@@ -7,14 +7,14 @@
   <parent>
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble -->
 
   <groupId>org.sweble</groupId>
   <artifactId>sweble</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sweble</name>
