@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Tooling -->
+
+  <parent>
+    <groupId>de.fau.cs.osr</groupId>
+    <artifactId>tooling</artifactId>
+    <version>1.0.4</version>
+  </parent>
+
+  <!-- This POM: Sweble -->
+
+  <groupId>org.sweble</groupId>
+  <artifactId>sweble</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>Sweble</name>
+  <url>http://osr.informatik.uni-erlangen.de</url>
+  <inceptionYear>2010</inceptionYear>
+  <description>
+    The next generation Wiki platform project.
+  </description>
+
+  <!-- ==[ Submodules ]===================================================== -->
+
+    <!-- The Sweble POM must not link to its submodules -->
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <!-- Dependency versions -->
+    <!-- ... -->
+
+    <!-- Plugin dependency versions -->
+    <!-- ... -->
+
+  </properties>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+    <dependencies>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+  -->
+
+  <developers>
+    <developer>
+      <id>riehle</id>
+      <name>Dirk Riehle</name>
+      <email>dirk.riehle@informatik.uni-erlangen.de</email>
+      <roles>
+        <role>Project Manager</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>dohrn</id>
+      <name>Hannes Dohrn</name>
+      <email>hannes.dohrn@informatik.uni-erlangen.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>kolassa</id>
+      <name>Carsten Kolassa</name>
+      <email>carsten.kolassa@informatik.uni-erlangen.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
+      <id>salim</id>
+      <name>Michel Salim</name>
+      <email>michel.salim@informatik.uni-erlangen.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <!--
+    see parent: <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <repositories>
+    <!-- Minimal set-up needed to retrieve parent POM -->
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-repositories</id>
+      <name>OSR Public Repositories</name>
+      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+    </repository>
+  </repositories>
+
+</project>
