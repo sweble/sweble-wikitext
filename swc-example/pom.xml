@@ -6,14 +6,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Example Archetype -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-example</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
 
   <name>SWC - Example Archetype</name>
   <url>http://osr.informatik.uni-erlangen.de</url>
