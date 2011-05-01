@@ -1,0 +1,208 @@
+{{wikiquotepar|MythBusters}}
+The cast of the television series ''[[MythBusters]]'' perform experiments to verify or debunk [[urban legend]]s, [[old wives' tale]]s, and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is [[MythBusters#Conclusions of the experiments|Busted, Plausible, or Confirmed]]).
+
+Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are "mini myths", videos available from the [[Discovery Channel]] website.
+
+==Episode overview==
+<onlyinclude>
+{| class="wikitable" style="width:100%; margin:auto; background:#FFFFFF;"
+|-
+! style="background-color: #DBE9F4; color:#000; text-align: center;"|Series # <!-- This is the episode number within the entire series -->
+!! style="background-color: #DBE9F4; color:#000; text-align: center;"|Season # <!-- This is the episode number within the current season -->
+!! style="background-color: #DBE9F4; color:#000; text-align: center;"|Title
+!! style="background-color: #DBE9F4; color:#000; text-align: center;"|Original airdate
+{{Episode list
+|EpisodeNumber   = SP11
+|EpisodeNumber2  = Special 1
+|Title           = Young Scientist Special
+|RTitle          = 
+|OriginalAirDate = {{Start date|2008|4|26}}
+|ShortSummary    = '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?
+|LineColor       = DBE9F4
+}}
+|}
+</onlyinclude>
+
+==Specials==
+=== Episode SP11 – "Young Scientists Special"===
+* Original airdate: April 26, 2008 on [[Science Channel]]
+
+This episode aired first on [[Science Channel]], as opposed to the show's regular home of [[Discovery Channel]].  A team of winners in Discovery's "Young Scientist Challenge" competitions tested environmental myths with the team.  Former MythBuster [[Scottie Chapman]] returned to assist with a myth.
+{| class="wikitable"
+! Myth statement
+! Status
+! Notes
+|-
+| Greenhouse gases increase the amount of heat absorbed by air.
+| <font color=green> Confirmed </font>
+| Airtight containers with carbon dioxide or methane added got one degree Celsius (2 °F) hotter than regular when heated by a hot lamp.
+|-
+| [[Electric car]]s are more sluggish than [[gasoline]]-powered cars.
+| <font color=red> Busted </font>
+| They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a "street car," not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.
+|-
+| Cows hurt the environment.
+| <font color=green> Confirmed </font>
+| Cows emit [[methane]]&mdash;though not mostly from flatulence, but from belching &mdash; and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.
+|-
+| Cow manure can be used to help the environment.
+| <font color=green> Confirmed </font>
+| Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.
+|}
+
+==Mini Myths==
+The mini-myths are shown in video clips that are available from the [[Discovery Channel]] website, as well as during the commercials in between ''MythBusters'' episodes.
+
+==="Egg-uinox"===
+The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.<ref>{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>
+{| class="wikitable"
+! Myth statement
+! Status
+! Notes
+|-
+| An egg can be balanced on its ends only during the spring and fall [[equinox]].
+| style="color:red" | Busted
+| This is a [[China|Chinese]] folk belief, sometimes called [[Egg of Li Chun|Li Chun egg balancing]] after the first day of spring in the Chinese calendar. There is nothing special about the spring and fall equinoxes that allows an egg to balance on end. A person with enough [[dexterity]] can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.
+|}
+
+==="Breakstep Bridge"===
+In a revisit of the [[MythBusters (2004 season)#Breakstep Bridge|Breakstep Bridge]] myth, Adam and Jamie decide that the suspension bridge that Adam had built was too stable to accurately test, so they build a simple [[beam bridge]] and test it under Adam's weight.<ref>{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref> This test was also aired in ''[[#Outtakes|MythBusters Outtakes]]''.
+
+{| class="wikitable"
+! Myth statement
+! Status
+! Notes
+|-
+| A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.
+| style="color:orange" | Plausible
+| The bridge was able to hold Adam's weight until he started bouncing on it.
+|}
+
+==="Mini Shark Myths"===
+The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ''Jaws'' in particular.<ref>{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>
+
+{| class="wikitable"
+! Myth statement
+! Status
+! Notes
+|-
+| Sharks tend to be attracted to brighter colors like yellow.
+| style="color:orange" | Plausible
+| When all the results were calculated, the sharks tested preferred to go for the "yum-yum yellow" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.
+|-
+| Sharks can detect a single drop of blood dropped into a pool of water.
+| style="color:red" | Busted
+| The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used [[lemon shark]]s, and [[great white shark|great white]]s or [[bull shark]]s might have gotten different results.
+|-
+| A shark's skin is rough enough to be used as [[sandpaper]].
+| style="color:green" | Confirmed
+| When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.
+|-
+| There is a [[rule of thumb]] a casual observer can use to adequately estimate the size of a shark.
+| style="color:red" | Busted
+| Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.
+|}
+
+==Outtakes==
+During live appearances by the MythBusters, they have screened additional segments that were not aired.
+
+==="Facts About Flatulence"===
+There were two additional myths addressed in addition to those in the ''[[MythBusters (2006 season)#Franklin's Kite|Franklin's Kite]]'' episode.  These two myths did not air because they were thought to be inappropriate for younger viewers.
+
+{| class="wikitable"
+! Myth statement
+! Status
+! Notes
+|-
+| Attractive women do not pass gas.
+| style="color:red" | Busted
+| Kari wore underwear equipped with a microphone connected to an amplifier and a [[hydrogen sulfide]] meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.<ref>{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>
+|-
+| A [[flatus]] [[Fart lighting|can be ignited]].
+| style="color:green" | Confirmed
+| Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.<ref>{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref> The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).
+
+This segment was later aired as part of the "Top 25 Moments" special on June 16, 2010.
+|}
+
+==="MythBusters Teeth Challenge"===
+Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the "[[MythBusters (2006 season)#Episode 55 – "Steam Cannon"|Steam Cannon]]" episode. However, on the Discovery Europe version, it is included in the episode.
+
+{| class="wikitable"
+! Myth statement
+! Status
+! Notes
+|-
+| Of all the MythBusters, Adam is the one with the brownest teeth. 
+| <font color=red>Busted</font>, then <font color=green>Confirmed</font>
+| Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his [[Tooth bleaching|teeth bleached]] to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).
+|}
+
+==[[BBC Two]] re-edited half hour shows==
+{{inc-video}}
+
+[[BBC Two]]'s editions of ''MythBusters'' are narrated by [[Rufus Hound]] in an energetic and irreverent style.
+
+{| class="wikitable"
+! Date broadcast
+! Myths
+|-
+| July 27, 2006
+| [[MythBusters (2003 season)#Penny Drop|Penny Drop]], [[MythBusters (2003 season)#Who Gets Wetter?|Who Gets Wetter?]], [[MythBusters (2003 season)#Exploding Toilet|Exploding Toilet]]
+|-
+| August 3, 2006
+| [[MythBusters (2003 season)#CD-ROM Shattering|CD-ROM Shattering]], [[MythBusters (2003 season)#Silicone Breasts|Silicone Breasts]], [[MythBusters (2003 season)#Cell Phone Destruction|Cell Phone Destruction]]
+|-
+| September 7, 2006
+| [[MythBusters (2003 season)#Lightning Strikes Tongue Piercing|Lightning Strikes Tongue Piercing]], [[MythBusters (2003 season)#101 Uses For Cola|Cola Myths (partial; cleaning blood, pennies and chrome, dissolving teeth and steaks)]], [[MythBusters (season 1)#Hammer Bridge Drop|Hammer Bridge Drop]]
+|-
+| September 14, 2006
+| [[List of MythBusters pilot episodes#Pilot 1 – "Jet Assisted Chevy, Pop Rocks and Soda"|JATO Car, Pop Rocks and Soda (called "Space Dust" in the British narration, as it is the more common name for Pop Rocks in the UK)]]
+|-
+| September 21, 2006
+| [[MythBusters (2003 season)#Buried Alive|Buried Alive]], [[MythBusters (2003 season)#Beat the Breath Test|Beat the Breath Test]]
+|-
+| September 28, 2006
+| [[MythBusters (2004 season)#Explosive Decompression|Explosive Decompression]], [[MythBusters (2004 season)#Rear Axle|Rear Axle]], [[MythBusters (2004 season)#Frog Giggin'|Frog Giggin']]
+|-
+| October 5, 2006
+| [[MythBusters (2004 season)#The Mad Trombonist|Mad Trombonist]], [[MythBusters (2004 season)#Goldfish Memory|Goldfish Memory]], [[MythBusters (2004 season)#Sinking Titanic|Down with the Titanic]]
+|-
+| October 12, 2006
+|[[MythBusters (2003 season)#Escape From Alcatraz|Escape from Alcatraz]], [[MythBusters (2003 season)#Stud Finders & Mind Control Chips|Mind Control Chips]], [[MythBusters (2003 season)#Does a Duck's Quack Echo?|Does a Duck's Quack Echo?]]
+|-
+| October 19, 2006
+|[[MythBusters (2004 season)#Rowing Water Skier|Row Skiing]], [[MythBusters (2004 season)#Toothbrush Surprise|Surprise Toothbrush]], [[MythBusters (2004 season)#Breakstep Bridge|Breakstep Bridge]]
+|- 
+| October 31, 2006
+| [[MythBusters (2004 season)#Buried in Concrete|The Hunt for Hoffa]], [[MythBusters (2004 season)#Daddy Long-Legs|Daddy Long-Legs]], [[MythBusters (2004 season)#Jet Taxi|Jet Taxi]]
+|-
+| November 7, 2006
+| [[List of MythBusters pilot episodes#Pilot 3 – "Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger"|Lawn Chair Balloon]], [[List of MythBusters pilot episodes#Pilot 3 – "Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger"|Poppy Seed Drug Test]], ''[[List of MythBusters pilot episodes#Pilot 3 – "Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger"|Goldfinger]]''
+|-
+| November 14, 2006
+| [[MythBusters (2004 season)#Chicken Gun|Chicken Gun (frozen or thawed?)]], [[MythBusters (2004 season)#Killer Washing Machine|Killer Laundry!]]
+|-
+| February 19, 2007
+| [[List of MythBusters pilot episodes#Pilot 2 – "Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer"|Vacuum Toilet]], [[List of MythBusters pilot episodes#Pilot 2 – "Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer"|Exploding Shopping]]
+|}
+
+==See also==
+* [[List of MythBusters episodes]]
+
+==References==
+{{Reflist}}
+
+==External links==
+* [http://dsc.discovery.com/fansites/mythbusters/mythbusters.html MythBusters Official site]
+* [http://drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/ View the ''Facts About Flatulence'' outtakes]
+* {{imdb title|id=0383126|title=MythBusters}}
+
+{{MythBusters}}
+
+{{DEFAULTSORT:Mythbusters}}
+[[Category:Lists of MythBusters episodes|Special]]
+
+[[nl:MythBusters afleveringen: Specials]]
+[[ru:Разрушители легенд: специальные выпуски]]
+[[fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista]]

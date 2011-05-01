@@ -1,0 +1,16 @@
+''italic''
+'''bold'''
+'''''bold+italic'''''
+
+'''hmmm''
+''hmm'''
+''Mark'''s
+'''Mark''''s
+
+* ''Item 1
+* '''Item 2
+* '''''Item 3
+
+ ''Pre 1
+ '''Pre 2
+ '''''Pre 3

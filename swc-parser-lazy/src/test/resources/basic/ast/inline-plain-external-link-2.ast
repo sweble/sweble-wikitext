@@ -1,0 +1,36 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Paragraph([
+      Url(
+        Properties:
+          RTD = RtData: [0] = "http://example.com"
+          {N} path = "//example.com"
+          {N} protocol = "http"
+      )
+      Whitespace(EOL: [ Text("\n") ])
+    ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n\n") ])
+    Paragraph([
+      Text("before ")
+      Url(
+        Properties:
+          RTD = RtData: [0] = "mail:mustermann@musterfirma.com"
+          {N} path = "mustermann@musterfirma.com"
+          {N} protocol = "mail"
+      )
+      Text(" after")
+      Whitespace(EOL: [ Text("\n") ])
+    ])
+  ]
+)

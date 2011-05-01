@@ -1,0 +1,168 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Section(
+      Properties:
+        RTD = RtData: [0] = "===", [1] = "===", [2]
+        {N} level = 3
+
+      [ Text(" Hallo 1 ") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Text("Welt 1")
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "=", [1] = "=", [2]
+        {N} level = 1
+
+      [ Text(" Hallo 2 ") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Itemization([
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1] = "\n"
+
+            [ Text(" a") ]
+          )
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1]
+
+            [ Text(" b") ]
+          )
+        ])
+        Whitespace(EOL: [ Text("\n") ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "=", [1] = "=", [2]
+        {N} level = 1
+
+      [ Text(" Hallo 3 ") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Text("Welt 3")
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Section(
+          Properties:
+            RTD = RtData: [0] = "==", [1] = "==", [2]
+            {N} level = 2
+
+          [ Text(" Hallo 4 ") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("Welt 4")
+              Whitespace(EOL: [ Text("\n") ])
+            ])
+            Section(
+              Properties:
+                RTD = RtData: [0] = "===", [1] = "===", [2]
+                {N} level = 3
+
+              [ Text(" Hallo 5 ") ]
+              [
+                Whitespace(EOL: [ Text("\n") ])
+                Paragraph([
+                  Text("Welt 5")
+                  Whitespace(EOL: [ Text("\n") ])
+                ])
+              ]
+            )
+            Section(
+              Properties:
+                RTD = RtData: [0] = "===", [1] = "===", [2]
+                {N} level = 3
+
+              [ Text(" Hallo 6 ") ]
+              [
+                Whitespace(EOL: [ Text("\n") ])
+                Paragraph([
+                  Text("Welt 6")
+                  Whitespace(EOL: [ Text("\n\n\n") ])
+                ])
+              ]
+            )
+          ]
+        )
+        Section(
+          Properties:
+            RTD = RtData: [0] = "==", [1] = "==", [2]
+            {N} level = 2
+
+          [ Text(" Hallo 7 ") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("Welt 7")
+              Whitespace(EOL: [ Text("\n") ])
+            ])
+            Section(
+              Properties:
+                RTD = RtData: [0] = "====", [1] = "====", [2]
+                {N} level = 4
+
+              [ Text(" Hallo 8 ") ]
+              [
+                Whitespace(EOL: [ Text("\n") ])
+                Paragraph([
+                  Text("Welt 8")
+                  Whitespace(EOL: [ Text("\n") ])
+                ])
+              ]
+            )
+          ]
+        )
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "=", [1] = "=", [2]
+        {N} level = 1
+
+      [ Text(" Hallo 9 ") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Text("Welt 9")
+          Whitespace(EOL: [ Text("\n\n\n") ])
+        ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "=", [1] = "=", [2]
+        {N} level = 1
+        warnings = 
+        [
+          Warning (normal): /basic/wikitext/block-section.wikitext:26:1 - 14: "= Hallo 10 ==" : Odd number of closing equals.
+        ]
+
+      [ Text(" Hallo 10 =") ]
+      [ Whitespace(EOL: [ Text("\n") ]) ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "=", [1] = "=", [2]
+        {N} level = 1
+        warnings = 
+        [
+          Warning (normal): /basic/wikitext/block-section.wikitext:27:1 - 14: "== Hallo 11 =" : Odd number of opening equals.
+        ]
+
+      [ Text("= Hallo 11 ") ]
+      [ ]
+    )
+  ]
+)

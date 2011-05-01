@@ -1,0 +1,57 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<p", [1] = ">", [2] = "</p>"
+        {N} empty = false
+        {N} name = "p"
+
+      [ ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Text("P1")
+        Whitespace(EOL: [ Text("\n") ])
+      ]
+    )
+    Whitespace(EOL: [ Text("\n") ])
+    Text("P2")
+    Whitespace(EOL: [ Text("\n") ])
+    XmlElementClose(
+      Properties:
+        RTD = RtData: [0] = "</p>"
+        {N} name = "p"
+    )
+    Whitespace(EOL: [ Text("\n") ])
+    Text("P3")
+    Whitespace(EOL: [ Text("\n") ])
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<p", [1] = ">", [2]
+        {N} empty = false
+        {N} name = "p"
+
+      [ ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Text("P4")
+        Whitespace(EOL: [ Text("\n") ])
+      ]
+    )
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
+        {N} empty = false
+        {N} name = "div"
+
+      [ ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Text("asdf")
+        Whitespace(EOL: [ Text("\n") ])
+      ]
+    )
+  ]
+)

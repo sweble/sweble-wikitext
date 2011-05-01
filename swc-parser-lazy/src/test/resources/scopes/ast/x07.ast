@@ -1,0 +1,43 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[target", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "target"
+
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [
+            Text(" a ")
+            XmlElement(
+              Properties:
+                RTD = RtData: [0] = "<i", [1] = ">", [2]
+                {N} empty = false
+                {N} name = "i"
+
+              [ ]
+              [ Text(" b ") ]
+            )
+          ]
+        )
+      )
+      XmlElement(
+        Properties:
+          RTD = RtData: [0], [1], [2]
+          {N} empty = false
+          {N} name = "i"
+
+        [ ]
+        [ Text(" c") ]
+      )
+    ])
+  ]
+)

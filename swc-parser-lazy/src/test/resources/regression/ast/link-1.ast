@@ -1,0 +1,51 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      ImageLink(
+        Properties:
+          RTD = RtData: [0] = "[[file:SC.jpg", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText(
+              Properties:
+                RTD = RtData: [0] = "|alt=", [1]
+
+              [ ]
+            )
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "file:SC.jpg"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = 225
+
+        [
+          LinkOptionResize(
+            Properties:
+              RTD = RtData: [0] = "|225px"
+              {N} height = -1
+              {N} width = 225
+          )
+          LinkOptionAltText(
+            Properties:
+              RTD = RtData: [0] = "|alt=", [1]
+
+            [ ]
+          )
+        ]
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [ Text("SC") ]
+        )
+      )
+    ])
+  ]
+)

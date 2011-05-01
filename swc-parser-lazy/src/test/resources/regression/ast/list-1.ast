@@ -1,0 +1,35 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Section(
+      Properties:
+        RTD = RtData: [0] = "=", [1] = "=", [2]
+        {N} level = 1
+
+      [ Text("C") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Itemization([
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1] = "\n"
+
+            [
+              Text("1")
+              Itemization([
+                ItemizationItem(
+                  Properties:
+                    RTD = RtData: [0] = "**", [1]
+
+                  [ Text("3") ]
+                )
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  ]
+)

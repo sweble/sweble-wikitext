@@ -1,0 +1,29 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([ Text("a ") ])
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
+        {N} empty = false
+        {N} name = "table"
+
+      [ ]
+      [
+        Text(" b ")
+        XmlElement(
+          Properties:
+            RTD = RtData: [0] = "<div", [1] = ">", [2]
+            {N} empty = false
+            {N} name = "div"
+
+          [ ]
+          [ Text(" c ") ]
+        )
+      ]
+    )
+    Text(" d")
+  ]
+)

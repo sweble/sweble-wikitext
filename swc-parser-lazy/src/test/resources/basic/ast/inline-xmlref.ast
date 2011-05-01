@@ -1,0 +1,77 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      XmlEntityRef(
+        Properties:
+          RTD = RtData: [0] = "&amp;"
+          {N} name = "amp"
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Text(
+        Properties:
+          {N} content = "&amp"
+          warnings = 
+          [
+            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:2:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
+          ]
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      XmlEntityRef(
+        Properties:
+          RTD = RtData: [0] = "&myinvention;"
+          {N} name = "myinvention"
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Text(
+        Properties:
+          {N} content = "&myinvention"
+          warnings = 
+          [
+            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:4:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
+          ]
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      XmlCharRef(
+        Properties:
+          RTD = RtData: [0] = "&#10;"
+          {N} codePoint = 10
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      XmlCharRef(
+        Properties:
+          RTD = RtData: [0] = "&#xFF;"
+          {N} codePoint = 255
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Text(
+        Properties:
+          {N} content = "&#;"
+          warnings = 
+          [
+            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:7:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
+          ]
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Text(
+        Properties:
+          {N} content = "&#"
+          warnings = 
+          [
+            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:8:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
+          ]
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Text(
+        Properties:
+          {N} content = "&"
+          warnings = 
+          [
+            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:9:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
+          ]
+      )
+    ])
+  ]
+)

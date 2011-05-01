@@ -1,0 +1,72 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Table(
+      Properties:
+        RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+      [
+        XmlAttribute(
+          Properties:
+            RTD = RtData: [0] = " border=\"", [1] = "\""
+            {N} hasValue = true
+            {N} name = "border"
+
+          [ Text("1") ]
+        )
+      ]
+      [
+        TableCell(
+          Properties:
+            RTD = RtData: [0] = "|", [1], [2]
+
+          [ ]
+          [
+            Text("1")
+            TagExtension(
+              Properties:
+                RTD = RtData: [0] = "<pre", [1] = ">T|a\n|b</pre>"
+                {N} body = "T|a\n|b"
+                {N} name = "pre"
+
+              [ ]
+            )
+          ]
+        )
+        TableCell(
+          Properties:
+            RTD = RtData: [0] = "||", [1], [2]
+
+          [ ]
+          [
+            Text("2")
+            XmlElement(
+              Properties:
+                RTD = RtData: [0] = "<span", [1] = "\n>", [2] = "</span>"
+                {N} empty = false
+                {N} name = "span"
+
+              [ ]
+              [ Text("X") ]
+            )
+            Text("Y")
+          ]
+        )
+        TableCell(
+          Properties:
+            RTD = RtData: [0] = "||", [1], [2]
+
+          [ ]
+          [
+            Paragraph([
+              Text("3")
+              Whitespace(EOL: [ Text("\n") ])
+            ])
+          ]
+        )
+      ]
+    )
+  ]
+)

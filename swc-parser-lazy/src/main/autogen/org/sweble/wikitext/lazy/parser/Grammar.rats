@@ -1,0 +1,125 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ *
+ * Lazy Grammar for MediaWiki Wikitext
+ * -----------------------------------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : LazyParsedPage
+ *     Extends     : ContentNode
+ *     Constructor : "content, warnings"
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LAZY_PARSED_PAGE
+ *     Import      : java.util.List
+ *     Import      : de.fau.cs.osr.ptk.common.Warning
+ *
+ *     Properties:
+ *       warnings : List<Warning>
+ *
+ */
+
+module org.sweble.wikitext.lazy.parser.Grammar;
+
+import org.sweble.wikitext.lazy.parser.Content;
+import org.sweble.wikitext.lazy.parser.State;
+
+// ...
+import org.sweble.wikitext.lazy.parser.ExternalLink;
+import org.sweble.wikitext.lazy.parser.HorizontalRule;
+import org.sweble.wikitext.lazy.parser.InternalLink;
+import org.sweble.wikitext.lazy.parser.List;
+import org.sweble.wikitext.lazy.parser.Section;
+import org.sweble.wikitext.lazy.parser.SemiPre;
+import org.sweble.wikitext.lazy.parser.Signature;
+import org.sweble.wikitext.lazy.parser.Table;
+import org.sweble.wikitext.lazy.parser.TableCaption;
+import org.sweble.wikitext.lazy.parser.TableCell;
+import org.sweble.wikitext.lazy.parser.TableHeader;
+import org.sweble.wikitext.lazy.parser.TableRow;
+import org.sweble.wikitext.lazy.parser.Whitespace;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+header
+{
+  import org.sweble.wikitext.lazy.postprocessor.IntermediateTags;
+  import org.sweble.wikitext.lazy.utils.*;
+
+  import de.fau.cs.osr.ptk.common.ast.*;
+  import de.fau.cs.osr.ptk.common.ast.Tuple.*;
+  import de.fau.cs.osr.utils.StringUtils;
+}
+
+body
+{
+}
+
+option
+  // Enabling verbose requires the GPL licensed Rats! library
+  // Due to the GPL license this can only be done during development and must
+  // never be released!
+  //verbose,
+  withLocation,
+  parser(org.sweble.wikitext.lazy.parser.LazyRatsParser);
+
+
+
+
+// -- Article ------------------------------------------------------------------
+
+public
+transient
+LazyParsedPage
+Article =
+  {
+    enter(ParserScopes.PAGE);
+  }
+  content:BolBlockContent &Eof
+  {
+    yyValue = new LazyParsedPage(content, new ArrayList<Warning>());
+  }
+;
+
+
+// -- Stuff that must not be optimized away ------------------------------------
+//    although the grammar doesn't reference it
+
+public
+transient
+void grmbl =
+  ListMemoized              InternalLinkMemoized      TableMemoized
+  ListTransient             InternalLinkTransient     TableTransient
+  TableCaptionMemoized      TableRowMemoized          TableHeaderMemoized
+  TableCaptionTransient     TableRowTransient         TableHeaderTransient
+  TableCellMemoized         pExtWsStarMemoized        ListMemoized
+  TableCellTransient        pExtWsStarTransient       ListTransient
+  SemiPreMemoized           SectionsMemoized          HeadingMemoized
+  SemiPreTransient          SectionsTransient         HeadingTransient
+  HorizontalRuleMemoized    ExternalLinkMemoized      ParagraphMemoized
+  HorizontalRuleTransient   ExternalLinkTransient     ParagraphTransient
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

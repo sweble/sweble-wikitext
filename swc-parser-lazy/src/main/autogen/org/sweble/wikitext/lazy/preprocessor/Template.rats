@@ -1,0 +1,246 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ * Templates
+ * ---------
+ *   - Arguments are parsed in the same way for transclusions and template
+ *     parameters, although template parameters only take one default value.
+ *     That's ok since MediaWiki too treats arguments for both the same way and
+ *     only takes the value after the first pipe as default value for the
+ *     template parameter.
+ *
+ * Template
+ * --------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : Template
+ *     Extends     : InnerNode.InnerNode2
+ *     Constructor : "name, args"
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE
+ *
+ *     Children:
+ *       name : NodeList
+ *       args : NodeList
+ *
+ * TemplateParameter
+ * -----------------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : TemplateParameter
+ *     Extends     : InnerNode.InnerNode3
+ *     Constructor : "name, defaultValue, garbage"
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE_PARAMETER
+ *
+ *     Children:
+ *       name         : NodeList
+ *       defaultValue : TemplateArgument
+ *       garbage      : NodeList
+ *
+ * TemplateArgument
+ * ----------------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : TemplateArgument
+ *     Extends     : InnerNode.InnerNode2
+ *     Constructor : "value, hasName"
+ *     Constructor : "name, value, hasName"
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE_ARGUMENT
+ *
+ *     Properties:
+ *       hasName : boolean
+ *
+ *     Children:
+ *       name  : NodeList
+ *       value : NodeList
+ *
+ */
+
+module org.sweble.wikitext.lazy.preprocessor.Template;
+
+import org.sweble.wikitext.lazy.preprocessor.State;
+import org.sweble.wikitext.lazy.preprocessor.ContentTemplateArgumentName;
+import org.sweble.wikitext.lazy.preprocessor.ContentTemplateArgumentValue;
+import org.sweble.wikitext.lazy.preprocessor.ContentTemplateName;
+
+
+
+
+// -- Article ------------------------------------------------------------------
+
+stateful AstNode Template =
+    braces:Braces1Plus
+    {
+      /* ALL PRODUCTIONS THAT DEPEND ON THE NUMBER OF BRANCES MUST
+       * BE TRANSIENT! THAT'S ALSO TRUE FOR PRODUCTIONS WHICH USE
+       * PRODUCTIONS THAT DEPEND ON THE BRACE COUNT
+       */
+      getState().setTemplateBraces(braces.length());
+    }
+    yyValue:TemplateTail
+  / braces:Braces1Plus
+    {
+      yyValue = new Text(braces);
+    }
+;
+
+private transient String Braces1Plus = "{" "{"+ ;
+
+/* Template tail generating one template/parameter or two nested template
+ *
+ * Multiple opening braces without interjacent spaces can generate at most two 
+ * nested templates. This production tries to identify these nested templates.
+ *
+ * ITS VITALLY IMPORTANT TO NOT SPLIT THIS PRODUCTION INTO TWO CHOICES
+ * where the first choice expects two TemplateTailPart's and the second
+ * choice is satisfied with only one TemplateTailPart. The reason:
+ * If the first choice fails, the template brace count has already changed!
+ * If the Rats! parser generator does not collapse the common prefix, the
+ * second choice will try to parse the TemplateTailPart again, but this time
+ * with the wrong brace count!
+ */
+private transient AstNode TemplateTail =
+  inner:TemplateTailPart outer:TemplateTailPart?
+  {
+    if (outer != null)
+    {
+      // insert inner template in front of the name of the outer template
+      ((NodeList) ((AstNode) outer).get(0)).add(0, inner);
+      yyValue = outer;
+    }
+    else
+    {
+      yyValue = inner;
+    }
+
+    // if more braces were openend than can be consumed by at most two
+    // templates/parameters we have to restore the remaining braces in front
+    // of the recognized templates.
+    int stillOpen = getState().getTemplateBraces();
+    if (stillOpen > 0)
+    {
+      yyValue = new NodeList(
+        new Text(StringUtils.strrep('{', stillOpen)),
+        yyValue);
+
+      getState().setTemplateBraces(0);
+    }
+  }
+;
+
+/* Template tail part generating either a Template or a Parameter
+ * Eats 2 or 3 closing braces
+ * ... [name] [arguments] }}}?
+ */
+private transient AstNode TemplateTailPart =
+    content:TemplateTailPart2 TemplateTailPart3
+    {
+      // content = (name, args)
+      NodeList args = content._2;
+
+      NodeList garbage = null;
+      TemplateArgument defaultValue = null;
+      if (args.size() > 0)
+      {
+        defaultValue = (TemplateArgument) args.get(0);
+        if (args.size() > 1)
+          garbage = new NodeList(args.subList(1, args.size()));
+      }
+
+      yyValue = new TemplateParameter(content._1, defaultValue, garbage);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt("{{{"), null, null, joinRt("}}}"));
+
+      getState().eatTemplateBraces(3);
+    }
+  / content:TemplateTailPart2
+    {
+      // content = (name, args)
+      yyValue = new Template(content._1, content._2);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt("{{"), null, joinRt("}}"));
+
+      getState().eatTemplateBraces(2);
+    }
+;
+
+/* Template tail part.
+ * Eats 2 closing braces
+ * ... [name] [arguments] }}
+ *
+ * It MUST BE TempalteName>Star<
+ * Example:
+ *   {{{{{param}}<no content here for example>}}}
+ */
+
+private transient Tuple2<NodeList, NodeList> TemplateTailPart2 =
+  &{ hasAtLeastTemplateBraces(2) } name:TemplateNameStar args:TemplateArgumentStar "}}"
+  {
+    yyValue = Tuple.from(name, args);
+  }
+;
+
+/* Template tail part.
+ * Eats the third closing brace
+ * ... }
+ */
+
+private transient void TemplateTailPart3 =
+  &{ hasAtLeastTemplateBraces(3) } '}'
+;
+
+
+
+
+// -- Template/Parameter arguments ---------------------------------------------
+
+private transient AstNode TemplateArgumentChoice =
+    parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
+    {
+      yyValue = new TemplateArgument(parameter, value, true);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt('|'), joinRt('='), null);
+    }
+  / value:TemplateArgumentValueStar
+    {
+      yyValue = new TemplateArgument(value, false);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt('|'), null, null);
+    }
+;
+
+private transient NodeList TemplateArgumentStar =
+  args:( void:'|' TemplateArgumentChoice )*
+  {
+    yyValue = new NodeList(args);
+  }
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

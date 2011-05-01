@@ -1,0 +1,16 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Whitespace(EOL: [ Text("\n") ])
+    Paragraph([
+      Text("text")
+      Whitespace(EOL: [ Text("\n\n") ])
+    ])
+    Paragraph([
+      Text("text")
+      Whitespace(EOL: [ Text("\n") ])
+    ])
+  ]
+)

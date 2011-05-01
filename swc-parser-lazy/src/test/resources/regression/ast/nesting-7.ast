@@ -1,0 +1,25 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Text("=")
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "h[[t", [1] = "]]h"
+          {N} postfix = "h"
+          {N} prefix = "h"
+          {N} target = "t"
+
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [ Text("a\nb") ]
+        )
+      )
+      Text("=")
+    ])
+  ]
+)

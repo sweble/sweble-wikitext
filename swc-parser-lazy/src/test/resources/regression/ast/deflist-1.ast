@@ -1,0 +1,16 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Text("t")
+      Ticks(
+        Properties:
+          RTD = RtData: [0] = "''"
+          {N} tickCount = 2
+      )
+      Text(":t")
+    ])
+  ]
+)

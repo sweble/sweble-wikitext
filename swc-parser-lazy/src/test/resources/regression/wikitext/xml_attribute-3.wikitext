@@ -1,0 +1,4 @@
+Whitespace before Eol!
+{| x="hallo"     
+ |-  x="hallo"    
+ |}

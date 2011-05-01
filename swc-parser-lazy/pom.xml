@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble Wikitext Components -->
+
+  <parent>
+    <groupId>org.sweble.wikitext</groupId>
+    <artifactId>sweble-wikitext</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components - Lazy Wikitext Parser -->
+
+  <groupId>org.sweble.wikitext</groupId>
+  <artifactId>swc-parser-lazy</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>SWC - Sweble Lazy Wikitext Parser</name>
+  <url>http://osr.informatik.uni-erlangen.de</url>
+  <description>
+    A lazy parser for MediaWiki's Wikitext.
+  </description>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+
+    <!-- Apache Commons -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+
+    <!-- NEVER RELEASE/DEPLOY THIS DEPENDENCY!
+         IT'S A GPL LIBRARY!
+    <dependency>
+      <groupId>xtc</groupId>
+      <artifactId>rats</artifactId>
+      <version>1.15.0</version>
+    </dependency>
+     -->
+
+    <!-- Parser Toolkit - Common -->
+    <dependency>
+      <groupId>de.fau.cs.osr.ptk</groupId>
+      <artifactId>ptk-common</artifactId>
+    </dependency>
+
+    <!--
+      Testing
+    -->
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Add various source directories -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/main/autogen</source>
+                <source>target/generated-sources/jflex</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Generate JFlex lexers -->
+      <plugin>
+        <groupId>de.jflex</groupId>
+        <artifactId>maven-jflex-plugin</artifactId>
+        <configuration>
+          <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+          <lexDefinitions>
+            <lexDefinition>${project.basedir}/src/main/autogen</lexDefinition>
+          </lexDefinitions>
+        </configuration>
+      </plugin>
+
+      <!-- Generate Rats! parsers -->
+      <plugin>
+        <groupId>de.fau.cs.osr.maven.plugins</groupId>
+        <artifactId>maven-rats-plugin</artifactId>
+        <configuration>
+          <baseDir>${project.basedir}/src/main/autogen</baseDir>
+          <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+          <ratsInputFiles>
+            <ratsInputFile>org/sweble/wikitext/lazy/parser/Grammar.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/lazy/preprocessor/Grammar.rats</ratsInputFile>
+          </ratsInputFiles>
+        </configuration>
+      </plugin>
+
+      <!-- Generate Ast Nodes -->
+      <plugin>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-nodegen-maven-plugin</artifactId>
+        <configuration>
+          <baseDir>${project.basedir}/src/main/autogen</baseDir>
+          <outputDir>${project.build.directory}/generated-sources</outputDir>
+          <ratsInputFiles>
+            <ratsInputFile>org/sweble/wikitext/lazy</ratsInputFile>
+          </ratsInputFiles>
+        </configuration>
+      </plugin>
+
+      <!-- Generate Ast Printers -->
+      <plugin>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-printergen-maven-plugin</artifactId>
+        <configuration>
+          <baseDir>${project.basedir}/src/main/autogen</baseDir>
+          <outputDir>${project.build.directory}/generated-sources</outputDir>
+          <aptInputFiles>
+            <aptInputFile>org/sweble/wikitext/lazy</aptInputFile>
+          </aptInputFiles>
+        </configuration>
+      </plugin>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <header>../etc/license-header.txt</header>
+          <mapping>
+             <rats>JAVADOC_STYLE</rats>
+             <jflex>JAVADOC_STYLE</jflex>
+             <apt>PTK_APT_STYLE</apt>
+          </mapping>
+          <headerDefinitions>
+            <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
+          </headerDefinitions>
+          <excludes>
+            <exclude>src/test/resources/**/*.disabled</exclude>
+            <exclude>src/test/resources/**/*.wikitext</exclude>
+            <exclude>src/test/resources/**/*.ast</exclude>
+            <exclude>src/test/resources/**/*.txt</exclude>
+            <exclude>src/test/resources/**/NOTICE</exclude>
+            <exclude>**/.gitignore</exclude>
+            <exclude>dependencies</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+                <scm>
+                <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+</project>

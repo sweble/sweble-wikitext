@@ -1,0 +1,15 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Itemization([
+      ItemizationItem(
+        Properties:
+          RTD = RtData: [0] = "<!--Comment-->*", [1]
+
+        [ Text(" Hallo") ]
+      )
+    ])
+  ]
+)

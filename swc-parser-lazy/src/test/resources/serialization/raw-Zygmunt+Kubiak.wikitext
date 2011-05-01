@@ -1,0 +1,25 @@
+'''Zygmunt Kubiak''' (30 April 1929, [[Warsaw]] - 19 March 2004) was a [[Poland|Polish]] [[writer]], [[essay]]ist, [[translator]], propagator of the antique culture, and professor at the [[University of Warsaw]].
+
+His book ''Mitologia Greków i Rzymian'' was shortlisted for the [[Nike Award]] in 1998.
+
+He translated, among others, [[Virgil]]'s ''[[Aeneid]]'', [[St. Augustine]]'s ''[[Confessions (St. Augustine)|Confessions]]'', and all poems of [[Constantine P. Cavafy]].
+
+{{Persondata <!-- Metadata: see [[Wikipedia:Persondata]]. -->
+| NAME              = Kubiak, Zygmunt
+| ALTERNATIVE NAMES =
+| SHORT DESCRIPTION =
+| DATE OF BIRTH     =
+| PLACE OF BIRTH    =
+| DATE OF DEATH     =
+| PLACE OF DEATH    =
+}}
+{{DEFAULTSORT:Kubiak, Zygmunt}}
+[[Category:Polish writers]]
+[[Category:1929 births]]
+[[Category:2004 deaths]]
+[[Category:Nike Award winners]]
+
+
+{{Poland-writer-stub}}
+
+[[pl:Zygmunt Kubiak]]

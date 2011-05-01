@@ -1,0 +1,17 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      TagExtension(
+        Properties:
+          RTD = RtData: [0] = "<pre", [1] = ">\n\tBlock\n</pre>"
+          {N} body = "\n\tBlock\n"
+          {N} name = "pre"
+
+        [ ]
+      )
+    ])
+  ]
+)

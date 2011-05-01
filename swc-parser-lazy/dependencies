@@ -1,0 +1,29 @@
+This software directly depends on the following 3rd party libraries:
+
+  Library: Apache Commons IO
+  License: The Apache Software License, Version 2.0
+  URL:     http://commons.apache.org/io/
+
+  Library: JUnit 4
+  License: Common Public License, Version 1.0
+  URL:     http://www.junit.org/
+
+
+This software directly depends on the following in-house libraries:
+
+  Library: Tooling
+  License: The Apache Software License, Version 2.0
+  URL:     http://sweble.org/
+
+  Library: Utils
+  License: The Apache Software License, Version 2.0
+  URL:     http://sweble.org/
+
+  Library: Parser Toolkit Common
+  License: The Apache Software License, Version 2.0
+  URL:     http://sweble.org/
+
+
+There may be indirect dependencies through one of the above mentioned libraries.
+Dependencies on maven plugins needed in the build process are not mentioned here.
+  

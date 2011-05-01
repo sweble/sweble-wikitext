@@ -1,0 +1,24 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[Target", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Target"
+
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [ Text("\n* Item 1\n* Item 2 ") ]
+        )
+      )
+      Text(" Wasuup?")
+    ])
+  ]
+)

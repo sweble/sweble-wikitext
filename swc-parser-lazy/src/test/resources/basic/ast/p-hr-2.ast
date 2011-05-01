@@ -1,0 +1,16 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+  ]
+)

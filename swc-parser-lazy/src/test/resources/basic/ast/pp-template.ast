@@ -1,0 +1,48 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Template(
+        Properties:
+          RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+        [ Text("name") ]
+        [
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1], [2]
+              {N} hasName = false
+
+            [ ]
+            [ Text("arg0") ]
+          )
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1] = "=", [2]
+              {N} hasName = true
+
+            [ Text("arg1") ]
+            [ Text("value1") ]
+          )
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1] = "=", [2]
+              {N} hasName = true
+
+            [ Text("arg2") ]
+            [
+              TemplateParameter(
+                Properties:
+                  RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
+
+                [ Text("parameter2") ]
+              )
+            ]
+          )
+        ]
+      )
+    ])
+  ]
+)

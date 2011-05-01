@@ -1,0 +1,3163 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Template(
+        Properties:
+          RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+        [ Text("wikiquotepar") ]
+        [
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1], [2]
+              {N} hasName = false
+
+            [ ]
+            [ Text("MythBusters") ]
+          )
+        ]
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Text("The cast of the television series ")
+      Italics(
+        Properties:
+          RTD = RtData: [0] = "''", [1] = "''"
+
+        [
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[MythBusters", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "MythBusters"
+
+            LinkTitle([ ])
+          )
+        ]
+      )
+      Text(" perform experiments to verify or debunk ")
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[urban legend", [1] = "]]s"
+          {N} postfix = "s"
+          {N} prefix = ""
+          {N} target = "urban legend"
+
+        LinkTitle([ ])
+      )
+      Text(", ")
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[old wives' tale", [1] = "]]s"
+          {N} postfix = "s"
+          {N} prefix = ""
+          {N} target = "old wives' tale"
+
+        LinkTitle([ ])
+      )
+      Text(", and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is ")
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[MythBusters#Conclusions of the experiments", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "MythBusters#Conclusions of the experiments"
+
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [ Text("Busted, Plausible, or Confirmed") ]
+        )
+      )
+      Text(").")
+      Whitespace(EOL: [ Text("\n\n") ])
+    ])
+    Paragraph([
+      Text("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[Discovery Channel", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Discovery Channel"
+
+        LinkTitle([ ])
+      )
+      Text(" website.")
+      Whitespace(EOL: [ Text("\n\n") ])
+    ])
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("Episode overview") ]
+      [
+        Whitespace(EOL: [ Text("\n\n") ])
+        Table(
+          Properties:
+            RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+          [
+            XmlAttribute(
+              Properties:
+                RTD = RtData: [0] = " class=\"", [1] = "\""
+                {N} hasValue = true
+                {N} name = "class"
+
+              [ Text("wikitable") ]
+            )
+            XmlAttribute(
+              Properties:
+                RTD = RtData: [0] = " style=\"", [1] = "\""
+                {N} hasValue = true
+                {N} name = "style"
+
+              [ Text("width:100%; margin:auto; background:#FFFFFF;") ]
+            )
+          ]
+          [
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1] = "|", [2]
+
+                  [
+                    XmlAttribute(
+                      Properties:
+                        RTD = RtData: [0] = " style=\"", [1] = "\""
+                        {N} hasValue = true
+                        {N} name = "style"
+
+                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                    )
+                  ]
+                  [
+                    Paragraph([
+                      Text("Series # ")
+                      XmlComment(
+                        Properties:
+                          RTD = RtData: [0] = "<!-- This is the episode number within the entire series -->"
+                          {N} content = " This is the episode number within the entire series "
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!!", [1] = "|", [2]
+
+                  [
+                    XmlAttribute(
+                      Properties:
+                        RTD = RtData: [0] = " style=\"", [1] = "\""
+                        {N} hasValue = true
+                        {N} name = "style"
+
+                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                    )
+                  ]
+                  [
+                    Paragraph([
+                      Text("Season # ")
+                      XmlComment(
+                        Properties:
+                          RTD = RtData: [0] = "<!-- This is the episode number within the current season -->"
+                          {N} content = " This is the episode number within the current season "
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!!", [1] = "|", [2]
+
+                  [
+                    XmlAttribute(
+                      Properties:
+                        RTD = RtData: [0] = " style=\"", [1] = "\""
+                        {N} hasValue = true
+                        {N} name = "style"
+
+                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                    )
+                  ]
+                  [
+                    Paragraph([
+                      Text("Title")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!!", [1] = "|", [2]
+
+                  [
+                    XmlAttribute(
+                      Properties:
+                        RTD = RtData: [0] = " style=\"", [1] = "\""
+                        {N} hasValue = true
+                        {N} name = "style"
+
+                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                    )
+                  ]
+                  [
+                    Paragraph([
+                      Text("Original airdate")
+                      Whitespace(EOL: [ Text("\n") ])
+                      Template(
+                        Properties:
+                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+                        [ Text("Episode list\n") ]
+                        [
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("EpisodeNumber   ") ]
+                            [ Text(" SP11\n") ]
+                          )
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("EpisodeNumber2  ") ]
+                            [ Text(" Special 1\n") ]
+                          )
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("Title           ") ]
+                            [ Text(" Young Scientist Special\n") ]
+                          )
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("RTitle          ") ]
+                            [ Text(" \n") ]
+                          )
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("OriginalAirDate ") ]
+                            [
+                              Text(" ")
+                              Template(
+                                Properties:
+                                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+                                [ Text("Start date") ]
+                                [
+                                  TemplateArgument(
+                                    Properties:
+                                      RTD = RtData: [0] = "|", [1], [2]
+                                      {N} hasName = false
+
+                                    [ ]
+                                    [ Text("2008") ]
+                                  )
+                                  TemplateArgument(
+                                    Properties:
+                                      RTD = RtData: [0] = "|", [1], [2]
+                                      {N} hasName = false
+
+                                    [ ]
+                                    [ Text("4") ]
+                                  )
+                                  TemplateArgument(
+                                    Properties:
+                                      RTD = RtData: [0] = "|", [1], [2]
+                                      {N} hasName = false
+
+                                    [ ]
+                                    [ Text("26") ]
+                                  )
+                                ]
+                              )
+                              Text("\n")
+                            ]
+                          )
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("ShortSummary    ") ]
+                            [ Text(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ]
+                          )
+                          TemplateArgument(
+                            Properties:
+                              RTD = RtData: [0] = "|", [1] = "=", [2]
+                              {N} hasName = true
+
+                            [ Text("LineColor       ") ]
+                            [ Text(" DBE9F4\n") ]
+                          )
+                        ]
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+        Whitespace(EOL: [ Text("\n\n\n") ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("Specials") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Section(
+          Properties:
+            RTD = RtData: [0] = "===", [1] = "===", [2]
+            {N} level = 3
+
+          [ Text(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Itemization([
+              ItemizationItem(
+                Properties:
+                  RTD = RtData: [0] = "*", [1]
+
+                [
+                  Text(" Original airdate: April 26, 2008 on ")
+                  InternalLink(
+                    Properties:
+                      RTD = RtData: [0] = "[[Science Channel", [1] = "]]"
+                      {N} postfix = ""
+                      {N} prefix = ""
+                      {N} target = "Science Channel"
+
+                    LinkTitle([ ])
+                  )
+                ]
+              )
+            ])
+            Whitespace(EOL: [ Text("\n\n") ])
+            Paragraph([
+              Text("This episode aired first on ")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[Science Channel", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "Science Channel"
+
+                LinkTitle([ ])
+              )
+              Text(", as opposed to the show's regular home of ")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[Discovery Channel", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "Discovery Channel"
+
+                LinkTitle([ ])
+              )
+              Text(".  A team of winners in Discovery's \"Young Scientist Challenge\" competitions tested environmental myths with the team.  Former MythBuster ")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[Scottie Chapman", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "Scottie Chapman"
+
+                LinkTitle([ ])
+              )
+              Text(" returned to assist with a myth.")
+              Whitespace(EOL: [ Text("\n") ])
+            ])
+            Table(
+              Properties:
+                RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+              [
+                XmlAttribute(
+                  Properties:
+                    RTD = RtData: [0] = " class=\"", [1] = "\""
+                    {N} hasValue = true
+                    {N} name = "class"
+
+                  [ Text("wikitable") ]
+                )
+              ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Myth statement")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Status")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Notes")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Greenhouse gases increase the amount of heat absorbed by air.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" ")
+                          XmlElement(
+                            Properties:
+                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
+                              {N} empty = false
+                              {N} name = "font"
+
+                            [
+                              XmlAttribute(
+                                Properties:
+                                  RTD = RtData: [0] = " color=", [1]
+                                  {N} hasValue = true
+                                  {N} name = "color"
+
+                                [ Text("green") ]
+                              )
+                            ]
+                            [ Text(" Confirmed ") ]
+                          )
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[Electric car", [1] = "]]s"
+                              {N} postfix = "s"
+                              {N} prefix = ""
+                              {N} target = "Electric car"
+
+                            LinkTitle([ ])
+                          )
+                          Text(" are more sluggish than ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[gasoline", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "gasoline"
+
+                            LinkTitle([ ])
+                          )
+                          Text("-powered cars.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" ")
+                          XmlElement(
+                            Properties:
+                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
+                              {N} empty = false
+                              {N} name = "font"
+
+                            [
+                              XmlAttribute(
+                                Properties:
+                                  RTD = RtData: [0] = " color=", [1]
+                                  {N} hasValue = true
+                                  {N} name = "color"
+
+                                [ Text("red") ]
+                              )
+                            ]
+                            [ Text(" Busted ") ]
+                          )
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Cows hurt the environment.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" ")
+                          XmlElement(
+                            Properties:
+                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
+                              {N} empty = false
+                              {N} name = "font"
+
+                            [
+                              XmlAttribute(
+                                Properties:
+                                  RTD = RtData: [0] = " color=", [1]
+                                  {N} hasValue = true
+                                  {N} name = "color"
+
+                                [ Text("green") ]
+                              )
+                            ]
+                            [ Text(" Confirmed ") ]
+                          )
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Cows emit ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[methane", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "methane"
+
+                            LinkTitle([ ])
+                          )
+                          XmlEntityRef(
+                            Properties:
+                              RTD = RtData: [0] = "&mdash;"
+                              {N} name = "mdash"
+                          )
+                          Text("though not mostly from flatulence, but from belching ")
+                          XmlEntityRef(
+                            Properties:
+                              RTD = RtData: [0] = "&mdash;"
+                              {N} name = "mdash"
+                          )
+                          Text(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Cow manure can be used to help the environment.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" ")
+                          XmlElement(
+                            Properties:
+                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
+                              {N} empty = false
+                              {N} name = "font"
+
+                            [
+                              XmlAttribute(
+                                Properties:
+                                  RTD = RtData: [0] = " color=", [1]
+                                  {N} hasValue = true
+                                  {N} name = "color"
+
+                                [ Text("green") ]
+                              )
+                            ]
+                            [ Text(" Confirmed ") ]
+                          )
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+            Whitespace(EOL: [ Text("\n\n") ])
+          ]
+        )
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("Mini Myths") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Text("The mini-myths are shown in video clips that are available from the ")
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[Discovery Channel", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "Discovery Channel"
+
+            LinkTitle([ ])
+          )
+          Text(" website, as well as during the commercials in between ")
+          Italics(
+            Properties:
+              RTD = RtData: [0] = "''", [1] = "''"
+
+            [ Text("MythBusters") ]
+          )
+          Text(" episodes.")
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Section(
+          Properties:
+            RTD = RtData: [0] = "===", [1] = "===", [2]
+            {N} level = 3
+
+          [ Text("\"Egg-uinox\"") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
+              TagExtension(
+                Properties:
+                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
+                  {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
+                  {N} name = "ref"
+
+                [ ]
+              )
+              Whitespace(EOL: [ Text("\n") ])
+            ])
+            Table(
+              Properties:
+                RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+              [
+                XmlAttribute(
+                  Properties:
+                    RTD = RtData: [0] = " class=\"", [1] = "\""
+                    {N} hasValue = true
+                    {N} name = "class"
+
+                  [ Text("wikitable") ]
+                )
+              ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Myth statement")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Status")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Notes")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" An egg can be balanced on its ends only during the spring and fall ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[equinox", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "equinox"
+
+                            LinkTitle([ ])
+                          )
+                          Text(".")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:red") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Busted")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" This is a ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[China", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "China"
+
+                            LinkTitle(
+                              Properties:
+                                RTD = RtData: [0] = "|", [1]
+
+                              [ Text("Chinese") ]
+                            )
+                          )
+                          Text(" folk belief, sometimes called ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[Egg of Li Chun", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "Egg of Li Chun"
+
+                            LinkTitle(
+                              Properties:
+                                RTD = RtData: [0] = "|", [1]
+
+                              [ Text("Li Chun egg balancing") ]
+                            )
+                          )
+                          Text(" after the first day of spring in the Chinese calendar. There is nothing special about the spring and fall equinoxes that allows an egg to balance on end. A person with enough ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[dexterity", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "dexterity"
+
+                            LinkTitle([ ])
+                          )
+                          Text(" can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+            Whitespace(EOL: [ Text("\n\n") ])
+          ]
+        )
+        Section(
+          Properties:
+            RTD = RtData: [0] = "===", [1] = "===", [2]
+            {N} level = 3
+
+          [ Text("\"Breakstep Bridge\"") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("In a revisit of the ")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[MythBusters (2004 season)#Breakstep Bridge", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "MythBusters (2004 season)#Breakstep Bridge"
+
+                LinkTitle(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1]
+
+                  [ Text("Breakstep Bridge") ]
+                )
+              )
+              Text(" myth, Adam and Jamie decide that the suspension bridge that Adam had built was too stable to accurately test, so they build a simple ")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[beam bridge", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "beam bridge"
+
+                LinkTitle([ ])
+              )
+              Text(" and test it under Adam's weight.")
+              TagExtension(
+                Properties:
+                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
+                  {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
+                  {N} name = "ref"
+
+                [ ]
+              )
+              Text(" This test was also aired in ")
+              Italics(
+                Properties:
+                  RTD = RtData: [0] = "''", [1] = "''"
+
+                [
+                  InternalLink(
+                    Properties:
+                      RTD = RtData: [0] = "[[#Outtakes", [1] = "]]"
+                      {N} postfix = ""
+                      {N} prefix = ""
+                      {N} target = "#Outtakes"
+
+                    LinkTitle(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1]
+
+                      [ Text("MythBusters Outtakes") ]
+                    )
+                  )
+                ]
+              )
+              Text(".")
+              Whitespace(EOL: [ Text("\n\n") ])
+            ])
+            Table(
+              Properties:
+                RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+              [
+                XmlAttribute(
+                  Properties:
+                    RTD = RtData: [0] = " class=\"", [1] = "\""
+                    {N} hasValue = true
+                    {N} name = "class"
+
+                  [ Text("wikitable") ]
+                )
+              ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Myth statement")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Status")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Notes")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:orange") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Plausible")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" The bridge was able to hold Adam's weight until he started bouncing on it.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+            Whitespace(EOL: [ Text("\n\n") ])
+          ]
+        )
+        Section(
+          Properties:
+            RTD = RtData: [0] = "===", [1] = "===", [2]
+            {N} level = 3
+
+          [ Text("\"Mini Shark Myths\"") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
+              Italics(
+                Properties:
+                  RTD = RtData: [0] = "''", [1] = "''"
+
+                [ Text("Jaws") ]
+              )
+              Text(" in particular.")
+              TagExtension(
+                Properties:
+                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
+                  {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
+                  {N} name = "ref"
+
+                [ ]
+              )
+              Whitespace(EOL: [ Text("\n\n") ])
+            ])
+            Table(
+              Properties:
+                RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+              [
+                XmlAttribute(
+                  Properties:
+                    RTD = RtData: [0] = " class=\"", [1] = "\""
+                    {N} hasValue = true
+                    {N} name = "class"
+
+                  [ Text("wikitable") ]
+                )
+              ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Myth statement")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Status")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Notes")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Sharks tend to be attracted to brighter colors like yellow.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:orange") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Plausible")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Sharks can detect a single drop of blood dropped into a pool of water.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:red") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Busted")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[lemon shark", [1] = "]]s"
+                              {N} postfix = "s"
+                              {N} prefix = ""
+                              {N} target = "lemon shark"
+
+                            LinkTitle([ ])
+                          )
+                          Text(", and ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[great white shark", [1] = "]]s"
+                              {N} postfix = "s"
+                              {N} prefix = ""
+                              {N} target = "great white shark"
+
+                            LinkTitle(
+                              Properties:
+                                RTD = RtData: [0] = "|", [1]
+
+                              [ Text("great white") ]
+                            )
+                          )
+                          Text(" or ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[bull shark", [1] = "]]s"
+                              {N} postfix = "s"
+                              {N} prefix = ""
+                              {N} target = "bull shark"
+
+                            LinkTitle([ ])
+                          )
+                          Text(" might have gotten different results.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" A shark's skin is rough enough to be used as ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[sandpaper", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "sandpaper"
+
+                            LinkTitle([ ])
+                          )
+                          Text(".")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:green") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Confirmed")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" There is a ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[rule of thumb", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "rule of thumb"
+
+                            LinkTitle([ ])
+                          )
+                          Text(" a casual observer can use to adequately estimate the size of a shark.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:red") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Busted")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+            Whitespace(EOL: [ Text("\n\n") ])
+          ]
+        )
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("Outtakes") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Text("During live appearances by the MythBusters, they have screened additional segments that were not aired.")
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Section(
+          Properties:
+            RTD = RtData: [0] = "===", [1] = "===", [2]
+            {N} level = 3
+
+          [ Text("\"Facts About Flatulence\"") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("There were two additional myths addressed in addition to those in the ")
+              Italics(
+                Properties:
+                  RTD = RtData: [0] = "''", [1] = "''"
+
+                [
+                  InternalLink(
+                    Properties:
+                      RTD = RtData: [0] = "[[MythBusters (2006 season)#Franklin's Kite", [1] = "]]"
+                      {N} postfix = ""
+                      {N} prefix = ""
+                      {N} target = "MythBusters (2006 season)#Franklin's Kite"
+
+                    LinkTitle(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1]
+
+                      [ Text("Franklin's Kite") ]
+                    )
+                  )
+                ]
+              )
+              Text(" episode.  These two myths did not air because they were thought to be inappropriate for younger viewers.")
+              Whitespace(EOL: [ Text("\n\n") ])
+            ])
+            Table(
+              Properties:
+                RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+              [
+                XmlAttribute(
+                  Properties:
+                    RTD = RtData: [0] = " class=\"", [1] = "\""
+                    {N} hasValue = true
+                    {N} name = "class"
+
+                  [ Text("wikitable") ]
+                )
+              ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Myth statement")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Status")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Notes")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Attractive women do not pass gas.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:red") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Busted")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Kari wore underwear equipped with a microphone connected to an amplifier and a ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[hydrogen sulfide", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "hydrogen sulfide"
+
+                            LinkTitle([ ])
+                          )
+                          Text(" meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.")
+                          TagExtension(
+                            Properties:
+                              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>"
+                              {N} body = "{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
+                              {N} name = "ref"
+
+                            [ ]
+                          )
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" A ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[flatus", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "flatus"
+
+                            LinkTitle([ ])
+                          )
+                          Text(" ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[Fart lighting", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "Fart lighting"
+
+                            LinkTitle(
+                              Properties:
+                                RTD = RtData: [0] = "|", [1]
+
+                              [ Text("can be ignited") ]
+                            )
+                          )
+                          Text(".")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1] = " |", [2]
+
+                      [
+                        XmlAttribute(
+                          Properties:
+                            RTD = RtData: [0] = " style=\"", [1] = "\""
+                            {N} hasValue = true
+                            {N} name = "style"
+
+                          [ Text("color:green") ]
+                        )
+                      ]
+                      [
+                        Paragraph([
+                          Text(" Confirmed")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.")
+                          TagExtension(
+                            Properties:
+                              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>"
+                              {N} body = "{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
+                              {N} name = "ref"
+
+                            [ ]
+                          )
+                          Text(" The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).")
+                          Whitespace(EOL: [ Text("\n\n") ])
+                        ])
+                        Paragraph([
+                          Text("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+            Whitespace(EOL: [ Text("\n\n") ])
+          ]
+        )
+        Section(
+          Properties:
+            RTD = RtData: [0] = "===", [1] = "===", [2]
+            {N} level = 3
+
+          [ Text("\"MythBusters Teeth Challenge\"") ]
+          [
+            Whitespace(EOL: [ Text("\n") ])
+            Paragraph([
+              Text("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\"", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\""
+
+                LinkTitle(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1]
+
+                  [ Text("Steam Cannon") ]
+                )
+              )
+              Text("\" episode. However, on the Discovery Europe version, it is included in the episode.")
+              Whitespace(EOL: [ Text("\n\n") ])
+            ])
+            Table(
+              Properties:
+                RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+              [
+                XmlAttribute(
+                  Properties:
+                    RTD = RtData: [0] = " class=\"", [1] = "\""
+                    {N} hasValue = true
+                    {N} name = "class"
+
+                  [ Text("wikitable") ]
+                )
+              ]
+              [
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Myth statement")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Status")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableHeader(
+                  Properties:
+                    RTD = RtData: [0] = "!", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" Notes")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableRow(
+                  Properties:
+                    RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+                  [ ]
+                  [
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Of all the MythBusters, Adam is the one with the brownest teeth. ")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" ")
+                          XmlElement(
+                            Properties:
+                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
+                              {N} empty = false
+                              {N} name = "font"
+
+                            [
+                              XmlAttribute(
+                                Properties:
+                                  RTD = RtData: [0] = " color=", [1]
+                                  {N} hasValue = true
+                                  {N} name = "color"
+
+                                [ Text("red") ]
+                              )
+                            ]
+                            [ Text("Busted") ]
+                          )
+                          Text(", then ")
+                          XmlElement(
+                            Properties:
+                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
+                              {N} empty = false
+                              {N} name = "font"
+
+                            [
+                              XmlAttribute(
+                                Properties:
+                                  RTD = RtData: [0] = " color=", [1]
+                                  {N} hasValue = true
+                                  {N} name = "color"
+
+                                [ Text("green") ]
+                              )
+                            ]
+                            [ Text("Confirmed") ]
+                          )
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                    TableCell(
+                      Properties:
+                        RTD = RtData: [0] = "|", [1], [2]
+
+                      [ ]
+                      [
+                        Paragraph([
+                          Text(" Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ")
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[Tooth bleaching", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "Tooth bleaching"
+
+                            LinkTitle(
+                              Properties:
+                                RTD = RtData: [0] = "|", [1]
+
+                              [ Text("teeth bleached") ]
+                            )
+                          )
+                          Text(" to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).")
+                          Whitespace(EOL: [ Text("\n") ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+            Whitespace(EOL: [ Text("\n\n") ])
+          ]
+        )
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [
+        InternalLink(
+          Properties:
+            RTD = RtData: [0] = "[[BBC Two", [1] = "]]"
+            {N} postfix = ""
+            {N} prefix = ""
+            {N} target = "BBC Two"
+
+          LinkTitle([ ])
+        )
+        Text(" re-edited half hour shows")
+      ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Template(
+            Properties:
+              RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+            [ Text("inc-video") ]
+            [ ]
+          )
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Paragraph([
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[BBC Two", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "BBC Two"
+
+            LinkTitle([ ])
+          )
+          Text("'s editions of ")
+          Italics(
+            Properties:
+              RTD = RtData: [0] = "''", [1] = "''"
+
+            [ Text("MythBusters") ]
+          )
+          Text(" are narrated by ")
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[Rufus Hound", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "Rufus Hound"
+
+            LinkTitle([ ])
+          )
+          Text(" in an energetic and irreverent style.")
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Table(
+          Properties:
+            RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+
+          [
+            XmlAttribute(
+              Properties:
+                RTD = RtData: [0] = " class=\"", [1] = "\""
+                {N} hasValue = true
+                {N} name = "class"
+
+              [ Text("wikitable") ]
+            )
+          ]
+          [
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1], [2]
+
+              [ ]
+              [
+                Paragraph([
+                  Text(" Date broadcast")
+                  Whitespace(EOL: [ Text("\n") ])
+                ])
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1], [2]
+
+              [ ]
+              [
+                Paragraph([
+                  Text(" Myths")
+                  Whitespace(EOL: [ Text("\n") ])
+                ])
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" July 27, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Penny Drop", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Penny Drop"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Penny Drop") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Who Gets Wetter?", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Who Gets Wetter?"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Who Gets Wetter?") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Exploding Toilet", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Exploding Toilet"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Exploding Toilet") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" August 3, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#CD-ROM Shattering", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#CD-ROM Shattering"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("CD-ROM Shattering") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Silicone Breasts", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Silicone Breasts"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Silicone Breasts") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Cell Phone Destruction", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Cell Phone Destruction"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Cell Phone Destruction") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" September 7, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Lightning Strikes Tongue Piercing", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Lightning Strikes Tongue Piercing"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Lightning Strikes Tongue Piercing") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#101 Uses For Cola", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#101 Uses For Cola"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Cola Myths (partial; cleaning blood, pennies and chrome, dissolving teeth and steaks)") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (season 1)#Hammer Bridge Drop", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (season 1)#Hammer Bridge Drop"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Hammer Bridge Drop") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" September 14, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\"", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\""
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("JATO Car, Pop Rocks and Soda (called \"Space Dust\" in the British narration, as it is the more common name for Pop Rocks in the UK)") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" September 21, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Buried Alive", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Buried Alive"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Buried Alive") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Beat the Breath Test", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Beat the Breath Test"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Beat the Breath Test") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" September 28, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Explosive Decompression", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Explosive Decompression"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Explosive Decompression") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Rear Axle", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Rear Axle"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Rear Axle") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Frog Giggin'", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Frog Giggin'"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Frog Giggin'") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" October 5, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#The Mad Trombonist", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#The Mad Trombonist"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Mad Trombonist") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Goldfish Memory", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Goldfish Memory"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Goldfish Memory") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Sinking Titanic", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Sinking Titanic"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Down with the Titanic") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" October 12, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Escape From Alcatraz", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Escape From Alcatraz"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Escape from Alcatraz") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Stud Finders & Mind Control Chips", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Stud Finders & Mind Control Chips"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Mind Control Chips") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Does a Duck's Quack Echo?", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2003 season)#Does a Duck's Quack Echo?"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Does a Duck's Quack Echo?") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" October 19, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Rowing Water Skier", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Rowing Water Skier"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Row Skiing") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Toothbrush Surprise", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Toothbrush Surprise"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Surprise Toothbrush") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Breakstep Bridge", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Breakstep Bridge"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Breakstep Bridge") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = " \n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" October 31, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Buried in Concrete", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Buried in Concrete"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("The Hunt for Hoffa") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Daddy Long-Legs", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Daddy Long-Legs"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Daddy Long-Legs") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Jet Taxi", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Jet Taxi"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Jet Taxi") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" November 7, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Lawn Chair Balloon") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Poppy Seed Drug Test") ]
+                        )
+                      )
+                      Text(", ")
+                      Italics(
+                        Properties:
+                          RTD = RtData: [0] = "''", [1] = "''"
+
+                        [
+                          InternalLink(
+                            Properties:
+                              RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"", [1] = "]]"
+                              {N} postfix = ""
+                              {N} prefix = ""
+                              {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
+
+                            LinkTitle(
+                              Properties:
+                                RTD = RtData: [0] = "|", [1]
+
+                              [ Text("Goldfinger") ]
+                            )
+                          )
+                        ]
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" November 14, 2006")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Chicken Gun", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Chicken Gun"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Chicken Gun (frozen or thawed?)") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Killer Washing Machine", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "MythBusters (2004 season)#Killer Washing Machine"
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Killer Laundry!") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+            TableRow(
+              Properties:
+                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+
+              [ ]
+              [
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" February 19, 2007")
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+                TableCell(
+                  Properties:
+                    RTD = RtData: [0] = "|", [1], [2]
+
+                  [ ]
+                  [
+                    Paragraph([
+                      Text(" ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\""
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Vacuum Toilet") ]
+                        )
+                      )
+                      Text(", ")
+                      InternalLink(
+                        Properties:
+                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"", [1] = "]]"
+                          {N} postfix = ""
+                          {N} prefix = ""
+                          {N} target = "List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\""
+
+                        LinkTitle(
+                          Properties:
+                            RTD = RtData: [0] = "|", [1]
+
+                          [ Text("Exploding Shopping") ]
+                        )
+                      )
+                      Whitespace(EOL: [ Text("\n") ])
+                    ])
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+        Whitespace(EOL: [ Text("\n\n") ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("See also") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Itemization([
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1]
+
+            [
+              Text(" ")
+              InternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[[List of MythBusters episodes", [1] = "]]"
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} target = "List of MythBusters episodes"
+
+                LinkTitle([ ])
+              )
+            ]
+          )
+        ])
+        Whitespace(EOL: [ Text("\n\n") ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("References") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Paragraph([
+          Template(
+            Properties:
+              RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+            [ Text("Reflist") ]
+            [ ]
+          )
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+      ]
+    )
+    Section(
+      Properties:
+        RTD = RtData: [0] = "==", [1] = "==", [2]
+        {N} level = 2
+
+      [ Text("External links") ]
+      [
+        Whitespace(EOL: [ Text("\n") ])
+        Itemization([
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1] = "\n"
+
+            [
+              Text(" ")
+              ExternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+
+                Url(
+                  Properties:
+                    RTD = RtData: [0] = "http://dsc.discovery.com/fansites/mythbusters/mythbusters.html"
+                    {N} path = "//dsc.discovery.com/fansites/mythbusters/mythbusters.html"
+                    {N} protocol = "http"
+                )
+                [ Text("MythBusters Official site") ]
+              )
+            ]
+          )
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1] = "\n"
+
+            [
+              Text(" ")
+              ExternalLink(
+                Properties:
+                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+
+                Url(
+                  Properties:
+                    RTD = RtData: [0] = "http://drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/"
+                    {N} path = "//drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/"
+                    {N} protocol = "http"
+                )
+                [
+                  Text("View the ")
+                  Italics(
+                    Properties:
+                      RTD = RtData: [0] = "''", [1] = "''"
+
+                    [ Text("Facts About Flatulence") ]
+                  )
+                  Text(" outtakes")
+                ]
+              )
+            ]
+          )
+          ItemizationItem(
+            Properties:
+              RTD = RtData: [0] = "*", [1]
+
+            [
+              Text(" ")
+              Template(
+                Properties:
+                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+                [ Text("imdb title") ]
+                [
+                  TemplateArgument(
+                    Properties:
+                      RTD = RtData: [0] = "|", [1] = "=", [2]
+                      {N} hasName = true
+
+                    [ Text("id") ]
+                    [ Text("0383126") ]
+                  )
+                  TemplateArgument(
+                    Properties:
+                      RTD = RtData: [0] = "|", [1] = "=", [2]
+                      {N} hasName = true
+
+                    [ Text("title") ]
+                    [ Text("MythBusters") ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+        Whitespace(EOL: [ Text("\n\n") ])
+        Paragraph([
+          Template(
+            Properties:
+              RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+            [ Text("MythBusters") ]
+            [ ]
+          )
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Paragraph([
+          Template(
+            Properties:
+              RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+            [ Text("DEFAULTSORT:Mythbusters") ]
+            [ ]
+          )
+          Whitespace(EOL: [ Text("\n") ])
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[Category:Lists of MythBusters episodes", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "Category:Lists of MythBusters episodes"
+
+            LinkTitle(
+              Properties:
+                RTD = RtData: [0] = "|", [1]
+
+              [ Text("Special") ]
+            )
+          )
+          Whitespace(EOL: [ Text("\n\n") ])
+        ])
+        Paragraph([
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[nl:MythBusters afleveringen: Specials", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "nl:MythBusters afleveringen: Specials"
+
+            LinkTitle([ ])
+          )
+          Whitespace(EOL: [ Text("\n") ])
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438"
+
+            LinkTitle([ ])
+          )
+          Whitespace(EOL: [ Text("\n") ])
+          InternalLink(
+            Properties:
+              RTD = RtData: [0] = "[[fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista", [1] = "]]"
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} target = "fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista"
+
+            LinkTitle([ ])
+          )
+          Whitespace(EOL: [ Text("\n") ])
+        ])
+      ]
+    )
+  ]
+)

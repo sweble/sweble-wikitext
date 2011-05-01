@@ -1,0 +1,24 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Italics(
+        Properties:
+          RTD = RtData: [0] = "''", [1] = "''"
+
+        [
+          Text(" A ")
+          Bold(
+            Properties:
+              RTD = RtData: [0] = "'''", [1] = "'''"
+
+            [ Text(" B ") ]
+          )
+          Text(" C ")
+        ]
+      )
+    ])
+  ]
+)

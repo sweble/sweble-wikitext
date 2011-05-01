@@ -1,0 +1,24 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([ Text("\n--\n\n") ])
+    Text(
+      Properties:
+        {N} content = "---"
+        warnings = [Warning: This looks like a Horizontal Rule, however a horizontal rule consists of at least 4 dashes: "---"]
+    )
+    Paragraph([ Text("\n\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Paragraph([ Text("\n\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "-----"
+    )
+    Paragraph([ Text("\n") ])
+  ]
+)

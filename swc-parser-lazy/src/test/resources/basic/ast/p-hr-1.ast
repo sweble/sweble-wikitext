@@ -1,0 +1,48 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Paragraph([
+      Text("text")
+      Whitespace(EOL: [ Text("\n") ])
+    ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n") ])
+    Paragraph([
+      Text("t")
+      Whitespace(EOL: [ Text("\n") ])
+    ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+    Whitespace(EOL: [ Text("\n\n") ])
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+  ]
+)

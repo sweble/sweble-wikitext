@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble -->
+
+  <parent>
+    <groupId>org.sweble</groupId>
+    <artifactId>sweble</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components -->
+
+  <groupId>org.sweble.wikitext</groupId>
+  <artifactId>sweble-wikitext</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>Sweble Wikitext Components</name>
+  <url>http://osr.informatik.uni-erlangen.de</url>
+  <inceptionYear>2009</inceptionYear>
+  <description>
+    The Sweble Wikitext Components module provides a parser for MediaWiki's 
+    Wikitext and an Engine trying emulating the behavior of a MediaWiki.
+  </description>
+
+  <!-- ==[ Submodules ]===================================================== -->
+
+  <modules>
+    <module>swc-parser-lazy</module>
+    <module>swc-engine</module>
+    <module>swc-example</module>
+  </modules>
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <!-- Dependency versions -->
+    <version.dep.rats-runtime>1.15.0</version.dep.rats-runtime>
+    <version.dep.log4j>1.2.14</version.dep.log4j>
+
+    <!-- Plugin dependency versions -->
+    <version.plugin.jflex>1.4.3</version.plugin.jflex>
+    <version.plugin.rats>1.3.0</version.plugin.rats>
+    <version.plugin.parser-toolkit>1.0.0</version.plugin.parser-toolkit>
+
+  </properties>
+
+  <!-- ==[ Dependency Management ]========================================== -->
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${version.dep.log4j}</version>
+      </dependency>
+
+      <!-- Parser Toolkit - Common -->
+      <dependency>
+        <groupId>de.fau.cs.osr.ptk</groupId>
+        <artifactId>ptk-common</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>1.0.0</version>
+      </dependency>
+
+      <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->
+      <dependency>
+        <groupId>org.sweble.wikitext</groupId>
+        <artifactId>swc-parser-lazy</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>1.0.0</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+
+    <!-- ==[ Resource Configuration ]======================================= -->
+
+    <!--
+      see parent: <resources>
+    -->
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <header>etc/license-header.txt</header>
+          <encoding>UTF-8</encoding>
+          <strictCheck>true</strictCheck>
+          <failIfMissing>true</failIfMissing>
+          <skip>false</skip>
+          <excludes>
+            <exclude>etc/license-header-apt-style.xml</exclude>
+            <exclude>**/.gitignore</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>NOTICE</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <!-- ==[ Plugin Management ]============================================ -->
+
+    <pluginManagement>
+      <plugins>
+
+        <!-- Maven JFlex Plugin -->
+        <plugin>
+          <groupId>de.jflex</groupId>
+          <artifactId>maven-jflex-plugin</artifactId>
+          <version>${version.plugin.jflex}</version>
+          <executions>
+            <execution>
+              <id>jflex-generate</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- Maven Rats Plugin -->
+        <plugin>
+          <groupId>de.fau.cs.osr.maven.plugins</groupId>
+          <artifactId>maven-rats-plugin</artifactId>
+          <version>${version.plugin.rats}</version>
+          <executions>
+            <execution>
+              <id>rats-generate</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- Maven NodeGen Plugin -->
+        <plugin>
+          <groupId>de.fau.cs.osr.ptk</groupId>
+          <artifactId>ptk-nodegen-maven-plugin</artifactId>
+          <version>${version.plugin.parser-toolkit}</version>
+          <executions>
+            <execution>
+              <id>nodegen-generate</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- Maven PrinterGen Plugin -->
+        <plugin>
+          <groupId>de.fau.cs.osr.ptk</groupId>
+          <artifactId>ptk-printergen-maven-plugin</artifactId>
+          <!-- Version is given directly so the release plugin can see it -->
+          <version>${version.plugin.parser-toolkit}</version>
+          <executions>
+            <execution>
+              <id>printergen-generate</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+    <!-- ==[ Build Element Set ]============================================ -->
+
+    <!--
+      see parent: <sourceDirectory>
+                  <scriptSourceDirectory>
+                  <testSourceDirectory>
+                  <outputDirectory>
+                  <testOutputDirectory>
+                  <extensions>
+    -->
+
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+  -->
+
+  <developers>
+    <developer>
+      <id>dohrn</id>
+      <name>Hannes Dohrn</name>
+      <email>hannes.dohrn@informatik.uni-erlangen.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <organization>University of Erlangen-Nürnberg - Open Source Research Group</organization>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <!--
+    see parent: <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <repositories>
+    <!-- Minimal set-up needed to retrieve parent POM -->
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-repositories</id>
+      <name>OSR Public Repositories</name>
+      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+    </repository>
+  </repositories>
+
+</project>

@@ -1,0 +1,55 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Redirect(
+        Properties:
+          RTD = RtData: [0] = "#REDIRECT[[link]]"
+          {N} target = "link"
+      )
+      Whitespace(EOL: [ Text("\n") ])
+      Template(
+        Properties:
+          RTD = RtData: [0] = "{{", [1], [2] = "}}"
+
+        [ Text("name") ]
+        [
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1], [2]
+              {N} hasName = false
+
+            [ ]
+            [ Text("arg0") ]
+          )
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1] = "=", [2]
+              {N} hasName = true
+
+            [ Text("arg1") ]
+            [ Text("value1") ]
+          )
+          TemplateArgument(
+            Properties:
+              RTD = RtData: [0] = "|", [1] = "=", [2]
+              {N} hasName = true
+
+            [ Text("arg2") ]
+            [
+              TemplateParameter(
+                Properties:
+                  RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
+
+                [ Text("parameter2") ]
+              )
+            ]
+          )
+        ]
+      )
+      Whitespace(EOL: [ Text("\n\n") ])
+    ])
+  ]
+)

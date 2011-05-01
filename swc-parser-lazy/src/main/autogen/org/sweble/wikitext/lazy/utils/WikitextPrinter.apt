@@ -1,0 +1,391 @@
+%*
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *%
+
+%Name WikitextPrinter;
+
+%Package org.sweble.wikitext.lazy.utils;
+
+%Header {
+
+import java.util.List;
+
+import org.sweble.wikitext.lazy.encval.*;
+import org.sweble.wikitext.lazy.parser.*;
+import org.sweble.wikitext.lazy.preprocessor.*;
+
+}
+
+
+%Body {
+
+	private static NodeList trim(NodeList l)
+	{
+		return TextUtils.trim(l);
+	}
+	
+	/*
+	private void iterate(List<? extends AstNode> list)
+	{
+		for (AstNode n : list)
+			dispatch(n);
+	}
+	*/
+
+	private static String imageLinkOptions(ImageLink n)
+	{
+		StringBuilder s = new StringBuilder();
+		
+		if (n.getWidth() >= 0 || n.getHeight() >= 0)
+		{
+			s.append('|');
+			if (n.getWidth() >= 0)
+				s.append(n.getWidth());
+			s.append('x');
+			if (n.getHeight() >= 0)
+				s.append(n.getHeight());
+			s.append("px");
+		}
+		
+		if (n.getUpright())
+			s.append("|upright");
+		
+		if (n.getHAlign() != ImageHorizAlign.NONE)
+		{
+			s.append('|');
+			s.append(n.getHAlign().asKeyword());
+		}
+		
+		if (n.getVAlign() != ImageVertAlign.MIDDLE)
+		{
+			s.append('|');
+			s.append(n.getVAlign().asKeyword());
+		}
+		
+		if (n.getFormat() != ImageViewFormat.UNRESTRAINED)
+		{
+			s.append('|');
+			s.append(n.getFormat().asKeyword());
+		}
+		
+		if (n.getBorder() != false)
+			s.append("|border");
+		
+		if (n.getLinkPage() != null)
+		{
+			s.append("|link=");
+			s.append(n.getLinkPage());
+		}
+		
+		if (n.getLinkUrl() != null)
+		{
+			s.append("|link=");
+			s.append(n.getLinkUrl().getProtocol());
+			s.append(':');
+			s.append(n.getLinkUrl().getPath());
+		}
+		
+		return s.toString();
+	}
+
+}
+
+
+%* ====[  Meta stuff  ]====================================================== *%
+
+
+%visit(LazyPreprocessedPage page)%
+{!iterate(page.getContent())}
+
+%visit(LazyParsedPage page)%
+{!iterate(page.getContent())}
+
+%visit(NodeList list)%
+{!iterate(list)}
+
+
+
+
+%* ====[  Formatting  ]====================================================== *%
+
+
+%visit(Text)%
+{=text.getContent()}
+
+
+%visit(Italics n)%
+''{!iterate(n.getContent())}''
+
+
+%visit(Bold n)%
+'''{!iterate(n.getContent())}'''
+
+
+%visit(Whitespace ws)
+
+
+%visit(Paragraph p)%n;%
+{!iterate(p.getContent())}
+
+
+
+
+%* ====[  Section  ]========================================================= *%
+
+
+%visit(Section s)%n;%
+{=strrep('=', s.getLevel())} {!iterate(trim(s.getTitle()))} {=strrep('=', s.getLevel())}
+{!iterate(s.getBody())}
+
+
+
+%* ====[  XML stuff  ]======================================================= *%
+
+
+%visit(XmlComment e)%
+
+
+%visit(XmlElement e)%
+<{=e.getName()}{!iterate(e.getXmlAttributes())}%
+{if(e.getEmpty())} />{else}>{!iterate(e.getBody())}</{=e.getName()}>{/if}
+
+
+%visit(XmlAttribute a)%
+{if(a.getHasValue())}%
+ {=a.getName()}="{!iterate(a.getValue())}"%
+{else}%
+ {=a.getName()}%
+{/if}
+
+
+%visit(XmlAttributeGarbage g)%
+
+
+%visit(XmlCharRef ref)%
+&#{=ref.getCodePoint()};
+
+
+%visit(XmlEntityRef ref)%
+&{=ref.getName()};
+
+
+
+
+%* ====[  SemiPre  ]========================================================= *%
+
+
+%visit(SemiPre sp)%n;%
+{!iterate(sp.getContent())}
+
+
+%visit(SemiPreLine l)
+ {!iterate(l.getContent())}
+
+
+
+
+%* ====[  Lists  ]=========================================================== *%
+
+
+%visit(DefinitionList n)%n;%
+{!iterate(n.getContent())}
+
+
+%visit(DefinitionTerm n)
+; {!iterate(trim(n.getContent()))}
+
+
+%visit(DefinitionDefinition n)
+: {!iterate(trim(n.getContent()))}
+
+
+%visit(Enumeration n)%n;%
+{!iterate(n.getContent())}
+
+
+%visit(EnumerationItem n)
+# {!iterate(trim(n.getContent()))}
+
+
+%visit(Itemization n)%n;%
+{!iterate(n.getContent())}
+
+
+%visit(ItemizationItem n)
+* {!iterate(trim(n.getContent()))}
+
+
+
+
+%* ====[  Links ( External, Internal, Image, Category )  ]=================== *%
+
+
+%visit(ExternalLink link)%
+[{=link.getTarget().getProtocol()}:{=link.getTarget().getPath()}%
+{if(!link.getTitle().isEmpty())} {!iterate(trim(link.getTitle()))}{/if}%
+]
+
+
+%visit(Url url)%
+{=url.getProtocol()}:{=url.getPath()}
+
+
+%visit(InternalLink n)%
+{=n.getPrefix()}%
+[[{=n.getTarget()}%
+{if(!n.getTitle().getContent().isEmpty())}%
+|{!iterate(n.getTitle().getContent())}%
+{/if}%
+]]{=n.getPostfix()}
+
+
+%visit(ImageLink n)%
+[[{=n.getTarget()}%
+{=imageLinkOptions(n)}%
+{if(!n.getAlt().isEmpty())}%
+|alt={!iterate(n.getAlt())}%
+{/if}%
+{if(!n.getTitle().getContent().isEmpty())}%
+|{!iterate(n.getTitle().getContent())}%
+{/if}%
+]]
+
+
+
+
+%* ====[  Tables  ]========================================================== *%
+
+
+%visit(Table table)%n;%
+%{|{!iterate(table.getXmlAttributes())}
+{!iterate(table.getBody())}
+%*
+{if(!table.getCaption().getXmlAttributes().isEmpty() || !table.getCaption().getBody().isEmpty())}
+{!dispatch(table.getCaption())}
+{/if}
+{if(!table.getHeader().getXmlAttributes().isEmpty() || !table.getHeader().getBody().isEmpty())}
+{!dispatch(table.getHeader())}
+{/if}
+{if(!table.getBody().isEmpty())}
+{!iterate(table.getBody())}
+{/if}
+*%
+|}
+
+
+%visit(TableCaption caption)
+|+%
+{if(!caption.getXmlAttributes().isEmpty())}{!iterate(caption.getXmlAttributes())} |{/if}%
+ {!iterate(trim(caption.getBody()))}
+
+
+%visit(TableRow row)
+|-{if(!row.getXmlAttributes().isEmpty())}{!iterate(row.getXmlAttributes())}{/if}
+{!iterate(row.getBody())}
+
+
+%visit(TableHeader header)
+!%
+{if(!header.getXmlAttributes().isEmpty())}{!iterate(header.getXmlAttributes())} |{/if}%
+ {!iterate(trim(header.getBody()))}
+
+
+%visit(TableCell cell)
+|%
+{if(!cell.getXmlAttributes().isEmpty())}{!iterate(cell.getXmlAttributes())} |{/if}%
+ {!iterate(trim(cell.getBody()))}
+
+
+
+
+%* ====[  Miscellaneous  ]=================================================== *%
+
+
+%visit(HorizontalRule rule)%n;
+----
+
+
+%visit(Signature sig)%
+{=strrep('~', sig.getTildeCount())}
+
+
+
+
+%* ====[  Elements that should have been resolved  ]========================= *%
+
+
+%visit(TagExtension n)%
+{if(n.getBody().isEmpty())}%
+<{=n.getName()}{!iterate(n.getXmlAttributes())} />%
+{else}%
+<{=n.getName()}{!iterate(n.getXmlAttributes())}>{=n.getBody()}</{=n.getName()}>%
+{/if}
+
+
+%visit(XmlElementEmpty e)%
+<{=e.getName()}{!iterate(e.getXmlAttributes())} />
+
+
+%visit(XmlElementOpen e)%
+<{=e.getName()}{!iterate(e.getXmlAttributes())}>
+
+
+%visit(XmlElementClose e)%
+</{=e.getName()}>
+
+
+%visit(Template tmpl)%
+%{%{{!iterate(tmpl.getName())}{!iterate(tmpl.getArgs())}}}
+
+
+%visit(TemplateParameter param)%
+%{%{%{{!iterate(param.getName())}{!dispatch(param.getDefaultValue())}{!iterate(param.getGarbage())}}}}%
+
+
+%visit(TemplateArgument arg)%
+|{if(!arg.getHasName())}%
+{!iterate(arg.getValue())}%
+{else}%
+{!iterate(arg.getName())}={!iterate(arg.getValue())}%
+{/if}
+
+
+%visit(Ticks)%
+{=strrep('\'', ticks.getTickCount())}
+
+
+%visit(MagicWord word)%
+__{=word.getWord()}__
+
+
+%visit(Redirect r)%
+#REDIRECT[[{=r.getTarget()}]]
+
+
+%visit(IllegalCodePoint icp)%
+{=icp.getCodePoint()}
+
+
+%visit(Ignored i)%
+
+
+%visit(OnlyInclude oi)%
+{!iterate(oi.getContent())}
+
+
+
+
+%* ========================================================================== *%

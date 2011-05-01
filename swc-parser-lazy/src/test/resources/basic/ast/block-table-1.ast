@@ -1,0 +1,27 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Table(
+      Properties:
+        RTD = RtData: [0] = "{|", [1] = "\n", [2] = " |}"
+
+      [ ]
+      [
+        TableHeader(
+          Properties:
+            RTD = RtData: [0] = " !", [1], [2]
+
+          [ ]
+          [
+            Paragraph([
+              Text(" Header")
+              Whitespace(EOL: [ Text("\n") ])
+            ])
+          ]
+        )
+      ]
+    )
+  ]
+)

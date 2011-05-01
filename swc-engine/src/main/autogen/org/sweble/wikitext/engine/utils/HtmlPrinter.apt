@@ -1,0 +1,597 @@
+%*
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *%
+
+%Name HtmlPrinter;
+
+%Package org.sweble.wikitext.engine.utils;
+
+%CtorParams String articleTitle;
+
+
+%Header {
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.sweble.wikitext.engine.Page;
+import org.sweble.wikitext.lazy.encval.*;
+import org.sweble.wikitext.lazy.parser.*;
+import org.sweble.wikitext.lazy.preprocessor.*;
+import org.sweble.wikitext.lazy.utils.*;
+
+}
+
+
+%Body {
+
+	private String classPrefix;
+
+	private String articleTitle = "";
+
+	private boolean renderTemplates = false;
+
+	private boolean renderTagExtensions = false;
+
+	private List<ExternalLink> numberedLinks = new ArrayList<ExternalLink>();
+
+	private boolean standaloneHtml = true;
+
+	private String cssLink;
+
+	private File cssFile;
+
+	private String cssResource;
+
+	// ===========================================================================
+
+	public HtmlPrinter(Writer writer, String articleTitle)
+	{
+		super(writer);
+
+		this.articleTitle = articleTitle;
+
+		setCssResource("HtmlPrinter.css", "");
+	}
+
+	// ===========================================================================
+
+	private void setClassPrefix(String classPrefix)
+	{
+		if (classPrefix != null)
+		{
+			this.classPrefix = classPrefix;
+			if (!classPrefix.isEmpty())
+				this.classPrefix += '-';
+		}
+	}
+
+	public boolean isStandaloneHtml()
+	{
+		return standaloneHtml;
+	}
+
+	public void setStandaloneHtml(boolean standaloneHtml, String classPrefix)
+	{
+		this.standaloneHtml = standaloneHtml;
+		setClassPrefix(classPrefix);
+	}
+
+	public String getCssLink()
+	{
+		return cssLink;
+	}
+
+	public void setCssLink(String cssLink, String classPrefix)
+	{
+		this.cssFile = null;
+		this.cssResource = null;
+		this.cssLink = cssLink;
+		setClassPrefix(classPrefix);
+	}
+
+	public File getCssFile()
+	{
+		return cssFile;
+	}
+
+	public void setCssFile(File cssFile, String classPrefix)
+	{
+		this.cssResource = null;
+		this.cssLink = null;
+		this.cssFile = cssFile;
+		setClassPrefix(classPrefix);
+	}
+
+	public String getCssResource()
+	{
+		return cssResource;
+	}
+
+	public void setCssResource(String cssResource, String classPrefix)
+	{
+		this.cssFile = null;
+		this.cssLink = null;
+		this.cssResource = cssResource;
+		setClassPrefix(classPrefix);
+	}
+
+	public void setRenderTemplates(boolean renderTemplates)
+	{
+		this.renderTemplates = renderTemplates;
+	}
+
+	public void setRenderTagExtensions(boolean renderTagExtensions)
+	{
+		this.renderTagExtensions = renderTagExtensions;
+	}
+
+	// ===========================================================================
+
+	/*
+	private void iterate(List<? extends AstNode> list)
+	{
+		for (AstNode n : list)
+			dispatch(n);
+	}
+	*/
+
+	private String asXmlCharRefs(String codePoint)
+	{
+		StringBuilder b = new StringBuilder();
+		for (int i = 0; i < codePoint.length(); ++i)
+		{
+			b.append("&#");
+			b.append((int) codePoint.charAt(i));
+			b.append(";");
+		}
+		return b.toString();
+	}
+
+	@SuppressWarnings("unchecked")
+	private void renderBlockLevelElementsFirst(Paragraph p)
+	{
+		List<AstNode> l = (List<AstNode>) p.getAttribute("blockLevelElements");
+		if (l == null)
+			return;
+
+		for(AstNode n : l)
+			dispatch(n);
+	}
+
+	@SuppressWarnings("unchecked")
+	private boolean isParagraphEmpty(Paragraph p)
+	{
+		if (!p.isEmpty())
+		{
+			List<AstNode> l = (List<AstNode>) p.getAttribute("blockLevelElements");
+			if (l == null || p.size() - l.size() > 0)
+				return false;
+		}
+		return true;
+	}
+
+	private void printExternalLinkNumber(ExternalLink link)
+	{
+		numberedLinks.add(link);
+		print(numberedLinks.size());
+	}
+
+	private String makeLinkTitle(InternalLink n)
+	{
+		return n.getTarget();
+	}
+
+	private String makeLinkTarget(InternalLink n)
+	{
+		return n.getTarget();
+	}
+
+	private String makeSignature(Signature sig)
+	{
+		return "[SIG]";
+	}
+}
+
+
+%* ====[  Meta stuff  ]====================================================== *%
+
+
+%visit(AstNode)%
+<span class="{=classPrefix}unknown-node">%
+{=astNode.getClass().getSimpleName()}%
+</span>
+
+
+%visit(Page page)
+{if(standaloneHtml)}%
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>{=escHtml(articleTitle)}</title>
+		{if(cssResource != null)}
+			<style type="text/css">
+				<!--
+					{=loadFromResource(cssResource)}
+				-->
+			</style>
+		{elif(cssFile != null)}
+			<style type="text/css">
+				<!--
+					{=load(cssFile)}
+				-->
+			</style>
+		{elif(cssLink != null)}
+			<link rel="stylesheet" type="text/css" href="{=cssLink}">
+		{/if}
+	</head>
+	<body>
+{/if}%
+<div class="{=classPrefix}content">
+	<h1 class="{=classPrefix}article-heading">{=escHtml(articleTitle)}</h1>
+	<div class="{=classPrefix}article-content">
+		{!iterate(page.getContent())}
+	</div>
+</div>
+</div>
+{if(standaloneHtml)}
+	</body>
+</html>
+{/if}
+
+
+
+
+%* ====[  Formatting  ]====================================================== *%
+
+
+%visit(Text)%
+{=escHtml(text.getContent())}
+
+
+%visit(Italics n)%
+<i>{!iterate(n.getContent())}</i>
+
+
+%visit(Bold n)%
+<b>{!iterate(n.getContent())}</b>
+
+
+%visit(Whitespace n)%
+{!iterate(n.getContent())}
+
+
+%visit(Paragraph p)
+{!renderBlockLevelElementsFirst(p)}
+{if (!isParagraphEmpty(p))}
+<p>
+	{!iterate(p.getContent())}
+</p>
+{/if}
+
+
+%visit(SemiPre sp)
+<pre>{!iterate(sp.getContent())}</pre>
+
+
+%visit(SemiPreLine line)%
+{!iterate(line.getContent())}{="\n"}
+
+
+
+
+%* ====[  Section  ]========================================================= *%
+
+
+%visit(Section s)
+<div class="{=classPrefix}section">
+	<h{=s.getLevel()}>{!iterate(s.getTitle())}</h{=s.getLevel()}>
+	<div class="{=classPrefix}section-body">
+		{!iterate(s.getBody())}
+	</div>
+</div>
+
+
+
+%* ====[  XML stuff  ]======================================================= *%
+
+
+%visit(XmlComment e)%
+
+
+%visit(XmlElement e)%
+<{=e.getName()}{!iterate(e.getXmlAttributes())}%
+{if(e.getEmpty())} />{else}>{!iterate(e.getBody())}</{=e.getName()}>{/if}
+
+
+%visit(XmlAttribute a)%
+ {=a.getName()}="{!iterate(a.getValue())}"
+
+
+%visit(XmlAttributeGarbage g)%
+
+
+%visit(XmlCharRef ref)%
+&#{=ref.getCodePoint()};
+
+
+%visit(XmlEntityRef ref)%
+&{=ref.getName()};
+
+
+
+
+%* ====[  Lists  ]=========================================================== *%
+
+
+%visit(DefinitionList n)
+<dl>
+	{!iterate(n.getContent())}
+</dl>
+
+
+%visit(DefinitionTerm n)
+<dt>{!iterate(n.getContent())}</dt>
+
+
+%visit(DefinitionDefinition n)
+<dd>{!iterate(n.getContent())}</dd>
+
+
+%visit(Enumeration n)
+<ol>
+	{!iterate(n.getContent())}
+</ol>
+
+
+%visit(EnumerationItem n)
+<li>{!iterate(n.getContent())}</li>
+
+
+%visit(Itemization n)
+<ul>
+	{!iterate(n.getContent())}
+</ul>
+
+
+%visit(ItemizationItem n)
+<li>{!iterate(n.getContent())}</li>
+
+
+
+
+%* ====[  Links ( External, Internal, Image, Category )  ]=================== *%
+
+
+%visit(ExternalLink link)%
+<a href="{=link.getTarget().getProtocol()}:{=link.getTarget().getPath()}">%
+{if(!link.getTitle().isEmpty())}{!iterate(link.getTitle())}%
+{else}%
+{!printExternalLinkNumber(link)}%
+{/if}%
+</a>
+
+
+%visit(Url url)%
+<a href="{=url.getProtocol()}:{=url.getPath()}">%
+{=url.getProtocol()}:{=url.getPath()}%
+</a>
+
+
+%visit(InternalLink n)%
+<a href="{=makeLinkTarget(n)}">%
+{=n.getPrefix()}%
+{if(n.getTitle().getContent().isEmpty())}%
+{=makeLinkTitle(n)}%
+{else}%
+{!iterate(n.getTitle().getContent())}%
+{/if}%
+{=n.getPostfix()}%
+</a>%
+
+
+%*
+%visit(ImageLink n)%
+{if(n.getFormat().isFramed())}%
+{if(!n.hasAttribute("rendered"))}%
+{!n.setAttribute("rendered", true)}
+<div class="thumb {=n.getHAlign().asCssClass()}">
+	<div class="thumbinner">
+		<a href="{=n.getTarget().getLinkString()}"><img
+		  class="thumbimage" 
+		  src="{=getImageUrl(n.getTarget())}"
+		  {if(n.getAlt() != null)}alt="{=escHtml(n.getAlt())}"{/if}
+		  /></a>
+		{if(!n.getTitle().isEmpty())}
+			<div class="thumbcaption">
+			  {!iterate(n.getTitle())}
+			</div>
+		{/if}
+	</div>
+</div>%
+{/if}%
+{else}%
+<a href="{=n.getTarget().getLinkString()}">%
+<img class="plainimage" src="{=getImageUrl(n.getTarget())}" {if(n.getAlt() != null)} alt="{=escHtml(n.getAlt())}" {/if}/>%
+</a>
+{/if}%
+*%
+
+
+
+
+%* ====[  Tables  ]========================================================== *%
+
+
+%visit(Table table)
+<table{!iterate(table.getXmlAttributes())}>
+	{!iterate(table.getBody())}
+%*
+	{if(!table.getCaption().getXmlAttributes().isEmpty() || !table.getCaption().getBody().isEmpty())}
+		{!dispatch(table.getCaption())}
+	{/if}
+	{if(!table.getHeader().getXmlAttributes().isEmpty() || !table.getHeader().getBody().isEmpty())}
+		<thead>
+			{!dispatch(table.getHeader())}
+		</thead>
+	{/if}
+	{if(!table.getBody().isEmpty())}
+		<tbody>
+			{!iterate(table.getBody())}
+		</tbody>
+	{/if}
+*%
+</table>
+
+
+%visit(TableCaption caption)
+<caption{!iterate(caption.getXmlAttributes())}>
+	{!iterate(caption.getBody())}
+</caption>
+
+
+%visit(TableRow row)
+<tr{!iterate(row.getXmlAttributes())}>
+	{!iterate(row.getBody())}
+</tr>
+
+
+%visit(TableHeader header)
+<th{!iterate(header.getXmlAttributes())}>
+	{!iterate(header.getBody())}
+</th>
+
+
+%visit(TableCell cell)
+<td{!iterate(cell.getXmlAttributes())}>
+	{!iterate(cell.getBody())}
+</td>
+
+
+
+
+%* ====[  Miscellaneous  ]=================================================== *%
+
+
+%visit(HorizontalRule rule)
+<hr />
+
+
+%visit(Signature sig)%
+<span class="{=classPrefix}signature">{=makeSignature(sig)}</span>%
+
+
+%visit(Redirect n)%
+<span class="{=classPrefix}redirect">&#x21B3; {=n.getTarget()}</span>
+
+
+%visit(IllegalCodePoint n)%
+<span class="{=classPrefix}illegal">{=asXmlCharRefs(n.getCodePoint())}</span>
+
+
+%visit(MagicWord n)%
+<span class="{=classPrefix}magic-word">__{=n.getWord()}__</span>
+
+
+
+
+%* ====[  Elements that should have been resolved  ]========================= *%
+
+
+%visit(TagExtension n)%
+<span class="{=classPrefix}unknown-node">%
+{if(renderTagExtensions)}%
+{if(n.getBody().isEmpty())}%
+&lt;{=n.getName()}{!iterate(n.getXmlAttributes())} />%
+{else}%
+&lt;{=n.getName()}{!iterate(n.getXmlAttributes())}>{=escHtml(n.getBody())}&lt;/{=n.getName()}>%
+{/if}%
+{else}%
+{if(n.getXmlAttributes().isEmpty())}%
+&lt;{=n.getName()}%
+{else}%
+&lt;{=n.getName()} ...%
+{/if}%
+{if(n.getBody().isEmpty())}%
+/>%
+{else}%
+>...&lt;/{=n.getName()}>%
+{/if}%
+{/if}%
+</span>
+
+
+%visit(XmlElementEmpty e)%
+<span class="{=classPrefix}unknown-node">%
+&lt;{=e.getName()}{!iterate(e.getXmlAttributes())} />%
+</span>
+
+
+%visit(XmlElementOpen e)%
+<span class="{=classPrefix}unknown-node">%
+&lt;{=e.getName()}{!iterate(e.getXmlAttributes())}>%
+</span>
+
+
+%visit(XmlElementClose e)%
+<span class="{=classPrefix}unknown-node">%
+&lt;/{=e.getName()}>%
+</span>
+
+
+%visit(Template tmpl)%
+<span class="{=classPrefix}unknown-node">%
+{if(renderTemplates)}%
+%{%{{!iterate(tmpl.getName())}{!iterate(tmpl.getArgs())}}}%
+{else}%
+{if(tmpl.getArgs().isEmpty())}%
+%{%{{!iterate(tmpl.getName())}}}%
+{else}%
+%{%{{!iterate(tmpl.getName())}|...}}%
+{/if}%
+{/if}%
+</span>
+
+
+%visit(TemplateParameter param)%
+<span class="{=classPrefix}unknown-node">%
+{if(renderTemplates)}%
+%{%{%{{!iterate(param.getName())}{!dispatch(param.getDefaultValue())}{!iterate(param.getGarbage())}}}}%
+{else}%
+{if(param.getDefaultValue() == null)}%
+%{%{%{{!iterate(param.getName())}}}}%
+{else}%
+%{%{%{{!iterate(param.getName())}|...}}}%
+{/if}%
+{/if}%
+</span>
+
+
+%visit(TemplateArgument arg)%
+|{if(arg.getHasName())}%
+{!iterate(arg.getValue())}%
+{else}%
+{!iterate(arg.getName())}={!iterate(arg.getValue())}%
+{/if}
+
+
+
+
+%* ========================================================================== *%

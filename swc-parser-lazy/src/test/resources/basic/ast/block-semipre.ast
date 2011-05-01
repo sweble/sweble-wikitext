@@ -1,0 +1,46 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    SemiPre([
+      SemiPreLine(
+        Properties:
+          RTD = RtData: [0] = " ", [1]
+
+        [ Text("Line 1") ]
+      )
+      SemiPreLine(
+        Properties:
+          RTD = RtData: [0] = "\n<!-- Comment --> ", [1]
+
+        [ Text("Line 2") ]
+      )
+      SemiPreLine(
+        Properties:
+          RTD = RtData: [0] = "\n ", [1]
+
+        [ Text("Line 3") ]
+      )
+    ])
+    Whitespace(EOL: [ Text("\n") ])
+    Paragraph([
+      Text("\tdiscontinued")
+      Whitespace(EOL: [ Text("\n") ])
+    ])
+    SemiPre([
+      SemiPreLine(
+        Properties:
+          RTD = RtData: [0] = " ", [1]
+
+        [ Text("Line 5") ]
+      )
+      SemiPreLine(
+        Properties:
+          RTD = RtData: [0] = "\n ", [1]
+
+        [ Text("Line 6") ]
+      )
+    ])
+  ]
+)

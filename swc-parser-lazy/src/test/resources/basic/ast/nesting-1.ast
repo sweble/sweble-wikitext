@@ -1,0 +1,32 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      Text(
+        Properties:
+          {N} content = "[[Target1|Title1a "
+          warnings = 
+          [
+            Warning (informative): /basic/wikitext/nesting-1.wikitext:1:1 - 10: "[[Target1" : This looks like a Internal Link, however the finishing `]]' is missing.
+          ]
+      )
+      InternalLink(
+        Properties:
+          RTD = RtData: [0] = "[[Target2", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Target2"
+
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [ Text("Title2") ]
+        )
+      )
+      Text(" Title1b]]")
+    ])
+  ]
+)

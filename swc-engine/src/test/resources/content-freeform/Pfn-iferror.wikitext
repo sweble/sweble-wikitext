@@ -1,0 +1,7 @@
+{{#iferror: {{#expr: 1 + 2 }} | error | correct }}
+{{#iferror: {{#expr: 1 + X }} | error | correct }}
+{{#iferror: {{#expr: 1 + 2 }} | error }}
+{{#iferror: {{#expr: 1 + X }} | error }}
+{{#iferror: {{#expr: 1 + 2 }} }}
+{{#iferror: {{#expr: 1 + X }} }}‌
+{{#iferror: <strong class="error">a</strong> | error | correct }}

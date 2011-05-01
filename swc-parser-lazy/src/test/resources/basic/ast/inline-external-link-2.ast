@@ -1,0 +1,22 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      ExternalLink(
+        Properties:
+          RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+
+        Url(
+          Properties:
+            RTD = RtData: [0] = "http://example.com"
+            {N} path = "//example.com"
+            {N} protocol = "http"
+        )
+        [ Text("[http://example2.com") ]
+      )
+      Text("]")
+    ])
+  ]
+)

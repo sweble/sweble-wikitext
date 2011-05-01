@@ -1,0 +1,291 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ * XML Elements
+ * ------------
+ *
+ *   - NONE OF THESE XML ELEMENTS CAN NEST!
+ *   - <onlyinclude> tags prevent parsing of the content AROUND them. That's
+ *     why these tags have to be handled specially by the module
+ *     ContentOnlyInclude and not here.
+ *   - <includeonly> tags also behave specially:
+ *     - The wikitext is marked for inclusion only: The content of the
+ *       <inclueonly> element is parsed by the preprocessor and the scope of
+ *       the tag is ignored. Start and end tags are simply ignored.
+ *     - The wikitext is marked for direct viewing: The complete element with
+ *       its content is ignored. No parsing of the content is done by the
+ *       preprocessor.
+ *   - <noinclude> tags also behave specially: They are treated the other way
+ *     round compared to the <includeonly> tags.
+ *   - All other tags that are recognized as tag extensions are handled
+ *     specially in that their content is not parsed by the preprocessor and
+ *     they can NOT nest.
+ *
+ * TagExtension
+ * ------------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : TagExtension
+ *     Extends     : InnerNode.InnerNode1
+ *     Constructor : "name, xmlAttributes, body"
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TAG_EXTENSION
+ *
+ *     Properties:
+ *       name : String
+ *       body : String
+ *
+ *     Children:
+ *       xmlAttributes : NodeList
+ *
+ * XmlComment
+ * ----------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : XmlComment
+ *     Extends     : StringContentNode
+ *     Constructor : content
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_COMMENT
+ *
+ */
+
+module org.sweble.wikitext.lazy.preprocessor.XmlElement;
+
+import org.sweble.wikitext.lazy.utils.Roundtrip;
+import org.sweble.wikitext.lazy.utils.Whitespace as Whitespace;
+import org.sweble.wikitext.lazy.utils.XmlName;
+import org.sweble.wikitext.lazy.utils.XmlAttribute(Whitespace);
+
+
+
+
+// -- XML Element --------------------------------------------------------------
+
+AstNode XmlElement =
+  '<' yyValue:
+  ( "!--" yyValue:XmlComment
+  / '/'   yyValue:IgnoredClosingTag
+  /       IgnoredOpeningTag
+  /       IgnoredElements
+  /       TagExtension
+  /       Greater
+  )
+;
+
+private inline Text Greater =
+  !ValidClosingTag
+  {
+    yyValue = new Text("<");
+  }
+;
+
+
+
+
+// -- XML Comment --------------------------------------------------------------
+
+private transient XmlComment XmlComment =
+    content:XmlCommentContent "-->"
+    {
+      yyValue = new XmlComment(content);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt("<!--" + content + "-->"));
+    }
+  / content:XmlCommentContent Eof
+    {
+      yyValue = new XmlComment(content);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt("<!--" + content));
+    }
+;
+
+private transient String XmlCommentContent =
+  ( !"-->" _ )*
+;
+
+
+
+
+// -- Ignored opening, closing tags --------------------------------------------
+
+private transient AstNode IgnoredClosingTag =
+  name:IgnoredTagName garbage:IgnoredTagGarbage '>'
+  {
+    String content = "</" + name + garbage + ">";
+
+    yyValue = new Ignored(content);
+
+    if (isGatherRtData())
+      addRtData(yyValue, joinRt(content));
+  }
+;
+
+private transient AstNode IgnoredOpeningTag =
+  name:IgnoredTagName garbage:IgnoredTagGarbage '>'
+  {
+    String content = "<" + name + garbage + ">";
+
+    yyValue = new Ignored(content);
+
+    if (isGatherRtData())
+      addRtData(yyValue, joinRt(content));
+  }
+;
+
+private inline String IgnoredTagName =
+  yyValue:TagName &{ isIgnoredTag(yyValue) }
+;
+
+private transient String IgnoredTagGarbage =
+  ( !'>' _ )*
+;
+
+
+
+
+// -- Ignored elements ---------------------------------------------------------
+
+private transient AstNode IgnoredElements =
+    header:IgnoredElementHeader
+    {
+      getState().setTagExtensionName(header._1);
+    }
+    '>' body:TagBody
+    {
+      String content = "<" + header._1 + header._2 + ">" + body._1 + body._2;
+
+      yyValue = new Ignored(content);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt(content));
+    }
+  / header:IgnoredElementHeader "/>"
+    {
+      String content = "<" + header._1 + header._2 + "/>";
+
+      yyValue = new Ignored(content);
+
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt(content));
+    }
+;
+
+private transient Tuple2<String, String> IgnoredElementHeader =
+  name:IgnoredElementName garbage:IgnoredTagGarbage
+  {
+    yyValue = Tuple.from(name, garbage);
+  }
+;
+
+private inline String IgnoredElementName =
+  yyValue:TagName &{ isIgnoredElement(yyValue) }
+;
+
+
+
+
+// -- Tag extensions -----------------------------------------------------------
+
+private transient TagExtension TagExtension =
+    header:TagHeader '>'
+    {
+      getState().setTagExtensionName(header._1);
+    }
+    body:TagBody
+    {
+      yyValue = new TagExtension(header._1, header._2, body._1);
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt('<', header._1),
+            joinRt(header._3, '>', body._1, body._2));
+    }
+  / header:TagHeader "/>"
+    {
+      yyValue = new TagExtension(header._1, header._2, "");
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt('<', header._1),
+            joinRt(header._3, "/>"));
+    }
+;
+
+private transient Tuple3<String, NodeList, String> TagHeader =
+    name:ValidTagName &pWsPlus attributes:XmlAttributePlus ws:pWsStar
+    {
+      yyValue = Tuple.from(name, attributes, ws);
+    }
+  / name:ValidTagName ws:pWsStar
+    {
+      yyValue = Tuple.from(name, new NodeList(), ws);
+    }
+;
+
+private transient Tuple2<String, String> TagBody =
+  content:TagContentStar
+  endTag:(
+    ValidClosingTag
+  / Eof
+    {
+      yyValue = null;
+    }
+  )
+  {
+    yyValue = Tuple.from(content, (String) endTag);
+  }
+;
+
+private transient String TagContentStar =
+  ( !ValidClosingTag _ )*
+;
+
+
+
+
+// -- Opening and closing names/tags -------------------------------------------
+
+private transient String ValidClosingTag =
+  "</" endTag:ClosingTagHeader &{ isValidClosingTag(endTag._1) }
+  {
+    yyValue = "</" + endTag._1 + endTag._2 + ">";
+  }
+;
+
+private transient Tuple2<String, String> ClosingTagHeader =
+  name:TagName ws:pWsStar '>'
+  {
+    yyValue = Tuple.from(name, ws);
+  }
+;
+
+private inline String ValidTagName =
+  yyValue:TagName &{ isValidExtensionTagName(yyValue) }
+;
+
+private inline String TagName = XmlName ;
+
+
+
+
+// -- End of file -------------------------------------------------------------

@@ -1,0 +1,11 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    HorizontalRule(
+      Properties:
+        RTD = RtData: [0] = "----"
+    )
+  ]
+)

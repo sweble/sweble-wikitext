@@ -1,0 +1,6 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [ Paragraph([ Text("don't touch me!") ]) ]
+)

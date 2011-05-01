@@ -1,0 +1,182 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ *
+ * TableCell
+ * ---------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : TableCell
+ *     Extends     : InnerNode.InnerNode2
+ *     Constructor : "xmlAttributes, body"
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TABLE_CELL
+ *
+ *     Children:
+ *       xmlAttributes : NodeList
+ *       body          : NodeList
+ *
+ */
+
+module org.sweble.wikitext.lazy.parser.TableCell;
+
+import org.sweble.wikitext.lazy.utils.Assert;
+
+import org.sweble.wikitext.lazy.parser.Content;
+import org.sweble.wikitext.lazy.parser.TableAttributeInline;
+import org.sweble.wikitext.lazy.parser.Whitespace;
+
+
+
+
+// -- Table Cell --[ State Aware Memoization ]----------------------------------
+
+noinline transient AstNode TableCell =
+ ^{
+    StateAwareResult r = (StateAwareResult) pTableCellMemoized(yyBase);
+    final LazyParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pTableCellTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized AstNode TableCellMemoized =
+  ^{
+      Result yyResult = new StateAwareResult("TableCell", getContext(), pTableCellTransient(yyBase));
+      if (returnTrue(yyResult))
+        return yyResult;
+   }
+;
+
+
+
+
+// -- Table Cell ---------------------------------------------------------------
+
+noinline transient AstNode TableCellTransient =
+    &( pExtSpaceStar '|' ) inline:TableInlineCellPlus last:TableBlockCell?
+    {
+      yyValue = new NodeList(inline, last);
+    }
+  / &( pExtSpaceStar '|' ) header:TableBlockCell
+    {
+      yyValue = header;
+    }
+;
+
+inline void InlineContentStopperTableCell =
+  &{ inScope(ParserScopes.TABLE_INLINE_CELL) } "||"
+;
+
+
+
+
+// -- Table Inline Cell --------------------------------------------------------
+
+private transient NodeList TableInlineCellPlus =
+  cells:( TableInlineCell &"||" )+
+  {
+    yyValue = new NodeList(cells);
+  }
+;
+
+private inline TableCell TableInlineCell =
+  rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:InlineContentStar
+  {
+    yyValue = new TableCell(attributes._1, body);
+
+    if (isGatherRtData())
+      addRtData(yyValue,
+          joinRt(rt0, prefix),
+          (Object[]) attributes._2,
+          null);
+  }
+;
+
+
+
+
+// -- Table Block Cell ---------------------------------------------------------
+
+private inline TableCell TableBlockCell =
+  rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
+  {
+    yyValue = new TableCell(attributes._1, body);
+
+    if (isGatherRtData())
+      addRtData(yyValue,
+          joinRt(rt0, prefix),
+          (Object[]) attributes._2,
+          null);
+  }
+;
+
+private inline void FollowUpSanityCheck =
+  ExpectedFollowUp / ShouldNotBeHere
+;
+
+private inline void ExpectedFollowUp =
+  pExtSpaceStar ( "!" / "|+" / "|-" / "|}" / "|" / Eof )
+;
+
+
+
+
+// -- Table Header Attributes --------------------------------------------------
+
+private Tuple2<NodeList, Object> Attributes =
+    &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
+    {
+      yyValue = Tuple.from(attrs, (Object) joinRt(ws, '|'));
+    }
+  / {
+      yyValue = Tuple.from(new NodeList(), null);
+    }
+;
+
+private transient void AttrPossible =
+  ( ![<|] !"[[" !slEol _ )* '|' !'|'
+;
+
+
+
+
+// -- Table Cell Inline Content ------------------------------------------------
+
+private inline stateful NodeList InlineContentStar =
+  {
+    enter(ParserScopes.TABLE_INLINE_CELL);
+  }
+  InlineContentPlus
+;
+
+private inline stateful NodeList BlockContentStar =
+  {
+    enter(ParserScopes.TABLE_CELL);
+  }
+  BlockContent
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

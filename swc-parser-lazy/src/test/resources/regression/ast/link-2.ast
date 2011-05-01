@@ -1,0 +1,40 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      ImageLink(
+        Properties:
+          RTD = RtData: [0] = "[[File:x", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText(
+              Properties:
+                RTD = RtData: [0] = "|alt=", [1]
+
+              [ Text("\n ") ]
+            )
+          {N} border = false
+          {N} format = UNRESTRAINED
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "File:x"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          LinkOptionAltText(
+            Properties:
+              RTD = RtData: [0] = "|alt=", [1]
+
+            [ Text("\n ") ]
+          )
+        ]
+        LinkTitle([ ])
+      )
+    ])
+  ]
+)
