@@ -217,6 +217,10 @@ import org.sweble.wikitext.lazy.utils.*;
 </span>
 
 
+%visit(NodeList l)%
+{!iterate(l)}
+
+
 %visit(Page page)
 {if(standaloneHtml)}%
 <?xml version="1.0" encoding="UTF-8" ?>
