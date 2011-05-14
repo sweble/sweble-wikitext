@@ -98,7 +98,7 @@ public class LinkTargetParser
 	        "(%[0-9A-Fa-f]{2})" +
 
 	        // XML entity reference
-	        "|(&" + XmlGrammar.XmlNameStr + ";)" +
+	        "|(&" + XmlGrammar.RE_XML_NAME + ";)" +
 
 	        // XML char reference
 	        "|((&#[0-9]+;)|(&#x[0-9A-Fa-f]+;))" +

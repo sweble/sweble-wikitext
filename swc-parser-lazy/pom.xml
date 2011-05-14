@@ -154,6 +154,7 @@
             <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
           </headerDefinitions>
           <excludes>
+            <exclude>doc/ast.txt</exclude>
             <exclude>src/test/resources/**/*.disabled</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/*.ast</exclude>
