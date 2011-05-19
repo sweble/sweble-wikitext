@@ -1,0 +1,15 @@
+== Simple Page ==
+
+This is a '''simple page'''. It contains a link, a list and a table.
+
+* [[Somewhere|Item 1]]
+* Item 2
+
+{| border="2"
+ |-
+ | Cell 1.1 || Cell 1.2 
+ |-
+ | Cell 2.1 || Cell 2.2
+ |}
+
+CYA!
