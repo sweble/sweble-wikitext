@@ -5,6 +5,14 @@
   <artifactId>swc-example-project</artifactId>
   <version>1.0.1-SNAPSHOT</version>
 
+  <name>SWC - Example Project</name>
+  <url>http://osr.informatik.uni-erlangen.de</url>
+  <inceptionYear>2011</inceptionYear>
+  <description>
+    An example project that contains a simple application that is able to parse 
+    a page written in Wikitext and render it as HTML.
+  </description>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.java>1.6</version.java>

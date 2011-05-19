@@ -1,3 +1,19 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.sweble.wikitext;
 
 import java.io.File;
@@ -17,33 +33,50 @@ import org.sweble.wikitext.lazy.LinkTargetException;
 
 public class App
 {
-	private static final boolean produceHtml = false;
-
 	public static void main(String[] args) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
 	{
 		if (args.length < 1)
 		{
-			System.err.println("Usage: java -jar scm-example.jar TITLE");
+			System.err.println("Usage: java -jar scm-example.jar [--html|--text] TITLE");
 			System.err.println();
 			System.err.println("  The program will look for a file called `TITLE.wikitext',");
 			System.err.println("  parse the file and write an HTML version to `TITLE.html'.");
 			return;
 		}
 		
-		String fileTitle = args[0];
+		boolean renderHtml = true;
 		
-		String html = run(new File(fileTitle + ".wikitext"), fileTitle);
+		int i = 0;
+		if (args[i].equalsIgnoreCase("--html"))
+		{
+			renderHtml = true;
+			++i;
+		}
+		else if (args[i].equalsIgnoreCase("--text"))
+		{
+			renderHtml = false;
+			++i;
+		}
+		
+		String fileTitle = args[i];
+		
+		String html = run(
+		        new File(fileTitle + ".wikitext"),
+		        fileTitle,
+		        renderHtml);
 		
 		FileUtils.writeStringToFile(
-		        new File(fileTitle + ".html"),
+		        new File(fileTitle + (renderHtml ? ".html" : ".text")),
 		        html);
 	}
 	
-	static String run(File file, String fileTitle) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
+	static String run(File file, String fileTitle, boolean renderHtml) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
 	{
 		// Set-up a simple wiki configuration
 		SimpleWikiConfiguration config = new SimpleWikiConfiguration(
 		        "classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
+		
+		final int wrapCol = 80;
 		
 		// Instantiate a compiler for wiki pages
 		Compiler compiler = new Compiler(config);
@@ -61,7 +94,7 @@ public class App
 		// Render the compiled page as HTML
 		StringWriter w = new StringWriter();
 		
-		if (produceHtml)
+		if (renderHtml)
 		{
 			HtmlPrinter p = new HtmlPrinter(w, pageTitle.getFullTitle());
 			p.setCssResource("/org/sweble/wikitext/engine/utils/HtmlPrinter.css", "");
@@ -71,7 +104,7 @@ public class App
 		}
 		else
 		{
-			TextConverter p = new TextConverter();
+			TextConverter p = new TextConverter(config, wrapCol);
 			return (String) p.go(cp.getPage());
 		}
 	}
