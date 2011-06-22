@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomNode;
+import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public enum XmlElementFactoryEnum
@@ -24,7 +24,7 @@ public enum XmlElementFactoryEnum
 	BLOCKQUOTE
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementBlockquoteAdapter(e);
 		}
@@ -33,7 +33,7 @@ public enum XmlElementFactoryEnum
 	DIV
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementDivAdapter(e);
 		}
@@ -44,7 +44,7 @@ public enum XmlElementFactoryEnum
 	HR
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementHrAdapter(e);
 		}
@@ -55,7 +55,7 @@ public enum XmlElementFactoryEnum
 	OL
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementOrderedListAdapter(e);
 		}
@@ -64,7 +64,7 @@ public enum XmlElementFactoryEnum
 	UL
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementUnorderedListAdapter(e);
 		}
@@ -73,7 +73,7 @@ public enum XmlElementFactoryEnum
 	LI
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementListItemAdapter(e);
 		}
@@ -160,7 +160,7 @@ public enum XmlElementFactoryEnum
 	ABBR
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementAbbrAdapter(e);
 		}
@@ -169,7 +169,7 @@ public enum XmlElementFactoryEnum
 	BIG
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementBigAdapter(e);
 		}
@@ -178,7 +178,7 @@ public enum XmlElementFactoryEnum
 	B
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementBoldAdapter(e);
 		}
@@ -187,7 +187,7 @@ public enum XmlElementFactoryEnum
 	BR
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementBrAdapter(e);
 		}
@@ -196,7 +196,7 @@ public enum XmlElementFactoryEnum
 	CITE
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementCiteAdapter(e);
 		}
@@ -205,7 +205,7 @@ public enum XmlElementFactoryEnum
 	CODE
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementCodeAdapter(e);
 		}
@@ -214,7 +214,7 @@ public enum XmlElementFactoryEnum
 	DFN
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementDfnAdapter(e);
 		}
@@ -223,7 +223,7 @@ public enum XmlElementFactoryEnum
 	EM
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementEmAdapter(e);
 		}
@@ -232,7 +232,7 @@ public enum XmlElementFactoryEnum
 	I
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementItalicsAdapter(e);
 		}
@@ -241,7 +241,7 @@ public enum XmlElementFactoryEnum
 	KBD
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementKbdAdapter(e);
 		}
@@ -250,7 +250,7 @@ public enum XmlElementFactoryEnum
 	SAMP
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementSampAdapter(e);
 		}
@@ -259,7 +259,7 @@ public enum XmlElementFactoryEnum
 	SMALL
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementSmallAdapter(e);
 		}
@@ -268,7 +268,7 @@ public enum XmlElementFactoryEnum
 	SPAN
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementSpanAdapter(e);
 		}
@@ -277,7 +277,7 @@ public enum XmlElementFactoryEnum
 	STRONG
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementStrongAdapter(e);
 		}
@@ -286,7 +286,7 @@ public enum XmlElementFactoryEnum
 	SUB
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementSubAdapter(e);
 		}
@@ -295,7 +295,7 @@ public enum XmlElementFactoryEnum
 	SUP
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementSupAdapter(e);
 		}
@@ -304,7 +304,7 @@ public enum XmlElementFactoryEnum
 	TT
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementTeletypeAdapter(e);
 		}
@@ -313,7 +313,7 @@ public enum XmlElementFactoryEnum
 	VAR
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementVarAdapter(e);
 		}
@@ -324,7 +324,7 @@ public enum XmlElementFactoryEnum
 	DEL
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementDelAdapter(e);
 		}
@@ -333,7 +333,7 @@ public enum XmlElementFactoryEnum
 	INS
 	{
 		@Override
-		public DomNode create(XmlElement e)
+		public WomNode create(XmlElement e)
 		{
 			return new XmlElementInsAdapter(e);
 		}
@@ -387,5 +387,5 @@ public enum XmlElementFactoryEnum
 		}
 	}*/;
 	
-	public abstract DomNode create(XmlElement e);
+	public abstract WomNode create(XmlElement e);
 }

@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomSpan;
+import org.sweble.wikitext.engine.wom.WomSpan;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementSpanAdapter
         extends
             XmlElementAdapter
         implements
-            DomSpan
+            WomSpan
 {
 	private static final long serialVersionUID = 1L;
 	

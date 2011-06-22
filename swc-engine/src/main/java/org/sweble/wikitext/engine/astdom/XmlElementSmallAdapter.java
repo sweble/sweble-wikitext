@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomSmall;
+import org.sweble.wikitext.engine.wom.WomSmall;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementSmallAdapter
         extends
             XmlElementAdapter
         implements
-            DomSmall
+            WomSmall
 {
 	private static final long serialVersionUID = 1L;
 	

@@ -16,15 +16,15 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomComment;
-import org.sweble.wikitext.engine.dom.DomNodeType;
+import org.sweble.wikitext.engine.wom.WomComment;
+import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
 public class XmlCommentAdapter
         extends
             DomBackbone
         implements
-            DomComment
+            WomComment
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -44,9 +44,9 @@ public class XmlCommentAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.COMMENT;
+		return WomNodeType.COMMENT;
 	}
 	
 	// =========================================================================

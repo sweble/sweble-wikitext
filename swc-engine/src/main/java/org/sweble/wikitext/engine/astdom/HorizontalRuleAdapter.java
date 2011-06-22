@@ -16,15 +16,15 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomHorizontalRule;
-import org.sweble.wikitext.engine.dom.DomNodeType;
+import org.sweble.wikitext.engine.wom.WomHorizontalRule;
+import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 
 public class HorizontalRuleAdapter
         extends
             DomBackbone
         implements
-            DomHorizontalRule
+            WomHorizontalRule
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -50,8 +50,8 @@ public class HorizontalRuleAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.ELEMENT;
+		return WomNodeType.ELEMENT;
 	}
 }

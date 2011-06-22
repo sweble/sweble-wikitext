@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomDfn;
+import org.sweble.wikitext.engine.wom.WomDfn;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementDfnAdapter
         extends
             XmlElementAdapter
         implements
-        	DomDfn
+        	WomDfn
 {
 	private static final long serialVersionUID = 1L;
 	

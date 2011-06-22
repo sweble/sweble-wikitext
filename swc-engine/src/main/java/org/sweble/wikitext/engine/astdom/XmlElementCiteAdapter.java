@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomCite;
+import org.sweble.wikitext.engine.wom.DomCite;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementCiteAdapter

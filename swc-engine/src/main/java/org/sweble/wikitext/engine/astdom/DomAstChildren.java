@@ -1,10 +1,26 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.sweble.wikitext.engine.astdom;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
 
-import org.sweble.wikitext.engine.dom.DomNode;
+import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -20,19 +36,19 @@ public class DomAstChildren
 		return firstChild != null;
 	}
 	
-	public Collection<DomNode> childNodes()
+	public Collection<WomNode> childNodes()
 	{
-		return new SiblingCollection<DomNode>(firstChild);
+		return new SiblingCollection<WomNode>(firstChild);
 	}
 	
-	public DomNode getFirstChild()
+	public WomNode getFirstChild()
 	{
 		return firstChild;
 	}
 	
-	public DomNode getLastChild()
+	public WomNode getLastChild()
 	{
-		DomNode child = firstChild;
+		WomNode child = firstChild;
 		if (child == null)
 			return null;
 		while (child.getNextSibling() != null)
@@ -40,7 +56,7 @@ public class DomAstChildren
 		return child;
 	}
 	
-	public void appendChild(DomNode child, DomBackbone parent, NodeList childContainer)
+	public void appendChild(WomNode child, DomBackbone parent, NodeList childContainer)
 	{
 		if (child == null)
 			throw new IllegalArgumentException("Argument `child' is null.");
@@ -63,7 +79,7 @@ public class DomAstChildren
 		childContainer.add(newChild.getAstNode());
 	}
 	
-	public void insertBefore(DomNode before, DomNode child, DomBackbone parent, NodeList childContainer) throws IllegalArgumentException
+	public void insertBefore(WomNode before, WomNode child, DomBackbone parent, NodeList childContainer) throws IllegalArgumentException
 	{
 		if (before == null || child == null)
 			throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
@@ -110,7 +126,7 @@ public class DomAstChildren
 			throw new AssertionError();
 	}
 	
-	public void removeChild(DomNode child, DomBackbone parent, NodeList childContainer)
+	public void removeChild(WomNode child, DomBackbone parent, NodeList childContainer)
 	{
 		if (child == null)
 			throw new IllegalArgumentException("Argument `child' is null.");
@@ -126,7 +142,7 @@ public class DomAstChildren
 		removeChild(remove, childContainer);
 	}
 	
-	public void replaceChild(DomNode search, DomNode replace, DomBackbone parent, NodeList childContainer)
+	public void replaceChild(WomNode search, WomNode replace, DomBackbone parent, NodeList childContainer)
 	{
 		if (search == null || replace == null)
 			throw new IllegalArgumentException("Argument `search' and/or `replace' is null.");

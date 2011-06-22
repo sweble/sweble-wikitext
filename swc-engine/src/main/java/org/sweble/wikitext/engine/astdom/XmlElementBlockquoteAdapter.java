@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomBlockquote;
+import org.sweble.wikitext.engine.wom.WomBlockquote;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementBlockquoteAdapter
         extends
             XmlElementAdapter
         implements
-        	DomBlockquote
+        	WomBlockquote
 {
 	private static final long serialVersionUID = 1L;
 	

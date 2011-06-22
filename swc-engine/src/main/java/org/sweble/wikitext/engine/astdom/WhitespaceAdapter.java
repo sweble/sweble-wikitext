@@ -16,8 +16,8 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomNodeType;
-import org.sweble.wikitext.engine.dom.DomText;
+import org.sweble.wikitext.engine.wom.WomNodeType;
+import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.lazy.parser.Whitespace;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -27,7 +27,7 @@ public class WhitespaceAdapter
         extends
             DomBackbone
         implements
-            DomText
+            WomText
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -56,9 +56,9 @@ public class WhitespaceAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.TEXT;
+		return WomNodeType.TEXT;
 	}
 	
 	@Override

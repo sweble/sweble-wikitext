@@ -18,8 +18,8 @@ package org.sweble.wikitext.engine.astdom;
 
 import java.util.Collection;
 
-import org.sweble.wikitext.engine.dom.DomAttribute;
-import org.sweble.wikitext.engine.dom.DomNode;
+import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -56,7 +56,7 @@ public abstract class DomFullElement
 	}
 	
 	@Override
-	public Collection<DomAttribute> getAttributes()
+	public Collection<WomAttribute> getAttributes()
 	{
 		return attrs.getAttributes();
 	}
@@ -80,7 +80,7 @@ public abstract class DomFullElement
 	}
 	
 	@Override
-	public void removeAttributeNode(DomAttribute attr) throws IllegalArgumentException
+	public void removeAttributeNode(WomAttribute attr) throws IllegalArgumentException
 	{
 		attrs.removeAttributeNode(attr, this, getAttributeContainer());
 	}
@@ -92,7 +92,7 @@ public abstract class DomFullElement
 	}
 	
 	@Override
-	public XmlAttributeAdapter setAttributeNode(DomAttribute attr) throws IllegalArgumentException
+	public XmlAttributeAdapter setAttributeNode(WomAttribute attr) throws IllegalArgumentException
 	{
 		return attrs.setAttributeNode(attr, this, getAttributeContainer());
 	}
@@ -106,43 +106,43 @@ public abstract class DomFullElement
 	}
 	
 	@Override
-	public Collection<DomNode> childNodes()
+	public Collection<WomNode> childNodes()
 	{
 		return children.childNodes();
 	}
 	
 	@Override
-	public DomNode getFirstChild()
+	public WomNode getFirstChild()
 	{
 		return children.getFirstChild();
 	}
 	
 	@Override
-	public DomNode getLastChild()
+	public WomNode getLastChild()
 	{
 		return children.getLastChild();
 	}
 	
 	@Override
-	public void appendChild(DomNode child)
+	public void appendChild(WomNode child)
 	{
 		children.appendChild(child, this, getChildContainer());
 	}
 	
 	@Override
-	public void insertBefore(DomNode before, DomNode child) throws IllegalArgumentException
+	public void insertBefore(WomNode before, WomNode child) throws IllegalArgumentException
 	{
 		children.insertBefore(before, child, this, getChildContainer());
 	}
 	
 	@Override
-	public void removeChild(DomNode child)
+	public void removeChild(WomNode child)
 	{
 		children.removeChild(child, this, getChildContainer());
 	}
 	
 	@Override
-	public void replaceChild(DomNode search, DomNode replace)
+	public void replaceChild(WomNode search, WomNode replace)
 	{
 		children.replaceChild(search, replace, this, getChildContainer());
 	}

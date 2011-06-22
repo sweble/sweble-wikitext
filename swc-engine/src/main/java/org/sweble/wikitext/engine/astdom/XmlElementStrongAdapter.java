@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomStrong;
+import org.sweble.wikitext.engine.wom.WomStrong;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementStrongAdapter
         extends
             XmlElementAdapter
         implements
-            DomStrong
+            WomStrong
 {
 	private static final long serialVersionUID = 1L;
 	

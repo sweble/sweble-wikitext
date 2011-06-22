@@ -1,10 +1,26 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.sweble.wikitext.engine.astdom;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.ListIterator;
 
-import org.sweble.wikitext.engine.dom.DomAttribute;
+import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.lazy.AstNodeTypes;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
 
@@ -17,14 +33,14 @@ public class DomAstAttributes
 	
 	// =========================================================================
 	
-	public Collection<DomAttribute> getAttributes()
+	public Collection<WomAttribute> getAttributes()
 	{
-		return new SiblingCollection<DomAttribute>(firstAttr);
+		return new SiblingCollection<WomAttribute>(firstAttr);
 	}
 	
 	public String getAttribute(String name)
 	{
-		final DomAttribute attributeNode = getAttributeNode(name);
+		final WomAttribute attributeNode = getAttributeNode(name);
 		if (attributeNode == null)
 			return null;
 		return attributeNode.getValue();
@@ -34,13 +50,13 @@ public class DomAstAttributes
 	{
 		if (name != null)
 		{
-			DomAttribute i = firstAttr;
+			WomAttribute i = firstAttr;
 			while (i != null)
 			{
 				if (i.getName().equalsIgnoreCase(name))
 					return (XmlAttributeAdapter) i;
 				
-				i = (DomAttribute) i.getNextSibling();
+				i = (WomAttribute) i.getNextSibling();
 			}
 		}
 		return null;
@@ -60,7 +76,7 @@ public class DomAstAttributes
 		return remove;
 	}
 	
-	public void removeAttributeNode(DomAttribute attr, DomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
+	public void removeAttributeNode(WomAttribute attr, DomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
 	{
 		if (attr == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");
@@ -81,7 +97,7 @@ public class DomAstAttributes
 		return setAttributeNode(attr, parent, attrContainer);
 	}
 	
-	public XmlAttributeAdapter setAttributeNode(DomAttribute attr, DomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
+	public XmlAttributeAdapter setAttributeNode(WomAttribute attr, DomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
 	{
 		if (attr == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");

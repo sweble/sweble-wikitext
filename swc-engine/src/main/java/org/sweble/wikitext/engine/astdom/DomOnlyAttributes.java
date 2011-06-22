@@ -1,8 +1,24 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.sweble.wikitext.engine.astdom;
 
 import java.util.Collection;
 
-import org.sweble.wikitext.engine.dom.DomAttribute;
+import org.sweble.wikitext.engine.wom.WomAttribute;
 
 public class DomOnlyAttributes
 {
@@ -10,14 +26,14 @@ public class DomOnlyAttributes
 	
 	// =========================================================================
 	
-	public Collection<DomAttribute> getAttributes()
+	public Collection<WomAttribute> getAttributes()
 	{
-		return new SiblingCollection<DomAttribute>(firstAttr);
+		return new SiblingCollection<WomAttribute>(firstAttr);
 	}
 	
 	public String getAttribute(String name)
 	{
-		final DomAttribute attributeNode = getAttributeNode(name);
+		final WomAttribute attributeNode = getAttributeNode(name);
 		if (attributeNode == null)
 			return null;
 		return attributeNode.getValue();
@@ -27,13 +43,13 @@ public class DomOnlyAttributes
 	{
 		if (name != null)
 		{
-			DomAttribute i = firstAttr;
+			WomAttribute i = firstAttr;
 			while (i != null)
 			{
 				if (i.getName().equalsIgnoreCase(name))
 					return (XmlAttributeAdapter) i;
 				
-				i = (DomAttribute) i.getNextSibling();
+				i = (WomAttribute) i.getNextSibling();
 			}
 		}
 		return null;
@@ -53,7 +69,7 @@ public class DomOnlyAttributes
 		return remove;
 	}
 	
-	public void removeAttributeNode(DomAttribute attr) throws IllegalArgumentException
+	public void removeAttributeNode(WomAttribute attr) throws IllegalArgumentException
 	{
 		if (attr == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");
@@ -77,7 +93,7 @@ public class DomOnlyAttributes
 		return setAttributeNode(attr, parent);
 	}
 	
-	public XmlAttributeAdapter setAttributeNode(DomAttribute attr, DomBackbone parent) throws IllegalArgumentException
+	public XmlAttributeAdapter setAttributeNode(WomAttribute attr, DomBackbone parent) throws IllegalArgumentException
 	{
 		if (attr == null)
 			throw new IllegalArgumentException("Argument `attr' is null.");

@@ -20,9 +20,9 @@ import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.sweble.wikitext.engine.dom.DomNode;
+import org.sweble.wikitext.engine.wom.WomNode;
 
-public class SiblingCollection<T extends DomNode>
+public class SiblingCollection<T extends WomNode>
         implements
             Collection<T>
 {
@@ -143,7 +143,7 @@ public class SiblingCollection<T extends DomNode>
 	
 	// =========================================================================
 	
-	private final static class SiblingIterator<T extends DomNode>
+	private final static class SiblingIterator<T extends WomNode>
 	        implements
 	            Iterator<T>
 	{

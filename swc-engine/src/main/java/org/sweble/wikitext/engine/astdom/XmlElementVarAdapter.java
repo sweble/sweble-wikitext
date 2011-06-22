@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomVar;
+import org.sweble.wikitext.engine.wom.WomVar;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementVarAdapter
         extends
             XmlElementAdapter
         implements
-            DomVar
+            WomVar
 {
 	private static final long serialVersionUID = 1L;
 	

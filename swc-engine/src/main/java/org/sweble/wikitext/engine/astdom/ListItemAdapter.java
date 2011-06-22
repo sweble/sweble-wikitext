@@ -18,9 +18,9 @@ package org.sweble.wikitext.engine.astdom;
 
 import java.util.Collection;
 
-import org.sweble.wikitext.engine.dom.DomListItem;
-import org.sweble.wikitext.engine.dom.DomNode;
-import org.sweble.wikitext.engine.dom.DomNodeType;
+import org.sweble.wikitext.engine.wom.WomListItem;
+import org.sweble.wikitext.engine.wom.WomNode;
+import org.sweble.wikitext.engine.wom.WomNodeType;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 
@@ -28,7 +28,7 @@ public class ListItemAdapter
         extends
             DomBackbone
         implements
-            DomListItem
+            WomListItem
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -50,9 +50,9 @@ public class ListItemAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.ELEMENT;
+		return WomNodeType.ELEMENT;
 	}
 	
 	@Override
@@ -70,43 +70,43 @@ public class ListItemAdapter
 	}
 	
 	@Override
-	public Collection<DomNode> childNodes()
+	public Collection<WomNode> childNodes()
 	{
 		return children.childNodes();
 	}
 	
 	@Override
-	public DomNode getFirstChild()
+	public WomNode getFirstChild()
 	{
 		return children.getFirstChild();
 	}
 	
 	@Override
-	public DomNode getLastChild()
+	public WomNode getLastChild()
 	{
 		return children.getLastChild();
 	}
 	
 	@Override
-	public void appendChild(DomNode child)
+	public void appendChild(WomNode child)
 	{
 		children.appendChild(child, this, getAstNode().getContent());
 	}
 	
 	@Override
-	public void insertBefore(DomNode before, DomNode child) throws IllegalArgumentException
+	public void insertBefore(WomNode before, WomNode child) throws IllegalArgumentException
 	{
 		children.insertBefore(before, child, this, getAstNode().getContent());
 	}
 	
 	@Override
-	public void removeChild(DomNode child)
+	public void removeChild(WomNode child)
 	{
 		children.removeChild(child, this, getAstNode().getContent());
 	}
 	
 	@Override
-	public void replaceChild(DomNode search, DomNode replace)
+	public void replaceChild(WomNode search, WomNode replace)
 	{
 		children.replaceChild(search, replace, this, getAstNode().getContent());
 	}

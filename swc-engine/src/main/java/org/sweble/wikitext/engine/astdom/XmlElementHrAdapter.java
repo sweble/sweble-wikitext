@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomHorizontalRule;
+import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementHrAdapter
         extends
             XmlElementAdapter
         implements
-            DomHorizontalRule
+            WomHorizontalRule
 {
 	private static final long serialVersionUID = 1L;
 	

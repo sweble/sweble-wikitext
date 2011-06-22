@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomDel;
+import org.sweble.wikitext.engine.wom.WomDel;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementDelAdapter
         extends
             XmlElementAdapter
         implements
-            DomDel
+            WomDel
 {
 	private static final long serialVersionUID = 1L;
 	

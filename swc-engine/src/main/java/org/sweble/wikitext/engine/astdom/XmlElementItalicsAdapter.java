@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomItalics;
+import org.sweble.wikitext.engine.wom.WomItalics;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementItalicsAdapter
         extends
             XmlElementAdapter
         implements
-        	DomItalics
+        	WomItalics
 {
 	private static final long serialVersionUID = 1L;
 	

@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomUnorderedList;
+import org.sweble.wikitext.engine.wom.WomUnorderedList;
 import org.sweble.wikitext.lazy.parser.Itemization;
 
 public class ItemizationAdapter
         extends
             ListAdapter<ItemizationItemAdapter>
         implements
-            DomUnorderedList
+            WomUnorderedList
 {
 	private static final long serialVersionUID = 1L;
 	

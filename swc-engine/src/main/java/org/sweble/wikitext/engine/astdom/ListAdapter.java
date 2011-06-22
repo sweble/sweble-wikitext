@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.sweble.wikitext.engine.dom.DomList;
-import org.sweble.wikitext.engine.dom.DomListItem;
-import org.sweble.wikitext.engine.dom.DomNode;
-import org.sweble.wikitext.engine.dom.DomNodeType;
+import org.sweble.wikitext.engine.wom.WomList;
+import org.sweble.wikitext.engine.wom.WomListItem;
+import org.sweble.wikitext.engine.wom.WomNode;
+import org.sweble.wikitext.engine.wom.WomNodeType;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 
@@ -31,7 +31,7 @@ public abstract class ListAdapter<T>
         extends
             DomBackbone
         implements
-            DomList
+            WomList
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -39,7 +39,7 @@ public abstract class ListAdapter<T>
 	
 	private final DomAstChildren children = new DomAstChildren();
 	
-	private final ArrayList<DomListItem> items = new ArrayList<DomListItem>();
+	private final ArrayList<WomListItem> items = new ArrayList<WomListItem>();
 	
 	// =========================================================================
 	
@@ -55,9 +55,9 @@ public abstract class ListAdapter<T>
 	public abstract String getNodeName();
 	
 	@Override
-	public final DomNodeType getNodeType()
+	public final WomNodeType getNodeType()
 	{
-		return DomNodeType.ELEMENT;
+		return WomNodeType.ELEMENT;
 	}
 	
 	@Override
@@ -75,37 +75,37 @@ public abstract class ListAdapter<T>
 	}
 	
 	@Override
-	public Collection<DomListItem> getItems()
+	public Collection<WomListItem> getItems()
 	{
 		return Collections.unmodifiableList(items);
 	}
 	
 	@Override
-	public DomListItem getItem(int index)
+	public WomListItem getItem(int index)
 	{
 		return items.get(index);
 	}
 	
 	@Override
-	public DomListItem setItem(int index, DomListItem item)
+	public WomListItem setItem(int index, WomListItem item)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public DomListItem removeItem(int index)
+	public WomListItem removeItem(int index)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public void appendItem(DomListItem item)
+	public void appendItem(WomListItem item)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public void insertItem(int beforeIndex, DomListItem item)
+	public void insertItem(int beforeIndex, WomListItem item)
 	{
 		throw new UnsupportedOperationException();
 	}
@@ -119,25 +119,25 @@ public abstract class ListAdapter<T>
 	}
 	
 	@Override
-	public Collection<DomNode> childNodes()
+	public Collection<WomNode> childNodes()
 	{
 		return children.childNodes();
 	}
 	
 	@Override
-	public DomNode getFirstChild()
+	public WomNode getFirstChild()
 	{
 		return children.getFirstChild();
 	}
 	
 	@Override
-	public DomNode getLastChild()
+	public WomNode getLastChild()
 	{
 		return children.getLastChild();
 	}
 	
 	@Override
-	public void appendChild(DomNode child)
+	public void appendChild(WomNode child)
 	{
 		if (!itemClass.isInstance(child))
 			throw new IllegalArgumentException(
@@ -146,11 +146,11 @@ public abstract class ListAdapter<T>
 		children.appendChild(child, this, getAstNode().getContent());
 		
 		// appendChild should have done all checks for us
-		items.add((DomListItem) child);
+		items.add((WomListItem) child);
 	}
 	
 	@Override
-	public void insertBefore(DomNode before, DomNode child) throws IllegalArgumentException
+	public void insertBefore(WomNode before, WomNode child) throws IllegalArgumentException
 	{
 		if (before == null || child == null)
 			throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
@@ -163,16 +163,16 @@ public abstract class ListAdapter<T>
 			throw new IllegalArgumentException("Given node `before' is not a child of this node.");
 		
 		int beforeIndex = 0;
-		for (DomNode cur = getFirstChild(); cur != before; cur = cur.getNextSibling())
+		for (WomNode cur = getFirstChild(); cur != before; cur = cur.getNextSibling())
 			++beforeIndex;
 		
 		children.insertBefore(before, child, this, getAstNode().getContent());
 		
-		items.add(beforeIndex, (DomListItem) child);
+		items.add(beforeIndex, (WomListItem) child);
 	}
 	
 	@Override
-	public void removeChild(DomNode child)
+	public void removeChild(WomNode child)
 	{
 		children.removeChild(child, this, getAstNode().getContent());
 		
@@ -181,7 +181,7 @@ public abstract class ListAdapter<T>
 	}
 	
 	@Override
-	public void replaceChild(DomNode search, DomNode replace)
+	public void replaceChild(WomNode search, WomNode replace)
 	{
 		if (search == null || replace == null)
 			throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
@@ -194,11 +194,11 @@ public abstract class ListAdapter<T>
 			throw new IllegalArgumentException("Given node `before' is not a child of this node.");
 		
 		int index = 0;
-		for (DomNode cur = getFirstChild(); cur != search; cur = cur.getNextSibling())
+		for (WomNode cur = getFirstChild(); cur != search; cur = cur.getNextSibling())
 			++index;
 		
 		children.replaceChild(search, replace, this, getAstNode().getContent());
 		
-		items.set(index, (DomListItem) replace);
+		items.set(index, (WomListItem) replace);
 	}
 }

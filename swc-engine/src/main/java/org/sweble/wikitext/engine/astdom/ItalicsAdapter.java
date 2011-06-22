@@ -16,8 +16,8 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomBold;
-import org.sweble.wikitext.engine.dom.DomNodeType;
+import org.sweble.wikitext.engine.wom.WomBold;
+import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.lazy.parser.Italics;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -26,7 +26,7 @@ public class ItalicsAdapter
         extends
             DomFullElement
         implements
-            DomBold
+            WomBold
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -52,9 +52,9 @@ public class ItalicsAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.ELEMENT;
+		return WomNodeType.ELEMENT;
 	}
 	
 	@Override

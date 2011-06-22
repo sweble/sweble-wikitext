@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomTeletype;
+import org.sweble.wikitext.engine.wom.WomTeletype;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementTeletypeAdapter
         extends
             XmlElementAdapter
         implements
-            DomTeletype
+            WomTeletype
 {
 	private static final long serialVersionUID = 1L;
 	

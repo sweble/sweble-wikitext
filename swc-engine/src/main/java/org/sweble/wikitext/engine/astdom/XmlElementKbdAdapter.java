@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomKbd;
+import org.sweble.wikitext.engine.wom.WomKbd;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementKbdAdapter
         extends
             XmlElementAdapter
         implements
-        	DomKbd
+        	WomKbd
 {
 	private static final long serialVersionUID = 1L;
 	

@@ -23,9 +23,9 @@ import java.util.List;
 
 import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.dom.DomAttribute;
-import org.sweble.wikitext.engine.dom.DomNode;
 import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
+import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.lazy.ParserConfigInterface;
 import org.sweble.wikitext.lazy.parser.Bold;
 import org.sweble.wikitext.lazy.parser.Enumeration;
@@ -81,7 +81,7 @@ public class AstToDomConverter
 		this.title = title;
 	}
 	
-	public static DomNode convert(SimpleWikiConfiguration config, PageTitle title, Page page)
+	public static WomNode convert(SimpleWikiConfiguration config, PageTitle title, Page page)
 	{
 		String namespace = title.getNamespace().getCanonical();
 		if (namespace.isEmpty())
@@ -93,99 +93,99 @@ public class AstToDomConverter
 		        null,
 		        title.getTitle());
 		
-		return (DomNode) converter.go(page);
+		return (WomNode) converter.go(page);
 	}
 	
 	// =========================================================================
 	
-	public DomNode visit(LazyPreprocessedPage p)
+	public WomNode visit(LazyPreprocessedPage p)
 	{
 		return addContent(p, new Document(p, namespace, path, title));
 	}
 	
-	public DomNode visit(LazyParsedPage p)
+	public WomNode visit(LazyParsedPage p)
 	{
 		return addContent(p, new Document(p, namespace, path, title));
 	}
 	
-	public DomNode visit(Page p)
+	public WomNode visit(Page p)
 	{
 		return addContent(p, new Document(p, namespace, path, title));
 	}
 	
-	public DomNode visit(Paragraph p)
+	public WomNode visit(Paragraph p)
 	{
 		return addContent(p, new ParagraphAdapter(p));
 	}
 	
-	public DomNode visit(Text t)
+	public WomNode visit(Text t)
 	{
 		return new TextAdapter(t);
 	}
 	
-	public DomNode visit(Whitespace t)
+	public WomNode visit(Whitespace t)
 	{
 		return new WhitespaceAdapter(t);
 	}
 	
-	public DomNode visit(XmlComment c)
+	public WomNode visit(XmlComment c)
 	{
 		return new XmlCommentAdapter(c);
 	}
 	
-	public DomAttribute visit(XmlAttribute a)
+	public WomAttribute visit(XmlAttribute a)
 	{
 		return new XmlAttributeAdapter(config, a);
 	}
 	
-	public DomNode visit(Bold bold)
+	public WomNode visit(Bold bold)
 	{
 		return addContent(bold, new BoldAdapter(bold));
 	}
 	
-	public DomNode visit(Italics italics)
+	public WomNode visit(Italics italics)
 	{
 		return addContent(italics, new ItalicsAdapter(italics));
 	}
 	
-	public DomNode visit(Enumeration e)
+	public WomNode visit(Enumeration e)
 	{
 		return addContent(e, new EnumerationAdapter(e));
 	}
 	
-	public DomNode visit(EnumerationItem i)
+	public WomNode visit(EnumerationItem i)
 	{
 		return addContent(i, new EnumerationItemAdapter(i));
 	}
 	
-	public DomNode visit(Itemization e)
+	public WomNode visit(Itemization e)
 	{
 		return addContent(e, new ItemizationAdapter(e));
 	}
 	
-	public DomNode visit(ItemizationItem i)
+	public WomNode visit(ItemizationItem i)
 	{
 		return addContent(i, new ItemizationItemAdapter(i));
 	}
 	
-	public DomNode visit(HorizontalRule hr)
+	public WomNode visit(HorizontalRule hr)
 	{
 		return new HorizontalRuleAdapter(hr);
 	}
 	
-	public DomNode visit(XmlElement e)
+	public WomNode visit(XmlElement e)
 	{
 		XmlElementFactoryEnum f = xmlElements.get(e.getName().toLowerCase());
 		if (f == null)
 			throw new FmtNotYetImplementedError(
 			        "Unmapable xml elements are not yet supported");
 		
-		DomNode result = f.create(e);
+		WomNode result = f.create(e);
 		
-		for (DomAttribute attr : mapDropNull(e.getXmlAttributes(), DomAttribute.class))
+		for (WomAttribute attr : mapDropNull(e.getXmlAttributes(), WomAttribute.class))
 			result.setAttributeNode(attr);
 		
-		for (DomNode child : mapDropNull(e.getBody()))
+		for (WomNode child : mapDropNull(e.getBody()))
 			result.appendChild(child);
 		
 		return result;
@@ -193,22 +193,22 @@ public class AstToDomConverter
 	
 	// =========================================================================
 	
-	private DomNode addContent(ContentNode node, DomNode result)
+	private WomNode addContent(ContentNode node, WomNode result)
 	{
-		for (DomNode child : mapDropNull(node.getContent()))
+		for (WomNode child : mapDropNull(node.getContent()))
 			result.appendChild(child);
 		return result;
 	}
 	
-	private List<DomNode> mapDropNull(NodeList l)
+	private List<WomNode> mapDropNull(NodeList l)
 	{
 		if (l == null)
 			return Collections.emptyList();
 		
-		LinkedList<DomNode> result = new LinkedList<DomNode>();
+		LinkedList<WomNode> result = new LinkedList<WomNode>();
 		for (AstNode n : l)
 		{
-			DomNode o = (DomNode) dispatch(n);
+			WomNode o = (WomNode) dispatch(n);
 			if (o != null)
 				result.add(o);
 		}

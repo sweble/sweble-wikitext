@@ -16,8 +16,8 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomNodeType;
-import org.sweble.wikitext.engine.dom.DomText;
+import org.sweble.wikitext.engine.wom.WomNodeType;
+import org.sweble.wikitext.engine.wom.WomText;
 
 import de.fau.cs.osr.ptk.common.ast.Text;
 
@@ -25,7 +25,7 @@ public class TextAdapter
         extends
             DomBackbone
         implements
-            DomText
+            WomText
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -45,9 +45,9 @@ public class TextAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.TEXT;
+		return WomNodeType.TEXT;
 	}
 	
 	@Override

@@ -114,12 +114,14 @@
           <mapping>
              <rats>JAVADOC_STYLE</rats>
              <apt>PTK_APT_STYLE</apt>
+             <xjb>XML_STYLE</xjb>
           </mapping>
           <headerDefinitions>
             <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
           </headerDefinitions>
           <header>../etc/license-header.txt</header>
           <excludes>
+            <exclude>src/main/autogen/org/sweble/wikitext/engine/xml/catalog/xml.xsd</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
             <exclude>**/.gitignore</exclude>

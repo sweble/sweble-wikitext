@@ -16,8 +16,8 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomAttribute;
-import org.sweble.wikitext.engine.dom.DomNodeType;
+import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.lazy.ParserConfigInterface;
 import org.sweble.wikitext.lazy.utils.StringConversionException;
 import org.sweble.wikitext.lazy.utils.StringConverter;
@@ -32,7 +32,7 @@ public class XmlAttributeAdapter
         extends
             DomBackbone
         implements
-            DomAttribute
+            WomAttribute
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -83,9 +83,9 @@ public class XmlAttributeAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public WomNodeType getNodeType()
 	{
-		return DomNodeType.ATTRIBUTE;
+		return WomNodeType.ATTRIBUTE;
 	}
 	
 	// =========================================================================

@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomBold;
+import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementBoldAdapter
         extends
             XmlElementAdapter
         implements
-            DomBold
+            WomBold
 {
 	private static final long serialVersionUID = 1L;
 	

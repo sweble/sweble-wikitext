@@ -21,8 +21,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 import org.sweble.wikitext.engine.astdom.AstToDomConverter;
-import org.sweble.wikitext.engine.dom.DomNode;
-import org.sweble.wikitext.engine.dom.tools.DomPrinter;
+import org.sweble.wikitext.engine.wom.WomNode;
+import org.sweble.wikitext.engine.wom.tools.DomPrinter;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.utils.AstPrinter;
 
@@ -48,7 +48,7 @@ public class AstDomTest
 		if (!QUIET)
 			System.out.println(AstPrinter.print(page.getPage()));
 		
-		DomNode dom = AstToDomConverter.convert(
+		WomNode dom = AstToDomConverter.convert(
 		        getConfig(),
 		        title,
 		        page.getPage());

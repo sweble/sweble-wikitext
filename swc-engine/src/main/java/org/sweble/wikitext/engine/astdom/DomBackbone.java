@@ -19,14 +19,14 @@ package org.sweble.wikitext.engine.astdom;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.sweble.wikitext.engine.dom.DomAttribute;
-import org.sweble.wikitext.engine.dom.DomNode;
+import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public abstract class DomBackbone
         implements
-            DomNode
+            WomNode
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -139,11 +139,11 @@ public abstract class DomBackbone
 	// =========================================================================
 	
 	@Override
-	public final DomNode cloneNode()
+	public final WomNode cloneNode()
 	{
 		try
 		{
-			return (DomNode) this.clone();
+			return (WomNode) this.clone();
 		}
 		catch (CloneNotSupportedException e)
 		{
@@ -214,7 +214,7 @@ public abstract class DomBackbone
 	}
 	
 	@Override
-	public Collection<DomAttribute> getAttributes()
+	public Collection<WomAttribute> getAttributes()
 	{
 		return Collections.emptyList();
 	}
@@ -238,7 +238,7 @@ public abstract class DomBackbone
 	}
 	
 	@Override
-	public void removeAttributeNode(DomAttribute attr) throws UnsupportedOperationException, IllegalArgumentException
+	public void removeAttributeNode(WomAttribute attr) throws UnsupportedOperationException, IllegalArgumentException
 	{
 		throw new UnsupportedOperationException();
 	}
@@ -250,7 +250,7 @@ public abstract class DomBackbone
 	}
 	
 	@Override
-	public XmlAttributeAdapter setAttributeNode(DomAttribute attr) throws UnsupportedOperationException, IllegalArgumentException
+	public XmlAttributeAdapter setAttributeNode(WomAttribute attr) throws UnsupportedOperationException, IllegalArgumentException
 	{
 		throw new UnsupportedOperationException();
 	}
@@ -264,43 +264,43 @@ public abstract class DomBackbone
 	}
 	
 	@Override
-	public Collection<DomNode> childNodes()
+	public Collection<WomNode> childNodes()
 	{
 		return Collections.emptyList();
 	}
 	
 	@Override
-	public DomNode getFirstChild()
+	public WomNode getFirstChild()
 	{
 		return null;
 	}
 	
 	@Override
-	public DomNode getLastChild()
+	public WomNode getLastChild()
 	{
 		return null;
 	}
 	
 	@Override
-	public void appendChild(DomNode child) throws UnsupportedOperationException
+	public void appendChild(WomNode child) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public void insertBefore(DomNode before, DomNode child) throws UnsupportedOperationException, IllegalArgumentException
+	public void insertBefore(WomNode before, WomNode child) throws UnsupportedOperationException, IllegalArgumentException
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public void removeChild(DomNode child) throws UnsupportedOperationException
+	public void removeChild(WomNode child) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public void replaceChild(DomNode search, DomNode replace) throws UnsupportedOperationException
+	public void replaceChild(WomNode search, WomNode replace) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException();
 	}

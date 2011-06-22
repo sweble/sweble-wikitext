@@ -16,14 +16,14 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
-import org.sweble.wikitext.engine.dom.DomOrderedList;
+import org.sweble.wikitext.engine.wom.WomOrderedList;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
 public class XmlElementOrderedListAdapter
         extends
             XmlListAdapter<XmlElementListItemAdapter>
         implements
-            DomOrderedList
+            WomOrderedList
 {
 	private static final long serialVersionUID = 1L;
 	
