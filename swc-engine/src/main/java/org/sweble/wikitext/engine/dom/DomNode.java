@@ -1,3 +1,19 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.sweble.wikitext.engine.dom;
 
 import java.io.Serializable;
@@ -175,10 +191,8 @@ public interface DomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the DOM node does not support attributes.
-	 * @throws IllegalArgumentException
-	 *             If the given node is not an attribute of this node.
 	 */
-	public DomAttribute setAttributeNode(DomAttribute attr) throws UnsupportedOperationException, IllegalArgumentException;
+	public DomAttribute setAttributeNode(DomAttribute attr) throws UnsupportedOperationException;
 	
 	// ==[ Navigation ]=========================================================
 	
@@ -245,13 +259,12 @@ public interface DomNode
 	/**
 	 * Remove the given child node from the list of children.
 	 * 
-	 * @return Returns <code>true</code> if the child was removed. If the given
-	 *         node is not a child of this node, <code>false</code> is returned.
-	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the DOM node does not support children.
+	 * @throws IllegalArgumentException
+	 *             If the <code>child</code> node is not a child of this node.
 	 */
-	public boolean removeChild(DomNode child) throws UnsupportedOperationException;
+	public void removeChild(DomNode child) throws UnsupportedOperationException, IllegalArgumentException;
 	
 	/**
 	 * Replace a given child node with another node.
@@ -261,8 +274,10 @@ public interface DomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the DOM node does not support children.
+	 * @throws IllegalArgumentException
+	 *             If the <code>search</code> node is not a child of this node.
 	 */
-	public boolean replaceChild(DomNode search, DomNode replace) throws UnsupportedOperationException;
+	public void replaceChild(DomNode search, DomNode replace) throws UnsupportedOperationException, IllegalArgumentException;
 	
 	// ==[ Cloning ]============================================================
 	

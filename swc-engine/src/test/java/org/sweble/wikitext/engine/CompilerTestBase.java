@@ -126,6 +126,11 @@ public class CompilerTestBase
 		return new FullPage(pageId, wikitext);
 	}
 	
+	public SimpleWikiConfiguration getConfig()
+	{
+		return config;
+	}
+	
 	// =========================================================================
 	
 	private final class ExpansionCallbackImpl

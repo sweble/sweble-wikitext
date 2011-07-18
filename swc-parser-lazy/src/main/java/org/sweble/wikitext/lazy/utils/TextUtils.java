@@ -30,6 +30,56 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public final class TextUtils
 {
+	public static NodeList stringToAst(String text)
+	{
+		NodeList list = new NodeList();
+		
+		if (text == null)
+			return list;
+		
+		int n = text.length();
+		int i = 0;
+		int j = 0;
+		for (; j < n; ++j)
+		{
+			char c = text.charAt(j);
+			switch (c)
+			{
+				case '<':
+					list.add(new Text(text.substring(i, j)));
+					list.add(new XmlEntityRef("lt"));
+					i = j + 1;
+					break;
+				case '>':
+					list.add(new Text(text.substring(i, j)));
+					list.add(new XmlEntityRef("gt"));
+					i = j + 1;
+					break;
+				case '&':
+					list.add(new Text(text.substring(i, j)));
+					list.add(new XmlEntityRef("amp"));
+					i = j + 1;
+					break;
+				case '\'':
+					// &apos; cannot safely be used, see wikipedia
+					list.add(new Text(text.substring(i, j)));
+					list.add(new XmlCharRef(39));
+					i = j + 1;
+					break;
+				case '"':
+					list.add(new Text(text.substring(i, j)));
+					list.add(new XmlEntityRef("quot"));
+					i = j + 1;
+					break;
+			}
+		}
+		
+		if (i != j)
+			list.add(new Text(text.substring(i, j)));
+		
+		return list;
+	}
+	
 	public static NodeList trim(NodeList nodes)
 	{
 		ArrayList<AstNode> result = new ArrayList<AstNode>(nodes);

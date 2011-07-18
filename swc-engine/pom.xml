@@ -149,6 +149,7 @@
         </executions>
       </plugin>
  
+      <!-- 
       <plugin>
         <groupId>com.sun.tools.jxc.maven2</groupId>
         <artifactId>maven-jaxb-schemagen-plugin</artifactId>
@@ -166,7 +167,7 @@
             ${project}
           </project>
           <destdir>${project.build.directory}/schemas</destdir>
-          <srcdir>${project.build.sourceDirectory}/org/sweble/wikitext/engine/dom/</srcdir>
+          <srcdir>${project.build.sourceDirectory}/org/sweble/wikitext/engine/astdom</srcdir>
           <verbose>true</verbose>
         </configuration>
         <dependencies>
@@ -191,6 +192,25 @@
             <version>2.2</version>
           </dependency>
         </dependencies>
+      </plugin>
+       -->
+
+      <!-- Compile schema files -->
+      <plugin>
+        <groupId>com.sun.tools.xjc.maven2</groupId>
+        <artifactId>maven-jaxb-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/xml</schemaDirectory>
+          <generatePackage>org.sweble.wikitext.engine.xml</generatePackage>
+          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+        </configuration>
       </plugin>
 
     </plugins>

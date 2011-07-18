@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2011 The Open Source Research Group,
+                   University of Erlangen-Nürnberg
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+
+<xsd:schema
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://sweble.org/wikitext-dom"
+  xmlns="http://sweble.org/wikitext-dom"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  elementFormDefault="qualified"
+
+  xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+  jxb:version="2.0"
+>
+
+  <xsd:import
+    namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/2001/xml.xsd" />
+
+  <!-- == Basic Types ====================================================== -->
+
+  <xsd:simpleType name="LanguageCode">
+    <xsd:restriction base="xsd:language" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Character">
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="1" fixed="true" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Number">
+    <xsd:restriction base="xsd:nonNegativeInteger">
+      <xsd:pattern value="[0-9]+" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TabIndexNumber">
+    <xsd:restriction base="Number">
+      <xsd:minInclusive value="0" />
+      <xsd:maxInclusive value="32767" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="SectionLevel">
+    <xsd:restriction base="Number">
+      <xsd:minInclusive value="1" />
+      <xsd:maxInclusive value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Uri">
+    <xsd:restriction base="xsd:anyURI" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Datetime">
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Script">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="StyleSheet">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Text">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Namespace">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="DocumentTitle">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ImageLinkTarget">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Username">
+    <xsd:restriction base="DocumentTitle" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="MagicWord">
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Length">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[-+]?(\d+|\d+(\.\d+)?%)" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Pixels">
+    <xsd:restriction base="xsd:nonNegativeInteger" />
+  </xsd:simpleType>
+
+  <!-- == Attribute Groups ================================================= -->
+
+  <xsd:attributeGroup name="group.attrs.core">
+    <xsd:attribute name="id" type="xsd:ID" />
+    <xsd:attribute name="class" type="xsd:NMTOKENS" />
+    <xsd:attribute name="style" type="StyleSheet" />
+    <xsd:attribute name="title" type="Text" />
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="group.attrs.i18n">
+    <xsd:attribute name="lang" type="LanguageCode" />
+    <!-- <xsd:attribute ref="xml:lang" /> -->
+    <xsd:attribute name="dir">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:token">
+          <xsd:enumeration value="ltr" />
+          <xsd:enumeration value="rtl" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="group.attrs.events">
+    <xsd:attribute name="onclick" type="Script" />
+    <xsd:attribute name="ondblclick" type="Script" />
+    <xsd:attribute name="onmousedown" type="Script" />
+    <xsd:attribute name="onmouseup" type="Script" />
+    <xsd:attribute name="onmouseover" type="Script" />
+    <xsd:attribute name="onmousemove" type="Script" />
+    <xsd:attribute name="onmouseout" type="Script" />
+    <xsd:attribute name="onkeypress" type="Script" />
+    <xsd:attribute name="onkeydown" type="Script" />
+    <xsd:attribute name="onkeyup" type="Script" />
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="group.attrs.focus">
+    <xsd:attribute name="accesskey" type="Character" />
+    <xsd:attribute name="tabindex" type="TabIndexNumber" />
+    <xsd:attribute name="onfocus" type="Script" />
+    <xsd:attribute name="onblur" type="Script" />
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="group.attrs">
+    <xsd:attributeGroup ref="group.attrs.core" />
+    <xsd:attributeGroup ref="group.attrs.i18n" />
+    <xsd:attributeGroup ref="group.attrs.events" />
+  </xsd:attributeGroup>
+
+  <!-- == Inline Content Groups ============================================ -->
+
+  <xsd:group name="group.content.special.pre">
+    <xsd:choice>
+      <xsd:element ref="br" />
+      <xsd:element ref="span" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.special">
+    <xsd:choice>
+      <xsd:group ref="group.content.special.pre" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.fontstyle">
+    <xsd:choice>
+      <xsd:element ref="tt" />
+      <xsd:element ref="i" />
+      <xsd:element ref="b" />
+      <xsd:element ref="big" />
+      <xsd:element ref="small" />
+      <!-- s, strike, ... -->
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.phrase">
+    <xsd:choice>
+      <xsd:element ref="em" />
+      <xsd:element ref="strong" />
+      <xsd:element ref="dfn" />
+      <xsd:element ref="code" />
+      <xsd:element ref="samp" />
+      <xsd:element ref="kbd" />
+      <xsd:element ref="var" />
+      <xsd:element ref="cite" />
+      <xsd:element ref="abbr" />
+      <xsd:element ref="sub" />
+      <xsd:element ref="sup" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.misc.inline">
+    <xsd:choice>
+      <xsd:element ref="ins" />
+      <xsd:element ref="del" />
+      <xsd:element ref="magicword" />
+      <xsd:group ref="group.content.pp.content" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.misc">
+    <xsd:choice>
+      <xsd:group ref="group.content.misc.inline" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.links">
+    <xsd:choice>
+      <xsd:element ref="imagelink" />
+      <xsd:element ref="intlink" />
+      <xsd:element ref="extlink" />
+      <xsd:element ref="url" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.inline">
+    <xsd:choice>
+      <xsd:group ref="group.content.links" />
+      <xsd:group ref="group.content.special" />
+      <xsd:group ref="group.content.fontstyle" />
+      <xsd:group ref="group.content.phrase" />
+      <xsd:element ref="signature" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:complexType name="Inline">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="group.content.inline" />
+      <xsd:group ref="group.content.misc.inline" />
+      <xsd:element ref="text" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="LinkTitleInline">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="group.content.special" />
+      <xsd:group ref="group.content.fontstyle" />
+      <xsd:group ref="group.content.phrase" />
+      <xsd:group ref="group.content.misc.inline" />
+      <xsd:element ref="text" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <!-- == Block Content Groups ============================================= -->
+
+  <xsd:group name="group.content.heading">
+    <xsd:choice>
+      <xsd:element ref="section" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.lists">
+    <xsd:choice>
+      <xsd:element ref="ul" />
+      <xsd:element ref="ol" />
+      <xsd:element ref="dl" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.blocktext">
+    <xsd:choice>
+      <xsd:element ref="pre" />
+      <xsd:element ref="semipre" />
+      <xsd:element ref="hr" />
+      <xsd:element ref="blockquote" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.block">
+    <xsd:choice>
+      <xsd:group ref="group.content.heading" />
+      <xsd:group ref="group.content.lists" />
+      <xsd:group ref="group.content.blocktext" />
+      <xsd:element ref="p" />
+      <xsd:element ref="div" />
+      <xsd:element ref="table" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:complexType name="Block">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="group.content.block" />
+      <xsd:group ref="group.content.misc" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="Flow">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="group.content.block" />
+      <xsd:group ref="group.content.inline" />
+      <xsd:group ref="group.content.misc" />
+      <xsd:element ref="text" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="PreContent">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:group ref="group.content.fontstyle" />
+      <xsd:group ref="group.content.phrase" />
+      <xsd:group ref="group.content.special.pre" />
+      <xsd:group ref="group.content.misc.inline" />
+      <xsd:element ref="text" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <!-- == Text ============================================================= -->
+
+  <xsd:element name="text">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+        </xsd:extension>
+      </xsd:simpleContent> 
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Document Body ==================================================== -->
+
+  <xsd:element name="document">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attribute name="namespace" type="Namespace" />
+          <xsd:attribute name="path" type="DocumentTitle" />
+          <xsd:attribute name="title" type="DocumentTitle" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="div">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Paragraphs ======================================================= -->
+
+  <xsd:element name="p">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Sections ========================================================= -->
+
+  <xsd:complexType name="Heading">
+    <xsd:complexContent>
+      <xsd:extension base="Inline">
+        <xsd:attributeGroup ref="group.attrs" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="section">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="heading" type="Heading" />
+        <xsd:element name="body" type="Flow" />
+      </xsd:sequence>
+      <xsd:attribute name="level" type="SectionLevel" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Lists ============================================================ -->
+
+  <xsd:element name="ul">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="li" maxOccurs="unbounded" />
+      </xsd:sequence>
+      <xsd:attributeGroup ref="group.attrs" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="ol">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="li" maxOccurs="unbounded" />
+      </xsd:sequence>
+      <xsd:attributeGroup ref="group.attrs" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="li">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="dl">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element ref="dt" />
+        <xsd:element ref="dd" />
+      </xsd:choice>
+      <xsd:attributeGroup ref="group.attrs" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="dt">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="dd">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Horizontal Rule ================================================== -->
+
+  <xsd:element name="hr">
+    <xsd:complexType>
+      <xsd:attributeGroup ref="group.attrs" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Preformatted Text ================================================ -->
+
+  <xsd:element name="pre">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="PreContent">
+           <xsd:attributeGroup ref="group.attrs" />
+           <xsd:attribute ref="xml:space" fixed="preserve" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="semipre">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="PreContent">
+           <xsd:attribute ref="xml:space" fixed="preserve" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Block-like Quotes ================================================ -->
+
+  <xsd:element name="blockquote">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Block">
+          <xsd:attributeGroup ref="group.attrs" />
+          <xsd:attribute name="cite" type="Uri" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Inserted & Deleted Text ========================================== -->
+
+  <xsd:element name="ins">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+          <xsd:attribute name="cite" type="Uri" />
+          <xsd:attribute name="datetime" type="Datetime" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="del">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+          <xsd:attribute name="cite" type="Uri" />
+          <xsd:attribute name="datetime" type="Datetime" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Signature ======================================================== -->
+
+  <xsd:simpleType name="SignatureFormat">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="username-timestamp" />
+      <xsd:enumeration value="username" />
+      <xsd:enumeration value="timestamp" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:element name="signature">
+    <xsd:complexType>
+      <xsd:attribute name="format" type="SignatureFormat" />
+      <xsd:attribute name="username" type="Username" />
+      <xsd:attribute name="timestamp" type="Datetime" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Links ============================================================ -->
+
+  <xsd:element name="intlink">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="LinkTitleInline">
+          <xsd:attribute name="target" type="DocumentTitle" />
+          <xsd:attribute name="prefix" type="Text" />
+          <xsd:attribute name="suffix" type="Text" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="extlink">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="LinkTitleInline">
+          <xsd:attribute name="target" type="xsd:anyURI" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="url">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+        </xsd:extension>
+      </xsd:simpleContent> 
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Inline Elements ================================================== -->
+
+  <xsd:element name="span">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="br">
+    <xsd:complexType>
+      <xsd:attributeGroup ref="group.attrs.core" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="em">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="strong">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="dfn">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="code">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="samp">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="kbd">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="var">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="cite">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="abbr">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="sub">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="sup">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="tt">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="i">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="b">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="big">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="small">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Images =========================================================== -->
+
+  <xsd:simpleType name="ImageHAlign">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="none" />
+      <xsd:enumeration value="left" />
+      <xsd:enumeration value="right" />
+      <xsd:enumeration value="center" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ImageVAlign">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="baseline" />
+      <xsd:enumeration value="sub" />
+      <xsd:enumeration value="super" />
+      <xsd:enumeration value="top" />
+      <xsd:enumeration value="text-top" />
+      <xsd:enumeration value="middle" />
+      <xsd:enumeration value="bottom" />
+      <xsd:enumeration value="text-bottom" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ImageFormat">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="unrestrained" />
+      <xsd:enumeration value="frameless" />
+      <xsd:enumeration value="thumbnail" />
+      <xsd:enumeration value="frame" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:element name="imagelink">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attribute name="target" type="DocumentTitle" />
+          <xsd:attribute name="width" type="Pixels" />
+          <xsd:attribute name="height" type="Pixels" />
+          <xsd:attribute name="upright" type="xsd:boolean" />
+          <xsd:attribute name="halign" type="ImageHAlign" />
+          <xsd:attribute name="valign" type="ImageVAlign" />
+          <xsd:attribute name="format" type="ImageFormat" />
+          <xsd:attribute name="border" type="xsd:boolean" />
+          <xsd:attribute name="link" type="ImageLinkTarget" />
+          <xsd:attribute name="alt" type="Text" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Tables =========================================================== -->
+
+  <xsd:simpleType name="TFrame">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="void" />
+      <xsd:enumeration value="above" />
+      <xsd:enumeration value="below" />
+      <xsd:enumeration value="hsides" />
+      <xsd:enumeration value="lhs" />
+      <xsd:enumeration value="rhs" />
+      <xsd:enumeration value="vsides" />
+      <xsd:enumeration value="box" />
+      <xsd:enumeration value="border" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TRules">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="none" />
+      <xsd:enumeration value="groups" />
+      <xsd:enumeration value="rows" />
+      <xsd:enumeration value="cols" />
+      <xsd:enumeration value="all" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Scope">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="row" />
+      <xsd:enumeration value="col" />
+      <xsd:enumeration value="rowgroup" />
+      <xsd:enumeration value="colgroup" />
+    </xsd:restriction>
+  </xsd:simpleType>
+ 
+  <xsd:attributeGroup name="group.attrs.cellhalign">
+    <xsd:attribute name="align">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:token">
+          <xsd:enumeration value="left" />
+          <xsd:enumeration value="center" />
+          <xsd:enumeration value="right" />
+          <xsd:enumeration value="justify" />
+          <xsd:enumeration value="char" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="char" type="Character" />
+    <xsd:attribute name="charoff" type="Length" />
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="group.attrs.cellvalign">
+    <xsd:attribute name="valign">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:token">
+          <xsd:enumeration value="top" />
+          <xsd:enumeration value="middle" />
+          <xsd:enumeration value="bottom" />
+          <xsd:enumeration value="baseline" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+
+  <xsd:element name="table">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="caption" minOccurs="0" />
+        <xsd:element ref="tr" maxOccurs="unbounded" />
+      </xsd:sequence>
+      <xsd:attributeGroup ref="group.attrs" />
+      <xsd:attribute name="summary" type="Text" />
+      <xsd:attribute name="width" type="Length" />
+      <xsd:attribute name="border" type="Pixels" />
+      <xsd:attribute name="frame" type="TFrame" />
+      <xsd:attribute name="rules" type="TRules" />
+      <xsd:attribute name="cellspacing" type="Length" />
+      <xsd:attribute name="cellpadding" type="Length" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="caption">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Inline">
+          <xsd:attributeGroup ref="group.attrs" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="tr">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element ref="th" />
+        <xsd:element ref="td" />
+      </xsd:choice>
+      <xsd:attributeGroup ref="group.attrs" />
+      <xsd:attributeGroup ref="group.attrs.cellhalign" />
+      <xsd:attributeGroup ref="group.attrs.cellvalign" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="th">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+          <xsd:attribute name="abbr" type="Text" />
+          <xsd:attribute name="axis" />
+          <xsd:attribute name="headers" type="xsd:IDREFS" />
+          <xsd:attribute name="scope" type="Scope" />
+          <xsd:attribute name="rowspan" default="1" type="Number" />
+          <xsd:attribute name="colspan" default="1" type="Number" />
+          <xsd:attributeGroup ref="group.attrs.cellhalign" />
+          <xsd:attributeGroup ref="group.attrs.cellvalign" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="td">
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="Flow">
+          <xsd:attributeGroup ref="group.attrs" />
+          <xsd:attribute name="abbr" type="Text" />
+          <xsd:attribute name="axis" />
+          <xsd:attribute name="headers" type="xsd:IDREFS" />
+          <xsd:attribute name="scope" type="Scope" />
+          <xsd:attribute name="rowspan" default="1" type="Number" />
+          <xsd:attribute name="colspan" default="1" type="Number" />
+          <xsd:attributeGroup ref="group.attrs.cellhalign" />
+          <xsd:attributeGroup ref="group.attrs.cellvalign" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- == Meta ============================================================= -->
+
+  <xsd:group name="group.content.pp.name">
+    <xsd:choice>
+      <xsd:element ref="text" />
+      <xsd:element ref="transclusion" />
+      <xsd:element ref="tcparam" />
+      <xsd:element ref="parserfn" />
+      <xsd:element ref="parservar" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:group name="group.content.pp.content">
+    <xsd:choice>
+      <xsd:element ref="tagextension" />
+    </xsd:choice>
+  </xsd:group>
+
+  <xsd:complexType name="PreprocessorName">
+    <xsd:choice>
+      <xsd:group ref="group.content.pp.name" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="PreprocessorContent">
+    <xsd:choice>
+      <xsd:group ref="group.content.pp.name" />
+      <xsd:group ref="group.content.pp.content" />
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:element name="magicword">
+    <xsd:complexType>
+      <xsd:attribute name="word" type="MagicWord" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="redirect">
+    <xsd:complexType>
+      <xsd:attribute name="target" type="DocumentTitle" />
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="tagextension">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="name" type="xsd:Name" />
+        </xsd:extension>
+      </xsd:simpleContent> 
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="transclusion">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name" type="PreprocessorName" />
+        <xsd:element name="argument" type="PreprocessorContent" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="tcparam">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name" type="PreprocessorName" />
+        <xsd:element name="default" type="PreprocessorContent" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="parserfn">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name" type="PreprocessorName" />
+        <xsd:element name="argument" type="PreprocessorContent" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="parservar">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name" type="PreprocessorName" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>
