@@ -149,6 +149,50 @@
         </executions>
       </plugin>
  
+      <plugin>
+        <groupId>com.sun.tools.jxc.maven2</groupId>
+        <artifactId>maven-jaxb-schemagen-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+          <execution>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <project>
+            ${project}
+          </project>
+          <destdir>${project.build.directory}/schemas</destdir>
+          <srcdir>${project.build.sourceDirectory}/org/sweble/wikitext/engine/dom/</srcdir>
+          <verbose>true</verbose>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+            <version>2.2</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2</version>
+          </dependency>
+          <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+            <version>2.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
     </plugins>
   </build>
 

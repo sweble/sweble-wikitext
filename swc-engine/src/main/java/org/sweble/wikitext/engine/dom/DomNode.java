@@ -1,12 +1,12 @@
 package org.sweble.wikitext.engine.dom;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-/**
- * TODO: Can a DOM node be child of multiple nodes? Can one add a node multiple
- * times?
- */
 public interface DomNode
+        extends
+            Cloneable,
+            Serializable
 {
 	// ==[ Reflection ]=========================================================
 	
@@ -158,13 +158,13 @@ public interface DomNode
 	 * replaced by the given attribute. Otherwise, a new attribute will be
 	 * created.
 	 * 
-	 * @return The old value of the attribute or <code>null</code> if the
-	 *         attribute did not exist.
+	 * @return The old attribute or <code>null</code> if the attribute did not
+	 *         exist.
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the DOM node does not support attributes.
 	 */
-	public String setAttribute(String name, String value) throws UnsupportedOperationException;
+	public DomAttribute setAttribute(String name, String value) throws UnsupportedOperationException;
 	
 	/**
 	 * Sets an attribute node. If the attribute already exists, it will be
@@ -219,7 +219,7 @@ public interface DomNode
 	 * Return the previous node on the same level as this node. Returns
 	 * <code>null</code> if there is no previous sibling.
 	 */
-	public DomNode getPreviousSibling();
+	public DomNode getPrevSibling();
 	
 	// ==[ Tree modification ]==================================================
 	
