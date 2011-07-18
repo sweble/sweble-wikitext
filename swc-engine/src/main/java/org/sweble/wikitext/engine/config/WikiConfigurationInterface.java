@@ -19,7 +19,6 @@ package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.HashSet;
 
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
@@ -60,11 +59,9 @@ public interface WikiConfigurationInterface
 	
 	// --------
 	
-	public HashSet<String> getAllowedHtmlTags();
+	//public HashSet<String> getAllowedHtmlTags();
 	
-	public HashSet<String> getEmptyOnlyHtmlTags();
-	
-	public HashSet<String> getPropagatableHtmlTags();
+	//public HashSet<String> getEmptyOnlyHtmlTags();
 	
 	// --------
 	

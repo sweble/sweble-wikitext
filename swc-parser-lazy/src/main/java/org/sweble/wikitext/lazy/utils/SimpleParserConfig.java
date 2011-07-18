@@ -53,11 +53,11 @@ public class SimpleParserConfig
 		allowed = new HashSet<String>();
 		allowed.addAll(Arrays.asList(
 		        "abbr", "b", "big", "blockquote", "br", "caption",
-		        "center", "cite", "code", "dd", "del", "div", "dl", "dt",
-		        "em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
-		        "i", "ins", "li", "ol", "p", "pre", "s", "small", "span",
-		        "strike", "strong", "sub", "sup", "table", "td", "th", "tr",
-		        "tt", "u", "ul", "var"));
+		        "center", "cite", "code", "dd", "del", "dfn", "div", "dl", 
+		        "dt", "em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
+		        "i", "ins", "kbd", "li", "ol", "p", "pre", "s", "samp", 
+		        "small", "span", "strike", "strong", "sub", "sup", "table", 
+		        "td", "th", "tr", "tt", "u", "ul", "var"));
 		
 		emptyOnly = new HashSet<String>();
 		emptyOnly.addAll(Arrays.asList(
@@ -69,12 +69,12 @@ public class SimpleParserConfig
 		elementTypes.put("p", ScopeType.XML_PARAGRAPH);
 		
 		for (String e : Arrays.asList("abbr", "b", "big", "br", "cite", "code",
-		        "em", "font", "i", "s", "small", "span", "strike", "strong",
+		        "em", "font", "i", "s", "samp", "small", "span", "strike", "strong",
 		        "sub", "sup", "tt", "u", "var"))
 			elementTypes.put(e, ScopeType.XML_INLINE);
 		
-		for (String e : Arrays.asList("blockquote", "center", "del", "div",
-		        "h1", "h2", "h3", "h4", "h5", "h6", "hr", "ins", "ol", "pre",
+		for (String e : Arrays.asList("blockquote", "center", "del", "dfn", "div",
+		        "h1", "h2", "h3", "h4", "h5", "h6", "hr", "ins", "kbd", "ol", "pre",
 		        "ul"))
 			elementTypes.put(e, ScopeType.XML_BLOCK);
 		

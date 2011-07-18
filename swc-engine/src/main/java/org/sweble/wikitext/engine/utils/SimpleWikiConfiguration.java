@@ -22,7 +22,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -486,6 +485,7 @@ public class SimpleWikiConfiguration
 	
 	// =========================================================================
 	
+	/*
 	@Override
 	public HashSet<String> getAllowedHtmlTags()
 	{
@@ -514,7 +514,8 @@ public class SimpleWikiConfiguration
 		        "small", "span", "strike", "strong", "sub", "sup", "tt",
 		        "u"));
 	}
-	
+	*/
+
 	// =========================================================================
 	
 	@Override
