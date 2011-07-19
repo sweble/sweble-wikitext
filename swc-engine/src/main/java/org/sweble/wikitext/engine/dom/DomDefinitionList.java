@@ -16,8 +16,22 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a definition list.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "dl".
+ */
 public interface DomDefinitionList
         extends
-            DomBlockElement
+            DomBlockElement,
+            DomUniversalAttributes
 {
+	/**
+	 * Tells whether the list should be displayed as compact list.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "compact".
+	 * 
+	 * @return Whether the "compact" flag is given or not.
+	 */
+	public boolean getCompact();
 }

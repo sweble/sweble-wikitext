@@ -16,8 +16,13 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a table header cell.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "th".
+ */
 public interface DomTableHeaderCell
         extends
-            DomTableCell
+            DomTableCellBase
 {
 }

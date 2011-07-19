@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes an abbreviation.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "abbr".
+ */
 public interface DomAbbr
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

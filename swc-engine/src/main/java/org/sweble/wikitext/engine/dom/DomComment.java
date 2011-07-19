@@ -16,6 +16,11 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes an XML-style comment in the Wikitext.
+ * 
+ * The content of the comment can be retrieved with the getValue() method.
+ */
 public interface DomComment
         extends
             DomNode

@@ -22,14 +22,16 @@ import java.io.IOException;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astdom.AstToDomConverter;
 import org.sweble.wikitext.engine.dom.DomNode;
+import org.sweble.wikitext.engine.dom.tools.DomPrinter;
 import org.sweble.wikitext.lazy.LinkTargetException;
-
-import de.fau.cs.osr.ptk.common.AstPrinter;
+import org.sweble.wikitext.lazy.utils.AstPrinter;
 
 public class AstDomTest
         extends
             CompilerTestBase
 {
+	private static final boolean QUIET = false;
+	
 	public AstDomTest() throws FileNotFoundException, IOException
 	{
 		super();
@@ -43,12 +45,21 @@ public class AstDomTest
 		PageTitle title = PageTitle.make(getConfig(), pageName);
 		CompiledPage page = postprocess(pageName, false);
 		
-		System.out.println(AstPrinter.print(page.getPage()));
+		if (!QUIET)
+			System.out.println(AstPrinter.print(page.getPage()));
 		
-		@SuppressWarnings("unused")
-        DomNode result = AstToDomConverter.convert(
+		DomNode dom = AstToDomConverter.convert(
 		        getConfig(),
 		        title,
 		        page.getPage());
+		
+		if (!QUIET)
+			System.out.println(DomPrinter.print(dom));
+		
+		dom.getFirstChild().removeChild(
+		        dom.getFirstChild().getFirstChild());
+		
+		if (!QUIET)
+			System.out.println(DomPrinter.print(dom));
 	}
 }

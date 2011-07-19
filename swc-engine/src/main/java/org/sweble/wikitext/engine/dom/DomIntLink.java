@@ -16,8 +16,39 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+import java.net.URL;
+
+/**
+ * Denotes a Wikitext internal link.
+ */
 public interface DomIntLink
         extends
+        	DomInlineElement,
             DomLink
 {
+	@Override
+	public DomTitle getTitle();
+	
+	/**
+	 * Set a new link title.
+	 * 
+	 * @param title
+	 *            The new title of the internal link.
+	 * 
+	 * @return The old link title node.
+	 */
+	public DomTitle setTitle(DomTitle title);
+	
+	@Override
+	public String getTarget();
+	
+	/**
+	 * Set a new target for this internal link.
+	 * 
+	 * @param target
+	 *            The new target of the internal link.
+	 * 
+	 * @return The old target of the internal link.
+	 */
+	public URL setTarget(String target);
 }

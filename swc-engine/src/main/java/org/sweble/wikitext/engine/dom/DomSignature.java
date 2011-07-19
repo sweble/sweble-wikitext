@@ -16,8 +16,62 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+import java.util.Date;
+
+/**
+ * A Wikitext signature.
+ */
 public interface DomSignature
         extends
-            DomProcessingInstruction
+            DomInlineElement
 {
+	/**
+	 * Get the signature format that describes how the signature should be
+	 * rendered.
+	 * 
+	 * @return The signature format.
+	 */
+	public DomSignatureFormat getSignatureFormat();
+	
+	/**
+	 * Set the signature format that describes how the signature should be
+	 * rendered.
+	 * 
+	 * @param format
+	 *            The new signature format.
+	 * @return The old signature format.
+	 */
+	public DomSignatureFormat setSignatureFormat(DomSignatureFormat format);
+	
+	/**
+	 * Get the name of the author.
+	 * 
+	 * @return The author name.
+	 */
+	public String getAuthor();
+	
+	/**
+	 * Set the author name.
+	 * 
+	 * @param author
+	 *            The new name of the author.
+	 * @return The old author name.
+	 */
+	public String setAuthor(String author);
+	
+	/**
+	 * Get the date and time of the signature.
+	 * 
+	 * @return The date and time of the signature.
+	 */
+	public Date getTimestamp();
+	
+	/**
+	 * Set the date and time of the signature.
+	 * 
+	 * @param timestamp
+	 *            The new date and time of the signature.
+	 * @return The old date and time of the signature.
+	 */
+	public Date setTimestamp(Date timestamp);
 }

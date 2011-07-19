@@ -16,8 +16,59 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Specifies the font color, font face and size of the text content.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "font".
+ */
 public interface DomFont
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
+	/**
+	 * Get the color of the text content.
+	 * 
+	 * @return The text color.
+	 */
+	public DomColor getColor();
+	
+	/**
+	 * Set the color of the text content.
+	 * 
+	 * @return The old color of the text content.
+	 */
+	public DomColor setColor(DomColor color);
+	
+	/**
+	 * Get the name of the font face of the text content.
+	 * 
+	 * @return The name of the font face.
+	 */
+	public String getFace();
+	
+	/**
+	 * Set the name of the font face.
+	 * 
+	 * @param face
+	 *            The name of the new font face.
+	 * @return The name of the old font face.
+	 */
+	public String setFace(String face);
+	
+	/**
+	 * Get the size of the text content.
+	 * 
+	 * @return The size of the text content. A value between 1 and 7.
+	 */
+	public int getSize();
+	
+	/**
+	 * Set the text size.
+	 * 
+	 * @param size
+	 *            The new text size. A value between 1 and 7.
+	 * @return The old text size.
+	 */
+	public int setSize(int size);
 }

@@ -16,6 +16,10 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * All Wikitext processing instructions like, for example, magic words inherit
+ * from this interface.
+ */
 public interface DomProcessingInstruction
         extends
             DomNode

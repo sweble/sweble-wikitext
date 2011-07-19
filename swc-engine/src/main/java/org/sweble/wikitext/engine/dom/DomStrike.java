@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes text that should be displayed as strikethrough text.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "strike".
+ */
 public interface DomStrike
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

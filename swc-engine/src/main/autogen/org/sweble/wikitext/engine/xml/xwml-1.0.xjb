@@ -19,11 +19,16 @@
 -->
 
 <jxb:bindings
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   version="2.0"
 >
-  <jxb:bindings schemaLocation="wikitext-dom-1.0.xsd">
+  <jxb:bindings schemaLocation="xwml-1.0.xsd">
+    <jxb:bindings node="//xs:attribute[@ref='xml:lang']">
+      <jxb:property name="xmlLang" />
+    </jxb:bindings>
+    
+	<!--
     <jxb:bindings node="//xsd:complexType[@name='Inline']//xsd:choice">
       <jxb:property name="children" />
     </jxb:bindings>
@@ -51,5 +56,6 @@
     <jxb:bindings node="//xsd:element[@name='tr']//xsd:choice">
       <jxb:property name="children" />
     </jxb:bindings>
+	-->
   </jxb:bindings>
 </jxb:bindings>

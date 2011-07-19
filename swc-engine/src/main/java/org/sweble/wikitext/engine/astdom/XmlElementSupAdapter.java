@@ -14,15 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.dom;
+package org.sweble.wikitext.engine.astdom;
 
-import java.util.Collection;
+import org.sweble.wikitext.engine.dom.DomSup;
+import org.sweble.wikitext.lazy.parser.XmlElement;
 
-public interface DomTagExtensionInvocation
+public class XmlElementSupAdapter
         extends
-            DomProcessingInstruction
+            XmlElementAdapter
+        implements
+            DomSup
 {
-	public String getName();
+	private static final long serialVersionUID = 1L;
 	
-	public Collection<DomTemplateArgument> getArguments();
+	// =========================================================================
+	
+	public XmlElementSupAdapter(XmlElement element)
+	{
+		super(element);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String getNodeName()
+	{
+		return "sup";
+	}
 }

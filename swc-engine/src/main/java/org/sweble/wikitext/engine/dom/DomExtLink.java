@@ -16,8 +16,39 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+import java.net.URL;
+
+/**
+ * Denotes a Wikitext bracketed external link.
+ */
 public interface DomExtLink
         extends
+        	DomInlineElement,
             DomLink
 {
+	@Override
+	public DomTitle getTitle();
+	
+	/**
+	 * Set a new link title.
+	 * 
+	 * @param title
+	 *            The new title of the external link.
+	 * 
+	 * @return The old link title node.
+	 */
+	public DomTitle setTitle(DomTitle title);
+	
+	@Override
+	public URL getTarget();
+	
+	/**
+	 * Set a new target for this external link.
+	 * 
+	 * @param target
+	 *            The new target of the external link.
+	 * 
+	 * @return The old target of the external link.
+	 */
+	public URL setTarget(URL target);
 }

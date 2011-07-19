@@ -16,8 +16,27 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a magic word.
+ */
 public interface DomMagicWord
         extends
             DomProcessingInstruction
 {
+	/**
+	 * Get the name of the magic word.
+	 * 
+	 * @return The name of the magic word.
+	 */
+	public String getName();
+	
+	/**
+	 * Set the name of the magic word.
+	 * 
+	 * @param name
+	 *            The new name of the magic word.
+	 * 
+	 * @return The old name of the magic word.
+	 */
+	public String setName(String name);
 }

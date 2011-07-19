@@ -16,6 +16,12 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * A node containing plain text.
+ * 
+ * The text can be retrieved or altered with the *Text() methods
+ * of DomNode.
+ */
 public interface DomText
         extends
             DomNode

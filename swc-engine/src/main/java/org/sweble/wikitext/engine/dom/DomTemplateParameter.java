@@ -16,9 +16,43 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * A template substitution parameter.
+ */
 public interface DomTemplateParameter
         extends
-            DomNode
+            DomProcessingInstruction
 {
+	/**
+	 * Get the name of the parameter.
+	 * 
+	 * @return The name of the parameter.
+	 */
+	public DomName getName();
 	
+	/**
+	 * Set the name of the parameter.
+	 * 
+	 * @param name
+	 *            The new name of the parameter.
+	 * @return The old name of the parameter.
+	 */
+	public DomName setName(DomName name);
+	
+	/**
+	 * Get the default value of the parameter.
+	 * 
+	 * @return The default value of the parameter or <code>null</code> if no
+	 *         default value is specified.
+	 */
+	public DomValue getDefault();
+	
+	/**
+	 * Set the default value of the parameter.
+	 * 
+	 * @param value
+	 *            The new default value of the parameter.
+	 * @return The old default value of the parameter.
+	 */
+	public DomValue setDefault(DomValue value);
 }

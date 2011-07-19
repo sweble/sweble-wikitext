@@ -16,6 +16,11 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes the body section of a table.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "tbody".
+ */
 public interface DomTableBody
         extends
             DomTablePartition

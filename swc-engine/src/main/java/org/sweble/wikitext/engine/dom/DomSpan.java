@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a general inline span.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "span".
+ */
 public interface DomSpan
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

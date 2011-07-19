@@ -16,8 +16,37 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * A redirection statement.
+ */
 public interface DomRedirect
         extends
-            DomProcessingInstruction
+            DomProcessingInstruction,
+            DomLink
 {
+	/**
+	 * Returns an empty title since redirection statements do not provide a
+	 * title.
+	 * 
+	 * @return An empty title.
+	 */
+	@Override
+	public DomTitle getTitle();
+	
+	/**
+	 * Return the target page of the redirection.
+	 * 
+	 * @return The target page to redirect to.
+	 */
+	@Override
+	public Object getTarget();
+	
+	/**
+	 * Set the target page of the redirection.
+	 * 
+	 * @param page
+	 *            The new target of the redirection.
+	 * @return The old target of the redirection.
+	 */
+	public String setTarget(String page);
 }

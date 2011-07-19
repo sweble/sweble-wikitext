@@ -49,7 +49,7 @@ import org.sweble.wikitext.lazy.parser.XmlElementOpen;
 import org.sweble.wikitext.lazy.postprocessor.ElementScopeStack.Scope;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -57,7 +57,7 @@ import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
         extends
-            Visitor
+            AstVisitor
 {
 	private final ParserConfigInterface config;
 	

@@ -26,7 +26,7 @@ import java.util.Map.Entry;
 
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -34,7 +34,7 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class AstCompressor
         extends
-            Visitor
+            AstVisitor
 {
 	public static LazyParsedPage process(LazyParsedPage a)
 	{

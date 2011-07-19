@@ -25,7 +25,7 @@ import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
@@ -55,7 +55,7 @@ public class PreprocessorToParserTransformer
 	
 	protected static final class TransformVisitor
 	        extends
-	            Visitor
+	            AstVisitor
 	{
 		private StringBuilder builder;
 		

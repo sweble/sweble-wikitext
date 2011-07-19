@@ -16,8 +16,34 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+import java.net.URL;
+
+/**
+ * A Wikitext plain url.
+ */
 public interface DomUrl
         extends
+            DomInlineElement,
             DomLink
 {
+	/**
+	 * Returns an empty title since images do not provide a title.
+	 * 
+	 * @return An empty title.
+	 */
+	@Override
+	public DomTitle getTitle();
+	
+	@Override
+	public URL getTarget();
+	
+	/**
+	 * Set a new target for this external link.
+	 * 
+	 * @param target
+	 *            The new target of the external link.
+	 * 
+	 * @return The old target of the external link.
+	 */
+	public URL setTarget(URL target);
 }

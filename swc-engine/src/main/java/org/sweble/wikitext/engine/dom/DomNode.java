@@ -174,6 +174,9 @@ public interface DomNode
 	 * replaced by the given attribute. Otherwise, a new attribute will be
 	 * created.
 	 * 
+	 * @param value
+	 *            Passing <code>null</code> as value will remove the attribute.
+	 * 
 	 * @return The old attribute or <code>null</code> if the attribute did not
 	 *         exist.
 	 * 

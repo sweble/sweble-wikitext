@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes text that should be rendered as strong (highlighted) text.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "strong".
+ */
 public interface DomStrong
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

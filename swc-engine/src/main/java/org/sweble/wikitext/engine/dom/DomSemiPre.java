@@ -16,6 +16,10 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a preformatted block of text that can contain other formatting
+ * markup. The DomPre element on the other hand can only contain pure text.
+ */
 public interface DomSemiPre
         extends
             DomBlockElement

@@ -14,10 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.dom;
+package org.sweble.wikitext.engine.astdom;
 
-public interface DomTableHeader
+import org.sweble.wikitext.engine.dom.DomTeletype;
+import org.sweble.wikitext.lazy.parser.XmlElement;
+
+public class XmlElementTeletypeAdapter
         extends
-            DomTablePartition
+            XmlElementAdapter
+        implements
+            DomTeletype
 {
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	public XmlElementTeletypeAdapter(XmlElement element)
+	{
+		super(element);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String getNodeName()
+	{
+		return "tt";
+	}
 }

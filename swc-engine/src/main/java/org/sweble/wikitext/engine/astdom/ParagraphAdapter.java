@@ -24,7 +24,7 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ParagraphAdapter
         extends
-            DomBackbone
+            DomFullElement
         implements
             DomParagraph
 {

@@ -23,7 +23,7 @@ import org.sweble.wikitext.lazy.ParserConfigInterface;
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
@@ -53,7 +53,7 @@ public class StringConverterPartial
 	
 	protected static final class ConverterVisitor
 	        extends
-	            Visitor
+	            AstVisitor
 	{
 		private final StringBuilder result = new StringBuilder();
 		

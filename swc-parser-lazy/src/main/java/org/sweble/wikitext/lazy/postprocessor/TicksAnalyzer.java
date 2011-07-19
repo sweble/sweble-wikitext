@@ -32,7 +32,7 @@ import org.sweble.wikitext.lazy.parser.SemiPreLine;
 import org.sweble.wikitext.lazy.parser.Ticks;
 import org.sweble.wikitext.lazy.parser.Whitespace;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.LeafNode;
@@ -136,7 +136,7 @@ public class TicksAnalyzer
 	
 	protected final static class LineAnalyzer
 	        extends
-	            Visitor
+	            AstVisitor
 	{
 		private final LinkedList<Line> lines;
 		
@@ -366,7 +366,7 @@ public class TicksAnalyzer
 	
 	protected final static class TicksConverter
 	        extends
-	            Visitor
+	            AstVisitor
 	{
 		private static enum State
 		{

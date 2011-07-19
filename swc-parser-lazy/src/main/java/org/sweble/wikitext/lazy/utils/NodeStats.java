@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -36,7 +36,7 @@ public class NodeStats
 	
 	protected static final class NodeStatsVisitor
 	        extends
-	            Visitor
+	            AstVisitor
 	{
 		private final Map<String, Integer> nodeCounts =
 		        new HashMap<String, Integer>();

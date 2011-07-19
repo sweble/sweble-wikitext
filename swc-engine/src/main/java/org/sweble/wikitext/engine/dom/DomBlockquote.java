@@ -16,8 +16,22 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a long quotation.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "blockquote".
+ */
 public interface DomBlockquote
         extends
-            DomBlockElement
+            DomBlockElement,
+            DomUniversalAttributes
 {
+	/**
+	 * Get source of the quotation.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "cite".
+	 * 
+	 * @return The source of the citation.
+	 */
+	public String getCite();
 }

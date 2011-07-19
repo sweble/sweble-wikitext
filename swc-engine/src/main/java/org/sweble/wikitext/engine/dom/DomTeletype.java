@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes text that should be rendered as teletype text.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "tt".
+ */
 public interface DomTeletype
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

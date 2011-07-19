@@ -30,16 +30,58 @@ public enum XmlElementFactoryEnum
 		}
 	},
 	
-	/*
-	CENTER
+	DIV
 	{
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new CENTERAdapter(e);
+			return new XmlElementDivAdapter(e);
 		}
 	},
 	
+	// =========================================================================
+	
+	HR
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementHrAdapter(e);
+		}
+	},
+	
+	// =========================================================================
+	
+	OL
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementOrderedListAdapter(e);
+		}
+	},
+	
+	UL
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementUnorderedListAdapter(e);
+		}
+	},
+	
+	LI
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementListItemAdapter(e);
+		}
+	},
+	
+	// =========================================================================
+	
+	/*
 	DL
 	{
 		@Override
@@ -48,31 +90,22 @@ public enum XmlElementFactoryEnum
 			return new DLAdapter(e);
 		}
 	},
-	
-	DIV
+
+	DD
 	{
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new DIVAdapter(e);
+			return new DDAdapter(e);
 		}
 	},
 	
-	HR
+	DT
 	{
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new HRAdapter(e);
-		}
-	},
-	
-	OL
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new OLAdapter(e);
+			return new DTAdapter(e);
 		}
 	},
 	
@@ -103,42 +136,6 @@ public enum XmlElementFactoryEnum
 		}
 	},
 	
-	UL
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new ULAdapter(e);
-		}
-	},
-	
-	DD
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new DDAdapter(e);
-		}
-	},
-	
-	DT
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new DTAdapter(e);
-		}
-	},
-	
-	LI
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new LIAdapter(e);
-		}
-	},
-	
 	TD
 	{
 		@Override
@@ -157,6 +154,9 @@ public enum XmlElementFactoryEnum
 		}
 	},
 	*/
+
+	// =========================================================================
+	
 	ABBR
 	{
 		@Override
@@ -165,13 +165,13 @@ public enum XmlElementFactoryEnum
 			return new XmlElementAbbrAdapter(e);
 		}
 	},
-	/*
+	
 	BIG
 	{
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new BIGAdapter(e);
+			return new XmlElementBigAdapter(e);
 		}
 	},
 	
@@ -180,7 +180,16 @@ public enum XmlElementFactoryEnum
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new BAdapter(e);
+			return new XmlElementBoldAdapter(e);
+		}
+	},
+	
+	BR
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementBrAdapter(e);
 		}
 	},
 	
@@ -189,7 +198,7 @@ public enum XmlElementFactoryEnum
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new CITEAdapter(e);
+			return new XmlElementCiteAdapter(e);
 		}
 	},
 	
@@ -198,16 +207,7 @@ public enum XmlElementFactoryEnum
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new CODEAdapter(e);
-		}
-	},
-	
-	DEL
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new DELAdapter(e);
+			return new XmlElementCodeAdapter(e);
 		}
 	},
 	
@@ -216,7 +216,7 @@ public enum XmlElementFactoryEnum
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new DFNAdapter(e);
+			return new XmlElementDfnAdapter(e);
 		}
 	},
 	
@@ -225,7 +225,129 @@ public enum XmlElementFactoryEnum
 		@Override
 		public DomNode create(XmlElement e)
 		{
-			return new EMAdapter(e);
+			return new XmlElementEmAdapter(e);
+		}
+	},
+	
+	I
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementItalicsAdapter(e);
+		}
+	},
+	
+	KBD
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementKbdAdapter(e);
+		}
+	},
+	
+	SAMP
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementSampAdapter(e);
+		}
+	},
+	
+	SMALL
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementSmallAdapter(e);
+		}
+	},
+	
+	SPAN
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementSpanAdapter(e);
+		}
+	},
+	
+	STRONG
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementStrongAdapter(e);
+		}
+	},
+	
+	SUB
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementSubAdapter(e);
+		}
+	},
+	
+	SUP
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementSupAdapter(e);
+		}
+	},
+	
+	TT
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementTeletypeAdapter(e);
+		}
+	},
+	
+	VAR
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementVarAdapter(e);
+		}
+	},
+	
+	// =========================================================================
+	
+	DEL
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementDelAdapter(e);
+		}
+	},
+	
+	INS
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new XmlElementInsAdapter(e);
+		}
+	},
+	
+	// =========================================================================
+	
+	/*
+	CENTER
+	{
+		@Override
+		public DomNode create(XmlElement e)
+		{
+			return new CENTERAdapter(e);
 		}
 	},
 	
@@ -238,66 +360,12 @@ public enum XmlElementFactoryEnum
 		}
 	},
 	
-	I
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new IAdapter(e);
-		}
-	},
-	
-	KBD
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new KBDAdapter(e);
-		}
-	},
-	
-	BR
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new BRAdapter(e);
-		}
-	},
-	
 	S
 	{
 		@Override
 		public DomNode create(XmlElement e)
 		{
 			return new SAdapter(e);
-		}
-	},
-	
-	SAMP
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new SAMPAdapter(e);
-		}
-	},
-	
-	SMALL
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new SMALLAdapter(e);
-		}
-	},
-	
-	SPAN
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new SPANAdapter(e);
 		}
 	},
 	
@@ -310,52 +378,7 @@ public enum XmlElementFactoryEnum
 		}
 	},
 	
-	STRONG
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new STRONGAdapter(e);
-		}
-	},
-	
-	SUB
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new SUBAdapter(e);
-		}
-	},
-	
-	SUP
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new SUPAdapter(e);
-		}
-	},
-	
-	TT
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new TTAdapter(e);
-		}
-	},
-	
 	U
-	{
-		@Override
-		public DomNode create(XmlElement e)
-		{
-			return new UAdapter(e);
-		}
-	},
-	
-	VAR
 	{
 		@Override
 		public DomNode create(XmlElement e)

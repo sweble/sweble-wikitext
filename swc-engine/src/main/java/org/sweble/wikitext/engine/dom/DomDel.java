@@ -16,8 +16,34 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+import java.util.Date;
+
+/**
+ * Denotes text or a block that has been removed.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "del".
+ */
 public interface DomDel
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomBlockElement,
+            DomUniversalAttributes
 {
+	/**
+	 * Get the url of a document that specifies the reasons for the change.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "cite".
+	 * 
+	 * @return The url.
+	 */
+	public String getCite();
+	
+	/**
+	 * Get the timestamp when the text or block was deleted.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "cite".
+	 * 
+	 * @return The date and time of the deletion.
+	 */
+	public Date getDatetime();
 }

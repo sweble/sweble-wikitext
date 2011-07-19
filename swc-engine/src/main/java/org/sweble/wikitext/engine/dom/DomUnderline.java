@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes text that should be rendered as underlined text.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "u".
+ */
 public interface DomUnderline
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

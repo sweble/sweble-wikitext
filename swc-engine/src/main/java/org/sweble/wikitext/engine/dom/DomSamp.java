@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a text as example.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "samp".
+ */
 public interface DomSamp
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

@@ -16,8 +16,37 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * A section in Wikitext.
+ * 
+ * A section consists of a heading and the body containing the actual content of
+ * the section.
+ */
 public interface DomSection
         extends
             DomBlockElement
 {
+	/**
+	 * Get the level of the section. Ranges from 1 (most important) to 6 (least
+	 * important).
+	 * 
+	 * @return The level of the section.
+	 */
+	public int getLevel();
+	
+	/**
+	 * Set the level of the section. Ranges from 1 (most important) to 6 (least
+	 * important). A section with level <code>x</code> cannot be contained in a
+	 * section with level <code>y</code> or any of its children if
+	 * <code>x <= y</code>.
+	 * 
+	 * @param level
+	 *            The new level of the section.
+	 * @return The old level of the section.
+	 * @throws IllegalArgumentException
+	 *             Thrown if this section is contained in a section with level
+	 *             <code>y</code> or any of its children and
+	 *             <code>level <= y</code>
+	 */
+	public int setLevel(int level) throws IllegalArgumentException;
 }

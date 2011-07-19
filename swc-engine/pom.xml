@@ -207,9 +207,15 @@
           </execution>
         </executions>
         <configuration>
+          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/xml/catalog.xml</catalog>
           <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/xml</schemaDirectory>
+          <includeSchemas>
+            <includeSchema>xwml-1.0.xsd</includeSchema>
+          </includeSchemas>
           <generatePackage>org.sweble.wikitext.engine.xml</generatePackage>
           <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+          <!-- <extension>true</extension> -->
+          <strict>false</strict>
         </configuration>
       </plugin>
 

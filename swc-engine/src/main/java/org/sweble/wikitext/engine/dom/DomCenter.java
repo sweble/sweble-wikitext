@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a block that will be centered.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "center".
+ */
 public interface DomCenter
         extends
-            DomBlockElement
+            DomBlockElement,
+            DomUniversalAttributes
 {
 }

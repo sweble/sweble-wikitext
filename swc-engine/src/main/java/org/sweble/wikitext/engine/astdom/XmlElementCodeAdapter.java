@@ -14,10 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.dom;
+package org.sweble.wikitext.engine.astdom;
 
-public interface DomVariable
+import org.sweble.wikitext.engine.dom.DomCode;
+import org.sweble.wikitext.lazy.parser.XmlElement;
+
+public class XmlElementCodeAdapter
         extends
-            DomInlineElement
+            XmlElementAdapter
+        implements
+        	DomCode
 {
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	public XmlElementCodeAdapter(XmlElement element)
+	{
+		super(element);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String getNodeName()
+	{
+		return "code";
+	}
 }

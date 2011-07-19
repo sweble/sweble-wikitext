@@ -33,7 +33,7 @@ import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinterInterface;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.test.ParserTestCommon;
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
@@ -68,7 +68,7 @@ public class FullTest
 		common.gatherParseAndPrintTest(
 		        "basic/wikitext/",
 		        "basic/ast/",
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
 	
@@ -78,7 +78,7 @@ public class FullTest
 		common.gatherParseAndPrintTest(
 		        "basic/wikitext/",
 		        "basic/wikitext/",
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new RtWikitextAstPrinter());
 	}
 	
@@ -90,7 +90,7 @@ public class FullTest
 		common.gatherParseAndPrintTest(
 		        "basic/wikitext/",
 		        "basic/wikitextprinter/",
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new WikitextAstPrinter());
 	}
 	
@@ -102,7 +102,7 @@ public class FullTest
 		common.gatherParseAndPrintTest(
 		        "regression/wikitext/",
 		        "regression/ast/",
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
 	
@@ -114,7 +114,7 @@ public class FullTest
 		common.gatherParseAndPrintTest(
 		        "complex/wikitext/",
 		        "complex/ast/",
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
 	
@@ -126,7 +126,7 @@ public class FullTest
 		common.gatherParseAndPrintTest(
 		        "scopes/wikitext/",
 		        "scopes/ast/",
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
 	

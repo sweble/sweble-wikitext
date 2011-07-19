@@ -23,7 +23,7 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class XmlElementAdapter
         extends
-            DomBackbone
+            DomFullElement
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -35,7 +35,7 @@ public abstract class XmlElementAdapter
 	}
 	
 	@Override
-	public DomNodeType getNodeType()
+	public final DomNodeType getNodeType()
 	{
 		return DomNodeType.ELEMENT;
 	}
@@ -43,19 +43,19 @@ public abstract class XmlElementAdapter
 	// =========================================================================
 	
 	@Override
-	protected XmlElement getAstNode()
+	protected final XmlElement getAstNode()
 	{
 		return (XmlElement) super.getAstNode();
 	}
 	
 	@Override
-	protected NodeList getAttributeContainer()
+	protected final NodeList getAttributeContainer()
 	{
 		return getAstNode().getXmlAttributes();
 	}
 	
 	@Override
-	protected NodeList getChildContainer()
+	protected final NodeList getChildContainer()
 	{
 		return getAstNode().getBody();
 	}

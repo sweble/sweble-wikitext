@@ -16,6 +16,9 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * A DOM element that behaves like a XHTML 1.0 Transitional inline element.
+ */
 public interface DomInlineElement
         extends
             DomNode

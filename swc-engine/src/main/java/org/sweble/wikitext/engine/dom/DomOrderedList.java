@@ -16,8 +16,15 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes an ordered list.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "ol".
+ */
 public interface DomOrderedList
         extends
-            DomBlockElement
+            DomBlockElement,
+            DomList,
+            DomListAttributes
 {
 }

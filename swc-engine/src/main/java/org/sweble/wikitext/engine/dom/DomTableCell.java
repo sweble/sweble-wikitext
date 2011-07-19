@@ -16,8 +16,13 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a table cell.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "td".
+ */
 public interface DomTableCell
         extends
-            DomNode
+            DomTableCellBase
 {
 }

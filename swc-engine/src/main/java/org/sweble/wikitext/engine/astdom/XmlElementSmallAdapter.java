@@ -14,10 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.dom;
+package org.sweble.wikitext.engine.astdom;
 
-public interface DomLineBreak
+import org.sweble.wikitext.engine.dom.DomSmall;
+import org.sweble.wikitext.lazy.parser.XmlElement;
+
+public class XmlElementSmallAdapter
         extends
-            DomInlineElement
+            XmlElementAdapter
+        implements
+            DomSmall
 {
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	public XmlElementSmallAdapter(XmlElement element)
+	{
+		super(element);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String getNodeName()
+	{
+		return "small";
+	}
 }

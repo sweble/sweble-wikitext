@@ -41,7 +41,7 @@ import org.sweble.wikitext.lazy.utils.NodeStats;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodeInputStream;
 import de.fau.cs.osr.ptk.common.ast.AstNodeOutputStream;
@@ -236,7 +236,7 @@ public class SerializationTest
 		if (STRIP_ATTRIBUTES)
 		{
 			parser.addVisitors(Arrays.asList(
-			        new Visitor[] { new StripAstVisitor() }));
+			        new AstVisitor[] { new StripAstVisitor() }));
 		}
 		
 		AstNode original = parser.parseArticle(content, title);
@@ -489,7 +489,7 @@ public class SerializationTest
 	
 	public static final class StripAstVisitor
 	        extends
-	            Visitor
+	            AstVisitor
 	{
 		public void visit(AstNode n)
 		{

@@ -139,18 +139,6 @@ public class XmlAttributeAdapter
 		return (XmlAttribute) super.getAstNode();
 	}
 	
-	@Override
-	protected NodeList getAttributeContainer()
-	{
-		return null;
-	}
-	
-	@Override
-	protected NodeList getChildContainer()
-	{
-		return null;
-	}
-	
 	private static boolean checkName(String name)
 	{
 		return XmlGrammar.xmlName().matcher(name).matches();

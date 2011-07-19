@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a definition term.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "dfn".
+ */
 public interface DomDfn
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

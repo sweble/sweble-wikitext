@@ -25,14 +25,14 @@ import org.sweble.wikitext.lazy.parser.NamedXmlElement;
 import org.sweble.wikitext.lazy.parser.XmlElementOpen;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.StringUtils;
 
 public final class ElementScopeStack
         extends
-            Visitor
+            AstVisitor
 {
 	Scope top = null;
 	

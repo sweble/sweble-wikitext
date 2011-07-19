@@ -16,8 +16,33 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a general block.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "div".
+ */
 public interface DomDiv
         extends
-            DomBlockElement
+            DomBlockElement,
+            DomUniversalAttributes
 {
+	/**
+	 * Get the alignment of the content inside the tag.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "align".
+	 * 
+	 * @return The alignment.
+	 */
+	public DomAlign getAlign();
+	
+	/**
+	 * Set the alignment of the content inside the tag.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "align".
+	 * 
+	 * @param align
+	 *            The new alignment.
+	 * @return The old alignment.
+	 */
+	public DomAlign setAlign(DomAlign align);
 }

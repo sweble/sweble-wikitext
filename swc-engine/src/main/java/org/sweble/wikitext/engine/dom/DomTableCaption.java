@@ -16,8 +16,29 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a table caption.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "caption".
+ */
 public interface DomTableCaption
         extends
-            DomTableCell
+            DomNode,
+            DomUniversalAttributes
 {
+	/**
+	 * Get the alignment of the caption.
+	 * 
+	 * @return The alignment of the caption.
+	 */
+	public DomCaptionAlign getAlign();
+	
+	/**
+	 * Set the alignment of the caption.
+	 * 
+	 * @param align
+	 *            The new alignment of the caption.
+	 * @return The old alignment of the caption.
+	 */
+	public DomCaptionAlign setAlign(DomCaptionAlign align);
 }

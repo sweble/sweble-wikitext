@@ -35,7 +35,7 @@ import org.sweble.wikitext.lazy.postprocessor.AstCompressor;
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinterInterface;
 import de.fau.cs.osr.ptk.common.ParserInterface;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class MediaWikiTest
@@ -56,7 +56,7 @@ public class MediaWikiTest
 	public void testWhiteboxAst() throws IOException, ParseException
 	{
 		parseAndPrintTest(
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new FullTest.AstPrinter(),
 		        false);
 	}
@@ -66,14 +66,14 @@ public class MediaWikiTest
 	public void testWhiteboxRtWikitextPrinter() throws IOException, ParseException
 	{
 		parseAndPrintTest(
-		        new Visitor[] { new AstCompressor() },
+		        new AstVisitor[] { new AstCompressor() },
 		        new FullTest.RtWikitextAstPrinter(),
 		        true);
 	}
 	
 	// =========================================================================
 	
-	public void parseAndPrintTest(Visitor[] visitors, AstPrinterInterface printer, boolean cmpInput) throws IOException, ParseException
+	public void parseAndPrintTest(AstVisitor[] visitors, AstPrinterInterface printer, boolean cmpInput) throws IOException, ParseException
 	{
 		System.out.println();
 		System.out.println("Parser & Print test:");

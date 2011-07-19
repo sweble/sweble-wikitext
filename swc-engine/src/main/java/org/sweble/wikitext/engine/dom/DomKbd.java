@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a key on the keyboard.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "kbd".
+ */
 public interface DomKbd
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

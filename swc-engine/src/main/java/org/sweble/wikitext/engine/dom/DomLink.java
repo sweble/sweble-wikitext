@@ -16,8 +16,26 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Elements of Wikitext that also link to different pages/urls inherit from this
+ * interface.
+ */
 public interface DomLink
         extends
             DomInlineElement
 {
+	/**
+	 * Returns the title of this link.
+	 * 
+	 * @return The title node or an empty title if the actual link type doesn't
+	 *         provide a title.
+	 */
+	public DomTitle getTitle();
+	
+	/**
+	 * Retrieve the target of this link.
+	 * 
+	 * @return The target of this link.
+	 */
+	public Object getTarget();
 }

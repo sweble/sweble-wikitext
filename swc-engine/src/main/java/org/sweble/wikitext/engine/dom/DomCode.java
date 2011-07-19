@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes text as being source code.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "code".
+ */
 public interface DomCode
         extends
-            DomInlineElement
+            DomInlineElement,
+            DomUniversalAttributes
 {
 }

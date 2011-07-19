@@ -16,8 +16,35 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a block of preformatted text.
+ * 
+ * The text is obtained through the getValue() method.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "pre".
+ */
 public interface DomPre
         extends
-            DomBlockElement
+            DomBlockElement,
+            DomUniversalAttributes
 {
+	/**
+	 * Get the number of characters per line.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "width".
+	 * 
+	 * @return The number of characters per line.
+	 */
+	public int getWidth();
+	
+	/**
+	 * Set the number of characters per line.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "width".
+	 * 
+	 * @param width
+	 *            The new number of characters per line.
+	 * @return The old number of characters per line.
+	 */
+	public int setWidth(int width);
 }

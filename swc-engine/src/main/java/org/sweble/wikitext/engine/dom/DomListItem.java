@@ -16,8 +16,31 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a list item.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "li".
+ */
 public interface DomListItem
         extends
-            DomNode
+            DomNode,
+            DomUniversalAttributes
 {
+	/**
+	 * Get the type of bullet point the list item uses.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "type".
+	 * 
+	 * @return The type of bullet point.
+	 */
+	public String getItemType();
+	
+	/**
+	 * Get the number of the list item.
+	 * 
+	 * Corresponds to the XHTML 1.0 Transitional attribute "value".
+	 * 
+	 * @return The number of the list item.
+	 */
+	public int getItemValue();
 }

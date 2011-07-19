@@ -16,18 +16,36 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * An attribute node.
+ * 
+ * Objects of this class represent attributes that can be attached to other DOM
+ * nodes that support attributes. An attribute node can only have other
+ * attribute nodes as siblings. An attribute node cannot have children or
+ * attributes of its own.
+ * 
+ * The value of the attribute can be retrieved and altered with the getValue()
+ * and setValue() methods of DomNode.
+ */
 public interface DomAttribute
         extends
             DomNode
 {
 	/**
-	 * Attribute names are case-insensitive.
+	 * Retrieve the name of the attribute. Attribute names are case-insensitive.
+	 * 
+	 * @return The name of the attribute.
 	 */
 	public String getName();
 	
-	@Override
-	public DomNode getNextSibling();
-	
-	@Override
-	public DomNode getPrevSibling();
+	/**
+	 * Set the name of the attribute. Attribute names are case-insensitive.
+	 * 
+	 * @param name
+	 *            The new name of the attribute.
+	 * @return The old name of the attribute.
+	 * @throws IllegalArgumentException
+	 *             If an attribute with the given name already exists.
+	 */
+	public String setName(String name) throws IllegalArgumentException;
 }

@@ -16,9 +16,42 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * An argument to a Wikitext transclusion statement.
+ */
 public interface DomTemplateArgument
         extends
             DomNode
 {
+	/**
+	 * Get the name of the argument.
+	 * 
+	 * @return The name of the argument.
+	 */
+	public DomName getName();
 	
+	/**
+	 * Set the name of the argument.
+	 * 
+	 * @param name
+	 *            The new name of the argument.
+	 * @return The old name of the argument.
+	 */
+	public DomName setName(DomName name);
+	
+	/**
+	 * Get the value of the argument.
+	 * 
+	 * @return The name of the value.
+	 */
+	public DomValue getArgValue();
+	
+	/**
+	 * Set the value of the argument.
+	 * 
+	 * @param value
+	 *            The new value of the argument.
+	 * @return The old value of the argument.
+	 */
+	public DomValue setArgValue(DomValue value);
 }

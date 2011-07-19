@@ -14,32 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.dom;
+package org.sweble.wikitext.engine.astdom;
 
-/**
- * The root of every article.
- */
-public interface DomDocument
+import org.sweble.wikitext.engine.dom.DomUnorderedList;
+import org.sweble.wikitext.lazy.parser.Itemization;
+
+public class ItemizationAdapter
         extends
-            DomNode
+            ListAdapter<ItemizationItemAdapter>
+        implements
+            DomUnorderedList
 {
-	/**
-	 * Returns the full name of an article including namespace and path.
-	 */
-	public String getName();
+	private static final long serialVersionUID = 1L;
 	
-	/**
-	 * Returns the name of the article without namespace and without path.
-	 */
-	public String getTitle();
+	// =========================================================================
 	
-	/**
-	 * Returns the canonical namespace name.
-	 */
-	public String getNamespace();
+	public ItemizationAdapter(Itemization astNode)
+	{
+		super(ItemizationItemAdapter.class, astNode);
+	}
 	
-	/**
-	 * Returns the path of subpages that contain the article.
-	 */
-	public String getPath();
+	// =========================================================================
+	
+	@Override
+	public String getNodeName()
+	{
+		return "ul";
+	}
 }

@@ -16,23 +16,23 @@
  */
 package org.sweble.wikitext.engine.astdom;
 
+import org.sweble.wikitext.engine.dom.DomBold;
 import org.sweble.wikitext.engine.dom.DomNodeType;
-import org.sweble.wikitext.engine.dom.DomText;
+import org.sweble.wikitext.lazy.parser.Italics;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
-public class TextAdaptor
+public class ItalicsAdapter
         extends
-            DomBackbone
+            DomFullElement
         implements
-            DomText
+            DomBold
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public TextAdaptor(Text astNode)
+	public ItalicsAdapter(Italics astNode)
 	{
 		super(astNode);
 	}
@@ -40,15 +40,21 @@ public class TextAdaptor
 	// =========================================================================
 	
 	@Override
+	protected Italics getAstNode()
+	{
+		return (Italics) super.getAstNode();
+	}
+	
+	@Override
 	public String getNodeName()
 	{
-		return null;
+		return "i";
 	}
 	
 	@Override
 	public DomNodeType getNodeType()
 	{
-		return DomNodeType.TEXT;
+		return DomNodeType.ELEMENT;
 	}
 	
 	@Override
@@ -60,6 +66,6 @@ public class TextAdaptor
 	@Override
 	protected NodeList getChildContainer()
 	{
-		return null;
+		return getAstNode().getContent();
 	}
 }

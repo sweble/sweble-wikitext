@@ -16,8 +16,14 @@
  */
 package org.sweble.wikitext.engine.dom;
 
+/**
+ * Denotes a definition list definition.
+ * 
+ * Corresponds to the XHTML 1.0 Transitional element "dd".
+ */
 public interface DomDefinitionListDef
         extends
-            DomNode
+            DomNode,
+            DomUniversalAttributes
 {
 }
