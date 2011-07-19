@@ -121,7 +121,7 @@
           </headerDefinitions>
           <header>../etc/license-header.txt</header>
           <excludes>
-            <exclude>src/main/autogen/org/sweble/wikitext/engine/xml/catalog/xml.xsd</exclude>
+            <exclude>src/main/autogen/org/sweble/wikitext/engine/wom/catalog/xml.xsd</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
             <exclude>**/.gitignore</exclude>
@@ -150,52 +150,6 @@
           </execution>
         </executions>
       </plugin>
- 
-      <!-- 
-      <plugin>
-        <groupId>com.sun.tools.jxc.maven2</groupId>
-        <artifactId>maven-jaxb-schemagen-plugin</artifactId>
-        <version>1.2</version>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <project>
-            ${project}
-          </project>
-          <destdir>${project.build.directory}/schemas</destdir>
-          <srcdir>${project.build.sourceDirectory}/org/sweble/wikitext/engine/astdom</srcdir>
-          <verbose>true</verbose>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.2</version>
-          </dependency>
-          <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-xjc</artifactId>
-            <version>2.2</version>
-          </dependency>
-          <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>2.2</version>
-          </dependency>
-          <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-xjc</artifactId>
-            <version>2.2</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-       -->
 
       <!-- Compile schema files -->
       <plugin>
@@ -209,8 +163,8 @@
           </execution>
         </executions>
         <configuration>
-          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/xml/catalog.xml</catalog>
-          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/xml</schemaDirectory>
+          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
+          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom</schemaDirectory>
           <includeSchemas>
             <includeSchema>xwml-1.0.xsd</includeSchema>
           </includeSchemas>
