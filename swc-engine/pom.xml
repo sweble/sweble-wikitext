@@ -153,24 +153,18 @@
 
       <!-- Compile schema files -->
       <plugin>
-        <groupId>com.sun.tools.xjc.maven2</groupId>
-        <artifactId>maven-jaxb-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
         <configuration>
-          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
-          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom</schemaDirectory>
-          <includeSchemas>
-            <includeSchema>xwml-1.0.xsd</includeSchema>
-          </includeSchemas>
+          <fileset>
+            <directory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom</directory>
+            <includes>
+              <include>xwml-1.0.xsd</include>
+            </includes>
+          </fileset>
           <generatePackage>org.sweble.wikitext.engine.xml</generatePackage>
           <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
-          <!-- <extension>true</extension> -->
+          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
           <strict>false</strict>
         </configuration>
       </plugin>

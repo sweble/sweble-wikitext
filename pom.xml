@@ -30,7 +30,9 @@
   <modules>
     <module>swc-parser-lazy</module>
     <module>swc-engine</module>
+    <!--
     <module>swc-example</module>
+    -->
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->
@@ -42,6 +44,7 @@
     <version.dep.log4j>1.2.14</version.dep.log4j>
 
     <!-- Plugin dependency versions -->
+    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
     <version.plugin.rats>1.3.0</version.plugin.rats>
     <version.plugin.parser-toolkit>1.0.0</version.plugin.parser-toolkit>
@@ -101,6 +104,9 @@
           <failIfMissing>true</failIfMissing>
           <skip>false</skip>
           <excludes>
+            <exclude>swc-engine/**</exclude>
+            <exclude>swc-example/**</exclude>
+            <exclude>swc-lazy-parser/**</exclude>
             <exclude>etc/license-header-apt-style.xml</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
@@ -117,6 +123,20 @@
 
     <pluginManagement>
       <plugins>
+
+        <!-- Maven JAXB Plugin -->
+        <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb2-plugin</artifactId>
+          <version>${version.plugin.jaxb}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
 
         <!-- Maven JFlex Plugin -->
         <plugin>
