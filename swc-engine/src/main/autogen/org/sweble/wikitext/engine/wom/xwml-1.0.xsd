@@ -742,6 +742,17 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="category">
+    <xs:annotation>
+      <xs:documentation>
+        Puts this page into the mentioned category.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="category" use="required" type="PageTitle" />
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="comment">
     <xs:annotation>
       <xs:documentation>
@@ -928,7 +939,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="redirect" minOccurs="0" />
-        <xs:element ref="body" minOccurs="0"/>
+        <xs:element ref="category" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="body" />
       </xs:sequence>
       <xs:attribute name="version" use="required" type="Version" />
       <xs:attribute name="namespace" type="Namespace" />
