@@ -25,9 +25,9 @@ import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.utils.StringUtils;
 
-public class DomPrinter
+public class WomPrinter
         extends
-            DomVisitor
+            WomVisitor
 {
 	protected PrintWriter out;
 	
@@ -35,7 +35,7 @@ public class DomPrinter
 	
 	// =========================================================================
 	
-	public DomPrinter(Writer writer)
+	public WomPrinter(Writer writer)
 	{
 		this.out = new PrintWriter(writer);
 	}
@@ -52,13 +52,13 @@ public class DomPrinter
 	public static String print(WomNode node)
 	{
 		StringWriter writer = new StringWriter();
-		new DomPrinter(writer).go(node);
+		new WomPrinter(writer).go(node);
 		return writer.toString();
 	}
 	
 	public static Writer print(Writer writer, WomNode node)
 	{
-		new DomPrinter(writer).go(node);
+		new WomPrinter(writer).go(node);
 		return writer;
 	}
 	

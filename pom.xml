@@ -30,9 +30,7 @@
   <modules>
     <module>swc-parser-lazy</module>
     <module>swc-engine</module>
-    <!--
     <module>swc-example</module>
-    -->
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->

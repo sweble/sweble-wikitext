@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.ptk.common.VisitorBase;
 
-public class DomVisitor
+public class WomVisitor
         extends
             VisitorBase<WomNode>
 {
