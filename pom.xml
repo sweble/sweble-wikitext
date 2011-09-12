@@ -21,7 +21,7 @@
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2009</inceptionYear>
   <description>
-    The Sweble Wikitext Components module provides a parser for MediaWiki's 
+    The Sweble Wikitext Components module provides a parser for MediaWiki's
     Wikitext and an Engine trying emulating the behavior of a MediaWiki.
   </description>
 
@@ -40,6 +40,7 @@
     <!-- Dependency versions -->
     <version.dep.rats-runtime>1.15.0</version.dep.rats-runtime>
     <version.dep.log4j>1.2.14</version.dep.log4j>
+    <version.dep.lombok>0.10.0</version.dep.lombok>
 
     <!-- Plugin dependency versions -->
     <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
@@ -54,10 +55,19 @@
   <dependencyManagement>
     <dependencies>
 
+      <!-- Log4j -->
       <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>${version.dep.log4j}</version>
+      </dependency>
+
+      <!-- Project Lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${version.dep.lombok}</version>
+        <scope>provided</scope>
       </dependency>
 
       <!-- Parser Toolkit - Common -->

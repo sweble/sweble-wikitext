@@ -21,6 +21,7 @@ package org.sweble.wikitext.engine.wom;
  */
 public interface WomDefinitionListItem
         extends
-        	WomNode
+            WomNode,
+            WomUniversalAttributes
 {
 }

@@ -21,7 +21,7 @@
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2010</inceptionYear>
   <description>
-    A minimal engine using the Sweble Lazy Wikitext Parser to 
+    A minimal engine using the Sweble Lazy Wikitext Parser to
     process articles in the context of a MediaWiki-like configuration.
   </description>
 
@@ -33,6 +33,13 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
+    </dependency>
+
+    <!-- Project Lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->

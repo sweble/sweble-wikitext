@@ -50,8 +50,7 @@ import java.util.Collection;
  */
 public interface WomDefinitionListTerm
         extends
-        	WomDefinitionListItem,
-            WomUniversalAttributes
+            WomDefinitionListItem
 {
 	/**
 	 * Get the number of definitions of this term.
