@@ -105,6 +105,7 @@
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
+            <exclude>swc-jar-example/bin/**</exclude>
             <exclude>swc-jar-example/test/*.html</exclude>
             <exclude>swc-jar-example/test/*.wikitext</exclude>
           </excludes>
