@@ -47,7 +47,7 @@ public class LazyParserContext
 		LazyParserContext p = (LazyParserContext) parent;
 		this.stickingScopes = p.stickingScopes;
 		this.scope = p.scope;
-		this.linkBuilder = null;
+		this.linkBuilder = p.linkBuilder; //null;
 	}
 	
 	// =========================================================================
