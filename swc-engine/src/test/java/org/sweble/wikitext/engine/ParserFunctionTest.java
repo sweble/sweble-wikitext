@@ -118,7 +118,7 @@ public class ParserFunctionTest
 	public void TEMPREG_Iferror() throws CompilerException, LinkTargetException, IOException
 	{
 		// FIXME: Fix iferror and then fix this test case
-		String expected = "correct\ncorrect\n{{#expr: 1 + 2 }}\n{{#expr: 1 + X }}\n{{#expr: 1 + 2 }}\n{{#expr: 1 + X }}‌\nerror";
+		String expected = "correct\ncorrect\n{{#expr: 1 + 2 }}\n{{#expr: 1 + X }}\n{{#expr: 1 + 2 }}\n{{#expr: 1 + X }}\nerror";
 		String page = "pfn-iferror";
 		doTest(expected, page);
 	}

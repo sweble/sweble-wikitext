@@ -96,7 +96,7 @@
         <artifactId>maven-license-plugin</artifactId>
         <configuration>
           <header>etc/license-header.txt</header>
-          <encoding>UTF-8</encoding>
+          <!-- <encoding>UTF-8</encoding> -->
           <strictCheck>true</strictCheck>
           <failIfMissing>true</failIfMissing>
           <skip>false</skip>
