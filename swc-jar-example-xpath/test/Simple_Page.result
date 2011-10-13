@@ -1,0 +1,17 @@
+(//InternalLink)[1]:
+"""[[Somewhere|Item 1]]"""
+
+(//TableCell)[1]:
+""" | Cell 1.1 """
+
+(//TableCell)[2]:
+"""|| Cell 1.2 
+"""
+
+(//TableCell)[3]:
+""" | Cell 2.1 """
+
+(//TableCell)[4]:
+"""|| Cell 2.2
+"""
+
