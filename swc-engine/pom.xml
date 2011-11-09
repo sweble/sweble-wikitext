@@ -158,6 +158,12 @@
         </executions>
       </plugin>
 
+      <!-- Make Git information available as properties -->
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+      </plugin>
+
       <!-- Compile schema files -->
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>

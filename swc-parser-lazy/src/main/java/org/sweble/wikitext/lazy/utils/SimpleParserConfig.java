@@ -35,19 +35,19 @@ public class SimpleParserConfig
             ParserConfigInterface
 {
 	private final static HashSet<String> allowed;
-	
+
 	private final static HashSet<String> emptyOnly;
-	
+
 	private final static HashMap<String, ScopeType> elementTypes;
-	
+
 	private final boolean warningsEnabled;
-	
+
 	private final boolean gatherRtd;
-	
+
 	private final boolean autoCorrect;
-	
+
 	// =========================================================================
-	
+
 	static
 	{
 		allowed = new HashSet<String>();
@@ -58,45 +58,45 @@ public class SimpleParserConfig
 		        "i", "ins", "kbd", "li", "ol", "p", "pre", "s", "samp", 
 		        "small", "span", "strike", "strong", "sub", "sup", "table", 
 		        "td", "th", "tr", "tt", "u", "ul", "var"));
-		
+
 		emptyOnly = new HashSet<String>();
 		emptyOnly.addAll(Arrays.asList(
 		        "area", "base", "basefont", "br", "col", "frame", "hr",
 		        "img", "input", "isindex", "link", "meta", "param"));
-		
+
 		elementTypes = new HashMap<String, ScopeType>();
-		
+
 		elementTypes.put("p", ScopeType.XML_PARAGRAPH);
-		
+
 		for (String e : Arrays.asList("abbr", "b", "big", "br", "cite", "code",
 		        "em", "font", "i", "s", "samp", "small", "span", "strike", "strong",
 		        "sub", "sup", "tt", "u", "var"))
 			elementTypes.put(e, ScopeType.XML_INLINE);
-		
+
 		for (String e : Arrays.asList("blockquote", "center", "del", "dfn", "div",
 		        "h1", "h2", "h3", "h4", "h5", "h6", "hr", "ins", "kbd", "ol", "pre",
 		        "ul"))
 			elementTypes.put(e, ScopeType.XML_BLOCK);
-		
+
 		for (String e : Arrays.asList("dd", "dl", "dt", "li"))
 			elementTypes.put(e, ScopeType.XML_ITEM);
-		
+
 		for (String e : Arrays.asList("caption", "td", "tr", "th"))
 			elementTypes.put(e, ScopeType.XML_TABLE_ITEM);
-		
+
 		for (String e : Arrays.asList("table"))
 			elementTypes.put(e, ScopeType.XML_TABLE);
 	}
-	
+
 	// =========================================================================
-	
+
 	public SimpleParserConfig()
 	{
 		this.warningsEnabled = true;
 		this.gatherRtd = true;
 		this.autoCorrect = false;
 	}
-	
+
 	public SimpleParserConfig(
 	        boolean warningsEnabled,
 	        boolean gatherRtd,
@@ -106,39 +106,39 @@ public class SimpleParserConfig
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
 	}
-	
+
 	// =========================================================================
-	
+
 	@Override
 	public boolean isWarningsEnabled()
 	{
 		return warningsEnabled;
 	}
-	
+
 	@Override
 	public boolean isGatherRtData()
 	{
 		return gatherRtd;
 	}
-	
+
 	@Override
 	public boolean isAutoCorrect()
 	{
 		return autoCorrect;
 	}
-	
+
 	@Override
 	public boolean isWarningLevelEnabled(WarningSeverity severity)
 	{
 		return true;
 	}
-	
+
 	@Override
 	public boolean isValidXmlEntityRef(String name)
 	{
 		return true;
 	}
-	
+
 	@Override
 	public boolean isUrlProtocol(String proto)
 	{
@@ -146,26 +146,26 @@ public class SimpleParserConfig
 		        "https://".equalsIgnoreCase(proto) ||
 		        "mail:".equalsIgnoreCase(proto);
 	}
-	
+
 	@Override
 	public boolean isMagicWord(String word)
 	{
 		return "NOTOC".equalsIgnoreCase(word);
 	}
-	
+
 	@Override
 	public String getInternalLinkPrefixPattern()
 	{
 		// Doesn't make that much sense, but needed for testing ...
 		return "[äöüßa-z]+";
 	}
-	
+
 	@Override
 	public String getInternalLinkPostfixPattern()
 	{
 		return "[äöüßa-z]+";
 	}
-	
+
 	@Override
 	public TargetType classifyTarget(String target)
 	{
@@ -178,14 +178,14 @@ public class SimpleParserConfig
 		{
 			return TargetType.INVALID;
 		}
-		
+
 		String ns = ltp.getNamespace();
 		if ("file".equalsIgnoreCase(ns) || "image".equalsIgnoreCase(ns))
 			return TargetType.IMAGE;
-		
+
 		return TargetType.PAGE;
 	}
-	
+
 	@Override
 	public boolean isNamespace(String name)
 	{
@@ -196,19 +196,19 @@ public class SimpleParserConfig
 		        "media".equals(name) ||
 		        "category".equals(name);
 	}
-	
+
 	@Override
 	public boolean isInterwikiName(String name)
 	{
 		return "mediawiki".equalsIgnoreCase(name);
 	}
-	
+
 	@Override
 	public boolean isLocalInterwikiName(String name)
 	{
 		return false;
 	}
-	
+
 	@Override
 	public boolean isValidExtensionTagName(String name)
 	{
@@ -221,20 +221,20 @@ public class SimpleParserConfig
 		        "noinclude".equalsIgnoreCase(name) ||
 		        "onlyinclude".equalsIgnoreCase(name);
 	}
-	
+
 	@Override
 	public String resolveXmlEntity(String name)
 	{
 		// keep it simple ...
-		if ("amp".equalsIgnoreCase("amp"))
+		if ("amp".equalsIgnoreCase(name))
 		{
 			return "&";
 		}
-		else if ("lt".equalsIgnoreCase("lt"))
+		else if ("lt".equalsIgnoreCase(name))
 		{
 			return "<";
 		}
-		else if ("nbsp".equalsIgnoreCase("nbsp"))
+		else if ("nbsp".equalsIgnoreCase(name))
 		{
 			return "\u00A0";
 		}
@@ -243,19 +243,19 @@ public class SimpleParserConfig
 			return null;
 		}
 	}
-	
+
 	@Override
 	public boolean isXmlElementAllowed(String name)
 	{
 		return allowed.contains(name.toLowerCase());
 	}
-	
+
 	@Override
 	public boolean isXmlElementEmptyOnly(String name)
 	{
 		return emptyOnly.contains(name.toLowerCase());
 	}
-	
+
 	@Override
 	public ScopeType getXmlElementType(String name)
 	{

@@ -24,18 +24,18 @@ public class EntityReferences
 {
 	private static final Map<String, String> entities =
 	        new HashMap<String, String>();
-	
+
 	private static final Map<String, String> entityAliases =
 	        new HashMap<String, String>();
-	
+
 	// =========================================================================
-	
+
 	static
 	{
 		// From: http://www.w3.org/TR/html4/sgml/entities.html
-		
+
 		// 24 Character entity references in HTML 4
-		
+
 		// 24.2 Character entity references for ISO 8859-1 characters
 		add("nbsp", "\u0160");
 		add("iexcl", "\u0161");
@@ -133,7 +133,7 @@ public class EntityReferences
 		add("yacute", "\u0253");
 		add("thorn", "\u0254");
 		add("yuml", "\u0255");
-		
+
 		// 24.3 Character entity references for symbols, mathematical symbols, and Greek letters
 		add("fnof", "\u0402");
 		add("Alpha", "\u0913");
@@ -259,7 +259,7 @@ public class EntityReferences
 		add("clubs", "\u9827");
 		add("hearts", "\u9829");
 		add("diams", "\u9830");
-		
+
 		// 24.4 Character entity references for markup-significant and internationalization characters
 		add("quot", "\u0034");
 		add("amp", "\u0038");
@@ -294,45 +294,53 @@ public class EntityReferences
 		add("rsaquo", "\u8250");
 		add("euro", "\u8364");
 	}
-	
+
 	// =========================================================================
-	
+
 	public static void add(String entityName, String replacement)
 	{
 		entities.put(entityName, replacement);
 	}
-	
+
 	public static void addAlias(String alias, String entityName)
 	{
 		entityAliases.put(alias, entityName);
 	}
-	
+
 	public static boolean isDeclared(String entityName)
 	{
 		return entities.containsKey(entityName);
 	}
-	
+
 	public static boolean isAliasDeclared(String alias)
 	{
 		return entityAliases.containsKey(alias);
 	}
-	
+
 	public static Map<String, String> getEntities()
 	{
 		return entities;
 	}
-	
+
+	/**
+	 * @deprecated Use getEntityAliases() instead!
+	 */
 	public static Map<String, String> getEntityaliases()
+	{
+		return EntityReferences.getEntityAliases();
+	}
+
+	public static Map<String, String> getEntityAliases()
 	{
 		return entityAliases;
 	}
-	
+
 	public static String resolve(String entityName)
 	{
 		String tmp = entityAliases.get(entityName);
 		if (tmp != null)
 			entityName = tmp;
-		
+
 		return entities.get(entityName);
 	}
 }

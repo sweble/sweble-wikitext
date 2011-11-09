@@ -186,6 +186,13 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- Make Git information available as properties -->
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+      </plugin>
+
     </plugins>
   </build>
 
