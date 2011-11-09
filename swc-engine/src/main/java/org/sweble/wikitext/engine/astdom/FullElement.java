@@ -31,8 +31,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class FullElement
-        extends
-            AttributeSupportingElement
+		extends
+			AttributeSupportingElement
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -171,7 +171,8 @@ public abstract class FullElement
 	}
 	
 	@Override
-	public final void insertBefore(WomNode before, WomNode child) throws IllegalArgumentException
+	public final void insertBefore(WomNode before, WomNode child)
+		throws IllegalArgumentException
 	{
 		ChildManager children = getChildManagerForModificationOrFail();
 		children.insertBefore(before, child, this, getAstChildContainerOrAddSupport());
@@ -211,7 +212,10 @@ public abstract class FullElement
 		Toolbox.replaceAstNode(container, oldNode, newNode);
 	}
 	
-	protected void addAttributes(WomNodeFactory womNodeFactory, NodeList xmlAttributes, AttributeManager attribManager)
+	protected void addAttributes(
+			WomNodeFactory womNodeFactory,
+			NodeList xmlAttributes,
+			AttributeManager attribManager)
 	{
 		Iterator<AstNode> i = xmlAttributes.iterator();
 		while (i.hasNext())
@@ -221,14 +225,17 @@ public abstract class FullElement
 				continue;
 			
 			NativeOrXmlAttributeAdapter attr =
-			        new NativeOrXmlAttributeAdapter(womNodeFactory, (XmlAttribute) n);
+					new NativeOrXmlAttributeAdapter(womNodeFactory, (XmlAttribute) n);
 			
 			// FIXME: This would fail if an AST contains the same attribute name multiple times.
 			setAttributeNode(attr);
 		}
 	}
 	
-	protected void addContent(WomNodeFactory womNodeFactory, NodeList container, ChildManager childManager)
+	protected void addContent(
+			WomNodeFactory womNodeFactory,
+			NodeList container,
+			ChildManager childManager)
 	{
 		Iterator<AstNode> i = container.iterator();
 		while (i.hasNext())
@@ -236,13 +243,16 @@ public abstract class FullElement
 			AstNode n = i.next();
 			
 			WomNode child = womNodeFactory.create(container, n);
-			if (child.getNodeType() == WomNodeType.TEXT)
+			if (child != null)
 			{
-				buildComplexText(womNodeFactory, container, childManager, i, (TextAdapter) child);
-			}
-			else if (child != null)
-			{
-				childManager.appendChild(child, this, null);
+				if (child.getNodeType() == WomNodeType.TEXT)
+				{
+					buildComplexText(womNodeFactory, container, childManager, i, (TextAdapter) child);
+				}
+				else
+				{
+					childManager.appendChild(child, this, null);
+				}
 			}
 			
 			/*
@@ -262,7 +272,12 @@ public abstract class FullElement
 		}
 	}
 	
-	private void buildComplexText(WomNodeFactory womNodeFactory, NodeList container, ChildManager childManager, Iterator<AstNode> i, TextAdapter firstText)
+	private void buildComplexText(
+			WomNodeFactory womNodeFactory,
+			NodeList container,
+			ChildManager childManager,
+			Iterator<AstNode> i,
+			TextAdapter firstText)
 	{
 		TextAdapter complexText = firstText;
 		WomNode notText = null;
