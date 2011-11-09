@@ -17,12 +17,11 @@
 
 package org.sweble.wikitext.lazy.utils;
 
-import org.sweble.wikitext.lazy.ParserConfigInterface;
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
-import de.fau.cs.osr.ptk.common.VisitingException;
 import de.fau.cs.osr.ptk.common.AstVisitor;
+import de.fau.cs.osr.ptk.common.VisitingException;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
@@ -48,7 +47,7 @@ public class StringConverter
 		return convert(astNode, null, DEFAULT_OPTIONS);
 	}
 	
-	public static String convert(AstNode astNode, ParserConfigInterface resolver, int options) throws StringConversionException
+	public static String convert(AstNode astNode, XmlEntityResolver resolver, int options) throws StringConversionException
 	{
 		ConverterVisitor converter =
 		        new ConverterVisitor(options, resolver);
@@ -74,13 +73,13 @@ public class StringConverter
 	{
 		private final StringBuilder result = new StringBuilder();
 		
-		private final ParserConfigInterface entityResolver;
+		private final XmlEntityResolver entityResolver;
 		
 		private final int options;
 		
 		// =====================================================================
 		
-		public ConverterVisitor(int options, ParserConfigInterface resolver)
+		public ConverterVisitor(int options, XmlEntityResolver resolver)
 		{
 			this.entityResolver = resolver;
 			this.options = options;

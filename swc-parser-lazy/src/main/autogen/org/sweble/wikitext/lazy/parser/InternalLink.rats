@@ -24,7 +24,7 @@
  *     - '[[' PageTitle LinkOption* LinkTitle ']]' LinkPostfix
  *
  *   - PageTitle can contain spaces but no newlines.
- *     - If a newline occurs before the closing brackets or the first pipe 
+ *     - If a newline occurs before the closing brackets or the first pipe
  *       character, the internal link is not recognized as such!
  *
  * Internal Link

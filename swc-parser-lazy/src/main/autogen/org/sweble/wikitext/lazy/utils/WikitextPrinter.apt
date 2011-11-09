@@ -36,7 +36,7 @@ import org.sweble.wikitext.lazy.preprocessor.*;
 	{
 		return TextUtils.trim(l);
 	}
-	
+
 	/*
 	private void iterate(List<? extends AstNode> list)
 	{
@@ -48,7 +48,7 @@ import org.sweble.wikitext.lazy.preprocessor.*;
 	private static String imageLinkOptions(ImageLink n)
 	{
 		StringBuilder s = new StringBuilder();
-		
+
 		if (n.getWidth() >= 0 || n.getHeight() >= 0)
 		{
 			s.append('|');
@@ -59,37 +59,37 @@ import org.sweble.wikitext.lazy.preprocessor.*;
 				s.append(n.getHeight());
 			s.append("px");
 		}
-		
+
 		if (n.getUpright())
 			s.append("|upright");
-		
+
 		if (n.getHAlign() != ImageHorizAlign.NONE)
 		{
 			s.append('|');
 			s.append(n.getHAlign().asKeyword());
 		}
-		
+
 		if (n.getVAlign() != ImageVertAlign.MIDDLE)
 		{
 			s.append('|');
 			s.append(n.getVAlign().asKeyword());
 		}
-		
+
 		if (n.getFormat() != ImageViewFormat.UNRESTRAINED)
 		{
 			s.append('|');
 			s.append(n.getFormat().asKeyword());
 		}
-		
+
 		if (n.getBorder() != false)
 			s.append("|border");
-		
+
 		if (n.getLinkPage() != null)
 		{
 			s.append("|link=");
 			s.append(n.getLinkPage());
 		}
-		
+
 		if (n.getLinkUrl() != null)
 		{
 			s.append("|link=");
@@ -97,7 +97,7 @@ import org.sweble.wikitext.lazy.preprocessor.*;
 			s.append(':');
 			s.append(n.getLinkUrl().getPath());
 		}
-		
+
 		return s.toString();
 	}
 

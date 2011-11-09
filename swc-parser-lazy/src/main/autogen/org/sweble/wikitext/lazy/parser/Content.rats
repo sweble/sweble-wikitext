@@ -28,7 +28,7 @@
  *     - Special things always have their unique prefix.
  *     - If such a prefix is encountered in the text, the rule for the
  *       corresponding thing MUST match. Either because we really found
- *       something special, or because the rule just consumed the prefix as 
+ *       something special, or because the rule just consumed the prefix as
  *       plain text to let the parser continue with it's work.
  *
  *   Even closer look:
@@ -222,6 +222,25 @@ private inline AstNode ParagraphTextMore =
 /* PostParaWs = EOL ( S* EOL )*
  */
 
+private noinline transient NodeList PostParaWs =
+  lt:pEol tail:PostParaWsMore*
+  {
+    yyValue = new NodeList(
+        new Whitespace(new NodeList(new Text(lt)), true),
+        tail);
+  }
+;
+
+private inline NodeList PostParaWsMore =
+  !ParagraphStopper s:pExtSpaceStar lt:pEol
+  {
+    yyValue = new NodeList(
+        s,
+        new Whitespace(new NodeList(new Text(lt)), true));
+  }
+;
+
+/*
 private noinline transient Whitespace PostParaWs =
   lt:pEol tail:PostParaWsMore*
   {
@@ -237,6 +256,7 @@ private inline NodeList PostParaWsMore =
     yyValue = new NodeList(s, new Text(lt));
   }
 ;
+*/
 
 
 

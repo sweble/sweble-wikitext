@@ -32,17 +32,16 @@ import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
 import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 
 import xtc.parser.ParseException;
-import de.fau.cs.osr.ptk.common.AstPrinterInterface;
 import de.fau.cs.osr.ptk.common.AstVisitor;
+import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.test.ParserTestCommon;
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
 
 public class FullTest
 {
 	private static ParserTestResources resources;
 	
-	private static ParserTestCommon common;
+	private static AstTestCommon common;
 	
 	@BeforeClass
 	public static void setUp()
@@ -52,7 +51,7 @@ public class FullTest
 		
 		resources = new ParserTestResources(new File(url.getFile()));
 		
-		common = new ParserTestCommon(
+		common = new AstTestCommon(
 		        resources,
 		        FullParser.class,
 		        "(.*?)/target/test-classes/",
@@ -134,7 +133,7 @@ public class FullTest
 	
 	public static final class AstPrinter
 	        implements
-	            AstPrinterInterface
+	            GenericPrinterInterface
 	{
 		@Override
 		public String getPrintoutType()
@@ -143,19 +142,19 @@ public class FullTest
 		}
 		
 		@Override
-		public void print(AstNode ast, Writer out) throws IOException
+		public void print(Object ast, Writer out) throws IOException
 		{
 			org.sweble.wikitext.lazy.utils.AstPrinter printer =
 			        new org.sweble.wikitext.lazy.utils.AstPrinter(out);
 			
 			printer.setLegacyIndentation(true);
-			printer.go(ast);
+			printer.go((AstNode) ast);
 		}
 	}
 	
 	public static final class WikitextAstPrinter
 	        implements
-	            AstPrinterInterface
+	            GenericPrinterInterface
 	{
 		@Override
 		public String getPrintoutType()
@@ -164,15 +163,15 @@ public class FullTest
 		}
 		
 		@Override
-		public void print(AstNode ast, Writer out) throws IOException
+		public void print(Object ast, Writer out) throws IOException
 		{
-			WikitextPrinter.print(out, ast);
+			WikitextPrinter.print(out, (AstNode) ast);
 		}
 	}
 	
 	public static final class RtWikitextAstPrinter
 	        implements
-	            AstPrinterInterface
+	            GenericPrinterInterface
 	{
 		@Override
 		public String getPrintoutType()
@@ -181,9 +180,9 @@ public class FullTest
 		}
 		
 		@Override
-		public void print(AstNode ast, Writer out) throws IOException
+		public void print(Object ast, Writer out) throws IOException
 		{
-			RtWikitextPrinter.print(out, ast);
+			RtWikitextPrinter.print(out, (AstNode) ast);
 		}
 	}
 }

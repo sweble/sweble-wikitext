@@ -108,7 +108,7 @@ private transient String Braces1Plus = "{" "{"+ ;
 
 /* Template tail generating one template/parameter or two nested template
  *
- * Multiple opening braces without interjacent spaces can generate at most two 
+ * Multiple opening braces without interjacent spaces can generate at most two
  * nested templates. This production tries to identify these nested templates.
  *
  * ITS VITALLY IMPORTANT TO NOT SPLIT THIS PRODUCTION INTO TWO CHOICES

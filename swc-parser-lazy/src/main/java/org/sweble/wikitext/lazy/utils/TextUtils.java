@@ -30,7 +30,60 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public final class TextUtils
 {
+	private static final XmlEntityResolver simpleXmlEntityResolver = new XmlEntityResolver()
+	{
+		@Override
+		public String resolveXmlEntity(String name)
+		{
+			if ("lt".equals(name))
+				return "<";
+			else if ("gt".equals(name))
+				return ">";
+			else if ("amp".equals(name))
+				return "&";
+			else if ("quot".equals(name))
+				return "\"";
+			else
+				return null;
+		}
+	};
+	
+	public static XmlEntityResolver getSimpleXmlEntityResolver()
+	{
+		return simpleXmlEntityResolver;
+	}
+	
+	public static boolean needsEscaping(String text, boolean forAttribute)
+	{
+		for (int i = 0; i < text.length(); ++i)
+		{
+			switch (text.charAt(i))
+			{
+				case '<':
+					return true;
+				case '>':
+					if (!forAttribute)
+						break;
+					return true;
+				case '&':
+					return true;
+				case '\'':
+					return true;
+				case '"':
+					if (!forAttribute)
+						break;
+					return true;
+			}
+		}
+		return false;
+	}
+	
 	public static NodeList stringToAst(String text)
+	{
+		return stringToAst(text, true);
+	}
+	
+	public static NodeList stringToAst(String text, boolean forAttribute)
 	{
 		NodeList list = new NodeList();
 		
@@ -46,29 +99,38 @@ public final class TextUtils
 			switch (c)
 			{
 				case '<':
-					list.add(new Text(text.substring(i, j)));
-					list.add(new XmlEntityRef("lt"));
+					if (j > i)
+						list.add(new Text(text.substring(i, j)));
+					list.add(createXmlEntity("lt"));
 					i = j + 1;
 					break;
 				case '>':
-					list.add(new Text(text.substring(i, j)));
-					list.add(new XmlEntityRef("gt"));
+					if (!forAttribute)
+						break;
+					if (j > i)
+						list.add(new Text(text.substring(i, j)));
+					list.add(createXmlEntity("gt"));
 					i = j + 1;
 					break;
 				case '&':
-					list.add(new Text(text.substring(i, j)));
-					list.add(new XmlEntityRef("amp"));
+					if (j > i)
+						list.add(new Text(text.substring(i, j)));
+					list.add(createXmlEntity("amp"));
 					i = j + 1;
 					break;
 				case '\'':
 					// &apos; cannot safely be used, see wikipedia
-					list.add(new Text(text.substring(i, j)));
-					list.add(new XmlCharRef(39));
+					if (j > i)
+						list.add(new Text(text.substring(i, j)));
+					list.add(createXmlCharRef(39));
 					i = j + 1;
 					break;
 				case '"':
-					list.add(new Text(text.substring(i, j)));
-					list.add(new XmlEntityRef("quot"));
+					if (!forAttribute)
+						break;
+					if (j > i)
+						list.add(new Text(text.substring(i, j)));
+					list.add(createXmlEntity("quot"));
 					i = j + 1;
 					break;
 			}
@@ -78,6 +140,20 @@ public final class TextUtils
 			list.add(new Text(text.substring(i, j)));
 		
 		return list;
+	}
+	
+	private static AstNode createXmlCharRef(int ch)
+	{
+		XmlCharRef xmlCharRef = new XmlCharRef(ch);
+		addRtData(xmlCharRef, joinRt("&#", String.valueOf(ch), ";"));
+		return xmlCharRef;
+	}
+	
+	private static XmlEntityRef createXmlEntity(String name)
+	{
+		XmlEntityRef xmlEntityRef = new XmlEntityRef(name);
+		addRtData(xmlEntityRef, joinRt("&", name, ";"));
+		return xmlEntityRef;
 	}
 	
 	public static NodeList trim(NodeList nodes)
@@ -150,7 +226,7 @@ public final class TextUtils
 						break;
 					}
 				}
-					
+				
 				case AstNodeTypes.NT_XML_COMMENT:
 					++i;
 					continue;
@@ -192,7 +268,7 @@ public final class TextUtils
 						break;
 					}
 				}
-					
+				
 				case AstNodeTypes.NT_XML_COMMENT:
 					--i;
 					continue;

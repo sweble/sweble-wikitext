@@ -19,8 +19,11 @@ package org.sweble.wikitext.lazy;
 
 import org.sweble.wikitext.lazy.parser.WarningSeverity;
 import org.sweble.wikitext.lazy.postprocessor.ScopeType;
+import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 
 public interface ParserConfigInterface
+        extends
+            XmlEntityResolver
 {
 	public enum TargetType
 	{
@@ -28,48 +31,48 @@ public interface ParserConfigInterface
 		PAGE,
 		IMAGE,
 	}
-
+	
 	boolean isValidXmlEntityRef(String name);
-
+	
 	boolean isMagicWord(String word);
-
+	
 	boolean isUrlProtocol(String proto);
-
+	
 	boolean isWarningLevelEnabled(WarningSeverity severity);
-
+	
 	boolean isAutoCorrect();
-
+	
 	boolean isWarningsEnabled();
-
+	
 	boolean isGatherRtData();
-
+	
 	String getInternalLinkPrefixPattern();
-
+	
 	String getInternalLinkPostfixPattern();
-
+	
 	TargetType classifyTarget(String target);
-
+	
 	boolean isNamespace(String nsName);
-
+	
 	boolean isInterwikiName(String nsName);
-
+	
 	boolean isLocalInterwikiName(String nsName);
-
+	
 	boolean isValidExtensionTagName(String name);
-
+	
 	/**
 	 * Returns the resolved value of an XML entity.
-	 *
+	 * 
 	 * @param name
 	 *            The name of the XML entity.
 	 * @return The resolved value or <code>null</code> if the XML entity is
 	 *         unknown.
 	 */
 	String resolveXmlEntity(String name);
-
+	
 	boolean isXmlElementAllowed(String name);
-
+	
 	boolean isXmlElementEmptyOnly(String name);
-
+	
 	ScopeType getXmlElementType(String name);
 }

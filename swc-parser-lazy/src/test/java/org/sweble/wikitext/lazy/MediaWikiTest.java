@@ -33,7 +33,7 @@ import org.junit.Ignore;
 import org.sweble.wikitext.lazy.postprocessor.AstCompressor;
 
 import xtc.parser.ParseException;
-import de.fau.cs.osr.ptk.common.AstPrinterInterface;
+import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
 import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -73,7 +73,7 @@ public class MediaWikiTest
 	
 	// =========================================================================
 	
-	public void parseAndPrintTest(AstVisitor[] visitors, AstPrinterInterface printer, boolean cmpInput) throws IOException, ParseException
+	public void parseAndPrintTest(AstVisitor[] visitors, GenericPrinterInterface printer, boolean cmpInput) throws IOException, ParseException
 	{
 		System.out.println();
 		System.out.println("Parser & Print test:");
