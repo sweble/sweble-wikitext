@@ -33,8 +33,8 @@ import de.fau.cs.osr.ptk.common.test.ParserTestCommon;
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
 
 public class AstTestCommon
-        extends
-            ParserTestCommon
+		extends
+			ParserTestCommon
 {
 	private final Class<?> parser;
 	
@@ -50,11 +50,11 @@ public class AstTestCommon
 	}
 	
 	public AstTestCommon(
-	        ParserTestResources resources,
-	        Class<?> parserClass,
-	        String noRefReplace,
-	        String noRefReplaceBy,
-	        boolean randomRefName)
+			ParserTestResources resources,
+			Class<?> parserClass,
+			String noRefReplace,
+			String noRefReplaceBy,
+			boolean randomRefName)
 	{
 		super(resources, noRefReplace, noRefReplaceBy, randomRefName);
 		this.parser = parserClass;
@@ -65,10 +65,13 @@ public class AstTestCommon
 	/**
 	 * @deprecated Unused
 	 */
-	public List<String> gatherParseAndPrint(String wikitextDir, AstVisitor[] visitors, GenericPrinterInterface printer) throws IOException, ParseException
+	public List<String> gatherParseAndPrint(
+			String wikitextDir,
+			AstVisitor[] visitors,
+			GenericPrinterInterface printer) throws IOException, ParseException
 	{
 		final List<File> input =
-		        resources.gather(wikitextDir, ".*?\\.wikitext", true);
+				resources.gather(wikitextDir, ".*?\\.wikitext", true);
 		
 		final ArrayList<String> result = new ArrayList<String>(input.size());
 		
@@ -80,7 +83,21 @@ public class AstTestCommon
 		return result;
 	}
 	
-	public void gatherParseAndPrintTest(String wikitextDir, String asttextDir, AstVisitor[] visitors, GenericPrinterInterface printer) throws IOException, ParseException
+	public void gatherParseAndPrintTest(
+			String wikitextDir,
+			String asttextDir,
+			AstVisitor[] visitors,
+			GenericPrinterInterface printer) throws IOException, ParseException
+	{
+		gatherParseAndPrintTest(null, wikitextDir, asttextDir, visitors, printer);
+	}
+	
+	public void gatherParseAndPrintTest(
+			String filter,
+			String wikitextDir,
+			String asttextDir,
+			AstVisitor[] visitors,
+			GenericPrinterInterface printer) throws IOException, ParseException
 	{
 		System.out.println();
 		System.out.println("Parser & Print test:");
@@ -90,16 +107,19 @@ public class AstTestCommon
 		System.out.println();
 		
 		final List<File> input =
-		        resources.gather(wikitextDir, ".*?\\.wikitext", true);
+				resources.gather(wikitextDir, ".*?\\.wikitext", true);
 		
 		for (File wikitextFile : input)
 		{
+			if (filter != null && !wikitextFile.getName().equalsIgnoreCase(filter))
+				continue;
+			
 			File asttextFile = ParserTestResources.rebase(
-			        wikitextFile,
-			        wikitextDir,
-			        asttextDir,
-			        printer.getPrintoutType(),
-			        true /* don't throw if file doesn't exist */);
+					wikitextFile,
+					wikitextDir,
+					asttextDir,
+					printer.getPrintoutType(),
+					true /* don't throw if file doesn't exist */);
 			
 			System.out.println("Testing: " + wikitextDir + wikitextFile.getName());
 			parseAndPrintTest(visitors, printer, wikitextFile, asttextFile);
@@ -111,7 +131,10 @@ public class AstTestCommon
 	/**
 	 * @deprecated Unused
 	 */
-	public String parseAndPrint(final AstVisitor[] visitors, GenericPrinterInterface printer, File wikitextFile) throws IOException, ParseException
+	public String parseAndPrint(
+			final AstVisitor[] visitors,
+			GenericPrinterInterface printer,
+			File wikitextFile) throws IOException, ParseException
 	{
 		FileContent wikitext = new FileContent(wikitextFile);
 		
@@ -120,7 +143,11 @@ public class AstTestCommon
 		return printToString(ast, printer);
 	}
 	
-	public void parseAndPrintTest(final AstVisitor[] visitors, GenericPrinterInterface printer, File wikitextFile, File reftextFile) throws IOException, ParseException
+	public void parseAndPrintTest(
+			final AstVisitor[] visitors,
+			GenericPrinterInterface printer,
+			File wikitextFile,
+			File reftextFile) throws IOException, ParseException
 	{
 		FileContent wikitext = new FileContent(wikitextFile);
 		
@@ -131,7 +158,9 @@ public class AstTestCommon
 	
 	// =========================================================================
 	
-	private AstNode parse(FileContent wikitext, AstVisitor[] visitors) throws IOException, ParseException
+	private AstNode parse(FileContent wikitext, AstVisitor[] visitors)
+		throws IOException,
+		ParseException
 	{
 		ParserInterface parser = instantiateParser();
 		
@@ -139,8 +168,8 @@ public class AstTestCommon
 			parser.addVisitors(Arrays.asList(visitors));
 		
 		return parser.parseArticle(
-		        wikitext.getContent(),
-		        wikitext.getFile().getAbsolutePath());
+				wikitext.getContent(),
+				wikitext.getFile().getAbsolutePath());
 	}
 	
 	private ParserInterface instantiateParser()
