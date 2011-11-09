@@ -24,16 +24,16 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomCategory
-        extends
-            WomProcessingInstruction,
-            WomLink
+		extends
+			WomProcessingInstruction,
+			WomLink
 {
 	/**
 	 * Return the category to which the page will be assigned.
 	 * 
 	 * Corresponds to the XWML 1.0 attribute "category".
 	 * 
-	 * @return The category.
+	 * @return The category without the category namespace specifier.
 	 */
 	public String getCategory();
 	
@@ -43,10 +43,19 @@ public interface WomCategory
 	 * Corresponds to the XWML 1.0 attribute "category".
 	 * 
 	 * @param category
-	 *            The new category.
+	 *            The new category without the category namespace specifier.
 	 * @return The old category.
+	 * @throws NullPointerException
+	 *             Thrown if the given category is <code>null</code>.
+	 * @throws IllegalArgumentException
+	 *             Thrown if another category with the given name is already
+	 *             associated with this page.
 	 */
-	public String setCategory(String category);
+	public String setCategory(String category)
+		throws NullPointerException,
+			IllegalArgumentException;
+	
+	// TODO: Deprecate setCategory and getCategory and use setName and getName instead.
 	
 	// ==[ Link interface ]=====================================================
 	
@@ -61,7 +70,7 @@ public interface WomCategory
 	/**
 	 * Return the name of the category this statement is pointing to.
 	 * 
-	 * @return The category.
+	 * @return The category including the category namespace specifier.
 	 */
 	@Override
 	public String getLinkTarget();

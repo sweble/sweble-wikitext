@@ -27,8 +27,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomAttribute
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Retrieve the name of the attribute. Attribute names are case-insensitive.
@@ -47,9 +47,11 @@ public interface WomAttribute
 	 *             If an attribute with the given name already exists or the
 	 *             given name was empty or not a valid XML name.
 	 * @throws NullPointerException
-	 *             Thrown if the <code>null</code> was specified as name.
+	 *             Thrown if <code>null</code> was specified as name.
 	 */
-	public String setName(String name) throws IllegalArgumentException, NullPointerException;
+	public String setName(String name)
+		throws IllegalArgumentException,
+			NullPointerException;
 	
 	/**
 	 * Return the value of the attribute.
@@ -65,6 +67,8 @@ public interface WomAttribute
 	 * @param value
 	 *            The new value of the attribute.
 	 * @return The old value of the attribute.
+	 * @throws NullPointerException
+	 *             Thrown if <code>null</code> was specified as value.
 	 */
-	public String setValue(String value);
+	public String setValue(String value) throws NullPointerException;
 }

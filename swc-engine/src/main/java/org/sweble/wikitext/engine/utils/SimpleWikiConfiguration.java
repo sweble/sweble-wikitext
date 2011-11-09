@@ -61,36 +61,38 @@ import de.fau.cs.osr.utils.FmtIllegalArgumentException;
  * This is a simple wiki config that is ONLY suited for test purposes!
  */
 public class SimpleWikiConfiguration
-        extends
-            SimpleParserConfig
-        implements
-            WikiConfigurationInterface
+		extends
+			SimpleParserConfig
+		implements
+			WikiConfigurationInterface
 {
 	private static final long serialVersionUID = 1L;
 	
 	private final HashMap<Integer, Namespace> namespacesById =
-	        new HashMap<Integer, Namespace>();
+			new HashMap<Integer, Namespace>();
 	
 	private final HashMap<String, Namespace> namespacesByAlias =
-	        new HashMap<String, Namespace>();
+			new HashMap<String, Namespace>();
 	
 	private Namespace defaultNamespace = null;
 	
 	private Namespace templateNamespace = null;
 	
 	private final HashMap<String, Interwiki> interwikiMap =
-	        new HashMap<String, Interwiki>();
+			new HashMap<String, Interwiki>();
 	
 	private Interwiki localInterwiki = null;
 	
 	private final HashMap<String, MagicWord> magicWordsByAlias =
-	        new HashMap<String, MagicWord>();
+			new HashMap<String, MagicWord>();
 	
 	private final HashMap<String, ParserFunctionBase> parserFunctions =
-	        new HashMap<String, ParserFunctionBase>();
+			new HashMap<String, ParserFunctionBase>();
 	
 	private final HashMap<String, TagExtensionBase> tagExtensions =
-	        new HashMap<String, TagExtensionBase>();
+			new HashMap<String, TagExtensionBase>();
+	
+	private boolean trimTransparentBeforeParsing = true;
 	
 	// =========================================================================
 	
@@ -99,7 +101,9 @@ public class SimpleWikiConfiguration
 		staticSetup();
 	}
 	
-	public SimpleWikiConfiguration(String xmlConfig) throws FileNotFoundException, IOException
+	public SimpleWikiConfiguration(String xmlConfig)
+		throws FileNotFoundException,
+			IOException
 	{
 		String file = xmlConfig.trim();
 		if (file.startsWith("classpath:"))
@@ -296,8 +300,8 @@ public class SimpleWikiConfiguration
 	{
 		if (interwikiMap.containsKey(interwiki.getPrefix()))
 			throw new FmtIllegalArgumentException(
-			        "An interwiki with prefix `%s' already exists",
-			        interwiki.getPrefix());
+					"An interwiki with prefix `%s' already exists",
+					interwiki.getPrefix());
 		
 		interwikiMap.put(interwiki.getPrefix(), interwiki);
 		
@@ -328,21 +332,21 @@ public class SimpleWikiConfiguration
 	{
 		if (namespacesById.containsKey(ns.getId()))
 			throw new FmtIllegalArgumentException(
-			        "A namespace with id `%2$d' already exists: `%1$s'",
-			        ns.getName(),
-			        ns.getId());
+					"A namespace with id `%2$d' already exists: `%1$s'",
+					ns.getName(),
+					ns.getId());
 		
 		if (namespacesByAlias.containsKey(ns.getName().toLowerCase()))
 			throw new FmtIllegalArgumentException(
-			        "A namespace with name `%1$s' already exists",
-			        ns.getName());
+					"A namespace with name `%1$s' already exists",
+					ns.getName());
 		
 		for (String alias : ns.getAliases())
 			if (namespacesByAlias.containsKey(alias.toLowerCase()))
 				throw new FmtIllegalArgumentException(
-				        "A namespace with alias `%2$s' already exists: `%1$s'",
-				        ns.getName(),
-				        alias);
+						"A namespace with alias `%2$s' already exists: `%1$s'",
+						ns.getName(),
+						alias);
 		
 		namespacesById.put(ns.getId(), ns);
 		
@@ -386,7 +390,7 @@ public class SimpleWikiConfiguration
 	{
 		if (defaultNamespace == null)
 			throw new UnsupportedOperationException(
-			            "The default namespace is not set");
+					"The default namespace is not set");
 		
 		return defaultNamespace;
 	}
@@ -396,7 +400,7 @@ public class SimpleWikiConfiguration
 	{
 		if (templateNamespace == null)
 			throw new UnsupportedOperationException(
-			            "The template namespace is not set");
+					"The template namespace is not set");
 		
 		return templateNamespace;
 	}
@@ -418,7 +422,7 @@ public class SimpleWikiConfiguration
 				        magicWord.getName(),
 				        alias);
 		*/
-
+		
 		// FIXME: Is lower case comparison the right way for magic words?
 		//        See also: getMagicWord()
 		magicWordsByAlias.put(magicWord.getName().toLowerCase(), magicWord);
@@ -443,8 +447,8 @@ public class SimpleWikiConfiguration
 	{
 		if (parserFunctions.containsKey(pfn.getName()))
 			throw new FmtIllegalArgumentException(
-			        "A parser function with name `%s' already exists",
-			        pfn.getName());
+					"A parser function with name `%s' already exists",
+					pfn.getName());
 		
 		parserFunctions.put(pfn.getName().toLowerCase(), pfn);
 		
@@ -463,8 +467,8 @@ public class SimpleWikiConfiguration
 	{
 		if (tagExtensions.containsKey(te.getName()))
 			throw new FmtIllegalArgumentException(
-			        "A tag extensions with name `%s' already exists",
-			        te.getName());
+					"A tag extensions with name `%s' already exists",
+					te.getName());
 		
 		tagExtensions.put(te.getName(), te);
 		
@@ -515,7 +519,7 @@ public class SimpleWikiConfiguration
 		        "u"));
 	}
 	*/
-
+	
 	// =========================================================================
 	
 	@Override
@@ -587,7 +591,7 @@ public class SimpleWikiConfiguration
 		Interwiki iw = getInterwiki(iwName);
 		if (iw == null)
 			throw new FmtIllegalArgumentException(
-			        "Unknown interwiki prefix: `%s'", iwName);
+					"Unknown interwiki prefix: `%s'", iwName);
 		return iw.isLocal();
 	}
 	
@@ -605,25 +609,39 @@ public class SimpleWikiConfiguration
 	
 	// =========================================================================
 	
+	@Override
+	public boolean trimTransparentBeforeParsing()
+	{
+		return trimTransparentBeforeParsing;
+	}
+	
+	public void setTrimTransparentBeforeParsing(
+			boolean trimTransparentBeforeParsing)
+	{
+		this.trimTransparentBeforeParsing = trimTransparentBeforeParsing;
+	}
+	
+	// =========================================================================
+	
 	public String serialize()
 	{
 		Serialized serialized = new Serialized();
 		
 		serialized.namespaces =
-		        new ArrayList<Namespace>(this.namespacesById.values());
+				new ArrayList<Namespace>(this.namespacesById.values());
 		
 		serialized.defaultNamespace = this.defaultNamespace;
 		
 		serialized.templateNamespace = this.templateNamespace;
 		
 		serialized.interwikiLinks =
-		        new ArrayList<Interwiki>(this.interwikiMap.values());
+				new ArrayList<Interwiki>(this.interwikiMap.values());
 		
 		serialized.localInterwiki = this.localInterwiki;
 		
 		serialized.magicWords = new ArrayList<MagicWord>(
-		        // remove duplicates
-		        new HashSet<MagicWord>(this.magicWordsByAlias.values()));
+				// remove duplicates
+				new HashSet<MagicWord>(this.magicWordsByAlias.values()));
 		
 		XStream xstream = setUpXStream();
 		

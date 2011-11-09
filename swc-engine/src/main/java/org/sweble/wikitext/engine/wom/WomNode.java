@@ -23,10 +23,16 @@ import java.util.Collection;
  * The parent interface of every node in the Wikitext Object Model.
  */
 public interface WomNode
-        extends
-            Cloneable,
-            Serializable
+		extends
+			Cloneable,
+			Serializable,
+			Iterable<WomNode>
 {
+	/**
+	 * The version of the WOM standard represented by these classes.
+	 */
+	public static final String VERSION = "1.0";
+	
 	// ==[ Reflection ]=========================================================
 	
 	/**
@@ -42,16 +48,16 @@ public interface WomNode
 	// ==[ Textual content ]====================================================
 	
 	/**
-	 * Return the text content of a node. Returns <code>null</node> for other 
-	 * types of nodes. An empty text node will return the empty string and not 
-	 * <code>null</code>!
+	 * Return the text content of a text node. Returns <code>null</node> for
+	 * other types of nodes. An empty text node will return the empty string and
+	 * not <code>null</code>!
 	 */
 	public String getText();
 	
 	/**
 	 * Return the value of a text node and other value carrying nodes. Returns
-	 * <code>null</node> for other types of nodes. Attributes with an empty 
-	 * value or empty text nodes will return the empty string and not 
+	 * <code>null</node> for other types of nodes. Attributes with an empty
+	 * value or empty text nodes will return the empty string and not
 	 * <code>null</code>!
 	 */
 	public String getValue();
@@ -74,14 +80,14 @@ public interface WomNode
 	 * @param length
 	 *            The number of characters that will be deleted.
 	 * 
-	 * @return The deleted text.
-	 * 
 	 * @throws UnsupportedOperationException
 	 *             If this node is not a text node.
 	 * @throws IndexOutOfBoundsException
 	 *             If the given range is invalid.
 	 */
-	public String deleteText(int from, int length) throws UnsupportedOperationException, IndexOutOfBoundsException;
+	public void deleteText(int from, int length)
+		throws UnsupportedOperationException,
+			IndexOutOfBoundsException;
 	
 	/**
 	 * Insert text at a specified position.
@@ -91,7 +97,9 @@ public interface WomNode
 	 * @throws IndexOutOfBoundsException
 	 *             If the given range is invalid.
 	 */
-	public void insertText(int at, String text) throws UnsupportedOperationException, IndexOutOfBoundsException;
+	public void insertText(int at, String text)
+		throws UnsupportedOperationException,
+			IndexOutOfBoundsException;
 	
 	/**
 	 * Replaces the text of this node with another text.
@@ -120,7 +128,9 @@ public interface WomNode
 	 * @throws IndexOutOfBoundsException
 	 *             If the given range is invalid.
 	 */
-	public String replaceText(int from, int length, String text) throws UnsupportedOperationException, IndexOutOfBoundsException;
+	public String replaceText(int from, int length, String text)
+		throws UnsupportedOperationException,
+			IndexOutOfBoundsException;
 	
 	// ==[ Attributes ]=========================================================
 	
@@ -130,20 +140,20 @@ public interface WomNode
 	public boolean supportsAttributes();
 	
 	/**
-	 * Return a collection containing the XML attributes of a node. Nodes that
-	 * don't support attributes will return an empty collection.
+	 * Returns an immutable collection containing the XML attributes of a node.
+	 * Nodes that don't support attributes will return an empty collection.
 	 */
 	public Collection<WomAttribute> getAttributes();
 	
 	/**
-	 * Return the value of an attribute node. If no attribute with the given
+	 * Returns the value of an attribute node. If no attribute with the given
 	 * name exists <code>null</code> is returned. Nodes that don't support
 	 * attributes will return <code>null</code>.
 	 */
 	public String getAttribute(String name);
 	
 	/**
-	 * Return an attribute. If no attribute with the given name exists
+	 * Returns an attribute. If no attribute with the given name exists
 	 * <code>null</code> is returned. Nodes that don't support attributes will
 	 * return <code>null</code>.
 	 */
@@ -160,7 +170,8 @@ public interface WomNode
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support attributes.
 	 */
-	public WomAttribute removeAttribute(String name) throws UnsupportedOperationException;
+	public WomAttribute removeAttribute(String name)
+		throws UnsupportedOperationException;
 	
 	/**
 	 * Remove an attribute.
@@ -170,7 +181,9 @@ public interface WomNode
 	 * @throws IllegalArgumentException
 	 *             If the given node is not an attribute of this node.
 	 */
-	public void removeAttributeNode(WomAttribute attr) throws UnsupportedOperationException, IllegalArgumentException;
+	public void removeAttributeNode(WomAttribute attr)
+		throws UnsupportedOperationException,
+			IllegalArgumentException;
 	
 	/**
 	 * Sets an attribute node. If the attribute already exists, it will be
@@ -186,7 +199,8 @@ public interface WomNode
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support attributes.
 	 */
-	public WomAttribute setAttribute(String name, String value) throws UnsupportedOperationException;
+	public WomAttribute setAttribute(String name, String value)
+		throws UnsupportedOperationException;
 	
 	/**
 	 * Sets an attribute node. If the attribute already exists, it will be
@@ -198,7 +212,8 @@ public interface WomNode
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support attributes.
 	 */
-	public WomAttribute setAttributeNode(WomAttribute attr) throws UnsupportedOperationException;
+	public WomAttribute setAttributeNode(WomAttribute attr)
+		throws UnsupportedOperationException;
 	
 	// ==[ Navigation ]=========================================================
 	
@@ -208,24 +223,31 @@ public interface WomNode
 	public WomNode getParent();
 	
 	/**
-	 * Return whether this node has any children.
+	 * Returns whether this node supports children.
+	 */
+	public boolean supportsChildren();
+	
+	/**
+	 * Return whether this node has any children. Returns <code>false</code> if
+	 * the node does not support children.
 	 */
 	public boolean hasChildNodes();
 	
 	/**
-	 * Returns a collection containing the children of this node.
+	 * Returns an immutable collection containing the children of this node.
+	 * Nodes that don't support children will return an empty collection.
 	 */
 	public Collection<WomNode> childNodes();
 	
 	/**
 	 * Returns the first child of this node or <code>null</code> if this node
-	 * has no children.
+	 * has no children or doesn't support children.
 	 */
 	public WomNode getFirstChild();
 	
 	/**
 	 * Returns the last child of this node or <code>null</code> if this node has
-	 * no children.
+	 * no children or doesn't support children.
 	 */
 	public WomNode getLastChild();
 	
@@ -260,7 +282,9 @@ public interface WomNode
 	 * @throws IllegalArgumentException
 	 *             If the <code>before</code> node is not a child of this node.
 	 */
-	public void insertBefore(WomNode before, WomNode child) throws UnsupportedOperationException, IllegalArgumentException;
+	public void insertBefore(WomNode before, WomNode child)
+		throws UnsupportedOperationException,
+			IllegalArgumentException;
 	
 	/**
 	 * Remove the given child node from the list of children.
@@ -270,7 +294,9 @@ public interface WomNode
 	 * @throws IllegalArgumentException
 	 *             If the <code>child</code> node is not a child of this node.
 	 */
-	public void removeChild(WomNode child) throws UnsupportedOperationException, IllegalArgumentException;
+	public void removeChild(WomNode child)
+		throws UnsupportedOperationException,
+			IllegalArgumentException;
 	
 	/**
 	 * Replace a given child node with another node.
@@ -283,7 +309,9 @@ public interface WomNode
 	 * @throws IllegalArgumentException
 	 *             If the <code>search</code> node is not a child of this node.
 	 */
-	public void replaceChild(WomNode search, WomNode replace) throws UnsupportedOperationException, IllegalArgumentException;
+	public void replaceChild(WomNode search, WomNode replace)
+		throws UnsupportedOperationException,
+			IllegalArgumentException;
 	
 	// ==[ Cloning ]============================================================
 	

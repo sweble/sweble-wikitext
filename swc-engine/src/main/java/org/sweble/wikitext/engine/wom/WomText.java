@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomText
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Return the text content of this node.
@@ -47,14 +47,20 @@ public interface WomText
 	public void appendText(String text) throws UnsupportedOperationException;
 	
 	@Override
-	public String deleteText(int from, int length) throws UnsupportedOperationException, IndexOutOfBoundsException;
+	public void deleteText(int from, int length)
+		throws UnsupportedOperationException,
+			IndexOutOfBoundsException;
 	
 	@Override
-	public void insertText(int at, String text) throws UnsupportedOperationException, IndexOutOfBoundsException;
+	public void insertText(int at, String text)
+		throws UnsupportedOperationException,
+			IndexOutOfBoundsException;
 	
 	@Override
 	public String replaceText(String text) throws UnsupportedOperationException;
 	
 	@Override
-	public String replaceText(int from, int length, String text) throws UnsupportedOperationException, IndexOutOfBoundsException;
+	public String replaceText(int from, int length, String text)
+		throws UnsupportedOperationException,
+			IndexOutOfBoundsException;
 }

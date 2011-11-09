@@ -16,16 +16,18 @@
  */
 package org.sweble.wikitext.engine.wom;
 
+import java.util.Collection;
+
 /**
  * The root node of every page.
  * 
  * Corresponds to the WXML 1.0 element "page".
  * 
- * <b>Child elements:</b> redirect? body
+ * <b>Child elements:</b> redirect? category* body
  */
 public interface WomPage
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Returns the full name of an page including namespace and path.
@@ -64,7 +66,9 @@ public interface WomPage
 	 * @throws NullPointerException
 	 *             Thrown if the given title is <code>null</code>.
 	 */
-	public String setTitle(String title) throws IllegalArgumentException, NullPointerException;
+	public String setTitle(String title)
+		throws IllegalArgumentException,
+			NullPointerException;
 	
 	/**
 	 * Returns the canonical namespace name.
@@ -140,6 +144,53 @@ public interface WomPage
 	 * @return The old redirection.
 	 */
 	public WomRedirect setRedirect(WomRedirect redirect);
+	
+	/**
+	 * Return a collection containing the categories that are assigned to this
+	 * page.
+	 * 
+	 * @return A collection of categories.
+	 */
+	public Collection<WomCategory> getCategories();
+	
+	/**
+	 * Test if this page belongs to a certain category.
+	 * 
+	 * @param name
+	 *            The case-insensitive name of the category to test.
+	 * @return <code>True</code> if this page belongs to the category with the
+	 *         specified name, <code>false</code> otherwise.
+	 * @throws NullPointerException
+	 *             Thrown if the specified name is <code>null</code>.
+	 */
+	public boolean hasCategory(String name) throws NullPointerException;
+	
+	/**
+	 * Remove a category from this page.
+	 * 
+	 * @param name
+	 *            The case-insensitive name of the category to remove.
+	 * @return The removed category or <code>null</code> if the specified
+	 *         category does not exist.
+	 * @throws NullPointerException
+	 *             Thrown if the specified name is <code>null</code>.
+	 */
+	public WomCategory removeCategory(String name) throws NullPointerException;
+	
+	/**
+	 * Add a category to this page.
+	 * 
+	 * @param name
+	 *            The case-insensitive name of the category to add.
+	 * @return The added category or an existing category if this page was
+	 *         already assigned to the specified category.
+	 * @throws NullPointerException
+	 *             Thrown if the specified name is <code>null</code>.
+	 */
+	public WomCategory setCategory(String name) throws NullPointerException;
+	
+	// FIXME: deprecate setCategory and use addCategory instead.
+	// FIXME: overload addCategory with WomCategory argument
 	
 	/**
 	 * Get the page body.

@@ -81,11 +81,11 @@ public class Compiler
 	 * </ul>
 	 */
 	public CompiledPage preprocess(
-	        PageId pageId,
-	        String wikitext,
-	        boolean forInclusion,
-	        ExpansionCallback callback)
-	            throws CompilerException
+			PageId pageId,
+			String wikitext,
+			boolean forInclusion,
+			ExpansionCallback callback)
+		throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -102,10 +102,10 @@ public class Compiler
 			EntityMap entityMap = new EntityMap();
 			
 			String validatedWikitext =
-			        validate(title, wikitext, entityMap, log);
+					validate(title, wikitext, entityMap, log);
 			
 			LazyPreprocessedPage ppAst =
-			        preprocess(title, validatedWikitext, forInclusion, entityMap, log);
+					preprocess(title, validatedWikitext, forInclusion, entityMap, log);
 			
 			pprAst = ppAst;
 			if (callback != null)
@@ -122,9 +122,9 @@ public class Compiler
 		}
 		
 		return new CompiledPage(
-		        new Page(pprAst.getContent()),
-		        pprAst.getWarnings(),
-		        log);
+				new Page(pprAst.getContent()),
+				pprAst.getWarnings(),
+				log);
 	}
 	
 	/**
@@ -140,10 +140,10 @@ public class Compiler
 	 * </ul>
 	 */
 	public CompiledPage parse(
-	        PageId pageId,
-	        String wikitext,
-	        ExpansionCallback callback)
-	            throws CompilerException
+			PageId pageId,
+			String wikitext,
+			ExpansionCallback callback)
+		throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -160,10 +160,10 @@ public class Compiler
 			EntityMap entityMap = new EntityMap();
 			
 			String validatedWikitext =
-			        validate(title, wikitext, entityMap, log);
+					validate(title, wikitext, entityMap, log);
 			
 			LazyPreprocessedPage ppAst =
-			        preprocess(title, validatedWikitext, false, entityMap, log);
+					preprocess(title, validatedWikitext, false, entityMap, log);
 			
 			LazyPreprocessedPage pprAst = ppAst;
 			if (callback != null)
@@ -182,9 +182,9 @@ public class Compiler
 		}
 		
 		return new CompiledPage(
-		        new Page(pAst.getContent()),
-		        pAst.getWarnings(),
-		        log);
+				new Page(pAst.getContent()),
+				pAst.getWarnings(),
+				log);
 	}
 	
 	/**
@@ -201,10 +201,10 @@ public class Compiler
 	 * </ul>
 	 */
 	public CompiledPage postprocess(
-	        PageId pageId,
-	        String wikitext,
-	        ExpansionCallback callback)
-	            throws CompilerException
+			PageId pageId,
+			String wikitext,
+			ExpansionCallback callback)
+		throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -221,10 +221,10 @@ public class Compiler
 			EntityMap entityMap = new EntityMap();
 			
 			String validatedWikitext =
-			        validate(title, wikitext, entityMap, log);
+					validate(title, wikitext, entityMap, log);
 			
 			LazyPreprocessedPage ppAst =
-			        preprocess(title, validatedWikitext, false, entityMap, log);
+					preprocess(title, validatedWikitext, false, entityMap, log);
 			
 			LazyPreprocessedPage pprAst = ppAst;
 			if (callback != null)
@@ -245,9 +245,9 @@ public class Compiler
 		}
 		
 		return new CompiledPage(
-		        new Page(pAst.getContent()),
-		        pAst.getWarnings(),
-		        log);
+				new Page(pAst.getContent()),
+				pAst.getWarnings(),
+				log);
 	}
 	
 	// =========================================================================
@@ -264,15 +264,15 @@ public class Compiler
 	 * </ul>
 	 */
 	protected CompiledPage preprocessAndExpand(
-	        ExpansionCallback callback,
-	        PageId pageId,
-	        String wikitext,
-	        boolean forInclusion,
-	        EntityMap entityMap,
-	        Map<String, AstNode> arguments,
-	        ExpansionFrame rootFrame,
-	        ExpansionFrame parentFrame)
-	            throws CompilerException
+			ExpansionCallback callback,
+			PageId pageId,
+			String wikitext,
+			boolean forInclusion,
+			EntityMap entityMap,
+			Map<String, AstNode> arguments,
+			ExpansionFrame rootFrame,
+			ExpansionFrame parentFrame)
+		throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -290,21 +290,21 @@ public class Compiler
 		try
 		{
 			String validatedWikitext =
-			        validate(title, wikitext, entityMap, log);
+					validate(title, wikitext, entityMap, log);
 			
 			LazyPreprocessedPage ppAst =
-			        preprocess(title, validatedWikitext, forInclusion, entityMap, log);
+					preprocess(title, validatedWikitext, forInclusion, entityMap, log);
 			
 			pprAst = expand(
-			        callback,
-			        title,
-			        ppAst,
-			        entityMap,
-			        arguments,
-			        forInclusion,
-			        rootFrame,
-			        parentFrame,
-			        log);
+					callback,
+					title,
+					ppAst,
+					entityMap,
+					arguments,
+					forInclusion,
+					rootFrame,
+					parentFrame,
+					log);
 		}
 		catch (CompilerException e)
 		{
@@ -317,21 +317,21 @@ public class Compiler
 		}
 		
 		return new CompiledPage(
-		        new Page(pprAst.getContent()),
-		        pprAst.getWarnings(),
-		        log);
+				new Page(pprAst.getContent()),
+				pprAst.getWarnings(),
+				log);
 	}
 	
 	protected CompiledPage expand(
-	        ExpansionCallback callback,
-	        PageId pageId,
-	        LazyPreprocessedPage ppAst,
-	        EntityMap entityMap,
-	        boolean forInclusion,
-	        Map<String, AstNode> arguments,
-	        ExpansionFrame rootFrame,
-	        ExpansionFrame parentFrame)
-	            throws CompilerException
+			ExpansionCallback callback,
+			PageId pageId,
+			LazyPreprocessedPage ppAst,
+			EntityMap entityMap,
+			boolean forInclusion,
+			Map<String, AstNode> arguments,
+			ExpansionFrame rootFrame,
+			ExpansionFrame parentFrame)
+		throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -349,15 +349,15 @@ public class Compiler
 		try
 		{
 			pprAst = expand(
-			        callback,
-			        title,
-			        ppAst,
-			        entityMap,
-			        arguments,
-			        forInclusion,
-			        rootFrame,
-			        parentFrame,
-			        log);
+					callback,
+					title,
+					ppAst,
+					entityMap,
+					arguments,
+					forInclusion,
+					rootFrame,
+					parentFrame,
+					log);
 		}
 		catch (CompilerException e)
 		{
@@ -370,9 +370,9 @@ public class Compiler
 		}
 		
 		return new CompiledPage(
-		        new Page(pprAst.getContent()),
-		        pprAst.getWarnings(),
-		        log);
+				new Page(pprAst.getContent()),
+				pprAst.getWarnings(),
+				log);
 	}
 	
 	// =========================================================================
@@ -381,11 +381,11 @@ public class Compiler
 	 * Validates wikitext.
 	 */
 	private String validate(
-	        PageTitle title,
-	        String wikitext,
-	        EntityMap entityMap,
-	        ContentNode parentLog)
-	            throws CompilerException
+			PageTitle title,
+			String wikitext,
+			EntityMap entityMap,
+			ContentNode parentLog)
+		throws CompilerException
 	{
 		ValidatorLog log = new ValidatorLog();
 		parentLog.getContent().add(log);
@@ -398,9 +398,9 @@ public class Compiler
 			LazyEncodingValidator validator = new LazyEncodingValidator();
 			
 			String validatedWikitext = validator.validate(
-			        wikitext,
-			        title.getFullTitle(),
-			        entityMap);
+					wikitext,
+					title.getFullTitle(),
+					entityMap);
 			
 			return validatedWikitext;
 		}
@@ -425,12 +425,12 @@ public class Compiler
 	 * Preprocesses validated wikitext and substitutes entities.
 	 */
 	private LazyPreprocessedPage preprocess(
-	        PageTitle title,
-	        String validatedWikitext,
-	        boolean forInclusion,
-	        EntityMap entityMap,
-	        ContentNode parentLog)
-	            throws CompilerException
+			PageTitle title,
+			String validatedWikitext,
+			boolean forInclusion,
+			EntityMap entityMap,
+			ContentNode parentLog)
+		throws CompilerException
 	{
 		PreprocessorLog log = new PreprocessorLog();
 		parentLog.getContent().add(log);
@@ -445,10 +445,10 @@ public class Compiler
 			LazyPreprocessor preprocessor = new LazyPreprocessor(wikiConfig);
 			
 			LazyPreprocessedPage preprocessedAst =
-			        (LazyPreprocessedPage) preprocessor.parseArticle(
-			                validatedWikitext,
-			                title.getFullTitle(),
-			                forInclusion);
+					(LazyPreprocessedPage) preprocessor.parseArticle(
+							validatedWikitext,
+							title.getFullTitle(),
+							forInclusion);
 			
 			return preprocessedAst;
 		}
@@ -480,41 +480,41 @@ public class Compiler
 	 * page as root of the expansion process.
 	 */
 	private LazyPreprocessedPage expand(
-	        ExpansionCallback callback,
-	        PageTitle title,
-	        LazyPreprocessedPage ppAst,
-	        EntityMap entityMap,
-	        LinkedHashMap<String, AstNode> arguments,
-	        boolean forInclusion,
-	        ContentNode parentLog)
-	            throws CompilerException
+			ExpansionCallback callback,
+			PageTitle title,
+			LazyPreprocessedPage ppAst,
+			EntityMap entityMap,
+			LinkedHashMap<String, AstNode> arguments,
+			boolean forInclusion,
+			ContentNode parentLog)
+		throws CompilerException
 	{
 		return expand(
-		        callback,
-		        title,
-		        ppAst,
-		        entityMap,
-		        arguments,
-		        forInclusion,
-		        null,
-		        null,
-		        parentLog);
+				callback,
+				title,
+				ppAst,
+				entityMap,
+				arguments,
+				forInclusion,
+				null,
+				null,
+				parentLog);
 	}
 	
 	/**
 	 * Starts the expansion process of a preprocessed page.
 	 */
 	private LazyPreprocessedPage expand(
-	        ExpansionCallback callback,
-	        PageTitle title,
-	        LazyPreprocessedPage ppAst,
-	        EntityMap entityMap,
-	        Map<String, AstNode> arguments,
-	        boolean forInclusion,
-	        ExpansionFrame rootFrame,
-	        ExpansionFrame parentFrame,
-	        ContentNode parentLog)
-	            throws CompilerException
+			ExpansionCallback callback,
+			PageTitle title,
+			LazyPreprocessedPage ppAst,
+			EntityMap entityMap,
+			Map<String, AstNode> arguments,
+			boolean forInclusion,
+			ExpansionFrame rootFrame,
+			ExpansionFrame parentFrame,
+			ContentNode parentLog)
+		throws CompilerException
 	{
 		PpResolverLog log = new PpResolverLog();
 		parentLog.getContent().add(log);
@@ -531,30 +531,30 @@ public class Compiler
 			if (rootFrame != null)
 			{
 				frame = new ExpansionFrame(
-				        this,
-				        callback,
-				        title,
-				        entityMap,
-				        arguments,
-				        forInclusion,
-				        rootFrame,
-				        parentFrame,
-				        ppAst.getWarnings(),
-				        log);
+						this,
+						callback,
+						title,
+						entityMap,
+						arguments,
+						forInclusion,
+						rootFrame,
+						parentFrame,
+						ppAst.getWarnings(),
+						log);
 			}
 			else
 			{
 				frame = new ExpansionFrame(
-				        this,
-				        callback,
-				        title,
-				        entityMap,
-				        ppAst.getWarnings(),
-				        log);
+						this,
+						callback,
+						title,
+						entityMap,
+						ppAst.getWarnings(),
+						log);
 			}
 			
 			LazyPreprocessedPage expanded =
-			        (LazyPreprocessedPage) frame.expand(ppAst);
+					(LazyPreprocessedPage) frame.expand(ppAst);
 			
 			return expanded;
 		}
@@ -579,11 +579,11 @@ public class Compiler
 	 * Parses a preprocessed page and substitutes entities.
 	 */
 	private LazyParsedPage parse(
-	        PageTitle title,
-	        LazyPreprocessedPage ppAst,
-	        EntityMap entityMap,
-	        ContentNode parentLog)
-	            throws CompilerException
+			PageTitle title,
+			LazyPreprocessedPage ppAst,
+			EntityMap entityMap,
+			ContentNode parentLog)
+		throws CompilerException
 	{
 		ParserLog log = new ParserLog();
 		parentLog.getContent().add(log);
@@ -594,17 +594,17 @@ public class Compiler
 		try
 		{
 			PreprocessedWikitext preprocessedWikitext =
-			        PreprocessorToParserTransformer.transform(
-			                ppAst,
-			                entityMap,
-			                true);
+					PreprocessorToParserTransformer.transform(
+							ppAst,
+							entityMap,
+							wikiConfig.trimTransparentBeforeParsing());
 			
 			LazyParser parser = new LazyParser(wikiConfig);
 			
 			LazyParsedPage parsedAst =
-			        (LazyParsedPage) parser.parseArticle(
-			                preprocessedWikitext,
-			                title.getTitle());
+					(LazyParsedPage) parser.parseArticle(
+							preprocessedWikitext,
+							title.getTitle());
 			
 			parsedAst.getWarnings().addAll(ppAst.getWarnings());
 			
@@ -634,10 +634,10 @@ public class Compiler
 	}
 	
 	private LazyParsedPage postprocess(
-	        PageTitle title,
-	        LazyParsedPage pAst,
-	        CompilerLog parentLog)
-	            throws CompilerException
+			PageTitle title,
+			LazyParsedPage pAst,
+			CompilerLog parentLog)
+		throws CompilerException
 	{
 		PostprocessorLog log = new PostprocessorLog();
 		parentLog.getContent().add(log);

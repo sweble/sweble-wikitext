@@ -1,0 +1,71 @@
+Page([
+  Paragraph([
+    InternalLink(
+      Properties:
+            RTD = RtData: [0] = "[[Category:Main", [1] = "]]"
+        {N} postfix = ""
+        {N} prefix = ""
+        {N} target = "Category:Main"
+
+      LinkTitle([ ])
+    )
+    Whitespace(
+      Properties:
+        {N} hasNewline = true
+
+      [ Text("\n") ]
+    )
+    XmlElement(
+      Properties:
+            RTD = RtData: [0] = "<b", [1] = ">", [2] = "</b>"
+        {N} empty = false
+        {N} name = "b"
+
+      [ ]
+      [
+        InternalLink(
+          Properties:
+                RTD = RtData: [0] = "[[Category:Bold", [1] = "]]"
+            {N} postfix = ""
+            {N} prefix = ""
+            {N} target = "Category:Bold"
+
+          LinkTitle([ ])
+        )
+        InternalLink(
+          Properties:
+                RTD = RtData: [0] = "[[Category:maiN", [1] = "]]"
+            {N} postfix = ""
+            {N} prefix = ""
+            {N} target = "Category:maiN"
+
+          LinkTitle([ ])
+        )
+        InternalLink(
+          Properties:
+                RTD = RtData: [0] = "[[Category:Ya Habibi Yalla", [1] = "]]"
+            {N} postfix = ""
+            {N} prefix = ""
+            {N} target = "Category:Ya Habibi Yalla"
+
+          LinkTitle([ ])
+        )
+      ]
+    )
+    Whitespace(
+      Properties:
+        {N} hasNewline = true
+
+      [ Text("\n") ]
+    )
+    InternalLink(
+      Properties:
+            RTD = RtData: [0] = "[[Category:BOLD", [1] = "]]"
+        {N} postfix = ""
+        {N} prefix = ""
+        {N} target = "Category:BOLD"
+
+      LinkTitle([ ])
+    )
+  ])
+])

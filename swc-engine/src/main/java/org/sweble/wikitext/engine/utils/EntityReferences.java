@@ -23,305 +23,305 @@ import java.util.Map;
 public class EntityReferences
 {
 	private static final Map<String, String> entities =
-	        new HashMap<String, String>();
-
+			new HashMap<String, String>();
+	
 	private static final Map<String, String> entityAliases =
-	        new HashMap<String, String>();
-
+			new HashMap<String, String>();
+	
 	// =========================================================================
-
+	
 	static
 	{
 		// From: http://www.w3.org/TR/html4/sgml/entities.html
-
+		
 		// 24 Character entity references in HTML 4
-
+		
 		// 24.2 Character entity references for ISO 8859-1 characters
-		add("nbsp", "\u0160");
-		add("iexcl", "\u0161");
-		add("cent", "\u0162");
-		add("pound", "\u0163");
-		add("curren", "\u0164");
-		add("yen", "\u0165");
-		add("brvbar", "\u0166");
-		add("sect", "\u0167");
-		add("uml", "\u0168");
-		add("copy", "\u0169");
-		add("ordf", "\u0170");
-		add("laquo", "\u0171");
-		add("not", "\u0172");
-		add("shy", "\u0173");
-		add("reg", "\u0174");
-		add("macr", "\u0175");
-		add("deg", "\u0176");
-		add("plusmn", "\u0177");
-		add("sup2", "\u0178");
-		add("sup3", "\u0179");
-		add("acute", "\u0180");
-		add("micro", "\u0181");
-		add("para", "\u0182");
-		add("middot", "\u0183");
-		add("cedil", "\u0184");
-		add("sup1", "\u0185");
-		add("ordm", "\u0186");
-		add("raquo", "\u0187");
-		add("frac14", "\u0188");
-		add("frac12", "\u0189");
-		add("frac34", "\u0190");
-		add("iquest", "\u0191");
-		add("Agrave", "\u0192");
-		add("Aacute", "\u0193");
-		add("Acirc", "\u0194");
-		add("Atilde", "\u0195");
-		add("Auml", "\u0196");
-		add("Aring", "\u0197");
-		add("AElig", "\u0198");
-		add("Ccedil", "\u0199");
-		add("Egrave", "\u0200");
-		add("Eacute", "\u0201");
-		add("Ecirc", "\u0202");
-		add("Euml", "\u0203");
-		add("Igrave", "\u0204");
-		add("Iacute", "\u0205");
-		add("Icirc", "\u0206");
-		add("Iuml", "\u0207");
-		add("ETH", "\u0208");
-		add("Ntilde", "\u0209");
-		add("Ograve", "\u0210");
-		add("Oacute", "\u0211");
-		add("Ocirc", "\u0212");
-		add("Otilde", "\u0213");
-		add("Ouml", "\u0214");
-		add("times", "\u0215");
-		add("Oslash", "\u0216");
-		add("Ugrave", "\u0217");
-		add("Uacute", "\u0218");
-		add("Ucirc", "\u0219");
-		add("Uuml", "\u0220");
-		add("Yacute", "\u0221");
-		add("THORN", "\u0222");
-		add("szlig", "\u0223");
-		add("agrave", "\u0224");
-		add("aacute", "\u0225");
-		add("acirc", "\u0226");
-		add("atilde", "\u0227");
-		add("auml", "\u0228");
-		add("aring", "\u0229");
-		add("aelig", "\u0230");
-		add("ccedil", "\u0231");
-		add("egrave", "\u0232");
-		add("eacute", "\u0233");
-		add("ecirc", "\u0234");
-		add("euml", "\u0235");
-		add("igrave", "\u0236");
-		add("iacute", "\u0237");
-		add("icirc", "\u0238");
-		add("iuml", "\u0239");
-		add("eth", "\u0240");
-		add("ntilde", "\u0241");
-		add("ograve", "\u0242");
-		add("oacute", "\u0243");
-		add("ocirc", "\u0244");
-		add("otilde", "\u0245");
-		add("ouml", "\u0246");
-		add("divide", "\u0247");
-		add("oslash", "\u0248");
-		add("ugrave", "\u0249");
-		add("uacute", "\u0250");
-		add("ucirc", "\u0251");
-		add("uuml", "\u0252");
-		add("yacute", "\u0253");
-		add("thorn", "\u0254");
-		add("yuml", "\u0255");
-
+		add("nbsp", "\u00a0");
+		add("iexcl", "\u00a1");
+		add("cent", "\u00a2");
+		add("pound", "\u00a3");
+		add("curren", "\u00a4");
+		add("yen", "\u00a5");
+		add("brvbar", "\u00a6");
+		add("sect", "\u00a7");
+		add("uml", "\u00a8");
+		add("copy", "\u00a9");
+		add("ordf", "\u00aa");
+		add("laquo", "\u00ab");
+		add("not", "\u00ac");
+		add("shy", "\u00ad");
+		add("reg", "\u00ae");
+		add("macr", "\u00af");
+		add("deg", "\u00b0");
+		add("plusmn", "\u00b1");
+		add("sup2", "\u00b2");
+		add("sup3", "\u00b3");
+		add("acute", "\u00b4");
+		add("micro", "\u00b5");
+		add("para", "\u00b6");
+		add("middot", "\u00b7");
+		add("cedil", "\u00b8");
+		add("sup1", "\u00b9");
+		add("ordm", "\u00ba");
+		add("raquo", "\u00bb");
+		add("frac14", "\u00bc");
+		add("frac12", "\u00bd");
+		add("frac34", "\u00be");
+		add("iquest", "\u00bf");
+		add("Agrave", "\u00c0");
+		add("Aacute", "\u00c1");
+		add("Acirc", "\u00c2");
+		add("Atilde", "\u00c3");
+		add("Auml", "\u00c4");
+		add("Aring", "\u00c5");
+		add("AElig", "\u00c6");
+		add("Ccedil", "\u00c7");
+		add("Egrave", "\u00c8");
+		add("Eacute", "\u00c9");
+		add("Ecirc", "\u00ca");
+		add("Euml", "\u00cb");
+		add("Igrave", "\u00cc");
+		add("Iacute", "\u00cd");
+		add("Icirc", "\u00ce");
+		add("Iuml", "\u00cf");
+		add("ETH", "\u00d0");
+		add("Ntilde", "\u00d1");
+		add("Ograve", "\u00d2");
+		add("Oacute", "\u00d3");
+		add("Ocirc", "\u00d4");
+		add("Otilde", "\u00d5");
+		add("Ouml", "\u00d6");
+		add("times", "\u00d7");
+		add("Oslash", "\u00d8");
+		add("Ugrave", "\u00d9");
+		add("Uacute", "\u00da");
+		add("Ucirc", "\u00db");
+		add("Uuml", "\u00dc");
+		add("Yacute", "\u00dd");
+		add("THORN", "\u00de");
+		add("szlig", "\u00df");
+		add("agrave", "\u00e0");
+		add("aacute", "\u00e1");
+		add("acirc", "\u00e2");
+		add("atilde", "\u00e3");
+		add("auml", "\u00e4");
+		add("aring", "\u00e5");
+		add("aelig", "\u00e6");
+		add("ccedil", "\u00e7");
+		add("egrave", "\u00e8");
+		add("eacute", "\u00e9");
+		add("ecirc", "\u00ea");
+		add("euml", "\u00eb");
+		add("igrave", "\u00ec");
+		add("iacute", "\u00ed");
+		add("icirc", "\u00ee");
+		add("iuml", "\u00ef");
+		add("eth", "\u00f0");
+		add("ntilde", "\u00f1");
+		add("ograve", "\u00f2");
+		add("oacute", "\u00f3");
+		add("ocirc", "\u00f4");
+		add("otilde", "\u00f5");
+		add("ouml", "\u00f6");
+		add("divide", "\u00f7");
+		add("oslash", "\u00f8");
+		add("ugrave", "\u00f9");
+		add("uacute", "\u00fa");
+		add("ucirc", "\u00fb");
+		add("uuml", "\u00fc");
+		add("yacute", "\u00fd");
+		add("thorn", "\u00fe");
+		add("yuml", "\u00ff");
+		
 		// 24.3 Character entity references for symbols, mathematical symbols, and Greek letters
-		add("fnof", "\u0402");
-		add("Alpha", "\u0913");
-		add("Beta", "\u0914");
-		add("Gamma", "\u0915");
-		add("Delta", "\u0916");
-		add("Epsilon", "\u0917");
-		add("Zeta", "\u0918");
-		add("Eta", "\u0919");
-		add("Theta", "\u0920");
-		add("Iota", "\u0921");
-		add("Kappa", "\u0922");
-		add("Lambda", "\u0923");
-		add("Mu", "\u0924");
-		add("Nu", "\u0925");
-		add("Xi", "\u0926");
-		add("Omicron", "\u0927");
-		add("Pi", "\u0928");
-		add("Rho", "\u0929");
-		add("Sigma", "\u0931");
-		add("Tau", "\u0932");
-		add("Upsilon", "\u0933");
-		add("Phi", "\u0934");
-		add("Chi", "\u0935");
-		add("Psi", "\u0936");
-		add("Omega", "\u0937");
-		add("alpha", "\u0945");
-		add("beta", "\u0946");
-		add("gamma", "\u0947");
-		add("delta", "\u0948");
-		add("epsilon", "\u0949");
-		add("zeta", "\u0950");
-		add("eta", "\u0951");
-		add("theta", "\u0952");
-		add("iota", "\u0953");
-		add("kappa", "\u0954");
-		add("lambda", "\u0955");
-		add("mu", "\u0956");
-		add("nu", "\u0957");
-		add("xi", "\u0958");
-		add("omicron", "\u0959");
-		add("pi", "\u0960");
-		add("rho", "\u0961");
-		add("sigmaf", "\u0962");
-		add("sigma", "\u0963");
-		add("tau", "\u0964");
-		add("upsilon", "\u0965");
-		add("phi", "\u0966");
-		add("chi", "\u0967");
-		add("psi", "\u0968");
-		add("omega", "\u0969");
-		add("thetasym", "\u0977");
-		add("upsih", "\u0978");
-		add("piv", "\u0982");
-		add("bull", "\u8226");
-		add("hellip", "\u8230");
-		add("prime", "\u8242");
-		add("Prime", "\u8243");
-		add("oline", "\u8254");
-		add("frasl", "\u8260");
-		add("weierp", "\u8472");
-		add("image", "\u8465");
-		add("real", "\u8476");
-		add("trade", "\u8482");
-		add("alefsym", "\u8501");
-		add("larr", "\u8592");
-		add("uarr", "\u8593");
-		add("rarr", "\u8594");
-		add("darr", "\u8595");
-		add("harr", "\u8596");
-		add("crarr", "\u8629");
-		add("lArr", "\u8656");
-		add("uArr", "\u8657");
-		add("rArr", "\u8658");
-		add("dArr", "\u8659");
-		add("hArr", "\u8660");
-		add("forall", "\u8704");
-		add("part", "\u8706");
-		add("exist", "\u8707");
-		add("empty", "\u8709");
-		add("nabla", "\u8711");
-		add("isin", "\u8712");
-		add("notin", "\u8713");
-		add("ni", "\u8715");
-		add("prod", "\u8719");
-		add("sum", "\u8721");
-		add("minus", "\u8722");
-		add("lowast", "\u8727");
-		add("radic", "\u8730");
-		add("prop", "\u8733");
-		add("infin", "\u8734");
-		add("ang", "\u8736");
-		add("and", "\u8743");
-		add("or", "\u8744");
-		add("cap", "\u8745");
-		add("cup", "\u8746");
-		add("int", "\u8747");
-		add("there4", "\u8756");
-		add("sim", "\u8764");
-		add("cong", "\u8773");
-		add("asymp", "\u8776");
-		add("ne", "\u8800");
-		add("equiv", "\u8801");
-		add("le", "\u8804");
-		add("ge", "\u8805");
-		add("sub", "\u8834");
-		add("sup", "\u8835");
-		add("nsub", "\u8836");
-		add("sube", "\u8838");
-		add("supe", "\u8839");
-		add("oplus", "\u8853");
-		add("otimes", "\u8855");
-		add("perp", "\u8869");
-		add("sdot", "\u8901");
-		add("lceil", "\u8968");
-		add("rceil", "\u8969");
-		add("lfloor", "\u8970");
-		add("rfloor", "\u8971");
-		add("lang", "\u9001");
-		add("rang", "\u9002");
-		add("loz", "\u9674");
-		add("spades", "\u9824");
-		add("clubs", "\u9827");
-		add("hearts", "\u9829");
-		add("diams", "\u9830");
-
+		add("fnof", "\u0192");
+		add("Alpha", "\u0391");
+		add("Beta", "\u0392");
+		add("Gamma", "\u0393");
+		add("Delta", "\u0394");
+		add("Epsilon", "\u0395");
+		add("Zeta", "\u0396");
+		add("Eta", "\u0397");
+		add("Theta", "\u0398");
+		add("Iota", "\u0399");
+		add("Kappa", "\u039a");
+		add("Lambda", "\u039b");
+		add("Mu", "\u039c");
+		add("Nu", "\u039d");
+		add("Xi", "\u039e");
+		add("Omicron", "\u039f");
+		add("Pi", "\u03a0");
+		add("Rho", "\u03a1");
+		add("Sigma", "\u03a3");
+		add("Tau", "\u03a4");
+		add("Upsilon", "\u03a5");
+		add("Phi", "\u03a6");
+		add("Chi", "\u03a7");
+		add("Psi", "\u03a8");
+		add("Omega", "\u03a9");
+		add("alpha", "\u03b1");
+		add("beta", "\u03b2");
+		add("gamma", "\u03b3");
+		add("delta", "\u03b4");
+		add("epsilon", "\u03b5");
+		add("zeta", "\u03b6");
+		add("eta", "\u03b7");
+		add("theta", "\u03b8");
+		add("iota", "\u03b9");
+		add("kappa", "\u03ba");
+		add("lambda", "\u03bb");
+		add("mu", "\u03bc");
+		add("nu", "\u03bd");
+		add("xi", "\u03be");
+		add("omicron", "\u03bf");
+		add("pi", "\u03c0");
+		add("rho", "\u03c1");
+		add("sigmaf", "\u03c2");
+		add("sigma", "\u03c3");
+		add("tau", "\u03c4");
+		add("upsilon", "\u03c5");
+		add("phi", "\u03c6");
+		add("chi", "\u03c7");
+		add("psi", "\u03c8");
+		add("omega", "\u03c9");
+		add("thetasym", "\u03d1");
+		add("upsih", "\u03d2");
+		add("piv", "\u03d6");
+		add("bull", "\u2022");
+		add("hellip", "\u2026");
+		add("prime", "\u2032");
+		add("Prime", "\u2033");
+		add("oline", "\u203e");
+		add("frasl", "\u2044");
+		add("weierp", "\u2118");
+		add("image", "\u2111");
+		add("real", "\u211c");
+		add("trade", "\u2122");
+		add("alefsym", "\u2135");
+		add("larr", "\u2190");
+		add("uarr", "\u2191");
+		add("rarr", "\u2192");
+		add("darr", "\u2193");
+		add("harr", "\u2194");
+		add("crarr", "\u21b5");
+		add("lArr", "\u21d0");
+		add("uArr", "\u21d1");
+		add("rArr", "\u21d2");
+		add("dArr", "\u21d3");
+		add("hArr", "\u21d4");
+		add("forall", "\u2200");
+		add("part", "\u2202");
+		add("exist", "\u2203");
+		add("empty", "\u2205");
+		add("nabla", "\u2207");
+		add("isin", "\u2208");
+		add("notin", "\u2209");
+		add("ni", "\u220b");
+		add("prod", "\u220f");
+		add("sum", "\u2211");
+		add("minus", "\u2212");
+		add("lowast", "\u2217");
+		add("radic", "\u221a");
+		add("prop", "\u221d");
+		add("infin", "\u221e");
+		add("ang", "\u2220");
+		add("and", "\u2227");
+		add("or", "\u2228");
+		add("cap", "\u2229");
+		add("cup", "\u222a");
+		add("int", "\u222b");
+		add("there4", "\u2234");
+		add("sim", "\u223c");
+		add("cong", "\u2245");
+		add("asymp", "\u2248");
+		add("ne", "\u2260");
+		add("equiv", "\u2261");
+		add("le", "\u2264");
+		add("ge", "\u2265");
+		add("sub", "\u2282");
+		add("sup", "\u2283");
+		add("nsub", "\u2284");
+		add("sube", "\u2286");
+		add("supe", "\u2287");
+		add("oplus", "\u2295");
+		add("otimes", "\u2297");
+		add("perp", "\u22a5");
+		add("sdot", "\u22c5");
+		add("lceil", "\u2308");
+		add("rceil", "\u2309");
+		add("lfloor", "\u230a");
+		add("rfloor", "\u230b");
+		add("lang", "\u2329");
+		add("rang", "\u232a");
+		add("loz", "\u25ca");
+		add("spades", "\u2660");
+		add("clubs", "\u2663");
+		add("hearts", "\u2665");
+		add("diams", "\u2666");
+		
 		// 24.4 Character entity references for markup-significant and internationalization characters
-		add("quot", "\u0034");
-		add("amp", "\u0038");
-		add("lt", "\u0060");
-		add("gt", "\u0062");
-		add("OElig", "\u0338");
-		add("oelig", "\u0339");
-		add("Scaron", "\u0352");
-		add("scaron", "\u0353");
-		add("Yuml", "\u0376");
-		add("circ", "\u0710");
-		add("tilde", "\u0732");
-		add("ensp", "\u8194");
-		add("emsp", "\u8195");
-		add("thinsp", "\u8201");
-		add("zwnj", "\u8204");
-		add("zwj", "\u8205");
-		add("lrm", "\u8206");
-		add("rlm", "\u8207");
-		add("ndash", "\u8211");
-		add("mdash", "\u8212");
-		add("lsquo", "\u8216");
-		add("rsquo", "\u8217");
-		add("sbquo", "\u8218");
-		add("ldquo", "\u8220");
-		add("rdquo", "\u8221");
-		add("bdquo", "\u8222");
-		add("dagger", "\u8224");
-		add("Dagger", "\u8225");
-		add("permil", "\u8240");
-		add("lsaquo", "\u8249");
-		add("rsaquo", "\u8250");
-		add("euro", "\u8364");
+		add("quot", "" + '\u0022'); // Eclipse gets really confused!
+		add("amp", "\u0026");
+		add("lt", "\u003c");
+		add("gt", "\u003e");
+		add("OElig", "\u0152");
+		add("oelig", "\u0153");
+		add("Scaron", "\u0160");
+		add("scaron", "\u0161");
+		add("Yuml", "\u0178");
+		add("circ", "\u02c6");
+		add("tilde", "\u02dc");
+		add("ensp", "\u2002");
+		add("emsp", "\u2003");
+		add("thinsp", "\u2009");
+		add("zwnj", "\u200c");
+		add("zwj", "\u200d");
+		add("lrm", "\u200e");
+		add("rlm", "\u200f");
+		add("ndash", "\u2013");
+		add("mdash", "\u2014");
+		add("lsquo", "\u2018");
+		add("rsquo", "\u2019");
+		add("sbquo", "\u201a");
+		add("ldquo", "\u201c");
+		add("rdquo", "\u201d");
+		add("bdquo", "\u201e");
+		add("dagger", "\u2020");
+		add("Dagger", "\u2021");
+		add("permil", "\u2030");
+		add("lsaquo", "\u2039");
+		add("rsaquo", "\u203a");
+		add("euro", "\u20ac");
 	}
-
+	
 	// =========================================================================
-
+	
 	public static void add(String entityName, String replacement)
 	{
 		entities.put(entityName, replacement);
 	}
-
+	
 	public static void addAlias(String alias, String entityName)
 	{
 		entityAliases.put(alias, entityName);
 	}
-
+	
 	public static boolean isDeclared(String entityName)
 	{
 		return entities.containsKey(entityName);
 	}
-
+	
 	public static boolean isAliasDeclared(String alias)
 	{
 		return entityAliases.containsKey(alias);
 	}
-
+	
 	public static Map<String, String> getEntities()
 	{
 		return entities;
 	}
-
+	
 	/**
 	 * @deprecated Use getEntityAliases() instead!
 	 */
@@ -329,18 +329,18 @@ public class EntityReferences
 	{
 		return EntityReferences.getEntityAliases();
 	}
-
+	
 	public static Map<String, String> getEntityAliases()
 	{
 		return entityAliases;
 	}
-
+	
 	public static String resolve(String entityName)
 	{
 		String tmp = entityAliases.get(entityName);
 		if (tmp != null)
 			entityName = tmp;
-
+		
 		return entities.get(entityName);
 	}
 }

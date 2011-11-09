@@ -1,0 +1,41 @@
+Page([
+  Paragraph([
+    Text("Hello")
+    Whitespace(
+      Properties:
+        {N} hasNewline = true
+
+      [ Text("\n") ]
+    )
+    XmlElement(
+      Properties:
+            RTD = RtData: [0] = "<b", [1] = ">", [2] = "</b>"
+        {N} empty = false
+        {N} name = "b"
+
+      [
+        XmlAttribute(
+          Properties:
+                RTD = RtData: [0] = " class=\"", [1] = "\""
+            {N} hasValue = true
+            {N} name = "class"
+
+          [ Text("asdf") ]
+        )
+      ]
+      [ Text("HTML bold") ]
+    )
+    Whitespace(
+      Properties:
+        {N} hasNewline = true
+
+      [ Text("\n") ]
+    )
+    Bold(
+      Properties:
+            RTD = RtData: [0] = "'''", [1] = "'''"
+
+      [ Text("Native bold") ]
+    )
+  ])
+])

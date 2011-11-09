@@ -1,0 +1,3 @@
+Hello
+<b class="asdf">HTML bold</b>
+'''Native bold'''

@@ -25,9 +25,9 @@ import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.lazy.ParserConfigInterface;
 
 public interface WikiConfigurationInterface
-        extends
-            Serializable,
-            ParserConfigInterface
+		extends
+			Serializable,
+			ParserConfigInterface
 {
 	public Namespace getNamespace(String name);
 	
@@ -62,6 +62,10 @@ public interface WikiConfigurationInterface
 	//public HashSet<String> getAllowedHtmlTags();
 	
 	//public HashSet<String> getEmptyOnlyHtmlTags();
+	
+	// --------
+	
+	public boolean trimTransparentBeforeParsing();
 	
 	// --------
 	

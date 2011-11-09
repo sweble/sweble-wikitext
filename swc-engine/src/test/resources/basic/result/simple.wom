@@ -1,0 +1,8 @@
+
+<page version="1.0" title="Simple.wikitext">
+  <body>
+    <p class="funny">Hello
+<b class="asdf">HTML bold</b>
+<b>Native bold</b></p>
+  </body>
+</page>
