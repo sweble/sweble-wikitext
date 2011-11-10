@@ -75,6 +75,18 @@ public class CompilerTestBase
 		        expansionCallback);
 	}
 	
+	protected CompiledPage expand(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	{
+		PageTitle title = PageTitle.make(config, page);
+		FullPage fullPage = retrieve(title);
+		if (fullPage == null)
+			return null;
+		return compiler.expand(
+		        fullPage.getId(),
+		        fullPage.getText(),
+		        expansionCallback);
+	}
+	
 	protected CompiledPage parse(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);

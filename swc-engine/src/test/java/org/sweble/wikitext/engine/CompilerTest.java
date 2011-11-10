@@ -20,12 +20,15 @@ package org.sweble.wikitext.engine;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.sweble.wikitext.lazy.LinkTargetException;
 
+import de.fau.cs.osr.ptk.common.AstPrinter;
+
 public class CompilerTest
-        extends
-            CompilerTestBase
+		extends
+			CompilerTestBase
 {
 	public CompilerTest() throws FileNotFoundException, IOException
 	{
@@ -33,10 +36,40 @@ public class CompilerTest
 	}
 	
 	@Test
-	public void test() throws CompilerException, LinkTargetException, IOException
+	public void test()
+			throws CompilerException, LinkTargetException, IOException
 	{
 		// FIXME: that's not enough and you know it ...
 		preprocess("Test", false);
 		postprocess("Regression:link-1", false);
+	}
+	
+	@Test
+	public void regresion()
+			throws LinkTargetException, IOException, CompilerException
+	{
+		CompiledPage cp = postprocess("Boston Red Sox", false);
+		Assert.assertEquals(
+				"Page([\n" +
+						"  Paragraph([\n" +
+						"    Text(\"Founded in \")\n" +
+						"    InternalLink(\n" +
+						"      Properties:\n" +
+						"            RTD = RtData: [0] = \"[[1901 in baseball\", [1] = \"]]\"\n" +
+						"        {N} postfix = \"\"\n" +
+						"        {N} prefix = \"\"\n" +
+						"        {N} target = \"1901 in baseball\"\n" +
+						"\n" +
+						"      LinkTitle(\n" +
+						"        Properties:\n" +
+						"              RTD = RtData: [0] = \"|\", [1]\n" +
+						"\n" +
+						"        [ Text(\"1901\") ]\n" +
+						"      )\n" +
+						"    )\n" +
+						"    Text(\" as one\")\n" +
+						"  ])\n" +
+						"])\n",
+				AstPrinter.print(cp.getPage()));
 	}
 }
