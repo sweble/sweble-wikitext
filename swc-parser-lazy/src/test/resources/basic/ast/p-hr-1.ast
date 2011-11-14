@@ -7,39 +7,42 @@ LazyParsedPage(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Whitespace(EOL: [ Text("\n\n") ])
+    Newline("\n")
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
     Paragraph([
       Text("text")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Paragraph([
       Text("t")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Whitespace(EOL: [ Text("\n\n") ])
+    Newline("\n")
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Whitespace(EOL: [ Text("\n\n") ])
+    Newline("\n")
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"

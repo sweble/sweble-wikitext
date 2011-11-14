@@ -11,22 +11,22 @@ LazyParsedPage(
 
       [ ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Text("P1")
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
       ]
     )
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Text("P2")
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     XmlElementClose(
       Properties:
         RTD = RtData: [0] = "</p>"
         {N} name = "p"
     )
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Text("P3")
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     XmlElement(
       Properties:
         RTD = RtData: [0] = "<p", [1] = ">", [2]
@@ -35,9 +35,9 @@ LazyParsedPage(
 
       [ ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Text("P4")
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
       ]
     )
     XmlElement(
@@ -48,9 +48,9 @@ LazyParsedPage(
 
       [ ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Text("asdf")
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
       ]
     )
   ]

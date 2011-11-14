@@ -29,12 +29,12 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Whitespace(EOL: [ Text("\n") ])
+                    Newline("\n")
                     Paragraph([
                       Text("* item 1")
-                      Whitespace(EOL: [ Text("\n") ])
+                      Newline("\n")
                       Text("* item 2")
-                      Whitespace(EOL: [ Text("\n") ])
+                      Newline("\n")
                     ])
                   ]
                 )
@@ -44,7 +44,7 @@ LazyParsedPage(
           ]
         )
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
   ]
 )

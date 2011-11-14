@@ -289,7 +289,7 @@ public abstract class FullElement
 			{
 				case AstNode.NT_TEXT:
 				case AstNodeTypes.NT_IGNORED:
-				case AstNodeTypes.NT_WHITESPACE:
+				case AstNodeTypes.NT_NEWLINE:
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				case AstNodeTypes.NT_XML_ENTITY_REF:
 					complexText.append(womNodeFactory, n);

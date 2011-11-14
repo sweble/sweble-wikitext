@@ -3,7 +3,7 @@ LazyParsedPage(
     {N} warnings = []
 
   [
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -20,10 +20,11 @@ LazyParsedPage(
         )
       ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("text]]")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("==")

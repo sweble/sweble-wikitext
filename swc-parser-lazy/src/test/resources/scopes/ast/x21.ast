@@ -3,7 +3,7 @@ LazyParsedPage(
     {N} warnings = []
 
   [
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     DefinitionList([
       DefinitionDefinition([
         DefinitionList([
@@ -54,7 +54,10 @@ LazyParsedPage(
         {N} name = "i"
 
       [ ]
-      [ Whitespace(EOL: [ Text("\n\n") ]) ]
+      [
+        Newline("\n")
+        Newline("\n")
+      ]
     )
     DefinitionList([
       DefinitionDefinition(
@@ -81,7 +84,7 @@ LazyParsedPage(
         {N} name = "i"
 
       [ ]
-      [ Whitespace(EOL: [ Text("\n") ]) ]
+      [ Newline("\n") ]
     )
   ]
 )

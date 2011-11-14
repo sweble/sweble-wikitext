@@ -3,7 +3,7 @@ LazyParsedPage(
     {N} warnings = []
 
   [
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Paragraph([ ])
     XmlElement(
       Properties:
@@ -13,10 +13,12 @@ LazyParsedPage(
 
       [ ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("\ttext")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([ Text("\t") ])
         XmlElement(
@@ -27,7 +29,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Text("\t\t")
             XmlElement(
               Properties:
@@ -38,7 +40,7 @@ LazyParsedPage(
               [ ]
               [ Text("Cell 1.1") ]
             )
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Text("\t\t")
             XmlElement(
               Properties:
@@ -49,11 +51,12 @@ LazyParsedPage(
               [ ]
               [ Text("Cell 1.2") ]
             )
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Text("\t")
           ]
         )
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([ Text("\t") ])
         XmlElement(
           Properties:
@@ -63,7 +66,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Text("\t\t")
             XmlElement(
               Properties:
@@ -74,7 +77,7 @@ LazyParsedPage(
               [ ]
               [ Text("Cell 2.1") ]
             )
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Text("\t\t")
             XmlElement(
               Properties:
@@ -85,14 +88,15 @@ LazyParsedPage(
               [ ]
               [ Text("Cell 2.2") ]
             )
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Text("\t")
           ]
         )
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([ ])
       ]
     )
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
   ]
 )

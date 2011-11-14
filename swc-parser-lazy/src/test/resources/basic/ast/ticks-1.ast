@@ -10,14 +10,14 @@ LazyParsedPage(
 
         [ Text("Hallo") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
         [ Text("Hallo") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"

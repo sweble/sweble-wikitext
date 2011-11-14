@@ -31,24 +31,27 @@ public class TextUtilsTest
 		        AstPrinter.print(TextUtils.stringToAst("H&llo <Welt>!"));
 		
 		final String expected =
-		        "[\n" +
-                "  Text(\"H\")\n" +
-                "  XmlEntityRef(\n" +
-                "    Properties:\n" +
-                "      {N} name = \"amp\"\n" +
-                "  )\n" +
-                "  Text(\"llo \")\n" +
-                "  XmlEntityRef(\n" +
-                "    Properties:\n" +
-                "      {N} name = \"lt\"\n" +
-                "  )\n" +
-                "  Text(\"Welt\")\n" +
-                "  XmlEntityRef(\n" +
-                "    Properties:\n" +
-                "      {N} name = \"gt\"\n" +
-                "  )\n" +
-                "  Text(\"!\")\n" +
-                "]\n";
+				"[\n" +
+				"  Text(\"H\")\n" +
+				"  XmlEntityRef(\n" +
+				"    Properties:\n" +
+				"          RTD = RtData: [0] = \"&amp;\"\n" +
+				"      {N} name = \"amp\"\n" +
+				"  )\n" +
+				"  Text(\"llo \")\n" +
+				"  XmlEntityRef(\n" +
+				"    Properties:\n" +
+				"          RTD = RtData: [0] = \"&lt;\"\n" +
+				"      {N} name = \"lt\"\n" +
+				"  )\n" +
+				"  Text(\"Welt\")\n" +
+				"  XmlEntityRef(\n" +
+				"    Properties:\n" +
+				"          RTD = RtData: [0] = \"&gt;\"\n" +
+				"      {N} name = \"gt\"\n" +
+				"  )\n" +
+				"  Text(\"!\")\n" +
+				"]\n";
 		
 		Assert.assertEquals(expected, actual);
 	}

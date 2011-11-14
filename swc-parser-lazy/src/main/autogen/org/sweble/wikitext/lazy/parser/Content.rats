@@ -181,19 +181,22 @@ private inline void ParagraphStopper =
 /* PreParaWs = S* EOL ( S* EOL )*
  */
 
-private noinline transient Whitespace PreParaWs =
-  s:pExtSpaceStar lt:pEol tail:PreParaWsMore*
+private noinline transient NodeList PreParaWs =
+  s:pExtSpaceStar lt:pEolNode tail:PreParaWsMore*
   {
+    yyValue = new NodeList(s, lt, new NodeList(tail));
+    /*
     yyValue = new Whitespace(
         new NodeList(s, new Text(lt), new NodeList(tail)),
         true);
+    */
   }
 ;
 
 private inline NodeList PreParaWsMore =
-  !ParagraphStopper s:pExtSpaceStar lt:pEol
+  !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
-    yyValue = new NodeList(s, new Text(lt));
+    yyValue = new NodeList(s, lt);
   }
 ;
 
@@ -208,14 +211,17 @@ private noinline transient AstNode ParagraphText =
 ;
 
 private inline AstNode ParagraphTextMore =
-  lt:pEol !ParagraphStopper s:pExtSpaceStar c:InlineContentPlus
+  lt:pEolNode !ParagraphStopper s:pExtSpaceStar c:InlineContentPlus
   {
+    yyValue = new NodeList(lt, s, c);
+    /*
     yyValue = new NodeList(
         new Whitespace(
           new NodeList(new Text(lt)),
           true),
         s,
         c);
+    */
   }
 ;
 
@@ -223,20 +229,26 @@ private inline AstNode ParagraphTextMore =
  */
 
 private noinline transient NodeList PostParaWs =
-  lt:pEol tail:PostParaWsMore*
+  lt:pEolNode tail:PostParaWsMore*
   {
+    yyValue = new NodeList(lt, tail);
+    /*
     yyValue = new NodeList(
         new Whitespace(new NodeList(new Text(lt)), true),
         tail);
+    */
   }
 ;
 
 private inline NodeList PostParaWsMore =
-  !ParagraphStopper s:pExtSpaceStar lt:pEol
+  !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
+    yyValue = new NodeList(s, lt);
+    /*
     yyValue = new NodeList(
         s,
         new Whitespace(new NodeList(new Text(lt)), true));
+    */
   }
 ;
 

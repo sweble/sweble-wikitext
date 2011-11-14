@@ -3,14 +3,15 @@ LazyParsedPage(
     {N} warnings = []
 
   [
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Paragraph([
       Text("text")
-      Whitespace(EOL: [ Text("\n\n") ])
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("text")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
   ]
 )

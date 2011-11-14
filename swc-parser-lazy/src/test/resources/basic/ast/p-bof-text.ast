@@ -5,11 +5,11 @@ LazyParsedPage(
   [
     Paragraph([
       Text("text")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Text("text")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Text("text")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
   ]
 )

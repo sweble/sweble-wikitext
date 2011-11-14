@@ -19,7 +19,7 @@ LazyParsedPage(
             {N} name = "b"
 
           [ ]
-          [ Whitespace(EOL: [ Text("\n") ]) ]
+          [ Newline("\n") ]
         )
       ]
     )

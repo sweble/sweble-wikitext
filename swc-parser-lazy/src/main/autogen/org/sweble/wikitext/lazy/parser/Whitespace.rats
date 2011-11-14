@@ -29,6 +29,15 @@
  *     Properties:
  *       hasNewline : boolean
  *
+ * Newline
+ * -------
+ *
+ *   AST node:
+ *     Name        : Newline
+ *     Extends     : StringContentNode
+ *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_NEWLINE
+ *     Constructor : "content"
+ *
  */
 
 module org.sweble.wikitext.lazy.parser.Whitespace;
@@ -40,7 +49,7 @@ modify org.sweble.wikitext.lazy.utils.Whitespace;
 
 
 
-// -- Redefinition of EOL productions ------------------------------------------
+// -- Definition of StateLess EOL productions ----------------------------------
 
    inline String  pSlEol        = "\r\n"     // <S>tate<L>ess
                                 / "\r"
@@ -51,8 +60,6 @@ modify org.sweble.wikitext.lazy.utils.Whitespace;
                                 / "\u000C"
                                 / "\u0085" ;
 
-          String  pEol         := <DUMMY> &{ acceptEol() } pSlEol ;
-
    inline void    slEol         = "\r\n"     // <S>tate<L>ess
                                 / '\r'
                                 / '\n'
@@ -62,10 +69,28 @@ modify org.sweble.wikitext.lazy.utils.Whitespace;
                                 / '\u000C'
                                 / '\u0085' ;
 
-          void    Eol          := <DUMMY> &{ acceptEol() } slEol ;
-
 transient void    slEolOrEof    = slEol
                                 / Eof ;
+
+
+
+
+// -- Redefinition of EOL Stateful productions ---------------------------------
+
+String pEol :=
+  <DUMMY> &{ acceptEol() } pSlEol
+;
+
+void Eol :=
+  <DUMMY> &{ acceptEol() } slEol
+;
+
+Newline pEolNode =
+  eol:pEol
+  {
+    yyValue = new Newline(eol);
+  }
+;
 
 
 
@@ -144,7 +169,7 @@ noinline transient AstNode pExtWsStar =
 
 noinline memoized Whitespace pExtWsStarMemoized =
  ^{
-    Result yyResult = new StateAwareResult("pExtWsPlus", getContext(), ppExtWsStarTransient(yyBase));
+    Result yyResult = new StateAwareResult("pExtWsStar", getContext(), ppExtWsStarTransient(yyBase));
     if (returnTrue(yyResult))
       return yyResult;
   }

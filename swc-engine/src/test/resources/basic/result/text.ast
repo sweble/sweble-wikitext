@@ -1,10 +1,5 @@
 Page([
-  Whitespace(
-    Properties:
-      {N} hasNewline = true
-
-    [ Text("\n") ]
-  )
+  Newline("\n")
   Paragraph([
     XmlElement(
       Properties:
@@ -24,18 +19,8 @@ Page([
       ]
       [ Text(" Hallo ") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -56,18 +41,8 @@ Page([
       ]
       [ Text(" Hallo ") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -87,27 +62,12 @@ Page([
         )
       ]
       [
-        Whitespace(
-          Properties:
-            {N} hasNewline = true
-
-          [ Text("\n") ]
-        )
+        Newline("\n")
         Text("Hallo")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -126,27 +86,10 @@ Page([
           [ Text("a4") ]
         )
       ]
-      [
-        Whitespace(
-          Properties:
-            {N} hasNewline = true
-
-          [ Text("\n") ]
-        )
-      ]
+      [ Newline("\n") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -185,35 +128,15 @@ Page([
         )
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
     XmlComment(
       Properties:
             RTD = RtData: [0] = "<!-- ======================================================================= -->"
         {N} content = " ======================================================================= "
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -234,18 +157,8 @@ Page([
       ]
       [ Text(" Hallo ") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -266,18 +179,8 @@ Page([
       ]
       [ Text(" Hallo ") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -297,27 +200,12 @@ Page([
         )
       ]
       [
-        Whitespace(
-          Properties:
-            {N} hasNewline = true
-
-          [ Text("\n") ]
-        )
+        Newline("\n")
         Text("Hallo")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -336,44 +224,17 @@ Page([
           [ Text("b4") ]
         )
       ]
-      [
-        Whitespace(
-          Properties:
-            {N} hasNewline = true
-
-          [ Text("\n") ]
-        )
-      ]
+      [ Newline("\n") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
     XmlComment(
       Properties:
             RTD = RtData: [0] = "<!-- ======================================================================= -->"
         {N} content = " ======================================================================= "
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -397,18 +258,8 @@ Page([
         Text("!")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -432,18 +283,8 @@ Page([
         Text("!")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -467,18 +308,8 @@ Page([
         Text("!")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -502,18 +333,8 @@ Page([
         Text("!")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -537,18 +358,8 @@ Page([
         Text("!")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -572,35 +383,15 @@ Page([
         Text("!")
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
     XmlComment(
       Properties:
             RTD = RtData: [0] = "<!-- ======================================================================= -->"
         {N} content = " ======================================================================= "
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
   Paragraph([
     XmlElement(
@@ -621,17 +412,7 @@ Page([
       ]
       [ Text("Hallo") ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
+    Newline("\n")
   ])
 ])

@@ -11,7 +11,8 @@ LazyParsedPage(
         [ Text("talkarchive") ]
         [ ]
       )
-      Whitespace(EOL: [ Text("\n\n") ])
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Bold(
@@ -20,7 +21,8 @@ LazyParsedPage(
 
         [ Text("Archive 1") ]
       )
-      Whitespace(EOL: [ Text("\n\n") ])
+      Newline("\n")
+      Newline("\n")
     ])
     Section(
       Properties:
@@ -29,10 +31,10 @@ LazyParsedPage(
 
       [ Text("The Irish connection ") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("Mmmm, it is very similar to Irish football, I wonder - was there significant Irish immigration in Australia at the time. {end sarcasm} Australian Rules = Irish Football played on a cricket pitch. It's ironic that us Aussie's love to play up AFL's uniqueness, yet it's uniqueness that gives away the fact that it's a bastardisation of an immigrant sport that's only played in one other country in the world. - CS")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         Itemization([
           ItemizationItem(
@@ -146,10 +148,11 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("I appreciate both your points. Am I driven by a partisan viewpoint? Perhaps, though to be honest I don't really enjoy either game being mainly a follower of rugby league. I'm just dumbfounded by the vehemence towards the idea that the game has Irish roots. And I can't help but think this was driven historically by the very real Irish/English divisions that existed in Australia up until the first wave of Southern European migration last century. The rules of Irish football may not have been codified until 30 years after Aussie Rules, but the game was played 100's of years previously. To dismiss out of hand, that a game familiar to a large (ethnic) part of a new society, had no influence on the development of a game with practically identical rules within that society is laughable. And then to \"draw a long bow\" to claim that the game is \"originally\" Australian because the natives were sometimes seen to kick a stuffed wombat around is ludicrous. Would you also deny the influence of African music on rock and roll because europeans played string instruments before exposure to African rhythms?")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         Itemization([
           ItemizationItem(
@@ -381,7 +384,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -476,7 +480,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -569,7 +574,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -579,14 +585,16 @@ LazyParsedPage(
 
       [ Text("Miscellaneous") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("Are there really no older professional teams? I have found some older cricket teams but don't know if they are professional or not.   ---rmhermen")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("well, its older than soccer. thats good enough for me.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("In fact, professionalism was not allowed by the VFL until its Rule 29 of 1911 (although under-the-table payments may well have occurred), and Melbourne FC was famous for being amateur for many years afterwards, so I don't think this can be justified. ")
@@ -605,22 +613,23 @@ LazyParsedPage(
             )
           )
           Text(" 10:28, 14 Mar 2004 (UTC) ")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I understand and appreciate the writer's enthusiasm for the sport, but the last sentence in partciular needs to be rephrased to be less partisan about its alleged superiority over other variants of football.")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("No, I agree with the author of the article. Where he says there are other ")
           Italics(
@@ -651,13 +660,14 @@ LazyParsedPage(
               [ Text("Mark Ryan") ]
             )
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "-----"
         )
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("By the way, I wrote a bunch more stuff for this article months ago that seems to have been lost by somebody's errant revision.  I hope the new wikipedia software will support a complete revision history. . . ")
           InternalLink(
@@ -674,16 +684,19 @@ LazyParsedPage(
               [ Text("Robert Merkel") ]
             )
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("I saw some games on TV in the US.  Who's the guy in the white suit who waves around  flags when a goal is scored?  Shouldn't this be mentioned in the article somewhere?")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -693,12 +706,14 @@ LazyParsedPage(
             [ Text("The Goal Umipre") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "-----"
         )
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("I like the diagrams, but the font is much too small.  ")
           InternalLink(
@@ -716,13 +731,14 @@ LazyParsedPage(
             )
           )
           Text(" 08:31, Aug 2, 2003 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -732,7 +748,7 @@ LazyParsedPage(
 
       [ Text("Winter") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("What is the difference between summer and winter in Australia, that the same fields are used but for different sports? -- ")
           InternalLink(
@@ -749,7 +765,8 @@ LazyParsedPage(
               [ Text("Error") ]
             )
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition([
@@ -805,7 +822,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -877,23 +895,26 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I have to take issue with the following -")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("\"All of the original VFL clubs are still in existence, with the exception of South Melbourne Football Club who in 1982 relocated to Sydney and became known as the Sydney Swans and the Fitzroy which merged with the Brisbane in 1996 due to financial difficulties.\"")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Does \"exist\" mean the club no longer plays in the VFL/AFL, or no longer exists?")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Fitzroy still exists as an amateur club. ")
           InternalLink(
             Properties:
@@ -909,7 +930,8 @@ LazyParsedPage(
               [ Text("RoyalDave") ]
             )
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
       ]
     )
@@ -920,7 +942,7 @@ LazyParsedPage(
 
       [ Text("History") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("The history section on this page needs to be corrected to bring it into line with the information on this site ")
           Url(
@@ -960,7 +982,8 @@ LazyParsedPage(
             )
           )
           Text(" 14:21, 9 Mar 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Mintguy has a point, although I've said to him elsewhere ")
@@ -989,13 +1012,13 @@ LazyParsedPage(
             )
           )
           Text(" 18:10, 12 Mar 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I just had another look at Blainey's ")
           Italics(
@@ -1019,7 +1042,8 @@ LazyParsedPage(
             [ Text("More Than A Game") ]
           )
           Text(" (1998). The latter book provides a few more details: they say that \"a rugby ball\" was used in the experimental game on July 31, 1858; that people of various backgrounds were involved, and; that rules were supposed to have been formulated afterwards, although these have not survived. ")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text(
@@ -1030,7 +1054,8 @@ LazyParsedPage(
                 Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:71:6 - 7: "&" : This looks like a XML Reference, however the entity name or character code is missing.
               ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text(
@@ -1083,7 +1108,8 @@ LazyParsedPage(
             )
           )
           Text(" 10:28, 14 Mar 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Grant. You've just reminded me of something with that last sentence. Some time ago I tried to find out about early proponents of Association football in Australia but I found virtually no information about this. I did find out that early bodies subscribing to the FA rules included the Southern British Football Association in New South Wales, the Anglo-Australian Football Association in Victoria and the British Football Associations of Queensland, South Australia and Tasmania. But I couldn't find any dates relating to the establishment and/or demise of these organisations. ")
@@ -1117,7 +1143,8 @@ LazyParsedPage(
             )
           )
           Text(" 10:56, 14 Mar 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Mintguy, see the latest comments on my talk page. ")
@@ -1136,20 +1163,22 @@ LazyParsedPage(
             )
           )
           Text(" 13:19, 14 Mar 2004 (UTC)~")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         HorizontalRule(
           Properties:
             RTD = RtData: [0] = "----"
         )
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("The article states that the VFA was formed in 1877, but the list of teams is incorrect. For example, Essendon is not listed as a team in the VFA in 1877, but they finished fourth in that year.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("There is also no mention of the earlier Victorian competition that preceded the VFA.")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           InternalLink(
             Properties:
               RTD = RtData: [0] = "[[User:B.d.mills", [1] = "]]"
@@ -1165,7 +1194,7 @@ LazyParsedPage(
             )
           )
           Text(" 12:54, 28 Sep 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
       ]
     )
@@ -1176,7 +1205,7 @@ LazyParsedPage(
 
       [ Text("Rules") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I think the section on the rules could be expanded. Basic information like the number of players is lacking, and can only be deduced from studying the images. ")
           InternalLink(
@@ -1194,7 +1223,8 @@ LazyParsedPage(
             )
           )
           Text(" 10:48, Mar 11, 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("It seems that I am far from the only one who has mixed up the various games played in 1858. ")
@@ -1241,7 +1271,8 @@ LazyParsedPage(
             )
           )
           Text(" 13:13, 14 Mar 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Section(
           Properties:
@@ -1250,7 +1281,8 @@ LazyParsedPage(
 
           [ Text("Length of the Game") ]
           [
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Seems an obvious thing to have, yet it's currently missing. As far as I know it's four quarters of thirty minutes, but I don't know who keeps time and whether it can go over thirty, or what happens if the scores are level at full time. Aussie input welcome! ")
               InternalLink(
@@ -1268,7 +1300,7 @@ LazyParsedPage(
                 )
               )
               Text(" 19:45, 24 September 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition(
@@ -1345,7 +1377,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             SemiPre([
               SemiPreLine(
                 Properties:
@@ -1354,18 +1387,19 @@ LazyParsedPage(
                 [ Text("      Each quarter runs for 20 minutes. Over time is what causes the game to go past the 20 minute mark. Overtime can be caused by a number of factors such as ") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Paragraph([
               Text("-the umpire returning the ball to the center to be bounced and resume play (30-40sec. each time)")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("-a player getting injured and needing to be carried off the feild (3-6min)")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("-A player taking a long time to have a shot at goal. (1-2min.) etc.")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("Overtime is usually no more than 10 minutes which may have contributed to confusion about 30 minute quarters.")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("Time is keept by an offical time keeper independent of the players and umpire. Only the umpire can call for the clock to be stoped which is what causes overtime.")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
           ]
         )
@@ -1378,7 +1412,8 @@ LazyParsedPage(
 
       [ Text("Rugby League") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("To explain my last edit: it's not accurate to say that Aussie Rules was \"developed as an alternative to Rugby\", with a link to ")
           InternalLink(
@@ -1450,7 +1485,8 @@ LazyParsedPage(
             )
           )
           Text(" 21:09, Apr 12, 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
       ]
     )
@@ -1483,7 +1519,8 @@ LazyParsedPage(
         Text(" ")
       ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("I added a section today, under the \"Future teams\" heading.  However on re-reading it seems that the entire \"teams\" section, as well as my additional section, should really go in the ")
           InternalLink(
@@ -1511,7 +1548,7 @@ LazyParsedPage(
             )
           )
           Text(" 00:16, 20 Jul 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -1791,7 +1828,7 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I would like to see the names of the 12 AHoF \"legends\" (at least) remain in this article, as there were very few mentions of players when I originally added the HoF section. A separate article on the HoF would still be a good idea, as it has a lot more members than just the 12 legends. By the way, almost none of the legends had article when I added that list and Wikipedia is still short of articles on Aussie rules players. (Except for the fan contributions on current players like ")
           InternalLink(
@@ -1833,7 +1870,8 @@ LazyParsedPage(
             )
           )
           Text(" 00:17, May 6, 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("It seems silly to have the Hall of Fame information duplicated on both this page and the AFL page.  I agree that it needs its own page but perhaps there should be some consensus about where it really should go?  My vote, fwiw, is to leave it on this page in preparation for moving it to its own page later.--")
@@ -1852,7 +1890,8 @@ LazyParsedPage(
             )
           )
           Text(" 07:45, 9 Jun 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -1893,7 +1932,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -1923,7 +1963,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -1933,7 +1974,7 @@ LazyParsedPage(
 
       [ Text("IAFC") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("The article indicates that the IAFC is the official administrative body for Australian rules football internationally but I think you would get a very different view on that from the AFL, who see themselves as the official international representative body for the sport.  If someone can come up with a statement from the AFL that it recognises the IAFC as the official international body though, I'd be happy to retain the reference.  --")
           InternalLink(
@@ -1951,7 +1992,7 @@ LazyParsedPage(
             )
           )
           Text(" 04:05, 10 Oct 2004 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2083,7 +2124,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2093,7 +2135,8 @@ LazyParsedPage(
 
       [ Text(" Diagrams ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Anyone want to have a go at adding the new centre circle into the diagrams? --")
           InternalLink(
@@ -2111,7 +2154,10 @@ LazyParsedPage(
             )
           )
           Text(" 02:48, 5 May 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n\n\n") ])
+          Newline("\n")
+          Newline("\n")
+          Newline("\n")
+          Newline("\n")
         ])
       ]
     )
@@ -2122,10 +2168,11 @@ LazyParsedPage(
 
       [ Text(" Footy ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Is this section really necessary or appropriate?")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2152,7 +2199,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2162,14 +2210,17 @@ LazyParsedPage(
 
       [ Text(" What is a \"clearance\"? ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("When I watch AFL football on TV, I often hear the announcers talking about \"clearances\" and \"disposals\", which events are also tabulated among the statistics.  Unfortunately, no one ever bothers to tell us Americans what those terms mean.  I decided that a Web search would provide me the answers.  Actually, I have searched extensively; and, though I did find here a definition of \"disposal\", I am still at a loss for an exact definition of \"clearance\".  I suppose that a clearance has occurred when the ball is kicked a long ways, but I suspect field position has something to do with it.  I don't know if a hand pass can count as a clearance.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I hope that someone who knows will add to the article a definition of \"clearance\".")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           InternalLink(
@@ -2187,7 +2238,7 @@ LazyParsedPage(
             )
           )
           Text(" 15:17, 26 August 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2197,7 +2248,8 @@ LazyParsedPage(
             [ Text("A clearance is more correctly known as a \"centre clearance\", and refers to when the ball is kicked out of the centre square to the advantage of one team or the other directly from the centre bounce after a goal or at the beginning of a quarter.  So if there's a stoppage in play in the centre square leading to an umpire bounce, the ensuing kick out of the square is NOT a clearance; but if it occurs as a direct consequence of the centre bounce it is.  ") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -2223,7 +2275,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -2278,7 +2331,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2288,7 +2342,7 @@ LazyParsedPage(
 
       [ Text(" Latest edit ") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("The latest anonimous edit looks like a bit of POV mischief from a banana bender with taped back ears and no neck who doesn't mind sniffing the odd backside.  Anyone with sufficient powers out there agree on a roll back?  --")
           InternalLink(
@@ -2331,7 +2385,8 @@ LazyParsedPage(
             )
           )
           Text(" 08:53, 14 September 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2394,7 +2449,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2404,7 +2460,7 @@ LazyParsedPage(
 
       [ Text(" ACT ") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("Re the Brain's most recent edit, that wasn't me that deleted that line that he has restored, but I always thought that it was inaccurate in relation to the ACT (i.e. Canberra).  In fact, Canberra was an aussie rules stronghold until at least 1982 because the first two generations of public servants came predominantly from Melbourne. With time this balance swung more to Sydney and then around 1982 the Canberra Raiders joined the then NSWRL.  Rugby league certainly has overtaken aussie rules in general popularity (if you are counting TV ratings) but in terms of participation I would think that it would be roughly on par with aussie rules and rugby union, and all three are likely to be behind soccer.  In terms spectators attending games, I imagine the ACT Brumbies currently outstrip all, the Canberra Raiders only get about half, and for some of the three or four games the Kangaroos play in Canberra, they will often get more than the average Raiders game.  All in all - I think it is not an accurate statement about Canberra (not to mention that in souther NSW, aussie rules is stronger than rugby league).  --")
           InternalLink(
@@ -2447,7 +2503,8 @@ LazyParsedPage(
             )
           )
           Text(" 06:53, 27 September 2005 (UTC)  ps I am a Canberran.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2466,7 +2523,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -2579,7 +2637,8 @@ LazyParsedPage(
             [ Text("I think that's fair enough Pippu. I've not spent much time in Canberra but my understanding of Aussie rules history there is much as you describe. However it must be said that the AFL match crowds in Canberra in recent years have been very small in comparison to the Raiders' and Brumbies'. Whether or not that would change if an AFL side was based there is a matter for conjecture but not in a WP article. About the only thing disputable about the passage is whether union or league is more popular in the ACT. ") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -2588,7 +2647,8 @@ LazyParsedPage(
             [ Text("Without the bold section above, the passage reads as though Aussie rules is predominant in all states of Australia, which is of course not the case, despite recent progress. ") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -2614,7 +2674,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -2683,7 +2744,7 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("The crowd at the last Raiders match (v Manly) was 10,366;")
           ExternalLink(
@@ -2711,7 +2772,8 @@ LazyParsedPage(
             )
             [ ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2728,7 +2790,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -2745,7 +2808,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -2761,7 +2825,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("On that basis you I think it have to be said that Aussies rules is at least equal to rugby league, and is growing at the moment. When the ")
           InternalLink(
@@ -2816,7 +2881,8 @@ LazyParsedPage(
             )
           )
           Text(" 22:27, 27 September 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -2826,7 +2892,8 @@ LazyParsedPage(
             [ Text("Fair enough, Grant, but are you aware that one of those matches was entirely bought out by Foxtel, who supplied free tickets to anyone who wanted one as part of a Foxtel/Fox Footy/AFL promotion in Canberra? ") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -2852,7 +2919,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -2888,7 +2956,7 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         SemiPre([
           SemiPreLine(
             Properties:
@@ -2897,7 +2965,7 @@ LazyParsedPage(
             [ ]
           )
         ])
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -2952,7 +3020,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3007,7 +3076,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -3017,7 +3087,8 @@ LazyParsedPage(
 
       [ Text(" Aussie rules in Australia ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The ")
           InternalLink(
@@ -3070,7 +3141,8 @@ LazyParsedPage(
             )
           )
           Text(" 04:32, 18 October 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
       ]
     )
@@ -3081,10 +3153,12 @@ LazyParsedPage(
 
       [ Text(" Rules ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The Rules section is getting rather long and unwieldly, especially the holding the ball subsection (which I started, when it actually was \"easily summarised\"), so moving it to another article seems like a good idea. But the name of such an article is an interesting topic - I would suggest \"Australian Football Rules\", just to confuse people (and to make User 139.132.1.1 happy). Possible alternatives are \"Australian Rules Football Rules\", or \"Rules of Australian Rules Football\", or even \"Australian Rules\". Seriously, probably the best name would be \"Rules of Australian Football\", regardless of whether you think that Australian Football is a good name. Incidentally, my copy of the rulebook has on the cover \"Laws of Australian Football\", so maybe thats an even better one (or \"Laws of Australian Rules Football\" come to think of it). If someone else wants to actually move the stuff, that would be good, or I'll probably do it in a week or two when I have more time. Of course the alternative is to just delete half the stuff, but that's probably not a good idea.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("On an unrelated note, exactly how high is \"elbow height\"? ")
@@ -3103,7 +3177,7 @@ LazyParsedPage(
             )
           )
           Text(" 17:39, 9 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -3155,7 +3229,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3185,7 +3260,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3234,7 +3310,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -3275,7 +3352,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3315,7 +3393,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -3325,54 +3404,63 @@ LazyParsedPage(
 
       [ Text(" Attendance Record Cop-Outs and Factoids ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Aussie Rules fans go to games.  Rugby league fans watch games on tv.  Using attendance records as a means to determine popularity is severely flawed.  Put simply, it's a cop out.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Another copout is the state count.  Try adding up the populations of the AFL states in comparison to the non-AFL states!  You have more than 50% of the entire country's population when you aggregate NSW and Qld populations alone.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I'm not suggesting that RL has higher popularity, just that AFL popularity in comparison is incredibly overstated by the non-NPOV wording in this article.")
-          Whitespace(EOL: [ Text("\n\n\n") ])
+          Newline("\n")
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Now for the backup stats.  This is from the Australian Bureau of Statistics.  State populations as of june 30 2003...")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I've even given you the benefit of the doubt on NT being an AFL zone!  I'm not convinced.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Non AFL States and Territories...")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("NSW: 668 6644")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Qld: 379 6775")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("ACT: 322 850")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Total: 10 806 269")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("AFL States and Territories...")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Vic: 4 917 394")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("SA:  1 527 421")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("WA:  1 952 286")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Tas: 477 094")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("NT:  198 351")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Total: 9 072 546")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Sorry to Burst your bubble AFL Fans! ")
@@ -3391,7 +3479,8 @@ LazyParsedPage(
             )
           )
           Text(" 13:53, 21 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I'm not really sure what you're trying to say, since your arguments are as dodgy as the ones you are apparaently debunking, not to mention noone ever used a state count to prove anything. Aussie Rules is the most popular code of football in Australia, by any measure (eg ")
@@ -3423,7 +3512,8 @@ LazyParsedPage(
             )
           )
           Text(" 14:37, 21 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition([
@@ -3454,7 +3544,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3498,7 +3589,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3542,7 +3634,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3586,7 +3679,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3630,7 +3724,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3674,7 +3769,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3718,7 +3814,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3810,7 +3907,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -3869,7 +3967,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("By the way, I noticed you didn't comment on my suggestion that this article is loaded with Non-NPov original material with little or no source citation to back it up.")
           InternalLink(
@@ -3887,7 +3986,8 @@ LazyParsedPage(
             )
           )
           Text(" 13:01, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -3928,7 +4028,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Bold(
             Properties:
@@ -3936,9 +4037,10 @@ LazyParsedPage(
 
             [ Text("I will say again that the main purpose of the section is *not* to make comparisons with other sports, but to describe what popularity the code has.") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("I have to disagree with you there.  How can you demonstrate the popularity of a sport without benchmarking it against other sports.  Saying Austrlian rules is very popular, or even the 'most' popular sport is like saying, 'my piece of string is very long' or 'I have the longest piece of string'.  As someone reading the article I want to see how much more popular the sport is overall and in comparison to the sport that comes second in the popularity contest.  Having said that, nothing annoys me more than when Aussie Rules fans pull out their pencil and eraser on a rugby league article and insert the term 'Aussie Rules' in as many places as they can get away with!  That's not what i'm trying to do here and generally speaking, I like to discuss potential edits prior to making changes to a page.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I will, as you suggest, add some sources, citable statistics and non-npov wording to the article.")
@@ -3957,7 +4059,8 @@ LazyParsedPage(
             )
           )
           Text(" 13:44, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -3967,7 +4070,8 @@ LazyParsedPage(
             [ Text("Please don't post comments in other people's posts, it makes it hard to tell who's said what.") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -3976,7 +4080,8 @@ LazyParsedPage(
             [ Text("Why measure popularity by majority per state? The popularity of sports doesn't respect state borders, especially when it comes to the AFL. For example:") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -3985,7 +4090,8 @@ LazyParsedPage(
             [ Text("Total viewers (in thousands) and broken down by five largest cities.") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -3994,7 +4100,8 @@ LazyParsedPage(
             [ Text("STATE OF ORIGIN RUGBY LEAGUE QLD V NSW 1ST GAME. Total 1,733. Syd 813; Mel 128; Bris 726; Ade 32; Perth 34.") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4003,7 +4110,8 @@ LazyParsedPage(
             [ Text("STATE OF ORIGIN RUGBY LEAGUE NSW V QLD 2ND GAME: Total 1,758. Syd 959; Mel 106; Bris 652; Ade 22; Perth 19") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4012,7 +4120,8 @@ LazyParsedPage(
             [ Text("STATE OF ORIGIN RUGBY LEAGUE QLD V NSW 3RD GAME: Total: 1,863. Syd 952; Mel 251; Bris 593; Ade 32; Per 35") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4021,7 +4130,8 @@ LazyParsedPage(
             [ Text("2005 NRL GRAND FINAL Total: 2,563. Syd 1,188; Mel 506; Bris 778; Ade 49; Per 42") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4030,7 +4140,8 @@ LazyParsedPage(
             [ Text("2005 AFL GRAND FINAL Total: 3,386. Syd 991; Mel 1,202; Bris 341; Ade 341; Per 511") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4047,7 +4158,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4056,7 +4168,8 @@ LazyParsedPage(
             [ Text(" Interesting to note that almost as many people in Sydney watched the AFL grand final as watched the NRL event. You could argue that it was because the Swans were playing, but that doesn't explain the lacklustre figures for league outside of Sydney and Brisbane, e.g. the relative figures in figures in Perth and Adelaide for Origin 2 and the AFL GF.") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4074,7 +4187,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4128,7 +4242,9 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n\n") ])
+        Newline("\n")
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Bold(
             Properties:
@@ -4136,11 +4252,13 @@ LazyParsedPage(
 
             [ Text("Why measure popularity by majority per state? The popularity of sports doesn't respect state borders, especially when it comes to the AFL. For example: ") ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Didn't suggest we do but your suggestion reinforces the meaningless nature of the state based stats when trying to draw a conclusion from a national standpoint.  If you'd read my comments you'd see I actually suggested using viewership as the main component of such an argument.  So thanks for backing my argument and supplying some usefull stats.  I'd like to see some of the viewership stats in the article.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4149,31 +4267,34 @@ LazyParsedPage(
 
             [ Text("Every source I have seen says that soccer is the biggest sport in terms of participation (probably because because of the number of kids, including girls playing), but Aussie rules is second ") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Well the ABS disagrees.  ")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("This link includes all forms of exercise as well as sports.  Aussie rules doesn't even rank in the top 10.  Soccer is number 10...")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Url(
             Properties:
               RTD = RtData: [0] = "http://www.abs.gov.au/Ausstats/abs@.nsf/0/DAAADA81176E2F89CA256F7200833023?Open"
               {N} path = "//www.abs.gov.au/Ausstats/abs@.nsf/0/DAAADA81176E2F89CA256F7200833023?Open"
               {N} protocol = "http"
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("This article is limited to organised sports and shows stats for children alone.  Aussie Rules is ranked 6th after swimming, soccer, netball, tennis and basketball")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Url(
             Properties:
               RTD = RtData: [0] = "http://search.abs.gov.au/servlet/SearchDocuments?query=Australian+rules+football+soccer+rugby+league&docID=CA256FE8004F86D9&docURL=HTTP://www.abs.gov.au/Ausstats/abs%40.nsf/0/57E1C764BFA85942CA256F7200832FBC%3FOpen"
               {N} path = "//search.abs.gov.au/servlet/SearchDocuments?query=Australian+rules+football+soccer+rugby+league&docID=CA256FE8004F86D9&docURL=HTTP://www.abs.gov.au/Ausstats/abs%40.nsf/0/57E1C764BFA85942CA256F7200832FBC%3FOpen"
               {N} protocol = "http"
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4191,9 +4312,10 @@ LazyParsedPage(
               )
             ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Perhaps you can explain the relevance of this point.  I don't get it.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           InternalLink(
@@ -4211,7 +4333,8 @@ LazyParsedPage(
             )
           )
           Text(" 15:03, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("You are being extremely inconsistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. The most recent version of the sweeney report, mentioned above, which uses participation as well as watching and attending, gives swimming as the most popular sport, with tennis, cricket and AF tied on second. Taking only TV (your favourite statistic) AF is the highest. Again, it contains many forms of exercise as well. If you want to read it - ")
@@ -4272,7 +4395,7 @@ LazyParsedPage(
             )
           )
           Text(" 15:22, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition([
@@ -4332,7 +4455,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4341,7 +4465,8 @@ LazyParsedPage(
             [ Text("Inconsistency doesn't cover it. The WAFL reference was a light hearted reference to your enigmatic comments about the state Aussie rules comps, which I still don't understand. (The WAFL games are telecast, by the way, live on the ABC. I would guess the SANFL and VFL games are as well.)") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4350,7 +4475,8 @@ LazyParsedPage(
             [ Text("I gladly defer to the ABS, which also shows Aussie rules to be the number one spectator sport:") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4363,7 +4489,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4376,7 +4503,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4455,7 +4583,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4475,7 +4604,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4574,21 +4704,24 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("To BJMurph")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Bold(
             Properties:
               RTD = RtData: [0] = "'''", [1] = "'''"
 
             [ Text("You are being extremely incosistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. ") ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("OK feel free to quote me out of context!  What I said was that the ABS doesn't provide statistics that will tell us which sport is more popular or how popular Australian sports are in comparison to one another.  Where i've used abs stats it has been specifically in relation to participation in sport.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4597,9 +4730,10 @@ LazyParsedPage(
 
             [ Text("The most recent version of the sweeney report") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("If you'd bothered to read my comments you'd see that I do view the sweeny report as a solid source and that my only gripe is with the fact that none of the stats from said report are included in the article!")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4608,9 +4742,10 @@ LazyParsedPage(
 
             [ Text("gives swimming as the most popular sport, with tennis cricket and AF tied on second") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Ah.  So are you now saying that Aussie Rules isn't the most popular sport in Australia?  Or have I misunderstood your point?")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4619,22 +4754,26 @@ LazyParsedPage(
 
             [ Text("And please stop editing other peoples comments, it's just confuses things") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("Well firstly, I didn't edit anyone elses comments.  I merely inserted my comments amongst theirs so it would be obvious which point i'm addressing.  After doing that ONCE I was asked not to so I didn't do it again.  Your statement implies that i've continued to do this.  This is a false accusation and a clear attempt at the ad hominen fallacy.  A dirty debating trick.  If what you're actually referring to me copying and pasting the arguments i'm commenting on, I fail to see how that makes it more confusing.  In fact i'd say it's making it more difficult for yout to confuse the issue.  You sure are trying hard though aren't you?")
-          Whitespace(EOL: [ Text("\n\n\n\n") ])
+          Newline("\n")
+          Newline("\n")
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("To Grant65")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Bold(
             Properties:
               RTD = RtData: [0] = "'''", [1] = "'''"
 
             [ Text("Inconsistency doesn't cover it. The WAFL reference was a light hearted reference to your enigmatic comments about the state Aussie rules comps, which I still don't understand.") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("My comments suggesting that it's ok to look at AFL popularity alone to get an idea of the popularity of the sport as a whole?  Again I will say, unless you think a significant number of those WAFL supporters don't support the AFL, there is no need to look at those numbers.  This is yet another attempt at a straw man argument.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4643,9 +4782,10 @@ LazyParsedPage(
 
             [ Text("I gladly defer to the ABS, which also shows Aussie rules to be the number one spectator sport: ") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("I don't dispute these stats at all.  Only the context in which they are used.  These stats don't in any way conclusively suggest that Aussies rules is 'more popular' than every other sport in Australia.  They merely show that Aussie rules gets more attendence at its games.  Any level headed person can see that.  If you can't i'd suggest your judgement is clouded by the love of the game to the extent that you are incapable of taking a pragmatic approach to the subject.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Bold(
@@ -4654,13 +4794,15 @@ LazyParsedPage(
 
             [ Text("Logically the biggest problem for league in terms of its following is not Aussie rules but rugby union") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("And yet another straw man argument.  This discussion has nothing to do with rugby league.  This discussion relates to the non-npov way in which Aussie Rules is represented in this article as Australia's most 'popular' sport.")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Please read the prior discussion before adding anything further to this discussion.  And please cease using dirty debating tactics.  I'm familiar with all of the logical fallacies.  We might even improve this article as a result!")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           InternalLink(
@@ -4678,7 +4820,8 @@ LazyParsedPage(
             )
           )
           Text(" 16:28, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -4688,7 +4831,8 @@ LazyParsedPage(
             [ Text("You'll notice I had already struck out the comment about editing other peoples comments, I wasn't reading it properly. And I will now say the same about the ABS comment, but with your interjections and stuff, I was finding the page hard to read. Perhaps if you made sure your comments were on a new line after the person you're quoting (maybe indented)(bold is good though).") ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -4746,7 +4890,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -4756,7 +4901,8 @@ LazyParsedPage(
 
       [ Text(" Another example of out of control non-NPOV ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Bold(
             Properties:
@@ -4764,7 +4910,8 @@ LazyParsedPage(
 
             [ Text("Cricket is the most common summer spectator sport in Australia, and is usually played on the same grounds as Australian Football. In the past, many elite-level footballers played representative cricket, but the increasingly professional nature of the game made this impossible by the 1980s. Of the other organised sports or physical activities played by aussie rules footballers in Australia, outdoor cricket is the most popular.") ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I think we're forgetting what the CG part of MCG stands for!")
@@ -4783,7 +4930,8 @@ LazyParsedPage(
             )
           )
           Text(" 10:01, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -4810,7 +4958,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4823,7 +4972,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4857,7 +5007,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4878,7 +5029,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4935,7 +5087,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -4956,7 +5109,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           XmlElement(
             Properties:
@@ -5000,11 +5154,12 @@ LazyParsedPage(
             )
           )
           Text(" 13:56, 22 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("OUT OF CONTROL NON-NPOV")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         Section(
           Properties:
@@ -5013,7 +5168,7 @@ LazyParsedPage(
 
           [ Text("Openning Paragraph") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5021,9 +5176,9 @@ LazyParsedPage(
 
                 [ Text("Spectacular high marks (\"speccies\") are regarded as one of the game's main attributes as a spectator sport.") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("From who's 'point of view' is it spectacular?")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition(
@@ -5050,7 +5205,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -5060,7 +5216,8 @@ LazyParsedPage(
 
           [ Text("Popularity") ]
           [
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5068,9 +5225,9 @@ LazyParsedPage(
 
                 [ Text("Domestic Migration") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("I'm a northerner and a rugby league fan, experientially I can't deny that AFL seems to be Australia's most popular winter sport and is growing in popularity. This point should be made though:")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             Itemization([
               ItemizationItem(
@@ -5080,7 +5237,8 @@ LazyParsedPage(
                 [ Text("In the states that support AFL pre-dominantly, that sport is followed with an unmatched level of passion, akin to a religion or way of life for many. It is not only accepted, but expected that you follow an AFL team, and it does not matter whether you are a truck driver or a lawyer the game is loved by everyone. In NSW on the other hand, following rugby league can sometimes be considered low-brow by your intellectual types, uncool by your hip types and thuggish brutality by your vegan types. Factor in the class divide where your elite private schools play rugby union only, and breed staunch union supporters and you can see you're behind the eight ball already. And then there is domestic migration, which in Australia tends to move in a north eastern direction meaning people brought up speaking the language of AFL move into NSW and Queensland and increase the supporter base for the code in those states.") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -5089,7 +5247,8 @@ LazyParsedPage(
                 [ Text("With relation to the above, this affects media coverage of the respective sports in Sydney. There are two reasons for this, the average union and AFL fan in NSW has a higher expendable income than the average rugby league fan (sorry no references), leading to these sports being able to attract 'high-end' sponsors and advertisers. In a vicious cycle, these 'high end' company's are often run at the highest levels by graduates from the aforementioned elite schools and we know where their loyalties lie. (In a quick aside, my personal opinion is that in Australia, rugby union would be as much of an anachronism as royal tennis, if it weren't for the elite private schools keeping it alive all these years.) Good sponsorship like this leads to greater exposure, even if the actual level of support doesn't warrant it. The Sydney Morning Herald is a prime example. This paper concentrates on union and AFL at the expense of rugby league, it also has a very poor circulation compared to the other major Sydney paper, the Daily Telegraph.") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("--")
               InternalLink(
@@ -5122,7 +5281,8 @@ LazyParsedPage(
                 )
               )
               Text(" 00:54, 25 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               Text("Very true.  And i'm happy to admit I came to this page knowing it would be loaded with non-npov statments due to the incredible level of fanaticism with the sport.  The level of fanaticism can only be compared to sports such as soccer in europe and GAA sports in country areas of Ireland (GAA sports are not popular in dublin where everyone just follows british soccer).  When visiting Melbourne many a cab driver has become upset with me when my response to the question 'which team do you follow?' is the Brisbane Broncos ")
@@ -5141,7 +5301,9 @@ LazyParsedPage(
                 )
               )
               Text(" 09:28, 25 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n\n\n") ])
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition(
@@ -5168,7 +5330,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             DefinitionList([
               DefinitionDefinition([
                 DefinitionList([
@@ -5198,7 +5361,8 @@ LazyParsedPage(
                 ])
               ])
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5206,9 +5370,10 @@ LazyParsedPage(
 
                 [ Text("attracts more interest than any other winter sport") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("This comment is backed up by an excellent citation.  The citation has a great deal of information that could aid the reader to quantify the popularity of Australian rules football in comparison to other sports.  However, none of that information is included in the article!")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               Bold(
@@ -5217,9 +5382,9 @@ LazyParsedPage(
 
                 [ Text("In the Australian Capital Territory (ACT) rugby union is arguably more popular.") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("Arguable by whom?  Who is being quoted here?  Where's the source to back this up?  Looks like heresay to me.")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition(
@@ -5281,7 +5446,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5289,9 +5455,9 @@ LazyParsedPage(
 
                 [ Text("In recent years, there has been a boom in Australian Football in Brisbane, and this appears to be closely linked to the success of the Brisbane Lions, who won three premierships in a row (2001-2003), and were runners-up in 2004.") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("Who is being quoted here?  Where is the citation and stats to back up the claim?  Looks like an assumption based on anecdotal evidence to me.")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition(
@@ -5328,7 +5494,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5336,9 +5503,9 @@ LazyParsedPage(
 
                 [ Text("In both the ACT and south-western NSW, Australian Football has rivalled the two varieties of rugby in popularity over many decades.") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("Over many decades?  I find that difficult to believe.  And again I ask, where's the source of this information?")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition(
@@ -5358,7 +5525,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5366,7 +5534,7 @@ LazyParsedPage(
 
                 [ Text("With nearly 400,000 participants, Australian Football is also one of the most played sports in the Australia.") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("Great.  Now the participation section.  Easily verifiable by the Australian Bureau of statistics web site.  One problem.  It's a pretty vague comment.  ")
               Bold(
                 Properties:
@@ -5375,7 +5543,8 @@ LazyParsedPage(
                 [ Text("One of the most played sports") ]
               )
               Text(" and successfully manages to leave people assuming certain things.  How about stating the its rank?  It might be interesting for people to know that soccer, netball and basketball all have higher participation rates and Australian Rules football.  And that in adults, sports such as golf, darts,billiards and pool have higher participation rates.  This is exactly how i'd word an article if I were expressing point of view and pushing an agenda.")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               Bold(
@@ -5384,9 +5553,9 @@ LazyParsedPage(
 
                 [ Text("Australian Football is also now played in more than 20 countries around the world.") ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("This fails to express how unpopular the sport is in those 20 countries?")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition([
@@ -5416,7 +5585,8 @@ LazyParsedPage(
                 ])
               ])
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -5426,7 +5596,8 @@ LazyParsedPage(
 
           [ Text("Leagues") ]
           [
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Bold(
                 Properties:
@@ -5434,11 +5605,13 @@ LazyParsedPage(
 
                 [ Text("The most powerful organisation and competition within the game is the elite, professional Australian Football League (AFL)") ]
               )
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               Text("Oh they're elite.  Is that another non-NPOV comment?  how about quoting somebody saying that?")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Enumeration([
               EnumerationItem(
@@ -5469,10 +5642,12 @@ LazyParsedPage(
                 [ Text("We don't need a quote to prove the AFL is the elite league - to quote Macquarie, \"a group of people with the most power, money, education etc.\" elite is just an adjective. Would you argue the AFL does not have the most money of any organisation of the game? And they set the rules, how much more power can you have?") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("I notice that all your arguments come from the sections that were removed from the intro. They are terefore summarising what should have been further into the article. I was not a fan of the leagues section, seeing as there is a teams and leagues section further in.")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               InternalLink(
@@ -5515,7 +5690,8 @@ LazyParsedPage(
                 )
               )
               Text(" 15:38, 22 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             DefinitionList([
               DefinitionDefinition([
@@ -5529,7 +5705,8 @@ LazyParsedPage(
                 ])
               ])
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Enumeration([
               EnumerationItem(
                 Properties:
@@ -5550,7 +5727,8 @@ LazyParsedPage(
                 [ Text("As for your 'elite' comment, there should be nothing in this article that can be interpreted as 'original material'.  Everything in this article is supposed to be sourced from somewhere.  This rule applies to all wikipedia articles.  This one is not an exception.") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               InternalLink(
                 Properties:
@@ -5567,7 +5745,8 @@ LazyParsedPage(
                 )
               )
               Text(" 16:41, 22 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               Text("I just took a look at the article for the first time since writing this and see that the issues i brought up have been addressed.  I'm impressed.  I think the article is better as a result.  Still needs more verifiable citations and quotations.")
@@ -5586,11 +5765,14 @@ LazyParsedPage(
                 )
               )
               Text(" 17:01, 22 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n\n\n") ])
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
             ])
             Paragraph([
               Text("I wasn't trying to say anything about your comments, rather that until a few weeks ago, everything up to and including the leagues section was in the intro. I haven't liked it is(or like it was), and have felt it sub par, but not quite sure how to go about fixing it.")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Enumeration([
               EnumerationItem(
@@ -5628,7 +5810,7 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Paragraph([
               InternalLink(
                 Properties:
@@ -5670,9 +5852,10 @@ LazyParsedPage(
                 )
               )
               Text(" 17:08, 22 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
               Text("(stop editing the page while i'm trying to post!!!!)")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Enumeration([
               EnumerationItem(
@@ -5711,7 +5894,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Enumeration([
               EnumerationItem(
                 Properties:
@@ -5737,7 +5921,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("You have a good point. I guess I feel that the meaning of elite being used here is the one that refers to the skill level of the competition, rather than the power and money of the organisation (governing body). It would be good to rewrite/split the sentence to that it adequately reflects both aspects. ")
               InternalLink(
@@ -5755,7 +5940,8 @@ LazyParsedPage(
                 )
               )
               Text(" 14:54, 23 November 2005 (UTC)")
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
             Enumeration([
               EnumerationItem(
@@ -5789,7 +5975,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -5801,7 +5988,8 @@ LazyParsedPage(
 
       [ Text(" Rename? ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Should this article be renamed from \"Australian rules football\" to \"Australian Rules Football\"?  It seems to be that the former sounds like a statement about a person in charge of football :) But in all seriousness, the latter is the correct title, is it not?  The history in the redirect appears to show the reverse was done on 11 November 2004, I but cannot think why. \"rules\" (uncapitalised) implies something other than a title. -- ")
           InternalLink(
@@ -5834,7 +6022,7 @@ LazyParsedPage(
             )
           )
           Text(" 02:27, 25 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -6022,7 +6210,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Enumeration([
           EnumerationItem(
             Properties:
@@ -6054,7 +6243,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -6194,7 +6384,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -6204,7 +6395,8 @@ LazyParsedPage(
 
       [ Text(" External links ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("I notice that some of the lists in the article have been columnised, drawing attention to something I was planning to raise earlier - should we really have that many external links listed? Most of them seem to be fairly good sites, but we aren't meant to be a link directory. The links at ")
           InternalLink(
@@ -6232,7 +6424,8 @@ LazyParsedPage(
             )
           )
           Text(" 17:40, 26 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("I don't think it's too bad. I agree it's as long as it should be, and maybe could be tightened slightly, but don't think a drastic cull is necessary.--")
@@ -6251,7 +6444,8 @@ LazyParsedPage(
             )
           )
           Text(" 11:20, 29 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           Text("Bah :p Many links, but none to ")
@@ -6283,7 +6477,8 @@ LazyParsedPage(
             )
           )
           Text(" 14:36, 29 November 2005 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -6320,7 +6515,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -6330,7 +6526,8 @@ LazyParsedPage(
 
       [ Text(" Padding ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition(
             Properties:
@@ -6370,7 +6567,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -6380,7 +6578,7 @@ LazyParsedPage(
 
       [ Text("Piccies") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I ask again:   are these the very best photos we can get our hands on of the great Australian game?  The one photo we show, looks more like the old Sun \"Spot the Ball\"  competition.  C'mon, let's lift our game!  ")
           InternalLink(
@@ -6423,7 +6621,7 @@ LazyParsedPage(
             )
           )
           Text(" 22:57, 8 February 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -6596,7 +6794,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -6665,7 +6864,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         DefinitionList([
           DefinitionDefinition([
             DefinitionList([
@@ -6734,7 +6934,8 @@ LazyParsedPage(
             ])
           ])
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -6744,7 +6945,7 @@ LazyParsedPage(
 
       [ Text("POV") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("Well, this article is pretty good, so congrats to the people involved. I do feel however, that it glorifies the sport a bit much, I know it is popular, but this article is a tad misleading, reading through it, it reads as if AFL is the be all and end all of Australian sport. Im not here to bag AFL by any means, and I know that there are sources provided and so on, but I do feel the article is not really written in a NPOV. ")
           InternalLink(
@@ -6762,7 +6963,7 @@ LazyParsedPage(
             )
           )
           Text(" 03:51, 19 February 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -6977,7 +7178,7 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
       ]
     )
     Section(
@@ -6987,7 +7188,7 @@ LazyParsedPage(
 
       [ Text("Help!") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ")
           TagExtension(
@@ -7029,7 +7230,7 @@ LazyParsedPage(
             )
           )
           Text(" 10:16, 22 February 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -7071,7 +7272,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -7081,7 +7283,7 @@ LazyParsedPage(
 
       [ Text("Tactics/Terminology") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I propose a section in the article on some of the tactics and terminology used in the game, drawing from ")
           InternalLink(
@@ -7265,7 +7467,7 @@ LazyParsedPage(
             ]
           )
           Text(" 11:18, 22 February 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -7307,7 +7509,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -7317,7 +7520,7 @@ LazyParsedPage(
 
       [ Text("Please vote") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("...in a ")
           InternalLink(
@@ -7373,7 +7576,8 @@ LazyParsedPage(
             )
           )
           Text(" 03:37, 4 March 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
       ]
     )
@@ -7384,7 +7588,8 @@ LazyParsedPage(
 
       [ Text(" External links ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("I've just reverted the additional of a generic football forum a couple of times.  Could someone more knowledgeable go through and trim the external links? -- ")
           InternalLink(
@@ -7402,7 +7607,7 @@ LazyParsedPage(
             )
           )
           Text(" 06:45, 31 March 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
         DefinitionList([
           DefinitionDefinition(
@@ -7479,17 +7684,17 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Paragraph([
           Text("I've added the following text in a comment in the external links section - feel free to change if you don't think it is appropriate:")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Italics(
             Properties:
               RTD = RtData: [0] = "''", [1] = "''"
 
             [ Text("Please DO NOT add other external links here unless they offer something specific that isn't available at any other site.  There are hundreds of unofficial fan sites and they can not all be listed here.  Preference will be given to links added by editors who contribute content, as opposed to editors who sign up specifically to promote a particular website.") ]
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Text("-- ")
           InternalLink(
             Properties:
@@ -7506,7 +7711,7 @@ LazyParsedPage(
             )
           )
           Text(" 00:32, 3 April 2006 (UTC)")
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
       ]
     )

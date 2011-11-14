@@ -18,13 +18,13 @@ package org.sweble.wikitext.engine.astwom.adapters;
 
 import java.util.ListIterator;
 
-import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
+import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.Whitespace;
+import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlCharRef;
 import org.sweble.wikitext.lazy.utils.XmlEntityRef;
@@ -35,10 +35,10 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class TextAdapter
-        extends
-            WomBackbone
-        implements
-            WomText
+		extends
+			WomBackbone
+		implements
+			WomText
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -54,11 +54,19 @@ public class TextAdapter
 		text = astNode.getContent();
 	}
 	
+	public TextAdapter(Newline newline)
+	{
+		super(newline);
+		text = Toolbox.toText(null, newline);
+	}
+	
+	/*
 	public TextAdapter(Whitespace ws)
 	{
 		super(ws);
 		text = Toolbox.toText(null, ws);
 	}
+	*/
 	
 	public TextAdapter(XmlEntityResolver entityResolver, XmlEntityRef ref)
 	{
@@ -168,7 +176,7 @@ public class TextAdapter
 		if (this.parts == null)
 		{
 			boolean isWs =
-			        getAstNode().getNodeType() == AstNodeTypes.NT_WHITESPACE;
+					getAstNode().getNodeType() == AstNodeTypes.NT_NEWLINE;
 			
 			if (isWs || TextUtils.needsEscaping(text, false))
 			{
@@ -194,7 +202,9 @@ public class TextAdapter
 	}
 	
 	@Override
-	public void deleteText(int from, int length) throws UnsupportedOperationException, IndexOutOfBoundsException
+	public void deleteText(int from, int length)
+		throws UnsupportedOperationException,
+		IndexOutOfBoundsException
 	{
 		if (from < 0 || length + from > this.text.length())
 			throw new IndexOutOfBoundsException();
@@ -212,25 +222,25 @@ public class TextAdapter
 			if (this.parts == null)
 			{
 				this.text = this.text.substring(0, from) +
-				        this.text.substring(from + length);
+						this.text.substring(from + length);
 				
-				if (getAstNode().getNodeType() != AstNodeTypes.NT_WHITESPACE)
+				if (getAstNode().getNodeType() != AstNodeTypes.NT_NEWLINE)
 				{
 					Text textNode = (Text) getAstNode();
 					textNode.setContent(this.text);
 				}
 				else
 				{
-					deleteText(null, (Whitespace) getAstNode(), from, length);
+					deleteText(null, (Newline) getAstNode(), from, length);
 				}
 			}
 			else
 			{
 				String firstText =
-				        this.text.substring(0, this.parts.offset);
+						this.text.substring(0, this.parts.offset);
 				
 				this.text = this.text.substring(0, from) +
-				        this.text.substring(from + length);
+						this.text.substring(from + length);
 				
 				TextPart first = new TextPart(getAstNode(), 0, firstText);
 				first.next = this.parts;
@@ -355,7 +365,10 @@ public class TextAdapter
 		throw new InternalError();
 	}
 	
-	private static void replaceAstNode(ListIterator<AstNode> i, AstNode astNode, AstNode replacement)
+	private static void replaceAstNode(
+			ListIterator<AstNode> i,
+			AstNode astNode,
+			AstNode replacement)
 	{
 		while (i.hasNext())
 		{
@@ -376,8 +389,8 @@ public class TextAdapter
 			case AstNode.NT_TEXT:
 				return deleteText(p, (Text) n, from, length);
 				
-			case AstNodeTypes.NT_WHITESPACE:
-				return deleteText(p, (Whitespace) n, from, length);
+			case AstNodeTypes.NT_NEWLINE:
+				return deleteText(p, (Newline) n, from, length);
 				
 			case AstNodeTypes.NT_XML_CHAR_REF:
 				return deleteText(p, (XmlCharRef) n, from, length, p.text);
@@ -392,8 +405,34 @@ public class TextAdapter
 	
 	private static Text deleteText(TextPart p, Text n, int from, int length)
 	{
-		String text = n.getContent();
+		String text = deleteText(p, from, length, n.getContent());
+		if (text == null)
+			return null;
 		
+		n.setContent(text);
+		return n;
+	}
+	
+	private static Newline deleteText(
+			TextPart p,
+			Newline n,
+			int from,
+			int length)
+	{
+		String text = deleteText(p, from, length, n.getContent());
+		if (text == null)
+			return null;
+		
+		n.setContent(text);
+		return n;
+	}
+	
+	private static String deleteText(
+			TextPart p,
+			int from,
+			int length,
+			String text)
+	{
 		if (from + length > text.length())
 			length = text.length() - from;
 		
@@ -401,17 +440,19 @@ public class TextAdapter
 			return null;
 		
 		text = text.substring(0, from) +
-		        text.substring(from + length);
+				text.substring(from + length);
 		
 		if (p != null)
 			p.text = text;
-		
-		n.setContent(text);
-		
-		return n;
+		return text;
 	}
 	
-	private static AstNode deleteText(TextPart p, XmlEntityRef n, int from, int length, String text)
+	private static AstNode deleteText(
+			TextPart p,
+			XmlEntityRef n,
+			int from,
+			int length,
+			String text)
 	{
 		if (from + length > text.length())
 			length = text.length() - from;
@@ -420,12 +461,17 @@ public class TextAdapter
 			return null;
 		
 		p.text = p.text.substring(0, from) +
-		        p.text.substring(from + length);
+				p.text.substring(from + length);
 		
 		return new Text(p.text);
 	}
 	
-	private static AstNode deleteText(TextPart p, XmlCharRef n, int from, int length, String text)
+	private static AstNode deleteText(
+			TextPart p,
+			XmlCharRef n,
+			int from,
+			int length,
+			String text)
 	{
 		if (from + length > text.length())
 			length = text.length() - from;
@@ -434,12 +480,17 @@ public class TextAdapter
 			return null;
 		
 		p.text = p.text.substring(0, from) +
-		        p.text.substring(from + length);
+				p.text.substring(from + length);
 		
 		return new Text(p.text);
 	}
 	
-	private static Whitespace deleteText(TextPart p, Whitespace n, int from, int length)
+	/*
+	private static Whitespace deleteText(
+			TextPart p,
+			Whitespace n,
+			int from,
+			int length)
 	{
 		NodeList list = n.getContent();
 		if (list.size() > 1)
@@ -470,9 +521,12 @@ public class TextAdapter
 		
 		return n;
 	}
+	*/
 	
 	@Override
-	public void insertText(int at, String text) throws UnsupportedOperationException, IndexOutOfBoundsException
+	public void insertText(int at, String text)
+		throws UnsupportedOperationException,
+		IndexOutOfBoundsException
 	{
 		// TODO: Implement
 	}
@@ -485,7 +539,9 @@ public class TextAdapter
 	}
 	
 	@Override
-	public String replaceText(int from, int length, String text) throws UnsupportedOperationException, IndexOutOfBoundsException
+	public String replaceText(int from, int length, String text)
+		throws UnsupportedOperationException,
+		IndexOutOfBoundsException
 	{
 		// TODO: Implement
 		return null;

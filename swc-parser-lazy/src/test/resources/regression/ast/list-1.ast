@@ -10,7 +10,7 @@ LazyParsedPage(
 
       [ Text("C") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:

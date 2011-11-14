@@ -18,7 +18,7 @@ LazyParsedPage(
         [ Text("ASDF") ]
       )
       Text(" may refer to ")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
     Itemization([
       ItemizationItem(
@@ -162,7 +162,7 @@ LazyParsedPage(
         [ Text(" Asdf.com is a random chat board where the point is to not always stay on topic.") ]
       )
     ])
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -170,7 +170,7 @@ LazyParsedPage(
 
       [ Text(" See also ") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -224,7 +224,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -235,7 +236,7 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
@@ -243,7 +244,8 @@ LazyParsedPage(
             [ Text("disambig") ]
             [ ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
         Paragraph([
           InternalLink(
@@ -255,7 +257,7 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           InternalLink(
             Properties:
               RTD = RtData: [0] = "[[fr:ASDF", [1] = "]]"
@@ -265,7 +267,7 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
       ]
     )

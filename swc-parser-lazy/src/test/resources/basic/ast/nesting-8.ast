@@ -32,7 +32,7 @@ LazyParsedPage(
                 )
               )
               Text("||2")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
           ]
         )

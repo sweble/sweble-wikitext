@@ -32,7 +32,7 @@ LazyParsedPage(
               [
                 Paragraph([
                   Text(" class=\"foo\"")
-                  Whitespace(EOL: [ Text("\n") ])
+                  Newline("\n")
                 ])
               ]
             )

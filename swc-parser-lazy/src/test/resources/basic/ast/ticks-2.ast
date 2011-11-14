@@ -10,14 +10,14 @@ LazyParsedPage(
 
         [ Text("italic") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
         [ Text("bold") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
@@ -31,7 +31,8 @@ LazyParsedPage(
           )
         ]
       )
-      Whitespace(EOL: [ Text("\n\n") ])
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("'")
@@ -41,14 +42,14 @@ LazyParsedPage(
 
         [ Text("hmmm") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
 
         [ Text("hmm'") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
@@ -56,7 +57,7 @@ LazyParsedPage(
         [ Text("Mark'") ]
       )
       Text("s")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
@@ -64,7 +65,8 @@ LazyParsedPage(
         [ Text("Mark'") ]
       )
       Text("s")
-      Whitespace(EOL: [ Text("\n\n") ])
+      Newline("\n")
+      Newline("\n")
     ])
     Itemization([
       ItemizationItem(
@@ -117,7 +119,8 @@ LazyParsedPage(
         ]
       )
     ])
-    Whitespace(EOL: [ Text("\n\n") ])
+    Newline("\n")
+    Newline("\n")
     SemiPre([
       SemiPreLine(
         Properties:
@@ -166,6 +169,6 @@ LazyParsedPage(
         ]
       )
     ])
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
   ]
 )

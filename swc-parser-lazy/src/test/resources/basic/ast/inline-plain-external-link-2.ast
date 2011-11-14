@@ -14,13 +14,14 @@ LazyParsedPage(
           {N} path = "//example.com"
           {N} protocol = "http"
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Whitespace(EOL: [ Text("\n\n") ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("before ")
       Url(
@@ -30,7 +31,7 @@ LazyParsedPage(
           {N} protocol = "mail"
       )
       Text(" after")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
   ]
 )

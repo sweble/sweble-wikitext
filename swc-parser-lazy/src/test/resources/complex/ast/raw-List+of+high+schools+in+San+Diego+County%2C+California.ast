@@ -23,7 +23,9 @@ LazyParsedPage(
         ]
       )
       Text(". It includes public and private schools and is arranged by school district (public schools) or affiliation (private schools).  These schools offer grades 9 through 12.  Junior High schools are not listed here.")
-      Whitespace(EOL: [ Text("\n\n\n") ])
+      Newline("\n")
+      Newline("\n")
+      Newline("\n")
     ])
     Section(
       Properties:
@@ -32,7 +34,7 @@ LazyParsedPage(
 
       [ Text("Public schools") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -40,7 +42,7 @@ LazyParsedPage(
 
           [ Text("Borrego Springs Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -66,7 +68,8 @@ LazyParsedPage(
                 [ Text("Palm Canyon High School (continuation), Borrego Springs") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -76,7 +79,7 @@ LazyParsedPage(
 
           [ Text("Coronado Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -107,7 +110,8 @@ LazyParsedPage(
                 [ Text("Palm Academy for Learning, Coronado") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -132,7 +136,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -225,7 +229,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -235,7 +240,7 @@ LazyParsedPage(
 
           [ Text("Fallbrook Union High School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -267,7 +272,8 @@ LazyParsedPage(
                 [ Text("Oasis High School (alternative), Fallbrook") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -287,7 +293,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -531,7 +537,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -541,7 +548,7 @@ LazyParsedPage(
 
           [ Text("Julian Union High School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -573,7 +580,8 @@ LazyParsedPage(
                 [ Text("Summit High Community Day, Julian") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -583,7 +591,7 @@ LazyParsedPage(
 
           [ Text("Lakeside Union School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -603,7 +611,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -613,7 +622,7 @@ LazyParsedPage(
 
           [ Text("Mountain Empire Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -633,7 +642,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -643,7 +653,7 @@ LazyParsedPage(
 
           [ Text("Oceanside Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -697,7 +707,8 @@ LazyParsedPage(
                 [ Text("Pacific View Charter School, Oceanside") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -717,7 +728,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -820,7 +831,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -830,7 +842,7 @@ LazyParsedPage(
 
           [ Text("Ramona Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -867,7 +879,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -892,7 +905,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Paragraph([
               Template(
                 Properties:
@@ -901,7 +914,8 @@ LazyParsedPage(
                 [ Text(":San Diego Unified School District") ]
                 [ ]
               )
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
           ]
         )
@@ -922,7 +936,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1005,7 +1019,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1015,7 +1030,7 @@ LazyParsedPage(
 
           [ Text("San Marcos Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1075,7 +1090,8 @@ LazyParsedPage(
                 [ Text("Twin Oaks High School (alternative), San Marcos") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1095,7 +1111,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1352,7 +1368,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1362,7 +1379,7 @@ LazyParsedPage(
 
           [ Text("Valley Center-Pauma Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1430,7 +1447,8 @@ LazyParsedPage(
                 [ Text("Valley Center Adult Education, Valley Center") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1440,7 +1458,7 @@ LazyParsedPage(
 
           [ Text("Vista Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1508,7 +1526,8 @@ LazyParsedPage(
                 [ Text(" North County Trade Tech High School (charter), Vista") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1518,7 +1537,7 @@ LazyParsedPage(
 
           [ Text("Warner Unified School District") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1544,7 +1563,8 @@ LazyParsedPage(
                 [ Text("San Jose Valley Continuation High School, Warner Springs") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -1556,14 +1576,17 @@ LazyParsedPage(
 
       [ Text("Private schools") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
           [ Text("Baptist") ]
-          [ Whitespace(EOL: [ Text("\n\n") ]) ]
+          [
+            Newline("\n")
+            Newline("\n")
+          ]
         )
         Section(
           Properties:
@@ -1587,7 +1610,7 @@ LazyParsedPage(
             )
           ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Paragraph([
               Template(
                 Properties:
@@ -1596,7 +1619,8 @@ LazyParsedPage(
                 [ Text(":Roman Catholic Diocese of San Diego") ]
                 [ ]
               )
-              Whitespace(EOL: [ Text("\n\n") ])
+              Newline("\n")
+              Newline("\n")
             ])
           ]
         )
@@ -1607,7 +1631,7 @@ LazyParsedPage(
 
           [ Text("Episcopal") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1632,7 +1656,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1642,7 +1667,7 @@ LazyParsedPage(
 
           [ Text("Jewish") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1696,7 +1721,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1706,7 +1732,7 @@ LazyParsedPage(
 
           [ Text("Lutheran") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1726,7 +1752,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1763,7 +1790,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1773,7 +1801,7 @@ LazyParsedPage(
 
           [ Text("Non-Denominational") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1798,7 +1826,8 @@ LazyParsedPage(
                 ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1808,7 +1837,7 @@ LazyParsedPage(
 
           [ Text("Nonsectarian") ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             Itemization([
               ItemizationItem(
                 Properties:
@@ -1950,7 +1979,9 @@ LazyParsedPage(
                 [ Text("Pacific Ridge School, Carlsbad") ]
               )
             ])
-            Whitespace(EOL: [ Text("\n\n\n") ])
+            Newline("\n")
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -1962,7 +1993,7 @@ LazyParsedPage(
 
       [ Text("Closed schools") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -1982,7 +2013,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -1992,7 +2024,7 @@ LazyParsedPage(
 
       [ Text("See also") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -2091,7 +2123,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2101,7 +2134,8 @@ LazyParsedPage(
 
       [ Text(" References ") ]
       [
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           XmlElementEmpty(
             Properties:
@@ -2110,7 +2144,8 @@ LazyParsedPage(
 
             [ ]
           )
-          Whitespace(EOL: [ Text("\n\n") ])
+          Newline("\n")
+          Newline("\n")
         ])
       ]
     )
@@ -2121,7 +2156,7 @@ LazyParsedPage(
 
       [ Text("External links") ]
       [
-        Whitespace(EOL: [ Text("\n") ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -2163,7 +2198,8 @@ LazyParsedPage(
             ]
           )
         ])
-        Whitespace(EOL: [ Text("\n\n") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -2179,7 +2215,7 @@ LazyParsedPage(
               [ Text("*") ]
             )
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
           InternalLink(
             Properties:
               RTD = RtData: [0] = "[[Category:Lists of schools in California", [1] = "]]"
@@ -2194,7 +2230,7 @@ LazyParsedPage(
               [ Text("California, San Diego County") ]
             )
           )
-          Whitespace(EOL: [ Text("\n") ])
+          Newline("\n")
         ])
       ]
     )

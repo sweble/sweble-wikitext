@@ -5,7 +5,7 @@ LazyParsedPage(
   [
     Paragraph([
       Text("Whitespace before Eol!")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
     Table(
       Properties:

@@ -23,10 +23,10 @@ LazyParsedPage(
         [ Text("Line 3") ]
       )
     ])
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     Paragraph([
       Text("\tdiscontinued")
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
     ])
     SemiPre([
       SemiPreLine(

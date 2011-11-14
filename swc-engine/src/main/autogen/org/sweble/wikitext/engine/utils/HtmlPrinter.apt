@@ -278,8 +278,10 @@ import org.sweble.wikitext.lazy.utils.*;
 <b>{!iterate(n.getContent())}</b>
 
 
-%visit(Whitespace n)%
-{!iterate(n.getContent())}
+%visit(Newline n)
+
+
+%visit(Whitespace n)
 
 
 %visit(Paragraph p)

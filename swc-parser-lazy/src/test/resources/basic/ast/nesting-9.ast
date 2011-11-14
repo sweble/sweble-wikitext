@@ -24,7 +24,7 @@ LazyParsedPage(
                     Warning (informative): /basic/wikitext/nesting-9.wikitext:2:3 - 6: "[[T" : This looks like a Internal Link, however the finishing `]]' is missing.
                   ]
               )
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
           ]
         )
@@ -43,7 +43,7 @@ LazyParsedPage(
           [
             Paragraph([
               Text("2")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
           ]
         )

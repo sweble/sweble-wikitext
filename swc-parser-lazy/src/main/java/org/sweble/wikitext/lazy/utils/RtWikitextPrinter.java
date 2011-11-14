@@ -66,13 +66,7 @@ public class RtWikitextPrinter
 				
 				break;
 			}
-				
-			case AstNode.NT_TEXT:
-			{
-				w.print(((StringContentNode) node).getContent());
-				break;
-			}
-				
+			
 			default:
 			{
 				RtData rtd = (RtData) node.getAttribute("RTD");
@@ -89,10 +83,17 @@ public class RtWikitextPrinter
 				}
 				else
 				{
-					for (AstNode n : node)
+					if (node instanceof StringContentNode)
 					{
-						if (n != null)
-							go(n);
+						w.print(((StringContentNode) node).getContent());
+					}
+					else
+					{
+						for (AstNode n : node)
+						{
+							if (n != null)
+								go(n);
+						}
 					}
 				}
 				break;

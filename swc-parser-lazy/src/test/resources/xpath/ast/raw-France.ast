@@ -344,15 +344,8 @@ Paragraph([
     LinkTitle([ ])
   )
   Text(".")
-  Whitespace(
-    Properties:
-      {N} hasNewline = true
-
-    [
-      Text("\n")
-      Text("\n")
-    ]
-  )
+  Newline("\n")
+  Newline("\n")
 ])
 
 ================================================================================
@@ -366,12 +359,7 @@ Section(
 
   [ Text(" Rome to Revolution ") ]
   [
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
     Paragraph([
       Text("The borders of modern France are approximately the same as those of ancient ")
       InternalLink(
@@ -495,15 +483,8 @@ Section(
         LinkTitle([ ])
       )
       Text(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       ImageLink(
@@ -567,12 +548,7 @@ Section(
           ]
         )
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       Text("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
       InternalLink(
         Properties:
@@ -680,15 +656,8 @@ Section(
         [ ]
       )
       Text(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       ImageLink(
@@ -748,12 +717,7 @@ Section(
           ]
         )
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       ImageLink(
         Properties:
               RTD = RtData: [0] = "[[File:Ingres, Napoleon on his Imperial throne.jpg", [1], [2] = "]]"
@@ -822,12 +786,7 @@ Section(
           ]
         )
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       ImageLink(
         Properties:
               RTD = RtData: [0] = "[[File:Jeanne d Arc Orleanide.jpg", [1], [2] = "]]"
@@ -894,12 +853,7 @@ Section(
           ]
         )
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       Text("Existence as a separate entity began with the ")
       InternalLink(
         Properties:
@@ -969,12 +923,7 @@ Section(
 
         [ ]
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       Text("The ")
       InternalLink(
         Properties:
@@ -1020,15 +969,8 @@ Section(
         [ ]
       )
       Text(" ")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("His descendants, the ")
@@ -1082,12 +1024,7 @@ Section(
         )
       )
       Text(".")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       Text("The ")
       InternalLink(
         Properties:
@@ -1127,12 +1064,7 @@ Section(
 
         [ ]
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [ Text("\n") ]
-      )
+      Newline("\n")
       Text("In 1066, the ")
       InternalLink(
         Properties:
@@ -1149,15 +1081,8 @@ Section(
         )
       )
       Text(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("The exact boundaries changed greatly with time, but French landholdings of the ")
@@ -1216,15 +1141,8 @@ Section(
         LinkTitle([ ])
       )
       Text(".")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("Charles IV (The Fair) died without an heir in 1328.")
@@ -1361,15 +1279,8 @@ Section(
 
         [ ]
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("In the most notorious incident during the ")
@@ -1411,15 +1322,8 @@ Section(
 
         [ ]
       )
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
     Paragraph([
       Text("The monarchy reached its height during the 17th century and the reign of ")
@@ -1487,15 +1391,8 @@ Section(
         )
       )
       Text(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
-      Whitespace(
-        Properties:
-          {N} hasNewline = true
-
-        [
-          Text("\n")
-          Text("\n")
-        ]
-      )
+      Newline("\n")
+      Newline("\n")
     ])
   ]
 )

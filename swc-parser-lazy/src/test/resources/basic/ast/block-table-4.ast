@@ -30,7 +30,7 @@ LazyParsedPage(
               [
                 Paragraph([
                   Text(" Header 2 ")
-                  Whitespace(EOL: [ Text("\n") ])
+                  Newline("\n")
                 ])
               ]
             )

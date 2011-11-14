@@ -3,7 +3,7 @@ LazyParsedPage(
     {N} warnings = []
 
   [
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     SemiPre([
       SemiPreLine(
         Properties:
@@ -86,6 +86,6 @@ LazyParsedPage(
         ]
       )
     ])
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
   ]
 )

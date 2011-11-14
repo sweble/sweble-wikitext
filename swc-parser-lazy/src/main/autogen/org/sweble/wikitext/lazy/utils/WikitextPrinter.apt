@@ -134,6 +134,9 @@ import org.sweble.wikitext.lazy.preprocessor.*;
 '''{!iterate(n.getContent())}'''
 
 
+%visit(Newline ws)
+
+
 %visit(Whitespace ws)
 
 

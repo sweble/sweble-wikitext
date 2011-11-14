@@ -9,7 +9,7 @@ LazyParsedPage(
           RTD = RtData: [0] = "#ReDiReCt[[link|garbage]]"
           {N} target = "link"
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"

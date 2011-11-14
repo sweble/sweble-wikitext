@@ -37,8 +37,8 @@ import org.sweble.wikitext.lazy.ParserConfigInterface.TargetType;
 import org.sweble.wikitext.lazy.parser.Bold;
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.InternalLink;
+import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.Paragraph;
-import org.sweble.wikitext.lazy.parser.Whitespace;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 import org.sweble.wikitext.lazy.utils.XmlCharRef;
@@ -50,10 +50,10 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class DefaultWomNodeFactory
-        extends
-            AstVisitor
-        implements
-            WomNodeFactory
+		extends
+			AstVisitor
+		implements
+			WomNodeFactory
 {
 	private final WikiConfigurationInterface config;
 	
@@ -119,9 +119,16 @@ public class DefaultWomNodeFactory
 		return new TextAdapter(text);
 	}
 	
+	/*
 	public WomNode visit(Whitespace ws)
 	{
 		return new TextAdapter(ws);
+	}
+	*/
+	
+	public WomNode visit(Newline newline)
+	{
+		return new TextAdapter(newline);
 	}
 	
 	public WomNode visit(XmlComment comment)
@@ -210,7 +217,7 @@ public class DefaultWomNodeFactory
 	private WomNode createFromXmlElement(XmlElement e)
 	{
 		XmlElementFactoryEnum resolved =
-		        XmlElementFactoryEnum.valueOf(e.getName().toUpperCase());
+				XmlElementFactoryEnum.valueOf(e.getName().toUpperCase());
 		if (resolved == null)
 			return null;
 		
@@ -595,6 +602,8 @@ public class DefaultWomNodeFactory
 		
 		// =====================================================================
 		
-		public abstract WomNode create(WomNodeFactory womNodeFactory, XmlElement e);
+		public abstract WomNode create(
+				WomNodeFactory womNodeFactory,
+				XmlElement e);
 	}
 }

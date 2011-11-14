@@ -9,12 +9,7 @@ Page([
 
       LinkTitle([ ])
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
     XmlElement(
       Properties:
             RTD = RtData: [0] = "<b", [1] = ">", [2] = "</b>"
@@ -52,12 +47,7 @@ Page([
         )
       ]
     )
-    Whitespace(
-      Properties:
-        {N} hasNewline = true
-
-      [ Text("\n") ]
-    )
+    Newline("\n")
     InternalLink(
       Properties:
             RTD = RtData: [0] = "[[Category:BOLD", [1] = "]]"

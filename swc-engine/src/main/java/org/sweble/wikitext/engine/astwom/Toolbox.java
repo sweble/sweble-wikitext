@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 import lombok.Getter;
 
 import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.Whitespace;
+import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
@@ -37,7 +37,10 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class Toolbox
 {
-	public static void replaceAstNode(NodeList container, AstNode oldAstNode, AstNode newAstNode) throws AssertionError
+	public static void replaceAstNode(
+			NodeList container,
+			AstNode oldAstNode,
+			AstNode newAstNode) throws AssertionError
 	{
 		ListIterator<AstNode> i = container.listIterator();
 		while (i.hasNext())
@@ -54,7 +57,8 @@ public class Toolbox
 			throw new AssertionError();
 	}
 	
-	public static void removeAstNode(NodeList childContainer, AstNode astNode) throws AssertionError
+	public static void removeAstNode(NodeList childContainer, AstNode astNode)
+		throws AssertionError
 	{
 		Iterator<AstNode> i = childContainer.iterator();
 		while (i.hasNext())
@@ -71,7 +75,10 @@ public class Toolbox
 			throw new AssertionError();
 	}
 	
-	public static void insertAstNode(NodeList childContainer, AstNode astNode, AstNode beforeAstNode) throws AssertionError
+	public static void insertAstNode(
+			NodeList childContainer,
+			AstNode astNode,
+			AstNode beforeAstNode) throws AssertionError
 	{
 		ListIterator<AstNode> i = childContainer.listIterator();
 		while (i.hasNext())
@@ -90,7 +97,10 @@ public class Toolbox
 			throw new AssertionError();
 	}
 	
-	public static void insertAstNodeAfter(NodeList childContainer, AstNode astNode, AstNode afterAstNode) throws AssertionError
+	public static void insertAstNodeAfter(
+			NodeList childContainer,
+			AstNode astNode,
+			AstNode afterAstNode) throws AssertionError
 	{
 		ListIterator<AstNode> i = childContainer.listIterator();
 		while (i.hasNext())
@@ -125,7 +135,7 @@ public class Toolbox
 	{
 		if (obj != null && !type.isInstance(obj))
 			throw new IllegalArgumentException(
-			        "Expected object of type " + type.getName() + "!");
+					"Expected object of type " + type.getName() + "!");
 		return (T) obj;
 	}
 	
@@ -134,7 +144,7 @@ public class Toolbox
 	{
 		if (obj != null && !type.isInstance(obj))
 			throw new IllegalArgumentException(
-			        "Expected argument `" + argName + "' to be of type " + type.getName() + "!");
+					"Expected argument `" + argName + "' to be of type " + type.getName() + "!");
 		return (T) obj;
 	}
 	
@@ -145,18 +155,18 @@ public class Toolbox
 		if (xmlElement.isEmpty())
 		{
 			TextUtils.addRtData(
-			        (AstNode) xmlElement,
-			        TextUtils.joinRt('<', xmlElement.getName()),
-			        TextUtils.joinRt(" />"),
-			        null);
+					(AstNode) xmlElement,
+					TextUtils.joinRt('<', xmlElement.getName()),
+					TextUtils.joinRt(" />"),
+					null);
 		}
 		else
 		{
 			TextUtils.addRtData(
-			        (AstNode) xmlElement,
-			        TextUtils.joinRt('<', xmlElement.getName()),
-			        TextUtils.joinRt('>'),
-			        TextUtils.joinRt("</", xmlElement.getName(), '>'));
+					(AstNode) xmlElement,
+					TextUtils.joinRt('<', xmlElement.getName()),
+					TextUtils.joinRt('>'),
+					TextUtils.joinRt("</", xmlElement.getName(), '>'));
 		}
 		
 		for (AstNode attr : xmlElement.getXmlAttributes())
@@ -170,16 +180,16 @@ public class Toolbox
 		if (xmlAttribute.getHasValue())
 		{
 			TextUtils.addRtData(
-			        xmlAttribute,
-			        TextUtils.joinRt(' ', xmlAttribute.getName(), "=\""),
-			        TextUtils.joinRt('"'));
+					xmlAttribute,
+					TextUtils.joinRt(' ', xmlAttribute.getName(), "=\""),
+					TextUtils.joinRt('"'));
 		}
 		else
 		{
 			TextUtils.addRtData(
-			        xmlAttribute,
-			        TextUtils.joinRt(' ', xmlAttribute.getName()),
-			        null);
+					xmlAttribute,
+					TextUtils.joinRt(' ', xmlAttribute.getName()),
+					null);
 		}
 		
 		return xmlAttribute;
@@ -188,10 +198,10 @@ public class Toolbox
 	// =========================================================================
 	
 	private static final String validTargetRxStr =
-	        "(?:[^\\u0000-\\u001F\\u007F\\uFFFD<>{}|\\[\\]/]+)";
+			"(?:[^\\u0000-\\u001F\\u007F\\uFFFD<>{}|\\[\\]/]+)";
 	
 	private static final String validTitleRxStr =
-	        "(?:[^\\u0000-\\u001F\\u007F\\uFFFD<>{}|\\[\\]:/]+)";
+			"(?:[^\\u0000-\\u001F\\u007F\\uFFFD<>{}|\\[\\]:/]+)";
 	
 	@Getter(lazy = true)
 	private static final Pattern validTargetRx = Pattern.compile(validTargetRxStr);
@@ -200,14 +210,16 @@ public class Toolbox
 	private static final Pattern validTitleRx = Pattern.compile(validTitleRxStr);
 	
 	private static final String validPathRxStr =
-	        "(?:(?:" + validTitleRxStr + "/)*" + validTitleRxStr + "?)";
+			"(?:(?:" + validTitleRxStr + "/)*" + validTitleRxStr + "?)";
 	
 	@Getter(lazy = true)
 	private static final Pattern validPathRx = Pattern.compile(validPathRxStr);
 	
 	// =========================================================================
 	
-	public static String checkValidTitle(String title) throws UnsupportedOperationException, IllegalArgumentException
+	public static String checkValidTitle(String title)
+		throws UnsupportedOperationException,
+			IllegalArgumentException
 	{
 		if (title == null)
 			throw new UnsupportedOperationException("Cannot remove title attribute");
@@ -218,7 +230,9 @@ public class Toolbox
 		return title;
 	}
 	
-	public static String checkValidCategory(String category) throws UnsupportedOperationException, IllegalArgumentException
+	public static String checkValidCategory(String category)
+		throws UnsupportedOperationException,
+			IllegalArgumentException
 	{
 		if (category == null)
 			throw new UnsupportedOperationException("Cannot remove category attribute");
@@ -229,7 +243,8 @@ public class Toolbox
 		return category;
 	}
 	
-	public static String checkValidNamespace(String namespace) throws IllegalArgumentException
+	public static String checkValidNamespace(String namespace)
+		throws IllegalArgumentException
 	{
 		if (namespace == null || namespace.isEmpty())
 			return null;
@@ -240,7 +255,8 @@ public class Toolbox
 		return namespace;
 	}
 	
-	public static String checkValidPath(String path) throws IllegalArgumentException
+	public static String checkValidPath(String path)
+		throws IllegalArgumentException
 	{
 		if (path == null || path.isEmpty())
 			return null;
@@ -278,18 +294,13 @@ public class Toolbox
 			case AstNode.NT_TEXT:
 				return ((Text) n).getContent();
 				
+			case AstNodeTypes.NT_NEWLINE:
+				return ((Newline) n).getContent();
+				
 			case AstNodeTypes.NT_XML_COMMENT:
 			case AstNodeTypes.NT_IGNORED:
 				return "";
 				
-			case AstNodeTypes.NT_WHITESPACE:
-			{
-				String result = "";
-				for (AstNode c : ((Whitespace) n).getContent())
-					result += toText(entityResolver, c);
-				return result;
-			}
-			
 			case AstNodeTypes.NT_XML_CHAR_REF:
 				return new String(Character.toChars(((XmlCharRef) n).getCodePoint()));
 				

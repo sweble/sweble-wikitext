@@ -28,6 +28,7 @@ import org.sweble.wikitext.lazy.parser.DefinitionDefinition;
 import org.sweble.wikitext.lazy.parser.DefinitionTerm;
 import org.sweble.wikitext.lazy.parser.EnumerationItem;
 import org.sweble.wikitext.lazy.parser.ItemizationItem;
+import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.SemiPreLine;
 import org.sweble.wikitext.lazy.parser.Ticks;
 import org.sweble.wikitext.lazy.parser.Whitespace;
@@ -83,10 +84,10 @@ public class TicksAnalyzer
 				pf = '"' + prefix.getContent() + '"';
 			
 			return String.format(
-			        "LineEntry(%s, %s, %d)",
-			        pv,
-			        pf,
-			        tickCount);
+					"LineEntry(%s, %s, %d)",
+					pv,
+					pf,
+					tickCount);
 		}
 	}
 	
@@ -109,10 +110,10 @@ public class TicksAnalyzer
 		public String toString()
 		{
 			return String.format(
-			        "Line(#i = %d, #b = %d): %s",
-			        numItalics,
-			        numBold,
-			        (ticks != null ? ticks.toString() : "-"));
+					"Line(#i = %d, #b = %d): %s",
+					numItalics,
+					numBold,
+					(ticks != null ? ticks.toString() : "-"));
 		}
 	}
 	
@@ -135,8 +136,8 @@ public class TicksAnalyzer
 	// =========================================================================
 	
 	protected final static class LineAnalyzer
-	        extends
-	            AstVisitor
+			extends
+				AstVisitor
 	{
 		private final LinkedList<Line> lines;
 		
@@ -174,6 +175,11 @@ public class TicksAnalyzer
 				previous = n;
 			}
 			previous = null;
+		}
+		
+		public void visit(Newline ws)
+		{
+			finishLine();
 		}
 		
 		public void visit(Whitespace ws)
@@ -365,8 +371,8 @@ public class TicksAnalyzer
 	// =========================================================================
 	
 	protected final static class TicksConverter
-	        extends
-	            AstVisitor
+			extends
+				AstVisitor
 	{
 		private static enum State
 		{
@@ -410,6 +416,17 @@ public class TicksAnalyzer
 			
 			toTag(entry, result);
 			
+			return result;
+		}
+		
+		public AstNode visit(Newline newline)
+		{
+			NodeList result = closeRemainingTags();
+			if (result == null)
+				return newline;
+			
+			state = State.None;
+			result.add(newline);
 			return result;
 		}
 		

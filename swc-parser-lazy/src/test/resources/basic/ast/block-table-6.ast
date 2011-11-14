@@ -42,7 +42,7 @@ LazyParsedPage(
           [
             Paragraph([
               Text(" B")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
           ]
         )
@@ -67,7 +67,7 @@ LazyParsedPage(
               [
                 Paragraph([
                   Text(" Y")
-                  Whitespace(EOL: [ Text("\n") ])
+                  Newline("\n")
                 ])
               ]
             )

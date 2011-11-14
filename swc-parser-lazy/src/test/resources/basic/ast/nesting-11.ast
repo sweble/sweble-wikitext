@@ -62,7 +62,7 @@ LazyParsedPage(
           [
             Paragraph([
               Text("3")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
           ]
         )

@@ -35,13 +35,14 @@ LazyParsedPage(
           [
             Paragraph([
               Text(" Header")
-              Whitespace(EOL: [ Text("\n") ])
+              Newline("\n")
             ])
           ]
         )
       ]
     )
-    Whitespace(EOL: [ Text("\n\n") ])
+    Newline("\n")
+    Newline("\n")
     Table(
       Properties:
         RTD = RtData: [0] = "{|", [1] = "\n", [2] = " |}"
@@ -71,7 +72,7 @@ LazyParsedPage(
               [
                 Paragraph([
                   Text(" class=\"foo\"")
-                  Whitespace(EOL: [ Text("\n") ])
+                  Newline("\n")
                 ])
               ]
             )

@@ -12,7 +12,7 @@ LazyParsedPage(
       [ ]
       [ Text("item1") ]
     )
-    Whitespace(EOL: [ Text("\n") ])
+    Newline("\n")
     XmlElement(
       Properties:
         RTD = RtData: [0] = "<li", [1] = ">", [2]
@@ -30,7 +30,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Whitespace(EOL: [ Text("\n") ])
+            Newline("\n")
             XmlElement(
               Properties:
                 RTD = RtData: [0] = "<li", [1] = ">", [2]
