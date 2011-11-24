@@ -57,10 +57,10 @@ public class Toolbox
 			throw new AssertionError();
 	}
 	
-	public static void removeAstNode(NodeList childContainer, AstNode astNode)
-		throws AssertionError
+	public static void removeAstNode(NodeList container, AstNode astNode)
+			throws AssertionError
 	{
-		Iterator<AstNode> i = childContainer.iterator();
+		Iterator<AstNode> i = container.iterator();
 		while (i.hasNext())
 		{
 			AstNode node = i.next();
@@ -76,11 +76,11 @@ public class Toolbox
 	}
 	
 	public static void insertAstNode(
-			NodeList childContainer,
+			NodeList container,
 			AstNode astNode,
 			AstNode beforeAstNode) throws AssertionError
 	{
-		ListIterator<AstNode> i = childContainer.listIterator();
+		ListIterator<AstNode> i = container.listIterator();
 		while (i.hasNext())
 		{
 			AstNode n = i.next();
@@ -98,11 +98,11 @@ public class Toolbox
 	}
 	
 	public static void insertAstNodeAfter(
-			NodeList childContainer,
+			NodeList container,
 			AstNode astNode,
 			AstNode afterAstNode) throws AssertionError
 	{
-		ListIterator<AstNode> i = childContainer.listIterator();
+		ListIterator<AstNode> i = container.listIterator();
 		while (i.hasNext())
 		{
 			AstNode n = i.next();
@@ -123,9 +123,51 @@ public class Toolbox
 		container.add(0, astNode);
 	}
 	
-	public static void appendAstNode(NodeList childContainer, AstNode astNode)
+	public static void appendAstNode(NodeList container, AstNode astNode)
 	{
-		childContainer.add(astNode);
+		container.add(astNode);
+	}
+	
+	public static ListIterator<AstNode> advanceAfter(
+			NodeList container,
+			AstNode node)
+	{
+		ListIterator<AstNode> i = container.listIterator();
+		while (i.hasNext())
+		{
+			if (i.next() == node)
+				return i;
+		}
+		return null;
+	}
+	
+	public static ListIterator<AstNode> advanceBefore(
+			NodeList container,
+			AstNode node)
+	{
+		ListIterator<AstNode> i = container.listIterator();
+		while (i.hasNext())
+		{
+			if (i.next() == node)
+			{
+				i.previous();
+				return i;
+			}
+		}
+		return null;
+	}
+	
+	public static void removeAstNode(ListIterator<AstNode> i, AstNode astNode)
+	{
+		while (i.hasNext())
+		{
+			if (i.next() == astNode)
+			{
+				i.remove();
+				return;
+			}
+		}
+		throw new InternalError();
 	}
 	
 	// =========================================================================
@@ -218,7 +260,7 @@ public class Toolbox
 	// =========================================================================
 	
 	public static String checkValidTitle(String title)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IllegalArgumentException
 	{
 		if (title == null)
@@ -231,7 +273,7 @@ public class Toolbox
 	}
 	
 	public static String checkValidCategory(String category)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IllegalArgumentException
 	{
 		if (category == null)
@@ -244,7 +286,7 @@ public class Toolbox
 	}
 	
 	public static String checkValidNamespace(String namespace)
-		throws IllegalArgumentException
+			throws IllegalArgumentException
 	{
 		if (namespace == null || namespace.isEmpty())
 			return null;
@@ -256,7 +298,7 @@ public class Toolbox
 	}
 	
 	public static String checkValidPath(String path)
-		throws IllegalArgumentException
+			throws IllegalArgumentException
 	{
 		if (path == null || path.isEmpty())
 			return null;

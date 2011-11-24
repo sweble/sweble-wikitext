@@ -28,8 +28,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.utils.StringUtils;
 
 public abstract class WomBackbone
-        implements
-            WomNode
+		implements
+			WomNode
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -102,11 +102,14 @@ public abstract class WomBackbone
 		nextSibling = null;
 	}
 	
-	public void link(WomBackbone parent, WomBackbone prevSibling, WomBackbone nextSibling)
+	public void link(
+			WomBackbone parent,
+			WomBackbone prevSibling,
+			WomBackbone nextSibling)
 	{
 		if (isLinked())
 			throw new IllegalStateException(
-			        "Node is still child of another WOM node.");
+					"Node is still child of another WOM node.");
 		
 		this.parent = parent;
 		
@@ -115,7 +118,7 @@ public abstract class WomBackbone
 		{
 			if (prevSibling.nextSibling != nextSibling)
 				throw new IllegalStateException(
-				        "WOM sibling chain inconsistent.");
+						"WOM sibling chain inconsistent.");
 			
 			prevSibling.nextSibling = this;
 		}
@@ -125,7 +128,7 @@ public abstract class WomBackbone
 		{
 			if (nextSibling.prevSibling != prevSibling)
 				throw new IllegalStateException(
-				        "WOM sibling chain inconsistent.");
+						"WOM sibling chain inconsistent.");
 			
 			nextSibling.prevSibling = this;
 		}
@@ -192,7 +195,7 @@ public abstract class WomBackbone
 	}
 	
 	@Override
-	public void appendText(String text) throws UnsupportedOperationException
+	public void appendText(String text) throws UnsupportedOperationException, IllegalArgumentException
 	{
 		doesNotSupportTextOperations();
 	}
@@ -210,10 +213,10 @@ public abstract class WomBackbone
 	}
 	
 	@Override
-	public String replaceText(String text) throws UnsupportedOperationException
+	public boolean replaceText(String search, String replacement) throws UnsupportedOperationException
 	{
 		doesNotSupportTextOperations();
-		return null;
+		return false;
 	}
 	
 	@Override

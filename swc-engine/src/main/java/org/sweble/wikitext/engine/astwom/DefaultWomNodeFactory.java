@@ -82,13 +82,6 @@ public class DefaultWomNodeFactory
 	
 	// =========================================================================
 	
-	//@Override
-	//public WomNode create(AstNode node)
-	//{
-	//	this.container = null;
-	//	return (WomNode) go(node);
-	//}
-	
 	@Override
 	public WomNode create(NodeList container, AstNode node)
 	{
@@ -118,13 +111,6 @@ public class DefaultWomNodeFactory
 	{
 		return new TextAdapter(text);
 	}
-	
-	/*
-	public WomNode visit(Whitespace ws)
-	{
-		return new TextAdapter(ws);
-	}
-	*/
 	
 	public WomNode visit(Newline newline)
 	{

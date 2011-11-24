@@ -11,6 +11,8 @@ Hallo...test...</b>
 
 <b id="a5">&amp;x&amp;x&amp;&amp;</b>
 
+<b id="a6">&amp;blub</b>
+
 <!-- ======================================================================= -->
 
 <b id="b1"> Hallo ...&amp;...</b>
@@ -41,3 +43,42 @@ Hallo...&amp;...</b>
 
 <b id="d1">Ho</b>
 
+<b id="d2"></b>
+
+<b id="d3">&#xDC00;</b>
+
+<b id="d4">&#xDC00;</b>
+
+<!-- ======================================================================= -->
+
+<b id="e1">Hallo Welt!</b>
+
+<b id="e2">Hallo Welt!</b>
+
+<b id="e3">Hallo du schoene Welt!</b>
+
+<b id="e4">&amp;x&amp;</b>
+
+<b id="e5">L&amp;mp!</b>
+
+<b id="e6">1234</b>
+
+<b id="e7">1234&amp;!&amp;4321</b>
+
+<b id="e8">123454321</b>
+
+<b id="e9">&amp;Teeeeest&amp;</b>
+
+<b id="e10">asdf&#xD840;SPLIT&#xDC00;asdf</b>
+
+<b id="e11">asdf&#xD840;SPLIT&#xDC00;asdf</b>
+
+<b id="e12">&#xD840;SPLIT&#xDC00;asdf</b>
+
+<b id="e13">asdf&#xD840;SPLIT&#xDC00;</b>
+
+<b id="e14">&#xD840;SPLIT&#xDC00;</b>
+
+<b id="e15">empty</b>
+
+<b id="e16">x</b>

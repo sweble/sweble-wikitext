@@ -69,8 +69,12 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If this node is not a text node.
+	 * @throws NullPointerException
+	 *             Thrown if <code>text</code> is <code>null</code>.
+	 * @throws IllegalArgumentException
+	 *             Thrown if <code>text</code> contains isolated surrogates.
 	 */
-	public void appendText(String text) throws UnsupportedOperationException;
+	public void appendText(String text) throws UnsupportedOperationException, NullPointerException, IllegalArgumentException;
 	
 	/**
 	 * Delete a range of the text of this node.
@@ -82,11 +86,14 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If this node is not a text node.
+	 * @throws UnsupportedOperationException
+	 *             If the operation leaves isolated surrogates in the resulting
+	 *             text.
 	 * @throws IndexOutOfBoundsException
 	 *             If the given range is invalid.
 	 */
 	public void deleteText(int from, int length)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IndexOutOfBoundsException;
 	
 	/**
@@ -94,22 +101,37 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If this node is not a text node.
+	 * @throws IllegalArgumentException
+	 *             Thrown if <code>text</code> contains isolated surrogates or
+	 *             the operation would leave isolated surrogates in the
+	 *             resulting text.
 	 * @throws IndexOutOfBoundsException
 	 *             If the given range is invalid.
+	 * @throws NullPointerException
+	 *             Thrown if <code>text</code> is <code>null</code>.
 	 */
 	public void insertText(int at, String text)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IndexOutOfBoundsException;
 	
 	/**
-	 * Replaces the text of this node with another text.
+	 * Replaces all occurrences of the given substring with another text.
 	 * 
-	 * @return The replaced text.
-	 * 
+	 * @param search
+	 *            The substring to replace.
+	 * @param replacement
+	 *            The new text that will replace the <code>search</code>
+	 *            substring.
+	 * @return Returns <code>true</code> if the substring was found and replaced
+	 *         at least once. If the given substring is not found,
+	 *         <code>false</code> is returned.
 	 * @throws UnsupportedOperationException
 	 *             If this node is not a text node.
+	 * @throws NullPointerException
+	 *             Thrown if <code>search</code> or <code>replacement</code> is
+	 *             <code>null</code>.
 	 */
-	public String replaceText(String text) throws UnsupportedOperationException;
+	public boolean replaceText(String search, String replacement) throws UnsupportedOperationException;
 	
 	/**
 	 * Replaces a specified range of the text of this node with another text.
@@ -118,7 +140,7 @@ public interface WomNode
 	 *            The first character that will be replaced.
 	 * @param length
 	 *            The number of characters that will be replaced.
-	 * @param text
+	 * @param replacement
 	 *            The new text that will replace the given range of characters.
 	 * 
 	 * @return The replaced text.
@@ -127,9 +149,11 @@ public interface WomNode
 	 *             If this node is not a text node.
 	 * @throws IndexOutOfBoundsException
 	 *             If the given range is invalid.
+	 * @throws NullPointerException
+	 *             Thrown if <code>replacement</code> is <code>null</code>.
 	 */
-	public String replaceText(int from, int length, String text)
-		throws UnsupportedOperationException,
+	public String replaceText(int from, int length, String replacement)
+			throws UnsupportedOperationException,
 			IndexOutOfBoundsException;
 	
 	// ==[ Attributes ]=========================================================
@@ -149,6 +173,9 @@ public interface WomNode
 	 * Returns the value of an attribute node. If no attribute with the given
 	 * name exists <code>null</code> is returned. Nodes that don't support
 	 * attributes will return <code>null</code>.
+	 * 
+	 * @throws NullPointerException
+	 *             Thrown if <code>name</code> is <code>null</code>.
 	 */
 	public String getAttribute(String name);
 	
@@ -156,6 +183,9 @@ public interface WomNode
 	 * Returns an attribute. If no attribute with the given name exists
 	 * <code>null</code> is returned. Nodes that don't support attributes will
 	 * return <code>null</code>.
+	 * 
+	 * @throws NullPointerException
+	 *             Thrown if <code>name</code> is <code>null</code>.
 	 */
 	public WomAttribute getAttributeNode(String name);
 	
@@ -169,9 +199,11 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support attributes.
+	 * @throws NullPointerException
+	 *             Thrown if <code>name</code> is <code>null</code>.
 	 */
 	public WomAttribute removeAttribute(String name)
-		throws UnsupportedOperationException;
+			throws UnsupportedOperationException;
 	
 	/**
 	 * Remove an attribute.
@@ -180,9 +212,11 @@ public interface WomNode
 	 *             If the node does not support attributes.
 	 * @throws IllegalArgumentException
 	 *             If the given node is not an attribute of this node.
+	 * @throws NullPointerException
+	 *             Thrown if <code>attr</code> is <code>null</code>.
 	 */
 	public void removeAttributeNode(WomAttribute attr)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IllegalArgumentException;
 	
 	/**
@@ -198,9 +232,11 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support attributes.
+	 * @throws NullPointerException
+	 *             Thrown if <code>name</code> is <code>null</code>.
 	 */
 	public WomAttribute setAttribute(String name, String value)
-		throws UnsupportedOperationException;
+			throws UnsupportedOperationException;
 	
 	/**
 	 * Sets an attribute node. If the attribute already exists, it will be
@@ -211,9 +247,11 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support attributes.
+	 * @throws NullPointerException
+	 *             Thrown if <code>attr</code> is <code>null</code>.
 	 */
 	public WomAttribute setAttributeNode(WomAttribute attr)
-		throws UnsupportedOperationException;
+			throws UnsupportedOperationException;
 	
 	// ==[ Navigation ]=========================================================
 	
@@ -270,6 +308,8 @@ public interface WomNode
 	 * 
 	 * @throws UnsupportedOperationException
 	 *             If the node does not support children.
+	 * @throws NullPointerException
+	 *             Thrown if <code>child</code> is <code>null</code>.
 	 */
 	public void appendChild(WomNode child) throws UnsupportedOperationException;
 	
@@ -281,9 +321,12 @@ public interface WomNode
 	 *             If the node does not support children.
 	 * @throws IllegalArgumentException
 	 *             If the <code>before</code> node is not a child of this node.
+	 * @throws NullPointerException
+	 *             Thrown if <code>before</code> or <code>child</code> is
+	 *             <code>null</code>.
 	 */
 	public void insertBefore(WomNode before, WomNode child)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IllegalArgumentException;
 	
 	/**
@@ -293,9 +336,11 @@ public interface WomNode
 	 *             If the node does not support children.
 	 * @throws IllegalArgumentException
 	 *             If the <code>child</code> node is not a child of this node.
+	 * @throws NullPointerException
+	 *             Thrown if <code>child</code> is <code>null</code>.
 	 */
 	public void removeChild(WomNode child)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IllegalArgumentException;
 	
 	/**
@@ -308,9 +353,12 @@ public interface WomNode
 	 *             If the node does not support children.
 	 * @throws IllegalArgumentException
 	 *             If the <code>search</code> node is not a child of this node.
+	 * @throws NullPointerException
+	 *             Thrown if <code>search</code> or <code>replace</code> is
+	 *             <code>null</code>.
 	 */
 	public void replaceChild(WomNode search, WomNode replace)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IllegalArgumentException;
 	
 	// ==[ Cloning ]============================================================

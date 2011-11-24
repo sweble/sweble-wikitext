@@ -29,7 +29,6 @@ import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
-import org.sweble.wikitext.engine.wom.WomText;
 
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
 
@@ -46,10 +45,13 @@ public class AstWomTest
 		System.out.println();
 		System.out.println("AST->WOM & Print test:");
 		
-		URL url = AstWomTest.class.getResource("/");
+		URL url = AstWomTest.class.getClassLoader().getResource("org/sweble/wikitext/engine/index");
 		Assert.assertTrue(url != null);
 		
-		resources = new ParserTestResources(new File(url.getFile()));
+		File index = new File(url.getFile());
+		File directory = index.getParentFile();
+		
+		resources = new ParserTestResources(directory);
 		
 		common = new AstWomTestBase(
 				resources,
@@ -133,124 +135,5 @@ public class AstWomTest
 						}
 					}
 				});
-	}
-	
-	@Test
-	public void testText() throws Exception
-	{
-		common.setExplicitTextNodes(true);
-		common.gatherParseAndPrintTest(
-				"text",
-				new TestCode()
-				{
-					@Override
-					public void run(final WomNode page)
-					{
-						// -- append --
-						
-						getFirstChildOfNodeById(page, "a1", WomText.class).appendText("...test...");
-						
-						getFirstChildOfNodeById(page, "a2", WomText.class).appendText("...test...");
-						
-						getFirstChildOfNodeById(page, "a3", WomText.class).appendText("...test...");
-						
-						getFirstChildOfNodeById(page, "a4", WomText.class).appendText("...test...");
-						
-						getFirstChildOfNodeById(page, "a5", WomText.class).appendText("&");
-						
-						getFirstChildOfNodeById(page, "b1", WomText.class).appendText("...&...");
-						
-						getFirstChildOfNodeById(page, "b2", WomText.class).appendText("...&...");
-						
-						getFirstChildOfNodeById(page, "b3", WomText.class).appendText("...&...");
-						
-						getFirstChildOfNodeById(page, "b4", WomText.class).appendText("...&...");
-						
-						// -- delete --
-						
-						Assert.assertEquals("Hallo Welt!", getFirstChildOfNodeById(page, "c1", WomText.class).getText());
-						
-						getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(0, 0);
-						
-						getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(10, 0);
-						
-						getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(11, 0);
-						
-						new ExpectException(IndexOutOfBoundsException.class)
-						{
-							public void run()
-							{
-								getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(11, 1);
-							}
-						};
-						
-						new ExpectException(IndexOutOfBoundsException.class)
-						{
-							public void run()
-							{
-								getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(12, 0);
-							}
-						};
-						
-						new ExpectException(IndexOutOfBoundsException.class)
-						{
-							public void run()
-							{
-								getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(-1, 0);
-							}
-						};
-						
-						new ExpectException(IndexOutOfBoundsException.class)
-						{
-							public void run()
-							{
-								getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(10, 2);
-							}
-						};
-						
-						getFirstChildOfNodeById(page, "c1", WomText.class).deleteText(0, 5);
-						
-						getFirstChildOfNodeById(page, "c2", WomText.class).deleteText(6, 4);
-						
-						getFirstChildOfNodeById(page, "c3", WomText.class).deleteText(10, 1);
-						
-						getFirstChildOfNodeById(page, "c4", WomText.class).deleteText(0, 10);
-						
-						getFirstChildOfNodeById(page, "c5", WomText.class).deleteText(9, 2);
-						
-						getFirstChildOfNodeById(page, "c6", WomText.class).deleteText(0, 11);
-						
-						//getFirstChildOfNodeById(page, "c7", WomText.class).deleteText(0, 11);
-						
-						getFirstChildOfNodeById(page, "d1", WomText.class).deleteText(1, 3);
-						
-					}
-				});
-	}
-	
-	public static abstract class ExpectException
-	{
-		public <T> ExpectException(Class<T> exceptionClass)
-		{
-			try
-			{
-				run();
-				Assert.fail(
-						"Expected an exception of type " +
-								exceptionClass.getName() +
-								" but no exception was thrown!");
-			}
-			catch (Throwable t)
-			{
-				Assert.assertTrue(
-						"Expected an exception of type " +
-								exceptionClass.getName() +
-								" but caught an exception of type " +
-								t.getClass().getName(),
-						exceptionClass.isInstance(t));
-			}
-		}
-		
-		public abstract void run();
 	}
 }

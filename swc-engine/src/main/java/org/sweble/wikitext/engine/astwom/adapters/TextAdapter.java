@@ -21,6 +21,7 @@ import java.util.ListIterator;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
+import org.sweble.wikitext.engine.utils.EntityReferences;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.lazy.AstNodeTypes;
@@ -33,7 +34,14 @@ import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
+import de.fau.cs.osr.utils.StringUtils;
 
+/**
+ * FIXME: We are not defragmenting the AST after insert/append/delete
+ * operations.
+ * 
+ * FIXME: We don't handle IllegalCodePoint nodes yet
+ */
 public class TextAdapter
 		extends
 			WomBackbone
@@ -41,6 +49,8 @@ public class TextAdapter
 			WomText
 {
 	private static final long serialVersionUID = 1L;
+	
+	private static final boolean DEBUG = true;
 	
 	private TextPart parts = null;
 	
@@ -57,27 +67,19 @@ public class TextAdapter
 	public TextAdapter(Newline newline)
 	{
 		super(newline);
-		text = Toolbox.toText(null, newline);
-	}
-	
-	/*
-	public TextAdapter(Whitespace ws)
-	{
-		super(ws);
-		text = Toolbox.toText(null, ws);
-	}
-	*/
-	
-	public TextAdapter(XmlEntityResolver entityResolver, XmlEntityRef ref)
-	{
-		super(ref);
-		text = Toolbox.toText(entityResolver, ref);
+		text = "\n";
 	}
 	
 	public TextAdapter(XmlCharRef ref)
 	{
 		super(ref);
 		text = Toolbox.toText(null, ref);
+	}
+	
+	public TextAdapter(XmlEntityResolver entityResolver, XmlEntityRef ref)
+	{
+		super(ref);
+		text = Toolbox.toText(entityResolver, ref);
 	}
 	
 	// =========================================================================
@@ -108,105 +110,74 @@ public class TextAdapter
 	
 	// =========================================================================
 	
-	private static final class TextPart
+	@Override
+	public void appendText(String text) throws UnsupportedOperationException, IllegalArgumentException
 	{
-		public AstNode astNode;
+		if (text.isEmpty())
+			return;
 		
-		public int offset;
+		TextPart first = stringToAst(text);
 		
-		public String text;
+		int length = this.text.length();
 		
-		public TextPart next = null;
+		String newText = this.text + text;
 		
-		public TextPart(AstNode astNode, int offset, String text)
+		if (StringUtils.hasParagraphSeparators(newText))
+			throw new UnsupportedOperationException(
+					"Insertion would split text into multiple paragraphs");
+		
+		// The operation cannot fail any more
+		this.text = newText;
+		
+		TextPart last = getLastPart();
+		
+		AstNode appendTo =
+				(last != null) ? last.astNode : getAstNode();
+		
+		if (appendTo.getNodeType() == AstNode.NT_TEXT
+				&& first.astNode.getNodeType() == AstNode.NT_TEXT)
 		{
-			this.astNode = astNode;
-			this.offset = offset;
-			this.text = text;
-		}
-	}
-	
-	public void append(String text, AstNode n)
-	{
-		String curText = getText();
-		
-		TextPart part = new TextPart(n, curText.length(), text);
-		
-		this.text += text;
-		
-		TextPart p;
-		for (p = this.parts; p != null; p = p.next)
-		{
-			if (p.next == null)
+			// collapse adjacent text nodes
+			
+			Text n = (Text) appendTo;
+			if (last != null)
 			{
-				p.next = part;
-				break;
+				last.text += first.text;
+				n.setContent(last.text);
 			}
+			else
+				n.setContent(n.getContent() + first.text);
+			
+			first = first.next;
 		}
-		if (p == null)
-			this.parts = part;
-	}
-	
-	public void append(XmlEntityResolver entityResolver, AstNode n)
-	{
-		append(Toolbox.toText(entityResolver, n), n);
-	}
-	
-	private AstNode getLastPart()
-	{
-		TextPart p = this.parts;
-		while (true)
+		
+		if (last == null)
+			this.parts = first;
+		else
+			last.next = first;
+		
+		ListIterator<AstNode> i =
+				Toolbox.advanceAfter(getTextContainer(), appendTo);
+		
+		TextPart p = first;
+		while (p != null)
 		{
-			if (p.next == null)
-				return p.astNode;
+			i.add(p.astNode);
+			p.offset += length;
 			p = p.next;
 		}
-	}
-	
-	private NodeList getTextContainer()
-	{
-		return ((FullElement) getParent()).getAstChildContainer();
+		
+		if (DEBUG)
+			checkIntegrity();
 	}
 	
 	// =========================================================================
 	
 	@Override
-	public void appendText(String text) throws UnsupportedOperationException
-	{
-		if (this.parts == null)
-		{
-			boolean isWs =
-					getAstNode().getNodeType() == AstNodeTypes.NT_NEWLINE;
-			
-			if (isWs || TextUtils.needsEscaping(text, false))
-			{
-				NodeList astParts = TextUtils.stringToAst(text, false);
-				Toolbox.insertAstNodeAfter(getTextContainer(), astParts, getAstNode());
-				for (AstNode n : astParts)
-					append(TextUtils.getSimpleXmlEntityResolver(), n);
-			}
-			else
-			{
-				this.text += text;
-				Text textNode = (Text) getAstNode();
-				textNode.setContent(this.text);
-			}
-		}
-		else
-		{
-			NodeList astParts = TextUtils.stringToAst(text, false);
-			Toolbox.insertAstNodeAfter(getTextContainer(), astParts, getLastPart());
-			for (AstNode n : astParts)
-				append(TextUtils.getSimpleXmlEntityResolver(), n);
-		}
-	}
-	
-	@Override
 	public void deleteText(int from, int length)
-		throws UnsupportedOperationException,
-		IndexOutOfBoundsException
+			throws UnsupportedOperationException, IndexOutOfBoundsException
 	{
-		if (from < 0 || length + from > this.text.length())
+		if (from < 0 || length < 0 || length + from > this.text.length())
 			throw new IndexOutOfBoundsException();
 		
 		if (length == 0)
@@ -214,40 +185,37 @@ public class TextAdapter
 		
 		if (this.text.length() == length)
 		{
-			this.text = "";
+			// FIXME: We are violating normalization:
+			//        We create an empty text node.
 			clear();
 		}
 		else
 		{
-			if (this.parts == null)
-			{
-				this.text = this.text.substring(0, from) +
-						this.text.substring(from + length);
-				
-				if (getAstNode().getNodeType() != AstNodeTypes.NT_NEWLINE)
-				{
-					Text textNode = (Text) getAstNode();
-					textNode.setContent(this.text);
-				}
-				else
-				{
-					deleteText(null, (Newline) getAstNode(), from, length);
-				}
-			}
-			else
-			{
-				String firstText =
-						this.text.substring(0, this.parts.offset);
-				
-				this.text = this.text.substring(0, from) +
-						this.text.substring(from + length);
-				
-				TextPart first = new TextPart(getAstNode(), 0, firstText);
-				first.next = this.parts;
-				
-				deleteText(from, length, first);
-			}
+			String firstText = (this.parts != null) ?
+					this.text.substring(0, this.parts.offset) :
+					this.text;
+			
+			String a = this.text.substring(0, from);
+			String b = this.text.substring(from + length);
+			String newText = a + b;
+			if (StringUtils.hasIsolatedSurrogates(a) || StringUtils.hasIsolatedSurrogates(b))
+				throw new UnsupportedOperationException(
+						"Deletion splits code point into surrogates");
+			
+			if (StringUtils.hasParagraphSeparators(newText))
+				throw new UnsupportedOperationException(
+						"Deletion would split text into multiple paragraphs");
+			
+			this.text = newText;
+			
+			TextPart first = new TextPart(getAstNode(), 0, firstText);
+			first.next = this.parts;
+			
+			deleteText(from, length, first);
 		}
+		
+		if (DEBUG)
+			checkIntegrity();
 	}
 	
 	private void deleteText(int from, int length, TextPart first)
@@ -268,41 +236,31 @@ public class TextAdapter
 		{
 			TextPart next = p.next;
 			
-			AstNode replacement = deleteText(p, from - p.offset, length);
-			if (replacement == null)
+			int partLen = p.text.length();
+			int partFrom = from - p.offset;
+			int delPartLen = length;
+			if (partFrom + delPartLen > partLen)
+				delPartLen = partLen - partFrom;
+			
+			if (partFrom == 0 && delPartLen == partLen)
 			{
-				removeAstNode(i, p.astNode);
+				Toolbox.removeAstNode(i, p.astNode);
 				if (prev == null)
-				{
 					first = next;
-					prev = null;
-				}
 				else
-				{
 					prev.next = next;
-				}
 			}
 			else
 			{
+				deleteFromPart(p, partFrom, delPartLen);
 				prev = p;
-				
-				if (replacement != p.astNode)
-					replaceAstNode(i, p.astNode, replacement);
 			}
 			
-			if (next == null)
-				break;
-			
-			int lenRemoved = Math.min(next.offset - from, length);
-			correct += lenRemoved;
-			length -= lenRemoved;
-			if (length <= 0)
+			length -= delPartLen;
+			correct += delPartLen;
+			if (length == 0)
 			{
-				do
-				{
-					next.offset -= correct;
-					next = next.next;
-				} while (next != null);
+				p = next;
 				break;
 			}
 			
@@ -311,12 +269,449 @@ public class TextAdapter
 			p = next;
 		}
 		
+		while (p != null)
+		{
+			p.offset -= correct;
+			p = p.next;
+		}
+		
 		this.parts = first.next;
-		if (first.astNode != getAstNode())
-			setAstNode(first.astNode);
+		setAstNode(first.astNode);
 	}
 	
-	private void clear() throws AssertionError, InternalError
+	private void deleteFromPart(TextPart p, int partFrom, int delPartLen)
+	{
+		AstNode astNode = p.astNode;
+		switch (astNode.getNodeType())
+		{
+			case AstNode.NT_TEXT:
+			{
+				Text n = (Text) astNode;
+				String text = n.getContent();
+				
+				text = text.substring(0, partFrom) +
+						text.substring(partFrom + delPartLen);
+				
+				n.setContent(text);
+				if (p != null)
+					p.text = text;
+				
+				break;
+			}
+			case AstNodeTypes.NT_NEWLINE:
+			{
+				// A newline is always only one character ... we cannot split that
+				throw new AssertionError();
+			}
+			case AstNodeTypes.NT_XML_CHAR_REF:
+			{
+				// A entity reference can only represent one UTF-16 character or
+				// two surrogates, never more.
+				if ((partFrom < 0 || partFrom > 1) && delPartLen != 1)
+					throw new AssertionError();
+				
+				// Deleting only one of the surrogates creates a corrupted  
+				// unicode string. But that case should have been caught 
+				// already!
+				throw new AssertionError();
+			}
+			case AstNodeTypes.NT_XML_ENTITY_REF:
+			{
+				// HTML entities are all one code point, BMP Unicode characters.
+				// So there's nothing to split here.
+				throw new AssertionError();
+				
+				// FIXME: But users of Sweble can always define additional entities 
+				// that can resolve to arbitrary strings ... and these strings might
+				// need escaping again.
+			}
+			default:
+				throw new AssertionError();
+		}
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public void insertText(int at, String text)
+			throws UnsupportedOperationException, IndexOutOfBoundsException
+	{
+		if (at < 0 || at > this.text.length())
+			throw new IndexOutOfBoundsException();
+		
+		if (text.isEmpty())
+			return;
+		
+		String a = this.text.substring(0, at);
+		String b = this.text.substring(at);
+		String newText = a + text + b;
+		
+		if (StringUtils.hasIsolatedSurrogates(a)
+				|| StringUtils.hasIsolatedSurrogates(b))
+			throw new UnsupportedOperationException(
+					"Insertion splits code points into surrogates.");
+		
+		if (StringUtils.hasParagraphSeparators(newText))
+			throw new UnsupportedOperationException(
+					"Insertion would split text into multiple paragraphs");
+		
+		TextPart firstToInsert = stringToAst(text);
+		
+		String firstText = (this.parts != null) ?
+				firstText = this.text.substring(0, this.parts.offset) :
+				this.text;
+		
+		this.text = newText;
+		
+		TextPart first = new TextPart(getAstNode(), 0, firstText);
+		first.next = this.parts;
+		
+		TextPart p = firstToInsert;
+		while (true)
+		{
+			p.offset += at;
+			if (p.next == null)
+				break;
+			p = p.next;
+		}
+		
+		// Insert the new parts
+		insertText(first, at, firstToInsert, p, text.length());
+		
+		if (DEBUG)
+			checkIntegrity();
+	}
+	
+	private void insertText(
+			TextPart first,
+			int at,
+			TextPart firstNewPart,
+			TextPart lastNewPart,
+			int length)
+	{
+		TextPart prev = null;
+		TextPart p = first;
+		
+		while (p.next != null && at >= p.next.offset)
+		{
+			prev = p;
+			p = p.next;
+		}
+		
+		if (at == p.offset)
+		{
+			// Insert exactly between two existing parts or before the first part.
+			
+			if (prev == null)
+				first = firstNewPart;
+			else
+				prev.next = firstNewPart;
+			lastNewPart.next = p;
+			
+			insertAstNodes(
+					Toolbox.advanceBefore(getTextContainer(), p.astNode),
+					firstNewPart,
+					lastNewPart);
+		}
+		else if (at == p.offset + p.text.length())
+		{
+			// Insert after the last part.
+			insertAstNodes(
+					Toolbox.advanceAfter(getTextContainer(), p.astNode),
+					firstNewPart,
+					lastNewPart);
+			
+			p.next = firstNewPart;
+			lastNewPart.next = null;
+			
+			p = null;
+		}
+		else
+		{
+			// Split a part and insert into the new gap.
+			
+			p = splitPart(p, at, firstNewPart, lastNewPart);
+			if (prev == null)
+				first = p;
+			else
+				prev.next = p;
+			
+			p = lastNewPart.next;
+		}
+		
+		// Fix offsets of parts following the inserted text
+		while (p != null)
+		{
+			p.offset += length;
+			p = p.next;
+		}
+		
+		this.parts = first.next;
+		setAstNode(first.astNode);
+	}
+	
+	private TextPart splitPart(
+			TextPart p,
+			int at,
+			TextPart firstNewPart,
+			TextPart lastNewPart)
+	{
+		AstNode n = p.astNode;
+		switch (n.getNodeType())
+		{
+			case AstNode.NT_TEXT:
+			{
+				return splitPart(p, (Text) n, at, firstNewPart, lastNewPart);
+			}
+			case AstNodeTypes.NT_NEWLINE:
+			{
+				// A newline is always only one character ... we cannot split that
+				throw new AssertionError();
+			}
+			case AstNodeTypes.NT_XML_CHAR_REF:
+			{
+				// Splitting a code point consiting of two code units creates a 
+				// corrupted unicode string. But that case should have been 
+				// caught already!
+				throw new AssertionError();
+			}
+			case AstNodeTypes.NT_XML_ENTITY_REF:
+			{
+				// HTML entities are all one code point, BMP Unicode characters.
+				// So there's nothing to split here.
+				throw new AssertionError();
+				
+				// FIXME: But users of Sweble can always define additional entities 
+				// that can resolve to arbitrary strings ... and these strings might
+				// need escaping again.
+			}
+			default:
+				throw new AssertionError();
+		}
+	}
+	
+	private TextPart splitPart(
+			TextPart p,
+			Text na,
+			int at,
+			TextPart firstNewPart,
+			TextPart lastNewPart)
+	{
+		// Before: prev p........ next
+		// After:  prev as     bs next
+		//              ^   ^
+		//              |   |
+		//              ofs at
+		
+		int ofs = p.offset;
+		int ins = at - ofs;
+		String text = p.text;
+		if (ins <= 0 || ins >= text.length())
+			throw new AssertionError();
+		
+		TextPart as = null;
+		TextPart bs = null;
+		TextPart next = p.next;
+		
+		// Find new text for left and right side of split
+		String aText = text.substring(0, ins);
+		String bText = text.substring(ins);
+		
+		// Fix/Create parts and ast nodes for left and right side of split
+		as = p;
+		as.text = aText;
+		((Text) as.astNode).setContent(aText);
+		
+		Text astNode = new Text(bText);
+		bs = new TextPart(astNode, ofs + ins, bText);
+		
+		// Insert and remove ast nodes
+		ListIterator<AstNode> i =
+				Toolbox.advanceAfter(getTextContainer(), p.astNode);
+		
+		insertAstNodes(i, firstNewPart, lastNewPart);
+		i.add(bs.astNode);
+		
+		// Link parts
+		as.next = firstNewPart;
+		lastNewPart.next = bs;
+		bs.next = next;
+		
+		return as;
+	}
+	
+	private void insertAstNodes(
+			ListIterator<AstNode> i,
+			TextPart firstNewPart,
+			TextPart lastNewPart)
+	{
+		TextPart q = firstNewPart;
+		while (true)
+		{
+			i.add(q.astNode);
+			if (q == lastNewPart)
+				break;
+			q = q.next;
+		}
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean replaceText(String search, String replacement)
+			throws UnsupportedOperationException
+	{
+		// FIXME: not exception safe!
+		
+		int i = text.indexOf(search, 0);
+		if (i == -1)
+			return false;
+		
+		final int sLen = search.length();
+		final int rLen = replacement.length();
+		
+		while (true)
+		{
+			replaceTextIntern(i, sLen, replacement);
+			
+			i = text.indexOf(search, i + rLen);
+			if (i == -1)
+				break;
+		}
+		
+		return true;
+	}
+	
+	@Override
+	public String replaceText(int from, int length, String text)
+			throws UnsupportedOperationException, IndexOutOfBoundsException
+	{
+		// FIXME: not exception safe!
+		
+		String replacee = this.text.substring(from, from + length);
+		replaceTextIntern(from, length, text);
+		return replacee;
+	}
+	
+	public void replaceTextIntern(int from, int length, String text)
+			throws UnsupportedOperationException, IndexOutOfBoundsException
+	{
+		deleteText(from, length);
+		insertText(from, text);
+	}
+	
+	// =========================================================================
+	
+	private static final class TextPart
+	{
+		public AstNode astNode;
+		
+		public int offset;
+		
+		public String text;
+		
+		public TextPart next = null;
+		
+		public TextPart(AstNode astNode, int offset, String text)
+		{
+			this.astNode = astNode;
+			this.offset = offset;
+			this.text = text;
+		}
+	}
+	
+	private TextPart getLastPart()
+	{
+		TextPart p = this.parts;
+		while (p != null)
+		{
+			if (p.next == null)
+				return p;
+			p = p.next;
+		}
+		return null;
+	}
+	
+	// =========================================================================
+	
+	private void checkIntegrity()
+	{
+		XmlEntityResolver entityResolver = new XmlEntityResolver()
+		{
+			@Override
+			public String resolveXmlEntity(String name)
+			{
+				// Let's hope that is enough for debugging purposes...
+				return EntityReferences.resolve(name);
+			}
+		};
+		
+		StringBuilder sb = new StringBuilder();
+		
+		String t = Toolbox.toText(entityResolver, getAstNode());
+		sb.append(t);
+		
+		int ofs = t.length();
+		
+		ListIterator<AstNode> i =
+				Toolbox.advanceAfter(getTextContainer(), getAstNode());
+		
+		if (i == null)
+			throw new AssertionError();
+		
+		TextPart p = this.parts;
+		while (p != null)
+		{
+			while (true)
+			{
+				if (!i.hasNext())
+					throw new AssertionError();
+				
+				AstNode n = i.next();
+				if (n == p.astNode)
+					break;
+				
+				switch (n.getNodeType())
+				{
+					case AstNode.NT_TEXT:
+					case AstNodeTypes.NT_NEWLINE:
+					case AstNodeTypes.NT_XML_CHAR_REF:
+					case AstNodeTypes.NT_XML_ENTITY_REF:
+						throw new AssertionError();
+						
+					default:
+						continue;
+				}
+			}
+			
+			if (ofs != p.offset)
+				throw new AssertionError();
+			
+			t = Toolbox.toText(entityResolver, p.astNode);
+			ofs += t.length();
+			
+			if (!t.equals(p.text))
+				throw new AssertionError();
+			
+			sb.append(t);
+			
+			p = p.next;
+		}
+		
+		if (!sb.toString().equals(this.text))
+			throw new AssertionError();
+	}
+	
+	// =========================================================================
+	
+	private NodeList getTextContainer()
+	{
+		return ((FullElement) getParent()).getAstChildContainer();
+	}
+	
+	// =========================================================================
+	
+	private void clear() throws AssertionError, AssertionError
 	{
 		NodeList container = getTextContainer();
 		
@@ -346,204 +741,157 @@ public class TextAdapter
 		}
 		
 		if (p != null)
-			throw new InternalError();
+			throw new AssertionError();
 		
 		setAstNode(empty);
+		
+		this.text = "";
 		this.parts = null;
 	}
 	
-	private static void removeAstNode(ListIterator<AstNode> i, AstNode astNode)
+	// =========================================================================
+	
+	private static TextPart stringToAst(String text)
 	{
-		while (i.hasNext())
+		if (text == null || text.isEmpty())
+			throw new AssertionError();
+		
+		TextPart first = null;
+		TextPart cur = null;
+		
+		int n = text.length();
+		int i = 0;
+		int j = 0;
+		for (; j < n; ++j)
 		{
-			if (i.next() == astNode)
+			AstNode nonTextNode = null;
+			
+			// The index of the first non-text character
+			int k = j;
+			
+			char ch = text.charAt(j);
+			switch (ch)
 			{
-				i.remove();
-				return;
+				case ' ':
+				case '\n':
+				case '\t':
+					continue;
+				case '<':
+					nonTextNode = TextUtils.xmlEntity("lt");
+					break;
+				case '>':
+					nonTextNode = TextUtils.xmlEntity("gt");
+					break;
+				case '&':
+					nonTextNode = TextUtils.xmlEntity("amp");
+					break;
+				default:
+					if ((ch >= 0 && ch < 0x20) || (ch == 0xFE))
+					{
+						nonTextNode = TextUtils.xmlCharRef(ch);
+						break;
+					}
+					else if (Character.isHighSurrogate(ch))
+					{
+						++j;
+						if (j < n)
+						{
+							char ch2 = text.charAt(j);
+							if (Character.isLowSurrogate(ch2))
+							{
+								int codePoint = Character.toCodePoint(ch, ch2);
+								switch (Character.getType(codePoint))
+								{
+									case Character.CONTROL:
+									case Character.PRIVATE_USE:
+									case Character.UNASSIGNED:
+										nonTextNode = TextUtils.xmlCharRef(codePoint);
+										break;
+									
+									default:
+										continue;
+								}
+							}
+						}
+					}
+					else if (!Character.isLowSurrogate(ch))
+					{
+						continue;
+					}
+					
+					// No low surrogate followed or only low surrogate
+					if (nonTextNode == null)
+						throw new IllegalArgumentException("String contains isolated surrogates!");
+					
+					break;
+			}
+			
+			// we only get here if a non-text element needs to be added
+			if (k > i)
+			{
+				String part = text.substring(i, k);
+				Text textNode = new Text(part);
+				TextPart p = new TextPart(textNode, i, part);
+				if (cur == null)
+					first = p;
+				else
+					cur.next = p;
+				cur = p;
+			}
+			
+			i = j + 1;
+			
+			// add the non-text element
+			{
+				String part = text.substring(k, i);
+				TextPart p = new TextPart(nonTextNode, k, part);
+				if (cur == null)
+					first = p;
+				else
+					cur.next = p;
+				cur = p;
 			}
 		}
-		throw new InternalError();
-	}
-	
-	private static void replaceAstNode(
-			ListIterator<AstNode> i,
-			AstNode astNode,
-			AstNode replacement)
-	{
-		while (i.hasNext())
+		
+		if (j > i)
 		{
-			if (i.next() == astNode)
-			{
-				i.set(replacement);
-				return;
-			}
+			String part = text.substring(i, j);
+			Text textNode = new Text(part);
+			TextPart p = new TextPart(textNode, i, part);
+			if (cur == null)
+				first = p;
+			else
+				cur.next = p;
 		}
-		throw new InternalError();
+		
+		return first;
 	}
 	
-	private static AstNode deleteText(TextPart p, int from, int length)
+	// =========================================================================
+	
+	public void append(XmlEntityResolver entityResolver, AstNode n)
 	{
-		AstNode n = p.astNode;
 		switch (n.getNodeType())
 		{
-			case AstNode.NT_TEXT:
-				return deleteText(p, (Text) n, from, length);
-				
 			case AstNodeTypes.NT_NEWLINE:
-				return deleteText(p, (Newline) n, from, length);
-				
-			case AstNodeTypes.NT_XML_CHAR_REF:
-				return deleteText(p, (XmlCharRef) n, from, length, p.text);
-				
-			case AstNodeTypes.NT_XML_ENTITY_REF:
-				return deleteText(p, (XmlEntityRef) n, from, length, p.text);
-				
+				append("\n", n);
+				break;
 			default:
-				throw new IllegalArgumentException();
+				append(Toolbox.toText(entityResolver, n), n);
+				break;
 		}
 	}
 	
-	private static Text deleteText(TextPart p, Text n, int from, int length)
+	private void append(String text, AstNode n)
 	{
-		String text = deleteText(p, from, length, n.getContent());
-		if (text == null)
-			return null;
+		TextPart part = new TextPart(n, this.text.length(), text);
 		
-		n.setContent(text);
-		return n;
-	}
-	
-	private static Newline deleteText(
-			TextPart p,
-			Newline n,
-			int from,
-			int length)
-	{
-		String text = deleteText(p, from, length, n.getContent());
-		if (text == null)
-			return null;
+		this.text += text;
 		
-		n.setContent(text);
-		return n;
-	}
-	
-	private static String deleteText(
-			TextPart p,
-			int from,
-			int length,
-			String text)
-	{
-		if (from + length > text.length())
-			length = text.length() - from;
-		
-		if (from == 0 && length == text.length())
-			return null;
-		
-		text = text.substring(0, from) +
-				text.substring(from + length);
-		
-		if (p != null)
-			p.text = text;
-		return text;
-	}
-	
-	private static AstNode deleteText(
-			TextPart p,
-			XmlEntityRef n,
-			int from,
-			int length,
-			String text)
-	{
-		if (from + length > text.length())
-			length = text.length() - from;
-		
-		if (from == 0 && length == text.length())
-			return null;
-		
-		p.text = p.text.substring(0, from) +
-				p.text.substring(from + length);
-		
-		return new Text(p.text);
-	}
-	
-	private static AstNode deleteText(
-			TextPart p,
-			XmlCharRef n,
-			int from,
-			int length,
-			String text)
-	{
-		if (from + length > text.length())
-			length = text.length() - from;
-		
-		if (from == 0 && length == text.length())
-			return null;
-		
-		p.text = p.text.substring(0, from) +
-				p.text.substring(from + length);
-		
-		return new Text(p.text);
-	}
-	
-	/*
-	private static Whitespace deleteText(
-			TextPart p,
-			Whitespace n,
-			int from,
-			int length)
-	{
-		NodeList list = n.getContent();
-		if (list.size() > 1)
-		{
-			String text = "";
-			for (AstNode m : list)
-			{
-				if (m.getNodeType() != AstNode.NT_TEXT)
-					throw new InternalError();
-				text += ((Text) m).getContent();
-			}
-			
-			Text m = (Text) list.get(0);
-			m.setContent(text);
-			
-			list.clear();
-			list.add(m);
-		}
-		
-		if (list.size() != 1 || list.get(0).getNodeType() != AstNode.NT_TEXT)
-			throw new InternalError();
-		
-		if (deleteText(null, (Text) list.get(0), from, length) == null)
-			return null;
-		
-		if (p != null)
-			p.text = ((Text) list.get(0)).getContent();
-		
-		return n;
-	}
-	*/
-	
-	@Override
-	public void insertText(int at, String text)
-		throws UnsupportedOperationException,
-		IndexOutOfBoundsException
-	{
-		// TODO: Implement
-	}
-	
-	@Override
-	public String replaceText(String text) throws UnsupportedOperationException
-	{
-		// TODO: Implement
-		return null;
-	}
-	
-	@Override
-	public String replaceText(int from, int length, String text)
-		throws UnsupportedOperationException,
-		IndexOutOfBoundsException
-	{
-		// TODO: Implement
-		return null;
+		TextPart last = getLastPart();
+		if (last != null)
+			last.next = part;
+		else
+			this.parts = part;
 	}
 }

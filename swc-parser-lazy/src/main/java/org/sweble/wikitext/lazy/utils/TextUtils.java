@@ -30,54 +30,6 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public final class TextUtils
 {
-	private static final XmlEntityResolver simpleXmlEntityResolver = new XmlEntityResolver()
-	{
-		@Override
-		public String resolveXmlEntity(String name)
-		{
-			if ("lt".equals(name))
-				return "<";
-			else if ("gt".equals(name))
-				return ">";
-			else if ("amp".equals(name))
-				return "&";
-			else if ("quot".equals(name))
-				return "\"";
-			else
-				return null;
-		}
-	};
-	
-	public static XmlEntityResolver getSimpleXmlEntityResolver()
-	{
-		return simpleXmlEntityResolver;
-	}
-	
-	public static boolean needsEscaping(String text, boolean forAttribute)
-	{
-		for (int i = 0; i < text.length(); ++i)
-		{
-			switch (text.charAt(i))
-			{
-				case '<':
-					return true;
-				case '>':
-					if (!forAttribute)
-						break;
-					return true;
-				case '&':
-					return true;
-				case '\'':
-					return true;
-				case '"':
-					if (!forAttribute)
-						break;
-					return true;
-			}
-		}
-		return false;
-	}
-	
 	public static NodeList stringToAst(String text)
 	{
 		return stringToAst(text, true);
@@ -95,13 +47,17 @@ public final class TextUtils
 		int j = 0;
 		for (; j < n; ++j)
 		{
-			char c = text.charAt(j);
-			switch (c)
+			char ch = text.charAt(j);
+			switch (ch)
 			{
+				case ' ':
+				case '\n':
+				case '\t':
+					break;
 				case '<':
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(createXmlEntity("lt"));
+					list.add(xmlEntity("lt"));
 					i = j + 1;
 					break;
 				case '>':
@@ -109,20 +65,20 @@ public final class TextUtils
 						break;
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(createXmlEntity("gt"));
+					list.add(xmlEntity("gt"));
 					i = j + 1;
 					break;
 				case '&':
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(createXmlEntity("amp"));
+					list.add(xmlEntity("amp"));
 					i = j + 1;
 					break;
 				case '\'':
 					// &apos; cannot safely be used, see wikipedia
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(createXmlCharRef(39));
+					list.add(xmlCharRef(39));
 					i = j + 1;
 					break;
 				case '"':
@@ -130,9 +86,53 @@ public final class TextUtils
 						break;
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(createXmlEntity("quot"));
+					list.add(xmlEntity("quot"));
 					i = j + 1;
 					break;
+				default:
+					if ((ch >= 0 && ch < 0x20) || (ch == 0xFE))
+					{
+						if (j > i)
+							list.add(new Text(text.substring(i, j)));
+						list.add(xmlCharRef(ch));
+						i = j + 1;
+						continue;
+					}
+					else if (Character.isHighSurrogate(ch))
+					{
+						++i;
+						if (i < n)
+						{
+							char ch2 = text.charAt(i);
+							if (Character.isLowSurrogate(ch2))
+							{
+								int codePoint = Character.toCodePoint(ch, ch2);
+								switch (Character.getType(codePoint))
+								{
+									case Character.CONTROL:
+									case Character.PRIVATE_USE:
+									case Character.UNASSIGNED:
+										if (j > i)
+											list.add(new Text(text.substring(i, j)));
+										list.add(xmlCharRef(codePoint));
+										i = j + 1;
+										break;
+									
+									default:
+										break;
+								}
+								
+								continue;
+							}
+						}
+					}
+					else if (!Character.isLowSurrogate(ch))
+					{
+						continue;
+					}
+					
+					// No low surrogate followed or only low surrogate
+					throw new IllegalArgumentException("String contains isolated surrogates!");
 			}
 		}
 		
@@ -142,19 +142,35 @@ public final class TextUtils
 		return list;
 	}
 	
-	private static AstNode createXmlCharRef(int ch)
+	// =========================================================================
+	
+	public static XmlCharRef xmlCharRef(int codePoint)
 	{
-		XmlCharRef xmlCharRef = new XmlCharRef(ch);
-		addRtData(xmlCharRef, joinRt("&#", String.valueOf(ch), ";"));
+		XmlCharRef xmlCharRef = new XmlCharRef(codePoint);
+		setXmlCharRef(xmlCharRef, codePoint);
 		return xmlCharRef;
 	}
 	
-	private static XmlEntityRef createXmlEntity(String name)
+	public static void setXmlCharRef(XmlCharRef xmlCharRef, int codePoint)
+	{
+		xmlCharRef.setCodePoint(codePoint);
+		addRtData(xmlCharRef, joinRt(String.format("&#x%X;", codePoint)));
+	}
+	
+	public static XmlEntityRef xmlEntity(String name)
 	{
 		XmlEntityRef xmlEntityRef = new XmlEntityRef(name);
-		addRtData(xmlEntityRef, joinRt("&", name, ";"));
+		setXmlEntityRef(xmlEntityRef, name);
 		return xmlEntityRef;
 	}
+	
+	private static void setXmlEntityRef(XmlEntityRef xmlEntityRef, String name)
+	{
+		xmlEntityRef.setName(name);
+		addRtData(xmlEntityRef, joinRt("&" + name + ";"));
+	}
+	
+	// =========================================================================
 	
 	public static NodeList trim(NodeList nodes)
 	{
@@ -207,7 +223,7 @@ public final class TextUtils
 				case AstNode.NT_TEXT:
 				{
 					Text stringNode = (Text) result.get(i);
-					String trimmed = trimLeft(stringNode.getContent());
+					String trimmed = StringUtils.trimLeft(stringNode.getContent());
 					if (trimmed != stringNode.getContent())
 					{
 						if (trimmed.isEmpty())
@@ -249,7 +265,7 @@ public final class TextUtils
 				case AstNode.NT_TEXT:
 				{
 					Text stringNode = (Text) result.get(i);
-					String trimmed = trimRight(stringNode.getContent());
+					String trimmed = StringUtils.trimRight(stringNode.getContent());
 					if (trimmed != stringNode.getContent())
 					{
 						if (trimmed.isEmpty())
@@ -280,6 +296,8 @@ public final class TextUtils
 			break;
 		}
 	}
+	
+	// =========================================================================
 	
 	public static NodeList pad(ArrayList<AstNode> result, int spaces)
 	{
@@ -324,61 +342,7 @@ public final class TextUtils
 		return new NodeList(result);
 	}
 	
-	public static String trim(String text)
-	{
-		int from = 0;
-		int length = text.length();
-		
-		while ((from < length) && (Character.isWhitespace(text.charAt(from))))
-			++from;
-		
-		while ((from < length) && (Character.isWhitespace(text.charAt(length - 1))))
-			--length;
-		
-		if (from > 0 || length < text.length())
-		{
-			return text.substring(from, length);
-		}
-		else
-		{
-			return text;
-		}
-	}
-	
-	public static String trimLeft(String text)
-	{
-		int from = 0;
-		int length = text.length();
-		
-		while ((from < length) && (Character.isWhitespace(text.charAt(from))))
-			++from;
-		
-		if (from > 0)
-		{
-			return text.substring(from, length);
-		}
-		else
-		{
-			return text;
-		}
-	}
-	
-	public static String trimRight(String text)
-	{
-		int length = text.length();
-		
-		while ((0 < length) && (Character.isWhitespace(text.charAt(length - 1))))
-			--length;
-		
-		if (length < text.length())
-		{
-			return text.substring(0, length);
-		}
-		else
-		{
-			return text;
-		}
-	}
+	// =========================================================================
 	
 	public static RtData addRtData(AstNode yyValue, Object[]... rts)
 	{

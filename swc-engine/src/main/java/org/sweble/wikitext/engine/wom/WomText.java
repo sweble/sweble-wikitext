@@ -57,7 +57,7 @@ public interface WomText
 			IndexOutOfBoundsException;
 	
 	@Override
-	public String replaceText(String text) throws UnsupportedOperationException;
+	public boolean replaceText(String search, String replacement) throws UnsupportedOperationException;
 	
 	@Override
 	public String replaceText(int from, int length, String text)
