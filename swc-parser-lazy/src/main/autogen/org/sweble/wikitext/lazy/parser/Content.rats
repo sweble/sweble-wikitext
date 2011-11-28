@@ -154,8 +154,8 @@ noinline transient AstNode ParagraphTransient =
     pre:PreParaWs !ParagraphStopper p:ParagraphText post:PostParaWs?
     {
       NodeList l = new NodeList();
-      l.add(pre);
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
+      l.add(pre);
       l.add(p);
       l.add(post);
       l.add(IntermediateTags.PARAGRAPH.createClose(false));
