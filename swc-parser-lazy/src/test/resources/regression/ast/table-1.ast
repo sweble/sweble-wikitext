@@ -15,10 +15,8 @@ LazyParsedPage(
 
           [ ]
           [
-            Paragraph([
-              Text("H")
-              Newline("\n")
-            ])
+            Paragraph([ Text("H") ])
+            Newline("\n")
           ]
         )
       ]

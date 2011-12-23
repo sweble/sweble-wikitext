@@ -100,24 +100,6 @@ public abstract class NativeOrXmlElement
 	
 	// =========================================================================
 	
-	protected void addAttributes(WomNodeFactory womNodeFactory, NodeList xmlAttributes)
-	{
-		if (xmlAttributes == null)
-			throw new NullPointerException();
-		
-		if (!xmlAttributes.isEmpty())
-			addAttributes(womNodeFactory, xmlAttributes, getAttribManagerForModificationOrFail());
-	}
-	
-	protected final void addContent(WomNodeFactory womNodeFactory, NodeList content)
-	{
-		if (content == null)
-			throw new NullPointerException();
-		
-		if (!content.isEmpty())
-			addContent(womNodeFactory, content, getChildManagerForModificationOrFail());
-	}
-	
 	protected final boolean isXml()
 	{
 		return getAstNode().getNodeType() == AstNodeTypes.NT_XML_ELEMENT;

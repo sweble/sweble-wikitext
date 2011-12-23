@@ -74,9 +74,9 @@ LazyParsedPage(
         )
       )
       Text(").")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
       InternalLink(
@@ -89,9 +89,9 @@ LazyParsedPage(
         LinkTitle([ ])
       )
       Text(" website.")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -151,9 +151,11 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "<!-- This is the episode number within the entire series -->"
                           {N} content = " This is the episode number within the entire series "
+                          {N} prefix = null
+                          {N} suffix = null
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -177,9 +179,11 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "<!-- This is the episode number within the current season -->"
                           {N} content = " This is the episode number within the current season "
+                          {N} prefix = null
+                          {N} suffix = null
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -197,10 +201,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Title")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Title") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -320,8 +322,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -330,7 +332,7 @@ LazyParsedPage(
         )
         Newline("\n")
         Newline("\n")
-        Newline("\n")
+        Paragraph([ Newline("\n") ])
       ]
     )
     Section(
@@ -402,8 +404,8 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" returned to assist with a myth.")
-              Newline("\n")
             ])
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -425,10 +427,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Myth statement")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Myth statement") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -437,10 +437,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Status")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Status") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -449,10 +447,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Notes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Notes") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -467,10 +463,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Greenhouse gases increase the amount of heat absorbed by air.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Greenhouse gases increase the amount of heat absorbed by air.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -499,8 +493,8 @@ LazyParsedPage(
                             ]
                             [ Text(" Confirmed ") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -509,10 +503,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -551,8 +543,8 @@ LazyParsedPage(
                             LinkTitle([ ])
                           )
                           Text("-powered cars.")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -581,8 +573,8 @@ LazyParsedPage(
                             ]
                             [ Text(" Busted ") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -591,10 +583,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -611,10 +601,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Cows hurt the environment.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Cows hurt the environment.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -643,8 +631,8 @@ LazyParsedPage(
                             ]
                             [ Text(" Confirmed ") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -668,16 +656,18 @@ LazyParsedPage(
                             Properties:
                               RTD = RtData: [0] = "&mdash;"
                               {N} name = "mdash"
+                              {N} resolved = "\u2014"
                           )
                           Text("though not mostly from flatulence, but from belching ")
                           XmlEntityRef(
                             Properties:
                               RTD = RtData: [0] = "&mdash;"
                               {N} name = "mdash"
+                              {N} resolved = "\u2014"
                           )
                           Text(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -694,10 +684,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Cow manure can be used to help the environment.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Cow manure can be used to help the environment.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -726,8 +714,8 @@ LazyParsedPage(
                             ]
                             [ Text(" Confirmed ") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -736,10 +724,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -779,9 +765,9 @@ LazyParsedPage(
             [ Text("MythBusters") ]
           )
           Text(" episodes.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -800,8 +786,8 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
             ])
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -823,10 +809,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Myth statement")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Myth statement") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -835,10 +819,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Status")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Status") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -847,10 +829,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Notes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Notes") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -877,8 +857,8 @@ LazyParsedPage(
                             LinkTitle([ ])
                           )
                           Text(".")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -896,10 +876,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Busted")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Busted") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -950,8 +928,8 @@ LazyParsedPage(
                             LinkTitle([ ])
                           )
                           Text(" can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1028,9 +1006,9 @@ LazyParsedPage(
                 ]
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -1052,10 +1030,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Myth statement")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Myth statement") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1064,10 +1040,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Status")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Status") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1076,10 +1050,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Notes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Notes") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -1094,10 +1066,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1115,10 +1085,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Plausible")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Plausible") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1127,10 +1095,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" The bridge was able to hold Adam's weight until he started bouncing on it.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" The bridge was able to hold Adam's weight until he started bouncing on it.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1166,9 +1132,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -1190,10 +1156,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Myth statement")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Myth statement") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1202,10 +1166,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Status")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Status") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1214,10 +1176,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Notes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Notes") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -1232,10 +1192,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Sharks tend to be attracted to brighter colors like yellow.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Sharks tend to be attracted to brighter colors like yellow.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1253,10 +1211,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Plausible")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Plausible") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1265,10 +1221,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1285,10 +1239,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Sharks can detect a single drop of blood dropped into a pool of water.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Sharks can detect a single drop of blood dropped into a pool of water.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1306,10 +1258,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Busted")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Busted") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1355,8 +1305,8 @@ LazyParsedPage(
                             LinkTitle([ ])
                           )
                           Text(" might have gotten different results.")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1385,8 +1335,8 @@ LazyParsedPage(
                             LinkTitle([ ])
                           )
                           Text(".")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1404,10 +1354,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Confirmed")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Confirmed") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1416,10 +1364,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1448,8 +1394,8 @@ LazyParsedPage(
                             LinkTitle([ ])
                           )
                           Text(" a casual observer can use to adequately estimate the size of a shark.")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1467,10 +1413,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Busted")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Busted") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1479,10 +1423,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1503,11 +1445,9 @@ LazyParsedPage(
       [ Text("Outtakes") ]
       [
         Newline("\n")
-        Paragraph([
-          Text("During live appearances by the MythBusters, they have screened additional segments that were not aired.")
-          Newline("\n")
-          Newline("\n")
-        ])
+        Paragraph([ Text("During live appearances by the MythBusters, they have screened additional segments that were not aired.") ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -1540,9 +1480,9 @@ LazyParsedPage(
                 ]
               )
               Text(" episode.  These two myths did not air because they were thought to be inappropriate for younger viewers.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -1564,10 +1504,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Myth statement")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Myth statement") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1576,10 +1514,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Status")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Status") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1588,10 +1524,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Notes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Notes") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -1606,10 +1540,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Attractive women do not pass gas.")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Attractive women do not pass gas.") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1627,10 +1559,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Busted")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Busted") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1659,8 +1589,8 @@ LazyParsedPage(
 
                             [ ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1704,8 +1634,8 @@ LazyParsedPage(
                             )
                           )
                           Text(".")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1723,10 +1653,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Confirmed")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Confirmed") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1746,13 +1674,11 @@ LazyParsedPage(
                             [ ]
                           )
                           Text(" The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).")
-                          Newline("\n")
-                          Newline("\n")
                         ])
-                        Paragraph([
-                          Text("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.")
-                          Newline("\n")
-                        ])
+                        Newline("\n")
+                        Newline("\n")
+                        Paragraph([ Text("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1788,9 +1714,9 @@ LazyParsedPage(
                 )
               )
               Text("\" episode. However, on the Discovery Europe version, it is included in the episode.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -1812,10 +1738,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Myth statement")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Myth statement") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1824,10 +1748,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Status")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Status") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -1836,10 +1758,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" Notes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Notes") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -1854,10 +1774,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" Of all the MythBusters, Adam is the one with the brownest teeth. ")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Of all the MythBusters, Adam is the one with the brownest teeth. ") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1905,8 +1823,8 @@ LazyParsedPage(
                             ]
                             [ Text("Confirmed") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -1932,8 +1850,8 @@ LazyParsedPage(
                             )
                           )
                           Text(" to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -1973,9 +1891,9 @@ LazyParsedPage(
             [ Text("inc-video") ]
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -2004,9 +1922,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" in an energetic and irreverent style.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Table(
           Properties:
             RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -2028,10 +1946,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Date broadcast")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Date broadcast") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -2040,10 +1956,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Myths")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Myths") ])
+                Newline("\n")
               ]
             )
             TableRow(
@@ -2058,10 +1972,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" July 27, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" July 27, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2116,8 +2028,8 @@ LazyParsedPage(
                           [ Text("Exploding Toilet") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2134,10 +2046,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" August 3, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" August 3, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2192,8 +2102,8 @@ LazyParsedPage(
                           [ Text("Cell Phone Destruction") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2210,10 +2120,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" September 7, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" September 7, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2268,8 +2176,8 @@ LazyParsedPage(
                           [ Text("Hammer Bridge Drop") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2286,10 +2194,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" September 14, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" September 14, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2314,8 +2220,8 @@ LazyParsedPage(
                           [ Text("JATO Car, Pop Rocks and Soda (called \"Space Dust\" in the British narration, as it is the more common name for Pop Rocks in the UK)") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2332,10 +2238,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" September 21, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" September 21, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2375,8 +2279,8 @@ LazyParsedPage(
                           [ Text("Beat the Breath Test") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2393,10 +2297,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" September 28, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" September 28, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2451,8 +2353,8 @@ LazyParsedPage(
                           [ Text("Frog Giggin'") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2469,10 +2371,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" October 5, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" October 5, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2527,8 +2427,8 @@ LazyParsedPage(
                           [ Text("Down with the Titanic") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2545,10 +2445,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" October 12, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" October 12, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2602,8 +2500,8 @@ LazyParsedPage(
                           [ Text("Does a Duck's Quack Echo?") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2620,10 +2518,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" October 19, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" October 19, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2677,8 +2573,8 @@ LazyParsedPage(
                           [ Text("Breakstep Bridge") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2695,10 +2591,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" October 31, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" October 31, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2753,8 +2647,8 @@ LazyParsedPage(
                           [ Text("Jet Taxi") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2771,10 +2665,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" November 7, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" November 7, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2836,8 +2728,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2854,10 +2746,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" November 14, 2006")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" November 14, 2006") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2897,8 +2787,8 @@ LazyParsedPage(
                           [ Text("Killer Laundry!") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -2915,10 +2805,8 @@ LazyParsedPage(
 
                   [ ]
                   [
-                    Paragraph([
-                      Text(" February 19, 2007")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" February 19, 2007") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -2958,8 +2846,8 @@ LazyParsedPage(
                           [ Text("Exploding Shopping") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -3017,9 +2905,9 @@ LazyParsedPage(
             [ Text("Reflist") ]
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -3123,9 +3011,9 @@ LazyParsedPage(
             [ Text("MythBusters") ]
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Template(
             Properties:
@@ -3149,9 +3037,9 @@ LazyParsedPage(
               [ Text("Special") ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -3182,8 +3070,8 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Newline("\n")
         ])
+        Newline("\n")
       ]
     )
   ]

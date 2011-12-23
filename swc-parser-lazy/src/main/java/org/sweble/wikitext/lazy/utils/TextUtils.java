@@ -57,7 +57,7 @@ public final class TextUtils
 				case '<':
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(xmlEntity("lt"));
+					list.add(xmlEntity("lt", "<"));
 					i = j + 1;
 					break;
 				case '>':
@@ -65,13 +65,13 @@ public final class TextUtils
 						break;
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(xmlEntity("gt"));
+					list.add(xmlEntity("gt", ">"));
 					i = j + 1;
 					break;
 				case '&':
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(xmlEntity("amp"));
+					list.add(xmlEntity("amp", "&"));
 					i = j + 1;
 					break;
 				case '\'':
@@ -86,7 +86,7 @@ public final class TextUtils
 						break;
 					if (j > i)
 						list.add(new Text(text.substring(i, j)));
-					list.add(xmlEntity("quot"));
+					list.add(xmlEntity("quot", "\""));
 					i = j + 1;
 					break;
 				default:
@@ -154,12 +154,12 @@ public final class TextUtils
 	public static void setXmlCharRef(XmlCharRef xmlCharRef, int codePoint)
 	{
 		xmlCharRef.setCodePoint(codePoint);
-		addRtData(xmlCharRef, joinRt(String.format("&#x%X;", codePoint)));
+		addRtData(xmlCharRef, joinRt(StringUtils.hexCharRef(codePoint)));
 	}
 	
-	public static XmlEntityRef xmlEntity(String name)
+	public static XmlEntityRef xmlEntity(String name, String resolved)
 	{
-		XmlEntityRef xmlEntityRef = new XmlEntityRef(name);
+		XmlEntityRef xmlEntityRef = new XmlEntityRef(name, resolved);
 		setXmlEntityRef(xmlEntityRef, name);
 		return xmlEntityRef;
 	}
@@ -167,7 +167,7 @@ public final class TextUtils
 	private static void setXmlEntityRef(XmlEntityRef xmlEntityRef, String name)
 	{
 		xmlEntityRef.setName(name);
-		addRtData(xmlEntityRef, joinRt("&" + name + ";"));
+		addRtData(xmlEntityRef, joinRt(StringUtils.entityRef(name)));
 	}
 	
 	// =========================================================================

@@ -540,6 +540,8 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "<!--Do not remove per [[WP:MOSNUM]]-->"
                   {N} content = "Do not remove per [[WP:MOSNUM]]"
+                  {N} prefix = null
+                  {N} suffix = null
               )
               Text("\n")
             ]
@@ -644,6 +646,8 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "<!--Do not remove per [[WP:MOSNUM]]-->"
                   {N} content = "Do not remove per [[WP:MOSNUM]]"
+                  {N} prefix = null
+                  {N} suffix = null
               )
               Text("\n")
             ]
@@ -1173,9 +1177,9 @@ LazyParsedPage(
           )
         ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Bold(
         Properties:
@@ -1480,6 +1484,7 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&nbsp;"
           {N} name = "nbsp"
+          {N} resolved = "\u00A0"
       )
       Text("km")
       XmlElement(
@@ -1511,6 +1516,7 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&nbsp;"
           {N} name = "nbsp"
+          {N} resolved = "\u00A0"
       )
       Text("million inhabitants, it is the most populous member state of the ")
       InternalLink(
@@ -1564,9 +1570,9 @@ LazyParsedPage(
 
         [ ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("A region named ")
       InternalLink(
@@ -1608,6 +1614,7 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&nbsp;"
           {N} name = "nbsp"
+          {N} resolved = "\u00A0"
       )
       Text("100. Beginning in the 10th century, German territories formed a central part of the ")
       InternalLink(
@@ -1823,9 +1830,9 @@ LazyParsedPage(
 
         [ ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("Germany is a ")
       InternalLink(
@@ -2123,9 +2130,9 @@ LazyParsedPage(
 
         [ ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -2151,9 +2158,9 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -2187,9 +2194,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The English word \"Germany\" derives from the ")
               InternalLink(
@@ -2285,9 +2292,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -2377,6 +2384,7 @@ LazyParsedPage(
                       Properties:
                         RTD = RtData: [0] = "&nbsp;"
                         {N} name = "nbsp"
+                        {N} resolved = "\u00A0"
                     )
                     Text("1")
                   ]
@@ -2433,6 +2441,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("BC, coming into contact with the ")
               InternalLink(
@@ -2537,9 +2546,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Under ")
               InternalLink(
@@ -2586,6 +2595,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("9, three ")
               InternalLink(
@@ -2652,6 +2662,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("100, the time of ")
               InternalLink(
@@ -2803,9 +2814,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -2970,9 +2981,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -3089,14 +3100,15 @@ LazyParsedPage(
                       Properties:
                         RTD = RtData: [0] = "&nbsp;"
                         {N} name = "nbsp"
+                        {N} resolved = "\u00A0"
                     )
                     Text("1000")
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("On 25 December 800, ")
               InternalLink(
@@ -3191,9 +3203,9 @@ LazyParsedPage(
                 [ Text("Sacrum Romanum Imperium Nationis Germanic\u00E6") ]
               )
               Text(" (Holy Roman Empire of the German Nation) starting in 1448, to adjust the title to its then reduced territory.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -3257,9 +3269,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Under the reign of the ")
               InternalLink(
@@ -3509,9 +3521,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The edict of the ")
               InternalLink(
@@ -3564,9 +3576,9 @@ LazyParsedPage(
                 )
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The monk ")
               InternalLink(
@@ -3743,9 +3755,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -3815,9 +3827,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Following the fall of ")
               InternalLink(
@@ -3985,9 +3997,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In the light of a ")
               InternalLink(
@@ -4145,9 +4157,9 @@ LazyParsedPage(
                 )
               )
               Text(", formerly the leading German state, from the affairs of the remaining German states.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -4246,9 +4258,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The state known as ")
               Italics(
@@ -4375,9 +4387,9 @@ LazyParsedPage(
                 )
               )
               Text(" outside Europe.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -4426,9 +4438,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In the ")
               Template(
@@ -4571,9 +4583,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(", Germany became increasingly isolated.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany's imperialism reached outside its own country, and it joined many other powers in Europe in claiming its share of Africa. The ")
               InternalLink(
@@ -4666,9 +4678,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -4837,9 +4849,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -4929,9 +4941,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("At the beginning of the German Revolution, Germany was declared a ")
               InternalLink(
@@ -5004,9 +5016,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" on 11 August 1919.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Suffering from the ")
               InternalLink(
@@ -5166,9 +5178,9 @@ LazyParsedPage(
                 ]
               )
               Text(", and were also targeted.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Discontentment with the new Weimar government helped fuel the growth of the ")
               InternalLink(
@@ -5231,9 +5243,9 @@ LazyParsedPage(
                 )
               )
               Text(", honouring Hitler's request.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -5329,9 +5341,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("On 27 February 1933 the ")
               InternalLink(
@@ -5482,9 +5494,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Leading to ")
               InternalLink(
@@ -5662,9 +5674,9 @@ LazyParsedPage(
                 )
               )
               Text(" failed.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -5887,9 +5899,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In what later became known as ")
               InternalLink(
@@ -5995,6 +6007,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million dead in Europe.")
               TagExtension(
@@ -6042,9 +6055,9 @@ LazyParsedPage(
                 [ Text("Clear") ]
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -6155,9 +6168,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The war resulted in the ")
               InternalLink(
@@ -6207,6 +6220,7 @@ LazyParsedPage(
                       Properties:
                         RTD = RtData: [0] = "&nbsp;"
                         {N} name = "nbsp"
+                        {N} resolved = "\u00A0"
                     )
                     Text("million Germans")
                   ]
@@ -6267,9 +6281,9 @@ LazyParsedPage(
                 )
               )
               Text(" into four military occupation zones.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The western sectors, controlled by France, the United Kingdom, and the United States, were merged on 23 May 1949, to form the ")
               Italics(
@@ -6384,9 +6398,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("West Germany, established as a federal parliamentary republic with a \"")
               InternalLink(
@@ -6479,9 +6493,9 @@ LazyParsedPage(
                 ]
               )
               Text(", having been occupied by France since 1947.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -6540,9 +6554,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("East Germany was an ")
               InternalLink(
@@ -6690,9 +6704,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Tensions between East and West Germany were somewhat reduced in the early 1970s by Chancellor ")
               InternalLink(
@@ -6737,9 +6751,9 @@ LazyParsedPage(
                 [ Text("de facto") ]
               )
               Text(" acceptance of Germany's territorial losses in World War II.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In summer 1989, Hungary decided (2 May) to dismantle the ")
               InternalLink(
@@ -6869,9 +6883,9 @@ LazyParsedPage(
                 )
               )
               Text(" or \"neue L\u00E4nder\").")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -6959,9 +6973,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Based on the Bonn-Berlin Act, adopted by the parliament on 10 March 1994, Berlin once again became the capital of the reunified Germany, while Bonn obtained the unique status of a ")
               Italics(
@@ -6988,9 +7002,9 @@ LazyParsedPage(
                 [ ]
               )
               Text(" The relocation of the government was completed in 1999.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Since reunification, Germany has taken a more active role in the ")
               InternalLink(
@@ -7086,9 +7100,9 @@ LazyParsedPage(
                 ]
               )
               Text(" These deployments were controversial, since after the war, Germany was bound by domestic law only to deploy troops for defence roles. Deployments to foreign territories were understood not to be covered by the defence provision; however, the parliamentary vote on the issue effectively legalised the participation in a peacekeeping context.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In 2005, ")
               InternalLink(
@@ -7176,9 +7190,9 @@ LazyParsedPage(
                 )
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -7249,9 +7263,9 @@ LazyParsedPage(
               [ Text("Topographic map") ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Germany is located in the Central Europe, the territory covers ")
           Template(
@@ -7471,9 +7485,9 @@ LazyParsedPage(
             )
           )
           Text(".")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Elevation ranges from the mountains of the ")
           InternalLink(
@@ -7671,9 +7685,9 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Germany shares borders with more European countries than any other country on the continent. Its neighbours are Denmark in the north, Poland and the Czech Republic in the east, Austria and Switzerland in the south, France and ")
           InternalLink(
@@ -7686,9 +7700,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" in the south-west and Belgium and the Netherlands in the north-west.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The most significant natural resources are iron ore, coal, ")
           InternalLink(
@@ -7741,9 +7755,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" and water.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -7777,9 +7791,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany comprises ")
               InternalLink(
@@ -7833,9 +7847,9 @@ LazyParsedPage(
                 [ Text("kreisfreie St\u00E4dte") ]
               )
               Text(").")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Template(
                 Properties:
@@ -7853,8 +7867,8 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
             ])
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -8003,10 +8017,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text(" Population")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text(" Population") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8086,10 +8098,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("10,717,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("10,717,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8169,10 +8179,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("12,444,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("12,444,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8228,10 +8236,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("3,400,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("3,400,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8311,10 +8317,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("2,568,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("2,568,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8399,10 +8403,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("663,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("663,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8482,10 +8484,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("1,735,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("1,735,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8565,10 +8565,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("6,098,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("6,098,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8648,10 +8646,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("1,720,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("1,720,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8731,10 +8727,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("8,001,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("8,001,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8814,10 +8808,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("18,075,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("18,075,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8897,10 +8889,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("4,061,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("4,061,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -8980,10 +8970,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("1,056,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("1,056,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -9063,10 +9051,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("4,296,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("4,296,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -9146,10 +9132,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("2,494,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("2,494,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -9229,10 +9213,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("2,829,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("2,829,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -9312,10 +9294,8 @@ LazyParsedPage(
                                 )
                               ]
                               [
-                                Paragraph([
-                                  Text("2,355,000")
-                                  Newline("\n")
-                                ])
+                                Paragraph([ Text("2,355,000") ])
+                                Newline("\n")
                               ]
                             )
                           ]
@@ -9420,9 +9400,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Most of Germany has a ")
               InternalLink(
@@ -9495,9 +9475,9 @@ LazyParsedPage(
                 )
               )
               Text(" occurs year round with a maximum during summer.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Winters are mild and summers tend to be cool, though temperatures can exceed ")
               Template(
@@ -9556,9 +9536,9 @@ LazyParsedPage(
                 )
               )
               Text("; winters can be very cold, summers can be very warm, and long dry periods are often recorded. Central and southern Germany are transition regions which vary from moderately oceanic to continental.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In addition to the maritime and continental climates that predominate over most of the country, the Alpine regions in the extreme south and, to a lesser degree, some areas of the Central German Uplands have a so-called mountain climate. This climate is characterised by lower temperatures because of higher altitudes and greater precipitation caused by air becoming moisture-laden as it lifts over higher terrain.")
               TagExtension(
@@ -9569,9 +9549,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -9663,9 +9643,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               InternalLink(
                 Properties:
@@ -9751,14 +9731,12 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" (31%). Only 15% is covered by permanent pastures.")
-              Newline("\n")
-              Newline("\n")
             ])
-            Paragraph([
-              Text("Plants and animals are those generally common to middle Europe. Beeches, oaks, and other deciduous trees constitute one-third of the forests; conifers are increasing as a result of reforestation. Spruce and fir trees predominate in the upper mountains, while pine and larch are found in sandy soil. There are many species of ferns, flowers, fungi, and mosses. Fish abound in the rivers and the North Sea. Wild animals include deer, wild boar, mouflon, fox, badger, hare, and small numbers of beavers. Various migratory birds cross Germany in the spring and autumn.")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Newline("\n")
+            Newline("\n")
+            Paragraph([ Text("Plants and animals are those generally common to middle Europe. Beeches, oaks, and other deciduous trees constitute one-third of the forests; conifers are increasing as a result of reforestation. Spruce and fir trees predominate in the upper mountains, while pine and larch are found in sandy soil. There are many species of ferns, flowers, fungi, and mosses. Fish abound in the rivers and the North Sea. Wild animals include deer, wild boar, mouflon, fox, badger, hare, and small numbers of beavers. Various migratory birds cross Germany in the spring and autumn.") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -9856,9 +9834,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is known for its many ")
               InternalLink(
@@ -9912,9 +9890,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -10006,9 +9984,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is known for its environmental consciousness.")
               TagExtension(
@@ -10067,9 +10045,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The German government has initiated wide-ranging emission reduction activities and the country's overall emissions are falling.")
               TagExtension(
@@ -10106,14 +10084,12 @@ LazyParsedPage(
                 )
               )
               Text(" are among the highest in the EU, although they are significantly lower than those of Australia, Canada, Saudi Arabia and the United States.")
-              Newline("\n")
-              Newline("\n")
             ])
-            Paragraph([
-              Text("Emissions from coal-burning utilities and industries contribute to air pollution. Acid rain, resulting from sulphur dioxide emissions, continues to damage German forests. Pollution in the Baltic Sea from raw sewage and industrial effluents from rivers in former East Germany have been reduced. The government under Chancellor Schr\u00F6der announced the intention to end the use of nuclear power for producing electricity. Germany is working to meet EU commitments to identify nature preservation areas in line with the EU's Flora, Fauna, and Habitat directive. Germany's last glaciers in the Alpine region are experiencing deglaciation. Natural hazards are river flooding in spring and stormy winds occurring in all regions.")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Newline("\n")
+            Newline("\n")
+            Paragraph([ Text("Emissions from coal-burning utilities and industries contribute to air pollution. Acid rain, resulting from sulphur dioxide emissions, continues to damage German forests. Pollution in the Baltic Sea from raw sewage and industrial effluents from rivers in former East Germany have been reduced. The government under Chancellor Schr\u00F6der announced the intention to end the use of nuclear power for producing electricity. Germany is working to meet EU commitments to identify nature preservation areas in line with the EU's Flora, Fauna, and Habitat directive. Germany's last glaciers in the Alpine region are experiencing deglaciation. Natural hazards are river flooding in spring and stormy winds occurring in all regions.") ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -10197,9 +10173,9 @@ LazyParsedPage(
               ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Germany is a ")
           InternalLink(
@@ -10283,9 +10259,9 @@ LazyParsedPage(
             [ Text("Verfassung") ]
           )
           Text(" (constitution), the authors expressed the intention that it would be replaced by a proper constitution once Germany was reunited as one state.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Amendments to the ")
           Italics(
@@ -10330,9 +10306,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" in 1990, with only minor amendments.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -10398,9 +10374,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The President, ")
               InternalLink(
@@ -10452,9 +10428,9 @@ LazyParsedPage(
                 [ Text("Bundestag") ]
               )
               Text(" and an equal number of state delegates.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The second highest official in the ")
               InternalLink(
@@ -10504,9 +10480,9 @@ LazyParsedPage(
                 [ Text("Bundestag") ]
               )
               Text(" and responsible for overseeing the daily sessions of the body.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The third-highest official and the ")
               InternalLink(
@@ -10557,9 +10533,9 @@ LazyParsedPage(
                 [ Text("Bundestag") ]
               )
               Text(" simultaneously has to elect a successor.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -10614,9 +10590,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -10797,9 +10773,9 @@ LazyParsedPage(
                 )
               )
               Text(" and are members of the state cabinets. The respective state governments have the right to appoint and remove their envoys at any time.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Since 1949, the party system has been dominated by the ")
               InternalLink(
@@ -10878,9 +10854,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -10978,9 +10954,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -11079,9 +11055,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" (Basic Law). It acts independently of the other state bodies, but cannot act on its own behalf.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany's supreme court system, called ")
               Italics(
@@ -11231,9 +11207,9 @@ LazyParsedPage(
                 )
               )
               Text(" in Leipzig.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -11302,9 +11278,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               InternalLink(
                 Properties:
@@ -11433,14 +11409,12 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" if prosecution by a court of the country where the crime was committed, or by an international court, is not possible.")
-              Newline("\n")
-              Newline("\n")
             ])
-            Paragraph([
-              Text("Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself.")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Newline("\n")
+            Newline("\n")
+            Paragraph([ Text("Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself.") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Any federal law overrides state law if the legislative power lies at the federal level. A famous example is the purported Hessian provision for the death penalty, which goes against the ban on capital punishment under the Basic Law, rendering the Hessian provision invalid. The ")
               Italics(
@@ -11506,9 +11480,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(". They are competent whether the action is based on federal or state law.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Many of the fundamental matters of ")
               InternalLink(
@@ -11535,9 +11509,9 @@ LazyParsedPage(
                 [ Text("Oberverwaltungsgerichte") ]
               )
               Text(" are the highest level of administrative jurisdiction concerning the state administrations, unless the question of law concerns federal law or state law identical to federal law. In such cases, final appeal to the Federal Administrative Court is possible.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -11628,9 +11602,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany maintains a network of 229 diplomatic missions abroad and holds relations with more than 190 countries.")
               TagExtension(
@@ -11642,9 +11616,9 @@ LazyParsedPage(
                 [ ]
               )
               Text(" As member it is the largest contributor to the budget of the European Union (providing 20%) and third largest contributor to the United Nations (providing 8%). Germany is a member of the NATO defence alliance, the Organisation of Economic Co-operation and Development (OECD), the G8, the G20, the World Bank and the International Monetary Fund (IMF).")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany has played a leading role in the European Union since its inception and has maintained a ")
               InternalLink(
@@ -11729,9 +11703,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -11785,9 +11759,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("During the Cold War, Germany's partition by the ")
               InternalLink(
@@ -11859,9 +11833,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -11910,9 +11884,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The governments of Germany and the United States are close political allies.")
               TagExtension(
@@ -12018,9 +11992,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The development policy of the Federal Republic of Germany is an independent area of German foreign policy. It is formulated by the Federal Ministry for Economic Cooperation and Development (BMZ) and carried out by the implementing organisations. The German government sees development policy as a joint responsibility of the international community.")
               TagExtension(
@@ -12041,9 +12015,9 @@ LazyParsedPage(
                 [ ]
               )
               Text(" Germany spent 0.37 per cent of its gross domestic product (GDP) on development, which is below the government's target of increasing aid to 0.51 per cent of GDP by 2010. The international target of 0.7% of GNP would have not been reached either.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -12141,9 +12115,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany's military, the ")
               Italics(
@@ -12358,9 +12332,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -12419,25 +12393,24 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The Bundeswehr employs 200,500 professional soldiers, 55,000 18\u201325")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("year-old conscripts who serve for at least six months under current rules, and 2,500 active reservists at any given time. Roughly 300,000 reservists are available to the Armed Forces and participate in defence exercises as well as deployments abroad.")
-              Newline("\n")
-              Newline("\n")
             ])
-            Paragraph([
-              Text("Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far.")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Newline("\n")
+            Newline("\n")
+            Paragraph([ Text("Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far.") ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Template(
                 Properties:
@@ -12554,9 +12527,9 @@ LazyParsedPage(
                 [ Text("clearleft") ]
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -12627,9 +12600,9 @@ LazyParsedPage(
               ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Germany has a ")
           InternalLink(
@@ -12753,9 +12726,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           ImageLink(
             Properties:
@@ -12824,9 +12797,9 @@ LazyParsedPage(
               ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Since the age of ")
           InternalLink(
@@ -12868,6 +12841,7 @@ LazyParsedPage(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("billion.")
           TagExtension(
@@ -12878,9 +12852,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Most of the country's export products are in engineering, especially in machinery, automobiles, chemical goods and metals.")
           TagExtension(
@@ -12909,9 +12883,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Germany is an advocate of closer European economic and political integration. Its commercial policies are increasingly determined by agreements among European Union (EU) members and EU ")
           InternalLink(
@@ -12934,9 +12908,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" in Frankfurt.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Two decades after ")
           InternalLink(
@@ -12986,6 +12960,7 @@ LazyParsedPage(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("billion.")
           TagExtension(
@@ -12996,9 +12971,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The nominal GDP of Germany contracted in the second and third quarters of 2008, putting the country in a technical recession following a global and ")
           InternalLink(
@@ -13029,12 +13004,14 @@ LazyParsedPage(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("billion ($70")
           XmlEntityRef(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("billion) economic stimulus plan to protect several sectors from a downturn and a subsequent rise in unemployment rates.")
           TagExtension(
@@ -13045,9 +13022,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -13181,9 +13158,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Of the world's 500 largest stock market listed companies measured by ")
               InternalLink(
@@ -13226,9 +13203,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Well known global brands are ")
               InternalLink(
@@ -13359,9 +13336,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is recognised for its highly specialised ")
               InternalLink(
@@ -13397,13 +13374,11 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
-            Paragraph([
-              Text("The list includes the largest companies by turnover in 2009. Unranked are the largest bank and the largest insurance company in 2007:")
-              Newline("\n")
-            ])
+            Newline("\n")
+            Newline("\n")
+            Paragraph([ Text("The list includes the largest companies by turnover in 2009. Unranked are the largest bank and the largest insurance company in 2007:") ])
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -13530,6 +13505,7 @@ LazyParsedPage(
                           Properties:
                             RTD = RtData: [0] = "&nbsp;"
                             {N} name = "nbsp"
+                            {N} resolved = "\u00A0"
                         )
                         Text("\u20AC) ")
                       ]
@@ -13564,6 +13540,7 @@ LazyParsedPage(
                           Properties:
                             RTD = RtData: [0] = "&nbsp;"
                             {N} name = "nbsp"
+                            {N} resolved = "\u00A0"
                         )
                         Text("\u20AC) ")
                       ]
@@ -13595,8 +13572,8 @@ LazyParsedPage(
                             [ ]
                           )
                           Text("(World)")
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -13690,10 +13667,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 329,305")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 329,305") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -13787,10 +13762,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 272,382")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 272,382") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -13884,10 +13857,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 398,200")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 398,200") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -13986,10 +13957,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 87,815")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 87,815") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14083,10 +14052,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 242,378")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 242,378") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14180,10 +14147,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 475,100")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 475,100") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14277,10 +14242,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 241,426")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 241,426") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14384,10 +14347,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 95,175")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 95,175") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14481,10 +14442,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 107,539")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 107,539") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14588,10 +14547,8 @@ LazyParsedPage(
 
                       [ ]
                       [
-                        Paragraph([
-                          Text(" 191,350")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 191,350") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -14678,9 +14635,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("With its central position in Europe, Germany is an important transportation hub. This is reflected in its dense and modern transportation networks. The extensive motorway (")
               InternalLink(
@@ -14710,9 +14667,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany has established a polycentric network of ")
               InternalLink(
@@ -14761,12 +14718,14 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("km/h and 300")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("km/h. Connections are offered at either 30-minute, hourly, or two-hourly intervals.")
               TagExtension(
@@ -14777,9 +14736,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The largest German airports are the ")
               InternalLink(
@@ -14912,9 +14871,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -15000,9 +14959,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is the world's fifth largest consumer of energy, and two-thirds of its primary energy was imported in 2002. In the same year, Germany was Europe's largest consumer of electricity, totalling 512.9 terawatt-hours. Government policy promotes energy conservation and the development of ")
               InternalLink(
@@ -15070,9 +15029,9 @@ LazyParsedPage(
                 )
               )
               Text(" has been improving since the beginning of the 1970s. The government has set the goal of meeting half the country's energy demands from renewable sources by 2050.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In 2000, the government and the ")
               InternalLink(
@@ -15109,9 +15068,9 @@ LazyParsedPage(
                 [ ]
               )
               Text(" Renewable energy still plays a more modest role in energy consumption. In 2006, energy consumption was met by the following sources: oil (36%); coal, including lignite (24%); natural gas (23%); nuclear (13%); hydro-electric and wind power (1%); and other (4%). However, the share of renewable energy in electricity supply has been rapidly increasing, reaching 14% in 2007. The German government has set a new target to increase this share to 27% by 2020.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -15214,9 +15173,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany has been the home of many famous inventors and ")
               InternalLink(
@@ -15384,9 +15343,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               InternalLink(
                 Properties:
@@ -15486,9 +15445,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("With regard to triadic patents Germany is in third place after the USA and Japan. With more than 26,500 registrations for patents submitted to the European Patent Office, Germany is the leading European nation. ")
               InternalLink(
@@ -15534,9 +15493,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -15645,9 +15604,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -15760,9 +15719,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The work of ")
               InternalLink(
@@ -15970,9 +15929,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Important research institutions in Germany are the ")
               InternalLink(
@@ -16024,6 +15983,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million per award it is one of highest endowed research prizes in the world.")
               TagExtension(
@@ -16034,9 +15994,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -16113,15 +16073,16 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("With estimated 81.8")
           XmlEntityRef(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("million inhabitants in January 2010,")
           TagExtension(
@@ -16172,9 +16133,9 @@ LazyParsedPage(
             )
           )
           Text(" stands at 229.4 inhabitants per square kilometre.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The overall ")
           InternalLink(
@@ -16259,9 +16220,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The ")
           InternalLink(
@@ -16330,14 +16291,12 @@ LazyParsedPage(
               ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
-        Paragraph([
-          Text("Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class.")
-          Newline("\n")
-          Newline("\n")
-        ])
+        Newline("\n")
+        Newline("\n")
+        Paragraph([ Text("Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class.") ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -16369,9 +16328,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" that nearly 30% of Germans aged 5 years and younger have at least one parent who was born abroad.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -16423,9 +16382,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -16457,12 +16416,14 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million of all 191")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million migrants.")
               TagExtension(
@@ -16512,9 +16473,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In 2009, 20% of the population had immigrant roots, the highest since records were kept since 1945.")
               TagExtension(
@@ -16547,6 +16508,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million), followed by Italy (776,000) and Poland (687,000).")
               TagExtension(
@@ -16557,9 +16519,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Large numbers of people with full or significant German ancestry are found in the")
               Newline("\n")
@@ -16568,6 +16530,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million),")
               TagExtension(
@@ -16593,6 +16556,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million)")
               TagExtension(
@@ -16608,6 +16572,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million).")
               TagExtension(
@@ -16623,6 +16588,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million \"Aussiedler\"\u2014ethnic Germans, mainly from Eastern Europe and the former Soviet Union\u2014have resettled in Germany since 1987.")
               TagExtension(
@@ -16633,9 +16599,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -16679,9 +16645,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany has a number of large cities; the most populous are: ")
               InternalLink(
@@ -16768,6 +16734,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million), including ")
               InternalLink(
@@ -16840,9 +16807,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -16897,10 +16864,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" Largest cities of Germany")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Largest cities of Germany") ])
+                    Newline("\n")
                   ]
                 )
                 TableRow(
@@ -17127,8 +17092,8 @@ LazyParsedPage(
                               [ Text("Munich (M\u00FCnchen)") ]
                             )
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -17146,10 +17111,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Rank")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Rank") ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -17167,10 +17130,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" City")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" City") ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -17188,10 +17149,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Population")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Population") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -17223,9 +17182,10 @@ LazyParsedPage(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -17243,10 +17203,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Rank")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Rank") ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -17264,10 +17222,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" City")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" City") ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -17285,10 +17241,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" Population")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" Population") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -17515,8 +17469,8 @@ LazyParsedPage(
 
                             LinkTitle([ ])
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -17594,10 +17548,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 3,442,675")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 3,442,675") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -17667,10 +17619,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 520,966")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 520,966") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -17748,10 +17698,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 1,774,224")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 1,774,224") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -17821,10 +17769,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 518,862")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 518,862") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -17902,10 +17848,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 1,330,440")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 1,330,440") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -17975,10 +17919,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 517,052")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 517,052") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18056,10 +17998,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 998,105")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 998,105") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -18129,10 +18069,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 503,673")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 503,673") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18215,10 +18153,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 671,927")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 671,927") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -18288,10 +18224,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 491,931")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 491,931") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18369,10 +18303,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 601,646")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 601,646") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -18442,10 +18374,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 376,319")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 376,319") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18523,10 +18453,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 586,217")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 586,217") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -18596,10 +18524,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 351,050")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 351,050") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18677,10 +18603,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 581,308")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 581,308") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -18750,10 +18674,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 323,084")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 323,084") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18831,10 +18753,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 576,259")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 576,259") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -18904,10 +18824,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 319,841")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 319,841") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -18985,10 +18903,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 547,685")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 547,685") ])
+                        Newline("\n")
                       ]
                     )
                     TableCell(
@@ -19058,10 +18974,8 @@ LazyParsedPage(
                         )
                       ]
                       [
-                        Paragraph([
-                          Text(" 311,969")
-                          Newline("\n")
-                        ])
+                        Paragraph([ Text(" 311,969") ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -19164,8 +19078,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -19237,9 +19151,9 @@ LazyParsedPage(
                   [ Text("Knowledge of German in European countries") ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("German is the official and predominant spoken language in Germany.")
               TagExtension(
@@ -19375,9 +19289,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(", and Russian.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Standard German is a ")
               InternalLink(
@@ -19670,15 +19584,16 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Around the world, German has approximately 100")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million ")
               InternalLink(
@@ -19700,6 +19615,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million non-native speakers.")
               TagExtension(
@@ -19724,6 +19640,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million people (18%) in the EU. 67% of German citizens claim to be able to communicate in at least one foreign language, 27% in at least two languages other than their own.")
               TagExtension(
@@ -19743,9 +19660,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -19841,9 +19758,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("According to organisational reporting based on projections in 2008 about 34.1% Germans have ")
               InternalLink(
@@ -19869,15 +19786,16 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Christianity is the largest religion in Germany, with around 49.4")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million adherents (62.8%) in 2008")
               TagExtension(
@@ -19902,6 +19820,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million are ")
               InternalLink(
@@ -19923,6 +19842,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million are Catholics (30.0%) in 2008, the remainder belong to small denominations (each (considerably ) less than 0.5% of the German population).")
               TagExtension(
@@ -19953,6 +19873,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million adherents (4.6 to 5.2%)")
               TagExtension(
@@ -20277,9 +20198,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Protestantism is concentrated in the north and east and ")
               InternalLink(
@@ -20355,15 +20276,16 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Of the roughly 4")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million Muslims, most are ")
               InternalLink(
@@ -20610,9 +20532,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("According to the ")
               InternalLink(
@@ -20642,9 +20564,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -20714,9 +20636,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Responsibility for educational oversight in Germany lies primarily with the ")
               InternalLink(
@@ -20738,6 +20660,8 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "<!--Kulturhoheit-->"
                   {N} content = "Kulturhoheit"
+                  {N} prefix = null
+                  {N} suffix = null
               )
               Text(" Optional ")
               InternalLink(
@@ -20839,9 +20763,9 @@ LazyParsedPage(
                 ]
               )
               Text(" prepares pupils for vocational education.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -20890,9 +20814,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Since the 1960s, a reform movement attempted to unify secondary education in a ")
               Italics(
@@ -20931,9 +20855,9 @@ LazyParsedPage(
                 [ ]
               )
               Text(" having low standards of achievement, inner-city Hauptschulen were increasingly considered dysfunctional by some people; outside the main metropolitan areas, the population is shrinking, so that according to some people it becomes increasingly impractical to maintain a three- or four-tier school system.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("A special system of apprenticeship called ")
               Italics(
@@ -20970,9 +20894,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("To enter a ")
               InternalLink(
@@ -21083,9 +21007,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -21155,9 +21079,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany has the world's oldest ")
               InternalLink(
@@ -21233,9 +21157,9 @@ LazyParsedPage(
                 ]
               )
               Text(" In 2005, Germany spent 10.7% of GDP on health care, or US$3,628 per capita.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany ranked 20th in the world in ")
               InternalLink(
@@ -21288,9 +21212,9 @@ LazyParsedPage(
                 )
               )
               Text("), and it was tied for eighth place in the number of practicing physicians, at per 1,000 people (3.3).")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In 2002 the top diagnosis for male patients released from the hospital was ")
               InternalLink(
@@ -21382,9 +21306,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -21466,9 +21390,9 @@ LazyParsedPage(
               ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("German culture began long before the rise of Germany as a ")
           InternalLink(
@@ -21558,27 +21482,30 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("In Germany, the federated states are in charge of the cultural institutions. There are 240 subsidised theatres, hundreds of symphonic orchestras, thousands of museums and over 25,000 libraries spread over the 16 states. These cultural opportunities are enjoyed by many millions: there are over 91")
           XmlEntityRef(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("million German museum visits every year; annually, 20")
           XmlEntityRef(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("million go to theatres and operas; while 3.6")
           XmlEntityRef(
             Properties:
               RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
+              {N} resolved = "\u00A0"
           )
           Text("million listen to the great symphonic orchestras.")
           TagExtension(
@@ -21589,9 +21516,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           ImageLink(
             Properties:
@@ -21623,9 +21550,9 @@ LazyParsedPage(
               [ Text("Berlin is a centre of arts, nightlife, music, architecture and festivals") ]
             )
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("The UNESCO inscribed 33 properties in ")
           InternalLink(
@@ -21651,9 +21578,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Numerous German painters have enjoyed international prestige through their work in diverse artistic styles. ")
           InternalLink(
@@ -21879,9 +21806,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -21907,9 +21834,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("German literature can be traced back to the Middle Ages and the works of writers such as ")
               InternalLink(
@@ -22041,9 +21968,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -22121,8 +22048,8 @@ LazyParsedPage(
                             [ ]
                             [ Text("(1749\u20131832)") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -22168,8 +22095,8 @@ LazyParsedPage(
                             [ ]
                             [ Text("(1759\u20131805)") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -22215,8 +22142,8 @@ LazyParsedPage(
                             [ ]
                             [ Text("(1785\u20131863)") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -22262,8 +22189,8 @@ LazyParsedPage(
                             [ ]
                             [ Text("(1875\u20131955)") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -22309,8 +22236,8 @@ LazyParsedPage(
                             [ ]
                             [ Text("(1877\u20131962)") ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -22542,8 +22469,8 @@ LazyParsedPage(
                             ]
                             LinkTitle([ ])
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -22626,9 +22553,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany's influence on philosophy is historically significant and many notable German philosophers have helped shape ")
               InternalLink(
@@ -22641,9 +22568,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" since the Middle Ages. The rise of the modern natural sciences and the related decline of religion raised a series of questions, which recur throughout German philosophy, concerning the relationships between knowledge and faith, reason and emotion, and scientific, ethical, and artistic ways of seeing the world.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               InternalLink(
                 Properties:
@@ -22855,9 +22782,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" have been particularly influential.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In the 21st century Germany has been an important country for the development of contemporary analytic philosophy in continental Europe, along with France, Austria, Switzerland and the Scandinavian countries.")
               TagExtension(
@@ -22868,9 +22795,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -22962,9 +22889,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("German cinema dates back to the very early years of the medium with the work of ")
               InternalLink(
@@ -23037,9 +22964,9 @@ LazyParsedPage(
                 )
               )
               Text(" (1927) is referred to as the birth of modern Science Fiction movies.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In 1930 Austrian-American ")
               InternalLink(
@@ -23136,9 +23063,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -23187,9 +23114,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("During the 1970s and 80s, ")
               InternalLink(
@@ -23330,9 +23257,9 @@ LazyParsedPage(
                 ]
               )
               Text(" (2008) have enjoyed international success.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -23465,9 +23392,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The ")
               InternalLink(
@@ -23519,9 +23446,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" in Potsdam are the oldest large-scale film studios in the world and a centre for international film production.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -23549,9 +23476,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany claims some of the world's most renowned classical music composers, including ")
               InternalLink(
@@ -23697,9 +23624,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
@@ -23787,8 +23714,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -23854,8 +23781,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -23916,8 +23843,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -23978,8 +23905,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -24040,8 +23967,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                     TableHeader(
@@ -24097,8 +24024,8 @@ LazyParsedPage(
                               )
                             ]
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -24374,8 +24301,8 @@ LazyParsedPage(
                             ]
                             LinkTitle([ ])
                           )
-                          Newline("\n")
                         ])
+                        Newline("\n")
                       ]
                     )
                   ]
@@ -24437,15 +24364,16 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany's television market is the largest in Europe, with some 34")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million TV households.")
               Newline("\n")
@@ -24483,9 +24411,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is home to some of the world's largest media conglomerates, including ")
               InternalLink(
@@ -24518,15 +24446,16 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The German-speaking book publishers produce about 700")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million copies of books every year, with about 80,000 titles, nearly 60,000 of them new publications. Germany is in third place on international statistics after the English-speaking book market and the People\u2019s Republic of China.")
               TagExtension(
@@ -24548,9 +24477,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" is considered to be the most important book fair in the world for international deals and trading and has a tradition that spans over 500 years.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("The country's news is provided for English speakers e.g. by news magazine ")
               InternalLink(
@@ -24573,9 +24502,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -24666,9 +24595,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Sport forms an integral part of German life. Twenty-seven million Germans are members of a sports club and an additional twelve million pursue such an activity individually.")
               TagExtension(
@@ -24703,6 +24632,7 @@ LazyParsedPage(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("million official members, the ")
               InternalLink(
@@ -24953,9 +24883,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -25024,9 +24954,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is one of the leading motor sports countries in the world. Race-winning cars, teams and drivers have come from Germany. The most successful ")
               InternalLink(
@@ -25138,9 +25068,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(" is a popular series in Germany.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Historically, German sportsmen have been some of the most successful contenders in the Olympic Games, ranking third in an ")
               InternalLink(
@@ -25277,9 +25207,9 @@ LazyParsedPage(
                 LinkTitle([ ])
               )
               Text(".")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -25357,9 +25287,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("German cuisine varies from region to region. The southern regions of ")
               InternalLink(
@@ -25414,9 +25344,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("A popular German saying has the meaning: \"Breakfast like an emperor, lunch like a king, and dine like a beggar.\" Breakfast is usually a selection of breads and rolls with jam and honey or cold meats and cheese, sometimes accompanied by a boiled egg. Cereals or muesli with milk or ")
               InternalLink(
@@ -25446,9 +25376,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               ImageLink(
                 Properties:
@@ -25497,9 +25427,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("As a country with many immigrants, Germany has adopted many international dishes into its cuisine and daily eating habits. ")
               InternalLink(
@@ -25686,9 +25616,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Although wine is becoming more popular in many parts of Germany, the national alcoholic drink is beer. German beer consumption per person is declining but\u2014at 116 litres annually\u2014it is still among the highest in the world.")
               TagExtension(
@@ -25826,9 +25756,9 @@ LazyParsedPage(
                 ]
               )
               Text(" (its mixture with fruit juice) are very popular in Germany.")
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -25887,9 +25817,9 @@ LazyParsedPage(
                   ]
                 )
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Germany is a modern, cosmopolitan, creative society, shaped by a plurality of lifestyles and regional identities.")
               TagExtension(
@@ -26014,9 +25944,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("During the last decade of the 20th century, Germany changed its attitude towards immigrants. Until the mid-1990s the opinion was widespread that Germany is not a country of immigration, even though about 20% of the population were of non-German origin. Today the government and a majority of the German society are acknowledging that immigrants from diverse ethnocultural backgrounds are part of the German society and that controlled immigration should be initiated based on qualification standards.")
               TagExtension(
@@ -26027,9 +25957,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("Since the 2006 FIFA World Cup, the internal and external evaluation of Germany's national image has changed.")
               TagExtension(
@@ -26086,15 +26016,16 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("With an expenditure of \u20AC67")
               XmlEntityRef(
                 Properties:
                   RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
+                  {N} resolved = "\u00A0"
               )
               Text("billion on international travel in 2008, Germans spent more money on travel than any other country. The most visited destinations were Spain, Italy and Austria.")
               TagExtension(
@@ -26113,9 +26044,9 @@ LazyParsedPage(
                 [ Text("-") ]
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
       ]
@@ -26153,8 +26084,8 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
         ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -26653,9 +26584,9 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -26683,8 +26614,8 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
         ])
+        Newline("\n")
       ]
     )
     Section(
@@ -26712,9 +26643,9 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -26775,18 +26706,12 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          XmlComment(
-            Properties:
-              RTD = RtData: [0] = "<!--\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n-->"
-              {N} content = "\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n"
-          )
-          Newline("\n")
         ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              RTD = RtData: [0] = "<!--\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n-->\n*", [1] = "\n"
 
             [
               Text(" ")
@@ -27006,8 +26931,8 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
         ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -27077,9 +27002,9 @@ LazyParsedPage(
               )
             ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -27245,9 +27170,9 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Template(
             Properties:

@@ -20,20 +20,26 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManager;
 import org.sweble.wikitext.engine.astwom.FullElement;
+import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.Toolbox;
+import org.sweble.wikitext.engine.astwom.UniversalAttributes;
+import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomRedirect;
 import org.sweble.wikitext.engine.wom.WomTitle;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 
+import de.fau.cs.osr.utils.Utils;
+
 public class RedirectAdapter
-        extends
-            FullElement
-        implements
-            WomRedirect
+		extends
+			FullElement
+		implements
+			WomRedirect
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -48,13 +54,13 @@ public class RedirectAdapter
 	public RedirectAdapter(String target)
 	{
 		super(new Redirect(target));
-		checkValidTarget(target);
+		setTarget(target);
 	}
 	
 	public RedirectAdapter(Redirect redirect)
 	{
 		super(redirect);
-		
+		setRedirectFromAst();
 		if (redirect == null)
 			throw new NullPointerException();
 	}
@@ -79,21 +85,6 @@ public class RedirectAdapter
 		return WomNodeType.ELEMENT;
 	}
 	
-	@Override
-	protected String checkAttributeValue(String name, String value) throws IllegalArgumentException, UnsupportedOperationException
-	{
-		if (name.equalsIgnoreCase("category"))
-		{
-			String checkedValue = checkValidTarget(value);
-			setTargetInAst(checkedValue);
-			return checkedValue;
-		}
-		else
-		{
-			throw new IllegalArgumentException("Attribute `" + name + "' not supported by this node");
-		}
-	}
-	
 	// =========================================================================
 	
 	@Override
@@ -105,13 +96,10 @@ public class RedirectAdapter
 	@Override
 	public String setTarget(String page)
 	{
-		page = checkValidTarget(page);
-		
-		// Fix AST
-		setTargetInAst(page);
-		
-		// Fix WOM
-		NativeOrXmlAttributeAdapter old = setAttributeUnchecked("target", page);
+		NativeOrXmlAttributeAdapter old = setAttributeUnchecked(
+				Attributes.target,
+				"target",
+				page);
 		
 		return (old == null) ? null : old.getValue();
 	}
@@ -130,17 +118,88 @@ public class RedirectAdapter
 	
 	// =========================================================================
 	
+	private void setRedirectFromAst()
+	{
+		setAttributeUnchecked(
+				Attributes.TARGET_FROM_AST,
+				"target",
+				getAstNode().getTarget());
+	}
+	
 	private void setTargetInAst(String target)
 	{
 		Redirect astNode = getAstNode();
 		astNode.setTarget(target);
 		TextUtils.addRtData(
-		        astNode,
-		        TextUtils.joinRt("#REDIRECT[[", target, "]]"));
+				astNode,
+				TextUtils.joinRt("#REDIRECT[[", target, "]]"));
 	}
 	
-	private String checkValidTarget(String target)
+	// =========================================================================
+	
+	@Override
+	protected AttributeDescriptor getAttributeDescriptor(String name)
 	{
-		return Toolbox.checkValidTarget(target);
+		AttributeDescriptor d = Utils.fromString(Attributes.class, name);
+		if (d != null && d != Attributes.TARGET_FROM_AST)
+			return d;
+		d = Utils.fromString(UniversalAttributes.class, name);
+		if (d != null)
+			return d;
+		return GenericAttributeDescriptor.get();
+	}
+	
+	private static enum Attributes implements AttributeDescriptor
+	{
+		target
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				Toolbox.checkValidTarget(value);
+				return value;
+			}
+			
+			@Override
+			public void customAction(WomNode parent, String value)
+			{
+				RedirectAdapter redirect = (RedirectAdapter) parent;
+				redirect.setTargetInAst(value);
+			}
+		},
+		
+		TARGET_FROM_AST
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				return value;
+			}
+			
+			@Override
+			public void customAction(WomNode parent, String value)
+			{
+			}
+		};
+		
+		// =====================================================================
+		
+		@Override
+		public boolean isRemovable()
+		{
+			return false;
+		}
+		
+		@Override
+		public boolean syncToAst()
+		{
+			return false;
+		}
+		
+		@Override
+		public Normalization getNormalizationMode()
+		{
+			return Normalization.NONE;
+		}
 	}
 }

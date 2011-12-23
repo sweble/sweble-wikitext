@@ -12,8 +12,8 @@ LazyParsedPage(
             Warning (informative): /basic/wikitext/nesting-5.wikitext:1:1 - 9: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing.
           ]
       )
-      Newline("\n")
     ])
+    Newline("\n")
     Itemization([
       ItemizationItem(
         Properties:
@@ -41,7 +41,7 @@ LazyParsedPage(
       )
       Newline("\n")
       Text("]]")
-      Newline("\n")
     ])
+    Newline("\n")
   ]
 )

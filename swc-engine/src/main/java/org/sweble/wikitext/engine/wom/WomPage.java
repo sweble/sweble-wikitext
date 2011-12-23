@@ -67,7 +67,7 @@ public interface WomPage
 	 *             Thrown if the given title is <code>null</code>.
 	 */
 	public String setTitle(String title)
-		throws IllegalArgumentException,
+			throws IllegalArgumentException,
 			NullPointerException;
 	
 	/**
@@ -98,8 +98,10 @@ public interface WomPage
 	 * Corresponds to the XWML 1.0 attribute "path".
 	 * 
 	 * @return The path of pages that lead to this subpage or <code>null</code>
-	 *         if this attribute is not given and this page, therefore, is not a
-	 *         subpage.
+	 *         if this attribute is not given and this page is not a subpage.
+	 *         The returned path never contains a trailing slash. The path is
+	 *         also not anchored with a slash at the start but still always
+	 *         denotes an absolute path.
 	 */
 	public String getPath();
 	
@@ -107,7 +109,8 @@ public interface WomPage
 	 * Set the path of pages that lead to this subpage.
 	 * 
 	 * @param path
-	 *            The new path or <code>null</code> to remove the attribute.
+	 *            The new path or <code>null</code> to remove the attribute. The
+	 *            given path will be stripped of a trailing slash if present.
 	 * @return The old path.
 	 */
 	public String setPath(String path);

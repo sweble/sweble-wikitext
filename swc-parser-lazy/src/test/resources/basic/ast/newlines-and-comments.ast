@@ -1,0 +1,21 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([ Text("Hallo") ])
+    Newline("\n")
+    Newline("\n")
+    Paragraph([
+      XmlComment(
+        Properties:
+          RTD = RtData: [0] = "  <!-- comment ... -->  \n"
+          {N} content = " comment ... "
+          {N} prefix = "  "
+          {N} suffix = "  \n"
+      )
+      Newline("\n")
+      Text("Hallo")
+    ])
+  ]
+)

@@ -28,10 +28,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Header 2 ")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Header 2 ") ])
+                Newline("\n")
               ]
             )
           ]

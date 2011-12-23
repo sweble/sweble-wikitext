@@ -38,6 +38,8 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "<!-- comment -->"
                       {N} content = " comment "
+                      {N} prefix = null
+                      {N} suffix = null
                   )
                   Text(" ")
                   Signature(
@@ -81,6 +83,7 @@ LazyParsedPage(
             Properties:
               RTD = RtData: [0] = "&amp;"
               {N} name = "amp"
+              {N} resolved = "&"
           )
           Text(" ignored ")
         ]

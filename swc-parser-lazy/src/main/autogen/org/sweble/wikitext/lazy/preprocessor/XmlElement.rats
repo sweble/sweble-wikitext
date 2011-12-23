@@ -63,7 +63,12 @@
  *     Name        : XmlComment
  *     Extends     : StringContentNode
  *     Constructor : content
+ *     Constructor : "content, prefix, suffix"
  *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_COMMENT
+ *
+ *     Properties:
+ *       prefix : String
+ *       suffix : String
  *
  */
 
@@ -101,6 +106,37 @@ private inline Text Greater =
 
 
 // -- XML Comment --------------------------------------------------------------
+
+transient AstNode XmlCommentTrimmed =
+    eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
+    {
+      XmlComment c = new XmlComment(content, prefix, suffix + eol2);
+      if (isGatherRtData())
+        addRtData(c, joinRt(prefix, "<!--", content, "-->", suffix, eol2));
+
+      yyValue = new NodeList(new Text(eol1), c);
+    }
+  / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
+    {
+      XmlComment c = new XmlComment(content);
+      if (isGatherRtData())
+        addRtData(c, joinRt("<!--", content, "-->"));
+
+      yyValue = new NodeList(new Text(eol1 + prefix), c);
+    }
+  / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
+    {
+      XmlComment c = new XmlComment(content);
+      if (isGatherRtData())
+        addRtData(c, joinRt("<!--", content));
+
+      yyValue = new NodeList(new Text(eol1 + prefix), c);
+    }
+;
+
+private transient String PureSpaceStar =
+  ' '*
+;
 
 private transient XmlComment XmlComment =
     content:XmlCommentContent "-->"

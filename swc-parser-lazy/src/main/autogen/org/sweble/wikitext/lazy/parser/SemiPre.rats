@@ -80,20 +80,34 @@ noinline memoized AstNode SemiPreMemoized =
 // -- SemiPre ------------------------------------------------------------------
 
 noinline transient AstNode SemiPreTransient =
-  &{ accept(ParserAtoms.SEMI_PRE) } first:SemiPreLine tail:( &slEol SemiPreLine )*
+  &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
   {
     yyValue = new SemiPre(new NodeList(first, tail));
   }
 ;
 
+private inline SemiPreLine FirstSemiPreLine =
+  !EmptyLine rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
+  {
+    yyValue = new SemiPreLine(content);
+
+    if (isGatherRtData())
+      addRtData(yyValue, joinRt(rt1, ' '), null);
+  }
+;
+
 private inline SemiPreLine SemiPreLine =
-  rt0:pEol? rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
+  rt0:pEol rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
     yyValue = new SemiPreLine(content);
 
     if (isGatherRtData())
       addRtData(yyValue, joinRt(rt0, rt1, ' '), null);
   }
+;
+
+private inline void EmptyLine =
+  pExtSpaceStar slEol
 ;
 
 // TODO: This is insufficient to capture MediaWiki's behavior!

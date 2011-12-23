@@ -11,11 +11,9 @@ LazyParsedPage(
       [ Text(" Hallo 1 ") ]
       [
         Newline("\n")
-        Paragraph([
-          Text("Welt 1")
-          Newline("\n")
-          Newline("\n")
-        ])
+        Paragraph([ Text("Welt 1") ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -51,11 +49,9 @@ LazyParsedPage(
       [ Text(" Hallo 3 ") ]
       [
         Newline("\n")
-        Paragraph([
-          Text("Welt 3")
-          Newline("\n")
-          Newline("\n")
-        ])
+        Paragraph([ Text("Welt 3") ])
+        Newline("\n")
+        Newline("\n")
         Section(
           Properties:
             RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -64,10 +60,8 @@ LazyParsedPage(
           [ Text(" Hallo 4 ") ]
           [
             Newline("\n")
-            Paragraph([
-              Text("Welt 4")
-              Newline("\n")
-            ])
+            Paragraph([ Text("Welt 4") ])
+            Newline("\n")
             Section(
               Properties:
                 RTD = RtData: [0] = "===", [1] = "===", [2]
@@ -76,10 +70,8 @@ LazyParsedPage(
               [ Text(" Hallo 5 ") ]
               [
                 Newline("\n")
-                Paragraph([
-                  Text("Welt 5")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Welt 5") ])
+                Newline("\n")
               ]
             )
             Section(
@@ -93,9 +85,9 @@ LazyParsedPage(
                 Paragraph([
                   Text("Welt 6")
                   Newline("\n")
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
               ]
             )
           ]
@@ -108,10 +100,8 @@ LazyParsedPage(
           [ Text(" Hallo 7 ") ]
           [
             Newline("\n")
-            Paragraph([
-              Text("Welt 7")
-              Newline("\n")
-            ])
+            Paragraph([ Text("Welt 7") ])
+            Newline("\n")
             Section(
               Properties:
                 RTD = RtData: [0] = "====", [1] = "====", [2]
@@ -120,10 +110,8 @@ LazyParsedPage(
               [ Text(" Hallo 8 ") ]
               [
                 Newline("\n")
-                Paragraph([
-                  Text("Welt 8")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Welt 8") ])
+                Newline("\n")
               ]
             )
           ]
@@ -141,9 +129,9 @@ LazyParsedPage(
         Paragraph([
           Text("Welt 9")
           Newline("\n")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(

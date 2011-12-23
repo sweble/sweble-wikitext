@@ -33,9 +33,9 @@ import org.junit.Ignore;
 import org.sweble.wikitext.lazy.postprocessor.AstCompressor;
 
 import xtc.parser.ParseException;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
 import de.fau.cs.osr.ptk.common.ParserInterface;
-import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class MediaWikiTest

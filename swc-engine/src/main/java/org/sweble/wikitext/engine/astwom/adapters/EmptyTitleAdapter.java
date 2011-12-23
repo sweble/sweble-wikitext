@@ -23,6 +23,9 @@ import org.sweble.wikitext.engine.wom.WomTitle;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
+/**
+ * FIXME: Implement this class!!!
+ */
 public class EmptyTitleAdapter
         extends
             WomBackbone

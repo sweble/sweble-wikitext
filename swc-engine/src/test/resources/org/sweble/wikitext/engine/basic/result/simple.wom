@@ -1,8 +1,30 @@
 
 <page version="1.0" title="Simple.wikitext">
+  <category category="Test" />
   <body>
-    <p class="funny">Hello
-<b class="asdf">HTML bold</b>
-<b>Native bold</b></p>
+    <p><text>Some text in a paragraph.
+
+</text></p>
+    <p><text>Some text with a newline
+and some special tokens like &amp; and ).
+
+</text></p>
+    <p><b name="value" /><text>
+
+</text></p>
+    <p><b><text> Native bold text </text></b><text>
+
+</text></p>
+    <p><b><text> HTML bold text </text></b><text>
+
+</text><comment> An XML comment </comment><text>
+
+</text><comment> An illegal -- XML comment </comment><text>
+
+</text></p>
+    <hr />
+    <hr />
+    <p><text>
+</text></p>
   </body>
 </page>

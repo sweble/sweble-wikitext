@@ -54,13 +54,29 @@ public abstract class AttributeManager
 	
 	public abstract NativeOrXmlAttributeAdapter getAttributeNode(String name);
 	
-	public abstract NativeOrXmlAttributeAdapter removeAttribute(String name, NodeList attrContainer);
+	public abstract NativeOrXmlAttributeAdapter removeAttribute(
+			AttributeDescriptor descriptor,
+			String name,
+			NodeList attrContainer);
 	
-	public abstract void removeAttributeNode(WomAttribute attr, WomBackbone parent, NodeList attrContainer) throws IllegalArgumentException;
+	public abstract void removeAttributeNode(
+			AttributeDescriptor descriptor,
+			WomAttribute attr,
+			WomBackbone parent,
+			NodeList attrContainer) throws IllegalArgumentException;
 	
-	public abstract NativeOrXmlAttributeAdapter setAttribute(String name, String value, WomBackbone parent, NodeList attrContainer);
+	public abstract NativeOrXmlAttributeAdapter setAttribute(
+			AttributeDescriptor descriptor,
+			String name,
+			String value,
+			WomBackbone parent,
+			NodeList attrContainer);
 	
-	public abstract NativeOrXmlAttributeAdapter setAttributeNode(WomAttribute attr, WomBackbone parent, NodeList attrContainer) throws IllegalArgumentException;
+	public abstract NativeOrXmlAttributeAdapter setAttributeNode(
+			AttributeDescriptor descriptor,
+			WomAttribute attr,
+			WomBackbone parent,
+			NodeList attrContainer) throws IllegalArgumentException;
 	
 	// =========================================================================
 	
@@ -104,13 +120,13 @@ public abstract class AttributeManager
 		return null;
 	}
 	
-	public String getTitlte()
+	public String getTitle()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	public String setTitlte(String title)
+	public String setTitle(String title)
 	{
 		// TODO Auto-generated method stub
 		return null;
@@ -337,25 +353,32 @@ public abstract class AttributeManager
 	// =========================================================================
 	
 	public static final class EmptyAttributeManager
-	        extends
-	            AttributeManager
+			extends
+				AttributeManager
 	{
+		@Override
 		public Collection<WomAttribute> getAttributes()
 		{
 			return Collections.emptyList();
 		}
 		
+		@Override
 		public String getAttribute(String name)
 		{
 			return null;
 		}
 		
+		@Override
 		public NativeOrXmlAttributeAdapter getAttributeNode(String name)
 		{
 			return null;
 		}
 		
-		public NativeOrXmlAttributeAdapter removeAttribute(String name, NodeList attrContainer)
+		@Override
+		public NativeOrXmlAttributeAdapter removeAttribute(
+				AttributeDescriptor descriptor,
+				String name,
+				NodeList attrContainer)
 		{
 			// Doesn't fail if an attribute with the specified name doesn't
 			// exist and therefore should also not fail if the node has no
@@ -363,25 +386,42 @@ public abstract class AttributeManager
 			return null;
 		}
 		
-		public void removeAttributeNode(WomAttribute attr, WomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
+		@Override
+		public void removeAttributeNode(
+				AttributeDescriptor descriptor,
+				WomAttribute attr,
+				WomBackbone parent,
+				NodeList attrContainer) throws IllegalArgumentException
 		{
 			// The node has no attributes yet someone passes an attribute he
 			// claims to be of this node ...
 			unsupported();
 		}
 		
-		public NativeOrXmlAttributeAdapter setAttribute(String name, String value, WomBackbone parent, NodeList attrContainer)
+		@Override
+		public NativeOrXmlAttributeAdapter setAttribute(
+				AttributeDescriptor descriptor,
+				String name,
+				String value,
+				WomBackbone parent,
+				NodeList attrContainer)
 		{
 			unsupported();
 			return null;
 		}
 		
-		public NativeOrXmlAttributeAdapter setAttributeNode(WomAttribute attr, WomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
+		@Override
+		public NativeOrXmlAttributeAdapter setAttributeNode(
+				AttributeDescriptor descriptor,
+				WomAttribute attr,
+				WomBackbone parent,
+				NodeList attrContainer) throws IllegalArgumentException
 		{
 			unsupported();
 			return null;
 		}
 		
+		@Override
 		public boolean isEmptyManager()
 		{
 			return true;
@@ -396,13 +436,14 @@ public abstract class AttributeManager
 	// =========================================================================
 	
 	public static final class AttributeManagerThingy
-	        extends
-	            AttributeManager
+			extends
+				AttributeManager
 	{
 		private NativeOrXmlAttributeAdapter firstAttr;
 		
 		// =====================================================================
 		
+		@Override
 		public boolean isEmptyManager()
 		{
 			return false;
@@ -410,11 +451,13 @@ public abstract class AttributeManager
 		
 		// =====================================================================
 		
+		@Override
 		public Collection<WomAttribute> getAttributes()
 		{
 			return new SiblingCollection<WomAttribute>(firstAttr);
 		}
 		
+		@Override
 		public String getAttribute(String name)
 		{
 			final WomAttribute attributeNode = getAttributeNode(name);
@@ -423,6 +466,7 @@ public abstract class AttributeManager
 			return attributeNode.getValue();
 		}
 		
+		@Override
 		public NativeOrXmlAttributeAdapter getAttributeNode(String name)
 		{
 			if (name != null)
@@ -439,7 +483,11 @@ public abstract class AttributeManager
 			return null;
 		}
 		
-		public NativeOrXmlAttributeAdapter removeAttribute(String name, NodeList attrContainer)
+		@Override
+		public NativeOrXmlAttributeAdapter removeAttribute(
+				AttributeDescriptor descriptor,
+				String name,
+				NodeList attrContainer)
 		{
 			if (name == null)
 				throw new IllegalArgumentException("Argument `name' is null.");
@@ -448,12 +496,17 @@ public abstract class AttributeManager
 			if (remove == null)
 				return null;
 			
-			removeAttribute(remove, attrContainer);
+			removeAttribute(descriptor, remove, attrContainer);
 			
 			return remove;
 		}
 		
-		public void removeAttributeNode(WomAttribute attr, WomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
+		@Override
+		public void removeAttributeNode(
+				AttributeDescriptor descriptor,
+				WomAttribute attr,
+				WomBackbone parent,
+				NodeList attrContainer) throws IllegalArgumentException
 		{
 			if (attr == null)
 				throw new IllegalArgumentException("Argument `attr' is null.");
@@ -461,55 +514,71 @@ public abstract class AttributeManager
 			if (attr.getParent() != parent)
 				throw new IllegalArgumentException("Given attribute `attr' is not an attribute of this XML element.");
 			
-			removeAttribute((NativeOrXmlAttributeAdapter) attr, attrContainer);
+			removeAttribute(descriptor, (NativeOrXmlAttributeAdapter) attr, attrContainer);
 		}
 		
-		public NativeOrXmlAttributeAdapter setAttribute(String name, String value, WomBackbone parent, NodeList attrContainer)
+		@Override
+		public NativeOrXmlAttributeAdapter setAttribute(
+				AttributeDescriptor descriptor,
+				String name,
+				String value,
+				WomBackbone parent,
+				NodeList attrContainer)
 		{
 			if (name == null)
 				throw new IllegalArgumentException("Argument `name' and/or `value' is null.");
 			
 			if (value == null)
 			{
-				return removeAttribute(name, attrContainer);
+				return removeAttribute(descriptor, name, attrContainer);
 			}
 			else
 			{
 				NativeOrXmlAttributeAdapter attr = new NativeOrXmlAttributeAdapter(name, value);
 				
-				return setAttributeNode(attr, parent, attrContainer);
+				return setAttributeNode(descriptor, attr, parent, attrContainer);
 			}
 		}
 		
-		public NativeOrXmlAttributeAdapter setAttributeNode(WomAttribute attr, WomBackbone parent, NodeList attrContainer) throws IllegalArgumentException
+		@Override
+		public NativeOrXmlAttributeAdapter setAttributeNode(
+				AttributeDescriptor descriptor,
+				WomAttribute attr,
+				WomBackbone parent,
+				NodeList attrContainer) throws IllegalArgumentException
 		{
 			if (attr == null)
 				throw new IllegalArgumentException("Argument `attr' is null.");
 			
 			final NativeOrXmlAttributeAdapter newAttr =
-			        Toolbox.expectType(NativeOrXmlAttributeAdapter.class, attr, "attr");
+					Toolbox.expectType(NativeOrXmlAttributeAdapter.class, attr, "attr");
 			
 			if (newAttr.isLinked())
 				throw new IllegalStateException(
-				        "Given attribute `attr' is still attribute of another WOM node.");
+						"Given attribute `attr' is still attribute of another WOM node.");
 			
 			NativeOrXmlAttributeAdapter oldAttr = getAttributeNode(attr.getName());
 			
-			replaceAttribute(oldAttr, newAttr, parent, attrContainer);
+			replaceAttribute(descriptor, oldAttr, newAttr, parent, attrContainer);
 			
 			return oldAttr;
 		}
 		
 		// =====================================================================
 		
-		private void removeAttribute(NativeOrXmlAttributeAdapter remove, NodeList attrContainer)
+		private void removeAttribute(
+				AttributeDescriptor descriptor,
+				NativeOrXmlAttributeAdapter remove,
+				NodeList attrContainer)
 		{
+			WomBackbone parent = remove.getParent();
+			
 			// remove from WOM
 			if (remove == firstAttr)
 				firstAttr = (NativeOrXmlAttributeAdapter) remove.getNextSibling();
 			remove.unlink();
 			
-			if (attrContainer != null)
+			if (attrContainer != null && descriptor.syncToAst())
 			{
 				// remove from AST
 				// the ast can contain an attribute with the same name multiple times!
@@ -536,9 +605,16 @@ public abstract class AttributeManager
 				if (i != null)
 					throw new AssertionError("WOM and AST out of sync!");
 			}
+			
+			descriptor.customAction(parent, null);
 		}
 		
-		private void replaceAttribute(final NativeOrXmlAttributeAdapter oldAttr, final NativeOrXmlAttributeAdapter newAttr, WomBackbone parent, NodeList attrContainer)
+		private void replaceAttribute(
+				AttributeDescriptor descriptor,
+				final NativeOrXmlAttributeAdapter oldAttr,
+				final NativeOrXmlAttributeAdapter newAttr,
+				WomBackbone parent,
+				NodeList attrContainer)
 		{
 			// replace in WOM
 			WomBackbone prev = null;
@@ -560,7 +636,7 @@ public abstract class AttributeManager
 			if (firstAttr == null || oldAttr == firstAttr)
 				firstAttr = newAttr;
 			
-			if (attrContainer != null)
+			if (attrContainer != null && descriptor.syncToAst())
 			{
 				if (newAttr.getAstNode() == null)
 					newAttr.attachAstNode();
@@ -620,6 +696,47 @@ public abstract class AttributeManager
 				if (newAttr.getAstNode() == null)
 					newAttr.detachAstNode();
 			}
+			
+			descriptor.customAction(parent, newAttr.getValue());
 		}
+	}
+	
+	// =========================================================================
+	
+	/**
+	 * Throw if the given value exceeds its domain.
+	 * 
+	 * @param value
+	 *            The value to check.
+	 * @param lower
+	 *            The lower bound (inclusive).
+	 * @param upper
+	 *            The upper bound (inclusive).
+	 */
+	public static void verifyRange(int value, int lower, int upper) throws IllegalArgumentException
+	{
+		if (value < lower || value > upper)
+			throw new IllegalArgumentException(String.format(
+					"Attribute value out of bounds: %d <= (%d) <= %d.",
+					lower,
+					value,
+					upper));
+	}
+	
+	/**
+	 * Throw if the given value exceeds its domain.
+	 * 
+	 * @param value
+	 *            The value to check.
+	 * @param lower
+	 *            The lower bound (inclusive).
+	 * @param upper
+	 *            The upper bound (inclusive).
+	 */
+	public static int verifyRange(String valueStr, int lower, int upper) throws IllegalArgumentException
+	{
+		Integer x = Integer.valueOf(valueStr);
+		verifyRange(x, lower, upper);
+		return x;
 	}
 }

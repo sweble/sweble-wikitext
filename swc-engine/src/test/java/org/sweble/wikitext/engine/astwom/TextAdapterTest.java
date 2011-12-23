@@ -23,11 +23,7 @@ import java.net.URL;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.CompilerException;
-import org.sweble.wikitext.engine.FullPage;
-import org.sweble.wikitext.engine.PageId;
-import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
@@ -42,24 +38,18 @@ import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
 
 public class TextAdapterTest
+		extends
+			AstWomTestBase
 {
-	private ParserTestResources resources;
-	
-	private AstWomTestBase common;
-	
-	// =========================================================================
-	
 	public TextAdapterTest() throws FileNotFoundException, IOException
 	{
-		System.out.println();
-		System.out.println("AST->WOM & Print test:");
-		
 		URL url = TextAdapterTest.class.getResource("/");
 		Assert.assertTrue(url != null);
 		
-		resources = new ParserTestResources(new File(url.getFile()));
+		ParserTestResources resources =
+				new ParserTestResources(new File(url.getFile()));
 		
-		common = new AstWomTestBase(
+		common = new AstWomTestCommon(
 				resources,
 				"(.*?)/target/test-classes/",
 				"$1/src/test/resources/",
@@ -103,19 +93,15 @@ public class TextAdapterTest
 			String expectedWt,
 			String expectedWom) throws LinkTargetException, CompilerException
 	{
-		WomPage page = parseToWom(wt);
-		
-		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
-		
-		WomText text = (WomText) para.getFirstChild().getFirstChild();
+		WomText text = parseGetText(wt);
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
-		compareWikitext(expectedWt, para.getFirstChild());
+		compareWikitext(expectedWt, text);
 		
-		compareWom(expectedWom, para.getFirstChild());
+		compareWom(expectedWom, text);
 	}
 	
 	// =========================================================================
@@ -163,7 +149,7 @@ public class TextAdapterTest
 		
 		append("Hallo", " \uDBC0\uDC00", "Hallo &#x100000;", "<text>Hallo &#x100000;</text>");
 		
-		append("Hallo", " \f", "Hallo &#xC;", "<text>Hallo &#xC;</text>");
+		append("Hallo", " \f", "Hallo &#xC;", "<text>Hallo &#xc;</text>");
 		
 		// make it fail!
 		
@@ -174,6 +160,10 @@ public class TextAdapterTest
 		append("Hallo", " \uD840", IllegalArgumentException.class);
 		
 		append("Hallo", " \uDC00", IllegalArgumentException.class);
+		
+		// some strange stuff is happening here
+		
+		append("Hallo", "\r", "Hallo&#xD;", "<text>Hallo&#xd;</text>");
 	}
 	
 	private void append(
@@ -182,11 +172,7 @@ public class TextAdapterTest
 			String expectedWt,
 			String expectedWom) throws LinkTargetException, CompilerException
 	{
-		WomPage page = parseToWom(wt);
-		
-		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
-		
-		WomText text = (WomText) para.getFirstChild().getFirstChild();
+		WomText text = parseGetText(wt);
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
@@ -194,9 +180,9 @@ public class TextAdapterTest
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
-		compareWikitext(expectedWt, para.getFirstChild());
+		compareWikitext(expectedWt, text);
 		
-		compareWom(expectedWom, para.getFirstChild());
+		compareWom(expectedWom, text);
 	}
 	
 	private void append(
@@ -282,11 +268,7 @@ public class TextAdapterTest
 			String expectedWt,
 			String expectedWom) throws LinkTargetException, CompilerException
 	{
-		WomPage page = parseToWom(wt);
-		
-		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
-		
-		WomText text = (WomText) para.getFirstChild().getFirstChild();
+		WomText text = parseGetText(wt);
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
@@ -294,9 +276,9 @@ public class TextAdapterTest
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
-		compareWikitext(expectedWt, para.getFirstChild());
+		compareWikitext(expectedWt, text);
 		
-		compareWom(expectedWom, para.getFirstChild());
+		compareWom(expectedWom, text);
 	}
 	
 	private void delete(
@@ -356,11 +338,7 @@ public class TextAdapterTest
 			String expectedWt,
 			String expectedWom) throws LinkTargetException, CompilerException
 	{
-		WomPage page = parseToWom(wt);
-		
-		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
-		
-		WomText text = (WomText) para.getFirstChild().getFirstChild();
+		WomText text = parseGetText(wt);
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
@@ -368,9 +346,9 @@ public class TextAdapterTest
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
-		compareWikitext(expectedWt, para.getFirstChild());
+		compareWikitext(expectedWt, text);
 		
-		compareWom(expectedWom, para.getFirstChild());
+		compareWom(expectedWom, text);
 	}
 	
 	private void insert(
@@ -435,11 +413,7 @@ public class TextAdapterTest
 			String expectedWt,
 			String expectedWom) throws LinkTargetException, CompilerException
 	{
-		WomPage page = parseToWom(wt);
-		
-		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
-		
-		WomText text = (WomText) para.getFirstChild().getFirstChild();
+		WomText text = parseGetText(wt);
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
@@ -447,9 +421,9 @@ public class TextAdapterTest
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
-		compareWikitext(expectedWt, para.getFirstChild());
+		compareWikitext(expectedWt, text);
 		
-		compareWom(expectedWom, para.getFirstChild());
+		compareWom(expectedWom, text);
 	}
 	
 	private void replace(
@@ -477,11 +451,7 @@ public class TextAdapterTest
 			String expectedWt,
 			String expectedWom) throws LinkTargetException, CompilerException
 	{
-		WomPage page = parseToWom(wt);
-		
-		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
-		
-		WomText text = (WomText) para.getFirstChild().getFirstChild();
+		WomText text = parseGetText(wt);
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
@@ -489,9 +459,9 @@ public class TextAdapterTest
 		
 		Assert.assertEquals(text.getText(), text.getValue());
 		
-		compareWikitext(expectedWt, para.getFirstChild());
+		compareWikitext(expectedWt, text);
 		
-		compareWom(expectedWom, para.getFirstChild());
+		compareWom(expectedWom, text);
 	}
 	
 	private void replace(
@@ -513,35 +483,36 @@ public class TextAdapterTest
 	
 	// =========================================================================
 	
-	private WomPage parseToWom(String wt) throws LinkTargetException, CompilerException
+	@Test
+	public void testTextNodeInsertion() throws LinkTargetException, CompilerException
 	{
-		final String TITLE = "-";
+		WomText text = parseGetText("Hello");
 		
-		PageTitle title = PageTitle.make(common.getConfig(), TITLE);
+		WomNodeFactory f = new AstWomNodeFactory(common.getConfig());
 		
-		PageId id = new PageId(title, -1);
+		text.getParent().appendChild(f.createText(" World!"));
 		
-		wt = String.format("<b>%s</b>", wt);
+		compareWikitext("Hello World!", text);
 		
-		FullPage fullPage = new FullPage(id, wt);
+		compareWom("<text>Hello</text><text> World!</text>", text);
+	}
+	
+	// =========================================================================
+	
+	private WomText parseGetText(String wt) throws LinkTargetException, CompilerException
+	{
+		WomPage page = parseToWom(wt);
 		
-		CompiledPage astPage = common.getCompiler().postprocess(
-				fullPage.getId(),
-				fullPage.getText(),
-				null);
+		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
 		
-		DefaultWomNodeFactory wnf =
-				new DefaultWomNodeFactory(common.getConfig(), TITLE);
-		
-		WomNode womPage = wnf.create(null, astPage.getPage());
-		
-		return (WomPage) womPage;
+		return (WomText) para.getFirstChild().getFirstChild();
 	}
 	
 	private void compareWikitext(
 			String expectedWt,
-			WomNode womNode)
+			WomNode textNode)
 	{
+		WomNode womNode = textNode.getParent();
 		XmlElement ast = (XmlElement) ((BoldAdapter) womNode).getAstNode();
 		String actual = RtWikitextPrinter.print(ast.getBody());
 		Assert.assertEquals(expectedWt, actual);
@@ -549,8 +520,9 @@ public class TextAdapterTest
 	
 	private void compareWom(
 			String expectedWom,
-			WomNode womNode)
+			WomNode textNode)
 	{
+		WomNode womNode = textNode.getParent();
 		StringBuffer actual = new StringBuffer();
 		for (WomNode n : womNode)
 			actual.append(WomPrinter.print(n, true));

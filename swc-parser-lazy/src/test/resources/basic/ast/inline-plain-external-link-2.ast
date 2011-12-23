@@ -14,8 +14,8 @@ LazyParsedPage(
           {N} path = "//example.com"
           {N} protocol = "http"
       )
-      Newline("\n")
     ])
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
@@ -31,7 +31,7 @@ LazyParsedPage(
           {N} protocol = "mail"
       )
       Text(" after")
-      Newline("\n")
     ])
+    Newline("\n")
   ]
 )

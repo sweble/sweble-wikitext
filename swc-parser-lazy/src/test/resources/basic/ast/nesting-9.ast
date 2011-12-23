@@ -24,8 +24,8 @@ LazyParsedPage(
                     Warning (informative): /basic/wikitext/nesting-9.wikitext:2:3 - 6: "[[T" : This looks like a Internal Link, however the finishing `]]' is missing.
                   ]
               )
-              Newline("\n")
             ])
+            Newline("\n")
           ]
         )
         TableCell(
@@ -41,10 +41,8 @@ LazyParsedPage(
 
           [ ]
           [
-            Paragraph([
-              Text("2")
-              Newline("\n")
-            ])
+            Paragraph([ Text("2") ])
+            Newline("\n")
           ]
         )
       ]

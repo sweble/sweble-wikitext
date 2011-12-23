@@ -29,33 +29,43 @@ public interface WomCategory
 			WomLink
 {
 	/**
-	 * Return the category to which the page will be assigned.
+	 * Return the name of the category.
 	 * 
-	 * Corresponds to the XWML 1.0 attribute "category".
+	 * Corresponds to the XWML 1.0 attribute "name".
 	 * 
-	 * @return The category without the category namespace specifier.
+	 * @return The name of the category without the category namespace
+	 *         specifier.
 	 */
-	public String getCategory();
+	public String getName();
 	
 	/**
-	 * Set the category to which the page will be assigned.
+	 * Set the name of the category.
 	 * 
-	 * Corresponds to the XWML 1.0 attribute "category".
+	 * Corresponds to the XWML 1.0 attribute "name".
 	 * 
-	 * @param category
-	 *            The new category without the category namespace specifier.
-	 * @return The old category.
+	 * @param name
+	 *            The new name of the category without the category namespace
+	 *            specifier.
+	 * @return The old name of the category.
 	 * @throws NullPointerException
 	 *             Thrown if the given category is <code>null</code>.
 	 * @throws IllegalArgumentException
 	 *             Thrown if another category with the given name is already
 	 *             associated with this page.
 	 */
-	public String setCategory(String category)
-		throws NullPointerException,
-			IllegalArgumentException;
+	public String setName(String name) throws NullPointerException, IllegalArgumentException;
 	
-	// TODO: Deprecate setCategory and getCategory and use setName and getName instead.
+	/**
+	 * @deprecated Use getName() instead.
+	 */
+	public String getCategory();
+	
+	/**
+	 * @deprecated Use setName() instead.
+	 */
+	public String setCategory(String category)
+			throws NullPointerException,
+			IllegalArgumentException;
 	
 	// ==[ Link interface ]=====================================================
 	
@@ -70,7 +80,8 @@ public interface WomCategory
 	/**
 	 * Return the name of the category this statement is pointing to.
 	 * 
-	 * @return The category including the category namespace specifier.
+	 * @return The name of the category including the category namespace
+	 *         specifier.
 	 */
 	@Override
 	public String getLinkTarget();

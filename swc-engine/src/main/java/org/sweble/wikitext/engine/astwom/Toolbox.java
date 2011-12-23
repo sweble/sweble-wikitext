@@ -23,8 +23,12 @@ import java.util.regex.Pattern;
 import lombok.Getter;
 
 import org.sweble.wikitext.lazy.AstNodeTypes;
+import org.sweble.wikitext.lazy.parser.Bold;
+import org.sweble.wikitext.lazy.parser.HorizontalRule;
+import org.sweble.wikitext.lazy.parser.InternalLink;
 import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
 import org.sweble.wikitext.lazy.utils.XmlCharRef;
@@ -34,6 +38,7 @@ import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
+import de.fau.cs.osr.utils.XmlGrammar;
 
 public class Toolbox
 {
@@ -192,49 +197,83 @@ public class Toolbox
 	
 	// =========================================================================
 	
-	public static XmlElement addXmlRtData(XmlElement xmlElement)
+	public static XmlElement addRtData(XmlElement n)
 	{
-		if (xmlElement.isEmpty())
+		if (n.isEmpty())
 		{
 			TextUtils.addRtData(
-					(AstNode) xmlElement,
-					TextUtils.joinRt('<', xmlElement.getName()),
+					(AstNode) n,
+					TextUtils.joinRt('<', n.getName()),
 					TextUtils.joinRt(" />"),
 					null);
 		}
 		else
 		{
 			TextUtils.addRtData(
-					(AstNode) xmlElement,
-					TextUtils.joinRt('<', xmlElement.getName()),
+					(AstNode) n,
+					TextUtils.joinRt('<', n.getName()),
 					TextUtils.joinRt('>'),
-					TextUtils.joinRt("</", xmlElement.getName(), '>'));
+					TextUtils.joinRt("</", n.getName(), '>'));
 		}
 		
-		for (AstNode attr : xmlElement.getXmlAttributes())
-			addXmlAttrRtData((XmlAttribute) attr);
+		for (AstNode attr : n.getXmlAttributes())
+			addRtData((XmlAttribute) attr);
 		
-		return xmlElement;
+		return n;
 	}
 	
-	public static AstNode addXmlAttrRtData(XmlAttribute xmlAttribute)
+	public static XmlAttribute addRtData(XmlAttribute n)
 	{
-		if (xmlAttribute.getHasValue())
+		if (n.getHasValue())
 		{
 			TextUtils.addRtData(
-					xmlAttribute,
-					TextUtils.joinRt(' ', xmlAttribute.getName(), "=\""),
+					n,
+					TextUtils.joinRt(' ', n.getName(), "=\""),
 					TextUtils.joinRt('"'));
 		}
 		else
 		{
 			TextUtils.addRtData(
-					xmlAttribute,
-					TextUtils.joinRt(' ', xmlAttribute.getName()),
+					n,
+					TextUtils.joinRt(' ', n.getName()),
 					null);
 		}
 		
-		return xmlAttribute;
+		return n;
+	}
+	
+	public static Bold addRtData(Bold n)
+	{
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("'''"),
+				TextUtils.joinRt("'''"));
+		return n;
+	}
+	
+	public static InternalLink addRtData(InternalLink n)
+	{
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("[[", n.getTarget()),
+				TextUtils.joinRt("]]"));
+		return n;
+	}
+	
+	public static XmlComment addRtData(XmlComment n)
+	{
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("<!--", n.getContent(), "-->"));
+		return n;
+	}
+	
+	public static HorizontalRule addRtData(HorizontalRule n)
+	{
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("----"));
+		return n;
 	}
 	
 	// =========================================================================
@@ -259,7 +298,7 @@ public class Toolbox
 	
 	// =========================================================================
 	
-	public static String checkValidTitle(String title)
+	public static void checkValidTitle(String title)
 			throws UnsupportedOperationException,
 			IllegalArgumentException
 	{
@@ -268,11 +307,9 @@ public class Toolbox
 		
 		if (!getValidTitleRx().matcher(title).matches())
 			throw new IllegalArgumentException("Invalid title");
-		
-		return title;
 	}
 	
-	public static String checkValidCategory(String category)
+	public static void checkValidCategory(String category)
 			throws UnsupportedOperationException,
 			IllegalArgumentException
 	{
@@ -281,8 +318,6 @@ public class Toolbox
 		
 		if (!getValidTitleRx().matcher(category).matches())
 			throw new IllegalArgumentException("Invalid category");
-		
-		return category;
 	}
 	
 	public static String checkValidNamespace(String namespace)
@@ -297,6 +332,15 @@ public class Toolbox
 		return namespace;
 	}
 	
+	/**
+	 * Checks for a valid path expression and removes a trailing slash if
+	 * present.
+	 * 
+	 * @param path
+	 *            The path to check.
+	 * @return The path stripped of a trailing slash if present.
+	 * @throws IllegalArgumentException
+	 */
 	public static String checkValidPath(String path)
 			throws IllegalArgumentException
 	{
@@ -306,25 +350,35 @@ public class Toolbox
 		if (path == null || !getValidPathRx().matcher(path).matches())
 			throw new IllegalArgumentException("Invalid path");
 		
-		int l = path.length();
-		if (path.charAt(l - 1) == '/')
-		{
-			--l;
-			return path.substring(0, l);
-		}
-		else
-			return path;
+		int l = path.length() - 1;
+		return (path.charAt(l) == '/') ? path.substring(0, l) : path;
 	}
 	
-	public static String checkValidTarget(String target)
+	public static void checkValidTarget(String target)
 	{
 		if (target == null)
 			throw new UnsupportedOperationException("Cannot remove target attribute");
 		
 		if (!getValidTargetRx().matcher(target).matches())
 			throw new IllegalArgumentException("Invalid target");
+	}
+	
+	public static void checkValidXmlName(String name)
+	{
+		if (name == null)
+			throw new NullPointerException("Name cannot be null");
 		
-		return target;
+		if (!XmlGrammar.xmlName().matcher(name).matches())
+			throw new IllegalArgumentException("Not a valid XML Name");
+	}
+	
+	public static void checkValidCommentText(String text)
+	{
+		if (text == null)
+			throw new NullPointerException("Text cannot be null");
+		
+		if (!XmlGrammar.xmlCommentText().matcher(text).matches())
+			throw new IllegalArgumentException("Not a valid XML Comment text");
 	}
 	
 	// =========================================================================

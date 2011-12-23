@@ -4,7 +4,9 @@ LazyParsedPage(
 
   [
     Newline("\n")
-    Newline("\n")
-    Newline("\n")
+    Paragraph([
+      Newline("\n")
+      Newline("\n")
+    ])
   ]
 )

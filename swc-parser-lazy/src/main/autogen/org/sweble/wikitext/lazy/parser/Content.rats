@@ -76,6 +76,119 @@ import org.sweble.wikitext.lazy.parser.Whitespace;
 
 
 
+// -- Body ---------------------------------------------------------------------
+
+header
+{
+  import java.util.Iterator;
+}
+
+body
+{
+  private AstNode makeP(NodeList pre, NodeList p, NodeList post)
+  {
+    NodeList l = null;
+    if (pre != null)
+    {
+      int i = 0;
+      for (AstNode n : pre)
+      {
+        if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+        {
+          ++i;
+          if (i > 2)
+            break;
+        }
+      }
+
+      if (i > 2)
+      {
+        l = new NodeList();
+
+        i = 0;
+        for (AstNode n : pre)
+        {
+          if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+          {
+            ++i;
+            if (i == 2)
+            {
+              l.add(n);
+              l.add(IntermediateTags.PARAGRAPH.createOpen(false));
+            }
+            else
+              l.add(n);
+          }
+          else
+            l.add(n);
+        }
+
+        if (p == null && post == null)
+          return l;
+      }
+      else if (p == null && post == null)
+      {
+        return pre;
+      }
+      else
+      {
+        l = new NodeList();
+        l.add(pre);
+        l.add(IntermediateTags.PARAGRAPH.createOpen(false));
+      }
+    }
+    else
+    {
+      l = new NodeList();
+      l.add(IntermediateTags.PARAGRAPH.createOpen(false));
+    }
+
+    // p != null
+    // l != null
+
+    l.add(p);
+
+    int i = 0;
+    if (post != null)
+    {
+      for (AstNode n : post)
+      {
+        if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+          ++i;
+      }
+    }
+
+    if (i > 2)
+    {
+      for (AstNode n : post)
+      {
+        if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+        {
+          --i;
+          if  (i == 2)
+          {
+            l.add(n);
+            l.add(IntermediateTags.PARAGRAPH.createClose(false));
+            continue;
+          }
+        }
+
+        l.add(n);
+      }
+    }
+    else
+    {
+      l.add(IntermediateTags.PARAGRAPH.createClose(false));
+      l.add(post);
+    }
+
+    return l;
+  }
+}
+
+
+
+
 // -- Block content ------------------------------------------------------------
 
 /* BolBlockContent = ( LineStartProd / Paragraph )*
@@ -153,6 +266,8 @@ noinline memoized AstNode ParagraphMemoized =
 noinline transient AstNode ParagraphTransient =
     pre:PreParaWs !ParagraphStopper p:ParagraphText post:PostParaWs?
     {
+      yyValue = makeP(pre, (NodeList) p, post);
+      /*
       NodeList l = new NodeList();
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
       l.add(pre);
@@ -160,16 +275,23 @@ noinline transient AstNode ParagraphTransient =
       l.add(post);
       l.add(IntermediateTags.PARAGRAPH.createClose(false));
       yyValue = l;
+      */
     }
   / PreParaWs
+    {
+      yyValue = makeP((NodeList) yyResult.semanticValue(), null, null);
+    }
   / p:ParagraphText post:PostParaWs?
     {
+      yyValue = makeP(null, (NodeList) p, post);
+      /*
       NodeList l = new NodeList();
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
       l.add(p);
       l.add(post);
       l.add(IntermediateTags.PARAGRAPH.createClose(false));
       yyValue = l;
+      */
     }
 ;
 
@@ -229,7 +351,7 @@ private inline AstNode ParagraphTextMore =
  */
 
 private noinline transient NodeList PostParaWs =
-  lt:pEolNode tail:PostParaWsMore*
+  lt:pEolNode tail:PostParaWsMore* ( &ParagraphStopper / !ParagraphText )
   {
     yyValue = new NodeList(lt, tail);
     /*

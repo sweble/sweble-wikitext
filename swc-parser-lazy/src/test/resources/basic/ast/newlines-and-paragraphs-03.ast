@@ -1,0 +1,12 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Newline("\n")
+    Paragraph([
+      Newline("\n")
+      Text("Hallo")
+    ])
+  ]
+)

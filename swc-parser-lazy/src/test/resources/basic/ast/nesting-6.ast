@@ -34,8 +34,8 @@ LazyParsedPage(
                       Text("* item 1")
                       Newline("\n")
                       Text("* item 2")
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -44,7 +44,7 @@ LazyParsedPage(
           ]
         )
       )
-      Newline("\n")
     ])
+    Newline("\n")
   ]
 )

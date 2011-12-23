@@ -30,10 +30,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" class=\"foo\"")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" class=\"foo\"") ])
+                Newline("\n")
               ]
             )
           ]

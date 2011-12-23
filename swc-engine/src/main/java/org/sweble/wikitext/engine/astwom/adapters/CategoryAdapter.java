@@ -23,25 +23,27 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManager;
 import org.sweble.wikitext.engine.astwom.AttributeSupportingElement;
-import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.astwom.Toolbox;
+import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomCategory;
+import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
 import org.sweble.wikitext.lazy.parser.InternalLink;
 import org.sweble.wikitext.lazy.parser.LinkTitle;
-import org.sweble.wikitext.lazy.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.utils.Utils;
 
 public class CategoryAdapter
-        extends
-            AttributeSupportingElement
-        implements
-            WomCategory
+		extends
+			AttributeSupportingElement
+		implements
+			WomCategory
 {
 	private static final String CATEGORY_NAMESPACE = "Category:";
 	
@@ -77,7 +79,7 @@ public class CategoryAdapter
 		
 		astNodes.add(new AstRep(null, getAstNode()));
 		
-		setCategory(category);
+		setName(category);
 	}
 	
 	public CategoryAdapter(NodeList container, InternalLink category)
@@ -112,42 +114,35 @@ public class CategoryAdapter
 		return WomNodeType.ELEMENT;
 	}
 	
+	// =========================================================================
+	
 	@Override
-	protected String checkAttributeValue(String name, String value) throws IllegalArgumentException, UnsupportedOperationException
+	public String getName()
 	{
-		if (name.equalsIgnoreCase("category"))
-		{
-			String checkedValue = checkValidCategory(value);
-			setNameInAst(checkedValue);
-			return checkedValue;
-		}
-		else
-		{
-			throw new IllegalArgumentException("Attribute `" + name + "' not supported by this node");
-		}
+		return getAttribute("name");
 	}
 	
-	// =========================================================================
+	@Override
+	public String setName(String name)
+	{
+		NativeOrXmlAttributeAdapter old = setAttribute(
+				Attributes.name,
+				"name",
+				name);
+		
+		return (old == null) ? null : old.getValue();
+	}
 	
 	@Override
 	public String getCategory()
 	{
-		return getAttribute("category");
+		return getName();
 	}
 	
 	@Override
-	public String setCategory(String category)
+	public String setCategory(String category) throws NullPointerException, IllegalArgumentException
 	{
-		category = checkValidCategory(category);
-		
-		// Fix AST
-		removeRedundantLinks();
-		setNameInAst(category);
-		
-		// Fix WOM
-		NativeOrXmlAttributeAdapter old = setAttributeUnchecked("category", category);
-		
-		return (old == null) ? null : old.getValue();
+		return setName(category);
 	}
 	
 	@Override
@@ -164,6 +159,9 @@ public class CategoryAdapter
 	
 	// =========================================================================
 	
+	/**
+	 * Called by PageAdapter to add a new category to the AST.
+	 */
 	protected void addToAst(NodeList container)
 	{
 		if (astNodes.size() != 1 || astNodes.get(0).container != null)
@@ -174,6 +172,9 @@ public class CategoryAdapter
 		container.add(getAstNode());
 	}
 	
+	/**
+	 * Called by PageAdapter to remove a category from the AST.
+	 */
 	protected void removeFromAst()
 	{
 		for (AstRep rep : astNodes)
@@ -187,6 +188,10 @@ public class CategoryAdapter
 		astNodes.add(new AstRep(null, getAstNode()));
 	}
 	
+	/**
+	 * Called by PageAdapter to replace one category node with another in the
+	 * AST.
+	 */
 	protected void replaceInAst(CategoryAdapter replacement)
 	{
 		if (replacement.astNodes.size() != 1)
@@ -230,6 +235,9 @@ public class CategoryAdapter
 		astNodes.add(new AstRep(null, astNode));
 	}
 	
+	/**
+	 * Called by PageAdapter to add another AST node mentioning this category.
+	 */
 	protected void addRedundantOccurance(CategoryAdapter newCat)
 	{
 		if (newCat.astNodes.size() != 1)
@@ -252,35 +260,52 @@ public class CategoryAdapter
 	
 	// =========================================================================
 	
-	private void setNameInAst(String category)
-	{
-		InternalLink astNode = getAstNode();
-		String target = CATEGORY_NAMESPACE + category;
-		astNode.setTarget(target);
-		TextUtils.addRtData(
-		        astNode,
-		        TextUtils.joinRt("[[", target),
-		        TextUtils.joinRt("]]"));
-	}
-	
 	private void setAttributeFromAst()
 	{
-		InternalLink category = getAstNode();
-		
-		String name = category.getTarget();
-		int i = name.lastIndexOf(':');
-		if (i >= 0)
-			name = name.substring(i + 1);
-		
-		setAttributeUnchecked("category", name);
+		// problem: since we set from ast we must not verify and don't perform 
+		// any custom action. we must also not sync to ast, but that's not a 
+		// problem since it's not done for category attributes anyway.
+		//
+		// the check for removability technically doesn't apply, because again,
+		// we set from the ast. but it's a good sanity check and should be done
+		// anyway.
+		//
+		// what must be done on the other hand is normalization, because we DO
+		// set from ast!
+		//
+		// cloning Attributes.name for that purpose sucks ... is there a better 
+		// way? especially since this problem will occur elsewhere too ...
+		setAttribute(
+				Attributes.NAME_FROM_AST,
+				"name",
+				getNameFromAst());
 	}
 	
-	private void removeRedundantLinks()
+	private String getNameFromAst()
 	{
+		InternalLink astNode = getAstNode();
+		String name = astNode.getTarget();
+		int i = name.lastIndexOf(':');
+		return (i >= 0) ? name.substring(i + 1) : name;
+	}
+	
+	private void effectNameChangeInAst(String name)
+	{
+		// target can be null when this method is called indirectly by the constructor.
+		if (getAstNode().getTarget() != null && getNameFromAst().equals(name))
+			return;
+		
+		String target = CATEGORY_NAMESPACE + name;
+		
+		// setNameInAst
+		InternalLink astNode = getAstNode();
+		astNode.setTarget(target);
+		Toolbox.addRtData(astNode);
+		
+		// removeRedundantLinks
 		if (astNodes.size() <= 1)
 			return;
 		
-		InternalLink astNode = getAstNode();
 		ListIterator<AstRep> i = astNodes.listIterator();
 		while (i.hasNext())
 		{
@@ -293,25 +318,83 @@ public class CategoryAdapter
 		}
 	}
 	
-	private String checkValidCategory(String category)
+	// =========================================================================
+	
+	@Override
+	protected AttributeDescriptor getAttributeDescriptor(String name)
 	{
-		String checkedCategory = Toolbox.checkValidCategory(category);
-		
-		if (!checkedCategory.equalsIgnoreCase(getCategory()))
+		Attributes d = Utils.fromString(Attributes.class, name);
+		if (d != null && d != Attributes.NAME_FROM_AST)
+			return d;
+		// No other attributes are allowed.
+		return null;
+	}
+	
+	private static enum Attributes implements AttributeDescriptor
+	{
+		name
 		{
-			WomBackbone parent = getParent();
-			if (parent != null)
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				if (!(parent instanceof PageAdapter))
-					throw new InternalError();
+				Toolbox.checkValidCategory(value);
 				
-				PageAdapter page = (PageAdapter) parent;
-				if (page.hasCategory(checkedCategory))
-					throw new IllegalArgumentException(
-					        "The page is already assigned to a category called `" + category + "'");
+				CategoryAdapter categoryAdapter = (CategoryAdapter) parent;
+				if (!value.equalsIgnoreCase(categoryAdapter.getName()))
+				{
+					WomBackbone pageNode = categoryAdapter.getParent();
+					if (pageNode != null)
+					{
+						if (!(pageNode instanceof PageAdapter))
+							throw new InternalError();
+						
+						PageAdapter page = (PageAdapter) pageNode;
+						if (page.hasCategory(value))
+							throw new IllegalArgumentException(
+									"The page is already assigned to a category called `" + value + "'");
+					}
+				}
+				
+				return value;
 			}
+			
+			@Override
+			public void customAction(WomNode parent, String value)
+			{
+				((CategoryAdapter) parent).effectNameChangeInAst(value);
+			}
+		},
+		
+		NAME_FROM_AST
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				return value;
+			}
+			
+			@Override
+			public void customAction(WomNode parent, String value)
+			{
+			}
+		};
+		
+		@Override
+		public boolean syncToAst()
+		{
+			return false;
 		}
 		
-		return checkedCategory;
+		@Override
+		public Normalization getNormalizationMode()
+		{
+			return Normalization.NONE;
+		}
+		
+		@Override
+		public boolean isRemovable()
+		{
+			return false;
+		}
 	}
 }

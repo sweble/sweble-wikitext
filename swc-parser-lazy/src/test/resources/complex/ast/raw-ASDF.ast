@@ -18,8 +18,8 @@ LazyParsedPage(
         [ Text("ASDF") ]
       )
       Text(" may refer to ")
-      Newline("\n")
     ])
+    Newline("\n")
     Itemization([
       ItemizationItem(
         Properties:
@@ -244,9 +244,9 @@ LazyParsedPage(
             [ Text("disambig") ]
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -267,8 +267,8 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Newline("\n")
         ])
+        Newline("\n")
       ]
     )
   ]

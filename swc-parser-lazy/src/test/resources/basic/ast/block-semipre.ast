@@ -24,10 +24,8 @@ LazyParsedPage(
       )
     ])
     Newline("\n")
-    Paragraph([
-      Text("\tdiscontinued")
-      Newline("\n")
-    ])
+    Paragraph([ Text("\tdiscontinued") ])
+    Newline("\n")
     SemiPre([
       SemiPreLine(
         Properties:

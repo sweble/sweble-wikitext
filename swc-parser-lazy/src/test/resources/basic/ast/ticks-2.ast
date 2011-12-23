@@ -31,9 +31,9 @@ LazyParsedPage(
           )
         ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("'")
       Italics(
@@ -65,9 +65,9 @@ LazyParsedPage(
         [ Text("Mark'") ]
       )
       Text("s")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Itemization([
       ItemizationItem(
         Properties:

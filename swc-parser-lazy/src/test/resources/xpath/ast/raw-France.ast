@@ -344,8 +344,6 @@ Paragraph([
     LinkTitle([ ])
   )
   Text(".")
-  Newline("\n")
-  Newline("\n")
 ])
 
 ================================================================================
@@ -483,9 +481,9 @@ Section(
         LinkTitle([ ])
       )
       Text(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       ImageLink(
         Properties:
@@ -656,9 +654,9 @@ Section(
         [ ]
       )
       Text(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       ImageLink(
         Properties:
@@ -969,9 +967,9 @@ Section(
         [ ]
       )
       Text(" ")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("His descendants, the ")
       InternalLink(
@@ -1081,9 +1079,9 @@ Section(
         )
       )
       Text(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("The exact boundaries changed greatly with time, but French landholdings of the ")
       InternalLink(
@@ -1141,9 +1139,9 @@ Section(
         LinkTitle([ ])
       )
       Text(".")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("Charles IV (The Fair) died without an heir in 1328.")
       TagExtension(
@@ -1279,9 +1277,9 @@ Section(
 
         [ ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("In the most notorious incident during the ")
       InternalLink(
@@ -1322,9 +1320,9 @@ Section(
 
         [ ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text("The monarchy reached its height during the 17th century and the reign of ")
       InternalLink(
@@ -1391,9 +1389,9 @@ Section(
         )
       )
       Text(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
   ]
 )
 

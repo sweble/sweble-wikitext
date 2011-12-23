@@ -1,0 +1,59 @@
+--------------------------------------------------------------------------------
+
+"\n" * n "Hallo"
+
+n
+0 -> <Hallo>
+1 -> <Hallo>
+
+2 -> <BR Hallo>            1
+3 -> <BR><Hallo>           2
+4 -> <BR><BR Hallo>        3
+5 -> <BR><BR><Hallo>       4
+6 -> <BR><BR><BR Hallo>    5
+7 -> <BR><BR><BR><Hallo>   6
+
+gap = max(0, n - 1)
+
+<BR> * gap/2 <BR * gap%2 Hallo>
+
+--------------------------------------------------------------------------------
+
+"Hallo" "\n" * n "Hallo"
+
+n
+0 -> <HalloHallo>
+1 -> <Hallo Hallo>
+2 -> <Hallo><Hallo>
+
+3 -> <Hallo><BR Hallo>           1
+4 -> <Hallo><BR><Hallo>          2
+5 -> <Hallo><BR><BR Hallo>       3
+6 -> <Hallo><BR><BR><Hallo>      4
+7 -> <Hallo><BR><BR><BR Hallo>   5
+
+gap = max(0, n - 2)
+
+<Hallo><BR> * gap/2 <BR * gap%2 Hallo>
+
+--------------------------------------------------------------------------------
+
+"Hallo" "\n" * n "{| ..."
+
+n
+0 -> <Hallo{|>
+1 -> <Hallo>{|
+2 -> <Hallo>{|
+
+3 -> <Hallo><BR>{|           1
+4 -> <Hallo><BR>{|           2
+5 -> <Hallo><BR><BR>{|       3
+6 -> <Hallo><BR><BR>{|       4
+7 -> <Hallo><BR><BR><BR>{|   5
+8 -> <Hallo><BR><BR><BR>{|   6
+
+gap = max(0, n - 2)
+
+<Hallo> <BR> * (n+1)/2 {|
+
+--------------------------------------------------------------------------------

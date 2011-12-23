@@ -23,12 +23,11 @@ import java.net.URL;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.AstWomTestBase.TestCode;
+import org.sweble.wikitext.engine.astwom.AstWomTestCommon.TestCode;
 import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.WomParagraph;
 
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
 
@@ -36,7 +35,7 @@ public class AstWomTest
 {
 	private ParserTestResources resources;
 	
-	private AstWomTestBase common;
+	private AstWomTestCommon common;
 	
 	// =========================================================================
 	
@@ -53,7 +52,7 @@ public class AstWomTest
 		
 		resources = new ParserTestResources(directory);
 		
-		common = new AstWomTestBase(
+		common = new AstWomTestCommon(
 				resources,
 				"(.*?)/target/test-classes/",
 				"$1/src/test/resources/",
@@ -71,6 +70,7 @@ public class AstWomTest
 	@Test
 	public void testSimple() throws Exception
 	{
+		common.setExplicitTextNodes(true);
 		common.gatherParseAndPrintTest(
 				"simple",
 				new TestCode()
@@ -78,12 +78,12 @@ public class AstWomTest
 					@Override
 					public void run(WomNode root)
 					{
-						WomPage page = (WomPage) root;
-						WomParagraph p = (WomParagraph) page.getBody().getFirstChild();
-						p.setAttribute("class", "funny");
+						// WomPage page = (WomPage) root;
 					}
 				});
 	}
+	
+	// =========================================================================
 	
 	@Test
 	public void testCategories() throws Exception
@@ -102,9 +102,9 @@ public class AstWomTest
 						
 						for (WomCategory c : p.getCategories())
 						{
-							if (c.getCategory().equalsIgnoreCase("bold"))
+							if (c.getName().equalsIgnoreCase("bold"))
 							{
-								c.setCategory("bOlD");
+								c.setName("bOlD");
 								p.replaceChild(c, new CategoryAdapter("muhaha"));
 								break;
 							}
@@ -114,6 +114,8 @@ public class AstWomTest
 					}
 				});
 	}
+	
+	// =========================================================================
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCategories2() throws Exception
@@ -130,8 +132,8 @@ public class AstWomTest
 						p.setCategory("main");
 						for (WomCategory c : p.getCategories())
 						{
-							if (c.getCategory().equalsIgnoreCase("bold"))
-								c.setCategory("main");
+							if (c.getName().equalsIgnoreCase("bold"))
+								c.setName("main");
 						}
 					}
 				});

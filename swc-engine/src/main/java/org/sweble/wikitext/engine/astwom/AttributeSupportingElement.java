@@ -18,16 +18,25 @@ package org.sweble.wikitext.engine.astwom;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor.Normalization;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.lazy.AstNodeTypes;
+import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.lazy.utils.XmlCharRef;
+import org.sweble.wikitext.lazy.utils.XmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.ptk.common.ast.Text;
+import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.XmlGrammar;
 
 public abstract class AttributeSupportingElement
-        extends
-            WomBackbone
+		extends
+			WomBackbone
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -133,30 +142,16 @@ public abstract class AttributeSupportingElement
 		return attribContainer;
 	}
 	
-	/**
-	 * Give the implementing class a chance to check and possibly modify the new
-	 * value of the attribute.
-	 * 
-	 * The default behavior is to accept all values and return the value
-	 * unaltered.
-	 * 
-	 * @param name
-	 *            The name of the attribute whose value gets changed.
-	 * @param value
-	 *            The new value to check or <code>null</code> if the value shall
-	 *            be removed.
-	 * @param object
-	 * @return The (possibly modified) value to set.
-	 * @throws IllegalArgumentException
-	 *             Thrown if the specified value is illegal.
-	 * @throws UnsupportedOperationException
-	 *             Thrown if <code>null</code> was passed as value but removal
-	 *             of the attribute is not allowed or if the value of the
-	 *             specified attribute cannot be modified at all.
-	 */
-	protected String checkAttributeValue(String name, String value) throws IllegalArgumentException, UnsupportedOperationException
+	protected abstract AttributeDescriptor getAttributeDescriptor(String name);
+	
+	// should be protected
+	public AttributeDescriptor getAttributeDescriptorOrFail(String name)
 	{
-		return value;
+		AttributeDescriptor d = getAttributeDescriptor(name);
+		if (d == null)
+			throw new IllegalArgumentException("There is no attribute '" + name + "'");
+		
+		return d;
 	}
 	
 	// =========================================================================
@@ -197,63 +192,540 @@ public abstract class AttributeSupportingElement
 	@Override
 	public final NativeOrXmlAttributeAdapter removeAttribute(String name)
 	{
-		checkAttributeValue(name, null);
-		return removeAttributeUnchecked(name);
+		return removeAttributeUnchecked(checkAttributeRemoval(name), name);
 	}
 	
-	protected NativeOrXmlAttributeAdapter removeAttributeUnchecked(String name)
+	protected NativeOrXmlAttributeAdapter removeAttributeUnchecked(
+			AttributeDescriptor descriptor,
+			String name)
 	{
 		// Don't use getAstAttribContainerOrAddSupport()!
 		// If the element doesn't have any attributes then the caller is
 		// removing something that's not there and we should not create the
 		// attribute manager.
 		AttributeManager attrs = getAttribManagerOrFail();
-		return attrs.removeAttribute(name, getAstAttribContainer());
+		return attrs.removeAttribute(descriptor, name, getAstAttribContainer());
 	}
 	
 	@Override
 	public final void removeAttributeNode(WomAttribute attr) throws IllegalArgumentException
 	{
-		checkAttributeValue(attr.getName(), null);
-		removeAttributeNodeUnchecked(attr);
+		removeAttributeNodeUnchecked(checkAttributeRemoval(attr.getName()), attr);
 	}
 	
-	protected void removeAttributeNodeUnchecked(WomAttribute attr)
+	protected void removeAttributeNodeUnchecked(
+			AttributeDescriptor descriptor,
+			WomAttribute attr)
 	{
 		// Don't use getAstAttribContainerOrAddSupport()!
 		// If the element doesn't have any attributes then the caller is
 		// removing something that's not there and we should not create the
 		// attribute manager.
 		AttributeManager attrs = getAttribManagerOrFail();
-		attrs.removeAttributeNode(attr, this, getAstAttribContainer());
+		attrs.removeAttributeNode(descriptor, attr, this, getAstAttribContainer());
+	}
+	
+	private AttributeDescriptor checkAttributeRemoval(String name)
+	{
+		AttributeDescriptor d = getAttributeDescriptorOrFail(name);
+		if (!d.isRemovable())
+			throw new UnsupportedOperationException("Attribute '" + name + "' cannot be removed");
+		
+		return d;
 	}
 	
 	@Override
-	public final NativeOrXmlAttributeAdapter setAttribute(String name, String value)
+	public final NativeOrXmlAttributeAdapter setAttribute(
+			String name,
+			String value)
 	{
-		return setAttributeUnchecked(name, checkAttributeValue(name, value));
+		AttributeDescriptor d = getAttributeDescriptorOrFail(name);
+		return setAttribute(d, name, value);
 	}
 	
-	protected NativeOrXmlAttributeAdapter setAttributeUnchecked(String name, String value)
+	protected NativeOrXmlAttributeAdapter setAttribute(
+			AttributeDescriptor descriptor,
+			String name,
+			String value)
+	{
+		String altered = descriptor.verify(this, value);
+		AttributeManager attrs = getAttribManagerForModificationOrFail();
+		return attrs.setAttribute(descriptor, name, altered, this, getAstAttribContainerOrAddSupport());
+	}
+	
+	protected NativeOrXmlAttributeAdapter setAttributeUnchecked(
+			AttributeDescriptor descriptor,
+			String name,
+			String value)
 	{
 		AttributeManager attrs = getAttribManagerForModificationOrFail();
-		return attrs.setAttribute(name, value, this, getAstAttribContainerOrAddSupport());
+		return attrs.setAttribute(descriptor, name, value, this, getAstAttribContainerOrAddSupport());
 	}
 	
 	@Override
 	public final NativeOrXmlAttributeAdapter setAttributeNode(WomAttribute attr) throws IllegalArgumentException
 	{
-		String value = attr.getValue();
-		String altered = checkAttributeValue(attr.getName(), value);
-		if (altered != value)
-			attr.setValue(value);
-		
-		return setAttributeNodeUnchecked(attr);
+		AttributeDescriptor d = getAttributeDescriptorOrFail(attr.getName());
+		return setAttributeNode(d, attr);
 	}
 	
-	protected NativeOrXmlAttributeAdapter setAttributeNodeUnchecked(WomAttribute attr)
+	protected NativeOrXmlAttributeAdapter setAttributeNode(
+			AttributeDescriptor descriptor,
+			WomAttribute attr)
 	{
+		String value = attr.getValue();
+		String altered = descriptor.verify(this, value);
+		if (altered != value)
+			attr.setValue(altered);
+		
 		AttributeManager attrs = getAttribManagerForModificationOrFail();
-		return attrs.setAttributeNode(attr, this, getAstAttribContainerOrAddSupport());
+		return attrs.setAttributeNode(descriptor, attr, this, getAstAttribContainerOrAddSupport());
 	}
+	
+	// =========================================================================
+	
+	protected NativeOrXmlAttributeAdapter setAttribute(
+			AttributeDescriptor descriptor,
+			String name,
+			int value)
+	{
+		String altered = descriptor.verify(this, String.valueOf(value));
+		AttributeManager attrs = getAttribManagerForModificationOrFail();
+		return attrs.setAttribute(descriptor, name, altered, this, getAstAttribContainerOrAddSupport());
+	}
+	
+	protected int getIntAttribute(String name)
+	{
+		NativeOrXmlAttributeAdapter a = this.getAttributeNode(name);
+		if (a == null)
+			throw new InternalError("Undefined attribute: " + name);
+		return a.getIntValue();
+	}
+	
+	protected int getIntAttribute(String name, int default_)
+	{
+		NativeOrXmlAttributeAdapter a = this.getAttributeNode(name);
+		if (a == null)
+			return default_;
+		return a.getIntValue();
+	}
+	
+	// =========================================================================
+	
+	protected void addAttributes(
+			AstToWomNodeFactory womNodeFactory,
+			NodeList xmlAttributes)
+	{
+		if (xmlAttributes == null)
+			throw new NullPointerException();
+		
+		if (!xmlAttributes.isEmpty())
+			addAttributes(womNodeFactory, xmlAttributes, getAttribManagerForModificationOrFail());
+	}
+	
+	protected void addAttributes(
+			AstToWomNodeFactory womNodeFactory,
+			NodeList xmlAttributes,
+			AttributeManager attribManager)
+	{
+		Iterator<AstNode> i = xmlAttributes.iterator();
+		while (i.hasNext())
+		{
+			AstNode n = i.next();
+			if (n.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
+				continue;
+			
+			XmlAttribute astAttr = (XmlAttribute) n;
+			
+			// MediaWiki cleans up HTML and normalizes attributes to be proper
+			// XHTML attributes (lowercase).
+			String name = astAttr.getName().toLowerCase();
+			
+			// If the given element does not allow for this attribute, we just 
+			// hide it in the WOM. It can still be found in the AST.
+			AttributeDescriptor descriptor = getAttributeDescriptor(name);
+			if (descriptor == null)
+				continue;
+			
+			// Don't import hidden attributes
+			if (!descriptor.syncToAst())
+				continue;
+			
+			// We only keep the lowercase name if the attribute is one of the
+			// known attributes. There are not rules that say how the other
+			// attribute names should be formatted.
+			if (descriptor == GenericAttributeDescriptor.get())
+				name = astAttr.getName();
+			
+			String value = normalize(
+					descriptor.getNormalizationMode(),
+					astAttr.getValue());
+			
+			// All known attributes (XHTML and WOM) only have lowercase values
+			// => rectification is easy ;)
+			if (descriptor == GenericAttributeDescriptor.get())
+				value = value.toLowerCase();
+			
+			try
+			{
+				descriptor.verify(this, value);
+			}
+			catch (IllegalArgumentException e)
+			{
+				// If the given attribute has an invalid value, we just 
+				// hide it in the WOM. It can still be found and overwritten 
+				// in the AST.
+				continue;
+			}
+			
+			NativeOrXmlAttributeAdapter attr =
+					new NativeOrXmlAttributeAdapter(
+							astAttr,
+							name,
+							value);
+			
+			getAttribManagerForModificationOrFail().setAttributeNode(
+					descriptor,
+					attr,
+					this,
+					getAstAttribContainerOrAddSupport());
+		}
+	}
+	
+	// =========================================================================
+	
+	protected String normalize(Normalization normalizationMode, NodeList value)
+	{
+		switch (normalizationMode)
+		{
+			case CDATA:
+				return convertAstToStringAndNormalize(value);
+			case NON_CDATA:
+				return trimAndCollapse(convertAstToStringAndNormalize(value));
+			case NONE:
+				return convertAstToString(value);
+			default:
+				throw new AssertionError();
+		}
+	}
+	
+	protected static String convertAstToString(NodeList value)
+	{
+		StringBuilder b = new StringBuilder();
+		for (AstNode n : value)
+		{
+			switch (n.getNodeType())
+			{
+				case AstNode.NT_TEXT:
+					b.append(((Text) n).getContent());
+					break;
+				case AstNodeTypes.NT_XML_CHAR_REF:
+				{
+					int cp = ((XmlCharRef) n).getCodePoint();
+					if (!XmlGrammar.isChar(cp))
+						//throw new IllegalArgumentException();
+						StringUtils.hexCharRef(b, cp);
+					else
+						b.append(Character.toChars(cp));
+					break;
+				}
+				case AstNodeTypes.NT_XML_ENTITY_REF:
+				{
+					String resolved = ((XmlEntityRef) n).getResolved();
+					if (resolved == null)
+						//throw new IllegalArgumentException();
+						StringUtils.entityRef(b, ((XmlEntityRef) n).getName());
+					else
+						b.append(resolved);
+					break;
+				}
+				default:
+					throw new AssertionError("Unepxected node type: " + value.getNodeName());
+			}
+		}
+		return b.toString();
+	}
+	
+	protected static String convertAstToStringAndNormalize(NodeList value)
+	{
+		StringBuilder b = new StringBuilder();
+		for (AstNode n : value)
+		{
+			switch (n.getNodeType())
+			{
+				case AstNode.NT_TEXT:
+					normalizeWhitespace(b, ((Text) n).getContent());
+					break;
+				case AstNodeTypes.NT_XML_CHAR_REF:
+				{
+					int cp = ((XmlCharRef) n).getCodePoint();
+					if (!XmlGrammar.isChar(cp))
+						//throw new IllegalArgumentException();
+						StringUtils.hexCharRef(b, cp);
+					else
+						b.append(Character.toChars(cp));
+					break;
+				}
+				case AstNodeTypes.NT_XML_ENTITY_REF:
+				{
+					String resolved = ((XmlEntityRef) n).getResolved();
+					if (resolved == null)
+						//throw new IllegalArgumentException();
+						StringUtils.entityRef(b, ((XmlEntityRef) n).getName());
+					else
+						b.append(resolved);
+					break;
+				}
+				default:
+					throw new AssertionError("Unepxected node type: " + value.getNodeName());
+			}
+		}
+		return b.toString();
+	}
+	
+	private static void normalizeWhitespace(StringBuilder b, String text)
+	{
+		int len = text.length();
+		for (int i = 0; i < len; ++i)
+		{
+			char ch = text.charAt(i);
+			switch (ch)
+			{
+				case '\r': // U+000D
+					++i;
+					if (i >= len || text.charAt(i) != '\n')
+						--i;
+					b.append(' ');
+					break;
+				
+				case '\t': // U+0009
+				case '\n': // U+000A
+				case ' ': //  U+0020
+					b.append(' ');
+					break;
+				
+				default:
+					b.append(ch);
+					break;
+			}
+		}
+	}
+	
+	/**
+	 * http://www.w3.org/TR/REC-xml/#AVNormalize
+	 */
+	protected static String trimAndCollapse(String cdataNormalized)
+	{
+		String normalized = cdataNormalized;
+		
+		int from = 0;
+		int length = normalized.length();
+		
+		while ((from < length) && (normalized.charAt(from) == ' '))
+			++from;
+		
+		while ((from < length) && (normalized.charAt(length - 1) == ' '))
+			--length;
+		
+		if (from >= length)
+			return "";
+		
+		StringBuffer sb = new StringBuffer(length - from);
+		
+		while (from < length)
+		{
+			char ch = normalized.charAt(from);
+			sb.append(ch);
+			
+			while (ch == ' ')
+			{
+				ch = normalized.charAt(from);
+				if (ch != ' ')
+				{
+					sb.append(ch);
+					break;
+				}
+				++from;
+			}
+			++from;
+		}
+		
+		return sb.toString();
+	}
+	
+	// Never tested:
+	///**
+	// * http://www.w3.org/TR/REC-xml/#AVNormalize
+	// * http://www.w3.org/TR/REC-xml/#sec-line-ends
+	// */
+	//public static String normalizeCdata(XmlEntityResolver resolver, String value)
+	//{
+	//	int len = value.length();
+	//	StringBuffer result = new StringBuffer(len);
+	//	
+	//	outmost: for (int i = 0; i < len; ++i)
+	//	{
+	//		char ch = value.charAt(i);
+	//		switch (ch)
+	//		{
+	//			case '\r': // U+000D
+	//				// translating both the two-character sequence #xD #xA and 
+	//				// any #xD that is not followed by #xA to a single #xA 
+	//				// character.
+	//				if (++i < len)
+	//				{
+	//					ch = value.charAt(i);
+	//					if (ch != '\n')
+	//						--i;
+	//				}
+	//				// For a white space character (#x20, #xD, #xA, 
+	//				// #x9), append a space character (#x20) to the 
+	//				// normalized value.
+	//				result.append(' ');
+	//				break;
+	//			
+	//			case '\t': // U+0009
+	//			case '\n': // U+000A
+	//			case ' ': //  U+0020
+	//				// For a white space character (#x20, #xD, #xA, 
+	//				// #x9), append a space character (#x20) to the 
+	//				// normalized value.
+	//				result.append(' ');
+	//				break;
+	//			
+	//			case '&':
+	//			{
+	//				/*
+	//				 * [67]     Reference     ::= EntityRef | CharRef
+	//				 */
+	//				
+	//				int j = i;
+	//				ref: if (++j < len)
+	//				{
+	//					ch = value.charAt(j);
+	//					switch (ch)
+	//					{
+	//						case '#':
+	//						{
+	//							// For a character reference, append the 
+	//							// referenced character to the normalized value.
+	//							
+	//							/*
+	//							 * [66]     CharRef       ::= '&#' [0-9]+ ';'
+	//							 *                        |   '&#x' [0-9a-fA-F]+ ';'
+	//							 */
+	//							
+	//							if (++j >= len)
+	//								break ref;
+	//							
+	//							ch = value.charAt(j);
+	//							
+	//							int ref = 0;
+	//							switch (ch)
+	//							{
+	//								case 'x':
+	//									while (++j < len)
+	//									{
+	//										ch = value.charAt(j);
+	//										if (ch >= '0' && ch <= '9')
+	//										{
+	//											ref = ref * 0x10 + (ch - '0');
+	//										}
+	//										else if (ch >= 'A' && ch <= 'F')
+	//										{
+	//											ref = ref * 0x10 + (ch - 'A' + 0xA);
+	//										}
+	//										else if (ch >= 'a' && ch <= 'f')
+	//										{
+	//											ref = ref * 0x10 + (ch - 'a' + 0xa);
+	//										}
+	//										else
+	//											break;
+	//									}
+	//									
+	//									if (j < i + 4 || ch != ';')
+	//										break ref;
+	//									
+	//									break;
+	//								
+	//								default:
+	//									while (true)
+	//									{
+	//										if (ch >= '0' && ch <= '9')
+	//										{
+	//											ref = ref * 10 + (ch - '0');
+	//										}
+	//										else
+	//											break;
+	//										
+	//										if (++j >= len)
+	//											break;
+	//										
+	//										ch = value.charAt(j);
+	//									}
+	//									
+	//									if (j < i + 3 || ch != ';')
+	//										break ref;
+	//									
+	//									break;
+	//							}
+	//							
+	//							result.append((char) ref);
+	//							
+	//							i = j;
+	//							continue outmost;
+	//						}
+	//						
+	//						default:
+	//						{
+	//							// For an entity reference, recursively apply 
+	//							// step 3 of this algorithm to the replacement 
+	//							// text of the entity.
+	//							
+	//							/*
+	//							 * [68]     EntityRef     ::= '&' Name ';'
+	//							 * [4]      NameStartChar ::= ":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+	//							 * [4a]     NameChar      ::= NameStartChar | "-" | "." | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]
+	//							 * [5]      Name          ::= NameStartChar (NameChar)*
+	//							 */
+	//							
+	//							int k = j;
+	//							if (!XmlGrammar.isNameStartChar(ch))
+	//								break;
+	//							
+	//							int l = k;
+	//							while (++l < len)
+	//							{
+	//								ch = value.charAt(l);
+	//								if (!XmlGrammar.isNameChar(ch))
+	//									break;
+	//							}
+	//							
+	//							if (ch != ';')
+	//								break ref;
+	//							
+	//							result.append(resolver.resolveXmlEntity(
+	//									value.substring(k, l)));
+	//							
+	//							i = j;
+	//							continue outmost;
+	//						}
+	//					}
+	//				}
+	//				
+	//				// This is actually a syntax error ...
+	//				result.append(ch);
+	//				break;
+	//			}
+	//			
+	//			default:
+	//				// For another character, append the character to the 
+	//				// normalized value.
+	//				result.append(ch);
+	//				break;
+	//		}
+	//	}
+	//	
+	//	return result.toString();
+	//}
 }

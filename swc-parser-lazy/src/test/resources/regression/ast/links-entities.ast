@@ -13,9 +13,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -26,9 +26,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text(
         Properties:
@@ -38,9 +38,9 @@ LazyParsedPage(
             Warning (none): /regression/wikitext/links-entities.wikitext:5:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing.
           ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text(
         Properties:
@@ -50,9 +50,9 @@ LazyParsedPage(
             Warning (none): /regression/wikitext/links-entities.wikitext:7:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing.
           ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text(
         Properties:
@@ -62,9 +62,9 @@ LazyParsedPage(
             Warning (none): /regression/wikitext/links-entities.wikitext:9:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing.
           ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -75,9 +75,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -88,9 +88,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -101,9 +101,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text(
         Properties:
@@ -117,11 +117,12 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&amplifier;"
           {N} name = "amplifier"
+          {N} resolved = null
       )
       Text(" Hallo]]")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text(
         Properties:
@@ -135,11 +136,12 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&amp;"
           {N} name = "amp"
+          {N} resolved = "&"
       )
       Text("amp; Hallo]]")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -150,9 +152,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -163,9 +165,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       Text(
         Properties:
@@ -176,9 +178,9 @@ LazyParsedPage(
             Warning (informative): /regression/wikitext/links-entities.wikitext:25:9 - 10: "&" : This looks like a XML Reference, however the entity name or character code is missing.
           ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -189,9 +191,9 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Paragraph([
       InternalLink(
         Properties:
@@ -202,7 +204,7 @@ LazyParsedPage(
 
         LinkTitle([ ])
       )
-      Newline("\n")
     ])
+    Newline("\n")
   ]
 )

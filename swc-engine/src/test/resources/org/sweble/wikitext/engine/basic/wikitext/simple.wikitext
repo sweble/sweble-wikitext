@@ -1,3 +1,21 @@
-Hello
-<b class="asdf">HTML bold</b>
-'''Native bold'''
+
+Some text in a paragraph.
+
+Some text with a newline
+and some special tokens like &amp; and &#41;.
+
+<b name="value" />
+
+''' Native bold text '''
+
+<b> HTML bold text </b>
+
+<!-- An XML comment -->
+
+<!-- An illegal -- XML comment -->
+
+----
+
+<hr />
+
+[[Category:Test]]

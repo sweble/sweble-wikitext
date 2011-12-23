@@ -20,19 +20,20 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.ChildManager;
 import org.sweble.wikitext.engine.astwom.FullElement;
-import org.sweble.wikitext.engine.astwom.WomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class TitleAdapter
-        extends
-            FullElement
-        implements
-            WomTitle
+		extends
+			FullElement
+		implements
+			WomTitle
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -47,7 +48,7 @@ public class TitleAdapter
 		super(new NodeList());
 	}
 	
-	public TitleAdapter(WomNodeFactory womNodeFactory, NodeList content)
+	public TitleAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
 	{
 		super(content);
 		
@@ -55,7 +56,11 @@ public class TitleAdapter
 			throw new NullPointerException();
 		
 		if (!content.isEmpty())
-			super.addContent(womNodeFactory, content, getChildManagerForModificationOrFail());
+			super.addContent(
+					womNodeFactory,
+					content,
+					getChildManagerForModificationOrFail(),
+					true);
 	}
 	
 	// =========================================================================
@@ -84,5 +89,11 @@ public class TitleAdapter
 	public NodeList getAstChildContainer()
 	{
 		return getAstNode();
+	}
+	
+	@Override
+	protected AttributeDescriptor getAttributeDescriptor(String name)
+	{
+		return null;
 	}
 }

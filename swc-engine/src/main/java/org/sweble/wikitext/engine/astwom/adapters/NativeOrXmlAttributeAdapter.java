@@ -16,54 +16,67 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import org.sweble.wikitext.engine.astwom.WomBackbone;
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
+import org.sweble.wikitext.engine.astwom.AttributeSupportingElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.engine.astwom.WomNodeFactory;
+import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.lazy.utils.StringConversionException;
-import org.sweble.wikitext.lazy.utils.StringConverter;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
-import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.utils.XmlGrammar;
 
 public class NativeOrXmlAttributeAdapter
-        extends
-            WomBackbone
-        implements
-            WomAttribute
+		extends
+			WomBackbone
+		implements
+			WomAttribute
 {
 	private static final long serialVersionUID = 1L;
 	
 	private String name;
 	
+	/**
+	 * This value must always be normalized.
+	 */
 	private String value;
 	
 	// =========================================================================
 	
 	/**
-	 * Create a WOM attribute node from an AST attribute node.
+	 * Create a WOM attribute node from an AST attribute node. The attribute
+	 * will be normalized according to the normalization mode reported by the
+	 * descriptor.
 	 * 
-	 * @param resolver
-	 *            Used to resolve XML entity references.
 	 * @param astNode
 	 *            The AST node to create a WOM attribute from.
+	 * @param normalizedName
+	 *            The normalized name of the attribute. Normalization only
+	 *            applies to known attributes (XHTML and WOM). Names of other
+	 *            attributes are not normalized and correspond to the original
+	 *            in the AST.
+	 * @param normalizedValue
+	 *            The normalized value of the attribute. Normalization only
+	 *            applies to known attributes (XHTML and WOM). Values of other
+	 *            attributes are not normalized and correspond to the original
+	 *            in the AST.
 	 * @throws NullPointerException
 	 *             Thrown if any argument is <code>null</code>.
 	 */
-	public NativeOrXmlAttributeAdapter(WomNodeFactory nodeFactory, XmlAttribute astNode) throws NullPointerException
+	public NativeOrXmlAttributeAdapter(
+			XmlAttribute astNode,
+			String normalizedName,
+			String normalizedValue) throws NullPointerException
 	{
 		super(astNode);
 		
-		if (nodeFactory == null || astNode == null)
+		if (astNode == null || normalizedName == null || normalizedValue == null)
 			throw new NullPointerException();
 		
-		this.name = getAstNode().getName();
-		this.value = convertValue(nodeFactory, astNode);
+		this.name = normalizedName;
+		this.value = normalizedValue;
 	}
 	
 	/**
@@ -87,9 +100,6 @@ public class NativeOrXmlAttributeAdapter
 	{
 		super(null);
 		
-		if (name == null || value == null)
-			throw new NullPointerException();
-		
 		setName(name);
 		setValue(value);
 	}
@@ -108,6 +118,11 @@ public class NativeOrXmlAttributeAdapter
 		return WomNodeType.ATTRIBUTE;
 	}
 	
+	public XmlAttribute getAstNode()
+	{
+		return (XmlAttribute) super.getAstNode();
+	}
+	
 	// =========================================================================
 	
 	@Override
@@ -119,15 +134,20 @@ public class NativeOrXmlAttributeAdapter
 	@Override
 	public String setName(String name) throws IllegalArgumentException, NullPointerException
 	{
-		if (name == null)
-			throw new NullPointerException();
+		Toolbox.checkValidXmlName(name);
 		
-		if (!checkName(name))
-			throw new IllegalArgumentException("Illegal attribute name.");
+		AttributeSupportingElement parent =
+				(AttributeSupportingElement) getParent();
 		
-		if (getParent() != null && getParent().getAttribute(name) != null)
-			throw new IllegalArgumentException("Attribute with this name " +
-			        "already exists for the corresponding element!");
+		if (parent != null)
+		{
+			if (parent.getAttribute(name) != null)
+				throw new IllegalArgumentException("Attribute with this name " +
+						"already exists for the corresponding element!");
+			
+			// Check if attribute name is allowed on our parent node.
+			parent.getAttributeDescriptorOrFail(name);
+		}
 		
 		String old = getName();
 		
@@ -150,6 +170,18 @@ public class NativeOrXmlAttributeAdapter
 		if (value == null)
 			throw new NullPointerException();
 		
+		AttributeSupportingElement parent =
+				(AttributeSupportingElement) getParent();
+		
+		if (parent != null)
+		{
+			// Check if attribute name is allowed on our parent node.
+			AttributeDescriptor descriptor =
+					parent.getAttributeDescriptorOrFail(name);
+			
+			descriptor.verify(parent, value);
+		}
+		
 		String old = getValue();
 		
 		this.value = value;
@@ -168,58 +200,49 @@ public class NativeOrXmlAttributeAdapter
 	 *         if an AST node is already attached and no operation was
 	 *         performed.
 	 */
+	// should be protected
 	public boolean attachAstNode()
 	{
 		if (getAstNode() != null)
 			return false;
 		
 		super.setAstNode(
-		        Toolbox.addXmlAttrRtData(
-		                new XmlAttribute(
-		                        name,
-		                        convertValue(value),
-		                        true)));
+				Toolbox.addRtData(
+						new XmlAttribute(
+								name,
+								convertValue(value),
+								true)));
 		
 		return true;
 	}
 	
+	// should be protected
 	public AstNode detachAstNode()
 	{
 		return super.setAstNode(null);
 	}
 	
-	// =========================================================================
-	
-	public XmlAttribute getAstNode()
-	{
-		return (XmlAttribute) super.getAstNode();
-	}
-	
-	private static boolean checkName(String name)
-	{
-		return XmlGrammar.xmlName().matcher(name).matches();
-	}
-	
 	private static NodeList convertValue(String value)
 	{
-		return TextUtils.stringToAst(value);
+		return TextUtils.stringToAst(value, true);
 	}
 	
-	private static String convertValue(XmlEntityResolver resolver, XmlAttribute astNode)
+	// =========================================================================
+	
+	public int getIntValue()
+	{
+		return Integer.valueOf(getValue());
+	}
+	
+	public int getIntValue(int default_)
 	{
 		try
 		{
-			int opt = StringConverter.RESOLVE_CHAR_REF |
-			        StringConverter.RESOLVE_ENTITY_REF |
-			        StringConverter.FAIL_ON_IGNORED |
-			        StringConverter.FAIL_ON_XML_COMMENTS;
-			
-			return StringConverter.convert(astNode.getValue(), resolver, opt);
+			return Integer.valueOf(getValue());
 		}
-		catch (StringConversionException e)
+		catch (NumberFormatException e)
 		{
-			// If the parser is working correctly this should not happen...
-			throw new AssertionError();
+			return default_;
 		}
 	}
 }

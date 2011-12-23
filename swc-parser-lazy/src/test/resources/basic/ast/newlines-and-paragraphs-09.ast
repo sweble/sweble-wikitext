@@ -1,0 +1,24 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([ Text("Hallo") ])
+    Newline("\n")
+    Table(
+      Properties:
+        RTD = RtData: [0] = "{|", [1] = "\n", [2] = " |}"
+
+      [ ]
+      [
+        TableCell(
+          Properties:
+            RTD = RtData: [0] = " |", [1], [2]
+
+          [ ]
+          [ Newline("\n") ]
+        )
+      ]
+    )
+  ]
+)

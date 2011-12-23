@@ -72,6 +72,50 @@ header
 
 body
 {
+  private NodeList fixNewlinesAtBoa(NodeList content)
+  {
+    NodeList result = new NodeList();
+
+    ArrayList<AstNode> tmp = new ArrayList<AstNode>();
+
+    int count = 0;
+
+    Iterator<AstNode> i = content.iterator();
+    outer: while (i.hasNext())
+    {
+      AstNode n = i.next();
+      switch (n.getNodeType())
+      {
+        case AstNodeTypes.NT_NEWLINE:
+          ++count;
+          // FALL THROUGH
+        case AstNode.NT_TEXT:
+          if (count >= 2)
+            tmp.add(n);
+          else
+            result.add(n);
+          break;
+
+        case AstNodeTypes.NT_XML_TAG_OPEN:
+          if (count >= 2)
+          {
+            result.add(n);
+            for (AstNode n2 : tmp)
+              result.add(n2);
+            while (i.hasNext())
+              result.add(i.next());
+            return result;
+          }
+          else
+            break outer;
+
+        default:
+          break outer;
+      }
+    }
+
+    return content;
+  }
 }
 
 option
@@ -96,7 +140,9 @@ Article =
   }
   content:BolBlockContent &Eof
   {
-    yyValue = new LazyParsedPage(content, new ArrayList<Warning>());
+    yyValue = new LazyParsedPage(
+        fixNewlinesAtBoa(content),
+        new ArrayList<Warning>());
   }
 ;
 

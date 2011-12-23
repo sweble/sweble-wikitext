@@ -49,11 +49,11 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
-public class DefaultWomNodeFactory
+public class DefaultAstToWomNodeFactory
 		extends
 			AstVisitor
 		implements
-			WomNodeFactory
+			AstToWomNodeFactory
 {
 	private final WikiConfigurationInterface config;
 	
@@ -67,7 +67,7 @@ public class DefaultWomNodeFactory
 	
 	// =========================================================================
 	
-	public DefaultWomNodeFactory(WikiConfigurationInterface config, String title)
+	public DefaultAstToWomNodeFactory(WikiConfigurationInterface config, String title)
 	{
 		this.config = config;
 		this.title = title;
@@ -253,7 +253,7 @@ public class DefaultWomNodeFactory
 		P
 		{
 			@Override
-			public WomNode create(WomNodeFactory womNodeFactory, XmlElement e)
+			public WomNode create(AstToWomNodeFactory womNodeFactory, XmlElement e)
 			{
 				return new ParagraphAdapter(womNodeFactory, e);
 			}
@@ -262,7 +262,7 @@ public class DefaultWomNodeFactory
 		HR
 		{
 			@Override
-			public WomNode create(WomNodeFactory womNodeFactory, XmlElement e)
+			public WomNode create(AstToWomNodeFactory womNodeFactory, XmlElement e)
 			{
 				return new HorizontalRuleAdapter(womNodeFactory, e);
 			}
@@ -386,7 +386,7 @@ public class DefaultWomNodeFactory
 		B
 		{
 			@Override
-			public WomNode create(WomNodeFactory womNodeFactory, XmlElement e)
+			public WomNode create(AstToWomNodeFactory womNodeFactory, XmlElement e)
 			{
 				return new BoldAdapter(womNodeFactory, e);
 			}
@@ -589,7 +589,7 @@ public class DefaultWomNodeFactory
 		// =====================================================================
 		
 		public abstract WomNode create(
-				WomNodeFactory womNodeFactory,
+				AstToWomNodeFactory womNodeFactory,
 				XmlElement e);
 	}
 }

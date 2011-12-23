@@ -134,6 +134,34 @@ public abstract class WomBackbone
 		}
 	}
 	
+	/**
+	 * Called on the parent node when a new child node is added. The parent can
+	 * then check if he accepts this kind of child node or throw an exception if
+	 * he doesn't.
+	 * 
+	 * @param child
+	 *            The child node to add.
+	 * @throws IllegalArgumentException
+	 *             Thrown if the parent does not accept this kind of child node.
+	 */
+	public void acceptsChild(WomBackbone child)
+	{
+	}
+	
+	/**
+	 * Called on a node when it is added as child to some parent node. The to be
+	 * child node can then check if it can be added to this kind of parent node
+	 * or throw an exception if it can not be added to this parent node.
+	 * 
+	 * @param parent
+	 *            The parent node to which the node is added.
+	 * @throws IllegalArgumentException
+	 *             Thrown if the node cannot be added to the given parent node.
+	 */
+	public void acceptsParent(WomBackbone parent)
+	{
+	}
+	
 	// =========================================================================
 	
 	@Override

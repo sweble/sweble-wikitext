@@ -96,7 +96,7 @@ public interface WomCoreAttributes
 	 * @return The title of the element or <code>null</code> if the attribute is
 	 *         not specified.
 	 */
-	public String getTitlte();
+	public String getTitle();
 	
 	/**
 	 * Get the title of the element.
@@ -108,5 +108,5 @@ public interface WomCoreAttributes
 	 *            the attribute.
 	 * @return The old title of this element.
 	 */
-	public String setTitlte(String title);
+	public String setTitle(String title);
 }

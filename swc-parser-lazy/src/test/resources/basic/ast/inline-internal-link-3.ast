@@ -12,8 +12,8 @@ LazyParsedPage(
             Warning (informative): /basic/wikitext/inline-internal-link-3.wikitext:1:1 - 8: "[[Link!" : This looks like a Internal Link, however the finishing `]]' is missing.
           ]
       )
-      Newline("\n")
     ])
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]

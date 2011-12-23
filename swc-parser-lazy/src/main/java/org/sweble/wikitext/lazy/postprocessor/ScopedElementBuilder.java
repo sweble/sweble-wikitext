@@ -56,8 +56,8 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
-        extends
-            AstVisitor
+		extends
+			AstVisitor
 {
 	private final ParserConfigInterface config;
 	
@@ -66,8 +66,8 @@ public class ScopedElementBuilder
 	// =========================================================================
 	
 	public static LazyParsedPage process(
-	        ParserConfigInterface config,
-	        AstNode ast)
+			ParserConfigInterface config,
+			AstNode ast)
 	{
 		return (LazyParsedPage) new ScopedElementBuilder(config).go(ast);
 	}
@@ -225,9 +225,9 @@ public class ScopedElementBuilder
 	public void visit(XmlElementEmpty n)
 	{
 		if (n instanceof IntermediateTag ||
-		        config.isXmlElementAllowed(n.getName()))
+				config.isXmlElementAllowed(n.getName()))
 		{
-			stack.append(createEmptyElement(n));
+			openAndCloseScope(determineElementType(n), n);
 		}
 		else
 		{
@@ -279,6 +279,25 @@ public class ScopedElementBuilder
 	}
 	
 	// =========================================================================
+	
+	private void openAndCloseScope(ScopeType scopeType, XmlElementEmpty n)
+	{
+		Scope current = null;
+		if (scopeType.isCloseInline())
+		{
+			stack.push(scopeType, n, true);
+			
+			closeBeforeBlock(scopeType.isCloseSamePred());
+			
+			current = stack.top();
+			stack.pop();
+		}
+		
+		stack.append(createEmptyElement(n));
+		
+		if (current != null)
+			reopenClosedInlineScopes(current.getClosedInline());
+	}
 	
 	private void openScope(ScopeType scopeType, AstNode n)
 	{
@@ -411,8 +430,8 @@ public class ScopedElementBuilder
 		Scope current = stack.top();
 		
 		boolean isRecordClosed =
-		        current.getType().isContinueClosed() ||
-		                current.getType().isReopenClosedInline();
+				current.getType().isContinueClosed() ||
+						current.getType().isReopenClosedInline();
 		
 		Scope i = current;
 		while (i.hasPrevious())
@@ -428,10 +447,10 @@ public class ScopedElementBuilder
 				continue;
 			}
 			else if (closeSamePrec &&
-			        current.getElement() instanceof NamedXmlElement)
+					current.getElement() instanceof NamedXmlElement)
 			{
 				final NamedXmlElement e =
-				        (NamedXmlElement) current.getElement();
+						(NamedXmlElement) current.getElement();
 				
 				if (s.match(/*current.getType(), */e))
 				{
@@ -444,7 +463,10 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	private void closeScopesBeforeClosingTag(Scope from, Scope toIncl, Scope reopenIn)
+	private void closeScopesBeforeClosingTag(
+			Scope from,
+			Scope toIncl,
+			Scope reopenIn)
 	{
 		Scope i = toIncl;
 		while (true)
@@ -457,7 +479,7 @@ public class ScopedElementBuilder
 					c = reopenIn.clearContent();
 				
 				Scope s = stack.insertAfter(
-				        reopenIn, i.getType(), i.getElement(), false);
+						reopenIn, i.getType(), i.getElement(), false);
 				
 				if (c != null)
 					s.setContent(c);
@@ -473,7 +495,10 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	private void closeScopesBeforeClosingTag(Scope from, Scope toIncl, XmlElementClose close_)
+	private void closeScopesBeforeClosingTag(
+			Scope from,
+			Scope toIncl,
+			XmlElementClose close_)
 	{
 		LinkedList<Scope> reopen = null;
 		
@@ -547,7 +572,10 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	private Scope findMatchingOpeningTag(ScopeType scopeType, Scope current, final NamedXmlElement closing)
+	private Scope findMatchingOpeningTag(
+			ScopeType scopeType,
+			Scope current,
+			final NamedXmlElement closing)
 	{
 		if (scopeType.isInlineScope())
 			return findMatchingInlineOpeningTag(scopeType, current, closing);
@@ -561,7 +589,10 @@ public class ScopedElementBuilder
 		return findMatchingSpecialOpeningTag(scopeType, current, closing);
 	}
 	
-	private Scope findMatchingInlineOpeningTag(ScopeType scopeType, Scope s, NamedXmlElement closing)
+	private Scope findMatchingInlineOpeningTag(
+			ScopeType scopeType,
+			Scope s,
+			NamedXmlElement closing)
 	{
 		do
 		{
@@ -575,7 +606,10 @@ public class ScopedElementBuilder
 		return null;
 	}
 	
-	private Scope findMatchingTableOpeningTag(ScopeType scopeType, Scope s, NamedXmlElement closing)
+	private Scope findMatchingTableOpeningTag(
+			ScopeType scopeType,
+			Scope s,
+			NamedXmlElement closing)
 	{
 		do
 		{
@@ -586,7 +620,10 @@ public class ScopedElementBuilder
 		return null;
 	}
 	
-	private Scope findMatchingBlockOpeningTag(ScopeType scopeType, Scope s, NamedXmlElement closing)
+	private Scope findMatchingBlockOpeningTag(
+			ScopeType scopeType,
+			Scope s,
+			NamedXmlElement closing)
 	{
 		do
 		{
@@ -600,7 +637,10 @@ public class ScopedElementBuilder
 		return null;
 	}
 	
-	private Scope findMatchingSpecialOpeningTag(ScopeType scopeType, Scope s, NamedXmlElement closing)
+	private Scope findMatchingSpecialOpeningTag(
+			ScopeType scopeType,
+			Scope s,
+			NamedXmlElement closing)
 	{
 		do
 		{
@@ -629,9 +669,9 @@ public class ScopedElementBuilder
 		{
 			final AstNode c0 = content.get(0);
 			if (s.getType().dropIfOnlyWhitespace() &&
-			        c0.isNodeType(AstNodeTypes.NT_WHITESPACE) &&
-			        s.isOpen() == false &&
-			        c == null)
+					c0.isNodeType(AstNodeTypes.NT_WHITESPACE) &&
+					s.isOpen() == false &&
+					c == null)
 				return c0;
 		}
 		
@@ -646,10 +686,10 @@ public class ScopedElementBuilder
 			final XmlElementOpen open = (XmlElementOpen) s.getElement();
 			final XmlElementClose close = (XmlElementClose) c;
 			return createElement(
-			        open,
-			        content,
-			        close,
-			        s.isOpen());
+					open,
+					content,
+					close,
+					s.isOpen());
 		}
 	}
 	
@@ -665,13 +705,16 @@ public class ScopedElementBuilder
 		return createEmptyElement(open, open.getXmlAttributes(), false);
 	}
 	
-	private XmlElement createEmptyElement(NamedXmlElement e, NodeList attrs, boolean wasEmpty)
+	private XmlElement createEmptyElement(
+			NamedXmlElement e,
+			NodeList attrs,
+			boolean wasEmpty)
 	{
 		XmlElement element = new XmlElement(
-		        e.getName(),
-		        true,
-		        attrs,
-		        new NodeList());
+				e.getName(),
+				true,
+				attrs,
+				new NodeList());
 		
 		if (config.isGatherRtData())
 		{
@@ -697,16 +740,16 @@ public class ScopedElementBuilder
 	}
 	
 	private XmlElement createElement(
-	        XmlElementOpen open,
-	        NodeList body,
-	        XmlElementClose close,
-	        boolean hasOpen)
+			XmlElementOpen open,
+			NodeList body,
+			XmlElementClose close,
+			boolean hasOpen)
 	{
 		XmlElement e = new XmlElement(
-		        open.getName(),
-		        false,
-		        open.getXmlAttributes(),
-		        body);
+				open.getName(),
+				false,
+				open.getXmlAttributes(),
+				body);
 		
 		if (config.isGatherRtData())
 		{

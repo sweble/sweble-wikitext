@@ -77,8 +77,8 @@ LazyParsedPage(
                 ]
                 [ Text("Clarence Saxby Chambliss Jr") ]
               )
-              Newline("\n")
             ])
+            Newline("\n")
           ]
         )
         TableRow(
@@ -163,8 +163,8 @@ LazyParsedPage(
                     [ ]
                     [ ]
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -177,10 +177,12 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -204,17 +206,15 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  XmlElement(
-                    Properties:
-                      RTD = RtData: [0] = "<hr", [1] = "/>", [2]
-                      {N} empty = true
-                      {N} name = "hr"
+                XmlElement(
+                  Properties:
+                    RTD = RtData: [0] = "<hr", [1] = "/>", [2]
+                    {N} empty = true
+                    {N} name = "hr"
 
-                    [ ]
-                    [ ]
-                  )
-                ])
+                  [ ]
+                  [ ]
+                )
                 XmlElement(
                   Properties:
                     RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
@@ -285,14 +285,16 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -334,8 +336,8 @@ LazyParsedPage(
                       )
                     ]
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -380,12 +382,14 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("office")
                       XmlEntityRef(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                     ]
                   )
@@ -413,12 +417,14 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("with")
                   XmlEntityRef(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   InternalLink(
                     Properties:
@@ -429,8 +435,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -443,32 +449,34 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -481,10 +489,11 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("by")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -504,8 +513,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -558,17 +567,15 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  XmlElement(
-                    Properties:
-                      RTD = RtData: [0] = "<hr", [1] = "/>", [2]
-                      {N} empty = true
-                      {N} name = "hr"
+                XmlElement(
+                  Properties:
+                    RTD = RtData: [0] = "<hr", [1] = "/>", [2]
+                    {N} empty = true
+                    {N} name = "hr"
 
-                    [ ]
-                    [ ]
-                  )
-                ])
+                  [ ]
+                  [ ]
+                )
                 XmlElement(
                   Properties:
                     RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
@@ -604,18 +611,21 @@ LazyParsedPage(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
                           Text("House")
                           XmlEntityRef(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
                           Text("of")
                           XmlEntityRef(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
                           Text("Representatives")
                         ]
@@ -709,6 +719,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("office")
                     ]
@@ -727,20 +738,23 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   XmlEntityRef(
                     Properties:
                       RTD = RtData: [0] = "&ndash;"
                       {N} name = "ndash"
+                      {N} resolved = "\u2013"
                   )
                   XmlEntityRef(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("January 3, 2003")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -753,32 +767,34 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -791,10 +807,11 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("by")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -814,8 +831,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -838,10 +855,11 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("by")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -878,8 +896,8 @@ LazyParsedPage(
                       )
                     ]
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -892,8 +910,10 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1] = "|", [2]
@@ -917,18 +937,16 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  Text(" ")
-                  XmlElement(
-                    Properties:
-                      RTD = RtData: [0] = "<hr", [1] = "/>", [2]
-                      {N} empty = true
-                      {N} name = "hr"
+                Paragraph([ Text(" ") ])
+                XmlElement(
+                  Properties:
+                    RTD = RtData: [0] = "<hr", [1] = "/>", [2]
+                    {N} empty = true
+                    {N} name = "hr"
 
-                    [ ]
-                    [ ]
-                  )
-                ])
+                  [ ]
+                  [ ]
+                )
                 XmlElement(
                   Properties:
                     RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
@@ -976,13 +994,15 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -1017,6 +1037,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("office")
                     ]
@@ -1035,20 +1056,23 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   XmlEntityRef(
                     Properties:
                       RTD = RtData: [0] = "&ndash;"
                       {N} name = "ndash"
+                      {N} resolved = "\u2013"
                   )
                   XmlEntityRef(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("January 3, 2007")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -1061,32 +1085,34 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -1099,10 +1125,11 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("by")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -1122,8 +1149,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -1146,10 +1173,11 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("by")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -1169,8 +1197,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -1183,49 +1211,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1236,49 +1266,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1289,49 +1321,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1342,49 +1376,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1395,49 +1431,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1448,49 +1486,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1501,49 +1541,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1554,49 +1596,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1607,49 +1651,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1660,49 +1706,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1713,49 +1761,51 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
         TableRow(
@@ -1786,18 +1836,16 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  XmlElement(
-                    Properties:
-                      RTD = RtData: [0] = "<hr", [1] = "/>", [2]
-                      {N} empty = true
-                      {N} name = "hr"
+                XmlElement(
+                  Properties:
+                    RTD = RtData: [0] = "<hr", [1] = "/>", [2]
+                    {N} empty = true
+                    {N} name = "hr"
 
-                    [ ]
-                    [ ]
-                  )
-                  Newline("\n")
-                ])
+                  [ ]
+                  [ ]
+                )
+                Newline("\n")
               ]
             )
           ]
@@ -1814,10 +1862,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Born")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Born") ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -1889,6 +1935,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("67)")
                     ]
@@ -1926,8 +1973,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -1940,10 +1987,12 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -1956,10 +2005,11 @@ LazyParsedPage(
                     Properties:
                       RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
+                      {N} resolved = "\u00A0"
                   )
                   Text("party")
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -1984,8 +2034,8 @@ LazyParsedPage(
                       [ Text("Republican") ]
                     )
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -2003,10 +2053,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Spouse(s)")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Spouse(s)") ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -2015,10 +2063,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Julianne Chambliss")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Julianne Chambliss") ])
+                Newline("\n")
               ]
             )
           ]
@@ -2031,17 +2077,15 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
+            Paragraph([ Newline("\n") ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
 
               [ ]
               [
-                Paragraph([
-                  Text(" Residence")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Residence") ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -2070,8 +2114,8 @@ LazyParsedPage(
 
                     LinkTitle([ ])
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -2107,13 +2151,14 @@ LazyParsedPage(
                           Properties:
                             RTD = RtData: [0] = "&nbsp;"
                             {N} name = "nbsp"
+                            {N} resolved = "\u00A0"
                         )
                         Text("mater")
                       ]
                     )
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -2148,8 +2193,8 @@ LazyParsedPage(
                       [ Text("University of Tennessee College of Law") ]
                     )
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -2166,10 +2211,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Occupation")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Occupation") ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -2178,10 +2221,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Lawyer")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Lawyer") ])
+                Newline("\n")
               ]
             )
           ]
@@ -2194,18 +2235,18 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
 
               [ ]
               [
-                Paragraph([
-                  Text(" Religion")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Religion") ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -2230,8 +2271,8 @@ LazyParsedPage(
                       [ Text("Episcopalian") ]
                     )
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -2244,20 +2285,20 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
 
               [ ]
               [
-                Paragraph([
-                  Text(" Website")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Website") ])
+                Newline("\n")
               ]
             )
             TableCell(
@@ -2280,8 +2321,8 @@ LazyParsedPage(
                     )
                     [ Text("www.Saxby.org") ]
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
           ]
@@ -2294,21 +2335,23 @@ LazyParsedPage(
           [
             Newline("\n")
             Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
-            Newline("\n")
+            Paragraph([
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+              Newline("\n")
+            ])
           ]
         )
       ]
@@ -2378,9 +2421,9 @@ LazyParsedPage(
         LinkTitle([ ])
       )
       Text(", chairing the committee during the 109th Congress (2005-2007).")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -2552,9 +2595,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" Fraternity.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("During the ")
           InternalLink(
@@ -2585,10 +2628,10 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Text("\t ")
-          Newline("\n")
         ])
+        Newline("\n")
+        Text("\t ")
+        Newline("\n")
         Paragraph([
           Text("Chambliss is a member of ")
           InternalLink(
@@ -2616,9 +2659,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(". He married Julianne Frohbert in 1966 and they have two children and two grandchildren.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Chambliss's son Bo is a registered lobbyist for the ")
           InternalLink(
@@ -2654,9 +2697,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2719,9 +2762,9 @@ LazyParsedPage(
             )
           )
           Text(".")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Chambliss was elected from the ")
           InternalLink(
@@ -2749,9 +2792,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" retired. He was elected with 63% of the vote\u2014an unexpectedly large margin since the 8th had never elected a Republican. He faced a tough re-election fight in 1996 against Macon attorney Jim Wiggins, but breezed to reelection in 1998 and 2000.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("During his four terms in the House, Chambliss served on the ")
           InternalLink(
@@ -2764,9 +2807,9 @@ LazyParsedPage(
             LinkTitle([ ])
           )
           Text(" and chaired the House Intelligence Subcommittee on Terrorism and Homeland Security.")
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Less than a month after the ")
           InternalLink(
@@ -2792,9 +2835,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("Chambliss was criticized for remarks he made during a November 19, 2001 meeting with first responders in ")
           InternalLink(
@@ -2825,9 +2868,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           Text("In 2006, Chambliss was among several congressional Republicans and Democrats who returned campaign donations from ")
           InternalLink(
@@ -2848,9 +2891,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -3195,9 +3238,9 @@ LazyParsedPage(
                   )
                 ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
             Paragraph([
               Text("In 2008, he was named one of 10 worst congressmen by Esquire Magazine, which described the competition as \"staggering.\" ")
               TagExtension(
@@ -3208,9 +3251,9 @@ LazyParsedPage(
 
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -3429,9 +3472,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("Chambliss received criticism from Democrats and Republicans for this ad, pointing out that he, who hadn't served in the Vietnam War due to receiving military deferments, had attacked a Vietnam War veteran who lost three limbs during his service for not being tough enough on issues of war and homeland security. Republican Senator ")
                   InternalLink(
@@ -3516,14 +3559,12 @@ LazyParsedPage(
                       )
                     ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
-                Paragraph([
-                  Text("Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.")
-                  Newline("\n")
-                  Newline("\n")
-                ])
+                Newline("\n")
+                Newline("\n")
+                Paragraph([ Text("Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.") ])
+                Newline("\n")
+                Newline("\n")
               ]
             )
             Section(
@@ -3808,11 +3849,9 @@ LazyParsedPage(
                 )
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
-                  Text("Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008.")
-                  Newline("\n")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008.") ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("Chambliss defeated Martin 57.5% to 42.5% in the runoff election.")
                   TagExtension(
@@ -3849,9 +3888,9 @@ LazyParsedPage(
                       )
                     ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
               ]
             )
             Section(
@@ -3922,9 +3961,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
               ]
             )
           ]
@@ -3996,9 +4035,9 @@ LazyParsedPage(
                     ]
                   )
                   Text(" (S. 1025), attracting more cosponsors than any other fundamental tax reform bill introduced.")
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("Although Chambliss has a conservative voting record, he has participated in bi-partisan legislation\u2014such as the ")
                   InternalLink(
@@ -4092,9 +4131,9 @@ LazyParsedPage(
                     LinkTitle([ ])
                   )
                   Text(", a bipartisan group which has worked to create a compromise surrounding the energy policy of the United States.")
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
               ]
             )
             Section(
@@ -4153,9 +4192,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On ")
                   InternalLink(
@@ -4204,9 +4243,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On agricultural issues, the ")
                   InternalLink(
@@ -4227,9 +4266,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On economic issues including voting on the national budget, national spending, and taxes, in 2007, the National Tax Limitation Committee gave Chambliss a 90% rating,")
                   TagExtension(
@@ -4259,9 +4298,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On civil liberties and civil rights issues, in 2007, the ")
                   InternalLink(
@@ -4306,9 +4345,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On education issues, in 2008, the Center for Education Reform, gave Chambliss a score of 9 out of 9, and called him a \"real reformer\",")
                   TagExtension(
@@ -4338,9 +4377,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On organized labor issues, in 2007 the ")
                   InternalLink(
@@ -4380,9 +4419,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
                 Paragraph([
                   Text("On environmental issues, in 2003 the ")
                   InternalLink(
@@ -4403,9 +4442,9 @@ LazyParsedPage(
 
                     [ ]
                   )
-                  Newline("\n")
-                  Newline("\n")
                 ])
+                Newline("\n")
+                Newline("\n")
               ]
             )
           ]
@@ -4513,8 +4552,8 @@ LazyParsedPage(
                       )
                     ]
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -4523,53 +4562,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Year")
-                  Newline("\n")
-                ])
-              ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1], [2]
-
-              [ ]
-              [ Newline("\n") ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
-
-              [ ]
-              [
-                Paragraph([
-                  Text("Democrat")
-                  Newline("\n")
-                ])
-              ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
-
-              [ ]
-              [
-                Paragraph([
-                  Text("Votes")
-                  Newline("\n")
-                ])
-              ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
-
-              [ ]
-              [
-                Paragraph([
-                  Text("Pct")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Year") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -4585,10 +4579,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Republican")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Democrat") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -4597,10 +4589,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Votes")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Votes") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -4609,10 +4599,45 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Pct")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Pct") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1], [2]
+
+              [ ]
+              [ Newline("\n") ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1] = "|", [2]
+
+              [ ]
+              [
+                Paragraph([ Text("Republican") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1] = "|", [2]
+
+              [ ]
+              [
+                Paragraph([ Text("Votes") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1] = "|", [2]
+
+              [ ]
+              [
+                Paragraph([ Text("Pct") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -4649,8 +4674,8 @@ LazyParsedPage(
                           [ Text("1994") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4675,10 +4700,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Craig Mathis")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Craig Mathis") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4704,10 +4727,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("53,408")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("53,408") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4725,10 +4746,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("37%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("37%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4760,8 +4779,8 @@ LazyParsedPage(
 
                         [ Text("Saxby Chambliss") ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4787,10 +4806,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("89,591")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("89,591") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4808,10 +4825,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("63%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("63%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4850,8 +4865,8 @@ LazyParsedPage(
                           [ Text("1996") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4876,10 +4891,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Jim Wiggins")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Jim Wiggins") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4905,10 +4918,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("84,506")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("84,506") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4926,10 +4937,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("47%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("47%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4961,8 +4970,8 @@ LazyParsedPage(
 
                         [ Text("Saxby Chambliss") ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -4988,10 +4997,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("93,619")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("93,619") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5009,10 +5016,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("53%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("53%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5051,8 +5056,8 @@ LazyParsedPage(
                           [ Text("1998") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5077,10 +5082,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Ronald L. Cain")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Ronald L. Cain") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5106,10 +5109,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("53,079")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("53,079") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5127,10 +5128,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("38%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("38%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5162,8 +5161,8 @@ LazyParsedPage(
 
                         [ Text("Saxby Chambliss") ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5189,10 +5188,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("87,993")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("87,993") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5210,10 +5207,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("62%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("62%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5252,8 +5247,8 @@ LazyParsedPage(
                           [ Text("2000") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5293,8 +5288,8 @@ LazyParsedPage(
                           [ Text("Jim Marshall") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5320,10 +5315,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("79,051")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("79,051") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5341,10 +5334,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("41%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("41%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5376,8 +5367,8 @@ LazyParsedPage(
 
                         [ Text("Saxby Chambliss") ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5403,10 +5394,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("113,380")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("113,380") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5424,10 +5413,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("59%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("59%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5506,8 +5493,8 @@ LazyParsedPage(
                       )
                     ]
                   )
-                  Newline("\n")
                 ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5516,53 +5503,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Year")
-                  Newline("\n")
-                ])
-              ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1], [2]
-
-              [ ]
-              [ Newline("\n") ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
-
-              [ ]
-              [
-                Paragraph([
-                  Text("Democrat")
-                  Newline("\n")
-                ])
-              ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
-
-              [ ]
-              [
-                Paragraph([
-                  Text("Votes")
-                  Newline("\n")
-                ])
-              ]
-            )
-            TableHeader(
-              Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
-
-              [ ]
-              [
-                Paragraph([
-                  Text("Pct")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Year") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5578,10 +5520,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Republican")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Democrat") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5590,10 +5530,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Votes")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Votes") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5602,10 +5540,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Pct")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Pct") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5621,10 +5557,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("3rd Party")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Republican") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5633,10 +5567,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Party")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Votes") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5645,10 +5577,25 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Votes")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Pct") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1], [2]
+
+              [ ]
+              [ Newline("\n") ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1] = "|", [2]
+
+              [ ]
+              [
+                Paragraph([ Text("3rd Party") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5657,10 +5604,28 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text("Pct")
-                  Newline("\n")
-                ])
+                Paragraph([ Text("Party") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1] = "|", [2]
+
+              [ ]
+              [
+                Paragraph([ Text("Votes") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                RTD = RtData: [0] = "!", [1] = "|", [2]
+
+              [ ]
+              [
+                Paragraph([ Text("Pct") ])
+                Newline("\n")
               ]
             )
             TableHeader(
@@ -5697,8 +5662,8 @@ LazyParsedPage(
                           [ Text("2002") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5733,8 +5698,8 @@ LazyParsedPage(
 
                         LinkTitle([ ])
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5760,10 +5725,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("932,422")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("932,422") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5781,10 +5744,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("46%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("46%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5835,8 +5796,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5862,10 +5823,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("1,071,352")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("1,071,352") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5883,10 +5842,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("53%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("53%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5911,10 +5868,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Claude \"Sandy\" Thomas")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Claude \"Sandy\" Thomas") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5947,8 +5902,8 @@ LazyParsedPage(
                           [ Text("Libertarian") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -5974,10 +5929,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("27,830")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("27,830") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6003,10 +5956,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("1%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("1%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6109,9 +6060,9 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
-                      Newline("\n")
                     ])
+                    Newline("\n")
+                    Newline("\n")
                   ]
                 )
               ]
@@ -6154,10 +6105,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Party")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Party") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -6175,10 +6124,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Candidate")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Candidate") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -6196,10 +6143,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("Votes")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("Votes") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -6217,10 +6162,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("%") ])
+                    Newline("\n")
                   ]
                 )
                 TableHeader(
@@ -6238,10 +6181,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text("\u00B1%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text("\u00B1%") ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -6323,8 +6264,8 @@ LazyParsedPage(
                           [ Text("Republican") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6354,8 +6295,8 @@ LazyParsedPage(
                         LinkTitle([ ])
                       )
                       Text(")")
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6373,10 +6314,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 1,226,528")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 1,226,528") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6394,10 +6333,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 57.5%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 57.5%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6498,8 +6435,8 @@ LazyParsedPage(
                           [ Text("Democratic") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6533,8 +6470,8 @@ LazyParsedPage(
                           [ Text("Jim Martin") ]
                         )
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6552,10 +6489,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 907,916")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 907,916") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6573,10 +6508,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 42.5%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 42.5%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6656,8 +6589,8 @@ LazyParsedPage(
 
                         [ Text("Majority") ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6675,10 +6608,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 318,612")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 318,612") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6696,10 +6627,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 14.9%")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 14.9%") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6794,8 +6723,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -6813,10 +6742,8 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" 2,134,444")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" 2,134,444") ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -7621,8 +7548,8 @@ LazyParsedPage(
 
                         LinkTitle([ ])
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -7679,6 +7606,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -7718,8 +7646,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -7764,18 +7692,21 @@ LazyParsedPage(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
                           Text("of")
                           XmlEntityRef(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
                           Text("the")
                           XmlEntityRef(
                             Properties:
                               RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
+                              {N} resolved = "\u00A0"
                           )
                           InternalLink(
                             Properties:
@@ -7794,18 +7725,21 @@ LazyParsedPage(
                                   Properties:
                                     RTD = RtData: [0] = "&nbsp;"
                                     {N} name = "nbsp"
+                                    {N} resolved = "\u00A0"
                                 )
                                 Text("House")
                                 XmlEntityRef(
                                   Properties:
                                     RTD = RtData: [0] = "&nbsp;"
                                     {N} name = "nbsp"
+                                    {N} resolved = "\u00A0"
                                 )
                                 Text("of")
                                 XmlEntityRef(
                                   Properties:
                                     RTD = RtData: [0] = "&nbsp;"
                                     {N} name = "nbsp"
+                                    {N} resolved = "\u00A0"
                                 )
                                 Text("Representatives")
                               ]
@@ -7851,8 +7785,8 @@ LazyParsedPage(
                         [ ]
                       )
                       Text("1995 \u2013 2003        ")
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -7892,6 +7826,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -7948,8 +7883,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -8001,8 +7936,8 @@ LazyParsedPage(
 
                         LinkTitle([ ])
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -8075,6 +8010,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -8114,8 +8050,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -8193,6 +8129,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&ndash;"
                           {N} name = "ndash"
+                          {N} resolved = "\u2013"
                       )
                       Text(" present        ")
                       XmlElement(
@@ -8241,8 +8178,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -8283,8 +8220,8 @@ LazyParsedPage(
 
                         [ Text("Incumbent") ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -8325,11 +8262,9 @@ LazyParsedPage(
                     )
                   ]
                   [
-                    Paragraph([
-                      Text(" Political offices")
-                      Newline("\n")
-                      Newline("\n")
-                    ])
+                    Paragraph([ Text(" Political offices") ])
+                    Newline("\n")
+                    Newline("\n")
                   ]
                 )
               ]
@@ -8386,6 +8321,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -8454,16 +8390,16 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      XmlElement(
-                        Properties:
-                          RTD = RtData: [0], [1], [2]
-                          {N} empty = false
-                          {N} name = "small"
-
-                        [ ]
-                        [ Newline("\n") ]
-                      )
                     ])
+                    XmlElement(
+                      Properties:
+                        RTD = RtData: [0], [1], [2]
+                        {N} empty = false
+                        {N} name = "small"
+
+                      [ ]
+                      [ Newline("\n") ]
+                    )
                   ]
                 )
                 TableCell(
@@ -8538,8 +8474,8 @@ LazyParsedPage(
                         [ ]
                       )
                       Text("2005 \u2013 2007        ")
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -8579,6 +8515,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -8647,16 +8584,16 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      XmlElement(
-                        Properties:
-                          RTD = RtData: [0], [1], [2]
-                          {N} empty = false
-                          {N} name = "small"
-
-                        [ ]
-                        [ Newline("\n") ]
-                      )
                     ])
+                    XmlElement(
+                      Properties:
+                        RTD = RtData: [0], [1], [2]
+                        {N} empty = false
+                        {N} name = "small"
+
+                      [ ]
+                      [ Newline("\n") ]
+                    )
                   ]
                 )
               ]
@@ -8708,8 +8645,8 @@ LazyParsedPage(
 
                         LinkTitle([ ])
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -8766,6 +8703,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -8834,16 +8772,16 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      XmlElement(
-                        Properties:
-                          RTD = RtData: [0], [1], [2]
-                          {N} empty = false
-                          {N} name = "small"
-
-                        [ ]
-                        [ Newline("\n") ]
-                      )
                     ])
+                    XmlElement(
+                      Properties:
+                        RTD = RtData: [0], [1], [2]
+                        {N} empty = false
+                        {N} name = "small"
+
+                      [ ]
+                      [ Newline("\n") ]
+                    )
                   ]
                 )
                 TableCell(
@@ -8931,8 +8869,8 @@ LazyParsedPage(
                         [ ]
                       )
                       Text("61st        ")
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
                 TableCell(
@@ -8972,6 +8910,7 @@ LazyParsedPage(
                         Properties:
                           RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
+                          {N} resolved = "\u00A0"
                       )
                       Text("by")
                       XmlElement(
@@ -9040,8 +8979,8 @@ LazyParsedPage(
                           )
                         ]
                       )
-                      Newline("\n")
                     ])
+                    Newline("\n")
                   ]
                 )
               ]
@@ -9322,6 +9261,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -9407,6 +9347,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -10979,6 +10920,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -11064,6 +11006,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -11426,6 +11369,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Westmoreland")
                                         ]
@@ -11435,6 +11379,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11454,6 +11399,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Johnson")
                                         ]
@@ -11463,6 +11409,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(D), ")
                                     InternalLink(
@@ -11482,6 +11429,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Lewis")
                                         ]
@@ -11491,6 +11439,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(D), ")
                                     InternalLink(
@@ -11510,6 +11459,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Price")
                                         ]
@@ -11519,6 +11469,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11538,6 +11489,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Woodall")
                                         ]
@@ -11547,6 +11499,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11566,6 +11519,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Scott")
                                         ]
@@ -11575,6 +11529,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11594,6 +11549,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Graves")
                                         ]
@@ -11603,6 +11559,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11618,6 +11575,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11637,6 +11595,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Gingrey")
                                         ]
@@ -11646,6 +11605,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(R), ")
                                     InternalLink(
@@ -11665,6 +11625,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Barrow")
                                         ]
@@ -11674,6 +11635,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(D), ")
                                     InternalLink(
@@ -11693,6 +11655,7 @@ LazyParsedPage(
                                             Properties:
                                               RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
+                                              {N} resolved = "\u00A0"
                                           )
                                           Text("Scott")
                                         ]
@@ -11702,6 +11665,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("(D)")
                                   ]
@@ -11805,6 +11769,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11825,6 +11790,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11845,6 +11811,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11865,6 +11832,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11885,6 +11853,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11905,6 +11874,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11925,6 +11895,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11945,6 +11916,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11965,6 +11937,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -11985,6 +11958,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12005,6 +11979,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12025,6 +12000,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12045,6 +12021,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12065,6 +12042,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12085,6 +12063,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12105,6 +12084,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12125,6 +12105,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12145,6 +12126,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12165,6 +12147,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12185,6 +12168,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12205,6 +12189,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12225,6 +12210,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12245,6 +12231,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12265,6 +12252,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12285,6 +12273,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12305,6 +12294,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12325,6 +12315,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12345,6 +12336,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12365,6 +12357,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12385,6 +12378,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12405,6 +12399,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12425,6 +12420,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12445,6 +12441,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12465,6 +12462,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12485,6 +12483,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12505,6 +12504,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12525,6 +12525,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12545,6 +12546,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12565,6 +12567,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12585,6 +12588,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12605,6 +12609,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12625,6 +12630,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12645,6 +12651,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12665,6 +12672,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12685,6 +12693,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12705,6 +12714,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12725,6 +12735,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12745,6 +12756,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12765,6 +12777,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12785,6 +12798,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     XmlElement(
@@ -12815,6 +12829,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     InternalLink(
                                       Properties:
@@ -12834,6 +12849,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12854,6 +12870,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12874,6 +12891,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12894,6 +12912,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -12914,6 +12933,7 @@ LazyParsedPage(
                                       Properties:
                                         RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
+                                        {N} resolved = "\u00A0"
                                     )
                                     Text("\u2022 ")
                                     InternalLink(
@@ -13211,6 +13231,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -13296,6 +13317,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -13816,6 +13838,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -13879,6 +13902,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -13942,6 +13966,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14010,6 +14035,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14073,6 +14099,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14136,6 +14163,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14199,6 +14227,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14262,6 +14291,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14325,6 +14355,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14388,6 +14419,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14451,6 +14483,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14514,6 +14547,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14577,6 +14611,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14640,6 +14675,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14703,6 +14739,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14766,6 +14803,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14834,6 +14872,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14897,6 +14936,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -14961,6 +15001,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15025,6 +15066,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15111,6 +15153,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15174,6 +15217,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15237,6 +15281,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15300,6 +15345,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15363,6 +15409,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15426,6 +15473,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15489,6 +15537,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15552,6 +15601,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15615,6 +15665,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15678,6 +15729,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15741,6 +15793,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15804,6 +15857,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15867,6 +15921,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15930,6 +15985,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -15993,6 +16049,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -16056,6 +16113,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -16119,6 +16177,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -16187,6 +16246,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -16256,6 +16316,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -16320,6 +16381,7 @@ LazyParsedPage(
                                                                                   Properties:
                                                                                     RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
+                                                                                    {N} resolved = "\u2013"
                                                                                 )
                                                                                 Text(" ")
                                                                                 Italics(
@@ -16648,6 +16710,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -16733,6 +16796,7 @@ LazyParsedPage(
                                                       Properties:
                                                         RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
+                                                        {N} resolved = "\u00B7"
                                                     )
                                                   ]
                                                 )
@@ -16963,16 +17027,19 @@ LazyParsedPage(
                                                   Properties:
                                                     RTD = RtData: [0] = "&nbsp;"
                                                     {N} name = "nbsp"
+                                                    {N} resolved = "\u00A0"
                                                 )
                                                 XmlEntityRef(
                                                   Properties:
                                                     RTD = RtData: [0] = "&nbsp;"
                                                     {N} name = "nbsp"
+                                                    {N} resolved = "\u00A0"
                                                 )
                                                 XmlEntityRef(
                                                   Properties:
                                                     RTD = RtData: [0] = "&nbsp;"
                                                     {N} name = "nbsp"
+                                                    {N} resolved = "\u00A0"
                                                 )
                                               ]
                                             )
@@ -22096,8 +22163,8 @@ LazyParsedPage(
         )
         Newline("\n")
         Newline("\n")
-        Newline("\n")
         Paragraph([
+          Newline("\n")
           InternalLink(
             Properties:
               RTD = RtData: [0] = "[[Category:1943 births", [1] = "]]"
@@ -22227,9 +22294,9 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
         Paragraph([
           InternalLink(
             Properties:
@@ -22320,8 +22387,8 @@ LazyParsedPage(
 
             LinkTitle([ ])
           )
-          Newline("\n")
         ])
+        Newline("\n")
       ]
     )
   ]

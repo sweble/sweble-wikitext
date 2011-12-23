@@ -13,19 +13,15 @@ LazyParsedPage(
       Properties:
         RTD = RtData: [0] = "----"
     )
-    Paragraph([
-      Text("text")
-      Newline("\n")
-    ])
+    Paragraph([ Text("text") ])
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
     )
     Newline("\n")
-    Paragraph([
-      Text("t")
-      Newline("\n")
-    ])
+    Paragraph([ Text("t") ])
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"

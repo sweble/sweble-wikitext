@@ -16,10 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.CustomChildrenElement;
-import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.engine.astwom.WomNodeFactory;
+import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomArg;
 import org.sweble.wikitext.engine.wom.WomName;
 import org.sweble.wikitext.engine.wom.WomNode;
@@ -29,10 +30,10 @@ import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ArgAdapter
-        extends
-            CustomChildrenElement
-        implements
-            WomArg
+		extends
+			CustomChildrenElement
+		implements
+			WomArg
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -61,7 +62,9 @@ public class ArgAdapter
 		setArgValue(value);
 	}
 	
-	public ArgAdapter(WomNodeFactory womNodeFactory, TemplateArgument astNode/*, WomName name, WomValue value*/)
+	public ArgAdapter(
+			AstToWomNodeFactory womNodeFactory,
+			TemplateArgument astNode/*, WomName name, WomValue value*/)
 	{
 		super(astNode);
 		
@@ -84,7 +87,7 @@ public class ArgAdapter
 	}
 	
 	@Override
-    public TemplateArgument getAstNode()
+	public TemplateArgument getAstNode()
 	{
 		return (TemplateArgument) super.getAstNode();
 	}
@@ -175,5 +178,13 @@ public class ArgAdapter
 		getAstNode().setValue(this.value.getAstNode());
 		
 		return old;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	protected AttributeDescriptor getAttributeDescriptor(String name)
+	{
+		return null;
 	}
 }

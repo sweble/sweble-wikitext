@@ -24,9 +24,9 @@ LazyParsedPage(
       )
       Text(". It includes public and private schools and is arranged by school district (public schools) or affiliation (private schools).  These schools offer grades 9 through 12.  Junior High schools are not listed here.")
       Newline("\n")
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -914,9 +914,9 @@ LazyParsedPage(
                 [ Text(":San Diego Unified School District") ]
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1619,9 +1619,9 @@ LazyParsedPage(
                 [ Text(":Roman Catholic Diocese of San Diego") ]
                 [ ]
               )
-              Newline("\n")
-              Newline("\n")
             ])
+            Newline("\n")
+            Newline("\n")
           ]
         )
         Section(
@@ -1981,7 +1981,7 @@ LazyParsedPage(
             ])
             Newline("\n")
             Newline("\n")
-            Newline("\n")
+            Paragraph([ Newline("\n") ])
           ]
         )
       ]
@@ -2144,9 +2144,9 @@ LazyParsedPage(
 
             [ ]
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -2230,8 +2230,8 @@ LazyParsedPage(
               [ Text("California, San Diego County") ]
             )
           )
-          Newline("\n")
         ])
+        Newline("\n")
       ]
     )
   ]

@@ -20,15 +20,14 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 
-import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.ptk.common.ast.Text;
+import de.fau.cs.osr.utils.StringUtils;
 
 public abstract class FullElement
 		extends
@@ -172,7 +171,7 @@ public abstract class FullElement
 	
 	@Override
 	public final void insertBefore(WomNode before, WomNode child)
-		throws IllegalArgumentException
+			throws IllegalArgumentException
 	{
 		ChildManager children = getChildManagerForModificationOrFail();
 		children.insertBefore(before, child, this, getAstChildContainerOrAddSupport());
@@ -212,74 +211,66 @@ public abstract class FullElement
 		Toolbox.replaceAstNode(container, oldNode, newNode);
 	}
 	
-	protected void addAttributes(
-			WomNodeFactory womNodeFactory,
-			NodeList xmlAttributes,
-			AttributeManager attribManager)
-	{
-		Iterator<AstNode> i = xmlAttributes.iterator();
-		while (i.hasNext())
-		{
-			AstNode n = i.next();
-			if (n.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
-				continue;
-			
-			NativeOrXmlAttributeAdapter attr =
-					new NativeOrXmlAttributeAdapter(womNodeFactory, (XmlAttribute) n);
-			
-			// FIXME: This would fail if an AST contains the same attribute name multiple times.
-			setAttributeNode(attr);
-		}
-	}
-	
 	protected void addContent(
-			WomNodeFactory womNodeFactory,
+			AstToWomNodeFactory womNodeFactory,
 			NodeList container,
-			ChildManager childManager)
+			ChildManager childManager,
+			boolean isInlineScope)
 	{
 		Iterator<AstNode> i = container.iterator();
 		while (i.hasNext())
 		{
 			AstNode n = i.next();
 			
-			WomNode child = womNodeFactory.create(container, n);
-			if (child != null)
 			{
-				if (child.getNodeType() == WomNodeType.TEXT)
+				switch (n.getNodeType())
 				{
-					buildComplexText(womNodeFactory, container, childManager, i, (TextAdapter) child);
-				}
-				else
-				{
-					childManager.appendChild(child, this, null);
+					case AstNodeTypes.NT_IGNORED:
+						break;
+					
+					case AstNode.NT_TEXT:
+					case AstNodeTypes.NT_XML_CHAR_REF:
+					case AstNodeTypes.NT_XML_ENTITY_REF:
+						if (isInlineScope)
+						{
+							buildComplexText(womNodeFactory, container, childManager, i, n);
+							break;
+						}
+						else
+						{
+							if (!StringUtils.isWhitespace(((Text) n).getContent()))
+								throw new AssertionError("Non-whitespace text in non-inline scope");
+							
+							break;
+						}
+						
+					case AstNodeTypes.NT_NEWLINE:
+						if (isInlineScope)
+							buildComplexText(womNodeFactory, container, childManager, i, n);
+						break;
+					
+					default:
+					{
+						WomNode child = womNodeFactory.create(container, n);
+						if (child != null)
+							childManager.appendChild(child, this, null);
+						break;
+					}
 				}
 			}
-			
-			/*
-			switch (n.getNodeType())
-			{
-				case AstNode.NT_TEXT:
-				case AstNodeTypes.NT_WHITESPACE:
-					buildComplexText(womNodeFactory, container, childManager, i, (TextAdapter) child);
-					break;
-				
-				default:
-					if (child != null)
-						childManager.appendChild(child, this, null);
-					break;
-			}
-			*/
 		}
 	}
 	
 	private void buildComplexText(
-			WomNodeFactory womNodeFactory,
+			AstToWomNodeFactory womNodeFactory,
 			NodeList container,
 			ChildManager childManager,
 			Iterator<AstNode> i,
-			TextAdapter firstText)
+			AstNode firstText)
 	{
-		TextAdapter complexText = firstText;
+		TextAdapter complexText =
+				(TextAdapter) womNodeFactory.create(container, firstText);
+		
 		WomNode notText = null;
 		
 		while (i.hasNext())
@@ -315,5 +306,18 @@ public abstract class FullElement
 		
 		if (notText != null)
 			childManager.appendChild(notText, this, null);
+	}
+
+	protected final void addContent(AstToWomNodeFactory womNodeFactory, NodeList content)
+	{
+		if (content == null)
+			throw new NullPointerException();
+		
+		if (!content.isEmpty())
+			addContent(
+					womNodeFactory, 
+					content, 
+					getChildManagerForModificationOrFail(),
+					true);
 	}
 }

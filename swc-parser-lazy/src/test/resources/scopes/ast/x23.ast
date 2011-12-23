@@ -1,0 +1,24 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Newline("\n")
+    Paragraph([
+      Text("x")
+      Newline("\n")
+    ])
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
+        {N} empty = false
+        {N} name = "div"
+
+      [ ]
+      [ Text("Hallo") ]
+    )
+    Newline("\n")
+    Text("y")
+    Newline("\n")
+  ]
+)

@@ -32,8 +32,8 @@ LazyParsedPage(
                 )
               )
               Text("||2")
-              Newline("\n")
             ])
+            Newline("\n")
           ]
         )
       ]

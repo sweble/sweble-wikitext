@@ -53,11 +53,16 @@ private inline AstNode ContentAtom =
 
 // -- Modify these to create new types of content ------------------------------
 
+inline void XmlCommentPrefix =
+  Eol ' '* "<!--"
+;
+
 inline AstNode ContentChoice =
-    <XmlElement>  &'<'  XmlElement      // prefix: "<"
-  / <Template>    &"{{" Template        // prefix: "{{"
-  / <IntLink>     &"[[" InternalLink    // prefix: "[["
-  / <ContentText>       ContentText
+    <XmlComment>  &XmlCommentPrefix XmlCommentTrimmed // prefix: \n ' '* <!--
+  / <XmlElement>  &'<'              XmlElement        // prefix: "<"
+  / <Template>    &"{{"             Template          // prefix: "{{"
+  / <IntLink>     &"[["             InternalLink      // prefix: "[["
+  / <ContentText>                   ContentText
 ;
 
 inline void ContentStopper =
@@ -65,10 +70,11 @@ inline void ContentStopper =
 ;
 
 inline void ContentStringStopper =
-    <PrefixOnlyInclude> '<'             // For security reasons: You might
-                                        // remove PrefixXmlElement unreflected,
-                                        // but you will think twice before
-                                        // removing PrefixOnlyInclude
+    <PrefixXmlComment>  XmlCommentPrefix
+  / <PrefixOnlyInclude> '<'              // For security reasons: You might
+                                         // remove PrefixXmlElement unreflected,
+                                         // but you will think twice before
+                                         // removing PrefixOnlyInclude
   / <PrefixXmlElement>  '<'
   / <PrefixTemplate>    "{{"
   / <PrefixIntLink>     "[["

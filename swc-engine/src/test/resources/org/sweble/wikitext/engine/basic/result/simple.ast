@@ -1,31 +1,116 @@
 Page([
+  Newline("\n")
+  Paragraph([ Text("Some text in a paragraph.") ])
+  Newline("\n")
+  Newline("\n")
   Paragraph([
-    Text("Hello")
+    Text("Some text with a newline")
     Newline("\n")
+    Text("and some special tokens like ")
+    XmlEntityRef(
+      Properties:
+            RTD = RtData: [0] = "&amp;"
+        {N} name = "amp"
+        {N} resolved = "&"
+    )
+    Text(" and ")
+    XmlCharRef(
+      Properties:
+            RTD = RtData: [0] = "&#41;"
+        {N} codePoint = 41
+    )
+    Text(".")
+  ])
+  Newline("\n")
+  Newline("\n")
+  Paragraph([
+    XmlElement(
+      Properties:
+            RTD = RtData: [0] = "<b", [1] = " />", [2]
+        {N} empty = true
+        {N} name = "b"
+
+      [
+        XmlAttribute(
+          Properties:
+                RTD = RtData: [0] = " name=\"", [1] = "\""
+            {N} hasValue = true
+            {N} name = "name"
+
+          [ Text("value") ]
+        )
+      ]
+      [ ]
+    )
+  ])
+  Newline("\n")
+  Newline("\n")
+  Paragraph([
+    Bold(
+      Properties:
+            RTD = RtData: [0] = "'''", [1] = "'''"
+
+      [ Text(" Native bold text ") ]
+    )
+  ])
+  Newline("\n")
+  Newline("\n")
+  Paragraph([
     XmlElement(
       Properties:
             RTD = RtData: [0] = "<b", [1] = ">", [2] = "</b>"
         {N} empty = false
         {N} name = "b"
 
-      [
-        XmlAttribute(
-          Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
-            {N} hasValue = true
-            {N} name = "class"
-
-          [ Text("asdf") ]
-        )
-      ]
-      [ Text("HTML bold") ]
+      [ ]
+      [ Text(" HTML bold text ") ]
     )
     Newline("\n")
-    Bold(
-      Properties:
-            RTD = RtData: [0] = "'''", [1] = "'''"
+    Newline("\n")
+  ])
+  XmlComment(
+    Properties:
+          RTD = RtData: [0] = "<!-- An XML comment -->\n"
+      {N} content = " An XML comment "
+      {N} prefix = ""
+      {N} suffix = "\n"
+  )
+  Newline("\n")
+  XmlComment(
+    Properties:
+          RTD = RtData: [0] = "<!-- An illegal -- XML comment -->\n"
+      {N} content = " An illegal -- XML comment "
+      {N} prefix = ""
+      {N} suffix = "\n"
+  )
+  Newline("\n")
+  HorizontalRule(
+    Properties:
+          RTD = RtData: [0] = "----"
+  )
+  Newline("\n")
+  Newline("\n")
+  XmlElement(
+    Properties:
+          RTD = RtData: [0] = "<hr", [1] = " />", [2]
+      {N} empty = true
+      {N} name = "hr"
 
-      [ Text("Native bold") ]
+    [ ]
+    [ ]
+  )
+  Newline("\n")
+  Newline("\n")
+  Paragraph([
+    InternalLink(
+      Properties:
+            RTD = RtData: [0] = "[[Category:Test", [1] = "]]"
+        {N} postfix = ""
+        {N} prefix = ""
+        {N} target = "Category:Test"
+
+      LinkTitle([ ])
     )
   ])
+  Newline("\n")
 ])

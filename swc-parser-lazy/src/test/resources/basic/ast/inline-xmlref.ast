@@ -8,6 +8,7 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&amp;"
           {N} name = "amp"
+          {N} resolved = "&"
       )
       Newline("\n")
       Text(
@@ -23,6 +24,7 @@ LazyParsedPage(
         Properties:
           RTD = RtData: [0] = "&myinvention;"
           {N} name = "myinvention"
+          {N} resolved = null
       )
       Newline("\n")
       Text(

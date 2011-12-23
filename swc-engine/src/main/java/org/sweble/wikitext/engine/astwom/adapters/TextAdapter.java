@@ -58,6 +58,33 @@ public class TextAdapter
 	
 	// =========================================================================
 	
+	public TextAdapter(XmlEntityResolver entityResolver, String text)
+	{
+		super(null);
+		
+		if (text.isEmpty())
+		{
+			setAstNode(new Text(""));
+		}
+		else
+		{
+			if (StringUtils.hasParagraphSeparators(text))
+				throw new UnsupportedOperationException(
+						"Insertion would split text into multiple paragraphs");
+			
+			TextPart first = stringToAst(text);
+			
+			// The operation cannot fail any more
+			this.text = text;
+			
+			setAstNode(first.astNode);
+			this.parts = first.next;
+			
+			if (DEBUG)
+				checkIntegrity();
+		}
+	}
+	
 	public TextAdapter(Text astNode)
 	{
 		super(astNode);
@@ -185,8 +212,6 @@ public class TextAdapter
 		
 		if (this.text.length() == length)
 		{
-			// FIXME: We are violating normalization:
-			//        We create an empty text node.
 			clear();
 		}
 		else
@@ -653,16 +678,18 @@ public class TextAdapter
 		
 		int ofs = t.length();
 		
-		ListIterator<AstNode> i =
-				Toolbox.advanceAfter(getTextContainer(), getAstNode());
-		
-		if (i == null)
-			throw new AssertionError();
+		ListIterator<AstNode> i = null;
+		if (getParent() != null)
+		{
+			i = Toolbox.advanceAfter(getTextContainer(), getAstNode());
+			if (i == null)
+				throw new AssertionError();
+		}
 		
 		TextPart p = this.parts;
 		while (p != null)
 		{
-			while (true)
+			while (i != null)
 			{
 				if (!i.hasNext())
 					throw new AssertionError();
@@ -777,13 +804,13 @@ public class TextAdapter
 				case '\t':
 					continue;
 				case '<':
-					nonTextNode = TextUtils.xmlEntity("lt");
+					nonTextNode = TextUtils.xmlEntity("lt", "<");
 					break;
 				case '>':
-					nonTextNode = TextUtils.xmlEntity("gt");
+					nonTextNode = TextUtils.xmlEntity("gt", ">");
 					break;
 				case '&':
-					nonTextNode = TextUtils.xmlEntity("amp");
+					nonTextNode = TextUtils.xmlEntity("amp", "&");
 					break;
 				default:
 					if ((ch >= 0 && ch < 0x20) || (ch == 0xFE))

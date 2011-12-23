@@ -18,5 +18,15 @@ package org.sweble.wikitext.lazy.utils;
 
 public interface XmlEntityResolver
 {
+	/**
+	 * Resolve an XML entity reference like <code>&amp;amp;</code>. The
+	 * implementation must recursivly fully resolve the given entity.
+	 * 
+	 * @param name
+	 *            The name of the XML entity reference to resolve. For
+	 *            <code>&amp;amp;</code> this would be <code>amp</code>.
+	 * @return A string containing the resolved text of the entity or
+	 *         <code>null</code> if the entity name is unknown.
+	 */
 	String resolveXmlEntity(String name);
 }

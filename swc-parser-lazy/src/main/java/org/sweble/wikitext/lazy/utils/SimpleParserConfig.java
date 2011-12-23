@@ -31,8 +31,8 @@ import org.sweble.wikitext.lazy.postprocessor.ScopeType;
  * This is a simple parser config that is ONLY suited for test purposes!
  */
 public class SimpleParserConfig
-        implements
-            ParserConfigInterface
+		implements
+			ParserConfigInterface
 {
 	private final static HashSet<String> allowed;
 	
@@ -52,30 +52,30 @@ public class SimpleParserConfig
 	{
 		allowed = new HashSet<String>();
 		allowed.addAll(Arrays.asList(
-		        "abbr", "b", "big", "blockquote", "br", "caption",
-		        "center", "cite", "code", "dd", "del", "dfn", "div", "dl",
-		        "dt", "em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
-		        "i", "ins", "kbd", "li", "ol", "p", "pre", "s", "samp",
-		        "small", "span", "strike", "strong", "sub", "sup", "table",
-		        "td", "th", "tr", "tt", "u", "ul", "var"));
+				"abbr", "b", "big", "blockquote", "br", "caption",
+				"center", "cite", "code", "dd", "del", "dfn", "div", "dl",
+				"dt", "em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
+				"i", "ins", "kbd", "li", "ol", "p", "pre", "s", "samp",
+				"small", "span", "strike", "strong", "sub", "sup", "table",
+				"td", "th", "tr", "tt", "u", "ul", "var"));
 		
 		emptyOnly = new HashSet<String>();
 		emptyOnly.addAll(Arrays.asList(
-		        "area", "base", "basefont", "br", "col", "frame", "hr",
-		        "img", "input", "isindex", "link", "meta", "param"));
+				"area", "base", "basefont", "br", "col", "frame", "hr",
+				"img", "input", "isindex", "link", "meta", "param"));
 		
 		elementTypes = new HashMap<String, ScopeType>();
 		
 		elementTypes.put("p", ScopeType.XML_PARAGRAPH);
 		
 		for (String e : Arrays.asList("abbr", "b", "big", "br", "cite", "code",
-		        "em", "font", "i", "s", "samp", "small", "span", "strike", "strong",
-		        "sub", "sup", "tt", "u", "var"))
+				"em", "font", "i", "s", "samp", "small", "span", "strike", "strong",
+				"sub", "sup", "tt", "u", "var"))
 			elementTypes.put(e, ScopeType.XML_INLINE);
 		
 		for (String e : Arrays.asList("blockquote", "center", "del", "dfn", "div",
-		        "h1", "h2", "h3", "h4", "h5", "h6", "hr", "ins", "kbd", "ol", "pre",
-		        "ul"))
+				"h1", "h2", "h3", "h4", "h5", "h6", "hr", "ins", "kbd", "ol", "pre",
+				"ul"))
 			elementTypes.put(e, ScopeType.XML_BLOCK);
 		
 		for (String e : Arrays.asList("dd", "dl", "dt", "li"))
@@ -98,9 +98,9 @@ public class SimpleParserConfig
 	}
 	
 	public SimpleParserConfig(
-	        boolean warningsEnabled,
-	        boolean gatherRtd,
-	        boolean autoCorrect)
+			boolean warningsEnabled,
+			boolean gatherRtd,
+			boolean autoCorrect)
 	{
 		this.warningsEnabled = warningsEnabled;
 		this.gatherRtd = gatherRtd;
@@ -143,8 +143,8 @@ public class SimpleParserConfig
 	public boolean isUrlProtocol(String proto)
 	{
 		return "http://".equalsIgnoreCase(proto) ||
-		        "https://".equalsIgnoreCase(proto) ||
-		        "mail:".equalsIgnoreCase(proto);
+				"https://".equalsIgnoreCase(proto) ||
+				"mail:".equalsIgnoreCase(proto);
 	}
 	
 	@Override
@@ -191,10 +191,10 @@ public class SimpleParserConfig
 	{
 		// keep it simple ...
 		return "image".equalsIgnoreCase(name) ||
-		        "file".equalsIgnoreCase(name) ||
-		        "template".equals(name) ||
-		        "media".equals(name) ||
-		        "category".equals(name);
+				"file".equalsIgnoreCase(name) ||
+				"template".equals(name) ||
+				"media".equals(name) ||
+				"category".equals(name);
 	}
 	
 	@Override
@@ -214,12 +214,12 @@ public class SimpleParserConfig
 	{
 		// keep it simple ...
 		return "ref".equalsIgnoreCase(name) ||
-		        "pre".equalsIgnoreCase(name) ||
-		        "nowiki".equalsIgnoreCase(name) ||
-		        "gallery".equalsIgnoreCase(name) ||
-		        "includeonly".equalsIgnoreCase(name) ||
-		        "noinclude".equalsIgnoreCase(name) ||
-		        "onlyinclude".equalsIgnoreCase(name);
+				"pre".equalsIgnoreCase(name) ||
+				"nowiki".equalsIgnoreCase(name) ||
+				"gallery".equalsIgnoreCase(name) ||
+				"includeonly".equalsIgnoreCase(name) ||
+				"noinclude".equalsIgnoreCase(name) ||
+				"onlyinclude".equalsIgnoreCase(name);
 	}
 	
 	@Override
@@ -234,9 +234,29 @@ public class SimpleParserConfig
 		{
 			return "<";
 		}
+		else if ("gt".equalsIgnoreCase(name))
+		{
+			return ">";
+		}
 		else if ("nbsp".equalsIgnoreCase(name))
 		{
 			return "\u00A0";
+		}
+		else if ("middot".equalsIgnoreCase(name))
+		{
+			return "\u00B7";
+		}
+		else if ("mdash".equalsIgnoreCase(name))
+		{
+			return "\u2014";
+		}
+		else if ("ndash".equalsIgnoreCase(name))
+		{
+			return "\u2013";
+		}
+		else if ("equiv".equalsIgnoreCase(name))
+		{
+			return "\u2261";
 		}
 		else
 		{

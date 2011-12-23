@@ -40,10 +40,8 @@ LazyParsedPage(
             )
           ]
           [
-            Paragraph([
-              Text(" B")
-              Newline("\n")
-            ])
+            Paragraph([ Text(" B") ])
+            Newline("\n")
           ]
         )
         TableRow(
@@ -65,10 +63,8 @@ LazyParsedPage(
 
               [ ]
               [
-                Paragraph([
-                  Text(" Y")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Y") ])
+                Newline("\n")
               ]
             )
           ]

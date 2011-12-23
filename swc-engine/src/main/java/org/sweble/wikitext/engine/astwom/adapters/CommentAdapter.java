@@ -16,20 +16,27 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
+import org.sweble.wikitext.engine.wom.WomComment;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
 public class CommentAdapter
-        extends
-            WomBackbone
-        implements
-            WomText
+		extends
+			WomBackbone
+		implements
+			WomComment
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
+	
+	public CommentAdapter(String text)
+	{
+		super(new XmlComment());
+		setValue(text);
+	}
 	
 	public CommentAdapter(XmlComment astNode)
 	{
@@ -60,5 +67,15 @@ public class CommentAdapter
 	public String getValue()
 	{
 		return getAstNode().getContent();
+	}
+	
+	@Override
+	public String setValue(String text) throws IllegalArgumentException, NullPointerException
+	{
+		String old = getValue();
+		Toolbox.checkValidCommentText(text);
+		getAstNode().setContent(text);
+		Toolbox.addRtData(getAstNode());
+		return old;
 	}
 }

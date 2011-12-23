@@ -226,6 +226,7 @@ public class PageAdapterTest
 			assertEquals("Title", p.getTitle());
 			assertEquals("Namespace:Path/Title", p.getName());
 		}
+		/*
 		{
 			WomPage p = new PageAdapter("x", "y", "z");
 			p.setAttribute("NamespacE", "Namespace");
@@ -260,6 +261,7 @@ public class PageAdapterTest
 			assertNull(p.getAttributeNode("name"));
 			assertNull(p.getAttribute("idontexist"));
 		}
+		*/
 	}
 	
 	// =========================================================================

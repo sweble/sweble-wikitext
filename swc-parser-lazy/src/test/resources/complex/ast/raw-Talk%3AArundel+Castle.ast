@@ -92,14 +92,17 @@ LazyParsedPage(
                       Text("start\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- B-Class checklist -->"
+                          RTD = RtData: [0] = "<!-- B-Class checklist -->\n"
                           {N} content = " B-Class checklist "
+                          {N} prefix = ""
+                          {N} suffix = "\n"
                       )
-                      Text("\n")
                       XmlComment(
                         Properties:
                           RTD = RtData: [0] = "<!-- 1. It is suitably referenced, and all \nmajor points are appropriately cited. -->"
                           {N} content = " 1. It is suitably referenced, and all \nmajor points are appropriately cited. "
+                          {N} prefix = null
+                          {N} suffix = null
                       )
                       Text("\n")
                     ]
@@ -114,10 +117,11 @@ LazyParsedPage(
                       Text("no\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. -->"
+                          RTD = RtData: [0] = "<!-- 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. -->\n"
                           {N} content = " 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. "
+                          {N} prefix = ""
+                          {N} suffix = "\n"
                       )
-                      Text("\n")
                     ]
                   )
                   TemplateArgument(
@@ -130,10 +134,11 @@ LazyParsedPage(
                       Text("\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 3. It has a defined structure, including \na lead section and one or more sections of content. -->"
+                          RTD = RtData: [0] = "<!-- 3. It has a defined structure, including \na lead section and one or more sections of content. -->\n"
                           {N} content = " 3. It has a defined structure, including \na lead section and one or more sections of content. "
+                          {N} prefix = ""
+                          {N} suffix = "\n"
                       )
-                      Text("\n")
                     ]
                   )
                   TemplateArgument(
@@ -146,10 +151,11 @@ LazyParsedPage(
                       Text("\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 4. It is free from major grammatical errors. -->"
+                          RTD = RtData: [0] = "<!-- 4. It is free from major grammatical errors. -->\n"
                           {N} content = " 4. It is free from major grammatical errors. "
+                          {N} prefix = ""
+                          {N} suffix = "\n"
                       )
-                      Text("\n")
                     ]
                   )
                   TemplateArgument(
@@ -162,10 +168,11 @@ LazyParsedPage(
                       Text("\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. -->"
+                          RTD = RtData: [0] = "<!-- 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. -->\n"
                           {N} content = " 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. "
+                          {N} prefix = ""
+                          {N} suffix = "\n"
                       )
-                      Text("\n")
                     ]
                   )
                   TemplateArgument(
@@ -178,10 +185,11 @@ LazyParsedPage(
                       Text("no infobox, no plan or map\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- Task force tags -->"
+                          RTD = RtData: [0] = "<!-- Task force tags -->\n"
                           {N} content = " Task force tags "
+                          {N} prefix = ""
+                          {N} suffix = "\n"
                       )
-                      Text("\n")
                     ]
                   )
                   TemplateArgument(
@@ -231,9 +239,9 @@ LazyParsedPage(
           )
         ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
     HorizontalRule(
       Properties:
         RTD = RtData: [0] = "----"
@@ -287,14 +295,12 @@ LazyParsedPage(
         )
       )
       Text(" 7 July 2005 19:52 (UTC)")
-      Newline("\n")
-      Newline("\n")
     ])
-    Paragraph([
-      Text("The history section states that the castle was first built in 1068 and that it was built during Edward the Confessor's reign.  Which is correct?")
-      Newline("\n")
-      Newline("\n")
-    ])
+    Newline("\n")
+    Newline("\n")
+    Paragraph([ Text("The history section states that the castle was first built in 1068 and that it was built during Edward the Confessor's reign.  Which is correct?") ])
+    Newline("\n")
+    Newline("\n")
     Section(
       Properties:
         RTD = RtData: [0] = "==", [1] = "==", [2]
@@ -382,16 +388,20 @@ LazyParsedPage(
             Properties:
               RTD = RtData: [0] = "<!-- Template:UnsignedIP -->"
               {N} content = " Template:UnsignedIP "
+              {N} prefix = null
+              {N} suffix = null
           )
           Text(" ")
           XmlComment(
             Properties:
               RTD = RtData: [0] = "<!--Autosigned by SineBot-->"
               {N} content = "Autosigned by SineBot"
+              {N} prefix = null
+              {N} suffix = null
           )
-          Newline("\n")
-          Newline("\n")
         ])
+        Newline("\n")
+        Newline("\n")
       ]
     )
     Section(
@@ -452,8 +462,8 @@ LazyParsedPage(
             )
           )
           Text(", and might not be applicable for the article in question.")
-          Newline("\n")
         ])
+        Newline("\n")
         Itemization([
           ItemizationItem(
             Properties:
@@ -1120,8 +1130,8 @@ LazyParsedPage(
             )
           )
           Text(") 00:02, 14 April 2008 (UTC)")
-          Newline("\n")
         ])
+        Newline("\n")
       ]
     )
   ]

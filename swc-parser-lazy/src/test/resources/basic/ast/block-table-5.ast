@@ -64,10 +64,8 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  Text(" Header 2")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Header 2") ])
+                Newline("\n")
               ]
             )
           ]
@@ -118,10 +116,8 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  Text(" Cell 1.2")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Cell 1.2") ])
+                Newline("\n")
               ]
             )
           ]
@@ -172,10 +168,8 @@ LazyParsedPage(
                 )
               ]
               [
-                Paragraph([
-                  Text(" Cell 2.2")
-                  Newline("\n")
-                ])
+                Paragraph([ Text(" Cell 2.2") ])
+                Newline("\n")
               ]
             )
           ]

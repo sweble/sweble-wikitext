@@ -49,8 +49,8 @@ LazyParsedPage(
           )
         ]
       )
-      Newline("\n")
-      Newline("\n")
     ])
+    Newline("\n")
+    Newline("\n")
   ]
 )

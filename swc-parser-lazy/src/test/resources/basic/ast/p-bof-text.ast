@@ -9,7 +9,7 @@ LazyParsedPage(
       Text("text")
       Newline("\n")
       Text("text")
-      Newline("\n")
     ])
+    Newline("\n")
   ]
 )

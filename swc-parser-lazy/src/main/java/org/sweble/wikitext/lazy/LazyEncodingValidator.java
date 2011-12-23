@@ -20,8 +20,9 @@ package org.sweble.wikitext.lazy;
 import java.io.IOException;
 import java.io.StringReader;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
 import org.sweble.wikitext.lazy.encval.EncodingValidatorLexer;
+
+import de.fau.cs.osr.ptk.common.EntityMap;
 
 public class LazyEncodingValidator
 {

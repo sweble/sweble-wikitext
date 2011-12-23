@@ -25,11 +25,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import org.sweble.wikitext.engine.Page;
+import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
+import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManager;
 import org.sweble.wikitext.engine.astwom.CustomChildrenElement;
-import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.engine.astwom.WomNodeFactory;
+import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomBody;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomNode;
@@ -39,12 +40,13 @@ import org.sweble.wikitext.engine.wom.WomRedirect;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.utils.Utils;
 
 public class PageAdapter
-        extends
-            CustomChildrenElement
-        implements
-            WomPage
+		extends
+			CustomChildrenElement
+		implements
+			WomPage
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -55,7 +57,7 @@ public class PageAdapter
 	private RedirectAdapter redirect = null;
 	
 	private LinkedHashMap<String, CategoryAdapter> categories =
-	        new LinkedHashMap<String, CategoryAdapter>();
+			new LinkedHashMap<String, CategoryAdapter>();
 	
 	private BodyAdapter body;
 	
@@ -65,7 +67,10 @@ public class PageAdapter
 	{
 		super(new org.sweble.wikitext.engine.Page());
 		
-		setAttributeUnchecked("version", WomNode.VERSION);
+		setAttributeUnchecked(
+				Attributes.version,
+				"version",
+				WomNode.VERSION);
 		
 		setNamespace(namespace);
 		setPath(path);
@@ -73,14 +78,22 @@ public class PageAdapter
 		setBody(new BodyAdapter());
 	}
 	
-	public PageAdapter(WomNodeFactory womNodeFactory, Page page, String namespace, String path, String title)
+	public PageAdapter(
+			AstToWomNodeFactory womNodeFactory,
+			Page page,
+			String namespace,
+			String path,
+			String title)
 	{
 		super(page);
 		
 		if (womNodeFactory == null || page == null || title == null)
 			throw new NullPointerException();
 		
-		setAttributeUnchecked("version", WomNode.VERSION);
+		setAttributeUnchecked(
+				Attributes.version,
+				"version",
+				WomNode.VERSION);
 		
 		setNamespace(namespace);
 		setPath(path);
@@ -88,7 +101,10 @@ public class PageAdapter
 		setBody(new BodyAdapter(womNodeFactory, page.getContent()));
 	}
 	
-	public PageAdapter(WomNodeFactory womNodeFactory, Page page, String title)
+	public PageAdapter(
+			AstToWomNodeFactory womNodeFactory,
+			Page page,
+			String title)
 	{
 		this(womNodeFactory, page, null, null, title);
 	}
@@ -111,82 +127,6 @@ public class PageAdapter
 	public ContentNode getAstNode()
 	{
 		return (ContentNode) super.getAstNode();
-	}
-	
-	@Override
-	public WomNode getFirstChild()
-	{
-		if (redirect != null)
-			return redirect;
-		if (!categories.isEmpty())
-			return categories.values().iterator().next();
-		return body;
-	}
-	
-	@Override
-	public WomNode getLastChild()
-	{
-		return body;
-	}
-	
-	@Override
-	protected void replaceChildImpl(WomBackbone newChild, WomBackbone oldChild)
-	{
-		if (oldChild == redirect)
-		{
-			setRedirect(Toolbox.expectType(WomRedirect.class, newChild));
-		}
-		else if (oldChild == body)
-		{
-			setBody(Toolbox.expectType(WomBody.class, newChild));
-		}
-		else
-		{
-			CategoryAdapter replacement =
-			        Toolbox.expectType(CategoryAdapter.class, newChild);
-			
-			CategoryAdapter replacee = (CategoryAdapter) oldChild;
-			
-			// Remove old from WOM
-			if (categories.remove(replacee.getCategory().toLowerCase()) == null)
-				throw new InternalError();
-			WomBackbone prevSibling = replacee.getPrevSibling();
-			WomBackbone nextSibling = replacee.getNextSibling();
-			replacee.unlink();
-			
-			// Add new to WOM
-			categories.put(replacement.getCategory().toLowerCase(), replacement);
-			replacement.link(this, prevSibling, nextSibling);
-			
-			// Fix AST
-			replacee.replaceInAst(replacement);
-		}
-	}
-	
-	@Override
-	protected final String checkAttributeValue(String name, String value) throws IllegalArgumentException, UnsupportedOperationException
-	{
-		name = name.toLowerCase();
-		if (name.equals("version"))
-		{
-			throw new UnsupportedOperationException("Cannot alter `version' attribute in any way");
-		}
-		else if (name.equals("title"))
-		{
-			return Toolbox.checkValidTitle(value);
-		}
-		else if (name.equals("namespace"))
-		{
-			return Toolbox.checkValidNamespace(value);
-		}
-		else if (name.equals("path"))
-		{
-			return Toolbox.checkValidPath(value);
-		}
-		else
-		{
-			throw new IllegalArgumentException("Attribute `" + name + "' not supported by this node");
-		}
 	}
 	
 	// =========================================================================
@@ -229,8 +169,11 @@ public class PageAdapter
 	@Override
 	public String setTitle(String title) throws IllegalArgumentException, NullPointerException
 	{
-		title = Toolbox.checkValidTitle(title);
-		NativeOrXmlAttributeAdapter old = setAttributeUnchecked("title", title);
+		NativeOrXmlAttributeAdapter old = setAttribute(
+				Attributes.title,
+				"title",
+				title);
+		
 		return (old == null) ? null : old.getValue();
 	}
 	
@@ -243,8 +186,11 @@ public class PageAdapter
 	@Override
 	public String setNamespace(String namespace)
 	{
-		namespace = Toolbox.checkValidNamespace(namespace);
-		NativeOrXmlAttributeAdapter old = setAttributeUnchecked("namespace", namespace);
+		NativeOrXmlAttributeAdapter old = setAttribute(
+				Attributes.namespace,
+				"namespace",
+				namespace);
+		
 		return (old == null) ? null : old.getValue();
 	}
 	
@@ -257,8 +203,11 @@ public class PageAdapter
 	@Override
 	public String setPath(String path)
 	{
-		path = Toolbox.checkValidPath(path);
-		NativeOrXmlAttributeAdapter old = setAttributeUnchecked("path", path);
+		NativeOrXmlAttributeAdapter old = setAttribute(
+				Attributes.path,
+				"path",
+				path);
+		
 		return (old == null) ? null : old.getValue();
 	}
 	
@@ -285,7 +234,7 @@ public class PageAdapter
 			return redirect;
 		
 		RedirectAdapter newRedirect =
-		        Toolbox.expectType(RedirectAdapter.class, redirect);
+				Toolbox.expectType(RedirectAdapter.class, redirect);
 		
 		NodeList container = ((BodyAdapter) getBody()).getAstNode();
 		
@@ -350,8 +299,8 @@ public class PageAdapter
 		if (cat != null)
 		{
 			// Make sure changes in case are not lost.
-			if (!name.equals(cat.getCategory()))
-				cat.setCategory(name);
+			if (!name.equals(cat.getName()))
+				cat.setName(name);
 			return cat;
 		}
 		
@@ -366,27 +315,6 @@ public class PageAdapter
 		cat.addToAst(this.body.getAstNode());
 		
 		return cat;
-	}
-	
-	/**
-	 * For INTERNAL use only!
-	 */
-	public void registerCategory(CategoryAdapter newCat)
-	{
-		String name = newCat.getCategory();
-		String lcName = name.toLowerCase();
-		
-		CategoryAdapter cat = categories.get(lcName);
-		if (cat != null)
-		{
-			cat.addRedundantOccurance(newCat);
-		}
-		else
-		{
-			// Add to WOM
-			categories.put(lcName, newCat);
-			newCat.link(this, this.body.getPrevSibling(), this.body);
-		}
 	}
 	
 	@Override
@@ -405,7 +333,7 @@ public class PageAdapter
 			return this.body;
 		
 		BodyAdapter newBody =
-		        Toolbox.expectType(BodyAdapter.class, body, "body");
+				Toolbox.expectType(BodyAdapter.class, body, "body");
 		
 		// Remove from WOM
 		BodyAdapter old = this.body;
@@ -424,5 +352,170 @@ public class PageAdapter
 		getAstNode().setContent(newBody.getAstNode());
 		
 		return old;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public WomNode getFirstChild()
+	{
+		if (redirect != null)
+			return redirect;
+		if (!categories.isEmpty())
+			return categories.values().iterator().next();
+		return body;
+	}
+	
+	@Override
+	public WomNode getLastChild()
+	{
+		return body;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	protected void replaceChildImpl(WomBackbone newChild, WomBackbone oldChild)
+	{
+		if (oldChild == redirect)
+		{
+			setRedirect(Toolbox.expectType(WomRedirect.class, newChild));
+		}
+		else if (oldChild == body)
+		{
+			setBody(Toolbox.expectType(WomBody.class, newChild));
+		}
+		else
+		{
+			CategoryAdapter replacement =
+					Toolbox.expectType(CategoryAdapter.class, newChild);
+			
+			CategoryAdapter replacee = (CategoryAdapter) oldChild;
+			
+			// Remove old from WOM
+			if (categories.remove(replacee.getName().toLowerCase()) == null)
+				throw new InternalError();
+			WomBackbone prevSibling = replacee.getPrevSibling();
+			WomBackbone nextSibling = replacee.getNextSibling();
+			replacee.unlink();
+			
+			// Add new to WOM
+			categories.put(replacement.getName().toLowerCase(), replacement);
+			replacement.link(this, prevSibling, nextSibling);
+			
+			// Fix AST
+			replacee.replaceInAst(replacement);
+		}
+	}
+	
+	/**
+	 * Add a category to this page gathered while traversing an AST.
+	 * 
+	 * <strong>For INTERNAL use only!</strong>
+	 */
+	public void registerCategory(CategoryAdapter newCat)
+	{
+		String name = newCat.getName();
+		String lcName = name.toLowerCase();
+		
+		CategoryAdapter cat = categories.get(lcName);
+		if (cat != null)
+		{
+			cat.addRedundantOccurance(newCat);
+		}
+		else
+		{
+			// Add to WOM
+			categories.put(lcName, newCat);
+			newCat.link(this, this.body.getPrevSibling(), this.body);
+		}
+	}
+	
+	// =========================================================================
+	
+	@Override
+	protected AttributeDescriptor getAttributeDescriptor(String name)
+	{
+		Attributes d = Utils.fromString(Attributes.class, name);
+		if (d != null)
+			return d;
+		// No other attributes are allowed.
+		return null;
+	}
+	
+	private static enum Attributes implements AttributeDescriptor
+	{
+		version
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException(
+						"Cannot alter read-only attribute `version'");
+			}
+			
+			@Override
+			public boolean isRemovable()
+			{
+				return false;
+			}
+		},
+		
+		title
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				Toolbox.checkValidTitle(value);
+				return value;
+			}
+			
+			@Override
+			public boolean isRemovable()
+			{
+				return false;
+			}
+		},
+		
+		namespace
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				return Toolbox.checkValidNamespace(value);
+			}
+		},
+		
+		path
+		{
+			@Override
+			public String verify(WomNode parent, String value) throws IllegalArgumentException
+			{
+				return Toolbox.checkValidPath(value);
+			}
+		};
+		
+		@Override
+		public boolean isRemovable()
+		{
+			return true;
+		}
+		
+		@Override
+		public boolean syncToAst()
+		{
+			return false;
+		}
+		
+		@Override
+		public Normalization getNormalizationMode()
+		{
+			return Normalization.NONE;
+		}
+		
+		@Override
+		public void customAction(WomNode parent, String value)
+		{
+		}
 	}
 }

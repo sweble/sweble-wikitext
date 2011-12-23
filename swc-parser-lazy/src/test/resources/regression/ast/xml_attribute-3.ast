@@ -3,10 +3,8 @@ LazyParsedPage(
     {N} warnings = []
 
   [
-    Paragraph([
-      Text("Whitespace before Eol!")
-      Newline("\n")
-    ])
+    Paragraph([ Text("Whitespace before Eol!") ])
+    Newline("\n")
     Table(
       Properties:
         RTD = RtData: [0] = "{|", [1] = "     \n", [2] = " |}"
