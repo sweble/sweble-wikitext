@@ -1,0 +1,103 @@
+#!/bin/bash
+
+set -o errexit
+
+ARCHETYPE_DIR="target/generated-sources/archetype"
+TEST_DIR="target/test-archetype"
+
+# Build example project and generate archetype
+echo "Cleaning ..."
+mvn clean &> generate-archetype.log
+
+echo "Verifying ..."
+mvn verify &> generate-archetype.log
+
+echo "Generating Archetype ..."
+mvn archetype:create-from-project &> generate-archetype.log
+
+# Remove eclipse project files
+rm -rf ${ARCHETYPE_DIR}/src/main/resources/archetype-resources/.{project,settings,classpath}
+
+# Remove .gitignore
+rm -rf ${ARCHETYPE_DIR}/src/main/resources/archetype-resources/.gitignore
+
+# Use our own, beautifully formatted pom.xml file
+cp pom-archetype.xml ${ARCHETYPE_DIR}/pom.xml
+
+# Remove other unwanted files:
+rm -rf ${ARCHETYPE_DIR}/src/main/resources/archetype-resources/{pom-archetype.xml,generate-archetype,generate-archetype.log,eclipse-project-files/}
+
+# Don't know what we would need that for:
+rm -rf ${ARCHETYPE_DIR}/src/test
+
+# Check contents
+expected=$(cat <<EOHD
+target/generated-sources/archetype
+target/generated-sources/archetype/pom.xml
+target/generated-sources/archetype/src
+target/generated-sources/archetype/src/main
+target/generated-sources/archetype/src/main/resources
+target/generated-sources/archetype/src/main/resources/META-INF
+target/generated-sources/archetype/src/main/resources/META-INF/maven
+target/generated-sources/archetype/src/main/resources/META-INF/maven/archetype-metadata.xml
+target/generated-sources/archetype/src/main/resources/archetype-resources
+target/generated-sources/archetype/src/main/resources/archetype-resources/LICENSE
+target/generated-sources/archetype/src/main/resources/archetype-resources/NOTICE
+target/generated-sources/archetype/src/main/resources/archetype-resources/README
+target/generated-sources/archetype/src/main/resources/archetype-resources/pom.xml
+target/generated-sources/archetype/src/main/resources/archetype-resources/src
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/main
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/main/java
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/main/java/App.java
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/main/java/TextConverter.java
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/test
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/test/java
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/test/java/AppTest.java
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/test/resources
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/test/resources/Simple_Page.html
+target/generated-sources/archetype/src/main/resources/archetype-resources/src/test/resources/Simple_Page.wikitext
+EOHD
+)
+
+actual=$(find ${ARCHETYPE_DIR} | sort | grep -v "^${ARCHETYPE_DIR}/target")
+
+if [ ! "$actual" = "$expected" ]; then
+	echo "Unexpected files in ${ARCHETYPE_DIR}!"
+	echo "$expected" > expected.tmp
+	echo "$actual" > actual.tmp
+	diff expected.tmp actual.tmp || true
+	rm expected.tmp actual.tmp
+	exit
+fi
+
+# Install archetype/Update local catalog
+echo "Installing archetype ..."
+pushd ${ARCHETYPE_DIR} &> /dev/null
+VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
+mvn install &> generate-archetype.log
+popd &> /dev/null
+
+echo "Generating project from archetype ..."
+PROJECT=project
+rm -rf ${TEST_DIR}
+mkdir ${TEST_DIR}
+pushd ${TEST_DIR} &> /dev/null
+mvn archetype:generate \
+	-B \
+	-DarchetypeCatalog=local \
+	-DarchetypeGroupId=org.sweble.wikitext \
+	-DarchetypeArtifactId=swc-example-basic-archetype \
+	-DarchetypeVersion=$VERSION \
+	-DgroupId=org.example \
+	-DartifactId=$PROJECT \
+	-Dversion=1.0 &> generate-archetype.log
+popd &> /dev/null
+
+# Try to build generated project
+echo "Verifying generated project ..."
+pushd ${TEST_DIR}/${PROJECT} &> /dev/null
+mvn verify &> generate-archetype.log
+popd &> /dev/null
+
+# SUCCESS!
+echo "Done"
