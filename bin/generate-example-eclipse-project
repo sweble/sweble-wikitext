@@ -21,7 +21,7 @@ set -o errexit
 PRJ="$1"
 if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
 	echo "Usage: $0 PROJECT"
-	exit
+	exit -1
 fi
 
 JARPRJ="${PRJ}-jar"

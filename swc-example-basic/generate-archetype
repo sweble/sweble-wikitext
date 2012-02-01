@@ -7,13 +7,13 @@ TEST_DIR="target/test-archetype"
 
 # Build example project and generate archetype
 echo "Cleaning ..."
-mvn clean &> generate-archetype.log
+mvn clean &>> generate-archetype.log
 
 echo "Verifying ..."
-mvn verify &> generate-archetype.log
+mvn verify &>> generate-archetype.log
 
 echo "Generating Archetype ..."
-mvn archetype:create-from-project &> generate-archetype.log
+mvn archetype:create-from-project &>> generate-archetype.log
 
 # Remove eclipse project files
 rm -rf ${ARCHETYPE_DIR}/src/main/resources/archetype-resources/.{project,settings,classpath}
@@ -74,7 +74,7 @@ fi
 echo "Installing archetype ..."
 pushd ${ARCHETYPE_DIR} &> /dev/null
 VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-mvn install &> generate-archetype.log
+mvn install &>> generate-archetype.log
 popd &> /dev/null
 
 echo "Generating project from archetype ..."
@@ -90,13 +90,13 @@ mvn archetype:generate \
 	-DarchetypeVersion=$VERSION \
 	-DgroupId=org.example \
 	-DartifactId=$PROJECT \
-	-Dversion=1.0 &> generate-archetype.log
+	-Dversion=1.0 &>> generate-archetype.log
 popd &> /dev/null
 
 # Try to build generated project
 echo "Verifying generated project ..."
 pushd ${TEST_DIR}/${PROJECT} &> /dev/null
-mvn verify &> generate-archetype.log
+mvn verify &>> generate-archetype.log
 popd &> /dev/null
 
 # SUCCESS!
