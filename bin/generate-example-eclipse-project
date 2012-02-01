@@ -70,11 +70,11 @@ pushd "${JARPRJ}" &>/dev/null
 mkdir lib
 get_dependency "org.sweble.wikitext" "swc-engine"
 
-cp ../${PRJ}/eclipse-project-files/.project .
+cp ../${PRJ}/eclipse-project-files/project .project
 
-cat ../${PRJ}/eclipse-project-files/.classpath | sed -e '/<!-- LIBS -->/q' > .classpath
+cat ../${PRJ}/eclipse-project-files/classpath | sed -e '/<!-- LIBS -->/q' > .classpath
 echo -n "$CLASSPATH" >> .classpath
-cat ../${PRJ}/eclipse-project-files/.classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
+cat ../${PRJ}/eclipse-project-files/classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
 
 echo
 dest="src"
