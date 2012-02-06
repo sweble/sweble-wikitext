@@ -9,7 +9,7 @@
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2011</inceptionYear>
   <description>
-    An example project that contains a simple application that is able to parse 
+    An example project that contains a simple application that is able to parse
     a page written in Wikitext and render it as HTML or plain text.
   </description>
 
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-engine</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1-SNAPSHOT</version>
     </dependency>
 
     <!-- JUnit -->
@@ -106,7 +106,7 @@
         </configuration>
       </plugin>
     </plugins>
-    
+
     <pluginManagement>
       <plugins>
 
