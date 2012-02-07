@@ -8,6 +8,7 @@
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
     <version>1.0.1-SNAPSHOT</version>
+    <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components -->
@@ -21,7 +22,7 @@
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2009</inceptionYear>
   <description>
-    The Sweble Wikitext Components module provides a parser for MediaWiki's 
+    The Sweble Wikitext Components module provides a parser for MediaWiki's
     Wikitext and an Engine trying emulating the behavior of a MediaWiki.
   </description>
 

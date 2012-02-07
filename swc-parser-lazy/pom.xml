@@ -192,12 +192,12 @@
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
         <executions>
-          <!-- Disabled until problem 
-            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19 
+          <!-- Disabled until problem
+            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19
             is resolved -->
-          <execution> 
-            <id>git-commit-info-disabled</id> 
-            <phase>none</phase> 
+          <execution>
+            <id>git-commit-info-disabled</id>
+            <phase>none</phase>
           </execution>
         </executions>
       </plugin>

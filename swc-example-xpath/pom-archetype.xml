@@ -21,7 +21,7 @@
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2010</inceptionYear>
   <description>
-    An archetype that creates a simple application which is able to parse 
+    An archetype that creates a simple application which is able to parse
     a page written in Wikitext and perform an XPath query on that document.
   </description>
 
@@ -71,7 +71,7 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
       <comments>
-        The archetype project itself is licensed under this license. 
+        The archetype project itself is licensed under this license.
         The generated project is licensed under the Simplified BSD License.
       </comments>
     </license>
