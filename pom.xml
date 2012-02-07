@@ -8,6 +8,7 @@
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
     <version>1.0.5-SNAPSHOT</version>
+    <relativePath>../tooling/pom.xml</relativePath>
   </parent>
 
   <!-- This POM: Sweble -->
