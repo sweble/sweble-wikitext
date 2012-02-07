@@ -27,11 +27,15 @@ import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.encval.IllegalCodePoint;
 import org.sweble.wikitext.lazy.parser.Bold;
+import org.sweble.wikitext.lazy.parser.Enumeration;
+import org.sweble.wikitext.lazy.parser.EnumerationItem;
 import org.sweble.wikitext.lazy.parser.ExternalLink;
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.ImageLink;
 import org.sweble.wikitext.lazy.parser.InternalLink;
 import org.sweble.wikitext.lazy.parser.Italics;
+import org.sweble.wikitext.lazy.parser.Itemization;
+import org.sweble.wikitext.lazy.parser.ItemizationItem;
 import org.sweble.wikitext.lazy.parser.MagicWord;
 import org.sweble.wikitext.lazy.parser.Paragraph;
 import org.sweble.wikitext.lazy.parser.Section;
@@ -76,8 +80,8 @@ import de.fau.cs.osr.utils.StringUtils;
  * </ul>
  */
 public class TextConverter
-        extends
-            Visitor
+		extends
+			Visitor
 {
 	private static final Pattern ws = Pattern.compile("\\s+");
 	
@@ -147,6 +151,28 @@ public class TextConverter
 	public void visit(NodeList n)
 	{
 		iterate(n);
+	}
+	
+	public void visit(Itemization e)
+	{
+		iterate(e.getContent());
+	}
+	
+	public void visit(ItemizationItem i)
+	{
+		newline(1);
+		iterate(i.getContent());
+	}
+	
+	public void visit(Enumeration e)
+	{
+		iterate(e.getContent());
+	}
+	
+	public void visit(EnumerationItem item)
+	{
+		newline(1);
+		iterate(item.getContent());
 	}
 	
 	public void visit(Page p)
@@ -226,7 +252,7 @@ public class TextConverter
 		
 		write(link.getPrefix());
 		if (link.getTitle().getContent() == null
-		        || link.getTitle().getContent().isEmpty())
+				|| link.getTitle().getContent().isEmpty())
 		{
 			write(link.getTarget());
 		}
