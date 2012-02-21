@@ -25,8 +25,8 @@ import lombok.Setter;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.AttributeManager;
-import org.sweble.wikitext.engine.astwom.ChildManager;
+import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
+import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
 import org.sweble.wikitext.engine.astwom.OtherAttributes;
@@ -60,11 +60,11 @@ public class ParagraphAdapter
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
 	@Delegate(types = { WomUniversalAttributes.class, AttribAccessors.class })
-	private AttributeManager attribManager = AttributeManager.emptyManager();
+	private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
 	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
-	private ChildManager childManager = ChildManager.emptyManager();
+	private ChildManagerBase childManager = ChildManagerBase.emptyManager();
 	
 	// =========================================================================
 	
@@ -364,7 +364,7 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				int x = AttributeManager.verifyRange(value, 0, MAX_GAP);
+				int x = AttributeManagerBase.verifyRange(value, 0, MAX_GAP);
 				return (x == 0) ? null : value;
 			}
 			
@@ -382,7 +382,7 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				int x = AttributeManager.verifyRange(value, 0, MAX_GAP);
+				int x = AttributeManagerBase.verifyRange(value, 0, MAX_GAP);
 				return (x == 0) ? null : value;
 			}
 			

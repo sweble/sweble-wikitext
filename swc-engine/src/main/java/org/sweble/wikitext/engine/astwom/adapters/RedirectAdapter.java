@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.AttributeManager;
+import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.Toolbox;
@@ -47,7 +47,7 @@ public class RedirectAdapter
 	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
-	private AttributeManager attribManager = AttributeManager.emptyManager();
+	private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
 	
 	// =========================================================================
 	

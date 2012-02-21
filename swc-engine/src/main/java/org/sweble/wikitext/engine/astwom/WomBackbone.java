@@ -69,6 +69,7 @@ public abstract class WomBackbone
 	
 	// =========================================================================
 	
+	/*
 	protected void setParent(WomBackbone parent)
 	{
 		this.parent = parent;
@@ -83,6 +84,7 @@ public abstract class WomBackbone
 	{
 		this.nextSibling = nextSibling;
 	}
+	*/
 	
 	public final boolean isLinked()
 	{

@@ -16,12 +16,12 @@ public class AttributeManagerTest
 	
 	private final NodeList attrContainer = new NodeList();
 	
-	private AttributeManager manager = new AttributeManager.AttributeManagerThingy();
+	private AttributeManagerBase manager = new AttributeManagerBase.AttributeManager();
 	
 	@Before
 	public void initialize()
 	{
-		manager = new AttributeManager.AttributeManagerThingy();
+		manager = new AttributeManagerBase.AttributeManager();
 	}
 	
 	@Test

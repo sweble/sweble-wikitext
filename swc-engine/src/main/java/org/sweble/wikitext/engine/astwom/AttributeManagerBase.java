@@ -32,18 +32,18 @@ import org.sweble.wikitext.lazy.utils.XmlAttribute;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
-public abstract class AttributeManager
+public abstract class AttributeManagerBase
 {
-	private static final AttributeManager emptyManager = new EmptyAttributeManager();
+	private static final AttributeManagerBase emptyManager = new EmptyAttributeManager();
 	
-	public static AttributeManager emptyManager()
+	public static AttributeManagerBase emptyManager()
 	{
 		return emptyManager;
 	}
 	
-	public static AttributeManager createManager()
+	public static AttributeManagerBase createManager()
 	{
-		return new AttributeManagerThingy();
+		return new AttributeManager();
 	}
 	
 	// =========================================================================
@@ -354,7 +354,7 @@ public abstract class AttributeManager
 	
 	public static final class EmptyAttributeManager
 			extends
-				AttributeManager
+				AttributeManagerBase
 	{
 		@Override
 		public Collection<WomAttribute> getAttributes()
@@ -435,9 +435,9 @@ public abstract class AttributeManager
 	
 	// =========================================================================
 	
-	public static final class AttributeManagerThingy
+	public static final class AttributeManager
 			extends
-				AttributeManager
+				AttributeManagerBase
 	{
 		private NativeOrXmlAttributeAdapter firstAttr;
 		

@@ -62,12 +62,12 @@ public abstract class AttributeSupportingElement
 	 * @return The attribute manager or <code>null</code> if the element never
 	 *         supports attributes in any AST incarnation.
 	 */
-	protected AttributeManager getAttribManager()
+	protected AttributeManagerBase getAttribManager()
 	{
 		return null;
 	}
 	
-	protected void setAttribManager(AttributeManager attribManager)
+	protected void setAttribManager(AttributeManagerBase attribManager)
 	{
 		throw new InternalError();
 	}
@@ -82,9 +82,9 @@ public abstract class AttributeSupportingElement
 	 *             Thrown if the element never supports attributes in any AST
 	 *             incarnation.
 	 */
-	protected final AttributeManager getAttribManagerOrFail() throws UnsupportedOperationException
+	protected final AttributeManagerBase getAttribManagerOrFail() throws UnsupportedOperationException
 	{
-		AttributeManager attribManager = getAttribManager();
+		AttributeManagerBase attribManager = getAttribManager();
 		if (attribManager == null)
 		{
 			doesNotSupportAttributes();
@@ -93,12 +93,12 @@ public abstract class AttributeSupportingElement
 		return attribManager;
 	}
 	
-	protected final AttributeManager getAttribManagerForModificationOrFail() throws UnsupportedOperationException
+	protected final AttributeManagerBase getAttribManagerForModificationOrFail() throws UnsupportedOperationException
 	{
-		AttributeManager attribManager = getAttribManagerOrFail();
+		AttributeManagerBase attribManager = getAttribManagerOrFail();
 		if (attribManager.isEmptyManager())
 		{
-			attribManager = AttributeManager.createManager();
+			attribManager = AttributeManagerBase.createManager();
 			setAttribManager(attribManager);
 		}
 		return attribManager;
@@ -165,7 +165,7 @@ public abstract class AttributeSupportingElement
 	@Override
 	public final Collection<WomAttribute> getAttributes()
 	{
-		AttributeManager attrs = getAttribManager();
+		AttributeManagerBase attrs = getAttribManager();
 		if (attrs == null)
 			return Collections.emptyList();
 		return attrs.getAttributes();
@@ -174,7 +174,7 @@ public abstract class AttributeSupportingElement
 	@Override
 	public final String getAttribute(String name)
 	{
-		AttributeManager attrs = getAttribManager();
+		AttributeManagerBase attrs = getAttribManager();
 		if (attrs == null)
 			return null;
 		return attrs.getAttribute(name);
@@ -183,7 +183,7 @@ public abstract class AttributeSupportingElement
 	@Override
 	public final NativeOrXmlAttributeAdapter getAttributeNode(String name)
 	{
-		AttributeManager attrs = getAttribManager();
+		AttributeManagerBase attrs = getAttribManager();
 		if (attrs == null)
 			return null;
 		return attrs.getAttributeNode(name);
@@ -203,7 +203,7 @@ public abstract class AttributeSupportingElement
 		// If the element doesn't have any attributes then the caller is
 		// removing something that's not there and we should not create the
 		// attribute manager.
-		AttributeManager attrs = getAttribManagerOrFail();
+		AttributeManagerBase attrs = getAttribManagerOrFail();
 		return attrs.removeAttribute(descriptor, name, getAstAttribContainer());
 	}
 	
@@ -221,7 +221,7 @@ public abstract class AttributeSupportingElement
 		// If the element doesn't have any attributes then the caller is
 		// removing something that's not there and we should not create the
 		// attribute manager.
-		AttributeManager attrs = getAttribManagerOrFail();
+		AttributeManagerBase attrs = getAttribManagerOrFail();
 		attrs.removeAttributeNode(descriptor, attr, this, getAstAttribContainer());
 	}
 	
@@ -249,7 +249,7 @@ public abstract class AttributeSupportingElement
 			String value)
 	{
 		String altered = descriptor.verify(this, value);
-		AttributeManager attrs = getAttribManagerForModificationOrFail();
+		AttributeManagerBase attrs = getAttribManagerForModificationOrFail();
 		return attrs.setAttribute(descriptor, name, altered, this, getAstAttribContainerOrAddSupport());
 	}
 	
@@ -258,7 +258,7 @@ public abstract class AttributeSupportingElement
 			String name,
 			String value)
 	{
-		AttributeManager attrs = getAttribManagerForModificationOrFail();
+		AttributeManagerBase attrs = getAttribManagerForModificationOrFail();
 		return attrs.setAttribute(descriptor, name, value, this, getAstAttribContainerOrAddSupport());
 	}
 	
@@ -278,7 +278,7 @@ public abstract class AttributeSupportingElement
 		if (altered != value)
 			attr.setValue(altered);
 		
-		AttributeManager attrs = getAttribManagerForModificationOrFail();
+		AttributeManagerBase attrs = getAttribManagerForModificationOrFail();
 		return attrs.setAttributeNode(descriptor, attr, this, getAstAttribContainerOrAddSupport());
 	}
 	
@@ -290,7 +290,7 @@ public abstract class AttributeSupportingElement
 			int value)
 	{
 		String altered = descriptor.verify(this, String.valueOf(value));
-		AttributeManager attrs = getAttribManagerForModificationOrFail();
+		AttributeManagerBase attrs = getAttribManagerForModificationOrFail();
 		return attrs.setAttribute(descriptor, name, altered, this, getAstAttribContainerOrAddSupport());
 	}
 	
@@ -323,7 +323,7 @@ public abstract class AttributeSupportingElement
 	
 	protected void addAttributes(
 			NodeList xmlAttributes,
-			AttributeManager attribManager)
+			AttributeManagerBase attribManager)
 	{
 		Iterator<AstNode> i = xmlAttributes.iterator();
 		while (i.hasNext())

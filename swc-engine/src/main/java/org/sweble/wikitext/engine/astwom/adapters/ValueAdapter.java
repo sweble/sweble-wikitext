@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.ChildManager;
+import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomNodeType;
@@ -39,7 +39,7 @@ public class ValueAdapter
 	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
-	private ChildManager childManager = ChildManager.emptyManager();
+	private ChildManagerBase childManager = ChildManagerBase.emptyManager();
 	
 	// =========================================================================
 	

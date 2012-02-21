@@ -24,18 +24,18 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
-public abstract class ChildManager
+public abstract class ChildManagerBase
 {
-	private static final ChildManager emptyManager = new EmptyChildManager();
+	private static final ChildManagerBase emptyManager = new EmptyChildManager();
 	
-	public static ChildManager emptyManager()
+	public static ChildManagerBase emptyManager()
 	{
 		return emptyManager;
 	}
 	
-	private static ChildManager createManager()
+	private static ChildManagerBase createManager()
 	{
-		return new ChildManagerThingy();
+		return new ChildManager();
 	}
 	
 	// =========================================================================
@@ -74,22 +74,22 @@ public abstract class ChildManager
 	
 	public abstract boolean isEmptyManager();
 	
-	public abstract ChildManager modifyable();
+	public abstract ChildManagerBase modifyable();
 	
 	// =========================================================================
 	
 	public static final class EmptyChildManager
 			extends
-				ChildManager
+				ChildManagerBase
 	{
 		public boolean isEmptyManager()
 		{
 			return true;
 		}
 		
-		public ChildManager modifyable()
+		public ChildManagerBase modifyable()
 		{
-			return ChildManager.createManager();
+			return ChildManagerBase.createManager();
 		}
 		
 		// =====================================================================
@@ -164,9 +164,9 @@ public abstract class ChildManager
 	
 	// =========================================================================
 	
-	public static final class ChildManagerThingy
+	public static final class ChildManager
 			extends
-				ChildManager
+				ChildManagerBase
 	{
 		private WomBackbone firstChild;
 		
@@ -177,7 +177,7 @@ public abstract class ChildManager
 			return false;
 		}
 		
-		public ChildManager modifyable()
+		public ChildManagerBase modifyable()
 		{
 			return this;
 		}

@@ -49,6 +49,7 @@ public class EmptyTitleAdapter
 		throw new UnsupportedOperationException();
 	}
 	
+	/*
 	@Override
 	protected void setParent(WomBackbone parent)
 	{
@@ -66,6 +67,7 @@ public class EmptyTitleAdapter
 	{
 		throw new UnsupportedOperationException();
 	}
+	*/
 	
 	@Override
 	public void unlink()

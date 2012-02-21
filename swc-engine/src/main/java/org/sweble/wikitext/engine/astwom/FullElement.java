@@ -53,12 +53,12 @@ public abstract class FullElement
 	 * @return The child manager or <code>null</code> if the element never
 	 *         supports children in any AST incarnation.
 	 */
-	protected ChildManager getChildManager()
+	protected ChildManagerBase getChildManager()
 	{
 		return null;
 	}
 	
-	protected void setChildManager(ChildManager childManager)
+	protected void setChildManager(ChildManagerBase childManager)
 	{
 		throw new InternalError();
 	}
@@ -73,10 +73,10 @@ public abstract class FullElement
 	 *             Thrown if the element never supports children in any AST
 	 *             incarnation.
 	 */
-	protected final ChildManager getChildManagerForModificationOrFail()
+	protected final ChildManagerBase getChildManagerForModificationOrFail()
 	{
-		ChildManager childManager = getChildManager();
-		ChildManager modifyable = childManager.modifyable();
+		ChildManagerBase childManager = getChildManager();
+		ChildManagerBase modifyable = childManager.modifyable();
 		if (childManager != modifyable)
 			setChildManager(modifyable);
 		return modifyable;
@@ -129,7 +129,7 @@ public abstract class FullElement
 	@Override
 	public final boolean hasChildNodes()
 	{
-		ChildManager children = getChildManager();
+		ChildManagerBase children = getChildManager();
 		if (children == null)
 			return false;
 		return children.hasChildNodes();
@@ -138,7 +138,7 @@ public abstract class FullElement
 	@Override
 	public final Collection<WomNode> childNodes()
 	{
-		ChildManager children = getChildManager();
+		ChildManagerBase children = getChildManager();
 		if (children == null)
 			return Collections.emptyList();
 		return children.childNodes();
@@ -147,7 +147,7 @@ public abstract class FullElement
 	@Override
 	public final WomNode getFirstChild()
 	{
-		ChildManager children = getChildManager();
+		ChildManagerBase children = getChildManager();
 		if (children == null)
 			return null;
 		return children.getFirstChild();
@@ -156,7 +156,7 @@ public abstract class FullElement
 	@Override
 	public final WomNode getLastChild()
 	{
-		ChildManager children = getChildManager();
+		ChildManagerBase children = getChildManager();
 		if (children == null)
 			return null;
 		return children.getLastChild();
@@ -165,7 +165,7 @@ public abstract class FullElement
 	@Override
 	public final void appendChild(WomNode child)
 	{
-		ChildManager children = getChildManagerForModificationOrFail();
+		ChildManagerBase children = getChildManagerForModificationOrFail();
 		children.appendChild(child, this, getAstChildContainerOrAddSupport());
 	}
 	
@@ -173,7 +173,7 @@ public abstract class FullElement
 	public final void insertBefore(WomNode before, WomNode child)
 			throws IllegalArgumentException
 	{
-		ChildManager children = getChildManagerForModificationOrFail();
+		ChildManagerBase children = getChildManagerForModificationOrFail();
 		children.insertBefore(before, child, this, getAstChildContainerOrAddSupport());
 	}
 	
@@ -184,7 +184,7 @@ public abstract class FullElement
 		// If the given child is not a child of this node then the caller is
 		// removing something that's not there and the call to removeChild will
 		// eventually fail anyway.
-		ChildManager children = getChildManagerForModificationOrFail();
+		ChildManagerBase children = getChildManagerForModificationOrFail();
 		children.removeChild(child, this, getAstChildContainer());
 	}
 	
@@ -195,7 +195,7 @@ public abstract class FullElement
 		// If the given child is not a child of this node then the caller is
 		// replacing something that's not there and the call to replaceChild 
 		// will eventually fail anyway.
-		ChildManager children = getChildManagerForModificationOrFail();
+		ChildManagerBase children = getChildManagerForModificationOrFail();
 		children.replaceChild(search, replace, this, getAstChildContainer());
 	}
 	
@@ -214,7 +214,7 @@ public abstract class FullElement
 	protected void addContent(
 			AstToWomNodeFactory womNodeFactory,
 			NodeList container,
-			ChildManager childManager,
+			ChildManagerBase childManager,
 			boolean isInlineScope)
 	{
 		addContent(womNodeFactory, container, null, null, childManager, isInlineScope);
@@ -225,7 +225,7 @@ public abstract class FullElement
 			NodeList container,
 			AstNode from,
 			AstNode to,
-			ChildManager childManager,
+			ChildManagerBase childManager,
 			boolean isInlineScope)
 	{
 		Iterator<AstNode> i = container.iterator();
@@ -286,7 +286,7 @@ public abstract class FullElement
 			AstToWomNodeFactory womNodeFactory,
 			NodeList container,
 			AstNode to,
-			ChildManager childManager,
+			ChildManagerBase childManager,
 			Iterator<AstNode> i,
 			AstNode firstText)
 	{

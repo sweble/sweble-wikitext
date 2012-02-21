@@ -86,7 +86,7 @@ public class AttributeSupportingElementTest
 		
 		@Getter(AccessLevel.PROTECTED)
 		@Setter(AccessLevel.PROTECTED)
-		private AttributeManager attribManager = AttributeManager.emptyManager();
+		private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
 		
 		public ElementStub(XmlElement astNode)
 		{

@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.AttributeManager;
+import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
 import org.sweble.wikitext.engine.astwom.AttributeSupportingElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
@@ -53,7 +53,7 @@ public class CategoryAdapter
 	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
-	private AttributeManager attribManager = AttributeManager.emptyManager();
+	private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
 	
 	protected static final class AstRep
 	{
