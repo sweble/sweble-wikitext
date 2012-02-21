@@ -16,468 +16,420 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-
+import org.junit.Rule;
 import org.junit.Test;
-import org.sweble.wikitext.engine.Page;
-import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.RedirectAdapter;
+import org.junit.rules.ExpectedException;
 import org.sweble.wikitext.engine.wom.WomAttribute;
-import org.sweble.wikitext.engine.wom.WomBody;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-
-import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class PageAdapterTest
 {
-	/*
-	 * Test element low level functions
-	 */
+	@Rule
+	public ExpectedException expectedEx = ExpectedException.none();
 	
 	// =========================================================================
 	
 	@Test
-	public void testCtor1()
+	public void newPageAdpaterIsCorrectlyInitialized()
 	{
-		{
-			WomPage p = new PageAdapter((String) null, (String) null, "Title");
-			assertEquals(null, p.getNamespace());
-			assertEquals(null, p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("", "", "Title");
-			assertEquals(null, p.getNamespace());
-			assertEquals(null, p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("Namespace", "Path", "Title");
-			assertEquals("Namespace", p.getNamespace());
-			assertEquals("Path", p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Namespace:Path/Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("Namespace", "Path/", "Title");
-			assertEquals("Namespace", p.getNamespace());
-			assertEquals("Path", p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Namespace:Path/Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("", "", "Title");
-			assertEquals(WomNodeType.DOCUMENT, p.getNodeType());
-			assertEquals("page", p.getNodeName());
-			assertEquals("1.0", p.getVersion());
-			assertEquals(null, p.getNamespace());
-			assertEquals(null, p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Title", p.getName());
-			assertTrue(p.supportsAttributes());
-			assertTrue(p.supportsChildren());
-			assertTrue(p.hasChildNodes());
-			assertFalse(p.isRedirect());
-			assertNotNull(p.getBody());
-			assertNull(p.getParent());
-			assertNull(p.getRedirect());
-			assertNull(p.getText());
-			assertNull(p.getValue());
-			assertTrue(p.getFirstChild() == p.getBody());
-			assertTrue(p.getLastChild() == p.getBody());
-			assertEquals(
-			        Arrays.asList(new WomNode[] { p.getBody() }),
-			        new LinkedList<WomNode>(p.childNodes()));
-		}
-		{
-			WomPage p = new PageAdapter("Namespace", "Path", "Title");
-			for (WomAttribute attr : p.getAttributes())
-			{
-				if (attr.getName().equalsIgnoreCase("namespace"))
-					assertEquals("Namespace", attr.getValue());
-				else if (attr.getName().equalsIgnoreCase("path"))
-					assertEquals("Path", attr.getValue());
-				else if (attr.getName().equalsIgnoreCase("title"))
-					assertEquals("Title", attr.getValue());
-				else if (attr.getName().equalsIgnoreCase("version"))
-					assertEquals("1.0", attr.getValue());
-				else
-					assertTrue("Unexpected attribute: " + attr.getName(), false);
-			}
-		}
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_1()
-	{
-		new PageAdapter("Namespace:", "Path", "Title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_2()
-	{
-		new PageAdapter("Namespace/", "Path", "Title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_3()
-	{
-		new PageAdapter("Namespace", "/", "Title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_4()
-	{
-		new PageAdapter("Namespace", "/Path", "Title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_5()
-	{
-		new PageAdapter("Namespace", "/Path/", "Title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_6()
-	{
-		new PageAdapter("Namespace", "Path//", "Title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_7()
-	{
-		new PageAdapter("", "", "Title:");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_8()
-	{
-		new PageAdapter("", "", "Title/");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testCtor1_9()
-	{
-		new PageAdapter("", "", "");
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testCtor1_10()
-	{
-		new PageAdapter("", "", (String) null);
-	}
-	
-	// =========================================================================
-	
-	@Test
-	public void testLowLevelAttr()
-	{
-		{
-			WomPage p = new PageAdapter("x", "y", "z");
-			p.setAttribute("namespace", null);
-			p.setAttribute("path", null);
-			p.setAttribute("title", "Title");
-			assertEquals(null, p.getNamespace());
-			assertEquals(null, p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("x", "y", "z");
-			p.setAttribute("namespace", "");
-			p.setAttribute("path", "");
-			p.setAttribute("title", "Title");
-			assertEquals(null, p.getNamespace());
-			assertEquals(null, p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("x", "y", "z");
-			p.setAttribute("namespace", "Namespace");
-			p.setAttribute("path", "Path");
-			p.setAttribute("title", "Title");
-			assertEquals("Namespace", p.getNamespace());
-			assertEquals("Path", p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Namespace:Path/Title", p.getName());
-		}
-		{
-			WomPage p = new PageAdapter("x", "y", "z");
-			p.setAttribute("namespace", "Namespace");
-			p.setAttribute("path", "Path/");
-			p.setAttribute("title", "Title");
-			assertEquals("Namespace", p.getNamespace());
-			assertEquals("Path", p.getPath());
-			assertEquals("Title", p.getTitle());
-			assertEquals("Namespace:Path/Title", p.getName());
-		}
-		/*
-		{
-			WomPage p = new PageAdapter("x", "y", "z");
-			p.setAttribute("NamespacE", "Namespace");
-			p.setAttribute("PatH", "Path/");
-			p.setAttribute("TitlE", "Title");
-			assertEquals("Namespace:Path/Title", p.getName());
-			assertEquals("Namespace", p.getAttribute("namespace"));
-			assertEquals("Namespace", p.getAttribute("NAMESPACE"));
-			assertEquals("Path", p.getAttribute("path"));
-			assertEquals("Path", p.getAttribute("PATH"));
-			assertEquals("Title", p.getAttribute("title"));
-			assertEquals("Title", p.getAttribute("TITLE"));
-			assertNull(p.getAttribute("name"));
-		}
-		{
-			WomPage p = new PageAdapter("x", "y", "z");
-			p.setAttribute("NamespacE", "Namespace");
-			p.setAttribute("PatH", "Path/");
-			p.setAttribute("TitlE", "Title");
-			assertEquals("NamespacE", p.getAttributeNode("namespace").getName());
-			assertEquals("NamespacE", p.getAttributeNode("NAMESPACE").getName());
-			assertEquals("Namespace", p.getAttributeNode("namespace").getValue());
-			assertEquals("Namespace", p.getAttributeNode("NAMESPACE").getValue());
-			assertEquals("PatH", p.getAttributeNode("path").getName());
-			assertEquals("PatH", p.getAttributeNode("PATH").getName());
-			assertEquals("Path", p.getAttributeNode("path").getValue());
-			assertEquals("Path", p.getAttributeNode("PATH").getValue());
-			assertEquals("TitlE", p.getAttributeNode("title").getName());
-			assertEquals("TitlE", p.getAttributeNode("TITLE").getName());
-			assertEquals("Title", p.getAttributeNode("title").getValue());
-			assertEquals("Title", p.getAttributeNode("TITLE").getValue());
-			assertNull(p.getAttributeNode("name"));
-			assertNull(p.getAttribute("idontexist"));
-		}
-		*/
-	}
-	
-	// =========================================================================
-	
-	@Test
-	public void testAttrSetter1()
-	{
-		WomPage p = new PageAdapter("", "", "Title");
+		WomPage page = womPage().withNamespace("Ns").withPath("Path").build();
 		
-		assertNull(p.setNamespace("Namespace"));
-		assertEquals("Namespace", p.setNamespace("Namespace2"));
+		assertEquals("page", page.getNodeName());
+		assertEquals("1.0", page.getVersion());
+		assertEquals("Ns", page.getNamespace());
+		assertEquals("Path", page.getPath());
+		assertEquals("Default Page", page.getTitle());
 		
-		assertNull(p.setPath("Path"));
-		assertEquals("Path", p.setPath("Path2"));
+		assertNotNull(page.getBody());
 		
-		assertEquals("Title", p.setTitle("Title2"));
-		assertEquals("Title2", p.setTitle("Title3"));
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testAttrSetter2()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setNamespace("Namespace:");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testAttrSetter3()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setPath("Path//");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testAttrSetter4()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setTitle("Title/");
-	}
-	
-	// =========================================================================
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testLowLevelAttrSetter1()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setAttribute("namespace", "Namespace:");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testLowLevelAttrSetter2()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setAttribute("path", "Path//");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testLowLevelAttrSetter3()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setAttribute("title", "Title/");
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelAttrSetter4()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setAttribute("version", "1.0");
-	}
-	
-	// =========================================================================
-	
-	@Test
-	public void testLowLevelAttrRemove1()
-	{
-		WomPage p = new PageAdapter("ns", "path", "Title");
-		assertEquals("ns", p.removeAttribute("namespace").getValue());
-		assertEquals("path", p.removeAttribute("path").getValue());
-		assertNull(p.getAttribute("namespace"));
-		assertNull(p.getAttribute("path"));
-		assertNull(p.setAttribute("namespace", "ns"));
-		assertNull(p.setAttribute("path", "path"));
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelAttrRemove2()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setAttribute("version", null);
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelAttrRemove3()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setAttribute("title", null);
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelAttrRemove4()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.removeAttribute("version");
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelAttrRemove5()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.removeAttribute("title");
-	}
-	
-	@Test(expected = IllegalArgumentException.class)
-	public void testLowLevelAttrRemove6()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.removeAttribute("idontexist");
-	}
-	
-	// =========================================================================
-	
-	@Test
-	public void testChild1()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		BodyAdapter newBody = new BodyAdapter();
-		WomBody oldBody = p.getBody();
-		assertTrue(oldBody == p.setBody(newBody));
-		assertTrue(newBody == p.getBody());
-		assertTrue(newBody == p.getFirstChild());
-		assertTrue(newBody == p.getLastChild());
-	}
-	
-	@Test(expected = NullPointerException.class)
-	public void testChild2()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setBody(null);
-	}
-	
-	@Test
-	public void testChild3()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		RedirectAdapter newRedirect = new RedirectAdapter("asdf");
-		assertNull(p.setRedirect(newRedirect));
-		assertTrue(p.isRedirect());
-		assertTrue(newRedirect == p.getRedirect());
-		assertTrue(newRedirect == p.getFirstChild());
-		assertTrue(p.getLastChild() == p.getBody());
-		assertTrue(newRedirect == p.setRedirect(null));
-		assertNull(p.getRedirect());
-		assertFalse(p.isRedirect());
-		assertTrue(p.getFirstChild() == p.getBody());
-		assertTrue(p.getLastChild() == p.getBody());
-	}
-	
-	@Test
-	public void testChild4()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.setCategory("Test");
-		p.setCategory("Test2");
+		assertFalse(page.isRedirect());
+		assertNull(page.getRedirect());
 		
-		System.out.println(WomPrinter.print(p));
+		assertEquals(WomNodeType.DOCUMENT, page.getNodeType());
+		assertNull(page.getText());
+		assertNull(page.getValue());
+		assertTrue(page.supportsAttributes());
+		assertTrue(page.supportsChildren());
+		assertTrue(page.hasChildNodes());
+		assertNull(page.getParent());
+		assertTrue(page.getFirstChild() == page.getBody());
+		assertTrue(page.getLastChild() == page.getBody());
 		
-		AstNode n = ((PageAdapter) p).getAstNode();
-		System.out.print(AstPrinter.print(n));
+		assertArrayEquals(
+				new WomNode[] { page.getBody() },
+				page.childNodes().toArray());
+	}
+	
+	@Test
+	public void getNameConcatenatesNamespacePathAndTitle()
+	{
+		WomPage page = womPage().withNamespace("Ns").withPath("Path").build();
+		assertEquals("Ns:Path/Default Page", page.getName());
+	}
+	
+	@Test
+	public void emptyStringInNamespaceAndPathAreTreatedAsNull()
+	{
+		WomPage page = womPage().withNamespace("").withPath("").build();
+		assertNull(page.getNamespace());
+		assertNull(page.getPath());
+	}
+	
+	@Test
+	public void pagePropertiesCanBeEnumeratedInAttributes() throws Exception
+	{
+		WomPage page = womPage().withNamespace("Ns").withPath("Path").build();
+		
+		for (WomAttribute attr : page.getAttributes())
+		{
+			if (attr.getName().equalsIgnoreCase("namespace"))
+				assertEquals("Ns", attr.getValue());
+			else if (attr.getName().equalsIgnoreCase("path"))
+				assertEquals("Path", attr.getValue());
+			else if (attr.getName().equalsIgnoreCase("title"))
+				assertEquals("Default Page", attr.getValue());
+			else if (attr.getName().equalsIgnoreCase("version"))
+				assertEquals("1.0", attr.getValue());
+			else
+				fail();
+		}
+	}
+	
+	@Test
+	public void cannotRemoveUnknownAttribute() throws Exception
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("An attribute named `iDontExist' is not supported by this element!");
+		womPage().build().removeAttribute("iDontExist");
+	}
+	
+	@Test
+	public void cannotAddAribtraryAttribute() throws Exception
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("An attribute named `imRandom' is not supported by this element!");
+		womPage().build().setAttribute("imRandom", "value");
 	}
 	
 	// =========================================================================
 	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelChild1()
+	@Test
+	public void canInstantiateWomPageWithNullNamespace()
 	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.appendChild(new BodyAdapter());
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelChild2()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.insertBefore(p.getLastChild(), new RedirectAdapter("asdf"));
-	}
-	
-	@Test(expected = UnsupportedOperationException.class)
-	public void testLowLevelChild3()
-	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.removeChild(p.getLastChild());
+		WomPage page = womPage().withNamespace(null).build();
+		assertNull(page.getNamespace());
 	}
 	
 	@Test
-	public void testLowLevelChild4()
+	public void canRetrieveNamespaceAfterInstantiation()
 	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		BodyAdapter newBody = new BodyAdapter();
-		p.replaceChild(p.getBody(), newBody);
-		assertTrue(newBody == p.getBody());
-		assertTrue(newBody == p.getFirstChild());
-		assertTrue(newBody == p.getLastChild());
+		WomPage page = womPage().withNamespace("Ns").build();
+		assertEquals("Ns", page.getNamespace());
+	}
+	
+	@Test
+	public void canRetrieveNamespaceAfterInstantiationFromAttribute()
+	{
+		WomPage page = womPage().withNamespace("Ns").build();
+		assertEquals("Ns", page.getAttribute("namespace"));
+	}
+	
+	@Test
+	public void canSetNamespaceAttributeToNull()
+	{
+		WomPage page = womPage().withNamespace("Ns").build();
+		assertEquals("Ns", page.getNamespace());
+		
+		page.setAttribute("namespace", null);
+		assertNull(page.getNamespace());
+	}
+	
+	@Test
+	public void settingNamespaceToEmptyStringRemovesTheNamespaceAttribute()
+	{
+		WomPage page = womPage().withNamespace("Ns").build();
+		assertEquals("Ns", page.getNamespace());
+		
+		page.setNamespace("");
+		assertNull(page.getAttribute("namesapce"));
+		assertNull(page.getNamespace());
+	}
+	
+	@Test
+	public void namespaceContainingColonRaisesException()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid namespace");
+		womPage().withNamespace("Namespace:").build();
+	}
+	
+	@Test
+	public void namespaceContainingSlashRaisesException()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid namespace");
+		womPage().withNamespace("Namespace/").build();
+	}
+	
+	@Test
+	public void namespaceIsCheckedWhenSettingAttribute()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid namespace");
+		womPage().build().setAttribute("namespace", "Namespace/");
+	}
+	
+	@Test
+	public void namespaceIsCheckedWhenUsingSetter()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid namespace");
+		womPage().build().setNamespace("Namespace/");
+	}
+	
+	@Test
+	public void namespaceAttributeNameIsCaseSsensitive()
+	{
+		WomPage page = womPage().withNamespace("Ns").build();
+		assertNull(page.getAttribute("NAMESPACE"));
+		
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("An attribute named `NAMESPACE' is not supported by this element!");
+		page.setAttribute("NAMESPACE", "Ns 2");
+	}
+	
+	@Test
+	public void canRemoveNamespaceAttribute() throws Exception
+	{
+		WomPage page = womPage().withNamespace("Ns").build();
+		assertNotNull(page.getAttribute("namespace"));
+		assertEquals("Ns:Default Page", page.getName());
+		
+		page.removeAttribute("namespace");
+		assertNull(page.getAttribute("namespace"));
+		assertNull(page.getNamespace());
+		assertEquals("Default Page", page.getName());
 	}
 	
 	// =========================================================================
 	
 	@Test
-	public void testAst()
+	public void canInstantiateWomPageWithNullPath()
 	{
-		WomPage p = new PageAdapter("ns", "path", "Title");
-		AstNode n = ((PageAdapter) p).getAstNode();
-		assertFalse(n.hasAttributes());
-		assertFalse(n.hasProperties());
-		assertTrue(n instanceof Page);
-		assertNotNull(((Page) n).getContent());
-		assertEquals(0, ((Page) n).getContent().size());
-		//System.out.print(AstPrinter.print(n));
+		WomPage page = womPage().withPath(null).build();
+		assertNull(page.getPath());
+	}
+	
+	@Test
+	public void canRetrievePathAfterInstantiation()
+	{
+		WomPage page = womPage().withPath("Path").build();
+		assertEquals("Path", page.getPath());
+	}
+	
+	@Test
+	public void canRetrievePathAfterInstantiationFromAttribute()
+	{
+		WomPage page = womPage().withPath("Path").build();
+		assertEquals("Path", page.getAttribute("path"));
+	}
+	
+	@Test
+	public void canSetPathAttributeToNull()
+	{
+		WomPage page = womPage().withPath("Path").build();
+		assertEquals("Path", page.getPath());
+		
+		page.setAttribute("path", null);
+		assertNull(page.getPath());
+	}
+	
+	@Test
+	public void settingPathToEmptyStringRemovesThePathAttribute()
+	{
+		WomPage page = womPage().withPath("Path").build();
+		assertEquals("Path", page.getPath());
+		
+		page.setPath("");
+		assertNull(page.getAttribute("path"));
+		assertNull(page.getPath());
+	}
+	
+	@Test
+	public void pathThatIsOnlyASlashRaisesException()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid path");
+		womPage().withPath("/").build();
+	}
+	
+	@Test
+	public void pathThatStartsWithSlashRaisesException()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid path");
+		womPage().withPath("/Path").build();
+	}
+	
+	@Test
+	public void slashAtTheEndOfPathIsStripped()
+	{
+		WomPage page = womPage().withPath("Path/").build();
+		assertEquals("Path", page.getPath());
+	}
+	
+	@Test
+	public void doubleSlashInPathRaisesException() throws Exception
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid path");
+		womPage().withPath("Path//").build();
+	}
+	
+	@Test
+	public void pathIsCheckedWhenSettingAttribute()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid path");
+		womPage().build().setAttribute("path", "/");
+	}
+	
+	@Test
+	public void pathIsCheckedWhenUsingSetter()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid path");
+		womPage().build().setPath("/");
+	}
+	
+	@Test
+	public void pathAttributeNameIsCaseSsensitive()
+	{
+		WomPage page = womPage().withPath("Path").build();
+		assertNull(page.getAttribute("PATH"));
+		
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("An attribute named `PATH' is not supported by this element!");
+		page.setAttribute("PATH", "Path 2");
+	}
+	
+	@Test
+	public void canRemovePathAttribute() throws Exception
+	{
+		WomPage page = womPage().withPath("Path").build();
+		assertNotNull(page.getAttribute("path"));
+		assertEquals("Path/Default Page", page.getName());
+		
+		page.removeAttribute("path");
+		assertNull(page.getAttribute("path"));
+		assertNull(page.getPath());
+		assertEquals("Default Page", page.getName());
+	}
+	
+	// =========================================================================
+	
+	@Test
+	public void cannotInstantiatePageWithNullTitle()
+	{
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Cannot remove attribute `title'");
+		womPage().withTitle(null).build();
+	}
+	
+	@Test
+	public void cannotInstantiatePageWithEmptyTitle()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid title");
+		womPage().withTitle("").build();
+	}
+	
+	@Test
+	public void cannotSetPageWithEmptyTitle()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid title");
+		womPage().withTitle("").build();
+	}
+	
+	@Test
+	public void slashInTitleRaisesException() throws Exception
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid title");
+		womPage().withTitle("Title/").build();
+	}
+	
+	@Test
+	public void colonInTitleRaisesException() throws Exception
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid title");
+		womPage().withTitle("Title:").build();
+	}
+	
+	@Test
+	public void titleIsCheckedWhenSettingAttribute()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid title");
+		womPage().build().setAttribute("title", "Title/");
+	}
+	
+	@Test
+	public void titleIsCheckedWhenUsingSetter()
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Invalid title");
+		womPage().build().setTitle("Title/");
+	}
+	
+	@Test
+	public void titleAttributeNameIsCaseSsensitive()
+	{
+		WomPage page = womPage().build();
+		assertNull(page.getAttribute("TITLE"));
+		
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("An attribute named `TITLE' is not supported by this element!");
+		page.setAttribute("TITLE", "Title");
+	}
+	
+	@Test
+	public void cannotRemoveTitleAttribute() throws Exception
+	{
+		WomPage page = womPage().build();
+		assertNotNull(page.getAttribute("title"));
+		
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Attribute `title' cannot be removed");
+		page.removeAttribute("title");
+	}
+	
+	// =========================================================================
+	
+	@Test
+	public void versionAttributeCannotBeRemoved() throws Exception
+	{
+		WomPage page = womPage().build();
+		
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Attribute `version' cannot be removed");
+		page.removeAttribute("version");
+	}
+	
+	@Test
+	public void versionAttributeCannotBeAltered() throws Exception
+	{
+		WomPage page = womPage().build();
+		
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Cannot alter read-only attribute `version'");
+		page.setAttribute("version", "2.0");
 	}
 }

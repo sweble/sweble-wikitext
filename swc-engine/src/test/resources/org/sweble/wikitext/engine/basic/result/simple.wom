@@ -1,30 +1,16 @@
-
 <page version="1.0" title="Simple.wikitext">
-  <category category="Test" />
+  <category name="Test" />
   <body>
-    <p><text>Some text in a paragraph.
-
-</text></p>
-    <p><text>Some text with a newline
-and some special tokens like &amp; and ).
-
-</text></p>
-    <p><b name="value" /><text>
-
-</text></p>
-    <p><b><text> Native bold text </text></b><text>
-
-</text></p>
-    <p><b><text> HTML bold text </text></b><text>
-
-</text><comment> An XML comment </comment><text>
-
-</text><comment> An illegal -- XML comment </comment><text>
-
-</text></p>
+    <p topgap="0" bottomgap="0"><text>Some text in a paragraph.</text></p>
+    <p topgap="0" bottomgap="0"><text>Some text with a newline
+and some special tokens like &amp; and ).</text></p>
+    <p topgap="0" bottomgap="0"><b name="value" /></p>
+    <p topgap="0" bottomgap="0"><b><text> Native bold text </text></b></p>
+    <p topgap="0" bottomgap="2"><b><text> HTML bold text </text></b></p>
+    <comment> An XML comment </comment>
+    <comment> An illegal -- XML comment </comment>
     <hr />
     <hr />
-    <p><text>
-</text></p>
+    <p topgap="0" bottomgap="0" />
   </body>
 </page>

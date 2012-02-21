@@ -16,15 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URL;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
+import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
@@ -35,39 +31,12 @@ import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
 
-import de.fau.cs.osr.ptk.common.test.ParserTestResources;
-
 public class TextAdapterTest
-		extends
-			AstWomTestBase
 {
-	public TextAdapterTest() throws FileNotFoundException, IOException
-	{
-		URL url = TextAdapterTest.class.getResource("/");
-		Assert.assertTrue(url != null);
-		
-		ParserTestResources resources =
-				new ParserTestResources(new File(url.getFile()));
-		
-		common = new AstWomTestCommon(
-				resources,
-				"(.*?)/target/test-classes/",
-				"$1/src/test/resources/",
-				false,
-				"basic/wikitext/",
-				"basic/result/",
-				"basic/result/",
-				"basic/result/");
-		
-		common.getConfig().setTrimTransparentBeforeParsing(false);
-	}
-	
-	// =========================================================================
-	
 	@Test
 	public void testTextAdapter() throws Exception
 	{
-		WomPage page = parseToWom("some text");
+		WomPage page = AstWomTestFixture.quickParseToWom("<b>some text</b>");
 		
 		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
 		
@@ -91,7 +60,7 @@ public class TextAdapterTest
 	private void parse(
 			String wt,
 			String expectedWt,
-			String expectedWom) throws LinkTargetException, CompilerException
+			String expectedWom) throws Exception
 	{
 		WomText text = parseGetText(wt);
 		
@@ -170,7 +139,7 @@ public class TextAdapterTest
 			String wt,
 			String append,
 			String expectedWt,
-			String expectedWom) throws LinkTargetException, CompilerException
+			String expectedWom) throws Exception
 	{
 		WomText text = parseGetText(wt);
 		
@@ -266,7 +235,7 @@ public class TextAdapterTest
 			int from,
 			int length,
 			String expectedWt,
-			String expectedWom) throws LinkTargetException, CompilerException
+			String expectedWom) throws Exception
 	{
 		WomText text = parseGetText(wt);
 		
@@ -336,7 +305,7 @@ public class TextAdapterTest
 			int at,
 			String what,
 			String expectedWt,
-			String expectedWom) throws LinkTargetException, CompilerException
+			String expectedWom) throws Exception
 	{
 		WomText text = parseGetText(wt);
 		
@@ -411,7 +380,7 @@ public class TextAdapterTest
 			String replacement,
 			boolean didReplace,
 			String expectedWt,
-			String expectedWom) throws LinkTargetException, CompilerException
+			String expectedWom) throws Exception
 	{
 		WomText text = parseGetText(wt);
 		
@@ -449,7 +418,7 @@ public class TextAdapterTest
 			String replacement,
 			String expectedReplacedText,
 			String expectedWt,
-			String expectedWom) throws LinkTargetException, CompilerException
+			String expectedWom) throws Exception
 	{
 		WomText text = parseGetText(wt);
 		
@@ -484,11 +453,12 @@ public class TextAdapterTest
 	// =========================================================================
 	
 	@Test
-	public void testTextNodeInsertion() throws LinkTargetException, CompilerException
+	public void testTextNodeInsertion() throws Exception
 	{
 		WomText text = parseGetText("Hello");
 		
-		WomNodeFactory f = new AstWomNodeFactory(common.getConfig());
+		SimpleWikiConfiguration config = new AstWomTestFixture().getConfig();
+		WomNodeFactory f = new AstWomNodeFactory(config);
 		
 		text.getParent().appendChild(f.createText(" World!"));
 		
@@ -499,9 +469,10 @@ public class TextAdapterTest
 	
 	// =========================================================================
 	
-	private WomText parseGetText(String wt) throws LinkTargetException, CompilerException
+	private WomText parseGetText(String wt) throws Exception
 	{
-		WomPage page = parseToWom(wt);
+		WomPage page = AstWomTestFixture.quickParseToWom(
+				String.format("<b>%s</b>", wt));
 		
 		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
 		

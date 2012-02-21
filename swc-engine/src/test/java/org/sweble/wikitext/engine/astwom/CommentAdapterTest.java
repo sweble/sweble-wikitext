@@ -16,66 +16,59 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-import org.sweble.wikitext.lazy.utils.AstPrinter;
+import org.sweble.wikitext.lazy.parser.RtData;
+import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
-import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class CommentAdapterTest
-		extends
-			AstWomTestBase
 {
-	@Test
-	public void test()
+	private WomPage womPage;
+	
+	private ContentNode astPage;
+	
+	@Before
+	public void initialize()
 	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.getBody().appendChild(f.createComment("Hallo"));
+		womPage = womPage().withBody(
+				womComment().build()).build();
 		
-		ContentNode astNode = ((PageAdapter) p).getAstNode();
-		compare(p, astNode, astNode.getContent());
+		astPage = ((PageAdapter) womPage).getAstNode();
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testException()
+	public void illegalCommentTextRaisesException()
 	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
-		p.getBody().appendChild(f.createComment("Muhaha -- Muhaha"));
+		womPage().withBody(
+				womComment().withText(" -- ").build()).build();
 	}
 	
-	private void compare(WomPage p, ContentNode astNode, NodeList content)
+	@Test
+	public void rtDataSupportsCorrectRendering()
 	{
-		Assert.assertEquals(
-				"",
-				WikitextPrinter.print(content));
+		assertEquals(
+				"<!-- Default Comment Text -->",
+				RtWikitextPrinter.print(astPage));
+	}
+	
+	@Test
+	public void theAstOfAWomCommentIsCorrect()
+	{
+		XmlComment c = (XmlComment) astPage.getContent().get(0);
 		
-		Assert.assertEquals(
-				"<!--Hallo-->",
-				RtWikitextPrinter.print(astNode));
-		
-		Assert.assertEquals(
-				"Page([\n" +
-						"  XmlComment(\n" +
-						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"<!--Hallo-->\"\n" +
-						"      {N} content = \"Hallo\"\n" +
-						"      {N} prefix = null\n" +
-						"      {N} suffix = null\n" +
-						"  )\n" +
-						"])\n",
-				AstPrinter.print(astNode));
-		
-		Assert.assertEquals(
-				"\n<page version=\"1.0\" title=\"Title\">\n" +
-						"  <body><comment>Hallo</comment>\n" +
-						"  </body>\n" +
-						"</page>",
-				WomPrinter.print(p));
+		assertNull(c.getPrefix());
+		assertNull(c.getSuffix());
+		assertEquals(" Default Comment Text ", c.getContent());
+		assertEquals(
+				RtData.build("<!-- Default Comment Text -->"),
+				c.getAttribute("RTD"));
 	}
 }

@@ -474,7 +474,7 @@ public abstract class AttributeManager
 				WomAttribute i = firstAttr;
 				while (i != null)
 				{
-					if (i.getName().equalsIgnoreCase(name))
+					if (i.getName().equals(name))
 						return (NativeOrXmlAttributeAdapter) i;
 					
 					i = (WomAttribute) i.getNextSibling();

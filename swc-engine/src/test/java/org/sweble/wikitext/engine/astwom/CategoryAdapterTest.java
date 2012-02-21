@@ -16,37 +16,82 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
+import org.junit.rules.ExpectedException;
+import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
+import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
+import org.sweble.wikitext.engine.wom.WomParagraph;
 
 public class CategoryAdapterTest
 {
-	@Test(expected = IllegalArgumentException.class)
-	public void test() throws Throwable
+	private WomPage womPage;
+	
+	@Rule
+	public ExpectedException expectedEx = ExpectedException.none();
+	
+	@Before
+	public void initialize() throws Exception
 	{
-		WomCategory cat = null;
-		try
-		{
-			WomPage p = new PageAdapter((String) null, (String) null, "Title");
-			p.setCategory("Foo");
-			p.setCategory("Bar");
-			for (WomCategory c : p.getCategories())
-			{
-				cat = c;
-				c.setAttribute("name", "FooBar");
-				break;
-			}
-			p.setCategory("Bar");
-		}
-		catch (Exception e)
-		{
-			throw new Throwable(e)
-			{
-				private static final long serialVersionUID = 1L;
-			};
-		}
-		cat.setAttribute("name", "Bar");
+		womPage = womPage().withBody(
+				womComment().build()).build();
+	}
+	
+	@Test
+	public void cannotAddCategoryToAnyElement()
+	{
+		WomBold bold = womBold().build();
+		womPage.getBody().appendChild(bold);
+		
+		CategoryAdapter c = new CategoryAdapter("Some Category");
+		
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Cannot add category node to bold node!");
+		bold.appendChild(c);
+	}
+	
+	@Test()
+	public void removingANodeWhichContainsACategoryNodeRemovesTheCategory() throws Exception
+	{
+		womPage = AstWomTestFixture.quickParseToWom("<b>[[Category:Test]]</b>");
+		
+		assertTrue(womPage.hasCategory("Test"));
+		
+		WomParagraph para = (WomParagraph) womPage.getBody().getFirstChild();
+		WomBold bold = (WomBold) para.getFirstChild();
+		para.removeChild(bold);
+		
+		assertFalse(womPage.hasCategory("Test"));
+	}
+	
+	@Test
+	public void settingTheNameAttributeOfACategoryToTheNameOfAnExistingCategoryRaisesException()
+	{
+		womPage.setCategory("Foo");
+		WomCategory foo = womPage.getCategories().iterator().next();
+		
+		womPage.setCategory("Bar");
+		
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("The page is already assigned to a category called `Bar'");
+		foo.setAttribute("name", "Bar");
+	}
+	
+	@Test
+	public void pageKnowsAboutRenameAfterSettingTheNameAttributeOfACategory()
+	{
+		womPage.setCategory("Foo");
+		WomCategory foo = womPage.getCategories().iterator().next();
+		assertTrue(womPage.hasCategory("Foo"));
+		
+		foo.setAttribute("name", "Bar");
+		assertTrue(womPage.hasCategory("Bar"));
+		assertFalse(womPage.hasCategory("Foo"));
 	}
 }

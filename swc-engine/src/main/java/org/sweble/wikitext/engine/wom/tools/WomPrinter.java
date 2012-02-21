@@ -41,6 +41,8 @@ public class WomPrinter
 	
 	private final boolean explicitTextNodes;
 	
+	private boolean firstLine = true;
+	
 	// =========================================================================
 	
 	public WomPrinter(Writer writer, boolean explicitTextNodes)
@@ -100,7 +102,7 @@ public class WomPrinter
 		{
 			if (isBlock(n))
 			{
-				out.print('\n');
+				println();
 				indent();
 				out.print('<');
 				out.print(n.getNodeName());
@@ -114,7 +116,7 @@ public class WomPrinter
 				
 				if (blockContent.peek())
 				{
-					out.println();
+					println();
 					indent();
 				}
 				out.print("</");
@@ -156,7 +158,12 @@ public class WomPrinter
 		}
 		else if (n.getNodeType() == WomNodeType.COMMENT)
 		{
-			//blockContent.set(blockContent.size() - 1, false);
+			if (blockContent.peek())
+			{
+				println();
+				indent();
+			}
+			
 			out.print("<comment>");
 			out.print(n.getValue());
 			out.print("</comment>");
@@ -165,7 +172,7 @@ public class WomPrinter
 		{
 			if (isBlock(n))
 			{
-				out.print('\n');
+				println();
 				indent();
 				out.print('<');
 				out.print(n.getNodeName());
@@ -181,6 +188,18 @@ public class WomPrinter
 				iterateAttributes(n);
 				out.print(" />");
 			}
+		}
+	}
+	
+	private void println()
+	{
+		if (!firstLine)
+		{
+			out.println();
+		}
+		else
+		{
+			firstLine = false;
 		}
 	}
 	

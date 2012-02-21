@@ -149,7 +149,7 @@ public abstract class AttributeSupportingElement
 	{
 		AttributeDescriptor d = getAttributeDescriptor(name);
 		if (d == null)
-			throw new IllegalArgumentException("There is no attribute '" + name + "'");
+			throw new IllegalArgumentException("An attribute named `" + name + "' is not supported by this element!");
 		
 		return d;
 	}
@@ -229,7 +229,7 @@ public abstract class AttributeSupportingElement
 	{
 		AttributeDescriptor d = getAttributeDescriptorOrFail(name);
 		if (!d.isRemovable())
-			throw new UnsupportedOperationException("Attribute '" + name + "' cannot be removed");
+			throw new UnsupportedOperationException("Attribute `" + name + "' cannot be removed");
 		
 		return d;
 	}
@@ -312,19 +312,16 @@ public abstract class AttributeSupportingElement
 	
 	// =========================================================================
 	
-	protected void addAttributes(
-			AstToWomNodeFactory womNodeFactory,
-			NodeList xmlAttributes)
+	protected void addAttributes(NodeList xmlAttributes)
 	{
 		if (xmlAttributes == null)
 			throw new NullPointerException();
 		
 		if (!xmlAttributes.isEmpty())
-			addAttributes(womNodeFactory, xmlAttributes, getAttribManagerForModificationOrFail());
+			addAttributes(xmlAttributes, getAttribManagerForModificationOrFail());
 	}
 	
 	protected void addAttributes(
-			AstToWomNodeFactory womNodeFactory,
 			NodeList xmlAttributes,
 			AttributeManager attribManager)
 	{
@@ -352,7 +349,7 @@ public abstract class AttributeSupportingElement
 				continue;
 			
 			// We only keep the lowercase name if the attribute is one of the
-			// known attributes. There are not rules that say how the other
+			// known attributes. There are no rules that say how the other
 			// attribute names should be formatted.
 			if (descriptor == GenericAttributeDescriptor.get())
 				name = astAttr.getName();
@@ -362,7 +359,7 @@ public abstract class AttributeSupportingElement
 					astAttr.getValue());
 			
 			// All known attributes (XHTML and WOM) only have lowercase values
-			// => rectification is easy ;)
+			// => correction is easy ;)
 			if (descriptor == GenericAttributeDescriptor.get())
 				value = value.toLowerCase();
 			
@@ -388,7 +385,7 @@ public abstract class AttributeSupportingElement
 					descriptor,
 					attr,
 					this,
-					getAstAttribContainerOrAddSupport());
+					null);
 		}
 	}
 	

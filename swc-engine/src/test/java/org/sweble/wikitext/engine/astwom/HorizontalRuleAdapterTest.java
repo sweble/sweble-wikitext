@@ -16,84 +16,107 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-import org.sweble.wikitext.lazy.utils.AstPrinter;
+import org.sweble.wikitext.lazy.parser.HorizontalRule;
+import org.sweble.wikitext.lazy.parser.RtData;
+import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
-import org.sweble.wikitext.lazy.utils.WikitextPrinter;
+import org.sweble.wikitext.lazy.utils.XmlAttribute;
 
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class HorizontalRuleAdapterTest
-		extends
-			AstWomTestBase
 {
-	@Test
-	public void test()
+	private WomPage womPage;
+	
+	private NodeList astPageContent;
+	
+	private WomHorizontalRule hRule;
+	
+	@Before
+	public void initialize()
 	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
+		hRule = womHr().build();
+		womPage = womPage().withBody(hRule).build();
 		
-		WomHorizontalRule hr = f.createHorizontalRule();
-		p.getBody().appendChild(hr);
-		
-		hr = f.createHorizontalRule();
-		hr.setAttribute("style", "foo");
-		hr.appendChild(f.createText("Invalid"));
-		p.getBody().appendChild(hr);
-		
-		ContentNode astNode = ((PageAdapter) p).getAstNode();
-		compare(p, astNode, astNode.getContent());
+		astPageContent = ((PageAdapter) womPage).getAstNode().getContent();
 	}
 	
-	private void compare(WomPage p, ContentNode astNode, NodeList content)
+	@Test
+	public void theAstOfAHorizontalRuleIsCorrect()
 	{
-		Assert.assertEquals(
-				"\n\n----<hr style=\"foo\" />",
-				WikitextPrinter.print(content));
+		HorizontalRule hr = (HorizontalRule) astPageContent.get(0);
 		
-		Assert.assertEquals(
-				"----<hr style=\"foo\">Invalid</hr>",
-				RtWikitextPrinter.print(astNode));
+		assertEquals(
+				RtData.build("----"),
+				hr.getAttribute("RTD"));
+	}
+	
+	@Test
+	public void theAstOfAHorizontalRuleAfterConversionToHtmlIsCorrect()
+	{
+		hRule.setAttribute("style", "foo");
 		
-		Assert.assertEquals(
-				"Page([\n" +
-						"  HorizontalRule(\n" +
-						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"----\"\n" +
-						"  )\n" +
-						"  XmlElement(\n" +
-						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"<hr\", [1] = \">\", [2] = \"</hr>\"\n" +
-						"      {N} empty = true\n" +
-						"      {N} name = \"hr\"\n" +
-						"\n" +
-						"    [\n" +
-						"      XmlAttribute(\n" +
-						"        Properties:\n" +
-						"              RTD = RtData: [0] = \" style=\\\"\", [1] = \"\\\"\"\n" +
-						"          {N} hasValue = true\n" +
-						"          {N} name = \"style\"\n" +
-						"\n" +
-						"        [ Text(\"foo\") ]\n" +
-						"      )\n" +
-						"    ]\n" +
-						"    [ Text(\"Invalid\") ]\n" +
-						"  )\n" +
-						"])\n",
-				AstPrinter.print(astNode));
+		XmlElement e = (XmlElement) astPageContent.get(0);
 		
-		Assert.assertEquals(
-				"\n<page version=\"1.0\" title=\"Title\">\n" +
-						"  <body>\n" +
-						"    <hr />\n" +
-						"    <hr style=\"foo\">Invalid</hr>\n" +
-						"  </body>\n" +
-						"</page>",
-				WomPrinter.print(p));
+		assertEquals(1, e.getXmlAttributes().size());
+		
+		XmlAttribute a = (XmlAttribute) e.getXmlAttributes().get(0);
+		assertEquals("style", a.getName());
+		assertTrue(a.getHasValue());
+		assertEquals(1, a.getValue().size());
+		assertEquals("foo", ((Text) a.getValue().get(0)).getContent());
+		
+		assertEquals(
+				RtData.build("<hr", " />", null),
+				e.getAttribute("RTD"));
+	}
+	
+	@Test
+	public void theAstOfAHorizontalRuleAfterAddingInvalidContentIsCorrect()
+	{
+		hRule.appendChild(womText().withText("Invalid").build());
+		
+		XmlElement e = (XmlElement) astPageContent.get(0);
+		
+		assertEquals(
+				RtData.build("<hr", ">", "</hr>"),
+				e.getAttribute("RTD"));
+	}
+	
+	@Test
+	public void rtDataSupportsCorrectRendering()
+	{
+		assertEquals(
+				"----",
+				RtWikitextPrinter.print(astPageContent));
+	}
+	
+	@Test
+	public void rtDataSupportsCorrectRenderingAfterConversionToHtml()
+	{
+		hRule.setAttribute("style", "foo");
+		
+		assertEquals(
+				"<hr style=\"foo\" />",
+				RtWikitextPrinter.print(astPageContent));
+	}
+	
+	@Test
+	public void rtDataSupportsCorrectRenderingAfterAddingInvalidContent()
+	{
+		hRule.appendChild(womText().withText("Invalid").build());
+		
+		assertEquals(
+				"<hr>Invalid</hr>",
+				RtWikitextPrinter.print(astPageContent));
 	}
 }

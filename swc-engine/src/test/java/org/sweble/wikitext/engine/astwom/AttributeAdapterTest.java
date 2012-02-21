@@ -16,131 +16,74 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
-import org.sweble.wikitext.engine.wom.WomAttribute;
-import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-import org.sweble.wikitext.lazy.utils.AstPrinter;
-import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
-import org.sweble.wikitext.lazy.utils.WikitextPrinter;
+import static org.junit.Assert.*;
 
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
+import org.sweble.wikitext.engine.wom.WomNode;
+import org.sweble.wikitext.engine.wom.tools.AstWomBuilder;
+import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.lazy.utils.XmlAttribute;
+
+import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class AttributeAdapterTest
-		extends
-			AstWomTestBase
 {
-	@Test(expected = IllegalArgumentException.class)
-	public void test()
+	private WomNode womBold;
+	
+	@Rule
+	public ExpectedException expectedEx = ExpectedException.none();
+	
+	@Before
+	public void initialize()
 	{
-		WomAttribute a = null;
-		try
-		{
-			WomPage p = new PageAdapter((String) null, (String) null, "Title");
-			
-			WomNode bold = f.createBold(f.createText("Hallo"));
-			p.getBody().appendChild(bold);
-			bold.setAttribute("class", "foo");
-			bold.setAttribute("style", "bar");
-			
-			p.setCategory("Foo");
-			p.setCategory("Bar");
-			
-			a = bold.getAttributeNode("style");
-		}
-		catch (Exception e)
-		{
-			Assert.fail();
-		}
-		a.setName("class");
+		womBold = AstWomBuilder.womBold().build();
+		
+		/*
+		womPage = AstWomBuilder.womPage().withBody(
+				womBold).build();
+		*/
+		
 	}
 	
 	@Test
-	public void testCompare()
+	public void settingAnAttribNameToANameOfAnotherAttribRaisesAnException()
 	{
-		WomPage p = new PageAdapter((String) null, (String) null, "Title");
+		womBold.setAttribute("class", "foo");
 		
-		WomNode bold = f.createBold(f.createText("Hallo"));
-		p.getBody().appendChild(bold);
-		bold.setAttribute("class", "foo");
-		bold.setAttribute("style", "bar");
+		womBold.setAttribute("style", "bar");
 		
-		p.setCategory("Foo");
-		p.setCategory("Bar");
-		
-		ContentNode astNode = ((PageAdapter) p).getAstNode();
-		compare(p, astNode, astNode.getContent());
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Attribute with this name already exists for the corresponding element!");
+		womBold.getAttributeNode("style").setName("class");
 	}
 	
-	private void compare(WomPage p, ContentNode astNode, NodeList content)
+	@Test
+	public void setAttribIsRetrievableAndHasCorrectValue()
 	{
-		Assert.assertEquals(
-				"<b class=\"foo\" style=\"bar\">Hallo</b>[[Category:Foo]][[Category:Bar]]",
-				WikitextPrinter.print(content));
+		womBold.setAttribute("class", "foo");
+		womBold.setAttribute("style", "bar");
 		
-		Assert.assertEquals(
-				"<b class=\"foo\" style=\"bar\">Hallo</b>[[Category:Foo]][[Category:Bar]]",
-				RtWikitextPrinter.print(astNode));
+		assertEquals("foo", womBold.getAttribute("class"));
+		assertEquals("bar", womBold.getAttribute("style"));
+	}
+	
+	@Test
+	public void astAssociatedWithAttiribIsCorrect()
+	{
+		womBold.setAttribute("class", "foo");
 		
-		Assert.assertEquals(
-				"Page([\n" +
-						"  XmlElement(\n" +
-						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"<b\", [1] = \">\", [2] = \"</b>\"\n" +
-						"      {N} empty = false\n" +
-						"      {N} name = \"b\"\n" +
-						"\n" +
-						"    [\n" +
-						"      XmlAttribute(\n" +
-						"        Properties:\n" +
-						"              RTD = RtData: [0] = \" class=\\\"\", [1] = \"\\\"\"\n" +
-						"          {N} hasValue = true\n" +
-						"          {N} name = \"class\"\n" +
-						"\n" +
-						"        [ Text(\"foo\") ]\n" +
-						"      )\n" +
-						"      XmlAttribute(\n" +
-						"        Properties:\n" +
-						"              RTD = RtData: [0] = \" style=\\\"\", [1] = \"\\\"\"\n" +
-						"          {N} hasValue = true\n" +
-						"          {N} name = \"style\"\n" +
-						"\n" +
-						"        [ Text(\"bar\") ]\n" +
-						"      )\n" +
-						"    ]\n" +
-						"    [ Text(\"Hallo\") ]\n" +
-						"  )\n" +
-						"  InternalLink(\n" +
-						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"[[Category:Foo\", [1] = \"]]\"\n" +
-						"      {N} postfix = \"\"\n" +
-						"      {N} prefix = \"\"\n" +
-						"      {N} target = \"Category:Foo\"\n" +
-						"\n" +
-						"    LinkTitle([ ])\n" +
-						"  )\n" +
-						"  InternalLink(\n" +
-						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"[[Category:Bar\", [1] = \"]]\"\n" +
-						"      {N} postfix = \"\"\n" +
-						"      {N} prefix = \"\"\n" +
-						"      {N} target = \"Category:Bar\"\n" +
-						"\n" +
-						"    LinkTitle([ ])\n" +
-						"  )\n" +
-						"])\n",
-				AstPrinter.print(astNode));
+		XmlElement e = (XmlElement) ((BoldAdapter) womBold).getAstNode();
 		
-		Assert.assertEquals(
-				"\n<page version=\"1.0\" title=\"Title\">\n" +
-						"  <category name=\"Foo\" />\n" +
-						"  <category name=\"Bar\" />\n" +
-						"  <body><b class=\"foo\" style=\"bar\">Hallo</b></body>\n" +
-						"</page>",
-				WomPrinter.print(p));
+		assertEquals(1, e.getXmlAttributes().size());
+		
+		XmlAttribute a = (XmlAttribute) e.getXmlAttributes().get(0);
+		assertEquals("class", a.getName());
+		assertTrue(a.getHasValue());
+		assertEquals(1, a.getValue().size());
+		assertEquals("foo", ((Text) a.getValue().get(0)).getContent());
 	}
 }

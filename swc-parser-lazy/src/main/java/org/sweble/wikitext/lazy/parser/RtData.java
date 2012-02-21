@@ -26,8 +26,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class RtData
-        implements
-            Serializable
+		implements
+			Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -126,5 +126,19 @@ public class RtData
 			}
 		}
 		return true;
+	}
+	
+	public static RtData build(String... data)
+	{
+		Object[][] rtd = new Object[data.length][];
+		
+		int i = 0;
+		for (Object o : data)
+		{
+			if (o != null)
+				rtd[i++] = new Object[] { o };
+		}
+		
+		return new RtData(rtd);
 	}
 }

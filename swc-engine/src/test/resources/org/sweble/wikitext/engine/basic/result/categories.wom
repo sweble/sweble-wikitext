@@ -1,10 +1,9 @@
-
 <page version="1.0" title="Categories.wikitext">
-  <category category="main" />
-  <category category="muhaha" />
-  <category category="ich bin neu hier" />
+  <category name="main" />
+  <category name="muhaha" />
+  <category name="ich bin neu hier" />
   <body>
-    <p>
+    <p topgap="0" bottomgap="0">
 <b />
 </p>
   </body>

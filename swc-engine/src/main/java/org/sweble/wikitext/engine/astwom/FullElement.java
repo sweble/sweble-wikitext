@@ -217,10 +217,31 @@ public abstract class FullElement
 			ChildManager childManager,
 			boolean isInlineScope)
 	{
+		addContent(womNodeFactory, container, null, null, childManager, isInlineScope);
+	}
+	
+	protected void addContent(
+			AstToWomNodeFactory womNodeFactory,
+			NodeList container,
+			AstNode from,
+			AstNode to,
+			ChildManager childManager,
+			boolean isInlineScope)
+	{
 		Iterator<AstNode> i = container.iterator();
 		while (i.hasNext())
 		{
 			AstNode n = i.next();
+			if (from != null)
+			{
+				if (n != from)
+					continue;
+				from = null;
+			}
+			else if (n == to)
+			{
+				break;
+			}
 			
 			{
 				switch (n.getNodeType())
@@ -233,7 +254,7 @@ public abstract class FullElement
 					case AstNodeTypes.NT_XML_ENTITY_REF:
 						if (isInlineScope)
 						{
-							buildComplexText(womNodeFactory, container, childManager, i, n);
+							buildComplexText(womNodeFactory, container, to, childManager, i, n);
 							break;
 						}
 						else
@@ -246,7 +267,7 @@ public abstract class FullElement
 						
 					case AstNodeTypes.NT_NEWLINE:
 						if (isInlineScope)
-							buildComplexText(womNodeFactory, container, childManager, i, n);
+							buildComplexText(womNodeFactory, container, to, childManager, i, n);
 						break;
 					
 					default:
@@ -264,6 +285,7 @@ public abstract class FullElement
 	private void buildComplexText(
 			AstToWomNodeFactory womNodeFactory,
 			NodeList container,
+			AstNode to,
 			ChildManager childManager,
 			Iterator<AstNode> i,
 			AstNode firstText)
@@ -276,6 +298,9 @@ public abstract class FullElement
 		while (i.hasNext())
 		{
 			AstNode n = i.next();
+			if (n == to)
+				break;
+			
 			switch (n.getNodeType())
 			{
 				case AstNode.NT_TEXT:
@@ -307,16 +332,29 @@ public abstract class FullElement
 		if (notText != null)
 			childManager.appendChild(notText, this, null);
 	}
-
-	protected final void addContent(AstToWomNodeFactory womNodeFactory, NodeList content)
+	
+	protected final void addContent(
+			AstToWomNodeFactory womNodeFactory,
+			NodeList content)
+	{
+		addContent(womNodeFactory, content, null, null);
+	}
+	
+	protected final void addContent(
+			AstToWomNodeFactory womNodeFactory,
+			NodeList content,
+			AstNode from,
+			AstNode to)
 	{
 		if (content == null)
 			throw new NullPointerException();
 		
 		if (!content.isEmpty())
 			addContent(
-					womNodeFactory, 
-					content, 
+					womNodeFactory,
+					content,
+					from,
+					to,
 					getChildManagerForModificationOrFail(),
 					true);
 	}

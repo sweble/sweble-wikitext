@@ -70,7 +70,7 @@ public class BoldAdapter
 	public BoldAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
 		super("b", astNode);
-		addAttributes(womNodeFactory, astNode.getXmlAttributes());
+		addAttributes(astNode.getXmlAttributes());
 		addContent(womNodeFactory, astNode.getBody());
 	}
 	

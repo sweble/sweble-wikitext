@@ -78,8 +78,8 @@ public class ParagraphAdapter
 			Paragraph astNode)
 	{
 		super(astNode);
-		addContent(womNodeFactory, astNode.getContent());
-		gapsFromAst();
+		//addContent(womNodeFactory, astNode.getContent());
+		gapsFromAst(womNodeFactory);
 	}
 	
 	public ParagraphAdapter(
@@ -88,7 +88,7 @@ public class ParagraphAdapter
 	{
 		super("p", astNode);
 		addContent(womNodeFactory, astNode.getBody());
-		addAttributes(womNodeFactory, astNode.getXmlAttributes());
+		addAttributes(astNode.getXmlAttributes());
 		
 		// FIXME: How about gaps and <p> elements?
 	}
@@ -156,8 +156,11 @@ public class ParagraphAdapter
 	
 	// =========================================================================
 	
-	private void gapsFromAst()
+	private void gapsFromAst(AstToWomNodeFactory womNodeFactory)
 	{
+		AstNode first = null;
+		AstNode last = null;
+		
 		NodeList container = getAstChildContainer();
 		ListIterator<AstNode> i;
 		
@@ -176,6 +179,7 @@ public class ParagraphAdapter
 					++topGap;
 					break;
 				default:
+					first = n;
 					break outer;
 			}
 		}
@@ -197,11 +201,24 @@ public class ParagraphAdapter
 					++bottomGap;
 					break;
 				default:
+					i.next();
+					if (i.hasNext())
+						last = i.next();
 					break outer;
 			}
 		}
 		
 		setAttribute(Attributes.BOTTOMGAP_FROM_AST, "bottomgap", bottomGap);
+		
+		if (bottomGap == 2)
+		{
+			addContent(womNodeFactory, container, first, last);
+		}
+		else
+		{
+			addContent(womNodeFactory, container, first, last);
+		}
+		
 	}
 	
 	private void setTopGapInAst(int lines)

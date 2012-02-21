@@ -199,7 +199,7 @@ public class Toolbox
 	
 	public static XmlElement addRtData(XmlElement n)
 	{
-		if (n.isEmpty())
+		if (n.getEmpty())
 		{
 			TextUtils.addRtData(
 					(AstNode) n,
@@ -303,7 +303,7 @@ public class Toolbox
 			IllegalArgumentException
 	{
 		if (title == null)
-			throw new UnsupportedOperationException("Cannot remove title attribute");
+			throw new UnsupportedOperationException("Cannot remove attribute `title'");
 		
 		if (!getValidTitleRx().matcher(title).matches())
 			throw new IllegalArgumentException("Invalid title");
@@ -314,7 +314,7 @@ public class Toolbox
 			IllegalArgumentException
 	{
 		if (category == null)
-			throw new UnsupportedOperationException("Cannot remove category attribute");
+			throw new UnsupportedOperationException("Cannot remove attribute `category'");
 		
 		if (!getValidTitleRx().matcher(category).matches())
 			throw new IllegalArgumentException("Invalid category");

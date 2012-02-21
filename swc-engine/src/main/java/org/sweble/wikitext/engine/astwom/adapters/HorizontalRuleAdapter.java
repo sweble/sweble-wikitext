@@ -76,7 +76,7 @@ public class HorizontalRuleAdapter
 			XmlElement astNode)
 	{
 		super("hr", astNode);
-		addAttributes(womNodeFactory, astNode.getXmlAttributes());
+		addAttributes(astNode.getXmlAttributes());
 		addContent(womNodeFactory, astNode.getBody());
 	}
 	
