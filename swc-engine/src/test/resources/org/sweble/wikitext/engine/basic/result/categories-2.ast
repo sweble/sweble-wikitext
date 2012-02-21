@@ -1,0 +1,17 @@
+Page([
+  Paragraph([
+    Text("asdf")
+    Newline("\n")
+    InternalLink(
+      Properties:
+            RTD = RtData: [0] = "[[Category:Main", [1] = "]]"
+        {N} postfix = ""
+        {N} prefix = ""
+        {N} target = "Category:Main"
+
+      LinkTitle([ ])
+    )
+    Newline("\n")
+    Text("asdf")
+  ])
+])
