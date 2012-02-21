@@ -107,14 +107,14 @@ private inline Text Greater =
 
 // -- XML Comment --------------------------------------------------------------
 
-/**
- * When a comment is preceded AND followed by newlines (ignoring spaces) the
- * spaces in front and after the comment are removed as well as the newline
- * following the comment. The newline in front of the comment IS NOT TOUCHED!
- *
- * If a comment is not enclosed in newlines (ignoring spaces) then only the
- * comment itself is consumed.
- */
+//
+// When a comment is preceded AND followed by newlines (ignoring spaces) the
+// spaces in front and after the comment are removed as well as the newline
+// following the comment. The newline in front of the comment IS NOT TOUCHED!
+//
+// If a comment is not enclosed in newlines (ignoring spaces) then only the
+// comment itself is consumed.
+//
 transient AstNode XmlCommentTrimmed =
     eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
     {
