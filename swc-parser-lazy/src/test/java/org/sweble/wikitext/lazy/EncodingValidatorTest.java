@@ -38,9 +38,9 @@ public class EncodingValidatorTest
 		StringBuilder source = new StringBuilder();
 		source.append("Ein einfacher Test-String\n"); // L 0
 		source.append("mit ein paar \uE800 und \r\n"); // L 1:13
-		source.append("natürlich ein paar \uFDEE.\n"); // L 2:19
+		source.append("nat\u00FCrlich ein paar \uFDEE.\n"); // L 2:19
 		source.append("Aber auch \uDBEF und \uDC80 \r"); // L 3:10, 3:16
-		source.append("dürfen nicht fehlen. Zu guter \n");// L4
+		source.append("d\u00FCrfen nicht fehlen. Zu guter \n");// L4
 		source.append("Letzt noch ein Wohlklang \u0007."); // L 5:25
 		
 		/* Ruins the test string!

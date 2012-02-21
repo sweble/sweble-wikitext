@@ -58,9 +58,7 @@ public class XPathTest
 	{
 		String title = "raw-France";
 		
-		AstNode ast = parser.parseArticle(
-		        load(PATH + "/wikitext/" + title + ".wikitext"),
-		        title);
+		AstNode ast = parse(title);
 		
 		JXPathContext context = JXPathContext.newContext(ast);
 		
@@ -72,7 +70,7 @@ public class XPathTest
 		
 		doQuery(context, b, "//Template[contains(name//Text[@content],\"Infobox Country\")]//TemplateArgument[contains(name//Text[@content],\"capital\")]/value");
 		
-		String actual = b.toString();
+		String actual = b.toString().replace("\r\n", "\n");
 		
 		String expected = null;
 		try
@@ -91,9 +89,7 @@ public class XPathTest
 	{
 		String title = "raw-Germany";
 		
-		AstNode ast = parser.parseArticle(
-		        load(PATH + "/wikitext/" + title + ".wikitext"),
-		        title);
+		AstNode ast = parse(title);
 		
 		JXPathContext context = JXPathContext.newContext(ast);
 		
@@ -101,7 +97,7 @@ public class XPathTest
 		
 		doQuery(context, b, "//Template[contains(name//Text[@content],\"Infobox country\")]//TemplateArgument[contains(name//Text[@content],\"capital\")]/value");
 		
-		String actual = b.toString();
+		String actual = b.toString().replace("\r\n", "\n");
 		
 		String expected = null;
 		try
@@ -114,13 +110,22 @@ public class XPathTest
 		
 		Assert.assertEquals(expected, actual);
 	}
+
+	private AstNode parse(String title) throws IOException, ParseException
+	{
+		AstNode ast = parser.parseArticle(
+		        load(PATH + "/wikitext/" + title + ".wikitext"),
+		        title);
+		
+		return ast;
+	}
 	
 	private String load(String path) throws IOException
 	{
 		InputStream in = SerializationTest.class.getResourceAsStream(path);
 		if (in == null)
 			return null;
-		return IOUtils.toString(in);
+		return IOUtils.toString(in, "UTF-8");
 	}
 	
 	private void doQuery(JXPathContext context, StringBuilder b, final String query)

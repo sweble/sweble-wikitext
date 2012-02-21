@@ -1,0 +1,92 @@
+#!/bin/bash
+#
+# Copyright 2011 The Open Source Research Group,
+#                University of Erlangen-Nürnberg
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set -o errexit
+
+PRJ="$1"
+if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
+	echo "Usage: $0 PROJECT"
+	exit -1
+fi
+
+JARPRJ="${PRJ}-jar"
+
+REPO="http://mojo.informatik.uni-erlangen.de/nexus/content/groups/public"
+
+echo "generating eclipse example from project '${PRJ}'"
+
+CLASSPATH=""
+function get_dependency() {
+
+	echo
+	GROUPID="$1"
+	ARTIFACTID="$2"
+
+	pushd ../"${PRJ}" &>/dev/null
+
+	echo "identifying version of '${GROUPID}:${ARTIFACTID}'"
+	VERSION=$( \
+		mvn dependency:list | \
+		grep -e "\[INFO\][ ]*${GROUPID}:${ARTIFACTID}" | \
+		sed -e "s/.*${GROUPID}:${ARTIFACTID}:jar:\([^:]\+\):.*/\1/" )
+
+	#echo "version: $VERSION"
+
+	JAR="${ARTIFACTID}-${VERSION}-jar-with-dependencies.jar"
+	echo "downloading '$JAR'"
+	mvn org.apache.maven.plugins:maven-dependency-plugin:2.4:get \
+		-DgroupId=${GROUPID} \
+		-DartifactId=${ARTIFACTID} \
+		-Dversion=${VERSION} \
+		-Dpackaging=jar \
+		-Dclassifier=jar-with-dependencies \
+		-DremoteRepositories=${REPO} \
+		-Ddest=../"$JARPRJ"/lib/"$JAR" &> ../"$JARPRJ"/generate-example-eclipse-project.log
+
+	CLASSPATH="$CLASSPATH	<classpathentry kind=\"lib\" path=\"lib/$JAR\"/>"$'\n'
+
+	popd &>/dev/null
+
+}
+
+mkdir "${JARPRJ}"
+pushd "${JARPRJ}" &>/dev/null
+
+mkdir lib
+get_dependency "org.sweble.wikitext" "swc-engine"
+
+cp ../${PRJ}/eclipse-project-files/project .project
+
+cat ../${PRJ}/eclipse-project-files/classpath | sed -e '/<!-- LIBS -->/q' > .classpath
+echo -n "$CLASSPATH" >> .classpath
+cat ../${PRJ}/eclipse-project-files/classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
+
+echo
+dest="src"
+for i in {main,test}; do
+	for j in {java,resources}; do
+		src="../${PRJ}/src/$i/$j"
+		if [[ -d $src ]]; then
+			echo "copying: $src -> $dest"
+			rsync -a $src/ $dest/
+		fi
+	done
+	dest="test"
+done
+
+popd &>/dev/null

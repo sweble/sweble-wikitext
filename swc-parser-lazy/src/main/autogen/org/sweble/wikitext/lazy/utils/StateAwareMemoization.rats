@@ -137,7 +137,8 @@ body
 
     @Override public boolean hasValueIgnoreCase(String s) { return result.hasValueIgnoreCase(s); }
 
-    @Override public <T> T semanticValue() { return result.semanticValue(); }
+    @SuppressWarnings("unchecked")
+    @Override public <T> T semanticValue() { return (T) result.semanticValue(); }
 
     @Override public ParseError parseError() { return result.parseError(); }
 

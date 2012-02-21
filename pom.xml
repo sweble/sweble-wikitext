@@ -8,6 +8,7 @@
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
     <version>1.0.1-SNAPSHOT</version>
+    <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components -->
@@ -30,7 +31,8 @@
   <modules>
     <module>swc-parser-lazy</module>
     <module>swc-engine</module>
-    <module>swc-example</module>
+    <module>swc-example-basic</module>
+    <module>swc-example-xpath</module>
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->
@@ -107,7 +109,7 @@
         <artifactId>maven-license-plugin</artifactId>
         <configuration>
           <header>etc/license-header.txt</header>
-          <encoding>UTF-8</encoding>
+          <!-- <encoding>UTF-8</encoding> -->
           <strictCheck>true</strictCheck>
           <failIfMissing>true</failIfMissing>
           <skip>false</skip>
@@ -119,9 +121,7 @@
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
-            <exclude>swc-jar-example/bin/**</exclude>
-            <exclude>swc-jar-example/test/*.html</exclude>
-            <exclude>swc-jar-example/test/*.wikitext</exclude>
+            <exclude>*-example-*-jar/**</exclude>
           </excludes>
         </configuration>
       </plugin>

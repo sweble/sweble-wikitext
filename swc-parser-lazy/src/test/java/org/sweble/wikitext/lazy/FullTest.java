@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
+import java.util.regex.Pattern;
 
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -43,6 +44,10 @@ public class FullTest
 	
 	private static AstTestCommon common;
 	
+	private static final String SC = File.separator;
+	
+	private static final String QSC = SC.replace("\\", "\\\\");//Pattern.quote(SC);
+	
 	@BeforeClass
 	public static void setUp()
 	{
@@ -54,8 +59,8 @@ public class FullTest
 		common = new AstTestCommon(
 		        resources,
 		        FullParser.class,
-		        "(.*?)/target/test-classes/",
-		        "$1/src/test/resources/",
+		        "(.*?)" + QSC + "target" + QSC + "test-classes" + QSC,
+		        "$1" + QSC + "src" + QSC + "test" + QSC + "resources" + QSC,
 		        false);
 	}
 	
@@ -65,8 +70,8 @@ public class FullTest
 	public void testBasicAst() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "basic/wikitext/",
-		        "basic/ast/",
+		        "basic" + SC + "wikitext" + SC,
+		        "basic" + SC + "ast" + SC,
 		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
@@ -75,8 +80,8 @@ public class FullTest
 	public void testBasicRtWikitextPrinter() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "basic/wikitext/",
-		        "basic/wikitext/",
+		        "basic" + SC + "wikitext" + SC,
+		        "basic" + SC + "wikitext" + SC,
 		        new AstVisitor[] { new AstCompressor() },
 		        new RtWikitextAstPrinter());
 	}
@@ -87,8 +92,8 @@ public class FullTest
 	public void testBasicWikitextPrinter() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "basic/wikitext/",
-		        "basic/wikitextprinter/",
+		        "basic" + SC + "wikitext" + SC,
+		        "basic" + SC + "wikitextprinter" + SC,
 		        new AstVisitor[] { new AstCompressor() },
 		        new WikitextAstPrinter());
 	}
@@ -99,8 +104,8 @@ public class FullTest
 	public void testRegression() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "regression/wikitext/",
-		        "regression/ast/",
+		        "regression" + SC + "wikitext" + SC,
+		        "regression" + SC + "ast" + SC,
 		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
@@ -111,8 +116,8 @@ public class FullTest
 	public void testComplexRegression() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "complex/wikitext/",
-		        "complex/ast/",
+		        "complex" + SC + "wikitext" + SC,
+		        "complex" + SC + "ast" + SC,
 		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}
@@ -123,8 +128,8 @@ public class FullTest
 	public void testScopes() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "scopes/wikitext/",
-		        "scopes/ast/",
+		        "scopes" + SC + "wikitext" + SC,
+		        "scopes" + SC + "ast" + SC,
 		        new AstVisitor[] { new AstCompressor() },
 		        new AstPrinter());
 	}

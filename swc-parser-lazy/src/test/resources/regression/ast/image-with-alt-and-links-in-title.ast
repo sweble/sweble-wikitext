@@ -1,0 +1,60 @@
+LazyParsedPage(
+  Properties:
+    {N} warnings = []
+
+  [
+    Paragraph([
+      ImageLink(
+        Properties:
+          RTD = RtData: [0] = "[[File:X", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText(
+              Properties:
+                RTD = RtData: [0] = "|alt=", [1]
+
+              [ Text("Y") ]
+            )
+          {N} border = false
+          {N} format = THUMBNAIL
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "File:X"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          LinkOptionKeyword(
+            Properties:
+              RTD = RtData: [0] = "|thumb"
+              {N} keyword = "thumb"
+          )
+          LinkOptionAltText(
+            Properties:
+              RTD = RtData: [0] = "|alt=", [1]
+
+            [ Text("Y") ]
+          )
+        ]
+        LinkTitle(
+          Properties:
+            RTD = RtData: [0] = "|", [1]
+
+          [
+            InternalLink(
+              Properties:
+                RTD = RtData: [0] = "[[Z", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "Z"
+
+              LinkTitle([ ])
+            )
+          ]
+        )
+      )
+    ])
+  ]
+)
