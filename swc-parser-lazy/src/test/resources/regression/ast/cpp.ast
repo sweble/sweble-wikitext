@@ -13,7 +13,7 @@ LazyParsedPage(
         [ ]
         [ Text("<") ]
       )
-      Whitespace(EOL: [ Text("\n") ])
+      Newline("\n")
       XmlElementOpen(
         Properties:
           RTD = RtData: [0] = "<blub", [1] = ">"
