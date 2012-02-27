@@ -155,6 +155,8 @@
           </headerDefinitions>
           <excludes>
             <exclude>doc/ast.txt</exclude>
+            <exclude>doc/newlines-a.txt</exclude>
+            <exclude>doc/newlines-b.txt</exclude>
             <exclude>src/test/resources/**/*.disabled</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/*.ast</exclude>
