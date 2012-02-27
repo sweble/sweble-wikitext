@@ -64,7 +64,7 @@ public abstract class FullElement
 	}
 	
 	/*
-	 * @startuml FullElement: getChildManagerForModificationOrFail.svg
+	 * @startuml FullElement-getChildManagerForModificationOrFail.svg
 	 * [-> FullElement: getChildManagerForModificationOrFail()
 	 * activate FullElement
 	 * 

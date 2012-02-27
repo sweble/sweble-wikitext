@@ -57,7 +57,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
     </dependency>
-
   </dependencies>
 
   <build>
@@ -194,6 +193,19 @@
         </configuration>
       </plugin>
 
+      <!-- Generate PlantUML diagrams -->
+      <plugin>
+        <groupId>com.github.jeluard</groupId>
+        <artifactId>maven-plantuml-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
