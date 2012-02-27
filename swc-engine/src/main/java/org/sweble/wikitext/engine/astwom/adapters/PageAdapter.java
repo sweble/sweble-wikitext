@@ -431,6 +431,15 @@ public class PageAdapter
 		}
 	}
 	
+	protected void changeCategoryName(
+			CategoryAdapter categoryAdapter,
+			String oldName,
+			String newName)
+	{
+		this.categories.remove(oldName.toLowerCase());
+		this.categories.put(newName.toLowerCase(), categoryAdapter);
+	}
+	
 	// =========================================================================
 	
 	@Override
@@ -514,7 +523,7 @@ public class PageAdapter
 		}
 		
 		@Override
-		public void customAction(WomNode parent, String value)
+		public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 		{
 		}
 	}

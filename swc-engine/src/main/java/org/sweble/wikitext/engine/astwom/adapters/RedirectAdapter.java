@@ -161,10 +161,10 @@ public class RedirectAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 				RedirectAdapter redirect = (RedirectAdapter) parent;
-				redirect.setTargetInAst(value);
+				redirect.setTargetInAst(newAttr.getValue());
 			}
 		},
 		
@@ -177,7 +177,7 @@ public class RedirectAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		};

@@ -82,6 +82,24 @@ public abstract class AttributeSupportingElement
 	 *             Thrown if the element never supports attributes in any AST
 	 *             incarnation.
 	 */
+	/*
+	 * @startuml AttributeSupportingElement-getAttribManagerOrFail
+	 * [-> AttributeSupportingElement: getAttribManagerOrFail
+	 * activate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> "? extends AttributeSupportingElement": getAttribManager
+	 *   activate "? extends AttributeSupportingElement"
+	 *     AttributeSupportingElement <-- "? extends AttributeSupportingElement": attribManager
+	 *   deactivate "? extends AttributeSupportingElement"
+	 * 
+	 *   alt attribManager == null
+	 *     [<-- AttributeSupportingElement: throw UnsupportedOperationException
+	 *   end
+	 * 
+	 *   [<-- AttributeSupportingElement: attribManager
+	 * deactivate AttributeSupportingElement
+	 * @enduml
+	 */
 	protected final AttributeManagerBase getAttribManagerOrFail() throws UnsupportedOperationException
 	{
 		AttributeManagerBase attribManager = getAttribManager();
@@ -93,6 +111,36 @@ public abstract class AttributeSupportingElement
 		return attribManager;
 	}
 	
+	/*
+	 * @startuml AttributeSupportingElement-getAttribManagerForModificationOrFail
+	 * [-> AttributeSupportingElement: getAttribManagerForModificationOrFail
+	 * activate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> AttributeSupportingElement: getAttribManagerOrFail
+	 *   activate AttributeSupportingElement
+	 * 
+	 *     AttributeSupportingElement -> "? extends AttributeSupportingElement": getAttribManager
+	 *     activate "? extends AttributeSupportingElement"
+	 *       AttributeSupportingElement <-- "? extends AttributeSupportingElement": attribManager
+	 *     deactivate "? extends AttributeSupportingElement"
+	 * 
+	 *     alt attribManager == null
+	 *       [<-- AttributeSupportingElement: throw UnsupportedOperationException
+	 *     end
+	 * 
+	 *     AttributeSupportingElement <-- AttributeSupportingElement: attribManager
+	 *   deactivate AttributeSupportingElement
+	 * 
+	 *   alt is immutable empty manager
+	 *     create AttributeManager
+	 *     AttributeSupportingElement -> AttributeManager: new
+	 *     AttributeSupportingElement -> "? extends AttributeSupportingElement": setAttribManager
+	 *   end
+	 * 
+	 *   [<-- AttributeSupportingElement: attribManager
+	 * deactivate AttributeSupportingElement
+	 * @enduml
+	 */
 	protected final AttributeManagerBase getAttribManagerForModificationOrFail() throws UnsupportedOperationException
 	{
 		AttributeManagerBase attribManager = getAttribManagerOrFail();
@@ -134,6 +182,27 @@ public abstract class AttributeSupportingElement
 		return null;
 	}
 	
+	/* 
+	 * @startuml AttributeSupportingElement-getAstAttribContainerOrAddSupport
+	 * [-> AttributeSupportingElement: getAstAttribContainerOrAddSupport
+	 * activate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> "? extends AttributeSupportingElement": getAstAttribContainer
+	 *   activate "? extends AttributeSupportingElement"
+	 *     AttributeSupportingElement <-- "? extends AttributeSupportingElement": astAttribContainer
+	 *   deactivate "? extends AttributeSupportingElement"
+	 *   
+	 *   alt attribContainer == null
+	 *     AttributeSupportingElement -> "? extends AttributeSupportingElement": addAstAttribSupport
+	 *     activate "? extends AttributeSupportingElement"
+	 *       AttributeSupportingElement <-- "? extends AttributeSupportingElement": astAttribContainer
+	 *     deactivate "? extends AttributeSupportingElement"
+	 *   end
+	 *   
+	 *   [<-- AttributeSupportingElement: astAttribContainer
+	 * deactivate AttributeSupportingElement
+	 * @enduml
+	 */
 	protected final NodeList getAstAttribContainerOrAddSupport()
 	{
 		NodeList attribContainer = getAstAttribContainer();
@@ -145,6 +214,24 @@ public abstract class AttributeSupportingElement
 	protected abstract AttributeDescriptor getAttributeDescriptor(String name);
 	
 	// should be protected
+	/*
+	 * @startuml AttributeSupportingElement-getAttributeDescriptorOrFail
+	 * [-> AttributeSupportingElement: getAttributeDescriptorOrFail
+	 * activate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> "? extends AttributeSupportingElement": getAttributeDescriptor
+	 *   activate "? extends AttributeSupportingElement"
+	 *     AttributeSupportingElement <-- "? extends AttributeSupportingElement": descriptor
+	 *   deactivate "? extends AttributeSupportingElement"
+	 *   
+	 *   alt no descriptor available
+	 * 	   [<-- AttributeSupportingElement: throw IllegalArgumentException
+	 *   end
+	 * 	 [<-- AttributeSupportingElement: descriptor
+	 *   
+	 * deactivate AttributeSupportingElement
+	 * @enduml
+	 */
 	public AttributeDescriptor getAttributeDescriptorOrFail(String name)
 	{
 		AttributeDescriptor d = getAttributeDescriptor(name);
@@ -234,6 +321,99 @@ public abstract class AttributeSupportingElement
 		return d;
 	}
 	
+	/*
+	 * @startuml AttributeSupportingElement-setAttribute
+	 * [-> AttributeSupportingElement: setAttribute
+	 * activate AttributeSupportingElement
+	 *   
+	 *   AttributeSupportingElement -> AttributeSupportingElement: getAttributeDescriptorOrFail
+	 *   activate AttributeSupportingElement
+	 *   
+	 *     AttributeSupportingElement -> "? extends AttributeSupportingElement": getAttributeDescriptor
+	 *     activate "? extends AttributeSupportingElement"
+	 *       AttributeSupportingElement <-- "? extends AttributeSupportingElement": descriptor
+	 *     deactivate "? extends AttributeSupportingElement"
+	 *     
+	 *     alt no descriptor available
+	 * 	     [<-- AttributeSupportingElement: throw IllegalArgumentException
+	 *     end
+	 *     
+	 * 	   AttributeSupportingElement <-- AttributeSupportingElement: descriptor
+	 *   deactivate AttributeSupportingElement
+	 *   
+	 *   AttributeSupportingElement -> AttributeSupportingElement: setAttribute
+	 *   activate AttributeSupportingElement
+	 *   
+	 *     AttributeSupportingElement -> AttributeDescriptor: verify
+	 *     activate AttributeDescriptor
+	 * 
+	 *       alt invalid value
+	 *         [<-- AttributeDescriptor: throw IllegalArgumentException
+	 *       end
+	 * 
+	 *     AttributeSupportingElement <-- AttributeDescriptor: possibly altered value
+	 *     deactivate AttributeDescriptor
+	 * 
+	 *     AttributeSupportingElement -> AttributeSupportingElement: getAttribManagerForModificationOrFail
+	 *     activate AttributeSupportingElement
+	 * 
+	 *       AttributeSupportingElement -> AttributeSupportingElement: getAttribManagerOrFail
+	 *       activate AttributeSupportingElement
+	 * 
+	 *         AttributeSupportingElement -> "? extends AttributeSupportingElement": getAttribManager
+	 *         activate "? extends AttributeSupportingElement"
+	 *           AttributeSupportingElement <-- "? extends AttributeSupportingElement": attribManager
+	 *         deactivate "? extends AttributeSupportingElement"
+	 * 
+	 *         alt attribManager == null
+	 *           [<-- AttributeSupportingElement: throw UnsupportedOperationException
+	 *         end
+	 * 
+	 *         AttributeSupportingElement <-- AttributeSupportingElement: attribManager
+	 *       deactivate AttributeSupportingElement
+	 * 
+	 *       alt is immutable empty manager
+	 *         create AttributeManager
+	 *         AttributeSupportingElement -> AttributeManager: new
+	 *         AttributeSupportingElement -> "? extends AttributeSupportingElement": setAttribManager
+	 *       end
+	 * 
+	 *       AttributeSupportingElement <-- AttributeSupportingElement: attribManager
+	 *     deactivate AttributeSupportingElement
+	 * 
+	 *     AttributeSupportingElement -> AttributeSupportingElement: getAstAttribContainerOrAddSupport
+	 *     activate AttributeSupportingElement
+	 * 
+	 *       AttributeSupportingElement -> "? extends AttributeSupportingElement": getAstAttribContainer
+	 *       activate "? extends AttributeSupportingElement"
+	 *         AttributeSupportingElement <-- "? extends AttributeSupportingElement": astAttribContainer
+	 *       deactivate "? extends AttributeSupportingElement"
+	 * 
+	 *       alt attribContainer == null
+	 *         AttributeSupportingElement -> "? extends AttributeSupportingElement": addAstAttribSupport
+	 *         activate "? extends AttributeSupportingElement"
+	 *           AttributeSupportingElement <-- "? extends AttributeSupportingElement": astAttribContainer
+	 *         deactivate "? extends AttributeSupportingElement"
+	 *       end
+	 * 
+	 *       AttributeSupportingElement <-- AttributeSupportingElement: astAttribContainer
+	 *     deactivate AttributeSupportingElement
+	 * 
+	 *     AttributeSupportingElement -> AttributeManagerBase: setAttribute
+	 *     activate AttributeManagerBase
+	 *       alt failure
+	 *         [<-- AttributeManagerBase: throw 
+	 *       end
+	 *       AttributeSupportingElement <-- AttributeManagerBase: oldAttrib
+	 *     deactivate AttributeManagerBase
+	 * 
+	 * 	   AttributeSupportingElement <-- AttributeSupportingElement: oldAttrib
+	 *   deactivate AttributeSupportingElement
+	 *   
+	 *   [<-- AttributeSupportingElement: oldAttrib
+	 * deactivate AttributeSupportingElement
+	 * @enduml
+	 */
 	@Override
 	public final NativeOrXmlAttributeAdapter setAttribute(
 			String name,
@@ -243,6 +423,78 @@ public abstract class AttributeSupportingElement
 		return setAttribute(d, name, value);
 	}
 	
+	/*
+	 * @startuml AttributeSupportingElement-setAttribute-2
+	 * [-> AttributeSupportingElement: setAttribute
+	 * activate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> AttributeDescriptor: verify
+	 *   activate AttributeDescriptor
+	 *   
+	 *     alt invalid value
+	 * 	     [<-- AttributeDescriptor: throw IllegalArgumentException
+	 *     end
+	 *   
+	 *   AttributeSupportingElement <-- AttributeDescriptor: possibly altered value
+	 *   deactivate AttributeDescriptor
+	 * 
+	 *   AttributeSupportingElement -> AttributeSupportingElement: getAttribManagerForModificationOrFail
+	 *   activate AttributeSupportingElement
+	 *   
+	 *     AttributeSupportingElement -> AttributeSupportingElement: getAttribManagerOrFail
+	 *     activate AttributeSupportingElement
+	 * 
+	 *       AttributeSupportingElement -> "? extends AttributeSupportingElement": getAttribManager
+	 *       activate "? extends AttributeSupportingElement"
+	 *         AttributeSupportingElement <-- "? extends AttributeSupportingElement": attribManager
+	 *       deactivate "? extends AttributeSupportingElement"
+	 * 
+	 *       alt attribManager == null
+	 *         [<-- AttributeSupportingElement: throw UnsupportedOperationException
+	 *       end
+	 * 
+	 *       AttributeSupportingElement <-- AttributeSupportingElement: attribManager
+	 *     deactivate AttributeSupportingElement
+	 * 
+	 *     alt is immutable empty manager
+	 *       create AttributeManager
+	 *       AttributeSupportingElement -> AttributeManager: new
+	 *       AttributeSupportingElement -> "? extends AttributeSupportingElement": setAttribManager
+	 *     end
+	 * 
+	 *     AttributeSupportingElement <-- AttributeSupportingElement: attribManager
+	 *   deactivate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> AttributeSupportingElement: getAstAttribContainerOrAddSupport
+	 *   activate AttributeSupportingElement
+	 * 
+	 *     AttributeSupportingElement -> "? extends AttributeSupportingElement": getAstAttribContainer
+	 *     activate "? extends AttributeSupportingElement"
+	 *       AttributeSupportingElement <-- "? extends AttributeSupportingElement": astAttribContainer
+	 *     deactivate "? extends AttributeSupportingElement"
+	 *   
+	 *     alt attribContainer == null
+	 *       AttributeSupportingElement -> "? extends AttributeSupportingElement": addAstAttribSupport
+	 *       activate "? extends AttributeSupportingElement"
+	 *         AttributeSupportingElement <-- "? extends AttributeSupportingElement": astAttribContainer
+	 *       deactivate "? extends AttributeSupportingElement"
+	 *     end
+	 *   
+	 *     AttributeSupportingElement <-- AttributeSupportingElement: astAttribContainer
+	 *   deactivate AttributeSupportingElement
+	 * 
+	 *   AttributeSupportingElement -> AttributeManagerBase: setAttribute
+	 *   activate AttributeManagerBase
+	 *     alt failure
+	 * 	     [<-- AttributeManagerBase: throw 
+	 *     end
+	 *     AttributeSupportingElement <-- AttributeManagerBase: oldAttrib
+	 *   deactivate AttributeManagerBase
+	 * 
+	 * [<-- AttributeSupportingElement: oldAttrib
+	 * deactivate AttributeSupportingElement
+	 * @enduml
+	 */
 	protected NativeOrXmlAttributeAdapter setAttribute(
 			AttributeDescriptor descriptor,
 			String name,

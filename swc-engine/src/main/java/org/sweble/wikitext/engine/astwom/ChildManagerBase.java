@@ -209,6 +209,47 @@ public abstract class ChildManagerBase
 			return child;
 		}
 		
+		/*
+		 * @startuml ChildManager-appendChild.svg
+		 * participant "<u>newChild : WomBackbone</u>" as newChild
+		 * participant "<u>: ChildManager</u>" as CM
+		 * participant "<u>parent : WomBackbone</u>" as parent
+		 * 
+		 * [-> CM: appendChild()
+		 * activate CM
+		 *   
+		 *   CM -> newChild: isLinked()
+		 *   activate newChild
+		 *     CM <-- newChild: isLinked
+		 *   deactivate newChild
+		 *   
+		 *   alt isLinked?
+		 *     [<-- CM: IllegalArgumentException
+		 *   end
+		 *   
+		 *   CM -> parent: acceptsChild()
+		 *   activate parent
+		 *     alt doesn't accept child
+		 *       [<-- parent: throws
+		 *     end
+		 *   deactivate parent
+		 *   
+		 *   CM -> newChild: acceptsParent()
+		 *   activate newChild
+		 *     alt doesn't accept parent
+		 *       [<-- newChild: throws
+		 *     end
+		 *   deactivate newChild
+		 *   
+		 *   CM -> newChild: link()
+		 *   
+		 *   alt childContainer != null
+		 *     CM -> : appendAstNode()
+		 *   end
+		 *   
+		 * deactivate CM
+		 * @enduml
+		 */
 		public void appendChild(
 				WomNode child,
 				WomBackbone parent,

@@ -1,5 +1,6 @@
 package org.sweble.wikitext.engine.astwom;
 
+import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 
 public class GenericAttributeDescriptor
@@ -42,7 +43,7 @@ public class GenericAttributeDescriptor
 	}
 	
 	@Override
-	public void customAction(WomNode parent, String value)
+	public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 	{
 	}
 }

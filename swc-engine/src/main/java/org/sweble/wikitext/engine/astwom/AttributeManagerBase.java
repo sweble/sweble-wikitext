@@ -483,6 +483,42 @@ public abstract class AttributeManagerBase
 			return null;
 		}
 		
+		/*
+		 * @startuml AttributeManagerBase-removeAttribute.svg
+		 * [-> AttributeManager: removeAttribute()
+		 * activate AttributeManager
+		 * 
+		 *   alt name == null
+		 *     [<-- AttributeManager: throw IllegalArgumentException
+		 *   end
+		 * 
+		 *   AttributeManager --> AttributeManager: oldAttribute = getAttribute()
+		 *   alt oldAttribute == null
+		 *     [<-- AttributeManager: null
+		 *   end
+		 * 
+		 *   AttributeManager -> AttributeManager: removeAttribute()
+		 *   activate AttributeManager
+		 * 
+		 *     AttributeManager -> NativeOrXmlAttributeAdapter: attribute.unlink()
+		 *   
+		 *     AttributeManager -> AttributeDescriptor: syncToAst()
+		 *     activate AttributeDescriptor
+		 *       AttributeManager <-- AttributeDescriptor: syncToAst
+		 *     deactivate AttributeDescriptor
+		 *   
+		 *     alt attrContainer != null && syncToAst
+		 *       AttributeManager -> AttributeManager: removeAttributeFromAst()
+		 *     end
+		 * 
+		 *     AttributeManager -> AttributeDescriptor: customAction()
+		 * 
+		 *   deactivate AttributeManager
+		 *   
+		 *   [<-- AttributeManager: oldAttribute
+		 * deactivate AttributeManager
+		 * @enduml
+		 */
 		@Override
 		public NativeOrXmlAttributeAdapter removeAttribute(
 				AttributeDescriptor descriptor,
@@ -517,6 +553,37 @@ public abstract class AttributeManagerBase
 			removeAttribute(descriptor, (NativeOrXmlAttributeAdapter) attr, attrContainer);
 		}
 		
+		/*
+		 * @startuml AttributeManagerBase-setAttribute.svg
+		 * [-> AttributeManager: setAttribute()
+		 * activate AttributeManager
+		 * 
+		 *   alt name == null
+		 *     [<-- AttributeManager: throw IllegalArgumentException
+		 *   end
+		 * 
+		 *   alt value == null
+		 *     AttributeManager -> AttributeManager: removeAttribute()
+		 *     activate AttributeManager
+		 *       AttributeManager <-- AttributeManager: oldAttribute
+		 *     deactivate AttributeManager
+		 *   else
+		 *     create NativeOrXmlAttributeAdapter
+		 *     AttributeManager -> NativeOrXmlAttributeAdapter: new
+		 *     AttributeManager -> AttributeManager: setAttribute()
+		 *     activate AttributeManager
+		 *       AttributeManager -> AttributeManager: replaceAttribute()
+		 *       activate AttributeManager
+		 *         AttributeManager <-- AttributeManager: oldAttribute
+		 *       deactivate AttributeManager
+		 *       AttributeManager <-- AttributeManager: oldAttribute
+		 *     deactivate AttributeManager
+		 *   end
+		 * 
+		 *   [<-- AttributeManager: oldAttribute
+		 * deactivate AttributeManager
+		 * @enduml
+		 */
 		@Override
 		public NativeOrXmlAttributeAdapter setAttribute(
 				AttributeDescriptor descriptor,
@@ -540,6 +607,17 @@ public abstract class AttributeManagerBase
 			}
 		}
 		
+		/*
+		 * @startuml AttributeManagerBase-setAttributeNode.svg
+		 * [-> AttributeManager: setAttributeNode
+		 * activate AttributeManager
+		 * 
+		 *   AttributeManager -> AttributeManager: replaceAttribute
+		 * 
+		 *   [<-- AttributeManager: oldAttribute
+		 * deactivate AttributeManager
+		 * @enduml
+		 */
 		@Override
 		public NativeOrXmlAttributeAdapter setAttributeNode(
 				AttributeDescriptor descriptor,
@@ -566,49 +644,99 @@ public abstract class AttributeManagerBase
 		
 		// =====================================================================
 		
+		/*
+		 * @startuml AttributeManagerBase-removeAttribute-2.svg
+		 * [-> AttributeManager: removeAttribute()
+		 * activate AttributeManager
+		 * 
+		 *   AttributeManager -> NativeOrXmlAttributeAdapter: unlink()
+		 *   
+		 *   AttributeManager -> AttributeDescriptor: syncToAst()
+		 *   activate AttributeDescriptor
+		 *     AttributeManager <-- AttributeDescriptor: syncToAst
+		 *   deactivate AttributeDescriptor
+		 *   
+		 *   alt attrContainer != null && syncToAst
+		 *     AttributeManager -> AttributeManager: removeAttributeFromAst()
+		 *   end
+		 * 
+		 *   AttributeManager -> AttributeDescriptor: customAction(null)
+		 * 
+		 * deactivate AttributeManager
+		 * @enduml
+		 */
 		private void removeAttribute(
 				AttributeDescriptor descriptor,
-				NativeOrXmlAttributeAdapter remove,
+				NativeOrXmlAttributeAdapter attribute,
 				NodeList attrContainer)
 		{
-			WomBackbone parent = remove.getParent();
+			WomBackbone parent = attribute.getParent();
 			
 			// remove from WOM
-			if (remove == firstAttr)
-				firstAttr = (NativeOrXmlAttributeAdapter) remove.getNextSibling();
-			remove.unlink();
+			if (attribute == firstAttr)
+				firstAttr = (NativeOrXmlAttributeAdapter) attribute.getNextSibling();
+			attribute.unlink();
 			
 			if (attrContainer != null && descriptor.syncToAst())
-			{
-				// remove from AST
-				// the ast can contain an attribute with the same name multiple times!
-				Iterator<AstNode> i = attrContainer.iterator();
-				while (i.hasNext())
-				{
-					AstNode node = i.next();
-					// there could also be garbage nodes ...
-					if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
-						continue;
-					
-					XmlAttribute attr = (XmlAttribute) node;
-					if (attr.getName().equalsIgnoreCase(remove.getName()))
-					{
-						i.remove();
-						// the WOM will always refer to the last attribute
-						if (attr == remove.getAstNode())
-						{
-							i = null;
-							break;
-						}
-					}
-				}
-				if (i != null)
-					throw new AssertionError("WOM and AST out of sync!");
-			}
+				removeAttributeFromAst(attribute, attrContainer);
 			
-			descriptor.customAction(parent, null);
+			descriptor.customAction(parent, attribute, null);
 		}
 		
+		private void removeAttributeFromAst(
+				NativeOrXmlAttributeAdapter remove,
+				NodeList attrContainer) throws AssertionError
+		{
+			// remove from AST
+			// the ast can contain an attribute with the same name multiple times!
+			Iterator<AstNode> i = attrContainer.iterator();
+			while (i.hasNext())
+			{
+				AstNode node = i.next();
+				// there could also be garbage nodes ...
+				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+					continue;
+				
+				XmlAttribute attr = (XmlAttribute) node;
+				if (attr.getName().equalsIgnoreCase(remove.getName()))
+				{
+					i.remove();
+					// the WOM will always refer to the last attribute
+					if (attr == remove.getAstNode())
+					{
+						i = null;
+						break;
+					}
+				}
+			}
+			if (i != null)
+				throw new AssertionError("WOM and AST out of sync!");
+		}
+		
+		/*
+		 * @startuml AttributeManagerBase-replaceAttribute.svg
+		 * [-> AttributeManager: replaceAttribute()
+		 * activate AttributeManager
+		 * 
+		 *   alt oldAttr != null
+		 *     AttributeManager -> NativeOrXmlAttributeAdapter: oldAttr.unlink()
+		 *   end
+		 *   
+		 *   AttributeManager -> NativeOrXmlAttributeAdapter: newAttr.link()
+		 *   
+		 *   alt attrContainer != null && syncToAst
+		 *     AttributeManager -> AttributeManager: replaceAttributeInAst()
+		 *   else
+		 *     alt newAttr.getAstNode() == null
+		 *       AttributeManager -> NativeOrXmlAttributeAdapter: newAttr.detachAstNode()
+		 *     end
+		 *   end
+		 * 
+		 *   AttributeManager -> AttributeDescriptor: customAction(newAttr)
+		 * 
+		 * deactivate AttributeManager
+		 * @enduml
+		 */
 		private void replaceAttribute(
 				AttributeDescriptor descriptor,
 				final NativeOrXmlAttributeAdapter oldAttr,
@@ -638,58 +766,7 @@ public abstract class AttributeManagerBase
 			
 			if (attrContainer != null && descriptor.syncToAst())
 			{
-				if (newAttr.getAstNode() == null)
-					newAttr.attachAstNode();
-				
-				// replace in AST
-				// the ast can contain an attribute with the same name multiple times!
-				
-				XmlAttribute oldAstNode = null;
-				if (oldAttr != null)
-					oldAstNode = oldAttr.getAstNode();
-				
-				String name = newAttr.getName();
-				XmlAttribute newAstNode = newAttr.getAstNode();
-				
-				boolean replaced = false;
-				
-				ListIterator<AstNode> i = attrContainer.listIterator();
-				while (i.hasNext())
-				{
-					AstNode node = i.next();
-					if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
-						continue;
-					
-					XmlAttribute attr = (XmlAttribute) node;
-					if (attr.getName().equalsIgnoreCase(name))
-					{
-						if (attr == oldAstNode)
-						{
-							i.set(newAstNode);
-							replaced = true;
-							
-							Object rtd = oldAstNode.getAttribute("RTD");
-							if (rtd != null)
-								newAstNode.setAttribute("RTD", rtd);
-							
-							// The node the WOM refers to comes always last
-							break;
-						}
-						else
-						{
-							// Remove all nodes with the same name and replace only the last
-							i.remove();
-						}
-					}
-				}
-				
-				if (!replaced)
-				{
-					if (oldAttr != null)
-						throw new AssertionError();
-					
-					attrContainer.add(newAstNode);
-				}
+				replaceAttributeInAst(oldAttr, newAttr, attrContainer);
 			}
 			else
 			{
@@ -697,7 +774,66 @@ public abstract class AttributeManagerBase
 					newAttr.detachAstNode();
 			}
 			
-			descriptor.customAction(parent, newAttr.getValue());
+			descriptor.customAction(parent, oldAttr, newAttr);
+		}
+		
+		private void replaceAttributeInAst(
+				final NativeOrXmlAttributeAdapter oldAttr,
+				final NativeOrXmlAttributeAdapter newAttr,
+				NodeList attrContainer) throws AssertionError
+		{
+			if (newAttr.getAstNode() == null)
+				newAttr.attachAstNode();
+			
+			// replace in AST
+			// the ast can contain an attribute with the same name multiple times!
+			
+			XmlAttribute oldAstNode = null;
+			if (oldAttr != null)
+				oldAstNode = oldAttr.getAstNode();
+			
+			String name = newAttr.getName();
+			XmlAttribute newAstNode = newAttr.getAstNode();
+			
+			boolean replaced = false;
+			
+			ListIterator<AstNode> i = attrContainer.listIterator();
+			while (i.hasNext())
+			{
+				AstNode node = i.next();
+				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+					continue;
+				
+				XmlAttribute attr = (XmlAttribute) node;
+				if (attr.getName().equalsIgnoreCase(name))
+				{
+					if (attr == oldAstNode)
+					{
+						i.set(newAstNode);
+						replaced = true;
+						
+						Object rtd = oldAstNode.getAttribute("RTD");
+						if (rtd != null)
+							newAstNode.setAttribute("RTD", rtd);
+						
+						// The node the WOM refers to comes always last
+						break;
+					}
+					else
+					{
+						// Remove all nodes with the same name and replace only the last
+						i.remove();
+					}
+				}
+			}
+			
+			if (!replaced)
+			{
+				if (oldAttr != null)
+					throw new AssertionError();
+				
+				attrContainer.add(newAstNode);
+			}
 		}
 	}
 	

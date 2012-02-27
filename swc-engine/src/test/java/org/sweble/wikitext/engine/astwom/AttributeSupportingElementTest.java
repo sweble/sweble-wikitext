@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import org.junit.Test;
+import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.lazy.parser.XmlElement;
@@ -180,7 +181,7 @@ public class AttributeSupportingElementTest
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		}

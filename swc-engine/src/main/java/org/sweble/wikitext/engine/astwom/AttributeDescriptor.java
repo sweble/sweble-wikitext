@@ -1,5 +1,6 @@
 package org.sweble.wikitext.engine.astwom;
 
+import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 
 public interface AttributeDescriptor
@@ -47,11 +48,16 @@ public interface AttributeDescriptor
 	 * 
 	 * @param parent
 	 *            The parent node for which to verify the attribute.
-	 * @param value
-	 *            The value to set or <code>null</code> if the attribute was
-	 *            removed.
+	 * @param oldAttr
+	 *            The old attribute node.
+	 * @param newAttr
+	 *            The new attribute node or <code>null</code> if the old
+	 *            attribute was removed.
 	 */
-	public abstract void customAction(WomNode parent, String value);
+	public abstract void customAction(
+			WomNode parent,
+			NativeOrXmlAttributeAdapter oldAttr,
+			NativeOrXmlAttributeAdapter newAttr);
 	
 	// =========================================================================
 	

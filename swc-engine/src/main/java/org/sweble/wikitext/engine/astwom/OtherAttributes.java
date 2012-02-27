@@ -2,6 +2,7 @@ package org.sweble.wikitext.engine.astwom;
 
 import java.util.regex.Pattern;
 
+import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.utils.Utils;
@@ -97,7 +98,7 @@ public enum OtherAttributes implements AttributeDescriptor
 	}
 	
 	@Override
-	public void customAction(WomNode parent, String value)
+	public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 	{
 	}
 }

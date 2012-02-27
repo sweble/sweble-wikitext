@@ -369,10 +369,10 @@ public class ParagraphAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 				ParagraphAdapter p = (ParagraphAdapter) parent;
-				int lines = (value != null) ? Integer.parseInt(value) : 0;
+				int lines = (newAttr != null) ? Integer.parseInt(newAttr.getValue()) : 0;
 				p.setTopGapInAst(lines);
 			}
 		},
@@ -387,10 +387,10 @@ public class ParagraphAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 				ParagraphAdapter p = (ParagraphAdapter) parent;
-				int lines = (value != null) ? Integer.parseInt(value) : 0;
+				int lines = (newAttr != null) ? Integer.parseInt(newAttr.getValue()) : 0;
 				p.setBottomGapInAst(lines);
 			}
 		},
@@ -404,7 +404,7 @@ public class ParagraphAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		},
@@ -418,7 +418,7 @@ public class ParagraphAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		},
@@ -438,7 +438,7 @@ public class ParagraphAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		};

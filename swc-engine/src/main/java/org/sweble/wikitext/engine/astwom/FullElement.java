@@ -63,6 +63,29 @@ public abstract class FullElement
 		throw new InternalError();
 	}
 	
+	/*
+	 * @startuml FullElement: getChildManagerForModificationOrFail.svg
+	 * [-> FullElement: getChildManagerForModificationOrFail()
+	 * activate FullElement
+	 * 
+	 *   FullElement -> "? extends FullElement": getChildManager()
+	 *   activate "? extends FullElement"
+	 *     FullElement <-- "? extends FullElement": childManager
+	 *   deactivate "? extends FullElement"
+	 *   
+	 *   FullElement -> "ChildManagerBase": modifyable()
+	 *   activate ChildManagerBase
+	 *     FullElement <-- "ChildManagerBase": modifyableChildManager
+	 *   deactivate ChildManagerBase
+	 *   
+	 *   alt childManager != modifyableChildManager
+	 *     FullElement -> "? extends FullElement": setChildManager(\n\tmodifyableChildManager)
+	 *   end
+	 *   
+	 *   [<-- FullElement: modifyableChildManager
+	 * deactivate FullElement
+	 * @enduml
+	 */
 	/**
 	 * This method is similar to getChildManager() but fails with an exception
 	 * if the element doesn't support children. It is used by children modifying
@@ -162,6 +185,21 @@ public abstract class FullElement
 		return children.getLastChild();
 	}
 	
+	/*
+	 * @startuml FullElement-appendChild.svg
+	 * [-> FullElement: appendChild()
+	 * activate FullElement
+	 * 
+	 *   FullElement -> FullElement: getChildManagerForModificationOrFail()
+	 *   activate FullElement
+	 *     FullElement <-- FullElement: childManager
+	 *   deactivate FullElement
+	 * 
+	 *   FullElement -> ChildManager: appendChild()
+	 * 
+	 * deactivate FullElement
+	 * @enduml
+	 */
 	@Override
 	public final void appendChild(WomNode child)
 	{

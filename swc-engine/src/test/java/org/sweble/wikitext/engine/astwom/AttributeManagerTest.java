@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 
@@ -93,7 +94,7 @@ public class AttributeManagerTest
 		}
 		
 		@Override
-		public void customAction(WomNode parent, String value)
+		public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 		{
 		}
 	}

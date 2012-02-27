@@ -289,13 +289,15 @@ public class CategoryAdapter
 		return (i >= 0) ? name.substring(i + 1) : name;
 	}
 	
-	private void effectNameChangeInAst(String name)
+	private void effectNameChangeInAst(NativeOrXmlAttributeAdapter newAttr)
 	{
+		String newValue = newAttr.getValue();
+		
 		// target can be null when this method is called indirectly by the constructor.
-		if (getAstNode().getTarget() != null && getNameFromAst().equals(name))
+		if (getAstNode().getTarget() != null && getNameFromAst().equals(newValue))
 			return;
 		
-		String target = CATEGORY_NAMESPACE + name;
+		String target = CATEGORY_NAMESPACE + newValue;
 		
 		// setNameInAst
 		InternalLink astNode = getAstNode();
@@ -315,6 +317,21 @@ public class CategoryAdapter
 				i.remove();
 				rep.container.remove(rep.category);
 			}
+		}
+	}
+	
+	private void effectNameChangeInPage(
+			NativeOrXmlAttributeAdapter oldAttr,
+			NativeOrXmlAttributeAdapter newAttr)
+	{
+		WomBackbone root = getParent();
+		if (root != null)
+		{
+			if (!(root instanceof PageAdapter))
+				throw new InternalError();
+			
+			PageAdapter page = (PageAdapter) root;
+			page.changeCategoryName(this, oldAttr.getValue(), newAttr.getValue());
 		}
 	}
 	
@@ -359,9 +376,13 @@ public class CategoryAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
-				((CategoryAdapter) parent).effectNameChangeInAst(value);
+				((CategoryAdapter) parent).effectNameChangeInAst(newAttr);
+				((CategoryAdapter) parent).effectNameChangeInPage(oldAttr, newAttr);
 			}
 		},
 		
@@ -374,7 +395,10 @@ public class CategoryAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, String value)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		};

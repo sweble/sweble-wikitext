@@ -177,7 +177,7 @@ public class HorizontalRuleAdapter
 		}
 		
 		@Override
-		public void customAction(WomNode parent, String value)
+		public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
 		{
 		}
 	}
