@@ -21,7 +21,6 @@ import java.util.Collections;
 
 import org.sweble.wikitext.engine.wom.WomNode;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class ChildManagerBase
@@ -218,15 +217,6 @@ public abstract class ChildManagerBase
 		 * [-> CM: appendChild()
 		 * activate CM
 		 *   
-		 *   CM -> newChild: isLinked()
-		 *   activate newChild
-		 *     CM <-- newChild: isLinked
-		 *   deactivate newChild
-		 *   
-		 *   alt isLinked?
-		 *     [<-- CM: IllegalArgumentException
-		 *   end
-		 *   
 		 *   CM -> parent: acceptsChild()
 		 *   activate parent
 		 *     alt doesn't accept child
@@ -244,7 +234,7 @@ public abstract class ChildManagerBase
 		 *   CM -> newChild: link()
 		 *   
 		 *   alt childContainer != null
-		 *     CM -> : appendAstNode()
+		 *     CM -> parent: appendToAst()
 		 *   end
 		 *   
 		 * deactivate CM
@@ -275,9 +265,41 @@ public abstract class ChildManagerBase
 			
 			// insert into AST, if required
 			if (childContainer != null)
-				Toolbox.appendAstNode(childContainer, newChild.getAstNode());
+				parent.appendToAst(childContainer, newChild.getAstNode());
 		}
 		
+		/*
+		 * @startuml ChildManager-insertBefore.svg
+		 * participant "<u>child : WomBackbone</u>" as newChild
+		 * participant "<u>: ChildManager</u>" as CM
+		 * participant "<u>parent : WomBackbone</u>" as parent
+		 * 
+		 * [-> CM: insertBefore()
+		 * activate CM
+		 *   
+		 *   CM -> parent: acceptsChild()
+		 *   activate parent
+		 *     alt doesn't accept child
+		 *       [<-- parent: throws
+		 *     end
+		 *   deactivate parent
+		 *   
+		 *   CM -> newChild: acceptsParent()
+		 *   activate newChild
+		 *     alt doesn't accept parent
+		 *       [<-- newChild: throws
+		 *     end
+		 *   deactivate newChild
+		 *   
+		 *   CM -> newChild: link()
+		 *   
+		 *   alt childContainer != null
+		 *     CM -> parent: insertIntoAst()
+		 *   end
+		 *   
+		 * deactivate CM
+		 * @enduml
+		 */
 		public void insertBefore(
 				WomNode before,
 				WomNode child,
@@ -296,20 +318,39 @@ public abstract class ChildManagerBase
 			
 			if (before.getParent() != parent)
 				throw new IllegalArgumentException("Given node `before' is not a child of this node.");
-			WomBackbone b = (WomBackbone) before;
+			WomBackbone p = (WomBackbone) before;
 			
 			parent.acceptsChild(newChild);
 			newChild.acceptsParent(parent);
 			
 			// insert into WOM
-			newChild.link(parent, b.getPrevSibling(), b);
-			if (b == firstChild)
+			newChild.link(parent, p.getPrevSibling(), p);
+			if (p == firstChild)
 				firstChild = newChild;
 			
 			// insert into AST
-			Toolbox.insertAstNode(childContainer, newChild.getAstNode(), b.getAstNode());
+			if (childContainer != null)
+				parent.insertIntoAst(childContainer, newChild.getAstNode(), p.getAstNode());
 		}
 		
+		/*
+		 * @startuml ChildManager-removeChild.svg
+		 * participant "<u>child : WomBackbone</u>" as child
+		 * participant "<u>: ChildManager</u>" as CM
+		 * participant "<u>parent : WomBackbone</u>" as parent
+		 * 
+		 * [-> CM: removeChild()
+		 * activate CM
+		 *   
+		 *   CM -> child: unlink()
+		 *   
+		 *   alt childContainer != null
+		 *     CM -> parent: removeFromAst()
+		 *   end
+		 *   
+		 * deactivate CM
+		 * @enduml
+		 */
 		public void removeChild(
 				WomNode child,
 				WomBackbone parent,
@@ -324,9 +365,50 @@ public abstract class ChildManagerBase
 			if (child.getParent() != parent)
 				throw new IllegalArgumentException("Given node `child' is not a child of this node.");
 			
-			removeChild(remove, childContainer);
+			// remove from WOM
+			if (remove == firstChild)
+				firstChild = remove.getNextSibling();
+			remove.unlink();
+			
+			// remove from AST
+			if (childContainer != null)
+				parent.removeFromAst(childContainer, remove.getAstNode());
 		}
 		
+		/*
+		 * @startuml ChildManager-replaceChild.svg
+		 * participant "<u>search : WomBackbone</u>" as search
+		 * participant "<u>replace : WomBackbone</u>" as replace
+		 * participant "<u>: ChildManager</u>" as CM
+		 * participant "<u>parent : WomBackbone</u>" as parent
+		 * 
+		 * [-> CM: replaceChild()
+		 * activate CM
+		 *   
+		 *   CM -> parent: acceptsChild()
+		 *   activate parent
+		 *     alt doesn't accept child
+		 *       [<-- parent: throws
+		 *     end
+		 *   deactivate parent
+		 *   
+		 *   CM -> replace: acceptsParent()
+		 *   activate replace
+		 *     alt doesn't accept parent
+		 *       [<-- replace: throws
+		 *     end
+		 *   deactivate replace
+		 *   
+		 *   CM -> search: unlink()
+		 *   CM -> replace: link()
+		 *   
+		 *   alt childContainer != null
+		 *     CM -> parent: replaceInAst()
+		 *   end
+		 *   
+		 * deactivate CM
+		 * @enduml
+		 */
 		public void replaceChild(
 				WomNode search,
 				WomNode replace,
@@ -350,28 +432,6 @@ public abstract class ChildManagerBase
 			parent.acceptsChild(newChild);
 			newChild.acceptsParent(parent);
 			
-			replaceChild(oldChild, newChild, parent, childContainer);
-		}
-		
-		// =====================================================================
-		
-		private void removeChild(WomBackbone remove, NodeList childContainer)
-		{
-			// remove from WOM
-			if (remove == firstChild)
-				firstChild = remove.getNextSibling();
-			remove.unlink();
-			
-			// remove from AST
-			Toolbox.removeAstNode(childContainer, remove.getAstNode());
-		}
-		
-		private void replaceChild(
-				final WomBackbone oldChild,
-				final WomBackbone newChild,
-				WomBackbone parent,
-				NodeList childContainer)
-		{
 			// replace in WOM
 			WomBackbone prev = oldChild.getPrevSibling();
 			WomBackbone next = oldChild.getNextSibling();
@@ -382,10 +442,7 @@ public abstract class ChildManagerBase
 				firstChild = newChild;
 			
 			// replace in AST
-			AstNode oldAstNode = oldChild.getAstNode();
-			AstNode newAstNode = newChild.getAstNode();
-			
-			Toolbox.replaceAstNode(childContainer, oldAstNode, newAstNode);
+			parent.replaceInAst(childContainer, oldChild.getAstNode(), newChild.getAstNode());
 		}
 	}
 }

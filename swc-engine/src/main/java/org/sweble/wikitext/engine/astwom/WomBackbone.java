@@ -25,8 +25,63 @@ import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.StringUtils;
 
+/*
+ * @startuml AstWomOverviewClassDiagramm.svg
+ * 
+ * interface "Iterable<T>" as Iterable
+ * interface Cloneable
+ * interface Serializable
+ * interface WomNode
+ * 
+ * abstract WomBackbone
+ * abstract AttributeSupportingElement
+ * abstract CustomChildrenElement
+ * abstract FullElement
+ * abstract NativeOrXmlElement
+ * 
+ * Iterable <|-- WomNode
+ * Cloneable <|-- WomNode
+ * Serializable <|-- WomNode
+ * 
+ * namespace adapters {
+ *   class CategoryAdapter
+ *   class BodyAdapter
+ *   class ValueAdapter
+ *   class NativeOrXmlAttributeAdapter
+ *   class CommentAdapter
+ *   class TextAdapter
+ *   class BoldAdapter
+ *   class ParagraphAdapter
+ *   class ArgAdapter
+ *   class PageAdapter
+ * }
+ * 
+ * WomNode <|-- WomBackbone
+ * 
+ * AttributeSupportingElement <|-- CustomChildrenElement
+ * AttributeSupportingElement <|-- FullElement
+ * AttributeSupportingElement <|-- adapters.CategoryAdapter
+ * 
+ * FullElement <|-- NativeOrXmlElement
+ * FullElement <|-- adapters.BodyAdapter
+ * FullElement <|-- adapters.ValueAdapter
+ * 
+ * WomBackbone <|-- AttributeSupportingElement
+ * WomBackbone <|-- adapters.NativeOrXmlAttributeAdapter
+ * WomBackbone <|-- adapters.CommentAdapter
+ * WomBackbone <|-- adapters.TextAdapter
+ * 
+ * NativeOrXmlElement <|-- adapters.BoldAdapter
+ * NativeOrXmlElement <|-- adapters.ParagraphAdapter
+ * 
+ * CustomChildrenElement <|-- adapters.ArgAdapter
+ * CustomChildrenElement <|-- adapters.PageAdapter
+ * 
+ * @enduml
+ */
 public abstract class WomBackbone
 		implements
 			WomNode
@@ -62,7 +117,36 @@ public abstract class WomBackbone
 		return old;
 	}
 	
-	public void replaceAstChild(AstNode oldNode, AstNode newNode)
+	protected void appendToAst(NodeList container, AstNode child)
+	{
+		throw new InternalError();
+	}
+	
+	/**
+	 * @param prevChild
+	 *            Cannot be null.
+	 */
+	protected void insertIntoAst(
+			NodeList container,
+			AstNode newChild,
+			AstNode prevChild)
+	{
+		throw new InternalError();
+	}
+	
+	/**
+	 * @param oldNode
+	 *            Cannot be null.
+	 */
+	protected void replaceInAst(
+			NodeList container,
+			AstNode oldNode,
+			AstNode newNode)
+	{
+		throw new InternalError();
+	}
+	
+	protected void removeFromAst(NodeList container, AstNode removeChild)
 	{
 		throw new InternalError();
 	}

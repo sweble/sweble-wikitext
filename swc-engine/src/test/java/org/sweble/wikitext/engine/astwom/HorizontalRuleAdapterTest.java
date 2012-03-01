@@ -93,6 +93,21 @@ public class HorizontalRuleAdapterTest
 	}
 	
 	@Test
+	public void removingAllChildrenTurnsHrIntoEmptyElementAgain()
+	{
+		hRule.appendChild(womText().withText("Invalid").build());
+		
+		hRule.removeChild(hRule.getFirstChild());
+		
+		XmlElement e = (XmlElement) astPageContent.get(0);
+		
+		assertTrue(e.getEmpty());
+		assertEquals(
+				RtData.build("<hr", " />", null),
+				e.getAttribute("RTD"));
+	}
+	
+	@Test
 	public void rtDataSupportsCorrectRendering()
 	{
 		assertEquals(

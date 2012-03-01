@@ -24,8 +24,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class NativeOrXmlElement
-        extends
-            FullElement
+		extends
+			FullElement
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -98,6 +98,38 @@ public abstract class NativeOrXmlElement
 		return xml().getBody();
 	}
 	
+	@Override
+	protected void appendToAst(NodeList container, AstNode child)
+	{
+		if (isXml())
+		{
+			if (container.isEmpty())
+			{
+				XmlElement e = xml();
+				e.setEmpty(false);
+				Toolbox.addRtData(e);
+			}
+		}
+		
+		super.appendToAst(container, child);
+	}
+	
+	@Override
+	protected void removeFromAst(NodeList container, AstNode removeNode)
+	{
+		super.removeFromAst(container, removeNode);
+		
+		if (isXml())
+		{
+			if (container.isEmpty())
+			{
+				XmlElement e = xml();
+				e.setEmpty(true);
+				Toolbox.addRtData(e);
+			}
+		}
+	}
+	
 	// =========================================================================
 	
 	protected final boolean isXml()
@@ -116,8 +148,15 @@ public abstract class NativeOrXmlElement
 		{
 			XmlElement converted = convertToXmlElement();
 			
-			if (getParent() != null)
-				getParent().replaceAstChild(getAstNode(), converted);
+			WomBackbone parent = getParent();
+			if (parent != null)
+			{
+				NodeList astChildContainer = null;
+				if (parent instanceof FullElement)
+					astChildContainer = ((FullElement) parent).getAstChildContainer();
+				
+				parent.replaceInAst(astChildContainer, getAstNode(), converted);
+			}
 			
 			setAstNode(converted);
 		}

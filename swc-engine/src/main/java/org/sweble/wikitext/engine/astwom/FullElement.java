@@ -240,14 +240,36 @@ public abstract class FullElement
 	// =========================================================================
 	
 	@Override
-	public final void replaceAstChild(AstNode oldNode, AstNode newNode)
+	protected void appendToAst(NodeList container, AstNode child)
 	{
-		NodeList container = getAstChildContainer();
-		if (container == null)
-			throw new InternalError("Can't replace a child if I ain't got no container...");
-		
+		Toolbox.appendAstNode(container, child);
+	}
+	
+	@Override
+	protected void insertIntoAst(
+			NodeList container,
+			AstNode newChild,
+			AstNode prevChild)
+	{
+		Toolbox.insertAstNode(container, newChild, prevChild);
+	}
+	
+	@Override
+	protected void replaceInAst(
+			NodeList container,
+			AstNode oldNode,
+			AstNode newNode)
+	{
 		Toolbox.replaceAstNode(container, oldNode, newNode);
 	}
+	
+	@Override
+	protected void removeFromAst(NodeList container, AstNode removeNode)
+	{
+		Toolbox.removeAstNode(container, removeNode);
+	}
+	
+	// =========================================================================
 	
 	protected void addContent(
 			AstToWomNodeFactory womNodeFactory,
