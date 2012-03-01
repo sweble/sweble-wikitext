@@ -248,6 +248,20 @@ public abstract class WomBackbone
 	{
 	}
 	
+	/**
+	 * Called on a node when it is removed from its parent node. The child node
+	 * can then check if it allows the removal or throw an exception if it
+	 * cannot be removed this way.
+	 * 
+	 * @param parent
+	 *            The parent node from which the child is removed.
+	 * @throws IllegalArgumentException
+	 *             Thrown if the node cannot be removed.
+	 */
+	public void childAllowsRemoval(WomBackbone parent)
+	{
+	}
+	
 	// =========================================================================
 	
 	@Override

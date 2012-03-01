@@ -338,6 +338,24 @@ public class CategoryAdapter
 	// =========================================================================
 	
 	@Override
+	public void acceptsParent(WomBackbone parent)
+	{
+		throw new UnsupportedOperationException(
+				"Cannot add category node! " +
+						"Use category manipulation methods on page object instead.");
+	}
+	
+	@Override
+	public void childAllowsRemoval(WomBackbone parent)
+	{
+		throw new UnsupportedOperationException(
+				"Cannot remove category node! " +
+						"Use category manipulation methods on page object instead.");
+	}
+	
+	// =========================================================================
+	
+	@Override
 	protected AttributeDescriptor getAttributeDescriptor(String name)
 	{
 		Attributes d = Utils.fromString(Attributes.class, name);

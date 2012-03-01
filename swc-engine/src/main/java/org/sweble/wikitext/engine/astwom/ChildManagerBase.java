@@ -342,6 +342,13 @@ public abstract class ChildManagerBase
 		 * [-> CM: removeChild()
 		 * activate CM
 		 *   
+		 *   CM -> child: childAllowsRemoval()
+		 *   activate child
+		 *     alt doesn't allow removal
+		 *       [<-- parent: throws
+		 *     end
+		 *   deactivate child
+		 *   
 		 *   CM -> child: unlink()
 		 *   
 		 *   alt childContainer != null
@@ -365,6 +372,8 @@ public abstract class ChildManagerBase
 			if (child.getParent() != parent)
 				throw new IllegalArgumentException("Given node `child' is not a child of this node.");
 			
+			remove.childAllowsRemoval(parent);
+			
 			// remove from WOM
 			if (remove == firstChild)
 				firstChild = remove.getNextSibling();
@@ -384,6 +393,13 @@ public abstract class ChildManagerBase
 		 * 
 		 * [-> CM: replaceChild()
 		 * activate CM
+		 *   
+		 *   CM -> search: childAllowsRemoval()
+		 *   activate search
+		 *     alt doesn't allow removal
+		 *       [<-- parent: throws
+		 *     end
+		 *   deactivate search
 		 *   
 		 *   CM -> parent: acceptsChild()
 		 *   activate parent
@@ -428,6 +444,8 @@ public abstract class ChildManagerBase
 			if (search.getParent() != parent)
 				throw new IllegalArgumentException("Given node `search' is not a child of this node.");
 			WomBackbone oldChild = (WomBackbone) search;
+			
+			oldChild.childAllowsRemoval(parent);
 			
 			parent.acceptsChild(newChild);
 			newChild.acceptsParent(parent);

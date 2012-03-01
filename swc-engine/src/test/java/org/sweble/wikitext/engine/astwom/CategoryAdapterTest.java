@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -52,8 +53,16 @@ public class CategoryAdapterTest
 		CategoryAdapter c = new CategoryAdapter("Some Category");
 		
 		expectedEx.expect(UnsupportedOperationException.class);
-		expectedEx.expectMessage("Cannot add category node to bold node!");
+		expectedEx.expectMessage("Cannot add category node! Use category manipulation methods on page object instead.");
 		bold.appendChild(c);
+	}
+	
+	@Test
+	@Ignore
+	public void cannotRemoveCategoryFromAnyElement() throws Exception
+	{
+		/* This is not possible: WomCategory nodes are always children of a 
+		 * WomPage. But WomPage doesn't allow the removal of its children. */
 	}
 	
 	@Test()
