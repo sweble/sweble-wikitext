@@ -24,11 +24,16 @@ import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
+import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
+import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
 import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
+import org.sweble.wikitext.lazy.parser.InternalLink;
+import org.sweble.wikitext.lazy.parser.XmlElement;
+
+import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class CategoryAdapterTest
 {
@@ -45,16 +50,11 @@ public class CategoryAdapterTest
 	}
 	
 	@Test
+	@Ignore
 	public void cannotAddCategoryToAnyElement()
 	{
-		WomBold bold = womBold().build();
-		womPage.getBody().appendChild(bold);
-		
-		CategoryAdapter c = new CategoryAdapter("Some Category");
-		
-		expectedEx.expect(UnsupportedOperationException.class);
-		expectedEx.expectMessage("Cannot add category node! Use category manipulation methods on page object instead.");
-		bold.appendChild(c);
+		/* This is not possible: WomCategory nodes are always children of a 
+		 * WomPage. But WomPage doesn't allow to add children. */
 	}
 	
 	@Test
@@ -66,26 +66,35 @@ public class CategoryAdapterTest
 	}
 	
 	@Test()
-	public void removingANodeWhichContainsACategoryNodeRemovesTheCategory() throws Exception
+	public void removingANodeWhichContainsACategoryNodeMoveTheCategoryToThePage() throws Exception
 	{
 		womPage = AstWomTestFixture.quickParseToWom("<b>[[Category:Test]]</b>");
 		
-		assertTrue(womPage.hasCategory("Test"));
-		
 		WomParagraph para = (WomParagraph) womPage.getBody().getFirstChild();
 		WomBold bold = (WomBold) para.getFirstChild();
+		
+		assertTrue(womPage.hasCategory("Test"));
+		
+		XmlElement astBold = (XmlElement) ((BoldAdapter) bold).getAstNode();
+		assertFalse(astBold.getBody().isEmpty());
+		assertTrue(astBold.getBody().get(0) instanceof InternalLink);
+		
 		para.removeChild(bold);
 		
-		assertFalse(womPage.hasCategory("Test"));
+		assertTrue(womPage.hasCategory("Test"));
+		assertTrue(astBold.getBody().isEmpty());
+		
+		NodeList body = ((BodyAdapter) womPage.getBody()).getAstNode();
+		assertTrue(body.get(body.size() - 1) instanceof InternalLink);
 	}
 	
 	@Test
 	public void settingTheNameAttributeOfACategoryToTheNameOfAnExistingCategoryRaisesException()
 	{
-		womPage.setCategory("Foo");
+		womPage.addCategory("Foo");
 		WomCategory foo = womPage.getCategories().iterator().next();
 		
-		womPage.setCategory("Bar");
+		womPage.addCategory("Bar");
 		
 		expectedEx.expect(IllegalArgumentException.class);
 		expectedEx.expectMessage("The page is already assigned to a category called `Bar'");
@@ -95,7 +104,7 @@ public class CategoryAdapterTest
 	@Test
 	public void pageKnowsAboutRenameAfterSettingTheNameAttributeOfACategory()
 	{
-		womPage.setCategory("Foo");
+		womPage.addCategory("Foo");
 		WomCategory foo = womPage.getCategories().iterator().next();
 		assertTrue(womPage.hasCategory("Foo"));
 		

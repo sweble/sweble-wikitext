@@ -16,13 +16,10 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import java.util.Collections;
 import java.util.LinkedList;
-import java.util.List;
 
 import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.CommentAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.HorizontalRuleAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
@@ -55,29 +52,39 @@ public class DefaultAstToWomNodeFactory
 		implements
 			AstToWomNodeFactory
 {
+	public static final class AstCategory
+	{
+		private NodeList container;
+		
+		private InternalLink link;
+		
+		public AstCategory(NodeList container, InternalLink link)
+		{
+			this.container = container;
+			this.link = link;
+		}
+	}
+	
 	private final WikiConfigurationInterface config;
 	
 	private final String title;
 	
 	private final Namespace CATEGORY_NAMESPACE;
 	
-	private final LinkedList<CategoryAdapter> categories = new LinkedList<CategoryAdapter>();
+	private final LinkedList<AstCategory> categories2 = new LinkedList<AstCategory>();
 	
 	private NodeList container;
 	
 	// =========================================================================
 	
-	public DefaultAstToWomNodeFactory(WikiConfigurationInterface config, String title)
+	public DefaultAstToWomNodeFactory(
+			WikiConfigurationInterface config,
+			String title)
 	{
 		this.config = config;
 		this.title = title;
 		
 		CATEGORY_NAMESPACE = config.getNamespace("Category");
-	}
-	
-	public List<CategoryAdapter> getCategories()
-	{
-		return Collections.unmodifiableList(categories);
 	}
 	
 	// =========================================================================
@@ -99,10 +106,10 @@ public class DefaultAstToWomNodeFactory
 	
 	public WomNode visit(Page page)
 	{
-		PageAdapter p = new PageAdapter(this, page, title);
+		PageAdapter p = new PageAdapter(this, page, null, null, title);
 		
-		for (CategoryAdapter c : categories)
-			p.registerCategory(c);
+		for (AstCategory c : categories2)
+			p.setCategory(c.container, c.link);
 		
 		return p;
 	}
@@ -162,14 +169,10 @@ public class DefaultAstToWomNodeFactory
 			
 			if (namespace != null && namespace.equals(CATEGORY_NAMESPACE))
 			{
-				//if (this.page == null)
-				//	throw new RuntimeException("Cannot register category with page");
-				
 				if (this.container == null)
 					throw new RuntimeException("Cannot associate AST category node with its container");
 				
-				categories.add(new CategoryAdapter(this.container, link));
-				
+				categories2.add(new AstCategory(this.container, link));
 				return null;
 			}
 			else
@@ -253,7 +256,9 @@ public class DefaultAstToWomNodeFactory
 		P
 		{
 			@Override
-			public WomNode create(AstToWomNodeFactory womNodeFactory, XmlElement e)
+			public WomNode create(
+					AstToWomNodeFactory womNodeFactory,
+					XmlElement e)
 			{
 				return new ParagraphAdapter(womNodeFactory, e);
 			}
@@ -262,7 +267,9 @@ public class DefaultAstToWomNodeFactory
 		HR
 		{
 			@Override
-			public WomNode create(AstToWomNodeFactory womNodeFactory, XmlElement e)
+			public WomNode create(
+					AstToWomNodeFactory womNodeFactory,
+					XmlElement e)
 			{
 				return new HorizontalRuleAdapter(womNodeFactory, e);
 			}
@@ -386,7 +393,9 @@ public class DefaultAstToWomNodeFactory
 		B
 		{
 			@Override
-			public WomNode create(AstToWomNodeFactory womNodeFactory, XmlElement e)
+			public WomNode create(
+					AstToWomNodeFactory womNodeFactory,
+					XmlElement e)
 			{
 				return new BoldAdapter(womNodeFactory, e);
 			}

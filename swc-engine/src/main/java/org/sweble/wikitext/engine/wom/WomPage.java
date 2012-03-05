@@ -189,11 +189,22 @@ public interface WomPage
 	 *         already assigned to the specified category.
 	 * @throws NullPointerException
 	 *             Thrown if the specified name is <code>null</code>.
+	 * 
+	 * @deprecated Use addCategory(String name) instead.
 	 */
 	public WomCategory setCategory(String name) throws NullPointerException;
 	
-	// FIXME: deprecate setCategory and use addCategory instead.
-	// FIXME: overload addCategory with WomCategory argument
+	/**
+	 * Add a category to this page.
+	 * 
+	 * @param name
+	 *            The case-insensitive name of the category to add.
+	 * @return The added category or an existing category if this page was
+	 *         already assigned to the specified category.
+	 * @throws NullPointerException
+	 *             Thrown if the specified name is <code>null</code>.
+	 */
+	public WomCategory addCategory(String name) throws NullPointerException;
 	
 	/**
 	 * Get the page body.

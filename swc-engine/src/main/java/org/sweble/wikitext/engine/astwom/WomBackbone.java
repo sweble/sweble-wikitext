@@ -135,17 +135,29 @@ public abstract class WomBackbone
 	}
 	
 	/**
+	 * IMPORTANT: The implementing class has to make sure that the removed
+	 * subtree is searched for category nodes. These have to be re-attached to
+	 * the page body.
+	 * 
 	 * @param oldNode
 	 *            Cannot be null.
 	 */
 	protected void replaceInAst(
 			NodeList container,
-			AstNode oldNode,
-			AstNode newNode)
+			WomBackbone oldNode,
+			WomBackbone newNode)
 	{
 		throw new InternalError();
 	}
 	
+	/**
+	 * IMPORTANT: The implementing class has to make sure that the removed
+	 * subtree is searched for category nodes. These have to be re-attached to
+	 * the page body.
+	 * 
+	 * @param oldNode
+	 *            Cannot be null.
+	 */
 	protected void removeFromAst(NodeList container, AstNode removeChild)
 	{
 		throw new InternalError();

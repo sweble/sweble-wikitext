@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import lombok.Getter;
 
+import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
 import org.sweble.wikitext.lazy.AstNodeTypes;
 import org.sweble.wikitext.lazy.parser.Bold;
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
@@ -275,6 +276,8 @@ public class Toolbox
 				TextUtils.joinRt("----"));
 		return n;
 	}
+	
+	private static final String CATEGORY_ADAPTER_ATTRIBUTE_NAME = CategoryAdapter.class.getName();
 	
 	// =========================================================================
 	

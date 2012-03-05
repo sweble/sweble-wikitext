@@ -63,9 +63,7 @@ public interface WomCategory
 	/**
 	 * @deprecated Use setName() instead.
 	 */
-	public String setCategory(String category)
-			throws NullPointerException,
-			IllegalArgumentException;
+	public String setCategory(String category) throws NullPointerException, IllegalArgumentException;
 	
 	// ==[ Link interface ]=====================================================
 	

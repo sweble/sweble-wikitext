@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 
+import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.lazy.AstNodeTypes;
@@ -257,16 +258,23 @@ public abstract class FullElement
 	@Override
 	protected void replaceInAst(
 			NodeList container,
-			AstNode oldNode,
-			AstNode newNode)
+			WomBackbone oldNode,
+			WomBackbone newNode)
 	{
-		Toolbox.replaceAstNode(container, oldNode, newNode);
+		Toolbox.replaceAstNode(
+				container,
+				oldNode.getAstNode(),
+				newNode.getAstNode());
+		
+		CategoryAdapter.reAttachCategoryNodesToPage(oldNode.getAstNode());
 	}
 	
 	@Override
 	protected void removeFromAst(NodeList container, AstNode removeNode)
 	{
 		Toolbox.removeAstNode(container, removeNode);
+		
+		CategoryAdapter.reAttachCategoryNodesToPage(removeNode);
 	}
 	
 	// =========================================================================

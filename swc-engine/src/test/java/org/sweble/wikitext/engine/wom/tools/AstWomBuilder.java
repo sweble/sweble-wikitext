@@ -23,6 +23,11 @@ public class AstWomBuilder
 		return new WomPageBuilder();
 	}
 	
+	public static WomBodyBuilder womBody()
+	{
+		return new WomBodyBuilder();
+	}
+	
 	public static WomCommentBuilder womComment()
 	{
 		return new WomCommentBuilder();
@@ -58,6 +63,23 @@ public class AstWomBuilder
 		public WomComment build()
 		{
 			return new CommentAdapter(text);
+		}
+	}
+	
+	public static final class WomBodyBuilder
+	{
+		private WomBody body = new BodyAdapter();
+		
+		public WomBodyBuilder withContent(WomNode... contents)
+		{
+			for (WomNode n : contents)
+				this.body.appendChild(n);
+			return this;
+		}
+		
+		public WomBody build()
+		{
+			return this.body;
 		}
 	}
 	

@@ -37,6 +37,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomRedirect;
+import org.sweble.wikitext.lazy.parser.InternalLink;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -99,14 +100,6 @@ public class PageAdapter
 		setPath(path);
 		setTitle(title);
 		setBody(new BodyAdapter(womNodeFactory, page.getContent()));
-	}
-	
-	public PageAdapter(
-			AstToWomNodeFactory womNodeFactory,
-			Page page,
-			String title)
-	{
-		this(womNodeFactory, page, null, null, title);
 	}
 	
 	// =========================================================================
@@ -284,7 +277,7 @@ public class PageAdapter
 			old.unlink();
 			
 			// Remove from AST
-			old.removeFromAst();
+			old.removeCategoryAstNodes();
 			
 			return old;
 		}
@@ -292,7 +285,13 @@ public class PageAdapter
 	}
 	
 	@Override
-	public WomCategory setCategory(String name) throws NullPointerException
+	public WomCategory setCategory(String name)
+	{
+		return addCategory(name);
+	}
+	
+	@Override
+	public WomCategory addCategory(String name)
 	{
 		String lcName = name.toLowerCase();
 		CategoryAdapter cat = categories.get(lcName);
@@ -301,20 +300,93 @@ public class PageAdapter
 			// Make sure changes in case are not lost.
 			if (!name.equals(cat.getName()))
 				cat.setName(name);
-			return cat;
+		}
+		else
+		{
+			NodeList container = this.body.getAstNode();
+			
+			cat = new CategoryAdapter(container, name);
+			
+			// Add to WOM
+			categories.put(lcName, cat);
+			cat.link(this, this.body.getPrevSibling(), this.body);
+			
+			// Add to AST
+			reAttachCategory(cat.getAstNode());
 		}
 		
-		cat = new CategoryAdapter(name);
-		
-		// Add to WOM
-		categories.put(lcName, cat);
-		cat.link(this, this.body.getPrevSibling(), this.body);
-		
-		// Add to AST
-		// FIXME: Is it that simple? Think of interleaving text and such ...
-		cat.addToAst(this.body.getAstNode());
-		
 		return cat;
+	}
+	
+	/**
+	 * Used by factory that generates the WOM from an AST.
+	 * 
+	 * @param container
+	 *            The node that contains the AST node of the category link.
+	 * @param link
+	 *            The category link from the AST.
+	 */
+	public void setCategory(NodeList container, InternalLink link)
+	{
+		String name = CategoryAdapter.getNameFromAst(link);
+		String lcName = name.toLowerCase();
+		
+		CategoryAdapter cat = categories.get(lcName);
+		if (cat != null)
+		{
+			// The last category encountered in the AST determines the name.
+			cat.addAstAnalog(container, link);
+			cat.setNameUnchecked(name);
+		}
+		else
+		{
+			cat = new CategoryAdapter(container, link);
+			
+			// Add to WOM
+			categories.put(lcName, cat);
+			cat.link(this, this.body.getPrevSibling(), this.body);
+			
+			// Category is already placed in AST
+		}
+	}
+	
+	/**
+	 * Called by a CategoryAdapter that is already part of this page but wants
+	 * to re-attach its AST node to this page.
+	 * 
+	 * @param astNode
+	 *            The AST node to attach.
+	 * @return The container to which the ast node was attached.
+	 */
+	protected NodeList reAttachCategory(InternalLink astNode)
+	{
+		NodeList container = this.body.getAstNode();
+		
+		container.add(astNode);
+		
+		return container;
+	}
+	
+	/**
+	 * Called by the category node when the name of the category is changed on
+	 * the category directly (setName, setAttribute, etc.).
+	 * 
+	 * @param categoryAdapter
+	 *            The category adapter of the renamed category.
+	 * @param oldName
+	 *            The old name.
+	 * @param newName
+	 *            The new name.
+	 */
+	protected void renameCategory(
+			CategoryAdapter categoryAdapter,
+			String oldName,
+			String newName)
+	{
+		if (this.categories.remove(oldName.toLowerCase()) == null)
+			throw new InternalError();
+		
+		this.categories.put(newName.toLowerCase(), categoryAdapter);
 	}
 	
 	@Override
@@ -349,7 +421,14 @@ public class PageAdapter
 		this.body.link(this, prevSibling, null);
 		
 		// Set AST
+		NodeList oldAstBody = null;
+		if (old != null)
+			oldAstBody = old.getAstNode();
 		getAstNode().setContent(newBody.getAstNode());
+		
+		// Fix categories
+		if (oldAstBody != null)
+			CategoryAdapter.reAttachCategoryNodesToPage(oldAstBody);
 		
 		return old;
 	}
@@ -370,74 +449,6 @@ public class PageAdapter
 	public WomNode getLastChild()
 	{
 		return body;
-	}
-	
-	// =========================================================================
-	
-	@Override
-	protected void replaceChildImpl(WomBackbone newChild, WomBackbone oldChild)
-	{
-		if (oldChild == redirect)
-		{
-			setRedirect(Toolbox.expectType(WomRedirect.class, newChild));
-		}
-		else if (oldChild == body)
-		{
-			setBody(Toolbox.expectType(WomBody.class, newChild));
-		}
-		else
-		{
-			CategoryAdapter replacement =
-					Toolbox.expectType(CategoryAdapter.class, newChild);
-			
-			CategoryAdapter replacee = (CategoryAdapter) oldChild;
-			
-			// Remove old from WOM
-			if (categories.remove(replacee.getName().toLowerCase()) == null)
-				throw new InternalError();
-			WomBackbone prevSibling = replacee.getPrevSibling();
-			WomBackbone nextSibling = replacee.getNextSibling();
-			replacee.unlink();
-			
-			// Add new to WOM
-			categories.put(replacement.getName().toLowerCase(), replacement);
-			replacement.link(this, prevSibling, nextSibling);
-			
-			// Fix AST
-			replacee.replaceInAst(replacement);
-		}
-	}
-	
-	/**
-	 * Add a category to this page gathered while traversing an AST.
-	 * 
-	 * <strong>For INTERNAL use only!</strong>
-	 */
-	public void registerCategory(CategoryAdapter newCat)
-	{
-		String name = newCat.getName();
-		String lcName = name.toLowerCase();
-		
-		CategoryAdapter cat = categories.get(lcName);
-		if (cat != null)
-		{
-			cat.addRedundantOccurance(newCat);
-		}
-		else
-		{
-			// Add to WOM
-			categories.put(lcName, newCat);
-			newCat.link(this, this.body.getPrevSibling(), this.body);
-		}
-	}
-	
-	protected void changeCategoryName(
-			CategoryAdapter categoryAdapter,
-			String oldName,
-			String newName)
-	{
-		this.categories.remove(oldName.toLowerCase());
-		this.categories.put(newName.toLowerCase(), categoryAdapter);
 	}
 	
 	// =========================================================================
@@ -523,7 +534,10 @@ public class PageAdapter
 		}
 		
 		@Override
-		public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+		public void customAction(
+				WomNode parent,
+				NativeOrXmlAttributeAdapter oldAttr,
+				NativeOrXmlAttributeAdapter newAttr)
 		{
 		}
 	}

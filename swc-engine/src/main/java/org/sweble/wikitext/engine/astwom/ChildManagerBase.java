@@ -460,7 +460,7 @@ public abstract class ChildManagerBase
 				firstChild = newChild;
 			
 			// replace in AST
-			parent.replaceInAst(childContainer, oldChild.getAstNode(), newChild.getAstNode());
+			parent.replaceInAst(childContainer, oldChild, newChild);
 		}
 	}
 }

@@ -22,10 +22,13 @@ import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.engine.wom.WomBody;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
+import org.sweble.wikitext.lazy.parser.InternalLink;
 
 public class PageAdapterTest
 {
@@ -431,5 +434,24 @@ public class PageAdapterTest
 		expectedEx.expect(UnsupportedOperationException.class);
 		expectedEx.expectMessage("Cannot alter read-only attribute `version'");
 		page.setAttribute("version", "2.0");
+	}
+	
+	// =========================================================================
+	
+	@Test
+	public void setBodyReAttachesCategoriesToNewBody() throws Exception
+	{
+		WomPage page = womPage().build();
+		page.addCategory("some category");
+		
+		WomBody oldBody = page.getBody();
+		assertTrue(((BodyAdapter) oldBody).getAstNode().get(0) instanceof InternalLink);
+		
+		WomBody newBody = womBody().build();
+		page.setBody(newBody);
+		
+		assertTrue(page.hasCategory("some category"));
+		assertTrue(((BodyAdapter) newBody).getAstNode().get(0) instanceof InternalLink);
+		assertTrue(((BodyAdapter) oldBody).getAstNode().isEmpty());
 	}
 }

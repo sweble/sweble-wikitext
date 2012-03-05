@@ -155,7 +155,7 @@ public abstract class NativeOrXmlElement
 				if (parent instanceof FullElement)
 					astChildContainer = ((FullElement) parent).getAstChildContainer();
 				
-				parent.replaceInAst(astChildContainer, getAstNode(), converted);
+				Toolbox.replaceAstNode(astChildContainer, getAstNode(), converted);
 			}
 			
 			setAstNode(converted);
