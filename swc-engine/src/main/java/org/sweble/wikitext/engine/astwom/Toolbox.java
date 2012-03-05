@@ -22,11 +22,11 @@ import java.util.regex.Pattern;
 
 import lombok.Getter;
 
-import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
 import org.sweble.wikitext.lazy.AstNodeTypes;
 import org.sweble.wikitext.lazy.parser.Bold;
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.InternalLink;
+import org.sweble.wikitext.lazy.parser.Italics;
 import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
@@ -252,6 +252,15 @@ public class Toolbox
 		return n;
 	}
 	
+	public static AstNode addRtData(Italics n)
+	{
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("''"),
+				TextUtils.joinRt("''"));
+		return n;
+	}
+	
 	public static InternalLink addRtData(InternalLink n)
 	{
 		TextUtils.addRtData(
@@ -276,8 +285,6 @@ public class Toolbox
 				TextUtils.joinRt("----"));
 		return n;
 	}
-	
-	private static final String CATEGORY_ADAPTER_ATTRIBUTE_NAME = CategoryAdapter.class.getName();
 	
 	// =========================================================================
 	

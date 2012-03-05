@@ -17,34 +17,27 @@
 package org.sweble.wikitext.engine.astwom.adapters;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
-import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.engine.wom.WomBold;
-import org.sweble.wikitext.lazy.parser.Bold;
+import org.sweble.wikitext.engine.wom.WomCite;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
-public class BoldAdapter
+public class CiteAdapter
 		extends
-			NativeOrXmlElementWithUniversalAttributes
+			XmlElementWithUniversalAttributes
 		implements
-			WomBold
+			WomCite
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String TAG_AND_NODE_NAME = "b";
+	private static final String TAG_AND_NODE_NAME = "cite";
 	
 	// =========================================================================
 	
-	public BoldAdapter()
+	public CiteAdapter()
 	{
-		super(Toolbox.addRtData(new Bold()));
+		super(TAG_AND_NODE_NAME);
 	}
 	
-	public BoldAdapter(AstToWomNodeFactory womNodeFactory, Bold astNode)
-	{
-		super(womNodeFactory, astNode);
-	}
-	
-	public BoldAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public CiteAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
 		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

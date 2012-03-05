@@ -18,33 +18,33 @@ package org.sweble.wikitext.engine.astwom.adapters;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.engine.wom.WomBold;
-import org.sweble.wikitext.lazy.parser.Bold;
+import org.sweble.wikitext.engine.wom.WomItalics;
+import org.sweble.wikitext.lazy.parser.Italics;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
-public class BoldAdapter
+public class ItalicsAdapter
 		extends
 			NativeOrXmlElementWithUniversalAttributes
 		implements
-			WomBold
+			WomItalics
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String TAG_AND_NODE_NAME = "b";
+	private static final String TAG_AND_NODE_NAME = "i";
 	
 	// =========================================================================
 	
-	public BoldAdapter()
+	public ItalicsAdapter()
 	{
-		super(Toolbox.addRtData(new Bold()));
+		super(Toolbox.addRtData(new Italics()));
 	}
 	
-	public BoldAdapter(AstToWomNodeFactory womNodeFactory, Bold astNode)
+	public ItalicsAdapter(AstToWomNodeFactory womNodeFactory, Italics astNode)
 	{
 		super(womNodeFactory, astNode);
 	}
 	
-	public BoldAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public ItalicsAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
 		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
