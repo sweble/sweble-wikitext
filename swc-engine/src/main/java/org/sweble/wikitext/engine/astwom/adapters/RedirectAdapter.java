@@ -22,7 +22,7 @@ import lombok.Setter;
 
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
-import org.sweble.wikitext.engine.astwom.FullElement;
+import org.sweble.wikitext.engine.astwom.AttributeSupportingElement;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
@@ -37,7 +37,7 @@ import de.fau.cs.osr.utils.Utils;
 
 public class RedirectAdapter
 		extends
-			FullElement
+			AttributeSupportingElement
 		implements
 			WomRedirect
 {
@@ -161,7 +161,10 @@ public class RedirectAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
 				RedirectAdapter redirect = (RedirectAdapter) parent;
 				redirect.setTargetInAst(newAttr.getValue());
@@ -177,7 +180,10 @@ public class RedirectAdapter
 			}
 			
 			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		};

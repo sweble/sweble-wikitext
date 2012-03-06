@@ -16,51 +16,28 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-
-import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.ChildManagerBase;
-import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
-import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomValue;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ValueAdapter
 		extends
-			FullElement
+			ContainerElement
 		implements
 			WomValue
 {
 	private static final long serialVersionUID = 1L;
 	
-	@Getter(AccessLevel.PROTECTED)
-	@Setter(AccessLevel.PROTECTED)
-	private ChildManagerBase childManager = ChildManagerBase.emptyManager();
-	
 	// =========================================================================
 	
 	public ValueAdapter()
 	{
-		super(new NodeList());
 	}
 	
-	public ValueAdapter(AstToWomNodeFactory womNodeFactory, NodeList value)
+	public ValueAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
 	{
-		super(value);
-		
-		if (value == null)
-			throw new NullPointerException();
-		
-		if (!value.isEmpty())
-			super.addContent(
-					womNodeFactory,
-					value,
-					getChildManagerForModificationOrFail(),
-					true);
+		super(womNodeFactory, content);
 	}
 	
 	// =========================================================================
@@ -69,31 +46,5 @@ public class ValueAdapter
 	public String getNodeName()
 	{
 		return "value";
-	}
-	
-	@Override
-	public NodeList getAstNode()
-	{
-		return (NodeList) super.getAstNode();
-	}
-	
-	@Override
-	public WomNodeType getNodeType()
-	{
-		return WomNodeType.ELEMENT;
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public NodeList getAstChildContainer()
-	{
-		return getAstNode();
-	}
-	
-	@Override
-	protected AttributeDescriptor getAttributeDescriptor(String name)
-	{
-		return null;
 	}
 }

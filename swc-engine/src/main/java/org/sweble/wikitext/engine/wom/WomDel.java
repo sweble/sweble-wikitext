@@ -49,7 +49,7 @@ public interface WomDel
 	 *            The new url or <code>null</code> to remove the attribute.
 	 * @return The The old url.
 	 */
-	public String getCite(String url);
+	public String setCite(String url);
 	
 	/**
 	 * Get the timestamp when the text or block was deleted.
@@ -71,5 +71,5 @@ public interface WomDel
 	 *            attribute.
 	 * @return The old timestamp.
 	 */
-	public Date getDatetime(Date timestamp);
+	public Date setDatetime(Date timestamp);
 }

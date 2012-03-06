@@ -17,25 +17,25 @@
 package org.sweble.wikitext.engine.astwom.adapters;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
-import org.sweble.wikitext.engine.wom.WomBody;
+import org.sweble.wikitext.engine.wom.WomDefault;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
-public class BodyAdapter
+public class DefaultAdapter
 		extends
 			ContainerElement
 		implements
-			WomBody
+			WomDefault
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public BodyAdapter()
+	public DefaultAdapter()
 	{
 	}
 	
-	public BodyAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
+	public DefaultAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
 	{
 		super(womNodeFactory, content);
 	}
@@ -45,6 +45,6 @@ public class BodyAdapter
 	@Override
 	public String getNodeName()
 	{
-		return "body";
+		return "default";
 	}
 }

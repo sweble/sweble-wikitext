@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import java.util.Date;
+
 import lombok.AccessLevel;
 import lombok.Delegate;
 import lombok.Getter;
@@ -24,62 +26,41 @@ import lombok.Setter;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
-import org.sweble.wikitext.engine.astwom.ChildManagerBase;
-import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.MustBeOneOfException;
-import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
 import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
-import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.engine.astwom.UniversalAttributes;
-import org.sweble.wikitext.engine.wom.WomHorizAlign;
-import org.sweble.wikitext.engine.wom.WomHorizontalRule;
+import org.sweble.wikitext.engine.astwom.CoreAttributes;
+import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
+import org.sweble.wikitext.engine.wom.WomDel;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.engine.wom.WomValueWithUnit;
-import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.Utils;
 
-public class HorizontalRuleAdapter
+public class DelAdapter
 		extends
-			NativeOrXmlElement
+			XmlElementWithChildren
 		implements
-			WomHorizontalRule
+			WomDel
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String TAG_AND_NODE_NAME = "hr";
+	private static final String TAG_AND_NODE_NAME = "del";
 	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
 	@Delegate(types = { WomUniversalAttributes.class, AttribAccessors.class })
 	private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
 	
-	@Getter(AccessLevel.PROTECTED)
-	@Setter(AccessLevel.PROTECTED)
-	private ChildManagerBase childManager = ChildManagerBase.emptyManager();
-	
 	// =========================================================================
 	
-	public HorizontalRuleAdapter()
+	public DelAdapter()
 	{
-		super(Toolbox.addRtData(new HorizontalRule()));
+		super(TAG_AND_NODE_NAME);
 	}
 	
-	public HorizontalRuleAdapter(HorizontalRule astNode)
+	public DelAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
-		super(astNode);
-	}
-	
-	public HorizontalRuleAdapter(
-			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
-	{
-		super(TAG_AND_NODE_NAME, astNode);
-		addAttributes(astNode.getXmlAttributes());
-		addContent(womNodeFactory, astNode.getBody());
+		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================
@@ -92,24 +73,13 @@ public class HorizontalRuleAdapter
 	
 	// =========================================================================
 	
-	protected XmlElement convertToXmlElement()
-	{
-		return Toolbox.addRtData(new XmlElement(
-				TAG_AND_NODE_NAME,
-				true,
-				new NodeList(),
-				new NodeList()));
-	}
-	
-	// =========================================================================
-	
 	@Override
 	protected AttributeDescriptor getAttributeDescriptor(String name)
 	{
 		AttributeDescriptor d = Utils.fromString(Attributes.class, name);
 		if (d != null)
 			return d;
-		d = Utils.fromString(UniversalAttributes.class, name);
+		d = Utils.fromString(CoreAttributes.class, name);
 		if (d != null)
 			return d;
 		return GenericAttributeDescriptor.get();
@@ -117,46 +87,22 @@ public class HorizontalRuleAdapter
 	
 	private static enum Attributes implements AttributeDescriptor
 	{
-		align
+		cite
 		{
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				return AttributeVerifiers.LCR_ALIGN.verify(parent, value);
+				return AttributeVerifiers.URL.verify(parent, value);
 			}
 		},
-		noshade
+		datetime
 		{
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				if (!Utils.isOneOf(NOSHADE_EXPECTED, value))
-					throw new MustBeOneOfException(NOSHADE_EXPECTED, value);
-				
-				return value;
-			}
-		},
-		size
-		{
-			@Override
-			public String verify(WomNode parent, String value) throws IllegalArgumentException
-			{
-				return AttributeVerifiers.PIXELS.verify(parent, value);
-			}
-		},
-		width
-		{
-			@Override
-			public String verify(WomNode parent, String value) throws IllegalArgumentException
-			{
-				return AttributeVerifiers.LENGTH.verify(parent, value);
+				return AttributeVerifiers.DATETIME.verify(parent, value);
 			}
 		};
-		
-		// =====================================================================
-		
-		static final String[] NOSHADE_EXPECTED =
-				new String[] { "noshade" };
 		
 		// =====================================================================
 		
@@ -189,20 +135,12 @@ public class HorizontalRuleAdapter
 	
 	private interface AttribAccessors
 	{
-		public WomHorizAlign getAlign();
+		String getCite();
 		
-		public WomHorizAlign setAlign(WomHorizAlign align);
+		String setCite(String url);
 		
-		public boolean isNoshade();
+		Date getDatetime();
 		
-		public boolean setNoshade(boolean noshade);
-		
-		public Integer getSize();
-		
-		public Integer setSize(Integer size);
-		
-		public WomValueWithUnit getWidth();
-		
-		public WomValueWithUnit setWidth(WomValueWithUnit width);
+		Date setDatetime(Date timestamp);
 	}
 }

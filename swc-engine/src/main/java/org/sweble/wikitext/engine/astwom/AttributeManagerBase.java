@@ -18,13 +18,17 @@ package org.sweble.wikitext.engine.astwom;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.ListIterator;
 
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
+import org.sweble.wikitext.engine.wom.WomClear;
+import org.sweble.wikitext.engine.wom.WomColor;
 import org.sweble.wikitext.engine.wom.WomHorizAlign;
 import org.sweble.wikitext.engine.wom.WomI18nDir;
+import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomValueWithUnit;
 import org.sweble.wikitext.lazy.AstNodeTypes;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
@@ -33,6 +37,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class AttributeManagerBase
+		implements
+			WomUniversalAttributes
 {
 	private static final AttributeManagerBase emptyManager = new EmptyAttributeManager();
 	
@@ -84,48 +90,56 @@ public abstract class AttributeManagerBase
 	
 	// =========================================================================
 	
+	@Override
 	public String getId()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setId(String id) throws IllegalArgumentException
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getClasses()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setClasses(String classes)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getStyle()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setStyle(String style)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getTitle()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setTitle(String title)
 	{
 		// TODO Auto-generated method stub
@@ -134,36 +148,42 @@ public abstract class AttributeManagerBase
 	
 	// =========================================================================
 	
+	@Override
 	public WomI18nDir getDir()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public WomI18nDir setDir(WomI18nDir dir)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getLang()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setLang(String lang)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getXmlLang()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setXmlLang(String lang)
 	{
 		// TODO Auto-generated method stub
@@ -172,120 +192,140 @@ public abstract class AttributeManagerBase
 	
 	// =========================================================================
 	
+	@Override
 	public String getOnclick()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnclick(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOndblclick()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOndblclick(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnmousedown()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnmousedown(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnmouseup()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnmouseup(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnmouseover()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnmouseover(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnmousemove()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnmousemove(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnmouseout()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnmouseout(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnkeypress()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnkeypress(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnkeydown()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnkeydown(String handler)
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String getOnkeyup()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	@Override
 	public String setOnkeyup(String handler)
 	{
 		// TODO Auto-generated method stub
@@ -322,14 +362,14 @@ public abstract class AttributeManagerBase
 		return false;
 	}
 	
-	// Used by HorizontalRuleAdapter
+	// Used by HorizontalRuleAdapter, FontAdapter
 	public Integer getSize()
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	// Used by HorizontalRuleAdapter
+	// Used by HorizontalRuleAdapter, FontAdapter
 	public Integer setSize(Integer size)
 	{
 		// TODO Auto-generated method stub
@@ -345,6 +385,76 @@ public abstract class AttributeManagerBase
 	
 	// Used by HorizontalRuleAdapter
 	public WomValueWithUnit setWidth(WomValueWithUnit width)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by BlockquoteAdapter, DelAdapter, InsAdapter
+	public String getCite()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by BlockquoteAdapter, DelAdapter, InsAdapter
+	public String setCite(String source)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by BreakAdapter
+	public WomClear getClear()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by BreakAdapter
+	public WomClear setClear(WomClear clear)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by DelAdapter, InsAdapter
+	public Date getDatetime()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by DelAdapter, InsAdapter
+	public Date setDatetime(Date timestamp)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by FontAdapter
+	public WomColor getColor()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by FontAdapter
+	public WomColor setColor(WomColor color)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by FontAdapter
+	public String getFace()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	// Used by FontAdapter
+	public String setFace(String face)
 	{
 		// TODO Auto-generated method stub
 		return null;
@@ -835,44 +945,5 @@ public abstract class AttributeManagerBase
 				attrContainer.add(newAstNode);
 			}
 		}
-	}
-	
-	// =========================================================================
-	
-	/**
-	 * Throw if the given value exceeds its domain.
-	 * 
-	 * @param value
-	 *            The value to check.
-	 * @param lower
-	 *            The lower bound (inclusive).
-	 * @param upper
-	 *            The upper bound (inclusive).
-	 */
-	public static void verifyRange(int value, int lower, int upper) throws IllegalArgumentException
-	{
-		if (value < lower || value > upper)
-			throw new IllegalArgumentException(String.format(
-					"Attribute value out of bounds: %d <= (%d) <= %d.",
-					lower,
-					value,
-					upper));
-	}
-	
-	/**
-	 * Throw if the given value exceeds its domain.
-	 * 
-	 * @param value
-	 *            The value to check.
-	 * @param lower
-	 *            The lower bound (inclusive).
-	 * @param upper
-	 *            The upper bound (inclusive).
-	 */
-	public static int verifyRange(String valueStr, int lower, int upper) throws IllegalArgumentException
-	{
-		Integer x = Integer.valueOf(valueStr);
-		verifyRange(x, lower, upper);
-		return x;
 	}
 }

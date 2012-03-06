@@ -5,33 +5,151 @@ import org.sweble.wikitext.engine.wom.WomNode;
 
 public enum UniversalAttributes implements AttributeDescriptor
 {
-	// FIXME: IMPLEMENT VERIFY!
-	
 	// ==[ Core ]===============================================================
 	
-	ID, // xs:ID
-	CLASS, // xs:NMTOKENS
-	STYLE, // StyleSheet
-	TITLE, // Text
+	ID
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return CoreAttributes.ID.verify(parent, value);
+		}
+	},
+	CLASS
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return CoreAttributes.CLASS.verify(parent, value);
+		}
+	},
+	STYLE
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return CoreAttributes.STYLE.verify(parent, value);
+		}
+	},
+	
+	TITLE
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return CoreAttributes.TITLE.verify(parent, value);
+		}
+	},
 	
 	// ==[ I18N ]===============================================================
 	
-	DIR, // xs:token [ltr, rtl]
-	LANG, // LanguageCode
-	XMLLANG, // xml:lang
+	DIR
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return I18nAttributes.DIR.verify(parent, value);
+		}
+	},
+	LANG
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return I18nAttributes.LANG.verify(parent, value);
+		}
+	},
+	XMLLANG
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return I18nAttributes.XMLLANG.verify(parent, value);
+		}
+	},
 	
 	// ==[ Event ]==============================================================
 	
-	ONCLICK, // Script
-	ONDBLCLICK, // Script
-	ONMOUSEDOWN, // Script
-	ONMOUSEUP, // Script
-	ONMOUSEOVER, // Script
-	ONMOUSEMOVE, // Script
-	ONMOUSEOUT, // Script
-	ONKEYPRESS, // Script
-	ONKEYDOWN, // Script
-	ONKEYUP; // Script
+	ONCLICK
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONCLICK.verify(parent, value);
+		}
+	},
+	ONDBLCLICK
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONDBLCLICK.verify(parent, value);
+		}
+	},
+	ONMOUSEDOWN
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONMOUSEDOWN.verify(parent, value);
+		}
+	},
+	ONMOUSEUP
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONMOUSEUP.verify(parent, value);
+		}
+	},
+	ONMOUSEOVER
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONMOUSEOVER.verify(parent, value);
+		}
+	},
+	ONMOUSEMOVE
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONMOUSEMOVE.verify(parent, value);
+		}
+	},
+	ONMOUSEOUT
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONMOUSEOUT.verify(parent, value);
+		}
+	},
+	ONKEYPRESS
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONKEYPRESS.verify(parent, value);
+		}
+	},
+	ONKEYDOWN
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONKEYDOWN.verify(parent, value);
+		}
+	},
+	ONKEYUP
+	{
+		@Override
+		public String verify(WomNode parent, String value) throws IllegalArgumentException
+		{
+			return EventAttributes.ONKEYUP.verify(parent, value);
+		}
+	};
 	
 	// =========================================================================
 	
@@ -60,7 +178,10 @@ public enum UniversalAttributes implements AttributeDescriptor
 	}
 	
 	@Override
-	public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+	public void customAction(
+			WomNode parent,
+			NativeOrXmlAttributeAdapter oldAttr,
+			NativeOrXmlAttributeAdapter newAttr)
 	{
 	}
 }

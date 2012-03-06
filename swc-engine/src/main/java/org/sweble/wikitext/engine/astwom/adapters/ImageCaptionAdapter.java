@@ -17,25 +17,27 @@
 package org.sweble.wikitext.engine.astwom.adapters;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
-import org.sweble.wikitext.engine.wom.WomBody;
+import org.sweble.wikitext.engine.wom.WomImageCaption;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
-public class BodyAdapter
+public class ImageCaptionAdapter
 		extends
 			ContainerElement
 		implements
-			WomBody
+			WomImageCaption
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public BodyAdapter()
+	public ImageCaptionAdapter()
 	{
 	}
 	
-	public BodyAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
+	public ImageCaptionAdapter(
+			AstToWomNodeFactory womNodeFactory,
+			NodeList content)
 	{
 		super(womNodeFactory, content);
 	}
@@ -45,6 +47,6 @@ public class BodyAdapter
 	@Override
 	public String getNodeName()
 	{
-		return "body";
+		return "imgcaption";
 	}
 }

@@ -16,51 +16,28 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
-import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
-import org.sweble.wikitext.engine.astwom.ChildManagerBase;
-import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.wom.WomName;
-import org.sweble.wikitext.engine.wom.WomNodeType;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class NameAdapter
 		extends
-			FullElement
+			ContainerElement
 		implements
 			WomName
 {
 	private static final long serialVersionUID = 1L;
 	
-	@Getter(AccessLevel.PROTECTED)
-	@Setter(AccessLevel.PROTECTED)
-	private ChildManagerBase childManager = ChildManagerBase.emptyManager();
-	
 	// =========================================================================
 	
 	public NameAdapter()
 	{
-		super(new NodeList());
 	}
 	
-	public NameAdapter(AstToWomNodeFactory womNodeFactory, NodeList name)
+	public NameAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
 	{
-		super(name);
-		
-		if (name == null)
-			throw new NullPointerException();
-		
-		if (!name.isEmpty())
-			super.addContent(
-					womNodeFactory,
-					name,
-					getChildManagerForModificationOrFail(),
-					true);
+		super(womNodeFactory, content);
 	}
 	
 	// =========================================================================
@@ -69,31 +46,5 @@ public class NameAdapter
 	public String getNodeName()
 	{
 		return "name";
-	}
-	
-	@Override
-	public NodeList getAstNode()
-	{
-		return (NodeList) super.getAstNode();
-	}
-	
-	@Override
-	public WomNodeType getNodeType()
-	{
-		return WomNodeType.ELEMENT;
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public NodeList getAstChildContainer()
-	{
-		return getAstNode();
-	}
-	
-	@Override
-	protected AttributeDescriptor getAttributeDescriptor(String name)
-	{
-		return null;
 	}
 }

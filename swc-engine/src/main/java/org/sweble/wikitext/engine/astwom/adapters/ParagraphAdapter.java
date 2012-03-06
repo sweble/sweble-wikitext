@@ -29,7 +29,7 @@ import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
-import org.sweble.wikitext.engine.astwom.OtherAttributes;
+import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomHorizAlign;
@@ -364,7 +364,7 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				int x = AttributeManagerBase.verifyRange(value, 0, MAX_GAP);
+				int x = AttributeVerifiers.verifyRange(value, 0, MAX_GAP);
 				return (x == 0) ? null : value;
 			}
 			
@@ -382,7 +382,7 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				int x = AttributeManagerBase.verifyRange(value, 0, MAX_GAP);
+				int x = AttributeVerifiers.verifyRange(value, 0, MAX_GAP);
 				return (x == 0) ? null : value;
 			}
 			
@@ -428,7 +428,7 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				return OtherAttributes.TEXT_ALIGN.verify(parent, value);
+				return AttributeVerifiers.LCRJ_ALIGN.verify(parent, value);
 			}
 			
 			@Override

@@ -40,45 +40,54 @@ import de.fau.cs.osr.utils.StringUtils;
  * abstract AttributeSupportingElement
  * abstract CustomChildrenElement
  * abstract FullElement
+ * abstract ContainerElement
  * abstract NativeOrXmlElement
+ * abstract NativeOrXmlElementWithUniversalAttributes
+ * abstract XmlElementWithChildren
+ * abstract XmlElementWithUniversalAttributes
  * 
  * Iterable <|-- WomNode
  * Cloneable <|-- WomNode
  * Serializable <|-- WomNode
  * 
- * namespace adapters {
- *   class CategoryAdapter
- *   class BodyAdapter
- *   class ValueAdapter
- *   class NativeOrXmlAttributeAdapter
- *   class CommentAdapter
- *   class TextAdapter
- *   class BoldAdapter
- *   class ParagraphAdapter
- *   class ArgAdapter
- *   class PageAdapter
- * }
- * 
  * WomNode <|-- WomBackbone
+ * 
+ * WomBackbone <|-- AttributeSupportingElement
  * 
  * AttributeSupportingElement <|-- CustomChildrenElement
  * AttributeSupportingElement <|-- FullElement
- * AttributeSupportingElement <|-- adapters.CategoryAdapter
  * 
  * FullElement <|-- NativeOrXmlElement
- * FullElement <|-- adapters.BodyAdapter
- * FullElement <|-- adapters.ValueAdapter
+ * FullElement <|-- XmlElementWithChildren
+ * FullElement <|-- ContainerElement
  * 
- * WomBackbone <|-- AttributeSupportingElement
- * WomBackbone <|-- adapters.NativeOrXmlAttributeAdapter
- * WomBackbone <|-- adapters.CommentAdapter
- * WomBackbone <|-- adapters.TextAdapter
+ * NativeOrXmlElement <|-- NativeOrXmlElementWithUniversalAttributes
  * 
- * NativeOrXmlElement <|-- adapters.BoldAdapter
- * NativeOrXmlElement <|-- adapters.ParagraphAdapter
+ * XmlElementWithChildren <|-- XmlElementWithUniversalAttributes
  * 
- * CustomChildrenElement <|-- adapters.ArgAdapter
- * CustomChildrenElement <|-- adapters.PageAdapter
+ * note "Comment, \n<i>EmptyTitle</i>, \n<b>NativeOrXmlAttribute</b>, \n<b>Text</b>" as InheritFromWomBackbone
+ * WomBackbone .. InheritFromWomBackbone
+ * 
+ * note "Category, Redirect" as InheritFromAttributeSupportingElement
+ * AttributeSupportingElement .. InheritFromAttributeSupportingElement
+ * 
+ * note "Body, Default, \nElement, \nImageCaption, \nName, Title, \nValue" as InheritFromContainerElement
+ * ContainerElement .. InheritFromContainerElement
+ * 
+ * note "HorizontalRule, \nParagraph" as InheritFromNativeOrXmlElement
+ * NativeOrXmlElement .. InheritFromNativeOrXmlElement
+ * 
+ * note "Bold, Italics" as InheritFromNativeOrXmlElementWithUniversalAttributes
+ * NativeOrXmlElementWithUniversalAttributes .. InheritFromNativeOrXmlElementWithUniversalAttributes
+ * 
+ * note "Blockquote, Break, \nDel, Div, Font, Ins" as InheritFromXmlElementWithChildren
+ * XmlElementWithChildren .. InheritFromXmlElementWithChildren
+ * 
+ * note "Abbr, Big, Center, Cite, \nCode, Dfn, Emphasize, \nKbd, Samp, Small, \nSpan, Strike, Strong, \nSub, Sup, Teletype, \nUnderline, Var" as InheritFromXmlElementWithUniversalAttributes
+ * XmlElementWithUniversalAttributes .. InheritFromXmlElementWithUniversalAttributes
+ * 
+ * note "Arg, Page" as InheritFromCustomChildrenElement
+ * CustomChildrenElement -- InheritFromCustomChildrenElement
  * 
  * @enduml
  */
