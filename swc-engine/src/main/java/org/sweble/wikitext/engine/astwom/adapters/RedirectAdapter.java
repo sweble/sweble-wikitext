@@ -31,7 +31,6 @@ import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomRedirect;
 import org.sweble.wikitext.engine.wom.WomTitle;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
-import org.sweble.wikitext.lazy.utils.TextUtils;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -42,8 +41,6 @@ public class RedirectAdapter
 			WomRedirect
 {
 	private static final long serialVersionUID = 1L;
-	
-	private static final WomTitle EMPTY_TITLE = new EmptyTitleAdapter();
 	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
@@ -107,7 +104,7 @@ public class RedirectAdapter
 	@Override
 	public WomTitle getLinkTitle()
 	{
-		return EMPTY_TITLE;
+		return EmptyTitleAdapter.get();
 	}
 	
 	@Override
@@ -121,7 +118,7 @@ public class RedirectAdapter
 	private void setRedirectFromAst()
 	{
 		setAttributeUnchecked(
-				Attributes.TARGET_FROM_AST,
+				Attributes.TARGET_UNCHECKED,
 				"target",
 				getAstNode().getTarget());
 	}
@@ -130,9 +127,7 @@ public class RedirectAdapter
 	{
 		Redirect astNode = getAstNode();
 		astNode.setTarget(target);
-		TextUtils.addRtData(
-				astNode,
-				TextUtils.joinRt("#REDIRECT[[", target, "]]"));
+		Toolbox.addRtData(astNode);
 	}
 	
 	// =========================================================================
@@ -141,7 +136,7 @@ public class RedirectAdapter
 	protected AttributeDescriptor getAttributeDescriptor(String name)
 	{
 		AttributeDescriptor d = Utils.fromString(Attributes.class, name);
-		if (d != null && d != Attributes.TARGET_FROM_AST)
+		if (d != null && d != Attributes.TARGET_UNCHECKED)
 			return d;
 		d = Utils.fromString(UniversalAttributes.class, name);
 		if (d != null)
@@ -171,7 +166,13 @@ public class RedirectAdapter
 			}
 		},
 		
-		TARGET_FROM_AST
+		/**
+		 * This descriptor also describes the "target" attribute, however, it
+		 * doesn't verify the attribute's value and doesn't perform any custom
+		 * actions (as opposed to setAttributeUnchecked() which only skips the
+		 * verification).
+		 */
+		TARGET_UNCHECKED
 		{
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
@@ -205,7 +206,7 @@ public class RedirectAdapter
 		@Override
 		public Normalization getNormalizationMode()
 		{
-			return Normalization.NONE;
+			return Normalization.CDATA;
 		}
 	}
 }

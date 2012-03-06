@@ -29,6 +29,7 @@ import org.sweble.wikitext.lazy.parser.InternalLink;
 import org.sweble.wikitext.lazy.parser.Italics;
 import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
@@ -283,6 +284,14 @@ public class Toolbox
 		TextUtils.addRtData(
 				n,
 				TextUtils.joinRt("----"));
+		return n;
+	}
+	
+	public static Redirect addRtData(Redirect n)
+	{
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("#REDIRECT[[", n.getTarget(), "]]"));
 		return n;
 	}
 	

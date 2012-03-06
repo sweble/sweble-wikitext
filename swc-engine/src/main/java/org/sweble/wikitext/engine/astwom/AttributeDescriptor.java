@@ -63,8 +63,26 @@ public interface AttributeDescriptor
 	
 	public enum Normalization
 	{
+		/**
+		 * Only convert the attribute value's NodeList into a string. Don't
+		 * post-process the resulting string.
+		 */
 		NONE,
+		
+		/**
+		 * Normalize the attribute's value after conversion according to these
+		 * rules: http://www.w3.org/TR/REC-xml/#AVNormalize.
+		 */
 		CDATA,
+		
+		/**
+		 * Normalize the attribute's value after conversion according to these
+		 * rules: http://www.w3.org/TR/REC-xml/#AVNormalize.
+		 * 
+		 * Unlike the CDATA normalization, NON_CDATA normalization also
+		 * collapses sequences of spaces into a single space and removes leading
+		 * and trailing spaces.
+		 */
 		NON_CDATA
 	}
 }

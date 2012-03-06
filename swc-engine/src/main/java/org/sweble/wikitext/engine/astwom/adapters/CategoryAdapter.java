@@ -52,8 +52,6 @@ public class CategoryAdapter
 	
 	private static final long serialVersionUID = 1L;
 	
-	private static final WomTitle EMPTY_TITLE = new EmptyTitleAdapter();
-	
 	@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
 	private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
@@ -190,7 +188,7 @@ public class CategoryAdapter
 	@Override
 	public WomTitle getLinkTitle()
 	{
-		return EMPTY_TITLE;
+		return EmptyTitleAdapter.get();
 	}
 	
 	@Override
@@ -422,9 +420,10 @@ public class CategoryAdapter
 		},
 		
 		/**
-		 * This descriptor also describes the "name" attribute, however, it does
-		 * not perform verification and doesn't implement any custom actions.
-		 * Therefore it can be used when setting the attribute from the AST.
+		 * This descriptor also describes the "name" attribute, however, it
+		 * doesn't verify the attribute's value and doesn't perform any custom
+		 * actions (as opposed to setAttributeUnchecked() which only skips the
+		 * verification).
 		 */
 		NAME_UNCHECKED
 		{
@@ -452,7 +451,7 @@ public class CategoryAdapter
 		@Override
 		public Normalization getNormalizationMode()
 		{
-			return Normalization.NONE;
+			return Normalization.NON_CDATA;
 		}
 		
 		@Override

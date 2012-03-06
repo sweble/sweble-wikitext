@@ -33,7 +33,16 @@ public class EmptyTitleAdapter
 	
 	// =========================================================================
 	
-	public EmptyTitleAdapter()
+	private static final WomTitle EMPTY_TITLE = new EmptyTitleAdapter();
+	
+	public static WomTitle get()
+	{
+		return EMPTY_TITLE;
+	}
+	
+	// =========================================================================
+	
+	private EmptyTitleAdapter()
 	{
 		super(new NodeList());
 	}

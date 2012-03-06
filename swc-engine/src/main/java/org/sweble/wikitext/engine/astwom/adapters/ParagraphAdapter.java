@@ -26,10 +26,10 @@ import lombok.Setter;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
+import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
-import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomHorizAlign;
@@ -184,7 +184,7 @@ public class ParagraphAdapter
 			}
 		}
 		
-		setAttribute(Attributes.TOPGAP_FROM_AST, "topgap", topGap);
+		setAttribute(Attributes.GAP_UNCHECKED, "topgap", topGap);
 		
 		int bottomGap = 0;
 		i = container.listIterator(container.size());
@@ -208,7 +208,7 @@ public class ParagraphAdapter
 			}
 		}
 		
-		setAttribute(Attributes.BOTTOMGAP_FROM_AST, "bottomgap", bottomGap);
+		setAttribute(Attributes.GAP_UNCHECKED, "bottomgap", bottomGap);
 		
 		if (bottomGap == 2)
 		{
@@ -347,9 +347,7 @@ public class ParagraphAdapter
 	protected AttributeDescriptor getAttributeDescriptor(String name)
 	{
 		AttributeDescriptor d = Utils.fromString(Attributes.class, name);
-		if (d != null
-				&& d != Attributes.TOPGAP_FROM_AST
-				&& d != Attributes.BOTTOMGAP_FROM_AST)
+		if (d != null && d != Attributes.GAP_UNCHECKED)
 			return d;
 		d = Utils.fromString(UniversalAttributes.class, name);
 		if (d != null)
@@ -364,12 +362,14 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				int x = AttributeVerifiers.verifyRange(value, 0, MAX_GAP);
-				return (x == 0) ? null : value;
+				return verifyGap(value);
 			}
 			
 			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
 				ParagraphAdapter p = (ParagraphAdapter) parent;
 				int lines = (newAttr != null) ? Integer.parseInt(newAttr.getValue()) : 0;
@@ -382,12 +382,14 @@ public class ParagraphAdapter
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
-				int x = AttributeVerifiers.verifyRange(value, 0, MAX_GAP);
-				return (x == 0) ? null : value;
+				return verifyGap(value);
 			}
 			
 			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
 				ParagraphAdapter p = (ParagraphAdapter) parent;
 				int lines = (newAttr != null) ? Integer.parseInt(newAttr.getValue()) : 0;
@@ -395,31 +397,18 @@ public class ParagraphAdapter
 			}
 		},
 		
-		TOPGAP_FROM_AST
+		/**
+		 * This descriptor also describes the "topgap" and "bottomgap"
+		 * attributes, however, it doesn't verify the attribute's value and
+		 * doesn't perform any custom actions (as opposed to
+		 * setAttributeUnchecked() which only skips the verification).
+		 */
+		GAP_UNCHECKED
 		{
 			@Override
 			public String verify(WomNode parent, String value) throws IllegalArgumentException
 			{
 				return value;
-			}
-			
-			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
-			{
-			}
-		},
-		
-		BOTTOMGAP_FROM_AST
-		{
-			@Override
-			public String verify(WomNode parent, String value) throws IllegalArgumentException
-			{
-				return value;
-			}
-			
-			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
-			{
 			}
 		},
 		
@@ -436,12 +425,15 @@ public class ParagraphAdapter
 			{
 				return true;
 			}
-			
-			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
-			{
-			}
 		};
+		
+		@Override
+		public void customAction(
+				WomNode parent,
+				NativeOrXmlAttributeAdapter oldAttr,
+				NativeOrXmlAttributeAdapter newAttr)
+		{
+		}
 		
 		@Override
 		public boolean syncToAst()
@@ -459,6 +451,12 @@ public class ParagraphAdapter
 		public boolean isRemovable()
 		{
 			return true;
+		}
+		
+		private static String verifyGap(String value)
+		{
+			int gap = AttributeVerifiers.verifyRange(value, 0, MAX_GAP);
+			return (gap == 0) ? null : value;
 		}
 	}
 	
