@@ -3,7 +3,9 @@ package org.sweble.wikitext.engine.astwom;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.sweble.wikitext.engine.astwom.adapters.ArgAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.NameAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.ValueAdapter;
@@ -15,6 +17,9 @@ import org.sweble.wikitext.lazy.utils.AstBuilder;
 public class ArgAdapterTest
 {
 	private AstWomTestFixture f;
+	
+	@Rule
+	public ExpectedException expectedEx = ExpectedException.none();
 	
 	@Before
 	public void initialize()
@@ -85,7 +90,58 @@ public class ArgAdapterTest
 		assertEquals("value", arg.getArgValue().getFirstChild().getText());
 		
 		assertEquals(tmplArg, arg.getAstNode());
-		assertEquals(tmplArg.get(0), ((NameAdapter) arg.getName()).getAstNode());
-		assertEquals(tmplArg.get(1), ((ValueAdapter) arg.getArgValue()).getAstNode());
+		assertEquals(tmplArg.getName(), ((NameAdapter) arg.getName()).getAstNode());
+		assertEquals(tmplArg.getValue(), ((ValueAdapter) arg.getArgValue()).getAstNode());
+	}
+	
+	@Test
+	public void canRemoveNameFromArg() throws Exception
+	{
+		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+				.withName("arg")
+				.withValue("value")
+				.build();
+		
+		ArgAdapter arg = new ArgAdapter(f.makeFactory(), tmplArg);
+		
+		arg.setName(null);
+		
+		assertNull(arg.getName());
+		assertEquals(0, arg.getAstNode().getName().size());
+		assertEquals(
+				arg.getAstNode().getValue(),
+				((ValueAdapter) arg.getArgValue()).getAstNode());
+	}
+	
+	@Test
+	public void cannotRemoveValueFromArg() throws Exception
+	{
+		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+				.withName("arg")
+				.withValue("value")
+				.build();
+		
+		ArgAdapter arg = new ArgAdapter(f.makeFactory(), tmplArg);
+		
+		expectedEx.expect(NullPointerException.class);
+		expectedEx.expectMessage("Cannot remove mandatory child <value> from <arg>");
+		arg.setArgValue(null);
+	}
+	
+	@Test
+	public void canRelaceValue() throws Exception
+	{
+		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+				.withName("arg")
+				.withValue("value")
+				.build();
+		
+		ArgAdapter arg = new ArgAdapter(f.makeFactory(), tmplArg);
+		
+		ValueAdapter newValue = new ValueAdapter();
+		arg.replaceChild(arg.getArgValue(), newValue);
+		
+		assertEquals(newValue, arg.getArgValue());
+		assertEquals(arg.getAstNode().getValue(), newValue.getAstNode());
 	}
 }

@@ -144,9 +144,9 @@ public class ArgAdapter
 			getAstNode().setHasName(false);
 		}
 		
+		this.name = (NameAdapter) name;
 		if (name != null)
 		{
-			this.name = (NameAdapter) name;
 			this.name.link(this, null, this.value);
 			getAstNode().setName(this.name.getAstNode());
 			getAstNode().setHasName(true);
@@ -165,7 +165,7 @@ public class ArgAdapter
 	public WomValue setArgValue(WomValue value) throws NullPointerException
 	{
 		if (value == null)
-			throw new NullPointerException();
+			throw new NullPointerException("Cannot remove mandatory child <value> from <arg>");
 		
 		WomValue old = this.value;
 		
