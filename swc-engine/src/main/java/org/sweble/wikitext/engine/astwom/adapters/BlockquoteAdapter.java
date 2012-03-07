@@ -16,6 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
 import lombok.AccessLevel;
 import lombok.Delegate;
 import lombok.Getter;
@@ -24,9 +25,9 @@ import lombok.Setter;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
+import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
-import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.wom.WomBlockquote;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
@@ -60,7 +61,7 @@ public class BlockquoteAdapter
 			AstToWomNodeFactory womNodeFactory,
 			XmlElement astNode)
 	{
-		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
+		super(BLOCK_ELEMENTS, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================

@@ -29,19 +29,17 @@ public abstract class ContainerElement
 		super(new NodeList());
 	}
 	
-	public ContainerElement(AstToWomNodeFactory womNodeFactory, NodeList content)
+	public ContainerElement(
+			FullElementContentType contentType,
+			AstToWomNodeFactory factory,
+			NodeList content)
 	{
 		super(content);
 		
 		if (content == null)
 			throw new NullPointerException();
 		
-		if (!content.isEmpty())
-			addContent(
-					womNodeFactory,
-					content,
-					getChildManagerForModificationOrFail(),
-					false);
+		addContent(contentType, factory, content);
 	}
 	
 	// =========================================================================

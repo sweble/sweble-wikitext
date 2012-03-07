@@ -40,27 +40,29 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	
 	// =========================================================================
 	
-	public NativeOrXmlElementWithUniversalAttributes(AstNode astNode)
+	protected NativeOrXmlElementWithUniversalAttributes(AstNode astNode)
 	{
 		super(astNode);
 	}
 	
-	public NativeOrXmlElementWithUniversalAttributes(
-			AstToWomNodeFactory womNodeFactory,
+	protected NativeOrXmlElementWithUniversalAttributes(
+			FullElementContentType contentType,
+			AstToWomNodeFactory factory,
 			ContentNode astNode)
 	{
 		super(astNode);
-		addContent(womNodeFactory, astNode.getContent());
+		addContent(contentType, factory, astNode.getContent());
 	}
 	
-	public NativeOrXmlElementWithUniversalAttributes(
+	protected NativeOrXmlElementWithUniversalAttributes(
+			FullElementContentType contentType,
 			String tagName,
-			AstToWomNodeFactory womNodeFactory,
+			AstToWomNodeFactory factory,
 			XmlElement astNode)
 	{
 		super(tagName, astNode);
 		addAttributes(astNode.getXmlAttributes());
-		addContent(womNodeFactory, astNode.getBody());
+		addContent(contentType, factory, astNode.getBody());
 	}
 	
 	// =========================================================================

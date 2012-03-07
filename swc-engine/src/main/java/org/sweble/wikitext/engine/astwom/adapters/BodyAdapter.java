@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomBody;
 
@@ -35,9 +37,9 @@ public class BodyAdapter
 	{
 	}
 	
-	public BodyAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
+	public BodyAdapter(AstToWomNodeFactory factory, NodeList content)
 	{
-		super(womNodeFactory, content);
+		super(BLOCK_ELEMENTS, factory, content);
 	}
 	
 	// =========================================================================

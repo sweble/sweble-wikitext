@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomCite;
 import org.sweble.wikitext.lazy.parser.XmlElement;
@@ -39,7 +41,7 @@ public class CiteAdapter
 	
 	public CiteAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
-		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
+		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================

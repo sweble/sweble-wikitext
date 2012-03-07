@@ -66,9 +66,9 @@ public class CategoryAdapterTest
 	}
 	
 	@Test()
-	public void removingANodeWhichContainsACategoryNodeMoveTheCategoryToThePage() throws Exception
+	public void removingANodeWhichContainsACategoryNodeMovesTheCategoryToThePage() throws Exception
 	{
-		womPage = AstWomTestFixture.quickParseToWom("<b>[[Category:Test]]</b>");
+		womPage = AstWomTestFixture.quickPostprocessToWom("<b>[[Category:Test]]</b>");
 		
 		WomParagraph para = (WomParagraph) womPage.getBody().getFirstChild();
 		WomBold bold = (WomBold) para.getFirstChild();

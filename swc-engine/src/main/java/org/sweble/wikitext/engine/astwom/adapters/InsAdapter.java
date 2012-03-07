@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import java.util.Date;
 
 import lombok.AccessLevel;
@@ -60,7 +62,7 @@ public class InsAdapter
 	
 	public InsAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
-		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
+		super(BLOCK_OR_MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================

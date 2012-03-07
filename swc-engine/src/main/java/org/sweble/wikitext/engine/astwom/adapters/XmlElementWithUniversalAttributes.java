@@ -34,11 +34,12 @@ public abstract class XmlElementWithUniversalAttributes
 	}
 	
 	public XmlElementWithUniversalAttributes(
+			FullElementContentType contentType,
 			String tagName,
 			AstToWomNodeFactory womNodeFactory,
 			XmlElement astNode)
 	{
-		super(tagName, womNodeFactory, astNode);
+		super(contentType, tagName, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================

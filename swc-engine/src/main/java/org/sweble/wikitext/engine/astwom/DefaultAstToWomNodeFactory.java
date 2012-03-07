@@ -71,7 +71,7 @@ public class DefaultAstToWomNodeFactory
 	
 	private final Namespace CATEGORY_NAMESPACE;
 	
-	private final LinkedList<AstCategory> categories2 = new LinkedList<AstCategory>();
+	private final LinkedList<AstCategory> categories = new LinkedList<AstCategory>();
 	
 	private NodeList container;
 	
@@ -108,7 +108,7 @@ public class DefaultAstToWomNodeFactory
 	{
 		PageAdapter p = new PageAdapter(this, page, null, null, title);
 		
-		for (AstCategory c : categories2)
+		for (AstCategory c : categories)
 			p.setCategory(c.container, c.link);
 		
 		return p;
@@ -172,7 +172,7 @@ public class DefaultAstToWomNodeFactory
 				if (this.container == null)
 					throw new RuntimeException("Cannot associate AST category node with its container");
 				
-				categories2.add(new AstCategory(this.container, link));
+				categories.add(new AstCategory(this.container, link));
 				return null;
 			}
 			else

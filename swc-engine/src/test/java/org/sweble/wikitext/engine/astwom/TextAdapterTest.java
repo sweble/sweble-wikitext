@@ -36,7 +36,7 @@ public class TextAdapterTest
 	@Test
 	public void testTextAdapter() throws Exception
 	{
-		WomPage page = AstWomTestFixture.quickParseToWom("<b>some text</b>");
+		WomPage page = AstWomTestFixture.quickPostprocessToWom("<b>some text</b>");
 		
 		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();
 		
@@ -471,7 +471,7 @@ public class TextAdapterTest
 	
 	private WomText parseGetText(String wt) throws Exception
 	{
-		WomPage page = AstWomTestFixture.quickParseToWom(
+		WomPage page = AstWomTestFixture.quickPostprocessToWom(
 				String.format("<b>%s</b>", wt));
 		
 		WomParagraph para = (WomParagraph) page.getBody().getFirstChild();

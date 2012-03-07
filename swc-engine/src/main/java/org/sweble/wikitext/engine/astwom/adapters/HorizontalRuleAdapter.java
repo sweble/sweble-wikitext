@@ -16,6 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
 import lombok.AccessLevel;
 import lombok.Delegate;
 import lombok.Getter;
@@ -24,11 +25,11 @@ import lombok.Setter;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
+import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.MustBeOneOfException;
 import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
-import org.sweble.wikitext.engine.astwom.AttributeVerifiers;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomHorizAlign;
@@ -73,13 +74,11 @@ public class HorizontalRuleAdapter
 		super(astNode);
 	}
 	
-	public HorizontalRuleAdapter(
-			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
+	public HorizontalRuleAdapter(AstToWomNodeFactory factory, XmlElement astNode)
 	{
 		super(TAG_AND_NODE_NAME, astNode);
 		addAttributes(astNode.getXmlAttributes());
-		addContent(womNodeFactory, astNode.getBody());
+		addContent(SHOULD_BE_EMPTY, factory, astNode.getBody());
 	}
 	
 	// =========================================================================

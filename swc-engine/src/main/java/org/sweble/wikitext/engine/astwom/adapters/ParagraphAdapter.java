@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import java.util.ListIterator;
 
 import lombok.AccessLevel;
@@ -73,21 +75,18 @@ public class ParagraphAdapter
 		super(new Paragraph());
 	}
 	
-	public ParagraphAdapter(
-			AstToWomNodeFactory womNodeFactory,
-			Paragraph astNode)
+	public ParagraphAdapter(AstToWomNodeFactory factory, Paragraph astNode)
 	{
 		super(astNode);
-		//addContent(womNodeFactory, astNode.getContent());
-		gapsFromAst(womNodeFactory);
+		// Done by gapsFromAst!
+		//addContent(MIXED_INLINE, factory, astNode.getContent());
+		gapsFromAst(factory);
 	}
 	
-	public ParagraphAdapter(
-			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
+	public ParagraphAdapter(AstToWomNodeFactory factory, XmlElement astNode)
 	{
 		super("p", astNode);
-		addContent(womNodeFactory, astNode.getBody());
+		addContent(MIXED_INLINE, factory, astNode.getBody());
 		addAttributes(astNode.getXmlAttributes());
 		
 		// FIXME: How about gaps and <p> elements?
@@ -212,11 +211,11 @@ public class ParagraphAdapter
 		
 		if (bottomGap == 2)
 		{
-			addContent(womNodeFactory, container, first, last);
+			addContent(MIXED_INLINE, womNodeFactory, container, first, last);
 		}
 		else
 		{
-			addContent(womNodeFactory, container, first, last);
+			addContent(MIXED_INLINE, womNodeFactory, container, first, last);
 		}
 		
 	}

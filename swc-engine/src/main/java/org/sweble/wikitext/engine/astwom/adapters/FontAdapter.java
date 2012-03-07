@@ -16,6 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
 import lombok.AccessLevel;
 import lombok.Delegate;
 import lombok.Getter;
@@ -60,7 +61,7 @@ public class FontAdapter
 	
 	public FontAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
-		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
+		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================

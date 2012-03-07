@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomImageCaption;
 
@@ -35,11 +37,9 @@ public class ImageCaptionAdapter
 	{
 	}
 	
-	public ImageCaptionAdapter(
-			AstToWomNodeFactory womNodeFactory,
-			NodeList content)
+	public ImageCaptionAdapter(AstToWomNodeFactory factory, NodeList content)
 	{
-		super(womNodeFactory, content);
+		super(MIXED_INLINE, factory, content);
 	}
 	
 	// =========================================================================

@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomValue;
 
@@ -37,7 +39,7 @@ public class ValueAdapter
 	
 	public ValueAdapter(AstToWomNodeFactory womNodeFactory, NodeList content)
 	{
-		super(womNodeFactory, content);
+		super(MIXED_PREPROCESSOR, womNodeFactory, content);
 	}
 	
 	// =========================================================================

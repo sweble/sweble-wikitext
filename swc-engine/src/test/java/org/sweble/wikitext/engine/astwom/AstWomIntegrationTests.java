@@ -94,7 +94,7 @@ public class AstWomIntegrationTests
 	@Test
 	public void checkPrintedAst() throws Exception
 	{
-		Page page = fixture.parseToAst(wikitextFile).getPage();
+		Page page = fixture.postprocessToAst(wikitextFile).getPage();
 		
 		fixture.printAstTest(INPUT_DIR, OUTPUT_DIR, page, wikitextFile);
 	}
@@ -102,7 +102,7 @@ public class AstWomIntegrationTests
 	@Test
 	public void checkPrintedRtWt() throws Exception
 	{
-		Page page = fixture.parseToAst(wikitextFile).getPage();
+		Page page = fixture.postprocessToAst(wikitextFile).getPage();
 		
 		fixture.printRtWtTest(INPUT_DIR, OUTPUT_DIR, page, wikitextFile);
 	}
@@ -110,7 +110,7 @@ public class AstWomIntegrationTests
 	@Test
 	public void checkPrintedWom() throws Exception
 	{
-		WomPage page = fixture.parseToWom(wikitextFile);
+		WomPage page = fixture.postprocessToWom(wikitextFile);
 		
 		fixture.setExplicitTextNodes(true);
 		fixture.printWomTest(INPUT_DIR, OUTPUT_DIR, page, wikitextFile);

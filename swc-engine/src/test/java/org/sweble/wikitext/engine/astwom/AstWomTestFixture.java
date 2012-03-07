@@ -106,13 +106,26 @@ public class AstWomTestFixture
 	
 	// =========================================================================
 	
-	public static WomPage quickParseToWom(String wikitext) throws Exception
+	public DefaultAstToWomNodeFactory makeFactory() throws Exception
 	{
-		AstWomTestFixture f = new AstWomTestFixture();
-		return f.parseToWom(wikitext);
+		PageTitle title = PageTitle.make(this.config, "-");
+		return makeFactory(title);
 	}
 	
-	public WomPage parseToWom(String wikitext) throws Exception
+	public DefaultAstToWomNodeFactory makeFactory(PageTitle title)
+	{
+		return new DefaultAstToWomNodeFactory(
+				this.config,
+				title.getFullTitle());
+	}
+	
+	public static WomPage quickPostprocessToWom(String wikitext) throws Exception
+	{
+		AstWomTestFixture f = new AstWomTestFixture();
+		return f.postprocessToWom(wikitext);
+	}
+	
+	public WomPage postprocessToWom(String wikitext) throws Exception
 	{
 		final PageTitle title = PageTitle.make(this.config, "-" /* title */);
 		
@@ -120,10 +133,10 @@ public class AstWomTestFixture
 				new PageId(title, -1 /* revision */),
 				wikitext);
 		
-		return parseToWom(title, fullPage);
+		return postprocessToWom(title, fullPage);
 	}
 	
-	public WomPage parseToWom(File wikitextFile) throws Exception
+	public WomPage postprocessToWom(File wikitextFile) throws Exception
 	{
 		final PageTitle title = PageTitle.make(config, wikitextFile.getName());
 		
@@ -133,25 +146,30 @@ public class AstWomTestFixture
 				new PageId(title, -1 /* revision */),
 				wikitext.getContent());
 		
-		return parseToWom(title, fullPage);
+		return postprocessToWom(title, fullPage);
 	}
 	
-	public WomPage parseToWom(PageTitle title, FullPage fullPage) throws CompilerException, Exception
+	public WomPage postprocessToWom(PageTitle title, FullPage fullPage) throws CompilerException, Exception
 	{
 		final CompiledPage astPage = this.compiler.postprocess(
 				fullPage.getId(),
 				fullPage.getText(),
 				null);
 		
-		final DefaultAstToWomNodeFactory wnf =
-				new DefaultAstToWomNodeFactory(
-						this.config,
-						title.getFullTitle());
+		final DefaultAstToWomNodeFactory wnf = makeFactory(title);
 		
 		return (WomPage) wnf.create(null, astPage.getPage());
 	}
 	
-	public CompiledPage parseToAst(String wikitext) throws Exception
+	public static CompiledPage quickPreprocessToAst(
+			String wikitext,
+			boolean forInclusion) throws Exception
+	{
+		AstWomTestFixture f = new AstWomTestFixture();
+		return f.preprocessToAst(wikitext, forInclusion);
+	}
+	
+	public CompiledPage preprocessToAst(String wikitext, boolean forInclusion) throws Exception
 	{
 		final PageTitle title = PageTitle.make(this.config, "-" /* title */);
 		
@@ -159,10 +177,30 @@ public class AstWomTestFixture
 				new PageId(title, -1 /* revision */),
 				wikitext);
 		
-		return parseToAst(fullPage);
+		return preprocessToAst(fullPage, forInclusion);
 	}
 	
-	public CompiledPage parseToAst(File wikitextFile) throws Exception
+	public CompiledPage preprocessToAst(FullPage fullPage, boolean forInclusion) throws Exception
+	{
+		return this.compiler.preprocess(
+				fullPage.getId(),
+				fullPage.getText(),
+				forInclusion,
+				null);
+	}
+	
+	public CompiledPage postprocessToAst(String wikitext) throws Exception
+	{
+		final PageTitle title = PageTitle.make(this.config, "-" /* title */);
+		
+		final FullPage fullPage = new FullPage(
+				new PageId(title, -1 /* revision */),
+				wikitext);
+		
+		return postprocessToAst(fullPage);
+	}
+	
+	public CompiledPage postprocessToAst(File wikitextFile) throws Exception
 	{
 		final PageTitle title = PageTitle.make(config, wikitextFile.getName());
 		
@@ -172,10 +210,10 @@ public class AstWomTestFixture
 				new PageId(title, -1 /* revision */),
 				wikitext.getContent());
 		
-		return parseToAst(fullPage);
+		return postprocessToAst(fullPage);
 	}
 	
-	public CompiledPage parseToAst(FullPage fullPage) throws CompilerException, Exception
+	public CompiledPage postprocessToAst(FullPage fullPage) throws CompilerException, Exception
 	{
 		return this.compiler.postprocess(
 				fullPage.getId(),

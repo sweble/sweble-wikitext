@@ -36,8 +36,9 @@ public abstract class XmlElementWithChildren
 	}
 	
 	public XmlElementWithChildren(
+			FullElementContentType contentType,
 			String tagName,
-			AstToWomNodeFactory womNodeFactory,
+			AstToWomNodeFactory factory,
 			XmlElement astNode)
 	{
 		super(astNode);
@@ -49,7 +50,7 @@ public abstract class XmlElementWithChildren
 			throw new IllegalArgumentException("Given XmlElement node is not a `" + tagName + "' element!");
 		
 		addAttributes(astNode.getXmlAttributes());
-		addContent(womNodeFactory, astNode.getBody());
+		addContent(contentType, factory, astNode.getBody());
 	}
 	
 	// =========================================================================

@@ -2,6 +2,7 @@ package org.sweble.wikitext.lazy.utils;
 
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -33,6 +34,11 @@ public class AstBuilder
 	public static TextBuilder astText()
 	{
 		return new TextBuilder();
+	}
+	
+	public static TmplArgBuilder astTmplArg()
+	{
+		return new TmplArgBuilder();
 	}
 	
 	// =========================================================================
@@ -141,6 +147,32 @@ public class AstBuilder
 		public XmlAttribute build()
 		{
 			return new XmlAttribute(name, value, value != null);
+		}
+	}
+	
+	public static final class TmplArgBuilder
+	{
+		private NodeList name = null;
+		
+		private NodeList value;
+		
+		public TmplArgBuilder withName(String name)
+		{
+			this.name = new NodeList(new Text(name));
+			return this;
+		}
+		
+		public TmplArgBuilder withValue(String value)
+		{
+			this.value = new NodeList(new Text(value));
+			return this;
+		}
+		
+		public TemplateArgument build()
+		{
+			if (value == null)
+				value = new NodeList();
+			return new TemplateArgument(name, value, name != null);
 		}
 	}
 }

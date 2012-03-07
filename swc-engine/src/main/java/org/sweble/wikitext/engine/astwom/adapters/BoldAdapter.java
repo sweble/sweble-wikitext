@@ -16,6 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomBold;
@@ -41,12 +43,12 @@ public class BoldAdapter
 	
 	public BoldAdapter(AstToWomNodeFactory womNodeFactory, Bold astNode)
 	{
-		super(womNodeFactory, astNode);
+		super(MIXED_INLINE, womNodeFactory, astNode);
 	}
 	
 	public BoldAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
 	{
-		super(TAG_AND_NODE_NAME, womNodeFactory, astNode);
+		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}
 	
 	// =========================================================================

@@ -171,7 +171,8 @@ public class ArgAdapter
 		
 		Toolbox.expectType(ValueAdapter.class, value);
 		
-		this.value.unlink();
+		if (this.value != null)
+			this.value.unlink();
 		
 		this.value = (ValueAdapter) value;
 		this.value.link(this, this.name, null);
