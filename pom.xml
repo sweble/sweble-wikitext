@@ -8,6 +8,7 @@
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
     <version>1.0.4</version>
+    <relativePath>../tooling/pom.xml</relativePath>
   </parent>
 
   <!-- This POM: Sweble -->
@@ -58,16 +59,6 @@
     <!-- ==[ Plugin Configuration ]========================================= -->
 
     <plugins>
-
-      <!-- Check and format license headers -->
-      <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
     </plugins>
 
     <!-- ==[ Plugin Management ]============================================ -->
@@ -174,24 +165,5 @@
                 <repositories>
                 <pluginRepositories>
   -->
-
-  <repositories>
-    <!-- Minimal set-up needed to retrieve parent POM -->
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </snapshots>
-      <id>osr-public-repositories</id>
-      <name>OSR Public Repositories</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
-    </repository>
-  </repositories>
 
 </project>
