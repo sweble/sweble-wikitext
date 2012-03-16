@@ -8,6 +8,7 @@
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
     <version>1.0.0</version>
+    <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components -->
@@ -21,7 +22,7 @@
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2009</inceptionYear>
   <description>
-    The Sweble Wikitext Components module provides a parser for MediaWiki's 
+    The Sweble Wikitext Components module provides a parser for MediaWiki's
     Wikitext and an Engine trying emulating the behavior of a MediaWiki.
   </description>
 
@@ -30,7 +31,6 @@
   <modules>
     <module>swc-parser-lazy</module>
     <module>swc-engine</module>
-    <module>swc-example</module>
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->
@@ -96,7 +96,6 @@
         <artifactId>maven-license-plugin</artifactId>
         <configuration>
           <header>etc/license-header.txt</header>
-          <encoding>UTF-8</encoding>
           <strictCheck>true</strictCheck>
           <failIfMissing>true</failIfMissing>
           <skip>false</skip>
@@ -106,6 +105,20 @@
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
           </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Maven site generation -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <reportPlugins>
+
+            <plugin>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+          </reportPlugins>
         </configuration>
       </plugin>
 
@@ -168,7 +181,6 @@
         <plugin>
           <groupId>de.fau.cs.osr.ptk</groupId>
           <artifactId>ptk-printergen-maven-plugin</artifactId>
-          <!-- Version is given directly so the release plugin can see it -->
           <version>${version.plugin.parser-toolkit}</version>
           <executions>
             <execution>
@@ -253,24 +265,5 @@
                 <repositories>
                 <pluginRepositories>
   -->
-
-  <repositories>
-    <!-- Minimal set-up needed to retrieve parent POM -->
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
-      </snapshots>
-      <id>osr-public-repositories</id>
-      <name>OSR Public Repositories</name>
-      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
-    </repository>
-  </repositories>
 
 </project>
