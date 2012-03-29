@@ -7,18 +7,18 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.1-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Engine -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-engine</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Engine</name>
-  <url>http://osr.informatik.uni-erlangen.de</url>
+  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-engine</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     A minimal engine using the Sweble Lazy Wikitext Parser to
@@ -122,6 +122,8 @@
           <excludes>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
+            <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
             <exclude>LICENSE</exclude>
@@ -149,6 +151,25 @@
         </executions>
       </plugin>
 
+      <!-- Maven GPG Plugin -->
+      <plugin>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>${version.plugin.gpg}</version>
+        <configuration>
+          <!-- OSR Group <osr@i2.informatik.uni-erlangen.de> -->
+          <keyname>44E980E1</keyname>
+        </configuration>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- Maven site generation -->
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
@@ -162,6 +183,17 @@
             <!-- >>> ADDITIONAL REPORT PLUGINS >>> -->
             <plugin>
               <artifactId>maven-javadoc-plugin</artifactId>
+              <configuration>
+                <quiet>true</quiet>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <id>site-javadoc</id>
+                  <reports>
+                    <report>javadoc</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
             </plugin>
 
             <plugin>
@@ -170,6 +202,22 @@
 
             <plugin>
               <artifactId>maven-jxr-plugin</artifactId>
+              <reportSets>
+                <reportSet>
+                  <id>src-xref</id>
+                  <reports>
+                    <report>jxr</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-pmd-plugin</artifactId>
+              <version>2.7.1</version>
+              <configuration>
+                <targetJdk>${version.java}</targetJdk>
+              </configuration>
             </plugin>
 
             <plugin>
@@ -244,10 +292,109 @@
     see parent: <issueManagement>
                 <ciManagement>
                 <mailingLists>
-                <scm>
-                <distributionManagement>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
                 <repositories>
                 <pluginRepositories>
   -->
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+    <profile>
+      <id>quick</id>
+      <build>
+        <plugins>
+
+          <!-- Don't check and format license headers -->
+          <plugin>
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <!-- Don't sign artifacts -->
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${version.plugin.gpg}</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <!-- Don't run tests -->
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>
+            </configuration>
+          </plugin>
+
+          <!-- Only generate minimal site -->
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <configuration>
+              <reportPlugins>
+                <plugin>
+                  <artifactId>maven-project-info-reports-plugin</artifactId>
+                  <reportSets>
+                    <reportSet>
+                      <reports>
+                        <!-- cim, dependencies, dependency-convergence -->
+                        <report>dependency-management</report>
+                        <report>distribution-management</report>
+                        <report>index</report>
+                        <report>issue-tracking</report>
+                        <report>license</report>
+                        <report>mailing-list</report>
+                        <report>modules</report>
+                        <report>plugin-management</report>
+                        <report>plugins</report>
+                        <report>project-team</report>
+                        <report>scm</report>
+                        <report>summary</report>
+                      </reports>
+                    </reportSet>
+                  </reportSets>
+                </plugin>
+              </reportPlugins>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>dont-sign</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+
+          <!-- Don't sign artifacts -->
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${version.plugin.gpg}</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
