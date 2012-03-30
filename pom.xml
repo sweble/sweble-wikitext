@@ -258,9 +258,15 @@
     </developer>
   </developers>
 
-  <!--
-    see parent: <contributors>
-  -->
+  <contributors>
+    <contributor>
+      <name>Daniel Naber</name>
+      <email>naber@danielnaber.de</email>
+      <roles>
+        <role>tester</role>
+      </roles>
+    </contributor>
+  </contributors>
 
   <!-- ==[ Environment Settings ]=========================================== -->
 
