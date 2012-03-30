@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble Wikitext Components -->
+
+  <parent>
+    <groupId>org.sweble.wikitext</groupId>
+    <artifactId>sweble-wikitext</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <relativePath>../../../../pom.xml</relativePath>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components - Basic Example Archetype -->
+
+  <groupId>org.sweble.wikitext</groupId>
+  <artifactId>swc-example-basic-archetype</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>maven-archetype</packaging>
+
+  <name>SWC - Basic Example Archetype</name>
+  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-example-basic-archetype</url>
+  <inceptionYear>2010</inceptionYear>
+  <description>
+    An archetype that creates a simple application which is able to parse a page
+    written in Wikitext and render it as HTML.
+  </description>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>2.2</version>
+      </extension>
+    </extensions>
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- Maven GPG Plugin -->
+      <plugin>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>${version.plugin.gpg}</version>
+        <configuration>
+          <!-- OSR Group <osr@i2.informatik.uni-erlangen.de> -->
+          <keyname>44E980E1</keyname>
+        </configuration>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Maven site generation -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <reportPlugins>
+
+            <plugin>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+          </reportPlugins>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>
+        The archetype project itself is licensed under this license.
+        The generated project is licensed under the Simplified BSD License.
+      </comments>
+    </license>
+    <license>
+      <name>Simplified BSD License</name>
+      <url>http://www.opensource.org/licenses/BSD-2-Clause</url>
+      <distribution>any</distribution>
+      <comments>
+        The project generated from this archetype is licensed under this license
+      </comments>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+    <profile>
+      <id>quick</id>
+      <build>
+        <plugins>
+
+          <!-- Don't sign artifacts -->
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${version.plugin.gpg}</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <!-- Only generate minimal site -->
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <configuration>
+              <reportPlugins>
+                <plugin>
+                  <artifactId>maven-project-info-reports-plugin</artifactId>
+                  <reportSets>
+                    <reportSet>
+                      <reports>
+                        <!-- cim, dependencies, dependency-convergence -->
+                        <report>dependency-management</report>
+                        <report>distribution-management</report>
+                        <report>index</report>
+                        <report>issue-tracking</report>
+                        <report>license</report>
+                        <report>mailing-list</report>
+                        <report>modules</report>
+                        <report>plugin-management</report>
+                        <report>plugins</report>
+                        <report>project-team</report>
+                        <report>scm</report>
+                        <report>summary</report>
+                      </reports>
+                    </reportSet>
+                  </reportSets>
+                </plugin>
+              </reportPlugins>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>dont-sign</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+
+          <!-- Don't sign artifacts -->
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${version.plugin.gpg}</version>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

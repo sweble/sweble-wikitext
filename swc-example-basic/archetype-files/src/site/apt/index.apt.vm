@@ -1,0 +1,22 @@
+ ------
+ SWC - Basic Example Archetype
+ ------
+ Hannes Dohrn
+ ------
+ 2012-03-29
+ ------
+
+SWC - Basic Example Archetype
+
+ An example project that contains a simple application that is able to parse a
+ page written in Wikitext and render it as HTML or plain text.
+
+* Usage
+
+ To create an example project from this archetype, type:
+
++----+
+
+mvn archetype:generate -DarchetypeGroupId=${project.groupId} -DarchetypeArtifactId=${project.artifactId} -DarchetypeVersion=${project.version}
+
++----+

@@ -1,22 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Parent POM: Sweble -->
-
-  <parent>
-    <groupId>org.sweble.wikitext</groupId>
-    <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
-    <relativePath>../../tooling/pom.xml</relativePath>
-  </parent>
-
   <!-- This POM -->
 
   <groupId>org.example</groupId>
   <artifactId>swc-example-basic</artifactId>
   <version>1.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-  <name>SWC - Basic Example Project</name>
+  <name>SWC - Basic Example</name>
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2011</inceptionYear>
   <description>
@@ -70,6 +62,7 @@
       <!-- Create a JAR package -->
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
         <configuration>
           <archive>
             <manifest>
@@ -84,6 +77,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.4</version>
         <executions>
           <execution>
             <id>copy-dependencies</id>
@@ -102,6 +96,7 @@
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
+        <version>1.9.0</version>
         <configuration>
           <header>../etc/license-header.txt</header>
           <excludes>
@@ -117,10 +112,11 @@
         </configuration>
       </plugin>
 
-      <!-- DO NOT DEPLOAY THE EXAMPLE PROJECT ITSELF -->
+      <!-- DO NOT DEPLOY THE EXAMPLE PROJECT ITSELF -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.7</version>
         <configuration>
           <skip>true</skip>
         </configuration>
@@ -133,6 +129,7 @@
         <!-- Java Maven Compiler Plugin -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
           <configuration>
             <source>${version.java}</source>
             <target>${version.java}</target>
@@ -145,18 +142,81 @@
   <repositories>
     <repository>
       <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
+        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
         <updatePolicy>daily</updatePolicy>
         <checksumPolicy>warn</checksumPolicy>
       </snapshots>
-      <id>osr-public-repositories</id>
-      <name>OSR Public Repositories</name>
+      <id>osr-public-snapshots-repo</id>
+      <name>OSR Public Snapshots Repository</name>
       <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-plugin-snapshots-repo</id>
+      <name>OSR Public Plugin Snapshots Repository</name>
+      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+    <profile>
+      <id>build-examples</id>
+      <build>
+        <plugins>
+
+          <!-- Call shell scripts to build examples -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <executions>
+              <execution>
+                <id>exec-generate-example-archetype</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>../bin/generate-example-archetype</executable>
+                  <arguments>
+                    <argument>.</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>exec-generate-example-eclipse-project</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>../bin/generate-example-eclipse-project</executable>
+                  <arguments>
+                    <argument>.</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>
