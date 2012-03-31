@@ -94,9 +94,14 @@ public class PageTitle
 		if (namespace != null && !isDefaultNs)
 			result += namespace.getCanonical() + ":";
 		
-		result += title.replace('_', ' ');
+		result += getDenormalizedTitle();
 		
 		return result;
+	}
+
+	public String getDenormalizedTitle()
+	{
+		return title.replace('_', ' ');
 	}
 	
 	public String getLinkString()

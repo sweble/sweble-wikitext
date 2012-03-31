@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble Wikitext Components -->
+
+  <parent>
+    <groupId>org.sweble.wikitext</groupId>
+    <artifactId>sweble-wikitext</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components - Article Cruncher -->
+
+  <groupId>org.sweble.wikitext</groupId>
+  <artifactId>swc-article-cruncher</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SWC - Article Cruncher</name>
+  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-article-cruncher</url>
+  <inceptionYear>2012</inceptionYear>
+  <description>
+    A framework for multi-threaded processing of lots of articles.
+  </description>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+
+    <!-- Log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+
+    <!-- Sweble Wikitext Components - Engine -->
+    <!--
+    <dependency>
+      <groupId>org.sweble.wikitext</groupId>
+      <artifactId>swc-engine</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+    -->
+
+    <!-- Utils -->
+    <dependency>
+      <groupId>de.fau.cs.osr.utils</groupId>
+      <artifactId>utils</artifactId>
+    </dependency>
+
+    <!--
+      Testing
+    -->
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <header>../etc/license-header.txt</header>
+          <mapping>
+             <rats>JAVADOC_STYLE</rats>
+             <jflex>JAVADOC_STYLE</jflex>
+             <apt>PTK_APT_STYLE</apt>
+          </mapping>
+          <headerDefinitions>
+            <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
+          </headerDefinitions>
+          <excludes>
+            <exclude>*</exclude>
+            <exclude>src/main/schema/export-*.xsd</exclude>
+            <exclude>src/main/schema/catalog/xml.xsd</exclude>
+            <exclude>src/main/resources/**</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Make Git information available as properties -->
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+        <executions>
+          <!-- Disabled until problem
+            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19
+            is resolved -->
+          <execution>
+            <id>git-commit-info-disabled</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+                <scm>
+                <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+</project>

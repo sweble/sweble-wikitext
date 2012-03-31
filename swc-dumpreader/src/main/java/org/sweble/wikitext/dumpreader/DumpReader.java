@@ -18,65 +18,270 @@
 package org.sweble.wikitext.dumpreader;
 
 import java.io.File;
-import java.util.concurrent.BlockingQueue;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URL;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.ValidationEvent;
+import javax.xml.bind.ValidationEventHandler;
+import javax.xml.bind.ValidationEventLocator;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamReader;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+
+import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.log4j.Logger;
 
-public class DumpReader
+import sun.org.mozilla.javascript.WrappedException;
+
+import com.sun.org.apache.xerces.internal.util.XMLCatalogResolver;
+
+public abstract class DumpReader
 {
-	private static final File DUMP_FILE = new File("/home/dohrn/home.local/downloads/enwiki-dump/20120211/enwiki-20120211-pages-meta-current1.xml-p000000010p000010000.bz2");
+	private final File dumpFile;
 	
-	private static final Logger logger =
-			Logger.getLogger(DumpReader.class.getName());
+	private final Logger logger;
+	
+	private final XMLStreamReader xmlStreamReader;
+	
+	private final Unmarshaller unmarshaller;
+	
+	private final long fileLength;
+	
+	private final ExportSchemaVersion schemaVersion;
+	
+	private CountingInputStream decompressedInputStream;
+	
+	private CountingInputStream compressedInputStream;
+	
+	private long parsedCount;
+	
+	private boolean decompress;
 	
 	// =========================================================================
 	
-	public static void main(String[] args)
+	public DumpReader(File dumpFile, Logger logger) throws Exception
 	{
-		new DumpReader().run();
+		this.dumpFile = dumpFile;
+		this.logger = logger;
+		
+		logger.info("Setting up parser for file " + dumpFile.getAbsolutePath());
+		
+		schemaVersion = determineExportVersion();
+		
+		unmarshaller = createUnmarshaller(schemaVersion.getContextPath());
+		
+		installCallbacks();
+		
+		setSchema(
+				DumpReader.class.getResource("/catalog.xml"),
+				DumpReader.class.getResource(schemaVersion.getSchema()));
+		
+		xmlStreamReader = setUpParser();
+		
+		fileLength = dumpFile.length();
+		
+		parsedCount = 0;
+	}
+	
+	private ExportSchemaVersion determineExportVersion() throws IOException
+	{
+		FileInputStream fis = new FileInputStream(dumpFile);
+		
+		final int LOOKAHEAD = 4096;
+		byte[] b = new byte[LOOKAHEAD];
+		int read = fis.read(b, 0, LOOKAHEAD);
+		String header = new String(b, 0, read);
+		
+		if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.5/\""))
+		{
+			return ExportSchemaVersion.V0_5;
+		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.6/\""))
+		{
+			return ExportSchemaVersion.V0_6;
+		}
+		else
+		{
+			throw new IllegalArgumentException("Unknown xmlns");
+		}
 	}
 	
 	// =========================================================================
 	
-	private void run()
+	public void unmarshal() throws Throwable
 	{
-		logger.info("Starting dump reader");
-		try
+		unmarshaller.unmarshal(xmlStreamReader);
+	}
+	
+	public long getFileSize()
+	{
+		return fileLength;
+	}
+	
+	public long getDecompressedBytesRead() throws IOException
+	{
+		return decompressedInputStream.getCount();
+	}
+	
+	public long getCompressedBytesRead() throws IOException
+	{
+		if (decompress)
 		{
-			setUp();
+			return compressedInputStream.getCount();
 		}
-		catch (Exception e)
+		else
 		{
-			logger.error("Dump reader hit by exception", e);
-		}
-		finally
-		{
-			logger.info("Dump reader exiting");
+			return getDecompressedBytesRead();
 		}
 	}
 	
-	public void setUp() throws Exception
+	public long getParsedCount()
 	{
-		Nexus nexus = Nexus.get();
+		return parsedCount;
+	}
+	
+	// =========================================================================
+	
+	protected abstract void processPage(Object mediaWiki, Object page) throws Exception;
+	
+	// =========================================================================
+	
+	private void handlePage(Object mediaWiki, Object page) throws Exception
+	{
+		++parsedCount;
 		
-		nexus.start(DUMP_FILE);
+		processPage(mediaWiki, page);
+	}
+	
+	protected boolean handleEvent(ValidationEvent ve, ValidationEventLocator vel) throws Exception
+	{
+		logger.warn(String.format(
+				"%s:%d:%d: %s",
+				dumpFile.getAbsolutePath(),
+				vel.getLineNumber(),
+				vel.getColumnNumber(),
+				ve.getMessage()));
 		
-		// Add one local processing node
-		logger.info("Adding local processing node");
-		nexus.addProcessingNode(new ProcessingNodeFactory()
+		return true;
+	}
+	
+	// =========================================================================
+	
+	private XMLStreamReader setUpParser() throws Exception
+	{
+		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+		
+		if (dumpFile.getName().endsWith(".bz2"))
+		{
+			decompress = true;
+			
+			compressedInputStream = new CountingInputStream(
+					new FileInputStream(dumpFile));
+			
+			decompressedInputStream = new CountingInputStream(
+					new BZip2CompressorInputStream(compressedInputStream));
+		}
+		else if (dumpFile.getName().endsWith(".gz"))
+		{
+			decompress = true;
+			
+			compressedInputStream = new CountingInputStream(
+					new FileInputStream(dumpFile));
+			
+			decompressedInputStream = new CountingInputStream(
+					new GzipCompressorInputStream(compressedInputStream));
+		}
+		else
+		{
+			decompress = false;
+			
+			decompressedInputStream = new CountingInputStream(
+					new FileInputStream(dumpFile));
+		}
+		
+		return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
+	}
+	
+	private void setSchema(URL catalog, URL schemaUrl) throws Exception
+	{
+		SchemaFactory sf = SchemaFactory.newInstance(
+				javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		
+		sf.setResourceResolver(
+				new XMLCatalogResolver(
+						new String[] { catalog.getFile() }));
+		
+		Schema schema = sf.newSchema(schemaUrl);
+		
+		unmarshaller.setSchema(schema);
+		
+		unmarshaller.setEventHandler(
+				new ValidationEventHandler()
+				{
+					public boolean handleEvent(ValidationEvent ve)
+					{
+						try
+						{
+							return DumpReader.this.handleEvent(ve, ve.getLocator());
+						}
+						catch (RuntimeException e)
+						{
+							throw e;
+						}
+						catch (Exception e)
+						{
+							throw new WrappedException(e);
+						}
+					}
+				});
+	}
+	
+	private void installCallbacks()
+	{
+		final PageListener pageListener = new PageListener()
 		{
 			@Override
-			public Runnable create(
-					BlockingQueue<JobWithHistory> inTray,
-					BlockingQueue<JobWithHistory> completedJobs,
-					ThreadGroup parentThreadGroup)
+			public void handlePage(Object mediaWiki, Object page)
 			{
-				return new LocalProcessingNode(
-						inTray,
-						completedJobs,
-						parentThreadGroup,
-						8);
+				try
+				{
+					DumpReader.this.handlePage(mediaWiki, page);
+				}
+				catch (RuntimeException e)
+				{
+					throw e;
+				}
+				catch (Exception e)
+				{
+					throw new WrappedException(e);
+				}
+			}
+		};
+		
+		unmarshaller.setListener(new Unmarshaller.Listener()
+		{
+			public void beforeUnmarshal(Object target, Object parent)
+			{
+				schemaVersion.setPageListener(target, pageListener);
+			}
+			
+			public void afterUnmarshal(Object target, Object parent)
+			{
+				schemaVersion.setPageListener(target, pageListener);
 			}
 		});
+	}
+	
+	private Unmarshaller createUnmarshaller(String contextPath) throws JAXBException
+	{
+		JAXBContext context = JAXBContext.newInstance(contextPath);
+		
+		return context.createUnmarshaller();
 	}
 }
