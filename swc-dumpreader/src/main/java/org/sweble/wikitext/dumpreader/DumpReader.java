@@ -28,7 +28,9 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventHandler;
 import javax.xml.bind.ValidationEventLocator;
+import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
@@ -82,34 +84,12 @@ public abstract class DumpReader
 				DumpReader.class.getResource("/catalog.xml"),
 				DumpReader.class.getResource(schemaVersion.getSchema()));
 		
-		xmlStreamReader = setUpParser();
+		getDumpInputStream();
+		xmlStreamReader = getXmlStreamReader();
 		
 		fileLength = dumpFile.length();
 		
 		parsedCount = 0;
-	}
-	
-	private ExportSchemaVersion determineExportVersion() throws IOException
-	{
-		FileInputStream fis = new FileInputStream(dumpFile);
-		
-		final int LOOKAHEAD = 4096;
-		byte[] b = new byte[LOOKAHEAD];
-		int read = fis.read(b, 0, LOOKAHEAD);
-		String header = new String(b, 0, read);
-		
-		if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.5/\""))
-		{
-			return ExportSchemaVersion.V0_5;
-		}
-		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.6/\""))
-		{
-			return ExportSchemaVersion.V0_6;
-		}
-		else
-		{
-			throw new IllegalArgumentException("Unknown xmlns");
-		}
 	}
 	
 	// =========================================================================
@@ -117,6 +97,7 @@ public abstract class DumpReader
 	public void unmarshal() throws Throwable
 	{
 		unmarshaller.unmarshal(xmlStreamReader);
+		xmlStreamReader.close();
 	}
 	
 	public long getFileSize()
@@ -173,10 +154,8 @@ public abstract class DumpReader
 	
 	// =========================================================================
 	
-	private XMLStreamReader setUpParser() throws Exception
+	private void getDumpInputStream() throws Exception
 	{
-		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-		
 		if (dumpFile.getName().endsWith(".bz2"))
 		{
 			decompress = true;
@@ -204,7 +183,36 @@ public abstract class DumpReader
 			decompressedInputStream = new CountingInputStream(
 					new FileInputStream(dumpFile));
 		}
+	}
+	
+	private ExportSchemaVersion determineExportVersion() throws Exception
+	{
+		final int LOOKAHEAD = 4096;
+		byte[] b = new byte[LOOKAHEAD];
 		
+		getDumpInputStream();
+		int read = decompressedInputStream.read(b, 0, LOOKAHEAD);
+		decompressedInputStream.close();
+		
+		String header = new String(b, 0, read);
+		
+		if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.5/\""))
+		{
+			return ExportSchemaVersion.V0_5;
+		}
+		else if (header.contains("xmlns=\"http://www.mediawiki.org/xml/export-0.6/\""))
+		{
+			return ExportSchemaVersion.V0_6;
+		}
+		else
+		{
+			throw new IllegalArgumentException("Unknown xmlns");
+		}
+	}
+	
+	private XMLStreamReader getXmlStreamReader() throws FactoryConfigurationError, XMLStreamException
+	{
+		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 		return xmlInputFactory.createXMLStreamReader(decompressedInputStream);
 	}
 	
