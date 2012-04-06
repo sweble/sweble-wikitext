@@ -83,7 +83,8 @@ public class ConsoleWriter
 					progressLock.notify();
 				}
 				
-				progressLock.wait();
+				while (!progressHasUpdate)
+					progressLock.wait();
 			}
 		}
 	}
