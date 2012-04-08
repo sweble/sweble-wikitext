@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+    name="Sweble" >
+
+  <bannerLeft>
+    <name>Sweble</name>
+    <src>http://sweble.org/img/maven-site-banner-left.png</src>
+    <href>http://sweble.org/</href>
+  </bannerLeft>
+  <bannerRight>
+    <src>http://sweble.org/img/maven-site-banner-right.png</src>
+  </bannerRight>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.1</version>
+  </skin>
+
+  <version position="right" />
+  <publishDate position="right" />
+
+  <custom>
+    <fluidoSkin>
+      <topBarEnabled>false</topBarEnabled>
+      <sideBarEnabled>true</sideBarEnabled>
+    </fluidoSkin>
+  </custom>
+
+  <body>
+
+    <head />
+
+    <breadcrumbs>
+      <item name="Sweble" href="http://sweble.org" />
+      <item name="Documentation" href="http://sweble.org/doc" img="" />
+      <item name="Tooling" href="http://sweble.org/doc/site/tooling" img="" />
+      <item name="Sweble" href="http://sweble.org/doc/site/tooling/sweble" img="" />
+    </breadcrumbs>
+
+    <menu ref="parent"/>
+
+    <menu ref="reports"/>
+
+    <menu name="Sweble">
+      <item name="Blog" href="http://sweble.org" />
+      <item name="Wiki" href="http://sweble.org/wiki" />
+      <item name="Documentation" href="http://sweble.org/doc" />
+      <item name="Mailing Lists" href="http://sweble.org/mailing-lists/" />
+      <item name="Repositories" href="http://sweble.org/git-repositories/" />
+      <item name="Bugtracker" href="http://sweble.org/bugtracker" />
+    </menu>
+
+  </body>
+</project>
