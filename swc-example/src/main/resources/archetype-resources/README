@@ -1,6 +1,0 @@
-
-A .jar file is generated in target/ when "mvn package" is invoked. Further, all
-required libraries are copied to target/lib. The program can now be invoked
-with:
-
-  $ java -jar target/[artifactId].jar [title]
