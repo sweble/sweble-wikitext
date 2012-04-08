@@ -188,25 +188,6 @@
         </executions>
       </plugin>
 
-      <!-- Maven GPG Plugin -->
-      <plugin>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>${version.plugin.gpg}</version>
-        <configuration>
-          <!-- OSR Group <osr@i2.informatik.uni-erlangen.de> -->
-          <keyname>44E980E1</keyname>
-        </configuration>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
       <!-- Maven site generation -->
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
@@ -360,15 +341,6 @@
             </configuration>
           </plugin>
 
-          <!-- Don't sign artifacts -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>${version.plugin.gpg}</version>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </plugin>
-
           <!-- Don't run tests -->
           <plugin>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -412,26 +384,5 @@
       </build>
     </profile>
 
-    <profile>
-      <id>dont-sign</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-
-          <!-- Don't sign artifacts -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>${version.plugin.gpg}</version>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
   </profiles>
-
 </project>
