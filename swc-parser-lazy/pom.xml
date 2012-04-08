@@ -7,14 +7,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.0.1-SNAPSHOT</version>
+    <version>1.0.0.1</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Lazy Wikitext Parser -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-parser-lazy</artifactId>
-  <version>1.0.0.1-SNAPSHOT</version>
+  <version>1.0.0.1</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Lazy Wikitext Parser</name>
