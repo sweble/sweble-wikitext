@@ -176,9 +176,24 @@
 
   <!--
     see parent: <distributionManagement>
-                <repositories>
-                <pluginRepositories>
   -->
+
+  <!-- This is needed since SNAPSHOTs wouldn't find their parent pom otherwise -->
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-snapshots-repo</id>
+      <name>OSR Public Snapshots Repository</name>
+      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+    </repository>
+  </repositories>
 
   <!-- ==[ Profiles ]======================================================= -->
 
@@ -231,6 +246,33 @@
         </plugins>
       </build>
     </profile>
-  </profiles>
 
+    <profile>
+      <id>sign</id>
+      <build>
+        <plugins>
+
+          <!-- Maven GPG Plugin -->
+          <plugin>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <configuration>
+              <!-- Sweble <info@sweble.org> -->
+              <keyname>D17B20AF</keyname>
+            </configuration>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
 </project>
