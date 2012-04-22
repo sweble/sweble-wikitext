@@ -107,7 +107,6 @@ public class Nexus
 	// =========================================================================
 	
 	public void setUp(
-			File dumpFile,
 			int inTrayCapacity,
 			int completedJobsCapacity,
 			int outTrayCapacity) throws Throwable
