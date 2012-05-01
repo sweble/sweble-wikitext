@@ -23,7 +23,7 @@ import org.sweble.wikitext.lazy.ParserConfigInterface;
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
@@ -39,12 +39,12 @@ public class StringConverterPartial
 	
 	@SuppressWarnings("unchecked")
 	public static Tuple2<String, NodeList> convert(
-	        AstNode astNode,
-	        ParserConfigInterface resolver,
-	        int options)
+			AstNode astNode,
+			ParserConfigInterface resolver,
+			int options)
 	{
 		ConverterVisitor converter =
-		        new ConverterVisitor(options, resolver);
+				new ConverterVisitor(options, resolver);
 		
 		return (Tuple2<String, NodeList>) converter.go(astNode);
 	}
@@ -52,8 +52,8 @@ public class StringConverterPartial
 	// =========================================================================
 	
 	protected static final class ConverterVisitor
-	        extends
-	            Visitor
+			extends
+				AstVisitor
 	{
 		private final StringBuilder result = new StringBuilder();
 		
@@ -72,11 +72,11 @@ public class StringConverterPartial
 			
 			if (resolver != null && !opt(StringConverter.RESOLVE_ENTITY_REF))
 				throw new IllegalArgumentException(
-				        "If a resolver instance is given the option RESOLVE_ENTITY_REF is required");
+						"If a resolver instance is given the option RESOLVE_ENTITY_REF is required");
 			
 			if (resolver == null && opt(StringConverter.RESOLVE_ENTITY_REF))
 				throw new IllegalArgumentException(
-				        "If the option RESOLVE_ENTITY_REF is given a resolver instance is required");
+						"If the option RESOLVE_ENTITY_REF is given a resolver instance is required");
 		}
 		
 		// =====================================================================

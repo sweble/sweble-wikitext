@@ -26,15 +26,15 @@ import java.util.Map.Entry;
 
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class AstCompressor
-        extends
-            Visitor
+		extends
+			AstVisitor
 {
 	public static LazyParsedPage process(LazyParsedPage a)
 	{
@@ -129,7 +129,9 @@ public class AstCompressor
 	}
 	
 	@SuppressWarnings("unchecked")
-	private void mergeAttributes(HashMap<String, Object> ca, Map<String, Object> attrs)
+	private void mergeAttributes(
+			HashMap<String, Object> ca,
+			Map<String, Object> attrs)
 	{
 		for (Entry<String, Object> attr : attrs.entrySet())
 		{
@@ -142,7 +144,7 @@ public class AstCompressor
 					List<Warning> w1 = (List<Warning>) attr.getValue();
 					
 					ArrayList<Warning> wNew = new ArrayList<Warning>(
-					        w0.size() + w1.size());
+							w0.size() + w1.size());
 					
 					wNew.addAll(w0);
 					wNew.addAll(w1);
@@ -153,7 +155,7 @@ public class AstCompressor
 				{
 					// FIXME: Better: just cancel merging ...
 					throw new UnsupportedOperationException(
-					        "Merging of text nodes would overwrite attributes!");
+							"Merging of text nodes would overwrite attributes!");
 				}
 			}
 		}
