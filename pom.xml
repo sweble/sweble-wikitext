@@ -48,6 +48,7 @@
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
     <version.plugin.rats>1.3.0.1</version.plugin.rats>
     <version.plugin.parser-toolkit>1.0.0.1</version.plugin.parser-toolkit>
+    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
 
   </properties>
 
@@ -192,6 +193,20 @@
             <execution>
               <id>printergen-generate</id>
               <phase>generate-sources</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- JAXB Maven Plugin -->
+        <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb2-plugin</artifactId>
+          <version>${version.plugin.jaxb}</version>
+          <executions>
+            <execution>
               <goals>
                 <goal>generate</goal>
               </goals>

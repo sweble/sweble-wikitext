@@ -79,6 +79,25 @@
         </executions>
       </plugin>
 
+      <!-- Compile schema files -->
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <configuration>
+          <schemaDirectory>${basedir}/src/main/autogen</schemaDirectory>
+          <generatePackage>org.sweble.wikitext.engine.utils</generatePackage>
+          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+          <schemaIncludes>
+            <include>SimpleWikiConfiguration.xsd</include>
+          </schemaIncludes>
+          <!--
+          <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+           -->
+          <forceRegenerate>true</forceRegenerate>
+          <strict>true</strict>
+        </configuration>
+      </plugin>
+
       <!-- Generate Ast Nodes -->
       <plugin>
         <groupId>de.fau.cs.osr.ptk</groupId>

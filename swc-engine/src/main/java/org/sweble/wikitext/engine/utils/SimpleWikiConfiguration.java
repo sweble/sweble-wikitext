@@ -19,16 +19,20 @@ package org.sweble.wikitext.engine.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
+import java.io.StringWriter;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
-import org.apache.commons.io.IOUtils;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.Interwiki;
@@ -53,45 +57,42 @@ import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.LinkTargetParser;
 import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
 import de.fau.cs.osr.utils.FmtIllegalArgumentException;
 
 /**
  * This is a simple wiki config that is ONLY suited for test purposes!
  */
 public class SimpleWikiConfiguration
-        extends
-            SimpleParserConfig
-        implements
-            WikiConfigurationInterface
+		extends
+			SimpleParserConfig
+		implements
+			WikiConfigurationInterface
 {
 	private static final long serialVersionUID = 1L;
 	
 	private final HashMap<Integer, Namespace> namespacesById =
-	        new HashMap<Integer, Namespace>();
+			new HashMap<Integer, Namespace>();
 	
 	private final HashMap<String, Namespace> namespacesByAlias =
-	        new HashMap<String, Namespace>();
+			new HashMap<String, Namespace>();
 	
 	private Namespace defaultNamespace = null;
 	
 	private Namespace templateNamespace = null;
 	
 	private final HashMap<String, Interwiki> interwikiMap =
-	        new HashMap<String, Interwiki>();
+			new HashMap<String, Interwiki>();
 	
 	private Interwiki localInterwiki = null;
 	
 	private final HashMap<String, MagicWord> magicWordsByAlias =
-	        new HashMap<String, MagicWord>();
+			new HashMap<String, MagicWord>();
 	
 	private final HashMap<String, ParserFunctionBase> parserFunctions =
-	        new HashMap<String, ParserFunctionBase>();
+			new HashMap<String, ParserFunctionBase>();
 	
 	private final HashMap<String, TagExtensionBase> tagExtensions =
-	        new HashMap<String, TagExtensionBase>();
+			new HashMap<String, TagExtensionBase>();
 	
 	// =========================================================================
 	
@@ -100,7 +101,7 @@ public class SimpleWikiConfiguration
 		staticSetup();
 	}
 	
-	public SimpleWikiConfiguration(String xmlConfig) throws FileNotFoundException, IOException
+	public SimpleWikiConfiguration(String xmlConfig) throws FileNotFoundException, JAXBException
 	{
 		String file = xmlConfig.trim();
 		if (file.startsWith("classpath:"))
@@ -297,8 +298,8 @@ public class SimpleWikiConfiguration
 	{
 		if (interwikiMap.containsKey(interwiki.getPrefix()))
 			throw new FmtIllegalArgumentException(
-			        "An interwiki with prefix `%s' already exists",
-			        interwiki.getPrefix());
+					"An interwiki with prefix `%s' already exists",
+					interwiki.getPrefix());
 		
 		interwikiMap.put(interwiki.getPrefix(), interwiki);
 		
@@ -308,6 +309,11 @@ public class SimpleWikiConfiguration
 	public void setLocalInterwiki(Interwiki localInterwiki)
 	{
 		this.localInterwiki = localInterwiki;
+	}
+	
+	public Collection<Interwiki> getInterwikis()
+	{
+		return Collections.unmodifiableCollection(this.interwikiMap.values());
 	}
 	
 	@Override
@@ -329,21 +335,21 @@ public class SimpleWikiConfiguration
 	{
 		if (namespacesById.containsKey(ns.getId()))
 			throw new FmtIllegalArgumentException(
-			        "A namespace with id `%2$d' already exists: `%1$s'",
-			        ns.getName(),
-			        ns.getId());
+					"A namespace with id `%2$d' already exists: `%1$s'",
+					ns.getName(),
+					ns.getId());
 		
 		if (namespacesByAlias.containsKey(ns.getName().toLowerCase()))
 			throw new FmtIllegalArgumentException(
-			        "A namespace with name `%1$s' already exists",
-			        ns.getName());
+					"A namespace with name `%1$s' already exists",
+					ns.getName());
 		
 		for (String alias : ns.getAliases())
 			if (namespacesByAlias.containsKey(alias.toLowerCase()))
 				throw new FmtIllegalArgumentException(
-				        "A namespace with alias `%2$s' already exists: `%1$s'",
-				        ns.getName(),
-				        alias);
+						"A namespace with alias `%2$s' already exists: `%1$s'",
+						ns.getName(),
+						alias);
 		
 		namespacesById.put(ns.getId(), ns);
 		
@@ -370,6 +376,11 @@ public class SimpleWikiConfiguration
 		this.templateNamespace = templateNamespace;
 	}
 	
+	public Collection<Namespace> getNamespaces()
+	{
+		return Collections.unmodifiableCollection(namespacesById.values());
+	}
+	
 	@Override
 	public Namespace getNamespace(String name)
 	{
@@ -387,7 +398,7 @@ public class SimpleWikiConfiguration
 	{
 		if (defaultNamespace == null)
 			throw new UnsupportedOperationException(
-			            "The default namespace is not set");
+					"The default namespace is not set");
 		
 		return defaultNamespace;
 	}
@@ -397,7 +408,7 @@ public class SimpleWikiConfiguration
 	{
 		if (templateNamespace == null)
 			throw new UnsupportedOperationException(
-			            "The template namespace is not set");
+					"The template namespace is not set");
 		
 		return templateNamespace;
 	}
@@ -419,7 +430,7 @@ public class SimpleWikiConfiguration
 				        magicWord.getName(),
 				        alias);
 		*/
-
+		
 		// FIXME: Is lower case comparison the right way for magic words?
 		//        See also: getMagicWord()
 		magicWordsByAlias.put(magicWord.getName().toLowerCase(), magicWord);
@@ -429,6 +440,11 @@ public class SimpleWikiConfiguration
 			magicWordsByAlias.put(alias.toLowerCase(), magicWord);
 		
 		return magicWord;
+	}
+	
+	public Collection<MagicWord> getMagicWords()
+	{
+		return Collections.unmodifiableCollection(this.magicWordsByAlias.values());
 	}
 	
 	@Override
@@ -444,8 +460,8 @@ public class SimpleWikiConfiguration
 	{
 		if (parserFunctions.containsKey(pfn.getName()))
 			throw new FmtIllegalArgumentException(
-			        "A parser function with name `%s' already exists",
-			        pfn.getName());
+					"A parser function with name `%s' already exists",
+					pfn.getName());
 		
 		parserFunctions.put(pfn.getName().toLowerCase(), pfn);
 		
@@ -464,8 +480,8 @@ public class SimpleWikiConfiguration
 	{
 		if (tagExtensions.containsKey(te.getName()))
 			throw new FmtIllegalArgumentException(
-			        "A tag extensions with name `%s' already exists",
-			        te.getName());
+					"A tag extensions with name `%s' already exists",
+					te.getName());
 		
 		tagExtensions.put(te.getName(), te);
 		
@@ -490,29 +506,29 @@ public class SimpleWikiConfiguration
 	public HashSet<String> getAllowedHtmlTags()
 	{
 		return new HashSet<String>(Arrays.asList(
-		        "abbr", "b", "big", "blockquote", "br", "caption",
-		        "center", "cite", "code", "dd", "del", "div", "dl", "dt",
-		        "em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
-		        "i", "ins", "li", "ol", "p", "pre", "rb", "rp", "rt",
-		        "ruby", "s", "small", "span", "strike", "strong", "sub",
-		        "sup", "table", "td", "th", "tr", "tt", "u", "ul", "var"));
+				"abbr", "b", "big", "blockquote", "br", "caption",
+				"center", "cite", "code", "dd", "del", "div", "dl", "dt",
+				"em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
+				"i", "ins", "li", "ol", "p", "pre", "rb", "rp", "rt",
+				"ruby", "s", "small", "span", "strike", "strong", "sub",
+				"sup", "table", "td", "th", "tr", "tt", "u", "ul", "var"));
 	}
 	
 	@Override
 	public HashSet<String> getEmptyOnlyHtmlTags()
 	{
 		return new HashSet<String>(Arrays.asList(
-		        "area", "base", "basefont", "br", "col", "frame", "hr",
-		        "img", "input", "isindex", "link", "meta", "param"));
+				"area", "base", "basefont", "br", "col", "frame", "hr",
+				"img", "input", "isindex", "link", "meta", "param"));
 	}
 	
 	@Override
 	public HashSet<String> getPropagatableHtmlTags()
 	{
 		return new HashSet<String>(Arrays.asList(
-		        "b", "big", "del", "em", "i", "ins", "strong", "s",
-		        "small", "span", "strike", "strong", "sub", "sup", "tt",
-		        "u"));
+				"b", "big", "del", "em", "i", "ins", "strong", "s",
+				"small", "span", "strike", "strong", "sub", "sup", "tt",
+				"u"));
 	}
 	
 	// =========================================================================
@@ -586,7 +602,7 @@ public class SimpleWikiConfiguration
 		Interwiki iw = getInterwiki(iwName);
 		if (iw == null)
 			throw new FmtIllegalArgumentException(
-			        "Unknown interwiki prefix: `%s'", iwName);
+					"Unknown interwiki prefix: `%s'", iwName);
 		return iw.isLocal();
 	}
 	
@@ -604,82 +620,122 @@ public class SimpleWikiConfiguration
 	
 	// =========================================================================
 	
-	public String serialize()
+	public String serialize() throws JAXBException
 	{
-		Serialized serialized = new Serialized();
+		ObjectFactory of = new ObjectFactory();
 		
-		serialized.namespaces =
-		        new ArrayList<Namespace>(this.namespacesById.values());
+		AdaptedSimpleWikiConfiguration aswc =
+				of.createAdaptedSimpleWikiConfiguration();
 		
-		serialized.defaultNamespace = this.defaultNamespace;
+		aswc.setNamespaces(of.createAdaptedSimpleWikiConfigurationNamespaces());
+		for (Namespace ns : this.getNamespaces())
+		{
+			AdaptedNamespace ans = of.createAdaptedNamespace();
+			ans.setId(ns.getId());
+			ans.setName(ns.getName());
+			ans.setCanonical(ns.getCanonical());
+			ans.setIsFileNs(ns.isFileNs());
+			ans.setSubpages(ns.isSubpages());
+			ans.setAliases(of.createAdaptedNamespaceAliases());
+			ans.getAliases().getAlias().addAll(ns.getAliases());
+			aswc.getNamespaces().getNamespace().add(ans);
+		}
 		
-		serialized.templateNamespace = this.templateNamespace;
+		try
+		{
+			int id = this.getDefaultNamespace().getId();
+			aswc.getNamespaces().setDefaultNamespace(BigInteger.valueOf(id));
+		}
+		catch (UnsupportedOperationException e)
+		{
+		}
 		
-		serialized.interwikiLinks =
-		        new ArrayList<Interwiki>(this.interwikiMap.values());
+		try
+		{
+			int id = this.getTemplateNamespace().getId();
+			aswc.getNamespaces().setTemplateNamespace(BigInteger.valueOf(id));
+		}
+		catch (UnsupportedOperationException e)
+		{
+		}
 		
-		serialized.localInterwiki = this.localInterwiki;
+		aswc.setInterwikiLinks(of.createAdaptedSimpleWikiConfigurationInterwikiLinks());
+		for (Interwiki iw : this.getInterwikis())
+		{
+			AdaptedInterwiki aiw = of.createAdaptedInterwiki();
+			aiw.setPrefix(iw.getPrefix());
+			aiw.setUrl(iw.getUrl());
+			aiw.setLocal(iw.isLocal());
+			aiw.setTrans(iw.isTrans());
+			aswc.getInterwikiLinks().getInterwiki().add(aiw);
+		}
 		
-		serialized.magicWords = new ArrayList<MagicWord>(
-		        // remove duplicates
-		        new HashSet<MagicWord>(this.magicWordsByAlias.values()));
+		aswc.setMagicWords(of.createAdaptedSimpleWikiConfigurationMagicWords());
+		for (MagicWord mw : this.getMagicWords())
+		{
+			AdaptedMagicWord amw = of.createAdaptedMagicWord();
+			amw.setName(mw.getName());
+			amw.setCaseSensitive(mw.isCaseSensitive());
+			amw.setAliases(of.createAdaptedMagicWordAliases());
+			amw.getAliases().getAlias().addAll(mw.getAliases());
+			aswc.getMagicWords().getMagicWord().add(amw);
+		}
 		
-		XStream xstream = setUpXStream();
+		JAXBContext context = JAXBContext.newInstance(AdaptedSimpleWikiConfiguration.class);
 		
-		return xstream.toXML(serialized);
+		Marshaller m = context.createMarshaller();
+		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		
+		StringWriter w = new StringWriter();
+		m.marshal(aswc, w);
+		
+		return w.toString();
 	}
 	
-	public void deserialize(InputStream xml) throws IOException
+	public void deserialize(InputStream in) throws JAXBException
 	{
-		deserialize(IOUtils.toString(xml));
-	}
-	
-	public void deserialize(String xml)
-	{
-		XStream xstream = setUpXStream();
+		JAXBContext context = JAXBContext.newInstance(
+				AdaptedSimpleWikiConfiguration.class);
 		
-		Serialized deserialized = (Serialized) xstream.fromXML(xml);
+		Unmarshaller m = context.createUnmarshaller();
 		
-		for (Namespace namespace : deserialized.namespaces)
-			addNamespace(namespace);
+		AdaptedSimpleWikiConfiguration swc =
+				(AdaptedSimpleWikiConfiguration) m.unmarshal(in);
 		
-		this.defaultNamespace = deserialized.defaultNamespace;
+		for (AdaptedNamespace ns : swc.getNamespaces().getNamespace())
+		{
+			addNamespace(new Namespace(
+					ns.getId(),
+					ns.getName(),
+					ns.getCanonical(),
+					ns.isSubpages(),
+					ns.isIsFileNs(),
+					ns.getAliases().getAlias()));
+		}
 		
-		this.templateNamespace = deserialized.templateNamespace;
+		BigInteger defNs = swc.getNamespaces().getDefaultNamespace();
+		if (defNs != null)
+			this.defaultNamespace = getNamespace(defNs.intValue());
 		
-		for (Interwiki interwiki : deserialized.interwikiLinks)
-			addInterwiki(interwiki);
+		BigInteger tmplNs = swc.getNamespaces().getTemplateNamespace();
+		if (tmplNs != null)
+			this.templateNamespace = getNamespace(tmplNs.intValue());
 		
-		this.localInterwiki = deserialized.localInterwiki;
+		for (AdaptedInterwiki iw : swc.getInterwikiLinks().getInterwiki())
+		{
+			addInterwiki(new Interwiki(
+					iw.getPrefix(),
+					iw.getUrl(),
+					iw.isLocal(),
+					iw.isTrans()));
+		}
 		
-		for (MagicWord magicWord : deserialized.magicWords)
-			addMagicWord(magicWord);
-	}
-	
-	private XStream setUpXStream()
-	{
-		XStream xstream = new XStream(new DomDriver());
-		
-		xstream.alias("MediaWikiConfiguration", Serialized.class);
-		xstream.alias("Namespace", Namespace.class);
-		xstream.alias("Interwiki", Interwiki.class);
-		xstream.alias("MagicWord", MagicWord.class);
-		
-		return xstream;
-	}
-	
-	private static final class Serialized
-	{
-		public List<Namespace> namespaces;
-		
-		public Namespace defaultNamespace = null;
-		
-		public Namespace templateNamespace = null;
-		
-		public List<Interwiki> interwikiLinks;
-		
-		public Interwiki localInterwiki = null;
-		
-		public List<MagicWord> magicWords;
+		for (AdaptedMagicWord mw : swc.getMagicWords().getMagicWord())
+		{
+			addMagicWord(new MagicWord(
+					mw.getName(),
+					mw.isCaseSensitive(),
+					mw.getAliases().getAlias()));
+		}
 	}
 }

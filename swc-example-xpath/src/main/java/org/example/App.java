@@ -18,23 +18,19 @@
 package org.example;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.Compiler;
-import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
-import org.sweble.wikitext.lazy.LinkTargetException;
 
 public class App
 {
 	public static final int wrapCol = 80;
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
+	public static void main(String[] args) throws Exception
 	{
 		if (args.length < 1)
 		{
@@ -53,18 +49,18 @@ public class App
 		String query = args[i++];
 		
 		String result = run(
-		        new File(fileTitle + ".wikitext"),
-		        fileTitle,
-		        query);
+				new File(fileTitle + ".wikitext"),
+				fileTitle,
+				query);
 		
 		FileUtils.writeStringToFile(new File(fileTitle + ".result"), result);
 	}
 	
-	static String run(File file, String fileTitle, String query) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
+	static String run(File file, String fileTitle, String query) throws Exception
 	{
 		// Set-up a simple wiki configuration
 		SimpleWikiConfiguration config = new SimpleWikiConfiguration(
-		        "classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
+				"classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
 		
 		// Instantiate a compiler for wiki pages
 		Compiler compiler = new Compiler(config);

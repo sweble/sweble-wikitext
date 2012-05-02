@@ -24,6 +24,8 @@ import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.xml.bind.JAXBException;
+
 import org.apache.commons.io.IOUtils;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
@@ -38,15 +40,15 @@ public class CompilerTestBase
 	private final ExpansionCallbackImpl expansionCallback;
 	
 	private final List<String> contentDirs = Arrays.asList(
-	        "/content-freeform",
-	        "/content-enwp");
+			"/content-freeform",
+			"/content-enwp");
 	
 	// =========================================================================
 	
-	protected CompilerTestBase() throws FileNotFoundException, IOException
+	protected CompilerTestBase() throws FileNotFoundException, JAXBException
 	{
 		this.config = new SimpleWikiConfiguration(
-		        "classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
+				"classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
 		
 		this.compiler = new Compiler(config);
 		
@@ -58,7 +60,10 @@ public class CompilerTestBase
 		return preprocess(null, page, forInclusion);
 	}
 	
-	protected CompiledPage preprocess(String namespace, String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	protected CompiledPage preprocess(
+			String namespace,
+			String page,
+			boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		Namespace ns = null;
 		if (namespace != null)
@@ -69,10 +74,10 @@ public class CompilerTestBase
 		if (fullPage == null)
 			return null;
 		return compiler.preprocess(
-		        fullPage.getId(),
-		        fullPage.getText(),
-		        forInclusion,
-		        expansionCallback);
+				fullPage.getId(),
+				fullPage.getText(),
+				forInclusion,
+				expansionCallback);
 	}
 	
 	protected CompiledPage expand(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
@@ -82,9 +87,9 @@ public class CompilerTestBase
 		if (fullPage == null)
 			return null;
 		return compiler.expand(
-		        fullPage.getId(),
-		        fullPage.getText(),
-		        expansionCallback);
+				fullPage.getId(),
+				fullPage.getText(),
+				expansionCallback);
 	}
 	
 	protected CompiledPage parse(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
@@ -94,9 +99,9 @@ public class CompilerTestBase
 		if (fullPage == null)
 			return null;
 		return compiler.parse(
-		        fullPage.getId(),
-		        fullPage.getText(),
-		        expansionCallback);
+				fullPage.getId(),
+				fullPage.getText(),
+				expansionCallback);
 	}
 	
 	protected CompiledPage postprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
@@ -106,9 +111,9 @@ public class CompilerTestBase
 		if (fullPage == null)
 			return null;
 		return compiler.postprocess(
-		        fullPage.getId(),
-		        fullPage.getText(),
-		        expansionCallback);
+				fullPage.getId(),
+				fullPage.getText(),
+				expansionCallback);
 	}
 	
 	protected FullPage retrieve(PageTitle pageTitle) throws IOException
@@ -141,11 +146,13 @@ public class CompilerTestBase
 	// =========================================================================
 	
 	private final class ExpansionCallbackImpl
-	        implements
-	            ExpansionCallback
+			implements
+				ExpansionCallback
 	{
 		@Override
-		public FullPage retrieveWikitext(ExpansionFrame expansionFrame, PageTitle pageTitle) throws Exception
+		public FullPage retrieveWikitext(
+				ExpansionFrame expansionFrame,
+				PageTitle pageTitle) throws Exception
 		{
 			return retrieve(pageTitle);
 		}
