@@ -46,7 +46,6 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodeInputStream;
 import de.fau.cs.osr.ptk.common.ast.AstNodeOutputStream;
 import de.fau.cs.osr.ptk.common.ast.Location;
-import de.fau.cs.osr.ptk.common.xml.XmlWriter;
 import de.fau.cs.osr.utils.StopWatch;
 
 @SuppressWarnings("deprecation")
@@ -81,7 +80,7 @@ public class SerializationTest
 	private static final boolean WARNINGS_ENABLED = false;
 	
 	private static final ArrayList<ParsedWikitext> wikitexts =
-	        new ArrayList<ParsedWikitext>();
+			new ArrayList<ParsedWikitext>();
 	
 	private static AstNode original;
 	
@@ -236,7 +235,7 @@ public class SerializationTest
 		if (STRIP_ATTRIBUTES)
 		{
 			parser.addVisitors(Arrays.asList(
-			        new Visitor[] { new StripAstVisitor() }));
+					new Visitor[] { new StripAstVisitor() }));
 		}
 		
 		AstNode original = parser.parseArticle(content, title);
@@ -299,8 +298,10 @@ public class SerializationTest
 			}
 			case XML:
 			{
+				/*
 				XmlWriter xmlw = new XmlWriter(os);
 				xmlw.go(original);
+				*/
 				break;
 			}
 		}
@@ -488,8 +489,8 @@ public class SerializationTest
 	// =========================================================================
 	
 	public static final class StripAstVisitor
-	        extends
-	            Visitor
+			extends
+				Visitor
 	{
 		public void visit(AstNode n)
 		{

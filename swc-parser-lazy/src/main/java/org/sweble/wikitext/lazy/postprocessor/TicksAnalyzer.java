@@ -17,8 +17,7 @@
 
 package org.sweble.wikitext.lazy.postprocessor;
 
-import static org.sweble.wikitext.lazy.postprocessor.IntermediateTags.BOLD;
-import static org.sweble.wikitext.lazy.postprocessor.IntermediateTags.ITALICS;
+import static org.sweble.wikitext.lazy.postprocessor.IntermediateTags.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,7 +31,7 @@ import org.sweble.wikitext.lazy.parser.SemiPreLine;
 import org.sweble.wikitext.lazy.parser.Ticks;
 import org.sweble.wikitext.lazy.parser.Whitespace;
 
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.LeafNode;
@@ -83,10 +82,10 @@ public class TicksAnalyzer
 				pf = '"' + prefix.getContent() + '"';
 			
 			return String.format(
-			        "LineEntry(%s, %s, %d)",
-			        pv,
-			        pf,
-			        tickCount);
+					"LineEntry(%s, %s, %d)",
+					pv,
+					pf,
+					tickCount);
 		}
 	}
 	
@@ -109,10 +108,10 @@ public class TicksAnalyzer
 		public String toString()
 		{
 			return String.format(
-			        "Line(#i = %d, #b = %d): %s",
-			        numItalics,
-			        numBold,
-			        (ticks != null ? ticks.toString() : "-"));
+					"Line(#i = %d, #b = %d): %s",
+					numItalics,
+					numBold,
+					(ticks != null ? ticks.toString() : "-"));
 		}
 	}
 	
@@ -135,8 +134,8 @@ public class TicksAnalyzer
 	// =========================================================================
 	
 	protected final static class LineAnalyzer
-	        extends
-	            Visitor
+			extends
+				AstVisitor
 	{
 		private final LinkedList<Line> lines;
 		
@@ -365,8 +364,8 @@ public class TicksAnalyzer
 	// =========================================================================
 	
 	protected final static class TicksConverter
-	        extends
-	            Visitor
+			extends
+				AstVisitor
 	{
 		private static enum State
 		{

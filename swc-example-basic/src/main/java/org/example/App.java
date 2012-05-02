@@ -18,23 +18,19 @@
 package org.example;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.StringWriter;
 
 import org.apache.commons.io.FileUtils;
 import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.Compiler;
-import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.utils.HtmlPrinter;
 import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
-import org.sweble.wikitext.lazy.LinkTargetException;
 
 public class App
 {
-	public static void main(String[] args) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
+	public static void main(String[] args) throws Exception
 	{
 		if (args.length < 1)
 		{
@@ -62,20 +58,20 @@ public class App
 		String fileTitle = args[i];
 		
 		String html = run(
-		        new File(fileTitle + ".wikitext"),
-		        fileTitle,
-		        renderHtml);
+				new File(fileTitle + ".wikitext"),
+				fileTitle,
+				renderHtml);
 		
 		FileUtils.writeStringToFile(
-		        new File(fileTitle + (renderHtml ? ".html" : ".text")),
-		        html);
+				new File(fileTitle + (renderHtml ? ".html" : ".text")),
+				html);
 	}
 	
-	static String run(File file, String fileTitle, boolean renderHtml) throws FileNotFoundException, IOException, LinkTargetException, CompilerException
+	static String run(File file, String fileTitle, boolean renderHtml) throws Exception
 	{
 		// Set-up a simple wiki configuration
 		SimpleWikiConfiguration config = new SimpleWikiConfiguration(
-		        "classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
+				"classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
 		
 		final int wrapCol = 80;
 		

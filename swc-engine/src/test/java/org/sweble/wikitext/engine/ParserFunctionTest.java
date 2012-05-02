@@ -17,7 +17,6 @@
 
 package org.sweble.wikitext.engine;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import junit.framework.Assert;
@@ -30,10 +29,10 @@ import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 import de.fau.cs.osr.ptk.common.AstPrinter;
 
 public class ParserFunctionTest
-        extends
-            CompilerTestBase
+		extends
+			CompilerTestBase
 {
-	public ParserFunctionTest() throws FileNotFoundException, IOException
+	public ParserFunctionTest() throws Exception
 	{
 		super();
 	}
@@ -183,8 +182,8 @@ public class ParserFunctionTest
 		final CompiledPage preprocessed = preprocess(page, false);
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
-		        expected,
-		        WikitextPrinter.print(preprocessed.getPage().getContent()));
+				expected,
+				WikitextPrinter.print(preprocessed.getPage().getContent()));
 	}
 	
 	@SuppressWarnings("unused")
@@ -193,8 +192,8 @@ public class ParserFunctionTest
 		final CompiledPage preprocessed = preprocess(page, false);
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
-		        expected,
-		        AstPrinter.print(preprocessed.getPage().getContent()));
+				expected,
+				AstPrinter.print(preprocessed.getPage().getContent()));
 	}
 	
 	private void doTest(String namespace, String expected, String page) throws LinkTargetException, IOException, CompilerException
@@ -202,7 +201,7 @@ public class ParserFunctionTest
 		final CompiledPage preprocessed = preprocess(namespace, page, false);
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
-		        expected,
-		        WikitextPrinter.print(preprocessed.getPage().getContent()));
+				expected,
+				WikitextPrinter.print(preprocessed.getPage().getContent()));
 	}
 }
