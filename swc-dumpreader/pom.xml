@@ -152,6 +152,10 @@
         <artifactId>maven-jaxb2-plugin</artifactId>
         <executions>
           <execution>
+            <id>schema-to-java</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
             <id>compile-mw-schema-0.5</id>
             <goals>
               <goal>generate</goal>
