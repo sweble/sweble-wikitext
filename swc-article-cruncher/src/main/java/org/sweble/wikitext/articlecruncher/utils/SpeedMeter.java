@@ -37,6 +37,8 @@ public class SpeedMeter
 	
 	private float currentSpeed = Float.NaN;
 	
+	private float avgSpeed = Float.NaN;
+	
 	private float eta = Float.POSITIVE_INFINITY;
 	
 	// =========================================================================
@@ -77,6 +79,11 @@ public class SpeedMeter
 		return currentSpeed;
 	}
 	
+	public float getAvgSpeed()
+	{
+		return avgSpeed;
+	}
+	
 	public float getEta()
 	{
 		return eta;
@@ -109,7 +116,7 @@ public class SpeedMeter
 			
 			speedBuffer.add(currentSpeed);
 			
-			float avgSpeed = 0;
+			avgSpeed = 0;
 			for (float speed : speedBuffer)
 				avgSpeed += speed;
 			

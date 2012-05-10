@@ -21,7 +21,7 @@ import de.fau.cs.osr.utils.BinaryPrefix;
 
 public class ConsoleWriter
 		extends
-			WorkerBase
+			ConsoleWriterBase
 {
 	private final Object progressLock = new Object();
 	

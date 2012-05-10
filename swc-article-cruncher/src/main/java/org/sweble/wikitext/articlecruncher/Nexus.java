@@ -17,7 +17,6 @@
 
 package org.sweble.wikitext.articlecruncher;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -27,6 +26,8 @@ import java.util.concurrent.LinkedBlockingDeque;
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.ConsoleWriter;
+import org.sweble.wikitext.articlecruncher.utils.ConsoleWriterBase;
+import org.sweble.wikitext.articlecruncher.utils.ConsoleWriterDummy;
 import org.sweble.wikitext.articlecruncher.utils.ExecutorType;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorService;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
@@ -52,7 +53,7 @@ public class Nexus
 		return nexus;
 	}
 	
-	public static ConsoleWriter getConsoleWriter()
+	public static ConsoleWriterBase getConsoleWriter()
 	{
 		return get().consoleWriter;
 	}
@@ -84,7 +85,7 @@ public class Nexus
 	
 	//private WorkerBase storer;
 	
-	private ConsoleWriter consoleWriter;
+	private ConsoleWriterBase consoleWriter;
 	
 	private NexusState state;
 	
@@ -110,6 +111,15 @@ public class Nexus
 			int inTrayCapacity,
 			int completedJobsCapacity,
 			int outTrayCapacity) throws Throwable
+	{
+		setUp(inTrayCapacity, completedJobsCapacity, outTrayCapacity, true);
+	}
+	
+	public void setUp(
+			int inTrayCapacity,
+			int completedJobsCapacity,
+			int outTrayCapacity,
+			boolean withConsoleWriter) throws Throwable
 	{
 		synchronized (synchronizer.getMonitor())
 		{
@@ -137,11 +147,18 @@ public class Nexus
 					}
 				};
 				
-				consoleWriter = new ConsoleWriter(
-						abortHandler,
-						inTrayCapacity,
-						completedJobsCapacity,
-						outTrayCapacity);
+				if (withConsoleWriter)
+				{
+					consoleWriter = new ConsoleWriter(
+							abortHandler,
+							inTrayCapacity,
+							completedJobsCapacity,
+							outTrayCapacity);
+				}
+				else
+				{
+					consoleWriter = new ConsoleWriterDummy(abortHandler);
+				}
 				
 				gatherer = new Gatherer(abortHandler, inTray, completedJobs, outTray);
 				
@@ -297,6 +314,16 @@ public class Nexus
 	public Set<JobTrace> getJobTraces()
 	{
 		return jobTraces.getTraces();
+	}
+	
+	public BlockingQueue<JobWithHistory> getInTray()
+	{
+		return inTray;
+	}
+	
+	public BlockingQueue<CompletedJob> getOutTray()
+	{
+		return outTray;
 	}
 	
 	public static void shutdown()

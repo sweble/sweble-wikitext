@@ -18,6 +18,7 @@ package org.sweble.wikitext.articlecruncher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class JobTrace
 {
@@ -56,9 +57,9 @@ public class JobTrace
 	
 	// =========================================================================
 	
-	private static long jobIdCounter = 1;
+	private static AtomicLong jobIdCounter = new AtomicLong(0);
 	
-	private final long jobId = jobIdCounter++;
+	private final long jobId = jobIdCounter.incrementAndGet();
 	
 	private List<Signer> signers;
 	

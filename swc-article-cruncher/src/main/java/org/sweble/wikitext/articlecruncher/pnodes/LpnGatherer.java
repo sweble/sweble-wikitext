@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.articlecruncher.pnodes;
 
-import static org.sweble.wikitext.articlecruncher.JobCompletionState.FAILED;
+import static org.sweble.wikitext.articlecruncher.JobCompletionState.*;
 
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
@@ -80,7 +80,10 @@ public class LpnGatherer
 			
 			JobWithHistory job = runningJobs.remove(f);
 			if (job == null)
-				throw new InternalError("There must be a job for every future ...");
+			{
+				getLogger().fatal("There must be a job for every future ... " + f);
+				//throw new InternalError("There must be a job for every future ...");
+			}
 			
 			CompletedJob lastAttempt;
 			try
@@ -102,18 +105,32 @@ public class LpnGatherer
 			{
 				warn("Processing failed with exception", e.getCause());
 				
-				lastAttempt = new CompletedJob(
-						FAILED,
-						job.getJob(),
-						new Result(
-								job.getJob(),
-								e));
+				if (job != null)
+				{
+					lastAttempt = new CompletedJob(
+							FAILED,
+							job.getJob(),
+							new Result(
+									job.getJob(),
+									e));
+				}
+				else
+				{
+					lastAttempt = null;
+				}
 				
 				++failureCount;
 			}
 			
-			completedJobs.put(new JobWithHistory(job, lastAttempt));
-			Nexus.getConsoleWriter().updateInTray(completedJobs.size());
+			if (job != null)
+			{
+				completedJobs.put(new JobWithHistory(job, lastAttempt));
+				Nexus.getConsoleWriter().updateInTray(completedJobs.size());
+			}
+			else
+			{
+				getLogger().fatal("Lost job... " + lastAttempt);
+			}
 			
 			backPressure.release();
 		}
