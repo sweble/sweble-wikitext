@@ -15,15 +15,17 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.lazy;
+package org.example;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.zip.GZIPInputStream;
@@ -33,23 +35,19 @@ import junit.framework.Assert;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.sweble.wikitext.lazy.parser.RtData;
 import org.sweble.wikitext.lazy.utils.NodeStats;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.AstNodeInputStream;
-import de.fau.cs.osr.ptk.common.ast.AstNodeOutputStream;
 import de.fau.cs.osr.ptk.common.ast.Location;
+import de.fau.cs.osr.ptk.common.json.JsonConverter;
+import de.fau.cs.osr.utils.NameAbbrevService;
 import de.fau.cs.osr.utils.StopWatch;
 
-@SuppressWarnings("deprecation")
-public class SerializationTest
+public class Serialization
 {
 	private static final StopWatch watch = new StopWatch();
 	
@@ -86,63 +84,17 @@ public class SerializationTest
 	
 	private static int wikitextLength;
 	
-	@BeforeClass
-	public static void loadWikitext() throws IOException, ParseException
-	{
-		parse("raw-Germany.wikitext");
-		parse("raw-Wallace+Neff.wikitext");
-		parse("raw-Zygmunt+Kubiak.wikitext");
-		parse("exp-Saxby+Chambliss.wikitext");
-	}
+	NameAbbrevService abbrevService = new NameAbbrevService(
+			"de.fau.cs.osr.ptk.common.ast",
+			"org.sweble.wikitext.lazy.encval",
+			"org.sweble.wikitext.lazy.parser",
+			"org.sweble.wikitext.lazy.preprocessor",
+			"org.sweble.wikitext.lazy.utils",
+			"org.sweble.wikitext.engine");
 	
-	@Ignore
-	@Test
-	public void testNativeSerialization() throws IOException, ParseException, ClassNotFoundException
-	{
-		// Doesn't work any more. We are now using nodes without nullary ctor.
-		// The native code can't handle that.
-		doSerialization(Method.NATIVE);
-	}
+	// =========================================================================
 	
-	@Test
-	public void testJavaSerialization() throws IOException, ParseException, ClassNotFoundException
-	{
-		doSerialization(Method.JAVA);
-	}
-	
-	@Ignore
-	@Test
-	public void testXmlSerialization() throws IOException, ParseException, ClassNotFoundException
-	{
-		// Now implemented yet :(
-		doSerialization(Method.XML);
-	}
-	
-	private void doSerialization(Method method) throws IOException, ParseException, ClassNotFoundException
-	{
-		for (ParsedWikitext wt : wikitexts)
-		{
-			prepare(wt);
-			
-			if (!QUIET)
-			{
-				System.out.println();
-				System.out.println("==[  " + method.toString() + " serialization: " + wt.getTitle() + "  ]==");
-				System.out.println();
-			}
-			
-			doTest(method);
-		}
-	}
-	
-	private void prepare(ParsedWikitext wt) throws IOException, ParseException
-	{
-		original = wt.getAst();
-		
-		wikitextLength = wt.getLength();
-	}
-	
-	private static void parse(String title) throws IOException, ParseException
+	public static void parse(String title) throws IOException, ParseException
 	{
 		if (!QUIET)
 		{
@@ -167,6 +119,30 @@ public class SerializationTest
 		}
 		
 		NodeStats.process(original);
+	}
+	
+	public void doSerialization(Method method) throws IOException, ParseException, ClassNotFoundException
+	{
+		for (ParsedWikitext wt : wikitexts)
+		{
+			prepare(wt);
+			
+			if (!QUIET)
+			{
+				System.out.println();
+				System.out.println("==[  " + method.toString() + " serialization: " + wt.getTitle() + "  ]==");
+				System.out.println();
+			}
+			
+			doTest(method);
+		}
+	}
+	
+	private void prepare(ParsedWikitext wt) throws IOException, ParseException
+	{
+		original = wt.getAst();
+		
+		wikitextLength = wt.getLength();
 	}
 	
 	private void doTest(Method method) throws IOException, ClassNotFoundException, ParseException
@@ -195,7 +171,7 @@ public class SerializationTest
 	
 	private static String load(String title) throws IOException
 	{
-		InputStream in = SerializationTest.class.getResourceAsStream(title);
+		InputStream in = Serialization.class.getResourceAsStream(title);
 		
 		return IOUtils.toString(in);
 	}
@@ -235,7 +211,7 @@ public class SerializationTest
 		if (STRIP_ATTRIBUTES)
 		{
 			parser.addVisitors(Arrays.asList(
-					new Visitor[] { new StripAstVisitor() }));
+					new AstVisitor[] { new StripAstVisitor() }));
 		}
 		
 		AstNode original = parser.parseArticle(content, title);
@@ -282,13 +258,6 @@ public class SerializationTest
 	{
 		switch (method)
 		{
-			case NATIVE:
-			{
-				AstNodeOutputStream oos = new AstNodeOutputStream(os);
-				oos.writeNode(original);
-				oos.close();
-				break;
-			}
 			case JAVA:
 			{
 				ObjectOutputStream oos = new ObjectOutputStream(os);
@@ -302,6 +271,14 @@ public class SerializationTest
 				XmlWriter xmlw = new XmlWriter(os);
 				xmlw.go(original);
 				*/
+				break;
+			}
+			case JSON:
+			{
+				OutputStreamWriter w = new OutputStreamWriter(os, "UTF-8");
+				JsonConverter.createGsonConverter(true, abbrevService, true)
+						.toJson(original, w);
+				w.close();
 				break;
 			}
 		}
@@ -342,15 +319,17 @@ public class SerializationTest
 	{
 		switch (method)
 		{
-			case NATIVE:
-			{
-				AstNodeInputStream ois = new AstNodeInputStream(is);
-				return ois.readNode();
-			}
 			case JAVA:
 			{
 				ObjectInputStream ois = new ObjectInputStream(is);
 				return (AstNode) ois.readObject();
+			}
+			case JSON:
+			{
+				return JsonConverter.fromJson(
+						new InputStreamReader(is, "UTF-8"),
+						AstNode.class,
+						abbrevService);
 			}
 			default:
 				throw new UnsupportedOperationException();
@@ -450,7 +429,7 @@ public class SerializationTest
 	
 	public static enum Method
 	{
-		NATIVE,
+		JSON,
 		JAVA,
 		XML,
 	}
@@ -490,7 +469,7 @@ public class SerializationTest
 	
 	public static final class StripAstVisitor
 			extends
-				Visitor
+				AstVisitor
 	{
 		public void visit(AstNode n)
 		{
