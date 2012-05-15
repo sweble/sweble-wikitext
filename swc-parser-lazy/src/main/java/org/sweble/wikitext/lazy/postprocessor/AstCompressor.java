@@ -29,6 +29,7 @@ import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.Location;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
@@ -71,7 +72,7 @@ public class AstCompressor
 					{
 						i.previous();
 						i.previous();
-						compress(i);
+						compress(i, current.getNativeLocation());
 					}
 					else
 					{
@@ -87,7 +88,7 @@ public class AstCompressor
 		}
 	}
 	
-	private void compress(ListIterator<AstNode> i)
+	private void compress(ListIterator<AstNode> i, Location location)
 	{
 		String ct = "";
 		HashMap<String, Object> ca = null;
@@ -124,6 +125,8 @@ public class AstCompressor
 		Text text = new Text(ct);
 		if (ca != null)
 			text.setAttributes(ca);
+		if (location != null)
+			text.setNativeLocation(location);
 		
 		i.add(text);
 	}
