@@ -34,6 +34,7 @@
     <module>swc-dumpreader</module>
     <module>swc-article-cruncher</module>
     <module>swc-example-basic</module>
+    <module>swc-example-serialization</module>
     <module>swc-example-xpath</module>
   </modules>
 

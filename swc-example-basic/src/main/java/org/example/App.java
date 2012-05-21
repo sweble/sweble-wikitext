@@ -34,7 +34,7 @@ public class App
 	{
 		if (args.length < 1)
 		{
-			System.err.println("Usage: java -jar scm-example.jar [--html|--text] TITLE");
+			System.err.println("Usage: java -jar swc-example-basic-VERSION.jar [--html|--text] TITLE");
 			System.err.println();
 			System.err.println("  The program will look for a file called `TITLE.wikitext',");
 			System.err.println("  parse the file and write an HTML version to `TITLE.html'.");

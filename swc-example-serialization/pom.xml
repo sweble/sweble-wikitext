@@ -4,16 +4,15 @@
   <!-- This POM -->
 
   <groupId>org.example</groupId>
-  <artifactId>swc-example-basic</artifactId>
+  <artifactId>swc-example-serialization</artifactId>
   <version>1.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
 
-  <name>SWC - Basic Example</name>
+  <name>SWC - Serialization Example</name>
   <url>http://osr.informatik.uni-erlangen.de</url>
-  <inceptionYear>2010</inceptionYear>
+  <inceptionYear>2012</inceptionYear>
   <description>
     An example project that contains a simple application that is able to parse
-    a page written in Wikitext and render it as HTML or plain text.
+    a page written in Wikitext and serialize it to XML, JSON or binary.
   </description>
 
   <properties>
@@ -34,6 +33,20 @@
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-engine</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+
+    <!-- Parser Toolkit - Xml Tools-->
+    <dependency>
+      <groupId>de.fau.cs.osr.ptk</groupId>
+      <artifactId>ptk-xml-tools</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+
+    <!-- Parser Toolkit - Json Tools -->
+    <dependency>
+      <groupId>de.fau.cs.osr.ptk</groupId>
+      <artifactId>ptk-json-tools</artifactId>
       <version>1.0.1-SNAPSHOT</version>
     </dependency>
 
@@ -83,7 +96,7 @@
           <header>../etc/license-header.txt</header>
           <excludes>
             <exclude>src/test/resources/*.wikitext</exclude>
-            <exclude>src/test/resources/*.html</exclude>
+            <exclude>src/test/resources/*.result</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
@@ -152,6 +165,7 @@
       <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
     </pluginRepository>
   </pluginRepositories>
+
 
   <!-- ==[ Profiles ]======================================================= -->
 

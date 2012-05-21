@@ -122,7 +122,7 @@ public class XPathTest
 	
 	private String load(String path) throws IOException
 	{
-		InputStream in = SerializationTest.class.getResourceAsStream(path);
+		InputStream in = getClass().getResourceAsStream(path);
 		if (in == null)
 			return null;
 		return IOUtils.toString(in, "UTF-8");
