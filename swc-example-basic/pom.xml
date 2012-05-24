@@ -103,6 +103,16 @@
           <skip>true</skip>
         </configuration>
       </plugin>
+
+      <!-- DO NOT GENERATE A SITE FOR THE EXAMPLE PROJECT ITSELF -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
     </plugins>
 
     <pluginManagement>

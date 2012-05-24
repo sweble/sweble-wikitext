@@ -142,6 +142,7 @@
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
             <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
@@ -269,6 +270,21 @@
                   </tagClasses>
                 </tagListOptions>
               </configuration>
+            </plugin>
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
             </plugin>
             <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
 

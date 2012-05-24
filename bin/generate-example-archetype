@@ -11,6 +11,7 @@ fi
 pushd $PRJ &>/dev/null
 
 WDIR=$(pwd)
+echo
 echo "Working in: ${WDIR}"
 
 LOG="${WDIR}/generate-example-archetype.log"
@@ -104,10 +105,18 @@ pushd ${ARCHETYPE_DST_DIR} &> /dev/null
 
   mvn install &>> "${LOG}"
 
+  echo
+  echo "JAR: ${ARCHETYPE_DST_DIR}/target/${AT_ARTIFACT_ID}-${AT_VERSION}.jar"
+  echo
+
   echo "Generating site ..."
   echo "Generating site ..." &>> "${LOG}"
 
-  mvn site &>> "${LOG}"
+  echo
+  echo "Staged SITE: ${ARCHETYPE_DST_DIR}/target/staging"
+  echo
+
+  mvn site site:stage &>> "${LOG}"
 
 popd &> /dev/null
 
@@ -138,5 +147,6 @@ popd &> /dev/null
 # SUCCESS!
 echo "Done"
 echo "Done" &>> "${LOG}"
+echo
 
 popd &>/dev/null
