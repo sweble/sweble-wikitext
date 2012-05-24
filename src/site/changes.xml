@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/changes/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+  <properties>
+    <title>Changelog</title>
+    <author email="hannes.dohrn@informatik.uni-erlangen.de">Hannes Dohrn</author>
+  </properties>
+  <body>
+    <release version="1.1.0" description="Feature release">
+    </release>
+    <release version="1.0.0.1" description="Preparing for deployment to maven central">
+      <action dev="hdohrn" type="add">
+        Enabled maven site generation, adding a site descriptor and some custom css.
+      </action>
+      <action dev="hdohrn" type="add">
+        Added profiles for quick builds and GPG signing.
+      </action>
+      <action dev="hdohrn" type="fix">
+         Fixed project URL: http://sweble.org/doc/site/tooling/sweble
+      </action>
+      <action dev="hdohrn" type="update">
+        Disabled mojo as release repository for dependencies and plugins.
+      </action>
+      <action dev="hdohrn" type="update">
+        Cleaned up developer section in pom.
+      </action>
+    </release>
+    <release version="1.0.0" description="Initial release">
+    </release>
+  </body>
+</document>
+
+<!--
+  Preferred order:
+    New features
+    Fixes
+    Updates
+  Then order by size/importance of features
+
+  Tpyes:
+    add: added functionnality to the project.
+    fix: bug fix for the project.
+    update: updated some part of the project.
+    remove: removed some functionnality from the project.
+
+  <action dev="hdohrn" type="fix">
+  </action>
+  -->
