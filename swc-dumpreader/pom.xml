@@ -52,6 +52,7 @@
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
+      <version>${version.dep.aspectjrt}</version>
     </dependency>
 
     <!-- Apache Commons Compress -->
@@ -79,21 +80,6 @@
 
   </dependencies>
 
-  <!-- ==[ Dependency Management ]========================================== -->
-
-  <dependencyManagement>
-    <dependencies>
-
-      <!-- AspectJ -->
-      <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjrt</artifactId>
-        <version>${version.dep.aspectjrt}</version>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
-
   <build>
 
     <!-- ==[ Plugin Configuration ]========================================= -->
@@ -102,7 +88,6 @@
 
       <!-- Eclipse Plugin -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-eclipse-plugin</artifactId>
         <configuration>
           <downloadSources>true</downloadSources>
@@ -136,6 +121,7 @@
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>${version.plugin.jaxb}</version>
         <executions>
           <execution>
             <id>schema-to-java</id>
@@ -180,10 +166,18 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
+        <version>${version.plugin.aspectj}</version>
         <configuration>
           <source>${version.java}</source>
           <target>${version.java}</target>
         </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <!-- Disable Maven Compiler Plugin in favor of AspectJ Plugin -->
@@ -220,25 +214,6 @@
             <exclude>src/main/resources/**</exclude>
           </excludes>
         </configuration>
-      </plugin>
-
-      <!-- Generate Jar with dependencies -->
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
       <!-- Make Git information available as properties -->
@@ -343,7 +318,6 @@
             </plugin>
 
             <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-changes-plugin</artifactId>
               <configuration>
                 <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
@@ -363,50 +337,6 @@
       </plugin>
 
     </plugins>
-
-    <!-- ==[ Plugin Management ]============================================ -->
-
-    <pluginManagement>
-      <plugins>
-
-        <!-- Make it runnable through maven -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>${version.plugin.exec}</version>
-        </plugin>
-
-        <!-- Eclipse Plugin -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-eclipse-plugin</artifactId>
-          <version>${version.plugin.eclipse}</version>
-        </plugin>
-
-        <!-- Maven AspectJ Plugin -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>aspectj-maven-plugin</artifactId>
-          <version>${version.plugin.aspectj}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>compile</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Compile schema files -->
-        <plugin>
-          <groupId>org.jvnet.jaxb2.maven2</groupId>
-          <artifactId>maven-jaxb2-plugin</artifactId>
-          <version>${version.plugin.jaxb}</version>
-        </plugin>
-
-      </plugins>
-    </pluginManagement>
-
   </build>
 
   <!-- ==[ Reporting ]====================================================== -->
@@ -454,6 +384,7 @@
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
+
     <profile>
       <id>quick</id>
       <build>
@@ -505,6 +436,34 @@
                 </plugin>
               </reportPlugins>
             </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
           </plugin>
 
         </plugins>

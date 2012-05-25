@@ -46,6 +46,10 @@ echo "Generating archetype ..."
 echo "Generating archetype ..." &>> "${LOG}"
 pushd "$ARCHETYPE_SRC_DIR" &>/dev/null
 
+  echo
+  echo "ARCHETYPE: ${ARCHETYPE_DST_DIR}"
+  echo
+
   mvn archetype:create-from-project &>> "${LOG}"
   mv  target/generated-sources/archetype "$ARCHETYPE_DST_DIR"
 
@@ -112,11 +116,11 @@ pushd ${ARCHETYPE_DST_DIR} &> /dev/null
   echo "Generating site ..."
   echo "Generating site ..." &>> "${LOG}"
 
+  mvn site site:stage &>> "${LOG}"
+
   echo
   echo "Staged SITE: ${ARCHETYPE_DST_DIR}/target/staging"
   echo
-
-  mvn site site:stage &>> "${LOG}"
 
 popd &> /dev/null
 
@@ -143,6 +147,20 @@ echo "Verifying generated project ..." &>> "${LOG}"
 pushd ${ARCHETYPE_TEST_DIR}/${PROJECT} &> /dev/null
 mvn verify &>> "${LOG}"
 popd &> /dev/null
+
+# Deploy
+if [[ ! -z ${DEPLOY_EXAMPLE_ARCHETYPES-} ]]; then
+
+  pushd ${ARCHETYPE_DST_DIR} &> /dev/null
+
+    echo "Deploying archetype ..."
+    echo "Deploying archetype ..." &>> "${LOG}"
+
+    mvn deploy $DEPLOY_EXAMPLE_ARCHETYPES &>> "${LOG}"
+
+  popd &> /dev/null
+
+fi
 
 # SUCCESS!
 echo "Done"
