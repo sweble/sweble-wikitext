@@ -30,12 +30,27 @@ rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
 #mvn verify &>> "${LOG}"
 #mvn clean &>/dev/null
 
-echo "Gathering information ..."
-echo "Gathering information ..." &>> "${LOG}"
+echo "Gathering information on sweble-wikitext parent pom..."
+echo "Gathering information on sweble-wikitext parent pom..." &>> "${LOG}"
+pushd ../ &>/dev/null
+SWEBLE_WIKITEXT_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
+SWEBLE_WIKITEXT_GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
+SWEBLE_WIKITEXT_ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
+popd &>/dev/null
+if [[ $SWEBLE_WIKITEXT_GROUP_ID != "org.sweble.wikitext" ]] || [[ $SWEBLE_WIKITEXT_ARTIFACT_ID != "sweble-wikitext" ]]; then
+  echo "Expected org.sweble.wikitext:sweble-wikitext project in parent directory!"
+  exit 1
+fi
+echo "sweble-wikitext version: ${SWEBLE_WIKITEXT_VERSION}" >> "${LOG}"
+
+echo "Gathering information on example project ..."
+echo "Gathering information on example project ..." &>> "${LOG}"
+PRJ_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
 PRJ_GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
 PRJ_ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
 echo "Project groupId: ${PRJ_GROUP_ID}" >> "${LOG}"
 echo "Project artifactId: ${PRJ_ARTIFACT_ID}" >> "${LOG}"
+echo "Project version: ${PRJ_VERSION}" >> "${LOG}"
 
 echo "Gathering sources ..."
 echo "Gathering sources ..." &>> "${LOG}"
@@ -57,6 +72,12 @@ popd &>/dev/null
 
 # Use our own, beautifully formatted pom.xml file
 cp -a archetype-files/* ${ARCHETYPE_DST_DIR}/
+
+# Fix archetype's pom.xml
+cat archetype-files/pom.xml \
+  | sed -e "s/\${ARCHETYPE_VERSION}/${PRJ_VERSION}/" \
+  | sed -e "s/\${SWEBLE_WIKITEXT_VERSION}/${SWEBLE_WIKITEXT_VERSION}/" \
+  > ${ARCHETYPE_DST_DIR}/pom.xml
 
 # Don't know what we would need that for:
 rm -rf ${ARCHETYPE_DST_DIR}/{src/test/,target/}
@@ -103,9 +124,9 @@ pushd ${ARCHETYPE_DST_DIR} &> /dev/null
   AT_GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
   AT_ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
 
-  echo "Artifact groupId: ${AT_GROUP_ID}" >> "${LOG}"
-  echo "Artifact artifactId: ${AT_ARTIFACT_ID}" >> "${LOG}"
-  echo "Artifact version: ${AT_VERSION}" >> "${LOG}"
+  echo "Archetype groupId: ${AT_GROUP_ID}" >> "${LOG}"
+  echo "Archetype artifactId: ${AT_ARTIFACT_ID}" >> "${LOG}"
+  echo "Archetype version: ${AT_VERSION}" >> "${LOG}"
 
   mvn install &>> "${LOG}"
 
