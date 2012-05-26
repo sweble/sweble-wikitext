@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
-    <version>1.0.0.1</version>
+    <version>1.1.0</version>
     <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
@@ -15,7 +15,7 @@
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>sweble-wikitext</artifactId>
-  <version>1.0.0.1</version>
+  <version>1.1.0</version>
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
@@ -31,6 +31,11 @@
   <modules>
     <module>swc-parser-lazy</module>
     <module>swc-engine</module>
+    <module>swc-dumpreader</module>
+    <module>swc-article-cruncher</module>
+    <module>swc-example-basic</module>
+    <module>swc-example-serialization</module>
+    <module>swc-example-xpath</module>
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->
@@ -45,6 +50,7 @@
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
     <version.plugin.rats>1.3.0.1</version.plugin.rats>
     <version.plugin.parser-toolkit>1.0.0.1</version.plugin.parser-toolkit>
+    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
 
   </properties>
 
@@ -53,10 +59,19 @@
   <dependencyManagement>
     <dependencies>
 
+      <!-- Log4j -->
       <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>${version.dep.log4j}</version>
+      </dependency>
+
+      <!-- Utils -->
+      <dependency>
+        <groupId>de.fau.cs.osr.utils</groupId>
+        <artifactId>utils</artifactId>
+        <!-- Version is given directly so the release plugin can see it -->
+        <version>0.3.0</version>
       </dependency>
 
       <!-- Parser Toolkit - Common -->
@@ -64,7 +79,7 @@
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-common</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>1.0.0.1</version>
+        <version>1.1.0</version>
       </dependency>
 
       <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->
@@ -72,7 +87,7 @@
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-parser-lazy</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>1.0.0.1</version>
+        <version>1.1.0</version>
       </dependency>
 
     </dependencies>
@@ -101,11 +116,13 @@
           <skip>false</skip>
           <excludes>
             <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>etc/license-header-apt-style.xml</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
+            <exclude>*-example-*-jar/**</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -118,6 +135,20 @@
 
             <plugin>
               <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
             </plugin>
 
           </reportPlugins>
@@ -195,6 +226,21 @@
           </executions>
         </plugin>
 
+        <!-- JAXB Maven Plugin -->
+        <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb2-plugin</artifactId>
+          <version>${version.plugin.jaxb}</version>
+          <executions>
+            <execution>
+              <id>schema-to-java</id>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
       </plugins>
     </pluginManagement>
 
@@ -254,9 +300,15 @@
     </developer>
   </developers>
 
-  <!--
-    see parent: <contributors>
-  -->
+  <contributors>
+    <contributor>
+      <name>Daniel Naber</name>
+      <email>naber@danielnaber.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </contributor>
+  </contributors>
 
   <!-- ==[ Environment Settings ]=========================================== -->
 

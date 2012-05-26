@@ -561,7 +561,7 @@ private transient String LinkOptionKeywordString =
 
 // -- Link Option Name Value ---------------------------------------------------
 
-private transient AstNode LinkOptionNameValue =
+private transient stateful AstNode LinkOptionNameValue =
     rt0:pExtWsStar "link=" target:LinkTargetOverride rt1:pExtWsStar
     {
       getLinkBuilder().setLink(target);
@@ -604,7 +604,7 @@ private inline AstNode LinkTargetOverride =
 
 // -- Link Option Garbage ------------------------------------------------------
 
-private inline LinkOptionGarbage LinkOptionGarbage =
+private inline stateful LinkOptionGarbage LinkOptionGarbage =
   {
     enter(isImageTarget() ?
         ParserScopes.IMAGE_LINK_ALT :
@@ -626,7 +626,7 @@ private inline LinkOptionGarbage LinkOptionGarbage =
 
 // -- Link Title ---------------------------------------------------------------
 
-private inline LinkTitle LinkTitle =
+private inline stateful LinkTitle LinkTitle =
   {
     enter(isImageTarget() ?
         ParserScopes.IMAGE_LINK_TITLE :

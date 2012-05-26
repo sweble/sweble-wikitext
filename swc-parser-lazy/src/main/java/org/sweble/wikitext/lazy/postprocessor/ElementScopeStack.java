@@ -25,14 +25,14 @@ import org.sweble.wikitext.lazy.parser.NamedXmlElement;
 import org.sweble.wikitext.lazy.parser.XmlElementOpen;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.StringUtils;
 
 public final class ElementScopeStack
-        extends
-            Visitor
+		extends
+			AstVisitor
 {
 	Scope top = null;
 	
@@ -121,7 +121,7 @@ public final class ElementScopeStack
 			throw new IllegalStateException();
 	}
 	*/
-
+	
 	// =========================================================================
 	
 	public void append(AstNode n)
@@ -146,8 +146,8 @@ public final class ElementScopeStack
 		while (i != null)
 		{
 			s.append(StringUtils.indent(
-			        i.toString().trim(),
-			        StringUtils.strrep(' ', indent)));
+					i.toString().trim(),
+					StringUtils.strrep(' ', indent)));
 			s.append("\n\n");
 			indent += 2;
 			i = i.next();
@@ -254,7 +254,8 @@ public final class ElementScopeStack
 			return ci;
 		}
 		
-		public boolean match(/*ScopeType otherType, */NamedXmlElement otherElement)
+		public boolean match(
+				/*ScopeType otherType, */NamedXmlElement otherElement)
 		{
 			/*
 			if (type != otherType)

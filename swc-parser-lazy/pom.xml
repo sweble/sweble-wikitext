@@ -7,18 +7,19 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.0.1</version>
+    <version>1.1.0</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Lazy Wikitext Parser -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-parser-lazy</artifactId>
-  <version>1.0.0.1</version>
+  <version>1.1.0</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Lazy Wikitext Parser</name>
   <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
+  <inceptionYear>2010</inceptionYear>
   <description>
     A lazy parser for MediaWiki's Wikitext.
   </description>
@@ -154,12 +155,14 @@
             <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
           </headerDefinitions>
           <excludes>
+            <exclude>doc/ast.txt</exclude>
             <exclude>src/test/resources/**/*.disabled</exclude>
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/*.ast</exclude>
             <exclude>src/test/resources/**/*.txt</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
             <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
@@ -169,21 +172,17 @@
         </configuration>
       </plugin>
 
-      <!-- Generate Jar with dependencies -->
+      <!-- Make Git information available as properties -->
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
         <executions>
+          <!-- Disabled until problem
+            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19
+            is resolved -->
           <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
+            <id>git-commit-info-disabled</id>
+            <phase>none</phase>
           </execution>
         </executions>
       </plugin>
@@ -273,6 +272,20 @@
                 </tagListOptions>
               </configuration>
             </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
             <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
 
           </reportPlugins>
@@ -327,6 +340,7 @@
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
+
     <profile>
       <id>quick</id>
       <build>
@@ -378,6 +392,34 @@
                 </plugin>
               </reportPlugins>
             </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
           </plugin>
 
         </plugins>

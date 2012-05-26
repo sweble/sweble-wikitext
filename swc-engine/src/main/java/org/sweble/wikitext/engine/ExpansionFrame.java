@@ -629,7 +629,7 @@ public class ExpansionFrame
 		
 		for (TemplateArgument arg : arguments)
 		{
-			String id = String.valueOf(args.size());
+			String id = String.valueOf(args.size() + 1);
 			
 			args.put(id, arg.getValue());
 			

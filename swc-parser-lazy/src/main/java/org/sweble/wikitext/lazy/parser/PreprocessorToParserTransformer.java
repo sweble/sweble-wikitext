@@ -24,8 +24,8 @@ import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
 import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.Visitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
@@ -33,29 +33,29 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 public class PreprocessorToParserTransformer
 {
 	public static PreprocessedWikitext transform(
-	        LazyPreprocessedPage preprocessedArticle,
-	        EntityMap entityMap)
+			LazyPreprocessedPage preprocessedArticle,
+			EntityMap entityMap)
 	{
 		return new PreprocessedWikitext(
-		        (String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
-		        entityMap);
+				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
+				entityMap);
 	}
 	
 	public static PreprocessedWikitext transform(
-	        LazyPreprocessedPage preprocessedArticle,
-	        EntityMap entityMap,
-	        boolean trim)
+			LazyPreprocessedPage preprocessedArticle,
+			EntityMap entityMap,
+			boolean trim)
 	{
 		return new PreprocessedWikitext(
-		        (String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
-		        entityMap);
+				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
+				entityMap);
 	}
 	
 	// =========================================================================
 	
 	protected static final class TransformVisitor
-	        extends
-	            Visitor
+			extends
+				AstVisitor
 	{
 		private StringBuilder builder;
 		

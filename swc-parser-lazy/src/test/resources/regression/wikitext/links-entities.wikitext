@@ -1,0 +1,29 @@
+[[Hallo]]
+
+[[Hallo %0 Hallo]]
+
+[[Hallo %00 Hallo]]
+
+[[Hallo %7F Hallo]]
+
+[[Hallo %80 Hallo]]
+
+[[Hallo %20 Hallo]]
+
+[[Hallo %7E Hallo]]
+
+[[Hallo &amp; Hallo]]
+
+[[Hallo &amplifier; Hallo]]
+
+[[Hallo &amp;amp; Hallo]]
+
+[[Hallo %61 Hallo]]
+
+[[Hallo &%61mp; Hallo]]
+
+[[Hallo &%42mp; Hallo]]
+
+[[Hallo+Hallo]]
+
+[[Hallo%20Hallo+Hallo]]

@@ -18,11 +18,12 @@
 package org.sweble.wikitext.engine.config;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.TreeSet;
 
 public class MagicWord
-        implements
-            Serializable
+		implements
+			Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -34,11 +35,15 @@ public class MagicWord
 	
 	// =========================================================================
 	
-	public MagicWord(String name, Boolean caseSensitive, TreeSet<String> aliases)
+	public MagicWord(
+			String name,
+			Boolean caseSensitive,
+			Collection<String> aliases)
 	{
 		this.name = name;
 		this.caseSensitive = caseSensitive;
-		this.aliases = aliases;
+		this.aliases = new TreeSet<String>();
+		this.aliases.addAll(aliases);
 	}
 	
 	// =========================================================================

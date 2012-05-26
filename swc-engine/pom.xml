@@ -7,14 +7,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.0.1</version>
+    <version>1.1.0</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Engine -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-engine</artifactId>
-  <version>1.0.0.1</version>
+  <version>1.1.0</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Engine</name>
@@ -79,6 +79,25 @@
         </executions>
       </plugin>
 
+      <!-- Compile schema files -->
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <configuration>
+          <schemaDirectory>${basedir}/src/main/autogen</schemaDirectory>
+          <generatePackage>org.sweble.wikitext.engine.utils</generatePackage>
+          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+          <schemaIncludes>
+            <include>SimpleWikiConfiguration.xsd</include>
+          </schemaIncludes>
+          <!--
+          <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+           -->
+          <forceRegenerate>true</forceRegenerate>
+          <strict>true</strict>
+        </configuration>
+      </plugin>
+
       <!-- Generate Ast Nodes -->
       <plugin>
         <groupId>de.fau.cs.osr.ptk</groupId>
@@ -123,6 +142,7 @@
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
             <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
@@ -132,21 +152,17 @@
         </configuration>
       </plugin>
 
-      <!-- Generate Jar with dependencies -->
+      <!-- Make Git information available as properties -->
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
         <executions>
+          <!-- Disabled until problem
+            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19
+            is resolved -->
           <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
+            <id>git-commit-info-disabled</id>
+            <phase>none</phase>
           </execution>
         </executions>
       </plugin>
@@ -236,6 +252,20 @@
                 </tagListOptions>
               </configuration>
             </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
             <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
 
           </reportPlugins>
@@ -290,6 +320,7 @@
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
+
     <profile>
       <id>quick</id>
       <build>
@@ -341,6 +372,34 @@
                 </plugin>
               </reportPlugins>
             </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
           </plugin>
 
         </plugins>

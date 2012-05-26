@@ -96,7 +96,10 @@ public class LazyPreprocessorState
 	
 	public boolean isValidClosingTag(String name)
 	{
-		return name.compareToIgnoreCase(getTop().getTagExtensionName()) == 0;
+		String cur = getTop().getTagExtensionName();
+		if (cur == null)
+			return false;
+		return name.compareToIgnoreCase(cur) == 0;
 	}
 	
 	public void setTemplateBraces(int i)

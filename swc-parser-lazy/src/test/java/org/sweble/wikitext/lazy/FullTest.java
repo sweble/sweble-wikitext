@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.lazy;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +33,7 @@ import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinterInterface;
-import de.fau.cs.osr.ptk.common.Visitor;
+import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.test.ParserTestCommon;
 import de.fau.cs.osr.ptk.common.test.ParserTestResources;
@@ -44,6 +44,10 @@ public class FullTest
 	
 	private static ParserTestCommon common;
 	
+	private static final String SC = File.separator;
+	
+	private static final String QSC = SC.replace("\\", "\\\\");//Pattern.quote(SC);
+	
 	@BeforeClass
 	public static void setUp()
 	{
@@ -53,11 +57,11 @@ public class FullTest
 		resources = new ParserTestResources(new File(url.getFile()));
 		
 		common = new ParserTestCommon(
-		        resources,
-		        FullParser.class,
-		        "(.*?)/target/test-classes/",
-		        "$1/src/test/resources/",
-		        false);
+				resources,
+				FullParser.class,
+				"(.*?)" + QSC + "target" + QSC + "test-classes" + QSC,
+				"$1" + QSC + "src" + QSC + "test" + QSC + "resources" + QSC,
+				false);
 	}
 	
 	// ==[ Basic Tests ]========================================================
@@ -66,20 +70,20 @@ public class FullTest
 	public void testBasicAst() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "basic/wikitext/",
-		        "basic/ast/",
-		        new Visitor[] { new AstCompressor() },
-		        new AstPrinter());
+				"basic" + SC + "wikitext" + SC,
+				"basic" + SC + "ast" + SC,
+				new AstVisitor[] { new AstCompressor() },
+				new AstPrinter());
 	}
 	
 	@Test
 	public void testBasicRtWikitextPrinter() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "basic/wikitext/",
-		        "basic/wikitext/",
-		        new Visitor[] { new AstCompressor() },
-		        new RtWikitextAstPrinter());
+				"basic" + SC + "wikitext" + SC,
+				"basic" + SC + "wikitext" + SC,
+				new AstVisitor[] { new AstCompressor() },
+				new RtWikitextAstPrinter());
 	}
 	
 	// FIXME: Make this test work!
@@ -88,10 +92,10 @@ public class FullTest
 	public void testBasicWikitextPrinter() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "basic/wikitext/",
-		        "basic/wikitextprinter/",
-		        new Visitor[] { new AstCompressor() },
-		        new WikitextAstPrinter());
+				"basic" + SC + "wikitext" + SC,
+				"basic" + SC + "wikitextprinter" + SC,
+				new AstVisitor[] { new AstCompressor() },
+				new WikitextAstPrinter());
 	}
 	
 	// ==[ Regression Tests ]===================================================
@@ -100,10 +104,10 @@ public class FullTest
 	public void testRegression() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "regression/wikitext/",
-		        "regression/ast/",
-		        new Visitor[] { new AstCompressor() },
-		        new AstPrinter());
+				"regression" + SC + "wikitext" + SC,
+				"regression" + SC + "ast" + SC,
+				new AstVisitor[] { new AstCompressor() },
+				new AstPrinter());
 	}
 	
 	// ==[ Complex Regression Tests ]===========================================
@@ -112,10 +116,10 @@ public class FullTest
 	public void testComplexRegression() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "complex/wikitext/",
-		        "complex/ast/",
-		        new Visitor[] { new AstCompressor() },
-		        new AstPrinter());
+				"complex" + SC + "wikitext" + SC,
+				"complex" + SC + "ast" + SC,
+				new AstVisitor[] { new AstCompressor() },
+				new AstPrinter());
 	}
 	
 	// ==[ ScopedElementBuilder Tests ]=========================================
@@ -124,17 +128,17 @@ public class FullTest
 	public void testScopes() throws IOException, ParseException
 	{
 		common.gatherParseAndPrintTest(
-		        "scopes/wikitext/",
-		        "scopes/ast/",
-		        new Visitor[] { new AstCompressor() },
-		        new AstPrinter());
+				"scopes" + SC + "wikitext" + SC,
+				"scopes" + SC + "ast" + SC,
+				new AstVisitor[] { new AstCompressor() },
+				new AstPrinter());
 	}
 	
 	// =========================================================================
 	
 	public static final class AstPrinter
-	        implements
-	            AstPrinterInterface
+			implements
+				AstPrinterInterface
 	{
 		@Override
 		public String getPrintoutType()
@@ -146,7 +150,7 @@ public class FullTest
 		public void print(AstNode ast, Writer out) throws IOException
 		{
 			org.sweble.wikitext.lazy.utils.AstPrinter printer =
-			        new org.sweble.wikitext.lazy.utils.AstPrinter(out);
+					new org.sweble.wikitext.lazy.utils.AstPrinter(out);
 			
 			printer.setLegacyIndentation(true);
 			printer.go(ast);
@@ -154,8 +158,8 @@ public class FullTest
 	}
 	
 	public static final class WikitextAstPrinter
-	        implements
-	            AstPrinterInterface
+			implements
+				AstPrinterInterface
 	{
 		@Override
 		public String getPrintoutType()
@@ -171,8 +175,8 @@ public class FullTest
 	}
 	
 	public static final class RtWikitextAstPrinter
-	        implements
-	            AstPrinterInterface
+			implements
+				AstPrinterInterface
 	{
 		@Override
 		public String getPrintoutType()

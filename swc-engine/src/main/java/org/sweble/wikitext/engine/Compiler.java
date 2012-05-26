@@ -128,6 +128,63 @@ public class Compiler
 	}
 	
 	/**
+	 * Takes wikitext and expands the wikitext. The following steps are 
+	 * performed:
+	 * <ul>
+	 * <li>Validation</li>
+	 * <li>Preprocessing (for viewing)</li>
+	 * <li>Entity substitution</li>
+	 * <li>Expansion</li>
+	 * </ul>
+	 */
+	public CompiledPage expand(
+	        PageId pageId,
+	        String wikitext,
+	        ExpansionCallback callback)
+	            throws CompilerException
+	{
+		if (pageId == null || callback == null)
+			throw new NullPointerException();
+		
+		PageTitle title = pageId.getTitle();
+		
+		CompilerLog log = new CompilerLog();
+		log.setTitle(title.getFullTitle());
+		log.setRevision(pageId.getRevision());
+		
+		LazyPreprocessedPage pAst;
+		try
+		{
+			EntityMap entityMap = new EntityMap();
+			
+			String validatedWikitext =
+			        validate(title, wikitext, entityMap, log);
+			
+			LazyPreprocessedPage ppAst =
+			        preprocess(title, validatedWikitext, false, entityMap, log);
+			
+			LazyPreprocessedPage pprAst = ppAst;
+			pprAst = expand(callback, title, ppAst, entityMap, null, false, log);
+			
+			pAst = pprAst;
+		}
+		catch (CompilerException e)
+		{
+			e.attachLog(log);
+			throw e;
+		}
+		catch (Throwable e)
+		{
+			throw new CompilerException("Compilation failed!", e, log);
+		}
+		
+		return new CompiledPage(
+		        new Page(pAst.getContent()),
+		        pAst.getWarnings(),
+		        log);
+	}
+	
+	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
 	 * are performed:
 	 * <ul>

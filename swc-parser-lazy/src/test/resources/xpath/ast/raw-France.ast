@@ -1,0 +1,1515 @@
+--------------------------------------------------------------------------------
+  /*[1]/Paragraph[3]
+--------------------------------------------------------------------------------
+Paragraph([
+  Text("France is a ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[unitary state", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "unitary state"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("unitary") ]
+    )
+  )
+  Text(" ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[semi-presidential system", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "semi-presidential system"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("semi-presidential") ]
+    )
+  )
+  Text(" ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[republic", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "republic"
+
+    LinkTitle([ ])
+  )
+  Text(" with its main ideals expressed in the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[Declaration of the Rights of Man and of the Citizen", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "Declaration of the Rights of Man and of the Citizen"
+
+    LinkTitle([ ])
+  )
+  Text(". France is one of the most ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[developed country", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "developed country"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("developed countries") ]
+    )
+  )
+  TagExtension(
+    Properties:
+          RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}</ref>"
+      {N} body = "{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}"
+      {N} name = "ref"
+
+    [ ]
+  )
+  Text(" and possesses the fifth largest economy by ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[List of countries by GDP (nominal)", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "List of countries by GDP (nominal)"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("nominal GDP") ]
+    )
+  )
+  TagExtension(
+    Properties:
+          RTD = RtData: [0] = "<ref", [1] = ">[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook</ref>"
+      {N} body = "[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook"
+      {N} name = "ref"
+
+    [ ]
+  )
+  Text(" and seventh largest economy by ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[List of countries by GDP (PPP)", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "List of countries by GDP (PPP)"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("purchasing power parity") ]
+    )
+  )
+  Text(".")
+  TagExtension(
+    Properties:
+          RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}</ref>"
+      {N} body = "{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}"
+      {N} name = "ref"
+
+    [ ]
+  )
+  Text(" France enjoys a ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[standard of living", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "standard of living"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("high standard of living") ]
+    )
+  )
+  Text(" as well as a ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[Education Index", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "Education Index"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("high public education level") ]
+    )
+  )
+  Text(", and has also one of the world's highest ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[List of countries by life expectancy", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "List of countries by life expectancy"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("life expectancies") ]
+    )
+  )
+  Text(".")
+  TagExtension(
+    Properties:
+          RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}</ref>"
+      {N} body = "{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}"
+      {N} name = "ref"
+
+    [ ]
+  )
+  Text(" It is the most visited country in the world, receiving 82 million foreign tourists annually.")
+  TagExtension(
+    Properties:
+          RTD = RtData: [0] = "<ref", [1] = ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>"
+      {N} body = "{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}"
+      {N} name = "ref"
+
+    [
+      XmlAttribute(
+        Properties:
+              RTD = RtData: [0] = " name=\"", [1] = "\""
+          {N} hasValue = true
+          {N} name = "name"
+
+        [ Text("tourism.stat") ]
+      )
+    ]
+  )
+  Text(" France is a founding member of the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[United Nations", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "United Nations"
+
+    LinkTitle([ ])
+  )
+  Text(", and a member of the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[Francophonie", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "Francophonie"
+
+    LinkTitle([ ])
+  )
+  Text(", the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[G8", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "G8"
+
+    LinkTitle([ ])
+  )
+  Text(", ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[G-20 major economies", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "G-20 major economies"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("G20") ]
+    )
+  )
+  Text(", ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[NATO", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "NATO"
+
+    LinkTitle([ ])
+  )
+  Text(", ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[OECD", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "OECD"
+
+    LinkTitle([ ])
+  )
+  Text(", ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[World Trade Organisation", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "World Trade Organisation"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("WTO") ]
+    )
+  )
+  Text(", and the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[Latin Union", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "Latin Union"
+
+    LinkTitle([ ])
+  )
+  Text(". It is one of the five ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[United Nations Security Council#Permanent members", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "United Nations Security Council#Permanent members"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("permanent members of the UN Security Council") ]
+    )
+  )
+  Text(" and possesses the third largest ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[List of countries with nuclear weapons", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "List of countries with nuclear weapons"
+
+    LinkTitle(
+      Properties:
+            RTD = RtData: [0] = "|", [1]
+
+      [ Text("nuclear weapons stockpile") ]
+    )
+  )
+  Text(" in the world ")
+  TagExtension(
+    Properties:
+          RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}</ref>"
+      {N} body = "{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}"
+      {N} name = "ref"
+
+    [ ]
+  )
+  Text(" with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[Human Development Index", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "Human Development Index"
+
+    LinkTitle([ ])
+  )
+  Text(" and 24th on the ")
+  InternalLink(
+    Properties:
+          RTD = RtData: [0] = "[[Corruption Perception Index", [1] = "]]"
+      {N} postfix = ""
+      {N} prefix = ""
+      {N} target = "Corruption Perception Index"
+
+    LinkTitle([ ])
+  )
+  Text(".")
+  Whitespace(
+    Properties:
+      {N} hasNewline = true
+
+    [
+      Text("\n")
+      Text("\n")
+    ]
+  )
+])
+
+================================================================================
+--------------------------------------------------------------------------------
+  (//Section[@level=3])[1]
+--------------------------------------------------------------------------------
+Section(
+  Properties:
+        RTD = RtData: [0] = "===", [1] = "===", [2]
+    {N} level = 3
+
+  [ Text(" Rome to Revolution ") ]
+  [
+    Whitespace(
+      Properties:
+        {N} hasNewline = true
+
+      [ Text("\n") ]
+    )
+    Paragraph([
+      Text("The borders of modern France are approximately the same as those of ancient ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Gaul", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Gaul"
+
+        LinkTitle([ ])
+      )
+      Text(", which was inhabited by ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Celt", [1] = "]]ic"
+          {N} postfix = "ic"
+          {N} prefix = ""
+          {N} target = "Celt"
+
+        LinkTitle([ ])
+      )
+      Text(" ")
+      Italics(
+        Properties:
+              RTD = RtData: [0] = "''", [1] = "''"
+
+        [ Text("Gauls") ]
+      )
+      Text(". Gaul was conquered by ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Roman Empire", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Roman Empire"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Rome") ]
+        )
+      )
+      Text(" under ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Julius Caesar", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Julius Caesar"
+
+        LinkTitle([ ])
+      )
+      Text(" in the 1st century BC,")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].</ref>"
+          {N} body = "[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]]."
+          {N} name = "ref"
+
+        [ ]
+      )
+      Text(" and the Gauls eventually adopted ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Romance languages", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Romance languages"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Roman") ]
+        )
+      )
+      Text(" speech (")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Latin", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Latin"
+
+        LinkTitle([ ])
+      )
+      Text(", from which the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[French language", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "French language"
+
+        LinkTitle([ ])
+      )
+      Text(" evolved) and Roman culture. ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[History of Christianity", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "History of Christianity"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Christianity") ]
+        )
+      )
+      Text(" first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[St. Jerome", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "St. Jerome"
+
+        LinkTitle([ ])
+      )
+      Text(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      ImageLink(
+        Properties:
+              RTD = RtData: [0] = "[[File:Map France 1477-fr.svg", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText([ ])
+          {N} border = false
+          {N} format = THUMBNAIL
+          {N} hAlign = LEFT
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "File:Map France 1477-fr.svg"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|thumb"
+              {N} keyword = "thumb"
+          )
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|left"
+              {N} keyword = "left"
+          )
+        ]
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [
+            Text("France after the ")
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[Hundred Years War", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "Hundred Years War"
+
+              LinkTitle([ ])
+            )
+            Text(". Red line")
+            Text(":")
+            Text(" Boundary of the ")
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[Kingdom of France", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "Kingdom of France"
+
+              LinkTitle([ ])
+            )
+            Text("; Light blue")
+            Text(":")
+            Text(" the directly held royal domain")
+          ]
+        )
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      Text("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Rhine", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Rhine"
+
+        LinkTitle([ ])
+      )
+      Text(" was overrun by ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Germanic peoples", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Germanic peoples"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Germanic tribes") ]
+        )
+      )
+      Text(", principally the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Franks", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Franks"
+
+        LinkTitle([ ])
+      )
+      Text(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[House of Capet", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "House of Capet"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Capetian") ]
+        )
+      )
+      Text(" Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Catholic Church", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Catholic Church"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Catholic") ]
+        )
+      )
+      Text(" Christianity rather than ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Arianism", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Arianism"
+
+        LinkTitle([ ])
+      )
+      Text(" (their King ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Clovis I", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Clovis I"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Clovis") ]
+        )
+      )
+      Text(" did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (")
+      Italics(
+        Properties:
+              RTD = RtData: [0] = "''", [1] = "''"
+
+        [ Text("La fille a\u00EEn\u00E9e de l\u2019\u00C9glise") ]
+      )
+      Text("),")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]</ref>"
+          {N} body = "[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]"
+          {N} name = "ref"
+
+        [ ]
+      )
+      Text(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      ImageLink(
+        Properties:
+              RTD = RtData: [0] = "[[File:Francois Dubois 001.jpg", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText([ ])
+          {N} border = false
+          {N} format = THUMBNAIL
+          {N} hAlign = RIGHT
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "File:Francois Dubois 001.jpg"
+          {N} upright = false
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|right"
+              {N} keyword = "right"
+          )
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|thumb"
+              {N} keyword = "thumb"
+          )
+        ]
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [
+            Text("The ")
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[St. Bartholomew's Day massacre", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "St. Bartholomew's Day massacre"
+
+              LinkTitle([ ])
+            )
+            Text(" (1572) during the ")
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[French Wars of Religion", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "French Wars of Religion"
+
+              LinkTitle([ ])
+            )
+            Text(".")
+          ]
+        )
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      ImageLink(
+        Properties:
+              RTD = RtData: [0] = "[[File:Ingres, Napoleon on his Imperial throne.jpg", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText([ ])
+          {N} border = false
+          {N} format = THUMBNAIL
+          {N} hAlign = NONE
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "File:Ingres, Napoleon on his Imperial throne.jpg"
+          {N} upright = true
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|thumb"
+              {N} keyword = "thumb"
+          )
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|upright"
+              {N} keyword = "upright"
+          )
+        ]
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[Napoleon I", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "Napoleon I"
+
+              LinkTitle([ ])
+            )
+            Text(", ")
+            Italics(
+              Properties:
+                    RTD = RtData: [0] = "''", [1] = "''"
+
+              [ Text("Empereur des Fran\u00E7ais") ]
+            )
+            Text(", built a ")
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[First French Empire", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "First French Empire"
+
+              LinkTitle(
+                Properties:
+                      RTD = RtData: [0] = "|", [1]
+
+                [ Text("Great Empire") ]
+              )
+            )
+            Text(" across Europe.")
+          ]
+        )
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      ImageLink(
+        Properties:
+              RTD = RtData: [0] = "[[File:Jeanne d Arc Orleanide.jpg", [1], [2] = "]]"
+          {N} alt = 
+            LinkOptionAltText([ ])
+          {N} border = false
+          {N} format = THUMBNAIL
+          {N} hAlign = LEFT
+          {N} height = -1
+          {N} linkPage = null
+          {N} linkUrl = null
+          {N} target = "File:Jeanne d Arc Orleanide.jpg"
+          {N} upright = true
+          {N} vAlign = MIDDLE
+          {N} width = -1
+
+        [
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|thumb"
+              {N} keyword = "thumb"
+          )
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|left"
+              {N} keyword = "left"
+          )
+          LinkOptionKeyword(
+            Properties:
+                  RTD = RtData: [0] = "|upright"
+              {N} keyword = "upright"
+          )
+        ]
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[Jeanne d'Arc", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "Jeanne d'Arc"
+
+              LinkTitle([ ])
+            )
+            Text(" by ")
+            InternalLink(
+              Properties:
+                    RTD = RtData: [0] = "[[Philippe-Alexandre Le Brun de Charmettes", [1] = "]]"
+                {N} postfix = ""
+                {N} prefix = ""
+                {N} target = "Philippe-Alexandre Le Brun de Charmettes"
+
+              LinkTitle(
+                Properties:
+                      RTD = RtData: [0] = "|", [1]
+
+                [ Text("Le Brun de Charmettes") ]
+              )
+            )
+            Text(".")
+          ]
+        )
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      Text("Existence as a separate entity began with the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Treaty of Verdun", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Treaty of Verdun"
+
+        LinkTitle([ ])
+      )
+      Text(" (843), with the division of ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Charlemagne", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Charlemagne"
+
+        LinkTitle([ ])
+      )
+      Text("'s ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Carolingian Empire", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Carolingian Empire"
+
+        LinkTitle([ ])
+      )
+      Text(" into ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[East Francia", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "East Francia"
+
+        LinkTitle([ ])
+      )
+      Text(", ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Middle Francia", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Middle Francia"
+
+        LinkTitle([ ])
+      )
+      Text(" and ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[West Francia", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "West Francia"
+
+        LinkTitle([ ])
+      )
+      Text(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks</ref>"
+          {N} body = "[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks"
+          {N} name = "ref"
+
+        [ ]
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      Text("The ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Carolingian dynasty", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Carolingian dynasty"
+
+        LinkTitle([ ])
+      )
+      Text(" ruled France until 987, when ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Hugh Capet of France", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Hugh Capet of France"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Hugh Capet") ]
+        )
+      )
+      Text(", Duke of France and Count of Paris, was crowned ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[King of France", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "King of France"
+
+        LinkTitle([ ])
+      )
+      Text(".")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World</ref>"
+          {N} body = "[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World"
+          {N} name = "ref"
+
+        [ ]
+      )
+      Text(" ")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      Text("His descendants, the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[House of Capet", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "House of Capet"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Direct Capetians") ]
+        )
+      )
+      Text(", the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[House of Valois", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "House of Valois"
+
+        LinkTitle([ ])
+      )
+      Text(" and the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[House of Bourbon", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "House of Bourbon"
+
+        LinkTitle([ ])
+      )
+      Text(", progressively unified the country through a series of wars and dynastic inheritance into a ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[centralised kingdom", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "centralised kingdom"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Kingdom of France") ]
+        )
+      )
+      Text(".")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      Text("The ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Albigensian Crusade", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Albigensian Crusade"
+
+        LinkTitle([ ])
+      )
+      Text(" was launched in 1209 to eliminate the heretical ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Cathars", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Cathars"
+
+        LinkTitle([ ])
+      )
+      Text(" of ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Occitania", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Occitania"
+
+        LinkTitle([ ])
+      )
+      Text(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}</ref>"
+          {N} body = "{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}"
+          {N} name = "ref"
+
+        [ ]
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [ Text("\n") ]
+      )
+      Text("In 1066, the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[William the Conqueror", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "William the Conqueror"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Duke of Normandy") ]
+        )
+      )
+      Text(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      Text("The exact boundaries changed greatly with time, but French landholdings of the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[List of English monarchs", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "List of English monarchs"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("English Kings") ]
+        )
+      )
+      Text(" remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Wars of the Roses", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Wars of the Roses"
+
+        LinkTitle([ ])
+      )
+      Text(", won back mainland territory until only ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Calais", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Calais"
+
+        LinkTitle([ ])
+      )
+      Text(" remained. Under ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Mary I of England", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Mary I of England"
+
+        LinkTitle([ ])
+      )
+      Text(" this was lost to the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Spanish Netherlands", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Spanish Netherlands"
+
+        LinkTitle([ ])
+      )
+      Text(".")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      Text("Charles IV (The Fair) died without an heir in 1328.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>"
+          {N} body = "Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101."
+          {N} name = "ref"
+
+        [
+          XmlAttribute(
+            Properties:
+                  RTD = RtData: [0] = " name=\"", [1] = "\""
+              {N} hasValue = true
+              {N} name = "name"
+
+            [ Text("guerard") ]
+          )
+        ]
+      )
+      Text("  Under the rules of the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Salic Law", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Salic Law"
+
+        LinkTitle([ ])
+      )
+      Text(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = "/>"
+          {N} body = ""
+          {N} name = "ref"
+
+        [
+          XmlAttribute(
+            Properties:
+                  RTD = RtData: [0] = " name=\"", [1] = "\""
+              {N} hasValue = true
+              {N} name = "name"
+
+            [ Text("guerard") ]
+          )
+        ]
+      )
+      Text(" Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Philip IV of France", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Philip IV of France"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Philip of Valois") ]
+        )
+      )
+      Text(", the French monarchy reached the height of its medieval power.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = "/>"
+          {N} body = ""
+          {N} name = "ref"
+
+        [
+          XmlAttribute(
+            Properties:
+                  RTD = RtData: [0] = " name=\"", [1] = "\""
+              {N} hasValue = true
+              {N} name = "name"
+
+            [ Text("guerard") ]
+          )
+        ]
+      )
+      Text(" However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Black Death", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Black Death"
+
+        LinkTitle([ ])
+      )
+      Text(",")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>"
+          {N} body = "[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009."
+          {N} name = "ref"
+
+        [
+          XmlAttribute(
+            Properties:
+                  RTD = RtData: [0] = " name =", [1]
+              {N} hasValue = true
+              {N} name = "name"
+
+            [ ]
+          )
+          XmlAttribute(
+            Properties:
+                  RTD = RtData: [0] = " Encarta", [1]
+              {N} hasValue = false
+              {N} name = "Encarta"
+
+            [ ]
+          )
+        ]
+      )
+      Text(" England and France went to war in what would become known as the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Hundred Years' War", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Hundred Years' War"
+
+        LinkTitle([ ])
+      )
+      Text(".")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.</ref>"
+          {N} body = "Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''."
+          {N} name = "ref"
+
+        [ ]
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      Text("In the most notorious incident during the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[French Wars of Religion", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "French Wars of Religion"
+
+        LinkTitle([ ])
+      )
+      Text(" (1562\u201398), thousands of ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Huguenots", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Huguenots"
+
+        LinkTitle([ ])
+      )
+      Text(" were murdered in the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[St. Bartholomew's Day massacre", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "St. Bartholomew's Day massacre"
+
+        LinkTitle([ ])
+      )
+      Text(" of 1572.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].</ref>"
+          {N} body = "[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]]."
+          {N} name = "ref"
+
+        [ ]
+      )
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+    Paragraph([
+      Text("The monarchy reached its height during the 17th century and the reign of ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Louis XIV of France", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Louis XIV of France"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Louis XIV") ]
+        )
+      )
+      Text(". At this time, France possessed the largest population in Europe (see ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Demographics of France", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Demographics of France"
+
+        LinkTitle([ ])
+      )
+      Text(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[French language", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "French language"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("French") ]
+        )
+      )
+      Text(" was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.")
+      TagExtension(
+        Properties:
+              RTD = RtData: [0] = "<ref", [1] = ">[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations</ref>"
+          {N} body = "[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations"
+          {N} name = "ref"
+
+        [ ]
+      )
+      Text(" Much of the ")
+      InternalLink(
+        Properties:
+              RTD = RtData: [0] = "[[Age of Enlightenment", [1] = "]]"
+          {N} postfix = ""
+          {N} prefix = ""
+          {N} target = "Age of Enlightenment"
+
+        LinkTitle(
+          Properties:
+                RTD = RtData: [0] = "|", [1]
+
+          [ Text("Enlightenment") ]
+        )
+      )
+      Text(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
+      Whitespace(
+        Properties:
+          {N} hasNewline = true
+
+        [
+          Text("\n")
+          Text("\n")
+        ]
+      )
+    ])
+  ]
+)
+
+================================================================================
+--------------------------------------------------------------------------------
+  //Template[contains(name//Text[@content],"Infobox Country")]//TemplateArgument[contains(name//Text[@content],"capital")]/value
+--------------------------------------------------------------------------------
+[
+  Text(" ")
+  Text("[[")
+  Text("Paris")
+  Text("]]")
+  Text("\n")
+]
+
+================================================================================
