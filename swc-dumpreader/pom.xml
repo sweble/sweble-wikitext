@@ -7,14 +7,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Dump Reader -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-dumpreader</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Dump Reader</name>
@@ -30,7 +30,6 @@
 
     <!-- Dependency versions -->
     <version.dep.aspectjrt>1.6.7</version.dep.aspectjrt>
-    <version.dep.jaxb>2.2.1</version.dep.jaxb>
 
     <!-- Plugin dependency versions -->
     <version.plugin.eclipse>2.9</version.plugin.eclipse>
@@ -49,16 +48,11 @@
       <artifactId>log4j</artifactId>
     </dependency>
 
-    <!-- JAXB -->
-    <dependency>
-      <groupId>javax.xml.bind</groupId>
-      <artifactId>jaxb-api</artifactId>
-    </dependency>
-
     <!-- AspectJ -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
+      <version>${version.dep.aspectjrt}</version>
     </dependency>
 
     <!-- Apache Commons Compress -->
@@ -86,28 +80,6 @@
 
   </dependencies>
 
-  <!-- ==[ Dependency Management ]========================================== -->
-
-  <dependencyManagement>
-    <dependencies>
-
-      <!-- AspectJ -->
-      <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjrt</artifactId>
-        <version>${version.dep.aspectjrt}</version>
-      </dependency>
-
-      <!-- JAXB -->
-      <dependency>
-        <groupId>javax.xml.bind</groupId>
-        <artifactId>jaxb-api</artifactId>
-        <version>${version.dep.jaxb}</version>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
-
   <build>
 
     <!-- ==[ Plugin Configuration ]========================================= -->
@@ -116,7 +88,6 @@
 
       <!-- Eclipse Plugin -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-eclipse-plugin</artifactId>
         <configuration>
           <downloadSources>true</downloadSources>
@@ -150,6 +121,7 @@
       <plugin>
         <groupId>org.jvnet.jaxb2.maven2</groupId>
         <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>${version.plugin.jaxb}</version>
         <executions>
           <execution>
             <id>schema-to-java</id>
@@ -194,10 +166,18 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>aspectj-maven-plugin</artifactId>
+        <version>${version.plugin.aspectj}</version>
         <configuration>
           <source>${version.java}</source>
           <target>${version.java}</target>
         </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <!-- Disable Maven Compiler Plugin in favor of AspectJ Plugin -->
@@ -226,30 +206,14 @@
           </headerDefinitions>
           <excludes>
             <exclude>*</exclude>
+            <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
+            <exclude>src/site/resources/css/site.css</exclude>
             <exclude>src/main/schema/export-*.xsd</exclude>
             <exclude>src/main/schema/catalog/xml.xsd</exclude>
             <exclude>src/main/resources/**</exclude>
           </excludes>
         </configuration>
-      </plugin>
-
-      <!-- Generate Jar with dependencies -->
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
       <!-- Make Git information available as properties -->
@@ -267,51 +231,112 @@
         </executions>
       </plugin>
 
+      <!-- Maven site generation -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <reportPlugins>
+
+            <plugin>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+            <!-- >>> ADDITIONAL REPORT PLUGINS >>> -->
+            <plugin>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <configuration>
+                <quiet>true</quiet>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <id>site-javadoc</id>
+                  <reports>
+                    <report>javadoc</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-jxr-plugin</artifactId>
+              <reportSets>
+                <reportSet>
+                  <id>src-xref</id>
+                  <reports>
+                    <report>jxr</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-pmd-plugin</artifactId>
+              <version>2.7.1</version>
+              <configuration>
+                <targetJdk>${version.java}</targetJdk>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>taglist-maven-plugin</artifactId>
+              <configuration>
+                <encoding>UTF-8</encoding>
+                <sourceFileLocale>en</sourceFileLocale>
+                <emptyComments>true</emptyComments>
+                <tagListOptions>
+                  <tagClasses>
+                    <tagClass>
+                      <displayName>Code Work</displayName>
+                      <tags>
+                        <tag>
+                          <matchString>fixme</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                        <tag>
+                          <matchString>todo</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                        <tag>
+                          <matchString>@todo</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                      </tags>
+                    </tagClass>
+                  </tagClasses>
+                </tagListOptions>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+            <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
+
+          </reportPlugins>
+        </configuration>
+      </plugin>
+
     </plugins>
-
-    <!-- ==[ Plugin Management ]============================================ -->
-
-    <pluginManagement>
-      <plugins>
-
-        <!-- Make it runnable through maven -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>${version.plugin.exec}</version>
-        </plugin>
-
-        <!-- Eclipse Plugin -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-eclipse-plugin</artifactId>
-          <version>${version.plugin.eclipse}</version>
-        </plugin>
-
-        <!-- Maven AspectJ Plugin -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>aspectj-maven-plugin</artifactId>
-          <version>${version.plugin.aspectj}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>compile</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Compile schema files -->
-        <plugin>
-          <groupId>org.jvnet.jaxb2.maven2</groupId>
-          <artifactId>maven-jaxb2-plugin</artifactId>
-          <version>${version.plugin.jaxb}</version>
-        </plugin>
-
-      </plugins>
-    </pluginManagement>
-
   </build>
 
   <!-- ==[ Reporting ]====================================================== -->
@@ -342,10 +367,108 @@
     see parent: <issueManagement>
                 <ciManagement>
                 <mailingLists>
-                <scm>
-                <distributionManagement>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
                 <repositories>
                 <pluginRepositories>
   -->
 
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+
+    <profile>
+      <id>quick</id>
+      <build>
+        <plugins>
+
+          <!-- Don't check and format license headers -->
+          <plugin>
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <!-- Don't run tests -->
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>
+            </configuration>
+          </plugin>
+
+          <!-- Only generate minimal site -->
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <configuration>
+              <reportPlugins>
+                <plugin>
+                  <artifactId>maven-project-info-reports-plugin</artifactId>
+                  <reportSets>
+                    <reportSet>
+                      <reports>
+                        <!-- cim, dependencies, dependency-convergence -->
+                        <report>dependency-management</report>
+                        <report>distribution-management</report>
+                        <report>index</report>
+                        <report>issue-tracking</report>
+                        <report>license</report>
+                        <report>mailing-list</report>
+                        <report>modules</report>
+                        <report>plugin-management</report>
+                        <report>plugins</report>
+                        <report>project-team</report>
+                        <report>scm</report>
+                        <report>summary</report>
+                      </reports>
+                    </reportSet>
+                  </reportSets>
+                </plugin>
+              </reportPlugins>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
 </project>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
-    name="SWC - Engine" >
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/JSONSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+    name="SWC - Dump Reader" >
 
   <bannerLeft>
     <name>Sweble</name>
-    <src>http://sweble.org/img/maven-site-banner-left-swc-engine.png</src>
+    <src>http://sweble.org/img/maven-site-banner-left-swc-dumpreader.png</src>
     <href>http://sweble.org/</href>
   </bannerLeft>
   <bannerRight>
@@ -37,7 +37,7 @@
       <item name="Tooling" href="http://sweble.org/doc/site/tooling" img="" />
       <item name="Sweble" href="http://sweble.org/doc/site/tooling/sweble" img="" />
       <item name="Wikitext Components" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - Engine" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-engine" img="" />
+      <item name="SWC - Dump Reader" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-dumpreader" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>

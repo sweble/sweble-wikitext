@@ -7,14 +7,14 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Engine -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-engine</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Engine</name>
@@ -142,6 +142,7 @@
             <exclude>src/test/resources/**/*.wikitext</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
             <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
@@ -149,25 +150,6 @@
             <exclude>NOTICE</exclude>
           </excludes>
         </configuration>
-      </plugin>
-
-      <!-- Generate Jar with dependencies -->
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
       <!-- Make Git information available as properties -->
@@ -270,6 +252,20 @@
                 </tagListOptions>
               </configuration>
             </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
             <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
 
           </reportPlugins>
@@ -324,6 +320,7 @@
   <!-- ==[ Profiles ]======================================================= -->
 
   <profiles>
+
     <profile>
       <id>quick</id>
       <build>
@@ -375,6 +372,34 @@
                 </plugin>
               </reportPlugins>
             </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
           </plugin>
 
         </plugins>

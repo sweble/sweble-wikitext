@@ -25,6 +25,7 @@
 /src/site
 /src/site/apt
 /src/site/apt/index.apt.vm
+/src/site/changes.xml
 /src/site/resources
 /src/site/resources/css
 /src/site/resources/css/site.css

@@ -38,6 +38,7 @@ ZIP="${WDIR}/target/${TITLE}-jar.zip"
 #mvn clean &>> "${LOG}"
 rm -rf "$LOG" "$JARPRJ" "$ZIP"
 
+echo
 echo "Verifying ..."
 echo "Verifying ..." &>> "${LOG}"
 mvn verify &>> "${LOG}"
@@ -101,4 +102,6 @@ popd &>/dev/null
 
 # Zip it
 zip -r "${ZIP}" "${JARPRJ}" &>> "${LOG}"
-echo "Generated eclipse example project in: ${ZIP}"
+echo
+echo "PROJECT: ${ZIP}"
+echo
