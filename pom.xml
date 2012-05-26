@@ -7,7 +7,7 @@
   <parent>
     <groupId>de.fau.cs.osr</groupId>
     <artifactId>tooling</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
     <relativePath>../tooling/pom.xml</relativePath>
   </parent>
 
@@ -15,7 +15,7 @@
 
   <groupId>org.sweble</groupId>
   <artifactId>sweble</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sweble</name>
@@ -72,6 +72,7 @@
           <excludes>
             <exclude>**/.gitignore</exclude>
             <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
@@ -87,6 +88,20 @@
 
             <plugin>
               <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
             </plugin>
 
           </reportPlugins>
