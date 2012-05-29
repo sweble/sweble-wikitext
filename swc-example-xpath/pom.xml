@@ -73,6 +73,30 @@
         </configuration>
       </plugin>
 
+      <!-- Copy libraries to target/lib (needed by .jar package) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <!--
+              Should really be:
+              <outputDirectory>DOLLAR{project.build.directory}/lib</outputDirectory>
+              But the Variable is replaced too early, messing up the packaged archetype.
+                -->
+              <outputDirectory>target/lib</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- Check and format license headers -->
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
