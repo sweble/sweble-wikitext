@@ -8,6 +8,11 @@ if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
   exit -1
 fi
 
+MVN=`which mvn`
+
+$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
+	MVN=`which mvn3` || exit -1
+
 pushd $PRJ &>/dev/null
 
 WDIR=$(pwd)
@@ -22,20 +27,20 @@ ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
 # Build example project and generate archetype
 #echo "Cleaning ..."
 #echo "Cleaning ..." &>> "${LOG}"
-#mvn clean &>> "${LOG}"
+#$MVN clean &>> "${LOG}"
 rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
 
 #echo "Verifying ..."
 #echo "Verifying ..." &>> "${LOG}"
-#mvn verify &>> "${LOG}"
-#mvn clean &>/dev/null
+#$MVN verify &>> "${LOG}"
+#$MVN clean &>/dev/null
 
 echo "Gathering information on sweble-wikitext parent pom..."
 echo "Gathering information on sweble-wikitext parent pom..." &>> "${LOG}"
 pushd ../ &>/dev/null
-SWEBLE_WIKITEXT_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-SWEBLE_WIKITEXT_GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
-SWEBLE_WIKITEXT_ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
+SWEBLE_WIKITEXT_VERSION=$($MVN help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
+SWEBLE_WIKITEXT_GROUP_ID=$($MVN help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
+SWEBLE_WIKITEXT_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
 popd &>/dev/null
 if [[ $SWEBLE_WIKITEXT_GROUP_ID != "org.sweble.wikitext" ]] || [[ $SWEBLE_WIKITEXT_ARTIFACT_ID != "sweble-wikitext" ]]; then
   echo "Expected org.sweble.wikitext:sweble-wikitext project in parent directory!"
@@ -45,9 +50,9 @@ echo "sweble-wikitext version: ${SWEBLE_WIKITEXT_VERSION}" >> "${LOG}"
 
 echo "Gathering information on example project ..."
 echo "Gathering information on example project ..." &>> "${LOG}"
-PRJ_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-PRJ_GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
-PRJ_ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
+PRJ_VERSION=$($MVN help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
+PRJ_GROUP_ID=$($MVN help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
+PRJ_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
 echo "Project groupId: ${PRJ_GROUP_ID}" >> "${LOG}"
 echo "Project artifactId: ${PRJ_ARTIFACT_ID}" >> "${LOG}"
 echo "Project version: ${PRJ_VERSION}" >> "${LOG}"
@@ -65,7 +70,7 @@ pushd "$ARCHETYPE_SRC_DIR" &>/dev/null
   echo "ARCHETYPE: ${ARCHETYPE_DST_DIR}"
   echo
 
-  mvn archetype:create-from-project &>> "${LOG}"
+  $MVN archetype:create-from-project &>> "${LOG}"
   mv  target/generated-sources/archetype "$ARCHETYPE_DST_DIR"
 
 popd &>/dev/null
@@ -120,15 +125,15 @@ pushd ${ARCHETYPE_DST_DIR} &> /dev/null
   echo "Installing archetype ..."
   echo "Installing archetype ..." &>> "${LOG}"
 
-  AT_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-  AT_GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
-  AT_ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
+  AT_VERSION=$($MVN help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
+  AT_GROUP_ID=$($MVN help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
+  AT_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
 
   echo "Archetype groupId: ${AT_GROUP_ID}" >> "${LOG}"
   echo "Archetype artifactId: ${AT_ARTIFACT_ID}" >> "${LOG}"
   echo "Archetype version: ${AT_VERSION}" >> "${LOG}"
 
-  mvn install &>> "${LOG}"
+  $MVN install &>> "${LOG}"
 
   echo
   echo "JAR: ${ARCHETYPE_DST_DIR}/target/${AT_ARTIFACT_ID}-${AT_VERSION}.jar"
@@ -137,7 +142,7 @@ pushd ${ARCHETYPE_DST_DIR} &> /dev/null
   echo "Generating site ..."
   echo "Generating site ..." &>> "${LOG}"
 
-  mvn site site:stage &>> "${LOG}"
+  $MVN site site:stage &>> "${LOG}"
 
   echo
   echo "Staged SITE: ${ARCHETYPE_DST_DIR}/target/staging"
@@ -151,7 +156,7 @@ PROJECT=project
 rm -rf ${ARCHETYPE_TEST_DIR}
 mkdir ${ARCHETYPE_TEST_DIR}
 pushd ${ARCHETYPE_TEST_DIR} &> /dev/null
-mvn archetype:generate \
+$MVN archetype:generate \
 	-B \
 	-DarchetypeCatalog=local \
 	-DarchetypeGroupId=${AT_GROUP_ID} \
@@ -166,7 +171,7 @@ popd &> /dev/null
 echo "Verifying generated project ..."
 echo "Verifying generated project ..." &>> "${LOG}"
 pushd ${ARCHETYPE_TEST_DIR}/${PROJECT} &> /dev/null
-mvn verify &>> "${LOG}"
+$MVN verify &>> "${LOG}"
 popd &> /dev/null
 
 # Deploy
@@ -177,7 +182,7 @@ if [[ ! -z ${DEPLOY_EXAMPLE_ARCHETYPES-} ]]; then
     echo "Deploying archetype ..."
     echo "Deploying archetype ..." &>> "${LOG}"
 
-    mvn deploy $DEPLOY_EXAMPLE_ARCHETYPES &>> "${LOG}"
+    $MVN deploy $DEPLOY_EXAMPLE_ARCHETYPES &>> "${LOG}"
 
   popd &> /dev/null
 
