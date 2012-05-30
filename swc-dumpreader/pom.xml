@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Parent POM: Sweble Wikitext Components -->
+
+  <parent>
+    <groupId>org.sweble.wikitext</groupId>
+    <artifactId>sweble-wikitext</artifactId>
+    <version>1.1.1-SNAPSHOT</version>
+  </parent>
+
+  <!-- This POM: Sweble Wikitext Components - Dump Reader -->
+
+  <groupId>org.sweble.wikitext</groupId>
+  <artifactId>swc-dumpreader</artifactId>
+  <version>1.1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SWC - Sweble Dump Reader</name>
+  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-dumpreader</url>
+  <inceptionYear>2012</inceptionYear>
+  <description>
+    A small library for reading in Wikipedia dumps.
+  </description>
+
+  <!-- ==[ Properties ]===================================================== -->
+
+  <properties>
+
+    <!-- Dependency versions -->
+    <version.dep.aspectjrt>1.6.7</version.dep.aspectjrt>
+
+    <!-- Plugin dependency versions -->
+    <version.plugin.eclipse>2.9</version.plugin.eclipse>
+    <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
+    <version.plugin.aspectj>1.3</version.plugin.aspectj>
+
+  </properties>
+
+  <!-- ==[ Dependencies ]=================================================== -->
+
+  <dependencies>
+
+    <!-- Log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+
+    <!-- AspectJ -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>${version.dep.aspectjrt}</version>
+    </dependency>
+
+    <!-- Apache Commons Compress -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <!-- Utils -->
+    <dependency>
+      <groupId>de.fau.cs.osr.utils</groupId>
+      <artifactId>utils</artifactId>
+    </dependency>
+
+    <!--
+      Testing
+    -->
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <!-- ==[ Plugin Configuration ]========================================= -->
+
+    <plugins>
+
+      <!-- Eclipse Plugin -->
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>true</downloadJavadocs>
+          <ajdtVersion>1.5</ajdtVersion>
+        </configuration>
+      </plugin>
+
+      <!-- Add various source directories -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/main/schema</source>
+                <source>target/generated-sources/xjc</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Compile schema files -->
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>${version.plugin.jaxb}</version>
+        <executions>
+          <execution>
+            <id>schema-to-java</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>compile-mw-schema-0.5</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.5.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_5</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compile-mw-schema-0.6</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.6-fixed.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_6</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Maven AspectJ Plugin -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+        <version>${version.plugin.aspectj}</version>
+        <configuration>
+          <source>${version.java}</source>
+          <target>${version.java}</target>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Disable Maven Compiler Plugin in favor of AspectJ Plugin -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Check and format license headers -->
+      <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <header>../etc/license-header.txt</header>
+          <mapping>
+             <rats>JAVADOC_STYLE</rats>
+             <jflex>JAVADOC_STYLE</jflex>
+             <apt>PTK_APT_STYLE</apt>
+          </mapping>
+          <headerDefinitions>
+            <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
+          </headerDefinitions>
+          <excludes>
+            <exclude>*</exclude>
+            <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
+            <exclude>src/site/resources/css/site.css</exclude>
+            <exclude>src/main/schema/export-*.xsd</exclude>
+            <exclude>src/main/schema/catalog/xml.xsd</exclude>
+            <exclude>src/main/resources/**</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Make Git information available as properties -->
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+        <executions>
+          <!-- Disabled until problem
+            https://github.com/ktoso/maven-git-commit-id-plugin/issues/19
+            is resolved -->
+          <execution>
+            <id>git-commit-info-disabled</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Maven site generation -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <reportPlugins>
+
+            <plugin>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+            <!-- >>> ADDITIONAL REPORT PLUGINS >>> -->
+            <plugin>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <configuration>
+                <quiet>true</quiet>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <id>site-javadoc</id>
+                  <reports>
+                    <report>javadoc</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-jxr-plugin</artifactId>
+              <reportSets>
+                <reportSet>
+                  <id>src-xref</id>
+                  <reports>
+                    <report>jxr</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-pmd-plugin</artifactId>
+              <version>2.7.1</version>
+              <configuration>
+                <targetJdk>${version.java}</targetJdk>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>taglist-maven-plugin</artifactId>
+              <configuration>
+                <encoding>UTF-8</encoding>
+                <sourceFileLocale>en</sourceFileLocale>
+                <emptyComments>true</emptyComments>
+                <tagListOptions>
+                  <tagClasses>
+                    <tagClass>
+                      <displayName>Code Work</displayName>
+                      <tags>
+                        <tag>
+                          <matchString>fixme</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                        <tag>
+                          <matchString>todo</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                        <tag>
+                          <matchString>@todo</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                      </tags>
+                    </tagClass>
+                  </tagClasses>
+                </tagListOptions>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+            <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
+
+          </reportPlugins>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- ==[ Reporting ]====================================================== -->
+
+  <!--
+    see parent: <reporting>
+  -->
+
+  <!-- ==[ More Project Information ]======================================= -->
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!--
+    see parent: <organization>
+                <developers>
+                <contributors>
+  -->
+
+  <!-- ==[ Environment Settings ]=========================================== -->
+
+  <!--
+    see parent: <issueManagement>
+                <ciManagement>
+                <mailingLists>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
+                <repositories>
+                <pluginRepositories>
+  -->
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+
+    <profile>
+      <id>quick</id>
+      <build>
+        <plugins>
+
+          <!-- Don't check and format license headers -->
+          <plugin>
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <!-- Don't run tests -->
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>
+            </configuration>
+          </plugin>
+
+          <!-- Only generate minimal site -->
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <configuration>
+              <reportPlugins>
+                <plugin>
+                  <artifactId>maven-project-info-reports-plugin</artifactId>
+                  <reportSets>
+                    <reportSet>
+                      <reports>
+                        <!-- cim, dependencies, dependency-convergence -->
+                        <report>dependency-management</report>
+                        <report>distribution-management</report>
+                        <report>index</report>
+                        <report>issue-tracking</report>
+                        <report>license</report>
+                        <report>mailing-list</report>
+                        <report>modules</report>
+                        <report>plugin-management</report>
+                        <report>plugins</report>
+                        <report>project-team</report>
+                        <report>scm</report>
+                        <report>summary</report>
+                      </reports>
+                    </reportSet>
+                  </reportSets>
+                </plugin>
+              </reportPlugins>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
+</project>

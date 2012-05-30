@@ -36,8 +36,8 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 import de.fau.cs.osr.utils.Tuple2;
 
 public final class ExpansionVisitor
-        extends
-            AstVisitor
+		extends
+			AstVisitor
 {
 	private final ExpansionFrame preprocessorFrame;
 	
@@ -77,7 +77,7 @@ public final class ExpansionVisitor
 		AstNode result = null;
 		
 		Tuple2<String, NodeList> converted =
-		        StringConverterPartial.convert(n.getName());
+				StringConverterPartial.convert(n.getName());
 		
 		String title = converted._1;
 		
@@ -109,7 +109,7 @@ public final class ExpansionVisitor
 			else
 			{
 				preprocessorFrame.illegalTemplateName(
-				        new StringConversionException(tail), n.getName());
+						new StringConversionException(tail), n.getName());
 			}
 		}
 		

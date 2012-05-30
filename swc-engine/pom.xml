@@ -7,18 +7,18 @@
   <parent>
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Engine -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-engine</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Engine</name>
-  <url>http://osr.informatik.uni-erlangen.de</url>
+  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-engine</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     A minimal engine using the Sweble Lazy Wikitext Parser to
@@ -91,6 +91,44 @@
         </executions>
       </plugin>
 
+      <!-- Compile schema files -->
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <configuration>
+          <schemaDirectory>${basedir}/src/main/autogen</schemaDirectory>
+          <generatePackage>org.sweble.wikitext.engine.utils</generatePackage>
+          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+          <schemaIncludes>
+            <include>SimpleWikiConfiguration.xsd</include>
+          </schemaIncludes>
+          <!--
+          <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+           -->
+          <forceRegenerate>true</forceRegenerate>
+          <strict>true</strict>
+        </configuration>
+      </plugin>
+
+      <!-- Compile schema files -->
+      <!--
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <configuration>
+          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom</schemaDirectory>
+          <schemaIncludes>
+            <include>xwml-1.0.xsd</include>
+          </schemaIncludes>
+          <generatePackage>org.sweble.wikitext.engine.wom</generatePackage>
+          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
+          <strict>false</strict>
+          <forceRegenerate>true</forceRegenerate>
+        </configuration>
+      </plugin>
+      -->
+
       <!-- Generate Ast Nodes -->
       <plugin>
         <groupId>de.fau.cs.osr.ptk</groupId>
@@ -140,31 +178,15 @@
             <exclude>src/test/resources/**/*.wom</exclude>
             <exclude>src/test/resources/**/*.ast</exclude>
             <exclude>src/test/resources/**/NOTICE</exclude>
+            <exclude>src/site/site.xml</exclude>
+            <exclude>src/site/changes.xml</exclude>
+            <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
           </excludes>
         </configuration>
-      </plugin>
-
-      <!-- Generate Jar with dependencies -->
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
       <!-- Make Git information available as properties -->
@@ -182,23 +204,6 @@
         </executions>
       </plugin>
 
-      <!-- Compile schema files -->
-      <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <configuration>
-          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom</schemaDirectory>
-          <schemaIncludes>
-            <include>xwml-1.0.xsd</include>
-          </schemaIncludes>
-          <generatePackage>org.sweble.wikitext.engine.wom</generatePackage>
-          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
-          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
-          <strict>false</strict>
-          <forceRegenerate>true</forceRegenerate>
-        </configuration>
-      </plugin>
-
       <!-- Generate PlantUML diagrams -->
       <plugin>
         <groupId>com.github.jeluard</groupId>
@@ -212,6 +217,112 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- Maven site generation -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <reportPlugins>
+
+            <plugin>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+
+            <!-- >>> ADDITIONAL REPORT PLUGINS >>> -->
+            <plugin>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <configuration>
+                <quiet>true</quiet>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <id>site-javadoc</id>
+                  <reports>
+                    <report>javadoc</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-jxr-plugin</artifactId>
+              <reportSets>
+                <reportSet>
+                  <id>src-xref</id>
+                  <reports>
+                    <report>jxr</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-pmd-plugin</artifactId>
+              <version>2.7.1</version>
+              <configuration>
+                <targetJdk>${version.java}</targetJdk>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>taglist-maven-plugin</artifactId>
+              <configuration>
+                <encoding>UTF-8</encoding>
+                <sourceFileLocale>en</sourceFileLocale>
+                <emptyComments>true</emptyComments>
+                <tagListOptions>
+                  <tagClasses>
+                    <tagClass>
+                      <displayName>Code Work</displayName>
+                      <tags>
+                        <tag>
+                          <matchString>fixme</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                        <tag>
+                          <matchString>todo</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                        <tag>
+                          <matchString>@todo</matchString>
+                          <matchType>ignoreCase</matchType>
+                        </tag>
+                      </tags>
+                    </tagClass>
+                  </tagClasses>
+                </tagListOptions>
+              </configuration>
+            </plugin>
+
+            <plugin>
+              <artifactId>maven-changes-plugin</artifactId>
+              <configuration>
+                <xmlPath>${basedir}/src/site/changes.xml</xmlPath>
+              </configuration>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+            <!-- <<< ADDITIONAL REPORT PLUGINS <<< -->
+
+          </reportPlugins>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 
@@ -243,10 +354,108 @@
     see parent: <issueManagement>
                 <ciManagement>
                 <mailingLists>
-                <scm>
-                <distributionManagement>
+  -->
+
+  <scm>
+    <connection>scm:git://sweble.org/git/sweble-wikitext.git</connection>
+    <developerConnection>scm:git:ssh://gitosis@sweble.org/sweble-wikitext.git</developerConnection>
+    <url>http://sweble.org/gitweb/?p=sweble-wikitext.git;a=summary</url>
+  </scm>
+
+  <!--
+    see parent: <distributionManagement>
                 <repositories>
                 <pluginRepositories>
   -->
 
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+
+    <profile>
+      <id>quick</id>
+      <build>
+        <plugins>
+
+          <!-- Don't check and format license headers -->
+          <plugin>
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+
+          <!-- Don't run tests -->
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>
+            </configuration>
+          </plugin>
+
+          <!-- Only generate minimal site -->
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <configuration>
+              <reportPlugins>
+                <plugin>
+                  <artifactId>maven-project-info-reports-plugin</artifactId>
+                  <reportSets>
+                    <reportSet>
+                      <reports>
+                        <!-- cim, dependencies, dependency-convergence -->
+                        <report>dependency-management</report>
+                        <report>distribution-management</report>
+                        <report>index</report>
+                        <report>issue-tracking</report>
+                        <report>license</report>
+                        <report>mailing-list</report>
+                        <report>modules</report>
+                        <report>plugin-management</report>
+                        <report>plugins</report>
+                        <report>project-team</report>
+                        <report>scm</report>
+                        <report>summary</report>
+                      </reports>
+                    </reportSet>
+                  </reportSets>
+                </plugin>
+              </reportPlugins>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>build-aggregates</id>
+      <build>
+        <plugins>
+
+          <!-- Generate Jar with dependencies -->
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+  </profiles>
 </project>

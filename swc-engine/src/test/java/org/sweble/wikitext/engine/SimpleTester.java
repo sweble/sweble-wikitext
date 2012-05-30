@@ -18,7 +18,6 @@
 package org.sweble.wikitext.engine;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URLEncoder;
 
 import joptsimple.OptionException;
@@ -26,10 +25,8 @@ import joptsimple.OptionException;
 import org.apache.commons.io.FileUtils;
 import org.sweble.wikitext.engine.utils.HtmlPrinter;
 import org.sweble.wikitext.engine.utils.LogPrinter;
-import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.utils.NodeStats;
 
-import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinter;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.utils.getopt.Options;
@@ -54,14 +51,14 @@ public class SimpleTester
 	
 	// =========================================================================
 	
-	public static void main(String[] args) throws IOException, ParseException, LinkTargetException, CompilerException
+	public static void main(String[] args) throws Exception
 	{
 		new SimpleTester().run(args);
 	}
 	
 	// =========================================================================
 	
-	private void run(String[] args) throws IOException, ParseException, LinkTargetException, CompilerException
+	private void run(String[] args) throws Exception
 	{
 		if (!parseCmdLine(args))
 			return;
@@ -131,32 +128,32 @@ public class SimpleTester
 	private boolean parseCmdLine(String[] args)
 	{
 		options.createOption('h', "help")
-		        .withDescription("Print help message.")
-		        .create();
+				.withDescription("Print help message.")
+				.create();
 		
 		options.createOption("for-inclusion")
-		        .withDescription("Preprocess for inclusion.")
-		        .create();
+				.withDescription("Preprocess for inclusion.")
+				.create();
 		
 		options.createOption("dont-follow-redirect")
-		        .withDescription("Don't follow redirects in pages (Not yet supported).")
-		        .create();
+				.withDescription("Don't follow redirects in pages (Not yet supported).")
+				.create();
 		
 		options.createOption("preprocess")
-		        .withDescription("Preprocess.")
-		        .create();
+				.withDescription("Preprocess.")
+				.create();
 		
 		options.createOption("parse")
-		        .withDescription("Parse (overrides preprocess).")
-		        .create();
+				.withDescription("Parse (overrides preprocess).")
+				.create();
 		
 		options.createOption("postprocess")
-		        .withDescription("Postprocess (overrides parse, default).")
-		        .create();
+				.withDescription("Postprocess (overrides parse, default).")
+				.create();
 		
 		options.createOption("no-ast")
-		        .withDescription("Don't generate an AST dump.")
-		        .create();
+				.withDescription("Don't generate an AST dump.")
+				.create();
 		
 		try
 		{

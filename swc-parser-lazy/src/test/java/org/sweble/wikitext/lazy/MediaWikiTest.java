@@ -56,9 +56,9 @@ public class MediaWikiTest
 	public void testWhiteboxAst() throws IOException, ParseException
 	{
 		parseAndPrintTest(
-		        new AstVisitor[] { new AstCompressor() },
-		        new FullTest.AstPrinter(),
-		        false);
+				new AstVisitor[] { new AstCompressor() },
+				new FullTest.AstPrinter(),
+				false);
 	}
 	
 	@Ignore
@@ -66,14 +66,17 @@ public class MediaWikiTest
 	public void testWhiteboxRtWikitextPrinter() throws IOException, ParseException
 	{
 		parseAndPrintTest(
-		        new AstVisitor[] { new AstCompressor() },
-		        new FullTest.RtWikitextAstPrinter(),
-		        true);
+				new AstVisitor[] { new AstCompressor() },
+				new FullTest.RtWikitextAstPrinter(),
+				true);
 	}
 	
 	// =========================================================================
 	
-	public void parseAndPrintTest(AstVisitor[] visitors, GenericPrinterInterface printer, boolean cmpInput) throws IOException, ParseException
+	public void parseAndPrintTest(
+			AstVisitor[] visitors,
+			GenericPrinterInterface printer,
+			boolean cmpInput) throws IOException, ParseException
 	{
 		System.out.println();
 		System.out.println("Parser & Print test:");
@@ -114,12 +117,12 @@ public class MediaWikiTest
 		System.out.println("Reading test cases: " + file);
 		
 		InputStream s =
-		        MediaWikiTest.class.getResourceAsStream(file);
+				MediaWikiTest.class.getResourceAsStream(file);
 		
 		String src = IOUtils.toString(s);
 		
 		Pattern p = Pattern.compile(
-		        "(?m)^[ \t]*!![ \t]*(\\w+):?[ \t]*(?:\r\n?|\n)");
+				"(?m)^[ \t]*!![ \t]*(\\w+):?[ \t]*(?:\r\n?|\n)");
 		
 		Matcher m = p.matcher(src);
 		
@@ -279,7 +282,12 @@ public class MediaWikiTest
 		
 		private final String result;
 		
-		public Test(String name, String options, String input, String config, String result)
+		public Test(
+				String name,
+				String options,
+				String input,
+				String config,
+				String result)
 		{
 			super();
 			this.name = name;

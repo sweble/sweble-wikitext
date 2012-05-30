@@ -19,44 +19,59 @@
 set -o errexit
 
 PRJ="$1"
-if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
+if [[ -z "${PRJ}" ]] || [[ ! -d "${PRJ}" ]]; then
 	echo "Usage: $0 PROJECT"
 	exit -1
 fi
 
-JARPRJ="${PRJ}-jar"
+MVN=`which mvn`
 
-REPO="http://mojo.informatik.uni-erlangen.de/nexus/content/groups/public"
+$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
+	MVN=`which mvn3` || exit -1
 
-echo "generating eclipse example from project '${PRJ}'"
+pushd "${PRJ}" &>/dev/null
+
+WDIR=$(pwd)
+TITLE=$(basename "${WDIR}")
+LOG="${WDIR}/generate-example-eclipse-project.log"
+JARPRJ="${WDIR}/target/generated-sources/${TITLE}-jar"
+ZIP="${WDIR}/target/${TITLE}-jar.zip"
+
+# Build example project and generate archetype
+#echo "Cleaning ..."
+#echo "Cleaning ..." &>> "${LOG}"
+#$MVN clean &>> "${LOG}"
+rm -rf "$LOG" "$JARPRJ" "$ZIP"
+
+echo
+echo "Verifying ..."
+echo "Verifying ..." &>> "${LOG}"
+$MVN verify &>> "${LOG}"
+#$MVN clean &>/dev/null
 
 CLASSPATH=""
 function get_dependency() {
 
-	echo
 	GROUPID="$1"
 	ARTIFACTID="$2"
 
-	pushd ../"${PRJ}" &>/dev/null
+	pushd "${WDIR}" &>/dev/null
 
-	echo "identifying version of '${GROUPID}:${ARTIFACTID}'"
+	echo "Identifying version of '${GROUPID}:${ARTIFACTID}'"
 	VERSION=$( \
-		mvn dependency:list | \
+		$MVN dependency:list | \
 		grep -e "\[INFO\][ ]*${GROUPID}:${ARTIFACTID}" | \
 		sed -e "s/.*${GROUPID}:${ARTIFACTID}:jar:\([^:]\+\):.*/\1/" )
 
-	#echo "version: $VERSION"
-
 	JAR="${ARTIFACTID}-${VERSION}-jar-with-dependencies.jar"
-	echo "downloading '$JAR'"
-	mvn org.apache.maven.plugins:maven-dependency-plugin:2.4:get \
+	echo "Downloading '$JAR'"
+	$MVN org.apache.maven.plugins:maven-dependency-plugin:2.4:get \
 		-DgroupId=${GROUPID} \
 		-DartifactId=${ARTIFACTID} \
 		-Dversion=${VERSION} \
 		-Dpackaging=jar \
 		-Dclassifier=jar-with-dependencies \
-		-DremoteRepositories=${REPO} \
-		-Ddest=../"$JARPRJ"/lib/"$JAR" &> ../"$JARPRJ"/generate-example-eclipse-project.log
+		-Ddest="../${JARPRJ}/lib/${JAR}" &>> "${LOG}"
 
 	CLASSPATH="$CLASSPATH	<classpathentry kind=\"lib\" path=\"lib/$JAR\"/>"$'\n'
 
@@ -64,23 +79,22 @@ function get_dependency() {
 
 }
 
-mkdir "${JARPRJ}"
+mkdir -p "${JARPRJ}"
 pushd "${JARPRJ}" &>/dev/null
 
-mkdir lib
+mkdir -p lib
 get_dependency "org.sweble.wikitext" "swc-engine"
 
-cp ../${PRJ}/eclipse-project-files/project .project
+cp ${WDIR}/eclipse-project-files/project .project
 
-cat ../${PRJ}/eclipse-project-files/classpath | sed -e '/<!-- LIBS -->/q' > .classpath
+cat ${WDIR}/eclipse-project-files/classpath | sed -e '/<!-- LIBS -->/q' > .classpath
 echo -n "$CLASSPATH" >> .classpath
-cat ../${PRJ}/eclipse-project-files/classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
+cat ${WDIR}/eclipse-project-files/classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
 
-echo
 dest="src"
 for i in {main,test}; do
 	for j in {java,resources}; do
-		src="../${PRJ}/src/$i/$j"
+		src="${WDIR}/src/$i/$j"
 		if [[ -d $src ]]; then
 			echo "copying: $src -> $dest"
 			rsync -a $src/ $dest/
@@ -90,3 +104,9 @@ for i in {main,test}; do
 done
 
 popd &>/dev/null
+
+# Zip it
+zip -r "${ZIP}" "${JARPRJ}" &>> "${LOG}"
+echo
+echo "PROJECT: ${ZIP}"
+echo

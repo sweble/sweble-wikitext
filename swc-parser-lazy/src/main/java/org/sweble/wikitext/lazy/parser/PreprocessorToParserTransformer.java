@@ -33,29 +33,29 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 public class PreprocessorToParserTransformer
 {
 	public static PreprocessedWikitext transform(
-	        LazyPreprocessedPage preprocessedArticle,
-	        EntityMap entityMap)
+			LazyPreprocessedPage preprocessedArticle,
+			EntityMap entityMap)
 	{
 		return new PreprocessedWikitext(
-		        (String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
-		        entityMap);
+				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
+				entityMap);
 	}
 	
 	public static PreprocessedWikitext transform(
-	        LazyPreprocessedPage preprocessedArticle,
-	        EntityMap entityMap,
-	        boolean trim)
+			LazyPreprocessedPage preprocessedArticle,
+			EntityMap entityMap,
+			boolean trim)
 	{
 		return new PreprocessedWikitext(
-		        (String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
-		        entityMap);
+				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
+				entityMap);
 	}
 	
 	// =========================================================================
 	
 	protected static final class TransformVisitor
-	        extends
-	            AstVisitor
+			extends
+				AstVisitor
 	{
 		private StringBuilder builder;
 		

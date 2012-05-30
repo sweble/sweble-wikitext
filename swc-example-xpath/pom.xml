@@ -1,22 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Parent POM: Sweble -->
-
-  <parent>
-    <groupId>org.sweble.wikitext</groupId>
-    <artifactId>sweble-wikitext</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
-    <relativePath>../../tooling/pom.xml</relativePath>
-  </parent>
-
   <!-- This POM -->
 
   <groupId>org.example</groupId>
   <artifactId>swc-example-xpath</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
 
-  <name>SWC - XPath Example Project</name>
+  <name>SWC - XPath Example</name>
   <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2011</inceptionYear>
   <description>
@@ -42,7 +33,7 @@
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-engine</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.1.1-SNAPSHOT</version>
     </dependency>
 
     <!-- JUnit -->
@@ -70,6 +61,7 @@
       <!-- Create a JAR package -->
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.1</version>
         <configuration>
           <archive>
             <manifest>
@@ -81,9 +73,11 @@
         </configuration>
       </plugin>
 
+      <!-- Copy libraries to target/lib (needed by .jar package) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.4</version>
         <executions>
           <execution>
             <id>copy-dependencies</id>
@@ -92,7 +86,12 @@
               <goal>copy-dependencies</goal>
             </goals>
             <configuration>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
+              <!--
+              Should really be:
+              <outputDirectory>DOLLAR{project.build.directory}/lib</outputDirectory>
+              But the Variable is replaced too early, messing up the packaged archetype.
+                -->
+              <outputDirectory>target/lib</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -102,6 +101,7 @@
       <plugin>
         <groupId>com.mycila.maven-license-plugin</groupId>
         <artifactId>maven-license-plugin</artifactId>
+        <version>1.9.0</version>
         <configuration>
           <header>../etc/license-header.txt</header>
           <excludes>
@@ -117,12 +117,22 @@
         </configuration>
       </plugin>
 
-      <!-- DO NOT DEPLOAY THE EXAMPLE PROJECT ITSELF -->
+      <!-- DO NOT DEPLOY THE EXAMPLE PROJECT ITSELF -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.7</version>
         <configuration>
           <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- DO NOT GENERATE A SITE FOR THE EXAMPLE PROJECT ITSELF -->
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
         </configuration>
       </plugin>
     </plugins>
@@ -133,6 +143,7 @@
         <!-- Java Maven Compiler Plugin -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
           <configuration>
             <source>${version.java}</source>
             <target>${version.java}</target>
@@ -145,18 +156,81 @@
   <repositories>
     <repository>
       <releases>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
+        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>
         <updatePolicy>daily</updatePolicy>
         <checksumPolicy>warn</checksumPolicy>
       </snapshots>
-      <id>osr-public-repositories</id>
-      <name>OSR Public Repositories</name>
+      <id>osr-public-snapshots-repo</id>
+      <name>OSR Public Snapshots Repository</name>
       <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+      <id>osr-public-plugin-snapshots-repo</id>
+      <name>OSR Public Plugin Snapshots Repository</name>
+      <url>http://mojo.informatik.uni-erlangen.de/nexus/content/repositories/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!-- ==[ Profiles ]======================================================= -->
+
+  <profiles>
+    <profile>
+      <id>build-examples</id>
+      <build>
+        <plugins>
+
+          <!-- Call shell scripts to build examples -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <executions>
+              <execution>
+                <id>exec-generate-example-archetype</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>../bin/generate-example-archetype</executable>
+                  <arguments>
+                    <argument>.</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>exec-generate-example-eclipse-project</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>../bin/generate-example-eclipse-project</executable>
+                  <arguments>
+                    <argument>.</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>

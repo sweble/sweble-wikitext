@@ -17,8 +17,7 @@
 
 package org.sweble.wikitext.lazy.postprocessor;
 
-import static org.sweble.wikitext.lazy.postprocessor.IntermediateTags.BOLD;
-import static org.sweble.wikitext.lazy.postprocessor.IntermediateTags.ITALICS;
+import static org.sweble.wikitext.lazy.postprocessor.IntermediateTags.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;

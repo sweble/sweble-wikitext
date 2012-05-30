@@ -18,23 +18,18 @@
 package org.example;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
 import junit.framework.Assert;
 
 import org.apache.commons.io.IOUtils;
-import org.example.App;
 import org.junit.Test;
-import org.sweble.wikitext.engine.CompilerException;
-import org.sweble.wikitext.lazy.LinkTargetException;
 
 public class AppTest
 {
 	@Test
-	public void test() throws FileNotFoundException, IOException, LinkTargetException, CompilerException
+	public void test() throws Exception
 	{
 		String title = "Simple_Page";
 		

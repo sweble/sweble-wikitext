@@ -35,11 +35,11 @@ public class NodeStats
 	}
 	
 	protected static final class NodeStatsVisitor
-	        extends
-	            AstVisitor
+			extends
+				AstVisitor
 	{
 		private final Map<String, Integer> nodeCounts =
-		        new HashMap<String, Integer>();
+				new HashMap<String, Integer>();
 		
 		private int varCount = 0;
 		

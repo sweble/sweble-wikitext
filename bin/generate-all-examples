@@ -19,7 +19,7 @@
 set -o errexit
 
 echo
-for i in */generate-archetype; do
+for i in */archetype-files; do
 
 	PROJECT=$(dirname "$i")
 	echo "====[ $PROJECT ]========================================"
@@ -29,9 +29,7 @@ for i in */generate-archetype; do
 
 	echo
 
-	pushd "$PROJECT" &> /dev/null
-	./generate-archetype
-	popd &> /dev/null
+	./bin/generate-example-archetype "$PROJECT"
 
 	echo
 

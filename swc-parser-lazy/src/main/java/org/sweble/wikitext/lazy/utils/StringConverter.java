@@ -47,10 +47,13 @@ public class StringConverter
 		return convert(astNode, null, DEFAULT_OPTIONS);
 	}
 	
-	public static String convert(AstNode astNode, XmlEntityResolver resolver, int options) throws StringConversionException
+	public static String convert(
+			AstNode astNode,
+			XmlEntityResolver resolver,
+			int options) throws StringConversionException
 	{
 		ConverterVisitor converter =
-		        new ConverterVisitor(options, resolver);
+				new ConverterVisitor(options, resolver);
 		
 		try
 		{
@@ -68,8 +71,8 @@ public class StringConverter
 	// =========================================================================
 	
 	protected static final class ConverterVisitor
-	        extends
-	        AstVisitor
+			extends
+				AstVisitor
 	{
 		private final StringBuilder result = new StringBuilder();
 		
@@ -86,11 +89,11 @@ public class StringConverter
 			
 			if (resolver != null && !opt(RESOLVE_ENTITY_REF))
 				throw new IllegalArgumentException(
-				        "If a resolver instance is given the option RESOLVE_ENTITY_REF is required");
+						"If a resolver instance is given the option RESOLVE_ENTITY_REF is required");
 			
 			if (resolver == null && opt(RESOLVE_ENTITY_REF))
 				throw new IllegalArgumentException(
-				        "If the option RESOLVE_ENTITY_REF is given a resolver instance is required");
+						"If the option RESOLVE_ENTITY_REF is given a resolver instance is required");
 		}
 		
 		@Override

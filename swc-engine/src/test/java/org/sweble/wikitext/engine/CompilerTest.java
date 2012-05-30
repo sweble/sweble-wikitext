@@ -17,7 +17,6 @@
 
 package org.sweble.wikitext.engine;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.junit.Assert;
@@ -30,7 +29,7 @@ public class CompilerTest
 		extends
 			CompilerTestBase
 {
-	public CompilerTest() throws FileNotFoundException, IOException
+	public CompilerTest() throws Exception
 	{
 		super();
 	}
