@@ -1,0 +1,91 @@
+package org.sweble.wikitext.engine.astwom;
+
+import static org.junit.Assert.*;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.sweble.wikitext.lazy.utils.AstBuilder;
+import org.sweble.wikitext.lazy.utils.XmlAttribute;
+
+public class AttrAdapterTest
+{
+	@Rule
+	public ExpectedException expectedEx = ExpectedException.none();
+	
+	@Test
+	public void canDefaultConstructAttrAdapterAndRetrieveAttributes() throws Exception
+	{
+		AttrAdapter attr = new AttrAdapter("test");
+		assertEquals("test", attr.getName());
+		assertEquals("", attr.getAttrValue());
+	}
+	
+	@Test
+	public void canConstructAttrAdapterFromAst() throws Exception
+	{
+		XmlAttribute astAttr = AstBuilder.astXmlAttribute()
+				.withName("test")
+				.withValue("value")
+				.build();
+		
+		AttrAdapter attr = new AttrAdapter(astAttr);
+		assertEquals("test", attr.getName());
+		assertEquals("value", attr.getAttrValue());
+	}
+	
+	@Test
+	public void astAttribWithoutValueHasItsNameAsValueInWom() throws Exception
+	{
+		XmlAttribute astAttr = AstBuilder.astXmlAttribute()
+				.withoutValue()
+				.build();
+		
+		AttrAdapter attr = new AttrAdapter(astAttr);
+		assertEquals(attr.getName(), attr.getAttrValue());
+		
+		// This is only how the WOM sees it, the AST remains unchanged!
+		assertNull(((XmlAttribute) attr.getAstNode()).getValue());
+	}
+	
+	@Test
+	public void astAttribWithoutValueGetsValueAfterSetting() throws Exception
+	{
+		XmlAttribute astAttr = AstBuilder.astXmlAttribute()
+				.withoutValue()
+				.build();
+		
+		AttrAdapter attr = new AttrAdapter(astAttr);
+		assertEquals(attr.getName(), attr.getAttrValue());
+
+		attr.setAttrValue("new value");
+		
+		assertNotNull(((XmlAttribute) attr.getAstNode()).getValue());
+	}
+	
+	@Test
+	public void cannotGiveAttrInvalidName() throws Exception
+	{
+		expectedEx.expect(IllegalArgumentException.class);
+		expectedEx.expectMessage("Not a valid XML Name");
+		new AttrAdapter("not a valid attribute name");
+	}
+	
+	@Test
+	public void cannotRemoveNameAttribute() throws Exception
+	{
+		AttrAdapter attr = new AttrAdapter("test");
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Attribute `name' cannot be removed");
+		attr.removeAttribute("name");
+	}
+	
+	@Test
+	public void cannotRemoveValueAttribute() throws Exception
+	{
+		AttrAdapter attr = new AttrAdapter("test");
+		expectedEx.expect(UnsupportedOperationException.class);
+		expectedEx.expectMessage("Attribute `value' cannot be removed");
+		attr.removeAttribute("value");
+	}
+}

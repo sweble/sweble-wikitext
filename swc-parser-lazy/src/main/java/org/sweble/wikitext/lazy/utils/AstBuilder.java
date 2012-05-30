@@ -41,6 +41,11 @@ public class AstBuilder
 		return new TmplArgBuilder();
 	}
 	
+	public static XmlAttribBuilder astXmlAttribute()
+	{
+		return new XmlAttribBuilder();
+	}
+	
 	// =========================================================================
 	
 	public static final class XmlCommentBuilder
@@ -173,6 +178,44 @@ public class AstBuilder
 			if (value == null)
 				value = new NodeList();
 			return new TemplateArgument(name, value, name != null);
+		}
+	}
+	
+	public static final class XmlAttribBuilder
+	{
+		private String name = "defaultAttrName";
+		
+		private NodeList value = null;
+		
+		public XmlAttribBuilder withName(String name)
+		{
+			this.name = name;
+			return this;
+		}
+		
+		public XmlAttribBuilder withValue(String value)
+		{
+			this.value = new NodeList(new Text(value));
+			return this;
+		}
+		
+		public XmlAttribBuilder withValue(AstNode... content)
+		{
+			this.value = new NodeList();
+			for (AstNode n : content)
+				this.value.add(n);
+			return this;
+		}
+		
+		public XmlAttribBuilder withoutValue()
+		{
+			this.value = null;
+			return this;
+		}
+		
+		public XmlAttribute build()
+		{
+			return new XmlAttribute(name, value, value != null);
 		}
 	}
 }

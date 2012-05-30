@@ -643,7 +643,7 @@ public abstract class AttributeSupportingElement
 	
 	// =========================================================================
 	
-	protected String normalize(Normalization normalizationMode, NodeList value)
+	protected static String normalize(Normalization normalizationMode, NodeList value)
 	{
 		switch (normalizationMode)
 		{
@@ -658,7 +658,7 @@ public abstract class AttributeSupportingElement
 		}
 	}
 	
-	protected static String convertAstToString(NodeList value)
+	private static String convertAstToString(NodeList value)
 	{
 		StringBuilder b = new StringBuilder();
 		for (AstNode n : value)
@@ -695,7 +695,7 @@ public abstract class AttributeSupportingElement
 		return b.toString();
 	}
 	
-	protected static String convertAstToStringAndNormalize(NodeList value)
+	private static String convertAstToStringAndNormalize(NodeList value)
 	{
 		StringBuilder b = new StringBuilder();
 		for (AstNode n : value)
@@ -763,7 +763,7 @@ public abstract class AttributeSupportingElement
 	/**
 	 * http://www.w3.org/TR/REC-xml/#AVNormalize
 	 */
-	protected static String trimAndCollapse(String cdataNormalized)
+	private static String trimAndCollapse(String cdataNormalized)
 	{
 		String normalized = cdataNormalized;
 		
