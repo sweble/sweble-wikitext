@@ -26,8 +26,8 @@ import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.LinkTargetParser;
 
 public class PageTitle
-        implements
-            Serializable
+		implements
+			Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -98,7 +98,7 @@ public class PageTitle
 		
 		return result;
 	}
-
+	
 	public String getDenormalizedTitle()
 	{
 		return title.replace('_', ' ');
@@ -127,12 +127,12 @@ public class PageTitle
 	// =========================================================================
 	
 	protected PageTitle(
-	        String title,
-	        String fragment,
-	        Namespace namespace,
-	        Interwiki interwiki,
-	        boolean initialColon,
-	        boolean isDefaultNs)
+			String title,
+			String fragment,
+			Namespace namespace,
+			Interwiki interwiki,
+			boolean initialColon,
+			boolean isDefaultNs)
 	{
 		this.title = title;
 		this.fragment = fragment;
@@ -142,12 +142,17 @@ public class PageTitle
 		this.isDefaultNs = isDefaultNs;
 	}
 	
-	public static PageTitle make(WikiConfigurationInterface config, String target) throws LinkTargetException
+	public static PageTitle make(
+			WikiConfigurationInterface config,
+			String target) throws LinkTargetException
 	{
 		return make(config, target, null);
 	}
 	
-	public static PageTitle make(WikiConfigurationInterface config, String target, Namespace defaultNamespace) throws LinkTargetException
+	public static PageTitle make(
+			WikiConfigurationInterface config,
+			String target,
+			Namespace defaultNamespace) throws LinkTargetException
 	{
 		// FIXME: Review the implementation!
 		
@@ -182,11 +187,19 @@ public class PageTitle
 		boolean isDefaultNs = namespace.equals(config.getDefaultNamespace());
 		
 		return new PageTitle(
-		        title,
-		        fragment,
-		        namespace,
-		        interwiki,
-		        initialColon,
-		        isDefaultNs);
+				title,
+				fragment,
+				namespace,
+				interwiki,
+				initialColon,
+				isDefaultNs);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String toString()
+	{
+		return getFullTitle();
 	}
 }
