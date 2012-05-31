@@ -85,7 +85,7 @@ public class Compiler
 			String wikitext,
 			boolean forInclusion,
 			ExpansionCallback callback)
-		throws CompilerException
+			throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -128,7 +128,7 @@ public class Compiler
 	}
 	
 	/**
-	 * Takes wikitext and expands the wikitext. The following steps are 
+	 * Takes wikitext and expands the wikitext. The following steps are
 	 * performed:
 	 * <ul>
 	 * <li>Validation</li>
@@ -138,10 +138,30 @@ public class Compiler
 	 * </ul>
 	 */
 	public CompiledPage expand(
-	        PageId pageId,
-	        String wikitext,
-	        ExpansionCallback callback)
-	            throws CompilerException
+			PageId pageId,
+			String wikitext,
+			ExpansionCallback callback)
+			throws CompilerException
+	{
+		return expand(pageId, wikitext, false, callback);
+	}
+	
+	/**
+	 * Takes wikitext and expands the wikitext. The following steps are
+	 * performed:
+	 * <ul>
+	 * <li>Validation</li>
+	 * <li>Preprocessing (for viewing)</li>
+	 * <li>Entity substitution</li>
+	 * <li>Expansion</li>
+	 * </ul>
+	 */
+	public CompiledPage expand(
+			PageId pageId,
+			String wikitext,
+			boolean forInclusion,
+			ExpansionCallback callback)
+			throws CompilerException
 	{
 		if (pageId == null || callback == null)
 			throw new NullPointerException();
@@ -158,13 +178,13 @@ public class Compiler
 			EntityMap entityMap = new EntityMap();
 			
 			String validatedWikitext =
-			        validate(title, wikitext, entityMap, log);
+					validate(title, wikitext, entityMap, log);
 			
 			LazyPreprocessedPage ppAst =
-			        preprocess(title, validatedWikitext, false, entityMap, log);
+					preprocess(title, validatedWikitext, forInclusion, entityMap, log);
 			
 			LazyPreprocessedPage pprAst = ppAst;
-			pprAst = expand(callback, title, ppAst, entityMap, null, false, log);
+			pprAst = expand(callback, title, ppAst, entityMap, null, forInclusion, log);
 			
 			pAst = pprAst;
 		}
@@ -179,9 +199,9 @@ public class Compiler
 		}
 		
 		return new CompiledPage(
-		        new Page(pAst.getContent()),
-		        pAst.getWarnings(),
-		        log);
+				new Page(pAst.getContent()),
+				pAst.getWarnings(),
+				log);
 	}
 	
 	/**
@@ -200,7 +220,7 @@ public class Compiler
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-		throws CompilerException
+			throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -261,7 +281,7 @@ public class Compiler
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-		throws CompilerException
+			throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -329,7 +349,7 @@ public class Compiler
 			Map<String, AstNode> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
-		throws CompilerException
+			throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -388,7 +408,7 @@ public class Compiler
 			Map<String, AstNode> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
-		throws CompilerException
+			throws CompilerException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -442,7 +462,7 @@ public class Compiler
 			String wikitext,
 			EntityMap entityMap,
 			ContentNode parentLog)
-		throws CompilerException
+			throws CompilerException
 	{
 		ValidatorLog log = new ValidatorLog();
 		parentLog.getContent().add(log);
@@ -487,7 +507,7 @@ public class Compiler
 			boolean forInclusion,
 			EntityMap entityMap,
 			ContentNode parentLog)
-		throws CompilerException
+			throws CompilerException
 	{
 		PreprocessorLog log = new PreprocessorLog();
 		parentLog.getContent().add(log);
@@ -544,7 +564,7 @@ public class Compiler
 			LinkedHashMap<String, AstNode> arguments,
 			boolean forInclusion,
 			ContentNode parentLog)
-		throws CompilerException
+			throws CompilerException
 	{
 		return expand(
 				callback,
@@ -571,7 +591,7 @@ public class Compiler
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
 			ContentNode parentLog)
-		throws CompilerException
+			throws CompilerException
 	{
 		PpResolverLog log = new PpResolverLog();
 		parentLog.getContent().add(log);
@@ -640,7 +660,7 @@ public class Compiler
 			LazyPreprocessedPage ppAst,
 			EntityMap entityMap,
 			ContentNode parentLog)
-		throws CompilerException
+			throws CompilerException
 	{
 		ParserLog log = new ParserLog();
 		parentLog.getContent().add(log);
@@ -694,7 +714,7 @@ public class Compiler
 			PageTitle title,
 			LazyParsedPage pAst,
 			CompilerLog parentLog)
-		throws CompilerException
+			throws CompilerException
 	{
 		PostprocessorLog log = new PostprocessorLog();
 		parentLog.getContent().add(log);
