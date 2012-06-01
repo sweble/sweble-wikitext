@@ -33,6 +33,9 @@ import de.fau.cs.osr.ptk.common.ast.Location;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
+/**
+ * Collapses adjacent Text nodes into a single Text node.
+ */
 public class AstCompressor
 		extends
 			AstVisitor
