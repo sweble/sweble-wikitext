@@ -20,10 +20,12 @@ package org.sweble.wikitext.engine.astwom;
 import static org.junit.Assert.*;
 import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.engine.wom.WomPage;
 
+@Ignore
 public class SpecialElementSetterAndGetterTest
 {
 	@Test

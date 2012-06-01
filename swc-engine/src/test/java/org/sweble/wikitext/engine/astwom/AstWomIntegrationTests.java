@@ -24,12 +24,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.wom.WomPage;
 
+@Ignore
 @RunWith(value = NamedParametrized.class)
 public class AstWomIntegrationTests
 {
@@ -115,7 +117,7 @@ public class AstWomIntegrationTests
 		fixture.setExplicitTextNodes(true);
 		fixture.printWomTest(INPUT_DIR, OUTPUT_DIR, page, wikitextFile);
 	}
-
+	
 	/*
 	@Test
 	public void testSimple() throws Exception

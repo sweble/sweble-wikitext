@@ -26,6 +26,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
+import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
@@ -111,5 +112,36 @@ public class CategoryAdapterTest
 		foo.setAttribute("name", "Bar");
 		assertTrue(womPage.hasCategory("Bar"));
 		assertFalse(womPage.hasCategory("Foo"));
+	}
+	
+	/*
+	 * NativeOrXmlAttributeAdapter does not yet inform the attribute container
+	 * (in this case the category element) of changes (be it name or value).
+	 * This is especially problematic for native attributes which do not have an
+	 * AST counterpart but must be set on the container AST node explicitly by
+	 * the container.
+	 * 
+	 * Right now changes are stored in the WOM attribute but not in the
+	 * container element. Thus the changes are lost in the AST if the attribute
+	 * does not have an AST attribute as counterpart.
+	 * 
+	 * See also NativeOrXmlAttributeAdapter for explanation of problem.
+	 */
+	@Ignore
+	@Test
+	public void settingCategoryNameUsingAttributeNodeReflectsInCategory() throws Exception
+	{
+		womPage.addCategory("Foo");
+		WomCategory cat = womPage.getCategories().iterator().next();
+		assertTrue(womPage.hasCategory("Foo"));
+		
+		WomAttribute caNode = cat.getAttributeNode("name");
+		assertEquals("Foo", caNode.getValue());
+		
+		caNode.setValue("Bar");
+		
+		assertEquals("Bar", cat.getName());
+		assertFalse(womPage.hasCategory("Foo"));
+		assertTrue(womPage.hasCategory("Bar"));
 	}
 }

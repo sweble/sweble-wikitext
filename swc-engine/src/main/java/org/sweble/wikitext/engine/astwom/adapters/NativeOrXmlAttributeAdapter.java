@@ -28,6 +28,35 @@ import org.sweble.wikitext.lazy.utils.XmlAttribute;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
+/**
+ * Attributes in the WOM can map to different things in the AST. For one, native
+ * attributes are attributes of non-HTML elements. For example Wikitext links
+ * have attributes like "target". In this case NativeOrXmlAttributeAdapter does
+ * not have an AST node as counterpart. Instead the value will be set on the
+ * link node directly.
+ * 
+ * HTML elements like &lt;b> (bold) on the other hand have the XmlAttribute AST
+ * node as counterpart for the NativeOrXmlAttributeAdapter WOM node. In this
+ * case the bold node (which "owns" the attribute) need not know about a value
+ * or name change of one of its attributes. The NativeOrXmlAttributeAdapter
+ * class can access its AST counterpart node directly and apply changes.
+ * 
+ * Finally, HTML elements like &lt;b> (bold) can have a native representation
+ * (three ticks in the case of the bold element). These native analogs can not
+ * carry attributes. Therefore, if an attribute is set on a native element, the
+ * native element must be converted to its HTML analog. If a HTML element with
+ * attributes were converted to its native analog, all attributes would have to
+ * be dropped.
+ * 
+ * FIXME: NativeOrXmlAttributeAdapter does not yet inform the attribute
+ * container of changes (be it name or value). This is especially problematic
+ * for native attributes which do not have an AST counterpart but must be set on
+ * the container AST node explicitly by the container. Right now changes are
+ * stored in the WOM attribute but not in the container element. Thus the
+ * changes are lost in the AST if the attribute does not have an AST attribute
+ * as counterpart.
+ * 
+ */
 public class NativeOrXmlAttributeAdapter
 		extends
 			WomBackbone
