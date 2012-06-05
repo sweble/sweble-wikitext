@@ -29,11 +29,14 @@ import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
 import org.sweble.wikitext.engine.log.IllegalNameException;
 import org.sweble.wikitext.engine.log.ParseException;
+import org.sweble.wikitext.engine.log.ResolveMagicWordLog;
+import org.sweble.wikitext.engine.log.ResolveParameterLog;
 import org.sweble.wikitext.engine.log.ResolveRedirectLog;
 import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
 import org.sweble.wikitext.engine.log.UnhandledException;
 import org.sweble.wikitext.lazy.AstNodeTypes;
 import org.sweble.wikitext.lazy.LinkTargetException;
+import org.sweble.wikitext.lazy.parser.MagicWord;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.Template;
@@ -53,6 +56,8 @@ import de.fau.cs.osr.utils.StopWatch;
 
 public class ExpansionFrame
 {
+	private static final boolean DEBUG = true;
+	
 	private final Compiler compiler;
 	
 	private final ExpansionFrame rootFrame;
@@ -69,6 +74,8 @@ public class ExpansionFrame
 	
 	private final ExpansionCallback callback;
 	
+	private final ExpansionDebugHooks hooks;
+	
 	private final List<Warning> warnings;
 	
 	private final EntityMap entityMap;
@@ -76,15 +83,17 @@ public class ExpansionFrame
 	// =========================================================================
 	
 	public ExpansionFrame(
-	        Compiler compiler,
-	        ExpansionCallback callback,
-	        PageTitle title,
-	        EntityMap entityMap,
-	        List<Warning> warnings,
-	        ContentNode frameLog)
+			Compiler compiler,
+			ExpansionCallback callback,
+			ExpansionDebugHooks hooks,
+			PageTitle title,
+			EntityMap entityMap,
+			List<Warning> warnings,
+			ContentNode frameLog)
 	{
 		this.compiler = compiler;
 		this.callback = callback;
+		this.hooks = hooks;
 		this.title = title;
 		this.entityMap = entityMap;
 		this.arguments = new HashMap<String, AstNode>();
@@ -96,19 +105,21 @@ public class ExpansionFrame
 	}
 	
 	public ExpansionFrame(
-	        Compiler compiler,
-	        ExpansionCallback callback,
-	        PageTitle title,
-	        EntityMap entityMap,
-	        Map<String, AstNode> arguments,
-	        boolean forInclusion,
-	        ExpansionFrame rootFrame,
-	        ExpansionFrame parentFrame,
-	        List<Warning> warnings,
-	        ContentNode frameLog)
+			Compiler compiler,
+			ExpansionCallback callback,
+			ExpansionDebugHooks hooks,
+			PageTitle title,
+			EntityMap entityMap,
+			Map<String, AstNode> arguments,
+			boolean forInclusion,
+			ExpansionFrame rootFrame,
+			ExpansionFrame parentFrame,
+			List<Warning> warnings,
+			ContentNode frameLog)
 	{
 		this.compiler = compiler;
 		this.callback = callback;
+		this.hooks = hooks;
 		this.title = title;
 		this.entityMap = entityMap;
 		this.arguments = arguments;
@@ -187,6 +198,20 @@ public class ExpansionFrame
 	
 	protected AstNode resolveRedirect(Redirect n, String target)
 	{
+		if (hooks == null)
+			return resolveRedirectHooked(n, target);
+		
+		AstNode cont = hooks.beforeResolveRedirect(this, n, target);
+		if (cont != ExpansionDebugHooks.PROCEED)
+			return cont;
+		
+		// Proceed
+		AstNode result = resolveRedirectHooked(n, target);
+		return hooks.afterResolveRedirect(this, n, target, result);
+	}
+	
+	private AstNode resolveRedirectHooked(Redirect n, String target)
+	{
 		ResolveRedirectLog log = new ResolveRedirectLog(target, false);
 		frameLog.getContent().add(log);
 		
@@ -209,6 +234,9 @@ public class ExpansionFrame
 		}
 		catch (Throwable e)
 		{
+			if (DEBUG)
+				throw new RuntimeException(e);
+			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
@@ -223,9 +251,26 @@ public class ExpansionFrame
 	}
 	
 	protected AstNode resolveParserFunction(
-	        Template n,
-	        String target,
-	        List<TemplateArgument> arguments)
+			Template n,
+			String target,
+			List<TemplateArgument> arguments)
+	{
+		if (hooks == null)
+			return resolveParserFunctionHooked(n, target, arguments);
+		
+		AstNode cont = hooks.beforeResolveParserFunction(this, n, target, arguments);
+		if (cont != ExpansionDebugHooks.PROCEED)
+			return cont;
+		
+		// Proceed
+		AstNode result = resolveParserFunctionHooked(n, target, arguments);
+		return hooks.afterResolveParserFunction(this, n, target, arguments, result);
+	}
+	
+	private AstNode resolveParserFunctionHooked(
+			Template n,
+			String target,
+			List<TemplateArgument> arguments)
 	{
 		ResolveTransclusionLog log = new ResolveTransclusionLog(target, false);
 		frameLog.getContent().add(log);
@@ -239,13 +284,16 @@ public class ExpansionFrame
 			if (pfn == null)
 			{
 				// FIXME: File warning that we couldn't find the parser function?
-				return null;
+				return n;
 			}
 			
 			return invokeParserFunction(n, pfn, arguments, log);
 		}
 		catch (Throwable e)
 		{
+			if (DEBUG)
+				throw new RuntimeException(e);
+			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
@@ -260,9 +308,26 @@ public class ExpansionFrame
 	}
 	
 	protected AstNode resolveTransclusionOrMagicWord(
-	        Template n,
-	        String target,
-	        List<TemplateArgument> arguments)
+			Template n,
+			String target,
+			List<TemplateArgument> arguments)
+	{
+		if (hooks == null)
+			return resolveTransclusionOrMagicWordHooked(n, target, arguments);
+		
+		AstNode cont = hooks.beforeResolveTransclusionOrMagicWord(this, n, target, arguments);
+		if (cont != ExpansionDebugHooks.PROCEED)
+			return cont;
+		
+		// Proceed
+		AstNode result = resolveTransclusionOrMagicWordHooked(n, target, arguments);
+		return hooks.afterResolveTransclusionOrMagicWord(this, n, target, arguments, result);
+	}
+	
+	protected AstNode resolveTransclusionOrMagicWordHooked(
+			Template n,
+			String target,
+			List<TemplateArgument> arguments)
 	{
 		ResolveTransclusionLog log = new ResolveTransclusionLog(target, false);
 		frameLog.getContent().add(log);
@@ -276,10 +341,38 @@ public class ExpansionFrame
 			{
 				ParserFunctionBase pfn = getWikiConfig().getParserFunction(target);
 				if (pfn != null)
-					return invokeParserFunction(n, pfn, arguments, log);
+				{
+					if (hooks != null)
+					{
+						AstNode cont = hooks.resolveTransclusionOrMagicWordBeforeInvokeParserFunction(this, n, pfn, arguments);
+						if (cont != ExpansionDebugHooks.PROCEED)
+							return cont;
+						
+					}
+					
+					AstNode result = invokeParserFunction(n, pfn, arguments, log);
+					
+					if (hooks != null)
+						result = hooks.resolveTransclusionOrMagicWordAfterInvokeParserFunction(this, n, pfn, arguments, result);
+					
+					return result;
+				}
 			}
 			
-			return transcludePage(n, target, arguments, log);
+			if (hooks != null)
+			{
+				AstNode cont = hooks.resolveTransclusionOrMagicWordBeforeTranscludePage(this, n, target, arguments);
+				if (cont != ExpansionDebugHooks.PROCEED)
+					return cont;
+				
+			}
+			
+			AstNode result = transcludePage(n, target, arguments, log);
+			
+			if (hooks != null)
+				result = hooks.resolveTransclusionOrMagicWordAfterTranscludePage(this, n, target, arguments, result);
+			
+			return result;
 		}
 		catch (LinkTargetException e)
 		{
@@ -290,6 +383,9 @@ public class ExpansionFrame
 		}
 		catch (Throwable e)
 		{
+			if (DEBUG)
+				throw new RuntimeException(e);
+			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
@@ -305,14 +401,71 @@ public class ExpansionFrame
 	
 	protected AstNode resolveParameter(TemplateParameter n, String name)
 	{
-		return arguments.get(name);
+		if (hooks == null)
+			return resolveParameterHooked(n, name);
+		
+		AstNode cont = hooks.beforeResolveParameter(this, n, name);
+		if (cont != ExpansionDebugHooks.PROCEED)
+			return cont;
+		
+		// Proceed
+		AstNode result = resolveParameterHooked(n, name);
+		return hooks.afterResolveParameter(this, n, name, result);
+	}
+	
+	protected AstNode resolveParameterHooked(TemplateParameter n, String name)
+	{
+		ResolveParameterLog log = new ResolveParameterLog(name, false);
+		frameLog.getContent().add(log);
+		
+		//StopWatch stopWatch = new StopWatch();
+		//stopWatch.start();
+		
+		//try
+		//{
+		
+		AstNode value = arguments.get(name);
+		if (value == null)
+		{
+			log.setTimeNeeded(0L);
+			return n;
+		}
+		
+		log.setTimeNeeded(0L);
+		log.setSuccess(true);
+		
+		return value;
+		
+		//}
+		//finally
+		//{
+		//	log.setTimeNeeded(stopWatch.getElapsedTime());
+		//}
 	}
 	
 	protected AstNode resolveTagExtension(
-	        TagExtension n,
-	        String name,
-	        NodeList attributes,
-	        String body)
+			TagExtension n,
+			String name,
+			NodeList attributes,
+			String body)
+	{
+		if (hooks == null)
+			return resolveTagExtensionHooked(n, name, attributes, body);
+		
+		AstNode cont = hooks.beforeResolveTagExtension(this, n, name, attributes, body);
+		if (cont != ExpansionDebugHooks.PROCEED)
+			return cont;
+		
+		// Proceed
+		AstNode result = resolveTagExtensionHooked(n, name, attributes, body);
+		return hooks.afterResolveTagExtension(this, n, name, attributes, body, result);
+	}
+	
+	protected AstNode resolveTagExtensionHooked(
+			TagExtension n,
+			String name,
+			NodeList attributes,
+			String body)
 	{
 		ResolveTransclusionLog log = new ResolveTransclusionLog(name, false);
 		frameLog.getContent().add(log);
@@ -329,10 +482,13 @@ public class ExpansionFrame
 				return n;
 			}
 			
-			return invokeTagExtension(n, attributes, body, te);
+			return invokeTagExtension(n, attributes, body, te, log);
 		}
 		catch (Throwable e)
 		{
+			if (DEBUG)
+				throw new RuntimeException(e);
+			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
@@ -346,38 +502,81 @@ public class ExpansionFrame
 		}
 	}
 	
-	private AstNode invokeTagExtension(
-	        TagExtension tagExtension,
-	        NodeList attributes,
-	        String body,
-	        TagExtensionBase te)
+	protected AstNode resolveMagicWord(MagicWord n, String word)
 	{
-		HashMap<String, NodeList> attrs = new HashMap<String, NodeList>();
+		if (hooks == null)
+			return resolveMagicWordHooked(n, word);
 		
-		for (AstNode attr : attributes)
+		AstNode cont = hooks.beforeResolveMagicWord(this, n, word);
+		if (cont != ExpansionDebugHooks.PROCEED)
+			return cont;
+		
+		// Proceed
+		AstNode result = resolveMagicWordHooked(n, word);
+		return hooks.afterResolveMagicWord(this, n, word, result);
+	}
+	
+	protected AstNode resolveMagicWordHooked(MagicWord n, String word)
+	{
+		ResolveMagicWordLog log = new ResolveMagicWordLog(word, false);
+		frameLog.getContent().add(log);
+		
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		
+		try
 		{
-			if (attr.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+			MagicWordBase mw =
+					getWikiConfig().getMagicWord(word);
+			
+			if (mw == null)
 			{
-				XmlAttribute a = (XmlAttribute) attr;
-				attrs.put(a.getName(), a.getValue());
+				// FIXME: File warning that we couldn't find the magic word?
+				return n;
 			}
+			
+			return applyMagicWord(n, mw, log);
 		}
+		catch (Throwable e)
+		{
+			if (DEBUG)
+				throw new RuntimeException(e);
+			
+			StringWriter w = new StringWriter();
+			e.printStackTrace(new PrintWriter(w));
+			log.getContent().add(new UnhandledException(e, w.toString()));
+			
+			return n;
+		}
+		finally
+		{
+			stopWatch.stop();
+			log.setTimeNeeded(stopWatch.getElapsedTime());
+		}
+	}
+	
+	protected void illegalTemplateName(
+			StringConversionException e,
+			NodeList name)
+	{
+		if (hooks != null)
+			hooks.illegalTemplateName(e, name);
 		
-		return te.invoke(this, tagExtension, attrs, body);
+		frameLog.getContent().add(new IllegalNameException(
+				name,
+				"Cannot resolve target of transclusion to a simple name."));
 	}
 	
-	protected void illegalTemplateName(StringConversionException e, NodeList name)
+	protected void illegalParameterName(
+			StringConversionException e,
+			NodeList name)
 	{
+		if (hooks != null)
+			hooks.illegalParameterName(e, name);
+		
 		frameLog.getContent().add(new IllegalNameException(
-		        name,
-		        "Cannot resolve target of transclusion to a simple name."));
-	}
-	
-	protected void illegalParameterName(StringConversionException e, NodeList name)
-	{
-		frameLog.getContent().add(new IllegalNameException(
-		        name,
-		        "Cannot resolve name of parameter to a simple name."));
+				name,
+				"Cannot resolve name of parameter to a simple name."));
 	}
 	
 	// =========================================================================
@@ -542,13 +741,13 @@ public class ExpansionFrame
 		}
 	}
 	*/
-
+	
 	// =====================================================================
 	
 	private AstNode redirectTo(
-	        Redirect n,
-	        String target,
-	        ResolveRedirectLog log) throws LinkTargetException, CompilerException
+			Redirect n,
+			String target,
+			ResolveRedirectLog log) throws LinkTargetException, CompilerException
 	{
 		PageTitle title = PageTitle.make(getWikiConfig(), target);
 		
@@ -563,14 +762,14 @@ public class ExpansionFrame
 		else
 		{
 			CompiledPage compiledPage = this.compiler.preprocessAndExpand(
-			        callback,
-			        page.getId(),
-			        page.getText(),
-			        forInclusion,
-			        entityMap,
-			        arguments,
-			        rootFrame,
-			        this);
+					callback,
+					page.getId(),
+					page.getText(),
+					forInclusion,
+					entityMap,
+					arguments,
+					rootFrame,
+					this);
 			
 			log.setSuccess(true);
 			log.getContent().add(compiledPage.getLog());
@@ -582,10 +781,10 @@ public class ExpansionFrame
 	}
 	
 	private AstNode transcludePage(
-	        Template n,
-	        String target,
-	        List<TemplateArgument> arguments,
-	        ResolveTransclusionLog log) throws LinkTargetException, CompilerException
+			Template n,
+			String target,
+			List<TemplateArgument> arguments,
+			ResolveTransclusionLog log) throws LinkTargetException, CompilerException
 	{
 		Namespace tmplNs = getWikiConfig().getTemplateNamespace();
 		
@@ -597,22 +796,22 @@ public class ExpansionFrame
 		if (page == null)
 		{
 			// FIXME: File warning that we couldn't find the page?
-			return null;
+			return n;
 		}
 		else
 		{
 			Map<String, AstNode> args =
-			        prepareTransclusionArguments(arguments);
+					prepareTransclusionArguments(arguments);
 			
 			CompiledPage compiledPage = this.compiler.preprocessAndExpand(
-			        callback,
-			        page.getId(),
-			        page.getText(),
-			        true,
-			        entityMap,
-			        args,
-			        rootFrame,
-			        this);
+					callback,
+					page.getId(),
+					page.getText(),
+					true,
+					entityMap,
+					args,
+					rootFrame,
+					this);
 			
 			log.setSuccess(true);
 			log.getContent().add(compiledPage.getLog());
@@ -623,7 +822,8 @@ public class ExpansionFrame
 		}
 	}
 	
-	private Map<String, AstNode> prepareTransclusionArguments(List<TemplateArgument> arguments)
+	private Map<String, AstNode> prepareTransclusionArguments(
+			List<TemplateArgument> arguments)
 	{
 		HashMap<String, AstNode> args = new HashMap<String, AstNode>();
 		
@@ -654,7 +854,11 @@ public class ExpansionFrame
 		return args;
 	}
 	
-	private AstNode invokeParserFunction(Template template, ParserFunctionBase pfn, List<TemplateArgument> arguments, ResolveTransclusionLog log)
+	private AstNode invokeParserFunction(
+			Template template,
+			ParserFunctionBase pfn,
+			List<TemplateArgument> arguments,
+			ResolveTransclusionLog log)
 	{
 		LinkedList<AstNode> args = new LinkedList<AstNode>();
 		
@@ -663,9 +867,9 @@ public class ExpansionFrame
 			if (arg.getHasName())
 			{
 				args.add(new NodeList(
-				        arg.getName(),
-				        new Text("="),
-				        arg.getValue()));
+						arg.getName(),
+						new Text("="),
+						arg.getValue()));
 			}
 			else
 			{
@@ -680,6 +884,45 @@ public class ExpansionFrame
 		return result;
 	}
 	
+	private AstNode invokeTagExtension(
+			TagExtension tagExtension,
+			NodeList attributes,
+			String body,
+			TagExtensionBase te,
+			ResolveTransclusionLog log)
+	{
+		HashMap<String, NodeList> attrs = new HashMap<String, NodeList>();
+		
+		for (AstNode attr : attributes)
+		{
+			if (attr.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+			{
+				XmlAttribute a = (XmlAttribute) attr;
+				attrs.put(a.getName(), a.getValue());
+			}
+		}
+		
+		AstNode result = te.invoke(this, tagExtension, attrs, body);
+		
+		log.setSuccess(true);
+		
+		return result;
+	}
+	
+	private AstNode applyMagicWord(
+			MagicWord magicWord,
+			MagicWordBase mw,
+			ResolveMagicWordLog log)
+	{
+		AstNode result = mw.invoke(this, magicWord);
+		
+		log.setSuccess(true);
+		
+		return result;
+	}
+	
+	// =========================================================================
+	
 	private FullPage getWikitext(PageTitle title, ContentNode log)
 	{
 		try
@@ -688,6 +931,9 @@ public class ExpansionFrame
 		}
 		catch (Exception e)
 		{
+			if (DEBUG)
+				throw new RuntimeException(e);
+			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));

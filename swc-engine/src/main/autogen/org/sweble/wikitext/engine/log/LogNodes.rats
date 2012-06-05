@@ -107,6 +107,32 @@
  *       canonical  : String
  *       timeNeeded : Long
  *
+ * Resolve MagicWord Log
+ * ---------------------
+ *
+ *   AST node:
+ *     Name        : ResolveMagicWordLog
+ *     Extends     : ContentNode
+ *     Constructor : "name, success"
+ *     
+ *     Properties:
+ *       success    : boolean
+ *       name       : String
+ *       timeNeeded : Long
+ *
+ * Resolve Parameter Log
+ * ---------------------
+ *
+ *   AST node:
+ *     Name        : ResolveParameterLog
+ *     Extends     : ContentNode
+ *     Constructor : "name, success"
+ *     
+ *     Properties:
+ *       success    : boolean
+ *       name       : String
+ *       timeNeeded : Long
+ *
  * Parse Exception
  * ---------------
  *

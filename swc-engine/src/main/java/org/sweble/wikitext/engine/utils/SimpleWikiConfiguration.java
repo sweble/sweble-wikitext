@@ -21,17 +21,18 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.lang.reflect.Constructor;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import org.sweble.wikitext.engine.MagicWordBase;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.Interwiki;
@@ -51,12 +52,14 @@ import org.sweble.wikitext.engine.ext.TagExtensionMath;
 import org.sweble.wikitext.engine.ext.TagExtensionNoWiki;
 import org.sweble.wikitext.engine.ext.TagExtensionPre;
 import org.sweble.wikitext.engine.ext.TagExtensionRef;
+import org.sweble.wikitext.engine.ext.UnimplementedMagicWord;
 import org.sweble.wikitext.engine.ext.UnimplementedParserFunction;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.LinkTargetParser;
 import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
 import de.fau.cs.osr.utils.FmtIllegalArgumentException;
+import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 /**
  * This is a simple wiki config that is ONLY suited for test purposes!
@@ -84,8 +87,11 @@ public class SimpleWikiConfiguration
 	
 	private Interwiki localInterwiki = null;
 	
-	private final HashMap<String, MagicWord> magicWordsByAlias =
-			new HashMap<String, MagicWord>();
+	private final HashMap<String, MagicWordBase> magicWordsByAlias =
+			new HashMap<String, MagicWordBase>();
+	
+	private final HashMap<String, Class<? extends MagicWordBase>> magicWordImpls =
+			new HashMap<String, Class<? extends MagicWordBase>>();
 	
 	private final HashMap<String, ParserFunctionBase> parserFunctions =
 			new HashMap<String, ParserFunctionBase>();
@@ -416,7 +422,7 @@ public class SimpleWikiConfiguration
 	
 	// =========================================================================
 	
-	public MagicWord addMagicWord(MagicWord magicWord)
+	public MagicWordBase addMagicWord(MagicWord magicWord)
 	{
 		/*
 		if (magicWordsByAlias.containsKey(magicWord.getName()))
@@ -432,24 +438,51 @@ public class SimpleWikiConfiguration
 				        alias);
 		*/
 		
+		MagicWordBase contains = magicWordsByAlias.get(magicWord.getName());
+		if (contains != null)
+			return contains;
+		
+		Class<? extends MagicWordBase> implClazz =
+				magicWordImpls.get(magicWord.getName());
+		
+		MagicWordBase magicWordBase;
+		if (implClazz == null)
+		{
+			magicWordBase = new UnimplementedMagicWord(magicWord);
+		}
+		else
+		{
+			Constructor<? extends MagicWordBase> ctor;
+			try
+			{
+				ctor = implClazz.getConstructor(MagicWord.class);
+				
+				magicWordBase = ctor.newInstance(magicWord);
+			}
+			catch (Exception e)
+			{
+				throw new FmtInternalLogicError(e);
+			}
+		}
+		
 		// FIXME: Is lower case comparison the right way for magic words?
 		//        See also: getMagicWord()
-		magicWordsByAlias.put(magicWord.getName().toLowerCase(), magicWord);
+		magicWordsByAlias.put(magicWordBase.getName().toLowerCase(), magicWordBase);
 		
 		// FIXME: Dito.
-		for (String alias : magicWord.getAliases())
-			magicWordsByAlias.put(alias.toLowerCase(), magicWord);
+		for (String alias : magicWordBase.getAliases())
+			magicWordsByAlias.put(alias.toLowerCase(), magicWordBase);
 		
-		return magicWord;
+		return magicWordBase;
 	}
 	
-	public Collection<MagicWord> getMagicWords()
+	public Collection<MagicWordBase> getMagicWords()
 	{
 		return Collections.unmodifiableCollection(this.magicWordsByAlias.values());
 	}
 	
 	@Override
-	public MagicWord getMagicWord(String name)
+	public MagicWordBase getMagicWord(String name)
 	{
 		// FIXME: Is lower case comparison the right way for magic words?
 		return magicWordsByAlias.get(name.toLowerCase());
@@ -688,7 +721,7 @@ public class SimpleWikiConfiguration
 		}
 		
 		aswc.setMagicWords(of.createAdaptedSimpleWikiConfigurationMagicWords());
-		for (MagicWord mw : this.getMagicWords())
+		for (MagicWordBase mw : this.getMagicWords())
 		{
 			AdaptedMagicWord amw = of.createAdaptedMagicWord();
 			amw.setName(mw.getName());

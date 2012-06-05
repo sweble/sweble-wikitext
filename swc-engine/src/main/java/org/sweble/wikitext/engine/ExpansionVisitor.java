@@ -20,6 +20,7 @@ package org.sweble.wikitext.engine;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.sweble.wikitext.lazy.parser.MagicWord;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.Template;
@@ -176,5 +177,10 @@ public final class ExpansionVisitor
 	public AstNode visit(TagExtension n)
 	{
 		return preprocessorFrame.resolveTagExtension(n, n.getName(), n.getXmlAttributes(), n.getBody());
+	}
+	
+	public AstNode visit(MagicWord n)
+	{
+		return preprocessorFrame.resolveMagicWord(n, n.getWord());
 	}
 }

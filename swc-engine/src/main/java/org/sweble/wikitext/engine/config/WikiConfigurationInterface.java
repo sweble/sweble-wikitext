@@ -20,6 +20,7 @@ package org.sweble.wikitext.engine.config;
 import java.io.Serializable;
 import java.util.Collection;
 
+import org.sweble.wikitext.engine.MagicWordBase;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.lazy.ParserConfigInterface;
@@ -45,7 +46,7 @@ public interface WikiConfigurationInterface
 	
 	// --------
 	
-	public MagicWord getMagicWord(String name);
+	public MagicWordBase getMagicWord(String name);
 	
 	// --------
 	

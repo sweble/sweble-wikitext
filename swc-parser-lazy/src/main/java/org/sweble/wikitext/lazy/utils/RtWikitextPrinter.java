@@ -29,7 +29,7 @@ import de.fau.cs.osr.ptk.common.ast.StringContentNode;
 
 public class RtWikitextPrinter
 {
-	private PrintWriter w;
+	protected PrintWriter w;
 	
 	// =========================================================================
 	
@@ -55,7 +55,7 @@ public class RtWikitextPrinter
 	
 	// =========================================================================
 	
-	private void go(AstNode node)
+	protected void go(AstNode node)
 	{
 		switch (node.getNodeType())
 		{
@@ -101,7 +101,7 @@ public class RtWikitextPrinter
 		}
 	}
 	
-	private void printRtd(Object[] objects)
+	protected void printRtd(Object[] objects)
 	{
 		if (objects != null)
 		{

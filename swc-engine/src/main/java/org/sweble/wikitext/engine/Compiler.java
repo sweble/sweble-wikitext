@@ -55,6 +55,8 @@ public class Compiler
 	
 	private WikiConfigurationInterface wikiConfig;
 	
+	private ExpansionDebugHooks hooks;
+	
 	// =========================================================================
 	
 	public Compiler(WikiConfigurationInterface wikiConfig)
@@ -66,6 +68,16 @@ public class Compiler
 	public WikiConfigurationInterface getWikiConfig()
 	{
 		return wikiConfig;
+	}
+	
+	public void setDebugHooks(ExpansionDebugHooks hooks)
+	{
+		this.hooks = hooks;
+	}
+	
+	public ExpansionDebugHooks getDebugHooks()
+	{
+		return hooks;
 	}
 	
 	// =========================================================================
@@ -610,6 +622,7 @@ public class Compiler
 				frame = new ExpansionFrame(
 						this,
 						callback,
+						hooks,
 						title,
 						entityMap,
 						arguments,
@@ -624,6 +637,7 @@ public class Compiler
 				frame = new ExpansionFrame(
 						this,
 						callback,
+						hooks,
 						title,
 						entityMap,
 						ppAst.getWarnings(),

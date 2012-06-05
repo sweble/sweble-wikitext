@@ -18,38 +18,38 @@
 package org.sweble.wikitext.engine.ext;
 
 import org.sweble.wikitext.engine.OffendingNodeWarning;
+import org.sweble.wikitext.lazy.parser.MagicWord;
 import org.sweble.wikitext.lazy.parser.WarningSeverity;
-import org.sweble.wikitext.lazy.preprocessor.Template;
 
-public final class NotYetImplementedParserFunctionWarning
+public final class NotYetImplementedMagicWordWarning
 		extends
 			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final UnimplementedParserFunction upfn;
+	private final UnimplementedMagicWord umw;
 	
 	// =========================================================================
 	
-	public NotYetImplementedParserFunctionWarning(
-			UnimplementedParserFunction upfn,
-			Template template)
+	public NotYetImplementedMagicWordWarning(
+			UnimplementedMagicWord umw,
+			MagicWord magicWord)
 	{
-		super(template, WarningSeverity.FATAL, upfn.getClass(), makeMessage(upfn));
-		this.upfn = upfn;
+		super(magicWord, WarningSeverity.FATAL, umw.getClass(), makeMessage(umw));
+		this.umw = umw;
 	}
 	
-	private static String makeMessage(UnimplementedParserFunction upfn)
+	private static String makeMessage(UnimplementedMagicWord upfn)
 	{
-		return "The parser function `" + upfn.getName() + "' " +
+		return "The magic word `" + upfn.getName() + "' " +
 				"is not yet implemented!";
 	}
 	
 	// =========================================================================
 	
-	public UnimplementedParserFunction getUpfn()
+	public UnimplementedMagicWord getUpfn()
 	{
-		return upfn;
+		return umw;
 	}
 	
 	// =========================================================================
@@ -59,7 +59,7 @@ public final class NotYetImplementedParserFunctionWarning
 	{
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((upfn == null) ? 0 : upfn.hashCode());
+		result = prime * result + ((umw == null) ? 0 : umw.hashCode());
 		return result;
 	}
 	
@@ -72,13 +72,13 @@ public final class NotYetImplementedParserFunctionWarning
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		NotYetImplementedParserFunctionWarning other = (NotYetImplementedParserFunctionWarning) obj;
-		if (upfn == null)
+		NotYetImplementedMagicWordWarning other = (NotYetImplementedMagicWordWarning) obj;
+		if (umw == null)
 		{
-			if (other.upfn != null)
+			if (other.umw != null)
 				return false;
 		}
-		else if (!upfn.equals(other.upfn))
+		else if (!umw.equals(other.umw))
 			return false;
 		return true;
 	}
