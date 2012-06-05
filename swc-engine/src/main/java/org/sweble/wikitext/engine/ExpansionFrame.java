@@ -80,6 +80,8 @@ public class ExpansionFrame
 	
 	private final EntityMap entityMap;
 	
+	private ExpansionVisitor expansionVisitor;
+	
 	// =========================================================================
 	
 	public ExpansionFrame(
@@ -191,7 +193,8 @@ public class ExpansionFrame
 	
 	public AstNode expand(AstNode ppAst)
 	{
-		return (AstNode) new ExpansionVisitor(this).go(ppAst);
+		expansionVisitor = new ExpansionVisitor(this);
+		return (AstNode) expansionVisitor.go(ppAst);
 	}
 	
 	// =========================================================================
@@ -399,21 +402,27 @@ public class ExpansionFrame
 		}
 	}
 	
-	protected AstNode resolveParameter(TemplateParameter n, String name)
+	protected AstNode resolveParameter(
+			TemplateParameter n,
+			String name,
+			TemplateArgument defaultValue)
 	{
 		if (hooks == null)
-			return resolveParameterHooked(n, name);
+			return resolveParameterHooked(n, name, defaultValue);
 		
 		AstNode cont = hooks.beforeResolveParameter(this, n, name);
 		if (cont != ExpansionDebugHooks.PROCEED)
 			return cont;
 		
 		// Proceed
-		AstNode result = resolveParameterHooked(n, name);
+		AstNode result = resolveParameterHooked(n, name, defaultValue);
 		return hooks.afterResolveParameter(this, n, name, result);
 	}
 	
-	protected AstNode resolveParameterHooked(TemplateParameter n, String name)
+	protected AstNode resolveParameterHooked(
+			TemplateParameter n,
+			String name,
+			TemplateArgument defaultValue)
 	{
 		ResolveParameterLog log = new ResolveParameterLog(name, false);
 		frameLog.getContent().add(log);
@@ -425,6 +434,32 @@ public class ExpansionFrame
 		//{
 		
 		AstNode value = arguments.get(name);
+		
+		if (value == null && defaultValue != null)
+		{
+			// Only the first value after the pipe is the default 
+			// value. The rest is ignored.
+			
+			expansionVisitor.go(defaultValue.getValue());
+			
+			if (defaultValue.getHasName())
+			{
+				// The default value cannot be separated into name and 
+				// value
+				
+				expansionVisitor.go(defaultValue.getName());
+				
+				value = new NodeList();
+				value.add(defaultValue.getName());
+				value.add(new Text("="));
+				value.add(defaultValue.getValue());
+			}
+			else
+			{
+				value = defaultValue.getValue();
+			}
+		}
+		
 		if (value == null)
 		{
 			log.setTimeNeeded(0L);
@@ -757,7 +792,7 @@ public class ExpansionFrame
 		if (page == null)
 		{
 			// FIXME: File warning that we couldn't find the page?
-			return n;
+			return null;
 		}
 		else
 		{
@@ -796,7 +831,7 @@ public class ExpansionFrame
 		if (page == null)
 		{
 			// FIXME: File warning that we couldn't find the page?
-			return n;
+			return null;
 		}
 		else
 		{
@@ -876,6 +911,22 @@ public class ExpansionFrame
 				args.add(arg.getValue());
 			}
 		}
+		
+		/*
+
+		MediaWiki has two ways of invoking parser functions:
+		1) The arguments are passed in preprocessor DOM format.
+		2) The arguments are expanded and passed as text.
+		
+		In case 2) the expanded arguments are TRIMMED! before they are passed to 
+		the parser function. It is my understanding that, even though the 
+		arguments have been expanded and converted to text, there are still 
+		so-called markers in that text.
+		
+		Places in the code:
+		includes/parser/Parser.php:3172-3186 (83b70491fd7cbe9f8a0eadec0f9500636742f6fd)
+		
+		 */
 		
 		AstNode result = pfn.invoke(template, this, args);
 		

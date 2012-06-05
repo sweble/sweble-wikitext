@@ -21,6 +21,7 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.lazy.preprocessor.Template;
 import org.sweble.wikitext.lazy.utils.StringConversionException;
 import org.sweble.wikitext.lazy.utils.StringConverter;
@@ -30,8 +31,8 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class ParserFunctionSwitch
-        extends
-            ParserFunctionBase
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -41,7 +42,10 @@ public class ParserFunctionSwitch
 	}
 	
 	@Override
-	public AstNode invoke(Template template, ExpansionFrame preprocessorFrame, LinkedList<AstNode> args)
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			LinkedList<AstNode> args)
 	{
 		if (args.size() < 1)
 			return new NodeList();
@@ -179,7 +183,7 @@ public class ParserFunctionSwitch
 		}
 		
 		if (result != null)
-			result = preprocessorFrame.expand(result);
+			result = EngineTextUtils.trim(preprocessorFrame.expand(result));
 		
 		if (result == null)
 			result = new NodeList();

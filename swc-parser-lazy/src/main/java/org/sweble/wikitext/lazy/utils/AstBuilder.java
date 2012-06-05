@@ -17,8 +17,11 @@
 
 package org.sweble.wikitext.lazy.utils;
 
+import java.util.Arrays;
+
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.lazy.preprocessor.Ignored;
 import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
@@ -28,9 +31,25 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class AstBuilder
 {
+	@Deprecated
 	public static XmlCommentBuilder astComment()
 	{
 		return new XmlCommentBuilder();
+	}
+	
+	public static XmlComment astComment(String text)
+	{
+		return new XmlComment(text);
+	}
+	
+	public static Ignored astIgnored()
+	{
+		return new Ignored("This should be ignored");
+	}
+	
+	public static Ignored astIgnored(String text)
+	{
+		return new Ignored(text);
 	}
 	
 	public static HorizontalRuleBuilder astHr()
@@ -48,9 +67,20 @@ public class AstBuilder
 		return new XmlAttributeBuilder();
 	}
 	
+	@Deprecated
 	public static TextBuilder astText()
 	{
 		return new TextBuilder();
+	}
+	
+	public static Text astText(String text)
+	{
+		return new Text(text);
+	}
+	
+	public static NodeList astList(AstNode... contents)
+	{
+		return new NodeList(Arrays.asList(contents));
 	}
 	
 	public static TmplArgBuilder astTmplArg()

@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.sweble.wikitext.lazy.parser.MagicWord;
+import org.sweble.wikitext.lazy.parser.RtData;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.Template;
@@ -95,7 +96,11 @@ public final class ExpansionVisitor
 			
 			LinkedList<TemplateArgument> pfnArgs = new LinkedList<TemplateArgument>(args);
 			
-			pfnArgs.addFirst(new TemplateArgument(arg0, false));
+			TemplateArgument arg = new TemplateArgument(arg0, false);
+			if (preprocessorFrame.getCompiler().getWikiConfig().isGatherRtData())
+				arg.setAttribute("RTD", RtData.build(":", null, null));
+			
+			pfnArgs.addFirst(arg);
 			
 			result = preprocessorFrame.resolveParserFunction(n, pfn, pfnArgs);
 		}
@@ -138,34 +143,7 @@ public final class ExpansionVisitor
 		if (name != null)
 		{
 			name = name.trim();
-			value = preprocessorFrame.resolveParameter(n, name);
-		}
-		
-		if (value == null && n.getDefaultValue() != null)
-		{
-			// Only the first value after the pipe is the default 
-			// value. The rest is ignored.
-			
-			TemplateArgument arg = n.getDefaultValue();
-			
-			dispatch(arg.getValue());
-			
-			if (arg.getHasName())
-			{
-				// The default value cannot be separated into name and 
-				// value
-				
-				dispatch(arg.getName());
-				
-				value = new NodeList();
-				value.add(arg.getName());
-				value.add(new Text("="));
-				value.add(arg.getValue());
-			}
-			else
-			{
-				value = arg.getValue();
-			}
+			value = preprocessorFrame.resolveParameter(n, name, n.getDefaultValue());
 		}
 		
 		if (value == null)

@@ -21,15 +21,16 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.engine.utils.ApplyToText;
+import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.lazy.preprocessor.Template;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class ParserFunctionLc
-        extends
-            ParserFunctionBase
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -39,26 +40,27 @@ public class ParserFunctionLc
 	}
 	
 	@Override
-	public AstNode invoke(Template template, ExpansionFrame preprocessorFrame, LinkedList<AstNode> args)
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			LinkedList<AstNode> args)
 	{
 		if (args.size() < 1)
 			return new NodeList();
 		
 		AstNode arg0 = preprocessorFrame.expand(args.get(0));
 		
-		NodeList result = new NodeList();
-		for (AstNode n : arg0)
-		{
-			if (n.isNodeType(AstNode.NT_TEXT))
-			{
-				result.add(new Text(((Text) n).getContent().toLowerCase()));
-			}
-			else
-			{
-				result.add(n);
-			}
-		}
+		EngineTextUtils.trim(arg0);
 		
-		return result;
+		new ApplyToText(new ApplyToText.Functor()
+		{
+			@Override
+			public String apply(String text)
+			{
+				return text.toLowerCase();
+			}
+		}).go(arg0);
+		
+		return arg0;
 	}
 }
