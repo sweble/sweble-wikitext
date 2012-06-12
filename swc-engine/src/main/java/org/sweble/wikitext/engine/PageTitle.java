@@ -126,6 +126,40 @@ public class PageTitle
 	
 	// =========================================================================
 	
+	public PageTitle newWithNamespace(
+			WikiConfigurationInterface config,
+			Namespace ns)
+	{
+		return new PageTitle(
+				title,
+				fragment,
+				ns,
+				interwiki,
+				initialColon,
+				ns.equals(config.getDefaultNamespace()));
+	}
+	
+	public PageTitle getBaseTitle()
+	{
+		if (!namespace.isSubpages())
+			return this;
+		
+		int i = title.lastIndexOf('/');
+		if (i < 0)
+			return this;
+		
+		String baseTitle = title.substring(0, i);
+		return new PageTitle(
+				baseTitle,
+				null,
+				namespace,
+				interwiki,
+				initialColon,
+				isDefaultNs);
+	}
+	
+	// =========================================================================
+	
 	protected PageTitle(
 			String title,
 			String fragment,

@@ -17,14 +17,32 @@
 
 package org.sweble.wikitext.engine.ext;
 
+import java.util.List;
+
+import org.sweble.wikitext.engine.ExpansionFrame;
+import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.lazy.preprocessor.Template;
+
+import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.Text;
+
 public class ParserFunctionBasePagename
-        extends
-            UnimplementedParserFunction
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
 	public ParserFunctionBasePagename()
 	{
 		super("BASEPAGENAME");
+	}
+	
+	@Override
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> args)
+	{
+		return new Text(preprocessorFrame.getRootFrame().getTitle().getBaseTitle().getFullTitle());
 	}
 }

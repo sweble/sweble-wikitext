@@ -20,21 +20,24 @@ package org.sweble.wikitext.engine.ext;
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
+import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.engine.config.Namespace;
+import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
 import org.sweble.wikitext.lazy.preprocessor.Template;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
-public class ParserFunctionFullPagename
+public class ParserFunctionSubjectPagename
 		extends
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionFullPagename()
+	public ParserFunctionSubjectPagename()
 	{
-		super("FULLPAGENAME");
+		super("SUBJECTPAGENAME");
 	}
 	
 	@Override
@@ -43,6 +46,15 @@ public class ParserFunctionFullPagename
 			ExpansionFrame preprocessorFrame,
 			List<? extends AstNode> args)
 	{
-		return new Text(preprocessorFrame.getRootFrame().getTitle().getFullTitle());
+		WikiConfigurationInterface config = preprocessorFrame.getWikiConfig();
+		
+		PageTitle title = preprocessorFrame.getRootFrame().getTitle();
+		
+		Namespace ns = title.getNamespace();
+		Namespace subjectNs = config.getSubjectNamespaceFor(ns);
+		if (subjectNs != ns)
+			title = title.newWithNamespace(config, subjectNs);
+		
+		return new Text(title.getFullTitle());
 	}
 }

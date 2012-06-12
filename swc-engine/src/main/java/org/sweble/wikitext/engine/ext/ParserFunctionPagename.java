@@ -26,15 +26,15 @@ import org.sweble.wikitext.lazy.preprocessor.Template;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
-public class ParserFunctionFullPagename
+public class ParserFunctionPagename
 		extends
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionFullPagename()
+	public ParserFunctionPagename()
 	{
-		super("FULLPAGENAME");
+		super("PAGENAME");
 	}
 	
 	@Override
@@ -43,6 +43,6 @@ public class ParserFunctionFullPagename
 			ExpansionFrame preprocessorFrame,
 			List<? extends AstNode> args)
 	{
-		return new Text(preprocessorFrame.getRootFrame().getTitle().getFullTitle());
+		return new Text(preprocessorFrame.getRootFrame().getTitle().getDenormalizedTitle());
 	}
 }

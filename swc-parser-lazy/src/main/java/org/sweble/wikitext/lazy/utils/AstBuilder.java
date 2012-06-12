@@ -18,10 +18,13 @@
 package org.sweble.wikitext.lazy.utils;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
+import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
+import org.sweble.wikitext.lazy.preprocessor.Template;
 import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
@@ -73,6 +76,11 @@ public class AstBuilder
 		return new TextBuilder();
 	}
 	
+	public static AstNode astProtectedText(String text)
+	{
+		return new ProtectedText(text);
+	}
+	
 	public static Text astText(String text)
 	{
 		return new Text(text);
@@ -91,6 +99,11 @@ public class AstBuilder
 	public static XmlAttribBuilder astXmlAttribute()
 	{
 		return new XmlAttribBuilder();
+	}
+	
+	public static TemplateBuilder astTemplate()
+	{
+		return new TemplateBuilder();
 	}
 	
 	// =========================================================================
@@ -263,6 +276,39 @@ public class AstBuilder
 		public XmlAttribute build()
 		{
 			return new XmlAttribute(name, value, value != null);
+		}
+	}
+	
+	public static final class TemplateBuilder
+	{
+		private NodeList name = null;
+		
+		private NodeList args = null;
+		
+		public TemplateBuilder withName(AstNode... name)
+		{
+			this.name = astList(name);
+			return this;
+		}
+		
+		public TemplateBuilder withArguments(TemplateArgument... args)
+		{
+			this.args = astList(args);
+			return this;
+		}
+		
+		public TemplateBuilder withArguments(List<TemplateArgument> args)
+		{
+			return withArguments(args.toArray(new TemplateArgument[args.size()]));
+		}
+		
+		public Template build()
+		{
+			if (name == null)
+				name = astList(astText("default template"));
+			if (args == null)
+				args = astList();
+			return new Template(name, args);
 		}
 	}
 }

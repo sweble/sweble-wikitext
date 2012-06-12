@@ -21,6 +21,8 @@ public interface ExpansionCallback
 {
 	/**
 	 * Retrieves the latest revision of the article.
+	 * 
+	 * @return The requested article or null if no such article could be found.
 	 */
 	FullPage retrieveWikitext(ExpansionFrame expansionFrame, PageTitle pageTitle) throws Exception;
 	

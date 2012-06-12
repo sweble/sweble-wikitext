@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
@@ -30,8 +30,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ParserFunctionIfeq
-        extends
-            ParserFunctionBase
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -41,7 +41,10 @@ public class ParserFunctionIfeq
 	}
 	
 	@Override
-	public AstNode invoke(Template template, ExpansionFrame preprocessorFrame, LinkedList<AstNode> args)
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> args)
 	{
 		if (args.size() < 3)
 			return new NodeList();

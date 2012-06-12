@@ -20,24 +20,26 @@ package org.sweble.wikitext.engine.ext;
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
+import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.ParserFunctionBase;
-import org.sweble.wikitext.engine.config.Namespace;
+import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.preprocessor.Template;
 import org.sweble.wikitext.lazy.utils.StringConversionException;
 import org.sweble.wikitext.lazy.utils.StringConverter;
+import org.sweble.wikitext.lazy.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
+import de.fau.cs.osr.ptk.common.ast.NodeList;
 
-public class ParserFunctionNs
+public class ParserFunctionIfExist
 		extends
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionNs()
+	public ParserFunctionIfExist()
 	{
-		super("ns");
+		super("#ifexist");
 	}
 	
 	@Override
@@ -46,41 +48,65 @@ public class ParserFunctionNs
 			ExpansionFrame preprocessorFrame,
 			List<? extends AstNode> args)
 	{
-		if (args.size() < 0)
-			return null;
+		if (args.size() < 2)
+			return new NodeList();
 		
-		AstNode arg0 = preprocessorFrame.expand(args.get(0));
+		AstNode test = preprocessorFrame.expand(args.get(0));
 		
-		String arg;
+		String testStr = null;
 		try
 		{
-			arg = StringConverter.convert(arg0).trim();
+			testStr = StringConverter.convert(test).trim();
 		}
 		catch (StringConversionException e1)
 		{
-			return null;
+			// We have to convert the entire argument to a string to create a page name from it.
+			return template;
 		}
 		
-		Namespace namespace = preprocessorFrame.getWikiConfig().getNamespace(arg);
-		if (namespace == null)
+		PageTitle pageTitle;
+		try
 		{
-			int ns;
-			try
-			{
-				ns = Integer.parseInt(arg);
-			}
-			catch (NumberFormatException e)
-			{
-				return null;
-			}
-			
-			namespace = preprocessorFrame.getWikiConfig().getNamespace(ns);
+			pageTitle = PageTitle.make(preprocessorFrame.getWikiConfig(), testStr);
+		}
+		catch (LinkTargetException e)
+		{
+			// A page with an illegal name cannot exist.
+			return template;
 		}
 		
-		String result = "";
-		if (namespace != null)
-			result = namespace.getName();
+		boolean eval;
+		try
+		{
+			eval = preprocessorFrame.existsPage(pageTitle);
+		}
+		catch (Exception e)
+		{
+			// Interpret an error while testing for existence as non-existence.
+			eval = false;
+		}
 		
-		return new Text(result);
+		AstNode result;
+		if (eval)
+		{
+			result = args.get(1);
+		}
+		else
+		{
+			result = null;
+			if (args.size() >= 3)
+				result = args.get(2);
+		}
+		
+		if (result != null)
+			result = preprocessorFrame.expand(result);
+		
+		if (result == null)
+			result = new NodeList();
+		
+		if (result.isNodeType(AstNode.NT_NODE_LIST))
+			return TextUtils.trim((NodeList) result);
+		
+		return result;
 	}
 }

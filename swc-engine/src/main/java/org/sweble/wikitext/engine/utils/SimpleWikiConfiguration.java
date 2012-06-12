@@ -39,15 +39,26 @@ import org.sweble.wikitext.engine.config.Interwiki;
 import org.sweble.wikitext.engine.config.MagicWord;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
+import org.sweble.wikitext.engine.ext.ParserFunctionBasePagename;
 import org.sweble.wikitext.engine.ext.ParserFunctionFullPagename;
+import org.sweble.wikitext.engine.ext.ParserFunctionFullPagenamee;
 import org.sweble.wikitext.engine.ext.ParserFunctionFullurl;
 import org.sweble.wikitext.engine.ext.ParserFunctionIf;
 import org.sweble.wikitext.engine.ext.ParserFunctionIfError;
+import org.sweble.wikitext.engine.ext.ParserFunctionIfExist;
 import org.sweble.wikitext.engine.ext.ParserFunctionIfeq;
 import org.sweble.wikitext.engine.ext.ParserFunctionLc;
 import org.sweble.wikitext.engine.ext.ParserFunctionNamespace;
 import org.sweble.wikitext.engine.ext.ParserFunctionNs;
+import org.sweble.wikitext.engine.ext.ParserFunctionPagename;
+import org.sweble.wikitext.engine.ext.ParserFunctionProtectionLevel;
+import org.sweble.wikitext.engine.ext.ParserFunctionSafeSubst;
+import org.sweble.wikitext.engine.ext.ParserFunctionSubPagename;
+import org.sweble.wikitext.engine.ext.ParserFunctionSubjectPagename;
 import org.sweble.wikitext.engine.ext.ParserFunctionSwitch;
+import org.sweble.wikitext.engine.ext.ParserFunctionTalkPagename;
+import org.sweble.wikitext.engine.ext.ParserFunctionTalkSpace;
+import org.sweble.wikitext.engine.ext.ParserFunctionTime;
 import org.sweble.wikitext.engine.ext.TagExtensionMath;
 import org.sweble.wikitext.engine.ext.TagExtensionNoWiki;
 import org.sweble.wikitext.engine.ext.TagExtensionPre;
@@ -130,7 +141,7 @@ public class SimpleWikiConfiguration
 	
 	// =========================================================================
 	
-	private void staticSetup()
+	protected void staticSetup()
 	{
 		// ====[ Native MediaWiki Features ]====================================
 		
@@ -152,6 +163,9 @@ public class SimpleWikiConfiguration
 		//__START__
 		//__STATICREDIRECT__
 		//__TOC__
+		
+		// Strange stuff
+		addParserFunction(new ParserFunctionSafeSubst());
 		
 		// Variables - Date and Time
 		addParserFunction(new UnimplementedParserFunction("CURRENTDAY2"));
@@ -183,19 +197,18 @@ public class SimpleWikiConfiguration
 		
 		// Variables - Page Names
 		addParserFunction(new UnimplementedParserFunction("BASEPAGENAMEE"));
-		addParserFunction(new UnimplementedParserFunction("BASEPAGENAME"));
-		//addParserFunction(new ParserFunctionBasePagename());
-		addParserFunction(new UnimplementedParserFunction("FULLPAGENAMEE"));
+		addParserFunction(new ParserFunctionBasePagename());
+		addParserFunction(new ParserFunctionFullPagenamee());
 		addParserFunction(new ParserFunctionFullPagename());
 		addParserFunction(new UnimplementedParserFunction("PAGENAMEE"));
-		addParserFunction(new UnimplementedParserFunction("PAGENAME"));
+		addParserFunction(new ParserFunctionPagename());
 		addParserFunction(new UnimplementedParserFunction("SUBJECTPAGENAMEE"));
-		//addParserFunction(new ParserFunctionSubPagename());
 		addParserFunction(new UnimplementedParserFunction("SUBJECTPAGENAME"));
+		addParserFunction(new ParserFunctionSubjectPagename());
 		addParserFunction(new UnimplementedParserFunction("SUBPAGENAMEE"));
-		addParserFunction(new UnimplementedParserFunction("SUBPAGENAME"));
+		addParserFunction(new ParserFunctionSubPagename());
 		addParserFunction(new UnimplementedParserFunction("TALKPAGENAMEE"));
-		addParserFunction(new UnimplementedParserFunction("TALKPAGENAME"));
+		addParserFunction(new ParserFunctionTalkPagename());
 		
 		// Variables - Namespaces
 		addParserFunction(new UnimplementedParserFunction("ARTICLESPACE"));
@@ -204,7 +217,7 @@ public class SimpleWikiConfiguration
 		addParserFunction(new UnimplementedParserFunction("SUBJECTSPACEE"));
 		addParserFunction(new UnimplementedParserFunction("SUBJECTSPACE"));
 		addParserFunction(new UnimplementedParserFunction("TALKSPACEE"));
-		addParserFunction(new UnimplementedParserFunction("TALKSPACE"));
+		addParserFunction(new ParserFunctionTalkSpace());
 		
 		// Variables - Statistics
 		addParserFunction(new UnimplementedParserFunction("NUMBERINGROUP"));
@@ -233,7 +246,7 @@ public class SimpleWikiConfiguration
 		addParserFunction(new UnimplementedParserFunction("DIRECTIONMARK"));
 		addParserFunction(new UnimplementedParserFunction("DIRMARK"));
 		addParserFunction(new UnimplementedParserFunction("DISPLAYTITLE"));
-		addParserFunction(new UnimplementedParserFunction("PROTECTIONLEVEL"));
+		addParserFunction(new ParserFunctionProtectionLevel());
 		addParserFunction(new UnimplementedParserFunction("REVISIONDAY2"));
 		addParserFunction(new UnimplementedParserFunction("REVISIONDAY"));
 		addParserFunction(new UnimplementedParserFunction("REVISIONID"));
@@ -285,10 +298,10 @@ public class SimpleWikiConfiguration
 		addParserFunction(new ParserFunctionIfeq());
 		addParserFunction(new ParserFunctionIfError());
 		addParserFunction(new UnimplementedParserFunction("#ifexpr"));
-		addParserFunction(new UnimplementedParserFunction("#ifexist"));
+		addParserFunction(new ParserFunctionIfExist());
 		addParserFunction(new UnimplementedParserFunction("#rel2abs"));
 		addParserFunction(new ParserFunctionSwitch());
-		addParserFunction(new UnimplementedParserFunction("#time"));
+		addParserFunction(new ParserFunctionTime());
 		addParserFunction(new UnimplementedParserFunction("#timel"));
 		addParserFunction(new UnimplementedParserFunction("#titleparts"));
 		
@@ -418,6 +431,30 @@ public class SimpleWikiConfiguration
 					"The template namespace is not set");
 		
 		return templateNamespace;
+	}
+	
+	@Override
+	public Namespace getTalkNamespaceFor(Namespace ns)
+	{
+		if (ns.isTalkNamespace())
+			return ns;
+		
+		if (ns.getId() < 0)
+			return null;
+		
+		return getNamespace(ns.getId() + 1);
+	}
+	
+	@Override
+	public Namespace getSubjectNamespaceFor(Namespace ns)
+	{
+		if (ns.isSubjectNamespace())
+			return ns;
+		
+		if (ns.getId() <= 0)
+			return null;
+		
+		return getNamespace(ns.getId() - 1);
 	}
 	
 	// =========================================================================
@@ -572,8 +609,28 @@ public class SimpleWikiConfiguration
 	@Override
 	public String getWikiUrl()
 	{
-		// FIXME: Properly implement this method
-		return "http://localhost/wiki";
+		return "http://localhost/mediawiki/";
+	}
+	
+	@Override
+	public String getWikiUrl(String title, String query)
+	{
+		if (title != null && title.isEmpty())
+			title = null;
+		if (query != null && query.isEmpty())
+			query = null;
+		
+		String url = getWikiUrl();
+		
+		if (title != null || query != null)
+			url += "index.php?";
+		
+		if (title != null)
+			url += "title=" + title;
+		if (query != null)
+			url += (title != null) ? "&" + query : query;
+		
+		return url;
 	}
 	
 	// =========================================================================

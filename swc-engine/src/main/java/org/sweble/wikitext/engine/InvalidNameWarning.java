@@ -15,34 +15,36 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.engine.ext;
+package org.sweble.wikitext.engine;
 
-import java.util.List;
-
-import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.engine.ParserFunctionBase;
-import org.sweble.wikitext.lazy.preprocessor.Template;
+import org.sweble.wikitext.lazy.parser.WarningSeverity;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
-public class ParserFunctionFullPagename
-		extends
-			ParserFunctionBase
+public class InvalidNameWarning
+        extends
+            OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionFullPagename()
+	private static final String message =
+	        "The wikitext cannot be converted into a plain name";
+	
+	// =========================================================================
+	
+	public InvalidNameWarning(
+	        WarningSeverity severity,
+	        String origin,
+	        AstNode name)
 	{
-		super("FULLPAGENAME");
+		super(name, severity, origin, message);
 	}
 	
-	@Override
-	public AstNode invoke(
-			Template template,
-			ExpansionFrame preprocessorFrame,
-			List<? extends AstNode> args)
+	public InvalidNameWarning(
+	        WarningSeverity severity,
+	        Class<?> origin,
+	        AstNode name)
 	{
-		return new Text(preprocessorFrame.getRootFrame().getTitle().getFullTitle());
+		super(name, severity, origin, message);
 	}
 }

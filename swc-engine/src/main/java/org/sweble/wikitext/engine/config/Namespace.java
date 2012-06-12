@@ -22,8 +22,8 @@ import java.util.Collection;
 import java.util.TreeSet;
 
 public class Namespace
-        implements
-            Serializable
+		implements
+			Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -42,12 +42,12 @@ public class Namespace
 	// =========================================================================
 	
 	public Namespace(
-	        int id,
-	        String name,
-	        String canonical,
-	        boolean subpages,
-	        boolean isFileNs,
-	        Collection<String> aliases)
+			int id,
+			String name,
+			String canonical,
+			boolean subpages,
+			boolean isFileNs,
+			Collection<String> aliases)
 	{
 		this.id = id;
 		this.name = name;
@@ -94,6 +94,16 @@ public class Namespace
 	public boolean isFileNs()
 	{
 		return isFileNs;
+	}
+	
+	public boolean isTalkNamespace()
+	{
+		return (id > 0) && (id % 2 == 1);
+	}
+	
+	public boolean isSubjectNamespace()
+	{
+		return (id >= 0) && (id % 2 == 0);
 	}
 	
 	@Override

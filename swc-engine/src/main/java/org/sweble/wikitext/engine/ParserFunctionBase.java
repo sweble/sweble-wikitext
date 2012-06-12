@@ -18,25 +18,33 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
-import java.util.LinkedList;
+import java.util.List;
 
 import org.sweble.wikitext.lazy.preprocessor.Template;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public abstract class ParserFunctionBase
-        implements
-            Serializable
+		implements
+			Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
 	private final String name;
 	
+	private final PfnArgumentMode argMode;
+	
 	// =========================================================================
 	
 	public ParserFunctionBase(String name)
 	{
-		super();
+		this(PfnArgumentMode.UNEXPANDED_VALUES, name);
+		
+	}
+	
+	public ParserFunctionBase(PfnArgumentMode argMode, String name)
+	{
+		this.argMode = argMode;
 		this.name = name;
 	}
 	
@@ -47,8 +55,13 @@ public abstract class ParserFunctionBase
 		return name;
 	}
 	
+	public PfnArgumentMode getArgMode()
+	{
+		return argMode;
+	}
+	
 	public abstract AstNode invoke(
-	        Template template,
-	        ExpansionFrame preprocessorFrame,
-	        LinkedList<AstNode> args);
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> argsValues);
 }

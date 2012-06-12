@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
@@ -45,7 +45,7 @@ public class ParserFunctionSwitch
 	public AstNode invoke(
 			Template template,
 			ExpansionFrame preprocessorFrame,
-			LinkedList<AstNode> args)
+			List<? extends AstNode> args)
 	{
 		if (args.size() < 1)
 			return new NodeList();

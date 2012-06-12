@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext;
 
-import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
@@ -30,13 +30,13 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ParserFunctionIfError
-        extends
-            ParserFunctionBase
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
 	private static final Pattern classErrorPattern =
-	        Pattern.compile("<[^<>\\s]*?\\sclass\\s*=\\s*\"error\"[^<>]*>");
+			Pattern.compile("<[^<>\\s]*?\\sclass\\s*=\\s*\"error\"[^<>]*>");
 	
 	public ParserFunctionIfError()
 	{
@@ -44,7 +44,10 @@ public class ParserFunctionIfError
 	}
 	
 	@Override
-	public AstNode invoke(Template template, ExpansionFrame preprocessorFrame, LinkedList<AstNode> args)
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> args)
 	{
 		// FIXME: Complain about wrong number of arguments 1 > count(args) > 3 
 		if (args.size() < 1)

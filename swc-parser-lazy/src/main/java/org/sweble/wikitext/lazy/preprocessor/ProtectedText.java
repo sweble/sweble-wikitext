@@ -17,11 +17,13 @@
 
 package org.sweble.wikitext.lazy.preprocessor;
 
+import org.sweble.wikitext.lazy.AstNodeTypes;
+
 import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class ProtectedText
-        extends
-            Text
+		extends
+			Text
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -33,5 +35,13 @@ public class ProtectedText
 	public ProtectedText(String content)
 	{
 		super(content);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public int getNodeType()
+	{
+		return AstNodeTypes.NT_PROTECTED_TEXT;
 	}
 }

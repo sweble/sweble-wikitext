@@ -17,47 +17,21 @@
 
 package org.sweble.wikitext.engine;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
-import org.sweble.wikitext.engine.log.IllegalNameException;
-import org.sweble.wikitext.engine.log.ParseException;
-import org.sweble.wikitext.engine.log.ResolveMagicWordLog;
-import org.sweble.wikitext.engine.log.ResolveParameterLog;
-import org.sweble.wikitext.engine.log.ResolveRedirectLog;
-import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
-import org.sweble.wikitext.engine.log.UnhandledException;
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.LinkTargetException;
-import org.sweble.wikitext.lazy.parser.MagicWord;
-import org.sweble.wikitext.lazy.preprocessor.Redirect;
-import org.sweble.wikitext.lazy.preprocessor.TagExtension;
-import org.sweble.wikitext.lazy.preprocessor.Template;
-import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
-import org.sweble.wikitext.lazy.preprocessor.TemplateParameter;
-import org.sweble.wikitext.lazy.utils.StringConversionException;
-import org.sweble.wikitext.lazy.utils.StringConverter;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
+import de.fau.cs.osr.ptk.common.VisitingException;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
-import de.fau.cs.osr.utils.StopWatch;
 
 public class ExpansionFrame
 {
-	private static final boolean DEBUG = true;
-	
 	private final Compiler compiler;
 	
 	private final ExpansionFrame rootFrame;
@@ -74,11 +48,11 @@ public class ExpansionFrame
 	
 	private final ExpansionCallback callback;
 	
-	private final ExpansionDebugHooks hooks;
-	
 	private final List<Warning> warnings;
 	
 	private final EntityMap entityMap;
+	
+	private final boolean noRedirect;
 	
 	private ExpansionVisitor expansionVisitor;
 	
@@ -90,20 +64,30 @@ public class ExpansionFrame
 			ExpansionDebugHooks hooks,
 			PageTitle title,
 			EntityMap entityMap,
+			boolean noRedirect,
 			List<Warning> warnings,
-			ContentNode frameLog)
+			ContentNode frameLog,
+			boolean timingEnabled,
+			boolean catchAll)
 	{
 		this.compiler = compiler;
 		this.callback = callback;
-		this.hooks = hooks;
 		this.title = title;
 		this.entityMap = entityMap;
 		this.arguments = new HashMap<String, AstNode>();
 		this.forInclusion = false;
+		this.noRedirect = noRedirect;
 		this.warnings = warnings;
 		this.frameLog = frameLog;
 		this.rootFrame = this;
 		this.parentFrame = null;
+		
+		expansionVisitor = new ExpansionVisitor(
+				this,
+				frameLog,
+				hooks,
+				timingEnabled,
+				catchAll);
 	}
 	
 	public ExpansionFrame(
@@ -114,22 +98,32 @@ public class ExpansionFrame
 			EntityMap entityMap,
 			Map<String, AstNode> arguments,
 			boolean forInclusion,
+			boolean noRedirect,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
 			List<Warning> warnings,
-			ContentNode frameLog)
+			ContentNode frameLog,
+			boolean timingEnabled,
+			boolean catchAll)
 	{
 		this.compiler = compiler;
 		this.callback = callback;
-		this.hooks = hooks;
 		this.title = title;
 		this.entityMap = entityMap;
 		this.arguments = arguments;
 		this.forInclusion = forInclusion;
+		this.noRedirect = noRedirect;
 		this.warnings = warnings;
 		this.frameLog = frameLog;
 		this.rootFrame = rootFrame;
 		this.parentFrame = parentFrame;
+		
+		expansionVisitor = new ExpansionVisitor(
+				this,
+				frameLog,
+				hooks,
+				timingEnabled,
+				catchAll);
 	}
 	
 	// =========================================================================
@@ -179,7 +173,7 @@ public class ExpansionFrame
 		warnings.add(warning);
 	}
 	
-	private void addAllWarnings(Collection<Warning> warnings)
+	public void addWarnings(Collection<Warning> warnings)
 	{
 		this.warnings.addAll(warnings);
 	}
@@ -189,806 +183,39 @@ public class ExpansionFrame
 		return warnings;
 	}
 	
-	// =========================================================================
-	
-	public AstNode expand(AstNode ppAst)
+	public EntityMap getEntityMap()
 	{
-		expansionVisitor = new ExpansionVisitor(this);
-		return (AstNode) expansionVisitor.go(ppAst);
+		return entityMap;
+	}
+	
+	public ExpansionCallback getCallback()
+	{
+		return callback;
+	}
+	
+	public boolean isNoRedirect()
+	{
+		return noRedirect;
 	}
 	
 	// =========================================================================
 	
-	protected AstNode resolveRedirect(Redirect n, String target)
-	{
-		if (hooks == null)
-			return resolveRedirectHooked(n, target);
-		
-		AstNode cont = hooks.beforeResolveRedirect(this, n, target);
-		if (cont != ExpansionDebugHooks.PROCEED)
-			return cont;
-		
-		// Proceed
-		AstNode result = resolveRedirectHooked(n, target);
-		return hooks.afterResolveRedirect(this, n, target, result);
-	}
-	
-	private AstNode resolveRedirectHooked(Redirect n, String target)
-	{
-		ResolveRedirectLog log = new ResolveRedirectLog(target, false);
-		frameLog.getContent().add(log);
-		
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
-		
-		try
-		{
-			// FIXME: What if we don't want to redirect, but view the redirect 
-			//        page itself? Then we probably don't want to return the
-			//        contents...
-			return redirectTo(n, target, log);
-		}
-		catch (LinkTargetException e)
-		{
-			// FIXME: Should we rather file a warning? Or additionally file a warning?
-			log.getContent().add(new ParseException(e.getMessage()));
-			
-			return n;
-		}
-		catch (Throwable e)
-		{
-			if (DEBUG)
-				throw new RuntimeException(e);
-			
-			StringWriter w = new StringWriter();
-			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
-			
-			return n;
-		}
-		finally
-		{
-			stopWatch.stop();
-			log.setTimeNeeded(stopWatch.getElapsedTime());
-		}
-	}
-	
-	protected AstNode resolveParserFunction(
-			Template n,
-			String target,
-			List<TemplateArgument> arguments)
-	{
-		if (hooks == null)
-			return resolveParserFunctionHooked(n, target, arguments);
-		
-		AstNode cont = hooks.beforeResolveParserFunction(this, n, target, arguments);
-		if (cont != ExpansionDebugHooks.PROCEED)
-			return cont;
-		
-		// Proceed
-		AstNode result = resolveParserFunctionHooked(n, target, arguments);
-		return hooks.afterResolveParserFunction(this, n, target, arguments, result);
-	}
-	
-	private AstNode resolveParserFunctionHooked(
-			Template n,
-			String target,
-			List<TemplateArgument> arguments)
-	{
-		ResolveTransclusionLog log = new ResolveTransclusionLog(target, false);
-		frameLog.getContent().add(log);
-		
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
-		
-		try
-		{
-			ParserFunctionBase pfn = getWikiConfig().getParserFunction(target);
-			if (pfn == null)
-			{
-				// FIXME: File warning that we couldn't find the parser function?
-				return n;
-			}
-			
-			return invokeParserFunction(n, pfn, arguments, log);
-		}
-		catch (Throwable e)
-		{
-			if (DEBUG)
-				throw new RuntimeException(e);
-			
-			StringWriter w = new StringWriter();
-			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
-			
-			return n;
-		}
-		finally
-		{
-			stopWatch.stop();
-			log.setTimeNeeded(stopWatch.getElapsedTime());
-		}
-	}
-	
-	protected AstNode resolveTransclusionOrMagicWord(
-			Template n,
-			String target,
-			List<TemplateArgument> arguments)
-	{
-		if (hooks == null)
-			return resolveTransclusionOrMagicWordHooked(n, target, arguments);
-		
-		AstNode cont = hooks.beforeResolveTransclusionOrMagicWord(this, n, target, arguments);
-		if (cont != ExpansionDebugHooks.PROCEED)
-			return cont;
-		
-		// Proceed
-		AstNode result = resolveTransclusionOrMagicWordHooked(n, target, arguments);
-		return hooks.afterResolveTransclusionOrMagicWord(this, n, target, arguments, result);
-	}
-	
-	protected AstNode resolveTransclusionOrMagicWordHooked(
-			Template n,
-			String target,
-			List<TemplateArgument> arguments)
-	{
-		ResolveTransclusionLog log = new ResolveTransclusionLog(target, false);
-		frameLog.getContent().add(log);
-		
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
-		
-		try
-		{
-			if (arguments.isEmpty())
-			{
-				ParserFunctionBase pfn = getWikiConfig().getParserFunction(target);
-				if (pfn != null)
-				{
-					if (hooks != null)
-					{
-						AstNode cont = hooks.resolveTransclusionOrMagicWordBeforeInvokeParserFunction(this, n, pfn, arguments);
-						if (cont != ExpansionDebugHooks.PROCEED)
-							return cont;
-						
-					}
-					
-					AstNode result = invokeParserFunction(n, pfn, arguments, log);
-					
-					if (hooks != null)
-						result = hooks.resolveTransclusionOrMagicWordAfterInvokeParserFunction(this, n, pfn, arguments, result);
-					
-					return result;
-				}
-			}
-			
-			if (hooks != null)
-			{
-				AstNode cont = hooks.resolveTransclusionOrMagicWordBeforeTranscludePage(this, n, target, arguments);
-				if (cont != ExpansionDebugHooks.PROCEED)
-					return cont;
-				
-			}
-			
-			AstNode result = transcludePage(n, target, arguments, log);
-			
-			if (hooks != null)
-				result = hooks.resolveTransclusionOrMagicWordAfterTranscludePage(this, n, target, arguments, result);
-			
-			return result;
-		}
-		catch (LinkTargetException e)
-		{
-			// FIXME: Should we rather file a warning? Or additionally file a warning?
-			log.getContent().add(new ParseException(e.getMessage()));
-			
-			return n;
-		}
-		catch (Throwable e)
-		{
-			if (DEBUG)
-				throw new RuntimeException(e);
-			
-			StringWriter w = new StringWriter();
-			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
-			
-			return n;
-		}
-		finally
-		{
-			stopWatch.stop();
-			log.setTimeNeeded(stopWatch.getElapsedTime());
-		}
-	}
-	
-	protected AstNode resolveParameter(
-			TemplateParameter n,
-			String name,
-			TemplateArgument defaultValue)
-	{
-		if (hooks == null)
-			return resolveParameterHooked(n, name, defaultValue);
-		
-		AstNode cont = hooks.beforeResolveParameter(this, n, name);
-		if (cont != ExpansionDebugHooks.PROCEED)
-			return cont;
-		
-		// Proceed
-		AstNode result = resolveParameterHooked(n, name, defaultValue);
-		return hooks.afterResolveParameter(this, n, name, result);
-	}
-	
-	protected AstNode resolveParameterHooked(
-			TemplateParameter n,
-			String name,
-			TemplateArgument defaultValue)
-	{
-		ResolveParameterLog log = new ResolveParameterLog(name, false);
-		frameLog.getContent().add(log);
-		
-		//StopWatch stopWatch = new StopWatch();
-		//stopWatch.start();
-		
-		//try
-		//{
-		
-		AstNode value = arguments.get(name);
-		
-		if (value == null && defaultValue != null)
-		{
-			// Only the first value after the pipe is the default 
-			// value. The rest is ignored.
-			
-			expansionVisitor.go(defaultValue.getValue());
-			
-			if (defaultValue.getHasName())
-			{
-				// The default value cannot be separated into name and 
-				// value
-				
-				expansionVisitor.go(defaultValue.getName());
-				
-				value = new NodeList();
-				value.add(defaultValue.getName());
-				value.add(new Text("="));
-				value.add(defaultValue.getValue());
-			}
-			else
-			{
-				value = defaultValue.getValue();
-			}
-		}
-		
-		if (value == null)
-		{
-			log.setTimeNeeded(0L);
-			return n;
-		}
-		
-		log.setTimeNeeded(0L);
-		log.setSuccess(true);
-		
-		return value;
-		
-		//}
-		//finally
-		//{
-		//	log.setTimeNeeded(stopWatch.getElapsedTime());
-		//}
-	}
-	
-	protected AstNode resolveTagExtension(
-			TagExtension n,
-			String name,
-			NodeList attributes,
-			String body)
-	{
-		if (hooks == null)
-			return resolveTagExtensionHooked(n, name, attributes, body);
-		
-		AstNode cont = hooks.beforeResolveTagExtension(this, n, name, attributes, body);
-		if (cont != ExpansionDebugHooks.PROCEED)
-			return cont;
-		
-		// Proceed
-		AstNode result = resolveTagExtensionHooked(n, name, attributes, body);
-		return hooks.afterResolveTagExtension(this, n, name, attributes, body, result);
-	}
-	
-	protected AstNode resolveTagExtensionHooked(
-			TagExtension n,
-			String name,
-			NodeList attributes,
-			String body)
-	{
-		ResolveTransclusionLog log = new ResolveTransclusionLog(name, false);
-		frameLog.getContent().add(log);
-		
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
-		
-		try
-		{
-			TagExtensionBase te = getWikiConfig().getTagExtension(name);
-			if (te == null)
-			{
-				// FIXME: File warning that we couldn't find the tag extension?
-				return n;
-			}
-			
-			return invokeTagExtension(n, attributes, body, te, log);
-		}
-		catch (Throwable e)
-		{
-			if (DEBUG)
-				throw new RuntimeException(e);
-			
-			StringWriter w = new StringWriter();
-			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
-			
-			return n;
-		}
-		finally
-		{
-			stopWatch.stop();
-			log.setTimeNeeded(stopWatch.getElapsedTime());
-		}
-	}
-	
-	protected AstNode resolveMagicWord(MagicWord n, String word)
-	{
-		if (hooks == null)
-			return resolveMagicWordHooked(n, word);
-		
-		AstNode cont = hooks.beforeResolveMagicWord(this, n, word);
-		if (cont != ExpansionDebugHooks.PROCEED)
-			return cont;
-		
-		// Proceed
-		AstNode result = resolveMagicWordHooked(n, word);
-		return hooks.afterResolveMagicWord(this, n, word, result);
-	}
-	
-	protected AstNode resolveMagicWordHooked(MagicWord n, String word)
-	{
-		ResolveMagicWordLog log = new ResolveMagicWordLog(word, false);
-		frameLog.getContent().add(log);
-		
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
-		
-		try
-		{
-			MagicWordBase mw =
-					getWikiConfig().getMagicWord(word);
-			
-			if (mw == null)
-			{
-				// FIXME: File warning that we couldn't find the magic word?
-				return n;
-			}
-			
-			return applyMagicWord(n, mw, log);
-		}
-		catch (Throwable e)
-		{
-			if (DEBUG)
-				throw new RuntimeException(e);
-			
-			StringWriter w = new StringWriter();
-			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
-			
-			return n;
-		}
-		finally
-		{
-			stopWatch.stop();
-			log.setTimeNeeded(stopWatch.getElapsedTime());
-		}
-	}
-	
-	protected void illegalTemplateName(
-			StringConversionException e,
-			NodeList name)
-	{
-		if (hooks != null)
-			hooks.illegalTemplateName(e, name);
-		
-		frameLog.getContent().add(new IllegalNameException(
-				name,
-				"Cannot resolve target of transclusion to a simple name."));
-	}
-	
-	protected void illegalParameterName(
-			StringConversionException e,
-			NodeList name)
-	{
-		if (hooks != null)
-			hooks.illegalParameterName(e, name);
-		
-		frameLog.getContent().add(new IllegalNameException(
-				name,
-				"Cannot resolve name of parameter to a simple name."));
-	}
-	
-	// =========================================================================
-	
-	/* FIXME: These don't work! You would have to clone a cached page first, 
-	 * before you can perform any kind of template expansion!
-	 * 
-	private AstNode redirectTo(
-	        Redirect n,
-	        String target,
-	        ResolveRedirectLog log)
-	            throws ArticleTitleException, CompilerException, UnsupportedEncodingException
-	{
-		PageTitle title = new PageTitle(getWikiConfig(), target);
-		
-		log.setCanonical(title.getFullTitle());
-		
-		FullPreprocessedPage fpPage =
-		        callback.retrievePreprocessedPage(this, title, forInclusion);
-		
-		if (fpPage == null)
-		{
-			FullPage page = getWikitext(title, log);
-			if (page == null)
-			{
-				return n;
-			}
-			else
-			{
-				CompiledPage ppPage = this.compiler.preprocess(
-				        page.getId(),
-				        page.getText(),
-				        forInclusion,
-				        null);
-				
-				fpPage = new FullPreprocessedPage(
-				        page.getId(),
-				        forInclusion,
-				        ppPage);
-				
-				callback.cachePreprocessedPage(this, fpPage);
-				
-				LazyPreprocessedPage lppPage =
-				        (LazyPreprocessedPage) ppPage.getPage();
-				
-				CompiledPage compiledPage = this.compiler.expand(
-				        callback,
-				        page.getId(),
-				        lppPage,
-				        forInclusion,
-				        arguments,
-				        rootFrame,
-				        this);
-				
-				log.setSuccess(true);
-				log.getContent().append(compiledPage.getLog());
-				
-				return ((LazyPreprocessedPage) compiledPage.getPage()).getContent();
-			}
-		}
-		else
-		{
-			LazyPreprocessedPage lppPage =
-			        (LazyPreprocessedPage) fpPage.getPage().getPage();
-			
-			CompiledPage compiledPage = this.compiler.expand(
-			        callback,
-			        fpPage.getId(),
-			        lppPage,
-			        forInclusion,
-			        arguments,
-			        rootFrame,
-			        this);
-			
-			log.setSuccess(true);
-			log.getContent().append(compiledPage.getLog());
-			
-			return ((LazyPreprocessedPage) compiledPage.getPage()).getContent();
-		}
-	}
-	
-	private AstNode transcludePage(
-	        Template n,
-	        String target,
-	        List<TemplateArgument> arguments,
-	        ResolveTransclusionLog log)
-	            throws ArticleTitleException, CompilerException, UnsupportedEncodingException
-	{
-		Namespace tmplNs = getWikiConfig().getTemplateNamespace();
-		
-		PageTitle title = new PageTitle(getWikiConfig(), target, tmplNs);
-		
-		log.setCanonical(title.getFullTitle());
-		
-		FullPreprocessedPage fpPage =
-		        callback.retrievePreprocessedPage(this, title, true);
-		
-		if (fpPage == null)
-		{
-			FullPage page = getWikitext(title, log);
-			if (page == null)
-			{
-				return null;
-			}
-			else
-			{
-				Map<String, AstNode> args =
-				        prepareTransclusionArguments(arguments);
-				
-				CompiledPage ppPage = this.compiler.preprocess(
-				        page.getId(),
-				        page.getText(),
-				        true,
-				        null);
-				
-				fpPage = new FullPreprocessedPage(
-				        page.getId(),
-				        true,
-				        ppPage);
-				
-				callback.cachePreprocessedPage(this, fpPage);
-				
-				LazyPreprocessedPage lppPage =
-				        (LazyPreprocessedPage) ppPage.getPage();
-				
-				CompiledPage compiledPage = this.compiler.expand(
-				        callback,
-				        page.getId(),
-				        lppPage,
-				        true,
-				        args,
-				        rootFrame,
-				        this);
-				
-				log.setSuccess(true);
-				log.getContent().append(compiledPage.getLog());
-				
-				return ((LazyPreprocessedPage) compiledPage.getPage()).getContent();
-			}
-		}
-		else
-		{
-			Map<String, AstNode> args =
-			        prepareTransclusionArguments(arguments);
-			
-			LazyPreprocessedPage lppPage =
-			        (LazyPreprocessedPage) fpPage.getPage().getPage();
-			
-			CompiledPage compiledPage = this.compiler.expand(
-			        callback,
-			        fpPage.getId(),
-			        lppPage,
-			        true,
-			        args,
-			        rootFrame,
-			        this);
-			
-			log.setSuccess(true);
-			log.getContent().append(compiledPage.getLog());
-			
-			return ((LazyPreprocessedPage) compiledPage.getPage()).getContent();
-		}
-	}
-	*/
-	
-	// =====================================================================
-	
-	private AstNode redirectTo(
-			Redirect n,
-			String target,
-			ResolveRedirectLog log) throws LinkTargetException, CompilerException
-	{
-		PageTitle title = PageTitle.make(getWikiConfig(), target);
-		
-		log.setCanonical(title.getFullTitle());
-		
-		FullPage page = getWikitext(title, log);
-		if (page == null)
-		{
-			// FIXME: File warning that we couldn't find the page?
-			return null;
-		}
-		else
-		{
-			CompiledPage compiledPage = this.compiler.preprocessAndExpand(
-					callback,
-					page.getId(),
-					page.getText(),
-					forInclusion,
-					entityMap,
-					arguments,
-					rootFrame,
-					this);
-			
-			log.setSuccess(true);
-			log.getContent().add(compiledPage.getLog());
-			
-			addAllWarnings(compiledPage.getWarnings());
-			
-			return compiledPage.getPage().getContent();
-		}
-	}
-	
-	private AstNode transcludePage(
-			Template n,
-			String target,
-			List<TemplateArgument> arguments,
-			ResolveTransclusionLog log) throws LinkTargetException, CompilerException
-	{
-		Namespace tmplNs = getWikiConfig().getTemplateNamespace();
-		
-		PageTitle title = PageTitle.make(getWikiConfig(), target, tmplNs);
-		
-		log.setCanonical(title.getFullTitle());
-		
-		FullPage page = getWikitext(title, log);
-		if (page == null)
-		{
-			// FIXME: File warning that we couldn't find the page?
-			return null;
-		}
-		else
-		{
-			Map<String, AstNode> args =
-					prepareTransclusionArguments(arguments);
-			
-			CompiledPage compiledPage = this.compiler.preprocessAndExpand(
-					callback,
-					page.getId(),
-					page.getText(),
-					true,
-					entityMap,
-					args,
-					rootFrame,
-					this);
-			
-			log.setSuccess(true);
-			log.getContent().add(compiledPage.getLog());
-			
-			addAllWarnings(compiledPage.getWarnings());
-			
-			return compiledPage.getPage().getContent();
-		}
-	}
-	
-	private Map<String, AstNode> prepareTransclusionArguments(
-			List<TemplateArgument> arguments)
-	{
-		HashMap<String, AstNode> args = new HashMap<String, AstNode>();
-		
-		for (TemplateArgument arg : arguments)
-		{
-			String id = String.valueOf(args.size() + 1);
-			
-			args.put(id, arg.getValue());
-			
-			if (arg.getHasName())
-			{
-				try
-				{
-					String name = StringConverter.convert(arg.getName());
-					
-					name = name.trim();
-					
-					if (!name.isEmpty() && !name.equals(id))
-						args.put(name, arg.getValue());
-				}
-				catch (StringConversionException e)
-				{
-					illegalParameterName(e, arg.getName());
-				}
-			}
-		}
-		
-		return args;
-	}
-	
-	private AstNode invokeParserFunction(
-			Template template,
-			ParserFunctionBase pfn,
-			List<TemplateArgument> arguments,
-			ResolveTransclusionLog log)
-	{
-		LinkedList<AstNode> args = new LinkedList<AstNode>();
-		
-		for (TemplateArgument arg : arguments)
-		{
-			if (arg.getHasName())
-			{
-				args.add(new NodeList(
-						arg.getName(),
-						new Text("="),
-						arg.getValue()));
-			}
-			else
-			{
-				args.add(arg.getValue());
-			}
-		}
-		
-		/*
-
-		MediaWiki has two ways of invoking parser functions:
-		1) The arguments are passed in preprocessor DOM format.
-		2) The arguments are expanded and passed as text.
-		
-		In case 2) the expanded arguments are TRIMMED! before they are passed to 
-		the parser function. It is my understanding that, even though the 
-		arguments have been expanded and converted to text, there are still 
-		so-called markers in that text.
-		
-		Places in the code:
-		includes/parser/Parser.php:3172-3186 (83b70491fd7cbe9f8a0eadec0f9500636742f6fd)
-		
-		 */
-		
-		AstNode result = pfn.invoke(template, this, args);
-		
-		log.setSuccess(true);
-		
-		return result;
-	}
-	
-	private AstNode invokeTagExtension(
-			TagExtension tagExtension,
-			NodeList attributes,
-			String body,
-			TagExtensionBase te,
-			ResolveTransclusionLog log)
-	{
-		HashMap<String, NodeList> attrs = new HashMap<String, NodeList>();
-		
-		for (AstNode attr : attributes)
-		{
-			if (attr.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
-			{
-				XmlAttribute a = (XmlAttribute) attr;
-				attrs.put(a.getName(), a.getValue());
-			}
-		}
-		
-		AstNode result = te.invoke(this, tagExtension, attrs, body);
-		
-		log.setSuccess(true);
-		
-		return result;
-	}
-	
-	private AstNode applyMagicWord(
-			MagicWord magicWord,
-			MagicWordBase mw,
-			ResolveMagicWordLog log)
-	{
-		AstNode result = mw.invoke(this, magicWord);
-		
-		log.setSuccess(true);
-		
-		return result;
-	}
-	
-	// =========================================================================
-	
-	private FullPage getWikitext(PageTitle title, ContentNode log)
+	public AstNode expand(AstNode ppAst) throws ExpansionException
 	{
 		try
 		{
-			return callback.retrieveWikitext(this, title);
+			return (AstNode) expansionVisitor.go(ppAst);
 		}
 		catch (Exception e)
 		{
-			if (DEBUG)
-				throw new RuntimeException(e);
-			
-			StringWriter w = new StringWriter();
-			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
-			return null;
+			throw new ExpansionException(e);
 		}
+	}
+	
+	// =========================================================================
+	
+	public boolean existsPage(PageTitle pageTitle) throws Exception
+	{
+		return callback.retrieveWikitext(this, pageTitle) != null;
 	}
 }

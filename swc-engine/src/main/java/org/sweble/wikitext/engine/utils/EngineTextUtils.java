@@ -25,7 +25,7 @@ public class EngineTextUtils
 			{
 				NodeList l = (NodeList) n;
 				ListIterator<AstNode> i = l.listIterator();
-				while (i.hasNext())
+				outer: while (i.hasNext())
 				{
 					AstNode item = i.next();
 					switch (item.getNodeType())
@@ -34,11 +34,14 @@ public class EngineTextUtils
 							Text t = (Text) item;
 							String text = t.getContent();
 							if (text.isEmpty())
+							{
+								i.remove();
 								continue;
+							}
 							
 							String trimmed = StringUtils.trimLeft(text);
 							if (trimmed.equals(text))
-								break;
+								break outer;
 							
 							if (trimmed.isEmpty())
 							{
@@ -48,7 +51,7 @@ public class EngineTextUtils
 							else
 							{
 								t.setContent(trimmed);
-								break;
+								break outer;
 							}
 							
 						case AstNodeTypes.NT_IGNORED:
@@ -80,7 +83,7 @@ public class EngineTextUtils
 			{
 				NodeList l = (NodeList) n;
 				ListIterator<AstNode> i = l.listIterator(l.size());
-				while (i.hasPrevious())
+				outer: while (i.hasPrevious())
 				{
 					AstNode item = i.previous();
 					switch (item.getNodeType())
@@ -96,7 +99,7 @@ public class EngineTextUtils
 							
 							String trimmed = StringUtils.trimRight(text);
 							if (trimmed.equals(text))
-								break;
+								break outer;
 							
 							if (trimmed.isEmpty())
 							{
@@ -106,7 +109,7 @@ public class EngineTextUtils
 							else
 							{
 								t.setContent(trimmed);
-								break;
+								break outer;
 							}
 							
 						case AstNodeTypes.NT_IGNORED:

@@ -20,23 +20,51 @@ package org.sweble.wikitext.engine;
 import org.sweble.wikitext.engine.log.CompilerLog;
 
 public final class CompilerException
-        extends
-            Exception
+		extends
+			Exception
 {
 	private static final long serialVersionUID = 1L;
 	
+	private final PageTitle pageTitle;
+	
 	private CompilerLog log;
 	
-	public CompilerException(String message, Throwable cause)
+	// =========================================================================
+	
+	public CompilerException(
+			PageTitle pageTitle,
+			String message,
+			Throwable cause)
 	{
-		this(message, cause, null);
+		this(pageTitle, message, cause, null);
 	}
 	
-	public CompilerException(String message, Throwable cause, CompilerLog log)
+	public CompilerException(
+			PageTitle pageTitle,
+			String message,
+			Throwable cause,
+			CompilerLog log)
 	{
-		super(message, cause);
+		super(makeMessage(pageTitle, message), unwrap(cause));
+		this.pageTitle = pageTitle;
 		this.log = log;
 	}
+	
+	// =========================================================================
+	
+	private static String makeMessage(PageTitle pageTitle, String message)
+	{
+		return String.format("%s (%s)", message, pageTitle.getFullTitle());
+	}
+	
+	private static Throwable unwrap(Throwable t)
+	{
+		while (t instanceof ExpansionException)
+			t = (Exception) t.getCause();
+		return t;
+	}
+	
+	// =========================================================================
 	
 	public void attachLog(CompilerLog log)
 	{
@@ -44,6 +72,11 @@ public final class CompilerException
 			throw new IllegalStateException("Log already attached!");
 		
 		this.log = log;
+	}
+	
+	public PageTitle getPageTitle()
+	{
+		return pageTitle;
 	}
 	
 	public CompilerLog getLog()

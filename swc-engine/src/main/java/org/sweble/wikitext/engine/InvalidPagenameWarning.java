@@ -21,7 +21,7 @@ import org.sweble.wikitext.lazy.parser.WarningSeverity;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
-public class IllegalPagenameWarning
+public class InvalidPagenameWarning
         extends
             OffendingNodeWarning
 {
@@ -31,7 +31,7 @@ public class IllegalPagenameWarning
 	
 	// =========================================================================
 	
-	public IllegalPagenameWarning(
+	public InvalidPagenameWarning(
 	        WarningSeverity severity,
 	        String origin,
 	        AstNode titleNode,
@@ -41,7 +41,7 @@ public class IllegalPagenameWarning
 		this.titleString = titleString;
 	}
 	
-	public IllegalPagenameWarning(
+	public InvalidPagenameWarning(
 	        WarningSeverity severity,
 	        Class<?> origin,
 	        AstNode titleNode,
@@ -82,7 +82,7 @@ public class IllegalPagenameWarning
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		IllegalPagenameWarning other = (IllegalPagenameWarning) obj;
+		InvalidPagenameWarning other = (InvalidPagenameWarning) obj;
 		if (titleString == null)
 		{
 			if (other.titleString != null)

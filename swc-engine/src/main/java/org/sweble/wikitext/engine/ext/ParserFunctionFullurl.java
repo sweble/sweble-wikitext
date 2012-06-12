@@ -17,12 +17,12 @@
 
 package org.sweble.wikitext.engine.ext;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.IllegalArgumentsWarning;
-import org.sweble.wikitext.engine.IllegalNameWarning;
-import org.sweble.wikitext.engine.IllegalPagenameWarning;
+import org.sweble.wikitext.engine.InvalidNameWarning;
+import org.sweble.wikitext.engine.InvalidPagenameWarning;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.config.Interwiki;
@@ -36,8 +36,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class ParserFunctionFullurl
-        extends
-            ParserFunctionBase
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -47,26 +47,29 @@ public class ParserFunctionFullurl
 	}
 	
 	@Override
-	public AstNode invoke(Template template, ExpansionFrame preprocessorFrame, LinkedList<AstNode> args)
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> args)
 	{
 		if (args.size() < 1)
 		{
 			preprocessorFrame.fileWarning(
-			        new IllegalArgumentsWarning(
-			                WarningSeverity.NORMAL,
-			                getClass(),
-			                "Parser function was called with too few arguments!",
-			                template));
+					new IllegalArgumentsWarning(
+							WarningSeverity.NORMAL,
+							getClass(),
+							"Parser function was called with too few arguments!",
+							template));
 			return template;
 		}
 		else if (args.size() > 2)
 		{
 			preprocessorFrame.fileWarning(
-			        new IllegalArgumentsWarning(
-			                WarningSeverity.NONE,
-			                getClass(),
-			                "Parser function was called with too many arguments!",
-			                template));
+					new IllegalArgumentsWarning(
+							WarningSeverity.NONE,
+							getClass(),
+							"Parser function was called with too many arguments!",
+							template));
 		}
 		
 		AstNode titleNode = args.get(0);
@@ -80,10 +83,10 @@ public class ParserFunctionFullurl
 		catch (StringConversionException e1)
 		{
 			preprocessorFrame.fileWarning(
-			        new IllegalNameWarning(
-			                WarningSeverity.NORMAL,
-			                getClass(),
-			                expTitleNode));
+					new InvalidNameWarning(
+							WarningSeverity.NORMAL,
+							getClass(),
+							expTitleNode));
 			return template;
 		}
 		
@@ -95,28 +98,15 @@ public class ParserFunctionFullurl
 		catch (LinkTargetException e)
 		{
 			preprocessorFrame.fileWarning(
-			        new IllegalPagenameWarning(
-			                WarningSeverity.NORMAL,
-			                getClass(),
-			                titleNode,
-			                titleStr));
+					new InvalidPagenameWarning(
+							WarningSeverity.NORMAL,
+							getClass(),
+							titleNode,
+							titleStr));
 			return template;
 		}
 		
-		String result;
-		Interwiki iw = title.getInterwikiLink();
-		if (iw != null)
-		{
-			result = iw.getUrl();
-			// FIXME: We have to replace a placeholder for interwiki URLs
-		}
-		else
-		{
-			result = preprocessorFrame.getWikiConfig().getWikiUrl();
-		}
-		
-		Text text = null;
-		
+		String query = null;
 		if (args.size() >= 2)
 		{
 			AstNode queryNode = preprocessorFrame.expand(args.get(1));
@@ -127,18 +117,22 @@ public class ParserFunctionFullurl
 				queryStr = StringConverter.convert(queryNode).trim();
 				
 				// FIXME: We must use an API URL here, not the default wiki URL
+				/*
 				result += title.getLinkString();
 				result += "&" + queryStr;
 				
 				text = new Text(result);
+				*/
+				
+				query = queryStr;
 			}
 			catch (StringConversionException e)
 			{
 				preprocessorFrame.fileWarning(
-				        new IllegalNameWarning(
-				                WarningSeverity.NORMAL,
-				                getClass(),
-				                expTitleNode));
+						new InvalidNameWarning(
+								WarningSeverity.NORMAL,
+								getClass(),
+								expTitleNode));
 			}
 		}
 		else
@@ -146,11 +140,26 @@ public class ParserFunctionFullurl
 			// FIXME: We have to properly append the title to the URL 
 			//        (separator char? query argument?). Maybe also use a 
 			//        placeholder in wiki URL?
-			
+			/*
 			result += title.getLinkString();
 			
 			text = new Text(result);
+			*/
 		}
+		
+		String url;
+		Interwiki iw = title.getInterwikiLink();
+		if (iw != null)
+		{
+			url = iw.getUrl();
+			// FIXME: We have to replace a placeholder for interwiki URLs
+		}
+		else
+		{
+			url = preprocessorFrame.getWikiConfig().getWikiUrl(title.getLinkString(), query);
+		}
+		
+		Text text = new Text(url);
 		
 		return text;
 	}

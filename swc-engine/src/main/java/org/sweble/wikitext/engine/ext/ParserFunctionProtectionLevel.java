@@ -15,36 +15,35 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.engine;
+package org.sweble.wikitext.engine.ext;
 
-import org.sweble.wikitext.lazy.parser.WarningSeverity;
+import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+
+import java.util.List;
+
+import org.sweble.wikitext.engine.ExpansionFrame;
+import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.lazy.preprocessor.Template;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
-public class IllegalNameWarning
-        extends
-            OffendingNodeWarning
+public class ParserFunctionProtectionLevel
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String message =
-	        "The wikitext cannot be converted into a plain name";
-	
-	// =========================================================================
-	
-	public IllegalNameWarning(
-	        WarningSeverity severity,
-	        String origin,
-	        AstNode name)
+	public ParserFunctionProtectionLevel()
 	{
-		super(name, severity, origin, message);
+		super("PROTECTIONLEVEL");
 	}
 	
-	public IllegalNameWarning(
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        AstNode name)
+	@Override
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> args)
 	{
-		super(name, severity, origin, message);
+		return astList();
 	}
 }

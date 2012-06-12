@@ -93,11 +93,38 @@
  *       canonical  : String
  *       timeNeeded : Long
  *
+ * Resolve Parser Function Log
+ * ---------------------------
+ *
+ *   AST node:
+ *     Name        : ResolveParserFunctionLog
+ *     Extends     : ContentNode
+ *     Constructor : "name, success"
+ *     
+ *     Properties:
+ *       success    : boolean
+ *       name       : String
+ *       timeNeeded : Long
+ *
  * Resolve Transclusion Log
  * ------------------------
  *
  *   AST node:
  *     Name        : ResolveTransclusionLog
+ *     Extends     : ContentNode
+ *     Constructor : "target, success"
+ *     
+ *     Properties:
+ *       success    : boolean
+ *       target     : String
+ *       canonical  : String
+ *       timeNeeded : Long
+ *
+ * Resolve Tag Extension Log
+ * -------------------------
+ *
+ *   AST node:
+ *     Name        : ResolveTagExtensionLog
  *     Extends     : ContentNode
  *     Constructor : "target, success"
  *     

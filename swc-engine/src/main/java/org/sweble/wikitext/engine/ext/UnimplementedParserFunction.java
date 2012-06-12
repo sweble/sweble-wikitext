@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
@@ -26,8 +26,8 @@ import org.sweble.wikitext.lazy.preprocessor.Template;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class UnimplementedParserFunction
-        extends
-            ParserFunctionBase
+		extends
+			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -41,10 +41,13 @@ public class UnimplementedParserFunction
 	// =========================================================================
 	
 	@Override
-	public AstNode invoke(Template template, ExpansionFrame preprocessorFrame, LinkedList<AstNode> args)
+	public AstNode invoke(
+			Template template,
+			ExpansionFrame preprocessorFrame,
+			List<? extends AstNode> args)
 	{
 		preprocessorFrame.fileWarning(
-		        new NotYetImplementedParserFunctionWarning(this, template));
+				new NotYetImplementedParserFunctionWarning(this, template));
 		
 		return template;
 	}

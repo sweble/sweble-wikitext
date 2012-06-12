@@ -38,6 +38,10 @@ public interface WikiConfigurationInterface
 	
 	public Namespace getDefaultNamespace();
 	
+	public Namespace getTalkNamespaceFor(Namespace ns);
+	
+	public Namespace getSubjectNamespaceFor(Namespace ns);
+	
 	// --------
 	
 	public Interwiki getInterwiki(String prefix);
@@ -71,4 +75,6 @@ public interface WikiConfigurationInterface
 	// --------
 	
 	public String getWikiUrl();
+	
+	public String getWikiUrl(String title, String query);
 }

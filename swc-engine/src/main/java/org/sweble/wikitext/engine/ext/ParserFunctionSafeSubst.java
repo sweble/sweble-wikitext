@@ -21,20 +21,23 @@ import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.engine.PfnArgumentMode;
+import org.sweble.wikitext.lazy.parser.RtData;
 import org.sweble.wikitext.lazy.preprocessor.Template;
+import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
+import org.sweble.wikitext.lazy.utils.AstBuilder;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
-public class ParserFunctionFullPagename
+public class ParserFunctionSafeSubst
 		extends
 			ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionFullPagename()
+	public ParserFunctionSafeSubst()
 	{
-		super("FULLPAGENAME");
+		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");
 	}
 	
 	@Override
@@ -43,6 +46,25 @@ public class ParserFunctionFullPagename
 			ExpansionFrame preprocessorFrame,
 			List<? extends AstNode> args)
 	{
-		return new Text(preprocessorFrame.getRootFrame().getTitle().getFullTitle());
+		if (args.size() < 0)
+			return null;
+		
+		// Assuming we are  NOT doing a pre save transformation
+		
+		AstNode name = ((TemplateArgument) args.get(0)).getValue();
+		
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		List<TemplateArgument> tmplArgs = (List) args.subList(1, args.size());
+		
+		Template tmpl = AstBuilder.astTemplate()
+				.withName(name)
+				.withArguments(tmplArgs)
+				.build();
+		
+		RtData rtd = (RtData) template.getAttribute("RTD");
+		if (rtd != null)
+			tmpl.setAttribute("RTD", rtd);
+		
+		return preprocessorFrame.expand(tmpl);
 	}
 }

@@ -57,6 +57,12 @@ public class Compiler
 	
 	private ExpansionDebugHooks hooks;
 	
+	private boolean noRedirect = false;
+	
+	private boolean timingEnabled = false;
+	
+	private boolean catchAll = true;
+	
 	// =========================================================================
 	
 	public Compiler(WikiConfigurationInterface wikiConfig)
@@ -65,19 +71,51 @@ public class Compiler
 		this.wikiConfig = wikiConfig;
 	}
 	
-	public WikiConfigurationInterface getWikiConfig()
-	{
-		return wikiConfig;
-	}
+	// =========================================================================
 	
 	public void setDebugHooks(ExpansionDebugHooks hooks)
 	{
 		this.hooks = hooks;
 	}
 	
+	public void setNoRedirect(boolean noRedirect)
+	{
+		this.noRedirect = noRedirect;
+	}
+	
+	public void setTimingEnabled(boolean timingEnabled)
+	{
+		this.timingEnabled = timingEnabled;
+	}
+	
+	public void setCatchAll(boolean catchAll)
+	{
+		this.catchAll = catchAll;
+	}
+	
+	public WikiConfigurationInterface getWikiConfig()
+	{
+		return wikiConfig;
+	}
+	
 	public ExpansionDebugHooks getDebugHooks()
 	{
 		return hooks;
+	}
+	
+	public boolean isNoRedirect()
+	{
+		return noRedirect;
+	}
+	
+	public boolean isTimingEnabled()
+	{
+		return timingEnabled;
+	}
+	
+	public boolean isCatchAll()
+	{
+		return catchAll;
 	}
 	
 	// =========================================================================
@@ -130,7 +168,7 @@ public class Compiler
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException("Compilation failed!", e, log);
+			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
 		return new CompiledPage(
@@ -207,7 +245,7 @@ public class Compiler
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException("Compilation failed!", e, log);
+			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
 		return new CompiledPage(
@@ -267,7 +305,7 @@ public class Compiler
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException("Compilation failed!", e, log);
+			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
 		return new CompiledPage(
@@ -330,7 +368,7 @@ public class Compiler
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException("Compilation failed!", e, log);
+			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
 		return new CompiledPage(
@@ -402,7 +440,7 @@ public class Compiler
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException("Compilation failed!", e, log);
+			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
 		return new CompiledPage(
@@ -455,7 +493,7 @@ public class Compiler
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException("Compilation failed!", e, log);
+			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
 		return new CompiledPage(
@@ -493,7 +531,7 @@ public class Compiler
 			
 			return validatedWikitext;
 		}
-		catch (Throwable e)
+		catch (Exception e)
 		{
 			logger.error("Validation failed!", e);
 			
@@ -501,7 +539,7 @@ public class Compiler
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException("Validation failed!", e);
+			throw new CompilerException(title, "Validation failed!", e);
 		}
 		finally
 		{
@@ -545,9 +583,9 @@ public class Compiler
 		{
 			log.getContent().add(new ParseException(e.getMessage()));
 			
-			throw new CompilerException("Preprocessing failed!", e);
+			throw new CompilerException(title, "Preprocessing failed!", e);
 		}
-		catch (Throwable e)
+		catch (Exception e)
 		{
 			logger.error("Preprocessing failed!", e);
 			
@@ -555,7 +593,7 @@ public class Compiler
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException("Preprocessing failed!", e);
+			throw new CompilerException(title, "Preprocessing failed!", e);
 		}
 		finally
 		{
@@ -627,10 +665,13 @@ public class Compiler
 						entityMap,
 						arguments,
 						forInclusion,
+						noRedirect,
 						rootFrame,
 						parentFrame,
 						ppAst.getWarnings(),
-						log);
+						log,
+						timingEnabled,
+						catchAll);
 			}
 			else
 			{
@@ -640,8 +681,11 @@ public class Compiler
 						hooks,
 						title,
 						entityMap,
+						noRedirect,
 						ppAst.getWarnings(),
-						log);
+						log,
+						timingEnabled,
+						catchAll);
 			}
 			
 			LazyPreprocessedPage expanded =
@@ -649,7 +693,7 @@ public class Compiler
 			
 			return expanded;
 		}
-		catch (Throwable e)
+		catch (Exception e)
 		{
 			logger.error("Resolution failed!", e);
 			
@@ -657,7 +701,7 @@ public class Compiler
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException("Resolution failed!", e);
+			throw new CompilerException(title, "Resolution failed!", e);
 		}
 		finally
 		{
@@ -705,9 +749,9 @@ public class Compiler
 		{
 			log.getContent().add(new ParseException(e.getMessage()));
 			
-			throw new CompilerException("Parsing failed!", e);
+			throw new CompilerException(title, "Parsing failed!", e);
 		}
-		catch (Throwable e)
+		catch (Exception e)
 		{
 			logger.error("Parsing failed!", e);
 			
@@ -715,7 +759,7 @@ public class Compiler
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException("Parsing failed!", e);
+			throw new CompilerException(title, "Parsing failed!", e);
 		}
 		finally
 		{
@@ -744,7 +788,7 @@ public class Compiler
 			
 			return pAst;
 		}
-		catch (Throwable e)
+		catch (Exception e)
 		{
 			logger.error("Postprocessing failed!", e);
 			
@@ -752,7 +796,7 @@ public class Compiler
 			e.printStackTrace(new PrintWriter(w));
 			log.getContent().add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException("Postprocessing failed!", e);
+			throw new CompilerException(title, "Postprocessing failed!", e);
 		}
 		finally
 		{

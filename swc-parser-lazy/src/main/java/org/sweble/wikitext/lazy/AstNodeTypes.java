@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.lazy;
 
-import static de.fau.cs.osr.ptk.common.ast.AstNode.NT_CUSTOM_BIT;
+import static de.fau.cs.osr.ptk.common.ast.AstNode.*;
 
 public interface AstNodeTypes
 {
@@ -40,6 +40,8 @@ public interface AstNodeTypes
 	public static final int NT_GARBAGE /* .................. */= NT_MW_NODE_BITS + 4;
 	
 	public static final int NT_IGNORED /* .................. */= NT_MW_NODE_BITS + 5;
+	
+	public static final int NT_PROTECTED_TEXT /* ............*/= NT_MW_NODE_BITS + 6;
 	
 	// -- Preprocessor nodes ---------------------------------------------------
 	

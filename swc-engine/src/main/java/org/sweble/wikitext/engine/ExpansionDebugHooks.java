@@ -2,13 +2,18 @@ package org.sweble.wikitext.engine;
 
 import java.util.List;
 
+import org.sweble.wikitext.engine.log.ResolveMagicWordLog;
+import org.sweble.wikitext.engine.log.ResolveParameterLog;
+import org.sweble.wikitext.engine.log.ResolveParserFunctionLog;
+import org.sweble.wikitext.engine.log.ResolveRedirectLog;
+import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
+import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
 import org.sweble.wikitext.lazy.parser.MagicWord;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.Template;
 import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
 import org.sweble.wikitext.lazy.preprocessor.TemplateParameter;
-import org.sweble.wikitext.lazy.utils.StringConversionException;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -23,7 +28,7 @@ public abstract class ExpansionDebugHooks
 	// =========================================================================
 	
 	public AstNode beforeResolveRedirect(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			Redirect n,
 			String target)
 	{
@@ -31,92 +36,57 @@ public abstract class ExpansionDebugHooks
 	}
 	
 	public AstNode afterResolveRedirect(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			Redirect n,
 			String target,
-			AstNode result)
+			AstNode result,
+			ResolveRedirectLog log)
 	{
 		return result;
 	}
 	
 	public AstNode beforeResolveParserFunction(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			Template n,
-			String target,
-			List<TemplateArgument> arguments)
+			ParserFunctionBase pfn,
+			List<? extends AstNode> argsValues)
 	{
 		return PROCEED;
 	}
 	
 	public AstNode afterResolveParserFunction(
-			ExpansionFrame expansionFrame,
-			Template n,
-			String target,
-			List<TemplateArgument> arguments,
-			AstNode result)
-	{
-		return result;
-	}
-	
-	public AstNode beforeResolveTransclusionOrMagicWord(
-			ExpansionFrame expansionFrame,
-			Template n,
-			String target,
-			List<TemplateArgument> arguments)
-	{
-		return PROCEED;
-	}
-	
-	public AstNode resolveTransclusionOrMagicWordBeforeInvokeParserFunction(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			Template n,
 			ParserFunctionBase pfn,
-			List<TemplateArgument> arguments)
-	{
-		return PROCEED;
-	}
-	
-	public AstNode resolveTransclusionOrMagicWordAfterInvokeParserFunction(
-			ExpansionFrame expansionFrame,
-			Template n,
-			ParserFunctionBase pfn,
-			List<TemplateArgument> arguments,
-			AstNode result)
+			List<? extends AstNode> argsValues,
+			AstNode result,
+			ResolveParserFunctionLog log)
 	{
 		return result;
 	}
 	
-	public AstNode resolveTransclusionOrMagicWordBeforeTranscludePage(
-			ExpansionFrame expansionFrame,
+	public AstNode beforeResolveTransclusion(
+			ExpansionVisitor expansionVisitor,
 			Template n,
 			String target,
-			List<TemplateArgument> arguments)
+			List<TemplateArgument> args)
 	{
 		return PROCEED;
 	}
 	
-	public AstNode resolveTransclusionOrMagicWordAfterTranscludePage(
-			ExpansionFrame expansionFrame,
+	public AstNode afterResolveTransclusion(
+			ExpansionVisitor expansionVisitor,
 			Template n,
 			String target,
-			List<TemplateArgument> arguments,
-			AstNode result)
-	{
-		return result;
-	}
-	
-	public AstNode afterResolveTransclusionOrMagicWord(
-			ExpansionFrame expansionFrame,
-			Template n,
-			String target,
-			List<TemplateArgument> arguments,
-			AstNode result)
+			List<TemplateArgument> args,
+			AstNode result,
+			ResolveTransclusionLog log)
 	{
 		return result;
 	}
 	
 	public AstNode beforeResolveParameter(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			TemplateParameter n,
 			String name)
 	{
@@ -124,61 +94,52 @@ public abstract class ExpansionDebugHooks
 	}
 	
 	public AstNode afterResolveParameter(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			TemplateParameter n,
 			String name,
-			AstNode result)
+			AstNode result,
+			ResolveParameterLog log)
 	{
 		return result;
 	}
-
+	
 	public AstNode beforeResolveTagExtension(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			TagExtension n,
 			String name,
-			NodeList attributes,
+			NodeList attrs,
 			String body)
 	{
 		return PROCEED;
 	}
-
+	
 	public AstNode afterResolveTagExtension(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			TagExtension n,
 			String name,
 			NodeList attributes,
 			String body,
-			AstNode result)
+			AstNode result,
+			ResolveTagExtensionLog log)
 	{
 		return result;
 	}
-
+	
 	public AstNode beforeResolveMagicWord(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			MagicWord n,
 			String word)
 	{
 		return PROCEED;
 	}
-
+	
 	public AstNode afterResolveMagicWord(
-			ExpansionFrame expansionFrame,
+			ExpansionVisitor expansionVisitor,
 			MagicWord n,
 			String word,
-			AstNode result)
+			AstNode result,
+			ResolveMagicWordLog log)
 	{
 		return result;
-	}
-
-	public void illegalTemplateName(StringConversionException e, NodeList name)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void illegalParameterName(StringConversionException e, NodeList name)
-	{
-		// TODO Auto-generated method stub
-		
 	}
 }
