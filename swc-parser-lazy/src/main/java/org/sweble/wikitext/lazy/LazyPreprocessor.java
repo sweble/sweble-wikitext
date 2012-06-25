@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
 import org.sweble.wikitext.lazy.preprocessor.LazyRatsPreprocessor;
 
@@ -28,12 +29,13 @@ import xtc.parser.ParseError;
 import xtc.parser.ParseException;
 import xtc.parser.Result;
 import xtc.parser.SemanticValue;
+import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserCommon;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class LazyPreprocessor
-        extends
-            ParserCommon
+		extends
+			ParserCommon
 {
 	private LazyRatsPreprocessor preprocessor = null;
 	
@@ -54,6 +56,9 @@ public class LazyPreprocessor
 		return parseArticle(src, title, false);
 	}
 	
+	/**
+	 * @deprecated Use other parseArticle() method instead
+	 */
 	public AstNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
 	{
 		Reader in = new StringReader(src);
@@ -65,7 +70,7 @@ public class LazyPreprocessor
 		// FIXME: If we want the preprocessor to be able to resolve parser 
 		//        entities from encoding validation, we should offer the entity
 		//        map here...
-		preprocessor.getState().init(config, forInclusion);
+		preprocessor.getState().init(config, new EntityMap(), forInclusion);
 		
 		Result r = this.preprocessor.pArticle(0);
 		
@@ -80,8 +85,8 @@ public class LazyPreprocessor
 			else
 			{
 				throw new ParseException(
-				        "Internal preprocessor error: " +
-				                "Unexpected preprocessor result type!");
+						"Internal preprocessor error: " +
+								"Unexpected preprocessor result type!");
 			}
 		}
 		else
@@ -91,14 +96,63 @@ public class LazyPreprocessor
 			if (err.index == -1)
 			{
 				throw new ParseException(
-				        "Parse error: No information available");
+						"Parse error: No information available");
 			}
 			else
 			{
 				throw new ParseException(String.format(
-				        "%s: %s",
-				        preprocessor.location(err.index),
-				        err.msg));
+						"%s: %s",
+						preprocessor.location(err.index),
+						err.msg));
+			}
+		}
+	}
+	
+	public AstNode parseArticle(
+			ValidatedWikitext wikitext,
+			String title,
+			boolean forInclusion) throws IOException, ParseException
+	{
+		Reader in = new StringReader(wikitext.getWikitext());
+		
+		int inputSize = wikitext.getWikitext().getBytes().length;
+		
+		preprocessor = new LazyRatsPreprocessor(in, title, inputSize);
+		
+		preprocessor.getState().init(config, wikitext.getEntityMap(), forInclusion);
+		
+		Result r = this.preprocessor.pArticle(0);
+		
+		if (r.hasValue())
+		{
+			SemanticValue v = (SemanticValue) r;
+			
+			if (v.value instanceof LazyPreprocessedPage)
+			{
+				return process((LazyPreprocessedPage) v.value);
+			}
+			else
+			{
+				throw new ParseException(
+						"Internal preprocessor error: " +
+								"Unexpected preprocessor result type!");
+			}
+		}
+		else
+		{
+			ParseError err = (ParseError) r;
+			
+			if (err.index == -1)
+			{
+				throw new ParseException(
+						"Parse error: No information available");
+			}
+			else
+			{
+				throw new ParseException(String.format(
+						"%s: %s",
+						preprocessor.location(err.index),
+						err.msg));
 			}
 		}
 	}

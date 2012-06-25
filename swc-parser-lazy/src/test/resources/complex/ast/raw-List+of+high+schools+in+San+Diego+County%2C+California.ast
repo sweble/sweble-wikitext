@@ -1,5 +1,6 @@
 LazyParsedPage(
   Properties:
+    {N} entityMap = EntityMap {0=Template([0] = [Text(":San Diego Unified School District")], [1] = []), 1=Template([0] = [Text(":Roman Catholic Diocese of San Diego")], [1] = []), 2=TagExtension([0] = [])}
     {N} warnings = []
 
   [

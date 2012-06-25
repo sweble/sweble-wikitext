@@ -20,16 +20,21 @@ package org.sweble.wikitext.lazy;
 import java.io.IOException;
 import java.io.StringReader;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
 import org.sweble.wikitext.lazy.encval.EncodingValidatorLexer;
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
+
+import de.fau.cs.osr.ptk.common.EntityMap;
 
 public class LazyEncodingValidator
 {
+	/**
+	 * @deprecated Use other validate() method instead
+	 */
 	public String validate(
-	        String source,
-	        String title,
-	        EntityMap entityMap)
-	                throws IOException
+			String source,
+			String title,
+			EntityMap entityMap)
+			throws IOException
 	{
 		StringReader in = new StringReader(source);
 		EncodingValidatorLexer lexer = new EncodingValidatorLexer(in);
@@ -43,5 +48,23 @@ public class LazyEncodingValidator
 		in.close();
 		
 		return lexer.getWikitext();
+	}
+	
+	public ValidatedWikitext validate(String source, String title) throws IOException
+	{
+		StringReader in = new StringReader(source);
+		EncodingValidatorLexer lexer = new EncodingValidatorLexer(in);
+		
+		EntityMap entityMap = new EntityMap();
+		
+		lexer.setFile(title);
+		lexer.setEntityMap(entityMap);
+		
+		while (lexer.yylex() != null)
+			;
+		
+		in.close();
+		
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
 	}
 }

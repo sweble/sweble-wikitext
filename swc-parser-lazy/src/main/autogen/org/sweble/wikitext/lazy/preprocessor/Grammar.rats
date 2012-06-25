@@ -77,12 +77,15 @@
  *     Name        : LazyPreprocessedPage
  *     Extends     : ContentNode
  *     Constructor : "content, warnings"
+ *     Constructor : "content, warnings, entityMap"
  *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LAZY_PREPROCESSED_PAGE
  *     Import      : java.util.List
  *     Import      : de.fau.cs.osr.ptk.common.Warning
+ *     Import      : de.fau.cs.osr.ptk.common.EntityMap
  *
  *     Properties:
- *       warnings : List<Warning>
+ *       warnings  : List<Warning>
+ *       entityMap : EntityMap
  *
  */
 
@@ -124,7 +127,8 @@ public transient LazyPreprocessedPage Article =
   {
     yyValue = new LazyPreprocessedPage(
         new NodeList(redirect, content),
-        new ArrayList<Warning>());
+        new ArrayList<Warning>(),
+        getState().getEntityMap());
   }
 ;
 

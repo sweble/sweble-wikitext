@@ -3,6 +3,7 @@ The paragraph interrupts the table!
 
 LazyParsedPage(
   Properties:
+    {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [

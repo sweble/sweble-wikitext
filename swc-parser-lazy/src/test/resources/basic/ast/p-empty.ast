@@ -1,5 +1,6 @@
 LazyParsedPage(
   Properties:
+    {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [ ]
