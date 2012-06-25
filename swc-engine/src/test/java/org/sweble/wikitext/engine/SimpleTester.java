@@ -218,6 +218,6 @@ public class SimpleTester
 	
 	private void printHelpMessage(Options options)
 	{
-		options.help(System.out);
+		options.cmdLineHelp(System.out);
 	}
 }
