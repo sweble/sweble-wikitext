@@ -24,6 +24,7 @@ import java.io.IOException;
 import org.junit.Test;
 import org.sweble.wikitext.lazy.encval.IllegalCodePoint;
 import org.sweble.wikitext.lazy.encval.IllegalCodePointType;
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;
@@ -47,7 +48,7 @@ public class EncodingValidatorTest
 		InputStreamReader in = new InputStreamReader(
 		        IOUtils.toInputStream(source.toString(), "UTF-8"));
 		*/
-
+		
 		/*
 		StringReader in = new StringReader(source.toString());
 		while (true)
@@ -60,11 +61,11 @@ public class EncodingValidatorTest
 		}
 		in.close();
 		*/
-
-		EntityMap entityMap = new EntityMap();
 		
 		LazyEncodingValidator v = new LazyEncodingValidator();
-		String result = v.validate(source.toString(), title, entityMap);
+		ValidatedWikitext result = v.validate(source.toString(), title);
+		String validatedWikitext = result.getWikitext();
+		EntityMap entityMap = result.getEntityMap();
 		
 		IllegalCodePoint x0 = (IllegalCodePoint) entityMap.getEntity(0);
 		assertEquals("\uE800", x0.getCodePoint());
@@ -99,6 +100,6 @@ public class EncodingValidatorTest
 		ref.append("dürfen nicht fehlen. Zu guter \n");
 		ref.append("Letzt noch ein Wohlklang \uE0004\uE001.");
 		
-		assertEquals(ref.toString(), result);
+		assertEquals(ref.toString(), validatedWikitext);
 	}
 }

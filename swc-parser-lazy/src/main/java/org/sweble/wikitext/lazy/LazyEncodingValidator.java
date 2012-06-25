@@ -27,10 +27,7 @@ import de.fau.cs.osr.ptk.common.EntityMap;
 
 public class LazyEncodingValidator
 {
-	/**
-	 * @deprecated Use other validate() method instead
-	 */
-	public String validate(
+	public ValidatedWikitext validate(
 			String source,
 			String title,
 			EntityMap entityMap)
@@ -47,7 +44,7 @@ public class LazyEncodingValidator
 		
 		in.close();
 		
-		return lexer.getWikitext();
+		return new ValidatedWikitext(lexer.getWikitext(), entityMap);
 	}
 	
 	public ValidatedWikitext validate(String source, String title) throws IOException

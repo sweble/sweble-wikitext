@@ -53,12 +53,13 @@ public class LazyPreprocessor
 	@Override
 	public AstNode parseArticle(String src, String title) throws IOException, ParseException
 	{
-		return parseArticle(src, title, false);
+		return parseArticle(new ValidatedWikitext(src, new EntityMap()), title, false);
 	}
 	
+	/*
 	/**
 	 * @deprecated Use other parseArticle() method instead
-	 */
+	 *
 	public AstNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
 	{
 		Reader in = new StringReader(src);
@@ -107,6 +108,7 @@ public class LazyPreprocessor
 			}
 		}
 	}
+	*/
 	
 	public AstNode parseArticle(
 			ValidatedWikitext wikitext,

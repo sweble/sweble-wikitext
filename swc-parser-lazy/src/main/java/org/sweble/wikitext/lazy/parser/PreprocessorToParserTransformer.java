@@ -42,10 +42,29 @@ public class PreprocessorToParserTransformer
 	}
 	
 	public static PreprocessedWikitext transform(
+			LazyPreprocessedPage preprocessedArticle)
+	{
+		EntityMap entityMap = preprocessedArticle.getEntityMap();
+		return new PreprocessedWikitext(
+				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
+				entityMap);
+	}
+	
+	public static PreprocessedWikitext transform(
 			LazyPreprocessedPage preprocessedArticle,
 			EntityMap entityMap,
 			boolean trim)
 	{
+		return new PreprocessedWikitext(
+				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
+				entityMap);
+	}
+	
+	public static PreprocessedWikitext transform(
+			LazyPreprocessedPage preprocessedArticle,
+			boolean trim)
+	{
+		EntityMap entityMap = preprocessedArticle.getEntityMap();
 		return new PreprocessedWikitext(
 				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
 				entityMap);

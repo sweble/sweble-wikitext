@@ -37,6 +37,7 @@ import org.sweble.wikitext.lazy.LazyEncodingValidator;
 import org.sweble.wikitext.lazy.LazyParser;
 import org.sweble.wikitext.lazy.LazyPostprocessor;
 import org.sweble.wikitext.lazy.LazyPreprocessor;
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
@@ -99,17 +100,15 @@ public class Compiler
 		LazyPreprocessedPage pprAst;
 		try
 		{
-			EntityMap entityMap = new EntityMap();
-			
-			String validatedWikitext =
-					validate(title, wikitext, entityMap, log);
+			ValidatedWikitext validatedWikitext =
+					validate(title, wikitext, log, null);
 			
 			LazyPreprocessedPage ppAst =
-					preprocess(title, validatedWikitext, forInclusion, entityMap, log);
+					preprocess(title, validatedWikitext, forInclusion, log);
 			
 			pprAst = ppAst;
 			if (callback != null)
-				pprAst = expand(callback, title, ppAst, entityMap, null, false, log);
+				pprAst = expand(callback, title, ppAst, null, false, log);
 		}
 		catch (CompilerException e)
 		{
@@ -155,16 +154,14 @@ public class Compiler
 		LazyPreprocessedPage pAst;
 		try
 		{
-			EntityMap entityMap = new EntityMap();
-			
-			String validatedWikitext =
-					validate(title, wikitext, entityMap, log);
+			ValidatedWikitext validatedWikitext =
+					validate(title, wikitext, log, null);
 			
 			LazyPreprocessedPage ppAst =
-					preprocess(title, validatedWikitext, false, entityMap, log);
+					preprocess(title, validatedWikitext, false, log);
 			
 			LazyPreprocessedPage pprAst = ppAst;
-			pprAst = expand(callback, title, ppAst, entityMap, null, false, log);
+			pprAst = expand(callback, title, ppAst, null, false, log);
 			
 			pAst = pprAst;
 		}
@@ -214,19 +211,17 @@ public class Compiler
 		LazyParsedPage pAst;
 		try
 		{
-			EntityMap entityMap = new EntityMap();
-			
-			String validatedWikitext =
-					validate(title, wikitext, entityMap, log);
+			ValidatedWikitext validatedWikitext =
+					validate(title, wikitext, log, null);
 			
 			LazyPreprocessedPage ppAst =
-					preprocess(title, validatedWikitext, false, entityMap, log);
+					preprocess(title, validatedWikitext, false, log);
 			
 			LazyPreprocessedPage pprAst = ppAst;
 			if (callback != null)
-				pprAst = expand(callback, title, ppAst, entityMap, null, false, log);
+				pprAst = expand(callback, title, ppAst, null, false, log);
 			
-			pAst = parse(title, pprAst, entityMap, log);
+			pAst = parse(title, pprAst, log);
 		}
 		catch (CompilerException e)
 		{
@@ -275,19 +270,17 @@ public class Compiler
 		LazyParsedPage pAst;
 		try
 		{
-			EntityMap entityMap = new EntityMap();
-			
-			String validatedWikitext =
-					validate(title, wikitext, entityMap, log);
+			ValidatedWikitext validatedWikitext =
+					validate(title, wikitext, log, null);
 			
 			LazyPreprocessedPage ppAst =
-					preprocess(title, validatedWikitext, false, entityMap, log);
+					preprocess(title, validatedWikitext, false, log);
 			
 			LazyPreprocessedPage pprAst = ppAst;
 			if (callback != null)
-				pprAst = expand(callback, title, ppAst, entityMap, null, false, log);
+				pprAst = expand(callback, title, ppAst, null, false, log);
 			
-			pAst = parse(title, pprAst, entityMap, log);
+			pAst = parse(title, pprAst, log);
 			
 			pAst = postprocess(title, pAst, log);
 		}
@@ -318,8 +311,7 @@ public class Compiler
 	 */
 	public CompiledPage postprocessPpOrExpAst(
 			PageId pageId,
-			LazyPreprocessedPage pprAst,
-			EntityMap entityMap)
+			LazyPreprocessedPage pprAst)
 			throws CompilerException
 	{
 		if (pageId == null)
@@ -334,7 +326,7 @@ public class Compiler
 		LazyParsedPage pAst;
 		try
 		{
-			pAst = parse(title, pprAst, entityMap, log);
+			pAst = parse(title, pprAst, log);
 			
 			pAst = postprocess(title, pAst, log);
 		}
@@ -393,17 +385,16 @@ public class Compiler
 		LazyPreprocessedPage pprAst;
 		try
 		{
-			String validatedWikitext =
-					validate(title, wikitext, entityMap, log);
+			ValidatedWikitext validatedWikitext =
+					validate(title, wikitext, log, entityMap);
 			
 			LazyPreprocessedPage ppAst =
-					preprocess(title, validatedWikitext, forInclusion, entityMap, log);
+					preprocess(title, validatedWikitext, forInclusion, log);
 			
 			pprAst = expand(
 					callback,
 					title,
 					ppAst,
-					entityMap,
 					arguments,
 					forInclusion,
 					rootFrame,
@@ -456,7 +447,6 @@ public class Compiler
 					callback,
 					title,
 					ppAst,
-					entityMap,
 					arguments,
 					forInclusion,
 					rootFrame,
@@ -483,12 +473,14 @@ public class Compiler
 	
 	/**
 	 * Validates wikitext.
+	 * 
+	 * @param entityMap
 	 */
-	private String validate(
+	private ValidatedWikitext validate(
 			PageTitle title,
 			String wikitext,
-			EntityMap entityMap,
-			ContentNode parentLog)
+			ContentNode parentLog,
+			EntityMap entityMap)
 			throws CompilerException
 	{
 		ValidatorLog log = new ValidatorLog();
@@ -501,7 +493,7 @@ public class Compiler
 		{
 			LazyEncodingValidator validator = new LazyEncodingValidator();
 			
-			String validatedWikitext = validator.validate(
+			ValidatedWikitext validatedWikitext = validator.validate(
 					wikitext,
 					title.getFullTitle(),
 					entityMap);
@@ -530,9 +522,8 @@ public class Compiler
 	 */
 	private LazyPreprocessedPage preprocess(
 			PageTitle title,
-			String validatedWikitext,
+			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
-			EntityMap entityMap,
 			ContentNode parentLog)
 			throws CompilerException
 	{
@@ -587,7 +578,6 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			LazyPreprocessedPage ppAst,
-			EntityMap entityMap,
 			LinkedHashMap<String, AstNode> arguments,
 			boolean forInclusion,
 			ContentNode parentLog)
@@ -597,7 +587,6 @@ public class Compiler
 				callback,
 				title,
 				ppAst,
-				entityMap,
 				arguments,
 				forInclusion,
 				null,
@@ -612,7 +601,6 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			LazyPreprocessedPage ppAst,
-			EntityMap entityMap,
 			Map<String, AstNode> arguments,
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
@@ -638,7 +626,7 @@ public class Compiler
 						this,
 						callback,
 						title,
-						entityMap,
+						ppAst.getEntityMap(),
 						arguments,
 						forInclusion,
 						rootFrame,
@@ -652,7 +640,7 @@ public class Compiler
 						this,
 						callback,
 						title,
-						entityMap,
+						ppAst.getEntityMap(),
 						ppAst.getWarnings(),
 						log);
 			}
@@ -685,7 +673,6 @@ public class Compiler
 	private LazyParsedPage parse(
 			PageTitle title,
 			LazyPreprocessedPage ppAst,
-			EntityMap entityMap,
 			ContentNode parentLog)
 			throws CompilerException
 	{
@@ -698,10 +685,7 @@ public class Compiler
 		try
 		{
 			PreprocessedWikitext preprocessedWikitext =
-					PreprocessorToParserTransformer.transform(
-							ppAst,
-							entityMap,
-							true);
+					PreprocessorToParserTransformer.transform(ppAst, true);
 			
 			LazyParser parser = new LazyParser(wikiConfig);
 			
