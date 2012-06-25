@@ -493,6 +493,9 @@ public class Compiler
 		{
 			LazyEncodingValidator validator = new LazyEncodingValidator();
 			
+			if (entityMap == null)
+				entityMap = new EntityMap();
+			
 			ValidatedWikitext validatedWikitext = validator.validate(
 					wikitext,
 					title.getFullTitle(),
