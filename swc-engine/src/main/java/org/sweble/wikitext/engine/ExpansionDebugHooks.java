@@ -8,7 +8,7 @@ import org.sweble.wikitext.engine.log.ResolveParserFunctionLog;
 import org.sweble.wikitext.engine.log.ResolveRedirectLog;
 import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
 import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
-import org.sweble.wikitext.lazy.parser.MagicWord;
+import org.sweble.wikitext.lazy.parser.PageSwitch;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
 import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.Template;
@@ -125,17 +125,17 @@ public abstract class ExpansionDebugHooks
 		return result;
 	}
 	
-	public AstNode beforeResolveMagicWord(
+	public AstNode beforeResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
-			MagicWord n,
+			PageSwitch n,
 			String word)
 	{
 		return PROCEED;
 	}
 	
-	public AstNode afterResolveMagicWord(
+	public AstNode afterResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
-			MagicWord n,
+			PageSwitch n,
 			String word,
 			AstNode result,
 			ResolveMagicWordLog log)

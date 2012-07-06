@@ -11,8 +11,7 @@ public enum PfnArgumentMode
 	
 	/**
 	 * The original template arguments will be collapsed as is done by
-	 * EXPANDED_AND_STRIPPED_VALUES. Then the collapsed value is expanded,
-	 * converted to a string and trimmed.
+	 * UNEXPANDED_VALUES. Then the collapsed value is expanded and trimmed.
 	 */
 	EXPANDED_AND_TRIMMED_VALUES,
 	

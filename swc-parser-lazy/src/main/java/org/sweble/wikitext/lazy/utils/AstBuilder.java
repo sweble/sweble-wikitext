@@ -24,6 +24,7 @@ import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
 import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
+import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.Template;
 import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
@@ -34,6 +35,16 @@ import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class AstBuilder
 {
+	public static TemplateArgumentBuilder astTemplateArg()
+	{
+		return new TemplateArgumentBuilder();
+	}
+	
+	public static TagExtensionBuilder astTagExtension()
+	{
+		return new TagExtensionBuilder();
+	}
+	
 	@Deprecated
 	public static XmlCommentBuilder astComment()
 	{
@@ -65,11 +76,6 @@ public class AstBuilder
 		return new XmlElementBuilder();
 	}
 	
-	public static XmlAttributeBuilder astXmlAttrib()
-	{
-		return new XmlAttributeBuilder();
-	}
-	
 	@Deprecated
 	public static TextBuilder astText()
 	{
@@ -86,6 +92,11 @@ public class AstBuilder
 		return new Text(text);
 	}
 	
+	public static Text astProtected(String text)
+	{
+		return new ProtectedText(text);
+	}
+	
 	public static NodeList astList(AstNode... contents)
 	{
 		return new NodeList(Arrays.asList(contents));
@@ -96,7 +107,7 @@ public class AstBuilder
 		return new TmplArgBuilder();
 	}
 	
-	public static XmlAttribBuilder astXmlAttribute()
+	public static XmlAttribBuilder astXmlAttrib()
 	{
 		return new XmlAttribBuilder();
 	}
@@ -136,7 +147,7 @@ public class AstBuilder
 	{
 		private String name = "element";
 		
-		private NodeList body = new NodeList(new Text("element body"));
+		private NodeList body = astList(astText("element body"));
 		
 		private NodeList attribs = null;
 		
@@ -184,63 +195,6 @@ public class AstBuilder
 		}
 	}
 	
-	public static final class XmlAttributeBuilder
-	{
-		private String name = "default name";
-		
-		private NodeList value = new NodeList(new Text("default value"));
-		
-		public XmlAttributeBuilder withName(String name)
-		{
-			this.name = name;
-			return this;
-		}
-		
-		public XmlAttributeBuilder withValue(String text)
-		{
-			return this.withValue(new Text(text));
-		}
-		
-		public XmlAttributeBuilder withValue(AstNode... value)
-		{
-			this.value = new NodeList();
-			for (AstNode n : value)
-				this.value.add(n);
-			return this;
-		}
-		
-		public XmlAttribute build()
-		{
-			return new XmlAttribute(name, value, value != null);
-		}
-	}
-	
-	public static final class TmplArgBuilder
-	{
-		private NodeList name = null;
-		
-		private NodeList value;
-		
-		public TmplArgBuilder withName(String name)
-		{
-			this.name = new NodeList(new Text(name));
-			return this;
-		}
-		
-		public TmplArgBuilder withValue(String value)
-		{
-			this.value = new NodeList(new Text(value));
-			return this;
-		}
-		
-		public TemplateArgument build()
-		{
-			if (value == null)
-				value = new NodeList();
-			return new TemplateArgument(name, value, name != null);
-		}
-	}
-	
 	public static final class XmlAttribBuilder
 	{
 		private String name = "defaultAttrName";
@@ -279,6 +233,32 @@ public class AstBuilder
 		}
 	}
 	
+	public static final class TmplArgBuilder
+	{
+		private NodeList name = null;
+		
+		private NodeList value;
+		
+		public TmplArgBuilder withName(String name)
+		{
+			this.name = new NodeList(new Text(name));
+			return this;
+		}
+		
+		public TmplArgBuilder withValue(String value)
+		{
+			this.value = new NodeList(new Text(value));
+			return this;
+		}
+		
+		public TemplateArgument build()
+		{
+			if (value == null)
+				value = new NodeList();
+			return new TemplateArgument(name, value, name != null);
+		}
+	}
+	
 	public static final class TemplateBuilder
 	{
 		private NodeList name = null;
@@ -309,6 +289,68 @@ public class AstBuilder
 			if (args == null)
 				args = astList();
 			return new Template(name, args);
+		}
+	}
+	
+	public static final class TagExtensionBuilder
+	{
+		private String name = "someTagExtension";
+		
+		private NodeList xmlAttributes = astList();
+		
+		private String body = "";
+		
+		public TagExtensionBuilder withName(String name)
+		{
+			this.name = name;
+			return this;
+		}
+		
+		public TagExtensionBuilder withAttribs(AstNode... attribs)
+		{
+			this.xmlAttributes = astList(attribs);
+			return this;
+		}
+		
+		public TagExtensionBuilder withBody(String body)
+		{
+			this.body = body;
+			return this;
+		}
+		
+		public TagExtension build()
+		{
+			return new TagExtension(name, xmlAttributes, body);
+		}
+	}
+	
+	public static final class TemplateArgumentBuilder
+	{
+		private NodeList name = astList(astText("argName"));
+		
+		private NodeList value = astList(astText("value"));
+		
+		public TemplateArgumentBuilder withoutName()
+		{
+			this.name = null;
+			return this;
+		}
+		
+		public TemplateArgumentBuilder withName(AstNode... name)
+		{
+			this.name = astList(name);
+			return this;
+		}
+		
+		public TemplateArgumentBuilder setValue(AstNode... value)
+		{
+			this.value = astList(value);
+			return this;
+		}
+		
+		public TemplateArgument build()
+		{
+			return new TemplateArgument(name, value, name != null);
 		}
 	}
 }

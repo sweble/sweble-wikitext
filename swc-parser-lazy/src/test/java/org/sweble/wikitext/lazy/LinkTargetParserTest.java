@@ -23,7 +23,7 @@ import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
 public class LinkTargetParserTest
 {
-	private ParserConfigInterface config = new SimpleParserConfig();
+	private ParserConfig config = new SimpleParserConfig();
 
 	@Test
 	public void testXmlDecode()

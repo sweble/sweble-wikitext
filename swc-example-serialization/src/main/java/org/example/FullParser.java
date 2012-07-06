@@ -19,16 +19,17 @@ package org.example;
 
 import java.io.IOException;
 
+import org.sweble.wikitext.engine.config.ParserConfigImpl;
+import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.lazy.LazyEncodingValidator;
 import org.sweble.wikitext.lazy.LazyParser;
 import org.sweble.wikitext.lazy.LazyPostprocessor;
 import org.sweble.wikitext.lazy.LazyPreprocessor;
-import org.sweble.wikitext.lazy.ParserConfigInterface;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
 import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
-import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.EntityMap;
@@ -39,23 +40,25 @@ public final class FullParser
 		extends
 			ParserCommon
 {
-	private ParserConfigInterface parserConfig;
+	private ParserConfigImpl parserConfig;
 	
 	public FullParser()
 	{
-		parserConfig = new SimpleParserConfig();
+		WikiConfigImpl config = DefaultConfigEn.generate();
+		parserConfig = config.getParserConfig();
 	}
 	
 	public FullParser(
 			boolean warningsEnabled,
-			boolean gatherRtd,
+			boolean gatherRtData,
 			boolean autoCorrect)
 	
 	{
-		parserConfig = new SimpleParserConfig(
-				warningsEnabled,
-				gatherRtd,
-				autoCorrect);
+		WikiConfigImpl config = DefaultConfigEn.generate();
+		parserConfig = config.getParserConfig();
+		parserConfig.setWarningsEnabled(warningsEnabled);
+		parserConfig.setGatherRtData(gatherRtData);
+		parserConfig.setAutoCorrect(autoCorrect);
 	}
 	
 	@Override

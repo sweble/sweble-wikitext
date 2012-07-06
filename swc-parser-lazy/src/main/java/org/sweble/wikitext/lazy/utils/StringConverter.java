@@ -18,6 +18,7 @@
 package org.sweble.wikitext.lazy.utils;
 
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
+import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -38,6 +39,8 @@ public class StringConverter
 	
 	public static final int FAIL_ON_IGNORED = 0x0010;
 	
+	public static final int FAIL_ON_PROTECTED_TEXT = 0x0020;
+	
 	public static final int DEFAULT_OPTIONS = 0x0000;
 	
 	// =========================================================================
@@ -47,6 +50,14 @@ public class StringConverter
 		return convert(astNode, null, DEFAULT_OPTIONS);
 	}
 	
+	public static String convert(AstNode astNode, int options) throws StringConversionException
+	{
+		return convert(astNode, null, options);
+	}
+	
+	/**
+	 * @deprecated
+	 */
 	public static String convert(
 			AstNode astNode,
 			XmlEntityResolver resolver,
@@ -82,18 +93,19 @@ public class StringConverter
 		
 		// =====================================================================
 		
+		public ConverterVisitor(int options)
+		{
+			this.entityResolver = null;
+			this.options = options;
+		}
+		
+		/**
+		 * @deprecated
+		 */
 		public ConverterVisitor(int options, XmlEntityResolver resolver)
 		{
 			this.entityResolver = resolver;
 			this.options = options;
-			
-			if (resolver != null && !opt(RESOLVE_ENTITY_REF))
-				throw new IllegalArgumentException(
-						"If a resolver instance is given the option RESOLVE_ENTITY_REF is required");
-			
-			if (resolver == null && opt(RESOLVE_ENTITY_REF))
-				throw new IllegalArgumentException(
-						"If the option RESOLVE_ENTITY_REF is given a resolver instance is required");
 		}
 		
 		@Override
@@ -134,7 +146,11 @@ public class StringConverter
 		{
 			String replacement = null;
 			if (opt(RESOLVE_ENTITY_REF))
-				replacement = entityResolver.resolveXmlEntity(n.getName());
+			{
+				replacement = n.getResolved();
+				if (entityResolver != null)
+					replacement = entityResolver.resolveXmlEntity(n.getName());
+			}
 			
 			if (replacement == null)
 			{
@@ -153,6 +169,14 @@ public class StringConverter
 		
 		public void visit(Text n)
 		{
+			result.append(n.getContent());
+		}
+		
+		public void visit(ProtectedText n) throws StringConversionException
+		{
+			if (opt(FAIL_ON_PROTECTED_TEXT))
+				throw new StringConversionException(n);
+			
 			result.append(n.getContent());
 		}
 		

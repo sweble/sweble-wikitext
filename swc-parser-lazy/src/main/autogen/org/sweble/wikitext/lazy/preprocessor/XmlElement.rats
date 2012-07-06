@@ -266,7 +266,7 @@ private transient TagExtension TagExtension =
     }
   / header:TagHeader "/>"
     {
-      yyValue = new TagExtension(header._1, header._2, "");
+      yyValue = new TagExtension(header._1, header._2, null);
 
       if (isGatherRtData())
         addRtData(yyValue,

@@ -190,7 +190,7 @@
  *     - ParserEntity
  *
  *   The LinkTitleContent cannot contain:
- *     - MagicWord
+ *     - PageSwitch
  *
  *   AST node:
  *     Name        : LinkTitle

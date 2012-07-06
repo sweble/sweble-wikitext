@@ -24,24 +24,21 @@ import org.sweble.wikitext.engine.astwom.adapters.ParagraphAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomParagraph;
-import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 
 public class AstWomNodeFactory
 		implements
 			WomNodeFactory
 {
-	private final XmlEntityResolver xmlEntityResolver;
-	
-	public AstWomNodeFactory(XmlEntityResolver xmlEntityResolver)
+	public AstWomNodeFactory()
 	{
-		super();
-		this.xmlEntityResolver = xmlEntityResolver;
 	}
+	
+	// =========================================================================
 	
 	@Override
 	public TextAdapter createText(String text)
 	{
-		return new TextAdapter(xmlEntityResolver, text);
+		return new TextAdapter(text);
 	}
 	
 	@Override

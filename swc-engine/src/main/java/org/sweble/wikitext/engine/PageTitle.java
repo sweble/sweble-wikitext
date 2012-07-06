@@ -18,10 +18,15 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.sweble.wikitext.engine.config.Interwiki;
 import org.sweble.wikitext.engine.config.Namespace;
-import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.config.WikiConfigurationException;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.LinkTargetParser;
 
@@ -30,6 +35,12 @@ public class PageTitle
 			Serializable
 {
 	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	private final WikiConfig config;
+	
+	// =========================================================================
 	
 	private final String title;
 	
@@ -47,6 +58,9 @@ public class PageTitle
 	
 	// =========================================================================
 	
+	/**
+	 * Returns the normalized title (" " replaced by "_").
+	 */
 	public String getTitle()
 	{
 		return title;
@@ -82,10 +96,17 @@ public class PageTitle
 		return initialColon;
 	}
 	
-	public String getFullTitle()
+	/**
+	 * Get the full title:
+	 * 
+	 * <pre>
+	 * &quot;[IW_PREFIX:][NS_PREFIX:]TITLE&quot;
+	 * </pre>
+	 * 
+	 * The TITLE itself will be in de-normalized form ("_" replaced by " ").
+	 */
+	public String getDenormalizedFullTitle()
 	{
-		// FIXME: Review the implementation!
-		
 		String result = "";
 		
 		if (interwiki != null)
@@ -99,15 +120,25 @@ public class PageTitle
 		return result;
 	}
 	
+	/**
+	 * Returns the de-normalized title ("_" replaced by " ").
+	 */
 	public String getDenormalizedTitle()
 	{
 		return title.replace('_', ' ');
 	}
 	
-	public String getLinkString()
+	/**
+	 * Get title string suitable for links:
+	 * 
+	 * <pre>
+	 * &quot;[IW_PREFIX:][NS_PREFIX:]TITLE;
+	 * </pre>
+	 * 
+	 * The TITLE itself will be in normalized form (" " replaced by "_").
+	 */
+	public String getNormalizedFullTitle()
 	{
-		// FIXME: Review the implementation!
-		
 		String result = "";
 		
 		if (interwiki != null)
@@ -118,30 +149,52 @@ public class PageTitle
 		
 		result += title;
 		
-		if (fragment != null)
-			result += "#" + fragment;
-		
 		return result;
 	}
 	
 	// =========================================================================
 	
-	public PageTitle newWithNamespace(
-			WikiConfigurationInterface config,
-			Namespace ns)
+	public URL getUrl()
 	{
-		return new PageTitle(
-				title,
-				fragment,
-				ns,
-				interwiki,
-				initialColon,
-				ns.equals(config.getDefaultNamespace()));
+		if (this.interwiki != null)
+		{
+			return this.interwiki.getUrl(this);
+		}
+		else
+		{
+			try
+			{
+				return UrlService.makeUrlToArticle(this.config.getArticlePath(), this);
+			}
+			catch (MalformedURLException e)
+			{
+				/* This should not happen: If the URL is correctly formatted, 
+				 * appending a title must not cause a MalformedURLException. 
+				 */
+				throw new WikiConfigurationException(e);
+			}
+		}
 	}
+	
+	public URL getUrl(String urlEncodedQuery) throws MalformedURLException
+	{
+		return (urlEncodedQuery != null) ?
+				UrlService.appendQuery(getUrl(), urlEncodedQuery) :
+				getUrl();
+	}
+	
+	public URL getUrl(Map<String, String> query) throws MalformedURLException
+	{
+		return (query != null && !query.isEmpty()) ?
+				UrlService.appendQuery(getUrl(), query) :
+				getUrl();
+	}
+	
+	// =========================================================================
 	
 	public PageTitle getBaseTitle()
 	{
-		if (!namespace.isSubpages())
+		if (!namespace.isCanHaveSubpages())
 			return this;
 		
 		int i = title.lastIndexOf('/');
@@ -149,7 +202,9 @@ public class PageTitle
 			return this;
 		
 		String baseTitle = title.substring(0, i);
+		
 		return new PageTitle(
+				config,
 				baseTitle,
 				null,
 				namespace,
@@ -160,7 +215,34 @@ public class PageTitle
 	
 	// =========================================================================
 	
+	public PageTitle newWithNamespace(Namespace ns)
+	{
+		return new PageTitle(
+				config,
+				title,
+				fragment,
+				ns,
+				interwiki,
+				initialColon,
+				ns.equals(config.getDefaultNamespace()));
+	}
+	
+	public PageTitle newWithTitle(String title)
+	{
+		return new PageTitle(
+				config,
+				title,
+				fragment,
+				namespace,
+				interwiki,
+				initialColon,
+				isDefaultNs);
+	}
+	
+	// =========================================================================
+	
 	protected PageTitle(
+			WikiConfig config,
 			String title,
 			String fragment,
 			Namespace namespace,
@@ -168,6 +250,7 @@ public class PageTitle
 			boolean initialColon,
 			boolean isDefaultNs)
 	{
+		this.config = config;
 		this.title = title;
 		this.fragment = fragment;
 		this.namespace = namespace;
@@ -177,21 +260,21 @@ public class PageTitle
 	}
 	
 	public static PageTitle make(
-			WikiConfigurationInterface config,
+			WikiConfig config,
 			String target) throws LinkTargetException
 	{
 		return make(config, target, null);
 	}
 	
 	public static PageTitle make(
-			WikiConfigurationInterface config,
+			WikiConfig config,
 			String target,
 			Namespace defaultNamespace) throws LinkTargetException
 	{
 		// FIXME: Review the implementation!
 		
 		LinkTargetParser parser = new LinkTargetParser();
-		parser.parse(config, target);
+		parser.parse(config.getParserConfig(), target);
 		
 		String title = parser.getTitle();
 		String fragment = parser.getFragment();
@@ -213,14 +296,15 @@ public class PageTitle
 		// TODO: MediaWiki limits the length of title names
 		
 		// Don't capitalize the first letter of a interwiki link
-		if (interwiki == null && title.length() > 0 && namespace.isCapitalized())
-			title = Character.toUpperCase(title.charAt(0)) + title.substring(1);
+		if (interwiki == null)
+			title = StringUtils.capitalize(title);
 		
 		// TODO: MediaWiki normalizes IPv6 titles
 		
 		boolean isDefaultNs = namespace.equals(config.getDefaultNamespace());
 		
 		return new PageTitle(
+				config,
 				title,
 				fragment,
 				namespace,
@@ -234,6 +318,65 @@ public class PageTitle
 	@Override
 	public String toString()
 	{
-		return getFullTitle();
+		return getDenormalizedFullTitle();
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((fragment == null) ? 0 : fragment.hashCode());
+		result = prime * result + (initialColon ? 1231 : 1237);
+		result = prime * result + ((interwiki == null) ? 0 : interwiki.hashCode());
+		result = prime * result + (isDefaultNs ? 1231 : 1237);
+		result = prime * result + ((namespace == null) ? 0 : namespace.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PageTitle other = (PageTitle) obj;
+		if (fragment == null)
+		{
+			if (other.fragment != null)
+				return false;
+		}
+		else if (!fragment.equals(other.fragment))
+			return false;
+		if (initialColon != other.initialColon)
+			return false;
+		if (interwiki == null)
+		{
+			if (other.interwiki != null)
+				return false;
+		}
+		else if (!interwiki.equals(other.interwiki))
+			return false;
+		if (isDefaultNs != other.isDefaultNs)
+			return false;
+		if (namespace == null)
+		{
+			if (other.namespace != null)
+				return false;
+		}
+		else if (!namespace.equals(other.namespace))
+			return false;
+		if (title == null)
+		{
+			if (other.title != null)
+				return false;
+		}
+		else if (!title.equals(other.title))
+			return false;
+		return true;
 	}
 }

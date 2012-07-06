@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<swc-engine:WikiConfig xmlns:swc-engine="org.sweble.wikitext.engine">
+    <siteName>My English Wiki</siteName>
+    <wikiUrl>http://localhost/</wikiUrl>
+    <contentLang>en</contentLang>
+    <iwPrefix>en</iwPrefix>
+    <namespaces defaultNsId="0" templateNsId="10">
+        <namespace id="-2" name="Media" canonical="Media" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="-1" name="Special" canonical="Special" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="0" name="" canonical="" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="1" name="Talk" canonical="Talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="2" name="User" canonical="User" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="3" name="User talk" canonical="User talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="4" name="Wikipedia" canonical="Project" canHaveSubpages="false" fileNs="false">
+            <alias>WP</alias>
+        </namespace>
+        <namespace id="5" name="Wikipedia talk" canonical="Project talk" canHaveSubpages="false" fileNs="false">
+            <alias>WT</alias>
+        </namespace>
+        <namespace id="6" name="File" canonical="File" canHaveSubpages="false" fileNs="true">
+            <alias>Image</alias>
+        </namespace>
+        <namespace id="7" name="File talk" canonical="File talk" canHaveSubpages="false" fileNs="false">
+            <alias>Image talk</alias>
+        </namespace>
+        <namespace id="8" name="MediaWiki" canonical="MediaWiki" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="9" name="MediaWiki talk" canonical="MediaWiki talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="10" name="Template" canonical="Template" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="11" name="Template talk" canonical="Template talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="12" name="Help" canonical="Help" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="13" name="Help talk" canonical="Help talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="14" name="Category" canonical="Category" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="15" name="Category talk" canonical="Category talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="100" name="Portal" canonical="Portal" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="101" name="Portal talk" canonical="Portal talk" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="108" name="Book" canonical="Book" canHaveSubpages="false" fileNs="false"/>
+        <namespace id="109" name="Book talk" canonical="Book talk" canHaveSubpages="false" fileNs="false"/>
+    </namespaces>
+    <interwikis>
+        <interwiki prefix="aa" local="true" trans="false" url="http://aa.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ab" local="true" trans="false" url="http://ab.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="abbenormal" local="false" trans="false" url="http://ourpla.net/cgi/pikie?$1"/>
+        <interwiki prefix="acronym" local="false" trans="false" url="http://www.acronymfinder.com/af-query.asp?String=exact&amp;Acronym=$1"/>
+        <interwiki prefix="advisory" local="true" trans="false" url="http://advisory.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="advogato" local="false" trans="false" url="http://www.advogato.org/$1"/>
+        <interwiki prefix="aew" local="false" trans="false" url="http://wiki.arabeyes.org/$1"/>
+        <interwiki prefix="af" local="true" trans="false" url="http://af.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="airwarfare" local="false" trans="false" url="http://airwarfare.com/mediawiki-1.4.5/index.php?$1"/>
+        <interwiki prefix="aiwiki" local="false" trans="false" url="http://www.ifi.unizh.ch/ailab/aiwiki/aiw.cgi?$1"/>
+        <interwiki prefix="ak" local="true" trans="false" url="http://ak.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="allwiki" local="false" trans="false" url="http://allwiki.com/index.php/$1"/>
+        <interwiki prefix="als" local="true" trans="false" url="http://als.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="am" local="true" trans="false" url="http://am.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="an" local="true" trans="false" url="http://an.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ang" local="true" trans="false" url="http://ang.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="appropedia" local="false" trans="false" url="http://www.appropedia.org/$1"/>
+        <interwiki prefix="aquariumwiki" local="false" trans="false" url="http://www.theaquariumwiki.com/$1"/>
+        <interwiki prefix="ar" local="true" trans="false" url="http://ar.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="arc" local="true" trans="false" url="http://arc.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="arxiv" local="false" trans="false" url="http://arxiv.org/abs/$1"/>
+        <interwiki prefix="arz" local="true" trans="false" url="http://arz.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="as" local="true" trans="false" url="http://as.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="aspienetwiki" local="false" trans="false" url="http://aspie.mela.de/index.php/$1"/>
+        <interwiki prefix="ast" local="true" trans="false" url="http://ast.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="atmwiki" local="false" trans="false" url="http://www.otterstedt.de/wiki/index.php/$1"/>
+        <interwiki prefix="av" local="true" trans="false" url="http://av.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ay" local="true" trans="false" url="http://ay.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="az" local="true" trans="false" url="http://az.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="b" local="true" trans="false" url="http://en.wikibooks.org/wiki/$1"/>
+        <interwiki prefix="ba" local="true" trans="false" url="http://ba.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bar" local="true" trans="false" url="http://bar.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bat-smg" local="true" trans="false" url="http://bat-smg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="battlestarwiki" local="false" trans="false" url="http://en.battlestarwiki.org/wiki/$1"/>
+        <interwiki prefix="bcl" local="true" trans="false" url="http://bcl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="be" local="true" trans="false" url="http://be.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="be-x-old" local="true" trans="false" url="http://be-x-old.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bemi" local="false" trans="false" url="http://bemi.free.fr/vikio/index.php?$1"/>
+        <interwiki prefix="benefitswiki" local="false" trans="false" url="http://www.benefitslink.com/cgi-bin/wiki.cgi?$1"/>
+        <interwiki prefix="betawiki" local="false" trans="false" url="http://translatewiki.net/wiki/$1"/>
+        <interwiki prefix="betawikiversity" local="false" trans="false" url="http://beta.wikiversity.org/wiki/$1"/>
+        <interwiki prefix="bg" local="true" trans="false" url="http://bg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bh" local="true" trans="false" url="http://bh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bi" local="true" trans="false" url="http://bi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="biblewiki" local="false" trans="false" url="http://bible.tmtm.com/wiki/$1"/>
+        <interwiki prefix="bluwiki" local="false" trans="false" url="http://www.bluwiki.org/go/$1"/>
+        <interwiki prefix="bm" local="true" trans="false" url="http://bm.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bn" local="true" trans="false" url="http://bn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bo" local="true" trans="false" url="http://bo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="botwiki" local="false" trans="false" url="http://botwiki.sno.cc/wiki/$1"/>
+        <interwiki prefix="boxrec" local="false" trans="false" url="http://www.boxrec.com/media/index.php?$1"/>
+        <interwiki prefix="bpy" local="true" trans="false" url="http://bpy.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="br" local="true" trans="false" url="http://br.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="brickwiki" local="false" trans="false" url="http://brickwiki.org/index.php?title=$1"/>
+        <interwiki prefix="bridgeswiki" local="false" trans="false" url="http://c2.com:8000/$1"/>
+        <interwiki prefix="bs" local="true" trans="false" url="http://bs.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bug" local="true" trans="false" url="http://bug.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bugzilla" local="true" trans="false" url="https://bugzilla.wikimedia.org/show_bug.cgi?id=$1"/>
+        <interwiki prefix="buzztard" local="false" trans="false" url="http://buzztard.org/index.php/$1"/>
+        <interwiki prefix="bxr" local="true" trans="false" url="http://bxr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="bytesmiths" local="false" trans="false" url="http://www.Bytesmiths.com/wiki/$1"/>
+        <interwiki prefix="c2" local="false" trans="false" url="http://c2.com/cgi/wiki?$1"/>
+        <interwiki prefix="c2find" local="false" trans="false" url="http://c2.com/cgi/wiki?FindPage&amp;value=$1"/>
+        <interwiki prefix="ca" local="true" trans="false" url="http://ca.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cache" local="false" trans="false" url="http://www.google.com/search?q=cache:$1"/>
+        <interwiki prefix="canwiki" local="false" trans="false" url="http://www.can-wiki.info/$1"/>
+        <interwiki prefix="canyonwiki" local="false" trans="false" url="http://www.canyonwiki.com/wiki/index.php/$1"/>
+        <interwiki prefix="cbk-zam" local="true" trans="false" url="http://cbk-zam.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cdo" local="true" trans="false" url="http://cdo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ce" local="true" trans="false" url="http://ce.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ceb" local="true" trans="false" url="http://ceb.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cellwiki" local="false" trans="false" url="http://cell.wikia.com/wiki/$1"/>
+        <interwiki prefix="centralwikia" local="false" trans="false" url="http://www.wikia.com/wiki/$1"/>
+        <interwiki prefix="ch" local="true" trans="false" url="http://ch.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="chapter" local="true" trans="false" url="http://en.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="chej" local="false" trans="false" url="http://esperanto.blahus.cz/cxej/vikio/index.php/$1"/>
+        <interwiki prefix="cho" local="true" trans="false" url="http://cho.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="choralwiki" local="false" trans="false" url="http://www.cpdl.org/wiki/index.php/$1"/>
+        <interwiki prefix="chr" local="true" trans="false" url="http://chr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="chy" local="true" trans="false" url="http://chy.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ciscavate" local="false" trans="false" url="http://ciscavate.org/index.php/$1"/>
+        <interwiki prefix="citizendium" local="false" trans="false" url="http://en.citizendium.org/wiki/$1"/>
+        <interwiki prefix="ckwiss" local="false" trans="false" url="http://ck-wissen.de/ckwiki/index.php?title=$1"/>
+        <interwiki prefix="closed-zh-tw" local="true" trans="false" url="http://closed-zh-tw.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cndbname" local="false" trans="false" url="http://cndb.com/actor.html?name=$1"/>
+        <interwiki prefix="cndbtitle" local="false" trans="false" url="http://cndb.com/movie.html?title=$1"/>
+        <interwiki prefix="co" local="true" trans="false" url="http://co.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="colab" local="false" trans="false" url="http://colab.info"/>
+        <interwiki prefix="comcom" local="true" trans="false" url="http://comcom.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="comixpedia" local="false" trans="false" url="http://www.comixpedia.org/index.php?title=$1"/>
+        <interwiki prefix="commons" local="true" trans="false" url="http://commons.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="communityscheme" local="false" trans="false" url="http://community.schemewiki.org/?c=s&amp;key=$1"/>
+        <interwiki prefix="comune" local="false" trans="false" url="http://rete.comuni-italiani.it/wiki/$1"/>
+        <interwiki prefix="consciousness" local="false" trans="false" url="http://teadvus.inspiral.org/index.php/$1"/>
+        <interwiki prefix="corpknowpedia" local="false" trans="false" url="http://corpknowpedia.org/wiki/index.php/$1"/>
+        <interwiki prefix="cr" local="true" trans="false" url="http://cr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="crazyhacks" local="false" trans="false" url="http://www.crazy-hacks.org/wiki/index.php?title=$1"/>
+        <interwiki prefix="creatureswiki" local="false" trans="false" url="http://creatures.wikia.com/wiki/$1"/>
+        <interwiki prefix="crh" local="true" trans="false" url="http://crh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cs" local="true" trans="false" url="http://cs.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="csb" local="true" trans="false" url="http://csb.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cu" local="true" trans="false" url="http://cu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cv" local="true" trans="false" url="http://cv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cxej" local="false" trans="false" url="http://esperanto.blahus.cz/cxej/vikio/index.php/$1"/>
+        <interwiki prefix="cy" local="true" trans="false" url="http://cy.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="cz" local="true" trans="false" url="http://cz.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="da" local="true" trans="false" url="http://da.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="dawiki" local="false" trans="false" url="http://www.dienstag-abend.de/wiki/index.php/$1"/>
+        <interwiki prefix="dbdump" local="true" trans="false" url="http://download.wikimedia.org/$1/latest/"/>
+        <interwiki prefix="dcc" local="false" trans="false" url="http://www.dccwiki.com/$1"/>
+        <interwiki prefix="dcdatabase" local="false" trans="false" url="http://www.dcdatabaseproject.com/wiki/$1"/>
+        <interwiki prefix="dcma" local="false" trans="false" url="http://www.christian-morgenstern.de/dcma/$1"/>
+        <interwiki prefix="de" local="true" trans="false" url="http://de.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="dejanews" local="false" trans="false" url="http://www.deja.com/=dnc/getdoc.xp?AN=$1"/>
+        <interwiki prefix="delicious" local="false" trans="false" url="http://del.icio.us/tag/$1"/>
+        <interwiki prefix="demokraatia" local="false" trans="false" url="http://wiki.demokraatia.ee/index.php/$1"/>
+        <interwiki prefix="devmo" local="false" trans="false" url="http://developer.mozilla.org/en/docs/$1"/>
+        <interwiki prefix="dict" local="false" trans="false" url="http://www.dict.org/bin/Dict?Database=*&amp;Form=Dict1&amp;Strategy=*&amp;Query=$1"/>
+        <interwiki prefix="dictionary" local="false" trans="false" url="http://www.dict.org/bin/Dict?Database=*&amp;Form=Dict1&amp;Strategy=*&amp;Query=$1"/>
+        <interwiki prefix="diq" local="true" trans="false" url="http://diq.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="disinfopedia" local="false" trans="false" url="http://www.sourcewatch.org/wiki.phtml?title=$1"/>
+        <interwiki prefix="distributedproofreaders" local="false" trans="false" url="http://www.pgdp.net/wiki/$1"/>
+        <interwiki prefix="distributedproofreadersca" local="false" trans="false" url="http://www.pgdpcanada.net/wiki/index.php/$1"/>
+        <interwiki prefix="dk" local="true" trans="false" url="http://dk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="dmoz" local="false" trans="false" url="http://www.dmoz.org/$1"/>
+        <interwiki prefix="dmozs" local="false" trans="false" url="http://www.dmoz.org/cgi-bin/search?search=$1"/>
+        <interwiki prefix="docbook" local="false" trans="false" url="http://wiki.docbook.org/topic/$1"/>
+        <interwiki prefix="doi" local="false" trans="false" url="http://dx.doi.org/$1"/>
+        <interwiki prefix="doom_wiki" local="false" trans="false" url="http://doom.wikia.com/wiki/$1"/>
+        <interwiki prefix="download" local="true" trans="false" url="http://download.wikimedia.org/$1"/>
+        <interwiki prefix="drae" local="false" trans="false" url="http://buscon.rae.es/draeI/SrvltGUIBusUsual?LEMA=$1"/>
+        <interwiki prefix="dreamhost" local="false" trans="false" url="http://wiki.dreamhost.com/index.php/$1"/>
+        <interwiki prefix="drumcorpswiki" local="false" trans="false" url="http://www.drumcorpswiki.com/index.php/$1"/>
+        <interwiki prefix="dsb" local="true" trans="false" url="http://dsb.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="dv" local="true" trans="false" url="http://dv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="dwjwiki" local="false" trans="false" url="http://www.suberic.net/cgi-bin/dwj/wiki.cgi?$1"/>
+        <interwiki prefix="dz" local="true" trans="false" url="http://dz.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="echei" local="false" trans="false" url="http://www.ikso.net/cgi-bin/wiki.pl?$1"/>
+        <interwiki prefix="ecoreality" local="false" trans="false" url="http://www.EcoReality.org/wiki/$1"/>
+        <interwiki prefix="ecxei" local="false" trans="false" url="http://www.ikso.net/cgi-bin/wiki.pl?$1"/>
+        <interwiki prefix="ee" local="true" trans="false" url="http://ee.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="efnetceewiki" local="false" trans="false" url="http://purl.net/wiki/c/$1"/>
+        <interwiki prefix="efnetcppwiki" local="false" trans="false" url="http://purl.net/wiki/cpp/$1"/>
+        <interwiki prefix="efnetpythonwiki" local="false" trans="false" url="http://purl.net/wiki/python/$1"/>
+        <interwiki prefix="efnetxmlwiki" local="false" trans="false" url="http://purl.net/wiki/xml/$1"/>
+        <interwiki prefix="el" local="true" trans="false" url="http://el.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="elibre" local="false" trans="false" url="http://enciclopedia.us.es/index.php/$1"/>
+        <interwiki prefix="emacswiki" local="false" trans="false" url="http://www.emacswiki.org/cgi-bin/wiki.pl?$1"/>
+        <interwiki prefix="eml" local="true" trans="false" url="http://eml.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="en" local="true" trans="false" url="http://en.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="energiewiki" local="false" trans="false" url="http://www.netzwerk-energieberater.de/wiki/index.php/$1"/>
+        <interwiki prefix="eo" local="true" trans="false" url="http://eo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="eokulturcentro" local="false" trans="false" url="http://esperanto.toulouse.free.fr/nova/wikini/wakka.php?wiki=$1"/>
+        <interwiki prefix="epo" local="true" trans="false" url="http://epo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="es" local="true" trans="false" url="http://es.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="et" local="true" trans="false" url="http://et.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ethnologue" local="false" trans="false" url="http://www.ethnologue.com/show_language.asp?code=$1"/>
+        <interwiki prefix="eu" local="true" trans="false" url="http://eu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="evowiki" local="false" trans="false" url="http://wiki.cotch.net/index.php/$1"/>
+        <interwiki prefix="exotica" local="false" trans="false" url="http://www.exotica.org.uk/wiki/$1"/>
+        <interwiki prefix="ext" local="true" trans="false" url="http://ext.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="eĉei" local="false" trans="false" url="http://www.ikso.net/cgi-bin/wiki.pl?$1"/>
+        <interwiki prefix="fa" local="true" trans="false" url="http://fa.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="fanimutationwiki" local="false" trans="false" url="http://wiki.animutationportal.com/index.php/$1"/>
+        <interwiki prefix="ff" local="true" trans="false" url="http://ff.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="fi" local="true" trans="false" url="http://fi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="finalempire" local="false" trans="false" url="http://final-empire.sourceforge.net/cgi-bin/wiki.pl?$1"/>
+        <interwiki prefix="finalfantasy" local="false" trans="false" url="http://finalfantasy.wikia.com/wiki/$1"/>
+        <interwiki prefix="finnix" local="false" trans="false" url="http://www.finnix.org/$1"/>
+        <interwiki prefix="fiu-vro" local="true" trans="false" url="http://fiu-vro.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="fj" local="true" trans="false" url="http://fj.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="flickruser" local="false" trans="false" url="http://www.flickr.com/people/$1"/>
+        <interwiki prefix="floralwiki" local="false" trans="false" url="http://www.floralwiki.co.uk/wiki/$1"/>
+        <interwiki prefix="flyerwiki-de" local="false" trans="false" url="http://de.flyerwiki.net/index.php/$1"/>
+        <interwiki prefix="fo" local="true" trans="false" url="http://fo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="foldoc" local="false" trans="false" url="http://www.foldoc.org/$1"/>
+        <interwiki prefix="forthfreak" local="false" trans="false" url="http://wiki.forthfreak.net/index.cgi?$1"/>
+        <interwiki prefix="foundation" local="false" trans="false" url="http://wikimediafoundation.org/wiki/$1"/>
+        <interwiki prefix="foxwiki" local="false" trans="false" url="http://fox.wikis.com/wc.dll?Wiki~$1"/>
+        <interwiki prefix="fr" local="true" trans="false" url="http://fr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="freebio" local="false" trans="false" url="http://freebiology.org/wiki/$1"/>
+        <interwiki prefix="freebsdman" local="false" trans="false" url="http://www.FreeBSD.org/cgi/man.cgi?apropos=1&amp;query=$1"/>
+        <interwiki prefix="freeculturewiki" local="false" trans="false" url="http://wiki.freeculture.org/index.php/$1"/>
+        <interwiki prefix="freedomdefined" local="false" trans="false" url="http://freedomdefined.org/$1"/>
+        <interwiki prefix="freefeel" local="false" trans="false" url="http://freefeel.org/wiki/$1"/>
+        <interwiki prefix="freekiwiki" local="false" trans="false" url="http://wiki.freegeek.org/index.php/$1"/>
+        <interwiki prefix="frp" local="true" trans="false" url="http://frp.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="fur" local="true" trans="false" url="http://fur.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="fy" local="true" trans="false" url="http://fy.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ga" local="true" trans="false" url="http://ga.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="gan" local="true" trans="false" url="http://gan.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ganfyd" local="false" trans="false" url="http://ganfyd.org/index.php?title=$1"/>
+        <interwiki prefix="gausswiki" local="false" trans="false" url="http://gauss.ffii.org/$1"/>
+        <interwiki prefix="gd" local="true" trans="false" url="http://gd.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="gentoo-wiki" local="false" trans="false" url="http://gentoo-wiki.com/$1"/>
+        <interwiki prefix="genwiki" local="false" trans="false" url="http://wiki.genealogy.net/index.php/$1"/>
+        <interwiki prefix="gl" local="true" trans="false" url="http://gl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="glk" local="true" trans="false" url="http://glk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="globalvoices" local="false" trans="false" url="http://cyber.law.harvard.edu/dyn/globalvoices/wiki/$1"/>
+        <interwiki prefix="glossarwiki" local="false" trans="false" url="http://glossar.hs-augsburg.de/$1"/>
+        <interwiki prefix="glossarywiki" local="false" trans="false" url="http://glossary.hs-augsburg.de/$1"/>
+        <interwiki prefix="gn" local="true" trans="false" url="http://gn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="golem" local="false" trans="false" url="http://golem.linux.it/index.php/$1"/>
+        <interwiki prefix="google" local="false" trans="false" url="http://www.google.com/search?q=$1"/>
+        <interwiki prefix="googledefine" local="false" trans="false" url="http://www.google.com/search?q=define:$1"/>
+        <interwiki prefix="googlegroups" local="false" trans="false" url="http://groups.google.com/groups?q=$1"/>
+        <interwiki prefix="got" local="true" trans="false" url="http://got.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="gotamac" local="false" trans="false" url="http://www.got-a-mac.org/$1"/>
+        <interwiki prefix="greatlakeswiki" local="false" trans="false" url="http://greatlakeswiki.org/index.php/$1"/>
+        <interwiki prefix="gu" local="true" trans="false" url="http://gu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="guildwiki" local="false" trans="false" url="http://gw.gamewikis.org/wiki/$1"/>
+        <interwiki prefix="gutenberg" local="false" trans="false" url="http://www.gutenberg.org/etext/$1"/>
+        <interwiki prefix="gutenbergwiki" local="false" trans="false" url="http://www.gutenberg.org/wiki/$1"/>
+        <interwiki prefix="gv" local="true" trans="false" url="http://gv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="h2wiki" local="false" trans="false" url="http://halowiki.net/p/$1"/>
+        <interwiki prefix="ha" local="true" trans="false" url="http://ha.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hak" local="true" trans="false" url="http://hak.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hammondwiki" local="false" trans="false" url="http://www.dairiki.org/HammondWiki/index.php3?$1"/>
+        <interwiki prefix="haw" local="true" trans="false" url="http://haw.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="he" local="true" trans="false" url="http://he.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="heroeswiki" local="false" trans="false" url="http://heroeswiki.com/$1"/>
+        <interwiki prefix="herzkinderwiki" local="false" trans="false" url="http://www.herzkinderinfo.de/Mediawiki/index.php/$1"/>
+        <interwiki prefix="hi" local="true" trans="false" url="http://hi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hif" local="true" trans="false" url="http://hif.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hkmule" local="false" trans="false" url="http://www.hkmule.com/wiki/$1"/>
+        <interwiki prefix="ho" local="true" trans="false" url="http://ho.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="holshamtraders" local="false" trans="false" url="http://www.holsham-traders.de/wiki/index.php/$1"/>
+        <interwiki prefix="hr" local="true" trans="false" url="http://hr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hrfwiki" local="false" trans="false" url="http://fanstuff.hrwiki.org/index.php/$1"/>
+        <interwiki prefix="hrwiki" local="false" trans="false" url="http://www.hrwiki.org/index.php/$1"/>
+        <interwiki prefix="hsb" local="true" trans="false" url="http://hsb.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ht" local="true" trans="false" url="http://ht.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hu" local="true" trans="false" url="http://hu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="humancell" local="false" trans="false" url="http://www.humancell.org/index.php/$1"/>
+        <interwiki prefix="hupwiki" local="false" trans="false" url="http://wiki.hup.hu/index.php/$1"/>
+        <interwiki prefix="hy" local="true" trans="false" url="http://hy.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="hz" local="true" trans="false" url="http://hz.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ia" local="true" trans="false" url="http://ia.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="id" local="true" trans="false" url="http://id.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ie" local="true" trans="false" url="http://ie.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ig" local="true" trans="false" url="http://ig.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ii" local="true" trans="false" url="http://ii.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ik" local="true" trans="false" url="http://ik.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ilo" local="true" trans="false" url="http://ilo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="imdbcharacter" local="false" trans="false" url="http://www.imdb.com/character/ch$1/"/>
+        <interwiki prefix="imdbcompany" local="false" trans="false" url="http://www.imdb.com/company/co$1/"/>
+        <interwiki prefix="imdbname" local="false" trans="false" url="http://www.imdb.com/name/nm$1/"/>
+        <interwiki prefix="imdbtitle" local="false" trans="false" url="http://www.imdb.com/title/tt$1/"/>
+        <interwiki prefix="incubator" local="true" trans="false" url="http://incubator.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="infoanarchy" local="false" trans="false" url="http://www.infoanarchy.org/en/$1"/>
+        <interwiki prefix="infosecpedia" local="false" trans="false" url="http://www.infosecpedia.org/pedia/index.php/$1"/>
+        <interwiki prefix="infosphere" local="false" trans="false" url="http://theinfosphere.org/$1"/>
+        <interwiki prefix="io" local="true" trans="false" url="http://io.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="is" local="true" trans="false" url="http://is.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="iso639-3" local="false" trans="false" url="http://www.sil.org/iso639-3/documentation.asp?id=$1"/>
+        <interwiki prefix="it" local="true" trans="false" url="http://it.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="iu" local="true" trans="false" url="http://iu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="iuridictum" local="false" trans="false" url="http://iuridictum.pecina.cz/w/$1"/>
+        <interwiki prefix="ja" local="true" trans="false" url="http://ja.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="jameshoward" local="false" trans="false" url="http://jameshoward.us/$1"/>
+        <interwiki prefix="javanet" local="false" trans="false" url="http://wiki.java.net/bin/view/Main/$1"/>
+        <interwiki prefix="javapedia" local="false" trans="false" url="http://wiki.java.net/bin/view/Javapedia/$1"/>
+        <interwiki prefix="jbo" local="true" trans="false" url="http://jbo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="jefo" local="false" trans="false" url="http://esperanto-jeunes.org/wiki/$1"/>
+        <interwiki prefix="jiniwiki" local="false" trans="false" url="http://www.cdegroot.com/cgi-bin/jini?$1"/>
+        <interwiki prefix="jp" local="true" trans="false" url="http://jp.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="jspwiki" local="false" trans="false" url="http://www.ecyrd.com/JSPWiki/Wiki.jsp?page=$1"/>
+        <interwiki prefix="jstor" local="false" trans="false" url="http://www.jstor.org/journals/$1"/>
+        <interwiki prefix="jv" local="true" trans="false" url="http://jv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ka" local="true" trans="false" url="http://ka.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kaa" local="true" trans="false" url="http://kaa.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kab" local="true" trans="false" url="http://kab.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kamelo" local="false" trans="false" url="http://kamelopedia.mormo.org/index.php/$1"/>
+        <interwiki prefix="karlsruhe" local="false" trans="false" url="http://ka.stadtwiki.net/$1"/>
+        <interwiki prefix="kerimwiki" local="false" trans="false" url="http://wiki.oxus.net/$1"/>
+        <interwiki prefix="kg" local="true" trans="false" url="http://kg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ki" local="true" trans="false" url="http://ki.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kinowiki" local="false" trans="false" url="http://kino.skripov.com/index.php/$1"/>
+        <interwiki prefix="kj" local="true" trans="false" url="http://kj.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kk" local="true" trans="false" url="http://kk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kl" local="true" trans="false" url="http://kl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="km" local="true" trans="false" url="http://km.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kmwiki" local="false" trans="false" url="http://kmwiki.wikispaces.com/$1"/>
+        <interwiki prefix="kn" local="true" trans="false" url="http://kn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ko" local="true" trans="false" url="http://ko.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kontuwiki" local="false" trans="false" url="http://kontu.merri.net/wiki/$1"/>
+        <interwiki prefix="koslarwiki" local="false" trans="false" url="http://wiki.koslar.de/index.php/$1"/>
+        <interwiki prefix="kpopwiki" local="false" trans="false" url="http://www.kpopwiki.com/$1"/>
+        <interwiki prefix="kr" local="true" trans="false" url="http://kr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ks" local="true" trans="false" url="http://ks.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ksh" local="true" trans="false" url="http://ksh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ku" local="true" trans="false" url="http://ku.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kv" local="true" trans="false" url="http://kv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="kw" local="true" trans="false" url="http://kw.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ky" local="true" trans="false" url="http://ky.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="la" local="true" trans="false" url="http://la.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lad" local="true" trans="false" url="http://lad.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lb" local="true" trans="false" url="http://lb.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lbe" local="true" trans="false" url="http://lbe.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lg" local="true" trans="false" url="http://lg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="li" local="true" trans="false" url="http://li.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lij" local="true" trans="false" url="http://lij.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="linguistlist" local="false" trans="false" url="http://linguistlist.org/forms/langs/LLDescription.cfm?code=$1"/>
+        <interwiki prefix="linuxwiki" local="false" trans="false" url="http://www.linuxwiki.de/$1"/>
+        <interwiki prefix="linuxwikide" local="false" trans="false" url="http://www.linuxwiki.de/$1"/>
+        <interwiki prefix="liswiki" local="false" trans="false" url="http://liswiki.org/wiki/$1"/>
+        <interwiki prefix="literateprograms" local="false" trans="false" url="http://en.literateprograms.org/$1"/>
+        <interwiki prefix="livepedia" local="false" trans="false" url="http://www.livepedia.gr/index.php?title=$1"/>
+        <interwiki prefix="lmo" local="true" trans="false" url="http://lmo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ln" local="true" trans="false" url="http://ln.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lo" local="true" trans="false" url="http://lo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lojban" local="false" trans="false" url="http://www.lojban.org/tiki/tiki-index.php?page=$1"/>
+        <interwiki prefix="lostpedia" local="false" trans="false" url="http://lostpedia.wikia.com/wiki/$1"/>
+        <interwiki prefix="lqwiki" local="false" trans="false" url="http://wiki.linuxquestions.org/wiki/$1"/>
+        <interwiki prefix="lt" local="true" trans="false" url="http://lt.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lugkr" local="false" trans="false" url="http://lug-kr.sourceforge.net/cgi-bin/lugwiki.pl?$1"/>
+        <interwiki prefix="luxo" local="false" trans="false" url="http://toolserver.org/~luxo/contributions/contributions.php?user=$1"/>
+        <interwiki prefix="lv" local="true" trans="false" url="http://lv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="lyricwiki" local="false" trans="false" url="http://www.lyricwiki.org/$1"/>
+        <interwiki prefix="mail" local="true" trans="false" url="https://lists.wikimedia.org/mailman/listinfo/$1"/>
+        <interwiki prefix="mailarchive" local="true" trans="false" url="http://lists.wikimedia.org/pipermail/$1"/>
+        <interwiki prefix="map-bms" local="true" trans="false" url="http://map-bms.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mariowiki" local="false" trans="false" url="http://www.mariowiki.com/$1"/>
+        <interwiki prefix="marveldatabase" local="false" trans="false" url="http://www.marveldatabase.com/wiki/index.php/$1"/>
+        <interwiki prefix="mdf" local="true" trans="false" url="http://mdf.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="meatball" local="false" trans="false" url="http://www.usemod.com/cgi-bin/mb.pl?$1"/>
+        <interwiki prefix="mediazilla" local="true" trans="false" url="https://bugzilla.wikimedia.org/$1"/>
+        <interwiki prefix="memoryalpha" local="false" trans="false" url="http://memory-alpha.org/en/wiki/$1"/>
+        <interwiki prefix="metawiki" local="false" trans="false" url="http://sunir.org/apps/meta.pl?$1"/>
+        <interwiki prefix="metawikipedia" local="true" trans="false" url="http://meta.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="mg" local="true" trans="false" url="http://mg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mh" local="true" trans="false" url="http://mh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mi" local="true" trans="false" url="http://mi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mineralienatlas" local="false" trans="false" url="http://www.mineralienatlas.de/lexikon/index.php/$1"/>
+        <interwiki prefix="minnan" local="true" trans="false" url="http://minnan.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mk" local="true" trans="false" url="http://mk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ml" local="true" trans="false" url="http://ml.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mn" local="true" trans="false" url="http://mn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mo" local="true" trans="false" url="http://mo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="moinmoin" local="false" trans="false" url="http://moinmo.in/$1"/>
+        <interwiki prefix="monstropedia" local="false" trans="false" url="http://www.monstropedia.org/?title=$1"/>
+        <interwiki prefix="mosapedia" local="false" trans="false" url="http://mosapedia.de/wiki/index.php/$1"/>
+        <interwiki prefix="mozcom" local="false" trans="false" url="http://mozilla.wikia.com/wiki/$1"/>
+        <interwiki prefix="mozillawiki" local="false" trans="false" url="http://wiki.mozilla.org/$1"/>
+        <interwiki prefix="mozillazinekb" local="false" trans="false" url="http://kb.mozillazine.org/$1"/>
+        <interwiki prefix="mr" local="true" trans="false" url="http://mr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ms" local="true" trans="false" url="http://ms.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mt" local="true" trans="false" url="http://mt.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mus" local="true" trans="false" url="http://mus.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="musicbrainz" local="false" trans="false" url="http://wiki.musicbrainz.org/$1"/>
+        <interwiki prefix="mw" local="false" trans="false" url="http://www.mediawiki.org/wiki/$1"/>
+        <interwiki prefix="mwod" local="false" trans="false" url="http://www.merriam-webster.com/cgi-bin/dictionary?book=Dictionary&amp;va=$1"/>
+        <interwiki prefix="mwot" local="false" trans="false" url="http://www.merriam-webster.com/cgi-bin/thesaurus?book=Thesaurus&amp;va=$1"/>
+        <interwiki prefix="my" local="true" trans="false" url="http://my.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="myv" local="true" trans="false" url="http://myv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="mzn" local="true" trans="false" url="http://mzn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="n" local="true" trans="false" url="http://en.wikinews.org/wiki/$1"/>
+        <interwiki prefix="na" local="true" trans="false" url="http://na.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nah" local="true" trans="false" url="http://nah.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nan" local="true" trans="false" url="http://nan.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nap" local="true" trans="false" url="http://nap.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nb" local="true" trans="false" url="http://nb.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nds" local="true" trans="false" url="http://nds.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nds-nl" local="true" trans="false" url="http://nds-nl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ne" local="true" trans="false" url="http://ne.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="netvillage" local="false" trans="false" url="http://www.netbros.com/?$1"/>
+        <interwiki prefix="new" local="true" trans="false" url="http://new.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ng" local="true" trans="false" url="http://ng.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nkcells" local="false" trans="false" url="http://www.nkcells.info/wiki/index.php/$1"/>
+        <interwiki prefix="nl" local="true" trans="false" url="http://nl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nn" local="true" trans="false" url="http://nn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="no" local="true" trans="false" url="http://no.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nomcom" local="true" trans="false" url="http://nomcom.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nosmoke" local="false" trans="false" url="http://no-smok.net/nsmk/$1"/>
+        <interwiki prefix="nost" local="true" trans="false" url="http://nostalgia.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nov" local="true" trans="false" url="http://nov.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nrm" local="true" trans="false" url="http://nrm.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="nv" local="true" trans="false" url="http://nv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ny" local="true" trans="false" url="http://ny.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="oc" local="true" trans="false" url="http://oc.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="oeis" local="false" trans="false" url="http://www.research.att.com/~njas/sequences/$1"/>
+        <interwiki prefix="oldwikisource" local="true" trans="false" url="http://wikisource.org/wiki/$1"/>
+        <interwiki prefix="olpc" local="false" trans="false" url="http://wiki.laptop.org/go/$1"/>
+        <interwiki prefix="om" local="true" trans="false" url="http://om.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="onelook" local="false" trans="false" url="http://www.onelook.com/?ls=b&amp;w=$1"/>
+        <interwiki prefix="openfacts" local="false" trans="false" url="http://openfacts.berlios.de/index.phtml?title=$1"/>
+        <interwiki prefix="openstreetmap" local="false" trans="false" url="http://wiki.openstreetmap.org/index.php/$1"/>
+        <interwiki prefix="openwetware" local="false" trans="false" url="http://openwetware.org/wiki/$1"/>
+        <interwiki prefix="openwiki" local="false" trans="false" url="http://openwiki.com/?$1"/>
+        <interwiki prefix="opera7wiki" local="false" trans="false" url="http://operawiki.info/$1"/>
+        <interwiki prefix="or" local="true" trans="false" url="http://or.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="organicdesign" local="false" trans="false" url="http://www.organicdesign.co.nz/$1"/>
+        <interwiki prefix="orgpatterns" local="false" trans="false" url="http://www.bell-labs.com/cgi-user/OrgPatterns/OrgPatterns?$1"/>
+        <interwiki prefix="orthodoxwiki" local="false" trans="false" url="http://orthodoxwiki.org/$1"/>
+        <interwiki prefix="os" local="true" trans="false" url="http://os.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="osi reference model" local="false" trans="false" url="http://wiki.tigma.ee/index.php/$1"/>
+        <interwiki prefix="otrs" local="true" trans="false" url="https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketID=$1"/>
+        <interwiki prefix="otrswiki" local="true" trans="false" url="http://otrs-wiki.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="ourmedia" local="false" trans="false" url="http://www.socialtext.net/ourmedia/index.cgi?$1"/>
+        <interwiki prefix="pa" local="true" trans="false" url="http://pa.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="pag" local="true" trans="false" url="http://pag.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="paganwiki" local="false" trans="false" url="http://www.paganwiki.org/wiki/index.php?title=$1"/>
+        <interwiki prefix="pam" local="true" trans="false" url="http://pam.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="panawiki" local="false" trans="false" url="http://wiki.alairelibre.net/wiki/$1"/>
+        <interwiki prefix="pangalacticorg" local="false" trans="false" url="http://www.pangalactic.org/Wiki/$1"/>
+        <interwiki prefix="pap" local="true" trans="false" url="http://pap.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="patwiki" local="false" trans="false" url="http://gauss.ffii.org/$1"/>
+        <interwiki prefix="pdc" local="true" trans="false" url="http://pdc.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="perlconfwiki" local="false" trans="false" url="http://perl.conf.hu/index.php/$1"/>
+        <interwiki prefix="perlnet" local="false" trans="false" url="http://perl.net.au/wiki/$1"/>
+        <interwiki prefix="personaltelco" local="false" trans="false" url="http://www.personaltelco.net/index.cgi/$1"/>
+        <interwiki prefix="phpwiki" local="false" trans="false" url="http://phpwiki.sourceforge.net/phpwiki/index.php?$1"/>
+        <interwiki prefix="phwiki" local="false" trans="false" url="http://wiki.pocketheaven.com/$1"/>
+        <interwiki prefix="pi" local="true" trans="false" url="http://pi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="pih" local="true" trans="false" url="http://pih.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="pl" local="true" trans="false" url="http://pl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="planetmath" local="false" trans="false" url="http://planetmath.org/?op=getobj&amp;from=objects&amp;id=$1"/>
+        <interwiki prefix="pmeg" local="false" trans="false" url="http://www.bertilow.com/pmeg/$1.php"/>
+        <interwiki prefix="pms" local="true" trans="false" url="http://pms.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="pmwiki" local="false" trans="false" url="http://old.porplemontage.com/wiki/index.php/$1"/>
+        <interwiki prefix="pnt" local="true" trans="false" url="http://pnt.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ps" local="true" trans="false" url="http://ps.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="psycle" local="false" trans="false" url="http://psycle.sourceforge.net/wiki/$1"/>
+        <interwiki prefix="pt" local="true" trans="false" url="http://pt.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="purlnet" local="false" trans="false" url="http://purl.oclc.org/NET/$1"/>
+        <interwiki prefix="pythoninfo" local="false" trans="false" url="http://www.python.org/cgi-bin/moinmoin/$1"/>
+        <interwiki prefix="pythonwiki" local="false" trans="false" url="http://www.pythonwiki.de/$1"/>
+        <interwiki prefix="pywiki" local="false" trans="false" url="http://c2.com/cgi/wiki?$1"/>
+        <interwiki prefix="q" local="true" trans="false" url="http://en.wikiquote.org/wiki/$1"/>
+        <interwiki prefix="qcwiki" local="false" trans="false" url="http://wiki.quantumchemistry.net/index.php/$1"/>
+        <interwiki prefix="qu" local="true" trans="false" url="http://qu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="quality" local="true" trans="false" url="http://quality.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="qwiki" local="false" trans="false" url="http://qwiki.caltech.edu/wiki/$1"/>
+        <interwiki prefix="r3000" local="false" trans="false" url="http://prinsig.se/weekee/$1"/>
+        <interwiki prefix="raec" local="false" trans="false" url="http://www.raec.clacso.edu.ar:8080/raec/Members/raecpedia/$1"/>
+        <interwiki prefix="rakwiki" local="false" trans="false" url="http://rakwiki.no-ip.info/$1"/>
+        <interwiki prefix="reuterswiki" local="false" trans="false" url="http://glossary.reuters.com/index.php/$1"/>
+        <interwiki prefix="rev" local="false" trans="false" url="http://www.mediawiki.org/wiki/Special:Code/MediaWiki/$1"/>
+        <interwiki prefix="revo" local="false" trans="false" url="http://purl.org/NET/voko/revo/art/$1.html"/>
+        <interwiki prefix="rfc" local="false" trans="false" url="http://tools.ietf.org/html/rfc$1"/>
+        <interwiki prefix="rheinneckar" local="false" trans="false" url="http://wiki.rhein-neckar.de/index.php/$1"/>
+        <interwiki prefix="rm" local="true" trans="false" url="http://rm.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="rmy" local="true" trans="false" url="http://rmy.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="rn" local="true" trans="false" url="http://rn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ro" local="true" trans="false" url="http://ro.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="roa-rup" local="true" trans="false" url="http://roa-rup.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="roa-tara" local="true" trans="false" url="http://roa-tara.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="robowiki" local="false" trans="false" url="http://robowiki.net/?$1"/>
+        <interwiki prefix="rowiki" local="false" trans="false" url="http://wiki.rennkuckuck.de/index.php/$1"/>
+        <interwiki prefix="ru" local="true" trans="false" url="http://ru.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="rw" local="true" trans="false" url="http://rw.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="s" local="true" trans="false" url="http://en.wikisource.org/wiki/$1"/>
+        <interwiki prefix="s23wiki" local="false" trans="false" url="http://s23.org/wiki/$1"/>
+        <interwiki prefix="sa" local="true" trans="false" url="http://sa.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sah" local="true" trans="false" url="http://sah.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sc" local="true" trans="false" url="http://sc.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="scholar" local="false" trans="false" url="http://scholar.google.com/scholar?q=$1"/>
+        <interwiki prefix="schoolswp" local="true" trans="false" url="http://schools-wikipedia.org/wiki/$1"/>
+        <interwiki prefix="scn" local="true" trans="false" url="http://scn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sco" local="true" trans="false" url="http://sco.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="scores" local="false" trans="false" url="http://www.imslp.org/wiki/$1"/>
+        <interwiki prefix="scoutwiki" local="false" trans="false" url="http://en.scoutwiki.org/$1"/>
+        <interwiki prefix="scramble" local="false" trans="false" url="http://www.scramble.nl/wiki/index.php?title=$1"/>
+        <interwiki prefix="sd" local="true" trans="false" url="http://sd.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="se" local="true" trans="false" url="http://se.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="seapig" local="false" trans="false" url="http://www.seapig.org/$1"/>
+        <interwiki prefix="seattlewiki" local="false" trans="false" url="http://seattlewiki.org/wiki/$1"/>
+        <interwiki prefix="seattlewireless" local="false" trans="false" url="http://seattlewireless.net/?$1"/>
+        <interwiki prefix="senseislibrary" local="false" trans="false" url="http://senseis.xmp.net/?$1"/>
+        <interwiki prefix="sg" local="true" trans="false" url="http://sg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sh" local="true" trans="false" url="http://sh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="shakti" local="false" trans="false" url="http://cgi.algonet.se/htbin/cgiwrap/pgd/ShaktiWiki/$1"/>
+        <interwiki prefix="si" local="true" trans="false" url="http://si.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="silcode" local="false" trans="false" url="http://www.sil.org/iso639-3/documentation.asp?id=$1"/>
+        <interwiki prefix="simple" local="true" trans="false" url="http://simple.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sk" local="true" trans="false" url="http://sk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sl" local="true" trans="false" url="http://sl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="slashdot" local="false" trans="false" url="http://slashdot.org/article.pl?sid=$1"/>
+        <interwiki prefix="slwiki" local="false" trans="false" url="http://wiki.secondlife.com/wiki/$1"/>
+        <interwiki prefix="sm" local="true" trans="false" url="http://sm.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="smikipedia" local="false" trans="false" url="http://www.smiki.de/$1"/>
+        <interwiki prefix="sn" local="true" trans="false" url="http://sn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="so" local="true" trans="false" url="http://so.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sourceforge" local="false" trans="false" url="http://sourceforge.net/$1"/>
+        <interwiki prefix="spcom" local="true" trans="false" url="http://spcom.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="species" local="true" trans="false" url="http://species.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="sq" local="true" trans="false" url="http://sq.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="squeak" local="false" trans="false" url="http://wiki.squeak.org/squeak/$1"/>
+        <interwiki prefix="sr" local="true" trans="false" url="http://sr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="srn" local="true" trans="false" url="http://srn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ss" local="true" trans="false" url="http://ss.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="st" local="true" trans="false" url="http://st.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="stable" local="false" trans="false" url="http://stable.toolserver.org/$1"/>
+        <interwiki prefix="stq" local="true" trans="false" url="http://stq.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="strategywiki" local="false" trans="false" url="http://strategywiki.org/wiki/$1"/>
+        <interwiki prefix="su" local="true" trans="false" url="http://su.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="sulutil" local="false" trans="false" url="http://toolserver.org/~vvv/sulutil.php?user=$1"/>
+        <interwiki prefix="susning" local="false" trans="false" url="http://www.susning.nu/$1"/>
+        <interwiki prefix="sv" local="true" trans="false" url="http://sv.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="svgwiki" local="false" trans="false" url="http://www.protocol7.com/svg-wiki/default.asp?$1"/>
+        <interwiki prefix="svn" local="true" trans="false" url="http://svn.wikimedia.org/viewvc/mediawiki/$1?view=log"/>
+        <interwiki prefix="sw" local="true" trans="false" url="http://sw.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="swinbrain" local="false" trans="false" url="http://mercury.it.swin.edu.au/swinbrain/index.php/$1"/>
+        <interwiki prefix="swingwiki" local="false" trans="false" url="http://www.swingwiki.org/$1"/>
+        <interwiki prefix="swtrain" local="false" trans="false" url="http://train.spottingworld.com/$1"/>
+        <interwiki prefix="szl" local="true" trans="false" url="http://szl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ta" local="true" trans="false" url="http://ta.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tabwiki" local="false" trans="false" url="http://www.tabwiki.com/index.php/$1"/>
+        <interwiki prefix="takipedia" local="false" trans="false" url="http://www.takipedia.org/wiki/$1"/>
+        <interwiki prefix="tavi" local="false" trans="false" url="http://tavi.sourceforge.net/$1"/>
+        <interwiki prefix="tclerswiki" local="false" trans="false" url="http://wiki.tcl.tk/$1"/>
+        <interwiki prefix="te" local="true" trans="false" url="http://te.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="technorati" local="false" trans="false" url="http://www.technorati.com/search/$1"/>
+        <interwiki prefix="tejo" local="false" trans="false" url="http://www.tejo.org/vikio/$1"/>
+        <interwiki prefix="tesoltaiwan" local="false" trans="false" url="http://www.tesol-taiwan.org/wiki/index.php/$1"/>
+        <interwiki prefix="testwiki" local="true" trans="false" url="http://test.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tet" local="true" trans="false" url="http://tet.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tg" local="true" trans="false" url="http://tg.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="th" local="true" trans="false" url="http://th.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="thelemapedia" local="false" trans="false" url="http://www.thelemapedia.org/index.php/$1"/>
+        <interwiki prefix="theopedia" local="false" trans="false" url="http://www.theopedia.com/$1"/>
+        <interwiki prefix="theppn" local="false" trans="false" url="http://wiki.theppn.org/$1"/>
+        <interwiki prefix="thinkwiki" local="false" trans="false" url="http://www.thinkwiki.org/wiki/$1"/>
+        <interwiki prefix="ti" local="true" trans="false" url="http://ti.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tibiawiki" local="false" trans="false" url="http://tibia.erig.net/$1"/>
+        <interwiki prefix="ticket" local="true" trans="false" url="https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=$1"/>
+        <interwiki prefix="tk" local="true" trans="false" url="http://tk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tl" local="true" trans="false" url="http://tl.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tmbw" local="false" trans="false" url="http://tmbw.net/wiki/$1"/>
+        <interwiki prefix="tmnet" local="false" trans="false" url="http://www.technomanifestos.net/?$1"/>
+        <interwiki prefix="tmwiki" local="false" trans="false" url="http://www.EasyTopicMaps.com/?page=$1"/>
+        <interwiki prefix="tn" local="true" trans="false" url="http://tn.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="to" local="true" trans="false" url="http://to.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tokipona" local="true" trans="false" url="http://tokipona.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tokyonights" local="false" trans="false" url="http://wiki.tokyo-nights.com/wiki/$1"/>
+        <interwiki prefix="tools" local="false" trans="false" url="http://toolserver.org/$1"/>
+        <interwiki prefix="tp" local="true" trans="false" url="http://tp.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tpi" local="true" trans="false" url="http://tpi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tr" local="true" trans="false" url="http://tr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="translatewiki" local="false" trans="false" url="http://translatewiki.net/wiki/$1"/>
+        <interwiki prefix="trash!italia" local="false" trans="false" url="http://trashware.linux.it/wiki/$1"/>
+        <interwiki prefix="ts" local="true" trans="false" url="http://ts.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tswiki" local="false" trans="false" url="http://wiki.toolserver.org/view/$1"/>
+        <interwiki prefix="tt" local="true" trans="false" url="http://tt.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tum" local="true" trans="false" url="http://tum.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="turismo" local="false" trans="false" url="http://www.tejo.org/turismo/$1"/>
+        <interwiki prefix="tviv" local="false" trans="false" url="http://tviv.org/wiki/$1"/>
+        <interwiki prefix="tvtropes" local="false" trans="false" url="http://www.tvtropes.org/pmwiki/pmwiki.php/Main/$1"/>
+        <interwiki prefix="tw" local="true" trans="false" url="http://tw.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="twiki" local="false" trans="false" url="http://twiki.org/cgi-bin/view/$1"/>
+        <interwiki prefix="twistedwiki" local="false" trans="false" url="http://purl.net/wiki/twisted/$1"/>
+        <interwiki prefix="ty" local="true" trans="false" url="http://ty.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="tyvawiki" local="false" trans="false" url="http://www.tyvawiki.org/wiki/$1"/>
+        <interwiki prefix="udm" local="true" trans="false" url="http://udm.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="ug" local="true" trans="false" url="http://ug.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="uk" local="true" trans="false" url="http://uk.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="uncyclopedia" local="false" trans="false" url="http://uncyclopedia.org/wiki/$1"/>
+        <interwiki prefix="unreal" local="false" trans="false" url="http://wiki.beyondunreal.com/wiki/$1"/>
+        <interwiki prefix="ur" local="true" trans="false" url="http://ur.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="urbandict" local="false" trans="false" url="http://www.urbandictionary.com/define.php?term=$1"/>
+        <interwiki prefix="usej" local="false" trans="false" url="http://www.tejo.org/usej/$1"/>
+        <interwiki prefix="usemod" local="false" trans="false" url="http://www.usemod.com/cgi-bin/wiki.pl?$1"/>
+        <interwiki prefix="uz" local="true" trans="false" url="http://uz.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="v" local="true" trans="false" url="http://en.wikiversity.org/wiki/$1"/>
+        <interwiki prefix="valuewiki" local="false" trans="false" url="http://www.valuewiki.com/w/$1"/>
+        <interwiki prefix="ve" local="true" trans="false" url="http://ve.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="vec" local="true" trans="false" url="http://vec.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="veropedia" local="false" trans="false" url="http://en.veropedia.com/a/$1"/>
+        <interwiki prefix="vi" local="true" trans="false" url="http://vi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="vinismo" local="false" trans="false" url="http://vinismo.com/en/$1"/>
+        <interwiki prefix="vkol" local="false" trans="false" url="http://kol.coldfront.net/thekolwiki/index.php/$1"/>
+        <interwiki prefix="vlos" local="false" trans="false" url="http://www.thuvienkhoahoc.com/tusach/$1"/>
+        <interwiki prefix="vls" local="true" trans="false" url="http://vls.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="vo" local="true" trans="false" url="http://vo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="voipinfo" local="false" trans="false" url="http://www.voip-info.org/wiki/view/$1"/>
+        <interwiki prefix="wa" local="true" trans="false" url="http://wa.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="war" local="true" trans="false" url="http://war.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="warpedview" local="false" trans="false" url="http://www.warpedview.com/mediawiki/index.php/$1"/>
+        <interwiki prefix="webdevwikinl" local="false" trans="false" url="http://www.promo-it.nl/WebDevWiki/index.php?page=$1"/>
+        <interwiki prefix="webisodes" local="false" trans="false" url="http://www.webisodes.org/$1"/>
+        <interwiki prefix="webseitzwiki" local="false" trans="false" url="http://webseitz.fluxent.com/wiki/$1"/>
+        <interwiki prefix="wg" local="true" trans="false" url="http://wg.en.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="wiki" local="false" trans="false" url="http://c2.com/cgi/wiki?$1"/>
+        <interwiki prefix="wikia" local="false" trans="false" url="http://www.wikia.com/wiki/c:$1"/>
+        <interwiki prefix="wikianso" local="false" trans="false" url="http://www.ansorena.de/mediawiki/wiki/$1"/>
+        <interwiki prefix="wikiasite" local="false" trans="false" url="http://www.wikia.com/wiki/c:$1"/>
+        <interwiki prefix="wikible" local="false" trans="false" url="http://wikible.org/en/$1"/>
+        <interwiki prefix="wikibooks" local="true" trans="false" url="http://en.wikibooks.org/wiki/$1"/>
+        <interwiki prefix="wikichat" local="false" trans="false" url="http://www.wikichat.org/$1"/>
+        <interwiki prefix="wikichristian" local="false" trans="false" url="http://www.wikichristian.org/index.php?title=$1"/>
+        <interwiki prefix="wikicities" local="false" trans="false" url="http://www.wikia.com/wiki/$1"/>
+        <interwiki prefix="wikicity" local="false" trans="false" url="http://www.wikia.com/wiki/c:$1"/>
+        <interwiki prefix="wikif1" local="false" trans="false" url="http://www.wikif1.org/$1"/>
+        <interwiki prefix="wikifur" local="false" trans="false" url="http://en.wikifur.com/wiki/$1"/>
+        <interwiki prefix="wikihow" local="false" trans="false" url="http://www.wikihow.com/$1"/>
+        <interwiki prefix="wikiindex" local="false" trans="false" url="http://wikiindex.com/$1"/>
+        <interwiki prefix="wikilemon" local="false" trans="false" url="http://wiki.illemonati.com/$1"/>
+        <interwiki prefix="wikilivres" local="false" trans="false" url="http://wikilivres.info/wiki/$1"/>
+        <interwiki prefix="wikimac-de" local="false" trans="false" url="http://apfelwiki.de/wiki/Main/$1"/>
+        <interwiki prefix="wikimac-fr" local="false" trans="false" url="http://www.wikimac.org/index.php/$1"/>
+        <interwiki prefix="wikimedia" local="false" trans="false" url="http://wikimediafoundation.org/wiki/$1"/>
+        <interwiki prefix="wikinews" local="false" trans="false" url="http://en.wikinews.org/wiki/$1"/>
+        <interwiki prefix="wikinfo" local="false" trans="false" url="http://www.wikinfo.org/index.php/$1"/>
+        <interwiki prefix="wikinurse" local="false" trans="false" url="http://wikinurse.org/media/index.php?title=$1"/>
+        <interwiki prefix="wikinvest" local="false" trans="false" url="http://www.wikinvest.com/$1"/>
+        <interwiki prefix="wikipaltz" local="false" trans="false" url="http://www.wikipaltz.com/wiki/$1"/>
+        <interwiki prefix="wikipediawikipedia" local="true" trans="false" url="http://en.wikipedia.org/wiki/Wikipedia:$1"/>
+        <interwiki prefix="wikiquote" local="true" trans="false" url="http://en.wikiquote.org/wiki/$1"/>
+        <interwiki prefix="wikireason" local="false" trans="false" url="http://wikireason.net/wiki/$1"/>
+        <interwiki prefix="wikischool" local="false" trans="false" url="http://www.wikischool.de/wiki/$1"/>
+        <interwiki prefix="wikisophia" local="false" trans="false" url="http://wikisophia.org/index.php?title=$1"/>
+        <interwiki prefix="wikisource" local="true" trans="false" url="http://en.wikisource.org/wiki/$1"/>
+        <interwiki prefix="wikispecies" local="true" trans="false" url="http://species.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wikispot" local="false" trans="false" url="http://wikispot.org/?action=gotowikipage&amp;v=$1"/>
+        <interwiki prefix="wikiti" local="false" trans="false" url="http://wikiti.denglend.net/index.php?title=$1"/>
+        <interwiki prefix="wikitravel" local="false" trans="false" url="http://wikitravel.org/en/$1"/>
+        <interwiki prefix="wikitree" local="false" trans="false" url="http://wikitree.org/index.php?title=$1"/>
+        <interwiki prefix="wikiversity" local="false" trans="false" url="http://en.wikiversity.org/wiki/$1"/>
+        <interwiki prefix="wikiwikiweb" local="false" trans="false" url="http://c2.com/cgi/wiki?$1"/>
+        <interwiki prefix="wikt" local="true" trans="false" url="http://en.wiktionary.org/wiki/$1"/>
+        <interwiki prefix="wiktionary" local="true" trans="false" url="http://en.wiktionary.org/wiki/$1"/>
+        <interwiki prefix="wipipedia" local="false" trans="false" url="http://www.londonfetishscene.com/wipi/index.php/$1"/>
+        <interwiki prefix="wlug" local="false" trans="false" url="http://www.wlug.org.nz/$1"/>
+        <interwiki prefix="wm2005" local="true" trans="false" url="http://wikimania2005.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wm2006" local="true" trans="false" url="http://wikimania2006.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wm2007" local="true" trans="false" url="http://wikimania2007.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wm2008" local="true" trans="false" url="http://wikimania2008.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wm2009" local="true" trans="false" url="http://wikimania2009.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wm2010" local="true" trans="false" url="http://wikimania2010.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wmania" local="true" trans="false" url="http://wikimania.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wmcz" local="true" trans="false" url="http://meta.wikimedia.org/wiki/Wikimedia_Czech_Republic/$1"/>
+        <interwiki prefix="wmf" local="false" trans="false" url="http://wikimediafoundation.org/wiki/$1"/>
+        <interwiki prefix="wmrs" local="true" trans="false" url="http://rs.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wmse" local="true" trans="false" url="http://se.wikimedia.org/wiki/$1"/>
+        <interwiki prefix="wo" local="true" trans="false" url="http://wo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="wookieepedia" local="false" trans="false" url="http://starwars.wikia.com/wiki/$1"/>
+        <interwiki prefix="world66" local="false" trans="false" url="http://www.world66.com/$1"/>
+        <interwiki prefix="wowwiki" local="false" trans="false" url="http://www.wowwiki.com/$1"/>
+        <interwiki prefix="wqy" local="false" trans="false" url="http://wqy.sourceforge.net/cgi-bin/index.cgi?$1"/>
+        <interwiki prefix="wurmpedia" local="false" trans="false" url="http://www.wurmonline.com/wiki/index.php/$1"/>
+        <interwiki prefix="wuu" local="true" trans="false" url="http://wuu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="wznan" local="false" trans="false" url="http://www.wikiznanie.ru/wiki/article/$1"/>
+        <interwiki prefix="xal" local="true" trans="false" url="http://xal.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="xboxic" local="false" trans="false" url="http://wiki.xboxic.com/$1"/>
+        <interwiki prefix="xh" local="true" trans="false" url="http://xh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="yi" local="true" trans="false" url="http://yi.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="yo" local="true" trans="false" url="http://yo.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="za" local="true" trans="false" url="http://za.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zea" local="true" trans="false" url="http://zea.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh" local="true" trans="false" url="http://zh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh-cfr" local="true" trans="false" url="http://zh-cfr.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh-classical" local="true" trans="false" url="http://zh-classical.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh-cn" local="true" trans="false" url="http://zh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh-min-nan" local="true" trans="false" url="http://zh-min-nan.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh-tw" local="true" trans="false" url="http://zh.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zh-yue" local="true" trans="false" url="http://zh-yue.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zrhwiki" local="false" trans="false" url="http://www.zrhwiki.ch/wiki/$1"/>
+        <interwiki prefix="zu" local="true" trans="false" url="http://zu.wikipedia.org/wiki/$1"/>
+        <interwiki prefix="zum" local="false" trans="false" url="http://wiki.zum.de/$1"/>
+        <interwiki prefix="zwiki" local="false" trans="false" url="http://www.zwiki.org/$1"/>
+        <interwiki prefix="zzz wiki" local="false" trans="false" url="http://wiki.zzz.ee/index.php/$1"/>
+        <interwiki prefix="Ĉej" local="false" trans="false" url="http://esperanto.blahus.cz/cxej/vikio/index.php/$1"/>
+    </interwikis>
+    <i18nAliases>
+        <i18nAlias id="basepagename" caseSensitive="true">
+            <alias>BASEPAGENAME</alias>
+        </i18nAlias>
+        <i18nAlias id="contentlanguage" caseSensitive="true">
+            <alias>CONTENTLANG</alias>
+            <alias>CONTENTLANGUAGE</alias>
+        </i18nAlias>
+        <i18nAlias id="currentday" caseSensitive="true">
+            <alias>CURRENTDAY</alias>
+        </i18nAlias>
+        <i18nAlias id="currentmonth" caseSensitive="true">
+            <alias>CURRENTMONTH</alias>
+            <alias>CURRENTMONTH2</alias>
+        </i18nAlias>
+        <i18nAlias id="currentyear" caseSensitive="true">
+            <alias>CURRENTYEAR</alias>
+        </i18nAlias>
+        <i18nAlias id="defaultsort" caseSensitive="true">
+            <alias>DEFAULTCATEGORYSORT:</alias>
+            <alias>DEFAULTSORT:</alias>
+            <alias>DEFAULTSORTKEY:</alias>
+        </i18nAlias>
+        <i18nAlias id="expr" caseSensitive="false">
+            <alias>#expr:</alias>
+        </i18nAlias>
+        <i18nAlias id="filepath" caseSensitive="false">
+            <alias>FILEPATH:</alias>
+        </i18nAlias>
+        <i18nAlias id="fullpagename" caseSensitive="true">
+            <alias>FULLPAGENAME</alias>
+        </i18nAlias>
+        <i18nAlias id="fullpagenamee" caseSensitive="true">
+            <alias>FULLPAGENAMEE</alias>
+        </i18nAlias>
+        <i18nAlias id="fullurl" caseSensitive="false">
+            <alias>FULLURL:</alias>
+        </i18nAlias>
+        <i18nAlias id="if" caseSensitive="false">
+            <alias>#if:</alias>
+        </i18nAlias>
+        <i18nAlias id="ifeq" caseSensitive="false">
+            <alias>#ifeq:</alias>
+        </i18nAlias>
+        <i18nAlias id="iferror" caseSensitive="false">
+            <alias>#iferror:</alias>
+        </i18nAlias>
+        <i18nAlias id="ifexist" caseSensitive="false">
+            <alias>#ifexist:</alias>
+        </i18nAlias>
+        <i18nAlias id="ifexpr" caseSensitive="false">
+            <alias>#ifexpr:</alias>
+        </i18nAlias>
+        <i18nAlias id="lc" caseSensitive="false">
+            <alias>LC:</alias>
+        </i18nAlias>
+        <i18nAlias id="lcfirst" caseSensitive="false">
+            <alias>LCFIRST:</alias>
+        </i18nAlias>
+        <i18nAlias id="namespace" caseSensitive="true">
+            <alias>NAMESPACE</alias>
+            <alias>NAMESPACE:</alias>
+        </i18nAlias>
+        <i18nAlias id="ns" caseSensitive="false">
+            <alias>NS:</alias>
+        </i18nAlias>
+        <i18nAlias id="padleft" caseSensitive="false">
+            <alias>PADLEFT:</alias>
+        </i18nAlias>
+        <i18nAlias id="pagename" caseSensitive="true">
+            <alias>PAGENAME</alias>
+            <alias>PAGENAME:</alias>
+        </i18nAlias>
+        <i18nAlias id="pagenamee" caseSensitive="true">
+            <alias>PAGENAMEE</alias>
+            <alias>PAGENAMEE:</alias>
+        </i18nAlias>
+        <i18nAlias id="protectionlevel" caseSensitive="true">
+            <alias>PROTECTIONLEVEL:</alias>
+        </i18nAlias>
+        <i18nAlias id="safesubst" caseSensitive="false">
+            <alias>SAFESUBST:</alias>
+        </i18nAlias>
+        <i18nAlias id="sitename" caseSensitive="true">
+            <alias>SITENAME</alias>
+        </i18nAlias>
+        <i18nAlias id="subjectpagename" caseSensitive="true">
+            <alias>ARTICLEPAGENAME</alias>
+            <alias>SUBJECTPAGENAME</alias>
+        </i18nAlias>
+        <i18nAlias id="subjectspace" caseSensitive="true">
+            <alias>ARTICLESPACE</alias>
+            <alias>SUBJECTSPACE</alias>
+        </i18nAlias>
+        <i18nAlias id="switch" caseSensitive="false">
+            <alias>#switch:</alias>
+        </i18nAlias>
+        <i18nAlias id="tag" caseSensitive="false">
+            <alias>#tag:</alias>
+        </i18nAlias>
+        <i18nAlias id="talkpagename" caseSensitive="true">
+            <alias>TALKPAGENAME</alias>
+            <alias>TALKPAGENAME:</alias>
+        </i18nAlias>
+        <i18nAlias id="talkspace" caseSensitive="true">
+            <alias>TALKSPACE</alias>
+        </i18nAlias>
+        <i18nAlias id="time" caseSensitive="false">
+            <alias>#time:</alias>
+        </i18nAlias>
+        <i18nAlias id="titleparts" caseSensitive="false">
+            <alias>#titleparts:</alias>
+        </i18nAlias>
+        <i18nAlias id="uc" caseSensitive="false">
+            <alias>UC:</alias>
+        </i18nAlias>
+        <i18nAlias id="ucfirst" caseSensitive="false">
+            <alias>UCFIRST:</alias>
+        </i18nAlias>
+        <i18nAlias id="urlencode" caseSensitive="false">
+            <alias>URLENCODE:</alias>
+        </i18nAlias>
+    </i18nAliases>
+    <pfnGroups>
+        <pfnGroup name="Built-in Parser Functions">
+            <pfn class="org.sweble.wikitext.engine.ext.builtin.BuiltInParserFunctions$ParserFunctionSafeSubst"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Parser Functions - Formatting">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsFormatting$LcPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsFormatting$LcFirstPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsFormatting$PadLeftPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsFormatting$UcPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsFormatting$UcFirstPfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Parser Functions - Localization"/>
+        <pfnGroup name="Core - Parser Functions - Miscellaneous">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsMiscellaneous$TagPfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Parser Functions - Namespaces">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsNamespaces$NsPfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Parser Functions - URL data">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsUrlData$FilepathPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsUrlData$FullurlPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnFunctionsUrlData$UrlencodePfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Variables - Behavior Switches"/>
+        <pfnGroup name="Core - Variables - Date and Time">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesDateAndTime$CurrentDayPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesDateAndTime$CurrentMonthPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesDateAndTime$CurrentYearPfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Variables - Namespaces">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesNamespaces$NamespacePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesNamespaces$SubjectspacePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesNamespaces$TalkspacePfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Variables - Page names">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$BasePagenamePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$FullPagenamePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$FullPagenameePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$PagenamePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$PagenameePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$SubjectPagenamePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesPageNames$TalkPagenamePfn"/>
+        </pfnGroup>
+        <pfnGroup name="Core - Variables - Statistics"/>
+        <pfnGroup name="Core - Variables - Technical Metadata">
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$ContentLanguagePfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$DefaultsortPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$ProtectionLevelPfn"/>
+            <pfn class="org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata$SitenamePfn"/>
+        </pfnGroup>
+        <pfnGroup name="Extension - Parser Functions">
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionExpr"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionIf"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionIfeq"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionIfError"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionIfExist"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionIfExpr"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionSwitch"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionTime"/>
+            <pfn class="org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionTitleparts"/>
+        </pfnGroup>
+    </pfnGroups>
+    <tagExtGroups>
+        <tagExtGroup name="Built-in Tag Extensions">
+            <tagExt class="org.sweble.wikitext.engine.ext.builtin.BuiltInTagExtensions$TagExtensionNoWiki"/>
+            <tagExt class="org.sweble.wikitext.engine.ext.builtin.BuiltInTagExtensions$TagExtensionPre"/>
+        </tagExtGroup>
+        <tagExtGroup name="Extension - Math">
+            <tagExt class="org.sweble.wikitext.engine.ext.math.MathTagExt$MathTagExtImpl"/>
+        </tagExtGroup>
+        <tagExtGroup name="Extension - Ref">
+            <tagExt class="org.sweble.wikitext.engine.ext.ref.RefTagExt$RefTagExtImpl"/>
+        </tagExtGroup>
+    </tagExtGroups>
+    <parserConfig>
+        <warningsEnabled>true</warningsEnabled>
+        <minSeverity>INFORMATIVE</minSeverity>
+        <autoCorrect>false</autoCorrect>
+        <gatherRtData>true</gatherRtData>
+        <internalLinkPostfixPattern>[a-z]+</internalLinkPostfixPattern>
+        <allowedUrlProtocols>
+            <protocol name="mail:"/>
+            <protocol name="https://"/>
+            <protocol name="http://"/>
+        </allowedUrlProtocols>
+        <xmlElementBehavior>
+            <element name="abbr" type="XML_INLINE" emptyOnly="false"/>
+            <element name="b" type="XML_INLINE" emptyOnly="false"/>
+            <element name="big" type="XML_INLINE" emptyOnly="false"/>
+            <element name="blockquote" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="br" type="XML_INLINE" emptyOnly="true"/>
+            <element name="caption" type="XML_TABLE_ITEM" emptyOnly="false"/>
+            <element name="center" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="cite" type="XML_INLINE" emptyOnly="false"/>
+            <element name="code" type="XML_INLINE" emptyOnly="false"/>
+            <element name="dd" type="XML_ITEM" emptyOnly="false"/>
+            <element name="del" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="dfn" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="div" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="dl" type="XML_ITEM" emptyOnly="false"/>
+            <element name="dt" type="XML_ITEM" emptyOnly="false"/>
+            <element name="em" type="XML_INLINE" emptyOnly="false"/>
+            <element name="font" type="XML_INLINE" emptyOnly="false"/>
+            <element name="h1" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="h2" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="h3" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="h4" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="h5" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="h6" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="hr" type="XML_BLOCK" emptyOnly="true"/>
+            <element name="i" type="XML_INLINE" emptyOnly="false"/>
+            <element name="ins" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="kbd" type="XML_INLINE" emptyOnly="false"/>
+            <element name="li" type="XML_ITEM" emptyOnly="false"/>
+            <element name="ol" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="p" type="XML_PARAGRAPH" emptyOnly="false"/>
+            <element name="pre" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="s" type="XML_INLINE" emptyOnly="false"/>
+            <element name="samp" type="XML_INLINE" emptyOnly="false"/>
+            <element name="small" type="XML_INLINE" emptyOnly="false"/>
+            <element name="span" type="XML_INLINE" emptyOnly="false"/>
+            <element name="strike" type="XML_INLINE" emptyOnly="false"/>
+            <element name="strong" type="XML_INLINE" emptyOnly="false"/>
+            <element name="sub" type="XML_INLINE" emptyOnly="false"/>
+            <element name="sup" type="XML_INLINE" emptyOnly="false"/>
+            <element name="table" type="XML_TABLE" emptyOnly="false"/>
+            <element name="td" type="XML_TABLE_ITEM" emptyOnly="false"/>
+            <element name="th" type="XML_TABLE_ITEM" emptyOnly="false"/>
+            <element name="tr" type="XML_TABLE_ITEM" emptyOnly="false"/>
+            <element name="tt" type="XML_INLINE" emptyOnly="false"/>
+            <element name="u" type="XML_INLINE" emptyOnly="false"/>
+            <element name="ul" type="XML_BLOCK" emptyOnly="false"/>
+            <element name="var" type="XML_INLINE" emptyOnly="false"/>
+        </xmlElementBehavior>
+        <xmlEntities>
+            <entity name="AElig" value="Æ"/>
+            <entity name="Aacute" value="Á"/>
+            <entity name="Acirc" value="Â"/>
+            <entity name="Agrave" value="À"/>
+            <entity name="Alpha" value="Α"/>
+            <entity name="Aring" value="Å"/>
+            <entity name="Atilde" value="Ã"/>
+            <entity name="Auml" value="Ä"/>
+            <entity name="Beta" value="Β"/>
+            <entity name="Ccedil" value="Ç"/>
+            <entity name="Chi" value="Χ"/>
+            <entity name="Dagger" value="‡"/>
+            <entity name="Delta" value="Δ"/>
+            <entity name="ETH" value="Ð"/>
+            <entity name="Eacute" value="É"/>
+            <entity name="Ecirc" value="Ê"/>
+            <entity name="Egrave" value="È"/>
+            <entity name="Epsilon" value="Ε"/>
+            <entity name="Eta" value="Η"/>
+            <entity name="Euml" value="Ë"/>
+            <entity name="Gamma" value="Γ"/>
+            <entity name="Iacute" value="Í"/>
+            <entity name="Icirc" value="Î"/>
+            <entity name="Igrave" value="Ì"/>
+            <entity name="Iota" value="Ι"/>
+            <entity name="Iuml" value="Ï"/>
+            <entity name="Kappa" value="Κ"/>
+            <entity name="Lambda" value="Λ"/>
+            <entity name="Mu" value="Μ"/>
+            <entity name="Ntilde" value="Ñ"/>
+            <entity name="Nu" value="Ν"/>
+            <entity name="OElig" value="Œ"/>
+            <entity name="Oacute" value="Ó"/>
+            <entity name="Ocirc" value="Ô"/>
+            <entity name="Ograve" value="Ò"/>
+            <entity name="Omega" value="Ω"/>
+            <entity name="Omicron" value="Ο"/>
+            <entity name="Oslash" value="Ø"/>
+            <entity name="Otilde" value="Õ"/>
+            <entity name="Ouml" value="Ö"/>
+            <entity name="Phi" value="Φ"/>
+            <entity name="Pi" value="Π"/>
+            <entity name="Prime" value="″"/>
+            <entity name="Psi" value="Ψ"/>
+            <entity name="Rho" value="Ρ"/>
+            <entity name="Scaron" value="Š"/>
+            <entity name="Sigma" value="Σ"/>
+            <entity name="THORN" value="Þ"/>
+            <entity name="Tau" value="Τ"/>
+            <entity name="Theta" value="Θ"/>
+            <entity name="Uacute" value="Ú"/>
+            <entity name="Ucirc" value="Û"/>
+            <entity name="Ugrave" value="Ù"/>
+            <entity name="Upsilon" value="Υ"/>
+            <entity name="Uuml" value="Ü"/>
+            <entity name="Xi" value="Ξ"/>
+            <entity name="Yacute" value="Ý"/>
+            <entity name="Yuml" value="Ÿ"/>
+            <entity name="Zeta" value="Ζ"/>
+            <entity name="aacute" value="á"/>
+            <entity name="acirc" value="â"/>
+            <entity name="acute" value="´"/>
+            <entity name="aelig" value="æ"/>
+            <entity name="agrave" value="à"/>
+            <entity name="alefsym" value="ℵ"/>
+            <entity name="alpha" value="α"/>
+            <entity name="amp" value="&amp;"/>
+            <entity name="and" value="∧"/>
+            <entity name="ang" value="∠"/>
+            <entity name="aring" value="å"/>
+            <entity name="asymp" value="≈"/>
+            <entity name="atilde" value="ã"/>
+            <entity name="auml" value="ä"/>
+            <entity name="bdquo" value="„"/>
+            <entity name="beta" value="β"/>
+            <entity name="brvbar" value="¦"/>
+            <entity name="bull" value="•"/>
+            <entity name="cap" value="∩"/>
+            <entity name="ccedil" value="ç"/>
+            <entity name="cedil" value="¸"/>
+            <entity name="cent" value="¢"/>
+            <entity name="chi" value="χ"/>
+            <entity name="circ" value="ˆ"/>
+            <entity name="clubs" value="♣"/>
+            <entity name="cong" value="≅"/>
+            <entity name="copy" value="©"/>
+            <entity name="crarr" value="↵"/>
+            <entity name="cup" value="∪"/>
+            <entity name="curren" value="¤"/>
+            <entity name="dArr" value="⇓"/>
+            <entity name="dagger" value="†"/>
+            <entity name="darr" value="↓"/>
+            <entity name="deg" value="°"/>
+            <entity name="delta" value="δ"/>
+            <entity name="diams" value="♦"/>
+            <entity name="divide" value="÷"/>
+            <entity name="eacute" value="é"/>
+            <entity name="ecirc" value="ê"/>
+            <entity name="egrave" value="è"/>
+            <entity name="empty" value="∅"/>
+            <entity name="emsp" value=" "/>
+            <entity name="ensp" value=" "/>
+            <entity name="epsilon" value="ε"/>
+            <entity name="equiv" value="≡"/>
+            <entity name="eta" value="η"/>
+            <entity name="eth" value="ð"/>
+            <entity name="euml" value="ë"/>
+            <entity name="euro" value="€"/>
+            <entity name="exist" value="∃"/>
+            <entity name="fnof" value="ƒ"/>
+            <entity name="forall" value="∀"/>
+            <entity name="frac12" value="½"/>
+            <entity name="frac14" value="¼"/>
+            <entity name="frac34" value="¾"/>
+            <entity name="frasl" value="⁄"/>
+            <entity name="gamma" value="γ"/>
+            <entity name="ge" value="≥"/>
+            <entity name="gt" value="&gt;"/>
+            <entity name="hArr" value="⇔"/>
+            <entity name="harr" value="↔"/>
+            <entity name="hearts" value="♥"/>
+            <entity name="hellip" value="…"/>
+            <entity name="iacute" value="í"/>
+            <entity name="icirc" value="î"/>
+            <entity name="iexcl" value="¡"/>
+            <entity name="igrave" value="ì"/>
+            <entity name="image" value="ℑ"/>
+            <entity name="infin" value="∞"/>
+            <entity name="int" value="∫"/>
+            <entity name="iota" value="ι"/>
+            <entity name="iquest" value="¿"/>
+            <entity name="isin" value="∈"/>
+            <entity name="iuml" value="ï"/>
+            <entity name="kappa" value="κ"/>
+            <entity name="lArr" value="⇐"/>
+            <entity name="lambda" value="λ"/>
+            <entity name="lang" value="〈"/>
+            <entity name="laquo" value="«"/>
+            <entity name="larr" value="←"/>
+            <entity name="lceil" value="⌈"/>
+            <entity name="ldquo" value="“"/>
+            <entity name="le" value="≤"/>
+            <entity name="lfloor" value="⌊"/>
+            <entity name="lowast" value="∗"/>
+            <entity name="loz" value="◊"/>
+            <entity name="lrm" value="‎"/>
+            <entity name="lsaquo" value="‹"/>
+            <entity name="lsquo" value="‘"/>
+            <entity name="lt" value="&lt;"/>
+            <entity name="macr" value="¯"/>
+            <entity name="mdash" value="—"/>
+            <entity name="micro" value="µ"/>
+            <entity name="middot" value="·"/>
+            <entity name="minus" value="−"/>
+            <entity name="mu" value="μ"/>
+            <entity name="nabla" value="∇"/>
+            <entity name="nbsp" value=" "/>
+            <entity name="ndash" value="–"/>
+            <entity name="ne" value="≠"/>
+            <entity name="ni" value="∋"/>
+            <entity name="not" value="¬"/>
+            <entity name="notin" value="∉"/>
+            <entity name="nsub" value="⊄"/>
+            <entity name="ntilde" value="ñ"/>
+            <entity name="nu" value="ν"/>
+            <entity name="oacute" value="ó"/>
+            <entity name="ocirc" value="ô"/>
+            <entity name="oelig" value="œ"/>
+            <entity name="ograve" value="ò"/>
+            <entity name="oline" value="‾"/>
+            <entity name="omega" value="ω"/>
+            <entity name="omicron" value="ο"/>
+            <entity name="oplus" value="⊕"/>
+            <entity name="or" value="∨"/>
+            <entity name="ordf" value="ª"/>
+            <entity name="ordm" value="º"/>
+            <entity name="oslash" value="ø"/>
+            <entity name="otilde" value="õ"/>
+            <entity name="otimes" value="⊗"/>
+            <entity name="ouml" value="ö"/>
+            <entity name="para" value="¶"/>
+            <entity name="part" value="∂"/>
+            <entity name="permil" value="‰"/>
+            <entity name="perp" value="⊥"/>
+            <entity name="phi" value="φ"/>
+            <entity name="pi" value="π"/>
+            <entity name="piv" value="ϖ"/>
+            <entity name="plusmn" value="±"/>
+            <entity name="pound" value="£"/>
+            <entity name="prime" value="′"/>
+            <entity name="prod" value="∏"/>
+            <entity name="prop" value="∝"/>
+            <entity name="psi" value="ψ"/>
+            <entity name="quot" value="&quot;"/>
+            <entity name="rArr" value="⇒"/>
+            <entity name="radic" value="√"/>
+            <entity name="rang" value="〉"/>
+            <entity name="raquo" value="»"/>
+            <entity name="rarr" value="→"/>
+            <entity name="rceil" value="⌉"/>
+            <entity name="rdquo" value="”"/>
+            <entity name="real" value="ℜ"/>
+            <entity name="reg" value="®"/>
+            <entity name="rfloor" value="⌋"/>
+            <entity name="rho" value="ρ"/>
+            <entity name="rlm" value="‏"/>
+            <entity name="rsaquo" value="›"/>
+            <entity name="rsquo" value="’"/>
+            <entity name="sbquo" value="‚"/>
+            <entity name="scaron" value="š"/>
+            <entity name="sdot" value="⋅"/>
+            <entity name="sect" value="§"/>
+            <entity name="shy" value="­"/>
+            <entity name="sigma" value="σ"/>
+            <entity name="sigmaf" value="ς"/>
+            <entity name="sim" value="∼"/>
+            <entity name="spades" value="♠"/>
+            <entity name="sub" value="⊂"/>
+            <entity name="sube" value="⊆"/>
+            <entity name="sum" value="∑"/>
+            <entity name="sup" value="⊃"/>
+            <entity name="sup1" value="¹"/>
+            <entity name="sup2" value="²"/>
+            <entity name="sup3" value="³"/>
+            <entity name="supe" value="⊇"/>
+            <entity name="szlig" value="ß"/>
+            <entity name="tau" value="τ"/>
+            <entity name="there4" value="∴"/>
+            <entity name="theta" value="θ"/>
+            <entity name="thetasym" value="ϑ"/>
+            <entity name="thinsp" value=" "/>
+            <entity name="thorn" value="þ"/>
+            <entity name="tilde" value="˜"/>
+            <entity name="times" value="×"/>
+            <entity name="trade" value="™"/>
+            <entity name="uArr" value="⇑"/>
+            <entity name="uacute" value="ú"/>
+            <entity name="uarr" value="↑"/>
+            <entity name="ucirc" value="û"/>
+            <entity name="ugrave" value="ù"/>
+            <entity name="uml" value="¨"/>
+            <entity name="upsih" value="ϒ"/>
+            <entity name="upsilon" value="υ"/>
+            <entity name="uuml" value="ü"/>
+            <entity name="weierp" value="℘"/>
+            <entity name="xi" value="ξ"/>
+            <entity name="yacute" value="ý"/>
+            <entity name="yen" value="¥"/>
+            <entity name="yuml" value="ÿ"/>
+            <entity name="zeta" value="ζ"/>
+            <entity name="zwj" value="‍"/>
+            <entity name="zwnj" value="‌"/>
+        </xmlEntities>
+    </parserConfig>
+    <compilerConfig>
+        <trimTransparentBeforeParsing>true</trimTransparentBeforeParsing>
+    </compilerConfig>
+</swc-engine:WikiConfig>

@@ -42,7 +42,7 @@ public class AttrAdapterTest
 	@Test
 	public void canConstructAttrAdapterFromAst() throws Exception
 	{
-		XmlAttribute astAttr = AstBuilder.astXmlAttribute()
+		XmlAttribute astAttr = AstBuilder.astXmlAttrib()
 				.withName("test")
 				.withValue("value")
 				.build();
@@ -55,7 +55,7 @@ public class AttrAdapterTest
 	@Test
 	public void astAttribWithoutValueHasItsNameAsValueInWom() throws Exception
 	{
-		XmlAttribute astAttr = AstBuilder.astXmlAttribute()
+		XmlAttribute astAttr = AstBuilder.astXmlAttrib()
 				.withoutValue()
 				.build();
 		
@@ -73,7 +73,7 @@ public class AttrAdapterTest
 	@Test
 	public void astAttribWithoutValueGetsValueAfterSetting() throws Exception
 	{
-		XmlAttribute astAttr = AstBuilder.astXmlAttribute()
+		XmlAttribute astAttr = AstBuilder.astXmlAttrib()
 				.withoutValue()
 				.build();
 		

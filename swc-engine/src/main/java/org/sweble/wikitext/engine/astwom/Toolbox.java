@@ -30,12 +30,12 @@ import org.sweble.wikitext.lazy.parser.Italics;
 import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.parser.XmlElement;
 import org.sweble.wikitext.lazy.preprocessor.Redirect;
+import org.sweble.wikitext.lazy.preprocessor.TagExtension;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlAttribute;
 import org.sweble.wikitext.lazy.utils.XmlCharRef;
 import org.sweble.wikitext.lazy.utils.XmlEntityRef;
-import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -295,6 +295,22 @@ public class Toolbox
 		return n;
 	}
 	
+	public static TagExtension addRtData(TagExtension n)
+	{
+		for (AstNode attr : n.getXmlAttributes())
+		{
+			if (attr.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
+				continue;
+			addRtData((XmlAttribute) attr);
+		}
+		
+		TextUtils.addRtData(
+				n,
+				TextUtils.joinRt("<", n.getName()),
+				TextUtils.joinRt(">", n.getBody(), "</", n.getName(), ">"));
+		return n;
+	}
+	
 	// =========================================================================
 	
 	private static final String validTargetRxStr =
@@ -402,7 +418,7 @@ public class Toolbox
 	
 	// =========================================================================
 	
-	public static String toText(XmlEntityResolver entityResolver, AstNode n)
+	public static String toText(AstNode n)
 	{
 		switch (n.getNodeType())
 		{
@@ -420,7 +436,7 @@ public class Toolbox
 				return new String(Character.toChars(((XmlCharRef) n).getCodePoint()));
 				
 			case AstNodeTypes.NT_XML_ENTITY_REF:
-				return entityResolver.resolveXmlEntity(((XmlEntityRef) n).getName());
+				return ((XmlEntityRef) n).getResolved();
 				
 			default:
 				throw new IllegalArgumentException();

@@ -20,7 +20,7 @@ package org.sweble.wikitext.lazy.postprocessor;
 import java.util.LinkedList;
 
 import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.ParserConfig;
 import org.sweble.wikitext.lazy.parser.DefinitionDefinition;
 import org.sweble.wikitext.lazy.parser.DefinitionList;
 import org.sweble.wikitext.lazy.parser.DefinitionTerm;
@@ -59,14 +59,14 @@ public class ScopedElementBuilder
 		extends
 			AstVisitor
 {
-	private final ParserConfigInterface config;
+	private final ParserConfig config;
 	
 	private final ElementScopeStack stack = new ElementScopeStack();
 	
 	// =========================================================================
 	
 	public static LazyParsedPage process(
-			ParserConfigInterface config,
+			ParserConfig config,
 			AstNode ast)
 	{
 		return (LazyParsedPage) new ScopedElementBuilder(config).go(ast);
@@ -74,7 +74,7 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	public ScopedElementBuilder(ParserConfigInterface config)
+	public ScopedElementBuilder(ParserConfig config)
 	{
 		this.config = config;
 	}

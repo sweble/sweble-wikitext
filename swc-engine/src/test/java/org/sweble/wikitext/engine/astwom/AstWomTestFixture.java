@@ -28,7 +28,8 @@ import org.sweble.wikitext.engine.FullPage;
 import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
+import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.tools.WomPrinter;
@@ -41,9 +42,6 @@ import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
 
 public class AstWomTestFixture
 {
-	private static final String WIKI_CONFIGURATION =
-			"classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml";
-	
 	private static FileCompare compare;
 	
 	private static TestResourcesFixture resources;
@@ -87,7 +85,7 @@ public class AstWomTestFixture
 	
 	// =========================================================================
 	
-	private final SimpleWikiConfiguration config;
+	private final WikiConfigImpl config;
 	
 	private final Compiler compiler;
 	
@@ -99,7 +97,7 @@ public class AstWomTestFixture
 	{
 		try
 		{
-			this.config = new SimpleWikiConfiguration(WIKI_CONFIGURATION);
+			this.config = DefaultConfigEn.generate();
 			
 			this.compiler = new Compiler(this.config);
 		}
@@ -116,7 +114,7 @@ public class AstWomTestFixture
 		this.explicitTextNodes = explicitTextNodes;
 	}
 	
-	public SimpleWikiConfiguration getConfig()
+	public WikiConfigImpl getConfig()
 	{
 		return config;
 	}
@@ -133,7 +131,7 @@ public class AstWomTestFixture
 	{
 		return new DefaultAstToWomNodeFactory(
 				this.config,
-				title.getFullTitle());
+				title.getDenormalizedFullTitle());
 	}
 	
 	public static WomPage quickPostprocessToWom(String wikitext) throws Exception

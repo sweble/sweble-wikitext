@@ -18,7 +18,6 @@ package org.sweble.wikitext.engine.astwom;
 
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -27,8 +26,6 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
  * Interface for factories that create WOM nodes from AST nodes.
  */
 public interface AstToWomNodeFactory
-		extends
-			XmlEntityResolver
 {
 	public class UnsupportedXmlElement
 			extends

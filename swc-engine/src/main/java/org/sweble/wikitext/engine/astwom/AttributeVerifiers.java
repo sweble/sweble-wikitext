@@ -164,7 +164,7 @@ public enum AttributeVerifiers
 	/**
 	 * Throw if the given value exceeds its domain.
 	 * 
-	 * @param value
+	 * @param type
 	 *            The value to check.
 	 * @param lower
 	 *            The lower bound (inclusive).

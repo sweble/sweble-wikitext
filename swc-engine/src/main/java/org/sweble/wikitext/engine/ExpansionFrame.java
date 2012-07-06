@@ -22,10 +22,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
+import org.sweble.wikitext.engine.config.WikiConfig;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.VisitingException;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
@@ -55,6 +54,10 @@ public class ExpansionFrame
 	private final boolean noRedirect;
 	
 	private ExpansionVisitor expansionVisitor;
+	
+	// FIXME: That should have been initialized from a request!
+	//        And only once for the whole expansion process!
+	private UrlService urlService = new UrlService();
 	
 	// =========================================================================
 	
@@ -163,7 +166,7 @@ public class ExpansionFrame
 		return frameLog;
 	}
 	
-	public WikiConfigurationInterface getWikiConfig()
+	public WikiConfig getWikiConfig()
 	{
 		return compiler.getWikiConfig();
 	}
@@ -198,6 +201,11 @@ public class ExpansionFrame
 		return noRedirect;
 	}
 	
+	public UrlService getUrlService()
+	{
+		return urlService;
+	}
+	
 	// =========================================================================
 	
 	public AstNode expand(AstNode ppAst) throws ExpansionException
@@ -216,6 +224,7 @@ public class ExpansionFrame
 	
 	public boolean existsPage(PageTitle pageTitle) throws Exception
 	{
-		return callback.retrieveWikitext(this, pageTitle) != null;
+		return (callback.retrieveWikitext(this, pageTitle) != null) ||
+				(callback.fileUrl(pageTitle, -1, -1) != null);
 	}
 }

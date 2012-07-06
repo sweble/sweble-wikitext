@@ -43,6 +43,8 @@ public interface AstNodeTypes
 	
 	public static final int NT_PROTECTED_TEXT /* ............*/= NT_MW_NODE_BITS + 6;
 	
+	public static final int NT_ERROR /* .....................*/= NT_MW_NODE_BITS + 7;
+	
 	// -- Preprocessor nodes ---------------------------------------------------
 	
 	public static final int NT_ILLEGAL_CODE_POINT /* ....... */= NT_ENCVAL_BITS + 1;
@@ -151,7 +153,7 @@ public interface AstNodeTypes
 	
 	public static final int NT_SECTION /* .................. */= NT_PARSER_BITS + 42;
 	
-	public static final int NT_MAGIC_WORD /* ............... */= NT_PARSER_BITS + 43;
+	public static final int NT_PAGE_SWITCH /* .............. */= NT_PARSER_BITS + 43;
 	
 	public static final int NT_SIGNATURE /* ................ */= NT_PARSER_BITS + 44;
 }

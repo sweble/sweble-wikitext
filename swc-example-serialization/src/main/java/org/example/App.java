@@ -132,7 +132,7 @@ public class App
 		System.err.println("  parse the file and write the serialized version to a file");
 		System.err.println("  with the same name and the approprate extension.");
 		System.err.println();
-		opt.help(System.err);
+		opt.cmdLineHelp(System.err);
 	}
 	
 	private static void run(

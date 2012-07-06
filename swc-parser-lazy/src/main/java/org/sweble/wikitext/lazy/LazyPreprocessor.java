@@ -37,11 +37,11 @@ public class LazyPreprocessor
 {
 	private LazyRatsPreprocessor preprocessor = null;
 	
-	private final ParserConfigInterface config;
+	private final ParserConfig config;
 	
 	// =========================================================================
 	
-	public LazyPreprocessor(ParserConfigInterface config)
+	public LazyPreprocessor(ParserConfig config)
 	{
 		this.config = config;
 	}

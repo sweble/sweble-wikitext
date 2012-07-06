@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.lazy.parser;
 
+import org.sweble.wikitext.lazy.WarningSeverity;
+
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.Span;
 

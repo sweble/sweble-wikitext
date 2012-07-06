@@ -37,13 +37,13 @@ public class LazyParser
         extends
             ParserCommon
 {
-	private final ParserConfigInterface config;
+	private final ParserConfig config;
 	
 	private LazyRatsParser parser;
 	
 	// =========================================================================
 	
-	public LazyParser(ParserConfigInterface config)
+	public LazyParser(ParserConfig config)
 	{
 		this.config = config;
 	}

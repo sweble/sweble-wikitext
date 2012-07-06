@@ -22,8 +22,7 @@ import java.util.regex.Pattern;
 
 import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.utils.EntityReferences;
-import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.encval.IllegalCodePoint;
 import org.sweble.wikitext.lazy.parser.Bold;
@@ -36,7 +35,7 @@ import org.sweble.wikitext.lazy.parser.InternalLink;
 import org.sweble.wikitext.lazy.parser.Italics;
 import org.sweble.wikitext.lazy.parser.Itemization;
 import org.sweble.wikitext.lazy.parser.ItemizationItem;
-import org.sweble.wikitext.lazy.parser.MagicWord;
+import org.sweble.wikitext.lazy.parser.PageSwitch;
 import org.sweble.wikitext.lazy.parser.Paragraph;
 import org.sweble.wikitext.lazy.parser.Section;
 import org.sweble.wikitext.lazy.parser.Url;
@@ -85,7 +84,7 @@ public class TextConverter
 {
 	private static final Pattern ws = Pattern.compile("\\s+");
 	
-	private final SimpleWikiConfiguration config;
+	private final WikiConfig config;
 	
 	private final int wrapCol;
 	
@@ -107,7 +106,7 @@ public class TextConverter
 	
 	// =========================================================================
 	
-	public TextConverter(SimpleWikiConfiguration config, int wrapCol)
+	public TextConverter(WikiConfig config, int wrapCol)
 	{
 		this.config = config;
 		this.wrapCol = wrapCol;
@@ -211,7 +210,7 @@ public class TextConverter
 	
 	public void visit(XmlEntityRef er)
 	{
-		String ch = EntityReferences.resolve(er.getName());
+		String ch = er.getResolved();
 		if (ch == null)
 		{
 			write('&');
@@ -372,7 +371,7 @@ public class TextConverter
 	{
 	}
 	
-	public void visit(MagicWord n)
+	public void visit(PageSwitch n)
 	{
 	}
 	

@@ -21,7 +21,7 @@
  * -------
  *
  *   Overview:
- *     - First see if it's something special (a link, a magic word, ...)
+ *     - First see if it's something special (a link, a page switch, ...)
  *     - If not, it's just text
  *
  *   Closer look:
@@ -58,7 +58,7 @@ import org.sweble.wikitext.lazy.utils.XmlReference;
 
 import org.sweble.wikitext.lazy.parser.ExternalLink;
 import org.sweble.wikitext.lazy.parser.InternalLink;
-import org.sweble.wikitext.lazy.parser.MagicWord;
+import org.sweble.wikitext.lazy.parser.PageSwitch;
 import org.sweble.wikitext.lazy.parser.ParserEntity;
 import org.sweble.wikitext.lazy.parser.Signature;
 import org.sweble.wikitext.lazy.parser.Ticks;
@@ -499,7 +499,7 @@ private inline AstNode InlineContentAtom =
   / &"[["     InternalLink
   / &"["      ExternalLink
   / &"''"     Ticks
-  / &"__"     MagicWord
+  / &"__"     PageSwitch
   / &"<"      XmlElement
   / &"&"      XmlReference
   / &"\uE000" ParserEntity
@@ -553,7 +553,7 @@ private inline String TextStopperPrefix =
   / "~~"            // signature
   / "["             // internal or external link
   / "''"            // bold or italic
-  / "__"            // magic word
+  / "__"            // page switch
   / "<"             // xml tag and comment
   / "&"             // xml entity
   / "\uE000"        // parser entity

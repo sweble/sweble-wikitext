@@ -90,7 +90,7 @@ public class AstWomIntegrationTests
 	public void initialize() throws Exception
 	{
 		this.fixture = womTestFixtureGet();
-		this.fixture.getConfig().setTrimTransparentBeforeParsing(false);
+		this.fixture.getConfig().getCompilerConfig().setTrimTransparentBeforeParsing(false);
 	}
 	
 	@Test

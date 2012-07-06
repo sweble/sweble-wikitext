@@ -1175,7 +1175,7 @@ Section(
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = "/>"
-          {N} body = ""
+          {N} body = null
           {N} name = "ref"
 
         [
@@ -1208,7 +1208,7 @@ Section(
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = "/>"
-          {N} body = ""
+          {N} body = null
           {N} name = "ref"
 
         [

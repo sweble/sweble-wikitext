@@ -10,10 +10,10 @@ LazyParsedPage(
 
         [
           Text(" ")
-          MagicWord(
+          PageSwitch(
             Properties:
               RTD = RtData: [0] = "__NOTOC__"
-              {N} word = "NOTOC"
+              {N} name = "NOTOC"
           )
         ]
       )
@@ -27,7 +27,7 @@ LazyParsedPage(
               {N} content = " __NOTOC_"
               warnings = 
               [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:2:3 - 10: "__NOTOC" : This looks like a Magic Word, however the word itself is missing or not recognized as a magic word.
+                Warning (none): /basic/wikitext/special-magicword.wikitext:2:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
               ]
           )
         ]
@@ -42,7 +42,7 @@ LazyParsedPage(
               {N} content = " __NOTOC"
               warnings = 
               [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:3:3 - 10: "__NOTOC" : This looks like a Magic Word, however the word itself is missing or not recognized as a magic word.
+                Warning (none): /basic/wikitext/special-magicword.wikitext:3:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
               ]
           )
         ]
@@ -57,7 +57,7 @@ LazyParsedPage(
               {N} content = " __MAGIC__"
               warnings = 
               [
-                Warning (normal): /basic/wikitext/special-magicword.wikitext:4:3 - 12: "__MAGIC__" : This looks like a Magic Word, however the word itself is not a magic word (unknown).
+                Warning (normal): /basic/wikitext/special-magicword.wikitext:4:3 - 12: "__MAGIC__" : This looks like a Page Switch, however the specified page switch name is unknown.
               ]
           )
         ]
@@ -72,7 +72,7 @@ LazyParsedPage(
               {N} content = " __MAGIC_"
               warnings = 
               [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:5:3 - 10: "__MAGIC" : This looks like a Magic Word, however the word itself is missing or not recognized as a magic word.
+                Warning (none): /basic/wikitext/special-magicword.wikitext:5:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
               ]
           )
         ]
@@ -87,7 +87,7 @@ LazyParsedPage(
               {N} content = " __MAGIC"
               warnings = 
               [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:6:3 - 10: "__MAGIC" : This looks like a Magic Word, however the word itself is missing or not recognized as a magic word.
+                Warning (none): /basic/wikitext/special-magicword.wikitext:6:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
               ]
           )
         ]

@@ -110,9 +110,9 @@ body
     return getState().getConfig().isValidXmlEntityRef(name);
   }
 
-  private boolean isMagicWord(String word)
+  private boolean isValidSwitchName(String word)
   {
-    return getState().getConfig().isMagicWord(word);
+    return getState().getConfig().isValidPageSwitchName(word);
   }
 }
 

@@ -34,7 +34,7 @@ public final class FullParser
         extends
             ParserCommon
 {
-	private ParserConfigInterface parserConfig;
+	private ParserConfig parserConfig;
 	
 	public FullParser()
 	{

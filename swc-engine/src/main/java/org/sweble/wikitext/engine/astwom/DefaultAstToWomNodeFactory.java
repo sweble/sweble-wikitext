@@ -26,11 +26,11 @@ import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.ParagraphAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
 import org.sweble.wikitext.engine.config.Namespace;
-import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.LinkTargetParser;
-import org.sweble.wikitext.lazy.ParserConfigInterface.TargetType;
+import org.sweble.wikitext.lazy.LinkTargetType;
 import org.sweble.wikitext.lazy.parser.Bold;
 import org.sweble.wikitext.lazy.parser.HorizontalRule;
 import org.sweble.wikitext.lazy.parser.InternalLink;
@@ -65,7 +65,7 @@ public class DefaultAstToWomNodeFactory
 		}
 	}
 	
-	private final WikiConfigurationInterface config;
+	private final WikiConfig config;
 	
 	private final String title;
 	
@@ -78,7 +78,7 @@ public class DefaultAstToWomNodeFactory
 	// =========================================================================
 	
 	public DefaultAstToWomNodeFactory(
-			WikiConfigurationInterface config,
+			WikiConfig config,
 			String title)
 	{
 		this.config = config;
@@ -94,12 +94,6 @@ public class DefaultAstToWomNodeFactory
 	{
 		this.container = container;
 		return (WomNode) go(node);
-	}
-	
-	@Override
-	public String resolveXmlEntity(String name)
-	{
-		return config.resolveXmlEntity(name);
 	}
 	
 	// =========================================================================
@@ -149,17 +143,17 @@ public class DefaultAstToWomNodeFactory
 		LinkTargetParser ltp = new LinkTargetParser();
 		
 		// can throw ... but shouldn't ...
-		ltp.parse(config, link.getTarget());
+		ltp.parse(config.getParserConfig(), link.getTarget());
 		
-		TargetType type = config.classifyTarget(link.getTarget());
-		if (type == TargetType.IMAGE)
+		LinkTargetType type = config.getParserConfig().classifyTarget(link.getTarget());
+		if (type == LinkTargetType.IMAGE)
 		{
 			// TODO: Generate ImageLink
 			return null;
 		}
 		else
 		{
-			if (type != TargetType.PAGE)
+			if (type != LinkTargetType.PAGE)
 				throw new InternalError();
 			
 			Namespace namespace = null;
@@ -193,7 +187,7 @@ public class DefaultAstToWomNodeFactory
 	
 	public WomNode visit(XmlEntityRef ref)
 	{
-		return new TextAdapter(this, ref);
+		return new TextAdapter(ref);
 	}
 	
 	public WomNode visit(XmlCharRef ref)

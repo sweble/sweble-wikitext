@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.lazy.preprocessor;
 
-import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.ParserConfig;
 
 import de.fau.cs.osr.ptk.common.ParserState;
 
@@ -25,7 +25,7 @@ public class LazyPreprocessorState
         extends
             ParserState<LazyPreprocessorContext>
 {
-	private ParserConfigInterface config;
+	private ParserConfig config;
 	
 	private boolean autoCorrect;
 	
@@ -52,12 +52,12 @@ public class LazyPreprocessorState
 	
 	// =========================================================================
 	
-	public ParserConfigInterface getConfig()
+	public ParserConfig getConfig()
 	{
 		return config;
 	}
 	
-	public void init(ParserConfigInterface config, boolean forInclusion)
+	public void init(ParserConfig config, boolean forInclusion)
 	{
 		this.config = config;
 		

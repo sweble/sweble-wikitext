@@ -46,6 +46,7 @@
     <version.dep.rats-runtime>1.15.0</version.dep.rats-runtime>
     <version.dep.log4j>1.2.14</version.dep.log4j>
     <version.dep.lombok>0.10.0</version.dep.lombok>
+    <version.dep.jaxb-impl>2.2.5</version.dep.jaxb-impl>
 
     <!-- Plugin dependency versions -->
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
@@ -59,6 +60,13 @@
 
   <dependencyManagement>
     <dependencies>
+
+      <!-- JAXB Reference Implementation -->
+      <dependency>
+          <groupId>com.sun.xml.bind</groupId>
+          <artifactId>jaxb-impl</artifactId>
+          <version>{$version.dep.jaxb-impl}</version>
+      </dependency>
 
       <!-- Log4j -->
       <dependency>

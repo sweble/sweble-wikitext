@@ -24,7 +24,8 @@ import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.Compiler;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 
 public class App
 {
@@ -59,8 +60,7 @@ public class App
 	static String run(File file, String fileTitle, String query) throws Exception
 	{
 		// Set-up a simple wiki configuration
-		SimpleWikiConfiguration config = new SimpleWikiConfiguration(
-				"classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
+		WikiConfig config = DefaultConfigEn.generate();
 		
 		// Instantiate a compiler for wiki pages
 		Compiler compiler = new Compiler(config);

@@ -71,7 +71,7 @@ public class ParserFunctionTest
 	public void TEMPREG_fullurl() throws CompilerException, LinkTargetException, IOException
 	{
 		// FIXME: Fix fullurl and then fix this test case
-		String expected = "http://localhost/wikiCategory:Top_level\nhttp://localhost/wikiCategory:Top_level&action=edit";
+		String expected = "http://localhost/?title=Category:Top_level\nhttp://localhost/?title=Category:Top_level&action=edit";
 		String page = "pfn-fullurl";
 		doTest(expected, page);
 	}
@@ -98,7 +98,7 @@ public class ParserFunctionTest
 	public void TEMPREG_Ifeq() throws CompilerException, LinkTargetException, IOException
 	{
 		// FIXME: Fix ifeq and then fix this test case
-		String expected = "yes\nyes\nyes\nno\nno\nno\nno\nno\n1\nyes\nyes\nno\nyes";
+		String expected = "yes\nyes\nyes\nyes\nno\nno\nno\nno\n1\nyes\nno\nno\nyes";
 		String page = "pfn-ifeq";
 		doTest(expected, page);
 	}
@@ -117,7 +117,7 @@ public class ParserFunctionTest
 	public void TEMPREG_Iferror() throws CompilerException, LinkTargetException, IOException
 	{
 		// FIXME: Fix iferror and then fix this test case
-		String expected = "correct\ncorrect\n{{#expr: 1 + 2 }}\n{{#expr: 1 + X }}\n{{#expr: 1 + 2 }}\n{{#expr: 1 + X }}\nerror";
+		String expected = "correct\nerror\n3\nerror\n3\n{{#iferror: <strong class=\"error\">Expression error: Unrecognised word \"x\".</strong> }}\ncorrect";
 		String page = "pfn-iferror";
 		doTest(expected, page);
 	}
@@ -170,7 +170,7 @@ public class ParserFunctionTest
 	public void TEMPREG_Switch() throws CompilerException, LinkTargetException, IOException
 	{
 		// FIXME: Fix switch and then fix this test case
-		String expected = "-0---\n Baz \n-1---\n\n-2---\n\n-3---\n\n-4---\n Bar \n-5---\n\n-6---\n\n-7---\n\n-8---\n A \n-9---\n\n-10---\n Nothing \n-11---\n Bar \n-12---\n A \n-13---\n\n-14---";
+		String expected = "-0---\nBaz\n-1---\nBar\n-2---\n\n-3---\n\n-4---\nBar\n-5---\n\n-6---\nthree\n-7---\none\n-8---\nA\n-9---\nC\n-10---\nNothing\n-11---\nBar\n-12---\nA\n-13---\nnowiki\n-14---";
 		String page = "pfn-switch";
 		doTest(expected, page);
 	}

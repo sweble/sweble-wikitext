@@ -17,8 +17,8 @@
 
 package org.sweble.wikitext.engine;
 
+import org.sweble.wikitext.lazy.WarningSeverity;
 import org.sweble.wikitext.lazy.parser.LazyWarning;
-import org.sweble.wikitext.lazy.parser.WarningSeverity;
 import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;

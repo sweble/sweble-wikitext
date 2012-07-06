@@ -57,8 +57,6 @@ public class RtWikitextPrinter
 	
 	public void go(AstNode node)
 	{
-		if (node == null)
-			System.err.println();
 		switch (node.getNodeType())
 		{
 			case AstNode.NT_NODE_LIST:

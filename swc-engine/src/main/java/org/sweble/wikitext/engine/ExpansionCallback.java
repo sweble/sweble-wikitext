@@ -26,10 +26,38 @@ public interface ExpansionCallback
 	 */
 	FullPage retrieveWikitext(ExpansionFrame expansionFrame, PageTitle pageTitle) throws Exception;
 	
-	///**
-	// * Retrieves the specified revision of the article.
-	// */
-	//String retrieveWikitext(ExpansionFrame expansionFrame, PageId pageId) throws Exception;
-	//void cachePreprocessedPage(ExpansionFrame expansionFrame, FullPreprocessedPage page);
-	//FullPreprocessedPage retrievePreprocessedPage(ExpansionFrame expansionFrame, PageTitle pageTitle, boolean forInclusion);
+	/**
+	 * Retrieve the full URL of a file.
+	 * 
+	 * Example:
+	 * 
+	 * <pre>
+	 * File:En-us-Barack-Hussein-Obama.ogg
+	 * </pre>
+	 * 
+	 * Output:
+	 * 
+	 * <pre>
+	 * http://upload.wikimedia.org/wikipedia/commons/8/82/En-us-Barack-Hussein-Obama.ogg
+	 * </pre>
+	 * 
+	 * @param pageTitle
+	 *            The title of the file.
+	 * @param width
+	 *            Return a URL to the image scaled to this width. This parameter
+	 *            is ignored if it is less than 1px.
+	 * @param height
+	 *            Return a URL to the image scaled to this height. This
+	 *            parameter is ignored if it is less than 1px.
+	 * @return The full URL.
+	 */
+	String fileUrl(PageTitle pageTitle, int width, int height) throws Exception;
+	
+	/*
+	 * Retrieves the specified revision of the article.
+	 *
+	String retrieveWikitext(ExpansionFrame expansionFrame, PageId pageId) throws Exception;
+	void cachePreprocessedPage(ExpansionFrame expansionFrame, FullPreprocessedPage page);
+	FullPreprocessedPage retrievePreprocessedPage(ExpansionFrame expansionFrame, PageTitle pageTitle, boolean forInclusion);
+	 */
 }

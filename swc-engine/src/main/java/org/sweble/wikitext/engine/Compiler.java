@@ -24,7 +24,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.sweble.wikitext.engine.config.WikiConfigurationInterface;
+import org.sweble.wikitext.engine.config.CompilerConfig;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.log.CompilerLog;
 import org.sweble.wikitext.engine.log.ParseException;
 import org.sweble.wikitext.engine.log.ParserLog;
@@ -37,6 +38,7 @@ import org.sweble.wikitext.lazy.LazyEncodingValidator;
 import org.sweble.wikitext.lazy.LazyParser;
 import org.sweble.wikitext.lazy.LazyPostprocessor;
 import org.sweble.wikitext.lazy.LazyPreprocessor;
+import org.sweble.wikitext.lazy.ParserConfig;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
@@ -53,7 +55,11 @@ public class Compiler
 	
 	// =========================================================================
 	
-	private WikiConfigurationInterface wikiConfig;
+	private WikiConfig wikiConfig;
+	
+	private ParserConfig parserConfig;
+	
+	private CompilerConfig compilerConfig;
 	
 	private ExpansionDebugHooks hooks;
 	
@@ -65,10 +71,12 @@ public class Compiler
 	
 	// =========================================================================
 	
-	public Compiler(WikiConfigurationInterface wikiConfig)
+	public Compiler(WikiConfig wikiConfig)
 	{
 		super();
 		this.wikiConfig = wikiConfig;
+		this.parserConfig = wikiConfig.getParserConfig();
+		this.compilerConfig = wikiConfig.getCompilerConfig();
 	}
 	
 	// =========================================================================
@@ -93,7 +101,7 @@ public class Compiler
 		this.catchAll = catchAll;
 	}
 	
-	public WikiConfigurationInterface getWikiConfig()
+	public WikiConfig getWikiConfig()
 	{
 		return wikiConfig;
 	}
@@ -143,7 +151,7 @@ public class Compiler
 		PageTitle title = pageId.getTitle();
 		
 		CompilerLog log = new CompilerLog();
-		log.setTitle(title.getFullTitle());
+		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
 		LazyPreprocessedPage pprAst;
@@ -219,7 +227,7 @@ public class Compiler
 		PageTitle title = pageId.getTitle();
 		
 		CompilerLog log = new CompilerLog();
-		log.setTitle(title.getFullTitle());
+		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
 		LazyPreprocessedPage pAst;
@@ -278,7 +286,7 @@ public class Compiler
 		PageTitle title = pageId.getTitle();
 		
 		CompilerLog log = new CompilerLog();
-		log.setTitle(title.getFullTitle());
+		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
 		LazyParsedPage pAst;
@@ -339,7 +347,7 @@ public class Compiler
 		PageTitle title = pageId.getTitle();
 		
 		CompilerLog log = new CompilerLog();
-		log.setTitle(title.getFullTitle());
+		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
 		LazyParsedPage pAst;
@@ -410,7 +418,7 @@ public class Compiler
 		PageTitle title = pageId.getTitle();
 		
 		CompilerLog log = new CompilerLog();
-		log.setTitle(title.getFullTitle());
+		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
 		LazyPreprocessedPage pprAst;
@@ -469,7 +477,7 @@ public class Compiler
 		PageTitle title = pageId.getTitle();
 		
 		CompilerLog log = new CompilerLog();
-		log.setTitle(title.getFullTitle());
+		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
 		LazyPreprocessedPage pprAst;
@@ -526,7 +534,7 @@ public class Compiler
 			
 			String validatedWikitext = validator.validate(
 					wikitext,
-					title.getFullTitle(),
+					title.getDenormalizedFullTitle(),
 					entityMap);
 			
 			return validatedWikitext;
@@ -569,12 +577,12 @@ public class Compiler
 		
 		try
 		{
-			LazyPreprocessor preprocessor = new LazyPreprocessor(wikiConfig);
+			LazyPreprocessor preprocessor = new LazyPreprocessor(parserConfig);
 			
 			LazyPreprocessedPage preprocessedAst =
 					(LazyPreprocessedPage) preprocessor.parseArticle(
 							validatedWikitext,
-							title.getFullTitle(),
+							title.getDenormalizedFullTitle(),
 							forInclusion);
 			
 			return preprocessedAst;
@@ -732,9 +740,9 @@ public class Compiler
 					PreprocessorToParserTransformer.transform(
 							ppAst,
 							entityMap,
-							wikiConfig.trimTransparentBeforeParsing());
+							compilerConfig.isTrimTransparentBeforeParsing());
 			
-			LazyParser parser = new LazyParser(wikiConfig);
+			LazyParser parser = new LazyParser(parserConfig);
 			
 			LazyParsedPage parsedAst =
 					(LazyParsedPage) parser.parseArticle(
@@ -782,7 +790,7 @@ public class Compiler
 		
 		try
 		{
-			LazyPostprocessor lpp = new LazyPostprocessor(wikiConfig);
+			LazyPostprocessor lpp = new LazyPostprocessor(parserConfig);
 			
 			pAst = (LazyParsedPage) lpp.postprocess(pAst, title.getTitle());
 			

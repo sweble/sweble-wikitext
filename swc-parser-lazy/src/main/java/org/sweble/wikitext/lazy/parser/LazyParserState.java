@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.ParserConfig;
 
 import de.fau.cs.osr.ptk.common.ParserState;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -32,7 +32,7 @@ public class LazyParserState
 {
 	private Map<Integer, AstNode> entityMap = new HashMap<Integer, AstNode>();
 	
-	private ParserConfigInterface config;
+	private ParserConfig config;
 	
 	private Pattern postfixPattern;
 	
@@ -66,12 +66,12 @@ public class LazyParserState
 	
 	// =========================================================================
 	
-	public ParserConfigInterface getConfig()
+	public ParserConfig getConfig()
 	{
 		return config;
 	}
 	
-	public void init(ParserConfigInterface config, Map<Integer, AstNode> entityMap)
+	public void init(ParserConfig config, Map<Integer, AstNode> entityMap)
 	{
 		this.config = config;
 		

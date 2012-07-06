@@ -175,7 +175,7 @@ public class AstWomBuilder
 		
 		public WomNode build()
 		{
-			return new TextAdapter(null, this.text);
+			return new TextAdapter(this.text);
 		}
 	}
 }

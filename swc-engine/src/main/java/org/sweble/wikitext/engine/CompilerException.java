@@ -54,13 +54,13 @@ public final class CompilerException
 	
 	private static String makeMessage(PageTitle pageTitle, String message)
 	{
-		return String.format("%s (%s)", message, pageTitle.getFullTitle());
+		return String.format("%s (%s)", message, pageTitle.getDenormalizedFullTitle());
 	}
 	
 	private static Throwable unwrap(Throwable t)
 	{
 		while (t instanceof ExpansionException)
-			t = (Exception) t.getCause();
+			t = t.getCause();
 		return t;
 	}
 	

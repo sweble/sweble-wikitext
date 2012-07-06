@@ -20,8 +20,8 @@ package org.sweble.wikitext.lazy.parser;
 import java.util.ArrayList;
 
 import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.ParserConfigInterface;
-import org.sweble.wikitext.lazy.ParserConfigInterface.TargetType;
+import org.sweble.wikitext.lazy.ParserConfig;
+import org.sweble.wikitext.lazy.LinkTargetType;
 
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -61,11 +61,11 @@ public class LinkBuilder
 	
 	// -- internal state
 	
-	private TargetType targetType;
+	private LinkTargetType targetType;
 	
 	// =========================================================================
 	
-	public LinkBuilder(ParserConfigInterface parserConfig, String target)
+	public LinkBuilder(ParserConfig parserConfig, String target)
 	{
 		this.target = target;
 		this.targetType = parserConfig.classifyTarget(target);
@@ -87,12 +87,12 @@ public class LinkBuilder
 	
 	public boolean isImageTarget()
 	{
-		return targetType == TargetType.IMAGE;
+		return targetType == LinkTargetType.IMAGE;
 	}
 	
 	public boolean isValidTarget()
 	{
-		return targetType != TargetType.INVALID;
+		return targetType != LinkTargetType.INVALID;
 	}
 	
 	// =========================================================================
@@ -185,7 +185,7 @@ public class LinkBuilder
 		if (this.title == null)
 			this.title = new LinkTitle();
 		
-		if (this.targetType == TargetType.IMAGE)
+		if (this.targetType == LinkTargetType.IMAGE)
 		{
 			if (hAlign == null)
 				hAlign = ImageHorizAlign.NONE;

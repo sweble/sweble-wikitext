@@ -26,7 +26,7 @@ header
 {
   import de.fau.cs.osr.ptk.common.Warning;
 
-  import org.sweble.wikitext.lazy.parser.WarningSeverity;
+  import org.sweble.wikitext.lazy.WarningSeverity;
   import org.sweble.wikitext.lazy.parser.LooksLikeWarning;
   import org.sweble.wikitext.lazy.parser.OddSyntaxWarning;
 

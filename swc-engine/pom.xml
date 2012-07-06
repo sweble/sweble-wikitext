@@ -29,6 +29,12 @@
 
   <dependencies>
 
+    <!-- JAXB Reference Implementation -->
+    <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+    </dependency>
+
     <!-- Log4j -->
     <dependency>
       <groupId>log4j</groupId>

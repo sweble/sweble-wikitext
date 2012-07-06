@@ -21,7 +21,6 @@ import java.util.ListIterator;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
-import org.sweble.wikitext.engine.utils.EntityReferences;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.lazy.AstNodeTypes;
@@ -29,7 +28,6 @@ import org.sweble.wikitext.lazy.parser.Newline;
 import org.sweble.wikitext.lazy.utils.TextUtils;
 import org.sweble.wikitext.lazy.utils.XmlCharRef;
 import org.sweble.wikitext.lazy.utils.XmlEntityRef;
-import org.sweble.wikitext.lazy.utils.XmlEntityResolver;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
@@ -58,7 +56,7 @@ public class TextAdapter
 	
 	// =========================================================================
 	
-	public TextAdapter(XmlEntityResolver entityResolver, String text)
+	public TextAdapter(String text)
 	{
 		super(null);
 		
@@ -100,13 +98,13 @@ public class TextAdapter
 	public TextAdapter(XmlCharRef ref)
 	{
 		super(ref);
-		text = Toolbox.toText(null, ref);
+		text = Toolbox.toText(ref);
 	}
 	
-	public TextAdapter(XmlEntityResolver entityResolver, XmlEntityRef ref)
+	public TextAdapter(XmlEntityRef ref)
 	{
 		super(ref);
-		text = Toolbox.toText(entityResolver, ref);
+		text = Toolbox.toText(ref);
 	}
 	
 	// =========================================================================
@@ -661,19 +659,9 @@ public class TextAdapter
 	
 	private void checkIntegrity()
 	{
-		XmlEntityResolver entityResolver = new XmlEntityResolver()
-		{
-			@Override
-			public String resolveXmlEntity(String name)
-			{
-				// Let's hope that is enough for debugging purposes...
-				return EntityReferences.resolve(name);
-			}
-		};
-		
 		StringBuilder sb = new StringBuilder();
 		
-		String t = Toolbox.toText(entityResolver, getAstNode());
+		String t = Toolbox.toText(getAstNode());
 		sb.append(t);
 		
 		int ofs = t.length();
@@ -714,7 +702,7 @@ public class TextAdapter
 			if (ofs != p.offset)
 				throw new AssertionError();
 			
-			t = Toolbox.toText(entityResolver, p.astNode);
+			t = Toolbox.toText(p.astNode);
 			ofs += t.length();
 			
 			if (!t.equals(p.text))
@@ -896,7 +884,7 @@ public class TextAdapter
 	
 	// =========================================================================
 	
-	public void append(XmlEntityResolver entityResolver, AstNode n)
+	public void append(AstNode n)
 	{
 		switch (n.getNodeType())
 		{
@@ -904,7 +892,7 @@ public class TextAdapter
 				append("\n", n);
 				break;
 			default:
-				append(Toolbox.toText(entityResolver, n), n);
+				append(Toolbox.toText(n), n);
 				break;
 		}
 	}

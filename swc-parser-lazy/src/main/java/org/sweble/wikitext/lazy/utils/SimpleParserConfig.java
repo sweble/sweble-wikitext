@@ -23,8 +23,9 @@ import java.util.HashSet;
 
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.LinkTargetParser;
-import org.sweble.wikitext.lazy.ParserConfigInterface;
-import org.sweble.wikitext.lazy.parser.WarningSeverity;
+import org.sweble.wikitext.lazy.LinkTargetType;
+import org.sweble.wikitext.lazy.ParserConfig;
+import org.sweble.wikitext.lazy.WarningSeverity;
 import org.sweble.wikitext.lazy.postprocessor.ScopeType;
 
 /**
@@ -32,13 +33,15 @@ import org.sweble.wikitext.lazy.postprocessor.ScopeType;
  */
 public class SimpleParserConfig
 		implements
-			ParserConfigInterface
+			ParserConfig
 {
 	private final static HashSet<String> allowed;
 	
 	private final static HashSet<String> emptyOnly;
 	
 	private final static HashMap<String, ScopeType> elementTypes;
+	
+	// =========================================================================
 	
 	private final boolean warningsEnabled;
 	
@@ -107,24 +110,12 @@ public class SimpleParserConfig
 		this.autoCorrect = autoCorrect;
 	}
 	
-	// =========================================================================
+	// ==[ Parser features ]====================================================
 	
 	@Override
 	public boolean isWarningsEnabled()
 	{
 		return warningsEnabled;
-	}
-	
-	@Override
-	public boolean isGatherRtData()
-	{
-		return gatherRtd;
-	}
-	
-	@Override
-	public boolean isAutoCorrect()
-	{
-		return autoCorrect;
 	}
 	
 	@Override
@@ -134,10 +125,18 @@ public class SimpleParserConfig
 	}
 	
 	@Override
-	public boolean isValidXmlEntityRef(String name)
+	public boolean isAutoCorrect()
 	{
-		return true;
+		return autoCorrect;
 	}
+	
+	@Override
+	public boolean isGatherRtData()
+	{
+		return gatherRtd;
+	}
+	
+	// ==[ Link classification and parsing ]====================================
 	
 	@Override
 	public boolean isUrlProtocol(String proto)
@@ -145,12 +144,6 @@ public class SimpleParserConfig
 		return "http://".equalsIgnoreCase(proto) ||
 				"https://".equalsIgnoreCase(proto) ||
 				"mail:".equalsIgnoreCase(proto);
-	}
-	
-	@Override
-	public boolean isMagicWord(String word)
-	{
-		return "NOTOC".equalsIgnoreCase(word);
 	}
 	
 	@Override
@@ -167,7 +160,7 @@ public class SimpleParserConfig
 	}
 	
 	@Override
-	public TargetType classifyTarget(String target)
+	public LinkTargetType classifyTarget(String target)
 	{
 		LinkTargetParser ltp = new LinkTargetParser();
 		try
@@ -176,14 +169,14 @@ public class SimpleParserConfig
 		}
 		catch (LinkTargetException e)
 		{
-			return TargetType.INVALID;
+			return LinkTargetType.INVALID;
 		}
 		
 		String ns = ltp.getNamespace();
 		if ("file".equalsIgnoreCase(ns) || "image".equalsIgnoreCase(ns))
-			return TargetType.IMAGE;
+			return LinkTargetType.IMAGE;
 		
-		return TargetType.PAGE;
+		return LinkTargetType.PAGE;
 	}
 	
 	@Override
@@ -198,15 +191,29 @@ public class SimpleParserConfig
 	}
 	
 	@Override
+	public boolean isTalkNamespace(String resultNs)
+	{
+		return resultNs.toLowerCase().equals("talk");
+	}
+	
+	@Override
 	public boolean isInterwikiName(String name)
 	{
 		return "mediawiki".equalsIgnoreCase(name);
 	}
 	
 	@Override
-	public boolean isLocalInterwikiName(String name)
+	public boolean isIwPrefixOfThisWiki(String iwPrefix)
 	{
 		return false;
+	}
+	
+	// ==[ Names ]==============================================================
+	
+	@Override
+	public boolean isValidPageSwitchName(String word)
+	{
+		return "NOTOC".equalsIgnoreCase(word);
 	}
 	
 	@Override
@@ -220,6 +227,35 @@ public class SimpleParserConfig
 				"includeonly".equalsIgnoreCase(name) ||
 				"noinclude".equalsIgnoreCase(name) ||
 				"onlyinclude".equalsIgnoreCase(name);
+	}
+	
+	// ==[ Parsing XML elements ]===============================================
+	
+	@Override
+	public boolean isXmlElementAllowed(String name)
+	{
+		return allowed.contains(name.toLowerCase());
+	}
+	
+	@Override
+	public boolean isXmlElementEmptyOnly(String name)
+	{
+		return emptyOnly.contains(name.toLowerCase());
+	}
+	
+	@Override
+	public ScopeType getXmlElementType(String name)
+	{
+		ScopeType type = elementTypes.get(name);
+		if (type == null)
+			return ScopeType.XML_BLOCK;
+		return type;
+	}
+	
+	@Override
+	public boolean isValidXmlEntityRef(String name)
+	{
+		return true;
 	}
 	
 	@Override
@@ -262,26 +298,5 @@ public class SimpleParserConfig
 		{
 			return null;
 		}
-	}
-	
-	@Override
-	public boolean isXmlElementAllowed(String name)
-	{
-		return allowed.contains(name.toLowerCase());
-	}
-	
-	@Override
-	public boolean isXmlElementEmptyOnly(String name)
-	{
-		return emptyOnly.contains(name.toLowerCase());
-	}
-	
-	@Override
-	public ScopeType getXmlElementType(String name)
-	{
-		ScopeType type = elementTypes.get(name);
-		if (type == null)
-			return ScopeType.XML_BLOCK;
-		return type;
 	}
 }

@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.lazy.parser;
 
-import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.ParserConfig;
 
 import de.fau.cs.osr.ptk.common.ParserContext;
 
@@ -77,7 +77,7 @@ public class LazyParserContext
 		return linkBuilder;
 	}
 	
-	public final void initLinkBuilder(ParserConfigInterface parserConfig, String target)
+	public final void initLinkBuilder(ParserConfig parserConfig, String target)
 	{
 		this.linkBuilder = new LinkBuilder(parserConfig, target);
 	}

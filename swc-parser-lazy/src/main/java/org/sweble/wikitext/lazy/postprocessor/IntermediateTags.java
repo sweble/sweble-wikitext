@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.lazy.postprocessor;
 
-import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.ParserConfig;
 import org.sweble.wikitext.lazy.parser.Bold;
 import org.sweble.wikitext.lazy.parser.Italics;
 import org.sweble.wikitext.lazy.parser.Paragraph;
@@ -38,7 +38,7 @@ public enum IntermediateTags
 		
 		@Override
 		public AstNode transform(
-		        ParserConfigInterface config,
+		        ParserConfig config,
 		        ImTagOpen o,
 		        ImTagClose c,
 		        NodeList body)
@@ -64,7 +64,7 @@ public enum IntermediateTags
 		
 		@Override
 		public AstNode transform(
-		        ParserConfigInterface config,
+		        ParserConfig config,
 		        ImTagOpen o,
 		        ImTagClose c,
 		        NodeList body)
@@ -90,7 +90,7 @@ public enum IntermediateTags
 		
 		@Override
 		public AstNode transform(
-		        ParserConfigInterface config,
+		        ParserConfig config,
 		        ImTagOpen open,
 		        ImTagClose close,
 		        NodeList body)
@@ -103,7 +103,7 @@ public enum IntermediateTags
 	public abstract String getElementName();
 	
 	public abstract AstNode transform(
-	        ParserConfigInterface config,
+	        ParserConfig config,
 	        ImTagOpen open,
 	        ImTagClose close,
 	        NodeList body);

@@ -25,7 +25,7 @@ public class ExpansionException
 	{
 		while (t instanceof ExpansionException
 				|| t instanceof VisitingException)
-			t = (Exception) t.getCause();
+			t = t.getCause();
 		return t;
 	}
 }

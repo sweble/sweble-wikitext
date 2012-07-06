@@ -24,11 +24,11 @@ import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class LazyPostprocessor
 {
-	private final ParserConfigInterface config;
+	private final ParserConfig config;
 	
 	// =========================================================================
 	
-	public LazyPostprocessor(ParserConfigInterface config)
+	public LazyPostprocessor(ParserConfig config)
 	{
 		this.config = config;
 	}

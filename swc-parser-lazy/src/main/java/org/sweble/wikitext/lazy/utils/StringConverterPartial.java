@@ -19,8 +19,9 @@ package org.sweble.wikitext.lazy.utils;
 
 import java.util.Iterator;
 
-import org.sweble.wikitext.lazy.ParserConfigInterface;
+import org.sweble.wikitext.lazy.ParserConfig;
 import org.sweble.wikitext.lazy.preprocessor.Ignored;
+import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
 import org.sweble.wikitext.lazy.preprocessor.XmlComment;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -40,7 +41,7 @@ public class StringConverterPartial
 	@SuppressWarnings("unchecked")
 	public static Tuple2<String, NodeList> convert(
 			AstNode astNode,
-			ParserConfigInterface resolver,
+			ParserConfig resolver,
 			int options)
 	{
 		ConverterVisitor converter =
@@ -57,7 +58,7 @@ public class StringConverterPartial
 	{
 		private final StringBuilder result = new StringBuilder();
 		
-		private final ParserConfigInterface entityResolver;
+		private final ParserConfig entityResolver;
 		
 		private final int options;
 		
@@ -65,7 +66,7 @@ public class StringConverterPartial
 		
 		// =====================================================================
 		
-		public ConverterVisitor(int options, ParserConfigInterface resolver)
+		public ConverterVisitor(int options, ParserConfig resolver)
 		{
 			this.entityResolver = resolver;
 			this.options = options;
@@ -179,6 +180,12 @@ public class StringConverterPartial
 		public void visit(Text n)
 		{
 			result.append(n.getContent());
+		}
+		
+		public void visit(ProtectedText n)
+		{
+			if (!opt(StringConverter.FAIL_ON_PROTECTED_TEXT))
+				result.append(n.getContent());
 		}
 		
 		public void visit(XmlComment n)

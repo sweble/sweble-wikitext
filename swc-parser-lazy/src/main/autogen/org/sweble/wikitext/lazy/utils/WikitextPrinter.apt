@@ -370,8 +370,8 @@ import org.sweble.wikitext.lazy.preprocessor.*;
 {=strrep('\'', ticks.getTickCount())}
 
 
-%visit(MagicWord word)%
-__{=word.getWord()}__
+%visit(PageSwitch pageSwitch)%
+__{=pageSwitch.getName()}__
 
 
 %visit(Redirect r)%

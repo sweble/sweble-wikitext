@@ -512,8 +512,8 @@ import org.sweble.wikitext.lazy.utils.*;
 <span class="{=classPrefix}illegal">{=asXmlCharRefs(n.getCodePoint())}</span>
 
 
-%visit(MagicWord n)%
-<span class="{=classPrefix}magic-word">__{=n.getWord()}__</span>
+%visit(PageSwitch n)%
+<span class="{=classPrefix}page-switch">__{=n.getName()}__</span>
 
 
 

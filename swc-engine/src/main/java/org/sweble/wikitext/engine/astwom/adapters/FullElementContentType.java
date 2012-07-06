@@ -349,7 +349,7 @@ public enum FullElementContentType
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				case AstNodeTypes.NT_XML_ENTITY_REF:
 				{
-					complexText.append(factory, n);
+					complexText.append(n);
 					break;
 				}
 				default:

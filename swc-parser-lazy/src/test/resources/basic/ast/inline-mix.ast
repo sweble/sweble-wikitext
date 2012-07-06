@@ -73,10 +73,10 @@ LazyParsedPage(
             ]
           )
           Text(" ")
-          MagicWord(
+          PageSwitch(
             Properties:
               RTD = RtData: [0] = "__NOTOC__"
-              {N} word = "NOTOC"
+              {N} name = "NOTOC"
           )
           Text(" ")
           XmlEntityRef(

@@ -1,6 +1,6 @@
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.lazy.parser.WarningSeverity;
+import org.sweble.wikitext.lazy.WarningSeverity;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
@@ -36,7 +36,7 @@ public class PageNotFoundWarning
 	
 	private static String makeMessage(PageTitle title)
 	{
-		return "The given text `" + title.getFullTitle() + "' " +
+		return "The given text `" + title.getDenormalizedFullTitle() + "' " +
 				"does not constitute a valid page name";
 	}
 	

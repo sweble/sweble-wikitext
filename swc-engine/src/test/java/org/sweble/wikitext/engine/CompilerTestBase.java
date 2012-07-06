@@ -28,14 +28,15 @@ import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.IOUtils;
 import org.sweble.wikitext.engine.config.Namespace;
-import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
+import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.lazy.LinkTargetException;
 
 public class CompilerTestBase
 {
 	private final Compiler compiler;
 	
-	private final SimpleWikiConfiguration config;
+	private final WikiConfigImpl config;
 	
 	private final ExpansionCallbackImpl expansionCallback;
 	
@@ -47,8 +48,7 @@ public class CompilerTestBase
 	
 	protected CompilerTestBase() throws FileNotFoundException, JAXBException
 	{
-		this.config = new SimpleWikiConfiguration(
-				"classpath:/org/sweble/wikitext/engine/SimpleWikiConfiguration.xml");
+		this.config = DefaultConfigEn.generate();
 		
 		this.compiler = new Compiler(config);
 		
@@ -120,7 +120,7 @@ public class CompilerTestBase
 	{
 		PageId pageId = new PageId(pageTitle, -1);
 		
-		String fullTitle = pageId.getTitle().getFullTitle();
+		String fullTitle = pageId.getTitle().getDenormalizedFullTitle();
 		String encFullTitle = URLEncoder.encode(fullTitle, "UTF-8");
 		
 		String wikitext = null;
@@ -143,7 +143,7 @@ public class CompilerTestBase
 		return new FullPage(pageId, wikitext);
 	}
 	
-	public SimpleWikiConfiguration getConfig()
+	public WikiConfigImpl getConfig()
 	{
 		return config;
 	}
@@ -160,6 +160,12 @@ public class CompilerTestBase
 				PageTitle pageTitle) throws Exception
 		{
 			return retrieve(pageTitle);
+		}
+		
+		@Override
+		public String fileUrl(PageTitle pageTitle, int width, int height) throws Exception
+		{
+			return null;
 		}
 	}
 }

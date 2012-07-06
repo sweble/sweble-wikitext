@@ -20,7 +20,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
-import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
@@ -457,8 +456,7 @@ public class TextAdapterTest
 	{
 		WomText text = parseGetText("Hello");
 		
-		SimpleWikiConfiguration config = new AstWomTestFixture().getConfig();
-		WomNodeFactory f = new AstWomNodeFactory(config);
+		WomNodeFactory f = new AstWomNodeFactory();
 		
 		text.getParent().appendChild(f.createText(" World!"));
 		
