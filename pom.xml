@@ -65,7 +65,7 @@
       <dependency>
           <groupId>com.sun.xml.bind</groupId>
           <artifactId>jaxb-impl</artifactId>
-          <version>{$version.dep.jaxb-impl}</version>
+          <version>${version.dep.jaxb-impl}</version>
       </dependency>
 
       <!-- Log4j -->
