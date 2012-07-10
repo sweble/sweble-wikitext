@@ -645,7 +645,8 @@ public final class ExpansionVisitor
 			if (result == null)
 				throw new NullPointerException("Parser function `" + pfn.getId() + "' returned null value!");
 			
-			result = treatBlockElements(result, hadNewline);
+			if (result != n)
+				result = treatBlockElements(n, result);
 			
 			log.setSuccess(true);
 		}
@@ -708,9 +709,7 @@ public final class ExpansionVisitor
 		AstNode result = null;
 		try
 		{
-			AstNode tResult = transcludePage(n, title, args, log);
-			
-			result = treatBlockElements(tResult, hadNewline);
+			result = transcludePage(n, title, args, log);
 		}
 		catch (Exception e)
 		{
@@ -787,7 +786,9 @@ public final class ExpansionVisitor
 			
 			log.setSuccess(true);
 			
-			return mergeLogsAndWarnings(log, compiledPage);
+			AstNode tResult = mergeLogsAndWarnings(log, compiledPage);
+			
+			return treatBlockElements(n, tResult);
 		}
 		else
 		{
@@ -1028,6 +1029,8 @@ public final class ExpansionVisitor
 		if (value != null)
 		{
 			log.setSuccess(true);
+			
+			//value = treatBlockElements(n, value);
 		}
 		
 		return value;
@@ -1346,13 +1349,32 @@ public final class ExpansionVisitor
 		return compiledPage.getPage().getContent();
 	}
 	
+	private AstNode treatBlockElements(Template tmpl, AstNode result)
+	{
+		if (result != null)
+			return treatBlockElements(tmpl, result, tmpl.getPrecededByNewline());
+		return null;
+	}
+	
+	/*
+	private AstNode treatBlockElements(TemplateParameter tmpl, AstNode result)
+	{
+		if (result != null)
+			return treatBlockElements(tmpl, result, tmpl.getPrecededByNewline());
+		return null;
+	}
+	*/
+	
 	/**
 	 * If we don't had a newline before some template element but the template
 	 * resolved to a block level element, THEN we prepend a newline to make the
 	 * block level element start on a new line (so that it can be identified
 	 * correctly).
 	 */
-	private AstNode treatBlockElements(AstNode result, boolean hadNewline)
+	private AstNode treatBlockElements(
+			AstNode tmpl,
+			AstNode result,
+			boolean hadNewline)
 	{
 		if (result != null && !hadNewline)
 		{

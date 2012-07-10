@@ -7,6 +7,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("name") ]
         [
@@ -36,6 +37,7 @@ LazyParsedPage(
               TemplateParameter(
                 Properties:
                   RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
+                  {N} precededByNewline = false
 
                 [ Text("parameter2") ]
               )

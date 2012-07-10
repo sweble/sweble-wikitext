@@ -7,6 +7,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("wikiquotepar") ]
         [
@@ -226,6 +227,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("Episode list\n") ]
                         [
@@ -272,6 +274,7 @@ LazyParsedPage(
                               Template(
                                 Properties:
                                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                  {N} precededByNewline = false
 
                                 [ Text("Start date") ]
                                 [
@@ -1887,6 +1890,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("inc-video") ]
             [ ]
@@ -2901,6 +2905,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Reflist") ]
             [ ]
@@ -2977,6 +2982,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("imdb title") ]
                 [
@@ -3007,6 +3013,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("MythBusters") ]
             [ ]
@@ -3018,6 +3025,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("DEFAULTSORT:Mythbusters") ]
             [ ]

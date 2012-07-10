@@ -7,6 +7,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("WikiProjectBannerShell") ]
         [
@@ -21,6 +22,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("WikiProject Sussex") ]
                 [
@@ -54,6 +56,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("WikiProject Architecture") ]
                 [
@@ -79,6 +82,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("WPMILHIST\n") ]
                 [
@@ -417,12 +421,14 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = false
 
             [
               Text("#ifeq:")
               TemplateParameter(
                 Properties:
                   RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
+                  {N} precededByNewline = false
 
                 [ Text("name") ]
               )
@@ -473,6 +479,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Done") ]
                 [ ]
@@ -558,6 +565,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Not done") ]
                 [ ]
@@ -678,6 +686,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Done") ]
                 [ ]
@@ -795,6 +804,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Done") ]
                 [ ]
@@ -877,6 +887,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Not done") ]
                 [ ]

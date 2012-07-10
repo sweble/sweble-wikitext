@@ -57,8 +57,13 @@ inline void XmlCommentPrefix =
   Eol ' '* "<!--"
 ;
 
+inline void TemplatePrefix =
+  Eol "{{"
+;
+
 inline AstNode ContentChoice =
     <XmlComment>  &XmlCommentPrefix XmlCommentTrimmed // prefix: \n ' '* <!--
+  / <EolTemplate> &TemplatePrefix   Template          // prefix: \n "{{"
   / <XmlElement>  &'<'              XmlElement        // prefix: "<"
   / <Template>    &"{{"             Template          // prefix: "{{"
   / <IntLink>     &"[["             InternalLink      // prefix: "[["
@@ -71,6 +76,7 @@ inline void ContentStopper =
 
 inline void ContentStringStopper =
     <PrefixXmlComment>  XmlCommentPrefix
+  / <PrefixEolTempalte> TemplatePrefix
   / <PrefixOnlyInclude> '<'              // For security reasons: You might
                                          // remove PrefixXmlElement unreflected,
                                          // but you will think twice before

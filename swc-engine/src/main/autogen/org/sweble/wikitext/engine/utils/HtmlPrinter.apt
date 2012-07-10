@@ -524,7 +524,7 @@ import org.sweble.wikitext.lazy.utils.*;
 %visit(TagExtension n)%
 <span class="{=classPrefix}unknown-node">%
 {if(renderTagExtensions)}%
-{if(n.getBody().isEmpty())}%
+{if(n.getBody() == null || n.getBody().isEmpty())}%
 &lt;{=n.getName()}{!iterate(n.getXmlAttributes())} />%
 {else}%
 &lt;{=n.getName()}{!iterate(n.getXmlAttributes())}>{=escHtml(n.getBody())}&lt;/{=n.getName()}>%
@@ -535,7 +535,7 @@ import org.sweble.wikitext.lazy.utils.*;
 {else}%
 &lt;{=n.getName()} ...%
 {/if}%
-{if(n.getBody().isEmpty())}%
+{if(n.getBody() == null || n.getBody().isEmpty())}%
 />%
 {else}%
 >...&lt;/{=n.getName()}>%

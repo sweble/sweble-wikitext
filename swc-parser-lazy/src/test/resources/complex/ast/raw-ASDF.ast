@@ -240,6 +240,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("disambig") ]
             [ ]

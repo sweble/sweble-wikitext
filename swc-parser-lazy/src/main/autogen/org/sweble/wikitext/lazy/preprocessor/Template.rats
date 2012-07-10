@@ -35,9 +35,12 @@
  *     Constructor : "name, args"
  *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE
  *
+ *     Properties:
+ *       precededByNewline : boolean
+ *
  *     Children:
- *       name : NodeList
- *       args : NodeList
+ *       name       : NodeList
+ *       args       : NodeList
  *
  * TemplateParameter
  * -----------------
@@ -49,6 +52,9 @@
  *     Extends     : InnerNode.InnerNode3
  *     Constructor : "name, defaultValue, garbage"
  *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE_PARAMETER
+ *
+ *     Properties:
+ *       precededByNewline : boolean
  *
  *     Children:
  *       name         : NodeList
@@ -78,6 +84,8 @@
 
 module org.sweble.wikitext.lazy.preprocessor.Template;
 
+import org.sweble.wikitext.lazy.utils.Whitespace;
+
 import org.sweble.wikitext.lazy.preprocessor.State;
 import org.sweble.wikitext.lazy.preprocessor.ContentTemplateArgumentName;
 import org.sweble.wikitext.lazy.preprocessor.ContentTemplateArgumentValue;
@@ -89,7 +97,7 @@ import org.sweble.wikitext.lazy.preprocessor.ContentTemplateName;
 // -- Article ------------------------------------------------------------------
 
 stateful AstNode Template =
-    braces:Braces1Plus
+    eol:pEol? braces:Braces1Plus
     {
       /* ALL PRODUCTIONS THAT DEPEND ON THE NUMBER OF BRANCES MUST
        * BE TRANSIENT! THAT'S ALSO TRUE FOR PRODUCTIONS WHICH USE
@@ -98,9 +106,25 @@ stateful AstNode Template =
       getState().setTemplateBraces(braces.length());
     }
     yyValue:TemplateTail
-  / braces:Braces1Plus
     {
-      yyValue = new Text(braces);
+      if (eol != null)
+      {
+        AstNode tmpl = yyValue;
+        if (yyValue instanceof NodeList)
+        {
+          NodeList list = (NodeList) yyValue;
+          tmpl = list.get(list.size() - 1);
+        }
+        if (yyValue instanceof Template)
+          ((Template) yyValue).setPrecededByNewline(true);
+        else
+          ((TemplateParameter) yyValue).setPrecededByNewline(true);
+        yyValue = new NodeList(new Text(eol), yyValue);
+      }
+    }
+  / eol:pEol? braces:Braces1Plus
+    {
+      yyValue = new Text((eol != null) ? eol + braces : braces);
     }
 ;
 

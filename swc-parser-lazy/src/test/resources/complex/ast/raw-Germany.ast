@@ -7,6 +7,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("Dablink") ]
         [
@@ -24,6 +25,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = true
 
         [ Text("Use dmy dates") ]
         [
@@ -41,6 +43,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = true
 
         [ Text("pp-semi-protected") ]
         [
@@ -58,6 +61,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = true
 
         [ Text("pp-move-indef") ]
         [ ]
@@ -66,6 +70,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = true
 
         [ Text("Featured article") ]
         [ ]
@@ -74,6 +79,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = true
 
         [ Text("Infobox country\n") ]
         [
@@ -88,6 +94,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -139,6 +146,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -197,6 +205,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("map_caption") ]
                 [
@@ -264,6 +273,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Ref") ]
                 [
@@ -838,6 +848,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("increase") ]
                 [ ]
@@ -890,6 +901,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Update after") ]
                 [
@@ -949,6 +961,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Ref") ]
                 [
@@ -1024,6 +1037,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Ref") ]
                 [
@@ -1106,6 +1120,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("note") ]
                 [
@@ -1133,6 +1148,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("note") ]
                 [
@@ -1159,6 +1175,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("note") ]
                 [
@@ -1191,6 +1208,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("IPAc-en") ]
         [
@@ -1263,6 +1281,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("lang-de") ]
         [
@@ -1280,6 +1299,7 @@ LazyParsedPage(
       Template(
         Properties:
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+          {N} precededByNewline = false
 
         [ Text("IPA-de") ]
         [
@@ -2145,6 +2165,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Main") ]
             [
@@ -2173,6 +2194,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -2309,6 +2331,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -2831,6 +2854,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -2998,6 +3022,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -3015,6 +3040,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("See also") ]
                 [
@@ -3772,6 +3798,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -4174,6 +4201,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -4350,6 +4378,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -4446,6 +4475,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -4866,6 +4896,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -5091,6 +5122,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -5156,6 +5188,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -5260,6 +5293,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -6051,6 +6085,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Clear") ]
                 [ ]
@@ -6072,6 +6107,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -6416,6 +6452,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -6471,6 +6508,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -6722,6 +6760,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("lang") ]
                 [
@@ -6900,6 +6939,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -7209,6 +7249,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Main") ]
             [
@@ -7271,6 +7312,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = false
 
             [ Text("convert") ]
             [
@@ -7320,6 +7362,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = false
 
             [ Text("convert") ]
             [
@@ -7369,6 +7412,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = false
 
             [ Text("convert") ]
             [
@@ -7513,6 +7557,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = false
 
             [ Text("convert") ]
             [
@@ -7592,6 +7637,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = false
 
             [ Text("convert") ]
             [
@@ -7770,6 +7816,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -7854,6 +7901,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("German Federal States") ]
                 [
@@ -9323,6 +9371,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("multiple image\n   ") ]
                 [
@@ -9483,6 +9532,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("convert") ]
                 [
@@ -9566,6 +9616,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("multiple image\n   ") ]
                 [
@@ -9907,6 +9958,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("multiple image\n   ") ]
                 [
@@ -10106,6 +10158,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Main") ]
             [
@@ -10871,6 +10924,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -11526,6 +11580,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -12032,6 +12087,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -12415,6 +12471,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("As of") ]
                 [
@@ -12523,6 +12580,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("clearleft") ]
                 [ ]
@@ -12546,6 +12604,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Main") ]
             [
@@ -14571,6 +14630,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -14888,6 +14948,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -15085,6 +15146,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -15510,6 +15572,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -16044,6 +16107,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Main") ]
             [
@@ -16490,6 +16554,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("As of") ]
                 [
@@ -16616,6 +16681,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("See also") ]
                 [
@@ -19023,6 +19089,7 @@ LazyParsedPage(
                               Template(
                                 Properties:
                                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                  {N} precededByNewline = false
 
                                 [ Text("cite web ") ]
                                 [
@@ -19102,6 +19169,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -19440,6 +19508,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("multiple image\n   ") ]
                 [
@@ -19677,6 +19746,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -19928,6 +19998,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("bar box\n") ]
                 [
@@ -19966,6 +20037,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -19999,6 +20071,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -20032,6 +20105,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -20065,6 +20139,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -20098,6 +20173,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -20131,6 +20207,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -20164,6 +20241,7 @@ LazyParsedPage(
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                          {N} precededByNewline = true
 
                         [ Text("bar percent") ]
                         [
@@ -20581,6 +20659,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -21024,6 +21103,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -21325,6 +21405,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Main") ]
             [
@@ -21821,6 +21902,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -22493,6 +22575,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -22812,6 +22895,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -23463,6 +23547,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -24519,6 +24604,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -25224,6 +25310,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("Main") ]
                 [
@@ -25915,6 +26002,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("Update after") ]
                 [
@@ -26040,6 +26128,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = true
 
                 [ Text("-") ]
                 [ ]
@@ -26063,6 +26152,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Portal box") ]
             [
@@ -26110,6 +26200,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Template group\n") ]
             [
@@ -26132,6 +26223,7 @@ LazyParsedPage(
                   Template(
                     Properties:
                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                      {N} precededByNewline = true
 
                     [ Text("Germany topics") ]
                     [ ]
@@ -26140,6 +26232,7 @@ LazyParsedPage(
                   Template(
                     Properties:
                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                      {N} precededByNewline = true
 
                     [ Text("States of Germany ") ]
                     [
@@ -26157,6 +26250,7 @@ LazyParsedPage(
                   Template(
                     Properties:
                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                      {N} precededByNewline = true
 
                     [ Text("Template group\n") ]
                     [
@@ -26179,6 +26273,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("Geographic location\n ") ]
                             [
@@ -26193,6 +26288,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26220,6 +26316,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26255,6 +26352,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26272,6 +26370,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26299,6 +26398,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flagicon") ]
                                     [
@@ -26326,6 +26426,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26343,6 +26444,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26370,6 +26472,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26397,6 +26500,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26414,6 +26518,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26441,6 +26546,7 @@ LazyParsedPage(
                                   Template(
                                     Properties:
                                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                                      {N} precededByNewline = false
 
                                     [ Text("Flag") ]
                                     [
@@ -26463,6 +26569,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("Sovereign states of Europe") ]
                             [ ]
@@ -26471,6 +26578,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("Countries bordering the Baltic Sea") ]
                             [ ]
@@ -26484,6 +26592,7 @@ LazyParsedPage(
                   Template(
                     Properties:
                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                      {N} precededByNewline = true
 
                     [ Text("Template group\n") ]
                     [
@@ -26506,6 +26615,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("EU members") ]
                             [ ]
@@ -26514,6 +26624,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("North Atlantic Treaty Organisation (NATO)") ]
                             [ ]
@@ -26522,6 +26633,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("Organisation for Economic Co-operation and Development") ]
                             [ ]
@@ -26530,6 +26642,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("G8 nations") ]
                             [ ]
@@ -26538,6 +26651,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("G20") ]
                             [ ]
@@ -26546,6 +26660,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("WTO members") ]
                             [ ]
@@ -26554,6 +26669,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("Council of Europe") ]
                             [ ]
@@ -26562,6 +26678,7 @@ LazyParsedPage(
                           Template(
                             Properties:
                               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                              {N} precededByNewline = true
 
                             [ Text("OSCE") ]
                             [ ]
@@ -26575,6 +26692,7 @@ LazyParsedPage(
                   Template(
                     Properties:
                       RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                      {N} precededByNewline = true
 
                     [ Text("National personifications") ]
                     [ ]
@@ -26601,6 +26719,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Reflist") ]
             [
@@ -26630,6 +26749,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Reflist") ]
             [
@@ -26660,6 +26780,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Spoken Wikipedia-2") ]
             [
@@ -26693,6 +26814,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Sister project links") ]
             [
@@ -26801,6 +26923,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("CIA World Factbook link") ]
                 [
@@ -26897,6 +27020,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("dmoz") ]
                 [
@@ -26918,6 +27042,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Wikiatlas") ]
             [
@@ -26977,6 +27102,7 @@ LazyParsedPage(
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
+                  {N} precededByNewline = false
 
                 [ Text("en icon") ]
                 [ ]
@@ -26989,6 +27115,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("osmrelation-inline") ]
             [
@@ -27177,6 +27304,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link GA") ]
             [
@@ -27194,6 +27322,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link GA") ]
             [
@@ -27211,6 +27340,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link GA") ]
             [
@@ -27228,6 +27358,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link GA") ]
             [
@@ -27245,6 +27376,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link GA") ]
             [
@@ -27262,6 +27394,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link GA") ]
             [
@@ -27279,6 +27412,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27296,6 +27430,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27313,6 +27448,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27330,6 +27466,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27347,6 +27484,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27364,6 +27502,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27381,6 +27520,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27398,6 +27538,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27415,6 +27556,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
@@ -27432,6 +27574,7 @@ LazyParsedPage(
           Template(
             Properties:
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
+              {N} precededByNewline = true
 
             [ Text("Link FA") ]
             [
