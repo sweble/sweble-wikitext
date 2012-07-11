@@ -26,13 +26,13 @@ import org.sweble.wikitext.lazy.LazyEncodingValidator;
 import org.sweble.wikitext.lazy.LazyParser;
 import org.sweble.wikitext.lazy.LazyPostprocessor;
 import org.sweble.wikitext.lazy.LazyPreprocessor;
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
 import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
 
 import xtc.parser.ParseException;
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserCommon;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
@@ -64,25 +64,23 @@ public final class FullParser
 	@Override
 	public AstNode parseArticle(String source, String title) throws IOException, ParseException
 	{
-		EntityMap entityMap = new EntityMap();
-		
 		// Encoding validation
 		
 		LazyEncodingValidator v = new LazyEncodingValidator();
 		
-		String validated = v.validate(source, title, entityMap);
+		ValidatedWikitext validated = v.validate(source, title);
 		
 		// Pre-processing
 		
-		ParserCommon prep = new LazyPreprocessor(parserConfig);
+		LazyPreprocessor prep = new LazyPreprocessor(parserConfig);
 		
 		LazyPreprocessedPage prepArticle =
-				(LazyPreprocessedPage) prep.parseArticle(validated, title);
+				(LazyPreprocessedPage) prep.parseArticle(validated, title, false);
 		
 		// Parsing
 		
-		PreprocessedWikitext ppw = PreprocessorToParserTransformer.transform(
-				prepArticle, entityMap);
+		PreprocessedWikitext ppw = PreprocessorToParserTransformer
+				.transform(prepArticle);
 		
 		LazyParser p = new LazyParser(parserConfig);
 		

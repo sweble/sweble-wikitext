@@ -17,20 +17,19 @@
 
 package org.sweble.wikitext.lazy.parser;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.sweble.wikitext.lazy.ParserConfig;
 
+import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserState;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class LazyParserState
-        extends
-            ParserState<LazyParserContext>
+		extends
+			ParserState<LazyParserContext>
 {
-	private Map<Integer, AstNode> entityMap = new HashMap<Integer, AstNode>();
+	private EntityMap entityMap = new EntityMap();
 	
 	private ParserConfig config;
 	
@@ -59,9 +58,14 @@ public class LazyParserState
 	
 	// =========================================================================
 	
-	public Map<Integer, AstNode> getEntityMap()
+	public EntityMap getEntityMap()
 	{
 		return entityMap;
+	}
+	
+	public AstNode getEntity(int id)
+	{
+		return entityMap.getEntity(id);
 	}
 	
 	// =========================================================================
@@ -71,7 +75,7 @@ public class LazyParserState
 		return config;
 	}
 	
-	public void init(ParserConfig config, Map<Integer, AstNode> entityMap)
+	public void init(ParserConfig config, EntityMap entityMap)
 	{
 		this.config = config;
 		
@@ -84,10 +88,10 @@ public class LazyParserState
 		this.gatherRtData = config.isGatherRtData();
 		
 		this.prefixPattern = Pattern.compile(
-		        "(" + config.getInternalLinkPrefixPattern() + ")$");
+				"(" + config.getInternalLinkPrefixPattern() + ")$");
 		
 		this.postfixPattern = Pattern.compile(
-		        config.getInternalLinkPostfixPattern());
+				config.getInternalLinkPostfixPattern());
 	}
 	
 	// =========================================================================

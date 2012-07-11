@@ -62,7 +62,7 @@ body
 
   public AstNode getEntity(int id)
   {
-    return getState().getEntityMap().get(id);
+    return getState().getEntity(id);
   }
 
   // ===========================================================================

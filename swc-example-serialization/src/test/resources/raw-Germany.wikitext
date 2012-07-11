@@ -955,7 +955,6 @@ Wikipedia is not a link list nor a Web directory. If your link points to a site 
 [[frr:Tjüschlönj]]
 [[gan:德國]]
 [[gag:Germaniya]]
-[[got:𐌸𐌹𐌿𐌳𐌹𐍃𐌺𐌰𐌻𐌰𐌽𐌳]]
 [[hak:Tet-koet]]
 [[xal:Ниицәтә Немшин Орн]]
 [[ko:독일]]

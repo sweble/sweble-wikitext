@@ -55,6 +55,25 @@ public class CompilerTestBase
 		this.expansionCallback = new ExpansionCallbackImpl();
 	}
 	
+	// =========================================================================
+	
+	public WikiConfigImpl getConfig()
+	{
+		return config;
+	}
+	
+	protected Compiler getCompiler()
+	{
+		return compiler;
+	}
+	
+	protected ExpansionCallbackImpl getExpansionCallback()
+	{
+		return expansionCallback;
+	}
+	
+	// =========================================================================
+	
 	protected CompiledPage preprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		return preprocess(null, page, forInclusion);
@@ -141,11 +160,6 @@ public class CompilerTestBase
 		}
 		
 		return new FullPage(pageId, wikitext);
-	}
-	
-	public WikiConfigImpl getConfig()
-	{
-		return config;
 	}
 	
 	// =========================================================================

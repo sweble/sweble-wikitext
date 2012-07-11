@@ -1,5 +1,6 @@
 LazyParsedPage(
   Properties:
+    {N} entityMap = EntityMap {0=Template([0] = [Text("name")], [1] = [TemplateArgument([0] = [], [1] = [Text("arg0")]), TemplateArgument([0] = [Text("arg1")], [1] = [Text("value1")]), TemplateArgument([0] = [Text("arg2")], [1] = [TemplateParameter([0] = [Text("parameter2")], [1] = null, [2] = null)])])}
     {N} warnings = []
 
   [

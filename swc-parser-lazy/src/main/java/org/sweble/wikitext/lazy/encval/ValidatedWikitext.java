@@ -15,20 +15,17 @@
  * limitations under the License.
  */
 
-/**
- * 
- */
-package org.sweble.wikitext.lazy.preprocessor;
+package org.sweble.wikitext.lazy.encval;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
 
-public final class PreprocessedWikitext
+public class ValidatedWikitext
 {
 	private String wikitext;
 	
 	private EntityMap entityMap;
 	
-	public PreprocessedWikitext(String wikitext, EntityMap entityMap)
+	public ValidatedWikitext(String wikitext, EntityMap entityMap)
 	{
 		this.wikitext = wikitext;
 		this.entityMap = entityMap;

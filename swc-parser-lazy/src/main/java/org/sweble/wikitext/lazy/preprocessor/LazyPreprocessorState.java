@@ -19,13 +19,16 @@ package org.sweble.wikitext.lazy.preprocessor;
 
 import org.sweble.wikitext.lazy.ParserConfig;
 
+import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserState;
 
 public class LazyPreprocessorState
-        extends
-            ParserState<LazyPreprocessorContext>
+		extends
+			ParserState<LazyPreprocessorContext>
 {
 	private ParserConfig config;
+	
+	private EntityMap entityMap;
 	
 	private boolean autoCorrect;
 	
@@ -57,9 +60,14 @@ public class LazyPreprocessorState
 		return config;
 	}
 	
-	public void init(ParserConfig config, boolean forInclusion)
+	public void init(
+			ParserConfig config,
+			EntityMap entityMap,
+			boolean forInclusion)
 	{
 		this.config = config;
+		
+		this.entityMap = entityMap;
 		
 		this.parseForInclusion = forInclusion;
 		
@@ -71,6 +79,11 @@ public class LazyPreprocessorState
 	}
 	
 	// =========================================================================
+	
+	public EntityMap getEntityMap()
+	{
+		return entityMap;
+	}
 	
 	public boolean isAutoCorrect()
 	{
@@ -120,7 +133,7 @@ public class LazyPreprocessorState
 	public void eatTemplateBraces(int i)
 	{
 		getTop().setTemplateBraces(
-		        getTop().getTemplateBraces() - i);
+				getTop().getTemplateBraces() - i);
 	}
 	
 	// =========================================================================
@@ -163,7 +176,7 @@ public class LazyPreprocessorState
 		else
 		{
 			return ("noinclude".compareTo(lcName) == 0) ||
-			        ("onlyinclude".compareTo(lcName) == 0);
+					("onlyinclude".compareTo(lcName) == 0);
 		}
 	}
 }

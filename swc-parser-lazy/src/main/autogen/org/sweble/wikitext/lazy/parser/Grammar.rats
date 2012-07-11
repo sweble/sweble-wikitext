@@ -26,12 +26,15 @@
  *     Name        : LazyParsedPage
  *     Extends     : ContentNode
  *     Constructor : "content, warnings"
+ *     Constructor : "content, warnings, entityMap"
  *     NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LAZY_PARSED_PAGE
  *     Import      : java.util.List
  *     Import      : de.fau.cs.osr.ptk.common.Warning
+ *     Import      : de.fau.cs.osr.ptk.common.EntityMap
  *
  *     Properties:
- *       warnings : List<Warning>
+ *       warnings  : List<Warning>
+ *       entityMap : EntityMap
  *
  */
 
@@ -142,7 +145,8 @@ Article =
   {
     yyValue = new LazyParsedPage(
         fixNewlinesAtBoa(content),
-        new ArrayList<Warning>());
+        new ArrayList<Warning>(), 
+        getState().getEntityMap());
   }
 ;
 

@@ -32,13 +32,16 @@
  *     Name        : CompiledPage
  *     Extends     : InnerNode.InnerNode1
  *     Constructor : "page, warnings, log"
+ *     Constructor : "page, warnings, entityMap, log"
  *     Import      : java.util.List
  *     Import      : org.sweble.wikitext.engine.log.CompilerLog
  *     Import      : de.fau.cs.osr.ptk.common.Warning
+ *     Import      : de.fau.cs.osr.ptk.common.EntityMap
  *
  *     Properties:
- *       log      : CompilerLog
- *       warnings : List<Warning>
+ *       log       : CompilerLog
+ *       warnings  : List<Warning>
+ *       entityMap : EntityMap
  *
  *     Children:
  *       page : Page

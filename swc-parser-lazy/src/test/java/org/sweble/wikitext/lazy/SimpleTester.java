@@ -28,6 +28,7 @@ import java.util.Set;
 import joptsimple.OptionException;
 
 import org.apache.commons.io.FileUtils;
+import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
@@ -37,8 +38,6 @@ import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.ParserCommon;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.utils.getopt.Options;
 
@@ -106,13 +105,12 @@ public class SimpleTester
 			return;
 		}
 		
-		EntityMap entityMap = new EntityMap();
-		
+		ValidatedWikitext validated = null;
 		if (!dontValidate)
 		{
 			LazyEncodingValidator v = new LazyEncodingValidator();
 			
-			content = v.validate(content, sourceFile, entityMap);
+			validated = v.validate(content, sourceFile);
 		}
 		
 		AstNode showArticle = null;
@@ -122,10 +120,10 @@ public class SimpleTester
 		LazyPreprocessedPage ppArticle = null;
 		if (!dontPreprocess)
 		{
-			ParserCommon pp = new LazyPreprocessor(parserConfig);
+			LazyPreprocessor pp = new LazyPreprocessor(parserConfig);
 			
 			ppArticle =
-			        (LazyPreprocessedPage) pp.parseArticle(content, sourceFile);
+					(LazyPreprocessedPage) pp.parseArticle(validated, sourceFile, false);
 			
 			showArticle = ppArticle;
 		}
@@ -134,19 +132,19 @@ public class SimpleTester
 		{
 			LazyParser p = new LazyParser(parserConfig);
 			
-			PreprocessedWikitext ppw = new PreprocessedWikitext(content, entityMap);
+			PreprocessedWikitext ppw = new PreprocessedWikitext(validated.getWikitext(), validated.getEntityMap());
 			if (!dontPreprocess)
-				ppw = PreprocessorToParserTransformer.transform(ppArticle, entityMap);
+				ppw = PreprocessorToParserTransformer.transform(ppArticle);
 			
 			LazyParsedPage parsedArticle =
-			        (LazyParsedPage) p.parseArticle(ppw, sourceFile);
+					(LazyParsedPage) p.parseArticle(ppw, sourceFile);
 			
 			if (!dontPostprocess)
 			{
 				LazyPostprocessor postp = new LazyPostprocessor(parserConfig);
 				
 				parsedArticle =
-				        (LazyParsedPage) postp.postprocess(parsedArticle, sourceFile);
+						(LazyParsedPage) postp.postprocess(parsedArticle, sourceFile);
 			}
 			
 			/* FIXME!
@@ -168,7 +166,7 @@ public class SimpleTester
 					parsedArticle = ParagraphBuilder.process(parsedArticle);
 			}
 			*/
-
+			
 			showArticle = parsedArticle;
 		}
 		
@@ -192,32 +190,32 @@ public class SimpleTester
 	private boolean parseCmdLine(String[] args)
 	{
 		options.createOption('h', "help")
-		        .withDescription("Print help message.")
-		        .create();
+				.withDescription("Print help message.")
+				.create();
 		
 		options.createOption("base-dir")
-		        .withDescription("Base directory for sourceFile files.")
-		        .withArgName("DIR")
-		        .withRequiredArg()
-		        .create();
+				.withDescription("Base directory for sourceFile files.")
+				.withArgName("DIR")
+				.withRequiredArg()
+				.create();
 		
 		options.createOption("sourceFile")
-		        .withDescription("File to parse.")
-		        .withArgName("FILE")
-		        .withRequiredArg()
-		        .create();
+				.withDescription("File to parse.")
+				.withArgName("FILE")
+				.withRequiredArg()
+				.create();
 		
 		options.createOption("dont-preprocess")
-		        .withDescription("Don't preprocess.")
-		        .create();
+				.withDescription("Don't preprocess.")
+				.create();
 		
 		options.createOption("dont-parse")
-		        .withDescription("Don't parse.")
-		        .create();
+				.withDescription("Don't parse.")
+				.create();
 		
 		options.createOption("dont-postprocess")
-		        .withDescription("Don't postprocess.")
-		        .create();
+				.withDescription("Don't postprocess.")
+				.create();
 		
 		try
 		{
@@ -246,9 +244,9 @@ public class SimpleTester
 		}
 		
 		baseDir = options.value(
-		        "base-dir",
-		        String.class,
-		        "/dropbox");
+				"base-dir",
+				String.class,
+				"/dropbox");
 		
 		if (options.getFreeArguments().isEmpty())
 		{
@@ -266,10 +264,10 @@ public class SimpleTester
 		
 		postprocessSteps = new HashSet<String>();
 		postprocessSteps.addAll(Arrays.asList(options.value(
-		        "postprocess-steps",
-		        String.class,
-		        "section,list,ticks,scoped,paragraph")
-		        .toLowerCase().split("\\s*,\\s*")));
+				"postprocess-steps",
+				String.class,
+				"section,list,ticks,scoped,paragraph")
+				.toLowerCase().split("\\s*,\\s*")));
 		
 		if (dontPreprocess && dontParse)
 			return false;
@@ -285,6 +283,6 @@ public class SimpleTester
 	
 	private void printHelpMessage(Options options)
 	{
-		options.help(System.out);
+		options.cmdLineHelp(System.out);
 	}
 }
