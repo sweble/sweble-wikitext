@@ -14,27 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.sweble.wikitext.lazy.utils;
 
-package org.sweble.wikitext.lazy;
+import java.io.IOException;
+import java.io.Writer;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import de.fau.cs.osr.ptk.common.AstPrinterInterface;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
 
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-public class LinkPrefixTest
+public final class TypedAstPrinter
+		implements
+			AstPrinterInterface
 {
-	@Test
-	public void test()
+	@Override
+	public String getPrintoutType()
 	{
-		String prefix = "asdfäöüß";
+		return "ast";
+	}
+	
+	@Override
+	public void print(AstNode ast, Writer out) throws IOException
+	{
+		org.sweble.wikitext.lazy.utils.AstPrinter printer =
+				new org.sweble.wikitext.lazy.utils.AstPrinter(out);
 		
-		Matcher m = Pattern.compile("(" + "[äöüßa-z]+" + ")$").matcher(
-				"Hallo Welt, hier kommt ein German Link " + prefix);
-		
-		Assert.assertTrue(m.find());
-		Assert.assertEquals(prefix, m.group(1));
+		printer.setLegacyIndentation(true);
+		printer.go(ast);
 	}
 }

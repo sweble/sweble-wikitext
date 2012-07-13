@@ -17,12 +17,13 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.engine.utils.SimpleWikiConfiguration;
 import org.sweble.wikitext.lazy.AstNodeTypes;
 import org.sweble.wikitext.lazy.parser.Paragraph;
@@ -39,7 +40,6 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ParseAllWithoutExpansionIntegrationTest
 {
-	
 	private CompilerTestBase ctb;
 	
 	private Compiler compiler;
@@ -139,7 +139,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 				+ "    ])\n"
 				+ "  ])\n"
 				+ ")\n";
-
+		
 		assertEquals(expected, printedAst);
 	}
 	
