@@ -23,6 +23,7 @@ import junit.framework.Assert;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.lazy.LinkTargetException;
 import org.sweble.wikitext.lazy.utils.WikitextPrinter;
 

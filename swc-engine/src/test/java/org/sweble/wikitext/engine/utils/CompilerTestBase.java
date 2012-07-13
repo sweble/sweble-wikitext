@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.engine;
+package org.sweble.wikitext.engine.utils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,6 +27,14 @@ import java.util.List;
 import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.IOUtils;
+import org.sweble.wikitext.engine.CompiledPage;
+import org.sweble.wikitext.engine.Compiler;
+import org.sweble.wikitext.engine.CompilerException;
+import org.sweble.wikitext.engine.ExpansionCallback;
+import org.sweble.wikitext.engine.ExpansionFrame;
+import org.sweble.wikitext.engine.FullPage;
+import org.sweble.wikitext.engine.PageId;
+import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
@@ -46,7 +54,7 @@ public class CompilerTestBase
 	
 	// =========================================================================
 	
-	protected CompilerTestBase() throws FileNotFoundException, JAXBException
+	public CompilerTestBase() throws FileNotFoundException, JAXBException
 	{
 		this.config = DefaultConfigEn.generate();
 		
@@ -62,24 +70,24 @@ public class CompilerTestBase
 		return config;
 	}
 	
-	protected Compiler getCompiler()
+	public Compiler getCompiler()
 	{
 		return compiler;
 	}
 	
-	protected ExpansionCallbackImpl getExpansionCallback()
+	public ExpansionCallbackImpl getExpansionCallback()
 	{
 		return expansionCallback;
 	}
 	
 	// =========================================================================
 	
-	protected CompiledPage preprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public CompiledPage preprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		return preprocess(null, page, forInclusion);
 	}
 	
-	protected CompiledPage preprocess(
+	public CompiledPage preprocess(
 			String namespace,
 			String page,
 			boolean forInclusion) throws LinkTargetException, IOException, CompilerException
@@ -99,7 +107,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	protected CompiledPage expand(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public CompiledPage expand(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);
 		FullPage fullPage = retrieve(title);
@@ -111,7 +119,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	protected CompiledPage parse(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public CompiledPage parse(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);
 		FullPage fullPage = retrieve(title);
@@ -123,7 +131,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	protected CompiledPage postprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public CompiledPage postprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);
 		FullPage fullPage = retrieve(title);
@@ -135,7 +143,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	protected FullPage retrieve(PageTitle pageTitle) throws IOException
+	public FullPage retrieve(PageTitle pageTitle) throws IOException
 	{
 		PageId pageId = new PageId(pageTitle, -1);
 		

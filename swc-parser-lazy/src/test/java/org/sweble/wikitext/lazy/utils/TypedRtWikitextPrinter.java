@@ -14,35 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.sweble.wikitext.lazy.utils;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import java.io.IOException;
+import java.io.Writer;
 
-import org.junit.Test;
-import org.sweble.wikitext.lazy.parser.HorizontalRule;
-import org.sweble.wikitext.lazy.preprocessor.XmlComment;
+import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
 
-public class TestWikitextPrinter
+public final class TypedRtWikitextPrinter
+		implements
+			GenericPrinterInterface
 {
-	@Test
-	public void wikitextPrinterGeneratesCorrectOutputForHorizontalRule()
+	@Override
+	public String getPrintoutType()
 	{
-		HorizontalRule node = astHr().build();
-		
-		assertEquals(
-				"\n\n----",
-				WikitextPrinter.print(node));
+		return "wikitext";
 	}
 	
-	@Test
-	public void wikitextPrinterProducesNoOutputForComments()
+	@Override
+	public void print(Object ast, Writer out) throws IOException
 	{
-		XmlComment node = astComment("some comment");
-		
-		assertEquals(
-				"",
-				WikitextPrinter.print(node));
+		RtWikitextPrinter.print(out, (AstNode) ast);
 	}
 }

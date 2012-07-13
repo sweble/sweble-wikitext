@@ -15,16 +15,20 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.lazy;
+package org.sweble.wikitext.lazy.utils;
 
 import java.io.IOException;
 
+import org.sweble.wikitext.lazy.LazyEncodingValidator;
+import org.sweble.wikitext.lazy.LazyParser;
+import org.sweble.wikitext.lazy.LazyPostprocessor;
+import org.sweble.wikitext.lazy.LazyPreprocessor;
+import org.sweble.wikitext.lazy.ParserConfig;
 import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
 import org.sweble.wikitext.lazy.parser.LazyParsedPage;
 import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
 import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
-import org.sweble.wikitext.lazy.utils.SimpleParserConfig;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.ParserCommon;
@@ -35,6 +39,8 @@ public final class FullParser
 			ParserCommon
 {
 	private ParserConfig parserConfig;
+	
+	// =========================================================================
 	
 	public FullParser()
 	{
@@ -52,6 +58,8 @@ public final class FullParser
 				gatherRtd,
 				autoCorrect);
 	}
+	
+	// =========================================================================
 	
 	@Override
 	public AstNode parseArticle(String source, String title) throws IOException, ParseException

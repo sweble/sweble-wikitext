@@ -50,19 +50,13 @@ public class AstWomTestFixture
 	
 	public static void womTestFixtureInitialize(
 			ClassLoader classLoader,
-			String resourceBase,
-			String pathPatternToReplace,
-			String pathToReplacePatternWith)
+			String resourceBase)
 	{
 		try
 		{
 			resources = new TestResourcesFixture(classLoader, resourceBase);
 			
-			compare = new FileCompare(
-					resources,
-					pathPatternToReplace,
-					pathToReplacePatternWith,
-					false);
+			compare = new FileCompare(resources);
 		}
 		catch (FileNotFoundException e)
 		{
@@ -251,7 +245,7 @@ public class AstWomTestFixture
 		
 		String actual = AstPrinter.print(page);
 		
-		compare.printTest(expectedFile, actual);
+		compare.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
 	
 	public void printRtWtTest(
@@ -269,7 +263,7 @@ public class AstWomTestFixture
 		
 		String actual = RtWikitextPrinter.print(page);
 		
-		compare.printTest(expectedFile, actual);
+		compare.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
 	
 	public void printWomTest(
@@ -287,6 +281,6 @@ public class AstWomTestFixture
 		
 		String actual = WomPrinter.print(wom, explicitTextNodes);
 		
-		compare.printTest(expectedFile, actual);
+		compare.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}
 }

@@ -14,27 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.sweble.wikitext.lazy.utils;
 
-package org.sweble.wikitext.lazy;
+import java.io.IOException;
+import java.io.Writer;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
 
-import junit.framework.Assert;
+public final class TypedWikitextPrinter
+		implements
+			GenericPrinterInterface
 
-import org.junit.Test;
-
-public class LinkPrefixTest
 {
-	@Test
-	public void test()
+	@Override
+	public String getPrintoutType()
 	{
-		String prefix = "asdfäöüß";
-		
-		Matcher m = Pattern.compile("(" + "[äöüßa-z]+" + ")$").matcher(
-				"Hallo Welt, hier kommt ein German Link " + prefix);
-		
-		Assert.assertTrue(m.find());
-		Assert.assertEquals(prefix, m.group(1));
+		return "wikitext";
+	}
+	
+	@Override
+	public void print(Object ast, Writer out) throws IOException
+	{
+		WikitextPrinter.print(out, (AstNode) ast);
 	}
 }

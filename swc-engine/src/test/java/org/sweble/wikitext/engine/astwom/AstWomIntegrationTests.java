@@ -39,10 +39,6 @@ public class AstWomIntegrationTests
 	
 	private static final String RESOURCE_BASE = "org/sweble/wikitext/engine";
 	
-	private static final String PATH_PATTERN_TO_REPLACE = "(.*?)/target/test-classes/";
-	
-	private static final String PATH_TO_REPLACE_PATTERN_WITH = "$1/src/test/resources/";
-	
 	private static final String INPUT_DIR = "basic/wikitext";
 	
 	private static final String INPUT_PATTERN = ".*\\.wikitext";
@@ -55,9 +51,7 @@ public class AstWomIntegrationTests
 	{
 		womTestFixtureInitialize(
 				CLASSLOADER,
-				RESOURCE_BASE,
-				PATH_PATTERN_TO_REPLACE,
-				PATH_TO_REPLACE_PATTERN_WITH);
+				RESOURCE_BASE);
 	}
 	
 	@Parameters
