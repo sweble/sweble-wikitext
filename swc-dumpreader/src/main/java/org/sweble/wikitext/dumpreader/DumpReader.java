@@ -39,9 +39,9 @@ import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.log4j.Logger;
 
-import sun.org.mozilla.javascript.WrappedException;
-
 import com.sun.org.apache.xerces.internal.util.XMLCatalogResolver;
+
+import de.fau.cs.osr.utils.WrappedException;
 
 public abstract class DumpReader
 {
