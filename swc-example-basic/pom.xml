@@ -19,6 +19,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.java>1.6</version.java>
+    <mvnCmdLine></mvnCmdLine>
   </properties>
 
   <dependencies>
@@ -211,6 +212,9 @@
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables> 
+                    <MVN>${mvnCmdLine}</MVN>
+                  </environmentVariables>                   
                 </configuration>
               </execution>
               <execution>
@@ -224,6 +228,9 @@
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables> 
+                    <MVN>${mvnCmdLine}</MVN>
+                  </environmentVariables>                   
                 </configuration>
               </execution>
             </executions>

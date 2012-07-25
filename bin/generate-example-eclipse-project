@@ -24,10 +24,12 @@ if [[ -z "${PRJ}" ]] || [[ ! -d "${PRJ}" ]]; then
 	exit -1
 fi
 
-MVN=`which mvn`
+if [[ ${MVN:-} == "" ]]; then
+	MVN=`which mvn`
 
-$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
-	MVN=`which mvn3` || exit -1
+	$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
+		MVN=`which mvn3` || exit -1
+fi
 
 pushd "${PRJ}" &>/dev/null
 
@@ -37,13 +39,16 @@ LOG="${WDIR}/generate-example-eclipse-project.log"
 JARPRJ="${WDIR}/target/generated-sources/${TITLE}-jar"
 ZIP="${WDIR}/target/${TITLE}-jar.zip"
 
+echo
+echo "Working in: ${WDIR}"
+echo "Using maven command line: ${MVN}"
+
 # Build example project and generate archetype
 #echo "Cleaning ..."
 #echo "Cleaning ..." &>> "${LOG}"
 #$MVN clean &>> "${LOG}"
 rm -rf "$LOG" "$JARPRJ" "$ZIP"
 
-echo
 echo "Verifying ..."
 echo "Verifying ..." &>> "${LOG}"
 $MVN verify &>> "${LOG}"

@@ -8,16 +8,19 @@ if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
   exit -1
 fi
 
-MVN=`which mvn`
+if [[ ${MVN:-} == "" ]]; then
+	MVN=`which mvn`
 
-$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
-	MVN=`which mvn3` || exit -1
+	$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
+		MVN=`which mvn3` || exit -1
+fi
 
 pushd $PRJ &>/dev/null
 
 WDIR=$(pwd)
 echo
 echo "Working in: ${WDIR}"
+echo "Using maven command line: ${MVN}"
 
 LOG="${WDIR}/generate-example-archetype.log"
 ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
@@ -89,7 +92,7 @@ rm -rf ${ARCHETYPE_DST_DIR}/{src/test/,target/}
 
 # Check contents
 EXPECTED_FILES=$(cat archetype-content.txt)
-ACTUAL_FILES=$(find ${ARCHETYPE_DST_DIR} | sort)
+ACTUAL_FILES=$(find ${ARCHETYPE_DST_DIR} | LC_ALL=POSIX sort)
 ACTUAL_FILES=${ACTUAL_FILES//$ARCHETYPE_DST_DIR/}
 
 if [ ! "${ACTUAL_FILES}" = "${EXPECTED_FILES}" ]; then
