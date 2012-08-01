@@ -1,3 +1,2 @@
 target/
-swc-example-basic-jar/
-*/generate-archetype.log
+swc-example-*-archetype/

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -o errexit
+set -e -u
 
-PRJ="$1"
+PRJ="${1:-}"
 if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
   echo "Usage: $0 PROJECT"
   exit -1
@@ -23,15 +23,12 @@ echo "Working in: ${WDIR}"
 echo "Using maven command line: ${MVN}"
 
 LOG="${WDIR}/generate-example-archetype.log"
-ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
-ARCHETYPE_DST_DIR="${WDIR}/target/generated-sources/archetype"
-ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
 
 # Build example project and generate archetype
 #echo "Cleaning ..."
 #echo "Cleaning ..." &>> "${LOG}"
 #$MVN clean &>> "${LOG}"
-rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
+rm -rf "$LOG"
 
 #echo "Verifying ..."
 #echo "Verifying ..." &>> "${LOG}"
@@ -59,6 +56,13 @@ PRJ_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '
 echo "Project groupId: ${PRJ_GROUP_ID}" >> "${LOG}"
 echo "Project artifactId: ${PRJ_ARTIFACT_ID}" >> "${LOG}"
 echo "Project version: ${PRJ_VERSION}" >> "${LOG}"
+
+ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
+#ARCHETYPE_DST_DIR="${WDIR}/target/generated-sources/archetype"
+ARCHETYPE_DST_DIR="${WDIR}/../${PRJ_ARTIFACT_ID}-archetype"
+ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
+
+rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
 
 echo "Gathering sources ..."
 echo "Gathering sources ..." &>> "${LOG}"
@@ -142,14 +146,14 @@ pushd ${ARCHETYPE_DST_DIR} &> /dev/null
   echo "JAR: ${ARCHETYPE_DST_DIR}/target/${AT_ARTIFACT_ID}-${AT_VERSION}.jar"
   echo
 
-  echo "Generating site ..."
-  echo "Generating site ..." &>> "${LOG}"
-
-  $MVN site site:stage &>> "${LOG}"
-
-  echo
-  echo "Staged SITE: ${ARCHETYPE_DST_DIR}/target/staging"
-  echo
+#   echo "Generating site ..."
+#   echo "Generating site ..." &>> "${LOG}"
+# 
+#   $MVN site site:stage &>> "${LOG}"
+# 
+#   echo
+#   echo "Staged SITE: ${ARCHETYPE_DST_DIR}/target/staging"
+#   echo
 
 popd &> /dev/null
 

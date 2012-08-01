@@ -31,6 +31,12 @@ if [[ ${MVN:-} == "" ]]; then
 		MVN=`which mvn3` || exit -1
 fi
 
+function error_exit
+{
+    echo "...: ${1:-"Unknown Error"}" 1>&2
+    exit 1
+}
+
 pushd "${PRJ}" &>/dev/null
 
 WDIR=$(pwd)
@@ -76,7 +82,8 @@ function get_dependency() {
 		-Dversion=${VERSION} \
 		-Dpackaging=jar \
 		-Dclassifier=jar-with-dependencies \
-		-Ddest="../${JARPRJ}/lib/${JAR}" &>> "${LOG}"
+		-Ddest="../${JARPRJ}/lib/${JAR}" &>> "${LOG}" \
+	|| error_exit "Failed to fetch dependency ${GROUPID}:${ARTIFACTID}:jar-with-dependencies:${VERSION}."$'\n'"Does your build include swc-engine and is the profile 'build-aggregates' activated?"
 
 	CLASSPATH="$CLASSPATH	<classpathentry kind=\"lib\" path=\"lib/$JAR\"/>"$'\n'
 
