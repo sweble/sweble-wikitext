@@ -40,7 +40,9 @@
     </breadcrumbs>
 
     <menu ref="parent"/>
+    <menu ref="modules"/>
 
+    <!--
     <menu name="Modules">
       <item name="SWC - Lazy Wikitext Parser" href="swc-parser-lazy/index.html" />
       <item name="SWC - Engine" href="swc-engine/index.html" />
@@ -53,6 +55,7 @@
       <item name="SWC - Serialization Example" href="swc-example-serialization-archetype/index.html" />
       <item name="SWC - XPath Example" href="swc-example-xpath-archetype/index.html" />
     </menu>
+    -->
     
     <menu ref="reports"/>
 
