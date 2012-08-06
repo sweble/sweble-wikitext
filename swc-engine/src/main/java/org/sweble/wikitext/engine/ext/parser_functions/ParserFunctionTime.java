@@ -90,7 +90,7 @@ public class ParserFunctionTime
 		
 		// ---- let's format ourselves a date...
 		
-		Locale locale = Locale.forLanguageTag(languageTag);
+		Locale locale = new Locale(languageTag);
 		
 		Calendar timestamp = new GregorianCalendar(locale);
 		timestamp.setLenient(true);

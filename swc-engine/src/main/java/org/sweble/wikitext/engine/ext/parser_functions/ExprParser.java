@@ -335,7 +335,7 @@ public class ExprParser
 	
 	private boolean isAlphaChar(char ch)
 	{
-		return Character.isAlphabetic(ch);
+		return Character.isLetterOrDigit(ch);
 	}
 	
 	private String parseWordToken(String expr, int i)
