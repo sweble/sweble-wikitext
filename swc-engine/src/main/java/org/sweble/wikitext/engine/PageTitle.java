@@ -48,6 +48,8 @@ public class PageTitle
 	
 	private final Namespace namespace;
 	
+	private final String namespaceAlias;
+	
 	private final Interwiki interwiki;
 	
 	private final boolean initialColon;
@@ -74,6 +76,19 @@ public class PageTitle
 	public Namespace getNamespace()
 	{
 		return namespace;
+	}
+	
+	/**
+	 * Returns the name of the namespace that was specified by the user. If an
+	 * alias or the canonical name was used, the alias or cannonical name is
+	 * returned. The alias or name as specified in the configuration is
+	 * returned, which might differ in case from what the user specified.
+	 */
+	public String getNamespaceAlias()
+	{
+		if (namespaceAlias == null)
+			return namespace.getName();
+		return namespaceAlias;
 	}
 	
 	public Interwiki getInterwikiLink()
@@ -113,7 +128,7 @@ public class PageTitle
 			result += interwiki.getPrefix() + ":";
 		
 		if (namespace != null && !isDefaultNs)
-			result += namespace.getCanonical() + ":";
+			result += getNamespaceAlias() + ":";
 		
 		result += getDenormalizedTitle();
 		
@@ -145,7 +160,7 @@ public class PageTitle
 			result += interwiki.getPrefix() + ":";
 		
 		if (namespace != null && !isDefaultNs)
-			result += namespace.getCanonical() + ":";
+			result += getNamespaceAlias() + ":";
 		
 		result += title;
 		
@@ -208,6 +223,7 @@ public class PageTitle
 				baseTitle,
 				null,
 				namespace,
+				namespaceAlias,
 				interwiki,
 				initialColon,
 				isDefaultNs);
@@ -222,6 +238,7 @@ public class PageTitle
 				title,
 				fragment,
 				ns,
+				null,
 				interwiki,
 				initialColon,
 				ns.equals(config.getDefaultNamespace()));
@@ -234,6 +251,7 @@ public class PageTitle
 				title,
 				fragment,
 				namespace,
+				namespaceAlias,
 				interwiki,
 				initialColon,
 				isDefaultNs);
@@ -246,6 +264,7 @@ public class PageTitle
 			String title,
 			String fragment,
 			Namespace namespace,
+			String namespaceAlias,
 			Interwiki interwiki,
 			boolean initialColon,
 			boolean isDefaultNs)
@@ -254,6 +273,7 @@ public class PageTitle
 		this.title = title;
 		this.fragment = fragment;
 		this.namespace = namespace;
+		this.namespaceAlias = namespaceAlias;
 		this.interwiki = interwiki;
 		this.initialColon = initialColon;
 		this.isDefaultNs = isDefaultNs;
@@ -291,6 +311,24 @@ public class PageTitle
 				namespace = config.getDefaultNamespace();
 		}
 		
+		// If it's an alias, convert to the exact alias name.
+		String namespaceAlias = null;
+		if (namespace != null && parser.getNamespace() != null)
+		{
+			String lcNs = parser.getNamespace().toLowerCase();
+			if (!lcNs.equals(namespace.getName()))
+			{
+				for (String a : namespace.getAliases())
+				{
+					if (lcNs.equals(a.toLowerCase()))
+					{
+						namespaceAlias = a;
+						break;
+					}
+				}
+			}
+		}
+		
 		Interwiki interwiki = config.getInterwiki(parser.getInterwiki());
 		
 		// TODO: MediaWiki limits the length of title names
@@ -308,6 +346,7 @@ public class PageTitle
 				title,
 				fragment,
 				namespace,
+				namespaceAlias,
 				interwiki,
 				initialColon,
 				isDefaultNs);

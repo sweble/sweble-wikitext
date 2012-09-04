@@ -163,9 +163,9 @@ public class WikiConfigImpl
 		
 		ArrayList<String> names = new ArrayList<String>(ns.getAliases().size() + 2);
 		for (String name : ns.getAliases())
-			names.add(name);
-		names.add(ns.getName());
-		names.add(ns.getCanonical());
+			names.add(name.toLowerCase());
+		names.add(ns.getName().toLowerCase());
+		names.add(ns.getCanonical().toLowerCase());
 		
 		for (String name : names)
 		{
@@ -201,7 +201,7 @@ public class WikiConfigImpl
 	@Override
 	public NamespaceImpl getNamespace(String name)
 	{
-		return namespaceByName.get(name);
+		return namespaceByName.get(name.toLowerCase());
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })

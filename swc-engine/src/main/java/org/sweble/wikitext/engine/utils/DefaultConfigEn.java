@@ -179,7 +179,8 @@ public class DefaultConfigEn
 				"File",
 				"File",
 				false,
-				true, Arrays.asList("Image")));
+				true, 
+				Arrays.asList("Image")));
 		
 		c.addNamespace(new NamespaceImpl(
 				7,

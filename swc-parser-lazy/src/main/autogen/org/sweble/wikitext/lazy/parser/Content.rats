@@ -221,11 +221,11 @@ private inline void BlockStopper =
 ;
 
 private noinline transient AstNode LineStartProd =
-    &( pExtSpaceStar "{|"  ) Table
-  / &( pTpStar       "---" ) HorizontalRule
-  / &( pTpStar       [*#:] ) List
-  / &( pTpStar       [ ]   ) SemiPre
-  / &( pTpStar       [=]   ) Sections
+    &( pExtSpaceStar "{|"   ) Table
+  / &( pTpStar       "---"  ) HorizontalRule
+  / &( pTpStar       [*#:;] ) List
+  / &( pTpStar       [ ]    ) SemiPre
+  / &( pTpStar       [=]    ) Sections
 ;
 
 

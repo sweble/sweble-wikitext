@@ -16810,20 +16810,21 @@ LazyParsedPage(
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
                           {N} height = -1
-                          {N} linkPage = null
+                          {N} linkPage = ""
                           {N} linkUrl = null
                           {N} target = "File:wpvg_hd_date_page.svg"
                           {N} upright = false
                           {N} vAlign = MIDDLE
                           {N} width = -1
 
-                        [ ]
-                        LinkTitle(
-                          Properties:
-                            RTD = RtData: [0] = "|", [1]
+                        [
+                          LinkOptionLinkTarget(
+                            Properties:
+                              RTD = RtData: [0] = "|link=", [1] = ""
 
-                          [ Text("link=") ]
-                        )
+                          )
+                        ]
+                        LinkTitle([ ])
                       )
                     ])
                     Newline("\n")

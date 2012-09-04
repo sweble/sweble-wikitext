@@ -236,9 +236,12 @@ public class ParserConfigImpl
 		}
 		
 		String nsStr = ltp.getNamespace();
-		NamespaceImpl ns = this.wikiConfig.getNamespace(nsStr);
-		if (ns != null && ns.isFileNs())
-			return LinkTargetType.IMAGE;
+		if (nsStr != null)
+		{
+			NamespaceImpl ns = this.wikiConfig.getNamespace(nsStr);
+			if (ns != null && ns.isFileNs() && !ltp.isInitialColon())
+				return LinkTargetType.IMAGE;
+		}
 		
 		return LinkTargetType.PAGE;
 	}

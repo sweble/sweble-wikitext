@@ -176,14 +176,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n")
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -284,18 +277,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n\n\n\n\n")
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -448,36 +430,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -532,10 +485,7 @@ LazyParsedPage(
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-          ]
+          [ Text("\n\n") ]
         )
         TableRow(
           Properties:
@@ -543,8 +493,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
+            Text("\n\n")
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -766,36 +715,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -909,12 +829,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1] = "|", [2]
@@ -993,17 +908,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n\n\n\n")
             TableCell(
               Properties:
                 RTD = RtData: [0] = "|", [1] = "|", [2]
@@ -1084,36 +989,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -1209,612 +1085,84 @@ LazyParsedPage(
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [ Newline("\n") ]
+          [ Text("\n") ]
         )
         TableRow(
           Properties:
@@ -1986,14 +1334,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -2047,7 +1388,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
+            Text("\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -2076,9 +1417,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([ Newline("\n") ])
+            Text("\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -2234,12 +1573,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -2284,14 +1618,7 @@ LazyParsedPage(
 
           [ ]
           [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
+            Text("\n\n\n\n\n\n")
             TableHeader(
               Properties:
                 RTD = RtData: [0] = "!", [1], [2]
@@ -2333,27 +1660,7 @@ LazyParsedPage(
             RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
           [ ]
-          [
-            Newline("\n")
-            Newline("\n")
-            Paragraph([
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-              Newline("\n")
-            ])
-          ]
+          [ Text("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
       ]
     )
@@ -3677,7 +2984,7 @@ LazyParsedPage(
                                 {N} format = UNRESTRAINED
                                 {N} hAlign = NONE
                                 {N} height = 40
-                                {N} linkPage = null
+                                {N} linkPage = ""
                                 {N} linkUrl = null
                                 {N} target = "Image:Wikinews-logo.svg"
                                 {N} upright = false
@@ -3691,10 +2998,10 @@ LazyParsedPage(
                                     {N} height = 40
                                     {N} width = 40
                                 )
-                                LinkOptionGarbage(
+                                LinkOptionLinkTarget(
                                   Properties:
-                                    RTD = RtData: [0] = "|link="
-                                    {N} content = "link="
+                                    RTD = RtData: [0] = "|link=", [1] = ""
+
                                 )
                                 LinkOptionAltText(
                                   Properties:
@@ -6193,7 +5500,7 @@ LazyParsedPage(
                 RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
               [ ]
-              [ Newline("\n") ]
+              [ Text("\n") ]
             )
             TableRow(
               Properties:
@@ -6364,7 +5671,7 @@ LazyParsedPage(
                 RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
               [ ]
-              [ Newline("\n") ]
+              [ Text("\n") ]
             )
             TableRow(
               Properties:
@@ -6539,10 +5846,7 @@ LazyParsedPage(
                 RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
               [ ]
-              [
-                Newline("\n")
-                Newline("\n")
-              ]
+              [ Text("\n\n") ]
             )
             TableRow(
               Properties:
@@ -6658,10 +5962,7 @@ LazyParsedPage(
                 RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
               [ ]
-              [
-                Newline("\n")
-                Newline("\n")
-              ]
+              [ Text("\n\n") ]
             )
             TableRow(
               Properties:
@@ -6792,10 +6093,7 @@ LazyParsedPage(
                 RTD = RtData: [0] = "|-", [1] = "\n", [2]
 
               [ ]
-              [
-                Newline("\n")
-                Newline("\n")
-              ]
+              [ Text("\n\n") ]
             )
           ]
         )
@@ -6877,7 +6175,7 @@ LazyParsedPage(
                         {N} format = UNRESTRAINED
                         {N} hAlign = NONE
                         {N} height = 40
-                        {N} linkPage = null
+                        {N} linkPage = ""
                         {N} linkUrl = null
                         {N} target = "Image:Commons-logo.svg"
                         {N} upright = false
@@ -6891,10 +6189,10 @@ LazyParsedPage(
                             {N} height = 40
                             {N} width = 40
                         )
-                        LinkOptionGarbage(
+                        LinkOptionLinkTarget(
                           Properties:
-                            RTD = RtData: [0] = "|link="
-                            {N} content = "link="
+                            RTD = RtData: [0] = "|link=", [1] = ""
+
                         )
                         LinkOptionAltText(
                           Properties:
@@ -7109,7 +6407,7 @@ LazyParsedPage(
                         {N} format = UNRESTRAINED
                         {N} hAlign = NONE
                         {N} height = 40
-                        {N} linkPage = null
+                        {N} linkPage = ""
                         {N} linkUrl = null
                         {N} target = "Image:Wikiquote-logo-en.svg"
                         {N} upright = false
@@ -7123,10 +6421,10 @@ LazyParsedPage(
                             {N} height = 40
                             {N} width = 40
                         )
-                        LinkOptionGarbage(
+                        LinkOptionLinkTarget(
                           Properties:
-                            RTD = RtData: [0] = "|link="
-                            {N} content = "link="
+                            RTD = RtData: [0] = "|link=", [1] = ""
+
                         )
                         LinkOptionAltText(
                           Properties:

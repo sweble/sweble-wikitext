@@ -165,12 +165,18 @@ body
 // -- Url ----------------------------------------------------------------------
 
 Url Url =
-  protocol:UrlProtocolString ':' path:UrlPathString &{ isProtocol(protocol, path) }
-  {
-    yyValue = new Url(protocol, path);
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(protocol, ':', path));
-  }
+    protocol:UrlProtocolString ':' path:UrlPathString &{ isProtocol(protocol, path) }
+    {
+      yyValue = new Url(protocol, path);
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt(protocol, ':', path));
+    }
+  / &"//" path:UrlPathString
+    {
+      yyValue = new Url(null, path);
+      if (isGatherRtData())
+        addRtData(yyValue, joinRt(path));
+    }
 ;
 
 String UrlProtocolString = tUrlProtocolString ;

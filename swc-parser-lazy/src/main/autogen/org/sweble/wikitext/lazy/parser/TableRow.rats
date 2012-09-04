@@ -108,7 +108,7 @@ private transient stateful NodeList TableRowContentStar =
   {
     enter(ParserScopes.TABLE_ELEMENTS);
   }
-  garbage:BolBlockContent content:TableRowElement*
+  garbage:InlineBlockContent content:TableRowElement*
   {
     yyValue = new NodeList(garbage, new NodeList(content));
   }

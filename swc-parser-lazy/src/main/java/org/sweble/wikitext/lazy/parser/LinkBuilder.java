@@ -20,8 +20,8 @@ package org.sweble.wikitext.lazy.parser;
 import java.util.ArrayList;
 
 import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.ParserConfig;
 import org.sweble.wikitext.lazy.LinkTargetType;
+import org.sweble.wikitext.lazy.ParserConfig;
 
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -151,18 +151,25 @@ public class LinkBuilder
 	
 	public void setLink(AstNode target)
 	{
-		if (target.isNodeType(AstNodeTypes.NT_URL))
+		if (target != null)
 		{
-			// second occurrence wins, url beats page
-			this.linkPage = null;
-			this.linkUrl = (Url) target;
+			if (target.isNodeType(AstNodeTypes.NT_URL))
+			{
+				// second occurrence wins, url beats page
+				this.linkPage = null;
+				this.linkUrl = (Url) target;
+			}
+			else
+			{
+				// second occurrence wins, url beats page
+				if (this.linkUrl != null)
+					return;
+				this.linkPage = ((LinkTarget) target).getContent();
+			}
 		}
 		else
 		{
-			// second occurrence wins, url beats page
-			if (this.linkUrl != null)
-				return;
-			this.linkPage = ((LinkTarget) target).getContent();
+			this.linkPage = "";
 		}
 	}
 	
@@ -200,19 +207,19 @@ public class LinkBuilder
 				alt = new LinkOptionAltText();
 			
 			ImageLink result = new ImageLink(
-			        target,
-			        options,
-			        title,
-			        format,
-			        border,
-			        hAlign,
-			        vAlign,
-			        width,
-			        height,
-			        upright,
-			        linkPage,
-			        linkUrl,
-			        alt);
+					target,
+					options,
+					title,
+					format,
+					border,
+					hAlign,
+					vAlign,
+					width,
+					height,
+					upright,
+					linkPage,
+					linkUrl,
+					alt);
 			
 			finish(result);
 			return result;
@@ -220,10 +227,10 @@ public class LinkBuilder
 		else
 		{
 			InternalLink result = new InternalLink(
-			        "",
-			        target,
-			        title,
-			        postfix);
+					"",
+					target,
+					title,
+					postfix);
 			
 			finish(result);
 			return result;

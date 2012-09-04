@@ -562,7 +562,7 @@ private transient String LinkOptionKeywordString =
 // -- Link Option Name Value ---------------------------------------------------
 
 private transient stateful AstNode LinkOptionNameValue =
-    rt0:pExtWsStar "link=" target:LinkTargetOverride rt1:pExtWsStar
+    rt0:pExtWsStar "link=" target:LinkTargetOverride? rt1:pExtWsStar
     {
       getLinkBuilder().setLink(target);
 

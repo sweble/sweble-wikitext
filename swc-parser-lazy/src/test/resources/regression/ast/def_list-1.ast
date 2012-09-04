@@ -1,0 +1,37 @@
+LazyParsedPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    {N} warnings = []
+
+  [
+    DefinitionList([
+      DefinitionTerm(
+        Properties:
+          RTD = RtData: [0] = ";", [1] = "\n"
+
+        [ Text("Other") ]
+      )
+    ])
+    Itemization([
+      ItemizationItem(
+        Properties:
+          RTD = RtData: [0] = "*", [1] = "\n"
+
+        [ Text("x") ]
+      )
+      ItemizationItem(
+        Properties:
+          RTD = RtData: [0] = "*", [1] = "\n"
+
+        [ Text("y") ]
+      )
+      ItemizationItem(
+        Properties:
+          RTD = RtData: [0] = "*", [1]
+
+        [ Text("z") ]
+      )
+    ])
+    Newline("\n")
+  ]
+)

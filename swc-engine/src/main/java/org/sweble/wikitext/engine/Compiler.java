@@ -256,6 +256,7 @@ public class Compiler
 		return new CompiledPage(
 				new Page(pAst.getContent()),
 				pAst.getWarnings(),
+				pAst.getEntityMap(),
 				log);
 	}
 	
