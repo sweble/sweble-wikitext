@@ -26,47 +26,47 @@ public class ExprParser
 {
 	private static final int maxStackSize = 100;
 	
-	private static final Map<String, Token> tokens = new HashMap<String, Token>();
+	private static final Map<String, Token> TOKENS = new HashMap<String, Token>();
 	
 	static
 	{
-		tokens.put("(", Token.LPAREN);
-		tokens.put(")", Token.RPAREN);
-		tokens.put("!=", Token.NEQ);
-		tokens.put("*", Token.TIMES);
-		tokens.put("+", Token.PLUS);
+		TOKENS.put("(", Token.LPAREN);
+		TOKENS.put(")", Token.RPAREN);
+		TOKENS.put("!=", Token.NEQ);
+		TOKENS.put("*", Token.TIMES);
+		TOKENS.put("+", Token.PLUS);
 		//tokens.put("+", Token.POS);
-		tokens.put("-", Token.MINUS);
+		TOKENS.put("-", Token.MINUS);
 		//tokens.put("-", Token.NEG);
-		tokens.put("/", Token.DIVIDE);
-		tokens.put("<", Token.LE);
-		tokens.put("<=", Token.LEQ);
-		tokens.put("<>", Token.NEQ);
-		tokens.put("=", Token.EQ);
-		tokens.put(">", Token.GR);
-		tokens.put(">=", Token.GEQ);
-		tokens.put("^", Token.POW);
-		tokens.put("abs", Token.ABS);
-		tokens.put("acos", Token.ARCCOS);
-		tokens.put("and", Token.AND);
-		tokens.put("asin", Token.ARCSINE);
-		tokens.put("atan", Token.ARCTAN);
-		tokens.put("ceil", Token.CEIL);
-		tokens.put("cos", Token.COSINE);
-		tokens.put("div", Token.DIVIDE);
-		tokens.put("e", Token.E);
+		TOKENS.put("/", Token.DIVIDE);
+		TOKENS.put("<", Token.LE);
+		TOKENS.put("<=", Token.LEQ);
+		TOKENS.put("<>", Token.NEQ);
+		TOKENS.put("=", Token.EQ);
+		TOKENS.put(">", Token.GR);
+		TOKENS.put(">=", Token.GEQ);
+		TOKENS.put("^", Token.POW);
+		TOKENS.put("abs", Token.ABS);
+		TOKENS.put("acos", Token.ARCCOS);
+		TOKENS.put("and", Token.AND);
+		TOKENS.put("asin", Token.ARCSINE);
+		TOKENS.put("atan", Token.ARCTAN);
+		TOKENS.put("ceil", Token.CEIL);
+		TOKENS.put("cos", Token.COSINE);
+		TOKENS.put("div", Token.DIVIDE);
+		TOKENS.put("e", Token.E);
 		//tokens.put("e", Token.SCIENTIFIC);
-		tokens.put("exp", Token.EXP);
-		tokens.put("floor", Token.FLOOR);
-		tokens.put("ln", Token.LN);
-		tokens.put("mod", Token.MOD);
-		tokens.put("not", Token.NOT);
-		tokens.put("or", Token.OR);
-		tokens.put("pi", Token.PI);
-		tokens.put("round", Token.ROUND);
-		tokens.put("sin", Token.SINE);
-		tokens.put("tan", Token.TANGENS);
-		tokens.put("trunc", Token.TRUNC);
+		TOKENS.put("exp", Token.EXP);
+		TOKENS.put("floor", Token.FLOOR);
+		TOKENS.put("ln", Token.LN);
+		TOKENS.put("mod", Token.MOD);
+		TOKENS.put("not", Token.NOT);
+		TOKENS.put("or", Token.OR);
+		TOKENS.put("pi", Token.PI);
+		TOKENS.put("round", Token.ROUND);
+		TOKENS.put("sin", Token.SINE);
+		TOKENS.put("tan", Token.TANGENS);
+		TOKENS.put("trunc", Token.TRUNC);
 	}
 	
 	// =====================================================================
@@ -120,7 +120,7 @@ public class ExprParser
 				if (isAlphaChar(ch))
 				{
 					word = parseWordToken(expr, i).toLowerCase();
-					token = tokens.get(word);
+					token = TOKENS.get(word);
 				}
 				else
 				{
@@ -128,14 +128,14 @@ public class ExprParser
 					{
 						// Try two-character operators
 						word = expr.substring(i, i + 2);
-						token = tokens.get(word);
+						token = TOKENS.get(word);
 					}
 					
 					if (token == null)
 					{
 						// Try one-character operators
 						word = "" + ch;
-						token = tokens.get(word);
+						token = TOKENS.get(word);
 					}
 				}
 				
@@ -305,7 +305,7 @@ public class ExprParser
 	
 	private boolean isNumberChar(char ch)
 	{
-		return (ch >= '0' && ch <= '9') || (ch == '.');
+		return ch == '.' || Character.isDigit(ch);
 	}
 	
 	private int pushOperand(String expr, int i)
@@ -335,7 +335,7 @@ public class ExprParser
 	
 	private boolean isAlphaChar(char ch)
 	{
-		return Character.isLetterOrDigit(ch);
+		return Character.isLetter(ch);
 	}
 	
 	private String parseWordToken(String expr, int i)
