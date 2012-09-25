@@ -24,7 +24,7 @@ import java.util.List;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.sweble.wikitext.engine.CompiledPage;
-import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;

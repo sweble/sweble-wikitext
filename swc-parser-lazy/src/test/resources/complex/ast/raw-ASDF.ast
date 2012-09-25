@@ -1,4 +1,4 @@
-LazyParsedPage(
+ParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=Template([0] = [Text("disambig")], [1] = [])}
     {N} warnings = []

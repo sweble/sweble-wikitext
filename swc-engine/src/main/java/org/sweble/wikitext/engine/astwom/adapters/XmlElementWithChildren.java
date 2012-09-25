@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.parser.parser.XmlElement;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

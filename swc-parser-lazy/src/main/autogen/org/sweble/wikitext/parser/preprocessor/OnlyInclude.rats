@@ -1,0 +1,115 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ *
+ * Inclusion control
+ * -----------------
+ *
+ *   - <noinclude>...</noinclude>
+ *     Everything between the tags is only processed when the page is viewed
+ *     directly.
+ *   - <includeonly>...</includeonly>
+ *     Everything between the tags is only processed when the page is included
+ *     by another page
+ *   - <onlyinclude>...</onlyinclude>
+ *     When viewed directly, <onlyinclude> tags have no effect, however, when
+ *     the page is included by another page, only the content inside
+ *     onlyinclude tags will be processed while all other text surroudning
+ *     the tags will be ignored.
+ *
+ * OnlyInclude
+ * -----------
+ *
+ *   Grammar:
+ *
+ *   AST node:
+ *     Name        : OnlyInclude
+ *     Extends     : ContentNode
+ *     Constructor : "content, elementType"
+ *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ONLY_INCLUDE
+ *
+ *     Properties:
+ *       elementType : XmlElementType
+ *
+ */
+
+module org.sweble.wikitext.parser.preprocessor.OnlyInclude;
+
+import org.sweble.wikitext.parser.utils.Whitespace;
+
+import org.sweble.wikitext.parser.preprocessor.State;
+import org.sweble.wikitext.parser.preprocessor.Redirect;
+import org.sweble.wikitext.parser.preprocessor.Content;
+
+
+
+
+// -- OnlyInclude Content ------------------------------------------------------
+
+NodeList OnlyIncludeContent = tOnlyIncludeContent ;
+
+private transient NodeList tOnlyIncludeContent =
+  ignored:Ignored repeat:OnlyIncludeRepeat* last:( KwOnlyIncludeOpen ContentStar )?
+  {
+    yyValue = new NodeList(ignored, repeat);
+    if (last != null)
+        yyValue.add(new OnlyInclude(last, XmlElementType.UNCLOSED_ELEMENT));
+  }
+;
+
+private inline NodeList OnlyIncludeRepeat =
+  KwOnlyIncludeOpen content:ContentStar KwOnlyIncludeClose ignored:Ignored
+  {
+    yyValue = new NodeList(
+        new OnlyInclude(content, XmlElementType.UNCLOSED_ELEMENT),
+        ignored);
+  }
+;
+
+private inline Ignored Ignored =
+  content:IgnoredString
+  {
+    yyValue = new Ignored(content);
+  }
+;
+
+private transient String IgnoredString = ( !KwOnlyIncludeOpen _ )* ;
+
+private inline void KwOnlyIncludeOpen = "<onlyinclude>" ;
+
+private inline void KwOnlyIncludeClose = "</onlyinclude>" ;
+
+
+
+
+// -- OnlyInclude Predicate ----------------------------------------------------
+
+void HasOnlyIncludeContent =
+  &{ yyState.isParseForInclusion() }
+  ( !KwOnlyIncludeOpen  _ )* KwOnlyIncludeOpen
+  ( !KwOnlyIncludeClose _ )* KwOnlyIncludeClose
+;
+
+inline void ContentStopperOnlyInclude =
+  &{ yyState.isHasOnlyInclude() } KwOnlyIncludeClose
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

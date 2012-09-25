@@ -1,0 +1,78 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+module org.sweble.wikitext.parser.preprocessor.State;
+
+
+
+
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  public WikitextPreprocessorState getState()
+  {
+    return yyState;
+  }
+
+  private boolean isWarningsEnabled()
+  {
+      return getState().isWarnignsEnabled();
+  }
+
+  private boolean isAutoCorrect(WarningSeverity severity)
+  {
+    return getState().isAutoCorrect() && isWarningLevelEnabled(severity);
+  }
+
+  private boolean isWarningLevelEnabled(WarningSeverity severity)
+  {
+    return getState().getConfig().isWarningLevelEnabled(severity);
+  }
+
+  public boolean isValidExtensionTagName(String name)
+  {
+    return getState().getConfig().isValidExtensionTagName(name);
+  }
+
+  public boolean isIgnoredTag(String name)
+  {
+    return getState().isIgnoredTag(name);
+  }
+
+  public boolean isIgnoredElement(String name)
+  {
+    return getState().isIgnoredElement(name);
+  }
+
+  public boolean isValidClosingTag(String name)
+  {
+    return getState().isValidClosingTag(name);
+  }
+
+  public boolean hasAtLeastTemplateBraces(int count)
+  {
+    return getState().hasAtLeastTemplateBraces(count);
+  }
+}
+
+option stateful(WikitextPreprocessorState);
+
+
+
+
+// -- End of file --------------------------------------------------------------

@@ -21,7 +21,7 @@
   <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-engine</url>
   <inceptionYear>2010</inceptionYear>
   <description>
-    A minimal engine using the Sweble Lazy Wikitext Parser to
+    A minimal engine using the Sweble Wikitext Parser to
     process articles in the context of a MediaWiki-like configuration.
   </description>
 
@@ -54,7 +54,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Sweble Wikitext Components - Lazy Wikitext Parser -->
+    <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-parser-lazy</artifactId>

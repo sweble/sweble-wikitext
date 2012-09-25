@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -40,20 +40,20 @@ import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
 import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
 import org.sweble.wikitext.engine.log.UnhandledException;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.LinkTargetException;
-import org.sweble.wikitext.lazy.WarningSeverity;
-import org.sweble.wikitext.lazy.parser.Newline;
-import org.sweble.wikitext.lazy.parser.PageSwitch;
-import org.sweble.wikitext.lazy.preprocessor.Redirect;
-import org.sweble.wikitext.lazy.preprocessor.TagExtension;
-import org.sweble.wikitext.lazy.preprocessor.Template;
-import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
-import org.sweble.wikitext.lazy.preprocessor.TemplateParameter;
-import org.sweble.wikitext.lazy.utils.StringConversionException;
-import org.sweble.wikitext.lazy.utils.StringConverter;
-import org.sweble.wikitext.lazy.utils.StringConverterPartial;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.parser.Newline;
+import org.sweble.wikitext.parser.parser.PageSwitch;
+import org.sweble.wikitext.parser.preprocessor.Redirect;
+import org.sweble.wikitext.parser.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
+import org.sweble.wikitext.parser.preprocessor.TemplateParameter;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.StringConverter;
+import org.sweble.wikitext.parser.utils.StringConverterPartial;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;

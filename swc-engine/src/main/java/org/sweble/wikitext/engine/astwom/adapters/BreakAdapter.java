@@ -32,7 +32,7 @@ import org.sweble.wikitext.engine.wom.WomBreak;
 import org.sweble.wikitext.engine.wom.WomClear;
 import org.sweble.wikitext.engine.wom.WomCoreAttributes;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.parser.parser.XmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 

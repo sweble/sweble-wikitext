@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,10 +25,10 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.lazy.LinkTargetException;
-import org.sweble.wikitext.lazy.preprocessor.Template;
-import org.sweble.wikitext.lazy.utils.StringConversionException;
-import org.sweble.wikitext.lazy.utils.StringConverter;
+import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.StringConverter;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 

@@ -33,8 +33,8 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-import org.sweble.wikitext.lazy.utils.AstPrinter;
-import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.AstPrinter;
+import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.test.FileCompare;
 import de.fau.cs.osr.ptk.common.test.FileContent;

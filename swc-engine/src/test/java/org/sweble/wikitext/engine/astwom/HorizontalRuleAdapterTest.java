@@ -24,11 +24,11 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.lazy.parser.HorizontalRule;
-import org.sweble.wikitext.lazy.parser.RtData;
-import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.utils.RtWikitextPrinter;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.parser.HorizontalRule;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.parser.RtData;
+import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.ptk.common.ast.Text;

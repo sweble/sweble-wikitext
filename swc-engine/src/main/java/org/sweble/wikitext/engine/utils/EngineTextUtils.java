@@ -19,7 +19,7 @@ package org.sweble.wikitext.engine.utils;
 
 import java.util.ListIterator;
 
-import org.sweble.wikitext.lazy.AstNodeTypes;
+import org.sweble.wikitext.parser.AstNodeTypes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

@@ -22,10 +22,10 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.preprocessor.ProtectedText;
-import org.sweble.wikitext.lazy.preprocessor.TagExtension;
-import org.sweble.wikitext.lazy.utils.TextUtils;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.preprocessor.ProtectedText;
+import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

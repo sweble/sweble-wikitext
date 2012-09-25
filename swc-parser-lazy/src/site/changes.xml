@@ -22,7 +22,7 @@
         Can not parse image block with nested internal link.
       </action>
       <action dev="hdohrn" type="fix" issue="13">
-        LazyRatsParser.java: type parameters of &lt;T&gt;T cannot be determined.
+        RatsWikitextParser.java: type parameters of &lt;T&gt;T cannot be determined.
       </action>
       <action dev="hdohrn" type="fix" issue="10">
         The LinkTargetParser is now decoding XML references and URL encoded entities (%xx) before checking titles for validity.

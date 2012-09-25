@@ -23,7 +23,7 @@ import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.lazy.AstNodeTypes;
+import org.sweble.wikitext.parser.AstNodeTypes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

@@ -25,8 +25,8 @@ import org.junit.rules.ExpectedException;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.tools.AstWomBuilder;
-import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
 
 import de.fau.cs.osr.ptk.common.ast.Text;
 

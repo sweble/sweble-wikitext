@@ -22,8 +22,8 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.lazy.utils.TextUtils;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

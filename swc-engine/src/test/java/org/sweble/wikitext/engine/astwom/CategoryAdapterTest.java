@@ -31,8 +31,8 @@ import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
-import org.sweble.wikitext.lazy.parser.InternalLink;
-import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.parser.parser.InternalLink;
+import org.sweble.wikitext.parser.parser.XmlElement;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 

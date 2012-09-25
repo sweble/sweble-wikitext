@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.sweble.wikitext.engine.TagExtensionBase.TagExtensionAdapter;
-import org.sweble.wikitext.lazy.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.preprocessor.TagExtension;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

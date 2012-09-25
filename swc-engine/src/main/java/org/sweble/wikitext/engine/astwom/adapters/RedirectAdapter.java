@@ -30,7 +30,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomRedirect;
 import org.sweble.wikitext.engine.wom.WomTitle;
-import org.sweble.wikitext.lazy.preprocessor.Redirect;
+import org.sweble.wikitext.parser.preprocessor.Redirect;
 
 import de.fau.cs.osr.utils.Utils;
 

@@ -18,7 +18,7 @@
 package org.sweble.wikitext.engine.utils;
 
 import static org.junit.Assert.*;
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 
 import org.junit.Test;
 

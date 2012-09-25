@@ -101,19 +101,19 @@ Some important nodes:
 ==[ Document ]==================================================================
 
  *   AST node:
-       Name        : LazyPreprocessedPage
+       Name        : PreproWikitextPage
        Extends     : ContentNode
        Constructor : "content, warnings"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LAZY_PREPROCESSED_PAGE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PREPROCESSED_WIKITEXT_PAGE
 
        Properties:
          warnings : List<Warning>
 
  *   AST node:
-       Name        : LazyParsedPage
+       Name        : ParsedWikitextPage
        Extends     : ContentNode
        Constructor : "content, warnings"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LAZY_PARSED_PAGE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PARSED_WIKITEXT_PAGE
 
        Properties:
          warnings : List<Warning>
@@ -126,7 +126,7 @@ Some important nodes:
        Name        : IllegalCodePoint
        Extends     : LeafNode
        Constructor : "codePoint, type"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ILLEGAL_CODE_POINT
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ILLEGAL_CODE_POINT
 
        Properties:
          codePoint : String
@@ -140,7 +140,7 @@ Some important nodes:
        Name        : MagicWord
        Extends     : LeafNode
        Constructor : word
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_MAGIC_WORD
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_MAGIC_WORD
 
        Properties:
          word : String
@@ -149,7 +149,7 @@ Some important nodes:
        Name        : Redirect
        Extends     : LeafNode
        Constructor : target
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_REDIRECT
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_REDIRECT
 
        Properties:
          target : String
@@ -158,7 +158,7 @@ Some important nodes:
        Name        : TagExtension
        Extends     : InnerNode.InnerNode1
        Constructor : "name, xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TAG_EXTENSION
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TAG_EXTENSION
 
        Properties:
          name : String
@@ -171,7 +171,7 @@ Some important nodes:
        Name        : Template
        Extends     : InnerNode.InnerNode2
        Constructor : "name, args"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE
 
        Children:
          name : NodeList
@@ -181,7 +181,7 @@ Some important nodes:
        Name        : TemplateParameter
        Extends     : InnerNode.InnerNode3
        Constructor : "name, defaultValue, garbage"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE_PARAMETER
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_PARAMETER
 
        Children:
          name         : NodeList
@@ -193,7 +193,7 @@ Some important nodes:
        Extends     : InnerNode.InnerNode2
        Constructor : "value, hasName"
        Constructor : "name, value, hasName"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TEMPLATE_ARGUMENT
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_ARGUMENT
 
        Properties:
          hasName : boolean
@@ -206,7 +206,7 @@ Some important nodes:
        Name        : OnlyInclude
        Extends     : ContentNode
        Constructor : "content, elementType"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ONLY_INCLUDE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ONLY_INCLUDE
 
        Properties:
          elementType : XmlElementType
@@ -214,7 +214,7 @@ Some important nodes:
  *   AST node: [INTERMEDIATE NODE]
        Name        : Ignored
        Extends     : StringContentNode
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_IGNORED
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IGNORED
        Constructor : content
 
 
@@ -224,7 +224,7 @@ Some important nodes:
  *   AST node:
        Name        : Whitespace
        Extends     : ContentNode
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_WHITESPACE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_WHITESPACE
        Constructor : "content, hasNewline"
 
        Properties:
@@ -238,19 +238,19 @@ Some important nodes:
        Name        : Bold
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_BOLD
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_BOLD
 
  *   AST node:
        Name        : Italics
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ITALICS
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITALICS
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : Ticks
        Extends     : LeafNode
        Constructor : tickCount
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TICKS
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TICKS
 
        Properties:
          tickCount : int
@@ -263,7 +263,7 @@ Some important nodes:
        Name        : Signature
        Extends     : LeafNode
        Constructor : tildeCount
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_SIGNATURE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SIGNATURE
 
        Properties:
          tildeCount : int
@@ -276,7 +276,7 @@ Some important nodes:
        Name        : Url
        Extends     : LeafNode
        Constructor : "protocol, path"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_URL
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_URL
 
        Properties:
          protocol : String
@@ -287,7 +287,7 @@ Some important nodes:
        Extends     : InnerNode.InnerNode2
        Constructor : "target"
        Constructor : "target, title"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_EXTERNAL_LINK
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_EXTERNAL_LINK
 
        Children:
          target : Url
@@ -298,7 +298,7 @@ Some important nodes:
        Extends     : InnerNode.InnerNode1
        Implements  : Cloneable
        Constructor : "prefix, target, title, postfix"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_INTERNAL_LINK
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_INTERNAL_LINK
 
        Children:
          title : LinkTitle
@@ -312,7 +312,7 @@ Some important nodes:
        Name        : ImageLink
        Extends     : InnerNode.InnerNode2
        Constructor : "target, options, title, format, border, hAlign, vAlign, width, height, upright, linkPage, linkUrl, alt"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_IMAGE_LINK
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IMAGE_LINK
 
        Children:
          options : NodeList
@@ -335,25 +335,25 @@ Some important nodes:
        Name        : LinkTitle
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_TITLE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TITLE
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
        Name        : LinkOptionGarbage
        Extends     : StringContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_OPTION_GARBAGE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_GARBAGE
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : LinkTarget
        Extends     : StringContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_TARGET
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TARGET
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : LinkOptionResize
        Extends     : LeafNode
        Constructor : "width, height"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_OPTION_RESIZE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_RESIZE
 
        Properties:
          width        : int
@@ -363,7 +363,7 @@ Some important nodes:
        Name        : LinkOptionKeyword
        Extends     : LeafNode
        Constructor : "keyword"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_OPTION_KEYWORD
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_KEYWORD
 
        Properties:
          keyword : String
@@ -372,7 +372,7 @@ Some important nodes:
        Name        : LinkOptionLinkTarget
        Extends     : InnerNode.InnerNode1
        Constructor : target
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
 
        Children:
          target : AstNode
@@ -381,7 +381,7 @@ Some important nodes:
        Name        : LinkOptionAltText
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_LINK_OPTION_ALT_TEXT
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_ALT_TEXT
 
 
 
@@ -391,7 +391,7 @@ Some important nodes:
        Name        : Section
        Extends     : InnerNode.InnerNode2
        Constructor : "level, title, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_SECTION
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SECTION
 
        Properties:
          level   : int
@@ -404,7 +404,7 @@ Some important nodes:
        Name        : Heading
        Extends     : ContentNode
        Constructor : "content, level"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_HEADING
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_HEADING
 
        Properties:
          level : int
@@ -417,7 +417,7 @@ Some important nodes:
        Name        : Paragraph
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_PARAGRAPH
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PARAGRAPH
 
 
 
@@ -426,7 +426,7 @@ Some important nodes:
  *   AST node:
        Name        : HorizontalRule
        Extends     : LeafNode
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_HORIZONTAL_RULE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_HORIZONTAL_RULE
 
 
 
@@ -436,13 +436,13 @@ Some important nodes:
        Name        : SemiPre
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_SEMI_PRE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE
 
  *   AST node:
        Name        : SemiPreLine
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_SEMI_PRE_LINE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE_LINE
 
 
 
@@ -451,47 +451,47 @@ Some important nodes:
  *   AST node:
        Name        : Enumeration
        Extends     : ContentNode
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ENUMERATION
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
 
  *   AST node:
        Name        : EnumerationItem
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ENUMERATION_ITEM
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
 
  *   AST node:
        Name        : Itemization
        Extends     : ContentNode
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ITEMIZATION
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
 
  *   AST node:
        Name        : ItemizationItem
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_ITEMIZATION_ITEM
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
 
  *   AST node:
        Name        : DefinitionList
        Extends     : ContentNode
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_DEFINITION_LIST
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
 
  *   AST node:
        Name        : DefinitionTerm
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_DEFINITION_TERM
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
 
  *   AST node:
        Name        : DefinitionDefinition
        Extends     : ContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_DEFINITION_DEFINITION
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : RawListItem
        Extends     : ContentNode
        Constructor : "content, rt0, rt1, prefix"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_RAW_LIST_ITEM
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_RAW_LIST_ITEM
 
        Properties:
          rt0     : String
@@ -506,7 +506,7 @@ Some important nodes:
        Name        : Table
        Extends     : InnerNode.InnerNode2
        Constructor : "xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TABLE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE
 
        Children:
          xmlAttributes : NodeList
@@ -516,7 +516,7 @@ Some important nodes:
        Name        : TableCaption
        Extends     : InnerNode.InnerNode2
        Constructor : "xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TABLE_CAPTION
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CAPTION
 
        Children:
          xmlAttributes : NodeList
@@ -526,7 +526,7 @@ Some important nodes:
        Name        : TableRow
        Extends     : InnerNode.InnerNode2
        Constructor : "xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TABLE_ROW
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_ROW
 
        Children:
          xmlAttributes : NodeList
@@ -536,7 +536,7 @@ Some important nodes:
        Name        : TableHeader
        Extends     : InnerNode.InnerNode2
        Constructor : "xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TABLE_HEADER
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_HEADER
 
        Children:
          xmlAttributes : NodeList
@@ -546,7 +546,7 @@ Some important nodes:
        Name        : TableCell
        Extends     : InnerNode.InnerNode2
        Constructor : "xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_TABLE_CELL
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CELL
 
        Children:
          xmlAttributes : NodeList
@@ -561,7 +561,7 @@ Some important nodes:
        Extends     : InnerNode.InnerNode2
        Implements  : NamedXmlElement
        Constructor : "name, empty, xmlAttributes, body"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_ELEMENT
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ELEMENT
 
        Properties:
          name  : String
@@ -576,7 +576,7 @@ Some important nodes:
        Extends     : InnerNode.InnerNode1
        Constructor : "name, hasValue"
        Constructor : "name, value, hasValue"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_ATTRIBUTE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE
 
        Properties:
          name     : String
@@ -589,7 +589,7 @@ Some important nodes:
        Name        : XmlCharRef
        Extends     : LeafNode
        Constructor : codePoint
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_CHAR_REF
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_CHAR_REF
 
        Properties:
          codePoint : int
@@ -598,7 +598,7 @@ Some important nodes:
        Name        : XmlEntityRef
        Extends     : LeafNode
        Constructor : name
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_ENTITY_REF
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ENTITY_REF
 
        Properties:
          name : String
@@ -607,20 +607,20 @@ Some important nodes:
        Name        : XmlComment
        Extends     : StringContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_COMMENT
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_COMMENT
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
        Name        : XmlAttributeGarbage
        Extends     : StringContentNode
        Constructor : content
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
        Name        : XmlElementOpen
        Extends     : InnerNode.InnerNode1
        Implements  : NamedXmlElement
        Constructor : "name, xmlAttributes"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_TAG_OPEN
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_OPEN
 
        Properties:
          name : String
@@ -633,7 +633,7 @@ Some important nodes:
        Extends     : LeafNode
        Implements  : NamedXmlElement
        Constructor : "name"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_TAG_CLOSE
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_CLOSE
 
        Properties:
          name : String
@@ -643,7 +643,7 @@ Some important nodes:
        Extends     : InnerNode.InnerNode1
        Implements  : NamedXmlElement
        Constructor : "name, xmlAttributes"
-       NodeType    : org.sweble.wikitext.lazy.AstNodeTypes.NT_XML_TAG_EMPTY
+       NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_EMPTY
 
        Properties:
          name : String

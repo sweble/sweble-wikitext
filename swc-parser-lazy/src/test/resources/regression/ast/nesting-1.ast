@@ -1,7 +1,7 @@
 WRONG!
 The paragraph interrupts the table!
 
-LazyParsedPage(
+ParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []

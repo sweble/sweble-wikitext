@@ -25,12 +25,12 @@ import org.sweble.wikitext.engine.log.ResolveParserFunctionLog;
 import org.sweble.wikitext.engine.log.ResolveRedirectLog;
 import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
 import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
-import org.sweble.wikitext.lazy.parser.PageSwitch;
-import org.sweble.wikitext.lazy.preprocessor.Redirect;
-import org.sweble.wikitext.lazy.preprocessor.TagExtension;
-import org.sweble.wikitext.lazy.preprocessor.Template;
-import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
-import org.sweble.wikitext.lazy.preprocessor.TemplateParameter;
+import org.sweble.wikitext.parser.parser.PageSwitch;
+import org.sweble.wikitext.parser.preprocessor.Redirect;
+import org.sweble.wikitext.parser.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
+import org.sweble.wikitext.parser.preprocessor.TemplateParameter;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

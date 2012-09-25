@@ -23,8 +23,8 @@ import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.lazy.utils.AstBuilder;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.utils.AstBuilder;
 
 public class AttrAdapterTest
 {

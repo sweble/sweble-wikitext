@@ -29,10 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.sweble.wikitext.engine.Page;
-import org.sweble.wikitext.lazy.encval.*;
-import org.sweble.wikitext.lazy.parser.*;
-import org.sweble.wikitext.lazy.preprocessor.*;
-import org.sweble.wikitext.lazy.utils.*;
+import org.sweble.wikitext.parser.encval.*;
+import org.sweble.wikitext.parser.parser.*;
+import org.sweble.wikitext.parser.preprocessor.*;
+import org.sweble.wikitext.parser.utils.*;
 
 }
 

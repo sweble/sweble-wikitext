@@ -38,10 +38,10 @@ import org.sweble.wikitext.engine.wom.WomHorizAlign;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.Newline;
-import org.sweble.wikitext.lazy.parser.Paragraph;
-import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.parser.parser.Newline;
+import org.sweble.wikitext.parser.parser.Paragraph;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.AstNodeTypes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

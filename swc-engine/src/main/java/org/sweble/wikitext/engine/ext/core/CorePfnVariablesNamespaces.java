@@ -24,10 +24,10 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.lazy.LinkTargetException;
-import org.sweble.wikitext.lazy.preprocessor.Template;
-import org.sweble.wikitext.lazy.utils.StringConversionException;
-import org.sweble.wikitext.lazy.utils.StringConverter;
+import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.StringConverter;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Text;

@@ -33,8 +33,8 @@ import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
-import org.sweble.wikitext.lazy.parser.InternalLink;
-import org.sweble.wikitext.lazy.parser.LinkTitle;
+import org.sweble.wikitext.parser.parser.InternalLink;
+import org.sweble.wikitext.parser.parser.LinkTitle;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

@@ -10,18 +10,18 @@
     <version>1.1.1-SNAPSHOT</version>
   </parent>
 
-  <!-- This POM: Sweble Wikitext Components - Lazy Wikitext Parser -->
+  <!-- This POM: Sweble Wikitext Components - Sweble Wikitext Parser -->
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>swc-parser-lazy</artifactId>
   <version>1.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SWC - Sweble Lazy Wikitext Parser</name>
+  <name>SWC - Sweble Wikitext Parser</name>
   <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
   <inceptionYear>2010</inceptionYear>
   <description>
-    A lazy parser for MediaWiki's Wikitext.
+    A parser for MediaWiki's Wikitext.
   </description>
 
   <!-- ==[ Dependencies ]=================================================== -->
@@ -108,8 +108,8 @@
           <baseDir>${project.basedir}/src/main/autogen</baseDir>
           <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
           <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/lazy/parser/Grammar.rats</ratsInputFile>
-            <ratsInputFile>org/sweble/wikitext/lazy/preprocessor/Grammar.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/parser/Grammar.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/preprocessor/Grammar.rats</ratsInputFile>
           </ratsInputFiles>
         </configuration>
       </plugin>
@@ -122,7 +122,7 @@
           <baseDir>${project.basedir}/src/main/autogen</baseDir>
           <outputDir>${project.build.directory}/generated-sources</outputDir>
           <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/lazy</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser</ratsInputFile>
           </ratsInputFiles>
         </configuration>
       </plugin>
@@ -135,7 +135,7 @@
           <baseDir>${project.basedir}/src/main/autogen</baseDir>
           <outputDir>${project.build.directory}/generated-sources</outputDir>
           <aptInputFiles>
-            <aptInputFile>org/sweble/wikitext/lazy</aptInputFile>
+            <aptInputFile>org/sweble/wikitext/parser</aptInputFile>
           </aptInputFiles>
         </configuration>
       </plugin>

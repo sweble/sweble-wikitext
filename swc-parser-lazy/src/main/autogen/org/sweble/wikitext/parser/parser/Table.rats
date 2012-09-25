@@ -1,0 +1,279 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ * Tables
+ * ------
+ *
+ *   Some observations:
+ *     - `{|' always opens a table. If no `|}' is found, the table runs to the
+ *       end of the document.
+ *     - After `{|' and `|-' everything is an attribute until the EOL.
+ *       Unrecognized attributes are discarded as garbage.
+ *     - After `|+', `|' and `!' everything is an attribute if there's a `|' on
+ *       the same line that is NOT preceded by `[[', no matter if a valid link
+ *       is formed or not. The actual cell content starts after the `|'.
+ *       - If there's no `|' on the same line, everything is cell content.
+ *     - After `|+', `||' and `!!' is meaningless and just text.
+ *     - After `!', both `!!' and `||' start a new HEADER cell, IF they appear
+ *       on the same line.
+ *     - After `|', only `||' starts a new cell, IF it appears on the same line.
+ *       `!!' is just recognized as text.
+ *
+ * Table
+ * -----
+ *
+ *   Grammar:
+ *     - S* '{|' TableAttribute* Eol TableContent* S* '|}'
+ *
+ *   AST node:
+ *     Name        : Table
+ *     Extends     : InnerNode.InnerNode2
+ *     Constructor : "xmlAttributes, body"
+ *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE
+ *     Import      : java.util.List
+ *
+ *     Children:
+ *       xmlAttributes : NodeList
+ *       body          : NodeList
+ *
+ */
+/*
+ *     Constructor : "xmlAttributes, immediateBody, caption, cols, header, body"
+ *
+ *     Properties:
+ *       caption       : TableCaption
+ *       header        : TableRow
+ *       body          : NodeList
+ *       cols          : int
+ */
+
+module org.sweble.wikitext.parser.parser.Table;
+
+import org.sweble.wikitext.parser.utils.Assert;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+import org.sweble.wikitext.parser.parser.TableAttribute;
+import org.sweble.wikitext.parser.parser.TableCaption;
+import org.sweble.wikitext.parser.parser.TableCell;
+import org.sweble.wikitext.parser.parser.TableHeader;
+import org.sweble.wikitext.parser.parser.TableRow;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- Header/Body --------------------------------------------------------------
+
+body
+{
+  /*
+  private Table makeTable(NodeList attributes, NodeList body)
+  {
+    int numCols = 0;
+
+    TableCaption caption = null;
+
+    ArrayList<AstNode> cols = null;
+
+    TableRow header = null;
+
+    TableRow curRow = null;
+    ArrayList<TableRow> rows = new ArrayList<TableRow>();
+
+    boolean first = true;
+
+    for (AstNode node : body)
+    {
+      switch (node.getNodeType())
+      {
+        case AstNodeTypes.NT_TABLE_CAPTION:
+          if (caption == null)
+            caption = (TableCaption) node;
+          if (!first)
+            ; // TODO: issue warning
+          break;
+
+        case AstNodeTypes.NT_TABLE_ROW:
+          int size = processRow(curRow, rows, cols);
+          if (size > numCols)
+            numCols = size;
+
+          cols = null;
+          curRow = (TableRow) node;
+          break;
+
+        case AstNodeTypes.NT_TABLE_CELL:
+        case AstNodeTypes.NT_TABLE_HEADER:
+          if (curRow == null)
+          {
+            if (cols == null)
+              cols = new ArrayList<AstNode>();
+            cols.add(node);
+          }
+          break;
+      }
+
+      first = false;
+    }
+
+    int size = processRow(curRow, rows, cols);
+    if (size > numCols)
+      numCols = size;
+
+    if (caption == null)
+      caption = new TableCaption();
+
+    if (header == null)
+      header = new TableRow();
+
+    Table table = new Table(
+            attributes,
+            body,
+            caption,
+            numCols,
+            header,
+            new NodeList(rows));
+
+    return table;
+  }
+
+  private int processRow(TableRow curRow, ArrayList<TableRow> rows, ArrayList<AstNode> cols)
+  {
+    int size = 0;
+    if (curRow != null)
+    {
+      size = curRow.getBody().size();
+      rows.add(curRow);
+    }
+    else if (cols != null)
+    {
+      size = cols.size();
+      rows.add(new TableRow(new NodeList(), new NodeList(cols)));
+    }
+    return size;
+  }
+  */
+}
+
+
+
+
+// -- Table --[ State Aware Memoization ]---------------------------------------
+
+noinline transient AstNode Table =
+ ^{
+    StateAwareResult r = (StateAwareResult) pTableMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pTableTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized AstNode TableMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("Table", getContext(), pTableTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+
+
+
+// -- Table --------------------------------------------------------------------
+
+noinline transient Table TableTransient =
+  &{ accept(ParserAtoms.TABLE) } TableBody
+;
+
+inline void BlockStopperNextTableElement =
+    &{ inScope(ParserScopes.TABLE_ELEMENTS) ||
+       inScope(ParserScopes.TABLE_CELL) }
+         pExtSpaceStar [|!]
+;
+
+
+
+
+// -- Table Body ---------------------------------------------------------------
+
+private inline Table TableBody =
+    head:TableHead rt2:pEol body:TableContentStar rt3:pExtSpaceStar close:"|}"?
+    {
+      //yyValue = makeTable(head._2, body);
+      yyValue = new Table(head._2, body);
+      if (isGatherRtData())
+        addRtData(yyValue,
+                joinRt(head._1, "{|"),
+                joinRt(head._3, rt2),
+                joinRt(rt3, close));
+    }
+  / head:TableHead Eof
+    {
+      //yyValue = makeTable(head._2, new NodeList());
+      yyValue = new Table(head._2, new NodeList());
+      if (isGatherRtData())
+        addRtData(yyValue,
+                joinRt(head._1, "{|"),
+                joinRt(head._3),
+                null);
+    }
+  / &ShouldNotBeHere SantiyCheckEnd { yyValue = null; }
+;
+
+private inline Tuple3<AstNode, NodeList, AstNode> TableHead =
+  rt0:pExtSpaceStar "{|" attrs:TableAttributeStar rt1:pExtSpaceStar
+  {
+    yyValue = Tuple.from(rt0, attrs, rt1);
+  }
+;
+
+private transient stateful NodeList TableContentStar =
+  {
+    enter(ParserScopes.TABLE_ELEMENTS);
+  }
+  garbage:InlineBlockContent content:TableElement*
+  {
+    yyValue = new NodeList(garbage, content);
+  }
+;
+
+private transient AstNode TableElement =
+    &TableElementPrefix ( TableCaption / TableRow / TableCell / TableHeader )
+  / &( TableDoneSanityCheck / ShouldNotBeHere ) SantiyCheckEnd
+;
+
+private inline void TableElementPrefix =
+    pExtSpaceStar "|+"
+  / pExtSpaceStar "|-"
+  / pExtSpaceStar "|" !"}"
+  / pExtSpaceStar "!"
+;
+
+private inline void TableDoneSanityCheck =
+  pExtSpaceStar ( "|}" / "|" / Eof )
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

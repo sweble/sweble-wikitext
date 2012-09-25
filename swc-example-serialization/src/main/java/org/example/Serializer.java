@@ -31,9 +31,9 @@ import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.sweble.wikitext.lazy.parser.LazyParsedPage;
-import org.sweble.wikitext.lazy.postprocessor.AstCompressor;
-import org.sweble.wikitext.lazy.utils.NodeStats;
+import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
+import org.sweble.wikitext.parser.postprocessor.AstCompressor;
+import org.sweble.wikitext.parser.utils.NodeStats;
 
 import com.google.gson.Gson;
 
@@ -53,10 +53,10 @@ public class Serializer
 	
 	private static final NameAbbrevService abbrevService = new NameAbbrevService(
 			"de.fau.cs.osr.ptk.common.ast",
-			"org.sweble.wikitext.lazy.encval",
-			"org.sweble.wikitext.lazy.parser",
-			"org.sweble.wikitext.lazy.preprocessor",
-			"org.sweble.wikitext.lazy.utils",
+			"org.sweble.wikitext.parser.encval",
+			"org.sweble.wikitext.parser.parser",
+			"org.sweble.wikitext.parser.preprocessor",
+			"org.sweble.wikitext.parser.utils",
 			"org.sweble.wikitext.engine");
 	
 	private boolean quiet = false;
@@ -599,8 +599,8 @@ public class Serializer
 	private void compare(AstNode deserialize)
 	{
 		// FIXME: Comparing entity maps fails since ast nodes are not comparable
-		((LazyParsedPage) original).setEntityMap(null);
-		((LazyParsedPage) deserialize).setEntityMap(null);
+		((ParsedWikitextPage) original).setEntityMap(null);
+		((ParsedWikitextPage) deserialize).setEntityMap(null);
 		if (!AstComparer.compare(original, deserialize, true, true))
 			throw new InternalError("Deserialized AST differs from original AST!");
 	}

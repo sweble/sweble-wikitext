@@ -42,7 +42,7 @@
     <menu ref="parent"/>
 
     <menu name="Modules">
-      <item name="SWC - Lazy Wikitext Parser" href="swc-parser-lazy/index.html" />
+      <item name="SWC - Sweble Wikitext Parser" href="swc-parser-lazy/index.html" />
       <item name="SWC - Engine" href="swc-engine/index.html" />
       <item name="SWC - Dump Reader" href="swc-dumpreader/index.html" />
       <item name="SWC - Article Cruncher" href="swc-article-cruncher/index.html" />

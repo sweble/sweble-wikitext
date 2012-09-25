@@ -17,16 +17,16 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.lazy.WarningSeverity;
-import org.sweble.wikitext.lazy.parser.LazyWarning;
-import org.sweble.wikitext.lazy.utils.WikitextPrinter;
+import org.sweble.wikitext.parser.utils.WikitextPrinter;
+import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.parser.WikitextWarning;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Span;
 
 public abstract class OffendingNodeWarning
         extends
-            LazyWarning
+            WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
 	

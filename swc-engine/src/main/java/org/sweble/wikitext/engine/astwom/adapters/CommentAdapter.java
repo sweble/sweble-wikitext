@@ -20,7 +20,7 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomComment;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.lazy.preprocessor.XmlComment;
+import org.sweble.wikitext.parser.preprocessor.XmlComment;
 
 public class CommentAdapter
 		extends

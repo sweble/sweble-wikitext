@@ -23,11 +23,11 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomText;
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.Newline;
-import org.sweble.wikitext.lazy.utils.TextUtils;
-import org.sweble.wikitext.lazy.utils.XmlCharRef;
-import org.sweble.wikitext.lazy.utils.XmlEntityRef;
+import org.sweble.wikitext.parser.parser.Newline;
+import org.sweble.wikitext.parser.utils.XmlCharRef;
+import org.sweble.wikitext.parser.utils.XmlEntityRef;
+import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

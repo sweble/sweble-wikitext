@@ -34,12 +34,12 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import org.sweble.wikitext.lazy.LinkTargetException;
-import org.sweble.wikitext.lazy.LinkTargetParser;
-import org.sweble.wikitext.lazy.LinkTargetType;
-import org.sweble.wikitext.lazy.ParserConfig;
-import org.sweble.wikitext.lazy.WarningSeverity;
-import org.sweble.wikitext.lazy.postprocessor.ScopeType;
+import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.LinkTargetParser;
+import org.sweble.wikitext.parser.LinkTargetType;
+import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
 import de.fau.cs.osr.utils.XmlGrammar;
 

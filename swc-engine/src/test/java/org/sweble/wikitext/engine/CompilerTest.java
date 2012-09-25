@@ -22,7 +22,7 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
-import org.sweble.wikitext.lazy.LinkTargetException;
+import org.sweble.wikitext.parser.LinkTargetException;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
 

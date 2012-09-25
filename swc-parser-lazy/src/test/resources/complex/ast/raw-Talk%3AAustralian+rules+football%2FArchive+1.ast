@@ -1,4 +1,4 @@
-LazyParsedPage(
+ParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=Template([0] = [Text("talkarchive")], [1] = []), 1=TagExtension([0] = [])}
     {N} warnings = []

@@ -42,8 +42,8 @@ import org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata;
 import org.sweble.wikitext.engine.ext.math.MathTagExt;
 import org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionsPfnExt;
 import org.sweble.wikitext.engine.ext.ref.RefTagExt;
-import org.sweble.wikitext.lazy.WarningSeverity;
-import org.sweble.wikitext.lazy.postprocessor.ScopeType;
+import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
 /**
  * Programatically generate a default configuration for a English Wiki.

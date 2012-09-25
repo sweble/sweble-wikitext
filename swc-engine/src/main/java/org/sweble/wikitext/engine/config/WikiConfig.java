@@ -21,7 +21,7 @@ import java.util.Collection;
 
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
-import org.sweble.wikitext.lazy.ParserConfig;
+import org.sweble.wikitext.parser.ParserConfig;
 
 public interface WikiConfig
 {

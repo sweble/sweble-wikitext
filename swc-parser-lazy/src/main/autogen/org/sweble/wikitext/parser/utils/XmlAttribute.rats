@@ -1,0 +1,250 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ *
+ * XML Attribute
+ * -------------
+ *
+ *   Grammar:
+ *     - Ws* XmlName Ws* '=' Ws* '\'' AttributeValueSq* '\''
+ *     - Ws* XmlName Ws* '=' Ws* '"' ValueDqStar '"'
+ *     - Ws* XmlName Ws* '=' ValueNqStar
+ *     - Ws* XmlName
+ *
+ *   AST node:
+ *     Name        : XmlAttribute
+ *     Extends     : InnerNode.InnerNode1
+ *     Constructor : "name, hasValue"
+ *     Constructor : "name, value, hasValue"
+ *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE
+ *
+ *     Properties:
+ *       name     : String
+ *       hasValue : boolean
+ *
+ *     Children:
+ *       value : NodeList
+ *
+ * XML Attribute Garbage
+ * ---------------------
+ *
+ *   AST node:
+ *     Name        : XmlAttributeGarbage
+ *     Extends     : StringContentNode
+ *     Constructor : content
+ *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE
+ *
+ */
+
+module org.sweble.wikitext.parser.utils.XmlAttribute(WS);
+
+import org.sweble.wikitext.parser.utils.XmlName;
+import org.sweble.wikitext.parser.utils.XmlReference;
+import WS;
+
+
+
+
+
+// -- Attributes ---------------------------------------------------------------
+
+NodeList XmlAttributeStar =
+  yyValue:tXmlAttributePlus?
+  {
+    if (yyValue == null)
+      yyValue = new NodeList();
+  }
+;
+
+NodeList XmlAttributePlus = tXmlAttributePlus ;
+
+inline void XmlAttrGarbageStopper =
+    <SlashGreater> "/>"
+  / <Greater>      '>'
+  / <Less>         '<'
+;
+
+inline void XmlAttrValueStopper =
+    <SlashGreater> "/>"
+  / <Greater>      '>'
+  / <Less>         '<'
+;
+
+inline String XmlAttrWs =
+    <Whitespace>   pWsPlus
+;
+
+
+
+
+// -- Attributes ---------------------------------------------------------------
+
+private transient NodeList tXmlAttributePlus =
+  head:XmlHeadAttributeChoice tail:XmlTailAttributeChoice*
+  {
+    yyValue = new NodeList(head, tail);
+  }
+;
+
+private inline AstNode XmlHeadAttributeChoice =
+    ValidXmlAttribute
+  / XmlAttributeGarbage
+;
+
+private inline AstNode XmlTailAttributeChoice =
+    &XmlAttrWs ValidXmlAttribute
+  / XmlAttributeGarbage
+;
+
+private inline XmlAttributeGarbage XmlAttributeGarbage =
+  garbage:GarbageString
+  {
+    yyValue = new XmlAttributeGarbage(garbage);
+  }
+;
+
+private transient String GarbageString =
+  ( !GarbageStringStopper _ )+
+;
+
+private inline void GarbageStringStopper =
+    XmlAttrWs? XmlAttrGarbageStopper
+  / XmlAttrWs ValidXmlAttribute
+;
+
+private XmlAttribute ValidXmlAttribute =
+    ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
+    {
+      yyValue = new XmlAttribute(name, value, true);
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt(ws0, name, ws1, '=', ws2, '\''),
+            joinRt('\''));
+    }
+  / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? '"' value:ValueDqStar '"' &AttrEnd
+    {
+      yyValue = new XmlAttribute(name, value, true);
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt(ws0, name, ws1, '=', ws2, '"'),
+            joinRt('"'));
+    }
+  / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' value:ValueNqStar &AttrEnd
+    {
+      yyValue = new XmlAttribute(name, value, true);
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt(ws0, name, ws1, '='),
+            null);
+    }
+  / ws0:XmlAttrWs? name:XmlName &AttrEnd
+    {
+      yyValue = new XmlAttribute(name, false);
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt(ws0, name),
+            null);
+    }
+;
+
+private inline void AttrEnd =
+    XmlAttrWs
+  / XmlAttrValueStopper
+  / Eof
+;
+
+
+
+
+// -- Single quoted attribute values -------------------------------------------
+
+private transient NodeList ValueSqStar =
+  value:ValueSqChoice*
+  {
+    yyValue = new NodeList(value);
+  }
+;
+
+private inline AstNode ValueSqChoice =
+    string:ValueSqString
+    {
+      yyValue = new Text(string);
+    }
+  / &'&' XmlReference
+;
+
+private transient String ValueSqString =
+  ( !XmlAttrValueStopper ![<'&] _ )+
+;
+
+
+
+
+// -- Double quoted attribute values -------------------------------------------
+
+private transient NodeList ValueDqStar =
+  value:ValueDqChoice*
+  {
+    yyValue = new NodeList(value);
+  }
+;
+
+private inline AstNode ValueDqChoice =
+    string:ValueDqString
+    {
+      yyValue = new Text(string);
+    }
+  / &'&' XmlReference
+;
+
+private transient String ValueDqString =
+  ( !XmlAttrValueStopper ![<"&] _ )+
+;
+
+
+
+
+// -- Non-quoted attribute values ----------------------------------------------
+
+private transient NodeList ValueNqStar =
+  value:ValueNqChoice*
+  {
+    yyValue = new NodeList(value);
+  }
+;
+
+private inline AstNode ValueNqChoice =
+    string:ValueNqString
+    {
+      yyValue = new Text(string);
+    }
+  / &'&' XmlReference
+;
+
+private transient String ValueNqString =
+  ( !XmlAttrValueStopper [a-zA-Z0-9!#$%()*,\-./:;<?@[\]^_`{|}~] )+
+;
+
+
+
+
+// -- End of file -------------------------------------------------------------

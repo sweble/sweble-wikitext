@@ -1,4 +1,4 @@
-LazyParsedPage(
+ParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=TagExtension([0] = [])}
     {N} warnings = []

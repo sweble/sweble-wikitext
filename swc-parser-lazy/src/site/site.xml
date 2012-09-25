@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
-    name="SWC - Lazy Wikitext Parser" >
+    name="SWC - Sweble Wikitext Parser" >
 
   <bannerLeft>
     <name>Sweble</name>
@@ -37,7 +37,7 @@
       <item name="Tooling" href="http://sweble.org/doc/site/tooling" img="" />
       <item name="Sweble" href="http://sweble.org/doc/site/tooling/sweble" img="" />
       <item name="Wikitext Components" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext" img="" />
-      <item name="SWC - Lazy Wikitext Parser" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-parser-lazy" img="" />
+      <item name="SWC - Sweble Wikitext Parser" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-parser-lazy" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>

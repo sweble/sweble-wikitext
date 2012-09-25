@@ -34,16 +34,16 @@ import org.sweble.wikitext.engine.log.PpResolverLog;
 import org.sweble.wikitext.engine.log.PreprocessorLog;
 import org.sweble.wikitext.engine.log.UnhandledException;
 import org.sweble.wikitext.engine.log.ValidatorLog;
-import org.sweble.wikitext.lazy.LazyEncodingValidator;
-import org.sweble.wikitext.lazy.LazyParser;
-import org.sweble.wikitext.lazy.LazyPostprocessor;
-import org.sweble.wikitext.lazy.LazyPreprocessor;
-import org.sweble.wikitext.lazy.ParserConfig;
-import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
-import org.sweble.wikitext.lazy.parser.LazyParsedPage;
-import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
-import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
-import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
+import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
+import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
+import org.sweble.wikitext.parser.WikitextEncodingValidator;
+import org.sweble.wikitext.parser.WikitextParser;
+import org.sweble.wikitext.parser.WikitextPostprocessor;
+import org.sweble.wikitext.parser.WikitextPreprocessor;
+import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.encval.ValidatedWikitext;
+import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
+import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -155,13 +155,13 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyPreprocessedPage pprAst;
+		PreproWikitextPage pprAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			LazyPreprocessedPage ppAst =
+			PreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
 			
 			pprAst = ppAst;
@@ -229,16 +229,16 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyPreprocessedPage pAst;
+		PreproWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			LazyPreprocessedPage ppAst =
+			PreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
 			
-			LazyPreprocessedPage pprAst = ppAst;
+			PreproWikitextPage pprAst = ppAst;
 			pprAst = expand(callback, title, ppAst, null, forInclusion, log);
 			
 			pAst = pprAst;
@@ -287,16 +287,16 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyParsedPage pAst;
+		ParsedWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			LazyPreprocessedPage ppAst =
+			PreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, false, log);
 			
-			LazyPreprocessedPage pprAst = ppAst;
+			PreproWikitextPage pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
 			
@@ -346,16 +346,16 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyParsedPage pAst;
+		ParsedWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			LazyPreprocessedPage ppAst =
+			PreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, false, log);
 			
-			LazyPreprocessedPage pprAst = ppAst;
+			PreproWikitextPage pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
 			
@@ -390,7 +390,7 @@ public class Compiler
 	 */
 	public CompiledPage postprocessPpOrExpAst(
 			PageId pageId,
-			LazyPreprocessedPage pprAst)
+			PreproWikitextPage pprAst)
 			throws CompilerException
 	{
 		if (pageId == null)
@@ -402,7 +402,7 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyParsedPage pAst;
+		ParsedWikitextPage pAst;
 		try
 		{
 			pAst = parse(title, pprAst, log);
@@ -461,13 +461,13 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyPreprocessedPage pprAst;
+		PreproWikitextPage pprAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, entityMap);
 			
-			LazyPreprocessedPage ppAst =
+			PreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
 			
 			pprAst = expand(
@@ -499,7 +499,7 @@ public class Compiler
 	protected CompiledPage expand(
 			ExpansionCallback callback,
 			PageId pageId,
-			LazyPreprocessedPage ppAst,
+			PreproWikitextPage ppAst,
 			EntityMap entityMap,
 			boolean forInclusion,
 			Map<String, AstNode> arguments,
@@ -519,7 +519,7 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		LazyPreprocessedPage pprAst;
+		PreproWikitextPage pprAst;
 		try
 		{
 			pprAst = expand(
@@ -568,7 +568,7 @@ public class Compiler
 		
 		try
 		{
-			LazyEncodingValidator validator = new LazyEncodingValidator();
+			WikitextEncodingValidator validator = new WikitextEncodingValidator();
 			
 			if (entityMap == null)
 				entityMap = new EntityMap();
@@ -600,7 +600,7 @@ public class Compiler
 	/**
 	 * Preprocesses validated wikitext and substitutes entities.
 	 */
-	private LazyPreprocessedPage preprocess(
+	private PreproWikitextPage preprocess(
 			PageTitle title,
 			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
@@ -617,10 +617,10 @@ public class Compiler
 		
 		try
 		{
-			LazyPreprocessor preprocessor = new LazyPreprocessor(parserConfig);
+			WikitextPreprocessor preprocessor = new WikitextPreprocessor(parserConfig);
 			
-			LazyPreprocessedPage preprocessedAst =
-					(LazyPreprocessedPage) preprocessor.parseArticle(
+			PreproWikitextPage preprocessedAst =
+					(PreproWikitextPage) preprocessor.parseArticle(
 							validatedWikitext,
 							title.getDenormalizedFullTitle(),
 							forInclusion);
@@ -654,10 +654,10 @@ public class Compiler
 	 * Starts the expansion process of a preprocessed page with the preprocessed
 	 * page as root of the expansion process.
 	 */
-	private LazyPreprocessedPage expand(
+	private PreproWikitextPage expand(
 			ExpansionCallback callback,
 			PageTitle title,
-			LazyPreprocessedPage ppAst,
+			PreproWikitextPage ppAst,
 			LinkedHashMap<String, AstNode> arguments,
 			boolean forInclusion,
 			ContentNode parentLog)
@@ -677,10 +677,10 @@ public class Compiler
 	/**
 	 * Starts the expansion process of a preprocessed page.
 	 */
-	private LazyPreprocessedPage expand(
+	private PreproWikitextPage expand(
 			ExpansionCallback callback,
 			PageTitle title,
-			LazyPreprocessedPage ppAst,
+			PreproWikitextPage ppAst,
 			Map<String, AstNode> arguments,
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
@@ -733,8 +733,8 @@ public class Compiler
 						catchAll);
 			}
 			
-			LazyPreprocessedPage expanded =
-					(LazyPreprocessedPage) frame.expand(ppAst);
+			PreproWikitextPage expanded =
+					(PreproWikitextPage) frame.expand(ppAst);
 			
 			return expanded;
 		}
@@ -758,9 +758,9 @@ public class Compiler
 	/**
 	 * Parses a preprocessed page and substitutes entities.
 	 */
-	private LazyParsedPage parse(
+	private ParsedWikitextPage parse(
 			PageTitle title,
-			LazyPreprocessedPage ppAst,
+			PreproWikitextPage ppAst,
 			ContentNode parentLog)
 			throws CompilerException
 	{
@@ -777,10 +777,10 @@ public class Compiler
 							ppAst,
 							compilerConfig.isTrimTransparentBeforeParsing());
 			
-			LazyParser parser = new LazyParser(parserConfig);
+			WikitextParser parser = new WikitextParser(parserConfig);
 			
-			LazyParsedPage parsedAst =
-					(LazyParsedPage) parser.parseArticle(
+			ParsedWikitextPage parsedAst =
+					(ParsedWikitextPage) parser.parseArticle(
 							preprocessedWikitext,
 							title.getTitle());
 			
@@ -811,9 +811,9 @@ public class Compiler
 		}
 	}
 	
-	private LazyParsedPage postprocess(
+	private ParsedWikitextPage postprocess(
 			PageTitle title,
-			LazyParsedPage pAst,
+			ParsedWikitextPage pAst,
 			CompilerLog parentLog)
 			throws CompilerException
 	{
@@ -825,9 +825,9 @@ public class Compiler
 		
 		try
 		{
-			LazyPostprocessor lpp = new LazyPostprocessor(parserConfig);
+			WikitextPostprocessor lpp = new WikitextPostprocessor(parserConfig);
 			
-			pAst = (LazyParsedPage) lpp.postprocess(pAst, title.getTitle());
+			pAst = (ParsedWikitextPage) lpp.postprocess(pAst, title.getTitle());
 			
 			return pAst;
 		}

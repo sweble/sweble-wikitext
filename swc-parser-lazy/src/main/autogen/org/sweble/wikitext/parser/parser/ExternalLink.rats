@@ -1,0 +1,187 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*!
+ *
+ * External Link
+ * -------------
+ *
+ *   Grammar:
+ *     - '[' Url Space* ']'
+ *     - '[' Url Space+ Title ']'
+ *
+ *   The title can contain:
+ *     - InternalLink
+ *     - PageSwitch
+ *     - ParserEntity
+ *     - Signature
+ *     - Ticks
+ *     - XmlReference
+ *
+ *   The title cannot contain:
+ *     - Newline
+ *       - Tables
+ *       - Headings
+ *       - Horizontal lines
+ *       - Block level elements
+ *     - ExternalLink
+ *     - PlainExternalLink
+ *     - XmlElement(*)
+ *
+ *   The title can syntactically not contain:
+ *     - Newlines
+ *
+ *   AST node:
+ *     Name        : ExternalLink
+ *     Extends     : InnerNode.InnerNode2
+ *     Constructor : "target"
+ *     Constructor : "target, title"
+ *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_EXTERNAL_LINK
+ *
+ *     Children:
+ *       target : Url
+ *       title  : NodeList
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.ExternalLink;
+
+import org.sweble.wikitext.parser.utils.Warnings;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+import org.sweble.wikitext.parser.parser.Url;
+import org.sweble.wikitext.parser.parser.Whitespace;
+
+
+
+
+// -- External link --[ State Aware Memoization ]-------------------------------
+
+noinline transient AstNode ExternalLink =
+ ^{
+    StateAwareResult r = (StateAwareResult) pExternalLinkMemoized(yyBase);
+    final WikitextParserContext context = getContext();
+    Result yyResult = r.getResult(context);
+    if (yyResult == null)
+      yyResult = r.setResult(context, pExternalLinkTransient(yyBase));
+    if (returnTrue(r))
+      return yyResult;
+  }
+;
+
+noinline memoized AstNode ExternalLinkMemoized =
+ ^{
+    Result yyResult = new StateAwareResult("ExternalLink", getContext(), pExternalLinkTransient(yyBase));
+    if (returnTrue(yyResult))
+      return yyResult;
+  }
+;
+
+
+
+
+// -- External link ------------------------------------------------------------
+
+noinline transient AstNode ExternalLinkTransient =
+    '[' &{ accept(ParserAtoms.EXTERNAL_LINK) } yyValue:ExternalLinkChoice
+  / '['
+    {
+      yyValue = new Text("[");
+    }
+;
+
+inline void InlineContentStopperExternalLink =
+  &{ inScope(ParserScopes.EXTERNAL_LINK_TITLE) } ']'
+;
+
+private inline stateful AstNode
+ExternalLinkChoice =
+    rt0:pTpStar target:Url rt1:pExtSpacePlus title:ExternalLinkTitleContentPlus ']'
+    {
+      yyValue = new ExternalLink(target, title);
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt('[', rt0),
+            joinRt(rt1),
+            joinRt(']'));
+    }
+  / rt0:pTpStar target:Url rt1:pSpaceStar ']'
+    {
+      yyValue = new ExternalLink(target);
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt('[', rt0),
+            null,
+            joinRt(rt1, ']'));
+    }
+  / &{ isWarningsEnabled() } ExternalLinkAutoCorrect
+;
+
+private inline AstNode ExternalLinkAutoCorrect =
+    &{ isAutoCorrect(WS_INFO) } rt0:pTpStar target:Url
+    {
+      yyValue = new ExternalLink(target);
+
+      fileLooksLikeWarning(
+          yyValue,
+          makeSpan(yyStart - 1, yyResult),
+          WS_INFO,
+          "External Link",
+          "the finishing `]' is missing");
+
+      if (isGatherRtData())
+        addRtData(yyValue,
+            joinRt('[', rt0),
+            null,
+            joinRt(']'));
+    }
+  / &{ isWarningLevelEnabled(WS_INFO) } &( pTpStar Url )
+    {
+      yyValue = new Text("[");
+
+      fileLooksLikeWarning(
+          yyValue,
+          makeSpan(yyStart - 1, yyPredResult),
+          WS_INFO,
+          "External Link",
+          "the finishing `]' is missing");
+    }
+  / &{ isWarningLevelEnabled(WS_NONE) }
+    {
+      yyValue = new Text("[");
+
+      fileLooksLikeWarning(
+          yyValue,
+          makeSpan(yyStart - 1, yyStart),
+          WS_NONE,
+          "External Link",
+          "the actual URL is missing");
+    }
+;
+
+private inline NodeList ExternalLinkTitleContentPlus =
+  {
+    enter(ParserScopes.EXTERNAL_LINK_TITLE);
+  }
+  InlineContentPlus
+;
+
+
+
+
+// -- End of file --------------------------------------------------------------

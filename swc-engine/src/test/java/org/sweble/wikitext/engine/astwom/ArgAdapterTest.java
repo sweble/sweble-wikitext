@@ -28,8 +28,8 @@ import org.sweble.wikitext.engine.astwom.adapters.NameAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.ValueAdapter;
 import org.sweble.wikitext.engine.wom.WomName;
 import org.sweble.wikitext.engine.wom.WomValue;
-import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
-import org.sweble.wikitext.lazy.utils.AstBuilder;
+import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
+import org.sweble.wikitext.parser.utils.AstBuilder;
 
 public class ArgAdapterTest
 {

@@ -23,10 +23,10 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.lazy.parser.RtData;
-import org.sweble.wikitext.lazy.preprocessor.Template;
-import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
-import org.sweble.wikitext.lazy.utils.AstBuilder;
+import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
+import org.sweble.wikitext.parser.parser.RtData;
+import org.sweble.wikitext.parser.utils.AstBuilder;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 

@@ -25,12 +25,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.Paragraph;
-import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
-import org.sweble.wikitext.lazy.preprocessor.TemplateArgument;
-import org.sweble.wikitext.lazy.preprocessor.TemplateParameter;
-import org.sweble.wikitext.lazy.utils.AstPrinter;
+import org.sweble.wikitext.parser.parser.Paragraph;
+import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
+import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
+import org.sweble.wikitext.parser.preprocessor.TemplateParameter;
+import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.utils.AstPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.EntityMap;
@@ -181,7 +181,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 			if (defVal.isEmpty())
 				return defValArg;
 			
-			LazyPreprocessedPage pprAst = new LazyPreprocessedPage(
+			PreproWikitextPage pprAst = new PreproWikitextPage(
 					defVal, warnings, entityMap);
 			
 			CompiledPage parsed = compiler.postprocessPpOrExpAst(pageId, pprAst);

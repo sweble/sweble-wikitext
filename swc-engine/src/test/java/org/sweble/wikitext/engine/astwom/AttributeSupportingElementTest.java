@@ -18,7 +18,7 @@
 package org.sweble.wikitext.engine.astwom;
 
 import static org.junit.Assert.*;
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,8 +27,8 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
 
 import de.fau.cs.osr.utils.Utils;
 

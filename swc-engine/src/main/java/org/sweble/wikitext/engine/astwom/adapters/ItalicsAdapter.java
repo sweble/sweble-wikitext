@@ -21,8 +21,8 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomItalics;
-import org.sweble.wikitext.lazy.parser.Italics;
-import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.parser.parser.Italics;
+import org.sweble.wikitext.parser.parser.XmlElement;
 
 public class ItalicsAdapter
 		extends

@@ -22,15 +22,15 @@ import java.io.IOException;
 import org.sweble.wikitext.engine.config.ParserConfigImpl;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
-import org.sweble.wikitext.lazy.LazyEncodingValidator;
-import org.sweble.wikitext.lazy.LazyParser;
-import org.sweble.wikitext.lazy.LazyPostprocessor;
-import org.sweble.wikitext.lazy.LazyPreprocessor;
-import org.sweble.wikitext.lazy.encval.ValidatedWikitext;
-import org.sweble.wikitext.lazy.parser.LazyParsedPage;
-import org.sweble.wikitext.lazy.parser.PreprocessorToParserTransformer;
-import org.sweble.wikitext.lazy.preprocessor.LazyPreprocessedPage;
-import org.sweble.wikitext.lazy.preprocessor.PreprocessedWikitext;
+import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
+import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
+import org.sweble.wikitext.parser.WikitextEncodingValidator;
+import org.sweble.wikitext.parser.WikitextParser;
+import org.sweble.wikitext.parser.WikitextPostprocessor;
+import org.sweble.wikitext.parser.WikitextPreprocessor;
+import org.sweble.wikitext.parser.encval.ValidatedWikitext;
+import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
+import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.ParserCommon;
@@ -66,37 +66,37 @@ public final class FullParser
 	{
 		// Encoding validation
 		
-		LazyEncodingValidator v = new LazyEncodingValidator();
+		WikitextEncodingValidator v = new WikitextEncodingValidator();
 		
 		ValidatedWikitext validated = v.validate(source, title);
 		
 		// Pre-processing
 		
-		LazyPreprocessor prep = new LazyPreprocessor(parserConfig);
+		WikitextPreprocessor prep = new WikitextPreprocessor(parserConfig);
 		
-		LazyPreprocessedPage prepArticle =
-				(LazyPreprocessedPage) prep.parseArticle(validated, title, false);
+		PreproWikitextPage prepArticle =
+				(PreproWikitextPage) prep.parseArticle(validated, title, false);
 		
 		// Parsing
 		
 		PreprocessedWikitext ppw = PreprocessorToParserTransformer
 				.transform(prepArticle);
 		
-		LazyParser p = new LazyParser(parserConfig);
+		WikitextParser p = new WikitextParser(parserConfig);
 		
-		LazyParsedPage parsedArticle =
-				(LazyParsedPage) p.parseArticle(ppw, title);
+		ParsedWikitextPage parsedArticle =
+				(ParsedWikitextPage) p.parseArticle(ppw, title);
 		
 		// Post-processing
 		
-		LazyPostprocessor postp = new LazyPostprocessor(parserConfig);
+		WikitextPostprocessor postp = new WikitextPostprocessor(parserConfig);
 		
-		LazyParsedPage postpArticle =
-				(LazyParsedPage) postp.postprocess(parsedArticle, title);
+		ParsedWikitextPage postpArticle =
+				(ParsedWikitextPage) postp.postprocess(parsedArticle, title);
 		
 		// User-defined processing
 		
-		LazyParsedPage userProcessed = (LazyParsedPage) process(postpArticle);
+		ParsedWikitextPage userProcessed = (ParsedWikitextPage) process(postpArticle);
 		
 		return userProcessed;
 	}

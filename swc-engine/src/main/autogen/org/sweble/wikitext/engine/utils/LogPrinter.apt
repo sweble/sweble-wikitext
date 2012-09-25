@@ -25,7 +25,7 @@
 %Header {
 
 import org.sweble.wikitext.engine.log.*;
-import org.sweble.wikitext.lazy.utils.WikitextPrinter;
+import org.sweble.wikitext.parser.utils.WikitextPrinter;
 
 }
 

@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomCenter;
-import org.sweble.wikitext.lazy.parser.XmlElement;
+import org.sweble.wikitext.parser.parser.XmlElement;
 
 public class CenterAdapter
 		extends

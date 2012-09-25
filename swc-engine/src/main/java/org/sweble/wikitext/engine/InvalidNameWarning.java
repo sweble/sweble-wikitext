@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.lazy.WarningSeverity;
+import org.sweble.wikitext.parser.WarningSeverity;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 

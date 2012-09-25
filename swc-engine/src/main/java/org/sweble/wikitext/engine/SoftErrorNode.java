@@ -17,12 +17,12 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 
 import org.sweble.wikitext.engine.astwom.Toolbox;
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.AstNodeTypes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 

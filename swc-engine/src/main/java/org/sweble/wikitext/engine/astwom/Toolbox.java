@@ -22,20 +22,20 @@ import java.util.regex.Pattern;
 
 import lombok.Getter;
 
-import org.sweble.wikitext.lazy.AstNodeTypes;
-import org.sweble.wikitext.lazy.parser.Bold;
-import org.sweble.wikitext.lazy.parser.HorizontalRule;
-import org.sweble.wikitext.lazy.parser.InternalLink;
-import org.sweble.wikitext.lazy.parser.Italics;
-import org.sweble.wikitext.lazy.parser.Newline;
-import org.sweble.wikitext.lazy.parser.XmlElement;
-import org.sweble.wikitext.lazy.preprocessor.Redirect;
-import org.sweble.wikitext.lazy.preprocessor.TagExtension;
-import org.sweble.wikitext.lazy.preprocessor.XmlComment;
-import org.sweble.wikitext.lazy.utils.TextUtils;
-import org.sweble.wikitext.lazy.utils.XmlAttribute;
-import org.sweble.wikitext.lazy.utils.XmlCharRef;
-import org.sweble.wikitext.lazy.utils.XmlEntityRef;
+import org.sweble.wikitext.parser.parser.Bold;
+import org.sweble.wikitext.parser.parser.HorizontalRule;
+import org.sweble.wikitext.parser.parser.InternalLink;
+import org.sweble.wikitext.parser.parser.Italics;
+import org.sweble.wikitext.parser.parser.Newline;
+import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.preprocessor.Redirect;
+import org.sweble.wikitext.parser.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.preprocessor.XmlComment;
+import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.utils.XmlCharRef;
+import org.sweble.wikitext.parser.utils.XmlEntityRef;
+import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

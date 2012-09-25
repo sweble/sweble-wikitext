@@ -17,13 +17,13 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.lazy.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
-import org.sweble.wikitext.lazy.preprocessor.Template;
+import org.sweble.wikitext.parser.preprocessor.Template;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
