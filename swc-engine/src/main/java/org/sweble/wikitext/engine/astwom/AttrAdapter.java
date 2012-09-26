@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttr;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.XmlAttribute;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.Utils;

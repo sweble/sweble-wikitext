@@ -17,13 +17,13 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.parser.XmlEndTag;
+import org.sweble.wikitext.parser.nodes.XmlEndTag;
 
 public class IntermediateEndTag
-        extends
-            XmlEndTag
-        implements
-            IntermediateTag
+		extends
+			XmlEndTag
+		implements
+			IntermediateTag
 {
 	private static final long serialVersionUID = 1L;
 	

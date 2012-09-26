@@ -47,7 +47,7 @@
  *
  *   AST node:
  *     Name        : ExternalLink
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Constructor : "target"
  *     Constructor : "target, title"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_EXTERNAL_LINK

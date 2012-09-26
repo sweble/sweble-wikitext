@@ -101,10 +101,10 @@ public enum ImageViewFormat
 	};
 	
 	private static final Object[] formatMap = new Object[] {
-	        "frameless", FRAMELESS,
-	        "thumb", THUMBNAIL,
-	        "thumbnail", THUMBNAIL,
-	        "frame", FRAME,
+			"frameless", FRAMELESS,
+			"thumb", THUMBNAIL,
+			"thumbnail", THUMBNAIL,
+			"frame", FRAME,
 	};
 	
 	public abstract String asKeyword();

@@ -37,8 +37,8 @@ import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomValueWithUnit;
-import org.sweble.wikitext.parser.parser.HorizontalRule;
-import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.Utils;

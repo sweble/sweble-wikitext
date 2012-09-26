@@ -37,7 +37,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomRedirect;
-import org.sweble.wikitext.parser.parser.InternalLink;
+import org.sweble.wikitext.parser.nodes.InternalLink;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

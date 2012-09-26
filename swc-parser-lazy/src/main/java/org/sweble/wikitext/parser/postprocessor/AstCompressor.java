@@ -24,7 +24,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;

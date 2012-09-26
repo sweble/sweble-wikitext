@@ -27,8 +27,8 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.parser.XmlElement;
-import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 

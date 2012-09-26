@@ -19,15 +19,15 @@ package org.sweble.wikitext.parser.parser;
 
 import java.util.ArrayList;
 
-import org.sweble.wikitext.parser.parser.ImageLink;
-import org.sweble.wikitext.parser.parser.InternalLink;
-import org.sweble.wikitext.parser.parser.LinkOptionAltText;
-import org.sweble.wikitext.parser.parser.LinkTarget;
-import org.sweble.wikitext.parser.parser.LinkTitle;
-import org.sweble.wikitext.parser.parser.Url;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.nodes.ImageLink;
+import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.LinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.LinkTarget;
+import org.sweble.wikitext.parser.nodes.LinkTitle;
+import org.sweble.wikitext.parser.nodes.Url;
 
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNode;

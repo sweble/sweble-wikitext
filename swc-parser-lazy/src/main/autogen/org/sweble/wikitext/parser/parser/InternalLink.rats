@@ -32,7 +32,7 @@
  *
  *   AST node:
  *     Name        : InternalLink
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Implements  : Cloneable
  *     Constructor : "prefix, target, title, postfix"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_INTERNAL_LINK
@@ -67,7 +67,7 @@
  *
  *   AST node:
  *     Name        : ImageLink
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Constructor : "target, options, title, format, border, hAlign, vAlign, width, height, upright, linkPage, linkUrl, alt"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IMAGE_LINK
  *
@@ -105,7 +105,7 @@
  *
  *   AST node:
  *     Name        : LinkOptionResize
- *     Extends     : LeafNode
+ *     Extends     : WtLeafNode
  *     Constructor : "width, height"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_RESIZE
  *
@@ -121,7 +121,7 @@
  *
  *   AST node:
  *     Name        : LinkOptionKeyword
- *     Extends     : LeafNode
+ *     Extends     : WtLeafNode
  *     Constructor : "keyword"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_KEYWORD
  *
@@ -137,7 +137,7 @@
  *
  *   AST node:
  *     Name        : LinkOptionLinkTarget
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Constructor : target
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
  *
@@ -152,7 +152,7 @@
  *
  *   AST node:
  *     Name        : LinkOptionAltText
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_ALT_TEXT
  *
@@ -164,7 +164,7 @@
  *
  *   AST node:
  *     Name        : LinkOptionGarbage
- *     Extends     : StringContentNode
+ *     Extends     : WtStringContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_GARBAGE
  *
@@ -194,7 +194,7 @@
  *
  *   AST node:
  *     Name        : LinkTitle
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TITLE
  *

@@ -34,11 +34,6 @@ import org.sweble.wikitext.parser.utils.Numbers;
 
 // -- Header & Body ------------------------------------------------------------
 
-header
-{
-  import org.sweble.wikitext.parser.AstNodeTypes;
-}
-
 body
 {
   private boolean isXmlCommentOrIgnored(AstNode n)

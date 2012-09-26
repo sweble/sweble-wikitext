@@ -33,7 +33,7 @@ import org.sweble.wikitext.engine.wom.WomCoreAttributes;
 import org.sweble.wikitext.engine.wom.WomFont;
 import org.sweble.wikitext.engine.wom.WomI18nAttributes;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 

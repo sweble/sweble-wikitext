@@ -19,11 +19,11 @@ package org.sweble.wikitext.parser.utils;
 
 import java.util.Iterator;
 
-import org.sweble.wikitext.parser.preprocessor.Ignored;
-import org.sweble.wikitext.parser.preprocessor.XmlComment;
-import org.sweble.wikitext.parser.utils.XmlCharRef;
-import org.sweble.wikitext.parser.utils.XmlEntityRef;
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;

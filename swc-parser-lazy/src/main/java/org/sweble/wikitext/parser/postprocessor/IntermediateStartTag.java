@@ -17,15 +17,15 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.parser.XmlStartTag;
+import org.sweble.wikitext.parser.nodes.XmlStartTag;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class IntermediateStartTag
-        extends
-            XmlStartTag
-        implements
-            IntermediateTag
+		extends
+			XmlStartTag
+		implements
+			IntermediateTag
 {
 	private static final long serialVersionUID = 1L;
 	

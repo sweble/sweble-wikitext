@@ -34,14 +34,14 @@ import org.sweble.wikitext.engine.log.PpResolverLog;
 import org.sweble.wikitext.engine.log.PreprocessorLog;
 import org.sweble.wikitext.engine.log.UnhandledException;
 import org.sweble.wikitext.engine.log.ValidatorLog;
-import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
-import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
+import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextEncodingValidator;
 import org.sweble.wikitext.parser.WikitextParser;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
 import org.sweble.wikitext.parser.WikitextPreprocessor;
-import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
+import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 

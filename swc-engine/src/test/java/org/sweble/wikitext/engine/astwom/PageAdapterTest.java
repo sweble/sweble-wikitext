@@ -28,7 +28,7 @@ import org.sweble.wikitext.engine.wom.WomBody;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.parser.parser.InternalLink;
+import org.sweble.wikitext.parser.nodes.InternalLink;
 
 public class PageAdapterTest
 {

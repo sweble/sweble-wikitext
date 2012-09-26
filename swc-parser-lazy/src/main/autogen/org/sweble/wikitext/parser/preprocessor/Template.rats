@@ -31,7 +31,7 @@
  *
  *   AST node:
  *     Name        : Template
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Constructor : "name, args"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE
  *
@@ -49,7 +49,7 @@
  *
  *   AST node:
  *     Name        : TemplateParameter
- *     Extends     : InnerNode.InnerNode3
+ *     Extends     : WtInnerNode3
  *     Constructor : "name, defaultValue, garbage"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_PARAMETER
  *
@@ -68,7 +68,7 @@
  *
  *   AST node:
  *     Name        : TemplateArgument
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Constructor : "value, hasName"
  *     Constructor : "name, value, hasName"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_ARGUMENT

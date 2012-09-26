@@ -58,7 +58,7 @@
  *
  *   AST node:
  *     Name        : Section
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Constructor : "level, title, body"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SECTION
  *

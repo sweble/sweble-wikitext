@@ -23,14 +23,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.parser.DefinitionListDef;
-import org.sweble.wikitext.parser.parser.DefinitionListTerm;
-import org.sweble.wikitext.parser.parser.ListItem;
-import org.sweble.wikitext.parser.parser.ListItem;
-import org.sweble.wikitext.parser.parser.Newline;
-import org.sweble.wikitext.parser.parser.SemiPreLine;
-import org.sweble.wikitext.parser.parser.Ticks;
-import org.sweble.wikitext.parser.parser.Whitespace;
+import org.sweble.wikitext.parser.nodes.DefinitionListDef;
+import org.sweble.wikitext.parser.nodes.DefinitionListTerm;
+import org.sweble.wikitext.parser.nodes.ListItem;
+import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.SemiPreLine;
+import org.sweble.wikitext.parser.nodes.Ticks;
+import org.sweble.wikitext.parser.nodes.Whitespace;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;

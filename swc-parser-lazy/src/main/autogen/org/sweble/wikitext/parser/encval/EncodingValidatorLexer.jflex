@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser.encval;
 
+import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
+
 import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;
 

@@ -21,9 +21,9 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 
-import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
-import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
+import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
 import xtc.parser.ParseError;
 import xtc.parser.ParseException;

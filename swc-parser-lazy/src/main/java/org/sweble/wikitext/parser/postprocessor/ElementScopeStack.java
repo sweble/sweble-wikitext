@@ -20,8 +20,8 @@ package org.sweble.wikitext.parser.postprocessor;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-import org.sweble.wikitext.parser.parser.XmlStartTag;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.XmlStartTag;
 import org.sweble.wikitext.parser.parser.NamedXmlElement;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;

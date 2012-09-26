@@ -27,7 +27,7 @@ import java.util.Locale;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 

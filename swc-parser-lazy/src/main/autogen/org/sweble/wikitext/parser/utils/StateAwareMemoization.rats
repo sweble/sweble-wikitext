@@ -22,11 +22,6 @@ module org.sweble.wikitext.parser.utils.StateAwareMemoization;
 
 // -- Header / Body / Footer ---------------------------------------------------
 
-header
-{
-  import org.sweble.wikitext.parser.utils.ParserStats;
-}
-
 body
 {
   private static ParserStats stats = null;

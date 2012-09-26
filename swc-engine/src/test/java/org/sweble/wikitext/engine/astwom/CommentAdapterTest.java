@@ -23,8 +23,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.parser.preprocessor.XmlComment;
-import org.sweble.wikitext.parser.parser.RtData;
+import org.sweble.wikitext.parser.RtData;
+import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.ContentNode;

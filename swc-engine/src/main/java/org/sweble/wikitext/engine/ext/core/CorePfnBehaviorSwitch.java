@@ -22,7 +22,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.parser.parser.PageSwitch;
+import org.sweble.wikitext.parser.nodes.PageSwitch;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 

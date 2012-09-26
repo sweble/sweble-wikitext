@@ -25,9 +25,6 @@ module org.sweble.wikitext.parser.utils.Roundtrip;
 header
 {
   import java.util.ArrayList;
-
-  import org.sweble.wikitext.parser.parser.RtData;
-  import org.sweble.wikitext.parser.utils.TextUtils;
 }
 
 body

@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -25,11 +25,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
-import org.sweble.wikitext.parser.parser.Paragraph;
-import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
-import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
-import org.sweble.wikitext.parser.preprocessor.TemplateParameter;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.utils.AstPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;

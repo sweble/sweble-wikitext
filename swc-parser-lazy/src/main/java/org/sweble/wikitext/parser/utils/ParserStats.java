@@ -42,16 +42,16 @@ public class ParserStats
 		public String toString()
 		{
 			return String.format(
-			        "MemoizedProduction [called=%5d, reused=%5d, parsed=%5d, failed=%5d]",
-			        called,
-			        reused,
-			        parsed,
-			        failed);
+					"MemoizedProduction [called=%5d, reused=%5d, parsed=%5d, failed=%5d]",
+					called,
+					reused,
+					parsed,
+					failed);
 		}
 	}
 	
 	private final Map<String, MemoizedProduction> memoizedProductions =
-	        new HashMap<String, MemoizedProduction>();
+			new HashMap<String, MemoizedProduction>();
 	
 	public Map<String, MemoizedProduction> getMemoizedProductions()
 	{

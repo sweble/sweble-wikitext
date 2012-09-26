@@ -23,10 +23,10 @@ import java.util.Iterator;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor.Normalization;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
-import org.sweble.wikitext.parser.utils.XmlAttribute;
-import org.sweble.wikitext.parser.utils.XmlCharRef;
-import org.sweble.wikitext.parser.utils.XmlEntityRef;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

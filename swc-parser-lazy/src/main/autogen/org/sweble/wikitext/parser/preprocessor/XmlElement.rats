@@ -43,7 +43,7 @@
  *
  *   AST node:
  *     Name        : TagExtension
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Constructor : "name, xmlAttributes, body"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TAG_EXTENSION
  *

@@ -23,8 +23,8 @@ import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.Span;
 
 public abstract class WikitextWarning
-        extends
-            Warning
+		extends
+			Warning
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,13 +32,21 @@ public abstract class WikitextWarning
 	
 	// =========================================================================
 	
-	public WikitextWarning(Span span, WarningSeverity severity, String origin, String message)
+	public WikitextWarning(
+			Span span,
+			WarningSeverity severity,
+			String origin,
+			String message)
 	{
 		super(span, origin, message);
 		this.severity = severity;
 	}
 	
-	public WikitextWarning(Span span, WarningSeverity severity, Class<?> origin, String message)
+	public WikitextWarning(
+			Span span,
+			WarningSeverity severity,
+			Class<?> origin,
+			String message)
 	{
 		super(span, origin, message);
 		this.severity = severity;

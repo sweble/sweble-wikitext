@@ -21,8 +21,8 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomBold;
-import org.sweble.wikitext.parser.parser.Bold;
-import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.nodes.Bold;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 
 public class BoldAdapter
 		extends

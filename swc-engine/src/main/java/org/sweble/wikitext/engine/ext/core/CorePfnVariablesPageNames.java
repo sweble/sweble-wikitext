@@ -28,8 +28,8 @@ import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
-import org.sweble.wikitext.parser.preprocessor.Template;
 import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 

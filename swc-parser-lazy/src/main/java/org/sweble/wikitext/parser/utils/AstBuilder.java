@@ -20,14 +20,14 @@ package org.sweble.wikitext.parser.utils;
 import java.util.Arrays;
 import java.util.List;
 
-import org.sweble.wikitext.parser.parser.HorizontalRule;
-import org.sweble.wikitext.parser.parser.XmlElement;
-import org.sweble.wikitext.parser.preprocessor.Ignored;
-import org.sweble.wikitext.parser.preprocessor.TagExtension;
-import org.sweble.wikitext.parser.preprocessor.Template;
-import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
-import org.sweble.wikitext.parser.preprocessor.XmlComment;
-import org.sweble.wikitext.parser.utils.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.TagExtension;
+import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;

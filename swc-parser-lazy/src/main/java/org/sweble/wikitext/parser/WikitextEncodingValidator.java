@@ -25,8 +25,6 @@ import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 
 import de.fau.cs.osr.ptk.common.EntityMap;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
-
 public class WikitextEncodingValidator
 {
 	public ValidatedWikitext validate(

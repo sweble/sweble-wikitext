@@ -17,10 +17,10 @@
 
 package org.sweble.wikitext.parser.parser;
 
-import org.sweble.wikitext.parser.preprocessor.Ignored;
-import org.sweble.wikitext.parser.preprocessor.PreproWikitextPage;
-import org.sweble.wikitext.parser.preprocessor.OnlyInclude;
-import org.sweble.wikitext.parser.preprocessor.XmlComment;
+import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.OnlyInclude;
+import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 

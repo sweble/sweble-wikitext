@@ -19,13 +19,13 @@ package org.sweble.wikitext.parser.utils;
 
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.parser.Whitespace;
+import org.sweble.wikitext.parser.nodes.Whitespace;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class AstPrinter
-        extends
-            de.fau.cs.osr.ptk.common.AstPrinter
+		extends
+			de.fau.cs.osr.ptk.common.AstPrinter
 {
 	public AstPrinter(Writer writer)
 	{

@@ -21,9 +21,8 @@ import static org.junit.Assert.*;
 import static org.sweble.wikitext.parser.utils.AstBuilder.*;
 
 import org.junit.Test;
-import org.sweble.wikitext.parser.parser.HorizontalRule;
-import org.sweble.wikitext.parser.preprocessor.XmlComment;
-import org.sweble.wikitext.parser.utils.WikitextPrinter;
+import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.XmlComment;
 
 public class TestWikitextPrinter
 {

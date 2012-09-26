@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.parser;
+package org.sweble.wikitext.parser;
 
 import java.io.Serializable;
 import java.util.Arrays;

@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomKbd;
-import org.sweble.wikitext.parser.parser.XmlElement;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 
 public class KbdAdapter
 		extends

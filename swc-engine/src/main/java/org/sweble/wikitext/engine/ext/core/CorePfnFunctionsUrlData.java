@@ -35,9 +35,9 @@ import org.sweble.wikitext.engine.UrlType;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
-import org.sweble.wikitext.parser.preprocessor.Template;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 

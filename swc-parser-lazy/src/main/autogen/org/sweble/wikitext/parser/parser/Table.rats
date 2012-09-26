@@ -42,7 +42,7 @@
  *
  *   AST node:
  *     Name        : Table
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Constructor : "xmlAttributes, body"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE
  *     Import      : java.util.List

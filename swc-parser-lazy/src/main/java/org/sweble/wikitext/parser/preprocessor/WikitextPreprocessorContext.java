@@ -20,8 +20,8 @@ package org.sweble.wikitext.parser.preprocessor;
 import de.fau.cs.osr.ptk.common.ParserContext;
 
 public class WikitextPreprocessorContext
-        extends
-            ParserContext
+		extends
+			ParserContext
 {
 	private String tagExtensionName;
 	

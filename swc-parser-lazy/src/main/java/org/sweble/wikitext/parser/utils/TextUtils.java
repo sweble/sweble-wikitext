@@ -20,10 +20,10 @@ package org.sweble.wikitext.parser.utils;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.sweble.wikitext.parser.utils.XmlCharRef;
-import org.sweble.wikitext.parser.utils.XmlEntityRef;
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.parser.RtData;
+import org.sweble.wikitext.parser.RtData;
+import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

@@ -24,11 +24,6 @@ import org.sweble.wikitext.parser.utils.Trickery;
 
 // -- Header/Body --------------------------------------------------------------
 
-header
-{
-  import org.sweble.wikitext.parser.utils.ParserShouldNotBeHereException;
-}
-
 body
 {
   private final void throwShouldNotBeHereException(int yyStart, String context)

@@ -24,10 +24,10 @@ import de.fau.cs.osr.ptk.common.ast.AstNodeAttributeInterface;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyInterface;
 
 public interface NamedXmlElement
-        extends
-            AstNodeAttributeInterface,
-            AstNodePropertyInterface,
-            List<AstNode>
+		extends
+			AstNodeAttributeInterface,
+			AstNodePropertyInterface,
+			List<AstNode>
 {
 	public String getName();
 }

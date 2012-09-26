@@ -26,8 +26,8 @@ import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-import org.sweble.wikitext.parser.parser.XmlElement;
 import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 public class TextAdapterTest

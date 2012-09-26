@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.wom.WomArg;
 import org.sweble.wikitext.engine.wom.WomName;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomValue;
-import org.sweble.wikitext.parser.preprocessor.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.TemplateArgument;
 
 import de.fau.cs.osr.ptk.common.ast.NodeList;
 

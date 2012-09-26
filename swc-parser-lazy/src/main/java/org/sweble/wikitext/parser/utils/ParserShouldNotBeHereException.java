@@ -21,8 +21,8 @@ import de.fau.cs.osr.ptk.common.ast.Location;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class ParserShouldNotBeHereException
-        extends
-            RuntimeException
+		extends
+			RuntimeException
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -34,14 +34,20 @@ public class ParserShouldNotBeHereException
 	
 	// =========================================================================
 	
-	public ParserShouldNotBeHereException(Location location, String context, int pos)
+	public ParserShouldNotBeHereException(
+			Location location,
+			String context,
+			int pos)
 	{
 		this.location = location;
 		this.context = context;
 		this.pos = pos;
 	}
 	
-	public ParserShouldNotBeHereException(xtc.tree.Location location, String context, int pos)
+	public ParserShouldNotBeHereException(
+			xtc.tree.Location location,
+			String context,
+			int pos)
 	{
 		this(new Location(location), context, pos);
 	}
@@ -81,30 +87,30 @@ public class ParserShouldNotBeHereException
 		if (before.isEmpty() && after.isEmpty())
 		{
 			return String.format(
-			        "ParserShouldNotBeHereException: %s: No context available",
-			        location.toString());
+					"ParserShouldNotBeHereException: %s: No context available",
+					location.toString());
 		}
 		else if (before.isEmpty())
 		{
 			return String.format(
-			        "ParserShouldNotBeHereException: %s: <!> \"%s\"",
-			        location.toString(),
-			        after);
+					"ParserShouldNotBeHereException: %s: <!> \"%s\"",
+					location.toString(),
+					after);
 		}
 		else if (after.isEmpty())
 		{
 			return String.format(
-			        "ParserShouldNotBeHereException: %s: \"%s\" <!>",
-			        location.toString(),
-			        before);
+					"ParserShouldNotBeHereException: %s: \"%s\" <!>",
+					location.toString(),
+					before);
 		}
 		else
 		{
 			return String.format(
-			        "ParserShouldNotBeHereException: %s: \"%s\" <!> \"%s\"",
-			        location.toString(),
-			        before,
-			        after);
+					"ParserShouldNotBeHereException: %s: \"%s\" <!> \"%s\"",
+					location.toString(),
+					before,
+					after);
 		}
 	}
 }

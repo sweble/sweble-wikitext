@@ -22,8 +22,8 @@ import org.sweble.wikitext.parser.ParserConfig;
 import de.fau.cs.osr.ptk.common.ParserContext;
 
 public class WikitextParserContext
-        extends
-            ParserContext
+		extends
+			ParserContext
 {
 	private int stickingScopes;
 	

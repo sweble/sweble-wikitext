@@ -23,9 +23,10 @@
 
 import java.util.List;
 
-import org.sweble.wikitext.parser.encval.*;
+import org.sweble.wikitext.parser.nodes.*;
 import org.sweble.wikitext.parser.parser.*;
-import org.sweble.wikitext.parser.preprocessor.*;
+
+import de.fau.cs.osr.ptk.common.ast.*;
 
 }
 

@@ -31,7 +31,7 @@ import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 import org.sweble.wikitext.parser.postprocessor.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
 
@@ -53,10 +53,10 @@ public class Serializer
 	
 	private static final NameAbbrevService abbrevService = new NameAbbrevService(
 			"de.fau.cs.osr.ptk.common.ast",
-			"org.sweble.wikitext.parser.encval",
-			"org.sweble.wikitext.parser.parser",
-			"org.sweble.wikitext.parser.preprocessor",
-			"org.sweble.wikitext.parser.utils",
+			"org.sweble.wikitext.parser.nodes",
+			"org.sweble.wikitext.parser.nodes.parser",
+			"org.sweble.wikitext.parser.nodes.preprocessor",
+			"org.sweble.wikitext.parser.nodes.utils",
 			"org.sweble.wikitext.engine");
 	
 	private boolean quiet = false;

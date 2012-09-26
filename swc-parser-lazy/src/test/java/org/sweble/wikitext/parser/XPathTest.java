@@ -49,7 +49,7 @@ public class XPathTest
 	public XPathTest()
 	{
 		JXPathContextReferenceImpl.addNodePointerFactory(
-		        new AstNodePointerFactory());
+				new AstNodePointerFactory());
 		
 		parser = new FullParser(WARNINGS_ENABLED, GATHER_RTD, AUTO_CORRECT);
 	}
@@ -111,12 +111,12 @@ public class XPathTest
 		
 		Assert.assertEquals(expected, actual);
 	}
-
+	
 	private AstNode parse(String title) throws IOException, ParseException
 	{
 		AstNode ast = parser.parseArticle(
-		        load(PATH + "/wikitext/" + title + ".wikitext"),
-		        title);
+				load(PATH + "/wikitext/" + title + ".wikitext"),
+				title);
 		
 		return ast;
 	}
@@ -129,7 +129,10 @@ public class XPathTest
 		return IOUtils.toString(in, "UTF-8");
 	}
 	
-	private void doQuery(JXPathContext context, StringBuilder b, final String query)
+	private void doQuery(
+			JXPathContext context,
+			StringBuilder b,
+			final String query)
 	{
 		b.append(StringUtils.strrep('-', 80));
 		b.append("\n  ");

@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 
-import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 import org.sweble.wikitext.parser.parser.RatsWikitextParser;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
@@ -34,8 +34,8 @@ import de.fau.cs.osr.ptk.common.ParserCommon;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class WikitextParser
-        extends
-            ParserCommon
+		extends
+			ParserCommon
 {
 	private final ParserConfig config;
 	
@@ -54,7 +54,7 @@ public class WikitextParser
 	public AstNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		PreprocessedWikitext ppWt =
-		        new PreprocessedWikitext(src, new EntityMap());
+				new PreprocessedWikitext(src, new EntityMap());
 		
 		return parseArticle(ppWt, title);
 	}
@@ -89,7 +89,7 @@ public class WikitextParser
 			else
 			{
 				throw new ParseException(
-				        "Internal parser error: Unexpected parser result type!");
+						"Internal parser error: Unexpected parser result type!");
 			}
 		}
 		else
@@ -99,14 +99,14 @@ public class WikitextParser
 			if (err.index == -1)
 			{
 				throw new ParseException(
-				        "Parse error: No information available");
+						"Parse error: No information available");
 			}
 			else
 			{
 				throw new ParseException(String.format(
-				        "%s: %s",
-				        parser.location(err.index),
-				        err.msg));
+						"%s: %s",
+						parser.location(err.index),
+						err.msg));
 			}
 		}
 	}

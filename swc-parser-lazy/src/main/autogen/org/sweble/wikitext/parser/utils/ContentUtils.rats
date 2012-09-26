@@ -22,11 +22,6 @@ module org.sweble.wikitext.parser.utils.ContentUtils;
 
 // -- Header / Body / Footer ---------------------------------------------------
 
-header
-{
-  import xtc.tree.Location;
-}
-
 body
 {
   protected String difference(int start, Result result)

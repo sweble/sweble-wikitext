@@ -18,8 +18,8 @@
 package org.sweble.wikitext.parser;
 
 public final class LinkTargetException
-        extends
-            Exception
+		extends
+			Exception
 {
 	private static final long serialVersionUID = 1L;
 	

@@ -35,8 +35,8 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case SECTIONS: // oh the horror ...
-				//case INTERNAL_LINK: // terminates the outer internal link
+			//case SECTIONS: // oh the horror ...
+			//case INTERNAL_LINK: // terminates the outer internal link
 				case LIST:
 				case SEMI_PRE:
 				case EXTERNAL_LINK:
@@ -61,8 +61,8 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case SECTIONS: // oh the horror ...
-				//case INTERNAL_LINK: // terminates the outer internal link
+			//case SECTIONS: // oh the horror ...
+			//case INTERNAL_LINK: // terminates the outer internal link
 				case LIST:
 				case SEMI_PRE:
 				case EXTERNAL_LINK:
@@ -87,8 +87,8 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case SECTIONS: // oh the horror ...
-				//case INTERNAL_LINK: // terminates the outer internal link
+			//case SECTIONS: // oh the horror ...
+			//case INTERNAL_LINK: // terminates the outer internal link
 				case LIST:
 				case SEMI_PRE:
 				case EXTERNAL_LINK:
@@ -113,8 +113,8 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case SECTIONS: // oh the horror ...
-				//case INTERNAL_LINK: // terminates the outer internal link
+			//case SECTIONS: // oh the horror ...
+			//case INTERNAL_LINK: // terminates the outer internal link
 				case LIST:
 				case SEMI_PRE:
 				case EXTERNAL_LINK:
@@ -139,11 +139,11 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case SIGNATURE:
+			//case SIGNATURE:
 				case INTERNAL_LINK:
-				//case XML_REFERENCE:
-				return true;
-			default:
+					//case XML_REFERENCE:
+					return true;
+				default:
 					return false;
 			}
 		}
@@ -156,14 +156,14 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case MAGIC_WORD:
+			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-				//case SIGNATURE:
-				//case XML_REFERENCE:
-				return true;
-			default:
+					//case SIGNATURE:
+					//case XML_REFERENCE:
+					return true;
+				default:
 					return false;
 			}
 		}
@@ -176,14 +176,14 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case MAGIC_WORD:
+			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-				//case SIGNATURE:
-				//case XML_REFERENCE:
-				return true;
-			default:
+					//case SIGNATURE:
+					//case XML_REFERENCE:
+					return true;
+				default:
 					return false;
 			}
 		}
@@ -196,14 +196,14 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case MAGIC_WORD:
+			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-				//case SIGNATURE:
-				//case XML_REFERENCE:
-				return true;
-			default:
+					//case SIGNATURE:
+					//case XML_REFERENCE:
+					return true;
+				default:
 					return false;
 			}
 		}
@@ -267,14 +267,14 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case MAGIC_WORD:
+			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-				//case SIGNATURE:
-				//case XML_REFERENCE:
-				return true;
-			default:
+					//case SIGNATURE:
+					//case XML_REFERENCE:
+					return true;
+				default:
 					return false;
 			}
 		}
@@ -299,14 +299,14 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-				//case MAGIC_WORD:
+			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-				//case SIGNATURE:
-				//case XML_REFERENCE:
-				return true;
-			default:
+					//case SIGNATURE:
+					//case XML_REFERENCE:
+					return true;
+				default:
 					return false;
 			}
 		}

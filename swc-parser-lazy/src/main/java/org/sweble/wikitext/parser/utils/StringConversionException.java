@@ -20,8 +20,8 @@ package org.sweble.wikitext.parser.utils;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class StringConversionException
-        extends
-            Exception
+		extends
+			Exception
 {
 	private static final long serialVersionUID = 1L;
 	

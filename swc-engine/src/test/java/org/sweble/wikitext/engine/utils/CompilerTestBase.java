@@ -37,7 +37,6 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.parser.LinkTargetException;
 
 public class CompilerTestBase

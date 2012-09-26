@@ -22,8 +22,8 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.parser.XmlElement;
-import org.sweble.wikitext.parser.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.nodes.TagExtension;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 import org.sweble.wikitext.parser.utils.TextUtils;
 

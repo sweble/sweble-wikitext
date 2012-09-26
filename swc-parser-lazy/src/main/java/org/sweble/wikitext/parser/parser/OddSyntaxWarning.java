@@ -22,27 +22,27 @@ import org.sweble.wikitext.parser.WarningSeverity;
 import de.fau.cs.osr.ptk.common.ast.Span;
 
 public class OddSyntaxWarning
-        extends
-            WikitextWarning
+		extends
+			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
 	public OddSyntaxWarning(
-	        Span span,
-	        WarningSeverity severity,
-	        String origin,
-	        String message)
+			Span span,
+			WarningSeverity severity,
+			String origin,
+			String message)
 	{
 		super(span, severity, origin, message);
 	}
 	
 	public OddSyntaxWarning(
-	        Span span,
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        String message)
+			Span span,
+			WarningSeverity severity,
+			Class<?> origin,
+			String message)
 	{
 		super(span, severity, origin, message);
 	}

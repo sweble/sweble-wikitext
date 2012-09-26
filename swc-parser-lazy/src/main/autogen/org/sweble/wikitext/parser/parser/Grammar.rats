@@ -24,7 +24,7 @@
  *
  *   AST node:
  *     Name        : ParsedWikitextPage
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "content, warnings"
  *     Constructor : "content, warnings, entityMap"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PARSED_WIKITEXT_PAGE
@@ -65,9 +65,12 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 header
 {
-  import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
+  import org.sweble.wikitext.parser.*;
+  import org.sweble.wikitext.parser.nodes.*;
+  import org.sweble.wikitext.parser.postprocessor.*;
   import org.sweble.wikitext.parser.utils.*;
 
+  import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;
   import de.fau.cs.osr.ptk.common.ast.Tuple.*;
   import de.fau.cs.osr.utils.StringUtils;

@@ -17,10 +17,10 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.parser.Bold;
-import org.sweble.wikitext.parser.parser.Italics;
-import org.sweble.wikitext.parser.parser.Paragraph;
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.nodes.Bold;
+import org.sweble.wikitext.parser.nodes.Italics;
+import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -38,10 +38,10 @@ public enum IntermediateTags
 		
 		@Override
 		public AstNode transform(
-		        ParserConfig config,
-		        IntermediateStartTag o,
-		        IntermediateEndTag c,
-		        NodeList body)
+				ParserConfig config,
+				IntermediateStartTag o,
+				IntermediateEndTag c,
+				NodeList body)
 		{
 			Italics e = new Italics(body);
 			if (config.isGatherRtData())
@@ -64,10 +64,10 @@ public enum IntermediateTags
 		
 		@Override
 		public AstNode transform(
-		        ParserConfig config,
-		        IntermediateStartTag o,
-		        IntermediateEndTag c,
-		        NodeList body)
+				ParserConfig config,
+				IntermediateStartTag o,
+				IntermediateEndTag c,
+				NodeList body)
 		{
 			Bold e = new Bold(body);
 			if (config.isGatherRtData())
@@ -90,10 +90,10 @@ public enum IntermediateTags
 		
 		@Override
 		public AstNode transform(
-		        ParserConfig config,
-		        IntermediateStartTag open,
-		        IntermediateEndTag close,
-		        NodeList body)
+				ParserConfig config,
+				IntermediateStartTag open,
+				IntermediateEndTag close,
+				NodeList body)
 		{
 			Paragraph e = new Paragraph(body);
 			return e;
@@ -103,10 +103,10 @@ public enum IntermediateTags
 	public abstract String getElementName();
 	
 	public abstract AstNode transform(
-	        ParserConfig config,
-	        IntermediateStartTag open,
-	        IntermediateEndTag close,
-	        NodeList body);
+			ParserConfig config,
+			IntermediateStartTag open,
+			IntermediateEndTag close,
+			NodeList body);
 	
 	public AstNode createOpen(boolean synthetic)
 	{

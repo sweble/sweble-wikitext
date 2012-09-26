@@ -30,8 +30,8 @@ import org.sweble.wikitext.engine.wom.WomHorizAlign;
 import org.sweble.wikitext.engine.wom.WomI18nDir;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomValueWithUnit;
-import org.sweble.wikitext.parser.utils.XmlAttribute;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.XmlAttribute;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

@@ -17,8 +17,8 @@
 package org.sweble.wikitext.engine.astwom;
 
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.parser.XmlElement;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.XmlElement;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

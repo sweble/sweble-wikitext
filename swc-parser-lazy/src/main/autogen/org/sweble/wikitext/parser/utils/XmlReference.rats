@@ -62,11 +62,6 @@ import org.sweble.wikitext.parser.utils.XmlName;
 
 // -- Header -------------------------------------------------------------------
 
-header
-{
-  import org.sweble.wikitext.parser.utils.XmlCharRef;
-  import org.sweble.wikitext.parser.utils.XmlEntityRef;
-}
 
 
 

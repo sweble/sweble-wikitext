@@ -22,8 +22,8 @@ import org.sweble.wikitext.parser.WarningSeverity;
 import de.fau.cs.osr.ptk.common.ast.Span;
 
 public class LooksLikeWarning
-        extends
-            WikitextWarning
+		extends
+			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,22 +32,22 @@ public class LooksLikeWarning
 	// =========================================================================
 	
 	public LooksLikeWarning(
-	        Span span,
-	        WarningSeverity severity,
-	        String origin,
-	        String looksLikeWhat,
-	        String message)
+			Span span,
+			WarningSeverity severity,
+			String origin,
+			String looksLikeWhat,
+			String message)
 	{
 		super(span, severity, origin, makeMessage(message, looksLikeWhat));
 		this.looksLikeWhat = looksLikeWhat;
 	}
 	
 	public LooksLikeWarning(
-	        Span span,
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        String looksLikeWhat,
-	        String message)
+			Span span,
+			WarningSeverity severity,
+			Class<?> origin,
+			String looksLikeWhat,
+			String message)
 	{
 		super(span, severity, origin, makeMessage(message, looksLikeWhat));
 		this.looksLikeWhat = looksLikeWhat;

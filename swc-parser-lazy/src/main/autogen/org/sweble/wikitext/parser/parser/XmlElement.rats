@@ -46,7 +46,7 @@
  *
  *   AST node:
  *     Name        : XmlStartTag
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Implements  : NamedXmlElement
  *     Constructor : "name, xmlAttributes"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_OPEN
@@ -62,7 +62,7 @@
  *
  *   AST node:
  *     Name        : XmlEmptyTag
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Implements  : NamedXmlElement
  *     Constructor : "name, xmlAttributes"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_EMPTY
@@ -78,7 +78,7 @@
  *
  *   AST node:
  *     Name        : XmlElement
- *     Extends     : InnerNode.InnerNode2
+ *     Extends     : WtInnerNode2
  *     Implements  : NamedXmlElement
  *     Constructor : "name, empty, xmlAttributes, body"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ELEMENT

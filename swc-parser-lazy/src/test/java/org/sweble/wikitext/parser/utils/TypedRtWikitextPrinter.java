@@ -19,8 +19,6 @@ package org.sweble.wikitext.parser.utils;
 import java.io.IOException;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
-
 import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 

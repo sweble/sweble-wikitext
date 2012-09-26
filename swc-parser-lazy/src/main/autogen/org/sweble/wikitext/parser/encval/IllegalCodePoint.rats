@@ -22,7 +22,7 @@
  *
  *   AST node:
  *     Name        : IllegalCodePoint
- *     Extends     : LeafNode
+ *     Extends     : WtLeafNode
  *     Constructor : "codePoint, type"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ILLEGAL_CODE_POINT
  *

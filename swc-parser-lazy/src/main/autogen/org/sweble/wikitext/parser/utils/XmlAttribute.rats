@@ -28,7 +28,7 @@
  *
  *   AST node:
  *     Name        : XmlAttribute
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Constructor : "name, hasValue"
  *     Constructor : "name, value, hasValue"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE

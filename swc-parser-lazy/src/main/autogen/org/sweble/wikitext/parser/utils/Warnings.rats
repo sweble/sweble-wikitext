@@ -24,12 +24,6 @@ module org.sweble.wikitext.parser.utils.Warnings;
 
 header
 {
-  import de.fau.cs.osr.ptk.common.Warning;
-
-  import org.sweble.wikitext.parser.WarningSeverity;
-  import org.sweble.wikitext.parser.parser.LooksLikeWarning;
-  import org.sweble.wikitext.parser.parser.OddSyntaxWarning;
-
   import java.util.LinkedList;
   import java.util.List;
 }

@@ -22,7 +22,7 @@ import java.util.GregorianCalendar;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.preprocessor.Template;
+import org.sweble.wikitext.parser.nodes.Template;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Text;

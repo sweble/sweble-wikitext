@@ -22,7 +22,7 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.preprocessor.TagExtension;
+import org.sweble.wikitext.parser.nodes.TagExtension;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;

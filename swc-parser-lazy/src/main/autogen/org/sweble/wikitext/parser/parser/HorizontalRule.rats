@@ -25,7 +25,7 @@
  *
  *   AST node:
  *     Name        : HorizontalRule
- *     Extends     : LeafNode
+ *     Extends     : WtLeafNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_HORIZONTAL_RULE
  *
  */

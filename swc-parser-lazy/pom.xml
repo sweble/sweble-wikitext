@@ -80,6 +80,7 @@
             </goals>
             <configuration>
               <sources>
+                <source>src/main/nodes</source>
                 <source>src/main/autogen</source>
                 <source>target/generated-sources/jflex</source>
               </sources>
@@ -115,6 +116,7 @@
       </plugin>
 
       <!-- Generate Ast Nodes -->
+      <!--
       <plugin>
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-nodegen-maven-plugin</artifactId>
@@ -126,6 +128,7 @@
           </ratsInputFiles>
         </configuration>
       </plugin>
+      -->
 
       <!-- Generate Ast Printers -->
       <plugin>
