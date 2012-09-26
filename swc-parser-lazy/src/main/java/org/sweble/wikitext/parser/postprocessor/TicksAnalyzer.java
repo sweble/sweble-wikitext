@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.parser.DefinitionDefinition;
-import org.sweble.wikitext.parser.parser.DefinitionTerm;
-import org.sweble.wikitext.parser.parser.EnumerationItem;
-import org.sweble.wikitext.parser.parser.ItemizationItem;
+import org.sweble.wikitext.parser.parser.DefinitionListDef;
+import org.sweble.wikitext.parser.parser.DefinitionListTerm;
+import org.sweble.wikitext.parser.parser.ListItem;
+import org.sweble.wikitext.parser.parser.ListItem;
 import org.sweble.wikitext.parser.parser.Newline;
 import org.sweble.wikitext.parser.parser.SemiPreLine;
 import org.sweble.wikitext.parser.parser.Ticks;
@@ -187,25 +187,19 @@ public class TicksAnalyzer
 				finishLine();
 		}
 		
-		public void visit(ItemizationItem n)
+		public void visit(ListItem n)
 		{
 			visit(n.getContent());
 			finishLine();
 		}
 		
-		public void visit(EnumerationItem n)
+		public void visit(DefinitionListTerm n)
 		{
 			visit(n.getContent());
 			finishLine();
 		}
 		
-		public void visit(DefinitionTerm n)
-		{
-			visit(n.getContent());
-			finishLine();
-		}
-		
-		public void visit(DefinitionDefinition n)
+		public void visit(DefinitionListDef n)
 		{
 			visit(n.getContent());
 			finishLine();
@@ -443,22 +437,17 @@ public class TicksAnalyzer
 			return result;
 		}
 		
-		public AstNode visit(ItemizationItem n)
+		public AstNode visit(ListItem n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public AstNode visit(EnumerationItem n)
+		public AstNode visit(DefinitionListTerm n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public AstNode visit(DefinitionTerm n)
-		{
-			return implicitLineScope(n);
-		}
-		
-		public AstNode visit(DefinitionDefinition n)
+		public AstNode visit(DefinitionListDef n)
 		{
 			return implicitLineScope(n);
 		}

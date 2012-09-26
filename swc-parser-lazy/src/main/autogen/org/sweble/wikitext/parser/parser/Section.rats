@@ -17,7 +17,7 @@
 
 /*!
  *
- * Section Heading
+ * Section SectionHeading
  * ---------------
  *
  *   Grammar:
@@ -45,7 +45,7 @@
  *     - Newlines
  *
  *   AST node:
- *     Name        : Heading
+ *     Name        : SectionHeading
  *     Extends     : ContentNode
  *     Constructor : "content, level"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_HEADING
@@ -81,7 +81,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 
 
-// -- Heading ------------------------------------------------------------------
+// -- SectionHeading ------------------------------------------------------------------
 
 header
 {
@@ -90,7 +90,7 @@ header
 
 body
 {
-  private Heading createHeading(
+  private SectionHeading createHeading(
       int spanFrom,
       Result spanTo,
       AstNode rt0,
@@ -128,7 +128,7 @@ body
       oCount -= oCount - cCount;
     }
 
-    Heading heading = new Heading(title, level);
+    SectionHeading heading = new SectionHeading(title, level);
 
     Text oOddText = null;
     if (oOdd > 0)
@@ -167,7 +167,7 @@ body
     return heading;
   }
 
-  private void fixSectionMetadata(Heading heading, Section section)
+  private void fixSectionMetadata(SectionHeading heading, Section section)
   {
     RtData rtd = (RtData) heading.getAttribute("RTD");
     if (rtd != null)
@@ -259,7 +259,7 @@ inline void InlineContentStopperHeading =
 ;
 
 inline void BlockStopperNextSection =
-  &{ inScope(ParserScopes.SECTION_BODY) } Heading
+  &{ inScope(ParserScopes.SECTION_BODY) } SectionHeading
 ;
 
 
@@ -268,12 +268,12 @@ inline void BlockStopperNextSection =
 // -- Section ------------------------------------------------------------------
 
 private noinline transient Section Section =
-    h:Heading Eof
+    h:SectionHeading Eof
     {
       yyValue = new Section(h.getLevel(), h.getContent(), new NodeList());
       fixSectionMetadata(h, yyValue);
     }
-  / h:Heading body:SectionContentStar
+  / h:SectionHeading body:SectionContentStar
     {
       yyValue = new Section(h.getLevel(), h.getContent(), body);
       fixSectionMetadata(h, yyValue);
@@ -283,9 +283,9 @@ private noinline transient Section Section =
 
 
 
-// -- Heading --[ State Aware Memoization ]-------------------------------------
+// -- SectionHeading --[ State Aware Memoization ]-------------------------------------
 
-noinline transient Heading Heading =
+noinline transient SectionHeading SectionHeading =
  ^{
     StateAwareResult r = (StateAwareResult) pHeadingMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -297,9 +297,9 @@ noinline transient Heading Heading =
   }
 ;
 
-noinline memoized Heading HeadingMemoized =
+noinline memoized SectionHeading HeadingMemoized =
  ^{
-    Result yyResult = new StateAwareResult("Heading", getContext(), pHeadingTransient(yyBase));
+    Result yyResult = new StateAwareResult("SectionHeading", getContext(), pHeadingTransient(yyBase));
     if (returnTrue(yyResult))
       return yyResult;
   }
@@ -308,9 +308,9 @@ noinline memoized Heading HeadingMemoized =
 
 
 
-// -- Heading ------------------------------------------------------------------
+// -- SectionHeading ------------------------------------------------------------------
 
-noinline transient Heading HeadingTransient =
+noinline transient SectionHeading HeadingTransient =
   rt0:pTpStar open:EqualsStr heading:HeadingContentStar close:EqualsStr rt1:pExtSpaceStar &slEolOrEof
   {
     // TODO: add warning productions

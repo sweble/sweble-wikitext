@@ -15,7 +15,7 @@ ParsedWikitextPage(
         [ Text("<") ]
       )
       Newline("\n")
-      XmlElementOpen(
+      XmlStartTag(
         Properties:
           RTD = RtData: [0] = "<blub", [1] = ">"
           {N} name = "blub"
@@ -23,7 +23,7 @@ ParsedWikitextPage(
         [ ]
       )
       Text("<")
-      XmlElementClose(
+      XmlEndTag(
         Properties:
           RTD = RtData: [0] = "</blub>"
           {N} name = "blub"

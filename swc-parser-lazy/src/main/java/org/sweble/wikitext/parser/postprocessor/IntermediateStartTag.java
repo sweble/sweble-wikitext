@@ -17,11 +17,13 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.parser.XmlElementClose;
+import org.sweble.wikitext.parser.parser.XmlStartTag;
 
-public class ImTagClose
+import de.fau.cs.osr.ptk.common.ast.NodeList;
+
+public class IntermediateStartTag
         extends
-            XmlElementClose
+            XmlStartTag
         implements
             IntermediateTag
 {
@@ -33,17 +35,17 @@ public class ImTagClose
 	
 	// =========================================================================
 	
-	public ImTagClose(IntermediateTags type)
+	public IntermediateStartTag(IntermediateTags type)
 	{
-		super(type.getElementName());
+		super(type.getElementName(), new NodeList());
 		
 		this.type = type;
 		this.synthetic = false;
 	}
 	
-	public ImTagClose(IntermediateTags type, boolean synthetic)
+	public IntermediateStartTag(IntermediateTags type, boolean synthetic)
 	{
-		super(type.getElementName());
+		super(type.getElementName(), new NodeList());
 		
 		this.type = type;
 		this.synthetic = synthetic;

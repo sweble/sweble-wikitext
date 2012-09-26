@@ -207,27 +207,23 @@ import org.sweble.wikitext.parser.preprocessor.*;
 {!iterate(n.getContent())}
 
 
-%visit(DefinitionTerm n)
+%visit(DefinitionListTerm n)
 ; {!iterate(trim(n.getContent()))}
 
 
-%visit(DefinitionDefinition n)
+%visit(DefinitionListDef n)
 : {!iterate(trim(n.getContent()))}
 
 
-%visit(Enumeration n)%n;%
+%visit(OrderedList n)%n;%
 {!iterate(n.getContent())}
 
 
-%visit(EnumerationItem n)
-# {!iterate(trim(n.getContent()))}
-
-
-%visit(Itemization n)%n;%
+%visit(UnorderedList n)%n;%
 {!iterate(n.getContent())}
 
 
-%visit(ItemizationItem n)
+%visit(ListItem n)
 * {!iterate(trim(n.getContent()))}
 
 
@@ -338,15 +334,15 @@ import org.sweble.wikitext.parser.preprocessor.*;
 {/if}
 
 
-%visit(XmlElementEmpty e)%
+%visit(XmlEmptyTag e)%
 <{=e.getName()}{!iterate(e.getXmlAttributes())} />
 
 
-%visit(XmlElementOpen e)%
+%visit(XmlStartTag e)%
 <{=e.getName()}{!iterate(e.getXmlAttributes())}>
 
 
-%visit(XmlElementClose e)%
+%visit(XmlEndTag e)%
 </{=e.getName()}>
 
 

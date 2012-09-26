@@ -6,9 +6,9 @@ ParsedWikitextPage(
   [
     Newline("\n")
     DefinitionList([
-      DefinitionDefinition([
+      DefinitionListDef([
         DefinitionList([
-          DefinitionDefinition(
+          DefinitionListDef(
             Properties:
               RTD = RtData: [0] = "::", [1]
 
@@ -61,7 +61,7 @@ ParsedWikitextPage(
       ]
     )
     DefinitionList([
-      DefinitionDefinition(
+      DefinitionListDef(
         Properties:
           RTD = RtData: [0] = ":", [1]
 

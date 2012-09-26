@@ -39,8 +39,8 @@ public enum IntermediateTags
 		@Override
 		public AstNode transform(
 		        ParserConfig config,
-		        ImTagOpen o,
-		        ImTagClose c,
+		        IntermediateStartTag o,
+		        IntermediateEndTag c,
 		        NodeList body)
 		{
 			Italics e = new Italics(body);
@@ -65,8 +65,8 @@ public enum IntermediateTags
 		@Override
 		public AstNode transform(
 		        ParserConfig config,
-		        ImTagOpen o,
-		        ImTagClose c,
+		        IntermediateStartTag o,
+		        IntermediateEndTag c,
 		        NodeList body)
 		{
 			Bold e = new Bold(body);
@@ -91,8 +91,8 @@ public enum IntermediateTags
 		@Override
 		public AstNode transform(
 		        ParserConfig config,
-		        ImTagOpen open,
-		        ImTagClose close,
+		        IntermediateStartTag open,
+		        IntermediateEndTag close,
 		        NodeList body)
 		{
 			Paragraph e = new Paragraph(body);
@@ -104,17 +104,17 @@ public enum IntermediateTags
 	
 	public abstract AstNode transform(
 	        ParserConfig config,
-	        ImTagOpen open,
-	        ImTagClose close,
+	        IntermediateStartTag open,
+	        IntermediateEndTag close,
 	        NodeList body);
 	
 	public AstNode createOpen(boolean synthetic)
 	{
-		return new ImTagOpen(this, synthetic);
+		return new IntermediateStartTag(this, synthetic);
 	}
 	
 	public AstNode createClose(boolean synthetic)
 	{
-		return new ImTagClose(this, synthetic);
+		return new IntermediateEndTag(this, synthetic);
 	}
 }

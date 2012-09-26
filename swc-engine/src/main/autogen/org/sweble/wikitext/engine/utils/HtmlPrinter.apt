@@ -353,31 +353,27 @@ import org.sweble.wikitext.parser.utils.*;
 </dl>
 
 
-%visit(DefinitionTerm n)
+%visit(DefinitionListTerm n)
 <dt>{!iterate(n.getContent())}</dt>
 
 
-%visit(DefinitionDefinition n)
+%visit(DefinitionListDef n)
 <dd>{!iterate(n.getContent())}</dd>
 
 
-%visit(Enumeration n)
+%visit(OrderedList n)
 <ol>
 	{!iterate(n.getContent())}
 </ol>
 
 
-%visit(EnumerationItem n)
-<li>{!iterate(n.getContent())}</li>
-
-
-%visit(Itemization n)
+%visit(UnorderedList n)
 <ul>
 	{!iterate(n.getContent())}
 </ul>
 
 
-%visit(ItemizationItem n)
+%visit(ListItem n)
 <li>{!iterate(n.getContent())}</li>
 
 
@@ -544,19 +540,19 @@ import org.sweble.wikitext.parser.utils.*;
 </span>
 
 
-%visit(XmlElementEmpty e)%
+%visit(XmlEmptyTag e)%
 <span class="{=classPrefix}unknown-node">%
 &lt;{=e.getName()}{!iterate(e.getXmlAttributes())} />%
 </span>
 
 
-%visit(XmlElementOpen e)%
+%visit(XmlStartTag e)%
 <span class="{=classPrefix}unknown-node">%
 &lt;{=e.getName()}{!iterate(e.getXmlAttributes())}>%
 </span>
 
 
-%visit(XmlElementClose e)%
+%visit(XmlEndTag e)%
 <span class="{=classPrefix}unknown-node">%
 &lt;/{=e.getName()}>%
 </span>

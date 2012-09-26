@@ -4,14 +4,14 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [ Text(" Hallo") ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
@@ -20,14 +20,14 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [ Text(" Hallo") ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
@@ -36,14 +36,14 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "<!-- Comment 1 -->*", [1] = "\n"
 
         [ Text(" Hallo") ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "<!-- Comment 2 -->*", [1]
 

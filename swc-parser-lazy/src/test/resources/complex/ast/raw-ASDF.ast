@@ -21,8 +21,8 @@ ParsedWikitextPage(
       Text(" may refer to ")
     ])
     Newline("\n")
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -40,7 +40,7 @@ ParsedWikitextPage(
           Text(", a military entity")
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -58,7 +58,7 @@ ParsedWikitextPage(
           Text(", a military entity")
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -76,7 +76,7 @@ ParsedWikitextPage(
           Text(", the most commonly used build system for Common Lisp")
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -94,7 +94,7 @@ ParsedWikitextPage(
           Text(", an organization that advances the use of synchronous data transmission technology")
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -111,7 +111,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -139,7 +139,7 @@ ParsedWikitextPage(
           Text(" keyboard")
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -156,7 +156,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
@@ -172,8 +172,8 @@ ParsedWikitextPage(
       [ Text(" See also ") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -190,7 +190,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -207,7 +207,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

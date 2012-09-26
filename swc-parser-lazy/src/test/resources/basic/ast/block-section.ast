@@ -25,14 +25,14 @@ ParsedWikitextPage(
       [ Text(" Hallo 2 ") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" a") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

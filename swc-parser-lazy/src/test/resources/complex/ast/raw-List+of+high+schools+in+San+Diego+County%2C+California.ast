@@ -44,8 +44,8 @@ ParsedWikitextPage(
           [ Text("Borrego Springs Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -62,7 +62,7 @@ ParsedWikitextPage(
                   Text(", Borrego Springs")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -81,8 +81,8 @@ ParsedWikitextPage(
           [ Text("Coronado Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -104,7 +104,7 @@ ParsedWikitextPage(
                   Text(", Coronado")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -138,20 +138,20 @@ ParsedWikitextPage(
           ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Center City High School, Escondido\t") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Escondido Charter High School, Escondido") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -168,7 +168,7 @@ ParsedWikitextPage(
                   Text(", Escondido")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -185,7 +185,7 @@ ParsedWikitextPage(
                   Text(", Escondido")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -202,13 +202,13 @@ ParsedWikitextPage(
                   Text(", Escondido")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Valley High School (continuation), Escondido") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -242,8 +242,8 @@ ParsedWikitextPage(
           [ Text("Fallbrook Union High School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -260,13 +260,13 @@ ParsedWikitextPage(
                   Text(", Fallbrook\t")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Ivy High School (continuation), Fallbrook") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -295,8 +295,8 @@ ParsedWikitextPage(
           ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -318,7 +318,7 @@ ParsedWikitextPage(
                   Text(" (continuation), El Cajon")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -335,7 +335,7 @@ ParsedWikitextPage(
                   Text(", El Cajon")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -352,7 +352,7 @@ ParsedWikitextPage(
                   Text(", Lakeside")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -374,7 +374,7 @@ ParsedWikitextPage(
                   Text(", El Cajon")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -391,7 +391,7 @@ ParsedWikitextPage(
                   Text(", La Mesa/El Cajon")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -408,7 +408,7 @@ ParsedWikitextPage(
                   Text(", El Cajon")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -425,7 +425,7 @@ ParsedWikitextPage(
                   Text(", La Mesa")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -447,7 +447,7 @@ ParsedWikitextPage(
                   Text(", Spring Valley")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -464,7 +464,7 @@ ParsedWikitextPage(
                   Text(", Spring Valley")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -481,7 +481,7 @@ ParsedWikitextPage(
                   Text(", Santee")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -498,7 +498,7 @@ ParsedWikitextPage(
                   Text(", Spring Valley")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -520,7 +520,7 @@ ParsedWikitextPage(
                   Text(", El Cajon")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -550,8 +550,8 @@ ParsedWikitextPage(
           [ Text("Julian Union High School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -568,13 +568,13 @@ ParsedWikitextPage(
                   Text(", Julian")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Redding (Ray) High (continuation), Julian") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -593,8 +593,8 @@ ParsedWikitextPage(
           [ Text("Lakeside Union School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -624,8 +624,8 @@ ParsedWikitextPage(
           [ Text("Mountain Empire Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -655,8 +655,8 @@ ParsedWikitextPage(
           [ Text("Oceanside Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -678,7 +678,7 @@ ParsedWikitextPage(
                   Text(", Oceanside")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -695,13 +695,13 @@ ParsedWikitextPage(
                   Text(", Oceanside")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Oceanside School of Business and Technology, Oceanside") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -730,8 +730,8 @@ ParsedWikitextPage(
           ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -753,7 +753,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -775,7 +775,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -792,7 +792,7 @@ ParsedWikitextPage(
                   Text(", Poway")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -809,7 +809,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -844,20 +844,20 @@ ParsedWikitextPage(
           [ Text("Ramona Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Montecito High School (alternative), Ramona") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Mountain Valley Academy High School, Ramona") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -939,8 +939,8 @@ ParsedWikitextPage(
           ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -957,7 +957,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -974,13 +974,13 @@ ParsedWikitextPage(
                   Text(", Carlsbad")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("North Coast High School (alternative)") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -997,13 +997,13 @@ ParsedWikitextPage(
                   Text(", Encinitas")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Sunset High School (alternative)") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1033,20 +1033,20 @@ ParsedWikitextPage(
           [ Text("San Marcos Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Bayshore Prep Charter School, San Marcos\t") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Foothills High (alternative), San Marcos\t") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1063,7 +1063,7 @@ ParsedWikitextPage(
                   Text(", San Marcos")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1085,7 +1085,7 @@ ParsedWikitextPage(
                   Text(", San Marcos")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1114,8 +1114,8 @@ ParsedWikitextPage(
           ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1132,7 +1132,7 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1149,7 +1149,7 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1166,7 +1166,7 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1188,7 +1188,7 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1205,13 +1205,13 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("MAAC Community Charter School, Chula Vista") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1228,7 +1228,7 @@ ParsedWikitextPage(
                   Text(", Imperial Beach")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1244,7 +1244,7 @@ ParsedWikitextPage(
                   )
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1261,7 +1261,7 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1278,7 +1278,7 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1295,13 +1295,13 @@ ParsedWikitextPage(
                   Text(", Chula Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Palomar High School, Chula Vista") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1318,7 +1318,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1335,7 +1335,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1352,7 +1352,7 @@ ParsedWikitextPage(
                   Text(", National City")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1382,8 +1382,8 @@ ParsedWikitextPage(
           [ Text("Valley Center-Pauma Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1400,49 +1400,49 @@ ParsedWikitextPage(
                   Text(", Valley Center")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Valley Center Middle School, Valley Center") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Valley Center Elementary, Valley Center") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Valley Center Primary, Valley Center") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Valley Center Lilac Elementary, Valley Center") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Pauma Valley School K-8, Pauma Valley") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Oak Glen High School (Continuation), Valley Center") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Valley Center Independent Study, Valley Center") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1461,8 +1461,8 @@ ParsedWikitextPage(
           [ Text("Vista Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1480,7 +1480,7 @@ ParsedWikitextPage(
                   Text(" (charter), Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1498,7 +1498,7 @@ ParsedWikitextPage(
                   Text(", Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1521,7 +1521,7 @@ ParsedWikitextPage(
                   Text(", Vista")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1540,8 +1540,8 @@ ParsedWikitextPage(
           [ Text("Warner Unified School District") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1558,7 +1558,7 @@ ParsedWikitextPage(
                   Text(", Warner Springs")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1635,8 +1635,8 @@ ParsedWikitextPage(
           [ Text("Episcopal") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1671,8 +1671,8 @@ ParsedWikitextPage(
           [ Text("Jewish") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1689,7 +1689,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1706,7 +1706,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1736,8 +1736,8 @@ ParsedWikitextPage(
           [ Text("Lutheran") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1757,8 +1757,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1775,7 +1775,7 @@ ParsedWikitextPage(
                   Text(", Escondido")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1805,14 +1805,14 @@ ParsedWikitextPage(
           [ Text("Non-Denominational") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Maranatha Christian Schools, San Diego") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1841,8 +1841,8 @@ ParsedWikitextPage(
           [ Text("Nonsectarian") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1862,19 +1862,19 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Carlsbad Seaside Academy, Carlsbad\t") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Carlsbad Village Academy, Carlsbad") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1896,7 +1896,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1918,7 +1918,7 @@ ParsedWikitextPage(
                   Text(", Encinitas")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1935,7 +1935,7 @@ ParsedWikitextPage(
                   Text(", Oceanside")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1952,7 +1952,7 @@ ParsedWikitextPage(
                   Text(", San Diego")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -1969,13 +1969,13 @@ ParsedWikitextPage(
                   Text(", La Jolla")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Pacific Academy International, Encinitas") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -1997,8 +1997,8 @@ ParsedWikitextPage(
       [ Text("Closed schools") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -2028,8 +2028,8 @@ ParsedWikitextPage(
       [ Text("See also") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2045,7 +2045,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2061,7 +2061,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2077,7 +2077,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2093,7 +2093,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2109,7 +2109,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -2140,7 +2140,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          XmlElementEmpty(
+          XmlEmptyTag(
             Properties:
               RTD = RtData: [0] = "<references", [1] = "/>"
               {N} name = "references"
@@ -2160,8 +2160,8 @@ ParsedWikitextPage(
       [ Text("External links") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2180,7 +2180,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

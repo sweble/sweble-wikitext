@@ -37,7 +37,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    XmlElementClose(
+                    XmlEndTag(
                       Properties:
                         RTD = RtData: [0] = "</li>"
                         {N} name = "li"

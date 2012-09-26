@@ -471,8 +471,8 @@ ParsedWikitextPage(
           Text(", and might not be applicable for the article in question.")
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -558,7 +558,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -624,7 +624,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -679,7 +679,7 @@ ParsedWikitextPage(
               Text(" (Note that there might not be an applicable infobox; remember that these suggestions are not generated manually)")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -797,7 +797,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -880,7 +880,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -924,8 +924,8 @@ ParsedWikitextPage(
                 )
               )
               Text(".)")
-              Itemization([
-                ItemizationItem(
+              UnorderedList([
+                ListItem(
                   Properties:
                     RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -991,7 +991,7 @@ ParsedWikitextPage(
                     Text(" ways to turn them green.\u201D")
                   ]
                 )
-                ItemizationItem(
+                ListItem(
                   Properties:
                     RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -1040,7 +1040,7 @@ ParsedWikitextPage(
               ])
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

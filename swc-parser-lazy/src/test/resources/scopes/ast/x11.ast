@@ -50,7 +50,7 @@ ParsedWikitextPage(
               [ ]
               [
                 Text(" d ")
-                XmlElementClose(
+                XmlEndTag(
                   Properties:
                     RTD = RtData: [0] = "</div>"
                     {N} name = "div"

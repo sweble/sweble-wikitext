@@ -15,14 +15,14 @@ ParsedWikitextPage(
       )
     ])
     Newline("\n")
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [ Text(" item 1") ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 

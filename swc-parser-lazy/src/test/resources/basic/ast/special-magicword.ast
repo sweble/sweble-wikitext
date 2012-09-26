@@ -4,8 +4,8 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -18,7 +18,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -33,7 +33,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -48,7 +48,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -63,7 +63,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -78,7 +78,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -93,7 +93,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 

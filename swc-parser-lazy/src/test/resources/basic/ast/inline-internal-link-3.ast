@@ -20,7 +20,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text(" Heading ") ]
+      [ Text(" SectionHeading ") ]
       [
         Newline("\n")
         Paragraph([ Text("]]") ])

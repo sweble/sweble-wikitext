@@ -52,13 +52,13 @@ ParsedWikitextPage(
       )
     ])
     Paragraph([
-      XmlElementClose(
+      XmlEndTag(
         Properties:
           RTD = RtData: [0] = "</tr>"
           {N} name = "tr"
       )
       Text("\n")
-      XmlElementClose(
+      XmlEndTag(
         Properties:
           RTD = RtData: [0] = "</table>"
           {N} name = "table"

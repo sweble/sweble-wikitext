@@ -16,8 +16,8 @@ Here's the meaning of those tags:
     help to transport information between parser stages.
 
   [ERROR]: These nodes indicates faulty syntax if they remain in the AST. Often 
-    these nodes are also intermediate nodes. The XmlElementOpen and 
-    XmlElementClose nodes for example: They are produced by the parser and will 
+    these nodes are also intermediate nodes. The XmlStartTag and 
+    XmlEndTag nodes for example: They are produced by the parser and will 
     be melted into XmlElement ndoes by the postprocessor if the postprocessor 
     can find matching pairs (and if the kind of XML element is actually 
     allowed). If not, both or one of the XmlElement{Open,Close} elements will 
@@ -401,7 +401,7 @@ Some important nodes:
          body  : NodeList
 
  *   AST node: [INTERMEDIATE NODE]
-       Name        : Heading
+       Name        : SectionHeading
        Extends     : ContentNode
        Constructor : "content, level"
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_HEADING
@@ -449,23 +449,23 @@ Some important nodes:
 ==[ Lists ]=====================================================================
 
  *   AST node:
-       Name        : Enumeration
+       Name        : OrderedList
        Extends     : ContentNode
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
 
  *   AST node:
-       Name        : EnumerationItem
+       Name        : ListItem
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
 
  *   AST node:
-       Name        : Itemization
+       Name        : UnorderedList
        Extends     : ContentNode
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
 
  *   AST node:
-       Name        : ItemizationItem
+       Name        : ListItem
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
@@ -476,13 +476,13 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
 
  *   AST node:
-       Name        : DefinitionTerm
+       Name        : DefinitionListTerm
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
 
  *   AST node:
-       Name        : DefinitionDefinition
+       Name        : DefinitionListDef
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION
@@ -616,7 +616,7 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
-       Name        : XmlElementOpen
+       Name        : XmlStartTag
        Extends     : InnerNode.InnerNode1
        Implements  : NamedXmlElement
        Constructor : "name, xmlAttributes"
@@ -629,7 +629,7 @@ Some important nodes:
          xmlAttributes : NodeList
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
-       Name        : XmlElementClose
+       Name        : XmlEndTag
        Extends     : LeafNode
        Implements  : NamedXmlElement
        Constructor : "name"
@@ -639,7 +639,7 @@ Some important nodes:
          name : String
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
-       Name        : XmlElementEmpty
+       Name        : XmlEmptyTag
        Extends     : InnerNode.InnerNode1
        Implements  : NamedXmlElement
        Constructor : "name, xmlAttributes"

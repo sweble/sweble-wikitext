@@ -2220,8 +2220,8 @@ ParsedWikitextPage(
           [ Text("Committee assignments") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2248,8 +2248,8 @@ ParsedWikitextPage(
                     ]
                   )
                   Text(" (Ranking Member)")
-                  Itemization([
-                    ItemizationItem(
+                  UnorderedList([
+                    ListItem(
                       Properties:
                         RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -2267,7 +2267,7 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2293,8 +2293,8 @@ ParsedWikitextPage(
                       )
                     ]
                   )
-                  Itemization([
-                    ItemizationItem(
+                  UnorderedList([
+                    ListItem(
                       Properties:
                         RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -2315,7 +2315,7 @@ ParsedWikitextPage(
                         )
                       ]
                     )
-                    ItemizationItem(
+                    ListItem(
                       Properties:
                         RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -2336,7 +2336,7 @@ ParsedWikitextPage(
                         )
                       ]
                     )
-                    ItemizationItem(
+                    ListItem(
                       Properties:
                         RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -2360,7 +2360,7 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2388,7 +2388,7 @@ ParsedWikitextPage(
                   )
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2416,7 +2416,7 @@ ParsedWikitextPage(
                   )
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -2572,50 +2572,50 @@ ParsedWikitextPage(
           [ Text("Caucus memberships") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Congressional Fire Services Caucus") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Congressional Sportsmen Foundation") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Juvenile Diabetes Caucus") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("National Guard Caucus") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Rural Health Caucus") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Senate Caucus on Military Depots, Arsenals and Ammunition Plants") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
                 [ Text("Co-Chair, Senate Reserve Caucus") ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -6272,8 +6272,8 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6299,7 +6299,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6319,7 +6319,7 @@ ParsedWikitextPage(
               Text(", official YouTube Channel")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -6514,8 +6514,8 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -6544,8 +6544,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6582,7 +6582,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6619,7 +6619,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6675,7 +6675,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6696,7 +6696,7 @@ ParsedWikitextPage(
               Text(" at On The Issues")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6731,7 +6731,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -6761,7 +6761,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -21437,7 +21437,7 @@ ParsedWikitextPage(
           ]
           [
             Newline("\n")
-            XmlElementOpen(
+            XmlStartTag(
               Properties:
                 RTD = RtData: [0] = "<references", [1] = ">"
                 {N} name = "references"
@@ -21453,7 +21453,7 @@ ParsedWikitextPage(
                 )
               ]
             )
-            XmlElementClose(
+            XmlEndTag(
               Properties:
                 RTD = RtData: [0] = "</references>"
                 {N} name = "references"

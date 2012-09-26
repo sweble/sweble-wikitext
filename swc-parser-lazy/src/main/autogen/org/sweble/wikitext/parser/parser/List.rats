@@ -34,36 +34,36 @@
  *       rt1     : AstNode
  *       prefix  : String
  *
- * Enumeration
+ * OrderedList
  * -----------
  *
  *   AST node:
- *     Name        : Enumeration
+ *     Name        : OrderedList
  *     Extends     : ContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
  *
- * EnumerationItem
+ * ListItem
  * ---------------
  *
  *   AST node:
- *     Name        : EnumerationItem
+ *     Name        : ListItem
  *     Extends     : ContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
  *
- * Itemization
+ * UnorderedList
  * -----------
  *
  *   AST node:
- *     Name        : Itemization
+ *     Name        : UnorderedList
  *     Extends     : ContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
  *
- * ItemizationItem
+ * ListItem
  * ---------------
  *
  *   AST node:
- *     Name        : ItemizationItem
+ *     Name        : ListItem
  *     Extends     : ContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
@@ -76,20 +76,20 @@
  *     Extends     : ContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
  *
- * DefinitionTerm
+ * DefinitionListTerm
  * --------------
  *
  *   AST node:
- *     Name        : DefinitionTerm
+ *     Name        : DefinitionListTerm
  *     Extends     : ContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
  *
- * DefinitionDefinition
+ * DefinitionListDef
  * --------------------
  *
  *   AST node:
- *     Name        : DefinitionDefinition
+ *     Name        : DefinitionListDef
  *     Extends     : ContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION
@@ -155,10 +155,10 @@ body
     switch (ch)
     {
       case '*':
-        node = new ListNode(ListType.ITEMIZATION, new Itemization());
+        node = new ListNode(ListType.ITEMIZATION, new UnorderedList());
         break;
       case '#':
-        node = new ListNode(ListType.ENUMERATION, new Enumeration());
+        node = new ListNode(ListType.ENUMERATION, new OrderedList());
         break;
       case ':':
       case ';':
@@ -184,16 +184,16 @@ body
     switch (ch)
     {
       case '*':
-        n = new ItemizationItem(content);
+        n = new ListItem(content);
         break;
       case '#':
-        n = new EnumerationItem(content);
+        n = new ListItem(content);
         break;
       case ':':
-        n = new DefinitionDefinition(content);
+        n = new DefinitionListDef(content);
         break;
       case ';':
-        n = new DefinitionTerm(content);
+        n = new DefinitionListTerm(content);
         break;
     }
     getCurrentListContent(listStack).add(n);

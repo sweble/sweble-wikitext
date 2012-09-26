@@ -37,7 +37,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = " ", [1]
 
             [
-              XmlElementClose(
+              XmlEndTag(
                 Properties:
                   RTD = RtData: [0] = "</td>"
                   {N} name = "td"
@@ -54,14 +54,14 @@ ParsedWikitextPage(
                   RTD = RtData: [0] = "'''", [1]
 
                 [
-                  XmlElementClose(
+                  XmlEndTag(
                     Properties:
                       RTD = RtData: [0] = "</td>"
                       {N} name = "td"
                   )
                 ]
               )
-              XmlElementClose(
+              XmlEndTag(
                 Properties:
                   RTD = RtData: [0] = "</tr>"
                   {N} name = "tr"

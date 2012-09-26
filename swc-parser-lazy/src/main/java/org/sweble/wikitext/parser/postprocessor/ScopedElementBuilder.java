@@ -19,16 +19,16 @@ package org.sweble.wikitext.parser.postprocessor;
 
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.parser.DefinitionDefinition;
+import org.sweble.wikitext.parser.parser.DefinitionListDef;
 import org.sweble.wikitext.parser.parser.DefinitionList;
-import org.sweble.wikitext.parser.parser.DefinitionTerm;
-import org.sweble.wikitext.parser.parser.Enumeration;
-import org.sweble.wikitext.parser.parser.EnumerationItem;
+import org.sweble.wikitext.parser.parser.DefinitionListTerm;
+import org.sweble.wikitext.parser.parser.OrderedList;
+import org.sweble.wikitext.parser.parser.ListItem;
 import org.sweble.wikitext.parser.parser.ExternalLink;
 import org.sweble.wikitext.parser.parser.ImageLink;
 import org.sweble.wikitext.parser.parser.InternalLink;
-import org.sweble.wikitext.parser.parser.Itemization;
-import org.sweble.wikitext.parser.parser.ItemizationItem;
+import org.sweble.wikitext.parser.parser.UnorderedList;
+import org.sweble.wikitext.parser.parser.ListItem;
 import org.sweble.wikitext.parser.parser.ParsedWikitextPage;
 import org.sweble.wikitext.parser.parser.Section;
 import org.sweble.wikitext.parser.parser.SemiPre;
@@ -39,9 +39,9 @@ import org.sweble.wikitext.parser.parser.TableCell;
 import org.sweble.wikitext.parser.parser.TableHeader;
 import org.sweble.wikitext.parser.parser.TableRow;
 import org.sweble.wikitext.parser.parser.XmlElement;
-import org.sweble.wikitext.parser.parser.XmlElementClose;
-import org.sweble.wikitext.parser.parser.XmlElementEmpty;
-import org.sweble.wikitext.parser.parser.XmlElementOpen;
+import org.sweble.wikitext.parser.parser.XmlEndTag;
+import org.sweble.wikitext.parser.parser.XmlEmptyTag;
+import org.sweble.wikitext.parser.parser.XmlStartTag;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.parser.NamedXmlElement;
@@ -174,36 +174,31 @@ public class ScopedElementBuilder
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(DefinitionTerm n)
+	public void visit(DefinitionListTerm n)
 	{
 		processScope(n);
 	}
 	
-	public void visit(DefinitionDefinition n)
+	public void visit(DefinitionListDef n)
 	{
 		processScope(n);
 	}
 	
-	public void visit(Enumeration n)
+	public void visit(OrderedList n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
 		iterate(n.getContent());
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(EnumerationItem n)
-	{
-		processScope(n);
-	}
-	
-	public void visit(Itemization n)
+	public void visit(UnorderedList n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
 		iterate(n.getContent());
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(ItemizationItem n)
+	public void visit(ListItem n)
 	{
 		processScope(n);
 	}
@@ -222,7 +217,7 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	public void visit(XmlElementEmpty n)
+	public void visit(XmlEmptyTag n)
 	{
 		if (n instanceof IntermediateTag ||
 				config.isXmlElementAllowed(n.getName()))
@@ -235,7 +230,7 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	public void visit(XmlElementOpen n)
+	public void visit(XmlStartTag n)
 	{
 		String name = n.getName();
 		if (n instanceof IntermediateTag || config.isXmlElementAllowed(name))
@@ -255,7 +250,7 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	public void visit(XmlElementClose n)
+	public void visit(XmlEndTag n)
 	{
 		String name = n.getName();
 		if (n instanceof IntermediateTag || config.isXmlElementAllowed(name))
@@ -280,7 +275,7 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	private void openAndCloseScope(ScopeType scopeType, XmlElementEmpty n)
+	private void openAndCloseScope(ScopeType scopeType, XmlEmptyTag n)
 	{
 		Scope current = null;
 		if (scopeType.isCloseInline())
@@ -380,7 +375,7 @@ public class ScopedElementBuilder
 		if (current.match(/*scopeType, */closing))
 		{
 			stack.pop();
-			stack.append(close(current, (XmlElementClose) n));
+			stack.append(close(current, (XmlEndTag) n));
 			
 			reopenClosedInlineScopes(current.getClosedInline());
 			return;
@@ -391,7 +386,7 @@ public class ScopedElementBuilder
 		Scope s = findMatchingOpeningTag(scopeType, current, closing);
 		if (s == null)
 		{
-			if (!(n instanceof ImTagClose))
+			if (!(n instanceof IntermediateEndTag))
 				stack.append(n);
 			return;
 		}
@@ -408,7 +403,7 @@ public class ScopedElementBuilder
 			{
 				// This call also reopens closed scopes after the closing tag n
 				Scope toIncl = stack.top();
-				closeScopesBeforeClosingTag(from, toIncl, (XmlElementClose) n);
+				closeScopesBeforeClosingTag(from, toIncl, (XmlEndTag) n);
 				break;
 			}
 			else if (s.getType().isWikitextScope())
@@ -498,7 +493,7 @@ public class ScopedElementBuilder
 	private void closeScopesBeforeClosingTag(
 			Scope from,
 			Scope toIncl,
-			XmlElementClose close_)
+			XmlEndTag close_)
 	{
 		LinkedList<Scope> reopen = null;
 		
@@ -675,16 +670,16 @@ public class ScopedElementBuilder
 				return c0;
 		}
 		
-		if (s.getElement() instanceof ImTagOpen)
+		if (s.getElement() instanceof IntermediateStartTag)
 		{
-			final ImTagOpen open = (ImTagOpen) s.getElement();
-			final ImTagClose close = (ImTagClose) c;
+			final IntermediateStartTag open = (IntermediateStartTag) s.getElement();
+			final IntermediateEndTag close = (IntermediateEndTag) c;
 			return open.getType().transform(config, open, close, content);
 		}
 		else
 		{
-			final XmlElementOpen open = (XmlElementOpen) s.getElement();
-			final XmlElementClose close = (XmlElementClose) c;
+			final XmlStartTag open = (XmlStartTag) s.getElement();
+			final XmlEndTag close = (XmlEndTag) c;
 			return createElement(
 					open,
 					content,
@@ -695,12 +690,12 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	private XmlElement createEmptyElement(XmlElementEmpty empty)
+	private XmlElement createEmptyElement(XmlEmptyTag empty)
 	{
 		return createEmptyElement(empty, empty.getXmlAttributes(), true);
 	}
 	
-	private XmlElement createEmptyElement(XmlElementOpen open)
+	private XmlElement createEmptyElement(XmlStartTag open)
 	{
 		return createEmptyElement(open, open.getXmlAttributes(), false);
 	}
@@ -740,9 +735,9 @@ public class ScopedElementBuilder
 	}
 	
 	private XmlElement createElement(
-			XmlElementOpen open,
+			XmlStartTag open,
 			NodeList body,
-			XmlElementClose close,
+			XmlEndTag close,
 			boolean hasOpen)
 	{
 		XmlElement e = new XmlElement(

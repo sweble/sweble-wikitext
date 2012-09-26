@@ -20,7 +20,7 @@ ParsedWikitextPage(
     Newline("\n")
     Text("P2")
     Newline("\n")
-    XmlElementClose(
+    XmlEndTag(
       Properties:
         RTD = RtData: [0] = "</p>"
         {N} name = "p"

@@ -605,7 +605,7 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([
           Text("The sample text (\"Header 1\" or \"row 1, cell 1\") is to be replaced with actual data.")
-          XmlElementClose(
+          XmlEndTag(
             Properties:
               RTD = RtData: [0] = "</div>"
               {N} name = "div"
@@ -854,8 +854,8 @@ ParsedWikitextPage(
           Text(" markup, so a knowledge of HTML table code will help in understanding pipe code.  The shortcuts are as follows:")
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -998,8 +998,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -1128,8 +1128,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -1348,8 +1348,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -1578,8 +1578,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -1803,8 +1803,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -2239,8 +2239,8 @@ ParsedWikitextPage(
         Paragraph([ Text("Just remember: no more than 2 single pipes on a line!") ])
         Newline("\n")
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -2458,8 +2458,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -2655,8 +2655,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -9887,7 +9887,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             DefinitionList([
-              DefinitionDefinition(
+              DefinitionListDef(
                 Properties:
                   RTD = RtData: [0] = ":", [1] = "\n"
 
@@ -9901,7 +9901,7 @@ ParsedWikitextPage(
                   )
                   Text("):")
                   DefinitionList([
-                    DefinitionDefinition(
+                    DefinitionListDef(
                       Properties:
                         RTD = RtData: [0] = "::", [1] = "\n"
 
@@ -9920,16 +9920,16 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              DefinitionDefinition(
+              DefinitionListDef(
                 Properties:
                   RTD = RtData: [0] = ":", [1] = "\n"
 
                 [
                   Text("Result:")
                   DefinitionList([
-                    DefinitionDefinition([
-                      Itemization([
-                        ItemizationItem(
+                    DefinitionListDef([
+                      UnorderedList([
+                        ListItem(
                           Properties:
                             RTD = RtData: [0] = "::*", [1] = "\n"
 
@@ -9981,7 +9981,7 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              DefinitionDefinition(
+              DefinitionListDef(
                 Properties:
                   RTD = RtData: [0] = ":", [1] = "\n"
 
@@ -9995,7 +9995,7 @@ ParsedWikitextPage(
                   )
                   Text("):")
                   DefinitionList([
-                    DefinitionDefinition(
+                    DefinitionListDef(
                       Properties:
                         RTD = RtData: [0] = "::", [1] = "\n"
 
@@ -10014,16 +10014,16 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              DefinitionDefinition(
+              DefinitionListDef(
                 Properties:
                   RTD = RtData: [0] = ":", [1] = "\n"
 
                 [
                   Text("Result:")
                   DefinitionList([
-                    DefinitionDefinition([
-                      Itemization([
-                        ItemizationItem(
+                    DefinitionListDef([
+                      UnorderedList([
+                        ListItem(
                           Properties:
                             RTD = RtData: [0] = "::*", [1]
 
@@ -10734,7 +10734,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         DefinitionList([
-          DefinitionDefinition(
+          DefinitionListDef(
             Properties:
               RTD = RtData: [0] = ":", [1]
 
@@ -10782,8 +10782,8 @@ ParsedWikitextPage(
           Text(" class. The style for this class can be specified in various ways:")
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -10806,7 +10806,7 @@ ParsedWikitextPage(
               Text(")")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -10837,7 +10837,7 @@ ParsedWikitextPage(
               Text(")")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -10855,13 +10855,13 @@ ParsedWikitextPage(
               Text(" etc.")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" individually on one wiki in a user subpage") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -12580,7 +12580,7 @@ ParsedWikitextPage(
       [
         Newline("\n")
         DefinitionList([
-          DefinitionDefinition(
+          DefinitionListDef(
             Properties:
               RTD = RtData: [0] = ":", [1]
 
@@ -12644,20 +12644,20 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" Do not divide a table into sections by subheaders spanning several rows. Instead, an extra column can be made showing the content of these headers on each row, in a short form.") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" Do not have elements spanning several columns; instead, again, repeat the content on each row, in a short form.") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -13503,26 +13503,26 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([ Text("Regardless of whether wikitable format or HTML is used, the wikitext of the rows within a table, and sometimes even within a collection of tables, has much in common, e.g.:") ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" the basic code for a table row") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" code for color, alignment, and sorting mode") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" fixed texts such as units") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -13532,26 +13532,26 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([ Text("In that case it can be useful to create a template that produces the syntax for a table row, with the data as parameters. This can have many advantages:") ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" easily changing the order of columns, or removing a column") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" easily adding a new column if many elements of the new column are left blank (if the column is inserted and the existing fields are unnamed, use a named parameter for the new field to avoid adding blank parameter values to many template calls)") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [ Text(" computing fields from other fields, e.g. population density from population and area") ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -13574,7 +13574,7 @@ ParsedWikitextPage(
               Text(" and another for display")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -13993,14 +13993,14 @@ ParsedWikitextPage(
           Text(" syntax that MediaWiki supports:")
         ])
         Newline("\n")
-        Enumeration([
-          EnumerationItem(
+        OrderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "#", [1] = "\n"
 
             [ Text("XHTML") ]
           )
-          EnumerationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "#", [1]
 
@@ -14857,32 +14857,32 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        Itemization([
-                          ItemizationItem(
+                        UnorderedList([
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Can preview or debug with any XHTML editor") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Can be indented for easier reading") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Well-known") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Insensitive to newlines") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1]
 
@@ -14899,26 +14899,26 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        Itemization([
-                          ItemizationItem(
+                        UnorderedList([
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Easy to write") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Easy to read") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Takes little space") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1]
 
@@ -14971,38 +14971,38 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        Itemization([
-                          ItemizationItem(
+                        UnorderedList([
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Tedious") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Takes a lot of space") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Difficult to read quickly") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Accidentally putting \"tr\" for \"td\" can cause confusion for hours.") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Indented code might not match nesting.") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1]
 
@@ -15019,32 +15019,32 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        Itemization([
-                          ItemizationItem(
+                        UnorderedList([
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Unfamiliar syntax") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Rigid structure") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Cannot be indented") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
                             [ Text(" Text (as in HTML tags) may be easier for some people to read than series of pipes, plus signs, dashes, etc.") ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -15062,7 +15062,7 @@ ParsedWikitextPage(
                               Text(" to pass a \"|\" in a parameter.")
                             ]
                           )
-                          ItemizationItem(
+                          ListItem(
                             Properties:
                               RTD = RtData: [0] = "*", [1]
 
@@ -15400,8 +15400,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ Text("Note:") ])
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -15437,7 +15437,7 @@ ParsedWikitextPage(
                   Text(" equivalent")
                 ]
               )
-              ItemizationItem(
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -17544,7 +17544,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         DefinitionList([
-          DefinitionDefinition(
+          DefinitionListDef(
             Properties:
               RTD = RtData: [0] = ":", [1]
 
@@ -19066,8 +19066,8 @@ ParsedWikitextPage(
       [ Text(" See also ") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19084,7 +19084,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19101,7 +19101,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19118,7 +19118,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19135,7 +19135,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19152,7 +19152,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19169,7 +19169,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19186,7 +19186,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19203,7 +19203,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19220,7 +19220,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19237,7 +19237,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19254,14 +19254,14 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [
               Text(" Examples:")
-              Itemization([
-                ItemizationItem(
+              UnorderedList([
+                ListItem(
                   Properties:
                     RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -19283,7 +19283,7 @@ ParsedWikitextPage(
                     )
                   ]
                 )
-                ItemizationItem(
+                ListItem(
                   Properties:
                     RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -19305,7 +19305,7 @@ ParsedWikitextPage(
                     )
                   ]
                 )
-                ItemizationItem(
+                ListItem(
                   Properties:
                     RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -19327,7 +19327,7 @@ ParsedWikitextPage(
                     )
                   ]
                 )
-                ItemizationItem(
+                ListItem(
                   Properties:
                     RTD = RtData: [0] = "**", [1] = "\n"
 
@@ -19352,7 +19352,7 @@ ParsedWikitextPage(
               ])
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19374,7 +19374,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19396,7 +19396,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -19435,8 +19435,8 @@ ParsedWikitextPage(
       [ Text(" External links ") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19454,7 +19454,7 @@ ParsedWikitextPage(
               Text(" published in German-Wikipediaproject (English instructions included)")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19474,7 +19474,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19525,7 +19525,7 @@ ParsedWikitextPage(
               Text(")")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19545,7 +19545,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19565,7 +19565,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19586,7 +19586,7 @@ ParsedWikitextPage(
               Text(" (can convert HTML tables to wiki)")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19607,7 +19607,7 @@ ParsedWikitextPage(
               Text(" Various versions and languages")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19628,7 +19628,7 @@ ParsedWikitextPage(
               Text(" with good examples")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -19649,7 +19649,7 @@ ParsedWikitextPage(
               Text(": A selection of tables and their Wiki/HTML code")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

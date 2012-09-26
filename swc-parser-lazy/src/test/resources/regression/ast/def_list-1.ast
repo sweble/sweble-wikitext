@@ -5,27 +5,27 @@ ParsedWikitextPage(
 
   [
     DefinitionList([
-      DefinitionTerm(
+      DefinitionListTerm(
         Properties:
           RTD = RtData: [0] = ";", [1] = "\n"
 
         [ Text("Other") ]
       )
     ])
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [ Text("x") ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [ Text("y") ]
       )
-      ItemizationItem(
+      ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 

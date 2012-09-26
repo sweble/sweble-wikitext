@@ -4,8 +4,8 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Itemization([
-      ItemizationItem(
+    UnorderedList([
+      ListItem(
         Properties:
           RTD = RtData: [0] = "<!--Comment-->*", [1]
 

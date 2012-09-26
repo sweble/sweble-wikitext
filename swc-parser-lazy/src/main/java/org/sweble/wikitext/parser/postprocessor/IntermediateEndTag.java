@@ -17,13 +17,11 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.parser.XmlElementOpen;
+import org.sweble.wikitext.parser.parser.XmlEndTag;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
-public class ImTagOpen
+public class IntermediateEndTag
         extends
-            XmlElementOpen
+            XmlEndTag
         implements
             IntermediateTag
 {
@@ -35,17 +33,17 @@ public class ImTagOpen
 	
 	// =========================================================================
 	
-	public ImTagOpen(IntermediateTags type)
+	public IntermediateEndTag(IntermediateTags type)
 	{
-		super(type.getElementName(), new NodeList());
+		super(type.getElementName());
 		
 		this.type = type;
 		this.synthetic = false;
 	}
 	
-	public ImTagOpen(IntermediateTags type, boolean synthetic)
+	public IntermediateEndTag(IntermediateTags type, boolean synthetic)
 	{
-		super(type.getElementName(), new NodeList());
+		super(type.getElementName());
 		
 		this.type = type;
 		this.synthetic = synthetic;

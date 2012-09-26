@@ -355,8 +355,8 @@ ParsedWikitextPage(
           [ Text(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
           [
             Newline("\n")
-            Itemization([
-              ItemizationItem(
+            UnorderedList([
+              ListItem(
                 Properties:
                   RTD = RtData: [0] = "*", [1]
 
@@ -2871,8 +2871,8 @@ ParsedWikitextPage(
       [ Text("See also") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -2924,8 +2924,8 @@ ParsedWikitextPage(
       [ Text("External links") ]
       [
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2945,7 +2945,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -2974,7 +2974,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

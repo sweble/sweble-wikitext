@@ -32,7 +32,7 @@
  * ---------------
  *
  *   AST node:
- *     Name        : XmlElementClose
+ *     Name        : XmlEndTag
  *     Extends     : LeafNode
  *     Implements  : NamedXmlElement
  *     Constructor : "name"
@@ -45,7 +45,7 @@
  * ---------------
  *
  *   AST node:
- *     Name        : XmlElementOpen
+ *     Name        : XmlStartTag
  *     Extends     : InnerNode.InnerNode1
  *     Implements  : NamedXmlElement
  *     Constructor : "name, xmlAttributes"
@@ -61,7 +61,7 @@
  * -----------------
  *
  *   AST node:
- *     Name        : XmlElementEmpty
+ *     Name        : XmlEmptyTag
  *     Extends     : InnerNode.InnerNode1
  *     Implements  : NamedXmlElement
  *     Constructor : "name, xmlAttributes"
@@ -106,18 +106,18 @@ import org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 // -- XmlElement ---------------------------------------------------------------
 
 AstNode XmlElement =
-    "</" yyValue:XmlElementClose
-  / '<'  yyValue:XmlElementOpen
+    "</" yyValue:XmlEndTag
+  / '<'  yyValue:XmlStartTag
   / '<'
     {
       yyValue = new Text("<");
     }
 ;
 
-private inline AstNode XmlElementClose =
+private inline AstNode XmlEndTag =
     name:XmlName ws:pWsStar '>'
     {
-      yyValue = new XmlElementClose(name);
+      yyValue = new XmlEndTag(name);
 
       if (isGatherRtData())
         addRtData(yyValue, joinRt("</", name, ws, '>'));
@@ -125,10 +125,10 @@ private inline AstNode XmlElementClose =
     // FIXME: Add auto correction and/or warning generation
 ;
 
-private inline AstNode XmlElementOpen =
+private inline AstNode XmlStartTag =
     name:XmlName attributes:AttributeStar ws:pWsStar "/>"
     {
-      yyValue = new XmlElementEmpty(name, attributes);
+      yyValue = new XmlEmptyTag(name, attributes);
 
       if (isGatherRtData())
         addRtData(yyValue,
@@ -137,7 +137,7 @@ private inline AstNode XmlElementOpen =
     }
   / name:XmlName attributes:AttributeStar ws:pWsStar '>'
     {
-      yyValue = new XmlElementOpen(name, attributes);
+      yyValue = new XmlStartTag(name, attributes);
 
       if (isGatherRtData())
         addRtData(yyValue,

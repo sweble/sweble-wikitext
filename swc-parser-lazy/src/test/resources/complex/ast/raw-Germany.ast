@@ -26177,8 +26177,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -26831,8 +26831,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "<!--\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n-->\n*", [1] = "\n"
 
@@ -26853,7 +26853,7 @@ ParsedWikitextPage(
               Text(" \u2013 Official Germany portal (non-profit)")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -26874,7 +26874,7 @@ ParsedWikitextPage(
               Text(" (German and English)")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -26895,7 +26895,7 @@ ParsedWikitextPage(
               Text(" \u2013 Germany's international broadcaster")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -26915,7 +26915,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -26948,7 +26948,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -26985,7 +26985,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -27012,7 +27012,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
@@ -27059,8 +27059,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Itemization([
-          ItemizationItem(
+        UnorderedList([
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
@@ -27081,7 +27081,7 @@ ParsedWikitextPage(
               Text(" \u2013 by the German Federal Foreign Office")
             ]
           )
-          ItemizationItem(
+          ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 

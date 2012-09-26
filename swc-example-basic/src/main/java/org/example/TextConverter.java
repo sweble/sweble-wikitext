@@ -25,15 +25,15 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.encval.IllegalCodePoint;
 import org.sweble.wikitext.parser.parser.Bold;
-import org.sweble.wikitext.parser.parser.Enumeration;
-import org.sweble.wikitext.parser.parser.EnumerationItem;
+import org.sweble.wikitext.parser.parser.OrderedList;
+import org.sweble.wikitext.parser.parser.ListItem;
 import org.sweble.wikitext.parser.parser.ExternalLink;
 import org.sweble.wikitext.parser.parser.HorizontalRule;
 import org.sweble.wikitext.parser.parser.ImageLink;
 import org.sweble.wikitext.parser.parser.InternalLink;
 import org.sweble.wikitext.parser.parser.Italics;
-import org.sweble.wikitext.parser.parser.Itemization;
-import org.sweble.wikitext.parser.parser.ItemizationItem;
+import org.sweble.wikitext.parser.parser.UnorderedList;
+import org.sweble.wikitext.parser.parser.ListItem;
 import org.sweble.wikitext.parser.parser.PageSwitch;
 import org.sweble.wikitext.parser.parser.Paragraph;
 import org.sweble.wikitext.parser.parser.Section;
@@ -152,23 +152,17 @@ public class TextConverter
 		iterate(n);
 	}
 	
-	public void visit(Itemization e)
+	public void visit(UnorderedList e)
 	{
 		iterate(e.getContent());
 	}
 	
-	public void visit(ItemizationItem i)
-	{
-		newline(1);
-		iterate(i.getContent());
-	}
-	
-	public void visit(Enumeration e)
+	public void visit(OrderedList e)
 	{
 		iterate(e.getContent());
 	}
 	
-	public void visit(EnumerationItem item)
+	public void visit(ListItem item)
 	{
 		newline(1);
 		iterate(item.getContent());
