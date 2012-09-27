@@ -58,7 +58,7 @@ ParsedWikitextPage(
                   Text(" ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1], [2] = "]"
+                      {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
                     Url(
                       Properties:

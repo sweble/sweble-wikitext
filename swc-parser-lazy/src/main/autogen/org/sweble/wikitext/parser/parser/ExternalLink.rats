@@ -113,21 +113,15 @@ private inline stateful AstNode
 ExternalLinkChoice =
     rt0:pTpStar target:Url rt1:pExtSpacePlus title:ExternalLinkTitleContentPlus ']'
     {
-      yyValue = new ExternalLink(target, title);
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt('[', rt0),
-            joinRt(rt1),
-            joinRt(']'));
+      yyValue = setRtd(
+        new ExternalLink(target, title),
+        '[', rt0, SEP, rt1, SEP, ']');
     }
   / rt0:pTpStar target:Url rt1:pSpaceStar ']'
     {
-      yyValue = new ExternalLink(target);
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt('[', rt0),
-            null,
-            joinRt(rt1, ']'));
+      yyValue = setRtd(
+        new ExternalLink(target),
+        '[', rt0, SEP, SEP, rt1, ']');
     }
   / &{ isWarningsEnabled() } ExternalLinkAutoCorrect
 ;
@@ -135,7 +129,9 @@ ExternalLinkChoice =
 private inline AstNode ExternalLinkAutoCorrect =
     &{ isAutoCorrect(WS_INFO) } rt0:pTpStar target:Url
     {
-      yyValue = new ExternalLink(target);
+      yyValue = setRtd(
+        new ExternalLink(target),
+        '[', rt0, SEP, SEP, ']');
 
       fileLooksLikeWarning(
           yyValue,
@@ -143,12 +139,6 @@ private inline AstNode ExternalLinkAutoCorrect =
           WS_INFO,
           "External Link",
           "the finishing `]' is missing");
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt('[', rt0),
-            null,
-            joinRt(']'));
     }
   / &{ isWarningLevelEnabled(WS_INFO) } &( pTpStar Url )
     {

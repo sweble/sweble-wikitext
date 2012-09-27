@@ -837,7 +837,7 @@ ParsedWikitextPage(
                                 Text("Indeed, even ")
                                 ExternalLink(
                                   Properties:
-                                    RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                    {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                   Url(
                                     Properties:
@@ -850,7 +850,7 @@ ParsedWikitextPage(
                                 Text(" is has hotter summers than ")
                                 ExternalLink(
                                   Properties:
-                                    RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                    {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                   Url(
                                     Properties:
@@ -863,7 +863,7 @@ ParsedWikitextPage(
                                 Text(". Nearly as hot as ")
                                 ExternalLink(
                                   Properties:
-                                    RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                    {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                   Url(
                                     Properties:
@@ -1215,7 +1215,7 @@ ParsedWikitextPage(
           Text("It seems that I am far from the only one who has mixed up the various games played in 1858. ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1], [2] = "]"
+              {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
             Url(
               Properties:
@@ -2729,7 +2729,7 @@ ParsedWikitextPage(
           Text("The crowd at the last Raiders match (v Manly) was 10,366;")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1], [2] = "]"
+              {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
             Url(
               Properties:
@@ -2742,7 +2742,7 @@ ParsedWikitextPage(
           Text(" the AFL Kangaroos biggest crowd this year was 13,481:")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1], [2] = "]"
+              {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
             Url(
               Properties:
@@ -2821,7 +2821,7 @@ ParsedWikitextPage(
           Text(" smash the Brumbies, expect union to decline in the ACT as well ;-) Seriously, with a population of 300,000, it's not a bad effort to get 10,000+ to both league and AFL games. According to the Governor-General the Brumbies get an average crowd of 22,500.")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1], [2] = "]"
+              {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
             Url(
               Properties:
@@ -3006,7 +3006,7 @@ ParsedWikitextPage(
                   Text("The average 2005 crowds for comparison.  Rugby Union 22,895; Rugby League 12,404; Aussie Rules 12,149.  Based on crowds alone, Union should rightly be most popular in ACT.  League gets good TV ratings but this may also be because the games are broadcast more regularly (Super 14 matches are not held as often).  Aussie Rules may be catching up, but by average crowds and ratings it is still 3rd overall.  Canberra memberships for both the Kangaroos and Sydney Swans may have nearly doubled in 2006, but still total less than 1,000 ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1], [2] = "]"
+                      {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
                     Url(
                       Properties:
@@ -3019,7 +3019,7 @@ ParsedWikitextPage(
                   Text(" ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1], [2] = "]"
+                      {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
                     Url(
                       Properties:
@@ -3449,7 +3449,7 @@ ParsedWikitextPage(
           Text("I'm not really sure what you're trying to say, since your arguments are as dodgy as the ones you are apparaently debunking, not to mention noone ever used a state count to prove anything. Aussie Rules is the most popular code of football in Australia, by any measure (eg ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1], [2] = "]"
+              {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
             Url(
               Properties:
@@ -4161,7 +4161,7 @@ ParsedWikitextPage(
               Text("Oh, by the way, official attendance at the WAFL grand final was 22,570.")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1], [2] = "]"
+                  {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
                 Url(
                   Properties:
@@ -5905,7 +5905,7 @@ ParsedWikitextPage(
                   Text("Re: the word elite. Geez, if you really want one, the NAB (sponsors) obviously think it is elite, because they drop the word about 5 times in this article ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1], [2] = "]"
+                      {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
                     Url(
                       Properties:
@@ -6406,7 +6406,7 @@ ParsedWikitextPage(
           Text("Bah :p Many links, but none to ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+              {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
             Url(
               Properties:
@@ -6507,7 +6507,7 @@ ParsedWikitextPage(
                   Text("; to see it in its original context prior to the move ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                      {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                     Url(
                       Properties:
@@ -6762,7 +6762,7 @@ ParsedWikitextPage(
                   Text("I've uploaded some pictures I took at a match between Essendon and the Lions in June last year. They're not great, but are better than what is there now. I haven't added them in yet, I'll leave that for someone else to do. They could also possibly be re-cropped and resized, I can do this if someone asks. Locations: ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                      {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                     Url(
                       Properties:
@@ -6775,7 +6775,7 @@ ParsedWikitextPage(
                   Text(", ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                      {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                     Url(
                       Properties:
@@ -6788,7 +6788,7 @@ ParsedWikitextPage(
                   Text(", ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                      {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                     Url(
                       Properties:

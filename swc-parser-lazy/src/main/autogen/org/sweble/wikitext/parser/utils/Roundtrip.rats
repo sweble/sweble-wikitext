@@ -29,6 +29,8 @@ header
 
 body
 {
+  private static final String SEP = RtDataPtk.SEP;
+
   protected boolean isGatherRtData()
   {
       return getState().isGatherRtData();

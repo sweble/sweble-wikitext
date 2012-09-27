@@ -1639,7 +1639,7 @@ ParsedWikitextPage(
                   Text(" ")
                   ExternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                      {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                     Url(
                       Properties:
@@ -6280,7 +6280,7 @@ ParsedWikitextPage(
             [
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6306,7 +6306,7 @@ ParsedWikitextPage(
             [
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6326,7 +6326,7 @@ ParsedWikitextPage(
             [
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6522,7 +6522,7 @@ ParsedWikitextPage(
             [
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6553,7 +6553,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6590,7 +6590,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6627,7 +6627,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6640,7 +6640,7 @@ ParsedWikitextPage(
               Text(", ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6653,7 +6653,7 @@ ParsedWikitextPage(
               Text(", and ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6683,7 +6683,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6704,7 +6704,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6739,7 +6739,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -6768,7 +6768,7 @@ ParsedWikitextPage(
             [
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -8659,7 +8659,7 @@ ParsedWikitextPage(
                                             )
                                             ExternalLink(
                                               Properties:
-                                                RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                                {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                               Url(
                                                 Properties:
@@ -10318,7 +10318,7 @@ ParsedWikitextPage(
                                             )
                                             ExternalLink(
                                               Properties:
-                                                RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                                {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                               Url(
                                                 Properties:
@@ -12629,7 +12629,7 @@ ParsedWikitextPage(
                                             )
                                             ExternalLink(
                                               Properties:
-                                                RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                                {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                               Url(
                                                 Properties:
@@ -16108,7 +16108,7 @@ ParsedWikitextPage(
                                             )
                                             ExternalLink(
                                               Properties:
-                                                RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                                                {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                                               Url(
                                                 Properties:

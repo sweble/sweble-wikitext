@@ -10824,7 +10824,7 @@ ParsedWikitextPage(
               Text(" (for example, on this and some other projects there is or was the class wikitable, later moved to ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -13630,7 +13630,7 @@ ParsedWikitextPage(
           Text(", ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+              {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
             Url(
               Properties:
@@ -15209,7 +15209,7 @@ ParsedWikitextPage(
           Text(") for HTML. There is an ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+              {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
             Url(
               Properties:
@@ -19010,7 +19010,7 @@ ParsedWikitextPage(
           Text("To convert from spreadsheets such as Gnumeric, MS Excel or OpenOffice.org Calc, you can use the ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+              {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
             Url(
               Properties:
@@ -19042,7 +19042,7 @@ ParsedWikitextPage(
           Text(" and use the ")
           ExternalLink(
             Properties:
-              RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+              {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
             Url(
               Properties:
@@ -19462,7 +19462,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19482,7 +19482,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19533,7 +19533,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19553,7 +19553,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19573,7 +19573,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19594,7 +19594,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19615,7 +19615,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19636,7 +19636,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
@@ -19657,7 +19657,7 @@ ParsedWikitextPage(
               Text(" ")
               ExternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[", [1] = " ", [2] = "]"
+                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
                 Url(
                   Properties:
