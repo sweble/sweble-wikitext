@@ -75,9 +75,9 @@ private inline WikitextNode HorizontalRuleChoice =
     {
       int dashes = 3 + more.size();
 
-      yyValue = new HorizontalRule();
-
-      setRtd(yyValue, StringUtils.strrep('-', dashes));
+      yyValue = setRtd(
+        new HorizontalRule(),
+        StringUtils.strrep('-', dashes));
     }
   / &{ isWarningsEnabled() } HorizontalRuleAutoCorrect
 ;

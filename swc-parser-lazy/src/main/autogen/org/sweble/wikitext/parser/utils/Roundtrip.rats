@@ -54,16 +54,18 @@ body
   	TextUtils.prependRtData(n, data);
   }
 
-  private void setRtd(WikitextNode node, String... glue)
+  private <T extends WikitextNode> T setRtd(T node, String... glue)
   {
     if (isGatherRtData())
       node.setRtd(glue);
+    return node;
   }
 
-  private void setRtd(WikitextNode node, Object... glue)
+  private <T extends WikitextNode> T setRtd(T node, Object... glue)
   {
     if (isGatherRtData())
       node.setRtd(glue);
+    return node;
   }
 }
 
