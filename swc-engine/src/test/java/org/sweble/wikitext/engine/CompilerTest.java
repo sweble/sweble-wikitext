@@ -55,14 +55,14 @@ public class CompilerTest
 						"    Text(\"Founded in \")\n" +
 						"    InternalLink(\n" +
 						"      Properties:\n" +
-						"            RTD = RtData: [0] = \"[[1901 in baseball\", [1] = \"]]\"\n" +
 						"        {N} postfix = \"\"\n" +
 						"        {N} prefix = \"\"\n" +
+						"        {N} rtd = RTD[ \"[[1901 in baseball\" <o> \"]]\" ]\n" +
 						"        {N} target = \"1901 in baseball\"\n" +
 						"\n" +
 						"      LinkTitle(\n" +
 						"        Properties:\n" +
-						"              RTD = RtData: [0] = \"|\", [1]\n" +
+						"          {N} rtd = RTD[ \"|\" <o> \"\" ]\n" +
 						"\n" +
 						"        [ Text(\"1901\") ]\n" +
 						"      )\n" +

@@ -31,9 +31,9 @@ ParsedWikitextPage(
         [
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[MythBusters", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[MythBusters" <o> "]]" ]
               {N} target = "MythBusters"
 
             LinkTitle([ ])
@@ -43,9 +43,9 @@ ParsedWikitextPage(
       Text(" perform experiments to verify or debunk ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[urban legend", [1] = "]]s"
           {N} postfix = "s"
           {N} prefix = ""
+          {N} rtd = RTD[ "[[urban legend" <o> "]]s" ]
           {N} target = "urban legend"
 
         LinkTitle([ ])
@@ -53,9 +53,9 @@ ParsedWikitextPage(
       Text(", ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[old wives' tale", [1] = "]]s"
           {N} postfix = "s"
           {N} prefix = ""
+          {N} rtd = RTD[ "[[old wives' tale" <o> "]]s" ]
           {N} target = "old wives' tale"
 
         LinkTitle([ ])
@@ -63,14 +63,14 @@ ParsedWikitextPage(
       Text(", and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[MythBusters#Conclusions of the experiments", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[MythBusters#Conclusions of the experiments" <o> "]]" ]
           {N} target = "MythBusters#Conclusions of the experiments"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Busted, Plausible, or Confirmed") ]
         )
@@ -83,9 +83,9 @@ ParsedWikitextPage(
       Text("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Discovery Channel", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Discovery Channel" <o> "]]" ]
           {N} target = "Discovery Channel"
 
         LinkTitle([ ])
@@ -364,9 +364,9 @@ ParsedWikitextPage(
                   Text(" Original airdate: April 26, 2008 on ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[Science Channel", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[Science Channel" <o> "]]" ]
                       {N} target = "Science Channel"
 
                     LinkTitle([ ])
@@ -380,9 +380,9 @@ ParsedWikitextPage(
               Text("This episode aired first on ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Science Channel", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Science Channel" <o> "]]" ]
                   {N} target = "Science Channel"
 
                 LinkTitle([ ])
@@ -390,9 +390,9 @@ ParsedWikitextPage(
               Text(", as opposed to the show's regular home of ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Discovery Channel", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Discovery Channel" <o> "]]" ]
                   {N} target = "Discovery Channel"
 
                 LinkTitle([ ])
@@ -400,9 +400,9 @@ ParsedWikitextPage(
               Text(".  A team of winners in Discovery's \"Young Scientist Challenge\" competitions tested environmental myths with the team.  Former MythBuster ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Scottie Chapman", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Scottie Chapman" <o> "]]" ]
                   {N} target = "Scottie Chapman"
 
                 LinkTitle([ ])
@@ -529,9 +529,9 @@ ParsedWikitextPage(
                           Text(" ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Electric car", [1] = "]]s"
                               {N} postfix = "s"
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Electric car" <o> "]]s" ]
                               {N} target = "Electric car"
 
                             LinkTitle([ ])
@@ -539,9 +539,9 @@ ParsedWikitextPage(
                           Text(" are more sluggish than ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[gasoline", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[gasoline" <o> "]]" ]
                               {N} target = "gasoline"
 
                             LinkTitle([ ])
@@ -649,9 +649,9 @@ ParsedWikitextPage(
                           Text(" Cows emit ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[methane", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[methane" <o> "]]" ]
                               {N} target = "methane"
 
                             LinkTitle([ ])
@@ -754,9 +754,9 @@ ParsedWikitextPage(
           Text("The mini-myths are shown in video clips that are available from the ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Discovery Channel", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Discovery Channel" <o> "]]" ]
               {N} target = "Discovery Channel"
 
             LinkTitle([ ])
@@ -853,9 +853,9 @@ ParsedWikitextPage(
                           Text(" An egg can be balanced on its ends only during the spring and fall ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[equinox", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[equinox" <o> "]]" ]
                               {N} target = "equinox"
 
                             LinkTitle([ ])
@@ -894,14 +894,14 @@ ParsedWikitextPage(
                           Text(" This is a ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[China", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[China" <o> "]]" ]
                               {N} target = "China"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("Chinese") ]
                             )
@@ -909,14 +909,14 @@ ParsedWikitextPage(
                           Text(" folk belief, sometimes called ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Egg of Li Chun", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Egg of Li Chun" <o> "]]" ]
                               {N} target = "Egg of Li Chun"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("Li Chun egg balancing") ]
                             )
@@ -924,9 +924,9 @@ ParsedWikitextPage(
                           Text(" after the first day of spring in the Chinese calendar. There is nothing special about the spring and fall equinoxes that allows an egg to balance on end. A person with enough ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[dexterity", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[dexterity" <o> "]]" ]
                               {N} target = "dexterity"
 
                             LinkTitle([ ])
@@ -956,14 +956,14 @@ ParsedWikitextPage(
               Text("In a revisit of the ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[MythBusters (2004 season)#Breakstep Bridge", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[MythBusters (2004 season)#Breakstep Bridge" <o> "]]" ]
                   {N} target = "MythBusters (2004 season)#Breakstep Bridge"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Breakstep Bridge") ]
                 )
@@ -971,9 +971,9 @@ ParsedWikitextPage(
               Text(" myth, Adam and Jamie decide that the suspension bridge that Adam had built was too stable to accurately test, so they build a simple ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[beam bridge", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[beam bridge" <o> "]]" ]
                   {N} target = "beam bridge"
 
                 LinkTitle([ ])
@@ -995,14 +995,14 @@ ParsedWikitextPage(
                 [
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[#Outtakes", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[#Outtakes" <o> "]]" ]
                       {N} target = "#Outtakes"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("MythBusters Outtakes") ]
                     )
@@ -1276,9 +1276,9 @@ ParsedWikitextPage(
                           Text(" The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[lemon shark", [1] = "]]s"
                               {N} postfix = "s"
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[lemon shark" <o> "]]s" ]
                               {N} target = "lemon shark"
 
                             LinkTitle([ ])
@@ -1286,14 +1286,14 @@ ParsedWikitextPage(
                           Text(", and ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[great white shark", [1] = "]]s"
                               {N} postfix = "s"
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[great white shark" <o> "]]s" ]
                               {N} target = "great white shark"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("great white") ]
                             )
@@ -1301,9 +1301,9 @@ ParsedWikitextPage(
                           Text(" or ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[bull shark", [1] = "]]s"
                               {N} postfix = "s"
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[bull shark" <o> "]]s" ]
                               {N} target = "bull shark"
 
                             LinkTitle([ ])
@@ -1331,9 +1331,9 @@ ParsedWikitextPage(
                           Text(" A shark's skin is rough enough to be used as ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[sandpaper", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[sandpaper" <o> "]]" ]
                               {N} target = "sandpaper"
 
                             LinkTitle([ ])
@@ -1390,9 +1390,9 @@ ParsedWikitextPage(
                           Text(" There is a ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[rule of thumb", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[rule of thumb" <o> "]]" ]
                               {N} target = "rule of thumb"
 
                             LinkTitle([ ])
@@ -1469,14 +1469,14 @@ ParsedWikitextPage(
                 [
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[MythBusters (2006 season)#Franklin's Kite", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[MythBusters (2006 season)#Franklin's Kite" <o> "]]" ]
                       {N} target = "MythBusters (2006 season)#Franklin's Kite"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Franklin's Kite") ]
                     )
@@ -1577,9 +1577,9 @@ ParsedWikitextPage(
                           Text(" Kari wore underwear equipped with a microphone connected to an amplifier and a ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[hydrogen sulfide", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[hydrogen sulfide" <o> "]]" ]
                               {N} target = "hydrogen sulfide"
 
                             LinkTitle([ ])
@@ -1615,9 +1615,9 @@ ParsedWikitextPage(
                           Text(" A ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[flatus", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[flatus" <o> "]]" ]
                               {N} target = "flatus"
 
                             LinkTitle([ ])
@@ -1625,14 +1625,14 @@ ParsedWikitextPage(
                           Text(" ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Fart lighting", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Fart lighting" <o> "]]" ]
                               {N} target = "Fart lighting"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("can be ignited") ]
                             )
@@ -1705,14 +1705,14 @@ ParsedWikitextPage(
               Text("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\"", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\"" <o> "]]" ]
                   {N} target = "MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\""
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Steam Cannon") ]
                 )
@@ -1841,14 +1841,14 @@ ParsedWikitextPage(
                           Text(" Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Tooth bleaching", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Tooth bleaching" <o> "]]" ]
                               {N} target = "Tooth bleaching"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("teeth bleached") ]
                             )
@@ -1876,9 +1876,9 @@ ParsedWikitextPage(
       [
         InternalLink(
           Properties:
-            RTD = RtData: [0] = "[[BBC Two", [1] = "]]"
             {N} postfix = ""
             {N} prefix = ""
+            {N} rtd = RTD[ "[[BBC Two" <o> "]]" ]
             {N} target = "BBC Two"
 
           LinkTitle([ ])
@@ -1902,9 +1902,9 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[BBC Two", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[BBC Two" <o> "]]" ]
               {N} target = "BBC Two"
 
             LinkTitle([ ])
@@ -1919,9 +1919,9 @@ ParsedWikitextPage(
           Text(" are narrated by ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Rufus Hound", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Rufus Hound" <o> "]]" ]
               {N} target = "Rufus Hound"
 
             LinkTitle([ ])
@@ -1991,14 +1991,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Penny Drop", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Penny Drop" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Penny Drop"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Penny Drop") ]
                         )
@@ -2006,14 +2006,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Who Gets Wetter?", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Who Gets Wetter?" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Who Gets Wetter?"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Who Gets Wetter?") ]
                         )
@@ -2021,14 +2021,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Exploding Toilet", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Exploding Toilet" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Exploding Toilet"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Exploding Toilet") ]
                         )
@@ -2065,14 +2065,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#CD-ROM Shattering", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#CD-ROM Shattering" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#CD-ROM Shattering"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("CD-ROM Shattering") ]
                         )
@@ -2080,14 +2080,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Silicone Breasts", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Silicone Breasts" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Silicone Breasts"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Silicone Breasts") ]
                         )
@@ -2095,14 +2095,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Cell Phone Destruction", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Cell Phone Destruction" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Cell Phone Destruction"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Cell Phone Destruction") ]
                         )
@@ -2139,14 +2139,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Lightning Strikes Tongue Piercing", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Lightning Strikes Tongue Piercing" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Lightning Strikes Tongue Piercing"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Lightning Strikes Tongue Piercing") ]
                         )
@@ -2154,14 +2154,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#101 Uses For Cola", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#101 Uses For Cola" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#101 Uses For Cola"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Cola Myths (partial; cleaning blood, pennies and chrome, dissolving teeth and steaks)") ]
                         )
@@ -2169,14 +2169,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (season 1)#Hammer Bridge Drop", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (season 1)#Hammer Bridge Drop" <o> "]]" ]
                           {N} target = "MythBusters (season 1)#Hammer Bridge Drop"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Hammer Bridge Drop") ]
                         )
@@ -2213,14 +2213,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\"", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\"" <o> "]]" ]
                           {N} target = "List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\""
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("JATO Car, Pop Rocks and Soda (called \"Space Dust\" in the British narration, as it is the more common name for Pop Rocks in the UK)") ]
                         )
@@ -2257,14 +2257,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Buried Alive", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Buried Alive" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Buried Alive"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Buried Alive") ]
                         )
@@ -2272,14 +2272,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Beat the Breath Test", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Beat the Breath Test" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Beat the Breath Test"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Beat the Breath Test") ]
                         )
@@ -2316,14 +2316,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Explosive Decompression", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Explosive Decompression" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Explosive Decompression"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Explosive Decompression") ]
                         )
@@ -2331,14 +2331,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Rear Axle", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Rear Axle" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Rear Axle"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Rear Axle") ]
                         )
@@ -2346,14 +2346,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Frog Giggin'", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Frog Giggin'" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Frog Giggin'"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Frog Giggin'") ]
                         )
@@ -2390,14 +2390,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#The Mad Trombonist", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#The Mad Trombonist" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#The Mad Trombonist"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Mad Trombonist") ]
                         )
@@ -2405,14 +2405,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Goldfish Memory", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Goldfish Memory" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Goldfish Memory"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Goldfish Memory") ]
                         )
@@ -2420,14 +2420,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Sinking Titanic", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Sinking Titanic" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Sinking Titanic"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Down with the Titanic") ]
                         )
@@ -2463,14 +2463,14 @@ ParsedWikitextPage(
                     Paragraph([
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Escape From Alcatraz", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Escape From Alcatraz" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Escape From Alcatraz"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Escape from Alcatraz") ]
                         )
@@ -2478,14 +2478,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Stud Finders & Mind Control Chips", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Stud Finders & Mind Control Chips" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Stud Finders & Mind Control Chips"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Mind Control Chips") ]
                         )
@@ -2493,14 +2493,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2003 season)#Does a Duck's Quack Echo?", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Does a Duck's Quack Echo?" <o> "]]" ]
                           {N} target = "MythBusters (2003 season)#Does a Duck's Quack Echo?"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Does a Duck's Quack Echo?") ]
                         )
@@ -2536,14 +2536,14 @@ ParsedWikitextPage(
                     Paragraph([
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Rowing Water Skier", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Rowing Water Skier" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Rowing Water Skier"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Row Skiing") ]
                         )
@@ -2551,14 +2551,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Toothbrush Surprise", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Toothbrush Surprise" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Toothbrush Surprise"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Surprise Toothbrush") ]
                         )
@@ -2566,14 +2566,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Breakstep Bridge", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Breakstep Bridge" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Breakstep Bridge"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Breakstep Bridge") ]
                         )
@@ -2610,14 +2610,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Buried in Concrete", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Buried in Concrete" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Buried in Concrete"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("The Hunt for Hoffa") ]
                         )
@@ -2625,14 +2625,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Daddy Long-Legs", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Daddy Long-Legs" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Daddy Long-Legs"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Daddy Long-Legs") ]
                         )
@@ -2640,14 +2640,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Jet Taxi", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Jet Taxi" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Jet Taxi"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Jet Taxi") ]
                         )
@@ -2684,14 +2684,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"" <o> "]]" ]
                           {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Lawn Chair Balloon") ]
                         )
@@ -2699,14 +2699,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"" <o> "]]" ]
                           {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Poppy Seed Drug Test") ]
                         )
@@ -2719,14 +2719,14 @@ ParsedWikitextPage(
                         [
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"" <o> "]]" ]
                               {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("Goldfinger") ]
                             )
@@ -2765,14 +2765,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Chicken Gun", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Chicken Gun" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Chicken Gun"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Chicken Gun (frozen or thawed?)") ]
                         )
@@ -2780,14 +2780,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[MythBusters (2004 season)#Killer Washing Machine", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Killer Washing Machine" <o> "]]" ]
                           {N} target = "MythBusters (2004 season)#Killer Washing Machine"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Killer Laundry!") ]
                         )
@@ -2824,14 +2824,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"" <o> "]]" ]
                           {N} target = "List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\""
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Vacuum Toilet") ]
                         )
@@ -2839,14 +2839,14 @@ ParsedWikitextPage(
                       Text(", ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"" <o> "]]" ]
                           {N} target = "List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\""
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Exploding Shopping") ]
                         )
@@ -2880,9 +2880,9 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[List of MythBusters episodes", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[List of MythBusters episodes" <o> "]]" ]
                   {N} target = "List of MythBusters episodes"
 
                 LinkTitle([ ])
@@ -3034,14 +3034,14 @@ ParsedWikitextPage(
           Newline("\n")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Category:Lists of MythBusters episodes", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Category:Lists of MythBusters episodes" <o> "]]" ]
               {N} target = "Category:Lists of MythBusters episodes"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Special") ]
             )
@@ -3052,9 +3052,9 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[nl:MythBusters afleveringen: Specials", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[nl:MythBusters afleveringen: Specials" <o> "]]" ]
               {N} target = "nl:MythBusters afleveringen: Specials"
 
             LinkTitle([ ])
@@ -3062,9 +3062,9 @@ ParsedWikitextPage(
           Newline("\n")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438" <o> "]]" ]
               {N} target = "ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438"
 
             LinkTitle([ ])
@@ -3072,9 +3072,9 @@ ParsedWikitextPage(
           Newline("\n")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista" <o> "]]" ]
               {N} target = "fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista"
 
             LinkTitle([ ])

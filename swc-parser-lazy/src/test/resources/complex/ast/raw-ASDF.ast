@@ -30,9 +30,9 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Alabama State Defense Force", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Alabama State Defense Force" <o> "]]" ]
               {N} target = "Alabama State Defense Force"
 
             LinkTitle([ ])
@@ -48,9 +48,9 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Alaska State Defense Force", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Alaska State Defense Force" <o> "]]" ]
               {N} target = "Alaska State Defense Force"
 
             LinkTitle([ ])
@@ -66,9 +66,9 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Another System Definition Facility", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Another System Definition Facility" <o> "]]" ]
               {N} target = "Another System Definition Facility"
 
             LinkTitle([ ])
@@ -84,9 +84,9 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Association of Synchronous Data Formats", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Association of Synchronous Data Formats" <o> "]]" ]
               {N} target = "Association of Synchronous Data Formats"
 
             LinkTitle([ ])
@@ -102,9 +102,9 @@ ParsedWikitextPage(
           Text(" Average Squared Difference Function, a mapping used in ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[pitch detection algorithm", [1] = "]]s"
               {N} postfix = "s"
               {N} prefix = ""
+              {N} rtd = RTD[ "[[pitch detection algorithm" <o> "]]s" ]
               {N} target = "pitch detection algorithm"
 
             LinkTitle([ ])
@@ -119,9 +119,9 @@ ParsedWikitextPage(
           Text(" asdf, the first four letters in the ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[home row", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[home row" <o> "]]" ]
               {N} target = "home row"
 
             LinkTitle([ ])
@@ -129,9 +129,9 @@ ParsedWikitextPage(
           Text(" on a ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[QWERTY", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[QWERTY" <o> "]]" ]
               {N} target = "QWERTY"
 
             LinkTitle([ ])
@@ -147,9 +147,9 @@ ParsedWikitextPage(
           Text(" asdf movie, a series of ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[viral video", [1] = "]]s"
               {N} postfix = "s"
               {N} prefix = ""
+              {N} rtd = RTD[ "[[viral video" <o> "]]s" ]
               {N} target = "viral video"
 
             LinkTitle([ ])
@@ -181,9 +181,9 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Hoverboard ASDF", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Hoverboard ASDF" <o> "]]" ]
                   {N} target = "Hoverboard ASDF"
 
                 LinkTitle([ ])
@@ -198,9 +198,9 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Japan Air Self-Defense Force", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Japan Air Self-Defense Force" <o> "]]" ]
                   {N} target = "Japan Air Self-Defense Force"
 
                 LinkTitle([ ])
@@ -215,9 +215,9 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[QWERTY", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[QWERTY" <o> "]]" ]
                   {N} target = "QWERTY"
 
                 LinkTitle([ ])
@@ -230,9 +230,9 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Category:Initialisms", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Category:Initialisms" <o> "]]" ]
               {N} target = "Category:Initialisms"
 
             LinkTitle([ ])
@@ -252,9 +252,9 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[de:ASDF", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[de:ASDF" <o> "]]" ]
               {N} target = "de:ASDF"
 
             LinkTitle([ ])
@@ -262,9 +262,9 @@ ParsedWikitextPage(
           Newline("\n")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[fr:ASDF", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[fr:ASDF" <o> "]]" ]
               {N} target = "fr:ASDF"
 
             LinkTitle([ ])

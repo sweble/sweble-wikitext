@@ -7,9 +7,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle([ ])
@@ -20,9 +20,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo %0 Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo %0 Hallo" <o> "]]" ]
           {N} target = "Hallo %0 Hallo"
 
         LinkTitle([ ])
@@ -69,9 +69,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo %20 Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo %20 Hallo" <o> "]]" ]
           {N} target = "Hallo %20 Hallo"
 
         LinkTitle([ ])
@@ -82,9 +82,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo %7E Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo %7E Hallo" <o> "]]" ]
           {N} target = "Hallo %7E Hallo"
 
         LinkTitle([ ])
@@ -95,9 +95,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo &amp; Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo &amp; Hallo" <o> "]]" ]
           {N} target = "Hallo &amp; Hallo"
 
         LinkTitle([ ])
@@ -146,9 +146,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo %61 Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo %61 Hallo" <o> "]]" ]
           {N} target = "Hallo %61 Hallo"
 
         LinkTitle([ ])
@@ -159,9 +159,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo &%61mp; Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo &%61mp; Hallo" <o> "]]" ]
           {N} target = "Hallo &%61mp; Hallo"
 
         LinkTitle([ ])
@@ -185,9 +185,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo+Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo+Hallo" <o> "]]" ]
           {N} target = "Hallo+Hallo"
 
         LinkTitle([ ])
@@ -198,9 +198,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo%20Hallo+Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo%20Hallo+Hallo" <o> "]]" ]
           {N} target = "Hallo%20Hallo+Hallo"
 
         LinkTitle([ ])

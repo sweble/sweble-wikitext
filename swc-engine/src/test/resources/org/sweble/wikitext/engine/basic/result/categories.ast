@@ -2,9 +2,9 @@ Page([
   Paragraph([
     InternalLink(
       Properties:
-            RTD = RtData: [0] = "[[Category:Main", [1] = "]]"
         {N} postfix = ""
         {N} prefix = ""
+        {N} rtd = RTD[ "[[Category:Main" <o> "]]" ]
         {N} target = "Category:Main"
 
       LinkTitle([ ])
@@ -20,27 +20,27 @@ Page([
       [
         InternalLink(
           Properties:
-                RTD = RtData: [0] = "[[Category:Bold", [1] = "]]"
             {N} postfix = ""
             {N} prefix = ""
+            {N} rtd = RTD[ "[[Category:Bold" <o> "]]" ]
             {N} target = "Category:Bold"
 
           LinkTitle([ ])
         )
         InternalLink(
           Properties:
-                RTD = RtData: [0] = "[[Category:maiN", [1] = "]]"
             {N} postfix = ""
             {N} prefix = ""
+            {N} rtd = RTD[ "[[Category:maiN" <o> "]]" ]
             {N} target = "Category:maiN"
 
           LinkTitle([ ])
         )
         InternalLink(
           Properties:
-                RTD = RtData: [0] = "[[Category:Ya Habibi Yalla", [1] = "]]"
             {N} postfix = ""
             {N} prefix = ""
+            {N} rtd = RTD[ "[[Category:Ya Habibi Yalla" <o> "]]" ]
             {N} target = "Category:Ya Habibi Yalla"
 
           LinkTitle([ ])
@@ -50,9 +50,9 @@ Page([
     Newline("\n")
     InternalLink(
       Properties:
-            RTD = RtData: [0] = "[[Category:BOLD", [1] = "]]"
         {N} postfix = ""
         {N} prefix = ""
+        {N} rtd = RTD[ "[[Category:BOLD" <o> "]]" ]
         {N} target = "Category:BOLD"
 
       LinkTitle([ ])

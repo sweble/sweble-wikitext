@@ -45,14 +45,14 @@ ParsedWikitextPage(
               Text(" This sort of comment shows a lack of understanding of the history of all football codes.  No one says that Australian Football wasn't influenced by other codes, in fact, the reverse is true.  It was codified in 1859, which in the context of all the modern codes of football, is very early indeed.  It didn't just appear out of thin air, in fact, we know a lot about the people that first played it and who first formulated the rudimentary rules.  Almost without exception, they had had exposure to the English public school system - which is where we are to find the roots of almost all the modern football codes.  However, during the 1840s and 1850s, they all had their own separate and different rules.  So Australian Football is unique in that it was codified so early in the piece and that it was an amalgam of the experience of various wealthy Australians in the English public school system.  The biggest influence was clearly the Rugby school (and those who know both sports well will also be familiar with a lot of the shared terminology that is used that is not to be found in the other codes).  However, all these different school rules can be categorised roughly into two groups:  those that relied predominantly on kicking the ball (precursor to Association Football) and those that relied predominantly on running with the ball (Rugby).  Both Australian and Gaelic football share the characteristic that they are a combination of both groups - but that doesn't mean that one influenced the other - it's simply what they both got out of the various rules that were doing the rounds at the time.  It is worth mentioning that the modern version of Gaelic Football was codified a good 30 years after Australian Football.  All football historians have found no evidence of Gaelic football being an influence on Australian football.  This is unsurprising - remembering that the first ones to play the game all had an English public school background - how many of them were going to put their hand up and say let's play this Irish game I know!  This is not a partisan view, it is simply what we know of the history of the game.  Remember also that the first recorded game of Australian Football was between two wealthy protestant private schools - it is unlikely that any Catholics took the field that day!  --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("pippudoz") ]
                 )
@@ -60,14 +60,14 @@ ParsedWikitextPage(
               Text(" - ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -92,9 +92,9 @@ ParsedWikitextPage(
                     Text(" Some have suggested that the influence was more in the other direction, i.e. that Gaelic was based on Aussie rules! There is some evidence for this, e.g. the ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[GAA", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[GAA" <o> "]]" ]
                         {N} target = "GAA"
 
                       LinkTitle([ ])
@@ -102,9 +102,9 @@ ParsedWikitextPage(
                     Text(" was not founded until the late 1880s and I know that Archbishop ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[Thomas Croke", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[Thomas Croke" <o> "]]" ]
                         {N} target = "Thomas Croke"
 
                       LinkTitle([ ])
@@ -112,14 +112,14 @@ ParsedWikitextPage(
                     Text(", one of the founders, was in New Zealand in the 1870s, where he had the opportunity to see \"Australasian rules\" being played. So maybe it was a \"two way street\". I will have to get hold of a history of Gaelic football one of these days.   ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                         {N} target = "User:Grant65"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("Grant65") ]
                       )
@@ -161,14 +161,14 @@ ParsedWikitextPage(
               Text("But...we can trace the influences of rock and roll directly to African music (or afro-american at least) - but the evidence for an Irish influence just isn't there.  Please note, I am not saying there were no influences from other codes, I have already stated that the Rugby School provided the greatest influence, but there is zero, I repeat, zero evidence of a Gaelic influence.  Lastly, the rules of both Aussie rules and Gaelic football are not similar at all.  The pig skin gets moved around the park in a similar manner, but that is where the similarity ends.  --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("pippudoz") ]
                 )
@@ -176,14 +176,14 @@ ParsedWikitextPage(
               Text(" - ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -213,14 +213,14 @@ ParsedWikitextPage(
                   Text(" Zero evidence except our eyes, Pippu ;-) I blame Geoff Blainey for perpetuating this idea that Tom Wills wasn't influenced by Irish  football (or Marn Grook). The fact is, no one knows what rules were used in the game that Blainey pushes as the \"first\" game (between Melbourne Grammar and Scotch College on August 7, 1858,) and they may had bugger all to do with the ones that the Melbourne FC devised the following year. I know those two schools have played ever since, but that doesn't mean they still use the same rules they did in 1858. ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                       {N} target = "User:Grant65"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Grant65") ]
                     )
@@ -228,14 +228,14 @@ ParsedWikitextPage(
                   Text(" | ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User talk:Grant65", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                       {N} target = "User talk:Grant65"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Talk") ]
                     )
@@ -269,9 +269,9 @@ ParsedWikitextPage(
                     Text(" the codes have an element of each to varying degrees.  You might say that soccer doesn't (i.e. running with the ball) - but in fact the goalkeeper is allowed to run a short distance with the ball and kick it from his hand a la Gaelic/Australian style.  What is the significance of that?  Because the precursors of Soccer allowed that to happen to a far greater degree.  Read the ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[Cambridge Rules", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[Cambridge Rules" <o> "]]" ]
                         {N} target = "Cambridge Rules"
 
                       LinkTitle([ ])
@@ -279,9 +279,9 @@ ParsedWikitextPage(
                     Text(" and ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[Sheffield Rules", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[Sheffield Rules" <o> "]]" ]
                         {N} target = "Sheffield Rules"
 
                       LinkTitle([ ])
@@ -289,14 +289,14 @@ ParsedWikitextPage(
                     Text(".  These are basically the rules of Aussie rules as they were codified in 1859!  So don't just rely on the superficial similarity of Gaelic football and aussie rules - dig a little deeper and look at the prevailing environment of the 1840s and 1850s - aussie rules, indeed all the modern football codes, can only be truly understood in that context.  ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                         {N} target = "User:Pippu d'angelo"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                       )
@@ -304,14 +304,14 @@ ParsedWikitextPage(
                     Text(" - ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                         {N} target = ":scn:User talk:Pippu d'angelo"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [
                           XmlElement(
@@ -409,9 +409,9 @@ ParsedWikitextPage(
                   Text(" it was in ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[hurling", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[hurling" <o> "]]" ]
                       {N} target = "hurling"
 
                     LinkTitle([ ])
@@ -419,7 +419,6 @@ ParsedWikitextPage(
                   Text(" before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ")
                   ImageLink(
                     Properties:
-                      RTD = RtData: [0] = "[[Image:NonFreeImageRemoved.svg", [1], [2] = "]]"
                       {N} alt = 
                         LinkOptionAltText([ ])
                       {N} border = false
@@ -428,6 +427,7 @@ ParsedWikitextPage(
                       {N} height = -1
                       {N} linkPage = null
                       {N} linkUrl = null
+                      {N} rtd = RTD[ "[[Image:NonFreeImageRemoved.svg" <o> "" <o> "]]" ]
                       {N} target = "Image:NonFreeImageRemoved.svg"
                       {N} upright = false
                       {N} vAlign = MIDDLE
@@ -436,8 +436,8 @@ ParsedWikitextPage(
                     [
                       LinkOptionResize(
                         Properties:
-                          RTD = RtData: [0] = "|30px"
                           {N} height = -1
+                          {N} rtd = RTD[ "|30px" ]
                           {N} width = 30
                       )
                     ]
@@ -446,14 +446,14 @@ ParsedWikitextPage(
                   Text("  ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                       {N} target = "User:Grant65"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Grant65") ]
                     )
@@ -461,14 +461,14 @@ ParsedWikitextPage(
                   Text(" | ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User talk:Grant65", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                       {N} target = "User talk:Grant65"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Talk") ]
                     )
@@ -501,7 +501,6 @@ ParsedWikitextPage(
                       Text(" the modern football games can be traced back to the various english public school games of the 1840s and 1850s.  Funny you should mention composite rules of aussie rules/rugby - I believe that in 2008, to mark the 150th anniversary of the first recorded game of our national game (however it may have been played back then), we should try and recreate the rules of 1858, and it would basically be a composite aussie rules/rugby game, and the AFL should challenge the Wallabies (or anyone else for that matter) playing these composite rules.  You first read the idea here folks, don't forget it!  Re a hybrid soccer/rugby game - I am all for it, because the end result would undoubtedly look better than either of them!  ")
                       ImageLink(
                         Properties:
-                          RTD = RtData: [0] = "[[Image:Flag of Sicily.svg", [1], [2] = "]]"
                           {N} alt = 
                             LinkOptionAltText([ ])
                           {N} border = false
@@ -510,6 +509,7 @@ ParsedWikitextPage(
                           {N} height = -1
                           {N} linkPage = null
                           {N} linkUrl = null
+                          {N} rtd = RTD[ "[[Image:Flag of Sicily.svg" <o> "" <o> "]]" ]
                           {N} target = "Image:Flag of Sicily.svg"
                           {N} upright = false
                           {N} vAlign = MIDDLE
@@ -518,8 +518,8 @@ ParsedWikitextPage(
                         [
                           LinkOptionResize(
                             Properties:
-                              RTD = RtData: [0] = "|40px"
                               {N} height = -1
+                              {N} rtd = RTD[ "|40px" ]
                               {N} width = 40
                           )
                         ]
@@ -528,14 +528,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                           {N} target = "User:Pippu d'angelo"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                         )
@@ -543,14 +543,14 @@ ParsedWikitextPage(
                       Text(" - ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[:scn:User talk:Pippu d'Angelo", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                           {N} target = ":scn:User talk:Pippu d'Angelo"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [
                             XmlElement(
@@ -595,14 +595,14 @@ ParsedWikitextPage(
           Text("In fact, professionalism was not allowed by the VFL until its Rule 29 of 1911 (although under-the-table payments may well have occurred), and Melbourne FC was famous for being amateur for many years afterwards, so I don't think this can be justified. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
@@ -641,14 +641,14 @@ ParsedWikitextPage(
           Text(" Australian Football League. More people are interested in the AFL than regional leagues like WAFL, therefore AFL is more popular. I don't think the author's comment at the end is unjustified, or biased at all. -- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Mark Ryan", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Mark Ryan" <o> "]]" ]
               {N} target = "User:Mark Ryan"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Mark Ryan") ]
             )
@@ -665,14 +665,14 @@ ParsedWikitextPage(
           Text("By the way, I wrote a bunch more stuff for this article months ago that seems to have been lost by somebody's errant revision.  I hope the new wikipedia software will support a complete revision history. . . ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Robert Merkel", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Robert Merkel" <o> "]]" ]
               {N} target = "User:Robert Merkel"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Robert Merkel") ]
             )
@@ -709,14 +709,14 @@ ParsedWikitextPage(
           Text("I like the diagrams, but the font is much too small.  ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Daniel Quinlan", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Daniel Quinlan" <o> "]]" ]
               {N} target = "User:Daniel Quinlan"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Daniel Quinlan") ]
             )
@@ -744,14 +744,14 @@ ParsedWikitextPage(
           Text("What is the difference between summer and winter in Australia, that the same fields are used but for different sports? -- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Error", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Error" <o> "]]" ]
               {N} target = "User:Error"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Error") ]
             )
@@ -770,14 +770,14 @@ ParsedWikitextPage(
                   Text("um... the weather!  You are obviously from a small country like england where the climate is basically the same in every location within the country.  Australia is a big country.  In melbourne you may be able to get away with playing in summer, most of the time, but in Brisbane you'd be carried off the field in a coffin!  Summer is hot (avg 29 degrees C but it reaches 40) winter is cold (avg 20 degrees C).  That's the difference. ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                       {N} target = "User:Factoid Killer"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Factoid Killer") ]
                     )
@@ -792,14 +792,14 @@ ParsedWikitextPage(
                         Text("No way in Melbourne - plenty of days over 30 and one or two up to 40.  That's why the players train in ice vests when they're training in summer, even in Melbourne.  Now, Hobart on the other hand...--")
                         InternalLink(
                           Properties:
-                            RTD = RtData: [0] = "[[User:Stevage", [1] = "]]"
                             {N} postfix = ""
                             {N} prefix = ""
+                            {N} rtd = RTD[ "[[User:Stevage" <o> "]]" ]
                             {N} target = "User:Stevage"
 
                           LinkTitle(
                             Properties:
-                              RTD = RtData: [0] = "|", [1]
+                              {N} rtd = RTD[ "|" <o> "" ]
 
                             [ Text("Stevage") ]
                           )
@@ -905,14 +905,14 @@ ParsedWikitextPage(
           Text("Fitzroy still exists as an amateur club. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:RoyalDave", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:RoyalDave" <o> "]]" ]
               {N} target = "User:RoyalDave"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("RoyalDave") ]
             )
@@ -941,14 +941,14 @@ ParsedWikitextPage(
           Text(" but I'l leave that to the Aussies. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Mintguy", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Mintguy" <o> "]]" ]
               {N} target = "User:Mintguy"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Mintguy") ]
             )
@@ -956,14 +956,14 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk: Mintguy", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk: Mintguy" <o> "]]" ]
               {N} target = "User talk: Mintguy"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("(T)") ]
             )
@@ -976,9 +976,9 @@ ParsedWikitextPage(
           Text("Mintguy has a point, although I've said to him elsewhere ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Talk:Football", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Talk:Football" <o> "]]" ]
               {N} target = "Talk:Football"
 
             LinkTitle([ ])
@@ -986,14 +986,14 @@ ParsedWikitextPage(
           Text(", I think fullpointsfooty.net is wrong on the early history. In fact, a lot of the histories of Aussie rules available on the web seem to be terrible and contradictory. We have a great opportunity to do better :-) Anyway, I've expanded and updated the history section. In particular, I've addressed some inaccuracies, such as (1) the role of H.C.A. Harrison, which seems to be exaggerated by almost everyone except serious historians; (2) the previous omission of the experiments at the Richmond Paddock, and (3) the \"significance\" of the game between Melbourne Grammar and Scotch College in 1858. To name a few. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
@@ -1055,9 +1055,9 @@ ParsedWikitextPage(
           )
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Football#The Establishment of Modern Codes of Football", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Football#The Establishment of Modern Codes of Football" <o> "]]" ]
               {N} target = "Football#The Establishment of Modern Codes of Football"
 
             LinkTitle([ ])
@@ -1072,9 +1072,9 @@ ParsedWikitextPage(
           )
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Football Association", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Football Association" <o> "]]" ]
               {N} target = "Football Association"
 
             LinkTitle([ ])
@@ -1082,14 +1082,14 @@ ParsedWikitextPage(
           Text(" rules of 1863 had been by influenced by the Melbourne FC rules! ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
@@ -1102,14 +1102,14 @@ ParsedWikitextPage(
           Text("Grant. You've just reminded me of something with that last sentence. Some time ago I tried to find out about early proponents of Association football in Australia but I found virtually no information about this. I did find out that early bodies subscribing to the FA rules included the Southern British Football Association in New South Wales, the Anglo-Australian Football Association in Victoria and the British Football Associations of Queensland, South Australia and Tasmania. But I couldn't find any dates relating to the establishment and/or demise of these organisations. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Mintguy", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Mintguy" <o> "]]" ]
               {N} target = "User:Mintguy"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Mintguy") ]
             )
@@ -1117,14 +1117,14 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk: Mintguy", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk: Mintguy" <o> "]]" ]
               {N} target = "User talk: Mintguy"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("(T)") ]
             )
@@ -1137,14 +1137,14 @@ ParsedWikitextPage(
           Text("Mintguy, see the latest comments on my talk page. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
@@ -1166,14 +1166,14 @@ ParsedWikitextPage(
           Newline("\n")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:B.d.mills", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:B.d.mills" <o> "]]" ]
               {N} target = "User:B.d.mills"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("B.d.mills") ]
             )
@@ -1195,14 +1195,14 @@ ParsedWikitextPage(
           Text("I think the section on the rules could be expanded. Basic information like the number of players is lacking, and can only be deduced from studying the images. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Abigail-II", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Abigail-II" <o> "]]" ]
               {N} target = "User:Abigail-II"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Abigail") ]
             )
@@ -1228,14 +1228,14 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Mintguy", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Mintguy" <o> "]]" ]
               {N} target = "User:Mintguy"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Mintguy") ]
             )
@@ -1243,14 +1243,14 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk: Mintguy", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk: Mintguy" <o> "]]" ]
               {N} target = "User talk: Mintguy"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("(T)") ]
             )
@@ -1272,14 +1272,14 @@ ParsedWikitextPage(
               Text("Seems an obvious thing to have, yet it's currently missing. As far as I know it's four quarters of thirty minutes, but I don't know who keeps time and whether it can go over thirty, or what happens if the scores are level at full time. Aussie input welcome! ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Deadlock", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Deadlock" <o> "]]" ]
                   {N} target = "User:Deadlock"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Deadlock") ]
                 )
@@ -1296,14 +1296,14 @@ ParsedWikitextPage(
                   Text("Good point - done! Revisions welcome.  --")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                       {N} target = "User:Pippu d'angelo"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("pippudoz") ]
                     )
@@ -1311,14 +1311,14 @@ ParsedWikitextPage(
                   Text(" - ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                       {N} target = ":scn:User talk:Pippu d'angelo"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [
                         XmlElement(
@@ -1343,14 +1343,14 @@ ParsedWikitextPage(
                         Text("Thanks - I now understand why when the clock showed 10 minutes the commentator said we were half-way through the final quarter of the GF highlights I saw. The quarter eventually ran to 32 minutes... ")
                         InternalLink(
                           Properties:
-                            RTD = RtData: [0] = "[[User:Deadlock", [1] = "]]"
                             {N} postfix = ""
                             {N} prefix = ""
+                            {N} rtd = RTD[ "[[User:Deadlock" <o> "]]" ]
                             {N} target = "User:Deadlock"
 
                           LinkTitle(
                             Properties:
-                              RTD = RtData: [0] = "|", [1]
+                              {N} rtd = RTD[ "|" <o> "" ]
 
                             [ Text("Deadlock") ]
                           )
@@ -1403,9 +1403,9 @@ ParsedWikitextPage(
           Text("To explain my last edit: it's not accurate to say that Aussie Rules was \"developed as an alternative to Rugby\", with a link to ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Rugby League", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Rugby League" <o> "]]" ]
               {N} target = "Rugby League"
 
             LinkTitle([ ])
@@ -1413,9 +1413,9 @@ ParsedWikitextPage(
           Text(", because Aussie Rules was invented long before there was any such thing as \"Rugby League\" and before there was even much ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Rugby Football", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Rugby Football" <o> "]]" ]
               {N} target = "Rugby Football"
 
             LinkTitle([ ])
@@ -1423,9 +1423,9 @@ ParsedWikitextPage(
           Text(" outside ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Rugby School", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Rugby School" <o> "]]" ]
               {N} target = "Rugby School"
 
             LinkTitle([ ])
@@ -1433,9 +1433,9 @@ ParsedWikitextPage(
           Text(". Neither would it be accurate to describe Aussie Rules as an offshoot of Rugby. See ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Football#The_Establishment_of_Modern_Codes_of_Football", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Football#The_Establishment_of_Modern_Codes_of_Football" <o> "]]" ]
               {N} target = "Football#The_Establishment_of_Modern_Codes_of_Football"
 
             LinkTitle([ ])
@@ -1443,28 +1443,28 @@ ParsedWikitextPage(
           Text(". ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
           )
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk: Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
               {N} target = "User talk: Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text(" (Talk)") ]
             )
@@ -1484,9 +1484,9 @@ ParsedWikitextPage(
         Text(" ")
         InternalLink(
           Properties:
-            RTD = RtData: [0] = "[[Australian Rules Football", [1] = "]]"
             {N} postfix = ""
             {N} prefix = ""
+            {N} rtd = RTD[ "[[Australian Rules Football" <o> "]]" ]
             {N} target = "Australian Rules Football"
 
           LinkTitle([ ])
@@ -1494,9 +1494,9 @@ ParsedWikitextPage(
         Text(" <-> ")
         InternalLink(
           Properties:
-            RTD = RtData: [0] = "[[Australian Football League", [1] = "]]"
             {N} postfix = ""
             {N} prefix = ""
+            {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
             {N} target = "Australian Football League"
 
           LinkTitle([ ])
@@ -1510,9 +1510,9 @@ ParsedWikitextPage(
           Text("I added a section today, under the \"Future teams\" heading.  However on re-reading it seems that the entire \"teams\" section, as well as my additional section, should really go in the ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Australian Football League", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
               {N} target = "Australian Football League"
 
             LinkTitle([ ])
@@ -1520,14 +1520,14 @@ ParsedWikitextPage(
           Text(" article.  However I figured if this was right, someone would have done it already.  Ideas anyone?  -- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Chuq", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
               {N} target = "User:Chuq"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Chuq") ]
             )
@@ -1544,28 +1544,28 @@ ParsedWikitextPage(
               Text("Yes, I think it should go on the AFL page.")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Grant65") ]
                 )
               )
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk: Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
                   {N} target = "User talk: Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text(" (Talk)") ]
                 )
@@ -1580,9 +1580,9 @@ ParsedWikitextPage(
                     Text("I moved both the future teams article, as well as the Hall of Fame section to ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[Australian Football League", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
                         {N} target = "Australian Football League"
 
                       LinkTitle([ ])
@@ -1597,14 +1597,14 @@ ParsedWikitextPage(
                     Text(" Hall of Fame. The teams and leagues section needs serious editing and splitting up before it can be moved to other articles - a job for another day. ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                         {N} target = "User:Bjmurph"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("Bjmurph") ]
                       )
@@ -1619,7 +1619,6 @@ ParsedWikitextPage(
                           Text("Actually it's the \"Australian Football Hall of Fame\" (but it's already been moved back in the article). ")
                           ImageLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Image:Flag_of_Australia.svg", [1], [2] = "]]"
                               {N} alt = 
                                 LinkOptionAltText([ ])
                               {N} border = false
@@ -1628,6 +1627,7 @@ ParsedWikitextPage(
                               {N} height = -1
                               {N} linkPage = null
                               {N} linkUrl = null
+                              {N} rtd = RTD[ "[[Image:Flag_of_Australia.svg" <o> "" <o> "]]" ]
                               {N} target = "Image:Flag_of_Australia.svg"
                               {N} upright = false
                               {N} vAlign = MIDDLE
@@ -1636,8 +1636,8 @@ ParsedWikitextPage(
                             [
                               LinkOptionResize(
                                 Properties:
-                                  RTD = RtData: [0] = "|30px"
                                   {N} height = -1
+                                  {N} rtd = RTD[ "|30px" ]
                                   {N} width = 30
                               )
                             ]
@@ -1646,14 +1646,14 @@ ParsedWikitextPage(
                           Text(" ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:Plattopus", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:Plattopus" <o> "]]" ]
                               {N} target = "User:Plattopus"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("plattopus") ]
                             )
@@ -1676,14 +1676,14 @@ ParsedWikitextPage(
                                 [
                                   InternalLink(
                                     Properties:
-                                      RTD = RtData: [0] = "[[User_talk:Plattopus", [1] = "]]"
                                       {N} postfix = ""
                                       {N} prefix = ""
+                                      {N} rtd = RTD[ "[[User_talk:Plattopus" <o> "]]" ]
                                       {N} target = "User_talk:Plattopus"
 
                                     LinkTitle(
                                       Properties:
-                                        RTD = RtData: [0] = "|", [1]
+                                        {N} rtd = RTD[ "|" <o> "" ]
 
                                       [ Text("talk") ]
                                     )
@@ -1702,14 +1702,14 @@ ParsedWikitextPage(
                                 Text("Yes, I accept I was wrong in this assumption, however, it still may not belong in this article. Perhaps it should be removed from both this page and the AFL page, and moved to it's own, to remove the duplicate entries. ")
                                 InternalLink(
                                   Properties:
-                                    RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                                     {N} postfix = ""
                                     {N} prefix = ""
+                                    {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                                     {N} target = "User:Bjmurph"
 
                                   LinkTitle(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1]
+                                      {N} rtd = RTD[ "|" <o> "" ]
 
                                     [ Text("Bjmurph") ]
                                   )
@@ -1724,7 +1724,6 @@ ParsedWikitextPage(
                                       Text("Possibly a good idea, assuming there is enough to write about it. If there is a HOF article in its own right, then obviously both the AFL and ARF articles should link to it, but in the meantime it should reside under Australian Rules Football, not the AFL. ")
                                       ImageLink(
                                         Properties:
-                                          RTD = RtData: [0] = "[[Image:Flag_of_Australia.svg", [1], [2] = "]]"
                                           {N} alt = 
                                             LinkOptionAltText([ ])
                                           {N} border = false
@@ -1733,6 +1732,7 @@ ParsedWikitextPage(
                                           {N} height = -1
                                           {N} linkPage = null
                                           {N} linkUrl = null
+                                          {N} rtd = RTD[ "[[Image:Flag_of_Australia.svg" <o> "" <o> "]]" ]
                                           {N} target = "Image:Flag_of_Australia.svg"
                                           {N} upright = false
                                           {N} vAlign = MIDDLE
@@ -1741,8 +1741,8 @@ ParsedWikitextPage(
                                         [
                                           LinkOptionResize(
                                             Properties:
-                                              RTD = RtData: [0] = "|30px"
                                               {N} height = -1
+                                              {N} rtd = RTD[ "|30px" ]
                                               {N} width = 30
                                           )
                                         ]
@@ -1751,14 +1751,14 @@ ParsedWikitextPage(
                                       Text(" ")
                                       InternalLink(
                                         Properties:
-                                          RTD = RtData: [0] = "[[User:Plattopus", [1] = "]]"
                                           {N} postfix = ""
                                           {N} prefix = ""
+                                          {N} rtd = RTD[ "[[User:Plattopus" <o> "]]" ]
                                           {N} target = "User:Plattopus"
 
                                         LinkTitle(
                                           Properties:
-                                            RTD = RtData: [0] = "|", [1]
+                                            {N} rtd = RTD[ "|" <o> "" ]
 
                                           [ Text("plattopus") ]
                                         )
@@ -1781,14 +1781,14 @@ ParsedWikitextPage(
                                             [
                                               InternalLink(
                                                 Properties:
-                                                  RTD = RtData: [0] = "[[User_talk:Plattopus", [1] = "]]"
                                                   {N} postfix = ""
                                                   {N} prefix = ""
+                                                  {N} rtd = RTD[ "[[User_talk:Plattopus" <o> "]]" ]
                                                   {N} target = "User_talk:Plattopus"
 
                                                 LinkTitle(
                                                   Properties:
-                                                    RTD = RtData: [0] = "|", [1]
+                                                    {N} rtd = RTD[ "|" <o> "" ]
 
                                                   [ Text("talk") ]
                                                 )
@@ -1818,9 +1818,9 @@ ParsedWikitextPage(
           Text("I would like to see the names of the 12 AHoF \"legends\" (at least) remain in this article, as there were very few mentions of players when I originally added the HoF section. A separate article on the HoF would still be a good idea, as it has a lot more members than just the 12 legends. By the way, almost none of the legends had article when I added that list and Wikipedia is still short of articles on Aussie rules players. (Except for the fan contributions on current players like ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Chris Tarrant", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Chris Tarrant" <o> "]]" ]
               {N} target = "Chris Tarrant"
 
             LinkTitle([ ])
@@ -1828,28 +1828,28 @@ ParsedWikitextPage(
           Text(" etc.) ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
           )
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk: Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
               {N} target = "User talk: Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text(" (Talk)") ]
             )
@@ -1862,14 +1862,14 @@ ParsedWikitextPage(
           Text("It seems silly to have the Hall of Fame information duplicated on both this page and the AFL page.  I agree that it needs its own page but perhaps there should be some consensus about where it really should go?  My vote, fwiw, is to leave it on this page in preparation for moving it to its own page later.--")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
               {N} target = "User:The Brain of Morbius"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("The Brain of Morbius") ]
             )
@@ -1887,28 +1887,28 @@ ParsedWikitextPage(
               Text("There is nothing wrong with having duplicate material on different pages, when appropriate. If anything I think the HoF material should be removed from the AFL page, since the HoF is about the whole history of the game and not just the AFL, but there may be opposition to that. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Grant65") ]
                 )
               )
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk: Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
                   {N} target = "User talk: Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text(" (Talk)") ]
                 )
@@ -1930,14 +1930,14 @@ ParsedWikitextPage(
                   Text("Yup the HoH should be in this article. On the other hand, the \"Notable VFL/AFL records\" section should be removed from this article if duplication is an issue between the two pages. - ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Squilibob", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Squilibob" <o> "]]" ]
                       {N} target = "User:Squilibob"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Squilibob") ]
                     )
@@ -1964,14 +1964,14 @@ ParsedWikitextPage(
           Text("The article indicates that the IAFC is the official administrative body for Australian rules football internationally but I think you would get a very different view on that from the AFL, who see themselves as the official international representative body for the sport.  If someone can come up with a statement from the AFL that it recognises the IAFC as the official international body though, I'd be happy to retain the reference.  --")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Roisterer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Roisterer" <o> "]]" ]
               {N} target = "User:Roisterer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Roisterer") ]
             )
@@ -1988,7 +1988,6 @@ ParsedWikitextPage(
               Text("The AFL certainly see themselves as the universal governing body, and I don't think I've seen any official AFL statements regarding the IAFC but I can guarantee they wouldn't be positive. ")
               ImageLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Image:Flag_of_Australia.svg", [1], [2] = "]]"
                   {N} alt = 
                     LinkOptionAltText([ ])
                   {N} border = false
@@ -1997,6 +1996,7 @@ ParsedWikitextPage(
                   {N} height = -1
                   {N} linkPage = null
                   {N} linkUrl = null
+                  {N} rtd = RTD[ "[[Image:Flag_of_Australia.svg" <o> "" <o> "]]" ]
                   {N} target = "Image:Flag_of_Australia.svg"
                   {N} upright = false
                   {N} vAlign = MIDDLE
@@ -2005,14 +2005,14 @@ ParsedWikitextPage(
                 [
                   LinkOptionResize(
                     Properties:
-                      RTD = RtData: [0] = "|30px"
                       {N} height = -1
+                      {N} rtd = RTD[ "|30px" ]
                       {N} width = 30
                   )
                 ]
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ ]
                 )
@@ -2020,14 +2020,14 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Plattopus", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Plattopus" <o> "]]" ]
                   {N} target = "User:Plattopus"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("plattopus") ]
                 )
@@ -2050,14 +2050,14 @@ ParsedWikitextPage(
                     [
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User_talk:Plattopus", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User_talk:Plattopus" <o> "]]" ]
                           {N} target = "User_talk:Plattopus"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("is this thing on?") ]
                         )
@@ -2076,28 +2076,28 @@ ParsedWikitextPage(
                     Text("The IAFC is not recognised by the AFL. No doubt the IAFC would say \"who is the AFL to recognise us or not?\" They would have a point since the AFL in recent years has shown itself as strangely reluctant to promote the game in countries such as Denmark where the game has grown of its own accord.")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                         {N} target = "User:Grant65"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("Grant65") ]
                       )
                     )
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User talk: Grant65", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
                         {N} target = "User talk: Grant65"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text(" (Talk)") ]
                       )
@@ -2126,14 +2126,14 @@ ParsedWikitextPage(
           Text("Anyone want to have a go at adding the new centre circle into the diagrams? --")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
               {N} target = "User:The Brain of Morbius"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("The Brain of Morbius") ]
             )
@@ -2166,14 +2166,14 @@ ParsedWikitextPage(
               Text("Neither - it's vandalism, now reverted.--")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("The Brain of Morbius") ]
                 )
@@ -2204,14 +2204,14 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:DrHow", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:DrHow" <o> "]]" ]
               {N} target = "User:DrHow"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("DrHow") ]
             )
@@ -2238,14 +2238,14 @@ ParsedWikitextPage(
               Text("Not sure where exactly to put that in the article as yet, but I'm sure someone will think of a way! --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("The Brain of Morbius") ]
                 )
@@ -2267,14 +2267,14 @@ ParsedWikitextPage(
                   Text("I think that is a pretty good definition, but in modern day commentary I am pretty sure they have extended the term to mean a clearance from any stoppage.  In modern day footy, the team that can win the most clearances from all forms of stoppages will nearly always win the game and thus the frequency of the use of the term.  Also, it can mean a handball if it has effectively cleared the area of the stoppage to the team's advantage, so a handball that went nowhere and resulted in another ball up would not be counted as a stat.  --")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                       {N} target = "User:Pippu d'angelo"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("pippudoz") ]
                     )
@@ -2282,14 +2282,14 @@ ParsedWikitextPage(
                   Text(" - ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                       {N} target = ":scn:User talk:Pippu d'angelo"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [
                         XmlElement(
@@ -2326,14 +2326,14 @@ ParsedWikitextPage(
           Text("The latest anonimous edit looks like a bit of POV mischief from a banana bender with taped back ears and no neck who doesn't mind sniffing the odd backside.  Anyone with sufficient powers out there agree on a roll back?  --")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
               {N} target = "User:Pippu d'angelo"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("pippudoz") ]
             )
@@ -2341,14 +2341,14 @@ ParsedWikitextPage(
           Text(" - ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
               {N} target = ":scn:User talk:Pippu d'angelo"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [
                 XmlElement(
@@ -2376,14 +2376,14 @@ ParsedWikitextPage(
               Text("Pippu, absolutely agree to that. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Wikipedia:Be bold in updating pages", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Wikipedia:Be bold in updating pages" <o> "]]" ]
                   {N} target = "Wikipedia:Be bold in updating pages"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Be bold") ]
                 )
@@ -2391,14 +2391,14 @@ ParsedWikitextPage(
               Text(". You don't need special powers to roll-back, just go to the edit history and select the previous edit (the good one) and press edit and save.  You will get a warning that you're going to overwrite the current version but just say OK to that. -- ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Ianbrown", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
                   {N} target = "User:Ianbrown"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Ian") ]
                 )
@@ -2413,14 +2413,14 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User_talk:Ianbrown", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
                   {N} target = "User_talk:Ianbrown"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("talk") ]
                 )
@@ -2445,14 +2445,14 @@ ParsedWikitextPage(
           Text("Re the Brain's most recent edit, that wasn't me that deleted that line that he has restored, but I always thought that it was inaccurate in relation to the ACT (i.e. Canberra).  In fact, Canberra was an aussie rules stronghold until at least 1982 because the first two generations of public servants came predominantly from Melbourne. With time this balance swung more to Sydney and then around 1982 the Canberra Raiders joined the then NSWRL.  Rugby league certainly has overtaken aussie rules in general popularity (if you are counting TV ratings) but in terms of participation I would think that it would be roughly on par with aussie rules and rugby union, and all three are likely to be behind soccer.  In terms spectators attending games, I imagine the ACT Brumbies currently outstrip all, the Canberra Raiders only get about half, and for some of the three or four games the Kangaroos play in Canberra, they will often get more than the average Raiders game.  All in all - I think it is not an accurate statement about Canberra (not to mention that in souther NSW, aussie rules is stronger than rugby league).  --")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
               {N} target = "User:Pippu d'angelo"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("pippudoz") ]
             )
@@ -2460,14 +2460,14 @@ ParsedWikitextPage(
           Text(" - ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
               {N} target = ":scn:User talk:Pippu d'angelo"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [
                 XmlElement(
@@ -2521,9 +2521,9 @@ ParsedWikitextPage(
                       Text("Australian rules which was invented in ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[Melbourne", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[Melbourne" <o> "]]" ]
                           {N} target = "Melbourne"
 
                         LinkTitle([ ])
@@ -2531,9 +2531,9 @@ ParsedWikitextPage(
                       Text(", is the predominant ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[winter sport", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[winter sport" <o> "]]" ]
                           {N} target = "winter sport"
 
                         LinkTitle([ ])
@@ -2541,9 +2541,9 @@ ParsedWikitextPage(
                       Text(" in all states of ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[Australia", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[Australia" <o> "]]" ]
                           {N} target = "Australia"
 
                         LinkTitle([ ])
@@ -2557,9 +2557,9 @@ ParsedWikitextPage(
                           Text(" with the exception of ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Queensland", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Queensland" <o> "]]" ]
                               {N} target = "Queensland"
 
                             LinkTitle([ ])
@@ -2567,9 +2567,9 @@ ParsedWikitextPage(
                           Text(", ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[New South Wales", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[New South Wales" <o> "]]" ]
                               {N} target = "New South Wales"
 
                             LinkTitle([ ])
@@ -2577,14 +2577,14 @@ ParsedWikitextPage(
                           Text(" and the ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Australian Capital Territory", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Australian Capital Territory" <o> "]]" ]
                               {N} target = "Australian Capital Territory"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("ACT") ]
                             )
@@ -2592,9 +2592,9 @@ ParsedWikitextPage(
                           Text(", where ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[Rugby league", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[Rugby league" <o> "]]" ]
                               {N} target = "Rugby league"
 
                             LinkTitle([ ])
@@ -2638,14 +2638,14 @@ ParsedWikitextPage(
               Text("Perhaps the par could be rewritten to note Aussie rules' predominance in southern NSW but I'm not convinced that's warranted; to all intents and purposes the par is fine for mine. --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("The Brain of Morbius") ]
                 )
@@ -2669,14 +2669,14 @@ ParsedWikitextPage(
                       Text("Brains - thanks for the reply - perhaps it's ok as it is but I wasn't suggesting that aussie rules was bigger than league or on par, but that even one of the other two codes may have been just as big (depending on the criterion you are using) - I'm just not sure that league is way out ahead of the other three in Canberra.  The interest in the raiders has really waned since the Brumbies came on the scene - but that needs to be tested over a long period because I am not sure the average Canberran would suffer say 5 or 6 years in the bottom 4.   Correct also in saying that it is too early to judge the  Kangaroos experiment.  --")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                           {N} target = "User:Pippu d'angelo"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("pippudoz") ]
                         )
@@ -2684,14 +2684,14 @@ ParsedWikitextPage(
                       Text(" - ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                           {N} target = ":scn:User talk:Pippu d'angelo"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [
                             XmlElement(
@@ -2709,9 +2709,9 @@ ParsedWikitextPage(
                       Text(" 09:58, 27 September 2005 (UTC)  p.s. check out our main page at ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[:scn:p\u00E0ggina principali", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[:scn:p\u00E0ggina principali" <o> "]]" ]
                           {N} target = ":scn:p\u00E0ggina principali"
 
                         LinkTitle([ ])
@@ -2811,9 +2811,9 @@ ParsedWikitextPage(
           Text("On that basis you I think it have to be said that Aussies rules is at least equal to rugby league, and is growing at the moment. When the ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Western Force", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Western Force" <o> "]]" ]
               {N} target = "Western Force"
 
             LinkTitle([ ])
@@ -2834,28 +2834,28 @@ ParsedWikitextPage(
           Text(" A competitive AFL team based there would come close to that I think.")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
           )
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk: Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
               {N} target = "User talk: Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text(" (Talk)") ]
             )
@@ -2883,14 +2883,14 @@ ParsedWikitextPage(
               Text("Perhaps we'd better take this discussion to BigFooty ;) --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("The Brain of Morbius") ]
                 )
@@ -2918,14 +2918,14 @@ ParsedWikitextPage(
                   Text(" oh yeah, you'll get some bipartisan discourse there... In my experience, as a 1971-1982 Canberra schoolboy (neatly the pre-Raiders period) AR was non-existant. But that was just our school, I'm sure some schools played it. But I'd agree with Grant, an AFL team would outdraw than the Raiders, as league fans are notorious for their unwillingness to show up at games, and AR fans the exact opposite. Doesn't help the Raiders have played a crappy brand of football for about 8 years either. On the Brumbies, they're only playing a six game season, probably more people showed up at Raiders games this year, despite their pitiful form.--")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:*Paul*", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:*Paul*" <o> "]]" ]
                       {N} target = "User:*Paul*"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Paul") ]
                     )
@@ -2950,14 +2950,14 @@ ParsedWikitextPage(
                   Text("I confirm what Brains says about the free game.  All in all, I think it is a reasonable rewrite - but re the ACT -  we might revisit it this time next year! --")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                       {N} target = "User:Pippu d'angelo"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("pippudoz") ]
                     )
@@ -2965,14 +2965,14 @@ ParsedWikitextPage(
                   Text(" - ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                       {N} target = ":scn:User talk:Pippu d'angelo"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [
                         XmlElement(
@@ -3032,14 +3032,14 @@ ParsedWikitextPage(
                   Text(".  I think a lot of people confuse Aussie Rules long-time strong presence in southern NSW/Riverina as extending to Canberra.  It is more the case that Canberra's proximity to Sydney holds sway.  --")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Biatch", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Biatch" <o> "]]" ]
                       {N} target = "User:Biatch"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Biatch") ]
                     )
@@ -3066,9 +3066,9 @@ ParsedWikitextPage(
           Text("The ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Sport in Australia", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Sport in Australia" <o> "]]" ]
               {N} target = "Sport in Australia"
 
             LinkTitle([ ])
@@ -3076,9 +3076,9 @@ ParsedWikitextPage(
           Text(" article is the current ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Wikipedia:Australian Collaboration of the Fortnight", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Wikipedia:Australian Collaboration of the Fortnight" <o> "]]" ]
               {N} target = "Wikipedia:Australian Collaboration of the Fortnight"
 
             LinkTitle([ ])
@@ -3086,14 +3086,14 @@ ParsedWikitextPage(
           Text(" - just wondering if anyone here would be interested in adding to the ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Sport_in_Australia#Australian rules football", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Sport_in_Australia#Australian rules football" <o> "]]" ]
               {N} target = "Sport_in_Australia#Australian rules football"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Aussie rules") ]
             )
@@ -3101,14 +3101,14 @@ ParsedWikitextPage(
           Text(" section? (or any other section) thanks --- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Astrokey44", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Astrokey44" <o> "]]" ]
               {N} target = "User:Astrokey44"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Astrokey44") ]
             )
@@ -3135,14 +3135,14 @@ ParsedWikitextPage(
           Text("On an unrelated note, exactly how high is \"elbow height\"? ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
               {N} target = "User:Bjmurph"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Bjmurph") ]
             )
@@ -3159,14 +3159,14 @@ ParsedWikitextPage(
               Text("If you can get hold of an old video of Dipper playing, that will give you a pretty good idea - the range is from throat level to black eye level.  --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("pippudoz") ]
                 )
@@ -3174,14 +3174,14 @@ ParsedWikitextPage(
               Text(" - ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -3213,14 +3213,14 @@ ParsedWikitextPage(
                   Text("Actually, I was refering to the thing about the goal umpire signalling with hands at elbow height, but you've illustrated my point anyway. Maybe Belly-button height is a better description? ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                       {N} target = "User:Bjmurph"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Bjmurph") ]
                     )
@@ -3246,14 +3246,14 @@ ParsedWikitextPage(
                       Text("As a formerly accredited goal umpire, I can tell you that the upper arms should be vertical and the lower arms horizontal, making it the height of the elbow when standing with arms by your sides. ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("JPD") ]
                         )
@@ -3261,14 +3261,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                           {N} target = "User talk:JPD"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("(talk)") ]
                         )
@@ -3292,14 +3292,14 @@ ParsedWikitextPage(
               Text("Laws of Australian Football sounds good to me, since that's what they're called. Law of Australian Rules Football if anyone really wants to kick up a stink. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -3307,14 +3307,14 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("(talk)") ]
                 )
@@ -3336,9 +3336,9 @@ ParsedWikitextPage(
                   Text("ok I moved it across to ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[Laws of Australian Football", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[Laws of Australian Football" <o> "]]" ]
                       {N} target = "Laws of Australian Football"
 
                     LinkTitle([ ])
@@ -3346,14 +3346,14 @@ ParsedWikitextPage(
                   Text(". Probably still needs a good short paragraph in this article ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Astrokey44", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Astrokey44" <o> "]]" ]
                       {N} target = "User:Astrokey44"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Astrokey44") ]
                     )
@@ -3429,14 +3429,14 @@ ParsedWikitextPage(
           Text("Sorry to Burst your bubble AFL Fans! ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Factoid Killer") ]
             )
@@ -3462,14 +3462,14 @@ ParsedWikitextPage(
           Text("). I tend to agree that stating it is the most popular sport is probably going a bit far, but the rest of the paragraph is fine. If anything, it understates the popularity of Aussie Rules in the NSW Riverina. Keep in mind also, that this article is about the sport, not about the AFL. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
               {N} target = "User:JPD"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("JPD") ]
             )
@@ -3489,14 +3489,14 @@ ParsedWikitextPage(
                   Text("The standard measurement of popularity used by the ABS is game attendance and participation.  This doesn't accurately measure the popularity of a sport.  It's perfectly valid to refer to the AFL alone in this argument since QAFL, NSWAFL, WAFL etc are not telecasted nationally if at all.  The popularity section boasts the # of states where the game is the most popular sport and mentions attendance.  That's fine except it doesn't mention anything about television viewership nor the populations of those states and territories mentioned.  In this respect, the reader has no way to quantify the popularity accurately and the article implies that the sport is phenomenally more popular than it is.  I know AFL fans can become extremely obsessive so we can't really expect an truely NPOV article on the subject without outside help.  In a few weeks i'm going to be back in australia.  I intend to do some research and provide an NPOV article based on cited sources.  Wikipedia's NPOV policy is not negotiable in any article.  Furthermore, this article is loaded with original material and lacks the appropriate citations expected from a Wikipedia article.  These rules apply to AFL fans too! ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                       {N} target = "User:Factoid Killer"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Factoid Killer") ]
                     )
@@ -3529,14 +3529,14 @@ ParsedWikitextPage(
                             Text("That's right it does and it stops short of actually providing any evidence of the sports popularity at a national level leaving the reader believing that an extremely large majority of people follow the sport in comparison to other sports.")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3574,14 +3574,14 @@ ParsedWikitextPage(
                             Text("It implies it!  Show me where the term 'Geographical spread' is used in the article!")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3619,14 +3619,14 @@ ParsedWikitextPage(
                             Text("I did read it as a description of the games popularity.  That's the problem!")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3664,14 +3664,14 @@ ParsedWikitextPage(
                             Text("My argument regarding other leagues validates my legitimate claim to use the term AFL and to limit my research to AFL whilst investigating the popularity of the sport of Australian Rules Football.  Unless you believe there are a significant number of followers who only follow the local state level games and bear no interest in the AFL then my argument is still valid.")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3709,14 +3709,14 @@ ParsedWikitextPage(
                             Text("I'm referring to the governing body that is usually considered to be the authority on statistics in Australia and dismissing their statistics as invalid.  Not everything I have to say is necessarily an argument debunking you.  Get over yourself.")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3754,14 +3754,14 @@ ParsedWikitextPage(
                             Text("Where is that mentioned?")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3799,14 +3799,14 @@ ParsedWikitextPage(
                             Text("Nice ")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[Straw Man Fallacy", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[Straw Man Fallacy" <o> "]]" ]
                                 {N} target = "Straw Man Fallacy"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Straw Man") ]
                               )
@@ -3814,14 +3814,14 @@ ParsedWikitextPage(
                             Text("! ")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3847,14 +3847,14 @@ ParsedWikitextPage(
                             Text("Television viewership is far more valid than game attendance since viewership represents a much higher number of followers.  I think it would be a very valid statistic to add if you're going to make a comparison between the popularity of AFL in comparison to followers of other sporting bodies.")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3885,14 +3885,14 @@ ParsedWikitextPage(
                       Text("The fact that the SANFL and WAFL are not telecast nationally doesn't mean that they don't show evidence of the popularity of the code. ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("JPD") ]
                         )
@@ -3907,14 +3907,14 @@ ParsedWikitextPage(
                             Text("See my previous comment regarding that particular argument.")
                             InternalLink(
                               Properties:
-                                RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                                 {N} postfix = ""
                                 {N} prefix = ""
+                                {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
                               LinkTitle(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1]
+                                  {N} rtd = RTD[ "|" <o> "" ]
 
                                 [ Text("Factoid Killer") ]
                               )
@@ -3936,14 +3936,14 @@ ParsedWikitextPage(
           Text("By the way, I noticed you didn't comment on my suggestion that this article is loaded with Non-NPov original material with little or no source citation to back it up.")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Factoid Killer") ]
             )
@@ -3975,14 +3975,14 @@ ParsedWikitextPage(
               Text(" purpose of the section is *not* to make comparisons with other sports, but to describe what popularity the code has. This means stating where it is and isn't dominant and mentioning attendance rates, participation rates and television audiences without trying to draw conclusions about which figures are most relevant. The reader can do that for themselves. Lastly, please don't try to break up my comments, as how you did it last time obscured the points I was making. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -4009,14 +4009,14 @@ ParsedWikitextPage(
           Text("I will, as you suggest, add some sources, citable statistics and non-npov wording to the article.")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Factoid Killer") ]
             )
@@ -4174,14 +4174,14 @@ ParsedWikitextPage(
               Text(" ;-) ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Grant65") ]
                 )
@@ -4189,14 +4189,14 @@ ParsedWikitextPage(
               Text(" | ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                   {N} target = "User talk:Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Talk") ]
                 )
@@ -4281,14 +4281,14 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Factoid Killer") ]
             )
@@ -4318,14 +4318,14 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
               {N} target = "User:Bjmurph"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("bjmurph") ]
             )
@@ -4333,14 +4333,14 @@ ParsedWikitextPage(
           Text(" ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk:Bjmurph", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
               {N} target = "User talk:Bjmurph"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [
                 XmlElement(
@@ -4371,14 +4371,14 @@ ParsedWikitextPage(
                       Text("Posting bits of other peoples things to reply to is confusing too. ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                           {N} target = "User:Bjmurph"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("bjmurph") ]
                         )
@@ -4386,14 +4386,14 @@ ParsedWikitextPage(
                       Text(" ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User talk:Bjmurph", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                           {N} target = "User talk:Bjmurph"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [
                             XmlElement(
@@ -4576,14 +4576,14 @@ ParsedWikitextPage(
               Text(" ...unless we accept the \"argument\" that league fans would rather watch it on TV. But I don't buy it. Logically the biggest problem for league in terms of its following is not Aussie rules but rugby union, which was established first and (I'm guessing) has been growing in popularity since professionalism was (officially) allowed. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Grant65") ]
                 )
@@ -4591,14 +4591,14 @@ ParsedWikitextPage(
               Text(" | ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:Grant65", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                   {N} target = "User talk:Grant65"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Talk") ]
                 )
@@ -4613,14 +4613,14 @@ ParsedWikitextPage(
                     Text("I think that the League people watching TV is a moot point, because I'm yet to see a statistic that shows the NRL TV viewing greater than the AFL TV viewing. ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                         {N} target = "User:Bjmurph"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("bjmurph") ]
                       )
@@ -4628,14 +4628,14 @@ ParsedWikitextPage(
                     Text(" ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User talk:Bjmurph", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                         {N} target = "User talk:Bjmurph"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [
                           XmlElement(
@@ -4764,14 +4764,14 @@ ParsedWikitextPage(
         Paragraph([
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Factoid Killer") ]
             )
@@ -4806,14 +4806,14 @@ ParsedWikitextPage(
               Text(" sport (or if it doesn't, it did, and should). The Sweeney report includes participation. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                   {N} target = "User:Bjmurph"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("bjmurph") ]
                 )
@@ -4821,14 +4821,14 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:Bjmurph", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                   {N} target = "User talk:Bjmurph"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -4874,14 +4874,14 @@ ParsedWikitextPage(
           Text("I think we're forgetting what the CG part of MCG stands for!")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Factoid Killer") ]
             )
@@ -4899,14 +4899,14 @@ ParsedWikitextPage(
               Text("I think you're forgetting what the article is about. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -4944,14 +4944,14 @@ ParsedWikitextPage(
                       Text("I did not see that you had deleted your comment, as it edit conflicted with my edit to the previous section and was quite confusing. At any rate, it is not normal to delete comments from the talk page. To avoid confusion, you might like admit on the talk page that you misread the sentence, rather than just deleting your comment. ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("JPD") ]
                         )
@@ -5005,14 +5005,14 @@ ParsedWikitextPage(
                               Text("Could you please ")
                               InternalLink(
                                 Properties:
-                                  RTD = RtData: [0] = "[[WP:FAITH", [1] = "]]"
                                   {N} postfix = ""
                                   {N} prefix = ""
+                                  {N} rtd = RTD[ "[[WP:FAITH" <o> "]]" ]
                                   {N} target = "WP:FAITH"
 
                                 LinkTitle(
                                   Properties:
-                                    RTD = RtData: [0] = "|", [1]
+                                    {N} rtd = RTD[ "|" <o> "" ]
 
                                   [ Text("assume good faith") ]
                                 )
@@ -5020,14 +5020,14 @@ ParsedWikitextPage(
                               Text("? The edit conflict was quite confusing and I did not realise that you had deleted it. I did not imply that you did not admit it, I simply suggested that it would have been less confusing to admit on the talk page. I am perfectly happy to let it die now that I understand you retracted the comment. I am not perfectly happy to accept your accusation that I deliberately resurrected it. ")
                               InternalLink(
                                 Properties:
-                                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                                   {N} postfix = ""
                                   {N} prefix = ""
+                                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                                   {N} target = "User:JPD"
 
                                 LinkTitle(
                                   Properties:
-                                    RTD = RtData: [0] = "|", [1]
+                                    {N} rtd = RTD[ "|" <o> "" ]
 
                                   [ Text("JPD") ]
                                 )
@@ -5080,14 +5080,14 @@ ParsedWikitextPage(
               Text(":::::It seem that you added this paragraph just before I clicked edit, so I hadn't read it when I wrote the above. The explanation for the 6 minutes, if you want it, is that I clicked submit when I had finished my edit to the earlier section, and then worked on something else. When I came back to the window, I saw that it had not been submitted due to an edit conflict. How much of the six minutes was between your edits and my original submission and how much was between my first submission and my second one, I don't know. You can see that my \"resurrection\" of your comment was part of the edit I made to the earlier section. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -5098,14 +5098,14 @@ ParsedWikitextPage(
           Text(" This was a response to your now deleted accusation - I am still having trouble keeping up with you, but I think we understand the original problem now, so let's leave it at that. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
               {N} target = "User:JPD"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("JPD") ]
             )
@@ -5144,14 +5144,14 @@ ParsedWikitextPage(
                   Text("Spectators. That's why it says \"...as a spectator sport\". If this is \"POV\", then you presumably believe that some other attribute of the game is more important to spectators.  Which? ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User Talk:Stevage", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User Talk:Stevage" <o> "]]" ]
                       {N} target = "User Talk:Stevage"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Stevage") ]
                     )
@@ -5208,14 +5208,14 @@ ParsedWikitextPage(
               Text("--")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:220.245.178.140", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:220.245.178.140" <o> "]]" ]
                   {N} target = "User:220.245.178.140"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("220.245.178.140") ]
                 )
@@ -5223,14 +5223,14 @@ ParsedWikitextPage(
               Text(" 00:54, 25 November 2005 (UTC)Regards CS-----")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:220.245.178.140", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:220.245.178.140" <o> "]]" ]
                   {N} target = "User:220.245.178.140"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("220.245.178.140") ]
                 )
@@ -5243,14 +5243,14 @@ ParsedWikitextPage(
               Text("Very true.  And i'm happy to admit I came to this page knowing it would be loaded with non-npov statments due to the incredible level of fanaticism with the sport.  The level of fanaticism can only be compared to sports such as soccer in europe and GAA sports in country areas of Ireland (GAA sports are not popular in dublin where everyone just follows british soccer).  When visiting Melbourne many a cab driver has become upset with me when my response to the question 'which team do you follow?' is the Brisbane Broncos ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Factoid Killer") ]
                 )
@@ -5269,14 +5269,14 @@ ParsedWikitextPage(
                   Text("In doing so, you managed to find several \"non-npov statements\" that were perfectly npov when they were read sensibly. You might have understood what was being said better if you didn't start with the assumption that it would be inappropriate. I agree with you that there are several vague unsourced statements, but that is not the same as POV-pushing. ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                       {N} target = "User:JPD"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("JPD") ]
                     )
@@ -5298,14 +5298,14 @@ ParsedWikitextPage(
                       Text("That may be the case but either way, my presumption has allowed me to play devils advocate to the benefit of the article. ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                           {N} target = "User:Factoid Killer"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Factoid Killer") ]
                         )
@@ -5357,14 +5357,14 @@ ParsedWikitextPage(
                         Text("Sorry not good enough.  I expect more than anecdotal  evidience to back a claim like this.  Where are the numbers?  Who are you quoting?")
                         InternalLink(
                           Properties:
-                            RTD = RtData: [0] = "[[User:62.254.168.102", [1] = "]]"
                             {N} postfix = ""
                             {N} prefix = ""
+                            {N} rtd = RTD[ "[[User:62.254.168.102" <o> "]]" ]
                             {N} target = "User:62.254.168.102"
 
                           LinkTitle(
                             Properties:
-                              RTD = RtData: [0] = "|", [1]
+                              {N} rtd = RTD[ "|" <o> "" ]
 
                             [ Text("62.254.168.102") ]
                           )
@@ -5379,14 +5379,14 @@ ParsedWikitextPage(
                               Text("It's probably true, it does need to be sourced, but more to the point, does it really need to be in the article? The point is that in most of NSW, Qld and ACT, AF is not the obviously dominant code as it is in other areas. For this context, it doesn't matter what the dominant code is. ")
                               InternalLink(
                                 Properties:
-                                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                                   {N} postfix = ""
                                   {N} prefix = ""
+                                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                                   {N} target = "User:JPD"
 
                                 LinkTitle(
                                   Properties:
-                                    RTD = RtData: [0] = "|", [1]
+                                    {N} rtd = RTD[ "|" <o> "" ]
 
                                   [ Text("JPD") ]
                                 )
@@ -5430,14 +5430,14 @@ ParsedWikitextPage(
                         Text("That would be a good start.  In addition, can we find out the rise in television ratings? Since the first premiership win?  Maybe the immigration stats.  I'm originally from Brisbane and recall a time when the only attendance the Brisbane Bears received consisted of southern immigrants who were there to see the opposition play.  It has been suggested that those AFL fans had children and their children follow the Brisbane Lions.  This largely accounts for the grown in support for the sport in Brisbane prior to the first premiership win.  I'll see if I can track down a quote or source for this.")
                         InternalLink(
                           Properties:
-                            RTD = RtData: [0] = "[[User:62.254.168.102", [1] = "]]"
                             {N} postfix = ""
                             {N} prefix = ""
+                            {N} rtd = RTD[ "[[User:62.254.168.102" <o> "]]" ]
                             {N} target = "User:62.254.168.102"
 
                           LinkTitle(
                             Properties:
-                              RTD = RtData: [0] = "|", [1]
+                              {N} rtd = RTD[ "|" <o> "" ]
 
                             [ Text("62.254.168.102") ]
                           )
@@ -5523,14 +5523,14 @@ ParsedWikitextPage(
                       Text(" Does it really need to address popularity (surely general popularity was covered in a previous section that mentions the game is only popular in Nauru and PNG ?  In any case it is a simple statement of fact - no more, no less. --")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:Biatch", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:Biatch" <o> "]]" ]
                           {N} target = "User:Biatch"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Biatch") ]
                         )
@@ -5603,14 +5603,14 @@ ParsedWikitextPage(
             Paragraph([
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                   {N} target = "User:Bjmurph"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("bjmurph") ]
                 )
@@ -5618,14 +5618,14 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:Bjmurph", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                   {N} target = "User talk:Bjmurph"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -5683,14 +5683,14 @@ ParsedWikitextPage(
             Paragraph([
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Factoid Killer") ]
                 )
@@ -5703,14 +5703,14 @@ ParsedWikitextPage(
               Text("I just took a look at the article for the first time since writing this and see that the issues i brought up have been addressed.  I'm impressed.  I think the article is better as a result.  Still needs more verifiable citations and quotations.")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Factoid Killer") ]
                 )
@@ -5767,14 +5767,14 @@ ParsedWikitextPage(
             Paragraph([
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Bjmurph", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                   {N} target = "User:Bjmurph"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("bjmurph") ]
                 )
@@ -5782,14 +5782,14 @@ ParsedWikitextPage(
               Text(" ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:Bjmurph", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                   {N} target = "User talk:Bjmurph"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -5831,14 +5831,14 @@ ParsedWikitextPage(
                   Text("I think the relevant definition of elite here is \u201CThe best or most skilled members of a group: the football team's elite.\u201D It would be POV to declare individual players elite, or possibly even to call the VFL the elite league in the past, but in modern days the structure of the game is such that saying the AFL is the elite league is as undisputable as calling the Premier League the elite competition in English soccer. We don't need to have sources for the word \"elite\", simply for the fact that it is the top-level competition. ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                       {N} target = "User:JPD"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("JPD") ]
                     )
@@ -5858,14 +5858,14 @@ ParsedWikitextPage(
                   Text("Re: the word elite.  OK I agree that the word elite can be used in a non-npov context.  However, in the sentence it's being used here, it is redundant.  It becomes POV at the point that the same point is repeated a multiple number of times in the same sentence.  I'm happy for them to be called either the most powerful organisation or the elite organisation, but not both.  What if instead of saying 'The NRL is the elite governing body for the sport of rugby leage in Australia' I decided to say this 'The NRL is the most powerful, vigorously supreme, almighty and elite governing body of the sport of rugby league in Australia'?")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                       {N} target = "User:Factoid Killer"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Factoid Killer") ]
                     )
@@ -5880,14 +5880,14 @@ ParsedWikitextPage(
               Text("You have a good point. I guess I feel that the meaning of elite being used here is the one that refers to the skill level of the competition, rather than the power and money of the organisation (governing body). It would be good to rewrite/split the sentence to that it adequately reflects both aspects. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -5918,9 +5918,9 @@ ParsedWikitextPage(
                   Text(".  If guess if it wasn't elite, you could probably walk up and get a game, which is obviously not the case. --")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Biatch", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Biatch" <o> "]]" ]
                       {N} target = "User:Biatch"
 
                     LinkTitle([ ])
@@ -5947,14 +5947,14 @@ ParsedWikitextPage(
           Text("Should this article be renamed from \"Australian rules football\" to \"Australian Rules Football\"?  It seems to be that the former sounds like a statement about a person in charge of football :) But in all seriousness, the latter is the correct title, is it not?  The history in the redirect appears to show the reverse was done on 11 November 2004, I but cannot think why. \"rules\" (uncapitalised) implies something other than a title. -- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Ianbrown", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
               {N} target = "User:Ianbrown"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Ian") ]
             )
@@ -5962,14 +5962,14 @@ ParsedWikitextPage(
           Text(" \u2261 ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User_talk:Ianbrown", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
               {N} target = "User_talk:Ianbrown"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("talk") ]
             )
@@ -5986,9 +5986,9 @@ ParsedWikitextPage(
               Text("Hi Ian - I agree it needs to be looked at, I don't understand either why it was changed to lower case.  It has to be either Australian Rules Football, or simply Australian Football (remembering that the league is called the ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Australian Football League", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
                   {N} target = "Australian Football League"
 
                 LinkTitle([ ])
@@ -5996,14 +5996,14 @@ ParsedWikitextPage(
               Text(").  ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                 )
@@ -6011,14 +6011,14 @@ ParsedWikitextPage(
               Text(" - ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -6043,14 +6043,14 @@ ParsedWikitextPage(
                     Text("Hi Pippu - long time no speak!  Definitely not \"Australian Football\"!  I always played \"Aussie Rules\" or \"Australian Rules Football\".  Regards -- ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Ianbrown", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
                         {N} target = "User:Ianbrown"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("Ian") ]
                       )
@@ -6065,14 +6065,14 @@ ParsedWikitextPage(
                     Text(" ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User_talk:Ianbrown", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
                         {N} target = "User_talk:Ianbrown"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("talk") ]
                       )
@@ -6094,14 +6094,14 @@ ParsedWikitextPage(
                           Text(" is not acceptable.  --")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                               {N} target = "User:Pippu d'angelo"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                             )
@@ -6109,14 +6109,14 @@ ParsedWikitextPage(
                           Text(" - ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                               {N} target = ":scn:User talk:Pippu d'angelo"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [
                                 XmlElement(
@@ -6142,14 +6142,14 @@ ParsedWikitextPage(
                           Text("I don't understand why it's not acceptable.  The \"Australian\" part is the only part that refers to a proper noun, the rest should be uncapitalised in the same way we refer to \"American football\", \"Association football\", etc.  We don't play \"Netball and Basketball\", we play netball and basketball. There's nothing about the name of the sport that demands capitalisation except for the bit that is named after a country, even if only for consistency's sake. Whatever our own opinions surely we should follow WP convention at least.--")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:The Brain of Morbius", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                               {N} target = "User:The Brain of Morbius"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("The Brain of Morbius") ]
                             )
@@ -6181,14 +6181,14 @@ ParsedWikitextPage(
               Text("It doesn't matter how you want the capitalisation to work, it is a wikipedia standard to capitalise only the first letter of the first word.")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Factoid Killer", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Factoid Killer") ]
                 )
@@ -6208,14 +6208,14 @@ ParsedWikitextPage(
               Text("Not quite true - if the title as a whole is a proper noun (eg New South Wales), then obviously each word has a capital letter. However, the convention is (correctly) that names of sports are not proper nouns, hence rugby league and Australian rules football. It is true that the game is often called simply Australian football, but the version with \"rules\" is at least as common and less ambiguous. The name of the AFL is irrelevant, as I'm fairly sure that there the sport is simply refered to as \"football\", with \"Australian\" referring to the league. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -6230,14 +6230,14 @@ ParsedWikitextPage(
                     Text("if it's a wikipedia convention - fair enough - but I still maintain there has been a big push over the last 10 to 15 years to call it simply Australian football, also, I can't help thinking that that is the normal encyclopaedic entry - but I'm definitely not going to die in a ditch over it! ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                         {N} target = "User:Pippu d'angelo"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                       )
@@ -6245,14 +6245,14 @@ ParsedWikitextPage(
                     Text(" - ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[:scn:User talk:Pippu d'angelo", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                         {N} target = ":scn:User talk:Pippu d'angelo"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [
                           XmlElement(
@@ -6285,9 +6285,9 @@ ParsedWikitextPage(
                           Text("I've done a bit of research and thought this through a bit more and have to backtrack and agree with ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                               {N} target = "User:JPD"
 
                             LinkTitle([ ])
@@ -6295,14 +6295,14 @@ ParsedWikitextPage(
                           Text(". ie. leave as is.  I apologise for bringing this up. -- ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:Ianbrown", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
                               {N} target = "User:Ianbrown"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("Ian") ]
                             )
@@ -6317,14 +6317,14 @@ ParsedWikitextPage(
                           Text(" ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User_talk:Ianbrown", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
                               {N} target = "User_talk:Ianbrown"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("talk") ]
                             )
@@ -6356,9 +6356,9 @@ ParsedWikitextPage(
           Text("I notice that some of the lists in the article have been columnised, drawing attention to something I was planning to raise earlier - should we really have that many external links listed? Most of them seem to be fairly good sites, but we aren't meant to be a link directory. The links at ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[cricket", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[cricket" <o> "]]" ]
               {N} target = "cricket"
 
             LinkTitle([ ])
@@ -6366,14 +6366,14 @@ ParsedWikitextPage(
           Text(" have been deliberately kept at a much smaller number, so maybe someone should do a bit of a cull here? ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
               {N} target = "User:JPD"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("JPD") ]
             )
@@ -6386,14 +6386,14 @@ ParsedWikitextPage(
           Text("I don't think it's too bad. I agree it's as long as it should be, and maybe could be tightened slightly, but don't think a drastic cull is necessary.--")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Cinephobia", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Cinephobia" <o> "]]" ]
               {N} target = "User:Cinephobia"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Cinephobia") ]
             )
@@ -6419,14 +6419,14 @@ ParsedWikitextPage(
           Text(" --")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:*Paul*", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:*Paul*" <o> "]]" ]
               {N} target = "User:*Paul*"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Paul") ]
             )
@@ -6444,9 +6444,9 @@ ParsedWikitextPage(
               Text(" I recommend doing what they do at ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Association football", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Association football" <o> "]]" ]
                   {N} target = "Association football"
 
                 LinkTitle([ ])
@@ -6454,14 +6454,14 @@ ParsedWikitextPage(
               Text(": have only high-level links in the main article, and place other links in more relevant articles (e.g. the articles on the actual organisations the refer to). --")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Daveb", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Daveb" <o> "]]" ]
                   {N} target = "User:Daveb"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("Daveb") ]
                 )
@@ -6497,9 +6497,9 @@ ParsedWikitextPage(
                   Text("The lengthy discussion regarding padding has been moved to ")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[Talk:Australian rules football/padding", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[Talk:Australian rules football/padding" <o> "]]" ]
                       {N} target = "Talk:Australian rules football/padding"
 
                     LinkTitle([ ])
@@ -6538,14 +6538,14 @@ ParsedWikitextPage(
           Text("I ask again:   are these the very best photos we can get our hands on of the great Australian game?  The one photo we show, looks more like the old Sun \"Spot the Ball\"  competition.  C'mon, let's lift our game!  ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
               {N} target = "User:Pippu d'angelo"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
             )
@@ -6553,14 +6553,14 @@ ParsedWikitextPage(
           Text(" - ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[:scn:User talk:Pippu d'Angelo", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
               {N} target = ":scn:User talk:Pippu d'Angelo"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [
                 XmlElement(
@@ -6612,14 +6612,14 @@ ParsedWikitextPage(
                     [
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[WP:AFL", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[WP:AFL" <o> "]]" ]
                           {N} target = "WP:AFL"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("R") ]
                         )
@@ -6645,14 +6645,14 @@ ParsedWikitextPage(
                     [
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[Special:Contributions/Rogerthat", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[Special:Contributions/Rogerthat" <o> "]]" ]
                           {N} target = "Special:Contributions/Rogerthat"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("o") ]
                         )
@@ -6678,14 +6678,14 @@ ParsedWikitextPage(
                     [
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:Rogerthat", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:Rogerthat" <o> "]]" ]
                           {N} target = "User:Rogerthat"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("gerthat") ]
                         )
@@ -6727,14 +6727,14 @@ ParsedWikitextPage(
                         [
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User_talk:Rogerthat", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User_talk:Rogerthat" <o> "]]" ]
                               {N} target = "User_talk:Rogerthat"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("Talk") ]
                             )
@@ -6801,14 +6801,14 @@ ParsedWikitextPage(
                   Text(" --")
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Joshd", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Joshd" <o> "]]" ]
                       {N} target = "User:Joshd"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("Joshd") ]
                     )
@@ -6834,7 +6834,6 @@ ParsedWikitextPage(
                       Text("I've cropped the one with the banner, uploaded it as ")
                       ImageLink(
                         Properties:
-                          RTD = RtData: [0] = "[[:Image:Footybanner.jpg", [1], [2] = "]]"
                           {N} alt = 
                             LinkOptionAltText([ ])
                           {N} border = false
@@ -6843,6 +6842,7 @@ ParsedWikitextPage(
                           {N} height = -1
                           {N} linkPage = null
                           {N} linkUrl = null
+                          {N} rtd = RTD[ "[[:Image:Footybanner.jpg" <o> "" <o> "]]" ]
                           {N} target = ":Image:Footybanner.jpg"
                           {N} upright = false
                           {N} vAlign = MIDDLE
@@ -6854,14 +6854,14 @@ ParsedWikitextPage(
                       Text(" and put it in the section of this article mentioning the banners. ")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("JPD") ]
                         )
@@ -6869,14 +6869,14 @@ ParsedWikitextPage(
                       Text(" (")
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                           {N} target = "User talk:JPD"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("talk") ]
                         )
@@ -6905,14 +6905,14 @@ ParsedWikitextPage(
           Text("Well, this article is pretty good, so congrats to the people involved. I do feel however, that it glorifies the sport a bit much, I know it is popular, but this article is a tad misleading, reading through it, it reads as if AFL is the be all and end all of Australian sport. Im not here to bag AFL by any means, and I know that there are sources provided and so on, but I do feel the article is not really written in a NPOV. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Forever young", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Forever young" <o> "]]" ]
               {N} target = "User:Forever young"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Forever young") ]
             )
@@ -6929,14 +6929,14 @@ ParsedWikitextPage(
               Text("About once every few months, someone comes along questioning the stats about the TV audiences, participation, live crowds, membership, etc.  Rather than go through all of it a gain in tedious detail, could you please highight a few areas that are POV, especially via direct quotes from the article. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                 )
@@ -6944,14 +6944,14 @@ ParsedWikitextPage(
               Text(" - ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[:scn:User talk:Pippu d'Angelo", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'Angelo"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [
                     XmlElement(
@@ -6976,14 +6976,14 @@ ParsedWikitextPage(
                     Text("I wouldn't call it non-NPOV, but the Popularity section, particularly with it positioned as the lead item (in front of what the game actually is, and its history) and its length, reads more like a fan site than a encyclopaedia --")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:*Paul*", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:*Paul*" <o> "]]" ]
                         {N} target = "User:*Paul*"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("Paul") ]
                       )
@@ -6998,14 +6998,14 @@ ParsedWikitextPage(
                           Text("that's a fair point - I am wondering whether it has always been there at the start, or whether it snuck in there during some of the many reorgs of the article...")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                               {N} target = "User:Pippu d'angelo"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                             )
@@ -7013,14 +7013,14 @@ ParsedWikitextPage(
                           Text(" - ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[:scn:User talk:Pippu d'Angelo", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                               {N} target = ":scn:User talk:Pippu d'Angelo"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [
                                 XmlElement(
@@ -7046,14 +7046,14 @@ ParsedWikitextPage(
                           Text("in fact I just checked a version I edited on 25 September 2005 and noticed that there was no section on the popularity of the game - so clearly it has been added in since - nothing wrong with that, but as you correctly point out, it may be best appearing after the game is actually described - I have to agree with you on that one - anyone else? ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[User:Pippu d'angelo", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                               {N} target = "User:Pippu d'angelo"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [ Text("\u03C1\u00A1\u03C1\u03C1\u00B5 \u03B4\u2192\u03B8\u2211") ]
                             )
@@ -7061,14 +7061,14 @@ ParsedWikitextPage(
                           Text(" - ")
                           InternalLink(
                             Properties:
-                              RTD = RtData: [0] = "[[:scn:User talk:Pippu d'Angelo", [1] = "]]"
                               {N} postfix = ""
                               {N} prefix = ""
+                              {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                               {N} target = ":scn:User talk:Pippu d'Angelo"
 
                             LinkTitle(
                               Properties:
-                                RTD = RtData: [0] = "|", [1]
+                                {N} rtd = RTD[ "|" <o> "" ]
 
                               [
                                 XmlElement(
@@ -7093,14 +7093,14 @@ ParsedWikitextPage(
                                 Text("I believe the intro understandably said something about where the game was played, which then became a lengthy explanation of it's popularity in Australia, etc, which became so long it was correctly made a separate section from the intro. I agree that it shouldn't really be at the beginning. ")
                                 InternalLink(
                                   Properties:
-                                    RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                                     {N} postfix = ""
                                     {N} prefix = ""
+                                    {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                                     {N} target = "User:JPD"
 
                                   LinkTitle(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1]
+                                      {N} rtd = RTD[ "|" <o> "" ]
 
                                     [ Text("JPD") ]
                                   )
@@ -7108,14 +7108,14 @@ ParsedWikitextPage(
                                 Text(" (")
                                 InternalLink(
                                   Properties:
-                                    RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                                     {N} postfix = ""
                                     {N} prefix = ""
+                                    {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                                     {N} target = "User talk:JPD"
 
                                   LinkTitle(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1]
+                                      {N} rtd = RTD[ "|" <o> "" ]
 
                                     [ Text("talk") ]
                                   )
@@ -7157,14 +7157,14 @@ ParsedWikitextPage(
           Text(". We need concerted action to stop this. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
@@ -7172,14 +7172,14 @@ ParsedWikitextPage(
           Text(" | ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
               {N} target = "User talk:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Talk") ]
             )
@@ -7196,14 +7196,14 @@ ParsedWikitextPage(
               Text("Put the category up for renaming. That name can't really be justified, so you should get support. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -7211,14 +7211,14 @@ ParsedWikitextPage(
               Text(" (")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("talk") ]
                 )
@@ -7243,9 +7243,9 @@ ParsedWikitextPage(
           Text("I propose a section in the article on some of the tactics and terminology used in the game, drawing from ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Australian Rules slang", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Australian Rules slang" <o> "]]" ]
               {N} target = "Australian Rules slang"
 
             LinkTitle([ ])
@@ -7253,9 +7253,9 @@ ParsedWikitextPage(
           Text(" and ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[:Category:Australian rules football terminology", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[:Category:Australian rules football terminology" <o> "]]" ]
               {N} target = ":Category:Australian rules football terminology"
 
             LinkTitle([ ])
@@ -7288,14 +7288,14 @@ ParsedWikitextPage(
                 [
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[WP:AFL", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[WP:AFL" <o> "]]" ]
                       {N} target = "WP:AFL"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("R") ]
                     )
@@ -7321,14 +7321,14 @@ ParsedWikitextPage(
                 [
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[Special:Contributions/Rogerthat", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[Special:Contributions/Rogerthat" <o> "]]" ]
                       {N} target = "Special:Contributions/Rogerthat"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("o") ]
                     )
@@ -7354,14 +7354,14 @@ ParsedWikitextPage(
                 [
                   InternalLink(
                     Properties:
-                      RTD = RtData: [0] = "[[User:Rogerthat", [1] = "]]"
                       {N} postfix = ""
                       {N} prefix = ""
+                      {N} rtd = RTD[ "[[User:Rogerthat" <o> "]]" ]
                       {N} target = "User:Rogerthat"
 
                     LinkTitle(
                       Properties:
-                        RTD = RtData: [0] = "|", [1]
+                        {N} rtd = RTD[ "|" <o> "" ]
 
                       [ Text("gerthat") ]
                     )
@@ -7403,14 +7403,14 @@ ParsedWikitextPage(
                     [
                       InternalLink(
                         Properties:
-                          RTD = RtData: [0] = "[[User_talk:Rogerthat", [1] = "]]"
                           {N} postfix = ""
                           {N} prefix = ""
+                          {N} rtd = RTD[ "[[User_talk:Rogerthat" <o> "]]" ]
                           {N} target = "User_talk:Rogerthat"
 
                         LinkTitle(
                           Properties:
-                            RTD = RtData: [0] = "|", [1]
+                            {N} rtd = RTD[ "|" <o> "" ]
 
                           [ Text("Talk") ]
                         )
@@ -7433,14 +7433,14 @@ ParsedWikitextPage(
               Text("The article is already quite long. If we were to add anything like this, we'd have to prune the rest of it, I think. If things are covered in another article, they don't need to have too much detail here - the attendance records could be removed, for example. ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -7448,14 +7448,14 @@ ParsedWikitextPage(
               Text(" (")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("talk") ]
                 )
@@ -7480,14 +7480,14 @@ ParsedWikitextPage(
           Text("...in a ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby" <o> "]]" ]
               {N} target = "Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [
                 Text("poll on references to Aussie rules in the ")
@@ -7503,14 +7503,14 @@ ParsedWikitextPage(
           Text(" article. ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Grant65") ]
             )
@@ -7518,14 +7518,14 @@ ParsedWikitextPage(
           Text(" | ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User talk:Grant65", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
               {N} target = "User talk:Grant65"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Talk") ]
             )
@@ -7549,14 +7549,14 @@ ParsedWikitextPage(
           Text("I've just reverted the additional of a generic football forum a couple of times.  Could someone more knowledgeable go through and trim the external links? -- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Chuq", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
               {N} target = "User:Chuq"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Chuq") ]
             )
@@ -7573,9 +7573,9 @@ ParsedWikitextPage(
               Text("All the links that you have removed were definitely aussie rules specific, so I don't understand your edit summary. However, there were way too many links. I have cut quite a few, but there are still more than there should be going by ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[Wikipedia:External links", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[Wikipedia:External links" <o> "]]" ]
                   {N} target = "Wikipedia:External links"
 
                 LinkTitle([ ])
@@ -7583,14 +7583,14 @@ ParsedWikitextPage(
               Text(". ")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("JPD") ]
                 )
@@ -7598,14 +7598,14 @@ ParsedWikitextPage(
               Text(" (")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[User talk:JPD", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("talk") ]
                 )
@@ -7620,14 +7620,14 @@ ParsedWikitextPage(
                     Text("Well, one was SANFL, one was North Melbourne, one appeared to be a Coke promotional site.. and one other. -- ")
                     InternalLink(
                       Properties:
-                        RTD = RtData: [0] = "[[User:Chuq", [1] = "]]"
                         {N} postfix = ""
                         {N} prefix = ""
+                        {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
                         {N} target = "User:Chuq"
 
                       LinkTitle(
                         Properties:
-                          RTD = RtData: [0] = "|", [1]
+                          {N} rtd = RTD[ "|" <o> "" ]
 
                         [ Text("Chuq") ]
                       )
@@ -7653,14 +7653,14 @@ ParsedWikitextPage(
           Text("-- ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[User:Chuq", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
               {N} target = "User:Chuq"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("Chuq") ]
             )

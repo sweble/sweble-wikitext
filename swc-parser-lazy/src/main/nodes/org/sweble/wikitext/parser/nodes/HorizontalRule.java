@@ -13,7 +13,6 @@ package org.sweble.wikitext.parser.nodes;
 public class HorizontalRule
 		extends
 			WtLeafNode
-
 {
 	private static final long serialVersionUID = 1L;
 	

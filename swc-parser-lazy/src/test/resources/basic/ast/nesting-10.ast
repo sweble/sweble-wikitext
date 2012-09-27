@@ -7,14 +7,14 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Target", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Target" <o> "]]" ]
           {N} target = "Target"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("\n* Item 1\n* Item 2 ") ]
         )

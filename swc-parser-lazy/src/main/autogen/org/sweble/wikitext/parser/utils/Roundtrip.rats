@@ -69,6 +69,13 @@ body
       node.setRtd(glue);
     return node;
   }
+
+  private <T extends WikitextNode> T prependRtd(T node, String glue)
+  {
+    if (isGatherRtData())
+      node.getRtd().prepend(glue);
+    return node;
+  }
 }
 
 

@@ -15,14 +15,14 @@ ParsedWikitextPage(
       )
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Target2", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Target2" <o> "]]" ]
           {N} target = "Target2"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Title2") ]
         )

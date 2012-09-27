@@ -10,7 +10,6 @@ public abstract class WtStringContentNode
 		implements
 			WikitextNode
 {
-	
 	private static final long serialVersionUID = -2087712873453224402L;
 	
 	private RtDataPtk rtd = null;
@@ -28,6 +27,14 @@ public abstract class WtStringContentNode
 	}
 	
 	// =========================================================================
+	
+	@Override
+	public RtDataPtk setRtd(RtDataPtk rtd)
+	{
+		RtDataPtk old = this.rtd;
+		this.rtd = rtd;
+		return old;
+	}
 	
 	@Override
 	public RtDataPtk setRtd(Object... glue)
@@ -60,59 +67,77 @@ public abstract class WtStringContentNode
 	@Override
 	public int getPropertyCount()
 	{
-		return 1;
+		return 1 + getSuperPropertyCount();
+	}
+	
+	private final int getSuperPropertyCount()
+	{
+		return super.getPropertyCount();
 	}
 	
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
-		{
-			@Override
-			protected int getPropertyCount()
-			{
-				return WtStringContentNode.this.getPropertyCount();
-			}
-			
-			@Override
-			protected String getName(int index)
-			{
-				switch (index)
-				{
-					case 0:
-						return "rtd";
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-			
-			@Override
-			protected Object getValue(int index)
-			{
-				switch (index)
-				{
-					case 0:
-						return WtStringContentNode.this.getRtd();
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-			
-			@Override
-			protected Object setValue(int index, Object value)
-			{
-				switch (index)
-				{
-					case 0:
-						return WtStringContentNode.this.setRtd((Object[]) value);
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-		};
+		return new WtStringContentNodePropertyIterator();
 	}
 	
+	protected class WtStringContentNodePropertyIterator
+			extends
+				StringContentNodePropertyIterator
+	{
+		@Override
+		protected int getPropertyCount()
+		{
+			return WtStringContentNode.this.getPropertyCount();
+		}
+		
+		@Override
+		protected String getName(int index)
+		{
+			switch (index - getSuperPropertyCount())
+			{
+				case 0:
+					return "rtd";
+					
+				default:
+					return super.getName(index);
+			}
+		}
+		
+		@Override
+		protected Object getValue(int index)
+		{
+			switch (index - getSuperPropertyCount())
+			{
+				case 0:
+					return WtStringContentNode.this.getRtd();
+					
+				default:
+					return super.getValue(index);
+			}
+		}
+		
+		@Override
+		protected Object setValue(int index, Object value)
+		{
+			switch (index - getSuperPropertyCount())
+			{
+				case 0:
+					return WtStringContentNode.this.setRtd((RtDataPtk) value);
+					
+				default:
+					return super.setValue(index, value);
+			}
+		}
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException
+	{
+		WtStringContentNode n = (WtStringContentNode) super.clone();
+		n.rtd = (RtDataPtk) n.rtd.clone();
+		return n;
+	}
 }

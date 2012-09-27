@@ -29,14 +29,14 @@ ParsedWikitextPage(
           Text("==")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "text[[target", [1] = "]]"
               {N} postfix = ""
               {N} prefix = "text"
+              {N} rtd = RTD[ "text[[target" <o> "]]" ]
               {N} target = "target"
 
             LinkTitle(
               Properties:
-                RTD = RtData: [0] = "|", [1]
+                {N} rtd = RTD[ "|" <o> "" ]
 
               [ Text("text\n") ]
             )

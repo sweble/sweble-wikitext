@@ -19,9 +19,9 @@ ParsedWikitextPage(
           Text("title1a ")
           InternalLink(
             Properties:
-              RTD = RtData: [0] = "[[target", [1] = "]]"
               {N} postfix = ""
               {N} prefix = ""
+              {N} rtd = RTD[ "[[target" <o> "]]" ]
               {N} target = "target"
 
             LinkTitle([ ])

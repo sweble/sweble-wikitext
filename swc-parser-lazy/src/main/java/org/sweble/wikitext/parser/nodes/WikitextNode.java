@@ -7,6 +7,8 @@ public interface WikitextNode
 		extends
 			AstNodeInterface
 {
+	public RtDataPtk setRtd(RtDataPtk rtd);
+	
 	public RtDataPtk setRtd(Object... glue);
 	
 	public RtDataPtk setRtd(String... glue);

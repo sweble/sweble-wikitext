@@ -12,7 +12,6 @@ public abstract class WtInnerNode2
 		implements
 			WikitextNode
 {
-	
 	private static final long serialVersionUID = -3133816643760188432L;
 	
 	private RtDataPtk rtd = null;
@@ -40,6 +39,14 @@ public abstract class WtInnerNode2
 	}
 	
 	// =========================================================================
+	
+	@Override
+	public RtDataPtk setRtd(RtDataPtk rtd)
+	{
+		RtDataPtk old = this.rtd;
+		this.rtd = rtd;
+		return old;
+	}
 	
 	@Override
 	public RtDataPtk setRtd(Object... glue)
@@ -78,53 +85,66 @@ public abstract class WtInnerNode2
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
-		{
-			@Override
-			protected int getPropertyCount()
-			{
-				return WtInnerNode2.this.getPropertyCount();
-			}
-			
-			@Override
-			protected String getName(int index)
-			{
-				switch (index)
-				{
-					case 0:
-						return "rtd";
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-			
-			@Override
-			protected Object getValue(int index)
-			{
-				switch (index)
-				{
-					case 0:
-						return WtInnerNode2.this.getRtd();
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-			
-			@Override
-			protected Object setValue(int index, Object value)
-			{
-				switch (index)
-				{
-					case 0:
-						return WtInnerNode2.this.setRtd((Object[]) value);
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-		};
+		return new WtInnerNode2PropertyIterator();
 	}
 	
+	protected class WtInnerNode2PropertyIterator
+			extends
+				AstNodePropertyIterator
+	{
+		@Override
+		protected int getPropertyCount()
+		{
+			return WtInnerNode2.this.getPropertyCount();
+		}
+		
+		@Override
+		protected String getName(int index)
+		{
+			switch (index)
+			{
+				case 0:
+					return "rtd";
+					
+				default:
+					throw new IndexOutOfBoundsException();
+			}
+		}
+		
+		@Override
+		protected Object getValue(int index)
+		{
+			switch (index)
+			{
+				case 0:
+					return WtInnerNode2.this.getRtd();
+					
+				default:
+					throw new IndexOutOfBoundsException();
+			}
+		}
+		
+		@Override
+		protected Object setValue(int index, Object value)
+		{
+			switch (index)
+			{
+				case 0:
+					return WtInnerNode2.this.setRtd((RtDataPtk) value);
+					
+				default:
+					throw new IndexOutOfBoundsException();
+			}
+		}
+	}
+
+	// =========================================================================
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException
+	{
+		WtInnerNode2 n = (WtInnerNode2) super.clone();
+		n.rtd = (RtDataPtk) n.rtd.clone();
+		return n;
+	}
 }

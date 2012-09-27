@@ -4,9 +4,9 @@ Page([
     Newline("\n")
     InternalLink(
       Properties:
-            RTD = RtData: [0] = "[[Category:Main", [1] = "]]"
         {N} postfix = ""
         {N} prefix = ""
+        {N} rtd = RTD[ "[[Category:Main" <o> "]]" ]
         {N} target = "Category:Main"
 
       LinkTitle([ ])

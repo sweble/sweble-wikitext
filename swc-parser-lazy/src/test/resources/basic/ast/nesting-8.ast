@@ -20,14 +20,14 @@ ParsedWikitextPage(
               Text("1")
               InternalLink(
                 Properties:
-                  RTD = RtData: [0] = "[[T", [1] = "]]"
                   {N} postfix = ""
                   {N} prefix = ""
+                  {N} rtd = RTD[ "[[T" <o> "]]" ]
                   {N} target = "T"
 
                 LinkTitle(
                   Properties:
-                    RTD = RtData: [0] = "|", [1]
+                    {N} rtd = RTD[ "|" <o> "" ]
 
                   [ Text("a\nb") ]
                 )

@@ -5,14 +5,14 @@ Paragraph([
   Text("France is a ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[unitary state", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[unitary state" <o> "]]" ]
       {N} target = "unitary state"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("unitary") ]
     )
@@ -20,14 +20,14 @@ Paragraph([
   Text(" ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[semi-presidential system", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[semi-presidential system" <o> "]]" ]
       {N} target = "semi-presidential system"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("semi-presidential") ]
     )
@@ -35,9 +35,9 @@ Paragraph([
   Text(" ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[republic", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[republic" <o> "]]" ]
       {N} target = "republic"
 
     LinkTitle([ ])
@@ -45,9 +45,9 @@ Paragraph([
   Text(" with its main ideals expressed in the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[Declaration of the Rights of Man and of the Citizen", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[Declaration of the Rights of Man and of the Citizen" <o> "]]" ]
       {N} target = "Declaration of the Rights of Man and of the Citizen"
 
     LinkTitle([ ])
@@ -55,14 +55,14 @@ Paragraph([
   Text(". France is one of the most ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[developed country", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[developed country" <o> "]]" ]
       {N} target = "developed country"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("developed countries") ]
     )
@@ -78,14 +78,14 @@ Paragraph([
   Text(" and possesses the fifth largest economy by ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[List of countries by GDP (nominal)", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[List of countries by GDP (nominal)" <o> "]]" ]
       {N} target = "List of countries by GDP (nominal)"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("nominal GDP") ]
     )
@@ -101,14 +101,14 @@ Paragraph([
   Text(" and seventh largest economy by ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[List of countries by GDP (PPP)", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[List of countries by GDP (PPP)" <o> "]]" ]
       {N} target = "List of countries by GDP (PPP)"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("purchasing power parity") ]
     )
@@ -125,14 +125,14 @@ Paragraph([
   Text(" France enjoys a ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[standard of living", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[standard of living" <o> "]]" ]
       {N} target = "standard of living"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("high standard of living") ]
     )
@@ -140,14 +140,14 @@ Paragraph([
   Text(" as well as a ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[Education Index", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[Education Index" <o> "]]" ]
       {N} target = "Education Index"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("high public education level") ]
     )
@@ -155,14 +155,14 @@ Paragraph([
   Text(", and has also one of the world's highest ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[List of countries by life expectancy", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[List of countries by life expectancy" <o> "]]" ]
       {N} target = "List of countries by life expectancy"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("life expectancies") ]
     )
@@ -197,9 +197,9 @@ Paragraph([
   Text(" France is a founding member of the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[United Nations", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[United Nations" <o> "]]" ]
       {N} target = "United Nations"
 
     LinkTitle([ ])
@@ -207,9 +207,9 @@ Paragraph([
   Text(", and a member of the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[Francophonie", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[Francophonie" <o> "]]" ]
       {N} target = "Francophonie"
 
     LinkTitle([ ])
@@ -217,9 +217,9 @@ Paragraph([
   Text(", the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[G8", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[G8" <o> "]]" ]
       {N} target = "G8"
 
     LinkTitle([ ])
@@ -227,14 +227,14 @@ Paragraph([
   Text(", ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[G-20 major economies", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[G-20 major economies" <o> "]]" ]
       {N} target = "G-20 major economies"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("G20") ]
     )
@@ -242,9 +242,9 @@ Paragraph([
   Text(", ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[NATO", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[NATO" <o> "]]" ]
       {N} target = "NATO"
 
     LinkTitle([ ])
@@ -252,9 +252,9 @@ Paragraph([
   Text(", ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[OECD", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[OECD" <o> "]]" ]
       {N} target = "OECD"
 
     LinkTitle([ ])
@@ -262,14 +262,14 @@ Paragraph([
   Text(", ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[World Trade Organisation", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[World Trade Organisation" <o> "]]" ]
       {N} target = "World Trade Organisation"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("WTO") ]
     )
@@ -277,9 +277,9 @@ Paragraph([
   Text(", and the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[Latin Union", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[Latin Union" <o> "]]" ]
       {N} target = "Latin Union"
 
     LinkTitle([ ])
@@ -287,14 +287,14 @@ Paragraph([
   Text(". It is one of the five ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[United Nations Security Council#Permanent members", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[United Nations Security Council#Permanent members" <o> "]]" ]
       {N} target = "United Nations Security Council#Permanent members"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("permanent members of the UN Security Council") ]
     )
@@ -302,14 +302,14 @@ Paragraph([
   Text(" and possesses the third largest ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[List of countries with nuclear weapons", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[List of countries with nuclear weapons" <o> "]]" ]
       {N} target = "List of countries with nuclear weapons"
 
     LinkTitle(
       Properties:
-            RTD = RtData: [0] = "|", [1]
+        {N} rtd = RTD[ "|" <o> "" ]
 
       [ Text("nuclear weapons stockpile") ]
     )
@@ -326,9 +326,9 @@ Paragraph([
   Text(" with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[Human Development Index", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[Human Development Index" <o> "]]" ]
       {N} target = "Human Development Index"
 
     LinkTitle([ ])
@@ -336,9 +336,9 @@ Paragraph([
   Text(" and 24th on the ")
   InternalLink(
     Properties:
-          RTD = RtData: [0] = "[[Corruption Perception Index", [1] = "]]"
       {N} postfix = ""
       {N} prefix = ""
+      {N} rtd = RTD[ "[[Corruption Perception Index" <o> "]]" ]
       {N} target = "Corruption Perception Index"
 
     LinkTitle([ ])
@@ -362,9 +362,9 @@ Section(
       Text("The borders of modern France are approximately the same as those of ancient ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Gaul", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Gaul" <o> "]]" ]
           {N} target = "Gaul"
 
         LinkTitle([ ])
@@ -372,9 +372,9 @@ Section(
       Text(", which was inhabited by ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Celt", [1] = "]]ic"
           {N} postfix = "ic"
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Celt" <o> "]]ic" ]
           {N} target = "Celt"
 
         LinkTitle([ ])
@@ -389,14 +389,14 @@ Section(
       Text(". Gaul was conquered by ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Roman Empire", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Roman Empire" <o> "]]" ]
           {N} target = "Roman Empire"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Rome") ]
         )
@@ -404,9 +404,9 @@ Section(
       Text(" under ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Julius Caesar", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Julius Caesar" <o> "]]" ]
           {N} target = "Julius Caesar"
 
         LinkTitle([ ])
@@ -423,14 +423,14 @@ Section(
       Text(" and the Gauls eventually adopted ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Romance languages", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Romance languages" <o> "]]" ]
           {N} target = "Romance languages"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Roman") ]
         )
@@ -438,9 +438,9 @@ Section(
       Text(" speech (")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Latin", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Latin" <o> "]]" ]
           {N} target = "Latin"
 
         LinkTitle([ ])
@@ -448,9 +448,9 @@ Section(
       Text(", from which the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[French language", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[French language" <o> "]]" ]
           {N} target = "French language"
 
         LinkTitle([ ])
@@ -458,14 +458,14 @@ Section(
       Text(" evolved) and Roman culture. ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[History of Christianity", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[History of Christianity" <o> "]]" ]
           {N} target = "History of Christianity"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Christianity") ]
         )
@@ -473,9 +473,9 @@ Section(
       Text(" first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[St. Jerome", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[St. Jerome" <o> "]]" ]
           {N} target = "St. Jerome"
 
         LinkTitle([ ])
@@ -487,7 +487,6 @@ Section(
     Paragraph([
       ImageLink(
         Properties:
-              RTD = RtData: [0] = "[[File:Map France 1477-fr.svg", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -496,6 +495,7 @@ Section(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Map France 1477-fr.svg" <o> "" <o> "]]" ]
           {N} target = "File:Map France 1477-fr.svg"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -504,26 +504,26 @@ Section(
         [
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|thumb"
               {N} keyword = "thumb"
+              {N} rtd = RTD[ "|thumb" ]
           )
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|left"
               {N} keyword = "left"
+              {N} rtd = RTD[ "|left" ]
           )
         ]
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [
             Text("France after the ")
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[Hundred Years War", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[Hundred Years War" <o> "]]" ]
                 {N} target = "Hundred Years War"
 
               LinkTitle([ ])
@@ -533,9 +533,9 @@ Section(
             Text(" Boundary of the ")
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[Kingdom of France", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[Kingdom of France" <o> "]]" ]
                 {N} target = "Kingdom of France"
 
               LinkTitle([ ])
@@ -550,9 +550,9 @@ Section(
       Text("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Rhine", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Rhine" <o> "]]" ]
           {N} target = "Rhine"
 
         LinkTitle([ ])
@@ -560,14 +560,14 @@ Section(
       Text(" was overrun by ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Germanic peoples", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Germanic peoples" <o> "]]" ]
           {N} target = "Germanic peoples"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Germanic tribes") ]
         )
@@ -575,9 +575,9 @@ Section(
       Text(", principally the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Franks", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Franks" <o> "]]" ]
           {N} target = "Franks"
 
         LinkTitle([ ])
@@ -585,14 +585,14 @@ Section(
       Text(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[House of Capet", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[House of Capet" <o> "]]" ]
           {N} target = "House of Capet"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Capetian") ]
         )
@@ -600,14 +600,14 @@ Section(
       Text(" Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Catholic Church", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Catholic Church" <o> "]]" ]
           {N} target = "Catholic Church"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Catholic") ]
         )
@@ -615,9 +615,9 @@ Section(
       Text(" Christianity rather than ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Arianism", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Arianism" <o> "]]" ]
           {N} target = "Arianism"
 
         LinkTitle([ ])
@@ -625,14 +625,14 @@ Section(
       Text(" (their King ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Clovis I", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Clovis I" <o> "]]" ]
           {N} target = "Clovis I"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Clovis") ]
         )
@@ -660,7 +660,6 @@ Section(
     Paragraph([
       ImageLink(
         Properties:
-              RTD = RtData: [0] = "[[File:Francois Dubois 001.jpg", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -669,6 +668,7 @@ Section(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Francois Dubois 001.jpg" <o> "" <o> "]]" ]
           {N} target = "File:Francois Dubois 001.jpg"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -677,26 +677,26 @@ Section(
         [
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|right"
               {N} keyword = "right"
+              {N} rtd = RTD[ "|right" ]
           )
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|thumb"
               {N} keyword = "thumb"
+              {N} rtd = RTD[ "|thumb" ]
           )
         ]
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [
             Text("The ")
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[St. Bartholomew's Day massacre", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[St. Bartholomew's Day massacre" <o> "]]" ]
                 {N} target = "St. Bartholomew's Day massacre"
 
               LinkTitle([ ])
@@ -704,9 +704,9 @@ Section(
             Text(" (1572) during the ")
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[French Wars of Religion", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[French Wars of Religion" <o> "]]" ]
                 {N} target = "French Wars of Religion"
 
               LinkTitle([ ])
@@ -718,7 +718,6 @@ Section(
       Newline("\n")
       ImageLink(
         Properties:
-              RTD = RtData: [0] = "[[File:Ingres, Napoleon on his Imperial throne.jpg", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -727,6 +726,7 @@ Section(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Ingres, Napoleon on his Imperial throne.jpg" <o> "" <o> "]]" ]
           {N} target = "File:Ingres, Napoleon on his Imperial throne.jpg"
           {N} upright = true
           {N} vAlign = MIDDLE
@@ -735,25 +735,25 @@ Section(
         [
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|thumb"
               {N} keyword = "thumb"
+              {N} rtd = RTD[ "|thumb" ]
           )
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|upright"
               {N} keyword = "upright"
+              {N} rtd = RTD[ "|upright" ]
           )
         ]
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[Napoleon I", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[Napoleon I" <o> "]]" ]
                 {N} target = "Napoleon I"
 
               LinkTitle([ ])
@@ -768,14 +768,14 @@ Section(
             Text(", built a ")
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[First French Empire", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[First French Empire" <o> "]]" ]
                 {N} target = "First French Empire"
 
               LinkTitle(
                 Properties:
-                      RTD = RtData: [0] = "|", [1]
+                  {N} rtd = RTD[ "|" <o> "" ]
 
                 [ Text("Great Empire") ]
               )
@@ -787,7 +787,6 @@ Section(
       Newline("\n")
       ImageLink(
         Properties:
-              RTD = RtData: [0] = "[[File:Jeanne d Arc Orleanide.jpg", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -796,6 +795,7 @@ Section(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Jeanne d Arc Orleanide.jpg" <o> "" <o> "]]" ]
           {N} target = "File:Jeanne d Arc Orleanide.jpg"
           {N} upright = true
           {N} vAlign = MIDDLE
@@ -804,30 +804,30 @@ Section(
         [
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|thumb"
               {N} keyword = "thumb"
+              {N} rtd = RTD[ "|thumb" ]
           )
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|left"
               {N} keyword = "left"
+              {N} rtd = RTD[ "|left" ]
           )
           LinkOptionKeyword(
             Properties:
-                  RTD = RtData: [0] = "|upright"
               {N} keyword = "upright"
+              {N} rtd = RTD[ "|upright" ]
           )
         ]
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[Jeanne d'Arc", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[Jeanne d'Arc" <o> "]]" ]
                 {N} target = "Jeanne d'Arc"
 
               LinkTitle([ ])
@@ -835,14 +835,14 @@ Section(
             Text(" by ")
             InternalLink(
               Properties:
-                    RTD = RtData: [0] = "[[Philippe-Alexandre Le Brun de Charmettes", [1] = "]]"
                 {N} postfix = ""
                 {N} prefix = ""
+                {N} rtd = RTD[ "[[Philippe-Alexandre Le Brun de Charmettes" <o> "]]" ]
                 {N} target = "Philippe-Alexandre Le Brun de Charmettes"
 
               LinkTitle(
                 Properties:
-                      RTD = RtData: [0] = "|", [1]
+                  {N} rtd = RTD[ "|" <o> "" ]
 
                 [ Text("Le Brun de Charmettes") ]
               )
@@ -855,9 +855,9 @@ Section(
       Text("Existence as a separate entity began with the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Treaty of Verdun", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Treaty of Verdun" <o> "]]" ]
           {N} target = "Treaty of Verdun"
 
         LinkTitle([ ])
@@ -865,9 +865,9 @@ Section(
       Text(" (843), with the division of ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Charlemagne", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Charlemagne" <o> "]]" ]
           {N} target = "Charlemagne"
 
         LinkTitle([ ])
@@ -875,9 +875,9 @@ Section(
       Text("'s ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Carolingian Empire", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Carolingian Empire" <o> "]]" ]
           {N} target = "Carolingian Empire"
 
         LinkTitle([ ])
@@ -885,9 +885,9 @@ Section(
       Text(" into ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[East Francia", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[East Francia" <o> "]]" ]
           {N} target = "East Francia"
 
         LinkTitle([ ])
@@ -895,9 +895,9 @@ Section(
       Text(", ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Middle Francia", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Middle Francia" <o> "]]" ]
           {N} target = "Middle Francia"
 
         LinkTitle([ ])
@@ -905,9 +905,9 @@ Section(
       Text(" and ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[West Francia", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[West Francia" <o> "]]" ]
           {N} target = "West Francia"
 
         LinkTitle([ ])
@@ -925,9 +925,9 @@ Section(
       Text("The ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Carolingian dynasty", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Carolingian dynasty" <o> "]]" ]
           {N} target = "Carolingian dynasty"
 
         LinkTitle([ ])
@@ -935,14 +935,14 @@ Section(
       Text(" ruled France until 987, when ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Hugh Capet of France", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hugh Capet of France" <o> "]]" ]
           {N} target = "Hugh Capet of France"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Hugh Capet") ]
         )
@@ -950,9 +950,9 @@ Section(
       Text(", Duke of France and Count of Paris, was crowned ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[King of France", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[King of France" <o> "]]" ]
           {N} target = "King of France"
 
         LinkTitle([ ])
@@ -974,14 +974,14 @@ Section(
       Text("His descendants, the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[House of Capet", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[House of Capet" <o> "]]" ]
           {N} target = "House of Capet"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Direct Capetians") ]
         )
@@ -989,9 +989,9 @@ Section(
       Text(", the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[House of Valois", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[House of Valois" <o> "]]" ]
           {N} target = "House of Valois"
 
         LinkTitle([ ])
@@ -999,9 +999,9 @@ Section(
       Text(" and the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[House of Bourbon", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[House of Bourbon" <o> "]]" ]
           {N} target = "House of Bourbon"
 
         LinkTitle([ ])
@@ -1009,14 +1009,14 @@ Section(
       Text(", progressively unified the country through a series of wars and dynastic inheritance into a ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[centralised kingdom", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[centralised kingdom" <o> "]]" ]
           {N} target = "centralised kingdom"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Kingdom of France") ]
         )
@@ -1026,9 +1026,9 @@ Section(
       Text("The ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Albigensian Crusade", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Albigensian Crusade" <o> "]]" ]
           {N} target = "Albigensian Crusade"
 
         LinkTitle([ ])
@@ -1036,9 +1036,9 @@ Section(
       Text(" was launched in 1209 to eliminate the heretical ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Cathars", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Cathars" <o> "]]" ]
           {N} target = "Cathars"
 
         LinkTitle([ ])
@@ -1046,9 +1046,9 @@ Section(
       Text(" of ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Occitania", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Occitania" <o> "]]" ]
           {N} target = "Occitania"
 
         LinkTitle([ ])
@@ -1066,14 +1066,14 @@ Section(
       Text("In 1066, the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[William the Conqueror", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[William the Conqueror" <o> "]]" ]
           {N} target = "William the Conqueror"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Duke of Normandy") ]
         )
@@ -1086,14 +1086,14 @@ Section(
       Text("The exact boundaries changed greatly with time, but French landholdings of the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[List of English monarchs", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[List of English monarchs" <o> "]]" ]
           {N} target = "List of English monarchs"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("English Kings") ]
         )
@@ -1101,9 +1101,9 @@ Section(
       Text(" remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Wars of the Roses", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Wars of the Roses" <o> "]]" ]
           {N} target = "Wars of the Roses"
 
         LinkTitle([ ])
@@ -1111,9 +1111,9 @@ Section(
       Text(", won back mainland territory until only ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Calais", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Calais" <o> "]]" ]
           {N} target = "Calais"
 
         LinkTitle([ ])
@@ -1121,9 +1121,9 @@ Section(
       Text(" remained. Under ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Mary I of England", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Mary I of England" <o> "]]" ]
           {N} target = "Mary I of England"
 
         LinkTitle([ ])
@@ -1131,9 +1131,9 @@ Section(
       Text(" this was lost to the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Spanish Netherlands", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Spanish Netherlands" <o> "]]" ]
           {N} target = "Spanish Netherlands"
 
         LinkTitle([ ])
@@ -1164,9 +1164,9 @@ Section(
       Text("  Under the rules of the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Salic Law", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Salic Law" <o> "]]" ]
           {N} target = "Salic Law"
 
         LinkTitle([ ])
@@ -1192,14 +1192,14 @@ Section(
       Text(" Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Philip IV of France", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Philip IV of France" <o> "]]" ]
           {N} target = "Philip IV of France"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Philip of Valois") ]
         )
@@ -1225,9 +1225,9 @@ Section(
       Text(" However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Black Death", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Black Death" <o> "]]" ]
           {N} target = "Black Death"
 
         LinkTitle([ ])
@@ -1261,9 +1261,9 @@ Section(
       Text(" England and France went to war in what would become known as the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Hundred Years' War", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hundred Years' War" <o> "]]" ]
           {N} target = "Hundred Years' War"
 
         LinkTitle([ ])
@@ -1284,9 +1284,9 @@ Section(
       Text("In the most notorious incident during the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[French Wars of Religion", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[French Wars of Religion" <o> "]]" ]
           {N} target = "French Wars of Religion"
 
         LinkTitle([ ])
@@ -1294,9 +1294,9 @@ Section(
       Text(" (1562\u201398), thousands of ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Huguenots", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Huguenots" <o> "]]" ]
           {N} target = "Huguenots"
 
         LinkTitle([ ])
@@ -1304,9 +1304,9 @@ Section(
       Text(" were murdered in the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[St. Bartholomew's Day massacre", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[St. Bartholomew's Day massacre" <o> "]]" ]
           {N} target = "St. Bartholomew's Day massacre"
 
         LinkTitle([ ])
@@ -1327,14 +1327,14 @@ Section(
       Text("The monarchy reached its height during the 17th century and the reign of ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Louis XIV of France", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Louis XIV of France" <o> "]]" ]
           {N} target = "Louis XIV of France"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Louis XIV") ]
         )
@@ -1342,9 +1342,9 @@ Section(
       Text(". At this time, France possessed the largest population in Europe (see ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Demographics of France", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Demographics of France" <o> "]]" ]
           {N} target = "Demographics of France"
 
         LinkTitle([ ])
@@ -1352,14 +1352,14 @@ Section(
       Text(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[French language", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[French language" <o> "]]" ]
           {N} target = "French language"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("French") ]
         )
@@ -1376,14 +1376,14 @@ Section(
       Text(" Much of the ")
       InternalLink(
         Properties:
-              RTD = RtData: [0] = "[[Age of Enlightenment", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Age of Enlightenment" <o> "]]" ]
           {N} target = "Age of Enlightenment"
 
         LinkTitle(
           Properties:
-                RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Enlightenment") ]
         )

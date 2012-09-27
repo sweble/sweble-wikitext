@@ -7,11 +7,10 @@ ParsedWikitextPage(
     Paragraph([
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:x", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText(
               Properties:
-                RTD = RtData: [0] = "|alt=", [1]
+                {N} rtd = RTD[ "|alt=" <o> "" ]
 
               [ Text("\n ") ]
             )
@@ -21,6 +20,7 @@ ParsedWikitextPage(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:x" <o> "" <o> "]]" ]
           {N} target = "File:x"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -29,7 +29,7 @@ ParsedWikitextPage(
         [
           LinkOptionAltText(
             Properties:
-              RTD = RtData: [0] = "|alt=", [1]
+              {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ Text("\n ") ]
           )

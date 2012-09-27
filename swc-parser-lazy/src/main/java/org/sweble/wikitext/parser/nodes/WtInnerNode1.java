@@ -42,6 +42,14 @@ public abstract class WtInnerNode1
 	// =========================================================================
 	
 	@Override
+	public RtDataPtk setRtd(RtDataPtk rtd)
+	{
+		RtDataPtk old = this.rtd;
+		this.rtd = rtd;
+		return old;
+	}
+	
+	@Override
 	public RtDataPtk setRtd(Object... glue)
 	{
 		rtd = new RtDataPtk(this, glue);
@@ -78,53 +86,66 @@ public abstract class WtInnerNode1
 	@Override
 	public AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
-		{
-			@Override
-			protected int getPropertyCount()
-			{
-				return WtInnerNode1.this.getPropertyCount();
-			}
-			
-			@Override
-			protected String getName(int index)
-			{
-				switch (index)
-				{
-					case 0:
-						return "rtd";
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-			
-			@Override
-			protected Object getValue(int index)
-			{
-				switch (index)
-				{
-					case 0:
-						return WtInnerNode1.this.getRtd();
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-			
-			@Override
-			protected Object setValue(int index, Object value)
-			{
-				switch (index)
-				{
-					case 0:
-						return WtInnerNode1.this.setRtd((Object[]) value);
-						
-					default:
-						throw new IndexOutOfBoundsException();
-				}
-			}
-		};
+		return new WtInnerNode1PropertyIterator();
 	}
 	
+	protected class WtInnerNode1PropertyIterator
+			extends
+				AstNodePropertyIterator
+	{
+		@Override
+		protected int getPropertyCount()
+		{
+			return WtInnerNode1.this.getPropertyCount();
+		}
+		
+		@Override
+		protected String getName(int index)
+		{
+			switch (index)
+			{
+				case 0:
+					return "rtd";
+					
+				default:
+					throw new IndexOutOfBoundsException();
+			}
+		}
+		
+		@Override
+		protected Object getValue(int index)
+		{
+			switch (index)
+			{
+				case 0:
+					return WtInnerNode1.this.getRtd();
+					
+				default:
+					throw new IndexOutOfBoundsException();
+			}
+		}
+		
+		@Override
+		protected Object setValue(int index, Object value)
+		{
+			switch (index)
+			{
+				case 0:
+					return WtInnerNode1.this.setRtd((RtDataPtk) value);
+					
+				default:
+					throw new IndexOutOfBoundsException();
+			}
+		}
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException
+	{
+		WtInnerNode1 n = (WtInnerNode1) super.clone();
+		n.rtd = (RtDataPtk) n.rtd.clone();
+		return n;
+	}
 }

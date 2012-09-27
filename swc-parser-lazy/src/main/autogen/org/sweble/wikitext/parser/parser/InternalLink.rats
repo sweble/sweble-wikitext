@@ -256,11 +256,9 @@ body
           {
             String b = t.substring(0, t.length() - p.length());
 
-            InternalLink l = (InternalLink) link.clone();
+            InternalLink l = (InternalLink) link.cloneWrapException();
             l.setPrefix(p);
-
-            if (isGatherRtData())
-              prependRtData(l, p);
+            prependRtd(l, p);
 
             return new NodeList(new Text(b), l);
           }
@@ -289,16 +287,6 @@ body
   private LinkBuilder getLinkBuilder()
   {
     return getState().getLinkBuilder();
-  }
-
-  private boolean isImageTarget()
-  {
-    return getLinkBuilder().isImageTarget();
-  }
-
-  private boolean isValidTarget()
-  {
-    return getLinkBuilder().isValidTarget();
   }
 }
 
@@ -352,28 +340,19 @@ private transient stateful AstNode InternalLinkChoice =
     {
       getState().initLinkBuilder(target);
     }
-    &{ isValidTarget() } options:OptionsAndTitle "]]" postfix:LinkPostfix?
+    &{ getLinkBuilder().isValidTarget() } options:OptionsAndTitle "]]" postfix:LinkPostfix?
     {
       if (postfix == null)
         postfix = "";
 
       yyValue = getState().getLinkBuilder().build(options, postfix);
-
-      if (isGatherRtData())
+      if (getLinkBuilder().isImageTarget())
       {
-        if (isImageTarget())
-        {
-          addRtData(yyValue,
-              joinRt("[[", rt0, target, rt1),
-              null,
-              joinRt("]]", postfix));
-        }
-        else
-        {
-          addRtData(yyValue,
-              joinRt("[[", rt0, target, rt1),
-              joinRt("]]", postfix));
-        }
+        setRtd((WikitextNode) yyValue, "[[", rt0, target, rt1, SEP, SEP, "]]", postfix);
+      }
+      else
+      {
+        setRtd((WikitextNode) yyValue, "[[", rt0, target, rt1, SEP, "]]", postfix);
       }
     }
   / &{ isWarningsEnabled() } InternalLinkAutoCorrect
@@ -385,20 +364,17 @@ private inline AstNode InternalLinkAutoCorrect =
     {
       getState().initLinkBuilder(target);
     }
-    &{ isValidTarget() }
+    &{ getLinkBuilder().isValidTarget() }
     {
       yyValue = getState().getLinkBuilder().build(new NodeList(), null);
 
-      if (isGatherRtData())
+      if (getLinkBuilder().isImageTarget())
       {
-        if (isImageTarget())
-        {
-          addRtData(yyValue, joinRt("[[", rt0, target), null, null);
-        }
-        else
-        {
-          addRtData(yyValue, joinRt("[[", rt0, target), null);
-        }
+        setRtd((WikitextNode) yyValue, "[[", rt0, target, SEP, SEP);
+      }
+      else
+      {
+        setRtd((WikitextNode) yyValue, "[[", rt0, target, SEP);
       }
 
       fileLooksLikeWarning(
@@ -413,7 +389,7 @@ private inline AstNode InternalLinkAutoCorrect =
        {
         getState().initLinkBuilder(target);
        }
-       &{ isValidTarget() }
+       &{ getLinkBuilder().isValidTarget() }
      )
     {
       yyValue = new Text("[[");
@@ -444,7 +420,7 @@ private inline AstNode InternalLinkAutoCorrect =
 // -- Options ------------------------------------------------------------------
 
 private inline NodeList OptionsAndTitle =
-    &{ !isImageTarget() } LinkTitle?
+    &{ !getLinkBuilder().isImageTarget() } LinkTitle?
     {
       yyValue = null;
     }
@@ -484,12 +460,7 @@ private LinkOptionResize LinkOptionResize =
 
       getLinkBuilder().setWidth(w);
 
-      yyValue = null;
-      if (isGatherRtData())
-      {
-        yyValue = new LinkOptionResize(w, -1);
-        addRtData(yyValue, joinRt('|', rt0, width, rt1, "px", rt2));
-      }
+      yyValue = setRtd(new LinkOptionResize(w, -1), '|', rt0, width, rt1, "px", rt2);
     }
   / rt0:pExtWsStar width:DigitPlus 'x' height:DigitPlus? rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -506,12 +477,7 @@ private LinkOptionResize LinkOptionResize =
       getLinkBuilder().setWidth(w);
       getLinkBuilder().setHeight(h);
 
-      yyValue = null;
-      if (isGatherRtData())
-      {
-        yyValue = new LinkOptionResize(w, h);
-        addRtData(yyValue, joinRt('|', rt0, width, 'x', height, rt1, "px", rt2));
-      }
+      yyValue = setRtd(new LinkOptionResize(w, h), '|', rt0, width, 'x', height, rt1, "px", rt2);
     }
   / rt0:pExtWsStar 'x' height:DigitPlus rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -526,12 +492,7 @@ private LinkOptionResize LinkOptionResize =
 
       getLinkBuilder().setHeight(h);
 
-      yyValue = null;
-      if (isGatherRtData())
-      {
-        yyValue = new LinkOptionResize(-1, h);
-        addRtData(yyValue,joinRt('|', rt0, 'x', height, rt1, "px", rt2));
-      }
+      yyValue = setRtd(new LinkOptionResize(-1, h), '|', rt0, 'x', height, rt1, "px", rt2);
     }
 ;
 
@@ -543,12 +504,7 @@ private LinkOptionResize LinkOptionResize =
 private LinkOptionKeyword LinkOptionKeyword =
   rt0:pExtWsStar keyword:LinkOptionKeywordString &{ getLinkBuilder().addKeyword(keyword) } rt1:pExtWsStar
   {
-    yyValue = null;
-    if (isGatherRtData())
-    {
-      yyValue = new LinkOptionKeyword(keyword);
-      addRtData(yyValue, joinRt('|', rt0, keyword, rt1));
-    }
+    yyValue = setRtd(new LinkOptionKeyword(keyword), '|', rt0, keyword, rt1);
   }
 ;
 
@@ -566,14 +522,7 @@ private transient stateful AstNode LinkOptionNameValue =
     {
       getLinkBuilder().setLink(target);
 
-      yyValue = null;
-      if (isGatherRtData())
-      {
-        yyValue = new LinkOptionLinkTarget(target);
-        addRtData(yyValue,
-            joinRt('|', rt0, "link="),
-            joinRt(rt1));
-      }
+      yyValue = setRtd(new LinkOptionLinkTarget(target), '|', rt0, "link=", SEP, rt1);
     }
   / rt0:pExtWsStar "alt="
     {
@@ -581,15 +530,8 @@ private transient stateful AstNode LinkOptionNameValue =
     }
     alt:LinkTitleContentStar
     {
-      yyValue = new LinkOptionAltText(alt);
+      yyValue = setRtd(new LinkOptionAltText(alt), '|', rt0, "alt=", SEP);
       getLinkBuilder().setAlt((LinkOptionAltText) yyValue);
-
-      if (isGatherRtData())
-      {
-        addRtData(yyValue,
-            joinRt('|', rt0, "alt="),
-            null);
-      }
     }
   // TODO: Support page=...
 ;
@@ -606,18 +548,14 @@ private inline AstNode LinkTargetOverride =
 
 private inline stateful LinkOptionGarbage LinkOptionGarbage =
   {
-    enter(isImageTarget() ?
+    enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_ALT :
         ParserScopes.INTERNAL_LINK_ALT);
   }
   LinkTitleContentStar
   {
-    yyValue = null;
-    if (isGatherRtData())
-    {
-      yyValue = new LinkOptionGarbage(difference(yyStart, yyResult));
-      addRtData(yyValue, joinRt('|', yyValue.getContent()));
-    }
+    String content = difference(yyStart, yyResult);
+    yyValue = setRtd(new LinkOptionGarbage(content), '|', content);
   }
 ;
 
@@ -628,17 +566,14 @@ private inline stateful LinkOptionGarbage LinkOptionGarbage =
 
 private inline stateful LinkTitle LinkTitle =
   {
-    enter(isImageTarget() ?
+    enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_TITLE :
         ParserScopes.INTERNAL_LINK_TITLE);
   }
   '|' title:LinkTitleContentStar
   {
-    yyValue = new LinkTitle(title);
+    yyValue = setRtd(new LinkTitle(title), '|');
     getLinkBuilder().setTitle(yyValue);
-
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt('|'));
   }
 ;
 
@@ -657,7 +592,7 @@ private inline NodeList LinkTitleContentStar =
 // -- Link Postfix -------------------------------------------------------------
 
 private noinline transient String LinkPostfix =
-  &{ !isImageTarget() }
+  &{ !getLinkBuilder().isImageTarget() }
   ^{
       Result yyResult = parseLinkPostfix(yyStart, yyBase);
    }

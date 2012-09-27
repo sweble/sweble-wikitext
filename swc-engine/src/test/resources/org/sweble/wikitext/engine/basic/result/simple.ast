@@ -104,9 +104,9 @@ Page([
   Paragraph([
     InternalLink(
       Properties:
-            RTD = RtData: [0] = "[[Category:Test", [1] = "]]"
         {N} postfix = ""
         {N} prefix = ""
+        {N} rtd = RTD[ "[[Category:Test" <o> "]]" ]
         {N} target = "Category:Test"
 
       LinkTitle([ ])

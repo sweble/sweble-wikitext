@@ -31,7 +31,6 @@ ParsedWikitextPage(
     Paragraph([
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:Image.png", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -40,6 +39,7 @@ ParsedWikitextPage(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -52,8 +52,8 @@ ParsedWikitextPage(
         [
           LinkOptionResize(
             Properties:
-              RTD = RtData: [0] = "|1000000000000000000xpx"
               {N} height = -1
+              {N} rtd = RTD[ "|1000000000000000000xpx" ]
               {N} width = -2
           )
         ]
@@ -65,11 +65,10 @@ ParsedWikitextPage(
     Paragraph([
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:Image.png", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText(
               Properties:
-                RTD = RtData: [0] = "|alt=", [1]
+                {N} rtd = RTD[ "|alt=" <o> "" ]
 
               [ Text("Alternativer alternativer Text\n\t") ]
             )
@@ -85,6 +84,7 @@ ParsedWikitextPage(
                 {N} path = "//example.com"
                 {N} protocol = "http"
             )
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
           {N} upright = false
           {N} vAlign = TOP
@@ -93,30 +93,30 @@ ParsedWikitextPage(
         [
           LinkOptionKeyword(
             Properties:
-              RTD = RtData: [0] = "|frame\n\t"
               {N} keyword = "frame"
+              {N} rtd = RTD[ "|frame\n\t" ]
           )
           LinkOptionResize(
             Properties:
-              RTD = RtData: [0] = "|10x20px\n\t"
               {N} height = 20
+              {N} rtd = RTD[ "|10x20px\n\t" ]
               {N} width = 10
           )
           LinkOptionAltText(
             Properties:
-              RTD = RtData: [0] = "|alt=", [1]
+              {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ Text("Alternativer Text\n\t") ]
           )
           LinkOptionResize(
             Properties:
-              RTD = RtData: [0] = "|15xpx\n\t"
               {N} height = -1
+              {N} rtd = RTD[ "|15xpx\n\t" ]
               {N} width = 15
           )
           LinkOptionLinkTarget(
             Properties:
-              RTD = RtData: [0] = "|link=", [1] = "\n\t"
+              {N} rtd = RTD[ "|link=" <o> "\n\t" ]
 
             Url(
               Properties:
@@ -127,25 +127,25 @@ ParsedWikitextPage(
           )
           LinkOptionResize(
             Properties:
-              RTD = RtData: [0] = "|x15px<!-- Comment -->\n\t"
               {N} height = 15
+              {N} rtd = RTD[ "|x15px<!-- Comment -->\n\t" ]
               {N} width = -1
           )
           LinkOptionKeyword(
             Properties:
-              RTD = RtData: [0] = "|top\n\t"
               {N} keyword = "top"
+              {N} rtd = RTD[ "|top\n\t" ]
           )
           LinkOptionAltText(
             Properties:
-              RTD = RtData: [0] = "|alt=", [1]
+              {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ Text("Alternativer alternativer Text\n\t") ]
           )
         ]
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Title") ]
         )
@@ -156,7 +156,6 @@ ParsedWikitextPage(
     Paragraph([
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:Image.png", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -165,6 +164,7 @@ ParsedWikitextPage(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -176,7 +176,6 @@ ParsedWikitextPage(
       Newline("\n")
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:Image.png", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -185,6 +184,7 @@ ParsedWikitextPage(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -193,13 +193,13 @@ ParsedWikitextPage(
         [
           LinkOptionGarbage(
             Properties:
-              RTD = RtData: [0] = "|invisible"
               {N} content = "invisible"
+              {N} rtd = RTD[ "|invisible" ]
           )
         ]
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("visible") ]
         )
@@ -207,7 +207,6 @@ ParsedWikitextPage(
       Newline("\n")
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:Image.png", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -216,6 +215,7 @@ ParsedWikitextPage(
           {N} height = -1
           {N} linkPage = "Some Page Title"
           {N} linkUrl = null
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -224,7 +224,7 @@ ParsedWikitextPage(
         [
           LinkOptionLinkTarget(
             Properties:
-              RTD = RtData: [0] = "|link=", [1] = ""
+              {N} rtd = RTD[ "|link=" <o> "" ]
 
             LinkTarget(
               Properties:
@@ -235,7 +235,7 @@ ParsedWikitextPage(
         ]
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Title") ]
         )
@@ -243,7 +243,6 @@ ParsedWikitextPage(
       Newline("\n")
       ImageLink(
         Properties:
-          RTD = RtData: [0] = "[[File:Image.png", [1], [2] = "]]"
           {N} alt = 
             LinkOptionAltText([ ])
           {N} border = false
@@ -258,6 +257,7 @@ ParsedWikitextPage(
                 {N} path = "//example.com"
                 {N} protocol = "http"
             )
+          {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
           {N} upright = false
           {N} vAlign = MIDDLE
@@ -266,7 +266,7 @@ ParsedWikitextPage(
         [
           LinkOptionLinkTarget(
             Properties:
-              RTD = RtData: [0] = "|link=", [1] = ""
+              {N} rtd = RTD[ "|link=" <o> "" ]
 
             Url(
               Properties:
@@ -278,7 +278,7 @@ ParsedWikitextPage(
         ]
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("Title") ]
         )
@@ -289,14 +289,14 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("arg0") ]
         )
@@ -304,14 +304,14 @@ ParsedWikitextPage(
       Newline("\n")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("arg0|http://blub.com") ]
         )
@@ -319,14 +319,14 @@ ParsedWikitextPage(
       Newline("\n")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("arg0|[http://blub.com") ]
         )
@@ -335,14 +335,14 @@ ParsedWikitextPage(
       Newline("\n")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle(
           Properties:
-            RTD = RtData: [0] = "|", [1]
+            {N} rtd = RTD[ "|" <o> "" ]
 
           [ Text("arg0|[http://bl|ub.com") ]
         )
@@ -354,9 +354,9 @@ ParsedWikitextPage(
     Paragraph([
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle([ ])
@@ -365,9 +365,9 @@ ParsedWikitextPage(
       Text("text ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "a[[Hallo", [1] = "]]"
           {N} postfix = ""
           {N} prefix = "a"
+          {N} rtd = RTD[ "a[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
         LinkTitle([ ])
@@ -377,9 +377,9 @@ ParsedWikitextPage(
       Text("text ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "[[Hallo", [1] = "]]z"
           {N} postfix = "z"
           {N} prefix = ""
+          {N} rtd = RTD[ "[[Hallo" <o> "]]z" ]
           {N} target = "Hallo"
 
         LinkTitle([ ])
@@ -389,9 +389,9 @@ ParsedWikitextPage(
       Text("text ")
       InternalLink(
         Properties:
-          RTD = RtData: [0] = "a[[Hallo", [1] = "]]z"
           {N} postfix = "z"
           {N} prefix = "a"
+          {N} rtd = RTD[ "a[[Hallo" <o> "]]z" ]
           {N} target = "Hallo"
 
         LinkTitle([ ])
