@@ -249,7 +249,7 @@ ParsedWikitextPage(
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
     Paragraph([

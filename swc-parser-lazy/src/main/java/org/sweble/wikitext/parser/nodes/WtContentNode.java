@@ -1,13 +1,13 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.RtData;
-
 import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
-public class WtContentNode
+public abstract class WtContentNode
 		extends
 			ContentNode
 		implements
@@ -16,48 +16,121 @@ public class WtContentNode
 	
 	private static final long serialVersionUID = -4825960747538151723L;
 	
+	private RtDataPtk rtd = null;
+	
+	// =========================================================================
+	
 	public WtContentNode()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtContentNode(AstNode content, Location location)
 	{
 		super(content, location);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtContentNode(AstNode content)
 	{
 		super(content);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtContentNode(NodeList content, Location location)
 	{
 		super(content, location);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtContentNode(NodeList content)
 	{
 		super(content);
-		// TODO Auto-generated constructor stub
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public RtDataPtk setRtd(Object... glue)
+	{
+		rtd = new RtDataPtk(this, glue);
+		return rtd;
 	}
 	
 	@Override
-	public RtData getRtData()
+	public RtDataPtk setRtd(String... glue)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		rtd = new RtDataPtk(this, glue);
+		return rtd;
 	}
 	
 	@Override
-	public void clearRtData()
+	public RtDataPtk getRtd()
 	{
-		// TODO Auto-generated method stub
-		
+		return rtd;
+	}
+	
+	@Override
+	public void clearRtd()
+	{
+		rtd = null;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public int getPropertyCount()
+	{
+		return 1;
+	}
+	
+	@Override
+	public AstNodePropertyIterator propertyIterator()
+	{
+		return new AstNodePropertyIterator()
+		{
+			@Override
+			protected int getPropertyCount()
+			{
+				return WtContentNode.this.getPropertyCount();
+			}
+			
+			@Override
+			protected String getName(int index)
+			{
+				switch (index)
+				{
+					case 0:
+						return "rtd";
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+			
+			@Override
+			protected Object getValue(int index)
+			{
+				switch (index)
+				{
+					case 0:
+						return WtContentNode.this.getRtd();
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+			
+			@Override
+			protected Object setValue(int index, Object value)
+			{
+				switch (index)
+				{
+					case 0:
+						return WtContentNode.this.setRtd((Object[]) value);
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+		};
 	}
 	
 }

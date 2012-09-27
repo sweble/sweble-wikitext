@@ -70,20 +70,19 @@ noinline transient AstNode HorizontalRuleTransient =
     }
 ;
 
-private inline AstNode HorizontalRuleChoice =
+private inline WikitextNode HorizontalRuleChoice =
     more:'-'+
     {
       int dashes = 3 + more.size();
 
       yyValue = new HorizontalRule();
 
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt(StringUtils.strrep('-', dashes)));
+      setRtd(yyValue, StringUtils.strrep('-', dashes));
     }
   / &{ isWarningsEnabled() } HorizontalRuleAutoCorrect
 ;
 
-private inline AstNode HorizontalRuleAutoCorrect =
+private inline AstNodeInterface HorizontalRuleAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
     yyValue = new Text("---");

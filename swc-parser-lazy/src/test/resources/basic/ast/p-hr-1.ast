@@ -6,43 +6,43 @@ ParsedWikitextPage(
   [
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Paragraph([ Text("text") ])
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
     Paragraph([ Text("t") ])
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
     Newline("\n")
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
   ]
 )

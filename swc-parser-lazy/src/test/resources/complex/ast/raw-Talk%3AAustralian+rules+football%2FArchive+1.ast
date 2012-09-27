@@ -613,14 +613,14 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Paragraph([ Text("I understand and appreciate the writer's enthusiasm for the sport, but the last sentence in partciular needs to be rephrased to be less partisan about its alleged superiority over other variants of football.") ])
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Paragraph([
@@ -658,7 +658,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "-----"
+            {N} rtd = RTD[ "-----" ]
         )
         Newline("\n")
         Paragraph([
@@ -682,7 +682,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Newline("\n")
@@ -701,7 +701,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "-----"
+            {N} rtd = RTD[ "-----" ]
         )
         Newline("\n")
         Newline("\n")
@@ -726,7 +726,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Newline("\n")
@@ -890,7 +890,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Paragraph([ Text("I have to take issue with the following -") ])
@@ -1003,7 +1003,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Paragraph([
@@ -1155,7 +1155,7 @@ ParsedWikitextPage(
         Newline("\n")
         HorizontalRule(
           Properties:
-            RTD = RtData: [0] = "----"
+            {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
         Paragraph([ Text("The article states that the VFA was formed in 1877, but the list of teams is incorrect. For example, Essendon is not listed as a team in the VFA in 1877, but they finished fourth in that year.") ])

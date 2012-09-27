@@ -25,6 +25,7 @@ import org.sweble.wikitext.parser.RtData;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 import de.fau.cs.osr.ptk.common.ast.StringContentNode;
 
 public class RtWikitextPrinter
@@ -83,16 +84,31 @@ public class RtWikitextPrinter
 				}
 				else
 				{
-					if (node instanceof StringContentNode)
+					RtDataPtk rtd2 = (RtDataPtk) node.getProperty("rtd", null);
+					if (rtd2 != null)
 					{
-						w.print(((StringContentNode) node).getContent());
+						int i = 0;
+						for (AstNode n : node)
+						{
+							printRtd2(rtd2.getField(i++));
+							if (n != null)
+								go(n);
+						}
+						printRtd2(rtd2.getField(i));
 					}
 					else
 					{
-						for (AstNode n : node)
+						if (node instanceof StringContentNode)
 						{
-							if (n != null)
-								go(n);
+							w.print(((StringContentNode) node).getContent());
+						}
+						else
+						{
+							for (AstNode n : node)
+							{
+								if (n != null)
+									go(n);
+							}
 						}
 					}
 				}
@@ -115,6 +131,21 @@ public class RtWikitextPrinter
 				{
 					w.print(o);
 				}
+			}
+		}
+	}
+	
+	protected void printRtd2(Object[] objects)
+	{
+		for (Object o : objects)
+		{
+			if (o instanceof AstNode)
+			{
+				go((AstNode) o);
+			}
+			else
+			{
+				w.print(o);
 			}
 		}
 	}

@@ -1,12 +1,12 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.RtData;
-
 import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.InnerNode.InnerNode1;
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
-public class WtInnerNode1
+public abstract class WtInnerNode1
 		extends
 			InnerNode1
 		implements
@@ -15,49 +15,116 @@ public class WtInnerNode1
 	
 	private static final long serialVersionUID = -3023143947405463528L;
 	
+	private RtDataPtk rtd = null;
+	
+	// =========================================================================
+	
 	public WtInnerNode1()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtInnerNode1(AstNode n0)
 	{
 		super(n0);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtInnerNode1(Location arg0, AstNode n0)
 	{
 		super(arg0, n0);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtInnerNode1(Location arg0)
 	{
 		super(arg0);
-		// TODO Auto-generated constructor stub
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public RtDataPtk setRtd(Object... glue)
+	{
+		rtd = new RtDataPtk(this, glue);
+		return rtd;
 	}
 	
 	@Override
-	public RtData getRtData()
+	public RtDataPtk setRtd(String... glue)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		rtd = new RtDataPtk(this, glue);
+		return rtd;
 	}
 	
 	@Override
-	public void clearRtData()
+	public RtDataPtk getRtd()
 	{
-		// TODO Auto-generated method stub
-		
+		return rtd;
 	}
 	
 	@Override
-	public String[] getChildNames()
+	public void clearRtd()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		rtd = null;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public int getPropertyCount()
+	{
+		return 1;
+	}
+	
+	@Override
+	public AstNodePropertyIterator propertyIterator()
+	{
+		return new AstNodePropertyIterator()
+		{
+			@Override
+			protected int getPropertyCount()
+			{
+				return WtInnerNode1.this.getPropertyCount();
+			}
+			
+			@Override
+			protected String getName(int index)
+			{
+				switch (index)
+				{
+					case 0:
+						return "rtd";
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+			
+			@Override
+			protected Object getValue(int index)
+			{
+				switch (index)
+				{
+					case 0:
+						return WtInnerNode1.this.getRtd();
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+			
+			@Override
+			protected Object setValue(int index, Object value)
+			{
+				switch (index)
+				{
+					case 0:
+						return WtInnerNode1.this.setRtd((Object[]) value);
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+		};
 	}
 	
 }

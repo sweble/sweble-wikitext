@@ -13,12 +13,12 @@ ParsedWikitextPage(
     Paragraph([ Text("\n\n") ])
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
     Paragraph([ Text("\n\n") ])
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "-----"
+        {N} rtd = RTD[ "-----" ]
     )
     Paragraph([ Text("\n") ])
   ]

@@ -6,7 +6,7 @@ ParsedWikitextPage(
   [
     HorizontalRule(
       Properties:
-        RTD = RtData: [0] = "----"
+        {N} rtd = RTD[ "----" ]
     )
   ]
 )

@@ -1,10 +1,10 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.RtData;
-
+import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 import de.fau.cs.osr.ptk.common.ast.StringContentNode;
 
-public class WtStringContentNode
+public abstract class WtStringContentNode
 		extends
 			StringContentNode
 		implements
@@ -13,30 +13,106 @@ public class WtStringContentNode
 	
 	private static final long serialVersionUID = -2087712873453224402L;
 	
+	private RtDataPtk rtd = null;
+	
+	// =========================================================================
+	
 	public WtStringContentNode()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public WtStringContentNode(String content)
 	{
 		super(content);
-		// TODO Auto-generated constructor stub
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public RtDataPtk setRtd(Object... glue)
+	{
+		rtd = new RtDataPtk(this, glue);
+		return rtd;
 	}
 	
 	@Override
-	public RtData getRtData()
+	public RtDataPtk setRtd(String... glue)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		rtd = new RtDataPtk(this, glue);
+		return rtd;
 	}
 	
 	@Override
-	public void clearRtData()
+	public RtDataPtk getRtd()
 	{
-		// TODO Auto-generated method stub
-		
+		return rtd;
+	}
+	
+	@Override
+	public void clearRtd()
+	{
+		rtd = null;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public int getPropertyCount()
+	{
+		return 1;
+	}
+	
+	@Override
+	public AstNodePropertyIterator propertyIterator()
+	{
+		return new AstNodePropertyIterator()
+		{
+			@Override
+			protected int getPropertyCount()
+			{
+				return WtStringContentNode.this.getPropertyCount();
+			}
+			
+			@Override
+			protected String getName(int index)
+			{
+				switch (index)
+				{
+					case 0:
+						return "rtd";
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+			
+			@Override
+			protected Object getValue(int index)
+			{
+				switch (index)
+				{
+					case 0:
+						return WtStringContentNode.this.getRtd();
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+			
+			@Override
+			protected Object setValue(int index, Object value)
+			{
+				switch (index)
+				{
+					case 0:
+						return WtStringContentNode.this.setRtd((Object[]) value);
+						
+					default:
+						throw new IndexOutOfBoundsException();
+				}
+			}
+		};
 	}
 	
 }
