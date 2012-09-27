@@ -41,9 +41,7 @@ module org.sweble.wikitext.parser.parser.LinkTarget;
 LinkTarget LinkTarget =
   target:LinkTargetString
   {
-    yyValue = new LinkTarget(target);
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(target));
+    yyValue = setRtd(new LinkTarget(target), target);
   }
 ;
 

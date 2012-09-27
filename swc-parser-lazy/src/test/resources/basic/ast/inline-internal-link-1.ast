@@ -226,11 +226,7 @@ ParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "" ]
 
-            LinkTarget(
-              Properties:
-                RTD = RtData: [0] = "Some Page Title"
-                {N} content = "Some Page Title"
-            )
+            LinkTarget("Some Page Title")
           )
         ]
         LinkTitle(

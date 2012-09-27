@@ -16868,11 +16868,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games"
-                                {N} content = "Wikipedia:WikiProject Video games"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games")
                           )
                         ]
                         LinkTitle([ ])
@@ -16919,11 +16915,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia talk:WikiProject Video games"
-                                {N} content = "Wikipedia talk:WikiProject Video games"
-                            )
+                            LinkTarget("Wikipedia talk:WikiProject Video games")
                           )
                         ]
                         LinkTitle([ ])
@@ -16970,11 +16962,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Portal:Video games"
-                                {N} content = "Portal:Video games"
-                            )
+                            LinkTarget("Portal:Video games")
                           )
                         ]
                         LinkTitle([ ])
@@ -17021,11 +17009,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games/Article guidelines"
-                                {N} content = "Wikipedia:WikiProject Video games/Article guidelines"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games/Article guidelines")
                           )
                         ]
                         LinkTitle([ ])
@@ -17072,11 +17056,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games/Templates"
-                                {N} content = "Wikipedia:WikiProject Video games/Templates"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games/Templates")
                           )
                         ]
                         LinkTitle([ ])
@@ -17123,11 +17103,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games/Sources"
-                                {N} content = "Wikipedia:WikiProject Video games/Sources"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games/Sources")
                           )
                         ]
                         LinkTitle([ ])
@@ -17174,11 +17150,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games/Assessment"
-                                {N} content = "Wikipedia:WikiProject Video games/Assessment"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games/Assessment")
                           )
                         ]
                         LinkTitle([ ])
@@ -17225,11 +17197,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games/Cleanup"
-                                {N} content = "Wikipedia:WikiProject Video games/Cleanup"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games/Cleanup")
                           )
                         ]
                         LinkTitle([ ])
@@ -17276,11 +17244,7 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget(
-                              Properties:
-                                RTD = RtData: [0] = "Wikipedia:WikiProject Video games/Requests"
-                                {N} content = "Wikipedia:WikiProject Video games/Requests"
-                            )
+                            LinkTarget("Wikipedia:WikiProject Video games/Requests")
                           )
                         ]
                         LinkTitle([ ])
