@@ -13,7 +13,7 @@ ParsedWikitextPage(
       )
       SemiPreLine(
         Properties:
-          {N} rtd = RTD[ "\nXmlComment(\" Comment \") " <o> "" ]
+          {N} rtd = RTD[ "\n" + XmlComment(\" Comment \") + " " <o> "" ]
 
         [ WtText("Line 2") ]
       )
