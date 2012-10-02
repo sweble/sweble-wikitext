@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomValue;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class ValueAdapter
 		extends
@@ -36,7 +36,7 @@ public class ValueAdapter
 	{
 	}
 	
-	public ValueAdapter(AstToWomNodeFactory womNodeFactory, WtList content)
+	public ValueAdapter(AstToWomNodeFactory womNodeFactory, WtNodeList content)
 	{
 		super(MIXED_PREPROCESSOR, womNodeFactory, content);
 	}

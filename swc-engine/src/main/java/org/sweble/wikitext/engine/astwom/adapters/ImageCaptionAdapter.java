@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomImageCaption;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class ImageCaptionAdapter
 		extends
@@ -36,7 +36,7 @@ public class ImageCaptionAdapter
 	{
 	}
 	
-	public ImageCaptionAdapter(AstToWomNodeFactory factory, WtList content)
+	public ImageCaptionAdapter(AstToWomNodeFactory factory, WtNodeList content)
 	{
 		super(MIXED_INLINE, factory, content);
 	}

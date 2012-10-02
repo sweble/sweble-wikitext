@@ -26,7 +26,7 @@ public class ListItem
 		
 	}
 	
-	public ListItem(WtList content)
+	public ListItem(WtNodeList content)
 	{
 		super(content);
 		

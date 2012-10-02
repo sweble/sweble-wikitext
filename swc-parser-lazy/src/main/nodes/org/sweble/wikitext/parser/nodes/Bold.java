@@ -26,7 +26,7 @@ public class Bold
 		
 	}
 	
-	public Bold(WtList content)
+	public Bold(WtNodeList content)
 	{
 		super(content);
 		

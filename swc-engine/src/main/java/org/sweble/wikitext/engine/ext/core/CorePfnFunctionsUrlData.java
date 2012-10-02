@@ -39,7 +39,7 @@ import org.sweble.wikitext.engine.utils.UrlEncoding;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -92,10 +92,10 @@ public class CorePfnFunctionsUrlData
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> argsValues)
+				List<? extends WtNode> argsValues)
 		{
 			if (argsValues.size() < 1)
 			{
@@ -117,7 +117,7 @@ public class CorePfnFunctionsUrlData
 								pfn));
 			}
 			
-			WikitextNode titleNode = argsValues.get(0);
+			WtNode titleNode = argsValues.get(0);
 			
 			String titleStr;
 			try
@@ -170,7 +170,7 @@ public class CorePfnFunctionsUrlData
 			String queryStr = null;
 			if (argsValues.size() >= 2)
 			{
-				WikitextNode queryNode = argsValues.get(1);
+				WtNode queryNode = argsValues.get(1);
 				
 				try
 				{
@@ -243,10 +243,10 @@ public class CorePfnFunctionsUrlData
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
 				return pfn;
@@ -340,10 +340,10 @@ public class CorePfnFunctionsUrlData
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
 				return pfn;

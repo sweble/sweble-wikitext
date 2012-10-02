@@ -39,9 +39,9 @@ import org.sweble.wikitext.parser.nodes.TableCell;
 import org.sweble.wikitext.parser.nodes.TableHeader;
 import org.sweble.wikitext.parser.nodes.TableRow;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.XmlEndTag;
@@ -55,7 +55,7 @@ import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
 		extends
-			AstVisitor<WikitextNode>
+			AstVisitor<WtNode>
 {
 	private final ParserConfig config;
 	
@@ -65,7 +65,7 @@ public class ScopedElementBuilder
 	
 	public static ParsedWikitextPage process(
 			ParserConfig config,
-			WikitextNode ast)
+			WtNode ast)
 	{
 		return (ParsedWikitextPage) new ScopedElementBuilder(config).go(ast);
 	}
@@ -80,14 +80,14 @@ public class ScopedElementBuilder
 	// =========================================================================
 	
 	@Override
-	protected Object after(WikitextNode node, Object result)
+	protected Object after(WtNode node, Object result)
 	{
 		return node;
 	}
 	
 	// =========================================================================
 	
-	public void visit(WikitextNode n)
+	public void visit(WtNode n)
 	{
 		stack.append(n);
 	}
@@ -292,7 +292,7 @@ public class ScopedElementBuilder
 			reopenClosedInlineScopes(current.getClosedInline());
 	}
 	
-	private void openScope(ScopeType scopeType, WikitextNode n)
+	private void openScope(ScopeType scopeType, WtNode n)
 	{
 		stack.push(scopeType, n, true);
 		
@@ -310,7 +310,7 @@ public class ScopedElementBuilder
 		n.setContent(processScope(n.getContent()));
 	}
 	
-	private WtList processScope(WtList n)
+	private WtNodeList processScope(WtNodeList n)
 	{
 		Scope container = stack.top();
 		
@@ -346,7 +346,7 @@ public class ScopedElementBuilder
 		return current.getContent();
 	}
 	
-	private void closeScope(ScopeType scopeType, WikitextNode n)
+	private void closeScope(ScopeType scopeType, WtNode n)
 	{
 		Scope current = stack.top();
 		
@@ -467,7 +467,7 @@ public class ScopedElementBuilder
 			// Only reopen closable inline scopes
 			if (i.getType().isReopen())
 			{
-				WtList c = null;
+				WtNodeList c = null;
 				if (!reopenIn.getContent().isEmpty())
 					c = reopenIn.clearContent();
 				
@@ -647,20 +647,20 @@ public class ScopedElementBuilder
 		return null;
 	}
 	
-	private WikitextNode close(Scope s)
+	private WtNode close(Scope s)
 	{
 		return close(s, null);
 	}
 	
-	private WikitextNode close(Scope s, WikitextNode c)
+	private WtNode close(Scope s, WtNode c)
 	{
-		WtList content = s.getContent();
+		WtNodeList content = s.getContent();
 		if (s.getType().dropIfEmpty() && content.isEmpty())
 			return null;
 		
 		if (content.size() == 1)
 		{
-			final WikitextNode c0 = content.get(0);
+			final WtNode c0 = content.get(0);
 			if (s.getType().dropIfOnlyWhitespace() &&
 					c0.isNodeType(AstNodeTypes.NT_WHITESPACE) &&
 					s.isOpen() == false &&
@@ -700,14 +700,14 @@ public class ScopedElementBuilder
 	
 	private XmlElement createEmptyElement(
 			NamedXmlElement e,
-			WtList attrs,
+			WtNodeList attrs,
 			boolean wasEmpty)
 	{
 		XmlElement element = new XmlElement(
 				e.getName(),
 				true,
 				attrs,
-				new WtList());
+				new WtNodeList());
 		
 		if (config.isGatherRtData())
 		{
@@ -731,7 +731,7 @@ public class ScopedElementBuilder
 	
 	private XmlElement createElement(
 			XmlStartTag open,
-			WtList body,
+			WtNodeList body,
 			XmlEndTag close,
 			boolean hasOpen)
 	{

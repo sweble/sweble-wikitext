@@ -5,9 +5,9 @@ import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class WtText
 		extends
-			GenericText<WikitextNode>
+			GenericText<WtNode>
 		implements
-			WikitextNode
+			WtNode
 {
 	
 	private static final long serialVersionUID = 7333107598118095040L;

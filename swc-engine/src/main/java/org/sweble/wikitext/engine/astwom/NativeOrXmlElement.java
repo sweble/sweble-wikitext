@@ -18,8 +18,8 @@ package org.sweble.wikitext.engine.astwom;
 
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
 public abstract class NativeOrXmlElement
@@ -30,7 +30,7 @@ public abstract class NativeOrXmlElement
 	
 	// =========================================================================
 	
-	public NativeOrXmlElement(WikitextNode astNode)
+	public NativeOrXmlElement(WtNode astNode)
 	{
 		super(astNode);
 		
@@ -64,7 +64,7 @@ public abstract class NativeOrXmlElement
 	// =========================================================================
 	
 	@Override
-	protected final WtList getAstAttribContainer()
+	protected final WtNodeList getAstAttribContainer()
 	{
 		if (isXml())
 			return xml().getXmlAttributes();
@@ -73,7 +73,7 @@ public abstract class NativeOrXmlElement
 	}
 	
 	@Override
-	protected final WtList addAstAttribSupport() throws UnsupportedOperationException
+	protected final WtNodeList addAstAttribSupport() throws UnsupportedOperationException
 	{
 		convertToXml();
 		return xml().getXmlAttributes();
@@ -82,7 +82,7 @@ public abstract class NativeOrXmlElement
 	// =========================================================================
 	
 	@Override
-	public WtList getAstChildContainer()
+	public WtNodeList getAstChildContainer()
 	{
 		if (isXml())
 			return xml().getBody();
@@ -91,14 +91,14 @@ public abstract class NativeOrXmlElement
 	}
 	
 	@Override
-	protected final WtList addAstChildrenSupport() throws UnsupportedOperationException
+	protected final WtNodeList addAstChildrenSupport() throws UnsupportedOperationException
 	{
 		convertToXml();
 		return xml().getBody();
 	}
 	
 	@Override
-	protected void appendToAst(WtList container, WikitextNode child)
+	protected void appendToAst(WtNodeList container, WtNode child)
 	{
 		if (isXml())
 		{
@@ -114,7 +114,7 @@ public abstract class NativeOrXmlElement
 	}
 	
 	@Override
-	protected void removeFromAst(WtList container, WikitextNode removeNode)
+	protected void removeFromAst(WtNodeList container, WtNode removeNode)
 	{
 		super.removeFromAst(container, removeNode);
 		
@@ -150,7 +150,7 @@ public abstract class NativeOrXmlElement
 			WomBackbone parent = getParent();
 			if (parent != null)
 			{
-				WtList astChildContainer = null;
+				WtNodeList astChildContainer = null;
 				if (parent instanceof FullElement)
 					astChildContainer = ((FullElement) parent).getAstChildContainer();
 				

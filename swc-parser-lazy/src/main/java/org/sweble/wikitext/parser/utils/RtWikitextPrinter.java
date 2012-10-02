@@ -21,8 +21,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
 import de.fau.cs.osr.ptk.common.ast.RtData;
@@ -40,14 +40,14 @@ public class RtWikitextPrinter
 	
 	// =========================================================================
 	
-	public static String print(WikitextNode node)
+	public static String print(WtNode node)
 	{
 		StringWriter writer = new StringWriter();
 		new RtWikitextPrinter(writer).go(node);
 		return writer.toString();
 	}
 	
-	public static Writer print(Writer writer, WikitextNode node)
+	public static Writer print(Writer writer, WtNode node)
 	{
 		new RtWikitextPrinter(writer).go(node);
 		return writer;
@@ -55,13 +55,13 @@ public class RtWikitextPrinter
 	
 	// =========================================================================
 	
-	public void go(WikitextNode node)
+	public void go(WtNode node)
 	{
 		switch (node.getNodeType())
 		{
-			case WikitextNode.NT_NODE_LIST:
+			case WtNode.NT_NODE_LIST:
 			{
-				for (WikitextNode c : (WtList) node)
+				for (WtNode c : (WtNodeList) node)
 					go(c);
 				
 				break;
@@ -73,7 +73,7 @@ public class RtWikitextPrinter
 				if (rtd != null)
 				{
 					int i = 0;
-					for (WikitextNode n : node)
+					for (WtNode n : node)
 					{
 						printRtd(rtd.getField(i++));
 						if (n != null)
@@ -87,7 +87,7 @@ public class RtWikitextPrinter
 					if (rtd2 != null)
 					{
 						int i = 0;
-						for (WikitextNode n : node)
+						for (WtNode n : node)
 						{
 							printRtd2(rtd2.getField(i++));
 							if (n != null)
@@ -99,11 +99,11 @@ public class RtWikitextPrinter
 					{
 						if (node instanceof GenericStringContentNode)
 						{
-							w.print(((GenericStringContentNode<WikitextNode>) node).getContent());
+							w.print(((GenericStringContentNode<WtNode>) node).getContent());
 						}
 						else
 						{
-							for (WikitextNode n : node)
+							for (WtNode n : node)
 							{
 								if (n != null)
 									go(n);
@@ -122,9 +122,9 @@ public class RtWikitextPrinter
 		{
 			for (Object o : objects)
 			{
-				if (o instanceof WikitextNode)
+				if (o instanceof WtNode)
 				{
-					go((WikitextNode) o);
+					go((WtNode) o);
 				}
 				else
 				{
@@ -138,9 +138,9 @@ public class RtWikitextPrinter
 	{
 		for (Object o : objects)
 		{
-			if (o instanceof WikitextNode)
+			if (o instanceof WtNode)
 			{
-				go((WikitextNode) o);
+				go((WtNode) o);
 			}
 			else
 			{

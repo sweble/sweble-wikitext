@@ -26,7 +26,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.junit.Test;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.WtPrinter;
 import org.sweble.wikitext.parser.utils.FullParser;
 
@@ -59,7 +59,7 @@ public class XPathTest
 	{
 		String title = "raw-France";
 		
-		WikitextNode ast = parse(title);
+		WtNode ast = parse(title);
 		
 		JXPathContext context = JXPathContext.newContext(ast);
 		
@@ -90,7 +90,7 @@ public class XPathTest
 	{
 		String title = "raw-Germany";
 		
-		WikitextNode ast = parse(title);
+		WtNode ast = parse(title);
 		
 		JXPathContext context = JXPathContext.newContext(ast);
 		
@@ -112,9 +112,9 @@ public class XPathTest
 		Assert.assertEquals(expected, actual);
 	}
 	
-	private WikitextNode parse(String title) throws IOException, ParseException
+	private WtNode parse(String title) throws IOException, ParseException
 	{
-		WikitextNode ast = parser.parseArticle(
+		WtNode ast = parser.parseArticle(
 				load(PATH + "/wikitext/" + title + ".wikitext"),
 				title);
 		
@@ -149,7 +149,7 @@ public class XPathTest
 				b.append(StringUtils.strrep('-', 80));
 				b.append('\n');
 			}
-			b.append(WtPrinter.print((WikitextNode) i.next()));
+			b.append(WtPrinter.print((WtNode) i.next()));
 			b.append('\n');
 			++j;
 		}

@@ -23,8 +23,8 @@ import java.util.Iterator;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -97,7 +97,7 @@ public abstract class WomBackbone
 {
 	private static final long serialVersionUID = 1L;
 	
-	private WikitextNode astNode;
+	private WtNode astNode;
 	
 	private WomBackbone parent;
 	
@@ -107,26 +107,26 @@ public abstract class WomBackbone
 	
 	// =========================================================================
 	
-	public WomBackbone(WikitextNode astNode)
+	public WomBackbone(WtNode astNode)
 	{
 		this.astNode = astNode;
 	}
 	
 	// =========================================================================
 	
-	public WikitextNode getAstNode()
+	public WtNode getAstNode()
 	{
 		return astNode;
 	}
 	
-	protected WikitextNode setAstNode(WikitextNode astNode)
+	protected WtNode setAstNode(WtNode astNode)
 	{
-		WikitextNode old = this.astNode;
+		WtNode old = this.astNode;
 		this.astNode = astNode;
 		return old;
 	}
 	
-	protected void appendToAst(WtList container, WikitextNode child)
+	protected void appendToAst(WtNodeList container, WtNode child)
 	{
 		throw new InternalError();
 	}
@@ -136,9 +136,9 @@ public abstract class WomBackbone
 	 *            Cannot be null.
 	 */
 	protected void insertIntoAst(
-			WtList container,
-			WikitextNode newChild,
-			WikitextNode prevChild)
+			WtNodeList container,
+			WtNode newChild,
+			WtNode prevChild)
 	{
 		throw new InternalError();
 	}
@@ -152,7 +152,7 @@ public abstract class WomBackbone
 	 *            Cannot be null.
 	 */
 	protected void replaceInAst(
-			WtList container,
+			WtNodeList container,
 			WomBackbone oldNode,
 			WomBackbone newNode)
 	{
@@ -167,7 +167,7 @@ public abstract class WomBackbone
 	 * @param oldNode
 	 *            Cannot be null.
 	 */
-	protected void removeFromAst(WtList container, WikitextNode removeChild)
+	protected void removeFromAst(WtNodeList container, WtNode removeChild)
 	{
 		throw new InternalError();
 	}

@@ -26,7 +26,7 @@ public class DefinitionListDef
 		
 	}
 	
-	public DefinitionListDef(WtList content)
+	public DefinitionListDef(WtNodeList content)
 	{
 		super(content);
 		

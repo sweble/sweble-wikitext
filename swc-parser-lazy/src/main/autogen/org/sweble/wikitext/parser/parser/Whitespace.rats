@@ -97,25 +97,25 @@ Newline pEolNode =
 
 // -- Preserved Transparent Elements -------------------------------------------
 
-WikitextNode pTpStar = ptTpStar ;
+WtNode pTpStar = ptTpStar ;
 
-WikitextNode pTpPlus = ptTpPlus ;
+WtNode pTpPlus = ptTpPlus ;
 
-private transient WtList ptTpStar =
+private transient WtNodeList ptTpStar =
   tp:pTransparent*
   {
-    yyValue = new WtList(tp);
+    yyValue = new WtNodeList(tp);
   }
 ;
 
-private transient WtList ptTpPlus =
+private transient WtNodeList ptTpPlus =
   tp:pTransparent+
   {
-    yyValue = new WtList(tp);
+    yyValue = new WtNodeList(tp);
   }
 ;
 
-private inline WikitextNode pTransparent =
+private inline WtNode pTransparent =
   ParserEntityXmlCommentOrIgnore
 ;
 
@@ -124,25 +124,25 @@ private inline WikitextNode pTransparent =
 
 // -- Preserved Extended Spaces ------------------------------------------------
 
-WikitextNode pExtSpaceStar = ptExtSpaceStar ;
+WtNode pExtSpaceStar = ptExtSpaceStar ;
 
-WikitextNode pExtSpacePlus = ptExtSpacePlus ;
+WtNode pExtSpacePlus = ptExtSpacePlus ;
 
-private transient WtList ptExtSpaceStar =
+private transient WtNodeList ptExtSpaceStar =
   s:pExtSpaceAtom*
   {
-    yyValue = new WtList(s);
+    yyValue = new WtNodeList(s);
   }
 ;
 
-private transient WtList ptExtSpacePlus =
+private transient WtNodeList ptExtSpacePlus =
   s:pExtSpaceAtom+
   {
-    yyValue = new WtList(s);
+    yyValue = new WtNodeList(s);
   }
 ;
 
-private inline WikitextNode pExtSpaceAtom =
+private inline WtNode pExtSpaceAtom =
     spaces:pSpacePlus
     {
       yyValue = new WtText(spaces);
@@ -155,7 +155,7 @@ private inline WikitextNode pExtSpaceAtom =
 
 // -- Preserved Extended Whitespace --------------------------------------------
 
-noinline transient WikitextNode pExtWsStar =
+noinline transient WtNode pExtWsStar =
  ^{
     StateAwareResult r = (StateAwareResult) ppExtWsStarMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -178,11 +178,11 @@ noinline memoized Whitespace pExtWsStarMemoized =
 noinline transient Whitespace pExtWsStarTransient =
   s:pExtSpaceStar ws:pExtWsAtom*
   {
-    yyValue = new Whitespace(new WtList(s, ws), !ws.isEmpty());
+    yyValue = new Whitespace(new WtNodeList(s, ws), !ws.isEmpty());
   }
 ;
 
-noinline transient WikitextNode pExtWsPlus =
+noinline transient WtNode pExtWsPlus =
  ^{
     StateAwareResult r = (StateAwareResult) ppExtWsPlusMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -205,15 +205,15 @@ noinline memoized Whitespace pExtWsPlusMemoized =
 noinline transient Whitespace pExtWsPlusTransient =
     s:pExtSpacePlus ws:pExtWsAtom*
     {
-      yyValue = new Whitespace(new WtList(s, ws), !ws.isEmpty());
+      yyValue = new Whitespace(new WtNodeList(s, ws), !ws.isEmpty());
     }
   / ws:pExtWsAtom+
     {
-      yyValue = new Whitespace(new WtList(ws), true);
+      yyValue = new Whitespace(new WtNodeList(ws), true);
     }
 ;
 
-private inline WikitextNode pExtWsAtom =
+private inline WtNode pExtWsAtom =
     ws:pWsPlus
     {
       yyValue = new WtText(ws);

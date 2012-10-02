@@ -23,7 +23,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public abstract class CorePfnVariable
 		extends
@@ -48,23 +48,23 @@ public abstract class CorePfnVariable
 	// =========================================================================
 	
 	@Override
-	public final WikitextNode invoke(
-			WikitextNode var,
+	public final WtNode invoke(
+			WtNode var,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> argsValues)
+			List<? extends WtNode> argsValues)
 	{
 		return invoke((Template) var, frame, argsValues);
 	}
 	
-	public WikitextNode invoke(
+	public WtNode invoke(
 			Template var,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> argsValues)
+			List<? extends WtNode> argsValues)
 	{
 		return invoke(var, frame);
 	}
 	
-	protected WikitextNode invoke(Template var, ExpansionFrame frame)
+	protected WtNode invoke(Template var, ExpansionFrame frame)
 	{
 		return var;
 	}

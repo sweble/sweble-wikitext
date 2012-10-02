@@ -7,9 +7,9 @@ import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtInnerNode2
 		extends
-			GenericInnerNode2<WikitextNode>
+			GenericInnerNode2<WtNode>
 		implements
-			WikitextNode
+			WtNode
 {
 	private static final long serialVersionUID = -3133816643760188432L;
 	
@@ -22,12 +22,12 @@ public abstract class WtInnerNode2
 		super();
 	}
 	
-	public WtInnerNode2(WikitextNode n0, WikitextNode n1)
+	public WtInnerNode2(WtNode n0, WtNode n1)
 	{
 		super(n0, n1);
 	}
 	
-	public WtInnerNode2(Location arg0, WikitextNode n0, WikitextNode n1)
+	public WtInnerNode2(Location arg0, WtNode n0, WtNode n1)
 	{
 		super(arg0, n0, n1);
 	}

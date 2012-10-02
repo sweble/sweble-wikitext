@@ -24,7 +24,7 @@ public class SemiPre
 		
 	}
 	
-	public SemiPre(WtList content)
+	public SemiPre(WtNodeList content)
 	{
 		super(content);
 		

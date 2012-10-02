@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.utils;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 public class ApplyToText
@@ -33,20 +33,20 @@ public class ApplyToText
 	
 	// =========================================================================
 	
-	public void go(WikitextNode arg0)
+	public void go(WtNode arg0)
 	{
-		if (arg0.getNodeType() == WikitextNode.NT_TEXT)
+		if (arg0.getNodeType() == WtNode.NT_TEXT)
 		{
 			apply((WtText) arg0);
 		}
 		else
 		{
-			for (WikitextNode n : arg0)
+			for (WtNode n : arg0)
 			{
 				if (n == null)
 					continue;
 				
-				if (n.isNodeType(WikitextNode.NT_TEXT))
+				if (n.isNodeType(WtNode.NT_TEXT))
 				{
 					apply((WtText) n);
 				}

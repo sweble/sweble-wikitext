@@ -19,11 +19,11 @@ public class XmlEmptyTag
 	
 	public XmlEmptyTag()
 	{
-		super(new WtList());
+		super(new WtNodeList());
 		
 	}
 	
-	public XmlEmptyTag(String name, WtList xmlAttributes)
+	public XmlEmptyTag(String name, WtNodeList xmlAttributes)
 	{
 		super(xmlAttributes);
 		setName(name);
@@ -119,14 +119,14 @@ public class XmlEmptyTag
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtList xmlAttributes)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtList getXmlAttributes()
+	public final WtNodeList getXmlAttributes()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };

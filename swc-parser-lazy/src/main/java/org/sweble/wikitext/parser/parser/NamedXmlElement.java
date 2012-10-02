@@ -17,11 +17,11 @@
 
 package org.sweble.wikitext.parser.parser;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public interface NamedXmlElement
 		extends
-			WikitextNode
+			WtNode
 {
 	public String getName();
 }

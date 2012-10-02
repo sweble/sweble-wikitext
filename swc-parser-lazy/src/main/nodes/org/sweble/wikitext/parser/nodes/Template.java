@@ -15,11 +15,11 @@ public class Template
 	
 	public Template()
 	{
-		super(new WtList(), new WtList());
+		super(new WtNodeList(), new WtNodeList());
 		
 	}
 	
-	public Template(WtList name, WtList args)
+	public Template(WtNodeList name, WtNodeList args)
 	{
 		super(name, args);
 		
@@ -114,24 +114,24 @@ public class Template
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtList name)
+	public final void setName(WtNodeList name)
 	{
 		set(0, name);
 	}
 	
-	public final WtList getName()
+	public final WtNodeList getName()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
-	public final void setArgs(WtList args)
+	public final void setArgs(WtNodeList args)
 	{
 		set(1, args);
 	}
 	
-	public final WtList getArgs()
+	public final WtNodeList getArgs()
 	{
-		return (WtList) get(1);
+		return (WtNodeList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "args" };

@@ -31,9 +31,9 @@ import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
 import de.fau.cs.osr.utils.Utils;
@@ -57,7 +57,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	
 	// =========================================================================
 	
-	protected NativeOrXmlElementWithUniversalAttributes(WikitextNode astNode)
+	protected NativeOrXmlElementWithUniversalAttributes(WtNode astNode)
 	{
 		super(astNode);
 	}
@@ -85,7 +85,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	// =========================================================================
 	
 	@Override
-	public WtList getAstChildContainer()
+	public WtNodeList getAstChildContainer()
 	{
 		return isXml() ? xml().getBody() : ((WtContentNode) getAstNode()).getContent();
 	}
@@ -105,7 +105,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 		return Toolbox.addRtData(new XmlElement(
 				getNodeName(),
 				false,
-				new WtList(),
+				new WtNodeList(),
 				getAstChildContainer()));
 	}
 }

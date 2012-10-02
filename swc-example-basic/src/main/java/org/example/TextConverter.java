@@ -43,8 +43,8 @@ import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
 import org.sweble.wikitext.parser.nodes.Url;
 import org.sweble.wikitext.parser.nodes.Whitespace;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
@@ -79,7 +79,7 @@ import de.fau.cs.osr.utils.StringUtils;
  */
 public class TextConverter
 		extends
-			AstVisitor<WikitextNode>
+			AstVisitor<WtNode>
 {
 	private static final Pattern ws = Pattern.compile("\\s+");
 	
@@ -112,7 +112,7 @@ public class TextConverter
 	}
 	
 	@Override
-	protected boolean before(WikitextNode node)
+	protected boolean before(WtNode node)
 	{
 		// This method is called by go() before visitation starts
 		sb = new StringBuilder();
@@ -127,7 +127,7 @@ public class TextConverter
 	}
 	
 	@Override
-	protected Object after(WikitextNode node, Object result)
+	protected Object after(WtNode node, Object result)
 	{
 		finishLine();
 		
@@ -138,7 +138,7 @@ public class TextConverter
 	
 	// =========================================================================
 	
-	public void visit(WikitextNode n)
+	public void visit(WtNode n)
 	{
 		// Fallback for all nodes that are not explicitly handled below
 		write("<");
@@ -146,7 +146,7 @@ public class TextConverter
 		write(" />");
 	}
 	
-	public void visit(WtList n)
+	public void visit(WtNodeList n)
 	{
 		iterate(n);
 	}

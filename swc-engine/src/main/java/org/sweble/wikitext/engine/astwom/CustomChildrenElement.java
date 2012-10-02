@@ -20,7 +20,7 @@ import java.util.Collection;
 
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public abstract class CustomChildrenElement
         extends
@@ -30,7 +30,7 @@ public abstract class CustomChildrenElement
 	
 	// =========================================================================
 	
-	public CustomChildrenElement(WikitextNode astNode)
+	public CustomChildrenElement(WtNode astNode)
 	{
 		super(astNode);
 	}

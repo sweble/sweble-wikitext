@@ -61,21 +61,21 @@ import org.sweble.wikitext.parser.preprocessor.Content;
 
 // -- OnlyInclude Content ------------------------------------------------------
 
-WtList OnlyIncludeContent = tOnlyIncludeContent ;
+WtNodeList OnlyIncludeContent = tOnlyIncludeContent ;
 
-private transient WtList tOnlyIncludeContent =
+private transient WtNodeList tOnlyIncludeContent =
   ignored:Ignored repeat:OnlyIncludeRepeat* last:( KwOnlyIncludeOpen ContentStar )?
   {
-    yyValue = new WtList(ignored, repeat);
+    yyValue = new WtNodeList(ignored, repeat);
     if (last != null)
         yyValue.add(new OnlyInclude(last, XmlElementType.UNCLOSED_ELEMENT));
   }
 ;
 
-private inline WtList OnlyIncludeRepeat =
+private inline WtNodeList OnlyIncludeRepeat =
   KwOnlyIncludeOpen content:ContentStar KwOnlyIncludeClose ignored:Ignored
   {
-    yyValue = new WtList(
+    yyValue = new WtNodeList(
         new OnlyInclude(content, XmlElementType.UNCLOSED_ELEMENT),
         ignored);
   }

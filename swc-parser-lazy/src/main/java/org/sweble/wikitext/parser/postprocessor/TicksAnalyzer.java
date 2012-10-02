@@ -30,10 +30,10 @@ import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.SemiPreLine;
 import org.sweble.wikitext.parser.nodes.Ticks;
 import org.sweble.wikitext.parser.nodes.Whitespace;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtStringContentNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 
@@ -45,13 +45,13 @@ public class TicksAnalyzer
 {
 	protected final static class LineEntry
 	{
-		public final WikitextNode previous;
+		public final WtNode previous;
 		
 		public WtText prefix;
 		
 		public int tickCount;
 		
-		public LineEntry(WikitextNode previous, WtText prefix, int tickCount)
+		public LineEntry(WtNode previous, WtText prefix, int tickCount)
 		{
 			this.previous = previous;
 			this.prefix = prefix;
@@ -65,7 +65,7 @@ public class TicksAnalyzer
 			if (previous != null)
 			{
 				pv = previous.getNodeName();
-				if (previous.isNodeType(WikitextNode.NT_TEXT))
+				if (previous.isNodeType(WtNode.NT_TEXT))
 				{
 					pv = ((WtText) previous).getContent();
 					if (pv.length() > 16)
@@ -117,7 +117,7 @@ public class TicksAnalyzer
 	
 	// =========================================================================
 	
-	public static WikitextNode process(WikitextNode a)
+	public static WtNode process(WtNode a)
 	{
 		LinkedList<Line> lines = new LinkedList<Line>();
 		
@@ -128,14 +128,14 @@ public class TicksAnalyzer
 		
 		analyzeOddTicksCombos(lines);
 		
-		return (WikitextNode) new TicksConverter(lines).go(a);
+		return (WtNode) new TicksConverter(lines).go(a);
 	}
 	
 	// =========================================================================
 	
 	protected final static class LineAnalyzer
 			extends
-				AstVisitor<WikitextNode>
+				AstVisitor<WtNode>
 	{
 		private final LinkedList<Line> lines;
 		
@@ -145,7 +145,7 @@ public class TicksAnalyzer
 		
 		private int numBold = 0;
 		
-		private WikitextNode previous = null;
+		private WtNode previous = null;
 		
 		public LineAnalyzer(LinkedList<Line> lines)
 		{
@@ -153,21 +153,21 @@ public class TicksAnalyzer
 		}
 		
 		@Override
-		protected Object after(WikitextNode node, Object result)
+		protected Object after(WtNode node, Object result)
 		{
 			finishLine();
 			return node;
 		}
 		
-		public void visit(WikitextNode n)
+		public void visit(WtNode n)
 		{
 			iterate(n);
 		}
 		
-		public void visit(WtList list)
+		public void visit(WtNodeList list)
 		{
 			previous = null;
-			for (WikitextNode n : list)
+			for (WtNode n : list)
 			{
 				dispatch(n);
 				previous = n;
@@ -286,7 +286,7 @@ public class TicksAnalyzer
 				{
 					LineEntry entry = line.ticks.get(i);
 					
-					WikitextNode p = entry.previous;
+					WtNode p = entry.previous;
 					if (p == null || entry.tickCount != 3)
 						continue;
 					
@@ -388,32 +388,32 @@ public class TicksAnalyzer
 				this.entryIter = lineIter.next().ticks.iterator();
 		}
 		
-		public WikitextNode visit(WikitextNode n)
+		public WtNode visit(WtNode n)
 		{
 			mapInPlace(n);
 			return n;
 		}
 		
-		public WikitextNode visit(WtLeafNode n)
+		public WtNode visit(WtLeafNode n)
 		{
 			// Nothing to do here
 			return n;
 		}
 		
-		public WikitextNode visit(Ticks n)
+		public WtNode visit(Ticks n)
 		{
 			LineEntry entry = nextEntry();
 			
-			WtList result = new WtList(entry.prefix);
+			WtNodeList result = new WtNodeList(entry.prefix);
 			
 			toTag(entry, result);
 			
 			return result;
 		}
 		
-		public WikitextNode visit(Newline newline)
+		public WtNode visit(Newline newline)
 		{
-			WtList result = closeRemainingTags();
+			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return newline;
 			
@@ -422,12 +422,12 @@ public class TicksAnalyzer
 			return result;
 		}
 		
-		public WikitextNode visit(Whitespace ws)
+		public WtNode visit(Whitespace ws)
 		{
 			if (!ws.getHasNewline())
 				return ws;
 			
-			WtList result = closeRemainingTags();
+			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return ws;
 			
@@ -436,37 +436,37 @@ public class TicksAnalyzer
 			return result;
 		}
 		
-		public WikitextNode visit(ListItem n)
+		public WtNode visit(ListItem n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public WikitextNode visit(DefinitionListTerm n)
+		public WtNode visit(DefinitionListTerm n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public WikitextNode visit(DefinitionListDef n)
+		public WtNode visit(DefinitionListDef n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public WikitextNode visit(SemiPreLine n)
+		public WtNode visit(SemiPreLine n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		private WikitextNode implicitLineScope(WtContentNode n)
+		private WtNode implicitLineScope(WtContentNode n)
 		{
-			WtList content = n.getContent();
+			WtNodeList content = n.getContent();
 			mapInPlace(content);
 			finishLine(content);
 			return n;
 		}
 		
-		private void finishLine(WtList body)
+		private void finishLine(WtNodeList body)
 		{
-			WtList result = closeRemainingTags();
+			WtNodeList result = closeRemainingTags();
 			if (result == null)
 				return;
 			
@@ -484,7 +484,7 @@ public class TicksAnalyzer
 			return entryIter.next();
 		}
 		
-		private void toTag(LineEntry entry, WtList result)
+		private void toTag(LineEntry entry, WtNodeList result)
 		{
 			switch (entry.tickCount)
 			{
@@ -577,26 +577,26 @@ public class TicksAnalyzer
 			}
 		}
 		
-		private WtList closeRemainingTags()
+		private WtNodeList closeRemainingTags()
 		{
-			WtList result = null;
+			WtNodeList result = null;
 			switch (state)
 			{
 				case Italics:
-					result = new WtList();
+					result = new WtNodeList();
 					result.add(ITALICS.createClose(true));
 					break;
 				case Bold:
-					result = new WtList();
+					result = new WtNodeList();
 					result.add(BOLD.createClose(true));
 					break;
 				case BoldItalics:
-					result = new WtList();
+					result = new WtNodeList();
 					result.add(ITALICS.createClose(true));
 					result.add(BOLD.createClose(true));
 					break;
 				case ItalicsBold:
-					result = new WtList();
+					result = new WtNodeList();
 					result.add(BOLD.createClose(true));
 					result.add(ITALICS.createClose(true));
 					break;

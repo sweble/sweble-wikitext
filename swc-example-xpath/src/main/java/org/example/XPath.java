@@ -24,7 +24,7 @@ import java.util.List;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.sweble.wikitext.engine.CompiledPage;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;
@@ -75,7 +75,7 @@ public class XPath
 				int i = 1;
 				for (Object o : r)
 				{
-					WikitextNode n = (WikitextNode) o;
+					WtNode n = (WtNode) o;
 					b.append('(');
 					b.append(query);
 					b.append(")[");

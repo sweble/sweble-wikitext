@@ -25,8 +25,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -38,11 +38,11 @@ import de.fau.cs.osr.ptk.common.ast.Location;
  */
 public class AstCompressor
 		extends
-			AstVisitor<WikitextNode>
+			AstVisitor<WtNode>
 {
-	public static WikitextNode process(WikitextNode a)
+	public static WtNode process(WtNode a)
 	{
-		return (WikitextNode) new AstCompressor().go(a);
+		return (WtNode) new AstCompressor().go(a);
 	}
 	
 	/**
@@ -56,30 +56,30 @@ public class AstCompressor
 	// =========================================================================
 	
 	@Override
-	protected Object after(WikitextNode node, Object result)
+	protected Object after(WtNode node, Object result)
 	{
 		return node;
 	}
 	
 	// =========================================================================
 	
-	public void visit(WikitextNode n)
+	public void visit(WtNode n)
 	{
 		iterate(n);
 	}
 	
-	public void visit(WtList n)
+	public void visit(WtNodeList n)
 	{
-		ListIterator<WikitextNode> i = n.listIterator();
+		ListIterator<WtNode> i = n.listIterator();
 		while (i.hasNext())
 		{
-			WikitextNode current = i.next();
-			if (current.getNodeType() == WikitextNode.NT_TEXT)
+			WtNode current = i.next();
+			if (current.getNodeType() == WtNode.NT_TEXT)
 			{
 				if (i.hasNext())
 				{
-					WikitextNode next = i.next();
-					if (next.getNodeType() == WikitextNode.NT_TEXT)
+					WtNode next = i.next();
+					if (next.getNodeType() == WtNode.NT_TEXT)
 					{
 						i.previous();
 						i.previous();
@@ -99,15 +99,15 @@ public class AstCompressor
 		}
 	}
 	
-	private void compress(ListIterator<WikitextNode> i, Location location)
+	private void compress(ListIterator<WtNode> i, Location location)
 	{
 		String ct = "";
 		HashMap<String, Object> ca = null;
 		
 		while (i.hasNext())
 		{
-			WikitextNode n = i.next();
-			if (n.getNodeType() != WikitextNode.NT_TEXT)
+			WtNode n = i.next();
+			if (n.getNodeType() != WtNode.NT_TEXT)
 			{
 				i.previous();
 				break;

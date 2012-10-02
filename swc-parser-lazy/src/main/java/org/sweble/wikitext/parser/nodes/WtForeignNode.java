@@ -3,17 +3,17 @@ package org.sweble.wikitext.parser.nodes;
 import de.fau.cs.osr.ptk.common.ast.GenericLeafNode;
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
-public abstract class ForeignNode
+public abstract class WtForeignNode
 		extends
-			GenericLeafNode<WikitextNode>
+			GenericLeafNode<WtNode>
 		implements
-			WikitextNode
+			WtNode
 {
 	private static final long serialVersionUID = -4615966524233077629L;
 	
 	// =========================================================================
 	
-	public static ForeignNode from(Object... content)
+	public static WtForeignNode from(Object... content)
 	{
 		if (content == null || content.length == 0)
 		{
@@ -75,7 +75,7 @@ public abstract class ForeignNode
 	
 	public static final class EmptyForeignNode
 			extends
-				ForeignNode
+				WtForeignNode
 	{
 		private static final long serialVersionUID = -2714647204132421385L;
 		
@@ -88,7 +88,7 @@ public abstract class ForeignNode
 	
 	public static final class ForeignNode1
 			extends
-				ForeignNode
+				WtForeignNode
 	{
 		private static final long serialVersionUID = 3885854587740841986L;
 		
@@ -110,7 +110,7 @@ public abstract class ForeignNode
 	
 	public static final class ForeignNodeN
 			extends
-				ForeignNode
+				WtForeignNode
 	{
 		private static final long serialVersionUID = 3885854587740841986L;
 		

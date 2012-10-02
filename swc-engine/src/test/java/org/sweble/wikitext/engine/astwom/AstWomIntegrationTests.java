@@ -181,7 +181,7 @@ public class AstWomIntegrationTests
 		
 		System.out.println(WomPrinter.print(p));
 		
-		WikitextNode n = ((PageAdapter) p).getAstNode();
+		WtNode n = ((PageAdapter) p).getAstNode();
 		System.out.print(AstPrinter.print(n));
 	}
 	

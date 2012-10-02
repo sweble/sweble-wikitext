@@ -25,11 +25,11 @@ public class LinkOptionLinkTarget
 	
 	public LinkOptionLinkTarget()
 	{
-		super((WikitextNode) null);
+		super((WtNode) null);
 		
 	}
 	
-	public LinkOptionLinkTarget(WikitextNode target)
+	public LinkOptionLinkTarget(WtNode target)
 	{
 		super(target);
 		
@@ -44,14 +44,14 @@ public class LinkOptionLinkTarget
 	// =========================================================================
 	// Children
 	
-	public final void setTarget(WikitextNode target)
+	public final void setTarget(WtNode target)
 	{
 		set(0, target);
 	}
 	
-	public final WikitextNode getTarget()
+	public final WtNode getTarget()
 	{
-		return (WikitextNode) get(0);
+		return (WtNode) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "target" };

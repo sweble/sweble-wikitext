@@ -81,7 +81,7 @@ public interface AttributeDescriptor
 	public enum Normalization
 	{
 		/**
-		 * Only convert the attribute value's WtList into a string. Don't
+		 * Only convert the attribute value's WtNodeList into a string. Don't
 		 * post-process the resulting string.
 		 */
 		NONE,

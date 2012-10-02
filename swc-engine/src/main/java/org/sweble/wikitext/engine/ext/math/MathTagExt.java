@@ -23,8 +23,8 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
 import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class MathTagExt
 		extends
@@ -63,10 +63,10 @@ public class MathTagExt
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				ExpansionFrame frame,
 				TagExtension tagExt,
-				Map<String, WtList> attrs,
+				Map<String, WtNodeList> attrs,
 				String body)
 		{
 			return null;

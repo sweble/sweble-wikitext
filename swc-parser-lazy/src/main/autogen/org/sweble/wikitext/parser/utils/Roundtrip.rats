@@ -36,21 +36,21 @@ body
       return getState().isGatherRtData();
   }
 
-  private <T extends WikitextNode> T setRtd(T node, String... glue)
+  private <T extends WtNode> T setRtd(T node, String... glue)
   {
     if (isGatherRtData())
       node.setRtd(glue);
     return node;
   }
 
-  private <T extends WikitextNode> T setRtd(T node, Object... glue)
+  private <T extends WtNode> T setRtd(T node, Object... glue)
   {
     if (isGatherRtData())
       node.setRtd(glue);
     return node;
   }
 
-  private <T extends WikitextNode> T prependRtd(T node, String glue)
+  private <T extends WtNode> T prependRtd(T node, String glue)
   {
     if (isGatherRtData())
       node.getRtd().prepend(glue);

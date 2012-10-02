@@ -25,8 +25,8 @@ import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.Newline;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
@@ -156,11 +156,11 @@ public class TextAdapter
 		
 		TextPart last = getLastPart();
 		
-		WikitextNode appendTo =
+		WtNode appendTo =
 				(last != null) ? last.astNode : getAstNode();
 		
-		if (appendTo.getNodeType() == WikitextNode.NT_TEXT
-				&& first.astNode.getNodeType() == WikitextNode.NT_TEXT)
+		if (appendTo.getNodeType() == WtNode.NT_TEXT
+				&& first.astNode.getNodeType() == WtNode.NT_TEXT)
 		{
 			// collapse adjacent text nodes
 			
@@ -181,7 +181,7 @@ public class TextAdapter
 		else
 			last.next = first;
 		
-		ListIterator<WikitextNode> i =
+		ListIterator<WtNode> i =
 				Toolbox.advanceAfter(getTextContainer(), appendTo);
 		
 		TextPart p = first;
@@ -252,7 +252,7 @@ public class TextAdapter
 			p = p.next;
 		}
 		
-		ListIterator<WikitextNode> i = getTextContainer().listIterator();
+		ListIterator<WtNode> i = getTextContainer().listIterator();
 		
 		int correct = 0;
 		while (true)
@@ -304,10 +304,10 @@ public class TextAdapter
 	
 	private void deleteFromPart(TextPart p, int partFrom, int delPartLen)
 	{
-		WikitextNode astNode = p.astNode;
+		WtNode astNode = p.astNode;
 		switch (astNode.getNodeType())
 		{
-			case WikitextNode.NT_TEXT:
+			case WtNode.NT_TEXT:
 			{
 				WtText n = (WtText) astNode;
 				String text = n.getContent();
@@ -479,10 +479,10 @@ public class TextAdapter
 			TextPart firstNewPart,
 			TextPart lastNewPart)
 	{
-		WikitextNode n = p.astNode;
+		WtNode n = p.astNode;
 		switch (n.getNodeType())
 		{
-			case WikitextNode.NT_TEXT:
+			case WtNode.NT_TEXT:
 			{
 				return splitPart(p, (WtText) n, at, firstNewPart, lastNewPart);
 			}
@@ -549,7 +549,7 @@ public class TextAdapter
 		bs = new TextPart(astNode, ofs + ins, bText);
 		
 		// Insert and remove ast nodes
-		ListIterator<WikitextNode> i =
+		ListIterator<WtNode> i =
 				Toolbox.advanceAfter(getTextContainer(), p.astNode);
 		
 		insertAstNodes(i, firstNewPart, lastNewPart);
@@ -564,7 +564,7 @@ public class TextAdapter
 	}
 	
 	private void insertAstNodes(
-			ListIterator<WikitextNode> i,
+			ListIterator<WtNode> i,
 			TextPart firstNewPart,
 			TextPart lastNewPart)
 	{
@@ -627,7 +627,7 @@ public class TextAdapter
 	
 	private static final class TextPart
 	{
-		public WikitextNode astNode;
+		public WtNode astNode;
 		
 		public int offset;
 		
@@ -635,7 +635,7 @@ public class TextAdapter
 		
 		public TextPart next = null;
 		
-		public TextPart(WikitextNode astNode, int offset, String text)
+		public TextPart(WtNode astNode, int offset, String text)
 		{
 			this.astNode = astNode;
 			this.offset = offset;
@@ -666,7 +666,7 @@ public class TextAdapter
 		
 		int ofs = t.length();
 		
-		ListIterator<WikitextNode> i = null;
+		ListIterator<WtNode> i = null;
 		if (getParent() != null)
 		{
 			i = Toolbox.advanceAfter(getTextContainer(), getAstNode());
@@ -682,13 +682,13 @@ public class TextAdapter
 				if (!i.hasNext())
 					throw new AssertionError();
 				
-				WikitextNode n = i.next();
+				WtNode n = i.next();
 				if (n == p.astNode)
 					break;
 				
 				switch (n.getNodeType())
 				{
-					case WikitextNode.NT_TEXT:
+					case WtNode.NT_TEXT:
 					case AstNodeTypes.NT_NEWLINE:
 					case AstNodeTypes.NT_XML_CHAR_REF:
 					case AstNodeTypes.NT_XML_ENTITY_REF:
@@ -719,7 +719,7 @@ public class TextAdapter
 	
 	// =========================================================================
 	
-	private WtList getTextContainer()
+	private WtNodeList getTextContainer()
 	{
 		return ((FullElement) getParent()).getAstChildContainer();
 	}
@@ -728,14 +728,14 @@ public class TextAdapter
 	
 	private void clear() throws AssertionError, AssertionError
 	{
-		WtList container = getTextContainer();
+		WtNodeList container = getTextContainer();
 		
-		WikitextNode n = getAstNode();
+		WtNode n = getAstNode();
 		
 		WtText empty = new WtText("");
 		Toolbox.insertAstNode(container, empty, n);
 		
-		ListIterator<WikitextNode> i = container.listIterator();
+		ListIterator<WtNode> i = container.listIterator();
 		while (i.hasNext())
 		{
 			if (i.next() == n)
@@ -779,7 +779,7 @@ public class TextAdapter
 		int j = 0;
 		for (; j < n; ++j)
 		{
-			WikitextNode nonTextNode = null;
+			WtNode nonTextNode = null;
 			
 			// The index of the first non-text character
 			int k = j;
@@ -884,7 +884,7 @@ public class TextAdapter
 	
 	// =========================================================================
 	
-	public void append(WikitextNode n)
+	public void append(WtNode n)
 	{
 		switch (n.getNodeType())
 		{
@@ -897,7 +897,7 @@ public class TextAdapter
 		}
 	}
 	
-	private void append(String text, WikitextNode n)
+	private void append(String text, WtNode n)
 	{
 		TextPart part = new TextPart(n, this.text.length(), text);
 		

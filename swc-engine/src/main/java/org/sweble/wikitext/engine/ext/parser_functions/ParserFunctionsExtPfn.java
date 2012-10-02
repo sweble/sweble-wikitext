@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public abstract class ParserFunctionsExtPfn
 		extends
@@ -49,18 +49,18 @@ public abstract class ParserFunctionsExtPfn
 	// =========================================================================
 	
 	@Override
-	public final WikitextNode invoke(
-			WikitextNode template,
+	public final WtNode invoke(
+			WtNode template,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> argsValues)
+			List<? extends WtNode> argsValues)
 	{
 		return invoke((Template) template, frame, argsValues);
 	}
 	
-	public abstract WikitextNode invoke(
+	public abstract WtNode invoke(
 			Template template,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> argsValues);
+			List<? extends WtNode> argsValues);
 	
 	// =========================================================================
 	
@@ -76,12 +76,12 @@ public abstract class ParserFunctionsExtPfn
 		}
 		
 		@Override
-		public final WikitextNode invoke(
+		public final WtNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
-			WikitextNode result = evaluate((Template) pfn, frame, args);
+			WtNode result = evaluate((Template) pfn, frame, args);
 			
 			// All control flow statements expand and trim their results.
 			
@@ -95,10 +95,10 @@ public abstract class ParserFunctionsExtPfn
 			}
 		}
 		
-		protected abstract WikitextNode evaluate(
+		protected abstract WtNode evaluate(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args);
+				List<? extends WtNode> args);
 	}
 	
 	// =========================================================================
@@ -111,7 +111,7 @@ public abstract class ParserFunctionsExtPfn
 		
 		private final boolean hasDefault;
 		
-		private WikitextNode defaultValue;
+		private WtNode defaultValue;
 		
 		private final int thenArgIndex;
 		
@@ -133,17 +133,17 @@ public abstract class ParserFunctionsExtPfn
 		}
 		
 		@Override
-		protected WikitextNode evaluate(
+		protected WtNode evaluate(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			if (args.size() <= (hasDefault ? thenArgIndex - 1 : thenArgIndex))
 				return astText("");
 			
 			boolean cond = evaluateCondition(pfn, frame, args);
 			
-			WikitextNode result = defaultValue;
+			WtNode result = defaultValue;
 			if (cond)
 			{
 				result = args.get(thenArgIndex);
@@ -159,7 +159,7 @@ public abstract class ParserFunctionsExtPfn
 			return result;
 		}
 		
-		protected void setDefault(WikitextNode defaultValue)
+		protected void setDefault(WtNode defaultValue)
 		{
 			this.defaultValue = defaultValue;
 		}
@@ -167,6 +167,6 @@ public abstract class ParserFunctionsExtPfn
 		protected abstract boolean evaluateCondition(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args);
+				List<? extends WtNode> args);
 	}
 }

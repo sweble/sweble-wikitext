@@ -23,7 +23,7 @@ import java.io.StringReader;
 
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
 import xtc.parser.ParseError;
@@ -50,7 +50,7 @@ public class WikitextPreprocessor
 	// =========================================================================
 	
 	@Override
-	public WikitextNode parseArticle(String src, String title) throws IOException, ParseException
+	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		return parseArticle(new ValidatedWikitext(src, new WtEntityMap()), title, false);
 	}
@@ -59,7 +59,7 @@ public class WikitextPreprocessor
 	/**
 	 * @deprecated Use other parseArticle() method instead
 	 *
-	public WikitextNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
+	public WtNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
 	{
 		Reader in = new StringReader(src);
 		
@@ -109,7 +109,7 @@ public class WikitextPreprocessor
 	}
 	*/
 	
-	public WikitextNode parseArticle(
+	public WtNode parseArticle(
 			ValidatedWikitext wikitext,
 			String title,
 			boolean forInclusion) throws IOException, ParseException
@@ -130,7 +130,7 @@ public class WikitextPreprocessor
 			
 			if (v.value instanceof PreproWikitextPage)
 			{
-				return (WikitextNode) process((PreproWikitextPage) v.value);
+				return (WtNode) process((PreproWikitextPage) v.value);
 			}
 			else
 			{

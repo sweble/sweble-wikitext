@@ -37,19 +37,19 @@ public class XmlAttribute
 	
 	public XmlAttribute()
 	{
-		super(new WtList());
+		super(new WtNodeList());
 		
 	}
 	
 	public XmlAttribute(String name, boolean hasValue)
 	{
-		super(new WtList());
+		super(new WtNodeList());
 		setName(name);
 		setHasValue(hasValue);
 		
 	}
 	
-	public XmlAttribute(String name, WtList value, boolean hasValue)
+	public XmlAttribute(String name, WtNodeList value, boolean hasValue)
 	{
 		super(value);
 		setName(name);
@@ -166,14 +166,14 @@ public class XmlAttribute
 	// =========================================================================
 	// Children
 	
-	public final void setValue(WtList value)
+	public final void setValue(WtNodeList value)
 	{
 		set(0, value);
 	}
 	
-	public final WtList getValue()
+	public final WtNodeList getValue()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "value" };

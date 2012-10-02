@@ -44,9 +44,9 @@ body
 
 // -- Assert -------------------------------------------------------------------
 
-inline WikitextNode SantiyCheckEnd = { yyValue = null; } &{ returnFalse() } ;
+inline WtNode SantiyCheckEnd = { yyValue = null; } &{ returnFalse() } ;
 
-inline WikitextNode SantiyCheckAccept = { yyValue = null; } ;
+inline WtNode SantiyCheckAccept = { yyValue = null; } ;
 
 noinline transient void ShouldNotBeHere = ThrowShouldNotBeHereException ;
 

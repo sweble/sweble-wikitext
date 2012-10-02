@@ -24,7 +24,7 @@ import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 
 import de.fau.cs.osr.ptk.common.Warning;
@@ -39,7 +39,7 @@ public class ExpansionFrame
 	
 	private final PageTitle title;
 	
-	private final Map<String, WikitextNode> arguments;
+	private final Map<String, WtNode> arguments;
 	
 	private final boolean forInclusion;
 	
@@ -77,7 +77,7 @@ public class ExpansionFrame
 		this.callback = callback;
 		this.title = title;
 		this.entityMap = entityMap;
-		this.arguments = new HashMap<String, WikitextNode>();
+		this.arguments = new HashMap<String, WtNode>();
 		this.forInclusion = false;
 		this.noRedirect = noRedirect;
 		this.warnings = warnings;
@@ -99,7 +99,7 @@ public class ExpansionFrame
 			ExpansionDebugHooks hooks,
 			PageTitle title,
 			WtEntityMap entityMap,
-			Map<String, WikitextNode> arguments,
+			Map<String, WtNode> arguments,
 			boolean forInclusion,
 			boolean noRedirect,
 			ExpansionFrame rootFrame,
@@ -151,7 +151,7 @@ public class ExpansionFrame
 		return title;
 	}
 	
-	public Map<String, WikitextNode> getArguments()
+	public Map<String, WtNode> getArguments()
 	{
 		return arguments;
 	}
@@ -208,11 +208,11 @@ public class ExpansionFrame
 	
 	// =========================================================================
 	
-	public WikitextNode expand(WikitextNode ppAst) throws ExpansionException
+	public WtNode expand(WtNode ppAst) throws ExpansionException
 	{
 		try
 		{
-			return (WikitextNode) expansionVisitor.go(ppAst);
+			return (WtNode) expansionVisitor.go(ppAst);
 		}
 		catch (Exception e)
 		{

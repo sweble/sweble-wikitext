@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.wom.WomName;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomValue;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class ArgAdapter
 		extends
@@ -139,7 +139,7 @@ public class ArgAdapter
 		if (this.name != null)
 		{
 			this.name.unlink();
-			getAstNode().setName(new WtList());
+			getAstNode().setName(new WtNodeList());
 			getAstNode().setHasName(false);
 		}
 		

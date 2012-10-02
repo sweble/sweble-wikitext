@@ -21,8 +21,8 @@ import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -39,13 +39,13 @@ public class ParserFunctionSwitch
 	}
 	
 	@Override
-	protected WikitextNode evaluate(
+	protected WtNode evaluate(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> args)
+			List<? extends WtNode> args)
 	{
 		if (args.size() < 1)
-			return new WtList();
+			return new WtNodeList();
 		
 		return new Evaluator(frame, args).evaluate();
 	}
@@ -54,23 +54,23 @@ public class ParserFunctionSwitch
 	{
 		private ExpansionFrame frame;
 		
-		private List<? extends WikitextNode> args;
+		private List<? extends WtNode> args;
 		
-		private WtList after;
+		private WtNodeList after;
 		
-		private WtList before;
+		private WtNodeList before;
 		
-		private WikitextNode result;
+		private WtNode result;
 		
-		public Evaluator(ExpansionFrame frame, List<? extends WikitextNode> args)
+		public Evaluator(ExpansionFrame frame, List<? extends WtNode> args)
 		{
 			this.frame = frame;
 			this.args = args;
 		}
 		
-		public WikitextNode evaluate()
+		public WtNode evaluate()
 		{
-			WikitextNode arg0 = frame.expand(args.get(0));
+			WtNode arg0 = frame.expand(args.get(0));
 			
 			String cmp = null;
 			Double icmp = null;
@@ -93,15 +93,15 @@ public class ParserFunctionSwitch
 				// Process each argument of the switch (after the test string)
 				
 				after = null;
-				before = new WtList();
-				if (args.get(i).isNodeType(WikitextNode.NT_NODE_LIST))
+				before = new WtNodeList();
+				if (args.get(i).isNodeType(WtNode.NT_NODE_LIST))
 				{
 					splitNodeListAtEquals(i);
 				}
 				else
 				{
-					WikitextNode c = args.get(i);
-					if (c.isNodeType(WikitextNode.NT_TEXT))
+					WtNode c = args.get(i);
+					if (c.isNodeType(WtNode.NT_TEXT))
 						splitTextAtEquals(c);
 				}
 				
@@ -144,7 +144,7 @@ public class ParserFunctionSwitch
 			// $before part could hold "#default", in which case we only
 			// set the result to the $after part.
 			
-			before = (WtList) frame.expand(before);
+			before = (WtNodeList) frame.expand(before);
 			
 			String cmp2;
 			try
@@ -187,11 +187,11 @@ public class ParserFunctionSwitch
 		
 		private void splitNodeListAtEquals(int i)
 		{
-			for (WikitextNode c : args.get(i))
+			for (WtNode c : args.get(i))
 			{
 				if (after == null)
 				{
-					if (c.isNodeType(WikitextNode.NT_TEXT))
+					if (c.isNodeType(WtNode.NT_TEXT))
 					{
 						splitTextAtEquals(c);
 					}
@@ -207,7 +207,7 @@ public class ParserFunctionSwitch
 			}
 		}
 		
-		private void splitTextAtEquals(WikitextNode c)
+		private void splitTextAtEquals(WtNode c)
 		{
 			String text = ((WtText) c).getContent();
 			
@@ -215,7 +215,7 @@ public class ParserFunctionSwitch
 			if (j != -1)
 			{
 				before.add(new WtText(text.substring(0, j)));
-				after = new WtList(new WtText(text.substring(j + 1)));
+				after = new WtNodeList(new WtText(text.substring(j + 1)));
 			}
 			else
 			{

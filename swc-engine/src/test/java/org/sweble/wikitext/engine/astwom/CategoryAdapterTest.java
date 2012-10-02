@@ -35,7 +35,7 @@ import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
 public class CategoryAdapterTest
@@ -87,7 +87,7 @@ public class CategoryAdapterTest
 		assertTrue(womPage.hasCategory("Test"));
 		assertTrue(astBold.getBody().isEmpty());
 		
-		WtList body = ((BodyAdapter) womPage.getBody()).getAstNode();
+		WtNodeList body = ((BodyAdapter) womPage.getBody()).getAstNode();
 		assertTrue(body.get(body.size() - 1) instanceof InternalLink);
 	}
 	

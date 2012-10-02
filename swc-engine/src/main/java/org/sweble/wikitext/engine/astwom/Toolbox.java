@@ -30,8 +30,8 @@ import org.sweble.wikitext.parser.nodes.Italics;
 import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.Redirect;
 import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
@@ -45,14 +45,14 @@ import de.fau.cs.osr.utils.XmlGrammar;
 public class Toolbox
 {
 	public static void replaceAstNode(
-			WtList container,
-			WikitextNode oldAstNode,
-			WikitextNode newAstNode) throws AssertionError
+			WtNodeList container,
+			WtNode oldAstNode,
+			WtNode newAstNode) throws AssertionError
 	{
-		ListIterator<WikitextNode> i = container.listIterator();
+		ListIterator<WtNode> i = container.listIterator();
 		while (i.hasNext())
 		{
-			WikitextNode node = i.next();
+			WtNode node = i.next();
 			if (node == oldAstNode)
 			{
 				i.set(newAstNode);
@@ -64,13 +64,13 @@ public class Toolbox
 			throw new AssertionError();
 	}
 	
-	public static void removeAstNode(WtList container, WikitextNode astNode)
+	public static void removeAstNode(WtNodeList container, WtNode astNode)
 			throws AssertionError
 	{
-		Iterator<WikitextNode> i = container.iterator();
+		Iterator<WtNode> i = container.iterator();
 		while (i.hasNext())
 		{
-			WikitextNode node = i.next();
+			WtNode node = i.next();
 			if (node == astNode)
 			{
 				i.remove();
@@ -83,14 +83,14 @@ public class Toolbox
 	}
 	
 	public static void insertAstNode(
-			WtList container,
-			WikitextNode astNode,
-			WikitextNode beforeAstNode) throws AssertionError
+			WtNodeList container,
+			WtNode astNode,
+			WtNode beforeAstNode) throws AssertionError
 	{
-		ListIterator<WikitextNode> i = container.listIterator();
+		ListIterator<WtNode> i = container.listIterator();
 		while (i.hasNext())
 		{
-			WikitextNode n = i.next();
+			WtNode n = i.next();
 			if (n == beforeAstNode)
 			{
 				i.previous();
@@ -105,14 +105,14 @@ public class Toolbox
 	}
 	
 	public static void insertAstNodeAfter(
-			WtList container,
-			WikitextNode astNode,
-			WikitextNode afterAstNode) throws AssertionError
+			WtNodeList container,
+			WtNode astNode,
+			WtNode afterAstNode) throws AssertionError
 	{
-		ListIterator<WikitextNode> i = container.listIterator();
+		ListIterator<WtNode> i = container.listIterator();
 		while (i.hasNext())
 		{
-			WikitextNode n = i.next();
+			WtNode n = i.next();
 			if (n == afterAstNode)
 			{
 				i.add(astNode);
@@ -125,21 +125,21 @@ public class Toolbox
 			throw new AssertionError();
 	}
 	
-	public static void prependAstNode(WtList container, WikitextNode astNode)
+	public static void prependAstNode(WtNodeList container, WtNode astNode)
 	{
 		container.add(0, astNode);
 	}
 	
-	public static void appendAstNode(WtList container, WikitextNode astNode)
+	public static void appendAstNode(WtNodeList container, WtNode astNode)
 	{
 		container.add(astNode);
 	}
 	
-	public static ListIterator<WikitextNode> advanceAfter(
-			WtList container,
-			WikitextNode node)
+	public static ListIterator<WtNode> advanceAfter(
+			WtNodeList container,
+			WtNode node)
 	{
-		ListIterator<WikitextNode> i = container.listIterator();
+		ListIterator<WtNode> i = container.listIterator();
 		while (i.hasNext())
 		{
 			if (i.next() == node)
@@ -148,11 +148,11 @@ public class Toolbox
 		return null;
 	}
 	
-	public static ListIterator<WikitextNode> advanceBefore(
-			WtList container,
-			WikitextNode node)
+	public static ListIterator<WtNode> advanceBefore(
+			WtNodeList container,
+			WtNode node)
 	{
-		ListIterator<WikitextNode> i = container.listIterator();
+		ListIterator<WtNode> i = container.listIterator();
 		while (i.hasNext())
 		{
 			if (i.next() == node)
@@ -165,8 +165,8 @@ public class Toolbox
 	}
 	
 	public static void removeAstNode(
-			ListIterator<WikitextNode> i,
-			WikitextNode astNode)
+			ListIterator<WtNode> i,
+			WtNode astNode)
 	{
 		while (i.hasNext())
 		{
@@ -212,7 +212,7 @@ public class Toolbox
 			n.setRtd('<', n.getName(), RtData.SEP, '>', RtData.SEP, "</", n.getName(), '>');
 		}
 		
-		for (WikitextNode attr : n.getXmlAttributes())
+		for (WtNode attr : n.getXmlAttributes())
 			addRtData((XmlAttribute) attr);
 		
 		return n;
@@ -238,7 +238,7 @@ public class Toolbox
 		return n;
 	}
 	
-	public static WikitextNode addRtData(Italics n)
+	public static WtNode addRtData(Italics n)
 	{
 		n.setRtd("''", RtData.SEP, "''");
 		return n;
@@ -270,7 +270,7 @@ public class Toolbox
 	
 	public static TagExtension addRtData(TagExtension n)
 	{
-		for (WikitextNode attr : n.getXmlAttributes())
+		for (WtNode attr : n.getXmlAttributes())
 		{
 			if (attr.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
 				continue;
@@ -388,11 +388,11 @@ public class Toolbox
 	
 	// =========================================================================
 	
-	public static String toText(WikitextNode n)
+	public static String toText(WtNode n)
 	{
 		switch (n.getNodeType())
 		{
-			case WikitextNode.NT_TEXT:
+			case WtNode.NT_TEXT:
 				return ((WtText) n).getContent();
 				
 			case AstNodeTypes.NT_NEWLINE:

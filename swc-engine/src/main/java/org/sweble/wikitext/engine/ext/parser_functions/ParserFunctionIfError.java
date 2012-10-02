@@ -24,7 +24,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class ParserFunctionIfError
 		extends
@@ -50,9 +50,9 @@ public class ParserFunctionIfError
 	protected boolean evaluateCondition(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> args)
+			List<? extends WtNode> args)
 	{
-		WikitextNode arg0 = frame.expand(args.get(0));
+		WtNode arg0 = frame.expand(args.get(0));
 		
 		boolean eval = searchErrorNode(arg0);
 		
@@ -64,7 +64,7 @@ public class ParserFunctionIfError
 		return eval;
 	}
 	
-	private static boolean searchErrorNode(WikitextNode arg0)
+	private static boolean searchErrorNode(WtNode arg0)
 	{
 		if (arg0 instanceof SoftErrorNode)
 		{
@@ -72,7 +72,7 @@ public class ParserFunctionIfError
 		}
 		else
 		{
-			for (WikitextNode n : arg0)
+			for (WtNode n : arg0)
 			{
 				if (searchErrorNode(n))
 					return true;

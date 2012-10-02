@@ -15,11 +15,11 @@ public class TagExtension
 	
 	public TagExtension()
 	{
-		super(new WtList());
+		super(new WtNodeList());
 		
 	}
 	
-	public TagExtension(String name, WtList xmlAttributes, String body)
+	public TagExtension(String name, WtNodeList xmlAttributes, String body)
 	{
 		super(xmlAttributes);
 		setName(name);
@@ -136,14 +136,14 @@ public class TagExtension
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtList xmlAttributes)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtList getXmlAttributes()
+	public final WtNodeList getXmlAttributes()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };

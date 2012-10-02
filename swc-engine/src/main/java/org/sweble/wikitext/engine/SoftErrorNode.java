@@ -23,7 +23,7 @@ import static org.sweble.wikitext.parser.utils.AstBuilder.astXmlAttrib;
 
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
@@ -38,7 +38,7 @@ public class SoftErrorNode
 		this(astText(message));
 	}
 	
-	public SoftErrorNode(WikitextNode content)
+	public SoftErrorNode(WtNode content)
 	{
 		// We don't store the content as AST node of the error node. This way
 		// we prevent visitors from trying to do something to the error node.
@@ -57,7 +57,7 @@ public class SoftErrorNode
 		Toolbox.addRtData(this);
 	}
 	
-	public SoftErrorNode(WikitextNode content, Exception e)
+	public SoftErrorNode(WtNode content, Exception e)
 	{
 		this(content);
 		setAttribute("exception", e);
@@ -65,7 +65,7 @@ public class SoftErrorNode
 	
 	public void addCssClass(String cssClass)
 	{
-		for (WikitextNode attrib : this.getXmlAttributes())
+		for (WtNode attrib : this.getXmlAttributes())
 		{
 			if (attrib == null || !(attrib instanceof XmlAttribute))
 				continue;

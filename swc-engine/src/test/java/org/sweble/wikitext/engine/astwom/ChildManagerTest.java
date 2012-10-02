@@ -24,8 +24,8 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 import org.mockito.InOrder;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase.ChildManager;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 public class ChildManagerTest
@@ -38,10 +38,10 @@ public class ChildManagerTest
 		FullElement child = mock(FullElement.class);
 		FullElement parent = mock(FullElement.class);
 		
-		WtList astContainer = new WtList();
+		WtNodeList astContainer = new WtNodeList();
 		when(parent.getAstAttribContainer()).thenReturn(astContainer);
 		
-		WikitextNode astChild = new WtText("...");
+		WtNode astChild = new WtText("...");
 		when(child.getAstNode()).thenReturn(astChild);
 		
 		cm.appendChild(child, parent, astContainer);

@@ -18,8 +18,8 @@
 package org.sweble.wikitext.parser.utils;
 
 import org.sweble.wikitext.parser.nodes.Ignored;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
@@ -47,12 +47,12 @@ public class StringConverter
 	
 	// =========================================================================
 	
-	public static String convert(WikitextNode astNode) throws StringConversionException
+	public static String convert(WtNode astNode) throws StringConversionException
 	{
 		return convert(astNode, null, DEFAULT_OPTIONS);
 	}
 	
-	public static String convert(WikitextNode astNode, int options) throws StringConversionException
+	public static String convert(WtNode astNode, int options) throws StringConversionException
 	{
 		return convert(astNode, null, options);
 	}
@@ -61,7 +61,7 @@ public class StringConverter
 	 * @deprecated
 	 */
 	public static String convert(
-			WikitextNode astNode,
+			WtNode astNode,
 			XmlEntityResolver resolver,
 			int options) throws StringConversionException
 	{
@@ -85,7 +85,7 @@ public class StringConverter
 	
 	protected static final class ConverterVisitor
 			extends
-				AstVisitor<WikitextNode>
+				AstVisitor<WtNode>
 	{
 		private final StringBuilder result = new StringBuilder();
 		
@@ -111,18 +111,18 @@ public class StringConverter
 		}
 		
 		@Override
-		protected Object after(WikitextNode node, Object result)
+		protected Object after(WtNode node, Object result)
 		{
 			return this.result.toString();
 		}
 		
 		@Override
-		public Object visitNotFound(WikitextNode node)
+		public Object visitNotFound(WtNode node)
 		{
 			throw new VisitingException(new StringConversionException(node));
 		}
 		
-		public void visit(WtList n)
+		public void visit(WtNodeList n)
 		{
 			iterate(n);
 		}

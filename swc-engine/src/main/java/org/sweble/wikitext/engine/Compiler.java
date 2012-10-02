@@ -43,7 +43,7 @@ import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
@@ -444,7 +444,7 @@ public class Compiler
 			String wikitext,
 			boolean forInclusion,
 			WtEntityMap entityMap,
-			Map<String, WikitextNode> arguments,
+			Map<String, WtNode> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
 			throws CompilerException
@@ -502,7 +502,7 @@ public class Compiler
 			PreproWikitextPage ppAst,
 			WtEntityMap entityMap,
 			boolean forInclusion,
-			Map<String, WikitextNode> arguments,
+			Map<String, WtNode> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
 			throws CompilerException
@@ -658,7 +658,7 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			PreproWikitextPage ppAst,
-			LinkedHashMap<String, WikitextNode> arguments,
+			LinkedHashMap<String, WtNode> arguments,
 			boolean forInclusion,
 			WtContentNode parentLog)
 			throws CompilerException
@@ -681,7 +681,7 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			PreproWikitextPage ppAst,
-			Map<String, WikitextNode> arguments,
+			Map<String, WtNode> arguments,
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
@@ -692,7 +692,7 @@ public class Compiler
 		parentLog.getContent().add(log);
 		
 		if (arguments == null)
-			arguments = new HashMap<String, WikitextNode>();
+			arguments = new HashMap<String, WtNode>();
 		
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();

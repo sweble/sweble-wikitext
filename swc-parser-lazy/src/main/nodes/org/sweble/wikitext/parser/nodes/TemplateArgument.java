@@ -15,18 +15,18 @@ public class TemplateArgument
 	
 	public TemplateArgument()
 	{
-		super(new WtList(), new WtList());
+		super(new WtNodeList(), new WtNodeList());
 		
 	}
 	
-	public TemplateArgument(WtList value, boolean hasName)
+	public TemplateArgument(WtNodeList value, boolean hasName)
 	{
-		super(new WtList(), value);
+		super(new WtNodeList(), value);
 		setHasName(hasName);
 		
 	}
 	
-	public TemplateArgument(WtList name, WtList value, boolean hasName)
+	public TemplateArgument(WtNodeList name, WtNodeList value, boolean hasName)
 	{
 		super(name, value);
 		setHasName(hasName);
@@ -122,24 +122,24 @@ public class TemplateArgument
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtList name)
+	public final void setName(WtNodeList name)
 	{
 		set(0, name);
 	}
 	
-	public final WtList getName()
+	public final WtNodeList getName()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
-	public final void setValue(WtList value)
+	public final void setValue(WtNodeList value)
 	{
 		set(1, value);
 	}
 	
-	public final WtList getValue()
+	public final WtNodeList getValue()
 	{
-		return (WtList) get(1);
+		return (WtNodeList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "value" };

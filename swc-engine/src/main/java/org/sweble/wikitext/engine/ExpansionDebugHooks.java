@@ -31,20 +31,20 @@ import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public abstract class ExpansionDebugHooks
 {
-	public static final WikitextNode PROCEED = new WtLeafNode()
+	public static final WtNode PROCEED = new WtLeafNode()
 	{
 		private static final long serialVersionUID = 1L;
 	};
 	
 	// =========================================================================
 	
-	public WikitextNode beforeResolveRedirect(
+	public WtNode beforeResolveRedirect(
 			ExpansionVisitor expansionVisitor,
 			Redirect n,
 			String target)
@@ -52,37 +52,37 @@ public abstract class ExpansionDebugHooks
 		return PROCEED;
 	}
 	
-	public WikitextNode afterResolveRedirect(
+	public WtNode afterResolveRedirect(
 			ExpansionVisitor expansionVisitor,
 			Redirect n,
 			String target,
-			WikitextNode result,
+			WtNode result,
 			ResolveRedirectLog log)
 	{
 		return result;
 	}
 	
-	public WikitextNode beforeResolveParserFunction(
+	public WtNode beforeResolveParserFunction(
 			ExpansionVisitor expansionVisitor,
 			Template n,
 			ParserFunctionBase pfn,
-			List<? extends WikitextNode> argsValues)
+			List<? extends WtNode> argsValues)
 	{
 		return PROCEED;
 	}
 	
-	public WikitextNode afterResolveParserFunction(
+	public WtNode afterResolveParserFunction(
 			ExpansionVisitor expansionVisitor,
 			Template n,
 			ParserFunctionBase pfn,
-			List<? extends WikitextNode> argsValues,
-			WikitextNode result,
+			List<? extends WtNode> argsValues,
+			WtNode result,
 			ResolveParserFunctionLog log)
 	{
 		return result;
 	}
 	
-	public WikitextNode beforeResolveTransclusion(
+	public WtNode beforeResolveTransclusion(
 			ExpansionVisitor expansionVisitor,
 			Template n,
 			String target,
@@ -91,18 +91,18 @@ public abstract class ExpansionDebugHooks
 		return PROCEED;
 	}
 	
-	public WikitextNode afterResolveTransclusion(
+	public WtNode afterResolveTransclusion(
 			ExpansionVisitor expansionVisitor,
 			Template n,
 			String target,
 			List<TemplateArgument> args,
-			WikitextNode result,
+			WtNode result,
 			ResolveTransclusionLog log)
 	{
 		return result;
 	}
 	
-	public WikitextNode beforeResolveParameter(
+	public WtNode beforeResolveParameter(
 			ExpansionVisitor expansionVisitor,
 			TemplateParameter n,
 			String name)
@@ -110,39 +110,39 @@ public abstract class ExpansionDebugHooks
 		return PROCEED;
 	}
 	
-	public WikitextNode afterResolveParameter(
+	public WtNode afterResolveParameter(
 			ExpansionVisitor expansionVisitor,
 			TemplateParameter n,
 			String name,
-			WikitextNode result,
+			WtNode result,
 			ResolveParameterLog log)
 	{
 		return result;
 	}
 	
-	public WikitextNode beforeResolveTagExtension(
+	public WtNode beforeResolveTagExtension(
 			ExpansionVisitor expansionVisitor,
 			TagExtension n,
 			String name,
-			WtList attrs,
+			WtNodeList attrs,
 			String body)
 	{
 		return PROCEED;
 	}
 	
-	public WikitextNode afterResolveTagExtension(
+	public WtNode afterResolveTagExtension(
 			ExpansionVisitor expansionVisitor,
 			TagExtension n,
 			String name,
-			WtList attributes,
+			WtNodeList attributes,
 			String body,
-			WikitextNode result,
+			WtNode result,
 			ResolveTagExtensionLog log)
 	{
 		return result;
 	}
 	
-	public WikitextNode beforeResolvePageSwitch(
+	public WtNode beforeResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
 			PageSwitch n,
 			String word)
@@ -150,11 +150,11 @@ public abstract class ExpansionDebugHooks
 		return PROCEED;
 	}
 	
-	public WikitextNode afterResolvePageSwitch(
+	public WtNode afterResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
 			PageSwitch n,
 			String word,
-			WikitextNode result,
+			WtNode result,
 			ResolveMagicWordLog log)
 	{
 		return result;

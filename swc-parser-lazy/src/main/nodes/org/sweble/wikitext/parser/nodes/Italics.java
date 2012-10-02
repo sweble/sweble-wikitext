@@ -26,7 +26,7 @@ public class Italics
 		
 	}
 	
-	public Italics(WtList content)
+	public Italics(WtNodeList content)
 	{
 		super(content);
 		

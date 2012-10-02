@@ -30,7 +30,7 @@ public class OnlyInclude
 		
 	}
 	
-	public OnlyInclude(WtList content, XmlElementType elementType)
+	public OnlyInclude(WtNodeList content, XmlElementType elementType)
 	{
 		super(content);
 		setElementType(elementType);

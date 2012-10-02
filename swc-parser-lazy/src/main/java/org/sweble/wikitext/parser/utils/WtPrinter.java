@@ -20,13 +20,13 @@ package org.sweble.wikitext.parser.utils;
 import java.io.Writer;
 
 import org.sweble.wikitext.parser.nodes.Whitespace;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
 
 public class WtPrinter
 		extends
-			AstPrinter<WikitextNode>
+			AstPrinter<WtNode>
 {
 	public WtPrinter(Writer writer)
 	{
@@ -37,7 +37,7 @@ public class WtPrinter
 	{
 		if (n.hasAttributes())
 		{
-			visit((WikitextNode) n);
+			visit((WtNode) n);
 		}
 		else if (n.getContent().isEmpty())
 		{

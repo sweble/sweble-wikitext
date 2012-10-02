@@ -1,6 +1,6 @@
 package org.example;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.Location;
@@ -29,7 +29,7 @@ public final class StripAstVisitor
 	
 	// =========================================================================
 	
-	public void visit(WikitextNode n)
+	public void visit(WtNode n)
 	{
 		if (stripAllAttributes)
 		{

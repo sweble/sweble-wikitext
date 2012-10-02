@@ -29,7 +29,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -47,10 +47,10 @@ public class ParserFunctionTime
 	}
 	
 	@Override
-	public WikitextNode invoke(
+	public WtNode invoke(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> args)
+			List<? extends WtNode> args)
 	{
 		if (args.size() < 1)
 			return pfn;
@@ -99,7 +99,7 @@ public class ParserFunctionTime
 		return format(format, timestamp, locale);
 	}
 	
-	private WikitextNode format(String format, Calendar timestamp, Locale locale)
+	private WtNode format(String format, Calendar timestamp, Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
 		
@@ -139,10 +139,10 @@ public class ParserFunctionTime
 	
 	private String expandArgToString(
 			ExpansionFrame preprocessorFrame,
-			List<? extends WikitextNode> args,
+			List<? extends WtNode> args,
 			final int index)
 	{
-		WikitextNode arg = preprocessorFrame.expand(args.get(index));
+		WtNode arg = preprocessorFrame.expand(args.get(index));
 		
 		EngineTextUtils.trim(arg);
 		

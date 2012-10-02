@@ -36,9 +36,9 @@ public class RawListItem
 	}
 	
 	public RawListItem(
-			WtList content,
+			WtNodeList content,
 			String rt0,
-			WikitextNode rt1,
+			WtNode rt1,
 			String prefix)
 	{
 		super(content);
@@ -71,16 +71,16 @@ public class RawListItem
 		return old;
 	}
 	
-	private WikitextNode rt1;
+	private WtNode rt1;
 	
-	public final WikitextNode getRt1()
+	public final WtNode getRt1()
 	{
 		return this.rt1;
 	}
 	
-	public final WikitextNode setRt1(WikitextNode rt1)
+	public final WtNode setRt1(WtNode rt1)
 	{
-		WikitextNode old = this.rt1;
+		WtNode old = this.rt1;
 		this.rt1 = rt1;
 		return old;
 	}
@@ -158,7 +158,7 @@ public class RawListItem
 					case 0:
 						return RawListItem.this.setRt0((String) value);
 					case 1:
-						return RawListItem.this.setRt1((WikitextNode) value);
+						return RawListItem.this.setRt1((WtNode) value);
 					case 2:
 						return RawListItem.this.setPrefix((String) value);
 						

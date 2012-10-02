@@ -19,13 +19,13 @@ public class ImageLink
 	
 	public ImageLink()
 	{
-		super(new WtList(), new LinkTitle());
+		super(new WtNodeList(), new LinkTitle());
 		
 	}
 	
 	public ImageLink(
 			String target,
-			WtList options,
+			WtNodeList options,
 			LinkTitle title,
 			ImageViewFormat format,
 			boolean border,
@@ -342,14 +342,14 @@ public class ImageLink
 	// =========================================================================
 	// Children
 	
-	public final void setOptions(WtList options)
+	public final void setOptions(WtNodeList options)
 	{
 		set(0, options);
 	}
 	
-	public final WtList getOptions()
+	public final WtNodeList getOptions()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
 	public final void setTitle(LinkTitle title)

@@ -21,8 +21,8 @@ import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.Ignored;
 import org.sweble.wikitext.parser.nodes.OnlyInclude;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
@@ -74,7 +74,7 @@ public class PreprocessorToParserTransformer
 	
 	protected static final class TransformVisitor
 			extends
-				AstVisitor<WikitextNode>
+				AstVisitor<WtNode>
 	{
 		private StringBuilder builder;
 		
@@ -91,14 +91,14 @@ public class PreprocessorToParserTransformer
 		// =====================================================================
 		
 		@Override
-		protected boolean before(WikitextNode node)
+		protected boolean before(WtNode node)
 		{
 			builder = new StringBuilder();
 			return super.before(node);
 		}
 		
 		@Override
-		protected String after(WikitextNode node, Object result)
+		protected String after(WtNode node, Object result)
 		{
 			return builder.toString();
 		}
@@ -110,7 +110,7 @@ public class PreprocessorToParserTransformer
 			iterate(n);
 		}
 		
-		public void visit(WikitextNode n)
+		public void visit(WtNode n)
 		{
 			makeParserEntity(n);
 		}
@@ -120,7 +120,7 @@ public class PreprocessorToParserTransformer
 			makeParserEntity(n);
 		}
 		
-		private void makeParserEntity(WikitextNode n)
+		private void makeParserEntity(WtNode n)
 		{
 			int id = entityMap.registerEntity(n);
 			builder.append('\uE000');
@@ -128,7 +128,7 @@ public class PreprocessorToParserTransformer
 			builder.append('\uE001');
 		}
 		
-		public void visit(WtList n)
+		public void visit(WtNodeList n)
 		{
 			iterate(n);
 		}
@@ -152,7 +152,7 @@ public class PreprocessorToParserTransformer
 		{
 			if (!trim)
 			{
-				visit((WikitextNode) n);
+				visit((WtNode) n);
 			}
 		}
 	}

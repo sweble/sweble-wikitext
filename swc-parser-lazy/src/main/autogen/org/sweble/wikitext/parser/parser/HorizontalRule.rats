@@ -37,7 +37,7 @@ module org.sweble.wikitext.parser.parser.HorizontalRule;
 
 // -- Horizontal Rule --[ State Aware Memoization ]-----------------------------
 
-noinline transient WikitextNode HorizontalRule =
+noinline transient WtNode HorizontalRule =
  ^{
     StateAwareResult r = (StateAwareResult) pHorizontalRuleMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -49,7 +49,7 @@ noinline transient WikitextNode HorizontalRule =
   }
 ;
 
-noinline memoized WikitextNode HorizontalRuleMemoized =
+noinline memoized WtNode HorizontalRuleMemoized =
  ^{
     Result yyResult = new StateAwareResult("HorizontalRule", getContext(), pHorizontalRuleTransient(yyBase));
     if (returnTrue(yyResult))
@@ -62,7 +62,7 @@ noinline memoized WikitextNode HorizontalRuleMemoized =
 
 // -- Horizontal Rule ----------------------------------------------------------
 
-noinline transient WikitextNode HorizontalRuleTransient =
+noinline transient WtNode HorizontalRuleTransient =
     "---" &{ accept(ParserAtoms.HORIZONTAL_RULE) } yyValue:HorizontalRuleChoice
   / "---"
     {
@@ -70,7 +70,7 @@ noinline transient WikitextNode HorizontalRuleTransient =
     }
 ;
 
-private inline WikitextNode HorizontalRuleChoice =
+private inline WtNode HorizontalRuleChoice =
     more:'-'+
     {
       int dashes = 3 + more.size();
@@ -82,7 +82,7 @@ private inline WikitextNode HorizontalRuleChoice =
   / &{ isWarningsEnabled() } HorizontalRuleAutoCorrect
 ;
 
-private inline WikitextNode HorizontalRuleAutoCorrect =
+private inline WtNode HorizontalRuleAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
     yyValue = new WtText("---");

@@ -20,7 +20,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public abstract class ChildManagerBase
 {
@@ -49,24 +49,24 @@ public abstract class ChildManagerBase
 	public abstract void appendChild(
 			WomNode child,
 			WomBackbone parent,
-			WtList childContainer);
+			WtNodeList childContainer);
 	
 	public abstract void insertBefore(
 			WomNode before,
 			WomNode child,
 			WomBackbone parent,
-			WtList childContainer) throws IllegalArgumentException;
+			WtNodeList childContainer) throws IllegalArgumentException;
 	
 	public abstract void removeChild(
 			WomNode child,
 			WomBackbone parent,
-			WtList childContainer);
+			WtNodeList childContainer);
 	
 	public abstract void replaceChild(
 			WomNode search,
 			WomNode replace,
 			WomBackbone parent,
-			WtList childContainer);
+			WtNodeList childContainer);
 	
 	// =========================================================================
 	
@@ -120,7 +120,7 @@ public abstract class ChildManagerBase
 		public void appendChild(
 				WomNode child,
 				WomBackbone parent,
-				WtList childContainer)
+				WtNodeList childContainer)
 		{
 			unsupported();
 		}
@@ -130,7 +130,7 @@ public abstract class ChildManagerBase
 				WomNode before,
 				WomNode child,
 				WomBackbone parent,
-				WtList childContainer) throws IllegalArgumentException
+				WtNodeList childContainer) throws IllegalArgumentException
 		{
 			unsupported();
 		}
@@ -139,7 +139,7 @@ public abstract class ChildManagerBase
 		public void removeChild(
 				WomNode child,
 				WomBackbone parent,
-				WtList childContainer)
+				WtNodeList childContainer)
 		{
 			unsupported();
 		}
@@ -149,7 +149,7 @@ public abstract class ChildManagerBase
 				WomNode search,
 				WomNode replace,
 				WomBackbone parent,
-				WtList childContainer)
+				WtNodeList childContainer)
 		{
 			unsupported();
 		}
@@ -242,7 +242,7 @@ public abstract class ChildManagerBase
 		public void appendChild(
 				WomNode child,
 				WomBackbone parent,
-				WtList childContainer)
+				WtNodeList childContainer)
 		{
 			if (child == null)
 				throw new IllegalArgumentException("Argument `child' is null.");
@@ -303,7 +303,7 @@ public abstract class ChildManagerBase
 				WomNode before,
 				WomNode child,
 				WomBackbone parent,
-				WtList childContainer) throws IllegalArgumentException
+				WtNodeList childContainer) throws IllegalArgumentException
 		{
 			if (before == null || child == null)
 				throw new IllegalArgumentException("Argument `before' and/or `child' is null.");
@@ -360,7 +360,7 @@ public abstract class ChildManagerBase
 		public void removeChild(
 				WomNode child,
 				WomBackbone parent,
-				WtList childContainer)
+				WtNodeList childContainer)
 		{
 			if (child == null)
 				throw new IllegalArgumentException("Argument `child' is null.");
@@ -428,7 +428,7 @@ public abstract class ChildManagerBase
 				WomNode search,
 				WomNode replace,
 				WomBackbone parent,
-				WtList childContainer)
+				WtNodeList childContainer)
 		{
 			if (search == null || replace == null)
 				throw new IllegalArgumentException("Argument `search' and/or `replace' is null.");

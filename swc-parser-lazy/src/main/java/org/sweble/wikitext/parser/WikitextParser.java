@@ -22,7 +22,7 @@ import java.io.Reader;
 import java.io.StringReader;
 
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.RatsWikitextParser;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
@@ -50,7 +50,7 @@ public class WikitextParser
 	// =========================================================================
 	
 	@Override
-	public WikitextNode parseArticle(String src, String title) throws IOException, ParseException
+	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		PreprocessedWikitext ppWt =
 				new PreprocessedWikitext(src, new WtEntityMap());
@@ -58,7 +58,7 @@ public class WikitextParser
 		return parseArticle(ppWt, title);
 	}
 	
-	public WikitextNode parseArticle(PreprocessedWikitext wikitext, String title) throws IOException, ParseException
+	public WtNode parseArticle(PreprocessedWikitext wikitext, String title) throws IOException, ParseException
 	{
 		Reader in = new StringReader(wikitext.getWikitext());
 		
@@ -83,7 +83,7 @@ public class WikitextParser
 			
 			if (v.value instanceof ParsedWikitextPage)
 			{
-				return (WikitextNode) process((ParsedWikitextPage) v.value);
+				return (WtNode) process((ParsedWikitextPage) v.value);
 			}
 			else
 			{

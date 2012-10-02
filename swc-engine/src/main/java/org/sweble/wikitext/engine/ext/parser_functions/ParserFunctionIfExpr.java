@@ -22,7 +22,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ext.parser_functions.ExprParser.ExprError;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -50,9 +50,9 @@ public class ParserFunctionIfExpr
 	protected boolean evaluateCondition(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> args)
+			List<? extends WtNode> args)
 	{
-		WikitextNode test = frame.expand(args.get(0));
+		WtNode test = frame.expand(args.get(0));
 		
 		String expr = null;
 		try

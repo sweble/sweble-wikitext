@@ -21,8 +21,8 @@ import java.util.Iterator;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.Ignored;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
@@ -35,28 +35,28 @@ import de.fau.cs.osr.utils.Tuple2;
 
 public class StringConverterPartial
 {
-	public static Tuple2<String, WtList> convert(WikitextNode astNode)
+	public static Tuple2<String, WtNodeList> convert(WtNode astNode)
 	{
 		return convert(astNode, null, StringConverter.DEFAULT_OPTIONS);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static Tuple2<String, WtList> convert(
-			WikitextNode astNode,
+	public static Tuple2<String, WtNodeList> convert(
+			WtNode astNode,
 			ParserConfig resolver,
 			int options)
 	{
 		ConverterVisitor converter =
 				new ConverterVisitor(options, resolver);
 		
-		return (Tuple2<String, WtList>) converter.go(astNode);
+		return (Tuple2<String, WtNodeList>) converter.go(astNode);
 	}
 	
 	// =========================================================================
 	
 	protected static final class ConverterVisitor
 			extends
-				AstVisitor<WikitextNode>
+				AstVisitor<WtNode>
 	{
 		private final StringBuilder result = new StringBuilder();
 		
@@ -64,7 +64,7 @@ public class StringConverterPartial
 		
 		private final int options;
 		
-		private WikitextNode failedOnNode = null;
+		private WtNode failedOnNode = null;
 		
 		// =====================================================================
 		
@@ -85,18 +85,18 @@ public class StringConverterPartial
 		// =====================================================================
 		
 		@Override
-		protected Object after(WikitextNode node, Object result)
+		protected Object after(WtNode node, Object result)
 		{
-			WtList tail = null;
+			WtNodeList tail = null;
 			if (failedOnNode != null)
 			{
-				if (failedOnNode.isNodeType(WikitextNode.NT_NODE_LIST))
+				if (failedOnNode.isNodeType(WtNode.NT_NODE_LIST))
 				{
-					tail = (WtList) failedOnNode;
+					tail = (WtNodeList) failedOnNode;
 				}
 				else
 				{
-					tail = new WtList(failedOnNode);
+					tail = new WtNodeList(failedOnNode);
 				}
 			}
 			
@@ -106,23 +106,23 @@ public class StringConverterPartial
 		// =====================================================================
 		
 		@Override
-		public Object visitNotFound(WikitextNode node)
+		public Object visitNotFound(WtNode node)
 		{
 			failedOnNode = node;
 			return node;
 		}
 		
-		public void visit(WtList n)
+		public void visit(WtNodeList n)
 		{
-			Iterator<WikitextNode> i = n.iterator();
+			Iterator<WtNode> i = n.iterator();
 			while (i.hasNext())
 			{
-				WikitextNode c = i.next();
+				WtNode c = i.next();
 				dispatch(c);
 				
 				if (failedOnNode != null)
 				{
-					failedOnNode = new WtList();
+					failedOnNode = new WtNodeList();
 					
 					failedOnNode.add(c);
 					while (i.hasNext())

@@ -30,8 +30,8 @@
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_ROW
  *
  *     Children:
- *       xmlAttributes : WtList
- *       body          : WtList
+ *       xmlAttributes : WtNodeList
+ *       body          : WtNodeList
  *
  */
 
@@ -50,7 +50,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 // -- Table Row --[ State Aware Memoization ]-----------------------------------
 
-noinline transient WikitextNode TableRow =
+noinline transient WtNode TableRow =
  ^{
     final StateAwareResult r = (StateAwareResult) pTableRowMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -62,7 +62,7 @@ noinline transient WikitextNode TableRow =
   }
 ;
 
-noinline memoized WikitextNode TableRowMemoized =
+noinline memoized WtNode TableRowMemoized =
  ^{
     final Result yyResult = new StateAwareResult("TableRow", getContext(), pTableRowTransient(yyBase));
     if (returnTrue(yyResult))
@@ -75,24 +75,24 @@ noinline memoized WikitextNode TableRowMemoized =
 
 // -- Table Row ----------------------------------------------------------------
 
-noinline transient WikitextNode TableRowTransient =
+noinline transient WtNode TableRowTransient =
   rt0:pExtSpaceStar "|-" attributes:TableAttributeStar body:TableRowBody
   {
-    yyValue = setRtd(new TableRow(attributes, body.getForeign(2, WtList.class)),
+    yyValue = setRtd(new TableRow(attributes, body.getForeign(2, WtNodeList.class)),
         rt0, "|-", SEP,
-        body.getForeign(0, WikitextNode.class), body.getForeign(1, String.class), SEP);
+        body.getForeign(0, WtNode.class), body.getForeign(1, String.class), SEP);
   }
 ;
 
-private inline ForeignNode TableRowBody =
+private inline WtForeignNode TableRowBody =
     rt0:pExtSpaceStar rt1:pEol body:TableRowContentStar
     {
-      yyValue = ForeignNode.from(rt0, rt1, body);
+      yyValue = WtForeignNode.from(rt0, rt1, body);
     }
   / rt0:pExtSpaceStar Eof
     {
       // Warning will be issued by the surrounding table.
-      yyValue = ForeignNode.from(rt0, "", new WtList());
+      yyValue = WtForeignNode.from(rt0, "", new WtNodeList());
     }
   / &ShouldNotBeHere SantiyCheckEnd
     {
@@ -100,17 +100,17 @@ private inline ForeignNode TableRowBody =
     }
 ;
 
-private transient stateful WtList TableRowContentStar =
+private transient stateful WtNodeList TableRowContentStar =
   {
     enter(ParserScopes.TABLE_ELEMENTS);
   }
   garbage:InlineBlockContent content:TableRowElement*
   {
-    yyValue = new WtList(garbage, new WtList(content));
+    yyValue = new WtNodeList(garbage, new WtNodeList(content));
   }
 ;
 
-private inline WikitextNode TableRowElement =
+private inline WtNode TableRowElement =
     &TableRowElementPrefix ( TableCell / TableHeader )
   / &( RowDoneSanityCheck / ShouldNotBeHere ) SantiyCheckEnd
 ;

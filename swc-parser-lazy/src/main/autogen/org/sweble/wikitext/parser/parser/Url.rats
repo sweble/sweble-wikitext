@@ -68,7 +68,7 @@ body
     return getState().getConfig().isUrlProtocol(protocol);
   }
 
-  private WikitextNode makeExternalLink(WtText text, String path)
+  private WtNode makeExternalLink(WtText text, String path)
   {
     String p = extractProtocol(text);
     String t = text.getContent();
@@ -79,7 +79,7 @@ body
     if (b.isEmpty())
       return url;
 
-    return new WtList(new WtText(b), url);
+    return new WtNodeList(new WtText(b), url);
   }
 
   private String extractProtocol(WtText text)

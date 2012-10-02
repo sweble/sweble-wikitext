@@ -22,11 +22,11 @@ public class TableCell
 	
 	public TableCell()
 	{
-		super(new WtList(), new WtList());
+		super(new WtNodeList(), new WtNodeList());
 		
 	}
 	
-	public TableCell(WtList xmlAttributes, WtList body)
+	public TableCell(WtNodeList xmlAttributes, WtNodeList body)
 	{
 		super(xmlAttributes, body);
 		
@@ -44,24 +44,24 @@ public class TableCell
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtList xmlAttributes)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtList getXmlAttributes()
+	public final WtNodeList getXmlAttributes()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
-	public final void setBody(WtList body)
+	public final void setBody(WtNodeList body)
 	{
 		set(1, body);
 	}
 	
-	public final WtList getBody()
+	public final WtNodeList getBody()
 	{
-		return (WtList) get(1);
+		return (WtNodeList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };

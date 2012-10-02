@@ -24,7 +24,7 @@ public class LinkOptionAltText
 		
 	}
 	
-	public LinkOptionAltText(WtList content)
+	public LinkOptionAltText(WtNodeList content)
 	{
 		super(content);
 		

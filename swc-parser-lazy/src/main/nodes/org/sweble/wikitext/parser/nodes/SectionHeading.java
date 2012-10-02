@@ -121,7 +121,7 @@ public class SectionHeading
 		
 	}
 	
-	public SectionHeading(WtList content, int level)
+	public SectionHeading(WtNodeList content, int level)
 	{
 		super(content);
 		setLevel(level);

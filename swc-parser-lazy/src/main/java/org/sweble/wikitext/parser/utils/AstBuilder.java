@@ -25,8 +25,8 @@ import org.sweble.wikitext.parser.nodes.Ignored;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlComment;
@@ -82,7 +82,7 @@ public class AstBuilder
 		return new TextBuilder();
 	}
 	
-	public static WikitextNode astProtectedText(String text)
+	public static WtNode astProtectedText(String text)
 	{
 		return new ProtectedText(text);
 	}
@@ -97,9 +97,9 @@ public class AstBuilder
 		return new ProtectedText(text);
 	}
 	
-	public static WtList astList(WikitextNode... contents)
+	public static WtNodeList astList(WtNode... contents)
 	{
-		return new WtList(Arrays.asList(contents));
+		return new WtNodeList(Arrays.asList(contents));
 	}
 	
 	public static TmplArgBuilder astTmplArg()
@@ -147,9 +147,9 @@ public class AstBuilder
 	{
 		private String name = "element";
 		
-		private WtList body = astList(astText("element body"));
+		private WtNodeList body = astList(astText("element body"));
 		
-		private WtList attribs = null;
+		private WtNodeList attribs = null;
 		
 		public XmlElementBuilder withName(String name)
 		{
@@ -157,18 +157,18 @@ public class AstBuilder
 			return this;
 		}
 		
-		public XmlElementBuilder withBody(WikitextNode... content)
+		public XmlElementBuilder withBody(WtNode... content)
 		{
-			this.body = new WtList();
-			for (WikitextNode n : content)
+			this.body = new WtNodeList();
+			for (WtNode n : content)
 				this.body.add(n);
 			return this;
 		}
 		
-		public XmlElementBuilder withAttribs(WikitextNode... attribs)
+		public XmlElementBuilder withAttribs(WtNode... attribs)
 		{
-			this.attribs = new WtList();
-			for (WikitextNode n : attribs)
+			this.attribs = new WtNodeList();
+			for (WtNode n : attribs)
 				this.attribs.add(n);
 			return this;
 		}
@@ -199,7 +199,7 @@ public class AstBuilder
 	{
 		private String name = "defaultAttrName";
 		
-		private WtList value = null;
+		private WtNodeList value = null;
 		
 		public XmlAttribBuilder withName(String name)
 		{
@@ -209,14 +209,14 @@ public class AstBuilder
 		
 		public XmlAttribBuilder withValue(String value)
 		{
-			this.value = new WtList(new WtText(value));
+			this.value = new WtNodeList(new WtText(value));
 			return this;
 		}
 		
-		public XmlAttribBuilder withValue(WikitextNode... content)
+		public XmlAttribBuilder withValue(WtNode... content)
 		{
-			this.value = new WtList();
-			for (WikitextNode n : content)
+			this.value = new WtNodeList();
+			for (WtNode n : content)
 				this.value.add(n);
 			return this;
 		}
@@ -235,37 +235,37 @@ public class AstBuilder
 	
 	public static final class TmplArgBuilder
 	{
-		private WtList name = null;
+		private WtNodeList name = null;
 		
-		private WtList value;
+		private WtNodeList value;
 		
 		public TmplArgBuilder withName(String name)
 		{
-			this.name = new WtList(new WtText(name));
+			this.name = new WtNodeList(new WtText(name));
 			return this;
 		}
 		
 		public TmplArgBuilder withValue(String value)
 		{
-			this.value = new WtList(new WtText(value));
+			this.value = new WtNodeList(new WtText(value));
 			return this;
 		}
 		
 		public TemplateArgument build()
 		{
 			if (value == null)
-				value = new WtList();
+				value = new WtNodeList();
 			return new TemplateArgument(name, value, name != null);
 		}
 	}
 	
 	public static final class TemplateBuilder
 	{
-		private WtList name = null;
+		private WtNodeList name = null;
 		
-		private WtList args = null;
+		private WtNodeList args = null;
 		
-		public TemplateBuilder withName(WikitextNode... name)
+		public TemplateBuilder withName(WtNode... name)
 		{
 			this.name = astList(name);
 			return this;
@@ -296,7 +296,7 @@ public class AstBuilder
 	{
 		private String name = "someTagExtension";
 		
-		private WtList xmlAttributes = astList();
+		private WtNodeList xmlAttributes = astList();
 		
 		private String body = "";
 		
@@ -306,7 +306,7 @@ public class AstBuilder
 			return this;
 		}
 		
-		public TagExtensionBuilder withAttribs(WikitextNode... attribs)
+		public TagExtensionBuilder withAttribs(WtNode... attribs)
 		{
 			this.xmlAttributes = astList(attribs);
 			return this;
@@ -326,9 +326,9 @@ public class AstBuilder
 	
 	public static final class TemplateArgumentBuilder
 	{
-		private WtList name = astList(astText("argName"));
+		private WtNodeList name = astList(astText("argName"));
 		
-		private WtList value = astList(astText("value"));
+		private WtNodeList value = astList(astText("value"));
 		
 		public TemplateArgumentBuilder withoutName()
 		{
@@ -336,13 +336,13 @@ public class AstBuilder
 			return this;
 		}
 		
-		public TemplateArgumentBuilder withName(WikitextNode... name)
+		public TemplateArgumentBuilder withName(WtNode... name)
 		{
 			this.name = astList(name);
 			return this;
 		}
 		
-		public TemplateArgumentBuilder setValue(WikitextNode... value)
+		public TemplateArgumentBuilder setValue(WtNode... value)
 		{
 			this.value = astList(value);
 			return this;

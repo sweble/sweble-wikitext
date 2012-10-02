@@ -3,9 +3,9 @@ package org.sweble.wikitext.parser.nodes;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
-public interface WikitextNode
+public interface WtNode
 		extends
-			AstNode<WikitextNode>
+			AstNode<WtNode>
 {
 	public RtData setRtd(RtData rtd);
 	

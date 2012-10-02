@@ -129,13 +129,13 @@ public transient PreproWikitextPage Article =
   redirect:Redirect? content:Content &Eof
   {
     yyValue = new PreproWikitextPage(
-        new WtList(redirect, content),
+        new WtNodeList(redirect, content),
         new ArrayList<Warning>(),
         getState().getEntityMap());
   }
 ;
 
-private inline WtList Content =
+private inline WtNodeList Content =
     &HasOnlyIncludeContent
     {
       yyState.setHasOnlyInclude(true);

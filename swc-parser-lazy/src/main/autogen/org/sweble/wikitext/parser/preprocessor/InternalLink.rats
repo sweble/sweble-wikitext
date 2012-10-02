@@ -24,10 +24,10 @@ modify org.sweble.wikitext.parser.preprocessor.Content;
 
 // -- InternalLink -------------------------------------------------------------
 
-WikitextNode InternalLink =
+WtNode InternalLink =
     "[[" content:InternalLinkContentStar "]]"
     {
-      yyValue = new WtList(new WtText("[["), content, new WtText("]]"));
+      yyValue = new WtNodeList(new WtText("[["), content, new WtText("]]"));
     }
   / '['
     {
@@ -45,7 +45,7 @@ void ContentStringStopper +=
   / <PrefixClosingBraces>  "]]"
 ;
 
-WtList InternalLinkContentStar = ContentStar ;
+WtNodeList InternalLinkContentStar = ContentStar ;
 
 
 

@@ -33,7 +33,7 @@ public class Paragraph
 		
 	}
 	
-	public Paragraph(WtList content)
+	public Paragraph(WtNodeList content)
 	{
 		super(content);
 		

@@ -41,8 +41,8 @@ import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.Paragraph;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
@@ -143,12 +143,12 @@ public class ParagraphAdapter
 		return Toolbox.addRtData(new XmlElement(
 				"p",
 				false,
-				new WtList(),
+				new WtNodeList(),
 				getAstChildContainer()));
 	}
 	
 	@Override
-	public WtList getAstChildContainer()
+	public WtNodeList getAstChildContainer()
 	{
 		return isXml() ? xml().getBody() : ((Paragraph) getAstNode()).getContent();
 	}
@@ -157,20 +157,20 @@ public class ParagraphAdapter
 	
 	private void gapsFromAst(AstToWomNodeFactory womNodeFactory)
 	{
-		WikitextNode first = null;
-		WikitextNode last = null;
+		WtNode first = null;
+		WtNode last = null;
 		
-		WtList container = getAstChildContainer();
-		ListIterator<WikitextNode> i;
+		WtNodeList container = getAstChildContainer();
+		ListIterator<WtNode> i;
 		
 		int topGap = 0;
 		i = container.listIterator();
 		outer: while (i.hasNext())
 		{
-			WikitextNode n = i.next();
+			WtNode n = i.next();
 			switch (n.getNodeType())
 			{
-				case WikitextNode.NT_TEXT:
+				case WtNode.NT_TEXT:
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
@@ -189,10 +189,10 @@ public class ParagraphAdapter
 		i = container.listIterator(container.size());
 		outer: while (i.hasPrevious())
 		{
-			WikitextNode n = i.previous();
+			WtNode n = i.previous();
 			switch (n.getNodeType())
 			{
-				case WikitextNode.NT_TEXT:
+				case WtNode.NT_TEXT:
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
@@ -222,16 +222,16 @@ public class ParagraphAdapter
 	
 	private void setTopGapInAst(int lines)
 	{
-		WtList container = getAstChildContainer();
-		ListIterator<WikitextNode> i = container.listIterator();
+		WtNodeList container = getAstChildContainer();
+		ListIterator<WtNode> i = container.listIterator();
 		
 		int j = 0;
 		outer: while (i.hasNext())
 		{
-			WikitextNode n = i.next();
+			WtNode n = i.next();
 			switch (n.getNodeType())
 			{
-				case WikitextNode.NT_TEXT:
+				case WtNode.NT_TEXT:
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
@@ -261,10 +261,10 @@ public class ParagraphAdapter
 			// i points to last newline
 			outer: while (i.hasNext())
 			{
-				WikitextNode n = i.next();
+				WtNode n = i.next();
 				switch (n.getNodeType())
 				{
-					case WikitextNode.NT_TEXT:
+					case WtNode.NT_TEXT:
 						if (StringUtils.isWhitespace(((WtText) n).getContent()))
 							i.remove();
 						break outer;
@@ -280,8 +280,8 @@ public class ParagraphAdapter
 	
 	private void setBottomGapInAst(int lines)
 	{
-		WtList container = getAstChildContainer();
-		ListIterator<WikitextNode> i = container.listIterator(container.size());
+		WtNodeList container = getAstChildContainer();
+		ListIterator<WtNode> i = container.listIterator(container.size());
 		
 		// We need one more newline at the end if we want "lines"
 		// empty lines in the document.
@@ -290,10 +290,10 @@ public class ParagraphAdapter
 		int j = 0;
 		outer: while (i.hasPrevious())
 		{
-			WikitextNode n = i.previous();
+			WtNode n = i.previous();
 			switch (n.getNodeType())
 			{
-				case WikitextNode.NT_TEXT:
+				case WtNode.NT_TEXT:
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
@@ -323,10 +323,10 @@ public class ParagraphAdapter
 			// i points to last newline
 			outer: while (i.hasPrevious())
 			{
-				WikitextNode n = i.previous();
+				WtNode n = i.previous();
 				switch (n.getNodeType())
 				{
-					case WikitextNode.NT_TEXT:
+					case WtNode.NT_TEXT:
 						if (StringUtils.isWhitespace(((WtText) n).getContent()))
 							i.remove();
 						break outer;

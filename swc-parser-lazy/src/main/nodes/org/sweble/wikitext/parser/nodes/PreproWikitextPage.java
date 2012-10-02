@@ -33,7 +33,7 @@ public class PreproWikitextPage
 		
 	}
 	
-	public PreproWikitextPage(WtList content, List<Warning> warnings)
+	public PreproWikitextPage(WtNodeList content, List<Warning> warnings)
 	{
 		super(content);
 		setWarnings(warnings);
@@ -41,7 +41,7 @@ public class PreproWikitextPage
 	}
 	
 	public PreproWikitextPage(
-			WtList content,
+			WtNodeList content,
 			List<Warning> warnings,
 			WtEntityMap entityMap)
 	{

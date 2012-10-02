@@ -120,17 +120,17 @@ public class ExternalLink
 	
 	public ExternalLink()
 	{
-		super(new Url(), new WtList());
+		super(new Url(), new WtNodeList());
 		
 	}
 	
 	public ExternalLink(Url target)
 	{
-		super(target, new WtList());
+		super(target, new WtNodeList());
 		
 	}
 	
-	public ExternalLink(Url target, WtList title)
+	public ExternalLink(Url target, WtNodeList title)
 	{
 		super(target, title);
 		
@@ -158,14 +158,14 @@ public class ExternalLink
 		return (Url) get(0);
 	}
 	
-	public final void setTitle(WtList title)
+	public final void setTitle(WtNodeList title)
 	{
 		set(1, title);
 	}
 	
-	public final WtList getTitle()
+	public final WtNodeList getTitle()
 	{
-		return (WtList) get(1);
+		return (WtNodeList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "target", "title" };

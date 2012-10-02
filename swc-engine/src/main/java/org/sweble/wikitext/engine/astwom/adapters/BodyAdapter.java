@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomBody;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class BodyAdapter
 		extends
@@ -36,7 +36,7 @@ public class BodyAdapter
 	{
 	}
 	
-	public BodyAdapter(AstToWomNodeFactory factory, WtList content)
+	public BodyAdapter(AstToWomNodeFactory factory, WtNodeList content)
 	{
 		super(BLOCK_ELEMENTS, factory, content);
 	}

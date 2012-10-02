@@ -8,9 +8,9 @@
 
 package org.sweble.wikitext.engine.log;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtInnerNode1;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
@@ -28,11 +28,11 @@ public class IllegalNameException
 	
 	public IllegalNameException()
 	{
-		super(new WtList());
+		super(new WtNodeList());
 		
 	}
 	
-	public IllegalNameException(WikitextNode name, String message)
+	public IllegalNameException(WtNode name, String message)
 	{
 		super(name);
 		setMessage(message);
@@ -117,14 +117,14 @@ public class IllegalNameException
 	// =========================================================================
 	// Children
 	
-	public final void setName(WikitextNode name)
+	public final void setName(WtNode name)
 	{
 		set(0, name);
 	}
 	
-	public final WikitextNode getName()
+	public final WtNode getName()
 	{
-		return (WikitextNode) get(0);
+		return (WtNode) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name" };

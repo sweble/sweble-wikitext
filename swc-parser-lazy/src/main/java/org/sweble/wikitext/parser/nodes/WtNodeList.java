@@ -6,58 +6,58 @@ import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.GenericNodeList;
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
-public class WtList
+public class WtNodeList
 		extends
-			GenericNodeList<WikitextNode>
+			GenericNodeList<WtNode>
 		implements
-			WikitextNode
+			WtNode
 {
 	
 	private static final long serialVersionUID = 6285729315278264384L;
 	
 	// =========================================================================
 	
-	public WtList()
+	public WtNodeList()
 	{
 		super();
 	}
 	
-	public WtList(Collection<? extends WikitextNode> list)
+	public WtNodeList(Collection<? extends WtNode> list)
 	{
 		super(list);
 	}
 	
-	public WtList(Pair<? extends WikitextNode> list)
+	public WtNodeList(Pair<? extends WtNode> list)
 	{
 		super(list);
 	}
 	
-	public WtList(WikitextNode car, Pair<? extends WikitextNode> cdr)
+	public WtNodeList(WtNode car, Pair<? extends WtNode> cdr)
 	{
 		super(car, cdr);
 	}
 	
-	public WtList(WikitextNode a, WikitextNode b, WikitextNode c, WikitextNode d)
+	public WtNodeList(WtNode a, WtNode b, WtNode c, WtNode d)
 	{
 		super(a, b, c, d);
 	}
 	
-	public WtList(WikitextNode a, WikitextNode b, WikitextNode c)
+	public WtNodeList(WtNode a, WtNode b, WtNode c)
 	{
 		super(a, b, c);
 	}
 	
-	public WtList(WikitextNode a, WikitextNode b)
+	public WtNodeList(WtNode a, WtNode b)
 	{
 		super(a, b);
 	}
 	
-	public WtList(WikitextNode... children)
+	public WtNodeList(WtNode... children)
 	{
 		super(children);
 	}
 	
-	public WtList(WikitextNode child)
+	public WtNodeList(WtNode child)
 	{
 		super(child);
 	}

@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class CorePfnVariablesTechnicalMetadata
 		extends
@@ -70,10 +70,10 @@ public class CorePfnVariablesTechnicalMetadata
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			return astText(frame.getWikiConfig().getSiteName());
 		}
@@ -108,10 +108,10 @@ public class CorePfnVariablesTechnicalMetadata
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			return astText(frame.getWikiConfig().getContentLanguage());
 		}
@@ -151,10 +151,10 @@ public class CorePfnVariablesTechnicalMetadata
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			// FIXME: Proper implementation:
 			return astList();
@@ -189,10 +189,10 @@ public class CorePfnVariablesTechnicalMetadata
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			// FIXME: Proper implementation:
 			return astList();

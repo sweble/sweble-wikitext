@@ -28,7 +28,7 @@ public class Whitespace
 		
 	}
 	
-	public Whitespace(WtList content, boolean hasNewline)
+	public Whitespace(WtNodeList content, boolean hasNewline)
 	{
 		super(content);
 		setHasNewline(hasNewline);

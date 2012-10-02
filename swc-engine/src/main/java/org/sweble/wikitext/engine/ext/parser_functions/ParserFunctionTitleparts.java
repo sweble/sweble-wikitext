@@ -27,7 +27,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -43,15 +43,15 @@ public class ParserFunctionTitleparts
 	}
 	
 	@Override
-	public WikitextNode invoke(
+	public WtNode invoke(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends WikitextNode> args)
+			List<? extends WtNode> args)
 	{
 		if (args.size() < 1)
 			return pfn;
 		
-		WikitextNode arg0 = frame.expand(args.get(0));
+		WtNode arg0 = frame.expand(args.get(0));
 		
 		if (args.size() < 2)
 			return arg0;
@@ -64,7 +64,7 @@ public class ParserFunctionTitleparts
 			String titleStr = StringConverter.convert(arg0).trim();
 			pageTitle = PageTitle.make(frame.getWikiConfig(), titleStr);
 			
-			WikitextNode arg1 = frame.expand(args.get(1));
+			WtNode arg1 = frame.expand(args.get(1));
 			String countStr = StringConverter.convert(arg1).trim();
 			try
 			{
@@ -74,7 +74,7 @@ public class ParserFunctionTitleparts
 			{
 			}
 			
-			WikitextNode arg2 = frame.expand(args.get(2));
+			WtNode arg2 = frame.expand(args.get(2));
 			String firstStr = StringConverter.convert(arg2).trim();
 			try
 			{

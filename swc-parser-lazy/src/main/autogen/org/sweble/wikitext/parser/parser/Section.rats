@@ -66,8 +66,8 @@
  *       level   : int
  *
  *     Children:
- *       title : WtList
- *       body  : WtList
+ *       title : WtNodeList
+ *       body  : WtNodeList
  *
  */
 
@@ -93,11 +93,11 @@ body
   private SectionHeading createHeading(
       int spanFrom,
       Result spanTo,
-      WikitextNode rt0,
+      WtNode rt0,
       int oCount,
-      WtList title,
+      WtNodeList title,
       int cCount,
-      WikitextNode rt1)
+      WtNode rt1)
   {
     int oOdd = 0;
     int cOdd = 0;
@@ -154,7 +154,7 @@ body
       cOddText = new WtText(StringUtils.strrep('=', cOdd));
     }
 
-    heading.setContent(new WtList(oOddText, title, cOddText));
+    heading.setContent(new WtNodeList(oOddText, title, cOddText));
 
     String equals = StringUtils.strrep('=', level);
     setRtd(heading, rt0, equals, SEP, equals, rt1);
@@ -172,12 +172,12 @@ body
       section.setAttribute("warnings", warnings);
   }
 
-  private WikitextNode makeSections(Section first, Pair<Section> tail)
+  private WtNode makeSections(Section first, Pair<Section> tail)
   {
     Stack<Section> stack = new Stack<Section>();
     stack.push(first);
 
-    WtList result = new WtList(first);
+    WtNodeList result = new WtNodeList(first);
 
     Pair<Section> i = tail;
     while (!i.isEmpty())
@@ -193,7 +193,7 @@ body
       else
       {
         // TODO: Dangerous! We must clone the section instead!
-        stack.peek().setBody(new WtList(stack.peek().getBody(), s));
+        stack.peek().setBody(new WtNodeList(stack.peek().getBody(), s));
       }
 
       stack.push(s);
@@ -210,7 +210,7 @@ body
 
 // -- Sections --[ State Aware Memoization ]------------------------------------
 
-noinline transient WikitextNode Sections =
+noinline transient WtNode Sections =
  ^{
     StateAwareResult r = (StateAwareResult) pSectionsMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -222,7 +222,7 @@ noinline transient WikitextNode Sections =
   }
 ;
 
-noinline memoized WikitextNode SectionsMemoized =
+noinline memoized WtNode SectionsMemoized =
  ^{
     Result yyResult = new StateAwareResult("Sections", getContext(), pSectionsTransient(yyBase));
     if (returnTrue(yyResult))
@@ -235,7 +235,7 @@ noinline memoized WikitextNode SectionsMemoized =
 
 // -- Sections -----------------------------------------------------------------
 
-noinline transient WikitextNode SectionsTransient =
+noinline transient WtNode SectionsTransient =
   &{ accept(ParserAtoms.SECTIONS) } first:Section tail:Section*
   {
     yyValue = makeSections(first, tail);
@@ -258,7 +258,7 @@ inline void BlockStopperNextSection =
 private noinline transient Section Section =
     h:SectionHeading Eof
     {
-      yyValue = new Section(h.getLevel(), h.getContent(), new WtList());
+      yyValue = new Section(h.getLevel(), h.getContent(), new WtNodeList());
       fixSectionMetadata(h, yyValue);
     }
   / h:SectionHeading body:SectionContentStar
@@ -313,14 +313,14 @@ private transient String EqualsStr = "="+ ;
 
 // -- Content ------------------------------------------------------------------
 
-private inline stateful WtList HeadingContentStar =
+private inline stateful WtNodeList HeadingContentStar =
   {
     enter(ParserScopes.SECTION_HEADING);
   }
   InlineContentPlus
 ;
 
-private inline stateful WtList SectionContentStar =
+private inline stateful WtNodeList SectionContentStar =
   {
     enter(ParserScopes.SECTION_BODY);
   }

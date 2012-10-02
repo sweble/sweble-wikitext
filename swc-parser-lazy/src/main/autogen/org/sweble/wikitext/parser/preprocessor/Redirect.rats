@@ -44,7 +44,7 @@ import org.sweble.wikitext.parser.parser.LinkTarget;
 
 // -- Redirect -----------------------------------------------------------------
 
-WikitextNode Redirect =
+WtNode Redirect =
   ws0:pWsStar '#' keyword:RedirectKeyword ws1:pWsStar target:RedirectLink
   {
     yyValue = setRtd(
@@ -57,12 +57,12 @@ private inline String RedirectKeyword =
   [Rr][Ee][Dd][Ii][Rr][Ee][Cc][Tt]
 ;
 
-private inline ForeignNode RedirectLink =
+private inline WtForeignNode RedirectLink =
   "[[" target:LinkTargetString garbage:RedirectLinkGarbageString? "]]"
   {
     if (garbage == null)
       garbage = "";
-    yyValue = ForeignNode.from("[[", target, garbage + "]]");
+    yyValue = WtForeignNode.from("[[", target, garbage + "]]");
   }
 ;
 

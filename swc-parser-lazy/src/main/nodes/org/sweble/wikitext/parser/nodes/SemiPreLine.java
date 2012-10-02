@@ -24,7 +24,7 @@ public class SemiPreLine
 		
 	}
 	
-	public SemiPreLine(WtList content)
+	public SemiPreLine(WtNodeList content)
 	{
 		super(content);
 		

@@ -23,7 +23,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -67,15 +67,15 @@ public class CorePfnFunctionsNamespaces
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				Template template,
 				ExpansionFrame preprocessorFrame,
-				List<? extends WikitextNode> args)
+				List<? extends WtNode> args)
 		{
 			if (args.size() < 0)
 				return null;
 			
-			WikitextNode arg0 = preprocessorFrame.expand(args.get(0));
+			WtNode arg0 = preprocessorFrame.expand(args.get(0));
 			
 			String arg;
 			try

@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.parser.utils;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class StringConversionException
 		extends
@@ -25,14 +25,14 @@ public class StringConversionException
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final WikitextNode node;
+	private final WtNode node;
 	
-	public StringConversionException(WikitextNode node)
+	public StringConversionException(WtNode node)
 	{
 		this.node = node;
 	}
 	
-	public WikitextNode getNode()
+	public WtNode getNode()
 	{
 		return node;
 	}

@@ -111,7 +111,7 @@ public class LinkTitle
 		
 	}
 	
-	public LinkTitle(WtList content)
+	public LinkTitle(WtNodeList content)
 	{
 		super(content);
 		

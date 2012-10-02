@@ -54,7 +54,7 @@
  *
  *     Children:
  *       target : Url
- *       title  : WtList
+ *       title  : WtNodeList
  *
  */
 
@@ -72,7 +72,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 // -- External link --[ State Aware Memoization ]-------------------------------
 
-noinline transient WikitextNode ExternalLink =
+noinline transient WtNode ExternalLink =
  ^{
     StateAwareResult r = (StateAwareResult) pExternalLinkMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -84,7 +84,7 @@ noinline transient WikitextNode ExternalLink =
   }
 ;
 
-noinline memoized WikitextNode ExternalLinkMemoized =
+noinline memoized WtNode ExternalLinkMemoized =
  ^{
     Result yyResult = new StateAwareResult("ExternalLink", getContext(), pExternalLinkTransient(yyBase));
     if (returnTrue(yyResult))
@@ -97,7 +97,7 @@ noinline memoized WikitextNode ExternalLinkMemoized =
 
 // -- External link ------------------------------------------------------------
 
-noinline transient WikitextNode ExternalLinkTransient =
+noinline transient WtNode ExternalLinkTransient =
     '[' &{ accept(ParserAtoms.EXTERNAL_LINK) } yyValue:ExternalLinkChoice
   / '['
     {
@@ -109,7 +109,7 @@ inline void InlineContentStopperExternalLink =
   &{ inScope(ParserScopes.EXTERNAL_LINK_TITLE) } ']'
 ;
 
-private inline stateful WikitextNode
+private inline stateful WtNode
 ExternalLinkChoice =
     rt0:pTpStar target:Url rt1:pExtSpacePlus title:ExternalLinkTitleContentPlus ']'
     {
@@ -126,7 +126,7 @@ ExternalLinkChoice =
   / &{ isWarningsEnabled() } ExternalLinkAutoCorrect
 ;
 
-private inline WikitextNode ExternalLinkAutoCorrect =
+private inline WtNode ExternalLinkAutoCorrect =
     &{ isAutoCorrect(WS_INFO) } rt0:pTpStar target:Url
     {
       yyValue = setRtd(
@@ -164,7 +164,7 @@ private inline WikitextNode ExternalLinkAutoCorrect =
     }
 ;
 
-private inline WtList ExternalLinkTitleContentPlus =
+private inline WtNodeList ExternalLinkTitleContentPlus =
   {
     enter(ParserScopes.EXTERNAL_LINK_TITLE);
   }

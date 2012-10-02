@@ -18,7 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.WarningSeverity;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.WikitextWarning;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
@@ -30,12 +30,12 @@ public abstract class OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final WikitextNode node;
+	private final WtNode node;
 	
 	// =========================================================================
 	
 	public OffendingNodeWarning(
-			WikitextNode node,
+			WtNode node,
 			WarningSeverity severity,
 			String origin,
 			String message)
@@ -45,7 +45,7 @@ public abstract class OffendingNodeWarning
 	}
 	
 	public OffendingNodeWarning(
-			WikitextNode node,
+			WtNode node,
 			WarningSeverity severity,
 			Class<?> origin,
 			String message)
@@ -54,7 +54,7 @@ public abstract class OffendingNodeWarning
 		this.node = node;
 	}
 	
-	private static Span makeSpan(WikitextNode node)
+	private static Span makeSpan(WtNode node)
 	{
 		return new Span(
 				node.getNativeLocation(),
@@ -63,7 +63,7 @@ public abstract class OffendingNodeWarning
 	
 	// =========================================================================
 	
-	public WikitextNode getNode()
+	public WtNode getNode()
 	{
 		return node;
 	}

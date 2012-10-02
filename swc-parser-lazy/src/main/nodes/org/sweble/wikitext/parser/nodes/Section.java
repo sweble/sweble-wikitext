@@ -23,11 +23,11 @@ public class Section
 	
 	public Section()
 	{
-		super(new WtList(), new WtList());
+		super(new WtNodeList(), new WtNodeList());
 		
 	}
 	
-	public Section(int level, WtList title, WtList body)
+	public Section(int level, WtNodeList title, WtNodeList body)
 	{
 		super(title, body);
 		setLevel(level);
@@ -123,24 +123,24 @@ public class Section
 	// =========================================================================
 	// Children
 	
-	public final void setTitle(WtList title)
+	public final void setTitle(WtNodeList title)
 	{
 		set(0, title);
 	}
 	
-	public final WtList getTitle()
+	public final WtNodeList getTitle()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
-	public final void setBody(WtList body)
+	public final void setBody(WtNodeList body)
 	{
 		set(1, body);
 	}
 	
-	public final WtList getBody()
+	public final WtNodeList getBody()
 	{
-		return (WtList) get(1);
+		return (WtNodeList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "title", "body" };

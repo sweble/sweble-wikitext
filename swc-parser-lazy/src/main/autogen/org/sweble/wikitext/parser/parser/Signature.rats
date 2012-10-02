@@ -43,7 +43,7 @@ import org.sweble.wikitext.parser.utils.Warnings;
 
 // -- Signature ----------------------------------------------------------------
 
-WikitextNode Signature =
+WtNode Signature =
     "~~" yyValue:SignatureChoice
   / "~~"
     {
@@ -51,7 +51,7 @@ WikitextNode Signature =
     }
 ;
 
-private inline WikitextNode SignatureChoice =
+private inline WtNode SignatureChoice =
     count:( "~~~" / "~~" / "~" ) w:TooManyTildesWarning?
     {
       int tildes = 2 + count.length();
@@ -70,7 +70,7 @@ private inline WikitextNode SignatureChoice =
   / &{ isWarningsEnabled() } SignatureAutoCorrect
 ;
 
-private inline WikitextNode SignatureAutoCorrect =
+private inline WtNode SignatureAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
     yyValue = new WtText("~~");
@@ -84,10 +84,10 @@ private inline WikitextNode SignatureAutoCorrect =
   }
 ;
 
-private transient ForeignNode TooManyTildesWarning =
+private transient WtForeignNode TooManyTildesWarning =
   &{ isWarningLevelEnabled(WS_NONE) } &'~'+
   {
-    yyValue = ForeignNode.from(yyRepetition1);
+    yyValue = WtForeignNode.from(yyRepetition1);
   }
 ;
 

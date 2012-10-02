@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.sweble.wikitext.engine.TagExtensionBase.TagExtensionAdapter;
 import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 @XmlTransient
 @XmlJavaTypeAdapter(value = TagExtensionAdapter.class)
@@ -56,10 +56,10 @@ public abstract class TagExtensionBase
 		return id;
 	}
 	
-	public abstract WikitextNode invoke(
+	public abstract WtNode invoke(
 			ExpansionFrame preprocessorFrame,
 			TagExtension tagExtension,
-			Map<String, WtList> attributes,
+			Map<String, WtNodeList> attributes,
 			String body);
 	
 	// =========================================================================

@@ -77,24 +77,24 @@ header
 
 body
 {
-  private WtList fixNewlinesAtBoa(WtList content)
+  private WtNodeList fixNewlinesAtBoa(WtNodeList content)
   {
-    WtList result = new WtList();
+    WtNodeList result = new WtNodeList();
 
-    ArrayList<WikitextNode> tmp = new ArrayList<WikitextNode>();
+    ArrayList<WtNode> tmp = new ArrayList<WtNode>();
 
     int count = 0;
 
-    Iterator<WikitextNode> i = content.iterator();
+    Iterator<WtNode> i = content.iterator();
     outer: while (i.hasNext())
     {
-      WikitextNode n = i.next();
+      WtNode n = i.next();
       switch (n.getNodeType())
       {
         case AstNodeTypes.NT_NEWLINE:
           ++count;
           // FALL THROUGH
-        case WikitextNode.NT_TEXT:
+        case WtNode.NT_TEXT:
           if (count >= 2)
             tmp.add(n);
           else
@@ -105,7 +105,7 @@ body
           if (count >= 2)
           {
             result.add(n);
-            for (WikitextNode n2 : tmp)
+            for (WtNode n2 : tmp)
               result.add(n2);
             while (i.hasNext())
               result.add(i.next());

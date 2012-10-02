@@ -32,7 +32,7 @@ public class ParsedWikitextPage
 		
 	}
 	
-	public ParsedWikitextPage(WtList content, List<Warning> warnings)
+	public ParsedWikitextPage(WtNodeList content, List<Warning> warnings)
 	{
 		super(content);
 		setWarnings(warnings);
@@ -40,7 +40,7 @@ public class ParsedWikitextPage
 	}
 	
 	public ParsedWikitextPage(
-			WtList content,
+			WtNodeList content,
 			List<Warning> warnings,
 			GenericEntityMap entityMap)
 	{

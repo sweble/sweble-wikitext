@@ -31,8 +31,8 @@ import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -155,13 +155,13 @@ public class ParseAllWithoutExpansionIntegrationTest
 		
 		// =====================================================================
 		
-		public WikitextNode visit(WikitextNode n)
+		public WtNode visit(WtNode n)
 		{
 			mapInPlace(n);
 			return n;
 		}
 		
-		public WikitextNode visit(CompiledPage n)
+		public WtNode visit(CompiledPage n)
 		{
 			this.warnings = n.getWarnings();
 			this.entityMap = n.getEntityMap();
@@ -169,13 +169,13 @@ public class ParseAllWithoutExpansionIntegrationTest
 			return n;
 		}
 		
-		public WikitextNode visit(TemplateParameter n) throws CompilerException
+		public WtNode visit(TemplateParameter n) throws CompilerException
 		{
 			TemplateArgument defValArg = n.getDefaultValue();
 			if (defValArg == null)
 				return n;
 			
-			WtList defVal = defValArg.getValue();
+			WtNodeList defVal = defValArg.getValue();
 			
 			// Shortcut for all those empty default values
 			if (defVal.isEmpty())
@@ -186,7 +186,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 			
 			CompiledPage parsed = compiler.postprocessPpOrExpAst(pageId, pprAst);
 			
-			WtList content = parsed.getPage().getContent();
+			WtNodeList content = parsed.getPage().getContent();
 			
 			// The parser of course thinks that the given wikitext is a 
 			// individual page and will wrap even single line text into a 

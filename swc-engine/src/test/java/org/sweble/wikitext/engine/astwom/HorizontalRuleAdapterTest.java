@@ -28,7 +28,7 @@ import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlElement;
@@ -40,7 +40,7 @@ public class HorizontalRuleAdapterTest
 {
 	private WomPage womPage;
 	
-	private WtList astPageContent;
+	private WtNodeList astPageContent;
 	
 	private WomHorizontalRule hRule;
 	

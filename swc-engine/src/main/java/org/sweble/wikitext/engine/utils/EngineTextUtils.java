@@ -20,8 +20,8 @@ package org.sweble.wikitext.engine.utils;
 import java.util.ListIterator;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 import de.fau.cs.osr.utils.StringUtils;
@@ -29,25 +29,25 @@ import de.fau.cs.osr.utils.StringUtils;
 public class EngineTextUtils
 {
 	
-	public static WikitextNode trim(WikitextNode n)
+	public static WtNode trim(WtNode n)
 	{
 		return trimRight(trimLeft(n));
 	}
 	
-	public static WikitextNode trimLeft(WikitextNode n)
+	public static WtNode trimLeft(WtNode n)
 	{
 		switch (n.getNodeType())
 		{
-			case WikitextNode.NT_NODE_LIST:
+			case WtNode.NT_NODE_LIST:
 			{
-				WtList l = (WtList) n;
-				ListIterator<WikitextNode> i = l.listIterator();
+				WtNodeList l = (WtNodeList) n;
+				ListIterator<WtNode> i = l.listIterator();
 				outer: while (i.hasNext())
 				{
-					WikitextNode item = i.next();
+					WtNode item = i.next();
 					switch (item.getNodeType())
 					{
-						case WikitextNode.NT_TEXT:
+						case WtNode.NT_TEXT:
 							WtText t = (WtText) item;
 							String text = t.getContent();
 							if (text.isEmpty())
@@ -81,7 +81,7 @@ public class EngineTextUtils
 				}
 				return n;
 			}
-			case WikitextNode.NT_TEXT:
+			case WtNode.NT_TEXT:
 			{
 				WtText t = (WtText) n;
 				t.setContent(StringUtils.trimLeft(t.getContent()));
@@ -92,20 +92,20 @@ public class EngineTextUtils
 		}
 	}
 	
-	public static WikitextNode trimRight(WikitextNode n)
+	public static WtNode trimRight(WtNode n)
 	{
 		switch (n.getNodeType())
 		{
-			case WikitextNode.NT_NODE_LIST:
+			case WtNode.NT_NODE_LIST:
 			{
-				WtList l = (WtList) n;
-				ListIterator<WikitextNode> i = l.listIterator(l.size());
+				WtNodeList l = (WtNodeList) n;
+				ListIterator<WtNode> i = l.listIterator(l.size());
 				outer: while (i.hasPrevious())
 				{
-					WikitextNode item = i.previous();
+					WtNode item = i.previous();
 					switch (item.getNodeType())
 					{
-						case WikitextNode.NT_TEXT:
+						case WtNode.NT_TEXT:
 							WtText t = (WtText) item;
 							String text = t.getContent();
 							if (text.isEmpty())
@@ -139,7 +139,7 @@ public class EngineTextUtils
 				}
 				return n;
 			}
-			case WikitextNode.NT_TEXT:
+			case WtNode.NT_TEXT:
 			{
 				WtText t = (WtText) n;
 				t.setContent(StringUtils.trimRight(t.getContent()));

@@ -31,7 +31,7 @@
  *
  *     Properties:
  *       rt0     : String
- *       rt1     : WikitextNode
+ *       rt1     : WtNode
  *       prefix  : String
  *
  * OrderedList
@@ -174,13 +174,13 @@ body
     if (createItem)
     {
       // FIXME: Issue warning!
-      pushNewListItem(listStack, ch, new WtList());
+      pushNewListItem(listStack, ch, new WtNodeList());
     }
   }
 
-  private WikitextNode pushNewListItem(Vector<ListNode> listStack, char ch, WtList content)
+  private WtNode pushNewListItem(Vector<ListNode> listStack, char ch, WtNodeList content)
   {
-    WikitextNode n = null;
+    WtNode n = null;
     switch (ch)
     {
       case '*':
@@ -200,24 +200,24 @@ body
     return n;
   }
 
-  private WtList getCurrentListContent(Vector<ListNode> listStack)
+  private WtNodeList getCurrentListContent(Vector<ListNode> listStack)
   {
     return listStack.lastElement().node.getContent();
   }
 
-  private WtList getLastItemContent(Vector<ListNode> listStack)
+  private WtNodeList getLastItemContent(Vector<ListNode> listStack)
   {
-    WtList items = getCurrentListContent(listStack);
+    WtNodeList items = getCurrentListContent(listStack);
     WtContentNode lastItem = (WtContentNode) items.get(items.size() - 1);
-    WtList lastItemContent = lastItem.getContent();
+    WtNodeList lastItemContent = lastItem.getContent();
     return lastItemContent;
   }
 
-  private WtList makeList(RawListItem first, Pair<RawListItem> tail)
+  private WtNodeList makeList(RawListItem first, Pair<RawListItem> tail)
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
-    WtList items = new WtList();
+    WtNodeList items = new WtNodeList();
 
     RtData lastItem = processListItem(listStack, items, first);
 
@@ -241,7 +241,11 @@ body
     return items;
   }
 
+<<<<<<< Updated upstream
   private RtData processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
+=======
+  private RtDataPtk processListItem(Vector<ListNode> listStack, WtNodeList items, RawListItem p)
+>>>>>>> Stashed changes
   {
     String prefix = p.getPrefix();
 
@@ -264,10 +268,10 @@ body
       pushNewList(listStack, prefix.charAt(j), j < last);
 
     // push the actual list item
-    WikitextNode item = pushNewListItem(
+    WtNode item = pushNewListItem(
         listStack,
         prefix.charAt(last),
-        new WtList(p.getContent()));
+        new WtNodeList(p.getContent()));
 
     //RtData rtData = null;
     RtData rtd = null;
@@ -290,7 +294,7 @@ body
 
 // -- List --[ State Aware Memoization ]-------------------------------------
 
-noinline transient WikitextNode List =
+noinline transient WtNode List =
  ^{
     StateAwareResult r = (StateAwareResult) pListMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -302,7 +306,7 @@ noinline transient WikitextNode List =
   }
 ;
 
-noinline memoized WikitextNode ListMemoized =
+noinline memoized WtNode ListMemoized =
  ^{
     Result yyResult = new StateAwareResult("List", getContext(), pListTransient(yyBase));
     if (returnTrue(yyResult))
@@ -315,7 +319,7 @@ noinline memoized WikitextNode ListMemoized =
 
 // -- List ------------------------------------------------------------------
 
-noinline transient WikitextNode ListTransient =
+noinline transient WtNode ListTransient =
   &{ accept(ParserAtoms.LIST) } first:ListItem tail:( &slEol ListItem )*
   {
     yyValue = makeList(first, tail);
@@ -345,7 +349,7 @@ private transient String ListPrefixStr =
   [*#:]+
 ;
 
-private inline stateful WtList ListItemContentStar =
+private inline stateful WtNodeList ListItemContentStar =
   {
     enter(ParserScopes.LIST_ITEM);
   }

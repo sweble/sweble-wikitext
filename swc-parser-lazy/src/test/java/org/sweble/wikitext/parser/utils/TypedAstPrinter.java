@@ -19,7 +19,7 @@ package org.sweble.wikitext.parser.utils;
 import java.io.IOException;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
 
@@ -39,6 +39,6 @@ public final class TypedAstPrinter
 		WtPrinter printer = new WtPrinter(out);
 		
 		printer.setLegacyIndentation(true);
-		printer.go((WikitextNode) ast);
+		printer.go((WtNode) ast);
 	}
 }

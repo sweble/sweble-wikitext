@@ -19,8 +19,8 @@ package org.sweble.wikitext.engine.astwom.adapters;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class EmptyTitleAdapter
 		extends
@@ -43,13 +43,13 @@ public class EmptyTitleAdapter
 	
 	private EmptyTitleAdapter()
 	{
-		super(new WtList());
+		super(new WtNodeList());
 	}
 	
 	// =========================================================================
 	
 	@Override
-	protected WikitextNode setAstNode(WikitextNode astNode)
+	protected WtNode setAstNode(WtNode astNode)
 	{
 		throw new UnsupportedOperationException();
 	}

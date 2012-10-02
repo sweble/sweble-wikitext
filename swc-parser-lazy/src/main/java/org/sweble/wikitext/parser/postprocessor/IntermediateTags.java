@@ -21,8 +21,8 @@ import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.Bold;
 import org.sweble.wikitext.parser.nodes.Italics;
 import org.sweble.wikitext.parser.nodes.Paragraph;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
@@ -37,11 +37,11 @@ public enum IntermediateTags
 		}
 		
 		@Override
-		public WikitextNode transform(
+		public WtNode transform(
 				ParserConfig config,
 				IntermediateStartTag o,
 				IntermediateEndTag c,
-				WtList body)
+				WtNodeList body)
 		{
 			Italics e = new Italics(body);
 			if (config.isGatherRtData())
@@ -63,11 +63,11 @@ public enum IntermediateTags
 		}
 		
 		@Override
-		public WikitextNode transform(
+		public WtNode transform(
 				ParserConfig config,
 				IntermediateStartTag o,
 				IntermediateEndTag c,
-				WtList body)
+				WtNodeList body)
 		{
 			Bold e = new Bold(body);
 			if (config.isGatherRtData())
@@ -89,11 +89,11 @@ public enum IntermediateTags
 		}
 		
 		@Override
-		public WikitextNode transform(
+		public WtNode transform(
 				ParserConfig config,
 				IntermediateStartTag open,
 				IntermediateEndTag close,
-				WtList body)
+				WtNodeList body)
 		{
 			Paragraph e = new Paragraph(body);
 			return e;
@@ -102,18 +102,18 @@ public enum IntermediateTags
 	
 	public abstract String getElementName();
 	
-	public abstract WikitextNode transform(
+	public abstract WtNode transform(
 			ParserConfig config,
 			IntermediateStartTag open,
 			IntermediateEndTag close,
-			WtList body);
+			WtNodeList body);
 	
-	public WikitextNode createOpen(boolean synthetic)
+	public WtNode createOpen(boolean synthetic)
 	{
 		return new IntermediateStartTag(this, synthetic);
 	}
 	
-	public WikitextNode createClose(boolean synthetic)
+	public WtNode createClose(boolean synthetic)
 	{
 		return new IntermediateEndTag(this, synthetic);
 	}

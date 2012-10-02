@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.parser;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.postprocessor.ScopedElementBuilder;
 import org.sweble.wikitext.parser.postprocessor.TicksAnalyzer;
 
@@ -34,9 +34,9 @@ public class WikitextPostprocessor
 	
 	// =========================================================================
 	
-	public WikitextNode postprocess(WikitextNode ast, String title)
+	public WtNode postprocess(WtNode ast, String title)
 	{
-		WikitextNode result = ast;
+		WtNode result = ast;
 		
 		result = TicksAnalyzer.process(/*config, */result);
 		result = ScopedElementBuilder.process(config, result);

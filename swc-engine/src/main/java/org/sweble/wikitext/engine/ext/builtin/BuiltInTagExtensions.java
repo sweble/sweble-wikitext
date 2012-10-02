@@ -23,8 +23,8 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
 import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
@@ -67,17 +67,17 @@ public class BuiltInTagExtensions
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				ExpansionFrame frame,
 				TagExtension tagExt,
-				Map<String, WtList> attrs,
+				Map<String, WtNodeList> attrs,
 				String body)
 		{
 			return new XmlElement(
 					"pre",
 					false,
 					tagExt.getXmlAttributes(),
-					new WtList(new WtText(body)));
+					new WtNodeList(new WtText(body)));
 		}
 	}
 	
@@ -99,10 +99,10 @@ public class BuiltInTagExtensions
 		}
 		
 		@Override
-		public WikitextNode invoke(
+		public WtNode invoke(
 				ExpansionFrame frame,
 				TagExtension tagExt,
-				Map<String, WtList> attrs,
+				Map<String, WtNodeList> attrs,
 				String body)
 		{
 			ProtectedText pt;

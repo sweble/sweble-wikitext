@@ -28,8 +28,8 @@ import org.sweble.wikitext.parser.nodes.LinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.LinkTarget;
 import org.sweble.wikitext.parser.nodes.LinkTitle;
 import org.sweble.wikitext.parser.nodes.Url;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
@@ -155,7 +155,7 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public void setLink(WikitextNode target)
+	public void setLink(WtNode target)
 	{
 		if (target != null)
 		{
@@ -193,7 +193,7 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public WikitextNode build(WtList options, String postfix)
+	public WtNode build(WtNodeList options, String postfix)
 	{
 		if (this.title == null)
 			this.title = new LinkTitle();
@@ -250,7 +250,7 @@ public class LinkBuilder
 		warnings.add(warning);
 	}
 	
-	public void finish(WikitextNode n)
+	public void finish(WtNode n)
 	{
 		if (warnings != null && !warnings.isEmpty())
 			n.setAttribute("warnings", warnings);

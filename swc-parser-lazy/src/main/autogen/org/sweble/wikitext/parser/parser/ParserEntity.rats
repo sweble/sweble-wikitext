@@ -36,7 +36,7 @@ import org.sweble.wikitext.parser.utils.Numbers;
 
 body
 {
-  private boolean isXmlCommentOrIgnored(WikitextNode n)
+  private boolean isXmlCommentOrIgnored(WtNode n)
   {
     switch (n.getNodeType())
     {
@@ -54,14 +54,14 @@ body
 
 // -- Entity -------------------------------------------------------------------
 
-WikitextNode WtParserEntity =
+WtNode WtParserEntity =
   '\uE000' id:DecimalNumeral '\uE001'
   {
     yyValue = getEntity(Integer.parseInt(id));
   }
 ;
 
-inline WikitextNode ParserEntityXmlCommentOrIgnore =
+inline WtNode ParserEntityXmlCommentOrIgnore =
   yyValue:WtParserEntity &{ isXmlCommentOrIgnored(yyValue) }
 ;
 

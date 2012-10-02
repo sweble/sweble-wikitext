@@ -35,8 +35,8 @@ import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.LinkTitle;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -58,11 +58,11 @@ public class CategoryAdapter
 	
 	private static final class AstAnalog
 	{
-		public final WtList container;
+		public final WtNodeList container;
 		
 		public final InternalLink category;
 		
-		public AstAnalog(WtList container, InternalLink category)
+		public AstAnalog(WtNodeList container, InternalLink category)
 		{
 			super();
 			this.container = container;
@@ -82,7 +82,7 @@ public class CategoryAdapter
 	 * @param name
 	 *            The name of the category.
 	 */
-	protected CategoryAdapter(WtList container, String name)
+	protected CategoryAdapter(WtNodeList container, String name)
 	{
 		// Just a dummy node which will get corrected later:
 		super(new InternalLink("", null, new LinkTitle(), ""));
@@ -103,7 +103,7 @@ public class CategoryAdapter
 	 * @param category
 	 *            The category node in the AST.
 	 */
-	public CategoryAdapter(WtList container, InternalLink category)
+	public CategoryAdapter(WtNodeList container, InternalLink category)
 	{
 		super(category);
 		
@@ -206,7 +206,7 @@ public class CategoryAdapter
 	 * After a call to this method, the caller has to set the name if the name's
 	 * case of the added category link should differ from the current name.
 	 */
-	protected void addAstAnalog(WtList container, InternalLink link)
+	protected void addAstAnalog(WtNodeList container, InternalLink link)
 	{
 		astNodes.add(new AstAnalog(container, link));
 		setAstNode(link);
@@ -304,7 +304,7 @@ public class CategoryAdapter
 		return (i >= 0) ? name.substring(i + 1) : name;
 	}
 	
-	public static void reAttachCategoryNodesToPage(WikitextNode subtree)
+	public static void reAttachCategoryNodesToPage(WtNode subtree)
 	{
 		ArrayList<CategoryAdapter> toFix = new ArrayList<CategoryAdapter>();
 		scanForCategories(subtree, toFix);
@@ -327,15 +327,15 @@ public class CategoryAdapter
 		setAstNode(astNode);
 		renameInAst(getName());
 		
-		WtList container = page.reAttachCategory(astNode);
+		WtNodeList container = page.reAttachCategory(astNode);
 		addAstAnalog(container, astNode);
 	}
 	
 	private static void scanForCategories(
-			WikitextNode subtree,
+			WtNode subtree,
 			ArrayList<CategoryAdapter> toFix)
 	{
-		for (WikitextNode n : subtree)
+		for (WtNode n : subtree)
 		{
 			CategoryAdapter a =
 					(CategoryAdapter) n.getAttribute(CATEGORY_ADAPTER_ATTRIBUTE_NAME);

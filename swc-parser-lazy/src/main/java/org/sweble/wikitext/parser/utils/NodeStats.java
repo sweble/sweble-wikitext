@@ -23,21 +23,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class NodeStats
 {
-	public static void process(WikitextNode astNode)
+	public static void process(WtNode astNode)
 	{
 		new NodeStatsVisitor().go(astNode);
 	}
 	
 	protected static final class NodeStatsVisitor
 			extends
-				AstVisitor<WikitextNode>
+				AstVisitor<WtNode>
 	{
 		private final Map<String, Integer> nodeCounts =
 				new HashMap<String, Integer>();
@@ -57,7 +57,7 @@ public class NodeStats
 		private int leafCount = 0;
 		
 		@Override
-		protected Object after(WikitextNode node, Object result)
+		protected Object after(WtNode node, Object result)
 		{
 			System.out.println("Analysis:");
 			
@@ -94,7 +94,7 @@ public class NodeStats
 			return super.after(node, result);
 		}
 		
-		public void visit(WikitextNode n)
+		public void visit(WtNode n)
 		{
 			if (n != null)
 			{
@@ -127,9 +127,9 @@ public class NodeStats
 			}
 		}
 		
-		private void countNode(WikitextNode n)
+		private void countNode(WtNode n)
 		{
-			Class<? extends WikitextNode> clazz = n.getClass();
+			Class<? extends WtNode> clazz = n.getClass();
 			String name = clazz.getName();
 			
 			Integer i = nodeCounts.get(name);

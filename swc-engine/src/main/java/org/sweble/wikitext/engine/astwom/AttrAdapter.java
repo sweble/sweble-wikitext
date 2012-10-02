@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttr;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 
 import de.fau.cs.osr.utils.Utils;
@@ -47,7 +47,7 @@ public class AttrAdapter
 	
 	public AttrAdapter(String name)
 	{
-		super(new XmlAttribute(name, new WtList(), false));
+		super(new XmlAttribute(name, new WtNodeList(), false));
 		setName(name);
 		setAttrValue("");
 	}
@@ -113,7 +113,7 @@ public class AttrAdapter
 		return old == null ? null : old.getValue();
 	}
 	
-	private void setAttrValueUnchecked(WtList value)
+	private void setAttrValueUnchecked(WtNodeList value)
 	{
 		String normalized;
 		if (value != null)

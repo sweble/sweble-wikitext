@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomTitle;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class TitleAdapter
 		extends
@@ -36,7 +36,7 @@ public class TitleAdapter
 	{
 	}
 	
-	public TitleAdapter(AstToWomNodeFactory factory, WtList content)
+	public TitleAdapter(AstToWomNodeFactory factory, WtNodeList content)
 	{
 		super(MIXED_TITLE, factory, content);
 	}

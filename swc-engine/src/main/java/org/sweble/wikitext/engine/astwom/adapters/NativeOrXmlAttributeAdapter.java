@@ -22,8 +22,8 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.utils.TextUtils;
 
@@ -245,12 +245,12 @@ public class NativeOrXmlAttributeAdapter
 	}
 	
 	// should be protected
-	public WikitextNode detachAstNode()
+	public WtNode detachAstNode()
 	{
 		return super.setAstNode(null);
 	}
 	
-	private static WtList convertValue(String value)
+	private static WtNodeList convertValue(String value)
 	{
 		return TextUtils.stringToAst(value, true);
 	}

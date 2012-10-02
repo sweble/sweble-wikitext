@@ -24,14 +24,14 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class AttributeManagerTest
 {
 	private final WomBackboneStub parent = new WomBackboneStub(null);;
 	
-	private final WtList attrContainer = new WtList();
+	private final WtNodeList attrContainer = new WtNodeList();
 	
 	private AttributeManagerBase manager = new AttributeManagerBase.AttributeManager();
 	
@@ -62,7 +62,7 @@ public class AttributeManagerTest
 	{
 		private static final long serialVersionUID = 1L;
 		
-		private WomBackboneStub(WikitextNode astNode)
+		private WomBackboneStub(WtNode astNode)
 		{
 			super(astNode);
 		}

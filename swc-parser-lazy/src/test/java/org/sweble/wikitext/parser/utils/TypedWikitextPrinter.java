@@ -36,6 +36,6 @@ public final class TypedWikitextPrinter
 	public void print(Object ast, Writer out) throws IOException
 	{
 		throw new InternalError();
-		//WikitextPrinter.print(out, (WikitextNode) ast);
+		//WikitextPrinter.print(out, (WtNode) ast);
 	}
 }

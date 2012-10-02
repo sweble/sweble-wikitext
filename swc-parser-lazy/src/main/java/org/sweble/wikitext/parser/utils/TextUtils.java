@@ -20,8 +20,8 @@ package org.sweble.wikitext.parser.utils;
 import java.util.ArrayList;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
@@ -30,14 +30,14 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public final class TextUtils
 {
-	public static WtList stringToAst(String text)
+	public static WtNodeList stringToAst(String text)
 	{
 		return stringToAst(text, true);
 	}
 	
-	public static WtList stringToAst(String text, boolean forAttribute)
+	public static WtNodeList stringToAst(String text, boolean forAttribute)
 	{
-		WtList list = new WtList();
+		WtNodeList list = new WtNodeList();
 		
 		if (text == null)
 			return list;
@@ -172,55 +172,55 @@ public final class TextUtils
 	
 	// =========================================================================
 	
-	public static WtList trim(WtList nodes)
+	public static WtNodeList trim(WtNodeList nodes)
 	{
-		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
+		ArrayList<WtNode> result = new ArrayList<WtNode>(nodes);
 		
 		trimLeft(result);
 		trimRight(result);
 		
-		return new WtList(result);
+		return new WtNodeList(result);
 	}
 	
-	public static WtList trimLeft(WtList nodes)
+	public static WtNodeList trimLeft(WtNodeList nodes)
 	{
-		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
+		ArrayList<WtNode> result = new ArrayList<WtNode>(nodes);
 		
 		trimLeft(result);
 		
-		return new WtList(result);
+		return new WtNodeList(result);
 	}
 	
-	public static WtList trimRight(WtList nodes)
+	public static WtNodeList trimRight(WtNodeList nodes)
 	{
-		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
+		ArrayList<WtNode> result = new ArrayList<WtNode>(nodes);
 		
 		trimRight(result);
 		
-		return new WtList(result);
+		return new WtNodeList(result);
 	}
 	
-	public static WtList trimAndPad(WtList nodes, int spaces)
+	public static WtNodeList trimAndPad(WtNodeList nodes, int spaces)
 	{
-		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
+		ArrayList<WtNode> result = new ArrayList<WtNode>(nodes);
 		
 		trimLeft(result);
 		trimRight(result);
 		
 		if (spaces <= 0)
-			return new WtList(result);
+			return new WtNodeList(result);
 		
 		return pad(result, spaces);
 	}
 	
-	public static void trimLeft(ArrayList<WikitextNode> result)
+	public static void trimLeft(ArrayList<WtNode> result)
 	{
 		int i = 0;
 		while (i < result.size())
 		{
 			switch (result.get(i).getNodeType())
 			{
-				case WikitextNode.NT_TEXT:
+				case WtNode.NT_TEXT:
 				{
 					WtText stringNode = (WtText) result.get(i);
 					String trimmed = StringUtils.trimLeft(stringNode.getContent());
@@ -255,14 +255,14 @@ public final class TextUtils
 		}
 	}
 	
-	public static void trimRight(ArrayList<WikitextNode> result)
+	public static void trimRight(ArrayList<WtNode> result)
 	{
 		int i = result.size() - 1;
 		while (i >= 0)
 		{
 			switch (result.get(i).getNodeType())
 			{
-				case WikitextNode.NT_TEXT:
+				case WtNode.NT_TEXT:
 				{
 					WtText stringNode = (WtText) result.get(i);
 					String trimmed = StringUtils.trimRight(stringNode.getContent());
@@ -299,10 +299,10 @@ public final class TextUtils
 	
 	// =========================================================================
 	
-	public static WtList pad(ArrayList<WikitextNode> result, int spaces)
+	public static WtNodeList pad(ArrayList<WtNode> result, int spaces)
 	{
 		if (spaces <= 0)
-			return new WtList(result);
+			return new WtNodeList(result);
 		
 		if (result.isEmpty())
 		{
@@ -316,7 +316,7 @@ public final class TextUtils
 			// -- before
 			
 			WtText before = null;
-			if (result.get(0).isNodeType(WikitextNode.NT_TEXT))
+			if (result.get(0).isNodeType(WtNode.NT_TEXT))
 				before = (WtText) result.remove(0);
 			spaced = "";
 			if (before != null)
@@ -329,7 +329,7 @@ public final class TextUtils
 			
 			WtText after = null;
 			int i = result.size() - 1;
-			if (result.get(i).isNodeType(WikitextNode.NT_TEXT))
+			if (result.get(i).isNodeType(WtNode.NT_TEXT))
 				after = (WtText) result.remove(i);
 			spaced = "";
 			if (after != null)
@@ -339,13 +339,13 @@ public final class TextUtils
 			result.add(new WtText(spaced));
 		}
 		
-		return new WtList(result);
+		return new WtNodeList(result);
 	}
 	
 	// =========================================================================
 	
 	/*
-	public static RtData addRtData(WikitextNode yyValue, Object[]... rts)
+	public static RtData addRtData(WtNode yyValue, Object[]... rts)
 	{
 		if (rts.length != yyValue.size() + 1)
 			rts = Arrays.copyOf(rts, yyValue.size() + 1);
@@ -359,15 +359,15 @@ public final class TextUtils
 		ArrayList<Object> result = new ArrayList<Object>();
 		for (Object o : objects)
 		{
-			if (o instanceof WikitextNode)
+			if (o instanceof WtNode)
 			{
-				WikitextNode a = (WikitextNode) o;
+				WtNode a = (WtNode) o;
 				switch (a.getNodeType())
 				{
-					case WikitextNode.NT_NODE_LIST:
-						for (WikitextNode c : (WtList) a)
+					case WtNode.NT_NODE_LIST:
+						for (WtNode c : (WtNodeList) a)
 						{
-							if (c.getNodeType() == WikitextNode.NT_TEXT)
+							if (c.getNodeType() == WtNode.NT_TEXT)
 							{
 								rtAddString(result, ((WtText) c).getContent());
 							}
@@ -378,7 +378,7 @@ public final class TextUtils
 						}
 						break;
 					
-					case WikitextNode.NT_TEXT:
+					case WtNode.NT_TEXT:
 						rtAddString(result, ((WtText) a).getContent());
 						break;
 					
@@ -418,7 +418,7 @@ public final class TextUtils
 		}
 	}
 	
-	public static void prependRtData(WikitextNode n, String data)
+	public static void prependRtData(WtNode n, String data)
 	{
 		RtData rtd = (RtData) n.getAttribute("RTD");
 		if (rtd == null || rtd.getRts().length == 0)

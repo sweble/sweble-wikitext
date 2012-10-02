@@ -7,9 +7,9 @@ import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtContentNode
 		extends
-			GenericContentNode<WikitextNode, WtList>
+			GenericContentNode<WtNode, WtNodeList>
 		implements
-			WikitextNode
+			WtNode
 {
 	private static final long serialVersionUID = -4825960747538151723L;
 	
@@ -19,20 +19,20 @@ public abstract class WtContentNode
 	
 	public WtContentNode()
 	{
-		super(new WtList());
+		super(new WtNodeList());
 	}
 	
-	public WtContentNode(Location arg0, WikitextNode n0)
+	public WtContentNode(Location arg0, WtNode n0)
 	{
 		super(arg0, n0);
 	}
 	
 	public WtContentNode(Location arg0)
 	{
-		super(arg0, new WtList());
+		super(arg0, new WtNodeList());
 	}
 	
-	public WtContentNode(WikitextNode n0)
+	public WtContentNode(WtNode n0)
 	{
 		super(n0);
 	}

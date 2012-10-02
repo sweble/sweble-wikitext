@@ -26,7 +26,7 @@ public class DefinitionListTerm
 		
 	}
 	
-	public DefinitionListTerm(WtList content)
+	public DefinitionListTerm(WtNodeList content)
 	{
 		super(content);
 		

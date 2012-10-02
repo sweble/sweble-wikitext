@@ -21,8 +21,8 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.XmlStartTag;
 import org.sweble.wikitext.parser.parser.NamedXmlElement;
 import org.sweble.wikitext.parser.utils.WtPrinter;
@@ -40,7 +40,7 @@ public final class ElementScopeStack
 		return top;
 	}
 	
-	public void push(ScopeType type, WikitextNode n, boolean open)
+	public void push(ScopeType type, WtNode n, boolean open)
 	{
 		final Scope s = new Scope(type, n, open);
 		if (top == null)
@@ -56,7 +56,7 @@ public final class ElementScopeStack
 	public Scope insertAfter(
 			Scope i,
 			ScopeType type,
-			WikitextNode n,
+			WtNode n,
 			boolean open)
 	{
 		return insertAfter(i, new Scope(type, n, open));
@@ -125,7 +125,7 @@ public final class ElementScopeStack
 	
 	// =========================================================================
 	
-	public void append(WikitextNode n)
+	public void append(WtNode n)
 	{
 		top().append(n);
 	}
@@ -168,17 +168,17 @@ public final class ElementScopeStack
 		
 		private final ScopeType type;
 		
-		private final WikitextNode element;
+		private final WtNode element;
 		
 		private final boolean open;
 		
-		private WtList content = new WtList();
+		private WtNodeList content = new WtNodeList();
 		
 		private LinkedList<Scope> closedInline;
 		
 		// =====================================================================
 		
-		public Scope(ScopeType type, WikitextNode n, boolean open)
+		public Scope(ScopeType type, WtNode n, boolean open)
 		{
 			this.type = type;
 			this.element = n;
@@ -209,12 +209,12 @@ public final class ElementScopeStack
 		
 		// =====================================================================
 		
-		public WikitextNode getElement()
+		public WtNode getElement()
 		{
 			return element;
 		}
 		
-		public WtList getContent()
+		public WtNodeList getContent()
 		{
 			return content;
 		}
@@ -236,7 +236,7 @@ public final class ElementScopeStack
 		
 		// =====================================================================
 		
-		public void append(WikitextNode n)
+		public void append(WtNode n)
 		{
 			content.add(n);
 		}
@@ -281,14 +281,14 @@ public final class ElementScopeStack
 			return false;
 		}
 		
-		public WtList clearContent()
+		public WtNodeList clearContent()
 		{
-			WtList c = content;
-			content = new WtList();
+			WtNodeList c = content;
+			content = new WtNodeList();
 			return c;
 		}
 		
-		public void setContent(WtList content)
+		public void setContent(WtNodeList content)
 		{
 			this.content = content;
 		}

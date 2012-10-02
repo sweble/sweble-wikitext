@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.ParserState;
 
@@ -63,7 +63,7 @@ public class WikitextParserState
 		return entityMap;
 	}
 	
-	public WikitextNode getEntity(int id)
+	public WtNode getEntity(int id)
 	{
 		return entityMap.getEntity(id);
 	}

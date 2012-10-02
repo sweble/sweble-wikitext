@@ -15,14 +15,14 @@ public class TemplateParameter
 	
 	public TemplateParameter()
 	{
-		super(new WtList(), new TemplateArgument(), new WtList());
+		super(new WtNodeList(), new TemplateArgument(), new WtNodeList());
 		
 	}
 	
 	public TemplateParameter(
-			WtList name,
+			WtNodeList name,
 			TemplateArgument defaultValue,
-			WtList garbage)
+			WtNodeList garbage)
 	{
 		super(name, defaultValue, garbage);
 		
@@ -117,14 +117,14 @@ public class TemplateParameter
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtList name)
+	public final void setName(WtNodeList name)
 	{
 		set(0, name);
 	}
 	
-	public final WtList getName()
+	public final WtNodeList getName()
 	{
-		return (WtList) get(0);
+		return (WtNodeList) get(0);
 	}
 	
 	public final void setDefaultValue(TemplateArgument defaultValue)
@@ -137,14 +137,14 @@ public class TemplateParameter
 		return (TemplateArgument) get(1);
 	}
 	
-	public final void setGarbage(WtList garbage)
+	public final void setGarbage(WtNodeList garbage)
 	{
 		set(2, garbage);
 	}
 	
-	public final WtList getGarbage()
+	public final WtNodeList getGarbage()
 	{
-		return (WtList) get(2);
+		return (WtNodeList) get(2);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "defaultValue", "garbage" };

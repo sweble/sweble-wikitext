@@ -52,7 +52,7 @@
  *       body : String
  *
  *     Children:
- *       xmlAttributes : WtList
+ *       xmlAttributes : WtNodeList
  *
  * XmlComment
  * ----------
@@ -84,7 +84,7 @@ import org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 
 // -- XML Element --------------------------------------------------------------
 
-WikitextNode XmlElement =
+WtNode XmlElement =
   '<' yyValue:
   ( "!--" yyValue:XmlComment
   / '/'   yyValue:IgnoredClosingTag
@@ -115,24 +115,24 @@ private inline WtText Greater =
 // If a comment is not enclosed in newlines (ignoring spaces) then only the
 // comment itself is consumed.
 //
-transient WikitextNode XmlCommentTrimmed =
+transient WtNode XmlCommentTrimmed =
     eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
     {
       XmlComment c = setRtd(new XmlComment(content, prefix, suffix + eol2), prefix, "<!--", content, "-->", suffix, eol2);
 
-      yyValue = new WtList(new WtText(eol1), c);
+      yyValue = new WtNodeList(new WtText(eol1), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
     {
       XmlComment c = setRtd(new XmlComment(content), "<!--", content, "-->");
 
-      yyValue = new WtList(new WtText(eol1 + prefix), c);
+      yyValue = new WtNodeList(new WtText(eol1 + prefix), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
     {
       XmlComment c = setRtd(new XmlComment(content), "<!--", content);
 
-      yyValue = new WtList(new WtText(eol1 + prefix), c);
+      yyValue = new WtNodeList(new WtText(eol1 + prefix), c);
     }
 ;
 
@@ -160,7 +160,7 @@ private transient String XmlCommentContent =
 
 // -- Ignored opening, closing tags --------------------------------------------
 
-private transient WikitextNode IgnoredClosingTag =
+private transient WtNode IgnoredClosingTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
   {
     String content = "</" + name + garbage + ">";
@@ -169,7 +169,7 @@ private transient WikitextNode IgnoredClosingTag =
   }
 ;
 
-private transient WikitextNode IgnoredOpeningTag =
+private transient WtNode IgnoredOpeningTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
   {
     String content = "<" + name + garbage + ">";
@@ -191,7 +191,7 @@ private transient String IgnoredTagGarbage =
 
 // -- Ignored elements ---------------------------------------------------------
 
-private transient WikitextNode IgnoredElements =
+private transient WtNode IgnoredElements =
     header:IgnoredElementHeader
     {
       getState().setTagExtensionName(header.getForeign(0, String.class));
@@ -210,10 +210,10 @@ private transient WikitextNode IgnoredElements =
     }
 ;
 
-private transient ForeignNode IgnoredElementHeader =
+private transient WtForeignNode IgnoredElementHeader =
   name:IgnoredElementName garbage:IgnoredTagGarbage
   {
-    yyValue = ForeignNode.from(name, garbage);
+    yyValue = WtForeignNode.from(name, garbage);
   }
 ;
 
@@ -236,7 +236,7 @@ private transient TagExtension TagExtension =
       yyValue = setRtd(
         new TagExtension(
           header.getForeign(0, String.class),
-          header.getForeign(1, WtList.class),
+          header.getForeign(1, WtNodeList.class),
           body.getForeign(0, String.class)),
         '<', header.getForeign(0, String.class), SEP,
         header.getForeign(2, String.class), '>', body.getForeign(0, String.class), body.getForeign(1, String.class));
@@ -244,24 +244,24 @@ private transient TagExtension TagExtension =
   / header:TagHeader "/>"
     {
       yyValue = setRtd(
-        new TagExtension(header.getForeign(0, String.class), header.getForeign(1, WtList.class), null),
+        new TagExtension(header.getForeign(0, String.class), header.getForeign(1, WtNodeList.class), null),
         '<', header.getForeign(0, String.class), SEP,
-        header.getForeign(2, WtList.class), "/>");
+        header.getForeign(2, WtNodeList.class), "/>");
     }
 ;
 
-private transient ForeignNode TagHeader =
+private transient WtForeignNode TagHeader =
     name:ValidTagName &pWsPlus attributes:XmlAttributePlus ws:pWsStar
     {
-      yyValue = ForeignNode.from(name, attributes, ws);
+      yyValue = WtForeignNode.from(name, attributes, ws);
     }
   / name:ValidTagName ws:pWsStar
     {
-      yyValue = ForeignNode.from(name, new WtList(), ws);
+      yyValue = WtForeignNode.from(name, new WtNodeList(), ws);
     }
 ;
 
-private transient ForeignNode TagBody =
+private transient WtForeignNode TagBody =
   content:TagContentStar
   endTag:(
     ValidClosingTag
@@ -271,7 +271,7 @@ private transient ForeignNode TagBody =
     }
   )
   {
-    yyValue = ForeignNode.from(content, (String) endTag);
+    yyValue = WtForeignNode.from(content, (String) endTag);
   }
 ;
 
@@ -291,10 +291,10 @@ private transient String ValidClosingTag =
   }
 ;
 
-private transient ForeignNode ClosingTagHeader =
+private transient WtForeignNode ClosingTagHeader =
   name:TagName ws:pWsStar '>'
   {
-    yyValue = ForeignNode.from(name, ws);
+    yyValue = WtForeignNode.from(name, ws);
   }
 ;
 

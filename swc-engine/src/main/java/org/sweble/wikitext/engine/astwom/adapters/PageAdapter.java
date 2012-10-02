@@ -39,7 +39,7 @@ import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomRedirect;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -229,7 +229,7 @@ public class PageAdapter
 		RedirectAdapter newRedirect =
 				Toolbox.expectType(RedirectAdapter.class, redirect);
 		
-		WtList container = ((BodyAdapter) getBody()).getAstNode();
+		WtNodeList container = ((BodyAdapter) getBody()).getAstNode();
 		
 		if (this.redirect != null)
 		{
@@ -303,7 +303,7 @@ public class PageAdapter
 		}
 		else
 		{
-			WtList container = this.body.getAstNode();
+			WtNodeList container = this.body.getAstNode();
 			
 			cat = new CategoryAdapter(container, name);
 			
@@ -326,7 +326,7 @@ public class PageAdapter
 	 * @param link
 	 *            The category link from the AST.
 	 */
-	public void setCategory(WtList container, InternalLink link)
+	public void setCategory(WtNodeList container, InternalLink link)
 	{
 		String name = CategoryAdapter.getNameFromAst(link);
 		String lcName = name.toLowerCase();
@@ -358,9 +358,9 @@ public class PageAdapter
 	 *            The AST node to attach.
 	 * @return The container to which the ast node was attached.
 	 */
-	protected WtList reAttachCategory(InternalLink astNode)
+	protected WtNodeList reAttachCategory(InternalLink astNode)
 	{
-		WtList container = this.body.getAstNode();
+		WtNodeList container = this.body.getAstNode();
 		
 		container.add(astNode);
 		
@@ -421,7 +421,7 @@ public class PageAdapter
 		this.body.link(this, prevSibling, null);
 		
 		// Set AST
-		WtList oldAstBody = null;
+		WtNodeList oldAstBody = null;
 		if (old != null)
 			oldAstBody = old.getAstNode();
 		getAstNode().setContent(newBody.getAstNode());

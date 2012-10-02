@@ -51,9 +51,9 @@ import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -112,20 +112,20 @@ public final class ExpansionVisitor
 	 * by the expanded AST.
 	 */
 	@Override
-	protected WikitextNode visitUnspecific(WikitextNode n)
+	protected WtNode visitUnspecific(WtNode n)
 	{
 		mapInPlace(n);
 		return n;
 	}
 	
 	@Override
-	protected Object resolveAndVisit(WikitextNode n, int type) throws ExpansionException
+	protected Object resolveAndVisit(WtNode n, int type) throws ExpansionException
 	{
 		switch (type)
 		{
 		// -- These set the hadNewline flag --
 		
-			case WikitextNode.NT_TEXT:
+			case WtNode.NT_TEXT:
 				return visitText((WtText) n);
 			case AstNodeTypes.NT_NEWLINE:
 				return visitNewline((Newline) n);
@@ -137,7 +137,7 @@ public final class ExpansionVisitor
 				
 			case AstNodeTypes.NT_IGNORED:
 			case AstNodeTypes.NT_XML_COMMENT:
-			case WikitextNode.NT_NODE_LIST:
+			case WtNode.NT_NODE_LIST:
 				return visitUnspecific(n);
 				
 				// -- We MUST reset hadNewline for these elements! --
@@ -171,13 +171,13 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WikitextNode visitNewline(Newline n)
+	private WtNode visitNewline(Newline n)
 	{
 		hadNewlineGlobal = true;
 		return n;
 	}
 	
-	private WikitextNode visitText(WtText n)
+	private WtNode visitText(WtText n)
 	{
 		String text = n.getContent();
 		if (!text.isEmpty())
@@ -195,7 +195,7 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private Object visitError(WikitextNode n)
+	private Object visitError(WtNode n)
 	{
 		/* Don't descend into error nodes!
 		 */
@@ -208,7 +208,7 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WikitextNode visit(Redirect n) throws ExpansionException
+	private WtNode visit(Redirect n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -218,7 +218,7 @@ public final class ExpansionVisitor
 		
 		String target = n.getTarget();
 		
-		WikitextNode result = resolveRedirectWrapper(n, target);
+		WtNode result = resolveRedirectWrapper(n, target);
 		if (result == null)
 			result = markError(n);
 		
@@ -231,11 +231,11 @@ public final class ExpansionVisitor
 	 *         process. Otherwise the expanded form of the redirect target page
 	 *         will be returned.
 	 */
-	private WikitextNode resolveRedirectWrapper(Redirect n, String target) throws ExpansionException
+	private WtNode resolveRedirectWrapper(Redirect n, String target) throws ExpansionException
 	{
 		if (hooks != null)
 		{
-			WikitextNode cont = hooks.beforeResolveRedirect(this, n, target);
+			WtNode cont = hooks.beforeResolveRedirect(this, n, target);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -254,7 +254,7 @@ public final class ExpansionVisitor
 			stopWatch.start();
 		}
 		
-		WikitextNode result = null;
+		WtNode result = null;
 		try
 		{
 			result = expandRedirectionTargetPage(n, target, log);
@@ -289,7 +289,7 @@ public final class ExpansionVisitor
 	 *         process. Otherwise the expanded form of the redirect target page
 	 *         will be returned.
 	 */
-	private WikitextNode expandRedirectionTargetPage(
+	private WtNode expandRedirectionTargetPage(
 			Redirect n,
 			String target,
 			ResolveRedirectLog log) throws Exception
@@ -364,7 +364,7 @@ public final class ExpansionVisitor
 	 * the respective parser function can decide if it needs to expand
 	 * parameters.
 	 */
-	private WikitextNode visit(Template n) throws ExpansionException
+	private WtNode visit(Template n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -373,12 +373,12 @@ public final class ExpansionVisitor
 		boolean hadNewline = this.hadNewlineGlobal;
 		
 		// First: Fully expand name.
-		WtList name = (WtList) dispatch(n.getName());
+		WtNodeList name = (WtNodeList) dispatch(n.getName());
 		//n.setName(name);
 		
-		Tuple2<String, WtList> conv = StringConverterPartial.convert(name);
+		Tuple2<String, WtNodeList> conv = StringConverterPartial.convert(name);
 		String title = conv._1;
-		WtList tail = conv._2;
+		WtNodeList tail = conv._2;
 		
 		// DO NOT expand parameters (yet)
 		ArrayList<TemplateArgument> args =
@@ -388,7 +388,7 @@ public final class ExpansionVisitor
 			args.add((TemplateArgument) arg);
 		
 		// First see if it is a parser function
-		WikitextNode result = resolveTemplateAsPfn(n, title, tail, args, hadNewline);
+		WtNode result = resolveTemplateAsPfn(n, title, tail, args, hadNewline);
 		
 		if (result == null)
 		{
@@ -424,7 +424,7 @@ public final class ExpansionVisitor
 		return result;
 	}
 	
-	private boolean endedWithNewline(WikitextNode result)
+	private boolean endedWithNewline(WtNode result)
 	{
 		// FIXME: IMPLEMENT!
 		return false;
@@ -444,10 +444,10 @@ public final class ExpansionVisitor
 	 *         found null is returned. If a parser function was found but an
 	 *         error occurs afterwards, the template node itself is returned.
 	 */
-	private WikitextNode resolveTemplateAsPfn(
+	private WtNode resolveTemplateAsPfn(
 			Template n,
 			String title,
-			WtList tail,
+			WtNodeList tail,
 			ArrayList<TemplateArgument> args,
 			boolean hadNewline) throws ExpansionException
 	{
@@ -472,7 +472,7 @@ public final class ExpansionVisitor
 		
 		String arg0Prefix = title.substring(i + 1).trim();
 		
-		List<? extends WikitextNode> argsValues = preparePfnArguments(
+		List<? extends WtNode> argsValues = preparePfnArguments(
 				pfn.getArgMode(),
 				arg0Prefix,
 				tail,
@@ -498,10 +498,10 @@ public final class ExpansionVisitor
 	 * 
 	 * @param pfnArgumentMode
 	 */
-	private List<? extends WikitextNode> preparePfnArguments(
+	private List<? extends WtNode> preparePfnArguments(
 			PfnArgumentMode pfnArgumentMode,
 			String arg0Prefix,
-			WtList tail,
+			WtNodeList tail,
 			List<TemplateArgument> args)
 	{
 		/*
@@ -524,22 +524,22 @@ public final class ExpansionVisitor
 		{
 			case EXPANDED_AND_TRIMMED_VALUES:
 			{
-				ArrayList<WikitextNode> argValues = new ArrayList<WikitextNode>(args.size() + 1);
+				ArrayList<WtNode> argValues = new ArrayList<WtNode>(args.size() + 1);
 				
-				WikitextNode arg0 = astList(new WtText(arg0Prefix), tail);
+				WtNode arg0 = astList(new WtText(arg0Prefix), tail);
 				
-				arg0 = EngineTextUtils.trim((WikitextNode) dispatch(arg0));
+				arg0 = EngineTextUtils.trim((WtNode) dispatch(arg0));
 				argValues.add(arg0);
 				
 				for (int j = 0; j < args.size(); ++j)
 				{
 					TemplateArgument tmplArg = args.get(j);
 					
-					WikitextNode arg = tmplArg.getHasName() ?
+					WtNode arg = tmplArg.getHasName() ?
 							astList(tmplArg.getName(), astText("="), tmplArg.getValue()) :
 							tmplArg.getValue();
 					
-					arg = EngineTextUtils.trim((WikitextNode) dispatch(arg));
+					arg = EngineTextUtils.trim((WtNode) dispatch(arg));
 					argValues.add(arg);
 				}
 				
@@ -552,7 +552,7 @@ public final class ExpansionVisitor
 				
 				argsWithArg0.add(
 						new TemplateArgument(
-								new WtList(new WtText(arg0Prefix), tail),
+								new WtNodeList(new WtText(arg0Prefix), tail),
 								false));
 				
 				for (TemplateArgument arg : args)
@@ -562,9 +562,9 @@ public final class ExpansionVisitor
 			}
 			case UNEXPANDED_VALUES:
 			{
-				ArrayList<WikitextNode> argValues = new ArrayList<WikitextNode>(args.size() + 1);
+				ArrayList<WtNode> argValues = new ArrayList<WtNode>(args.size() + 1);
 				
-				argValues.add(new WtList(new WtText(arg0Prefix), tail));
+				argValues.add(new WtNodeList(new WtText(arg0Prefix), tail));
 				
 				for (int j = 0; j < args.size(); ++j)
 				{
@@ -595,7 +595,7 @@ public final class ExpansionVisitor
 	 *         found null is returned. If a parser function was found but an
 	 *         error occurs afterwards, the template node itself is returned.
 	 */
-	private WikitextNode resolveTemplateAsMagicWord(
+	private WtNode resolveTemplateAsMagicWord(
 			Template n,
 			String title,
 			boolean hadNewline) throws ExpansionException
@@ -604,7 +604,7 @@ public final class ExpansionVisitor
 		if (pfn == null)
 			return null;
 		
-		List<WikitextNode> argsValues = Collections.emptyList();
+		List<WtNode> argsValues = Collections.emptyList();
 		
 		return invokePfn(n, pfn, argsValues, hadNewline);
 	}
@@ -612,15 +612,15 @@ public final class ExpansionVisitor
 	/**
 	 * Nothing left to do but call the actual parser function.
 	 */
-	private WikitextNode invokePfn(
+	private WtNode invokePfn(
 			Template n,
 			ParserFunctionBase pfn,
-			List<? extends WikitextNode> argsValues,
+			List<? extends WtNode> argsValues,
 			boolean hadNewline) throws ExpansionException
 	{
 		if (hooks != null)
 		{
-			WikitextNode cont = hooks.beforeResolveParserFunction(this, n, pfn, argsValues);
+			WtNode cont = hooks.beforeResolveParserFunction(this, n, pfn, argsValues);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -639,7 +639,7 @@ public final class ExpansionVisitor
 			stopWatch.start();
 		}
 		
-		WikitextNode result = null;
+		WtNode result = null;
 		try
 		{
 			result = pfn.invoke(n, expFrame, argsValues);
@@ -680,7 +680,7 @@ public final class ExpansionVisitor
 	 *         returned. If the page was found but an error occurs afterwards,
 	 *         the template node itself is returned.
 	 */
-	private WikitextNode resolveTemplateAsTransclusion(
+	private WtNode resolveTemplateAsTransclusion(
 			Template n,
 			String title,
 			ArrayList<TemplateArgument> args,
@@ -688,7 +688,7 @@ public final class ExpansionVisitor
 	{
 		if (hooks != null)
 		{
-			WikitextNode cont = hooks.beforeResolveTransclusion(this, n, title, args);
+			WtNode cont = hooks.beforeResolveTransclusion(this, n, title, args);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -707,7 +707,7 @@ public final class ExpansionVisitor
 			stopWatch.start();
 		}
 		
-		WikitextNode result = null;
+		WtNode result = null;
 		try
 		{
 			result = transcludePage(n, title, args, log);
@@ -742,7 +742,7 @@ public final class ExpansionVisitor
 	 *         returned. If the page was found but an error occurs afterwards,
 	 *         the template node itself is returned.
 	 */
-	private WikitextNode transcludePage(
+	private WtNode transcludePage(
 			Template n,
 			String target,
 			List<TemplateArgument> args,
@@ -773,7 +773,7 @@ public final class ExpansionVisitor
 		if (page != null)
 		{
 			// EXPANDS ARGUMENTS!
-			Map<String, WikitextNode> tmplArgs = prepareTransclusionArguments(args, log);
+			Map<String, WtNode> tmplArgs = prepareTransclusionArguments(args, log);
 			
 			CompiledPage compiledPage = getCompiler().preprocessAndExpand(
 					expFrame.getCallback(),
@@ -787,7 +787,7 @@ public final class ExpansionVisitor
 			
 			log.setSuccess(true);
 			
-			WikitextNode tResult = mergeLogsAndWarnings(log, compiledPage);
+			WtNode tResult = mergeLogsAndWarnings(log, compiledPage);
 			
 			return treatBlockElements(n, tResult);
 		}
@@ -829,26 +829,26 @@ public final class ExpansionVisitor
 	 * If an argument has a name which can be resolved to a string, the argument
 	 * will additionally be put into the mapping with the resolved name as key.
 	 */
-	private Map<String, WikitextNode> prepareTransclusionArguments(
+	private Map<String, WtNode> prepareTransclusionArguments(
 			List<TemplateArgument> args,
 			ResolveTransclusionLog log)
 	{
-		HashMap<String, WikitextNode> transclArgs = new HashMap<String, WikitextNode>();
+		HashMap<String, WtNode> transclArgs = new HashMap<String, WtNode>();
 		
 		int index = 1;
 		for (TemplateArgument arg : args)
 		{
 			// EXPAND VALUE!
-			WtList value = (WtList) dispatch(arg.getValue());
+			WtNodeList value = (WtNodeList) dispatch(arg.getValue());
 			
 			boolean named = false;
 			if (arg.getHasName())
 			{
 				// ONLY TRIM NAMED VALUES!
-				value = (WtList) EngineTextUtils.trim(value);
+				value = (WtNodeList) EngineTextUtils.trim(value);
 				
 				// EXPAND NAME!
-				WtList name = (WtList) dispatch(arg.getName());
+				WtNodeList name = (WtNodeList) dispatch(arg.getName());
 				
 				try
 				{
@@ -873,7 +873,7 @@ public final class ExpansionVisitor
 			{
 				String id = String.valueOf(index);
 				
-				WikitextNode prev = transclArgs.put(id, value);
+				WtNode prev = transclArgs.put(id, value);
 				// Automatic indices never overwrite!
 				if (prev != null)
 					transclArgs.put(id, prev);
@@ -902,13 +902,13 @@ public final class ExpansionVisitor
 	 * This method WILL ONLY EXPAND the default value if no value could be found
 	 * among the frame arguments.
 	 */
-	private WikitextNode visit(TemplateParameter n) throws ExpansionException
+	private WtNode visit(TemplateParameter n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
 		
 		// Fully expand name!
-		WtList name = (WtList) dispatch(n.getName());
+		WtNodeList name = (WtNodeList) dispatch(n.getName());
 		
 		String nameStr = null;
 		try
@@ -923,7 +923,7 @@ public final class ExpansionVisitor
 			fileInvalidParameterNameWarning(n, e);
 		}
 		
-		WikitextNode value = null;
+		WtNode value = null;
 		if (nameStr != null)
 			value = resolveParameterWrapper(n, nameStr.trim(), n.getDefaultValue());
 		
@@ -941,14 +941,14 @@ public final class ExpansionVisitor
 	 *         given, null is returned. Otherwise, if an error occurs, the
 	 *         parameter node itself is returned.
 	 */
-	private WikitextNode resolveParameterWrapper(
+	private WtNode resolveParameterWrapper(
 			TemplateParameter n,
 			String name,
 			TemplateArgument defaultValue) throws ExpansionException
 	{
 		if (hooks != null)
 		{
-			WikitextNode cont = hooks.beforeResolveParameter(this, n, name);
+			WtNode cont = hooks.beforeResolveParameter(this, n, name);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -967,7 +967,7 @@ public final class ExpansionVisitor
 			stopWatch.start();
 		}
 		
-		WikitextNode result = null;
+		WtNode result = null;
 		try
 		{
 			result = resolveParameter(n, name, defaultValue, log);
@@ -998,13 +998,13 @@ public final class ExpansionVisitor
 	 * this frame. If no matching argument can be found, the default value is
 	 * used, if present. Otherwise, null is returned.
 	 */
-	private WikitextNode resolveParameter(
+	private WtNode resolveParameter(
 			TemplateParameter n,
 			String name,
 			TemplateArgument defaultValue,
 			ResolveParameterLog log)
 	{
-		WikitextNode value = getFrameArgument(name);
+		WtNode value = getFrameArgument(name);
 		
 		if (value == null && defaultValue != null)
 		{
@@ -1024,7 +1024,7 @@ public final class ExpansionVisitor
 			}
 			
 			// EXPAND DEFAULT VALUE!
-			value = (WikitextNode) dispatch(value);
+			value = (WtNode) dispatch(value);
 		}
 		
 		if (value != null)
@@ -1043,27 +1043,27 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WikitextNode visit(TagExtension n) throws ExpansionException
+	private WtNode visit(TagExtension n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
 		
-		WikitextNode result = resolveTagExtensionWrapper(n, n.getName(), n.getXmlAttributes(), n.getBody());
+		WtNode result = resolveTagExtensionWrapper(n, n.getName(), n.getXmlAttributes(), n.getBody());
 		if (result == null)
 			result = markError(n);
 		
 		return result;
 	}
 	
-	private WikitextNode resolveTagExtensionWrapper(
+	private WtNode resolveTagExtensionWrapper(
 			TagExtension n,
 			String name,
-			WtList attrs,
+			WtNodeList attrs,
 			String body) throws ExpansionException
 	{
 		if (hooks != null)
 		{
-			WikitextNode cont = hooks.beforeResolveTagExtension(this, n, name, attrs, body);
+			WtNode cont = hooks.beforeResolveTagExtension(this, n, name, attrs, body);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -1082,7 +1082,7 @@ public final class ExpansionVisitor
 			stopWatch.start();
 		}
 		
-		WikitextNode result = null;
+		WtNode result = null;
 		try
 		{
 			result = resolveTagExtension(n, name, attrs, body, log);
@@ -1108,10 +1108,10 @@ public final class ExpansionVisitor
 				result;
 	}
 	
-	private WikitextNode resolveTagExtension(
+	private WtNode resolveTagExtension(
 			TagExtension n,
 			String name,
-			WtList attrs,
+			WtNodeList attrs,
 			String body,
 			ResolveTagExtensionLog log)
 	{
@@ -1127,9 +1127,9 @@ public final class ExpansionVisitor
 			//throw new InternalError("Cannot find tag extension: " + name);
 			return null;
 		
-		HashMap<String, WtList> attrMap = prepareTagExtensionAttributes(attrs);
+		HashMap<String, WtNodeList> attrMap = prepareTagExtensionAttributes(attrs);
 		
-		WikitextNode result = te.invoke(expFrame, n, attrMap, body);
+		WtNode result = te.invoke(expFrame, n, attrMap, body);
 		
 		log.setSuccess(true);
 		
@@ -1140,12 +1140,12 @@ public final class ExpansionVisitor
 	 * Converts the list of attributes into a map, ignoring any non-attribute
 	 * nodes.
 	 */
-	private HashMap<String, WtList> prepareTagExtensionAttributes(
-			WtList attrs)
+	private HashMap<String, WtNodeList> prepareTagExtensionAttributes(
+			WtNodeList attrs)
 	{
-		HashMap<String, WtList> attrMap = new HashMap<String, WtList>();
+		HashMap<String, WtNodeList> attrMap = new HashMap<String, WtNodeList>();
 		
-		for (WikitextNode attr : attrs)
+		for (WtNode attr : attrs)
 		{
 			if (attr.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
 			{
@@ -1163,25 +1163,25 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WikitextNode visit(PageSwitch n) throws ExpansionException
+	private WtNode visit(PageSwitch n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
 		
-		WikitextNode result = resolveMagicWordWrapper(n, n.getName());
+		WtNode result = resolveMagicWordWrapper(n, n.getName());
 		if (result == null)
 			result = markError(n);
 		
 		return result;
 	}
 	
-	private WikitextNode resolveMagicWordWrapper(
+	private WtNode resolveMagicWordWrapper(
 			PageSwitch n,
 			String name) throws ExpansionException
 	{
 		if (hooks != null)
 		{
-			WikitextNode cont = hooks.beforeResolvePageSwitch(this, n, name);
+			WtNode cont = hooks.beforeResolvePageSwitch(this, n, name);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -1200,7 +1200,7 @@ public final class ExpansionVisitor
 			stopWatch.start();
 		}
 		
-		WikitextNode result = null;
+		WtNode result = null;
 		try
 		{
 			result = resolvePageSwitch(n, name, log);
@@ -1226,7 +1226,7 @@ public final class ExpansionVisitor
 				result;
 	}
 	
-	private WikitextNode resolvePageSwitch(
+	private WtNode resolvePageSwitch(
 			PageSwitch n,
 			String name,
 			ResolveMagicWordLog log)
@@ -1241,10 +1241,10 @@ public final class ExpansionVisitor
 			 */
 			throw new InternalError("Cannot find tag extension: " + name);
 		
-		WikitextNode result = mw.invoke(
+		WtNode result = mw.invoke(
 				n,
 				expFrame,
-				Collections.<WikitextNode> emptyList());
+				Collections.<WtNode> emptyList());
 		
 		log.setSuccess(true);
 		
@@ -1273,7 +1273,7 @@ public final class ExpansionVisitor
 		return expFrame.getCompiler();
 	}
 	
-	private WikitextNode getFrameArgument(String name)
+	private WtNode getFrameArgument(String name)
 	{
 		return expFrame.getArguments().get(name);
 	}
@@ -1290,7 +1290,7 @@ public final class ExpansionVisitor
 		log.getContent().add(new UnhandledException(e, w.toString()));
 	}
 	
-	private void fileInvalidPageNameWarning(WikitextNode n, String target)
+	private void fileInvalidPageNameWarning(WtNode n, String target)
 	{
 		expFrame.fileWarning(new InvalidPagenameWarning(
 				WarningSeverity.FATAL,
@@ -1329,7 +1329,7 @@ public final class ExpansionVisitor
 				n));
 	}
 	
-	private void filePageNotFoundWarning(WikitextNode n, PageTitle title)
+	private void filePageNotFoundWarning(WtNode n, PageTitle title)
 	{
 		expFrame.fileWarning(new PageNotFoundWarning(
 				WarningSeverity.NORMAL,
@@ -1338,7 +1338,7 @@ public final class ExpansionVisitor
 				title));
 	}
 	
-	private WikitextNode mergeLogsAndWarnings(
+	private WtNode mergeLogsAndWarnings(
 			WtContentNode log,
 			CompiledPage compiledPage)
 	{
@@ -1350,7 +1350,7 @@ public final class ExpansionVisitor
 		return compiledPage.getPage().getContent();
 	}
 	
-	private WikitextNode treatBlockElements(Template tmpl, WikitextNode result)
+	private WtNode treatBlockElements(Template tmpl, WtNode result)
 	{
 		if (result != null)
 			return treatBlockElements(tmpl, result, tmpl.getPrecededByNewline());
@@ -1358,7 +1358,7 @@ public final class ExpansionVisitor
 	}
 	
 	/*
-	private WikitextNode treatBlockElements(TemplateParameter tmpl, WikitextNode result)
+	private WtNode treatBlockElements(TemplateParameter tmpl, WtNode result)
 	{
 		if (result != null)
 			return treatBlockElements(tmpl, result, tmpl.getPrecededByNewline());
@@ -1372,14 +1372,14 @@ public final class ExpansionVisitor
 	 * block level element start on a new line (so that it can be identified
 	 * correctly).
 	 */
-	private WikitextNode treatBlockElements(
-			WikitextNode tmpl,
-			WikitextNode result,
+	private WtNode treatBlockElements(
+			WtNode tmpl,
+			WtNode result,
 			boolean hadNewline)
 	{
 		if (result != null && !hadNewline)
 		{
-			Tuple2<String, WtList> split =
+			Tuple2<String, WtNodeList> split =
 					StringConverterPartial.convert(result, null, StringConverter.FAIL_ON_PROTECTED_TEXT);
 			
 			Matcher m = STARTS_WITH_BLOCK_ELEMENT.matcher(split._1);
@@ -1395,7 +1395,7 @@ public final class ExpansionVisitor
 	 * would for example be the case when we already tried to expand the node
 	 * but failed.
 	 */
-	private boolean skip(WikitextNode n)
+	private boolean skip(WtNode n)
 	{
 		return n.hasAttribute(SKIP_ATTR_NAME);
 	}
@@ -1406,7 +1406,7 @@ public final class ExpansionVisitor
 	 * BE CALLED when the expansion process for this element failed due to an
 	 * exception.
 	 */
-	private WikitextNode markError(WikitextNode n)
+	private WtNode markError(WtNode n)
 	{
 		//return new SoftErrorNode(n);
 		n.setAttribute(SKIP_ATTR_NAME, false);
@@ -1417,7 +1417,7 @@ public final class ExpansionVisitor
 	 * Called when the expansion process for the specified element failed due to
 	 * an exception.
 	 */
-	private WikitextNode markError(WikitextNode n, Exception e)
+	private WtNode markError(WtNode n, Exception e)
 	{
 		//return new SoftErrorNode(n, e);
 		n.setAttribute(SKIP_ATTR_NAME, e);

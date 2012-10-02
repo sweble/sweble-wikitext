@@ -1,7 +1,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 /**
  * <h1>Page Node</h1>
@@ -20,7 +20,7 @@ public class Page
 		
 	}
 	
-	public Page(WtList content)
+	public Page(WtNodeList content)
 	{
 		super(content);
 		

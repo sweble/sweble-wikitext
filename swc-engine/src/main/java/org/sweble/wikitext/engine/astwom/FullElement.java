@@ -22,8 +22,8 @@ import java.util.Collections;
 import org.sweble.wikitext.engine.astwom.adapters.CategoryAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.FullElementContentType;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public abstract class FullElement
 		extends
@@ -33,7 +33,7 @@ public abstract class FullElement
 	
 	// =========================================================================
 	
-	public FullElement(WikitextNode astNode)
+	public FullElement(WtNode astNode)
 	{
 		super(astNode);
 	}
@@ -108,7 +108,7 @@ public abstract class FullElement
 	 * @return The AST child container node or <code>null</code> if the AST
 	 *         element doesn't support children.
 	 */
-	public WtList getAstChildContainer()
+	public WtNodeList getAstChildContainer()
 	{
 		return null;
 	}
@@ -124,14 +124,14 @@ public abstract class FullElement
 	 * @throws UnsupportedOperationException
 	 *             Thrown if no conversion is possible.
 	 */
-	protected WtList addAstChildrenSupport()
+	protected WtNodeList addAstChildrenSupport()
 	{
 		return null;
 	}
 	
-	protected final WtList getAstChildContainerOrAddSupport()
+	protected final WtNodeList getAstChildContainerOrAddSupport()
 	{
-		WtList childContainer = getAstChildContainer();
+		WtNodeList childContainer = getAstChildContainer();
 		if (childContainer == null)
 			childContainer = addAstChildrenSupport();
 		return childContainer;
@@ -236,23 +236,23 @@ public abstract class FullElement
 	// =========================================================================
 	
 	@Override
-	protected void appendToAst(WtList container, WikitextNode child)
+	protected void appendToAst(WtNodeList container, WtNode child)
 	{
 		Toolbox.appendAstNode(container, child);
 	}
 	
 	@Override
 	protected void insertIntoAst(
-			WtList container,
-			WikitextNode newChild,
-			WikitextNode prevChild)
+			WtNodeList container,
+			WtNode newChild,
+			WtNode prevChild)
 	{
 		Toolbox.insertAstNode(container, newChild, prevChild);
 	}
 	
 	@Override
 	protected void replaceInAst(
-			WtList container,
+			WtNodeList container,
 			WomBackbone oldNode,
 			WomBackbone newNode)
 	{
@@ -265,7 +265,7 @@ public abstract class FullElement
 	}
 	
 	@Override
-	protected void removeFromAst(WtList container, WikitextNode removeNode)
+	protected void removeFromAst(WtNodeList container, WtNode removeNode)
 	{
 		Toolbox.removeAstNode(container, removeNode);
 		
@@ -277,7 +277,7 @@ public abstract class FullElement
 	protected final void addContent(
 			FullElementContentType contentType,
 			AstToWomNodeFactory factory,
-			WtList content)
+			WtNodeList content)
 	{
 		addContent(contentType, factory, content, null, null);
 	}
@@ -285,9 +285,9 @@ public abstract class FullElement
 	protected final void addContent(
 			FullElementContentType contentType,
 			AstToWomNodeFactory factory,
-			WtList content,
-			WikitextNode from,
-			WikitextNode to)
+			WtNodeList content,
+			WtNode from,
+			WtNode to)
 	{
 		if (content.isEmpty())
 			return;

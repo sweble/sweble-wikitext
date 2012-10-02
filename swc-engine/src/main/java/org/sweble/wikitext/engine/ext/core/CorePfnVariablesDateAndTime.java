@@ -23,7 +23,7 @@ import java.util.GregorianCalendar;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 public class CorePfnVariablesDateAndTime
@@ -65,7 +65,7 @@ public class CorePfnVariablesDateAndTime
 		}
 		
 		@Override
-		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(Template var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
 			return new WtText(String.valueOf(cal.get(GregorianCalendar.YEAR)));
@@ -90,7 +90,7 @@ public class CorePfnVariablesDateAndTime
 		}
 		
 		@Override
-		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(Template var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
 			return new WtText(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
@@ -123,7 +123,7 @@ public class CorePfnVariablesDateAndTime
 		}
 		
 		@Override
-		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(Template var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
 			return new WtText(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
