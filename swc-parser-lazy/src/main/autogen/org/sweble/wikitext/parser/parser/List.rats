@@ -219,15 +219,19 @@ body
 
     WtList items = new WtList();
 
-    RtData lastItem = processListItem(listStack, items, first);
+    RtDataPtk lastItem = processListItem(listStack, items, first);
 
     Pair<RawListItem> i = tail;
     while (!i.isEmpty())
     {
       RawListItem item = i.head();
 
+      if (lastItem != null)
+        lastItem.setField(1, item.getRt0());
+        /*
       if (isGatherRtData())
         lastItem.getRts()[1] = joinRt(item.getRt0());
+*/
 
       lastItem = processListItem(listStack, items, item);
 
@@ -237,7 +241,7 @@ body
     return items;
   }
 
-  private RtData processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
+  private RtDataPtk processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
   {
     String prefix = p.getPrefix();
 
@@ -265,14 +269,19 @@ body
         prefix.charAt(last),
         new WtList(p.getContent()));
 
-    RtData rtData = null;
-    if (isGatherRtData())
-      rtData = addRtData(item, joinRt(p.getRt1(), p.getPrefix()), null);
+    //RtData rtData = null;
+    RtDataPtk rtd = null;
+    if (isGatherRtData()){
+      rtd = new RtDataPtk(2, p.getRt1(), p.getPrefix(), SEP);
+      item.setRtd(rtd);
+      //rtData = addRtData(item, joinRt(p.getRt1(), p.getPrefix()), null);
+    }
 
     if (addRoot)
       items.add(listStack.firstElement().node);
 
-    return rtData;
+    //return rtData;
+    return rtd;
   }
 }
 

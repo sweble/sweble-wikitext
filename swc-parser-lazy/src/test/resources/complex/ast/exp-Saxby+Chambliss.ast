@@ -2223,7 +2223,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   Bold(
@@ -2251,7 +2251,7 @@ ParsedWikitextPage(
                   UnorderedList([
                     ListItem(
                       Properties:
-                        RTD = RtData: [0] = "**", [1] = "\n"
+                        {N} rtd = RTD[ "**" <o> "\n" ]
 
                       [
                         WtText("As Ranking Member of the full committee, Sen. Chambliss may serve as an ")
@@ -2269,7 +2269,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   Bold(
@@ -2296,7 +2296,7 @@ ParsedWikitextPage(
                   UnorderedList([
                     ListItem(
                       Properties:
-                        RTD = RtData: [0] = "**", [1] = "\n"
+                        {N} rtd = RTD[ "**" <o> "\n" ]
 
                       [
                         InternalLink(
@@ -2317,7 +2317,7 @@ ParsedWikitextPage(
                     )
                     ListItem(
                       Properties:
-                        RTD = RtData: [0] = "**", [1] = "\n"
+                        {N} rtd = RTD[ "**" <o> "\n" ]
 
                       [
                         InternalLink(
@@ -2338,7 +2338,7 @@ ParsedWikitextPage(
                     )
                     ListItem(
                       Properties:
-                        RTD = RtData: [0] = "**", [1] = "\n"
+                        {N} rtd = RTD[ "**" <o> "\n" ]
 
                       [
                         InternalLink(
@@ -2362,7 +2362,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   Bold(
@@ -2390,7 +2390,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   Bold(
@@ -2418,7 +2418,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   Bold(
@@ -2575,49 +2575,49 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Congressional Fire Services Caucus") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Congressional Sportsmen Foundation") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Juvenile Diabetes Caucus") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("National Guard Caucus") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Rural Health Caucus") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Senate Caucus on Military Depots, Arsenals and Ammunition Plants") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Co-Chair, Senate Reserve Caucus") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Steering Committee") ]
               )
@@ -6275,7 +6275,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               ExternalLink(
@@ -6301,7 +6301,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               ExternalLink(
@@ -6321,7 +6321,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               ExternalLink(
@@ -6517,7 +6517,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               ExternalLink(
@@ -6547,7 +6547,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -6584,7 +6584,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -6621,7 +6621,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -6677,7 +6677,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -6698,7 +6698,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -6733,7 +6733,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -6763,7 +6763,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               ExternalLink(

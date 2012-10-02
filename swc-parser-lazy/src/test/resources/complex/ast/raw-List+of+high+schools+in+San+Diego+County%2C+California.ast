@@ -47,7 +47,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -64,7 +64,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Palm Canyon High School (continuation), Borrego Springs") ]
               )
@@ -84,7 +84,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -106,7 +106,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Palm Academy for Learning, Coronado") ]
               )
@@ -141,19 +141,19 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Center City High School, Escondido\t") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Escondido Charter High School, Escondido") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -170,7 +170,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -187,7 +187,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -204,13 +204,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Valley High School (continuation), Escondido") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -245,7 +245,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -262,13 +262,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Ivy High School (continuation), Fallbrook") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Oasis High School (alternative), Fallbrook") ]
               )
@@ -298,7 +298,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -320,7 +320,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -337,7 +337,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -354,7 +354,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -376,7 +376,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -393,7 +393,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -410,7 +410,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -427,7 +427,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -449,7 +449,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -466,7 +466,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -483,7 +483,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -500,7 +500,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -522,7 +522,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -553,7 +553,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -570,13 +570,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Redding (Ray) High (continuation), Julian") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Summit High Community Day, Julian") ]
               )
@@ -596,7 +596,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -627,7 +627,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -658,7 +658,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -680,7 +680,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -697,13 +697,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Oceanside School of Business and Technology, Oceanside") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Pacific View Charter School, Oceanside") ]
               )
@@ -733,7 +733,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -755,7 +755,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -777,7 +777,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -794,7 +794,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -811,7 +811,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -847,19 +847,19 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Montecito High School (alternative), Ramona") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Mountain Valley Academy High School, Ramona") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -942,7 +942,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -959,7 +959,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -976,13 +976,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("North Coast High School (alternative)") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -999,13 +999,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Sunset High School (alternative)") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1036,19 +1036,19 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Bayshore Prep Charter School, San Marcos\t") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Foothills High (alternative), San Marcos\t") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1065,7 +1065,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1087,7 +1087,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Twin Oaks High School (alternative), San Marcos") ]
               )
@@ -1117,7 +1117,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1134,7 +1134,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1151,7 +1151,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1168,7 +1168,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1190,7 +1190,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1207,13 +1207,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("MAAC Community Charter School, Chula Vista") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1230,7 +1230,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1246,7 +1246,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1263,7 +1263,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1280,7 +1280,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1297,13 +1297,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Palomar High School, Chula Vista") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1320,7 +1320,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1337,7 +1337,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1354,7 +1354,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1385,7 +1385,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1402,49 +1402,49 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Valley Center Middle School, Valley Center") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Valley Center Elementary, Valley Center") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Valley Center Primary, Valley Center") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Valley Center Lilac Elementary, Valley Center") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Pauma Valley School K-8, Pauma Valley") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Oak Glen High School (Continuation), Valley Center") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Valley Center Independent Study, Valley Center") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Valley Center Adult Education, Valley Center") ]
               )
@@ -1464,7 +1464,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   WtText(" ")
@@ -1482,7 +1482,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   WtText(" ")
@@ -1500,7 +1500,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   WtText(" ")
@@ -1523,7 +1523,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText(" North County Trade Tech High School (charter), Vista") ]
               )
@@ -1543,7 +1543,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1560,7 +1560,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("San Jose Valley Continuation High School, Warner Springs") ]
               )
@@ -1638,7 +1638,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1674,7 +1674,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1691,7 +1691,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1708,7 +1708,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1739,7 +1739,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1760,7 +1760,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1777,7 +1777,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1808,13 +1808,13 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Maranatha Christian Schools, San Diego") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   InternalLink(
@@ -1844,7 +1844,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   ExternalLink(
@@ -1864,19 +1864,19 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Carlsbad Seaside Academy, Carlsbad\t") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Carlsbad Village Academy, Carlsbad") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1898,7 +1898,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1920,7 +1920,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1937,7 +1937,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1954,7 +1954,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   InternalLink(
@@ -1971,13 +1971,13 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [ WtText("Pacific Academy International, Encinitas") ]
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [ WtText("Pacific Ridge School, Carlsbad") ]
               )
@@ -2000,7 +2000,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText("Sun Valley Charter High School, Ramona. Closed as of February 3, 2008 due to lack of funding.")
@@ -2031,7 +2031,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               InternalLink(
@@ -2047,7 +2047,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               InternalLink(
@@ -2063,7 +2063,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               InternalLink(
@@ -2079,7 +2079,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               InternalLink(
@@ -2095,7 +2095,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               InternalLink(
@@ -2111,7 +2111,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               InternalLink(
@@ -2163,7 +2163,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               ExternalLink(
@@ -2182,7 +2182,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               ExternalLink(

@@ -474,7 +474,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               Template(
@@ -560,7 +560,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               Template(
@@ -626,7 +626,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               Bold(
@@ -681,7 +681,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               Template(
@@ -799,7 +799,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               Template(
@@ -882,7 +882,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               Template(
@@ -927,7 +927,7 @@ ParsedWikitextPage(
               UnorderedList([
                 ListItem(
                   Properties:
-                    RTD = RtData: [0] = "**", [1] = "\n"
+                    {N} rtd = RTD[ "**" <o> "\n" ]
 
                   [
                     WtText("Vague terms of size often are unnecessary and redundant -  \u201Csome\u201D, \u201Ca variety/number/majority of\u201D, \u201Cseveral\u201D, \u201Ca few\u201D, \u201Cmany\u201D, \u201Cany\u201D, and \u201Call\u201D. For example, \u201C")
@@ -993,7 +993,7 @@ ParsedWikitextPage(
                 )
                 ListItem(
                   Properties:
-                    RTD = RtData: [0] = "**", [1] = "\n"
+                    {N} rtd = RTD[ "**" <o> "\n" ]
 
                   [
                     WtText("\u201CIn ")
@@ -1042,7 +1042,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText("Please ensure that the article has gone through a thorough copyediting so that it exemplifies some of ")

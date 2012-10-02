@@ -857,7 +857,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" The entire table is encased with curly brackets and a vertical bar character (a pipe).  So use ")
@@ -1001,7 +1001,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" An optional ")
@@ -1131,7 +1131,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" To start a new ")
@@ -1351,7 +1351,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" Type the codes for each ")
@@ -1581,7 +1581,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" Cells can be separated with either a new line and new bar, or by a double bar \"")
@@ -1806,7 +1806,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [ WtText(" If you use single bars, then what might appear to be the first cell is in fact a format modifier applied to the cell, and the rest of your \"cells\" will be merged into one:") ]
           )
@@ -2242,7 +2242,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" a row of ")
@@ -2461,7 +2461,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" the first cell of a row is identified as a ")
@@ -2658,7 +2658,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" Optional ")
@@ -9889,7 +9889,7 @@ ParsedWikitextPage(
             DefinitionList([
               DefinitionListDef(
                 Properties:
-                  RTD = RtData: [0] = ":", [1] = "\n"
+                  {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText(" Wikicode (")
@@ -9903,7 +9903,7 @@ ParsedWikitextPage(
                   DefinitionList([
                     DefinitionListDef(
                       Properties:
-                        RTD = RtData: [0] = "::", [1] = "\n"
+                        {N} rtd = RTD[ "::" <o> "\n" ]
 
                       [
                         WtText(" ")
@@ -9922,7 +9922,7 @@ ParsedWikitextPage(
               )
               DefinitionListDef(
                 Properties:
-                  RTD = RtData: [0] = ":", [1] = "\n"
+                  {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("Result:")
@@ -9931,7 +9931,7 @@ ParsedWikitextPage(
                       UnorderedList([
                         ListItem(
                           Properties:
-                            RTD = RtData: [0] = "::*", [1] = "\n"
+                            {N} rtd = RTD[ "::*" <o> "\n" ]
 
                           [
                             WtText(" This is a test table here ")
@@ -9983,7 +9983,7 @@ ParsedWikitextPage(
               )
               DefinitionListDef(
                 Properties:
-                  RTD = RtData: [0] = ":", [1] = "\n"
+                  {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText(" Wikicode (")
@@ -9997,7 +9997,7 @@ ParsedWikitextPage(
                   DefinitionList([
                     DefinitionListDef(
                       Properties:
-                        RTD = RtData: [0] = "::", [1] = "\n"
+                        {N} rtd = RTD[ "::" <o> "\n" ]
 
                       [
                         WtText(" ")
@@ -10016,7 +10016,7 @@ ParsedWikitextPage(
               )
               DefinitionListDef(
                 Properties:
-                  RTD = RtData: [0] = ":", [1] = "\n"
+                  {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("Result:")
@@ -10025,7 +10025,7 @@ ParsedWikitextPage(
                       UnorderedList([
                         ListItem(
                           Properties:
-                            RTD = RtData: [0] = "::*", [1]
+                            {N} rtd = RTD[ "::*" <o> "" ]
 
                           [
                             WtText(" ")
@@ -10736,7 +10736,7 @@ ParsedWikitextPage(
         DefinitionList([
           DefinitionListDef(
             Properties:
-              RTD = RtData: [0] = ":", [1]
+              {N} rtd = RTD[ ":" <o> "" ]
 
             [
               WtText(" ")
@@ -10785,7 +10785,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" in the software itself, per skin (for example the class ")
@@ -10808,7 +10808,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" collectively for all users of one wiki in ")
@@ -10839,7 +10839,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" separately per skin in ")
@@ -10857,13 +10857,13 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" individually on one wiki in a user subpage") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [ WtText(" individually, but jointly for tables of the class concerned on all web pages, on the local computer of the user.") ]
           )
@@ -12582,7 +12582,7 @@ ParsedWikitextPage(
         DefinitionList([
           DefinitionListDef(
             Properties:
-              RTD = RtData: [0] = ":", [1]
+              {N} rtd = RTD[ ":" <o> "" ]
 
             [
               Italics(
@@ -12647,19 +12647,19 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" Do not divide a table into sections by subheaders spanning several rows. Instead, an extra column can be made showing the content of these headers on each row, in a short form.") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" Do not have elements spanning several columns; instead, again, repeat the content on each row, in a short form.") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [ WtText(" In a column of numbers, do not put text such as \"ca.\" in front of a number-it will sort like zero. Do not put text after the number, and do not put a range of numbers (it does not affect the sorting position for numeric sorting mode, and in the case of a range, the first number determines the position, but if, possibly after sorting this or another column, the element is at the top, it will induce alphabetic sorting mode). Instead, put these texts in a separate column. Alternatively, for the greatest flexibility, alphabetic sorting mode with hidden sortkeys can be used.") ]
           )
@@ -13506,25 +13506,25 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" the basic code for a table row") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" code for color, alignment, and sorting mode") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" fixed texts such as units") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [ WtText(" special formats for sorting") ]
           )
@@ -13535,25 +13535,25 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" easily changing the order of columns, or removing a column") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" easily adding a new column if many elements of the new column are left blank (if the column is inserted and the existing fields are unnamed, use a named parameter for the new field to avoid adding blank parameter values to many template calls)") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" computing fields from other fields, e.g. population density from population and area") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" duplicating content and providing span tags with \"display:none\" for the purpose of having one format for ")
@@ -13576,7 +13576,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [ WtText(" easy specification of a format for a whole column, such as color and alignment") ]
           )
@@ -13996,13 +13996,13 @@ ParsedWikitextPage(
         OrderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "#", [1] = "\n"
+              {N} rtd = RTD[ "#" <o> "\n" ]
 
             [ WtText("XHTML") ]
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "#", [1]
+              {N} rtd = RTD[ "#" <o> "" ]
 
             [
               WtText(
@@ -14860,31 +14860,31 @@ ParsedWikitextPage(
                         UnorderedList([
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Can preview or debug with any XHTML editor") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Can be indented for easier reading") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Well-known") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Insensitive to newlines") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1]
+                              {N} rtd = RTD[ "*" <o> "" ]
 
                             [ WtText(" No characters like \"|\" which can collide with template and parser function syntax") ]
                           )
@@ -14902,25 +14902,25 @@ ParsedWikitextPage(
                         UnorderedList([
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Easy to write") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Easy to read") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Takes little space") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1]
+                              {N} rtd = RTD[ "*" <o> "" ]
 
                             [ WtText(" Can be learned quickly") ]
                           )
@@ -14974,37 +14974,37 @@ ParsedWikitextPage(
                         UnorderedList([
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Tedious") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Takes a lot of space") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Difficult to read quickly") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Accidentally putting \"tr\" for \"td\" can cause confusion for hours.") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Indented code might not match nesting.") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1]
+                              {N} rtd = RTD[ "*" <o> "" ]
 
                             [ WtText(" In rare cases, newlines can break cells, causing severe confusion since newlines usually are ok.") ]
                           )
@@ -15022,31 +15022,31 @@ ParsedWikitextPage(
                         UnorderedList([
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Unfamiliar syntax") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Rigid structure") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Cannot be indented") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Text (as in HTML tags) may be easier for some people to read than series of pipes, plus signs, dashes, etc.") ]
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1] = "\n"
+                              {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [
                               WtText(" Requires using ")
@@ -15064,7 +15064,7 @@ ParsedWikitextPage(
                           )
                           ListItem(
                             Properties:
-                              RTD = RtData: [0] = "*", [1]
+                              {N} rtd = RTD[ "*" <o> "" ]
 
                             [
                               WtText(" Sensitive to newlines; see ")
@@ -15403,7 +15403,7 @@ ParsedWikitextPage(
             UnorderedList([
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1] = "\n"
+                  {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
                   WtText(" ")
@@ -15439,7 +15439,7 @@ ParsedWikitextPage(
               )
               ListItem(
                 Properties:
-                  RTD = RtData: [0] = "*", [1]
+                  {N} rtd = RTD[ "*" <o> "" ]
 
                 [
                   WtText(" ")
@@ -17510,7 +17510,7 @@ ParsedWikitextPage(
         DefinitionList([
           DefinitionListDef(
             Properties:
-              RTD = RtData: [0] = ":", [1]
+              {N} rtd = RTD[ ":" <o> "" ]
 
             [
               Italics(
@@ -19033,7 +19033,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19050,7 +19050,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19067,7 +19067,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19084,7 +19084,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19101,7 +19101,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19118,7 +19118,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19135,7 +19135,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19152,7 +19152,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19169,7 +19169,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19186,7 +19186,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19203,7 +19203,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19220,14 +19220,14 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" Examples:")
               UnorderedList([
                 ListItem(
                   Properties:
-                    RTD = RtData: [0] = "**", [1] = "\n"
+                    {N} rtd = RTD[ "**" <o> "\n" ]
 
                   [
                     WtText(" ")
@@ -19249,7 +19249,7 @@ ParsedWikitextPage(
                 )
                 ListItem(
                   Properties:
-                    RTD = RtData: [0] = "**", [1] = "\n"
+                    {N} rtd = RTD[ "**" <o> "\n" ]
 
                   [
                     WtText(" ")
@@ -19271,7 +19271,7 @@ ParsedWikitextPage(
                 )
                 ListItem(
                   Properties:
-                    RTD = RtData: [0] = "**", [1] = "\n"
+                    {N} rtd = RTD[ "**" <o> "\n" ]
 
                   [
                     WtText(" ")
@@ -19293,7 +19293,7 @@ ParsedWikitextPage(
                 )
                 ListItem(
                   Properties:
-                    RTD = RtData: [0] = "**", [1] = "\n"
+                    {N} rtd = RTD[ "**" <o> "\n" ]
 
                   [
                     WtText(" ")
@@ -19318,7 +19318,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19340,7 +19340,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19362,7 +19362,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" Cleanup template ")
@@ -19402,7 +19402,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19420,7 +19420,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19440,7 +19440,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19491,7 +19491,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19511,7 +19511,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19531,7 +19531,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19552,7 +19552,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19573,7 +19573,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19594,7 +19594,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -19615,7 +19615,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" ")

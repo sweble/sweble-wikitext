@@ -26180,7 +26180,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" ")
@@ -26834,7 +26834,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "<!--\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n-->\n*", [1] = "\n"
+              {N} rtd = RTD[ XmlComment("\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n") + "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -26855,7 +26855,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -26876,7 +26876,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -26897,7 +26897,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -26917,7 +26917,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -26950,7 +26950,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -26987,7 +26987,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -27014,7 +27014,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" ")
@@ -27062,7 +27062,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -27083,7 +27083,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" ")

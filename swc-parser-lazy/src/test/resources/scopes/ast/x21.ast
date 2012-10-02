@@ -10,7 +10,7 @@ ParsedWikitextPage(
         DefinitionList([
           DefinitionListDef(
             Properties:
-              RTD = RtData: [0] = "::", [1]
+              {N} rtd = RTD[ "::" <o> "" ]
 
             [
               XmlElement(
@@ -63,7 +63,7 @@ ParsedWikitextPage(
     DefinitionList([
       DefinitionListDef(
         Properties:
-          RTD = RtData: [0] = ":", [1]
+          {N} rtd = RTD[ ":" <o> "" ]
 
         [
           XmlElement(

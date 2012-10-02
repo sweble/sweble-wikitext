@@ -24,7 +24,7 @@ ParsedWikitextPage(
     UnorderedList([
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" ")
@@ -42,7 +42,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" ")
@@ -60,7 +60,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" ")
@@ -78,7 +78,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" ")
@@ -96,7 +96,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" Average Squared Difference Function, a mapping used in ")
@@ -113,7 +113,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" asdf, the first four letters in the ")
@@ -141,7 +141,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" asdf movie, a series of ")
@@ -158,7 +158,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1]
+          {N} rtd = RTD[ "*" <o> "" ]
 
         [ WtText(" Asdf.com is a random chat board where the point is to not always stay on topic.") ]
       )
@@ -175,7 +175,7 @@ ParsedWikitextPage(
         UnorderedList([
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -192,7 +192,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1] = "\n"
+              {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" ")
@@ -209,7 +209,7 @@ ParsedWikitextPage(
           )
           ListItem(
             Properties:
-              RTD = RtData: [0] = "*", [1]
+              {N} rtd = RTD[ "*" <o> "" ]
 
             [
               WtText(" ")

@@ -7,13 +7,13 @@ ParsedWikitextPage(
     UnorderedList([
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1]
+          {N} rtd = RTD[ "*" <o> "" ]
 
         [ WtText(" Welt") ]
       )
@@ -23,13 +23,13 @@ ParsedWikitextPage(
     UnorderedList([
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1]
+          {N} rtd = RTD[ "*" <o> "" ]
 
         [ WtText(" Welt") ]
       )
@@ -39,13 +39,13 @@ ParsedWikitextPage(
     UnorderedList([
       ListItem(
         Properties:
-          RTD = RtData: [0] = "<!-- Comment 1 -->*", [1] = "\n"
+          {N} rtd = RTD[ XmlComment(" Comment 1 ") + "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "<!-- Comment 2 -->*", [1]
+          {N} rtd = RTD[ XmlComment(" Comment 2 ") + "*" <o> "" ]
 
         [ WtText(" Welt") ]
       )

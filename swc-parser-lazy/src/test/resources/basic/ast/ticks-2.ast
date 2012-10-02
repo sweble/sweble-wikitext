@@ -72,7 +72,7 @@ ParsedWikitextPage(
     UnorderedList([
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" ")
@@ -86,7 +86,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1] = "\n"
+          {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
           WtText(" ")
@@ -100,7 +100,7 @@ ParsedWikitextPage(
       )
       ListItem(
         Properties:
-          RTD = RtData: [0] = "*", [1]
+          {N} rtd = RTD[ "*" <o> "" ]
 
         [
           WtText(" ")
