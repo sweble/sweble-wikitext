@@ -18,7 +18,7 @@ package org.sweble.wikitext.parser;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.sweble.wikitext.parser.utils.AstPrinter;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 import org.sweble.wikitext.parser.utils.TextUtils;
 
 public class TextUtilsTest
@@ -27,7 +27,7 @@ public class TextUtilsTest
 	public void testStringToAst()
 	{
 		final String actual =
-				AstPrinter.print(TextUtils.stringToAst("H&llo <Welt>!"));
+				WtPrinter.print(TextUtils.stringToAst("H&llo <Welt>!"));
 		
 		final String expected =
 				"[\n" +

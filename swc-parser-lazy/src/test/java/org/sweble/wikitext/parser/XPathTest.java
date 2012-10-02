@@ -27,7 +27,7 @@ import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.junit.Test;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
-import org.sweble.wikitext.parser.utils.AstPrinter;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 import org.sweble.wikitext.parser.utils.FullParser;
 
 import xtc.parser.ParseException;
@@ -149,7 +149,7 @@ public class XPathTest
 				b.append(StringUtils.strrep('-', 80));
 				b.append('\n');
 			}
-			b.append(AstPrinter.print((WikitextNode) i.next()));
+			b.append(WtPrinter.print((WikitextNode) i.next()));
 			b.append('\n');
 			++j;
 		}

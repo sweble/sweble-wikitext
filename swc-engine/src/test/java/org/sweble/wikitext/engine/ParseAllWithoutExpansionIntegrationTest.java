@@ -33,7 +33,7 @@ import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.nodes.WtList;
-import org.sweble.wikitext.parser.utils.AstPrinter;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
@@ -75,7 +75,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 		// We don't want to see the log
 		page.setLog(null);
 		
-		String printedAst = AstPrinter.print(page);
+		String printedAst = WtPrinter.print(page);
 		
 		String expected = ""
 				+ "CompiledPage(\n"

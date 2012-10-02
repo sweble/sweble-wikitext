@@ -22,11 +22,13 @@ import java.io.Writer;
 import org.sweble.wikitext.parser.nodes.Whitespace;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
 
-public class AstPrinter
+import de.fau.cs.osr.ptk.common.AstPrinter;
+
+public class WtPrinter
 		extends
-			de.fau.cs.osr.ptk.common.AstPrinter
+			AstPrinter<WikitextNode>
 {
-	public AstPrinter(Writer writer)
+	public WtPrinter(Writer writer)
 	{
 		super(writer);
 	}

@@ -36,8 +36,7 @@ public final class TypedAstPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		org.sweble.wikitext.parser.utils.AstPrinter printer =
-				new org.sweble.wikitext.parser.utils.AstPrinter(out);
+		WtPrinter printer = new WtPrinter(out);
 		
 		printer.setLegacyIndentation(true);
 		printer.go((WikitextNode) ast);
