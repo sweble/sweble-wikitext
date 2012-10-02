@@ -481,9 +481,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                               {N} empty = false
                               {N} name = "font"
+                              {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
                               XmlAttribute(
@@ -561,9 +561,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                               {N} empty = false
                               {N} name = "font"
+                              {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
                               XmlAttribute(
@@ -619,9 +619,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                               {N} empty = false
                               {N} name = "font"
+                              {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
                               XmlAttribute(
@@ -702,9 +702,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                               {N} empty = false
                               {N} name = "font"
+                              {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
                               XmlAttribute(
@@ -1792,9 +1792,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                               {N} empty = false
                               {N} name = "font"
+                              {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
                               XmlAttribute(
@@ -1811,9 +1811,9 @@ ParsedWikitextPage(
                           WtText(", then ")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                               {N} empty = false
                               {N} name = "font"
+                              {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
                               XmlAttribute(

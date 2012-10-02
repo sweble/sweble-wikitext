@@ -45,9 +45,9 @@ ParsedWikitextPage(
             WtText("2")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<span", [1] = "\n>", [2] = "</span>"
                 {N} empty = false
                 {N} name = "span"
+                {N} rtd = RTD[ "<span" <o> "\n>" <o> "</span>" ]
 
               [ ]
               [ WtText("X") ]

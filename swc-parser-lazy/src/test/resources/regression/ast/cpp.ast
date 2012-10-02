@@ -7,9 +7,9 @@ ParsedWikitextPage(
     Paragraph([
       XmlElement(
         Properties:
-          RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
           {N} empty = false
           {N} name = "code"
+          {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
         [ ]
         [ WtText("<") ]
@@ -17,16 +17,16 @@ ParsedWikitextPage(
       Newline("\n")
       XmlStartTag(
         Properties:
-          RTD = RtData: [0] = "<blub", [1] = ">"
           {N} name = "blub"
+          {N} rtd = RTD[ "<blub" <o> ">" ]
 
         [ ]
       )
       WtText("<")
       XmlEndTag(
         Properties:
-          RTD = RtData: [0] = "</blub>"
           {N} name = "blub"
+          {N} rtd = RTD[ "</blub>" ]
       )
     ])
   ]

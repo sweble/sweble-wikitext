@@ -7,9 +7,9 @@ ParsedWikitextPage(
     Paragraph([
       XmlElement(
         Properties:
-          RTD = RtData: [0] = "<i", [1] = ">", [2] = "</i>"
           {N} empty = false
           {N} name = "i"
+          {N} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
 
         [ ]
         [ WtText(" aaa ") ]

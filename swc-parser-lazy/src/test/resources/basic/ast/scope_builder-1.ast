@@ -8,9 +8,9 @@ ParsedWikitextPage(
     Paragraph([ ])
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
         {N} empty = false
         {N} name = "table"
+        {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
       [ ]
       [
@@ -24,9 +24,9 @@ ParsedWikitextPage(
         Paragraph([ WtText("\t") ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
             {N} empty = false
             {N} name = "tr"
+            {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
           [ ]
           [
@@ -34,9 +34,9 @@ ParsedWikitextPage(
             WtText("\t\t")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                 {N} empty = false
                 {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
               [ ]
               [ WtText("Cell 1.1") ]
@@ -45,9 +45,9 @@ ParsedWikitextPage(
             WtText("\t\t")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                 {N} empty = false
                 {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
               [ ]
               [ WtText("Cell 1.2") ]
@@ -61,9 +61,9 @@ ParsedWikitextPage(
         Paragraph([ WtText("\t") ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
             {N} empty = false
             {N} name = "tr"
+            {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
           [ ]
           [
@@ -71,9 +71,9 @@ ParsedWikitextPage(
             WtText("\t\t")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                 {N} empty = false
                 {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
               [ ]
               [ WtText("Cell 2.1") ]
@@ -82,9 +82,9 @@ ParsedWikitextPage(
             WtText("\t\t")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                 {N} empty = false
                 {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
               [ ]
               [ WtText("Cell 2.2") ]

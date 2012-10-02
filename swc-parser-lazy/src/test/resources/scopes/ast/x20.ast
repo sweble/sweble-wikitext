@@ -6,9 +6,9 @@ ParsedWikitextPage(
   [
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<p", [1] = ">", [2] = "</p>"
         {N} empty = false
         {N} name = "p"
+        {N} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
 
       [ ]
       [
@@ -22,17 +22,17 @@ ParsedWikitextPage(
     Newline("\n")
     XmlEndTag(
       Properties:
-        RTD = RtData: [0] = "</p>"
         {N} name = "p"
+        {N} rtd = RTD[ "</p>" ]
     )
     Newline("\n")
     WtText("P3")
     Newline("\n")
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<p", [1] = ">", [2]
         {N} empty = false
         {N} name = "p"
+        {N} rtd = RTD[ "<p" <o> ">" <o> "" ]
 
       [ ]
       [
@@ -43,9 +43,9 @@ ParsedWikitextPage(
     )
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
         {N} empty = false
         {N} name = "div"
+        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
       [ ]
       [

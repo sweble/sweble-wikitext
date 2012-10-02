@@ -21,7 +21,6 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.ParserConfig;
-import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.DefinitionList;
 import org.sweble.wikitext.parser.nodes.DefinitionListDef;
 import org.sweble.wikitext.parser.nodes.DefinitionListTerm;
@@ -49,9 +48,9 @@ import org.sweble.wikitext.parser.nodes.XmlEndTag;
 import org.sweble.wikitext.parser.nodes.XmlStartTag;
 import org.sweble.wikitext.parser.parser.NamedXmlElement;
 import org.sweble.wikitext.parser.postprocessor.ElementScopeStack.Scope;
-import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
@@ -712,22 +711,19 @@ public class ScopedElementBuilder
 		
 		if (config.isGatherRtData())
 		{
-			Object[] rtd0;
-			Object[] rtd1;
-			
-			RtData rtd = (RtData) e.getAttribute("RTD");
-			if (rtd == null)
+			RtDataPtk rtd = new RtDataPtk(3);
+			RtDataPtk rtdEmpty = e.getRtd();
+			if (rtdEmpty == null)
 			{
-				rtd0 = TextUtils.joinRt('<', e.getName());
-				rtd1 = TextUtils.joinRt(wasEmpty ? " />" : '>');
+				rtd.setField(0, '<', e.getName());
+				rtd.setField(1, wasEmpty ? " />" : '>');
 			}
 			else
 			{
-				rtd0 = rtd.getRts()[0];
-				rtd1 = rtd.getRts()[1];
+				rtd.setField(0, rtdEmpty.getField(0));
+				rtd.setField(1, rtdEmpty.getField(1));
 			}
-			
-			TextUtils.addRtData(element, rtd0, rtd1, null);
+			element.setRtd(rtd);
 		}
 		
 		return element;
@@ -747,39 +743,35 @@ public class ScopedElementBuilder
 		
 		if (config.isGatherRtData())
 		{
-			Object[] oRtd0 = null;
-			Object[] oRtd1 = null;
-			Object[] cRtd0 = null;
-			
+			RtDataPtk rtd = new RtDataPtk(3);
 			if (hasOpen)
 			{
-				RtData a = (RtData) open.getAttribute("RTD");
-				if (a == null)
+				RtDataPtk rtdOpen = open.getRtd();
+				if (rtdOpen == null)
 				{
-					oRtd0 = TextUtils.joinRt('<', open.getName());
-					oRtd1 = TextUtils.joinRt('>');
+					rtd.setField(0, '<', open.getName());
+					rtd.setField(1, '>');
 				}
 				else
 				{
-					oRtd0 = a.getRts()[0];
-					oRtd1 = a.getRts()[1];
+					rtd.setField(0, rtdOpen.getField(0));
+					rtd.setField(1, rtdOpen.getField(1));
 				}
 			}
 			
 			if (close != null)
 			{
-				RtData b = (RtData) close.getAttribute("RTD");
-				if (b != null)
+				RtDataPtk rtdClose = close.getRtd();
+				if (rtdClose == null)
 				{
-					cRtd0 = b.getRts()[0];
+					rtd.setField(2, "</", open.getName(), '>');
 				}
 				else
 				{
-					cRtd0 = TextUtils.joinRt("</", open.getName(), '>');
+					rtd.setField(2, rtdClose.getField(0));
 				}
 			}
-			
-			TextUtils.addRtData(e, oRtd0, oRtd1, cRtd0);
+			e.setRtd(rtd);
 		}
 		
 		return e;

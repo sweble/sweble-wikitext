@@ -72,9 +72,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                         {N} empty = false
                         {N} name = "small"
+                        {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                       [ ]
                       [ WtText("(waarom? jus'b'coz!)") ]
@@ -188,9 +188,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                         {N} empty = false
                         {N} name = "small"
+                        {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                       [ ]
                       [ WtText("(waarom? jus'b'coz!)") ]
@@ -316,9 +316,9 @@ ParsedWikitextPage(
                         [
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                               {N} empty = false
                               {N} name = "small"
+                              {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                             [ ]
                             [ WtText("(waarom? jus'b'coz!)") ]
@@ -555,9 +555,9 @@ ParsedWikitextPage(
                           [
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                 {N} empty = false
                                 {N} name = "small"
+                                {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                               [ ]
                               [ WtText("(waarom? jus'b'coz!)") ]
@@ -1323,9 +1323,9 @@ ParsedWikitextPage(
                       [
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                             {N} empty = false
                             {N} name = "small"
+                            {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                           [ ]
                           [ WtText("(waarom? jus'b'coz!)") ]
@@ -1660,17 +1660,17 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<sup", [1] = ">", [2] = "</sup>"
                               {N} empty = false
                               {N} name = "sup"
+                              {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
                             [ ]
                             [
                               XmlElement(
                                 Properties:
-                                  RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                   {N} empty = false
                                   {N} name = "small"
+                                  {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                                 [ ]
                                 [
@@ -1765,17 +1765,17 @@ ParsedWikitextPage(
                                       )
                                       XmlElement(
                                         Properties:
-                                          RTD = RtData: [0] = "<sup", [1] = ">", [2] = "</sup>"
                                           {N} empty = false
                                           {N} name = "sup"
+                                          {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
                                         [ ]
                                         [
                                           XmlElement(
                                             Properties:
-                                              RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                               {N} empty = false
                                               {N} name = "small"
+                                              {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                                             [ ]
                                             [
@@ -2034,17 +2034,17 @@ ParsedWikitextPage(
               )
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<sup", [1] = ">", [2] = "</sup>"
                   {N} empty = false
                   {N} name = "sup"
+                  {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
                 [ ]
                 [
                   XmlElement(
                     Properties:
-                      RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                       {N} empty = false
                       {N} name = "small"
+                      {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                     [ ]
                     [
@@ -2294,9 +2294,9 @@ ParsedWikitextPage(
                       [
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                             {N} empty = false
                             {N} name = "small"
+                            {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                           [ ]
                           [ WtText("(waarom? jus'coz!)") ]
@@ -2353,9 +2353,9 @@ ParsedWikitextPage(
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                     {N} empty = false
                     {N} name = "small"
+                    {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                   [ ]
                   [ WtText("(waarom? jus'coz!)") ]
@@ -2472,9 +2472,9 @@ ParsedWikitextPage(
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                     {N} empty = false
                     {N} name = "small"
+                    {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                   [ ]
                   [ WtText("(waarom? jus'b'coz!)") ]
@@ -2696,9 +2696,9 @@ ParsedWikitextPage(
                           [
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                 {N} empty = false
                                 {N} name = "small"
+                                {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                               [ ]
                               [ WtText("(waarom? jus'b'coz!)") ]
@@ -2977,9 +2977,9 @@ ParsedWikitextPage(
                       [
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                             {N} empty = false
                             {N} name = "small"
+                            {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                           [ ]
                           [ WtText("(waarom? jus'b'coz!)") ]
@@ -3186,9 +3186,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                         {N} empty = false
                         {N} name = "small"
+                        {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                       [ ]
                       [ WtText("(waarom? jus'b'coz!)") ]
@@ -4308,9 +4308,9 @@ ParsedWikitextPage(
           WtText(" ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<s", [1] = ">", [2] = "</s>"
               {N} empty = false
               {N} name = "s"
+              {N} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
 
             [ ]
             [ WtText("And please stop editing other peoples comments, it's just confuses things.") ]
@@ -4345,9 +4345,9 @@ ParsedWikitextPage(
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<sub", [1] = ">", [2] = "</sub>"
                     {N} empty = false
                     {N} name = "sub"
+                    {N} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
 
                   [ ]
                   [ WtText("talk\u203D") ]
@@ -4398,9 +4398,9 @@ ParsedWikitextPage(
                           [
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<sub", [1] = ">", [2] = "</sub>"
                                 {N} empty = false
                                 {N} name = "sub"
+                                {N} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
 
                               [ ]
                               [ WtText("talk\u203D") ]
@@ -4640,9 +4640,9 @@ ParsedWikitextPage(
                         [
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<sub", [1] = ">", [2] = "</sub>"
                               {N} empty = false
                               {N} name = "sub"
+                              {N} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
 
                             [ ]
                             [ WtText("talk\u203D") ]
@@ -4833,9 +4833,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<sub", [1] = ">", [2] = "</sub>"
                         {N} empty = false
                         {N} name = "sub"
+                        {N} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
 
                       [ ]
                       [ WtText("talk\u203D") ]
@@ -5071,9 +5071,9 @@ ParsedWikitextPage(
         Paragraph([
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<s", [1] = ">", [2] = "</s>"
               {N} empty = false
               {N} name = "s"
+              {N} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
 
             [ ]
             [
@@ -5630,9 +5630,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<sub", [1] = ">", [2] = "</sub>"
                         {N} empty = false
                         {N} name = "sub"
+                        {N} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
 
                       [ ]
                       [ WtText("talk\u203D") ]
@@ -5794,9 +5794,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<sub", [1] = ">", [2] = "</sub>"
                         {N} empty = false
                         {N} name = "sub"
+                        {N} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
 
                       [ ]
                       [ WtText("talk\u203D") ]
@@ -6023,9 +6023,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                         {N} empty = false
                         {N} name = "small"
+                        {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                       [ ]
                       [ WtText("(waarom? jus'b'coz!)") ]
@@ -6121,9 +6121,9 @@ ParsedWikitextPage(
                               [
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                     {N} empty = false
                                     {N} name = "small"
+                                    {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                                   [ ]
                                   [ WtText("(waarom? jus'b'coz!)") ]
@@ -6257,9 +6257,9 @@ ParsedWikitextPage(
                         [
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                               {N} empty = false
                               {N} name = "small"
+                              {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                             [ ]
                             [ WtText("(waarom? jus'b'coz!)") ]
@@ -6565,9 +6565,9 @@ ParsedWikitextPage(
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                     {N} empty = false
                     {N} name = "small"
+                    {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                   [ ]
                   [ WtText("(waarom? jus'b'coz!)") ]
@@ -6587,17 +6587,17 @@ ParsedWikitextPage(
               WtText("Don't worry mate, footy season coming up soon, plenty of opportunities coming up. Cheers, ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<b", [1] = ">", [2] = "</b>"
                   {N} empty = false
                   {N} name = "b"
+                  {N} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
 
                 [ ]
                 [
                   XmlElement(
                     Properties:
-                      RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                       {N} empty = false
                       {N} name = "font"
+                      {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
                       XmlAttribute(
@@ -6628,9 +6628,9 @@ ParsedWikitextPage(
                   )
                   XmlElement(
                     Properties:
-                      RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                       {N} empty = false
                       {N} name = "font"
+                      {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
                       XmlAttribute(
@@ -6661,9 +6661,9 @@ ParsedWikitextPage(
                   )
                   XmlElement(
                     Properties:
-                      RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                       {N} empty = false
                       {N} name = "font"
+                      {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
                       XmlAttribute(
@@ -6702,17 +6702,17 @@ ParsedWikitextPage(
                 [
                   XmlElement(
                     Properties:
-                      RTD = RtData: [0] = "<sup", [1] = ">", [2] = "</sup>"
                       {N} empty = false
                       {N} name = "sup"
+                      {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
                     [ ]
                     [
                       XmlElement(
                         Properties:
-                          RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                           {N} empty = false
                           {N} name = "font"
+                          {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                         [
                           XmlAttribute(
@@ -6956,9 +6956,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                         {N} empty = false
                         {N} name = "small"
+                        {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                       [ ]
                       [ WtText("(waarom? jus'b'coz!)") ]
@@ -7025,9 +7025,9 @@ ParsedWikitextPage(
                               [
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                     {N} empty = false
                                     {N} name = "small"
+                                    {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                                   [ ]
                                   [ WtText("(waarom? jus'b'coz!)") ]
@@ -7073,9 +7073,9 @@ ParsedWikitextPage(
                               [
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                                     {N} empty = false
                                     {N} name = "small"
+                                    {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                                   [ ]
                                   [ WtText("(waarom? jus'b'coz!)") ]
@@ -7263,17 +7263,17 @@ ParsedWikitextPage(
           WtText(". Any thoughts or suggestions on this? ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<b", [1] = ">", [2] = "</b>"
               {N} empty = false
               {N} name = "b"
+              {N} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
 
             [ ]
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                   {N} empty = false
                   {N} name = "font"
+                  {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                 [
                   XmlAttribute(
@@ -7304,9 +7304,9 @@ ParsedWikitextPage(
               )
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                   {N} empty = false
                   {N} name = "font"
+                  {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                 [
                   XmlAttribute(
@@ -7337,9 +7337,9 @@ ParsedWikitextPage(
               )
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                   {N} empty = false
                   {N} name = "font"
+                  {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                 [
                   XmlAttribute(
@@ -7378,17 +7378,17 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<sup", [1] = ">", [2] = "</sup>"
                   {N} empty = false
                   {N} name = "sup"
+                  {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
                 [ ]
                 [
                   XmlElement(
                     Properties:
-                      RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
                       {N} empty = false
                       {N} name = "font"
+                      {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
                       XmlAttribute(

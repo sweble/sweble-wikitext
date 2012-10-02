@@ -6,9 +6,9 @@ ParsedWikitextPage(
   [
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
         {N} empty = false
         {N} name = "div"
+        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
       [
         XmlAttribute(
@@ -47,9 +47,9 @@ ParsedWikitextPage(
     Newline("\n")
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
         {N} empty = false
         {N} name = "table"
+        {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
       [
         XmlAttribute(
@@ -65,9 +65,9 @@ ParsedWikitextPage(
         Newline("\n")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<th", [1] = ">", [2] = "</th>"
             {N} empty = false
             {N} name = "th"
+            {N} rtd = RTD[ "<th" <o> ">" <o> "</th>" ]
 
           [
             XmlAttribute(
@@ -84,17 +84,17 @@ ParsedWikitextPage(
         Newline("\n")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
             {N} empty = false
             {N} name = "tr"
+            {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
           [ ]
           [
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                 {N} empty = false
                 {N} name = "td"
+                {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
               [ ]
               [
@@ -114,9 +114,9 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<br", [1] = " />", [2]
                     {N} empty = true
                     {N} name = "br"
+                    {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                   [ ]
                   [ ]
@@ -137,9 +137,9 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<br", [1] = " />", [2]
                     {N} empty = true
                     {N} name = "br"
+                    {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                   [ ]
                   [ ]
@@ -160,9 +160,9 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<br", [1] = " />", [2]
                     {N} empty = true
                     {N} name = "br"
+                    {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                   [ ]
                   [ ]
@@ -183,9 +183,9 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<br", [1] = " />", [2]
                     {N} empty = true
                     {N} name = "br"
+                    {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                   [ ]
                   [ ]
@@ -206,9 +206,9 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<br", [1] = " />", [2]
                     {N} empty = true
                     {N} name = "br"
+                    {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                   [ ]
                   [ ]
@@ -229,9 +229,9 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<br", [1] = " />", [2]
                     {N} empty = true
                     {N} name = "br"
+                    {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                   [ ]
                   [ ]
@@ -607,8 +607,8 @@ ParsedWikitextPage(
           WtText("The sample text (\"Header 1\" or \"row 1, cell 1\") is to be replaced with actual data.")
           XmlEndTag(
             Properties:
-              RTD = RtData: [0] = "</div>"
               {N} name = "div"
+              {N} rtd = RTD[ "</div>" ]
           )
         ])
         Newline("\n")
@@ -863,9 +863,9 @@ ParsedWikitextPage(
               WtText(" The entire table is encased with curly brackets and a vertical bar character (a pipe).  So use ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [
@@ -880,9 +880,9 @@ ParsedWikitextPage(
               WtText(" to begin a table, and ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [
@@ -907,9 +907,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -962,9 +962,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1014,9 +1014,9 @@ ParsedWikitextPage(
               WtText(" is included with a line starting with a vertical bar and plus sign \"")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [
@@ -1056,9 +1056,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1170,9 +1170,9 @@ ParsedWikitextPage(
               WtText(" on its own line: \"")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [
@@ -1228,9 +1228,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1283,9 +1283,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1436,9 +1436,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1490,9 +1490,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1529,9 +1529,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1650,9 +1650,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1697,9 +1697,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1729,9 +1729,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1761,9 +1761,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1859,9 +1859,9 @@ ParsedWikitextPage(
               WtText(" ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1893,9 +1893,9 @@ ParsedWikitextPage(
               WtText(" ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1927,9 +1927,9 @@ ParsedWikitextPage(
               WtText(" ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -1961,9 +1961,9 @@ ParsedWikitextPage(
               WtText(" ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -2296,9 +2296,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2]
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "" ]
 
                 [
                   XmlAttribute(
@@ -2329,9 +2329,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0], [1], [2]
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "" <o> "" <o> "" ]
 
                 [
                   XmlAttribute(
@@ -2362,9 +2362,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0], [1], [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "" <o> "" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -2548,9 +2548,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -2601,9 +2601,9 @@ ParsedWikitextPage(
             [
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -2690,9 +2690,9 @@ ParsedWikitextPage(
               WtText(" ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                   {N} empty = false
                   {N} name = "span"
+                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                 [
                   XmlAttribute(
@@ -2832,9 +2832,9 @@ ParsedWikitextPage(
         ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
             {N} empty = false
             {N} name = "div"
+            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
           [
             XmlAttribute(
@@ -3067,9 +3067,9 @@ ParsedWikitextPage(
         WtText(". However, the ")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
             {N} empty = false
             {N} name = "code"
+            {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
           [ ]
           [ WtText("thead") ]
@@ -3077,9 +3077,9 @@ ParsedWikitextPage(
         WtText(", ")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
             {N} empty = false
             {N} name = "code"
+            {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
           [ ]
           [ WtText("tbody") ]
@@ -3087,9 +3087,9 @@ ParsedWikitextPage(
         WtText(", ")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
             {N} empty = false
             {N} name = "code"
+            {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
           [ ]
           [ WtText("tfoot") ]
@@ -3097,9 +3097,9 @@ ParsedWikitextPage(
         WtText(", ")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
             {N} empty = false
             {N} name = "code"
+            {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
           [ ]
           [ WtText("colgroup") ]
@@ -3107,9 +3107,9 @@ ParsedWikitextPage(
         WtText(", and ")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
             {N} empty = false
             {N} name = "code"
+            {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
           [ ]
           [ WtText("col") ]
@@ -3151,9 +3151,9 @@ ParsedWikitextPage(
           WtText("Each row must have the same number of cells as the other rows, so that the number of columns in the table remains consistent. For empty cells, use the non-breaking space ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [
@@ -3169,9 +3169,9 @@ ParsedWikitextPage(
           WtText(" as content to ensure that the cells are displayed. To show a visible pipe in a cell, use ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<tt", [1] = ">", [2] = "</tt>"
               {N} empty = false
               {N} name = "tt"
+              {N} rtd = RTD[ "<tt" <o> ">" <o> "</tt>" ]
 
             [ ]
             [
@@ -3194,9 +3194,9 @@ ParsedWikitextPage(
           WtText(" or ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<tt", [1] = ">", [2] = "</tt>"
               {N} empty = false
               {N} name = "tt"
+              {N} rtd = RTD[ "<tt" <o> ">" <o> "</tt>" ]
 
             [ ]
             [
@@ -3302,9 +3302,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -3445,9 +3445,9 @@ ParsedWikitextPage(
             Newline("\n")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -3900,9 +3900,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -3976,9 +3976,9 @@ ParsedWikitextPage(
                               WtText(" ")
                               XmlElement(
                                 Properties:
-                                  RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                                   {N} empty = false
                                   {N} name = "span"
+                                  {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                                 [
                                   XmlAttribute(
@@ -4047,9 +4047,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -4203,9 +4203,9 @@ ParsedWikitextPage(
               WtText("To make the table blend in with the background, use ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("style=\"background: none;\"") ]
@@ -4213,9 +4213,9 @@ ParsedWikitextPage(
               WtText(" or ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("style=\"background: transparent;\"") ]
@@ -4223,9 +4223,9 @@ ParsedWikitextPage(
               WtText(". (Warning: ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("style=\"background: inherit;\"") ]
@@ -4250,9 +4250,9 @@ ParsedWikitextPage(
                   [
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                         {N} empty = false
                         {N} name = "code"
+                        {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                       [ ]
                       [ WtText("class=\"wikitable\"") ]
@@ -4264,9 +4264,9 @@ ParsedWikitextPage(
               WtText(", use ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("style=\"background: #f2f2f2\"") ]
@@ -4274,9 +4274,9 @@ ParsedWikitextPage(
               WtText(" for the darker header, and ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("style=\"background: #f9f9f9\"") ]
@@ -4391,9 +4391,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -4555,9 +4555,9 @@ ParsedWikitextPage(
               WtText("Note that ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("style=\"") ]
@@ -4565,9 +4565,9 @@ ParsedWikitextPage(
               WtText("inline CSS")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("\"") ]
@@ -4575,9 +4575,9 @@ ParsedWikitextPage(
               WtText(" has no effect with some browsers. If compatibility is important, equivalent older constructs like ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("width=\"75%\"") ]
@@ -4639,9 +4639,9 @@ ParsedWikitextPage(
                 Newline("\n")
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                     {N} empty = false
                     {N} name = "div"
+                    {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                   [
                     XmlAttribute(
@@ -4864,9 +4864,9 @@ ParsedWikitextPage(
                 Newline("\n")
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                     {N} empty = false
                     {N} name = "div"
+                    {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                   [
                     XmlAttribute(
@@ -5250,9 +5250,9 @@ ParsedWikitextPage(
                       WtText("In a table that spans the entire width of a page, cells narrower than the widest cell tend to wrap. To keep an entire column from wrapping, use ")
                       XmlElement(
                         Properties:
-                          RTD = RtData: [0] = "<tt", [1] = ">", [2] = "</tt>"
                           {N} empty = false
                           {N} name = "tt"
+                          {N} rtd = RTD[ "<tt" <o> ">" <o> "</tt>" ]
 
                         [ ]
                         [ WtText("style=white-space:nowrap") ]
@@ -6493,18 +6493,18 @@ ParsedWikitextPage(
                           WtText(" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = " />", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                             [ ]
                             [ ]
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                               {N} empty = false
                               {N} name = "span"
+                              {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                             [
                               XmlAttribute(
@@ -6727,18 +6727,18 @@ ParsedWikitextPage(
                           WtText(" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = " />", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                             [ ]
                             [ ]
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                               {N} empty = false
                               {N} name = "span"
+                              {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                             [
                               XmlAttribute(
@@ -6910,9 +6910,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -7387,9 +7387,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -7729,9 +7729,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = " />", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                             [ ]
                             [ ]
@@ -7943,9 +7943,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = " />", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                             [ ]
                             [ ]
@@ -8034,9 +8034,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = " />", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                             [ ]
                             [ ]
@@ -8125,9 +8125,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = " />", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                             [ ]
                             [ ]
@@ -8206,9 +8206,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<p", [1] = ">", [2] = "</p>"
                 {N} empty = false
                 {N} name = "p"
+                {N} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
 
               [
                 XmlAttribute(
@@ -8223,9 +8223,9 @@ ParsedWikitextPage(
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<tt", [1] = ">", [2] = "</tt>"
                     {N} empty = false
                     {N} name = "tt"
+                    {N} rtd = RTD[ "<tt" <o> ">" <o> "</tt>" ]
 
                   [ ]
                   [
@@ -8241,9 +8241,9 @@ ParsedWikitextPage(
                     WtText(" border=\"1\"")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<br", [1] = " />", [2]
                         {N} empty = true
                         {N} name = "br"
+                        {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                       [ ]
                       [ ]
@@ -8259,9 +8259,9 @@ ParsedWikitextPage(
                     WtText("alpha;")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<br", [1] = " />", [2]
                         {N} empty = true
                         {N} name = "br"
+                        {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                       [ ]
                       [ ]
@@ -8270,9 +8270,9 @@ ParsedWikitextPage(
                     WtText("| style=\"text-align: center;\"| cell2")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<br", [1] = " />", [2]
                         {N} empty = true
                         {N} name = "br"
+                        {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                       [ ]
                       [ ]
@@ -8280,9 +8280,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                         {N} empty = false
                         {N} name = "span"
+                        {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                       [
                         XmlAttribute(
@@ -8339,9 +8339,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8355,9 +8355,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8371,9 +8371,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8387,9 +8387,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8412,9 +8412,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8426,9 +8426,9 @@ ParsedWikitextPage(
                     WtText("| style=\"vertical-align:bottom;\"| the original table again")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<br", [1] = " />", [2]
                         {N} empty = true
                         {N} name = "br"
+                        {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                       [ ]
                       [ ]
@@ -8437,9 +8437,9 @@ ParsedWikitextPage(
                     WtText("| style=\"width:100px;\" |")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<br", [1] = " />", [2]
                         {N} empty = true
                         {N} name = "br"
+                        {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                       [ ]
                       [ ]
@@ -8447,9 +8447,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                         {N} empty = false
                         {N} name = "span"
+                        {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                       [
                         XmlAttribute(
@@ -8481,9 +8481,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8497,9 +8497,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8522,9 +8522,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8548,9 +8548,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8564,9 +8564,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8589,9 +8589,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8603,9 +8603,9 @@ ParsedWikitextPage(
                     WtText("| style=\"width:50px;\" |")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<br", [1] = " />", [2]
                         {N} empty = true
                         {N} name = "br"
+                        {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                       [ ]
                       [ ]
@@ -8613,9 +8613,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<span", [1] = ">", [2] = "</span>"
                         {N} empty = false
                         {N} name = "span"
+                        {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
                       [
                         XmlAttribute(
@@ -8647,9 +8647,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8663,9 +8663,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8688,9 +8688,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8714,9 +8714,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8730,9 +8730,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -8755,9 +8755,9 @@ ParsedWikitextPage(
                         )
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<br", [1] = " />", [2]
                             {N} empty = true
                             {N} name = "br"
+                            {N} rtd = RTD[ "<br" <o> " />" <o> "" ]
 
                           [ ]
                           [ ]
@@ -9455,9 +9455,9 @@ ParsedWikitextPage(
               WtText("Note that using ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("rowspan=\"2\"") ]
@@ -9472,9 +9472,9 @@ ParsedWikitextPage(
               WtText(" combined with ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("rowspan=\"3\"") ]
@@ -9505,9 +9505,9 @@ ParsedWikitextPage(
               WtText("Likewise complete columns are not displayed if all their cells are empty. Borders between non-empty and empty cells might be also not displayed (depending on the browser), use ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [
@@ -9538,9 +9538,9 @@ ParsedWikitextPage(
               WtText("Centered tables can be achieved, but they will not \"float\"; that is to say, no text will appear to either side. The trick is ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<tt", [1] = ">", [2] = "</tt>"
                   {N} empty = false
                   {N} name = "tt"
+                  {N} rtd = RTD[ "<tt" <o> ">" <o> "</tt>" ]
 
                 [ ]
                 [
@@ -9742,9 +9742,9 @@ ParsedWikitextPage(
               WtText("At the start of a cell, add your parameter followed by a single pipe. For example ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<tt", [1] = ">", [2] = "</tt>"
                   {N} empty = false
                   {N} name = "tt"
+                  {N} rtd = RTD[ "<tt" <o> ">" <o> "</tt>" ]
 
                 [ ]
                 [ WtText("width=\"300\"|") ]
@@ -9937,9 +9937,9 @@ ParsedWikitextPage(
                             WtText(" This is a test table here ")
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
                                 {N} empty = false
                                 {N} name = "table"
+                                {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
                               [
                                 XmlAttribute(
@@ -9954,17 +9954,17 @@ ParsedWikitextPage(
                               [
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<tr", [1] = ">", [2]
                                     {N} empty = false
                                     {N} name = "tr"
+                                    {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
 
                                   [ ]
                                   [
                                     XmlElement(
                                       Properties:
-                                        RTD = RtData: [0] = "<td", [1] = ">", [2]
                                         {N} empty = false
                                         {N} name = "td"
+                                        {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
                                       [ ]
                                       [ WtText("HELLO WORLD") ]
@@ -10031,9 +10031,9 @@ ParsedWikitextPage(
                             WtText(" ")
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
                                 {N} empty = false
                                 {N} name = "table"
+                                {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
                               [
                                 XmlAttribute(
@@ -10048,34 +10048,34 @@ ParsedWikitextPage(
                               [
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<tr", [1] = ">", [2]
                                     {N} empty = false
                                     {N} name = "tr"
+                                    {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
 
                                   [ ]
                                   [
                                     XmlElement(
                                       Properties:
-                                        RTD = RtData: [0] = "<td", [1] = ">", [2]
                                         {N} empty = false
                                         {N} name = "td"
+                                        {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
                                       [ ]
                                       [ WtText("This is a test table here") ]
                                     )
                                     XmlElement(
                                       Properties:
-                                        RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                                         {N} empty = false
                                         {N} name = "td"
+                                        {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                                       [ ]
                                       [
                                         XmlElement(
                                           Properties:
-                                            RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
                                             {N} empty = false
                                             {N} name = "table"
+                                            {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
                                           [
                                             XmlAttribute(
@@ -10090,17 +10090,17 @@ ParsedWikitextPage(
                                           [
                                             XmlElement(
                                               Properties:
-                                                RTD = RtData: [0] = "<tr", [1] = ">", [2]
                                                 {N} empty = false
                                                 {N} name = "tr"
+                                                {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
 
                                               [ ]
                                               [
                                                 XmlElement(
                                                   Properties:
-                                                    RTD = RtData: [0] = "<td", [1] = ">", [2]
                                                     {N} empty = false
                                                     {N} name = "td"
+                                                    {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
                                                   [
                                                     XmlAttribute(
@@ -10122,9 +10122,9 @@ ParsedWikitextPage(
                                     )
                                     XmlElement(
                                       Properties:
-                                        RTD = RtData: [0] = "<td", [1] = ">", [2]
                                         {N} empty = false
                                         {N} name = "td"
+                                        {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
                                       [ ]
                                       [ WtText("followed by this text afterward.") ]
@@ -10185,9 +10185,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -10364,9 +10364,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -10874,9 +10874,9 @@ ParsedWikitextPage(
           WtText("Instead of remembering table parameters, you just include an appropriate style class after the ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("{|") ]
@@ -10887,9 +10887,9 @@ ParsedWikitextPage(
         Newline("\n")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
             {N} empty = false
             {N} name = "table"
+            {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
           [
             XmlAttribute(
@@ -10912,17 +10912,17 @@ ParsedWikitextPage(
           [
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
                 {N} empty = false
                 {N} name = "tr"
+                {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
               [ ]
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [
                     XmlAttribute(
@@ -10938,9 +10938,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                         {N} empty = false
                         {N} name = "div"
+                        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                       [
                         XmlAttribute(
@@ -10968,18 +10968,18 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [ ]
                   [ WtText(" ") ]
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [
                     XmlAttribute(
@@ -10995,9 +10995,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                         {N} empty = false
                         {N} name = "div"
+                        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                       [
                         XmlAttribute(
@@ -11386,18 +11386,18 @@ ParsedWikitextPage(
             )
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
                 {N} empty = false
                 {N} name = "tr"
+                {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
               [ ]
               [
                 Newline("\n")
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [
                     XmlAttribute(
@@ -11424,17 +11424,17 @@ ParsedWikitextPage(
             Newline("\n")
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
                 {N} empty = false
                 {N} name = "tr"
+                {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
               [ ]
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [
                     XmlAttribute(
@@ -11450,9 +11450,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                         {N} empty = false
                         {N} name = "div"
+                        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                       [
                         XmlAttribute(
@@ -11480,18 +11480,18 @@ ParsedWikitextPage(
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [ ]
                   [ WtText(" ") ]
                 )
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                   [
                     XmlAttribute(
@@ -11507,9 +11507,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                         {N} empty = false
                         {N} name = "div"
+                        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                       [
                         XmlAttribute(
@@ -11904,9 +11904,9 @@ ParsedWikitextPage(
           WtText("simply by replacing inline CSS for the table by ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("class=\"wikitable\"") ]
@@ -11965,9 +11965,9 @@ ParsedWikitextPage(
         ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
             {N} empty = false
             {N} name = "div"
+            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
           [
             XmlAttribute(
@@ -12004,9 +12004,9 @@ ParsedWikitextPage(
         ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
             {N} empty = false
             {N} name = "div"
+            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
           [
             XmlAttribute(
@@ -12415,9 +12415,9 @@ ParsedWikitextPage(
           WtText("Of course this works only for browsers supporting inline CSS, if it's important use XHTML markup like ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [
@@ -12439,9 +12439,9 @@ ParsedWikitextPage(
           WtText(" instead of \"font-size:120%\", or Wiki markup like ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [
@@ -12616,9 +12616,9 @@ ParsedWikitextPage(
           WtText("Tables can be made sortable by adding ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("class=\"sortable\"") ]
@@ -12680,9 +12680,9 @@ ParsedWikitextPage(
         ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
             {N} empty = false
             {N} name = "div"
+            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
           [
             XmlAttribute(
@@ -12719,9 +12719,9 @@ ParsedWikitextPage(
         ])
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
             {N} empty = false
             {N} name = "div"
+            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
           [
             XmlAttribute(
@@ -13068,9 +13068,9 @@ ParsedWikitextPage(
               Newline("\n")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("{| class=\"wikitable sortable collapsible\"") ]
@@ -13090,9 +13090,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -13130,9 +13130,9 @@ ParsedWikitextPage(
             ])
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                 {N} empty = false
                 {N} name = "div"
+                {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
               [
                 XmlAttribute(
@@ -13469,9 +13469,9 @@ ParsedWikitextPage(
               WtText("If you want the table to default to collapsed state, use the code ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("{| class=\"wikitable sortable collapsible collapsed\"") ]
@@ -13479,9 +13479,9 @@ ParsedWikitextPage(
               WtText(" in place of ")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
                   {N} empty = false
                   {N} name = "code"
+                  {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
                 [ ]
                 [ WtText("{| class=\"wikitable sortable collapsible\"") ]
@@ -14092,9 +14092,9 @@ ParsedWikitextPage(
           WtText(". Note however that the ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("thead") ]
@@ -14102,9 +14102,9 @@ ParsedWikitextPage(
           WtText(", ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("tbody") ]
@@ -14112,9 +14112,9 @@ ParsedWikitextPage(
           WtText(", ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("tfoot") ]
@@ -14122,9 +14122,9 @@ ParsedWikitextPage(
           WtText(", ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("colgroup") ]
@@ -14132,9 +14132,9 @@ ParsedWikitextPage(
           WtText(", and ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("col") ]
@@ -14540,9 +14540,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = ">", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> ">" <o> "" ]
 
                             [ ]
                             [ ]
@@ -14577,9 +14577,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<br", [1] = ">", [2]
                               {N} empty = true
                               {N} name = "br"
+                              {N} rtd = RTD[ "<br" <o> ">" <o> "" ]
 
                             [ ]
                             [ ]
@@ -14649,9 +14649,9 @@ ParsedWikitextPage(
                         Newline("\n")
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
                             {N} empty = false
                             {N} name = "table"
+                            {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
                           [
                             XmlAttribute(
@@ -14692,9 +14692,9 @@ ParsedWikitextPage(
                             WtText(" ")
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
                                 {N} empty = false
                                 {N} name = "tr"
+                                {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
                               [ ]
                               [
@@ -14702,9 +14702,9 @@ ParsedWikitextPage(
                                 WtText(" ")
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                                     {N} empty = false
                                     {N} name = "td"
+                                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                                   [ ]
                                   [ WtText("1") ]
@@ -14713,9 +14713,9 @@ ParsedWikitextPage(
                                 WtText(" ")
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                                     {N} empty = false
                                     {N} name = "td"
+                                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                                   [ ]
                                   [ WtText("2") ]
@@ -14728,9 +14728,9 @@ ParsedWikitextPage(
                             WtText(" ")
                             XmlElement(
                               Properties:
-                                RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
                                 {N} empty = false
                                 {N} name = "tr"
+                                {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
                               [ ]
                               [
@@ -14738,9 +14738,9 @@ ParsedWikitextPage(
                                 WtText(" ")
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                                     {N} empty = false
                                     {N} name = "td"
+                                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                                   [ ]
                                   [ WtText("3") ]
@@ -14749,9 +14749,9 @@ ParsedWikitextPage(
                                 WtText(" ")
                                 XmlElement(
                                   Properties:
-                                    RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                                     {N} empty = false
                                     {N} name = "td"
+                                    {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                                   [ ]
                                   [ WtText("4") ]
@@ -15227,9 +15227,9 @@ ParsedWikitextPage(
           WtText("The pipes must start at the beginning of a new line, except when separating parameters from content or when using ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("||") ]
@@ -17438,9 +17438,9 @@ ParsedWikitextPage(
           WtText(" page\u2014you can use the ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [ WtText("link") ]
@@ -17476,9 +17476,9 @@ ParsedWikitextPage(
           WtText("By setting the link to an empty string (e.g. ")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<code", [1] = ">", [2] = "</code>"
               {N} empty = false
               {N} name = "code"
+              {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
 
             [ ]
             [
@@ -17672,9 +17672,9 @@ ParsedWikitextPage(
                       WtText("Nibelungen Bridge to Worms")
                       XmlElement(
                         Properties:
-                          RTD = RtData: [0] = "<br", [1] = "/>", [2]
                           {N} empty = true
                           {N} name = "br"
+                          {N} rtd = RTD[ "<br" <o> "/>" <o> "" ]
 
                         [ ]
                         [ ]
@@ -18543,9 +18543,9 @@ ParsedWikitextPage(
               )
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<font", [1] = "/>", [2]
                   {N} empty = true
                   {N} name = "font"
+                  {N} rtd = RTD[ "<font" <o> "/>" <o> "" ]
 
                 [ ]
                 [ ]
@@ -18683,9 +18683,9 @@ ParsedWikitextPage(
                       [
                         XmlElement(
                           Properties:
-                            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
                             {N} empty = false
                             {N} name = "div"
+                            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
                           [
                             XmlAttribute(
@@ -18827,9 +18827,9 @@ ParsedWikitextPage(
                           )
                           XmlElement(
                             Properties:
-                              RTD = RtData: [0] = "<small", [1] = ">", [2] = "</small>"
                               {N} empty = false
                               {N} name = "small"
+                              {N} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
 
                             [ ]
                             [ WtText("View from bell tower") ]
@@ -18906,9 +18906,9 @@ ParsedWikitextPage(
         Newline("\n")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
             {N} empty = false
             {N} name = "div"
+            {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
           [
             XmlAttribute(

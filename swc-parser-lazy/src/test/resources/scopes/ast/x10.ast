@@ -7,26 +7,26 @@ ParsedWikitextPage(
     Paragraph([ WtText("a ") ])
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<div", [1] = ">", [2]
         {N} empty = false
         {N} name = "div"
+        {N} rtd = RTD[ "<div" <o> ">" <o> "" ]
 
       [ ]
       [
         WtText(" b ")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<blockquote", [1] = ">", [2] = "</blockquote>"
             {N} empty = false
             {N} name = "blockquote"
+            {N} rtd = RTD[ "<blockquote" <o> ">" <o> "</blockquote>" ]
 
           [ ]
           [
             WtText(" c ")
             XmlEndTag(
               Properties:
-                RTD = RtData: [0] = "</div>"
                 {N} name = "div"
+                {N} rtd = RTD[ "</div>" ]
             )
             WtText(" d ")
           ]

@@ -2142,8 +2142,8 @@ ParsedWikitextPage(
         Paragraph([
           XmlEmptyTag(
             Properties:
-              RTD = RtData: [0] = "<references", [1] = "/>"
               {N} name = "references"
+              {N} rtd = RTD[ "<references" <o> "/>" ]
 
             [ ]
           )

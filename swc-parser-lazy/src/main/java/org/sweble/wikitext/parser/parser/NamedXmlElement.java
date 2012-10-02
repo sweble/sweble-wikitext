@@ -17,18 +17,11 @@
 
 package org.sweble.wikitext.parser.parser;
 
-import java.util.List;
-
 import org.sweble.wikitext.parser.nodes.WikitextNode;
-
-import de.fau.cs.osr.ptk.common.ast.AstNodeAttributeInterface;
-import de.fau.cs.osr.ptk.common.ast.AstNodePropertyInterface;
 
 public interface NamedXmlElement
 		extends
-			AstNodeAttributeInterface,
-			AstNodePropertyInterface,
-			List<WikitextNode>
+			WikitextNode
 {
 	public String getName();
 }

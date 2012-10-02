@@ -11,9 +11,9 @@ ParsedWikitextPage(
     ])
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<hr", [1] = " />", [2]
         {N} empty = true
         {N} name = "hr"
+        {N} rtd = RTD[ "<hr" <o> " />" <o> "" ]
 
       [ ]
       [ ]

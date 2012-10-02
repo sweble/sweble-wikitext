@@ -6,47 +6,47 @@ ParsedWikitextPage(
   [
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<li", [1] = ">", [2] = "</li>"
         {N} empty = false
         {N} name = "li"
+        {N} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
 
       [ ]
       [
         WtText("item3")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
             {N} empty = false
             {N} name = "table"
+            {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
           [ ]
           [
             XmlElement(
               Properties:
-                RTD = RtData: [0] = "<tr", [1] = ">", [2]
                 {N} empty = false
                 {N} name = "tr"
+                {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
 
               [ ]
               [
                 XmlElement(
                   Properties:
-                    RTD = RtData: [0] = "<td", [1] = ">", [2]
                     {N} empty = false
                     {N} name = "td"
+                    {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
                   [ ]
                   [
                     XmlEndTag(
                       Properties:
-                        RTD = RtData: [0] = "</li>"
                         {N} name = "li"
+                        {N} rtd = RTD[ "</li>" ]
                     )
                     XmlElement(
                       Properties:
-                        RTD = RtData: [0] = "<li", [1] = ">", [2]
                         {N} empty = false
                         {N} name = "li"
+                        {N} rtd = RTD[ "<li" <o> ">" <o> "" ]
 
                       [ ]
                       [ WtText("item4") ]

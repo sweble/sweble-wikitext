@@ -117,10 +117,7 @@ WikitextNode XmlElement =
 private inline WikitextNode XmlEndTag =
     name:XmlName ws:pWsStar '>'
     {
-      yyValue = new XmlEndTag(name);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("</", name, ws, '>'));
+      yyValue = setRtd(new XmlEndTag(name), "</", name, ws, '>');
     }
     // FIXME: Add auto correction and/or warning generation
 ;
@@ -128,21 +125,11 @@ private inline WikitextNode XmlEndTag =
 private inline WikitextNode XmlStartTag =
     name:XmlName attributes:AttributeStar ws:pWsStar "/>"
     {
-      yyValue = new XmlEmptyTag(name, attributes);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt("<", name),
-            joinRt(ws, "/>"));
+      yyValue = setRtd(new XmlEmptyTag(name, attributes), "<", name, SEP, ws, "/>");
     }
   / name:XmlName attributes:AttributeStar ws:pWsStar '>'
     {
-      yyValue = new XmlStartTag(name, attributes);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt('<', name),
-            joinRt(ws, '>'));
+      yyValue = setRtd(new XmlStartTag(name, attributes), '<', name, SEP, ws, '>');
     }
     // FIXME: Add auto correction and/or warning generation
 ;

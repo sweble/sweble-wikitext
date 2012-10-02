@@ -10,27 +10,27 @@ ParsedWikitextPage(
     Paragraph([
       XmlElement(
         Properties:
-          RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
           {N} empty = false
           {N} name = "table"
+          {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
         [ ]
         [
           WtText("\n")
           XmlElement(
             Properties:
-              RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
               {N} empty = false
               {N} name = "tr"
+              {N} rtd = RTD[ "<tr" <o> ">" <o> "</tr>" ]
 
             [ ]
             [
               WtText("\n")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                   {N} empty = false
                   {N} name = "td"
+                  {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                 [ ]
                 [ WtText("x") ]
@@ -38,9 +38,9 @@ ParsedWikitextPage(
               WtText("\n")
               XmlElement(
                 Properties:
-                  RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
                   {N} empty = false
                   {N} name = "td"
+                  {N} rtd = RTD[ "<td" <o> ">" <o> "</td>" ]
 
                 [ ]
                 [ WtText("x") ]
@@ -54,14 +54,14 @@ ParsedWikitextPage(
     Paragraph([
       XmlEndTag(
         Properties:
-          RTD = RtData: [0] = "</tr>"
           {N} name = "tr"
+          {N} rtd = RTD[ "</tr>" ]
       )
       WtText("\n")
       XmlEndTag(
         Properties:
-          RTD = RtData: [0] = "</table>"
           {N} name = "table"
+          {N} rtd = RTD[ "</table>" ]
       )
       WtText("\n")
     ])

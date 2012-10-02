@@ -6,18 +6,18 @@ ParsedWikitextPage(
   [
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<li", [1] = ">", [2]
         {N} empty = false
         {N} name = "li"
+        {N} rtd = RTD[ "<li" <o> ">" <o> "" ]
 
       [ ]
       [
         WtText("item1")
         XmlElement(
           Properties:
-            RTD = RtData: [0] = "<b", [1] = ">", [2]
             {N} empty = false
             {N} name = "b"
+            {N} rtd = RTD[ "<b" <o> ">" <o> "" ]
 
           [ ]
           [ Newline("\n") ]
@@ -26,17 +26,17 @@ ParsedWikitextPage(
     )
     XmlElement(
       Properties:
-        RTD = RtData: [0] = "<li", [1] = ">", [2] = "</li>"
         {N} empty = false
         {N} name = "li"
+        {N} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
 
       [ ]
       [
         XmlElement(
           Properties:
-            RTD = RtData: [0], [1], [2] = "</b>"
             {N} empty = false
             {N} name = "b"
+            {N} rtd = RTD[ "" <o> "" <o> "</b>" ]
 
           [ ]
           [ WtText("item2") ]
