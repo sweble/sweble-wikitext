@@ -17,10 +17,9 @@
 package org.sweble.wikitext.engine.astwom;
 
 import org.sweble.wikitext.engine.wom.WomNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * Interface for factories that create WOM nodes from AST nodes.
@@ -56,5 +55,5 @@ public interface AstToWomNodeFactory
 	 *            The AST node for which a WOM node should be created.
 	 * @return The created WOM node.
 	 */
-	public WomNode create(NodeList container, AstNode node);
+	public WomNode create(WtList container, WikitextNode node);
 }

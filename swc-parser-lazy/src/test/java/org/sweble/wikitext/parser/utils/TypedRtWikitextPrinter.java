@@ -19,8 +19,9 @@ package org.sweble.wikitext.parser.utils;
 import java.io.IOException;
 import java.io.Writer;
 
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+
 import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public final class TypedRtWikitextPrinter
 		implements
@@ -35,6 +36,6 @@ public final class TypedRtWikitextPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		RtWikitextPrinter.print(out, (AstNode) ast);
+		RtWikitextPrinter.print(out, (WikitextNode) ast);
 	}
 }

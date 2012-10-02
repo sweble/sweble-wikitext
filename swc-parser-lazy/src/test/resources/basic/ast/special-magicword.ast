@@ -10,7 +10,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           PageSwitch(
             Properties:
               RTD = RtData: [0] = "__NOTOC__"
@@ -23,7 +23,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(
+          WtText(
             Properties:
               {N} content = " __NOTOC_"
               warnings = 
@@ -38,7 +38,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(
+          WtText(
             Properties:
               {N} content = " __NOTOC"
               warnings = 
@@ -53,7 +53,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(
+          WtText(
             Properties:
               {N} content = " __MAGIC__"
               warnings = 
@@ -68,7 +68,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(
+          WtText(
             Properties:
               {N} content = " __MAGIC_"
               warnings = 
@@ -83,7 +83,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(
+          WtText(
             Properties:
               {N} content = " __MAGIC"
               warnings = 
@@ -97,7 +97,7 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
-        [ Text(" __") ]
+        [ WtText(" __") ]
       )
     ])
   ]

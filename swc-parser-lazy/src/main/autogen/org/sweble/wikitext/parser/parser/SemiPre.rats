@@ -54,7 +54,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 // -- SemiPre --[ State Aware Memoization ]-------------------------------------
 
-noinline transient AstNode SemiPre =
+noinline transient WikitextNode SemiPre =
  ^{
     StateAwareResult r = (StateAwareResult) pSemiPreMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -66,7 +66,7 @@ noinline transient AstNode SemiPre =
   }
 ;
 
-noinline memoized AstNode SemiPreMemoized =
+noinline memoized WikitextNode SemiPreMemoized =
  ^{
     Result yyResult = new StateAwareResult("SemiPre", getContext(), pSemiPreTransient(yyBase));
     if (returnTrue(yyResult))
@@ -79,10 +79,10 @@ noinline memoized AstNode SemiPreMemoized =
 
 // -- SemiPre ------------------------------------------------------------------
 
-noinline transient AstNode SemiPreTransient =
+noinline transient WikitextNode SemiPreTransient =
   &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
   {
-    yyValue = new SemiPre(new NodeList(first, tail));
+    yyValue = new SemiPre(new WtList(first, tail));
   }
 ;
 
@@ -121,7 +121,7 @@ private inline void OpenOrCloseMatch =
     )
 ;
 
-private inline stateful NodeList SemiPreContentStar =
+private inline stateful WtList SemiPreContentStar =
   {
     enter(ParserScopes.SEMI_PRE);
   }

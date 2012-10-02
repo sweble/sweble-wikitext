@@ -48,7 +48,7 @@ ParsedWikitextPage(
                   [ ]
                 )
               ]
-              [ Text(" Header 1 ") ]
+              [ WtText(" Header 1 ") ]
             )
             TableHeader(
               Properties:
@@ -65,7 +65,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([ Text(" Header 2") ])
+                Paragraph([ WtText(" Header 2") ])
                 Newline("\n")
               ]
             )
@@ -100,7 +100,7 @@ ParsedWikitextPage(
                   [ ]
                 )
               ]
-              [ Text(" Cell 1.1 ") ]
+              [ WtText(" Cell 1.1 ") ]
             )
             TableCell(
               Properties:
@@ -117,7 +117,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([ Text(" Cell 1.2") ])
+                Paragraph([ WtText(" Cell 1.2") ])
                 Newline("\n")
               ]
             )
@@ -152,7 +152,7 @@ ParsedWikitextPage(
                   [ ]
                 )
               ]
-              [ Text(" Cell 2.1 ") ]
+              [ WtText(" Cell 2.1 ") ]
             )
             TableCell(
               Properties:
@@ -169,7 +169,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([ Text(" Cell 2.2") ])
+                Paragraph([ WtText(" Cell 2.2") ])
                 Newline("\n")
               ]
             )

@@ -17,22 +17,21 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 
 public class AttributeManagerTest
 {
 	private final WomBackboneStub parent = new WomBackboneStub(null);;
 	
-	private final NodeList attrContainer = new NodeList();
+	private final WtList attrContainer = new WtList();
 	
 	private AttributeManagerBase manager = new AttributeManagerBase.AttributeManager();
 	
@@ -63,7 +62,7 @@ public class AttributeManagerTest
 	{
 		private static final long serialVersionUID = 1L;
 		
-		private WomBackboneStub(AstNode astNode)
+		private WomBackboneStub(WikitextNode astNode)
 		{
 			super(astNode);
 		}

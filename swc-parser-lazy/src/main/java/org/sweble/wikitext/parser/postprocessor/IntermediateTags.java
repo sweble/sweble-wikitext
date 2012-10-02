@@ -21,10 +21,9 @@ import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.Bold;
 import org.sweble.wikitext.parser.nodes.Italics;
 import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.utils.TextUtils;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public enum IntermediateTags
 {
@@ -37,11 +36,11 @@ public enum IntermediateTags
 		}
 		
 		@Override
-		public AstNode transform(
+		public WikitextNode transform(
 				ParserConfig config,
 				IntermediateStartTag o,
 				IntermediateEndTag c,
-				NodeList body)
+				WtList body)
 		{
 			Italics e = new Italics(body);
 			if (config.isGatherRtData())
@@ -63,11 +62,11 @@ public enum IntermediateTags
 		}
 		
 		@Override
-		public AstNode transform(
+		public WikitextNode transform(
 				ParserConfig config,
 				IntermediateStartTag o,
 				IntermediateEndTag c,
-				NodeList body)
+				WtList body)
 		{
 			Bold e = new Bold(body);
 			if (config.isGatherRtData())
@@ -89,11 +88,11 @@ public enum IntermediateTags
 		}
 		
 		@Override
-		public AstNode transform(
+		public WikitextNode transform(
 				ParserConfig config,
 				IntermediateStartTag open,
 				IntermediateEndTag close,
-				NodeList body)
+				WtList body)
 		{
 			Paragraph e = new Paragraph(body);
 			return e;
@@ -102,18 +101,18 @@ public enum IntermediateTags
 	
 	public abstract String getElementName();
 	
-	public abstract AstNode transform(
+	public abstract WikitextNode transform(
 			ParserConfig config,
 			IntermediateStartTag open,
 			IntermediateEndTag close,
-			NodeList body);
+			WtList body);
 	
-	public AstNode createOpen(boolean synthetic)
+	public WikitextNode createOpen(boolean synthetic)
 	{
 		return new IntermediateStartTag(this, synthetic);
 	}
 	
-	public AstNode createClose(boolean synthetic)
+	public WikitextNode createClose(boolean synthetic)
 	{
 		return new IntermediateEndTag(this, synthetic);
 	}

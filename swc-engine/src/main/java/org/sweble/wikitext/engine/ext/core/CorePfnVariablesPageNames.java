@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.util.List;
 
@@ -30,11 +30,10 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class CorePfnVariablesPageNames
 		extends
@@ -79,9 +78,9 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
-			return new Text(frame.getRootFrame().getTitle().getDenormalizedFullTitle());
+			return new WtText(frame.getRootFrame().getTitle().getDenormalizedFullTitle());
 		}
 	}
 	
@@ -103,7 +102,7 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			return astText(UrlEncoding.WIKI.encode(frame.getRootFrame().getTitle().getNormalizedFullTitle()));
 		}
@@ -127,9 +126,9 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
-			return new Text(frame.getRootFrame().getTitle().getDenormalizedTitle());
+			return new WtText(frame.getRootFrame().getTitle().getDenormalizedTitle());
 		}
 	}
 	
@@ -152,10 +151,10 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends AstNode> argsValues)
+				List<? extends WikitextNode> argsValues)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
 			
@@ -178,7 +177,7 @@ public class CorePfnVariablesPageNames
 			}
 			
 			String link = title.getTitle();
-			return new Text(UrlEncoding.WIKI.encode(link));
+			return new WtText(UrlEncoding.WIKI.encode(link));
 		}
 	}
 	
@@ -200,9 +199,9 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
-			return new Text(frame.getRootFrame().getTitle().getBaseTitle().getDenormalizedFullTitle());
+			return new WtText(frame.getRootFrame().getTitle().getBaseTitle().getDenormalizedFullTitle());
 		}
 	}
 	
@@ -232,12 +231,12 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			return invokeStatic(frame);
 		}
 		
-		protected static AstNode invokeStatic(ExpansionFrame frame)
+		protected static WikitextNode invokeStatic(ExpansionFrame frame)
 		{
 			WikiConfig config = frame.getWikiConfig();
 			
@@ -248,7 +247,7 @@ public class CorePfnVariablesPageNames
 			if (subjectNs != ns)
 				title = title.newWithNamespace(subjectNs);
 			
-			return new Text(title.getDenormalizedFullTitle());
+			return new WtText(title.getDenormalizedFullTitle());
 		}
 	}
 	
@@ -277,7 +276,7 @@ public class CorePfnVariablesPageNames
 		
 		/*
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			WikiConfig config = frame.getWikiConfig();
 			
@@ -288,15 +287,15 @@ public class CorePfnVariablesPageNames
 			if (talkNs != ns)
 				title = title.newWithNamespace(talkNs);
 			
-			return new Text(title.getDenormalizedFullTitle());
+			return new WtText(title.getDenormalizedFullTitle());
 		}
 		*/
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends AstNode> argsValues)
+				List<? extends WikitextNode> argsValues)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
 			
@@ -319,7 +318,7 @@ public class CorePfnVariablesPageNames
 			}
 			
 			//String link = title.getTitle();
-			//return new Text(UrlEncoding.WIKI.encode(link));
+			//return new WtText(UrlEncoding.WIKI.encode(link));
 			
 			WikiConfig config = frame.getWikiConfig();
 			
@@ -328,7 +327,7 @@ public class CorePfnVariablesPageNames
 			if (talkNs != ns)
 				title = title.newWithNamespace(talkNs);
 			
-			return new Text(title.getDenormalizedFullTitle());
+			return new WtText(title.getDenormalizedFullTitle());
 		}
 	}
 	

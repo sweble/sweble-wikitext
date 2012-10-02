@@ -6,7 +6,7 @@ ParsedWikitextPage(
   [
     Newline("\n")
     Paragraph([
-      Text("x")
+      WtText("x")
       Newline("\n")
     ])
     XmlElement(
@@ -19,7 +19,7 @@ ParsedWikitextPage(
       [ ]
     )
     Newline("\n")
-    Text("y")
+    WtText("y")
     Newline("\n")
   ]
 )

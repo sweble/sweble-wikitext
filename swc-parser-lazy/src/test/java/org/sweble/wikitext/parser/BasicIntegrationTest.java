@@ -28,7 +28,6 @@ import org.sweble.wikitext.parser.postprocessor.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
 import org.sweble.wikitext.parser.utils.TypedAstPrinter;
 import org.sweble.wikitext.parser.utils.TypedRtWikitextPrinter;
-import org.sweble.wikitext.parser.utils.TypedWikitextPrinter;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -102,6 +101,7 @@ public class BasicIntegrationTest
 				new TypedRtWikitextPrinter());
 	}
 	
+	/*
 	@Test
 	@Ignore
 	public void testGeneratedWikitextAfterPostprocessingMatchesReference() throws IOException, ParseException
@@ -115,4 +115,5 @@ public class BasicIntegrationTest
 				EXPECTED_WT_SUB_DIR,
 				new TypedWikitextPrinter());
 	}
+	*/
 }

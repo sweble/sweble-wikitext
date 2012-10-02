@@ -23,15 +23,14 @@ import java.io.StringReader;
 
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
 import xtc.parser.ParseError;
 import xtc.parser.ParseException;
 import xtc.parser.Result;
 import xtc.parser.SemanticValue;
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserCommon;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class WikitextPreprocessor
 		extends
@@ -51,16 +50,16 @@ public class WikitextPreprocessor
 	// =========================================================================
 	
 	@Override
-	public AstNode parseArticle(String src, String title) throws IOException, ParseException
+	public WikitextNode parseArticle(String src, String title) throws IOException, ParseException
 	{
-		return parseArticle(new ValidatedWikitext(src, new EntityMap()), title, false);
+		return parseArticle(new ValidatedWikitext(src, new WtEntityMap()), title, false);
 	}
 	
 	/*
 	/**
 	 * @deprecated Use other parseArticle() method instead
 	 *
-	public AstNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
+	public WikitextNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
 	{
 		Reader in = new StringReader(src);
 		
@@ -71,7 +70,7 @@ public class WikitextPreprocessor
 		// FIXME: If we want the preprocessor to be able to resolve parser 
 		//        entities from encoding validation, we should offer the entity
 		//        map here...
-		preprocessor.getState().init(config, new EntityMap(), forInclusion);
+		preprocessor.getState().init(config, new WtEntityMap(), forInclusion);
 		
 		Result r = this.preprocessor.pArticle(0);
 		
@@ -110,7 +109,7 @@ public class WikitextPreprocessor
 	}
 	*/
 	
-	public AstNode parseArticle(
+	public WikitextNode parseArticle(
 			ValidatedWikitext wikitext,
 			String title,
 			boolean forInclusion) throws IOException, ParseException
@@ -131,7 +130,7 @@ public class WikitextPreprocessor
 			
 			if (v.value instanceof PreproWikitextPage)
 			{
-				return process((PreproWikitextPage) v.value);
+				return (WikitextNode) process((PreproWikitextPage) v.value);
 			}
 			else
 			{

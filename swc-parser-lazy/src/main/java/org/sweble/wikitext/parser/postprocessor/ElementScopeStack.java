@@ -21,18 +21,15 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlStartTag;
 import org.sweble.wikitext.parser.parser.NamedXmlElement;
+import org.sweble.wikitext.parser.utils.AstPrinter;
 
-import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.StringUtils;
 
 public final class ElementScopeStack
-		extends
-			AstVisitor
 {
 	Scope top = null;
 	
@@ -43,7 +40,7 @@ public final class ElementScopeStack
 		return top;
 	}
 	
-	public void push(ScopeType type, AstNode n, boolean open)
+	public void push(ScopeType type, WikitextNode n, boolean open)
 	{
 		final Scope s = new Scope(type, n, open);
 		if (top == null)
@@ -56,7 +53,11 @@ public final class ElementScopeStack
 		}
 	}
 	
-	public Scope insertAfter(Scope i, ScopeType type, AstNode n, boolean open)
+	public Scope insertAfter(
+			Scope i,
+			ScopeType type,
+			WikitextNode n,
+			boolean open)
 	{
 		return insertAfter(i, new Scope(type, n, open));
 	}
@@ -124,7 +125,7 @@ public final class ElementScopeStack
 	
 	// =========================================================================
 	
-	public void append(AstNode n)
+	public void append(WikitextNode n)
 	{
 		top().append(n);
 	}
@@ -167,17 +168,17 @@ public final class ElementScopeStack
 		
 		private final ScopeType type;
 		
-		private final AstNode element;
+		private final WikitextNode element;
 		
 		private final boolean open;
 		
-		private NodeList content = new NodeList();
+		private WtList content = new WtList();
 		
 		private LinkedList<Scope> closedInline;
 		
 		// =====================================================================
 		
-		public Scope(ScopeType type, AstNode n, boolean open)
+		public Scope(ScopeType type, WikitextNode n, boolean open)
 		{
 			this.type = type;
 			this.element = n;
@@ -208,12 +209,12 @@ public final class ElementScopeStack
 		
 		// =====================================================================
 		
-		public AstNode getElement()
+		public WikitextNode getElement()
 		{
 			return element;
 		}
 		
-		public NodeList getContent()
+		public WtList getContent()
 		{
 			return content;
 		}
@@ -235,7 +236,7 @@ public final class ElementScopeStack
 		
 		// =====================================================================
 		
-		public void append(AstNode n)
+		public void append(WikitextNode n)
 		{
 			content.add(n);
 		}
@@ -280,14 +281,14 @@ public final class ElementScopeStack
 			return false;
 		}
 		
-		public NodeList clearContent()
+		public WtList clearContent()
 		{
-			NodeList c = content;
-			content = new NodeList();
+			WtList c = content;
+			content = new WtList();
 			return c;
 		}
 		
-		public void setContent(NodeList content)
+		public void setContent(WtList content)
 		{
 			this.content = content;
 		}

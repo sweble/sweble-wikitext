@@ -43,15 +43,15 @@ import org.sweble.wikitext.parser.utils.Warnings;
 
 // -- PageSwitch ---------------------------------------------------------------
 
-AstNode PageSwitch =
+WikitextNode PageSwitch =
     "__" yyValue:PageSwitchChoice
   / "__"
     {
-      yyValue = new Text("__");
+      yyValue = new WtText("__");
     }
 ;
 
-private inline AstNode PageSwitchChoice =
+private inline WikitextNode PageSwitchChoice =
     name:SwitchName "__"
     {
       yyValue = new PageSwitch(name);
@@ -62,7 +62,7 @@ private inline AstNode PageSwitchChoice =
   / &{ isWarningsEnabled() } PageSwitchAutoCorrect
 ;
 
-private inline AstNode PageSwitchAutoCorrect =
+private inline WikitextNode PageSwitchAutoCorrect =
     &{ isAutoCorrect(WS_NORMAL) } name:SwitchName '_'
     {
       yyValue = new PageSwitch(name);
@@ -79,7 +79,7 @@ private inline AstNode PageSwitchAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NORMAL) } name:SwitchNameString "__"
     {
-      yyValue = new Text("__" + name + "__");
+      yyValue = new WtText("__" + name + "__");
 
       fileLooksLikeWarning(
           yyValue,
@@ -104,7 +104,7 @@ private inline AstNode PageSwitchAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NONE) } &SwitchNameString
     {
-      yyValue = new Text("__");
+      yyValue = new WtText("__");
 
       fileLooksLikeWarning(
           yyValue,

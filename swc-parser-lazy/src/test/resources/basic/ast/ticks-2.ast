@@ -9,14 +9,14 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("italic") ]
+        [ WtText("italic") ]
       )
       Newline("\n")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
-        [ Text("bold") ]
+        [ WtText("bold") ]
       )
       Newline("\n")
       Italics(
@@ -28,7 +28,7 @@ ParsedWikitextPage(
             Properties:
               RTD = RtData: [0] = "'''", [1] = "'''"
 
-            [ Text("bold+italic") ]
+            [ WtText("bold+italic") ]
           )
         ]
       )
@@ -36,36 +36,36 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("'")
+      WtText("'")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("hmmm") ]
+        [ WtText("hmmm") ]
       )
       Newline("\n")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("hmm'") ]
+        [ WtText("hmm'") ]
       )
       Newline("\n")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("Mark'") ]
+        [ WtText("Mark'") ]
       )
-      Text("s")
+      WtText("s")
       Newline("\n")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
-        [ Text("Mark'") ]
+        [ WtText("Mark'") ]
       )
-      Text("s")
+      WtText("s")
     ])
     Newline("\n")
     Newline("\n")
@@ -75,12 +75,12 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           Italics(
             Properties:
               RTD = RtData: [0] = "''", [1]
 
-            [ Text("Item 1") ]
+            [ WtText("Item 1") ]
           )
         ]
       )
@@ -89,12 +89,12 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           Bold(
             Properties:
               RTD = RtData: [0] = "'''", [1]
 
-            [ Text("Item 2") ]
+            [ WtText("Item 2") ]
           )
         ]
       )
@@ -103,7 +103,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1]
 
         [
-          Text(" ")
+          WtText(" ")
           Italics(
             Properties:
               RTD = RtData: [0] = "''", [1]
@@ -113,7 +113,7 @@ ParsedWikitextPage(
                 Properties:
                   RTD = RtData: [0] = "'''", [1]
 
-                [ Text("Item 3") ]
+                [ WtText("Item 3") ]
               )
             ]
           )
@@ -132,7 +132,7 @@ ParsedWikitextPage(
             Properties:
               RTD = RtData: [0] = "''", [1]
 
-            [ Text("Pre 1") ]
+            [ WtText("Pre 1") ]
           )
         ]
       )
@@ -145,7 +145,7 @@ ParsedWikitextPage(
             Properties:
               RTD = RtData: [0] = "'''", [1]
 
-            [ Text("Pre 2") ]
+            [ WtText("Pre 2") ]
           )
         ]
       )
@@ -163,7 +163,7 @@ ParsedWikitextPage(
                 Properties:
                   RTD = RtData: [0] = "'''", [1]
 
-                [ Text("Pre 3") ]
+                [ WtText("Pre 3") ]
               )
             ]
           )

@@ -113,7 +113,6 @@ header
 
   import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;
-  import de.fau.cs.osr.ptk.common.ast.Tuple.*;
   import de.fau.cs.osr.utils.StringUtils;
 }
 
@@ -130,13 +129,13 @@ public transient PreproWikitextPage Article =
   redirect:Redirect? content:Content &Eof
   {
     yyValue = new PreproWikitextPage(
-        new NodeList(redirect, content),
+        new WtList(redirect, content),
         new ArrayList<Warning>(),
         getState().getEntityMap());
   }
 ;
 
-private inline NodeList Content =
+private inline WtList Content =
     &HasOnlyIncludeContent
     {
       yyState.setHasOnlyInclude(true);

@@ -10,10 +10,9 @@ package org.sweble.wikitext.parser.nodes;
 
 import java.util.List;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
+import de.fau.cs.osr.ptk.common.GenericEntityMap;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>Grammar for MediaWiki Wikitext</h1> <h2>Grammar</h2>
@@ -33,7 +32,7 @@ public class ParsedWikitextPage
 		
 	}
 	
-	public ParsedWikitextPage(NodeList content, List<Warning> warnings)
+	public ParsedWikitextPage(WtList content, List<Warning> warnings)
 	{
 		super(content);
 		setWarnings(warnings);
@@ -41,9 +40,9 @@ public class ParsedWikitextPage
 	}
 	
 	public ParsedWikitextPage(
-			NodeList content,
+			WtList content,
 			List<Warning> warnings,
-			EntityMap entityMap)
+			GenericEntityMap entityMap)
 	{
 		super(content);
 		setWarnings(warnings);
@@ -74,16 +73,16 @@ public class ParsedWikitextPage
 		return old;
 	}
 	
-	private EntityMap entityMap;
+	private GenericEntityMap entityMap;
 	
-	public final EntityMap getEntityMap()
+	public final GenericEntityMap getEntityMap()
 	{
 		return this.entityMap;
 	}
 	
-	public final EntityMap setEntityMap(EntityMap entityMap)
+	public final GenericEntityMap setEntityMap(GenericEntityMap entityMap)
 	{
-		EntityMap old = this.entityMap;
+		GenericEntityMap old = this.entityMap;
 		this.entityMap = entityMap;
 		return old;
 	}
@@ -143,7 +142,7 @@ public class ParsedWikitextPage
 					case 0:
 						return ParsedWikitextPage.this.setWarnings((List<Warning>) value);
 					case 1:
-						return ParsedWikitextPage.this.setEntityMap((EntityMap) value);
+						return ParsedWikitextPage.this.setEntityMap((GenericEntityMap) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

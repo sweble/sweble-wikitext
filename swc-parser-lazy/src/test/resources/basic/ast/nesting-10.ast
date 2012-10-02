@@ -16,10 +16,10 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("\n* Item 1\n* Item 2 ") ]
+          [ WtText("\n* Item 1\n* Item 2 ") ]
         )
       )
-      Text(" Wasuup?")
+      WtText(" Wasuup?")
     ])
   ]
 )

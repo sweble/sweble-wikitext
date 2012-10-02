@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.util.List;
 
@@ -26,8 +26,7 @@ import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.nodes.Template;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public abstract class ParserFunctionsExtPfn
 		extends
@@ -50,18 +49,18 @@ public abstract class ParserFunctionsExtPfn
 	// =========================================================================
 	
 	@Override
-	public final AstNode invoke(
-			AstNode template,
+	public final WikitextNode invoke(
+			WikitextNode template,
 			ExpansionFrame frame,
-			List<? extends AstNode> argsValues)
+			List<? extends WikitextNode> argsValues)
 	{
 		return invoke((Template) template, frame, argsValues);
 	}
 	
-	public abstract AstNode invoke(
+	public abstract WikitextNode invoke(
 			Template template,
 			ExpansionFrame frame,
-			List<? extends AstNode> argsValues);
+			List<? extends WikitextNode> argsValues);
 	
 	// =========================================================================
 	
@@ -77,12 +76,12 @@ public abstract class ParserFunctionsExtPfn
 		}
 		
 		@Override
-		public final AstNode invoke(
+		public final WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
-			AstNode result = evaluate((Template) pfn, frame, args);
+			WikitextNode result = evaluate((Template) pfn, frame, args);
 			
 			// All control flow statements expand and trim their results.
 			
@@ -96,10 +95,10 @@ public abstract class ParserFunctionsExtPfn
 			}
 		}
 		
-		protected abstract AstNode evaluate(
+		protected abstract WikitextNode evaluate(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args);
+				List<? extends WikitextNode> args);
 	}
 	
 	// =========================================================================
@@ -112,7 +111,7 @@ public abstract class ParserFunctionsExtPfn
 		
 		private final boolean hasDefault;
 		
-		private AstNode defaultValue;
+		private WikitextNode defaultValue;
 		
 		private final int thenArgIndex;
 		
@@ -134,17 +133,17 @@ public abstract class ParserFunctionsExtPfn
 		}
 		
 		@Override
-		protected AstNode evaluate(
+		protected WikitextNode evaluate(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() <= (hasDefault ? thenArgIndex - 1 : thenArgIndex))
 				return astText("");
 			
 			boolean cond = evaluateCondition(pfn, frame, args);
 			
-			AstNode result = defaultValue;
+			WikitextNode result = defaultValue;
 			if (cond)
 			{
 				result = args.get(thenArgIndex);
@@ -160,7 +159,7 @@ public abstract class ParserFunctionsExtPfn
 			return result;
 		}
 		
-		protected void setDefault(AstNode defaultValue)
+		protected void setDefault(WikitextNode defaultValue)
 		{
 			this.defaultValue = defaultValue;
 		}
@@ -168,6 +167,6 @@ public abstract class ParserFunctionsExtPfn
 		protected abstract boolean evaluateCondition(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args);
+				List<? extends WikitextNode> args);
 	}
 }

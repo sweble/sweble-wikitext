@@ -26,8 +26,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.sweble.wikitext.engine.ParserFunctionBase.ParserFunctionAdapter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 @XmlTransient
 @XmlJavaTypeAdapter(value = ParserFunctionAdapter.class)
@@ -86,12 +85,12 @@ public abstract class ParserFunctionBase
 	}
 	
 	/**
-	 * AstNode can either be a Template or a PageSwitch
+	 * WikitextNode can either be a Template or a PageSwitch
 	 */
-	public abstract AstNode invoke(
-			AstNode template,
+	public abstract WikitextNode invoke(
+			WikitextNode template,
 			ExpansionFrame preprocessorFrame,
-			List<? extends AstNode> argsValues);
+			List<? extends WikitextNode> argsValues);
 	
 	// =========================================================================
 	

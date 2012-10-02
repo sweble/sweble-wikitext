@@ -14,14 +14,14 @@ ParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Paragraph([ Text("text") ])
+    Paragraph([ WtText("text") ])
     Newline("\n")
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
-    Paragraph([ Text("t") ])
+    Paragraph([ WtText("t") ])
     Newline("\n")
     HorizontalRule(
       Properties:

@@ -16,8 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womHr;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womText;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,18 +29,17 @@ import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
-
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class HorizontalRuleAdapterTest
 {
 	private WomPage womPage;
 	
-	private NodeList astPageContent;
+	private WtList astPageContent;
 	
 	private WomHorizontalRule hRule;
 	
@@ -73,7 +75,7 @@ public class HorizontalRuleAdapterTest
 		assertEquals("style", a.getName());
 		assertTrue(a.getHasValue());
 		assertEquals(1, a.getValue().size());
-		assertEquals("foo", ((Text) a.getValue().get(0)).getContent());
+		assertEquals("foo", ((WtText) a.getValue().get(0)).getContent());
 		
 		assertEquals(
 				RtData.build("<hr", " />", null),

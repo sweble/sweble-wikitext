@@ -17,8 +17,11 @@
 
 package org.sweble.wikitext.engine.utils;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astComment;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astIgnored;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import org.junit.Test;
 

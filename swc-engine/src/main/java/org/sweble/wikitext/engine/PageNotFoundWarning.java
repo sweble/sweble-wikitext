@@ -18,8 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.WarningSeverity;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public class PageNotFoundWarning
 		extends
@@ -34,7 +33,7 @@ public class PageNotFoundWarning
 	public PageNotFoundWarning(
 			WarningSeverity severity,
 			String origin,
-			AstNode titleNode,
+			WikitextNode titleNode,
 			PageTitle title)
 	{
 		super(titleNode, severity, origin, makeMessage(title));
@@ -44,7 +43,7 @@ public class PageNotFoundWarning
 	public PageNotFoundWarning(
 			WarningSeverity severity,
 			Class<?> origin,
-			AstNode titleNode,
+			WikitextNode titleNode,
 			PageTitle title)
 	{
 		super(titleNode, severity, origin, makeMessage(title));

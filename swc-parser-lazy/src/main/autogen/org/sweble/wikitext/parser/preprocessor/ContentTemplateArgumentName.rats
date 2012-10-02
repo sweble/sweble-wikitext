@@ -31,7 +31,7 @@ void ContentStringStopper +=
   / <PrefixClosingBraces>  "}}"
 ;
 
-NodeList TemplateArgumentNamePlus =
+WtList TemplateArgumentNamePlus =
   ContentPlus
 ;
 

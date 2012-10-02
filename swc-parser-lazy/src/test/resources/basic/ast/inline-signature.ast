@@ -9,14 +9,14 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
-        [ Text("~") ]
+        [ WtText("~") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(
+          WtText(
             Properties:
               {N} content = "~~"
               warnings = 
@@ -76,7 +76,7 @@ ParsedWikitextPage(
                 Warning (informative): /basic/wikitext/inline-signature.wikitext:6:2 - 8: "~~~~~~" : Signatures consist only of 3 to 5 tildes.
               ]
           )
-          Text("~")
+          WtText("~")
         ]
       )
       ListItem(
@@ -93,7 +93,7 @@ ParsedWikitextPage(
                 Warning (informative): /basic/wikitext/inline-signature.wikitext:7:2 - 9: "~~~~~~~" : Signatures consist only of 3 to 5 tildes.
               ]
           )
-          Text(
+          WtText(
             Properties:
               {N} content = "~~"
               warnings = 

@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>XML Attribute</h1> <h2>Grammar</h2>
@@ -47,19 +46,19 @@ public class XmlAttribute
 	
 	public XmlAttribute()
 	{
-		super(new NodeList());
+		super(new WtList());
 		
 	}
 	
 	public XmlAttribute(String name, boolean hasValue)
 	{
-		super(new NodeList());
+		super(new WtList());
 		setName(name);
 		setHasValue(hasValue);
 		
 	}
 	
-	public XmlAttribute(String name, NodeList value, boolean hasValue)
+	public XmlAttribute(String name, WtList value, boolean hasValue)
 	{
 		super(value);
 		setName(name);
@@ -171,14 +170,14 @@ public class XmlAttribute
 	// =========================================================================
 	// Children
 	
-	public final void setValue(NodeList value)
+	public final void setValue(WtList value)
 	{
 		set(0, value);
 	}
 	
-	public final NodeList getValue()
+	public final WtList getValue()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "value" };

@@ -25,7 +25,7 @@
         Fixed method signature EntityReferences.getEntityaliases -> getEntityAliases
       </action>
       <action dev="hdohrn" type="fix">
-        Fixed bug in HtmlPrinter: When passing a NodeList it was printed as unknown node
+        Fixed bug in HtmlPrinter: When passing a WtList it was printed as unknown node
       </action>
       <action dev="hdohrn" type="update">
         MagicWord constructor now accepts Collection of aliases instead of TreeSet.

@@ -16,7 +16,8 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -25,10 +26,9 @@ import org.junit.rules.ExpectedException;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.tools.AstWomBuilder;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlElement;
-
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class AttributeAdapterTest
 {
@@ -84,6 +84,6 @@ public class AttributeAdapterTest
 		assertEquals("class", a.getName());
 		assertTrue(a.getHasValue());
 		assertEquals(1, a.getValue().size());
-		assertEquals("foo", ((Text) a.getValue().get(0)).getContent());
+		assertEquals("foo", ((WtText) a.getValue().get(0)).getContent());
 	}
 }

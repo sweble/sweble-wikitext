@@ -22,11 +22,10 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNodeType;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.utils.TextUtils;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * Attributes in the WOM can map to different things in the AST. For one, native
@@ -246,12 +245,12 @@ public class NativeOrXmlAttributeAdapter
 	}
 	
 	// should be protected
-	public AstNode detachAstNode()
+	public WikitextNode detachAstNode()
 	{
 		return super.setAstNode(null);
 	}
 	
-	private static NodeList convertValue(String value)
+	private static WtList convertValue(String value)
 	{
 		return TextUtils.stringToAst(value, true);
 	}

@@ -69,7 +69,7 @@ public class AstWomBuilder
 	
 	public static final class WomCommentBuilder
 	{
-		private String text = " Default Comment Text ";
+		private String text = " Default Comment WtText ";
 		
 		public WomCommentBuilder withText(String text)
 		{

@@ -17,15 +17,15 @@
 
 package org.sweble.wikitext.parser.encval;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
+import org.sweble.wikitext.parser.WtEntityMap;
 
 public class ValidatedWikitext
 {
 	private String wikitext;
 	
-	private EntityMap entityMap;
+	private WtEntityMap entityMap;
 	
-	public ValidatedWikitext(String wikitext, EntityMap entityMap)
+	public ValidatedWikitext(String wikitext, WtEntityMap entityMap)
 	{
 		this.wikitext = wikitext;
 		this.entityMap = entityMap;
@@ -36,7 +36,7 @@ public class ValidatedWikitext
 		return wikitext;
 	}
 	
-	public EntityMap getEntityMap()
+	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}

@@ -16,24 +16,25 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womComment;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.RtData;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
-
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
 
 public class CommentAdapterTest
 {
 	private WomPage womPage;
 	
-	private ContentNode astPage;
+	private WtContentNode astPage;
 	
 	@Before
 	public void initialize()
@@ -55,7 +56,7 @@ public class CommentAdapterTest
 	public void rtDataSupportsCorrectRendering()
 	{
 		assertEquals(
-				"<!-- Default Comment Text -->",
+				"<!-- Default Comment WtText -->",
 				RtWikitextPrinter.print(astPage));
 	}
 	
@@ -66,9 +67,9 @@ public class CommentAdapterTest
 		
 		assertNull(c.getPrefix());
 		assertNull(c.getSuffix());
-		assertEquals(" Default Comment Text ", c.getContent());
+		assertEquals(" Default Comment WtText ", c.getContent());
 		assertEquals(
-				RtData.build("<!-- Default Comment Text -->"),
+				RtData.build("<!-- Default Comment WtText -->"),
 				c.getAttribute("RTD"));
 	}
 }

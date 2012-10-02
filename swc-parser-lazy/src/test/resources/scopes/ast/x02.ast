@@ -12,7 +12,7 @@ ParsedWikitextPage(
           {N} name = "i"
 
         [ ]
-        [ Text(" a ") ]
+        [ WtText(" a ") ]
       )
       InternalLink(
         Properties:
@@ -33,13 +33,13 @@ ParsedWikitextPage(
                 {N} name = "i"
 
               [ ]
-              [ Text(" b ") ]
+              [ WtText(" b ") ]
             )
-            Text(" c ")
+            WtText(" c ")
           ]
         )
       )
-      Text(" d")
+      WtText(" d")
     ])
   ]
 )

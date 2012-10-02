@@ -39,15 +39,15 @@ import org.sweble.wikitext.parser.WikitextEncodingValidator;
 import org.sweble.wikitext.parser.WikitextParser;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
 import org.sweble.wikitext.parser.WikitextPreprocessor;
+import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
 import de.fau.cs.osr.utils.StopWatch;
 
 public class Compiler
@@ -443,8 +443,8 @@ public class Compiler
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
-			EntityMap entityMap,
-			Map<String, AstNode> arguments,
+			WtEntityMap entityMap,
+			Map<String, WikitextNode> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
 			throws CompilerException
@@ -500,9 +500,9 @@ public class Compiler
 			ExpansionCallback callback,
 			PageId pageId,
 			PreproWikitextPage ppAst,
-			EntityMap entityMap,
+			WtEntityMap entityMap,
 			boolean forInclusion,
-			Map<String, AstNode> arguments,
+			Map<String, WikitextNode> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
 			throws CompilerException
@@ -556,8 +556,8 @@ public class Compiler
 	private ValidatedWikitext validate(
 			PageTitle title,
 			String wikitext,
-			ContentNode parentLog,
-			EntityMap entityMap)
+			WtContentNode parentLog,
+			WtEntityMap entityMap)
 			throws CompilerException
 	{
 		ValidatorLog log = new ValidatorLog();
@@ -571,7 +571,7 @@ public class Compiler
 			WikitextEncodingValidator validator = new WikitextEncodingValidator();
 			
 			if (entityMap == null)
-				entityMap = new EntityMap();
+				entityMap = new WtEntityMap();
 			
 			ValidatedWikitext validatedWikitext = validator.validate(
 					wikitext,
@@ -604,7 +604,7 @@ public class Compiler
 			PageTitle title,
 			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
-			ContentNode parentLog)
+			WtContentNode parentLog)
 			throws CompilerException
 	{
 		PreprocessorLog log = new PreprocessorLog();
@@ -658,9 +658,9 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			PreproWikitextPage ppAst,
-			LinkedHashMap<String, AstNode> arguments,
+			LinkedHashMap<String, WikitextNode> arguments,
 			boolean forInclusion,
-			ContentNode parentLog)
+			WtContentNode parentLog)
 			throws CompilerException
 	{
 		return expand(
@@ -681,18 +681,18 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			PreproWikitextPage ppAst,
-			Map<String, AstNode> arguments,
+			Map<String, WikitextNode> arguments,
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
-			ContentNode parentLog)
+			WtContentNode parentLog)
 			throws CompilerException
 	{
 		PpResolverLog log = new PpResolverLog();
 		parentLog.getContent().add(log);
 		
 		if (arguments == null)
-			arguments = new HashMap<String, AstNode>();
+			arguments = new HashMap<String, WikitextNode>();
 		
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -761,7 +761,7 @@ public class Compiler
 	private ParsedWikitextPage parse(
 			PageTitle title,
 			PreproWikitextPage ppAst,
-			ContentNode parentLog)
+			WtContentNode parentLog)
 			throws CompilerException
 	{
 		ParserLog log = new ParserLog();

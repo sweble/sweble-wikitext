@@ -18,7 +18,7 @@ ParsedWikitextPage(
           [ ]
         )
       ]
-      [ Text("\"hallo\"\n") ]
+      [ WtText("\"hallo\"\n") ]
     )
   ]
 )

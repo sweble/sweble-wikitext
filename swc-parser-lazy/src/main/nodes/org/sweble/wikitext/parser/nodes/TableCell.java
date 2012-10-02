@@ -8,8 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>TableCell</h1> <h2>Grammar</h2>
  */
@@ -24,11 +22,11 @@ public class TableCell
 	
 	public TableCell()
 	{
-		super(new NodeList(), new NodeList());
+		super(new WtList(), new WtList());
 		
 	}
 	
-	public TableCell(NodeList xmlAttributes, NodeList body)
+	public TableCell(WtList xmlAttributes, WtList body)
 	{
 		super(xmlAttributes, body);
 		
@@ -46,24 +44,24 @@ public class TableCell
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(NodeList xmlAttributes)
+	public final void setXmlAttributes(WtList xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final NodeList getXmlAttributes()
+	public final WtList getXmlAttributes()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
-	public final void setBody(NodeList body)
+	public final void setBody(WtList body)
 	{
 		set(1, body);
 	}
 	
-	public final NodeList getBody()
+	public final WtList getBody()
 	{
-		return (NodeList) get(1);
+		return (WtList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };

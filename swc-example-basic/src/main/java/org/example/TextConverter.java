@@ -43,15 +43,15 @@ import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
 import org.sweble.wikitext.parser.nodes.Url;
 import org.sweble.wikitext.parser.nodes.Whitespace;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 import de.fau.cs.osr.utils.StringUtils;
 
 /**
@@ -79,7 +79,7 @@ import de.fau.cs.osr.utils.StringUtils;
  */
 public class TextConverter
 		extends
-			AstVisitor
+			AstVisitor<WikitextNode>
 {
 	private static final Pattern ws = Pattern.compile("\\s+");
 	
@@ -112,7 +112,7 @@ public class TextConverter
 	}
 	
 	@Override
-	protected boolean before(AstNode node)
+	protected boolean before(WikitextNode node)
 	{
 		// This method is called by go() before visitation starts
 		sb = new StringBuilder();
@@ -127,7 +127,7 @@ public class TextConverter
 	}
 	
 	@Override
-	protected Object after(AstNode node, Object result)
+	protected Object after(WikitextNode node, Object result)
 	{
 		finishLine();
 		
@@ -138,7 +138,7 @@ public class TextConverter
 	
 	// =========================================================================
 	
-	public void visit(AstNode n)
+	public void visit(WikitextNode n)
 	{
 		// Fallback for all nodes that are not explicitly handled below
 		write("<");
@@ -146,7 +146,7 @@ public class TextConverter
 		write(" />");
 	}
 	
-	public void visit(NodeList n)
+	public void visit(WtList n)
 	{
 		iterate(n);
 	}
@@ -172,7 +172,7 @@ public class TextConverter
 		iterate(p.getContent());
 	}
 	
-	public void visit(Text text)
+	public void visit(WtText text)
 	{
 		write(text.getContent());
 	}

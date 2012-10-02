@@ -9,14 +9,14 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("Hallo") ]
+        [ WtText("Hallo") ]
       )
       Newline("\n")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
-        [ Text("Hallo") ]
+        [ WtText("Hallo") ]
       )
       Newline("\n")
       Italics(
@@ -28,7 +28,7 @@ ParsedWikitextPage(
             Properties:
               RTD = RtData: [0] = "'''", [1] = "'''"
 
-            [ Text("Hallo") ]
+            [ WtText("Hallo") ]
           )
         ]
       )

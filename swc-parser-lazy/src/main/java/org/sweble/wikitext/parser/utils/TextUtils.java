@@ -22,24 +22,24 @@ import java.util.Arrays;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.RtData;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 import de.fau.cs.osr.utils.StringUtils;
 
 public final class TextUtils
 {
-	public static NodeList stringToAst(String text)
+	public static WtList stringToAst(String text)
 	{
 		return stringToAst(text, true);
 	}
 	
-	public static NodeList stringToAst(String text, boolean forAttribute)
+	public static WtList stringToAst(String text, boolean forAttribute)
 	{
-		NodeList list = new NodeList();
+		WtList list = new WtList();
 		
 		if (text == null)
 			return list;
@@ -58,7 +58,7 @@ public final class TextUtils
 					break;
 				case '<':
 					if (j > i)
-						list.add(new Text(text.substring(i, j)));
+						list.add(new WtText(text.substring(i, j)));
 					list.add(xmlEntity("lt", "<"));
 					i = j + 1;
 					break;
@@ -66,20 +66,20 @@ public final class TextUtils
 					if (!forAttribute)
 						break;
 					if (j > i)
-						list.add(new Text(text.substring(i, j)));
+						list.add(new WtText(text.substring(i, j)));
 					list.add(xmlEntity("gt", ">"));
 					i = j + 1;
 					break;
 				case '&':
 					if (j > i)
-						list.add(new Text(text.substring(i, j)));
+						list.add(new WtText(text.substring(i, j)));
 					list.add(xmlEntity("amp", "&"));
 					i = j + 1;
 					break;
 				case '\'':
 					// &apos; cannot safely be used, see wikipedia
 					if (j > i)
-						list.add(new Text(text.substring(i, j)));
+						list.add(new WtText(text.substring(i, j)));
 					list.add(xmlCharRef(39));
 					i = j + 1;
 					break;
@@ -87,7 +87,7 @@ public final class TextUtils
 					if (!forAttribute)
 						break;
 					if (j > i)
-						list.add(new Text(text.substring(i, j)));
+						list.add(new WtText(text.substring(i, j)));
 					list.add(xmlEntity("quot", "\""));
 					i = j + 1;
 					break;
@@ -95,7 +95,7 @@ public final class TextUtils
 					if ((ch >= 0 && ch < 0x20) || (ch == 0xFE))
 					{
 						if (j > i)
-							list.add(new Text(text.substring(i, j)));
+							list.add(new WtText(text.substring(i, j)));
 						list.add(xmlCharRef(ch));
 						i = j + 1;
 						continue;
@@ -115,7 +115,7 @@ public final class TextUtils
 									case Character.PRIVATE_USE:
 									case Character.UNASSIGNED:
 										if (j > i)
-											list.add(new Text(text.substring(i, j)));
+											list.add(new WtText(text.substring(i, j)));
 										list.add(xmlCharRef(codePoint));
 										i = j + 1;
 										break;
@@ -139,7 +139,7 @@ public final class TextUtils
 		}
 		
 		if (i != j)
-			list.add(new Text(text.substring(i, j)));
+			list.add(new WtText(text.substring(i, j)));
 		
 		return list;
 	}
@@ -174,57 +174,57 @@ public final class TextUtils
 	
 	// =========================================================================
 	
-	public static NodeList trim(NodeList nodes)
+	public static WtList trim(WtList nodes)
 	{
-		ArrayList<AstNode> result = new ArrayList<AstNode>(nodes);
+		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
 		
 		trimLeft(result);
 		trimRight(result);
 		
-		return new NodeList(result);
+		return new WtList(result);
 	}
 	
-	public static NodeList trimLeft(NodeList nodes)
+	public static WtList trimLeft(WtList nodes)
 	{
-		ArrayList<AstNode> result = new ArrayList<AstNode>(nodes);
+		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
 		
 		trimLeft(result);
 		
-		return new NodeList(result);
+		return new WtList(result);
 	}
 	
-	public static NodeList trimRight(NodeList nodes)
+	public static WtList trimRight(WtList nodes)
 	{
-		ArrayList<AstNode> result = new ArrayList<AstNode>(nodes);
+		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
 		
 		trimRight(result);
 		
-		return new NodeList(result);
+		return new WtList(result);
 	}
 	
-	public static NodeList trimAndPad(NodeList nodes, int spaces)
+	public static WtList trimAndPad(WtList nodes, int spaces)
 	{
-		ArrayList<AstNode> result = new ArrayList<AstNode>(nodes);
+		ArrayList<WikitextNode> result = new ArrayList<WikitextNode>(nodes);
 		
 		trimLeft(result);
 		trimRight(result);
 		
 		if (spaces <= 0)
-			return new NodeList(result);
+			return new WtList(result);
 		
 		return pad(result, spaces);
 	}
 	
-	public static void trimLeft(ArrayList<AstNode> result)
+	public static void trimLeft(ArrayList<WikitextNode> result)
 	{
 		int i = 0;
 		while (i < result.size())
 		{
 			switch (result.get(i).getNodeType())
 			{
-				case AstNode.NT_TEXT:
+				case WikitextNode.NT_TEXT:
 				{
-					Text stringNode = (Text) result.get(i);
+					WtText stringNode = (WtText) result.get(i);
 					String trimmed = StringUtils.trimLeft(stringNode.getContent());
 					if (trimmed != stringNode.getContent())
 					{
@@ -235,7 +235,7 @@ public final class TextUtils
 						}
 						else
 						{
-							result.set(i, new Text(trimmed));
+							result.set(i, new WtText(trimmed));
 							break;
 						}
 					}
@@ -257,16 +257,16 @@ public final class TextUtils
 		}
 	}
 	
-	public static void trimRight(ArrayList<AstNode> result)
+	public static void trimRight(ArrayList<WikitextNode> result)
 	{
 		int i = result.size() - 1;
 		while (i >= 0)
 		{
 			switch (result.get(i).getNodeType())
 			{
-				case AstNode.NT_TEXT:
+				case WikitextNode.NT_TEXT:
 				{
-					Text stringNode = (Text) result.get(i);
+					WtText stringNode = (WtText) result.get(i);
 					String trimmed = StringUtils.trimRight(stringNode.getContent());
 					if (trimmed != stringNode.getContent())
 					{
@@ -277,7 +277,7 @@ public final class TextUtils
 						}
 						else
 						{
-							result.set(i, new Text(trimmed));
+							result.set(i, new WtText(trimmed));
 							break;
 						}
 					}
@@ -301,14 +301,14 @@ public final class TextUtils
 	
 	// =========================================================================
 	
-	public static NodeList pad(ArrayList<AstNode> result, int spaces)
+	public static WtList pad(ArrayList<WikitextNode> result, int spaces)
 	{
 		if (spaces <= 0)
-			return new NodeList(result);
+			return new WtList(result);
 		
 		if (result.isEmpty())
 		{
-			result.add(new Text(StringUtils.strrep(' ', spaces * 2)));
+			result.add(new WtText(StringUtils.strrep(' ', spaces * 2)));
 		}
 		else
 		{
@@ -317,36 +317,36 @@ public final class TextUtils
 			
 			// -- before
 			
-			Text before = null;
-			if (result.get(0).isNodeType(AstNode.NT_TEXT))
-				before = (Text) result.remove(0);
+			WtText before = null;
+			if (result.get(0).isNodeType(WikitextNode.NT_TEXT))
+				before = (WtText) result.remove(0);
 			spaced = "";
 			if (before != null)
 				spaced = before.getContent();
 			
 			spaced = spacesString + spaced;
-			result.add(0, new Text(spaced));
+			result.add(0, new WtText(spaced));
 			
 			// -- after
 			
-			Text after = null;
+			WtText after = null;
 			int i = result.size() - 1;
-			if (result.get(i).isNodeType(AstNode.NT_TEXT))
-				after = (Text) result.remove(i);
+			if (result.get(i).isNodeType(WikitextNode.NT_TEXT))
+				after = (WtText) result.remove(i);
 			spaced = "";
 			if (after != null)
 				spaced = after.getContent();
 			
 			spaced = spaced + spacesString;
-			result.add(new Text(spaced));
+			result.add(new WtText(spaced));
 		}
 		
-		return new NodeList(result);
+		return new WtList(result);
 	}
 	
 	// =========================================================================
 	
-	public static RtData addRtData(AstNode yyValue, Object[]... rts)
+	public static RtData addRtData(WikitextNode yyValue, Object[]... rts)
 	{
 		if (rts.length != yyValue.size() + 1)
 			rts = Arrays.copyOf(rts, yyValue.size() + 1);
@@ -360,17 +360,17 @@ public final class TextUtils
 		ArrayList<Object> result = new ArrayList<Object>();
 		for (Object o : objects)
 		{
-			if (o instanceof AstNode)
+			if (o instanceof WikitextNode)
 			{
-				AstNode a = (AstNode) o;
+				WikitextNode a = (WikitextNode) o;
 				switch (a.getNodeType())
 				{
-					case AstNode.NT_NODE_LIST:
-						for (AstNode c : (NodeList) a)
+					case WikitextNode.NT_NODE_LIST:
+						for (WikitextNode c : (WtList) a)
 						{
-							if (c.getNodeType() == AstNode.NT_TEXT)
+							if (c.getNodeType() == WikitextNode.NT_TEXT)
 							{
-								rtAddString(result, ((Text) c).getContent());
+								rtAddString(result, ((WtText) c).getContent());
 							}
 							else
 							{
@@ -379,8 +379,8 @@ public final class TextUtils
 						}
 						break;
 					
-					case AstNode.NT_TEXT:
-						rtAddString(result, ((Text) a).getContent());
+					case WikitextNode.NT_TEXT:
+						rtAddString(result, ((WtText) a).getContent());
 						break;
 					
 					default:
@@ -419,7 +419,7 @@ public final class TextUtils
 		}
 	}
 	
-	public static void prependRtData(AstNode n, String data)
+	public static void prependRtData(WikitextNode n, String data)
 	{
 		RtData rtd = (RtData) n.getAttribute("RTD");
 		if (rtd == null || rtd.getRts().length == 0)

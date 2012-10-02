@@ -1,7 +1,7 @@
 <div class="dablink">For a basic introduction, see [[Help:Wikitable]]. For style considerations, see [[Wikipedia:Manual of Style (tables)]].</div>
 <table style="padding:0.3em; float:right; margin-left:15px; margin-bottom:8px; border:1px solid #A3B1BF; background:#f5faff; text-align:center; font-size:95%; line-height:1.5em;;">
 <th style="background:#cee0f2; padding:0.3em; font-size:1.1em;">Wiki markup</th><tr></tr>
-<tr><td>[[Wikipedia:Cheatsheet|Basic markup]]<br />[[Help:Wiki markup|Text, links, and talk pages]]<br />[[Help:Visual file markup|Visual files]]<br />[[Help:Sound file markup|Sound files]]<br />[[Help:Table|Tables]]<br />[[Help:Template|Template editing]]<br />[[Help:HTML in wikitext|Using HTML]]</td></tr></table>
+<tr><td>[[Wikipedia:Cheatsheet|Basic markup]]<br />[[Help:Wiki markup|WtText, links, and talk pages]]<br />[[Help:Visual file markup|Visual files]]<br />[[Help:Sound file markup|Sound files]]<br />[[Help:Table|Tables]]<br />[[Help:Template|Template editing]]<br />[[Help:HTML in wikitext|Using HTML]]</td></tr></table>
 
 A '''wikitable''' is an arrangement of columns and rows used to organize and position data. Tables are useful for this purpose and there are many different styles and tricks that can be used to customise each. This page gives you information about syntax to build wikitables in Wikipedia.
 
@@ -1485,7 +1485,7 @@ See also [[w:HTML element#Tables|HTML element#Tables]]. Note however that the <c
 * Unfamiliar syntax
 * Rigid structure
 * Cannot be indented
-* Text (as in HTML tags) may be easier for some people to read than series of pipes, plus signs, dashes, etc.
+* WtText (as in HTML tags) may be easier for some people to read than series of pipes, plus signs, dashes, etc.
 * Requires using [[Template:!]] to pass a "|" in a parameter.
 * Sensitive to newlines; see [[Help:Newlines and spaces]].
 |-

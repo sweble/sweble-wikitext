@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text("0 ")
+      WtText("0 ")
       XmlElement(
         Properties:
           RTD = RtData: [0] = "<i", [1] = ">", [2]
@@ -14,7 +14,7 @@ ParsedWikitextPage(
 
         [ ]
         [
-          Text(" a ")
+          WtText(" a ")
           XmlElement(
             Properties:
               RTD = RtData: [0] = "<b", [1] = ">", [2]
@@ -22,7 +22,7 @@ ParsedWikitextPage(
               {N} name = "b"
 
             [ ]
-            [ Text(" b ") ]
+            [ WtText(" b ") ]
           )
         ]
       )
@@ -50,7 +50,7 @@ ParsedWikitextPage(
                 {N} name = "b"
 
               [ ]
-              [ Text(" c ") ]
+              [ WtText(" c ") ]
             )
           ]
         )
@@ -78,13 +78,13 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Text(" d ")
+                    WtText(" d ")
                     XmlEndTag(
                       Properties:
                         RTD = RtData: [0] = "</div>"
                         {N} name = "div"
                     )
-                    Text(" e ")
+                    WtText(" e ")
                   ]
                 )
               ]
@@ -96,7 +96,7 @@ ParsedWikitextPage(
                 {N} name = "b"
 
               [ ]
-              [ Text(" f ") ]
+              [ WtText(" f ") ]
             )
           ]
         )
@@ -107,7 +107,7 @@ ParsedWikitextPage(
             {N} name = "b"
 
           [ ]
-          [ Text(" g") ]
+          [ WtText(" g") ]
         )
       ]
     )

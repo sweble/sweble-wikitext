@@ -60,7 +60,7 @@ public enum CoreAttributes implements AttributeDescriptor
 		@Override
 		public String verify(WomNode parent, String value) throws IllegalArgumentException
 		{
-			// Text
+			// WtText
 			// TODO Auto-generated method stub
 			return value;
 		}

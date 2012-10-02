@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.util.List;
 
@@ -27,11 +27,10 @@ import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.utils.ApplyToText;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class CorePfnFunctionsFormatting
 		extends
@@ -85,13 +84,13 @@ public class CorePfnFunctionsFormatting
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame preprocessorFrame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
-				return new NodeList();
+				return new WtList();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -124,13 +123,13 @@ public class CorePfnFunctionsFormatting
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame preprocessorFrame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
-				return new NodeList();
+				return new WtList();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -165,13 +164,13 @@ public class CorePfnFunctionsFormatting
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame preprocessorFrame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
-				return new NodeList();
+				return new WtList();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -204,13 +203,13 @@ public class CorePfnFunctionsFormatting
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame preprocessorFrame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
-				return new NodeList();
+				return new WtList();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -247,15 +246,15 @@ public class CorePfnFunctionsFormatting
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
-				return new NodeList();
+				return new WtList();
 			
-			AstNode arg0 = frame.expand(args.get(0));
+			WikitextNode arg0 = frame.expand(args.get(0));
 			
 			if (args.size() < 2)
 				return arg0;
@@ -267,7 +266,7 @@ public class CorePfnFunctionsFormatting
 			{
 				text = StringConverter.convert(arg0).trim();
 				
-				AstNode arg1 = frame.expand(args.get(1));
+				WikitextNode arg1 = frame.expand(args.get(1));
 				String lenStr = StringConverter.convert(arg1).trim();
 				len = Integer.parseInt(lenStr);
 				if (len <= 0)
@@ -275,7 +274,7 @@ public class CorePfnFunctionsFormatting
 				
 				if (args.size() >= 3)
 				{
-					AstNode arg2 = frame.expand(args.get(2));
+					WikitextNode arg2 = frame.expand(args.get(2));
 					try
 					{
 						padStr = StringConverter.convert(arg2).trim();

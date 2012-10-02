@@ -72,7 +72,7 @@
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IMAGE_LINK
  *
  *     Children:
- *       options : NodeList
+ *       options : WtList
  *       title   : LinkTitle
  *
  *     Properties:
@@ -142,7 +142,7 @@
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
  *
  *     Children:
- *       target : AstNode
+ *       target : WikitextNode
  *
  * Link Option: AltText
  * --------------------
@@ -187,7 +187,7 @@
  *     - Ticks
  *     - XmlReference
  *     - XmlElement
- *     - ParserEntity
+ *     - WtParserEntity
  *
  *   The LinkTitleContent cannot contain:
  *     - PageSwitch
@@ -238,7 +238,7 @@ body
     }
   }
 
-  private AstNode addLinkPrefix(Text text, InternalLink link)
+  private WikitextNode addLinkPrefix(WtText text, InternalLink link)
   {
     String t = text.getContent();
     if (!t.isEmpty())
@@ -260,13 +260,13 @@ body
             l.setPrefix(p);
             prependRtd(l, p);
 
-            return new NodeList(new Text(b), l);
+            return new WtList(new WtText(b), l);
           }
         }
       }
     }
 
-    return new NodeList(text, link);
+    return new WtList(text, link);
   }
 
   private int toInt(String num)
@@ -295,7 +295,7 @@ body
 
 // -- Internal link --[ State Aware Memoization ]-------------------------------
 
-noinline transient AstNode InternalLink =
+noinline transient WikitextNode InternalLink =
  ^{
     StateAwareResult r = (StateAwareResult) pInternalLinkMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -307,7 +307,7 @@ noinline transient AstNode InternalLink =
   }
 ;
 
-noinline memoized AstNode InternalLinkMemoized =
+noinline memoized WikitextNode InternalLinkMemoized =
  ^{
     Result yyResult = new StateAwareResult("InternalLink", getContext(), pInternalLinkTransient(yyBase));
     if (returnTrue(yyResult))
@@ -320,11 +320,11 @@ noinline memoized AstNode InternalLinkMemoized =
 
 // -- Internal link ------------------------------------------------------------
 
-noinline transient AstNode InternalLinkTransient =
+noinline transient WikitextNode InternalLinkTransient =
     "[[" &{ accept(ParserAtoms.INTERNAL_LINK) } yyValue:InternalLinkChoice
   / "["
     {
-      yyValue = new Text("[");
+      yyValue = new WtText("[");
     }
 ;
 
@@ -335,7 +335,7 @@ inline void InlineContentStopperInternalLink =
   / &{ inScope(ParserScopes.IMAGE_LINK_TITLE)    } ( "]]" )
 ;
 
-private transient stateful AstNode InternalLinkChoice =
+private transient stateful WikitextNode InternalLinkChoice =
     rt0:pTpStar target:LinkTargetString rt1:pExtSpaceStar
     {
       getState().initLinkBuilder(target);
@@ -358,7 +358,7 @@ private transient stateful AstNode InternalLinkChoice =
   / &{ isWarningsEnabled() } InternalLinkAutoCorrect
 ;
 
-private inline AstNode InternalLinkAutoCorrect =
+private inline WikitextNode InternalLinkAutoCorrect =
     &{ isAutoCorrect(WS_INFO) }
     rt0:pTpStar target:LinkTargetString
     {
@@ -366,7 +366,7 @@ private inline AstNode InternalLinkAutoCorrect =
     }
     &{ getLinkBuilder().isValidTarget() }
     {
-      yyValue = getState().getLinkBuilder().build(new NodeList(), null);
+      yyValue = getState().getLinkBuilder().build(new WtList(), null);
 
       if (getLinkBuilder().isImageTarget())
       {
@@ -392,7 +392,7 @@ private inline AstNode InternalLinkAutoCorrect =
        &{ getLinkBuilder().isValidTarget() }
      )
     {
-      yyValue = new Text("[[");
+      yyValue = new WtText("[[");
 
       fileLooksLikeWarning(
           yyValue,
@@ -403,7 +403,7 @@ private inline AstNode InternalLinkAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NONE) }
     {
-      yyValue = new Text("[[");
+      yyValue = new WtText("[[");
 
       fileLooksLikeWarning(
           yyValue,
@@ -419,7 +419,7 @@ private inline AstNode InternalLinkAutoCorrect =
 
 // -- Options ------------------------------------------------------------------
 
-private inline NodeList OptionsAndTitle =
+private inline WtList OptionsAndTitle =
     &{ !getLinkBuilder().isImageTarget() } LinkTitle?
     {
       yyValue = null;
@@ -427,14 +427,14 @@ private inline NodeList OptionsAndTitle =
   / yyValue:LinkOptionStar LinkTitle?
 ;
 
-private transient NodeList LinkOptionStar =
+private transient WtList LinkOptionStar =
   options:( void:'|' LinkOptionChoice )*
   {
-    yyValue = new NodeList(options);
+    yyValue = new WtList(options);
   }
 ;
 
-private inline AstNode LinkOptionChoice =
+private inline WikitextNode LinkOptionChoice =
     LinkOptionResize    &( '|' / "]]" )
   / LinkOptionKeyword   &( '|' / "]]" )
   / LinkOptionNameValue
@@ -517,7 +517,7 @@ private transient String LinkOptionKeywordString =
 
 // -- Link Option Name Value ---------------------------------------------------
 
-private transient stateful AstNode LinkOptionNameValue =
+private transient stateful WikitextNode LinkOptionNameValue =
     rt0:pExtWsStar "link=" target:LinkTargetOverride? rt1:pExtWsStar
     {
       getLinkBuilder().setLink(target);
@@ -536,7 +536,7 @@ private transient stateful AstNode LinkOptionNameValue =
   // TODO: Support page=...
 ;
 
-private inline AstNode LinkTargetOverride =
+private inline WikitextNode LinkTargetOverride =
     Url
   / LinkTarget
 ;
@@ -582,7 +582,7 @@ private inline stateful LinkTitle LinkTitle =
 
 // -- Link Title Content -------------------------------------------------------
 
-private inline NodeList LinkTitleContentStar =
+private inline WtList LinkTitleContentStar =
   InlineBlockContent
 ;
 

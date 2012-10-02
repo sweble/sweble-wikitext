@@ -39,8 +39,8 @@
  *       precededByNewline : boolean
  *
  *     Children:
- *       name       : NodeList
- *       args       : NodeList
+ *       name       : WtList
+ *       args       : WtList
  *
  * TemplateParameter
  * -----------------
@@ -57,9 +57,9 @@
  *       precededByNewline : boolean
  *
  *     Children:
- *       name         : NodeList
+ *       name         : WtList
  *       defaultValue : TemplateArgument
- *       garbage      : NodeList
+ *       garbage      : WtList
  *
  * TemplateArgument
  * ----------------
@@ -77,8 +77,8 @@
  *       hasName : boolean
  *
  *     Children:
- *       name  : NodeList
- *       value : NodeList
+ *       name  : WtList
+ *       value : WtList
  *
  */
 
@@ -96,7 +96,7 @@ import org.sweble.wikitext.parser.preprocessor.ContentTemplateName;
 
 // -- Article ------------------------------------------------------------------
 
-stateful AstNode Template =
+stateful WikitextNode Template =
     eol:pEol? braces:Braces1Plus
     {
       /* ALL PRODUCTIONS THAT DEPEND ON THE NUMBER OF BRANCES MUST
@@ -109,22 +109,22 @@ stateful AstNode Template =
     {
       if (eol != null)
       {
-        AstNode tmpl = yyValue;
-        if (yyValue instanceof NodeList)
+        WikitextNode tmpl = yyValue;
+        if (yyValue instanceof WtList)
         {
-          NodeList list = (NodeList) yyValue;
+          WtList list = (WtList) yyValue;
           tmpl = list.get(list.size() - 1);
         }
         if (yyValue instanceof Template)
           ((Template) yyValue).setPrecededByNewline(true);
         else
           ((TemplateParameter) yyValue).setPrecededByNewline(true);
-        yyValue = new NodeList(new Text(eol), yyValue);
+        yyValue = new WtList(new WtText(eol), yyValue);
       }
     }
   / eol:pEol? braces:Braces1Plus
     {
-      yyValue = new Text((eol != null) ? eol + braces : braces);
+      yyValue = new WtText((eol != null) ? eol + braces : braces);
     }
 ;
 
@@ -143,13 +143,13 @@ private transient String Braces1Plus = "{" "{"+ ;
  * second choice will try to parse the TemplateTailPart again, but this time
  * with the wrong brace count!
  */
-private transient AstNode TemplateTail =
+private transient WikitextNode TemplateTail =
   inner:TemplateTailPart outer:TemplateTailPart?
   {
     if (outer != null)
     {
       // insert inner template in front of the name of the outer template
-      ((NodeList) ((AstNode) outer).get(0)).add(0, inner);
+      ((WtList) ((WikitextNode) outer).get(0)).add(0, inner);
       yyValue = outer;
     }
     else
@@ -163,8 +163,8 @@ private transient AstNode TemplateTail =
     int stillOpen = getState().getTemplateBraces();
     if (stillOpen > 0)
     {
-      yyValue = new NodeList(
-        new Text(StringUtils.strrep('{', stillOpen)),
+      yyValue = new WtList(
+        new WtText(StringUtils.strrep('{', stillOpen)),
         yyValue);
 
       getState().setTemplateBraces(0);
@@ -176,22 +176,22 @@ private transient AstNode TemplateTail =
  * Eats 2 or 3 closing braces
  * ... [name] [arguments] }}}?
  */
-private transient AstNode TemplateTailPart =
+private transient WikitextNode TemplateTailPart =
     content:TemplateTailPart2 TemplateTailPart3
     {
       // content = (name, args)
-      NodeList args = content._2;
+      WtList args = content.getForeign(1, WtList.class);
 
-      NodeList garbage = null;
+      WtList garbage = null;
       TemplateArgument defaultValue = null;
       if (args.size() > 0)
       {
         defaultValue = (TemplateArgument) args.get(0);
         if (args.size() > 1)
-          garbage = new NodeList(args.subList(1, args.size()));
+          garbage = new WtList(args.subList(1, args.size()));
       }
 
-      yyValue = new TemplateParameter(content._1, defaultValue, garbage);
+      yyValue = new TemplateParameter(content.getForeign(0, WtList.class), defaultValue, garbage);
 
       if (isGatherRtData())
         addRtData(yyValue, joinRt("{{{"), null, null, joinRt("}}}"));
@@ -201,7 +201,7 @@ private transient AstNode TemplateTailPart =
   / content:TemplateTailPart2
     {
       // content = (name, args)
-      yyValue = new Template(content._1, content._2);
+      yyValue = new Template(content.getForeign(0, WtList.class), content.getForeign(1, WtList.class));
 
       if (isGatherRtData())
         addRtData(yyValue, joinRt("{{"), null, joinRt("}}"));
@@ -219,10 +219,10 @@ private transient AstNode TemplateTailPart =
  *   {{{{{param}}<no content here for example>}}}
  */
 
-private transient Tuple2<NodeList, NodeList> TemplateTailPart2 =
+private transient ForeignNode TemplateTailPart2 =
   &{ hasAtLeastTemplateBraces(2) } name:TemplateNameStar args:TemplateArgumentStar "}}"
   {
-    yyValue = Tuple.from(name, args);
+    yyValue = ForeignNode.from(name, args);
   }
 ;
 
@@ -240,7 +240,7 @@ private transient void TemplateTailPart3 =
 
 // -- Template/Parameter arguments ---------------------------------------------
 
-private transient AstNode TemplateArgumentChoice =
+private transient WikitextNode TemplateArgumentChoice =
     parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
     {
       yyValue = new TemplateArgument(parameter, value, true);
@@ -257,10 +257,10 @@ private transient AstNode TemplateArgumentChoice =
     }
 ;
 
-private transient NodeList TemplateArgumentStar =
+private transient WtList TemplateArgumentStar =
   args:( void:'|' TemplateArgumentChoice )*
   {
-    yyValue = new NodeList(args);
+    yyValue = new WtList(args);
   }
 ;
 

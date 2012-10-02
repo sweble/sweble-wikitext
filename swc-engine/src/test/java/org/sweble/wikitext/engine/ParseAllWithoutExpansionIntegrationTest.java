@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -26,17 +26,17 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.utils.AstPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.Warning;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class ParseAllWithoutExpansionIntegrationTest
 {
@@ -90,14 +90,14 @@ public class ParseAllWithoutExpansionIntegrationTest
 				+ "        Properties:\n"
 				+ "              RTD = RtData: [0] = \"'''\", [1] = \"'''\"\n"
 				+ "\n"
-				+ "        [ Text(\" some bold text \") ]\n"
+				+ "        [ WtText(\" some bold text \") ]\n"
 				+ "      )\n"
 				+ "      Newline(\"\\n\")\n"
 				+ "      Italics(\n"
 				+ "        Properties:\n"
 				+ "              RTD = RtData: [0] = \"''\", [1] = \"''\"\n"
 				+ "\n"
-				+ "        [ Text(\"italic default value\") ]\n"
+				+ "        [ WtText(\"italic default value\") ]\n"
 				+ "      )\n"
 				+ "      Newline(\"\\n\")\n"
 				+ "      Template(\n"
@@ -105,7 +105,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 				+ "              RTD = RtData: [0] = \"{{\", [1], [2] = \"}}\"\n"
 				+ "          {N} precededByNewline = true\n"
 				+ "\n"
-				+ "        [ Text(\"some template\") ]\n"
+				+ "        [ WtText(\"some template\") ]\n"
 				+ "        [\n"
 				+ "          TemplateArgument(\n"
 				+ "            Properties:\n"
@@ -142,7 +142,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 	{
 		private PageId pageId;
 		
-		private EntityMap entityMap;
+		private WtEntityMap entityMap;
 		
 		private List<Warning> warnings;
 		
@@ -155,13 +155,13 @@ public class ParseAllWithoutExpansionIntegrationTest
 		
 		// =====================================================================
 		
-		public AstNode visit(AstNode n)
+		public WikitextNode visit(WikitextNode n)
 		{
 			mapInPlace(n);
 			return n;
 		}
 		
-		public AstNode visit(CompiledPage n)
+		public WikitextNode visit(CompiledPage n)
 		{
 			this.warnings = n.getWarnings();
 			this.entityMap = n.getEntityMap();
@@ -169,13 +169,13 @@ public class ParseAllWithoutExpansionIntegrationTest
 			return n;
 		}
 		
-		public AstNode visit(TemplateParameter n) throws CompilerException
+		public WikitextNode visit(TemplateParameter n) throws CompilerException
 		{
 			TemplateArgument defValArg = n.getDefaultValue();
 			if (defValArg == null)
 				return n;
 			
-			NodeList defVal = defValArg.getValue();
+			WtList defVal = defValArg.getValue();
 			
 			// Shortcut for all those empty default values
 			if (defVal.isEmpty())
@@ -186,7 +186,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 			
 			CompiledPage parsed = compiler.postprocessPpOrExpAst(pageId, pprAst);
 			
-			NodeList content = parsed.getPage().getContent();
+			WtList content = parsed.getPage().getContent();
 			
 			// The parser of course thinks that the given wikitext is a 
 			// individual page and will wrap even single line text into a 

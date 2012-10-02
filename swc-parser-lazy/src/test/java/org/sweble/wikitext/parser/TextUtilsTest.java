@@ -18,9 +18,8 @@ package org.sweble.wikitext.parser;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.sweble.wikitext.parser.utils.AstPrinter;
 import org.sweble.wikitext.parser.utils.TextUtils;
-
-import de.fau.cs.osr.ptk.common.AstPrinter;
 
 public class TextUtilsTest
 {
@@ -32,28 +31,28 @@ public class TextUtilsTest
 		
 		final String expected =
 				"[\n" +
-						"  Text(\"H\")\n" +
+						"  WtText(\"H\")\n" +
 						"  XmlEntityRef(\n" +
 						"    Properties:\n" +
 						"          RTD = RtData: [0] = \"&amp;\"\n" +
 						"      {N} name = \"amp\"\n" +
 						"      {N} resolved = \"&\"\n" +
 						"  )\n" +
-						"  Text(\"llo \")\n" +
+						"  WtText(\"llo \")\n" +
 						"  XmlEntityRef(\n" +
 						"    Properties:\n" +
 						"          RTD = RtData: [0] = \"&lt;\"\n" +
 						"      {N} name = \"lt\"\n" +
 						"      {N} resolved = \"<\"\n" +
 						"  )\n" +
-						"  Text(\"Welt\")\n" +
+						"  WtText(\"Welt\")\n" +
 						"  XmlEntityRef(\n" +
 						"    Properties:\n" +
 						"          RTD = RtData: [0] = \"&gt;\"\n" +
 						"      {N} name = \"gt\"\n" +
 						"      {N} resolved = \">\"\n" +
 						"  )\n" +
-						"  Text(\"!\")\n" +
+						"  WtText(\"!\")\n" +
 						"]\n";
 		
 		Assert.assertEquals(expected, actual);

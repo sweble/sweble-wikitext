@@ -12,7 +12,7 @@ ParsedWikitextPage(
           {N} name = "code"
 
         [ ]
-        [ Text("<") ]
+        [ WtText("<") ]
       )
       Newline("\n")
       XmlStartTag(
@@ -22,7 +22,7 @@ ParsedWikitextPage(
 
         [ ]
       )
-      Text("<")
+      WtText("<")
       XmlEndTag(
         Properties:
           RTD = RtData: [0] = "</blub>"

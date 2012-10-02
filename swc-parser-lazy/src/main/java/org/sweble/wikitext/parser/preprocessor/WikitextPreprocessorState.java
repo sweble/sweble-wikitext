@@ -18,8 +18,8 @@
 package org.sweble.wikitext.parser.preprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.WtEntityMap;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserState;
 
 public class WikitextPreprocessorState
@@ -28,7 +28,7 @@ public class WikitextPreprocessorState
 {
 	private ParserConfig config;
 	
-	private EntityMap entityMap;
+	private WtEntityMap entityMap;
 	
 	private boolean autoCorrect;
 	
@@ -62,7 +62,7 @@ public class WikitextPreprocessorState
 	
 	public void init(
 			ParserConfig config,
-			EntityMap entityMap,
+			WtEntityMap entityMap,
 			boolean forInclusion)
 	{
 		this.config = config;
@@ -80,7 +80,7 @@ public class WikitextPreprocessorState
 	
 	// =========================================================================
 	
-	public EntityMap getEntityMap()
+	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}

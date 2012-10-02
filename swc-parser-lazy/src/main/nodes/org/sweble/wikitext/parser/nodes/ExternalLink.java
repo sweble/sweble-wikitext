@@ -8,8 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>External Link</h1> <h2>Grammar</h2>
  * <ul>
@@ -38,7 +36,7 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
  * </li>
  * <li>
  * <p>
- * ParserEntity
+ * WtParserEntity
  * </p>
  * </li>
  * <li>
@@ -122,17 +120,17 @@ public class ExternalLink
 	
 	public ExternalLink()
 	{
-		super(new Url(), new NodeList());
+		super(new Url(), new WtList());
 		
 	}
 	
 	public ExternalLink(Url target)
 	{
-		super(target, new NodeList());
+		super(target, new WtList());
 		
 	}
 	
-	public ExternalLink(Url target, NodeList title)
+	public ExternalLink(Url target, WtList title)
 	{
 		super(target, title);
 		
@@ -160,14 +158,14 @@ public class ExternalLink
 		return (Url) get(0);
 	}
 	
-	public final void setTitle(NodeList title)
+	public final void setTitle(WtList title)
 	{
 		set(1, title);
 	}
 	
-	public final NodeList getTitle()
+	public final WtList getTitle()
 	{
-		return (NodeList) get(1);
+		return (WtList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "target", "title" };

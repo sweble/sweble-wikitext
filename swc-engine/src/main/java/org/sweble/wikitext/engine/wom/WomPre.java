@@ -21,7 +21,7 @@ package org.sweble.wikitext.engine.wom;
  * 
  * Corresponds to the XWML 1.0 element "pre".
  * 
- * <b>Child elements:</b> Text
+ * <b>Child elements:</b> WtText
  */
 public interface WomPre
         extends

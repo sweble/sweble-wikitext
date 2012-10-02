@@ -17,7 +17,9 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,7 +43,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
-import org.sweble.wikitext.engine.utils.HtmlPrinter;
 
 import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
 import de.fau.cs.osr.utils.NamedParametrized;
@@ -77,6 +78,8 @@ public class MediaWikiTestRunner
 	@Test
 	public void test() throws Exception
 	{
+		throw new InternalError();
+		/*
 		PageTitle title = PageTitle.make(getConfig(), name);
 		PageId pageId = new PageId(title, -1);
 		String wikitext = test.getInput();
@@ -97,6 +100,7 @@ public class MediaWikiTestRunner
 		expected = clean(expected);
 		
 		assertEquals(expected, actual);
+		*/
 	}
 	
 	private String clean(String html)

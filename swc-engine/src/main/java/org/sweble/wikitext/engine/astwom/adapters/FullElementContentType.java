@@ -24,9 +24,8 @@ import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.parser.AstNodeTypes;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 
 public enum FullElementContentType
 {
@@ -40,9 +39,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			throw new UnsupportedOperationException("Not yet supported");
 		}
@@ -58,9 +57,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			MIXED_INLINE.parseContent(factory, childManager, parent, container, from, to);
 		}
@@ -76,9 +75,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			MIXED_INLINE.parseContent(factory, childManager, parent, container, from, to);
 		}
@@ -94,9 +93,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			/*
 			 * It doesn't make sense to enforce strict block semantics since 
@@ -112,9 +111,9 @@ public enum FullElementContentType
 				{
 					break;
 				}
-				case AstNode.NT_TEXT:
+				case WikitextNode.NT_TEXT:
 				{
-					if (!StringUtils.isWhitespace(((Text) node).getContent()))
+					if (!StringUtils.isWhitespace(((WtText) node).getContent()))
 						throw new AssertionError("Non-whitespace text in non-inline scope");
 					
 					break;
@@ -146,12 +145,12 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
-			AstNode n = null;
-			Iterator<AstNode> i = container.iterator();
+			WikitextNode n = null;
+			Iterator<WikitextNode> i = container.iterator();
 			
 			// Find from node
 			if (from != null)
@@ -183,7 +182,7 @@ public enum FullElementContentType
 					case AstNodeTypes.NT_IGNORED:
 						break;
 					
-					case AstNode.NT_TEXT:
+					case WikitextNode.NT_TEXT:
 					case AstNodeTypes.NT_NEWLINE:
 					case AstNodeTypes.NT_XML_CHAR_REF:
 					case AstNodeTypes.NT_XML_ENTITY_REF:
@@ -220,9 +219,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			MIXED_INLINE.parseContent(factory, childManager, parent, container, from, to);
 		}
@@ -238,9 +237,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			MIXED_INLINE.parseContent(factory, childManager, parent, container, from, to);
 		}
@@ -256,9 +255,9 @@ public enum FullElementContentType
 				AstToWomNodeFactory factory,
 				ChildManagerBase childManager,
 				WomBackbone parent,
-				NodeList container,
-				AstNode from,
-				AstNode to)
+				WtList container,
+				WikitextNode from,
+				WikitextNode to)
 		{
 			MIXED_INLINE.parseContent(factory, childManager, parent, container, from, to);
 		}
@@ -291,9 +290,9 @@ public enum FullElementContentType
 			AstToWomNodeFactory factory,
 			ChildManagerBase childManager,
 			WomBackbone parent,
-			NodeList container,
-			AstNode from,
-			AstNode to);
+			WtList container,
+			WikitextNode from,
+			WikitextNode to);
 	
 	// =========================================================================
 	
@@ -312,7 +311,7 @@ public enum FullElementContentType
 	 *            The AST container that contains the node we are about to
 	 *            process.
 	 * @param firstNode
-	 *            The first text node (not necessarily a Text object) in the
+	 *            The first text node (not necessarily a WtText object) in the
 	 *            sequence of text nodes.
 	 * @param iter
 	 *            An iterator pointing to the first text node.
@@ -321,23 +320,23 @@ public enum FullElementContentType
 	 *            stop. The element "to" itself is not processed.
 	 * @return The node in the container that came after the last text node.
 	 */
-	private static AstNode buildInlineText(
+	private static WikitextNode buildInlineText(
 			AstToWomNodeFactory factory,
 			ChildManagerBase childManager,
 			WomBackbone parent,
-			NodeList container,
-			AstNode firstNode,
-			Iterator<AstNode> iter,
-			AstNode to)
+			WtList container,
+			WikitextNode firstNode,
+			Iterator<WikitextNode> iter,
+			WikitextNode to)
 	{
 		TextAdapter complexText =
 				(TextAdapter) factory.create(container, firstNode);
 		
-		AstNode notText = null;
+		WikitextNode notText = null;
 		
 		loop: while (iter.hasNext())
 		{
-			AstNode n = iter.next();
+			WikitextNode n = iter.next();
 			if (n == to)
 				break loop;
 			
@@ -345,7 +344,7 @@ public enum FullElementContentType
 			{
 				case AstNodeTypes.NT_IGNORED:
 				case AstNodeTypes.NT_NEWLINE:
-				case AstNode.NT_TEXT:
+				case WikitextNode.NT_TEXT:
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				case AstNodeTypes.NT_XML_ENTITY_REF:
 				{

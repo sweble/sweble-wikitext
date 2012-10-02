@@ -1,6 +1,6 @@
 Page([
   Paragraph([
-    Text("asdf")
+    WtText("asdf")
     Newline("\n")
     InternalLink(
       Properties:
@@ -12,6 +12,6 @@ Page([
       LinkTitle([ ])
     )
     Newline("\n")
-    Text("asdf")
+    WtText("asdf")
   ])
 ])

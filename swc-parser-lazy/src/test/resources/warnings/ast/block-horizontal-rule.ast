@@ -4,22 +4,22 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Paragraph([ Text("\n--\n\n") ])
-    Text(
+    Paragraph([ WtText("\n--\n\n") ])
+    WtText(
       Properties:
         {N} content = "---"
         warnings = [Warning: This looks like a Horizontal Rule, however a horizontal rule consists of at least 4 dashes: "---"]
     )
-    Paragraph([ Text("\n\n") ])
+    Paragraph([ WtText("\n\n") ])
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Paragraph([ Text("\n\n") ])
+    Paragraph([ WtText("\n\n") ])
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "-----" ]
     )
-    Paragraph([ Text("\n") ])
+    Paragraph([ WtText("\n") ])
   ]
 )

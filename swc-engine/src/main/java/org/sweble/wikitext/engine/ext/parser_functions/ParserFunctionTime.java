@@ -17,7 +17,8 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astProtectedText;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -28,10 +29,10 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class ParserFunctionTime
@@ -46,10 +47,10 @@ public class ParserFunctionTime
 	}
 	
 	@Override
-	public AstNode invoke(
+	public WikitextNode invoke(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends AstNode> args)
+			List<? extends WikitextNode> args)
 	{
 		if (args.size() < 1)
 			return pfn;
@@ -98,7 +99,7 @@ public class ParserFunctionTime
 		return format(format, timestamp, locale);
 	}
 	
-	private AstNode format(String format, Calendar timestamp, Locale locale)
+	private WikitextNode format(String format, Calendar timestamp, Locale locale)
 	{
 		StringBuilder sb = new StringBuilder();
 		
@@ -138,10 +139,10 @@ public class ParserFunctionTime
 	
 	private String expandArgToString(
 			ExpansionFrame preprocessorFrame,
-			List<? extends AstNode> args,
+			List<? extends WikitextNode> args,
 			final int index)
 	{
-		AstNode arg = preprocessorFrame.expand(args.get(index));
+		WikitextNode arg = preprocessorFrame.expand(args.get(index));
 		
 		EngineTextUtils.trim(arg);
 		

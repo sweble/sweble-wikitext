@@ -17,32 +17,33 @@
 
 package org.sweble.wikitext.parser.utils;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
-
 import org.junit.Test;
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
-import org.sweble.wikitext.parser.nodes.XmlComment;
 
 public class TestWikitextPrinter
 {
 	@Test
 	public void wikitextPrinterGeneratesCorrectOutputForHorizontalRule()
 	{
+		throw new InternalError();
+		/*
 		HorizontalRule node = astHr().build();
 		
 		assertEquals(
 				"\n\n----",
 				WikitextPrinter.print(node));
+		*/
 	}
 	
 	@Test
 	public void wikitextPrinterProducesNoOutputForComments()
 	{
+		throw new InternalError();
+		/*
 		XmlComment node = astComment("some comment");
 		
 		assertEquals(
 				"",
 				WikitextPrinter.print(node));
+		*/
 	}
 }

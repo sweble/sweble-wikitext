@@ -40,6 +40,9 @@ import org.sweble.wikitext.parser.nodes.TableCell;
 import org.sweble.wikitext.parser.nodes.TableHeader;
 import org.sweble.wikitext.parser.nodes.TableRow;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.XmlEndTag;
@@ -49,14 +52,11 @@ import org.sweble.wikitext.parser.postprocessor.ElementScopeStack.Scope;
 import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
 		extends
-			AstVisitor
+			AstVisitor<WikitextNode>
 {
 	private final ParserConfig config;
 	
@@ -66,7 +66,7 @@ public class ScopedElementBuilder
 	
 	public static ParsedWikitextPage process(
 			ParserConfig config,
-			AstNode ast)
+			WikitextNode ast)
 	{
 		return (ParsedWikitextPage) new ScopedElementBuilder(config).go(ast);
 	}
@@ -81,14 +81,14 @@ public class ScopedElementBuilder
 	// =========================================================================
 	
 	@Override
-	protected Object after(AstNode node, Object result)
+	protected Object after(WikitextNode node, Object result)
 	{
 		return node;
 	}
 	
 	// =========================================================================
 	
-	public void visit(AstNode n)
+	public void visit(WikitextNode n)
 	{
 		stack.append(n);
 	}
@@ -293,7 +293,7 @@ public class ScopedElementBuilder
 			reopenClosedInlineScopes(current.getClosedInline());
 	}
 	
-	private void openScope(ScopeType scopeType, AstNode n)
+	private void openScope(ScopeType scopeType, WikitextNode n)
 	{
 		stack.push(scopeType, n, true);
 		
@@ -306,12 +306,12 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	private void processScope(ContentNode n)
+	private void processScope(WtContentNode n)
 	{
 		n.setContent(processScope(n.getContent()));
 	}
 	
-	private NodeList processScope(NodeList n)
+	private WtList processScope(WtList n)
 	{
 		Scope container = stack.top();
 		
@@ -347,7 +347,7 @@ public class ScopedElementBuilder
 		return current.getContent();
 	}
 	
-	private void closeScope(ScopeType scopeType, AstNode n)
+	private void closeScope(ScopeType scopeType, WikitextNode n)
 	{
 		Scope current = stack.top();
 		
@@ -468,7 +468,7 @@ public class ScopedElementBuilder
 			// Only reopen closable inline scopes
 			if (i.getType().isReopen())
 			{
-				NodeList c = null;
+				WtList c = null;
 				if (!reopenIn.getContent().isEmpty())
 					c = reopenIn.clearContent();
 				
@@ -648,20 +648,20 @@ public class ScopedElementBuilder
 		return null;
 	}
 	
-	private AstNode close(Scope s)
+	private WikitextNode close(Scope s)
 	{
 		return close(s, null);
 	}
 	
-	private AstNode close(Scope s, AstNode c)
+	private WikitextNode close(Scope s, WikitextNode c)
 	{
-		NodeList content = s.getContent();
+		WtList content = s.getContent();
 		if (s.getType().dropIfEmpty() && content.isEmpty())
 			return null;
 		
 		if (content.size() == 1)
 		{
-			final AstNode c0 = content.get(0);
+			final WikitextNode c0 = content.get(0);
 			if (s.getType().dropIfOnlyWhitespace() &&
 					c0.isNodeType(AstNodeTypes.NT_WHITESPACE) &&
 					s.isOpen() == false &&
@@ -701,14 +701,14 @@ public class ScopedElementBuilder
 	
 	private XmlElement createEmptyElement(
 			NamedXmlElement e,
-			NodeList attrs,
+			WtList attrs,
 			boolean wasEmpty)
 	{
 		XmlElement element = new XmlElement(
 				e.getName(),
 				true,
 				attrs,
-				new NodeList());
+				new WtList());
 		
 		if (config.isGatherRtData())
 		{
@@ -735,7 +735,7 @@ public class ScopedElementBuilder
 	
 	private XmlElement createElement(
 			XmlStartTag open,
-			NodeList body,
+			WtList body,
 			XmlEndTag close,
 			boolean hasOpen)
 	{

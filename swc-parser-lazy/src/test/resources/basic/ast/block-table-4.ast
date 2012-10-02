@@ -21,7 +21,7 @@ ParsedWikitextPage(
                 RTD = RtData: [0] = " !", [1], [2]
 
               [ ]
-              [ Text(" Header 1 ") ]
+              [ WtText(" Header 1 ") ]
             )
             TableHeader(
               Properties:
@@ -29,7 +29,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ Text(" Header 2 ") ])
+                Paragraph([ WtText(" Header 2 ") ])
                 Newline("\n")
               ]
             )

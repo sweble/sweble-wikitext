@@ -1,6 +1,6 @@
 ParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Redirect(), 1=Template([0] = [Text("name")], [1] = [TemplateArgument([0] = [], [1] = [Text("arg0")]), TemplateArgument([0] = [Text("arg1")], [1] = [Text("value1")]), TemplateArgument([0] = [Text("arg2")], [1] = [TemplateParameter([0] = [Text("parameter2")], [1] = null, [2] = null)])])}
+    {N} entityMap = EntityMap {0=Redirect(), 1=Template([0] = [WtText("name")], [1] = [TemplateArgument([0] = [], [1] = [WtText("arg0")]), TemplateArgument([0] = [WtText("arg1")], [1] = [WtText("value1")]), TemplateArgument([0] = [WtText("arg2")], [1] = [TemplateParameter([0] = [WtText("parameter2")], [1] = null, [2] = null)])])}
     {N} warnings = []
 
   [
@@ -16,7 +16,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = true
 
-        [ Text("name") ]
+        [ WtText("name") ]
         [
           TemplateArgument(
             Properties:
@@ -24,29 +24,29 @@ ParsedWikitextPage(
               {N} hasName = false
 
             [ ]
-            [ Text("arg0") ]
+            [ WtText("arg0") ]
           )
           TemplateArgument(
             Properties:
               RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
 
-            [ Text("arg1") ]
-            [ Text("value1") ]
+            [ WtText("arg1") ]
+            [ WtText("value1") ]
           )
           TemplateArgument(
             Properties:
               RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
 
-            [ Text("arg2") ]
+            [ WtText("arg2") ]
             [
               TemplateParameter(
                 Properties:
                   RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
                   {N} precededByNewline = false
 
-                [ Text("parameter2") ]
+                [ WtText("parameter2") ]
               )
             ]
           )

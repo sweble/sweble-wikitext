@@ -24,14 +24,14 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("before ")
+      WtText("before ")
       Url(
         Properties:
           RTD = RtData: [0] = "mail:mustermann@musterfirma.com"
           {N} path = "mustermann@musterfirma.com"
           {N} protocol = "mail"
       )
-      Text(" after")
+      WtText(" after")
     ])
     Newline("\n")
   ]

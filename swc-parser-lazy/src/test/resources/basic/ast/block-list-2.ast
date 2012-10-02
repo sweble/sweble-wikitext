@@ -9,7 +9,7 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "<!--Comment-->*", [1]
 
-        [ Text(" Hallo") ]
+        [ WtText(" Hallo") ]
       )
     ])
   ]

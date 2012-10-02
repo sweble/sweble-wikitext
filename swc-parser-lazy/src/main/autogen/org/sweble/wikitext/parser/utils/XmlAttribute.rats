@@ -38,7 +38,7 @@
  *       hasValue : boolean
  *
  *     Children:
- *       value : NodeList
+ *       value : WtList
  *
  * XML Attribute Garbage
  * ---------------------
@@ -63,15 +63,15 @@ import WS;
 
 // -- Attributes ---------------------------------------------------------------
 
-NodeList XmlAttributeStar =
+WtList XmlAttributeStar =
   yyValue:tXmlAttributePlus?
   {
     if (yyValue == null)
-      yyValue = new NodeList();
+      yyValue = new WtList();
   }
 ;
 
-NodeList XmlAttributePlus = tXmlAttributePlus ;
+WtList XmlAttributePlus = tXmlAttributePlus ;
 
 inline void XmlAttrGarbageStopper =
     <SlashGreater> "/>"
@@ -94,19 +94,19 @@ inline String XmlAttrWs =
 
 // -- Attributes ---------------------------------------------------------------
 
-private transient NodeList tXmlAttributePlus =
+private transient WtList tXmlAttributePlus =
   head:XmlHeadAttributeChoice tail:XmlTailAttributeChoice*
   {
-    yyValue = new NodeList(head, tail);
+    yyValue = new WtList(head, tail);
   }
 ;
 
-private inline AstNode XmlHeadAttributeChoice =
+private inline WikitextNode XmlHeadAttributeChoice =
     ValidXmlAttribute
   / XmlAttributeGarbage
 ;
 
-private inline AstNode XmlTailAttributeChoice =
+private inline WikitextNode XmlTailAttributeChoice =
     &XmlAttrWs ValidXmlAttribute
   / XmlAttributeGarbage
 ;
@@ -177,17 +177,17 @@ private inline void AttrEnd =
 
 // -- Single quoted attribute values -------------------------------------------
 
-private transient NodeList ValueSqStar =
+private transient WtList ValueSqStar =
   value:ValueSqChoice*
   {
-    yyValue = new NodeList(value);
+    yyValue = new WtList(value);
   }
 ;
 
-private inline AstNode ValueSqChoice =
+private inline WikitextNode ValueSqChoice =
     string:ValueSqString
     {
-      yyValue = new Text(string);
+      yyValue = new WtText(string);
     }
   / &'&' XmlReference
 ;
@@ -201,17 +201,17 @@ private transient String ValueSqString =
 
 // -- Double quoted attribute values -------------------------------------------
 
-private transient NodeList ValueDqStar =
+private transient WtList ValueDqStar =
   value:ValueDqChoice*
   {
-    yyValue = new NodeList(value);
+    yyValue = new WtList(value);
   }
 ;
 
-private inline AstNode ValueDqChoice =
+private inline WikitextNode ValueDqChoice =
     string:ValueDqString
     {
-      yyValue = new Text(string);
+      yyValue = new WtText(string);
     }
   / &'&' XmlReference
 ;
@@ -225,17 +225,17 @@ private transient String ValueDqString =
 
 // -- Non-quoted attribute values ----------------------------------------------
 
-private transient NodeList ValueNqStar =
+private transient WtList ValueNqStar =
   value:ValueNqChoice*
   {
-    yyValue = new NodeList(value);
+    yyValue = new WtList(value);
   }
 ;
 
-private inline AstNode ValueNqChoice =
+private inline WikitextNode ValueNqChoice =
     string:ValueNqString
     {
-      yyValue = new Text(string);
+      yyValue = new WtText(string);
     }
   / &'&' XmlReference
 ;

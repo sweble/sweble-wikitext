@@ -60,7 +60,7 @@ body
     return getState().getTop();
   }
 
-  public AstNode getEntity(int id)
+  public WikitextNode getEntity(int id)
   {
     return getState().getEntity(id);
   }

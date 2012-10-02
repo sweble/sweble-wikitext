@@ -1,14 +1,13 @@
 package org.sweble.wikitext.parser.nodes;
 
 import xtc.tree.Location;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.InnerNode.InnerNode3;
+import de.fau.cs.osr.ptk.common.ast.GenericInnerNode.GenericInnerNode3;
 import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
 public abstract class WtInnerNode3
 		extends
-			InnerNode3
+			GenericInnerNode3<WikitextNode>
 		implements
 			WikitextNode
 {
@@ -23,12 +22,16 @@ public abstract class WtInnerNode3
 		super();
 	}
 	
-	public WtInnerNode3(AstNode n0, AstNode n1, AstNode n2)
+	public WtInnerNode3(WikitextNode n0, WikitextNode n1, WikitextNode n2)
 	{
 		super(n0, n1, n2);
 	}
 	
-	public WtInnerNode3(Location arg0, AstNode n0, AstNode n1, AstNode n2)
+	public WtInnerNode3(
+			Location arg0,
+			WikitextNode n0,
+			WikitextNode n1,
+			WikitextNode n2)
 	{
 		super(arg0, n0, n1, n2);
 	}
@@ -137,7 +140,7 @@ public abstract class WtInnerNode3
 			}
 		}
 	}
-
+	
 	// =========================================================================
 	
 	@Override

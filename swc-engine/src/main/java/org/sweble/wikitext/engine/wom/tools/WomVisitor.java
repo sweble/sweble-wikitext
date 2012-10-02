@@ -23,7 +23,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNode;
 
-import de.fau.cs.osr.ptk.common.VisitorBase;
+import de.fau.cs.osr.utils.visitor.VisitorBase;
 
 public class WomVisitor
         extends

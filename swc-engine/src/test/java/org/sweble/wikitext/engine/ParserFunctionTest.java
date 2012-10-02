@@ -25,7 +25,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.WikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
 
@@ -180,11 +179,14 @@ public class ParserFunctionTest
 	
 	private void doTest(String expected, String page) throws LinkTargetException, IOException, CompilerException
 	{
+		throw new InternalError();
+		/*
 		final CompiledPage preprocessed = preprocess(page, false);
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
 				expected,
 				WikitextPrinter.print(preprocessed.getPage().getContent()));
+		*/
 	}
 	
 	@SuppressWarnings("unused")
@@ -199,10 +201,13 @@ public class ParserFunctionTest
 	
 	private void doTest(String namespace, String expected, String page) throws LinkTargetException, IOException, CompilerException
 	{
+		throw new InternalError();
+		/*
 		final CompiledPage preprocessed = preprocess(namespace, page, false);
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
 				expected,
 				WikitextPrinter.print(preprocessed.getPage().getContent()));
+		*/
 	}
 }

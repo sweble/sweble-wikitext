@@ -16,7 +16,7 @@ ParsedWikitextPage(
             {N} name = "x"
 
           [
-            Text(
+            WtText(
               Properties:
                 {N} content = "&x"
                 warnings = 

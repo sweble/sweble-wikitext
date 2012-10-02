@@ -12,7 +12,7 @@ ParsedWikitextPage(
 
       [ ]
       [
-        Text("item3")
+        WtText("item3")
         XmlElement(
           Properties:
             RTD = RtData: [0] = "<table", [1] = ">", [2] = "</table>"
@@ -49,7 +49,7 @@ ParsedWikitextPage(
                         {N} name = "li"
 
                       [ ]
-                      [ Text("item4") ]
+                      [ WtText("item4") ]
                     )
                   ]
                 )

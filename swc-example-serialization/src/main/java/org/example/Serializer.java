@@ -32,13 +32,15 @@ import java.util.zip.GZIPOutputStream;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.postprocessor.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
 
 import com.google.gson.Gson;
 
 import de.fau.cs.osr.ptk.common.AstComparer;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.json.JsonConverter;
 import de.fau.cs.osr.ptk.common.xml.XmlReader;
 import de.fau.cs.osr.ptk.common.xml.XmlWriter;
@@ -53,6 +55,7 @@ public class Serializer
 	
 	private static final NameAbbrevService abbrevService = new NameAbbrevService(
 			"de.fau.cs.osr.ptk.common.ast",
+			"org.sweble.wikitext.parser",
 			"org.sweble.wikitext.parser.nodes",
 			"org.sweble.wikitext.parser.nodes.parser",
 			"org.sweble.wikitext.parser.nodes.preprocessor",
@@ -91,7 +94,7 @@ public class Serializer
 	
 	private String title;
 	
-	private AstNode original;
+	private WikitextNode original;
 	
 	private int wikitextLength;
 	
@@ -262,7 +265,7 @@ public class Serializer
 		
 		String content = FileUtils.readFileToString(source);
 		
-		AstNode original = parse(title, content);
+		WikitextNode original = parse(title, content);
 		
 		int wikitextLength = content.getBytes().length;
 		
@@ -323,7 +326,7 @@ public class Serializer
 	
 	// =========================================================================
 	
-	private AstNode parse(String title, String content) throws Exception
+	private WikitextNode parse(String title, String content) throws Exception
 	{
 		if (!quiet && timeParsing)
 		{
@@ -355,7 +358,7 @@ public class Serializer
 		return doParse(title, content);
 	}
 	
-	private AstNode doParse(String title, String content) throws Exception
+	private WikitextNode doParse(String title, String content) throws Exception
 	{
 		FullParser parser = new FullParser(
 				parserWarningsEnabled,
@@ -422,14 +425,24 @@ public class Serializer
 			case XML:
 			{
 				OutputStreamWriter osw = new OutputStreamWriter(objBaos, "UTF-8");
-				XmlWriter.write(original, osw, abbrevService);
+				XmlWriter<WikitextNode> xmlWriter = new XmlWriter<WikitextNode>(
+						WikitextNode.class,
+						WtList.class,
+						WtText.class);
+				xmlWriter.serialize(original, osw, abbrevService);
 				osw.close();
 				break;
 			}
 			case JSON:
 			{
 				OutputStreamWriter osw = new OutputStreamWriter(objBaos, "UTF-8");
-				Gson converter = JsonConverter.createGsonConverter(true, abbrevService, !ppStripLocations);
+				Gson converter = JsonConverter.createGsonConverter(
+						true,
+						abbrevService,
+						!ppStripLocations,
+						WikitextNode.class,
+						WtList.class,
+						WtText.class);
 				converter.toJson(original, osw);
 				osw.close();
 				break;
@@ -443,7 +456,7 @@ public class Serializer
 	
 	// =========================================================================
 	
-	private AstNode timedDeserialization(
+	private WikitextNode timedDeserialization(
 			SerializationMethod method,
 			byte[] serialized) throws Exception
 	{
@@ -458,7 +471,7 @@ public class Serializer
 			watch.stop();
 		}
 		
-		AstNode deserialized = deserialize(method, serialized);
+		WikitextNode deserialized = deserialize(method, serialized);
 		
 		if (!quiet)
 		{
@@ -472,34 +485,47 @@ public class Serializer
 		return deserialized;
 	}
 	
-	private AstNode deserialize(SerializationMethod method, byte[] serialized) throws Exception
+	private WikitextNode deserialize(
+			SerializationMethod method,
+			byte[] serialized) throws Exception
 	{
 		return deserialize(method, new ByteArrayInputStream(serialized));
 	}
 	
-	private AstNode deserialize(SerializationMethod method, InputStream is) throws Exception
+	private WikitextNode deserialize(SerializationMethod method, InputStream is) throws Exception
 	{
-		AstNode result = null;
+		WikitextNode result = null;
 		switch (method)
 		{
 			case JAVA:
 			{
 				ObjectInputStream ois = new ObjectInputStream(is);
-				result = (AstNode) ois.readObject();
+				result = (WikitextNode) ois.readObject();
 				ois.close();
 				break;
 			}
 			case XML:
 			{
 				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-				result = XmlReader.read(isr, abbrevService);
+				XmlReader<WikitextNode> xmlReader = new XmlReader<WikitextNode>(
+						WikitextNode.class,
+						WtList.class,
+						WtText.class);
+				result = xmlReader.deserialize(isr, abbrevService);
 				isr.close();
 				break;
 			}
 			case JSON:
 			{
 				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-				result = JsonConverter.fromJson(isr, AstNode.class, abbrevService);
+				Gson converter = JsonConverter.createGsonConverter(
+						true,
+						abbrevService,
+						!ppStripLocations,
+						WikitextNode.class,
+						WtList.class,
+						WtText.class);
+				result = converter.fromJson(isr, WikitextNode.class);
 				isr.close();
 				break;
 			}
@@ -557,7 +583,7 @@ public class Serializer
 	
 	// =========================================================================
 	
-	private AstNode timedUnzipAndDeserialize(
+	private WikitextNode timedUnzipAndDeserialize(
 			SerializationMethod method,
 			byte[] serialized) throws Exception
 	{
@@ -581,7 +607,7 @@ public class Serializer
 		return unzipAndDeserialize(method, serialized);
 	}
 	
-	private AstNode unzipAndDeserialize(
+	private WikitextNode unzipAndDeserialize(
 			SerializationMethod method,
 			byte[] zipped) throws Exception
 	{
@@ -596,7 +622,7 @@ public class Serializer
 	
 	// =========================================================================
 	
-	private void compare(AstNode deserialize)
+	private void compare(WikitextNode deserialize)
 	{
 		// FIXME: Comparing entity maps fails since ast nodes are not comparable
 		((ParsedWikitextPage) original).setEntityMap(null);

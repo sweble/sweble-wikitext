@@ -1,6 +1,6 @@
 ParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [Text("disambig")], [1] = [])}
+    {N} entityMap = EntityMap {0=Template([0] = [WtText("disambig")], [1] = [])}
     {N} warnings = []
 
   [
@@ -9,16 +9,16 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
-        [ Text("asdf") ]
+        [ WtText("asdf") ]
       )
-      Text(" or ")
+      WtText(" or ")
       Bold(
         Properties:
           RTD = RtData: [0] = "'''", [1] = "'''"
 
-        [ Text("ASDF") ]
+        [ WtText("ASDF") ]
       )
-      Text(" may refer to ")
+      WtText(" may refer to ")
     ])
     Newline("\n")
     UnorderedList([
@@ -27,7 +27,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -37,7 +37,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(", a military entity")
+          WtText(", a military entity")
         ]
       )
       ListItem(
@@ -45,7 +45,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -55,7 +55,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(", a military entity")
+          WtText(", a military entity")
         ]
       )
       ListItem(
@@ -63,7 +63,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -73,7 +73,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(", the most commonly used build system for Common Lisp")
+          WtText(", the most commonly used build system for Common Lisp")
         ]
       )
       ListItem(
@@ -81,7 +81,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" ")
+          WtText(" ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -91,7 +91,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(", an organization that advances the use of synchronous data transmission technology")
+          WtText(", an organization that advances the use of synchronous data transmission technology")
         ]
       )
       ListItem(
@@ -99,7 +99,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" Average Squared Difference Function, a mapping used in ")
+          WtText(" Average Squared Difference Function, a mapping used in ")
           InternalLink(
             Properties:
               {N} postfix = "s"
@@ -116,7 +116,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" asdf, the first four letters in the ")
+          WtText(" asdf, the first four letters in the ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -126,7 +126,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(" on a ")
+          WtText(" on a ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -136,7 +136,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(" keyboard")
+          WtText(" keyboard")
         ]
       )
       ListItem(
@@ -144,7 +144,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "*", [1] = "\n"
 
         [
-          Text(" asdf movie, a series of ")
+          WtText(" asdf movie, a series of ")
           InternalLink(
             Properties:
               {N} postfix = "s"
@@ -160,7 +160,7 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
-        [ Text(" Asdf.com is a random chat board where the point is to not always stay on topic.") ]
+        [ WtText(" Asdf.com is a random chat board where the point is to not always stay on topic.") ]
       )
     ])
     Newline("\n")
@@ -169,7 +169,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text(" See also ") ]
+      [ WtText(" See also ") ]
       [
         Newline("\n")
         UnorderedList([
@@ -178,7 +178,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [
-              Text(" ")
+              WtText(" ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -195,7 +195,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [
-              Text(" ")
+              WtText(" ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -212,7 +212,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1]
 
             [
-              Text(" ")
+              WtText(" ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -243,7 +243,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
 
-            [ Text("disambig") ]
+            [ WtText("disambig") ]
             [ ]
           )
         ])

@@ -23,9 +23,9 @@ import java.util.Iterator;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.StringUtils;
 
 /*
@@ -65,7 +65,7 @@ import de.fau.cs.osr.utils.StringUtils;
  * 
  * XmlElementWithChildren <|-- XmlElementWithUniversalAttributes
  * 
- * note "Comment, \n<i>EmptyTitle</i>, \n<b>NativeOrXmlAttribute</b>, \n<b>Text</b>" as InheritFromWomBackbone
+ * note "Comment, \n<i>EmptyTitle</i>, \n<b>NativeOrXmlAttribute</b>, \n<b>WtText</b>" as InheritFromWomBackbone
  * WomBackbone .. InheritFromWomBackbone
  * 
  * note "Category, Redirect" as InheritFromAttributeSupportingElement
@@ -97,7 +97,7 @@ public abstract class WomBackbone
 {
 	private static final long serialVersionUID = 1L;
 	
-	private AstNode astNode;
+	private WikitextNode astNode;
 	
 	private WomBackbone parent;
 	
@@ -107,26 +107,26 @@ public abstract class WomBackbone
 	
 	// =========================================================================
 	
-	public WomBackbone(AstNode astNode)
+	public WomBackbone(WikitextNode astNode)
 	{
 		this.astNode = astNode;
 	}
 	
 	// =========================================================================
 	
-	public AstNode getAstNode()
+	public WikitextNode getAstNode()
 	{
 		return astNode;
 	}
 	
-	protected AstNode setAstNode(AstNode astNode)
+	protected WikitextNode setAstNode(WikitextNode astNode)
 	{
-		AstNode old = this.astNode;
+		WikitextNode old = this.astNode;
 		this.astNode = astNode;
 		return old;
 	}
 	
-	protected void appendToAst(NodeList container, AstNode child)
+	protected void appendToAst(WtList container, WikitextNode child)
 	{
 		throw new InternalError();
 	}
@@ -136,9 +136,9 @@ public abstract class WomBackbone
 	 *            Cannot be null.
 	 */
 	protected void insertIntoAst(
-			NodeList container,
-			AstNode newChild,
-			AstNode prevChild)
+			WtList container,
+			WikitextNode newChild,
+			WikitextNode prevChild)
 	{
 		throw new InternalError();
 	}
@@ -152,7 +152,7 @@ public abstract class WomBackbone
 	 *            Cannot be null.
 	 */
 	protected void replaceInAst(
-			NodeList container,
+			WtList container,
 			WomBackbone oldNode,
 			WomBackbone newNode)
 	{
@@ -167,7 +167,7 @@ public abstract class WomBackbone
 	 * @param oldNode
 	 *            Cannot be null.
 	 */
-	protected void removeFromAst(NodeList container, AstNode removeChild)
+	protected void removeFromAst(WtList container, WikitextNode removeChild)
 	{
 		throw new InternalError();
 	}

@@ -16,7 +16,9 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.*;
+import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.womTestFixtureGather;
+import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.womTestFixtureGet;
+import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.womTestFixtureInitialize;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -179,7 +181,7 @@ public class AstWomIntegrationTests
 		
 		System.out.println(WomPrinter.print(p));
 		
-		AstNode n = ((PageAdapter) p).getAstNode();
+		WikitextNode n = ((PageAdapter) p).getAstNode();
 		System.out.print(AstPrinter.print(n));
 	}
 	

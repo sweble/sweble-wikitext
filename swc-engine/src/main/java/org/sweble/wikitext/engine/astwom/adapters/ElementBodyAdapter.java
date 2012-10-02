@@ -16,12 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.MIXED_ANY;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomElementBody;
-
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.sweble.wikitext.parser.nodes.WtList;
 
 public class ElementBodyAdapter
 		extends
@@ -37,7 +36,7 @@ public class ElementBodyAdapter
 	{
 	}
 	
-	public ElementBodyAdapter(AstToWomNodeFactory factory, NodeList content)
+	public ElementBodyAdapter(AstToWomNodeFactory factory, WtList content)
 	{
 		super(MIXED_ANY, factory, content);
 	}

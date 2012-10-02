@@ -23,8 +23,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.parser.nodes.PageSwitch;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public abstract class CorePfnBehaviorSwitch
 		extends
@@ -44,13 +43,13 @@ public abstract class CorePfnBehaviorSwitch
 	// =========================================================================
 	
 	@Override
-	public final AstNode invoke(
-			AstNode pageSwitch,
+	public final WikitextNode invoke(
+			WikitextNode pageSwitch,
 			ExpansionFrame frame,
-			List<? extends AstNode> argsValues)
+			List<? extends WikitextNode> argsValues)
 	{
 		return invoke((PageSwitch) pageSwitch, frame);
 	}
 	
-	protected abstract AstNode invoke(PageSwitch var, ExpansionFrame frame);
+	protected abstract WikitextNode invoke(PageSwitch var, ExpansionFrame frame);
 }

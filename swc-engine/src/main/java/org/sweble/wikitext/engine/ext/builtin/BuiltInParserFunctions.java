@@ -26,9 +26,8 @@ import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.utils.AstBuilder;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class BuiltInParserFunctions
 		extends
@@ -67,17 +66,17 @@ public class BuiltInParserFunctions
 		}
 		
 		@Override
-		public AstNode invoke(
-				AstNode template,
+		public WikitextNode invoke(
+				WikitextNode template,
 				ExpansionFrame preprocessorFrame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 0)
 				return null;
 			
 			// Assuming we are  NOT doing a pre save transformation
 			
-			AstNode name = ((TemplateArgument) args.get(0)).getValue();
+			WikitextNode name = ((TemplateArgument) args.get(0)).getValue();
 			
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			List<TemplateArgument> tmplArgs = (List) args.subList(1, args.size());

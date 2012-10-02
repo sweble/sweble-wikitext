@@ -18,16 +18,16 @@
 package org.sweble.wikitext.parser.utils;
 
 import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.VisitingException;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
+import de.fau.cs.osr.utils.visitor.VisitingException;
 
 public class StringConverter
 {
@@ -47,12 +47,12 @@ public class StringConverter
 	
 	// =========================================================================
 	
-	public static String convert(AstNode astNode) throws StringConversionException
+	public static String convert(WikitextNode astNode) throws StringConversionException
 	{
 		return convert(astNode, null, DEFAULT_OPTIONS);
 	}
 	
-	public static String convert(AstNode astNode, int options) throws StringConversionException
+	public static String convert(WikitextNode astNode, int options) throws StringConversionException
 	{
 		return convert(astNode, null, options);
 	}
@@ -61,7 +61,7 @@ public class StringConverter
 	 * @deprecated
 	 */
 	public static String convert(
-			AstNode astNode,
+			WikitextNode astNode,
 			XmlEntityResolver resolver,
 			int options) throws StringConversionException
 	{
@@ -85,7 +85,7 @@ public class StringConverter
 	
 	protected static final class ConverterVisitor
 			extends
-				AstVisitor
+				AstVisitor<WikitextNode>
 	{
 		private final StringBuilder result = new StringBuilder();
 		
@@ -111,18 +111,18 @@ public class StringConverter
 		}
 		
 		@Override
-		protected Object after(AstNode node, Object result)
+		protected Object after(WikitextNode node, Object result)
 		{
 			return this.result.toString();
 		}
 		
 		@Override
-		public Object visitNotFound(AstNode node)
+		public Object visitNotFound(WikitextNode node)
 		{
 			throw new VisitingException(new StringConversionException(node));
 		}
 		
-		public void visit(NodeList n)
+		public void visit(WtList n)
 		{
 			iterate(n);
 		}
@@ -169,7 +169,7 @@ public class StringConverter
 			}
 		}
 		
-		public void visit(Text n)
+		public void visit(WtText n)
 		{
 			result.append(n.getContent());
 		}

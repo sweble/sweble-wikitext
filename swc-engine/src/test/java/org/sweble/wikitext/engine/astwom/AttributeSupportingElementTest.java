@@ -17,8 +17,10 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astE;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astXmlAttrib;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

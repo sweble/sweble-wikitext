@@ -30,21 +30,21 @@ import org.sweble.wikitext.parser.preprocessor.OnlyInclude;
 
 // -- Content ------------------------------------------------------------------
 
-transient NodeList ContentStar =
+transient WtList ContentStar =
   content:ContentAtom*
   {
-    yyValue = new NodeList(content);
+    yyValue = new WtList(content);
   }
 ;
 
-transient NodeList ContentPlus =
+transient WtList ContentPlus =
   content:ContentAtom+
   {
-    yyValue = new NodeList(content);
+    yyValue = new WtList(content);
   }
 ;
 
-private inline AstNode ContentAtom =
+private inline WikitextNode ContentAtom =
   !ContentStopper ContentChoice
 ;
 
@@ -61,7 +61,7 @@ inline void TemplatePrefix =
   Eol "{{"
 ;
 
-inline AstNode ContentChoice =
+inline WikitextNode ContentChoice =
     <XmlComment>  &XmlCommentPrefix XmlCommentTrimmed // prefix: \n ' '* <!--
   / <EolTemplate> &TemplatePrefix   Template          // prefix: \n "{{"
   / <XmlElement>  &'<'              XmlElement        // prefix: "<"
@@ -91,10 +91,10 @@ inline void ContentStringStopper =
 
 // -- Everything else is text --------------------------------------------------
 
-private inline Text ContentText =
+private inline WtText ContentText =
   text:ContentString
   {
-    yyValue = new Text(text);
+    yyValue = new WtText(text);
   }
 ;
 

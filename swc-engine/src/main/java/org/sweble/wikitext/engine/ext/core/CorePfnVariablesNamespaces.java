@@ -26,11 +26,10 @@ import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class CorePfnVariablesNamespaces
 		extends
@@ -71,15 +70,15 @@ public class CorePfnVariablesNamespaces
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template var,
 				ExpansionFrame frame,
-				List<? extends AstNode> argsValues)
+				List<? extends WikitextNode> argsValues)
 		{
 			PageTitle title;
 			if (argsValues.size() > 0)
 			{
-				AstNode titleNode = argsValues.get(0);
+				WikitextNode titleNode = argsValues.get(0);
 				
 				try
 				{
@@ -101,7 +100,7 @@ public class CorePfnVariablesNamespaces
 				title = frame.getRootFrame().getTitle();
 			}
 			
-			return new Text(title.getNamespace().getName());
+			return new WtText(title.getNamespace().getName());
 		}
 	}
 	
@@ -130,14 +129,14 @@ public class CorePfnVariablesNamespaces
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
 			
 			Namespace talkNs =
 					frame.getWikiConfig().getSubjectNamespaceFor(title.getNamespace());
 			
-			return new Text(talkNs.getName());
+			return new WtText(talkNs.getName());
 		}
 	}
 	
@@ -165,14 +164,14 @@ public class CorePfnVariablesNamespaces
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
 			
 			Namespace talkNs =
 					frame.getWikiConfig().getTalkNamespaceFor(title.getNamespace());
 			
-			return new Text(talkNs.getName());
+			return new WtText(talkNs.getName());
 		}
 	}
 	

@@ -11,7 +11,7 @@ ParsedWikitextPage(
         {N} name = "li"
 
       [ ]
-      [ Text("item1") ]
+      [ WtText("item1") ]
     )
     Newline("\n")
     XmlElement(
@@ -22,7 +22,7 @@ ParsedWikitextPage(
 
       [ ]
       [
-        Text("item2")
+        WtText("item2")
         XmlElement(
           Properties:
             RTD = RtData: [0] = "<div", [1] = ">", [2] = "</div>"
@@ -39,7 +39,7 @@ ParsedWikitextPage(
                 {N} name = "li"
 
               [ ]
-              [ Text("item3") ]
+              [ WtText("item3") ]
             )
           ]
         )

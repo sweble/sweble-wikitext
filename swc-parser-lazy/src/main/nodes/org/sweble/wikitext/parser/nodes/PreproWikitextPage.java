@@ -10,10 +10,10 @@ package org.sweble.wikitext.parser.nodes;
 
 import java.util.List;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
+import org.sweble.wikitext.parser.WtEntityMap;
+
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>PreproWikitextPage</h1> <h2>Grammar</h2>
@@ -33,7 +33,7 @@ public class PreproWikitextPage
 		
 	}
 	
-	public PreproWikitextPage(NodeList content, List<Warning> warnings)
+	public PreproWikitextPage(WtList content, List<Warning> warnings)
 	{
 		super(content);
 		setWarnings(warnings);
@@ -41,9 +41,9 @@ public class PreproWikitextPage
 	}
 	
 	public PreproWikitextPage(
-			NodeList content,
+			WtList content,
 			List<Warning> warnings,
-			EntityMap entityMap)
+			WtEntityMap entityMap)
 	{
 		super(content);
 		setWarnings(warnings);
@@ -74,16 +74,16 @@ public class PreproWikitextPage
 		return old;
 	}
 	
-	private EntityMap entityMap;
+	private WtEntityMap entityMap;
 	
-	public final EntityMap getEntityMap()
+	public final WtEntityMap getEntityMap()
 	{
 		return this.entityMap;
 	}
 	
-	public final EntityMap setEntityMap(EntityMap entityMap)
+	public final WtEntityMap setEntityMap(WtEntityMap entityMap)
 	{
-		EntityMap old = this.entityMap;
+		WtEntityMap old = this.entityMap;
 		this.entityMap = entityMap;
 		return old;
 	}
@@ -143,7 +143,7 @@ public class PreproWikitextPage
 					case 0:
 						return PreproWikitextPage.this.setWarnings((List<Warning>) value);
 					case 1:
-						return PreproWikitextPage.this.setEntityMap((EntityMap) value);
+						return PreproWikitextPage.this.setEntityMap((WtEntityMap) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

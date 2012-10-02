@@ -17,8 +17,10 @@
 
 package org.sweble.wikitext.engine.wom.tools;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womComment;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womHr;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
 
 import org.junit.Test;
 import org.sweble.wikitext.engine.wom.WomPage;
@@ -34,7 +36,7 @@ public class WomPrinterTest
 		
 		assertEquals(
 				"<body>\n" +
-						"  <comment> Default Comment Text </comment>\n" +
+						"  <comment> Default Comment WtText </comment>\n" +
 						"</body>",
 				WomPrinter.print(womPage.getBody()));
 	}

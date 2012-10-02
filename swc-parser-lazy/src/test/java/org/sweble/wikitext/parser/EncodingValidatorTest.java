@@ -26,7 +26,7 @@ import org.sweble.wikitext.parser.encval.IllegalCodePointType;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
+import de.fau.cs.osr.ptk.common.GenericEntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;
 
 public class EncodingValidatorTest
@@ -65,7 +65,7 @@ public class EncodingValidatorTest
 		WikitextEncodingValidator v = new WikitextEncodingValidator();
 		ValidatedWikitext result = v.validate(source.toString(), title);
 		String validatedWikitext = result.getWikitext();
-		EntityMap entityMap = result.getEntityMap();
+		GenericEntityMap entityMap = result.getEntityMap();
 		
 		IllegalCodePoint x0 = (IllegalCodePoint) entityMap.getEntity(0);
 		assertEquals("\uE800", x0.getCodePoint());

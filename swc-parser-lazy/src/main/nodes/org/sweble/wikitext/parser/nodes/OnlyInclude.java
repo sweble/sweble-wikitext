@@ -11,7 +11,6 @@ package org.sweble.wikitext.parser.nodes;
 import org.sweble.wikitext.parser.preprocessor.XmlElementType;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>OnlyInclude</h1> <h2>Grammar</h2>
@@ -31,7 +30,7 @@ public class OnlyInclude
 		
 	}
 	
-	public OnlyInclude(NodeList content, XmlElementType elementType)
+	public OnlyInclude(WtList content, XmlElementType elementType)
 	{
 		super(content);
 		setElementType(elementType);

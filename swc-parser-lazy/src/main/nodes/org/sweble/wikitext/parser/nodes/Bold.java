@@ -8,8 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>Bold</h1>
  */
@@ -28,7 +26,7 @@ public class Bold
 		
 	}
 	
-	public Bold(NodeList content)
+	public Bold(WtList content)
 	{
 		super(content);
 		

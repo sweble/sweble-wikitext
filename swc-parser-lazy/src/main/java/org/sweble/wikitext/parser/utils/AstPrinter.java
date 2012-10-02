@@ -20,8 +20,7 @@ package org.sweble.wikitext.parser.utils;
 import java.io.Writer;
 
 import org.sweble.wikitext.parser.nodes.Whitespace;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public class AstPrinter
 		extends
@@ -36,7 +35,7 @@ public class AstPrinter
 	{
 		if (n.hasAttributes())
 		{
-			visit((AstNode) n);
+			visit((WikitextNode) n);
 		}
 		else if (n.getContent().isEmpty())
 		{

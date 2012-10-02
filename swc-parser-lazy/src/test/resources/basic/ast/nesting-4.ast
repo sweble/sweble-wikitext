@@ -15,9 +15,9 @@ ParsedWikitextPage(
             {N} path = "//example.com"
             {N} protocol = "http"
         )
-        [ Text("title1a [http://inner.com") ]
+        [ WtText("title1a [http://inner.com") ]
       )
-      Text(" title1b]")
+      WtText(" title1b]")
     ])
   ]
 )

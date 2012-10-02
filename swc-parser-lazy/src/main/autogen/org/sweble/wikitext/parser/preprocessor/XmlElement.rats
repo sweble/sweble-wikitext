@@ -52,7 +52,7 @@
  *       body : String
  *
  *     Children:
- *       xmlAttributes : NodeList
+ *       xmlAttributes : WtList
  *
  * XmlComment
  * ----------
@@ -84,7 +84,7 @@ import org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 
 // -- XML Element --------------------------------------------------------------
 
-AstNode XmlElement =
+WikitextNode XmlElement =
   '<' yyValue:
   ( "!--" yyValue:XmlComment
   / '/'   yyValue:IgnoredClosingTag
@@ -95,10 +95,10 @@ AstNode XmlElement =
   )
 ;
 
-private inline Text Greater =
+private inline WtText Greater =
   !ValidClosingTag
   {
-    yyValue = new Text("<");
+    yyValue = new WtText("<");
   }
 ;
 
@@ -115,14 +115,14 @@ private inline Text Greater =
 // If a comment is not enclosed in newlines (ignoring spaces) then only the
 // comment itself is consumed.
 //
-transient AstNode XmlCommentTrimmed =
+transient WikitextNode XmlCommentTrimmed =
     eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
     {
       XmlComment c = new XmlComment(content, prefix, suffix + eol2);
       if (isGatherRtData())
         addRtData(c, joinRt(prefix, "<!--", content, "-->", suffix, eol2));
 
-      yyValue = new NodeList(new Text(eol1), c);
+      yyValue = new WtList(new WtText(eol1), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
     {
@@ -130,7 +130,7 @@ transient AstNode XmlCommentTrimmed =
       if (isGatherRtData())
         addRtData(c, joinRt("<!--", content, "-->"));
 
-      yyValue = new NodeList(new Text(eol1 + prefix), c);
+      yyValue = new WtList(new WtText(eol1 + prefix), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
     {
@@ -138,7 +138,7 @@ transient AstNode XmlCommentTrimmed =
       if (isGatherRtData())
         addRtData(c, joinRt("<!--", content));
 
-      yyValue = new NodeList(new Text(eol1 + prefix), c);
+      yyValue = new WtList(new WtText(eol1 + prefix), c);
     }
 ;
 
@@ -172,7 +172,7 @@ private transient String XmlCommentContent =
 
 // -- Ignored opening, closing tags --------------------------------------------
 
-private transient AstNode IgnoredClosingTag =
+private transient WikitextNode IgnoredClosingTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
   {
     String content = "</" + name + garbage + ">";
@@ -184,7 +184,7 @@ private transient AstNode IgnoredClosingTag =
   }
 ;
 
-private transient AstNode IgnoredOpeningTag =
+private transient WikitextNode IgnoredOpeningTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
   {
     String content = "<" + name + garbage + ">";
@@ -209,14 +209,14 @@ private transient String IgnoredTagGarbage =
 
 // -- Ignored elements ---------------------------------------------------------
 
-private transient AstNode IgnoredElements =
+private transient WikitextNode IgnoredElements =
     header:IgnoredElementHeader
     {
-      getState().setTagExtensionName(header._1);
+      getState().setTagExtensionName(header.getForeign(0, String.class));
     }
     '>' body:TagBody
     {
-      String content = "<" + header._1 + header._2 + ">" + body._1 + body._2;
+      String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + ">" + body.getForeign(0, String.class) + body.getForeign(1, String.class);
 
       yyValue = new Ignored(content);
 
@@ -225,7 +225,7 @@ private transient AstNode IgnoredElements =
     }
   / header:IgnoredElementHeader "/>"
     {
-      String content = "<" + header._1 + header._2 + "/>";
+      String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + "/>";
 
       yyValue = new Ignored(content);
 
@@ -234,10 +234,10 @@ private transient AstNode IgnoredElements =
     }
 ;
 
-private transient Tuple2<String, String> IgnoredElementHeader =
+private transient ForeignNode IgnoredElementHeader =
   name:IgnoredElementName garbage:IgnoredTagGarbage
   {
-    yyValue = Tuple.from(name, garbage);
+    yyValue = ForeignNode.from(name, garbage);
   }
 ;
 
@@ -253,40 +253,43 @@ private inline String IgnoredElementName =
 private transient TagExtension TagExtension =
     header:TagHeader '>'
     {
-      getState().setTagExtensionName(header._1);
+      getState().setTagExtensionName(header.getForeign(0, String.class));
     }
     body:TagBody
     {
-      yyValue = new TagExtension(header._1, header._2, body._1);
+      yyValue = new TagExtension(
+        header.getForeign(0, String.class), 
+        header.getForeign(1, WtList.class), 
+        body.getForeign(0, String.class));
 
       if (isGatherRtData())
         addRtData(yyValue,
-            joinRt('<', header._1),
-            joinRt(header._3, '>', body._1, body._2));
+            joinRt('<', header.getForeign(0, String.class)),
+            joinRt(header.getForeign(2, String.class), '>', body.getForeign(0, String.class), body.getForeign(1, String.class)));
     }
   / header:TagHeader "/>"
     {
-      yyValue = new TagExtension(header._1, header._2, null);
+      yyValue = new TagExtension(header.getForeign(0, String.class), header.getForeign(1, WtList.class), null);
 
       if (isGatherRtData())
         addRtData(yyValue,
-            joinRt('<', header._1),
-            joinRt(header._3, "/>"));
+            joinRt('<', header.getForeign(0, String.class)),
+            joinRt(header.getForeign(2, WtList.class), "/>"));
     }
 ;
 
-private transient Tuple3<String, NodeList, String> TagHeader =
+private transient ForeignNode TagHeader =
     name:ValidTagName &pWsPlus attributes:XmlAttributePlus ws:pWsStar
     {
-      yyValue = Tuple.from(name, attributes, ws);
+      yyValue = ForeignNode.from(name, attributes, ws);
     }
   / name:ValidTagName ws:pWsStar
     {
-      yyValue = Tuple.from(name, new NodeList(), ws);
+      yyValue = ForeignNode.from(name, new WtList(), ws);
     }
 ;
 
-private transient Tuple2<String, String> TagBody =
+private transient ForeignNode TagBody =
   content:TagContentStar
   endTag:(
     ValidClosingTag
@@ -296,7 +299,7 @@ private transient Tuple2<String, String> TagBody =
     }
   )
   {
-    yyValue = Tuple.from(content, (String) endTag);
+    yyValue = ForeignNode.from(content, (String) endTag);
   }
 ;
 
@@ -310,16 +313,16 @@ private transient String TagContentStar =
 // -- Opening and closing names/tags -------------------------------------------
 
 private transient String ValidClosingTag =
-  "</" endTag:ClosingTagHeader &{ isValidClosingTag(endTag._1) }
+  "</" endTag:ClosingTagHeader &{ isValidClosingTag(endTag.getForeign(0, String.class)) }
   {
-    yyValue = "</" + endTag._1 + endTag._2 + ">";
+    yyValue = "</" + endTag.getForeign(0, String.class) + endTag.getForeign(1, String.class) + ">";
   }
 ;
 
-private transient Tuple2<String, String> ClosingTagHeader =
+private transient ForeignNode ClosingTagHeader =
   name:TagName ws:pWsStar '>'
   {
-    yyValue = Tuple.from(name, ws);
+    yyValue = ForeignNode.from(name, ws);
   }
 ;
 

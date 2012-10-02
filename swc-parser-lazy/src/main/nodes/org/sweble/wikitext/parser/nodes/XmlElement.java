@@ -11,7 +11,6 @@ package org.sweble.wikitext.parser.nodes;
 import org.sweble.wikitext.parser.parser.NamedXmlElement;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>XML Element</h1>
@@ -28,15 +27,15 @@ public class XmlElement
 	
 	public XmlElement()
 	{
-		super(new NodeList(), new NodeList());
+		super(new WtList(), new WtList());
 		
 	}
 	
 	public XmlElement(
 			String name,
 			Boolean empty,
-			NodeList xmlAttributes,
-			NodeList body)
+			WtList xmlAttributes,
+			WtList body)
 	{
 		super(xmlAttributes, body);
 		setName(name);
@@ -148,24 +147,24 @@ public class XmlElement
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(NodeList xmlAttributes)
+	public final void setXmlAttributes(WtList xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final NodeList getXmlAttributes()
+	public final WtList getXmlAttributes()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
-	public final void setBody(NodeList body)
+	public final void setBody(WtList body)
 	{
 		set(1, body);
 	}
 	
-	public final NodeList getBody()
+	public final WtList getBody()
 	{
-		return (NodeList) get(1);
+		return (WtList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };

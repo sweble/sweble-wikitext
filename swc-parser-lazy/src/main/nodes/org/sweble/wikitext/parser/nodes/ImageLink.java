@@ -5,7 +5,6 @@ import org.sweble.wikitext.parser.parser.ImageVertAlign;
 import org.sweble.wikitext.parser.parser.ImageViewFormat;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>Image Link</h1>
@@ -20,13 +19,13 @@ public class ImageLink
 	
 	public ImageLink()
 	{
-		super(new NodeList(), new LinkTitle());
+		super(new WtList(), new LinkTitle());
 		
 	}
 	
 	public ImageLink(
 			String target,
-			NodeList options,
+			WtList options,
 			LinkTitle title,
 			ImageViewFormat format,
 			boolean border,
@@ -343,14 +342,14 @@ public class ImageLink
 	// =========================================================================
 	// Children
 	
-	public final void setOptions(NodeList options)
+	public final void setOptions(WtList options)
 	{
 		set(0, options);
 	}
 	
-	public final NodeList getOptions()
+	public final WtList getOptions()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
 	public final void setTitle(LinkTitle title)

@@ -17,11 +17,11 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Text("\ttext")
+          WtText("\ttext")
           Newline("\n")
           Newline("\n")
         ])
-        Paragraph([ Text("\t") ])
+        Paragraph([ WtText("\t") ])
         XmlElement(
           Properties:
             RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
@@ -31,7 +31,7 @@ ParsedWikitextPage(
           [ ]
           [
             Newline("\n")
-            Text("\t\t")
+            WtText("\t\t")
             XmlElement(
               Properties:
                 RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
@@ -39,10 +39,10 @@ ParsedWikitextPage(
                 {N} name = "td"
 
               [ ]
-              [ Text("Cell 1.1") ]
+              [ WtText("Cell 1.1") ]
             )
             Newline("\n")
-            Text("\t\t")
+            WtText("\t\t")
             XmlElement(
               Properties:
                 RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
@@ -50,15 +50,15 @@ ParsedWikitextPage(
                 {N} name = "td"
 
               [ ]
-              [ Text("Cell 1.2") ]
+              [ WtText("Cell 1.2") ]
             )
             Newline("\n")
-            Text("\t")
+            WtText("\t")
           ]
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([ Text("\t") ])
+        Paragraph([ WtText("\t") ])
         XmlElement(
           Properties:
             RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
@@ -68,7 +68,7 @@ ParsedWikitextPage(
           [ ]
           [
             Newline("\n")
-            Text("\t\t")
+            WtText("\t\t")
             XmlElement(
               Properties:
                 RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
@@ -76,10 +76,10 @@ ParsedWikitextPage(
                 {N} name = "td"
 
               [ ]
-              [ Text("Cell 2.1") ]
+              [ WtText("Cell 2.1") ]
             )
             Newline("\n")
-            Text("\t\t")
+            WtText("\t\t")
             XmlElement(
               Properties:
                 RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
@@ -87,10 +87,10 @@ ParsedWikitextPage(
                 {N} name = "td"
 
               [ ]
-              [ Text("Cell 2.2") ]
+              [ WtText("Cell 2.2") ]
             )
             Newline("\n")
-            Text("\t")
+            WtText("\t")
           ]
         )
         Newline("\n")

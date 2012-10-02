@@ -55,7 +55,7 @@
  *       name : String
  *
  *     Children:
- *       xmlAttributes : NodeList
+ *       xmlAttributes : WtList
  *
  * Empty XML Element
  * -----------------
@@ -71,7 +71,7 @@
  *       name : String
  *
  *     Children:
- *       xmlAttributes : NodeList
+ *       xmlAttributes : WtList
  *
  * XML Element
  * -----------
@@ -88,8 +88,8 @@
  *       empty : Boolean
  *
  *     Children:
- *       xmlAttributes : NodeList
- *       body          : NodeList
+ *       xmlAttributes : WtList
+ *       body          : WtList
  *
  */
 
@@ -105,16 +105,16 @@ import org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 
 // -- XmlElement ---------------------------------------------------------------
 
-AstNode XmlElement =
+WikitextNode XmlElement =
     "</" yyValue:XmlEndTag
   / '<'  yyValue:XmlStartTag
   / '<'
     {
-      yyValue = new Text("<");
+      yyValue = new WtText("<");
     }
 ;
 
-private inline AstNode XmlEndTag =
+private inline WikitextNode XmlEndTag =
     name:XmlName ws:pWsStar '>'
     {
       yyValue = new XmlEndTag(name);
@@ -125,7 +125,7 @@ private inline AstNode XmlEndTag =
     // FIXME: Add auto correction and/or warning generation
 ;
 
-private inline AstNode XmlStartTag =
+private inline WikitextNode XmlStartTag =
     name:XmlName attributes:AttributeStar ws:pWsStar "/>"
     {
       yyValue = new XmlEmptyTag(name, attributes);
@@ -147,11 +147,11 @@ private inline AstNode XmlStartTag =
     // FIXME: Add auto correction and/or warning generation
 ;
 
-private inline NodeList AttributeStar =
+private inline WtList AttributeStar =
   yyValue:(&pWsPlus XmlAttributePlus)?
   {
     if (yyValue == null)
-      yyValue = new NodeList();
+      yyValue = new WtList();
   }
 ;
 

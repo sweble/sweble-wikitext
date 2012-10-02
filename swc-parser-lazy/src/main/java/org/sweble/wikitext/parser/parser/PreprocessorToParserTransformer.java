@@ -17,24 +17,24 @@
 
 package org.sweble.wikitext.parser.parser;
 
+import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.Ignored;
 import org.sweble.wikitext.parser.nodes.OnlyInclude;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.EntityMap;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class PreprocessorToParserTransformer
 {
 	public static PreprocessedWikitext transform(
 			PreproWikitextPage preprocessedArticle,
-			EntityMap entityMap)
+			WtEntityMap entityMap)
 	{
 		return new PreprocessedWikitext(
 				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
@@ -44,7 +44,7 @@ public class PreprocessorToParserTransformer
 	public static PreprocessedWikitext transform(
 			PreproWikitextPage preprocessedArticle)
 	{
-		EntityMap entityMap = preprocessedArticle.getEntityMap();
+		WtEntityMap entityMap = preprocessedArticle.getEntityMap();
 		return new PreprocessedWikitext(
 				(String) new TransformVisitor(entityMap, false).go(preprocessedArticle),
 				entityMap);
@@ -52,7 +52,7 @@ public class PreprocessorToParserTransformer
 	
 	public static PreprocessedWikitext transform(
 			PreproWikitextPage preprocessedArticle,
-			EntityMap entityMap,
+			WtEntityMap entityMap,
 			boolean trim)
 	{
 		return new PreprocessedWikitext(
@@ -64,7 +64,7 @@ public class PreprocessorToParserTransformer
 			PreproWikitextPage preprocessedArticle,
 			boolean trim)
 	{
-		EntityMap entityMap = preprocessedArticle.getEntityMap();
+		WtEntityMap entityMap = preprocessedArticle.getEntityMap();
 		return new PreprocessedWikitext(
 				(String) new TransformVisitor(entityMap, trim).go(preprocessedArticle),
 				entityMap);
@@ -74,15 +74,15 @@ public class PreprocessorToParserTransformer
 	
 	protected static final class TransformVisitor
 			extends
-				AstVisitor
+				AstVisitor<WikitextNode>
 	{
 		private StringBuilder builder;
 		
-		private EntityMap entityMap;
+		private WtEntityMap entityMap;
 		
 		private final boolean trim;
 		
-		public TransformVisitor(EntityMap entityMap, boolean trim)
+		public TransformVisitor(WtEntityMap entityMap, boolean trim)
 		{
 			this.entityMap = entityMap;
 			this.trim = trim;
@@ -91,14 +91,14 @@ public class PreprocessorToParserTransformer
 		// =====================================================================
 		
 		@Override
-		protected boolean before(AstNode node)
+		protected boolean before(WikitextNode node)
 		{
 			builder = new StringBuilder();
 			return super.before(node);
 		}
 		
 		@Override
-		protected String after(AstNode node, Object result)
+		protected String after(WikitextNode node, Object result)
 		{
 			return builder.toString();
 		}
@@ -110,7 +110,7 @@ public class PreprocessorToParserTransformer
 			iterate(n);
 		}
 		
-		public void visit(AstNode n)
+		public void visit(WikitextNode n)
 		{
 			makeParserEntity(n);
 		}
@@ -120,7 +120,7 @@ public class PreprocessorToParserTransformer
 			makeParserEntity(n);
 		}
 		
-		private void makeParserEntity(AstNode n)
+		private void makeParserEntity(WikitextNode n)
 		{
 			int id = entityMap.registerEntity(n);
 			builder.append('\uE000');
@@ -128,7 +128,7 @@ public class PreprocessorToParserTransformer
 			builder.append('\uE001');
 		}
 		
-		public void visit(NodeList n)
+		public void visit(WtList n)
 		{
 			iterate(n);
 		}
@@ -138,7 +138,7 @@ public class PreprocessorToParserTransformer
 			iterate(n);
 		}
 		
-		public void visit(Text n)
+		public void visit(WtText n)
 		{
 			builder.append(n.getContent());
 		}
@@ -152,7 +152,7 @@ public class PreprocessorToParserTransformer
 		{
 			if (!trim)
 			{
-				visit((AstNode) n);
+				visit((WikitextNode) n);
 			}
 		}
 	}

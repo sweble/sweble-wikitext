@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>TagExtension</h1> <h2>Grammar</h2>
@@ -25,11 +24,11 @@ public class TagExtension
 	
 	public TagExtension()
 	{
-		super(new NodeList());
+		super(new WtList());
 		
 	}
 	
-	public TagExtension(String name, NodeList xmlAttributes, String body)
+	public TagExtension(String name, WtList xmlAttributes, String body)
 	{
 		super(xmlAttributes);
 		setName(name);
@@ -141,14 +140,14 @@ public class TagExtension
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(NodeList xmlAttributes)
+	public final void setXmlAttributes(WtList xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final NodeList getXmlAttributes()
+	public final WtList getXmlAttributes()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };

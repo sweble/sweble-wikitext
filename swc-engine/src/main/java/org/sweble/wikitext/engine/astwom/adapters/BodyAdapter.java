@@ -16,12 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.BLOCK_ELEMENTS;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomBody;
-
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.sweble.wikitext.parser.nodes.WtList;
 
 public class BodyAdapter
 		extends
@@ -37,7 +36,7 @@ public class BodyAdapter
 	{
 	}
 	
-	public BodyAdapter(AstToWomNodeFactory factory, NodeList content)
+	public BodyAdapter(AstToWomNodeFactory factory, WtList content)
 	{
 		super(BLOCK_ELEMENTS, factory, content);
 	}

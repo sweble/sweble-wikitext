@@ -62,7 +62,7 @@ public interface WomNode
 	 */
 	public String getValue();
 	
-	// ==[ Text manipulation ]==================================================
+	// ==[ WtText manipulation ]==================================================
 	
 	/**
 	 * Append text to the text of this node.

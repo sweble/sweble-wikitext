@@ -23,9 +23,8 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
 import org.sweble.wikitext.parser.nodes.TagExtension;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 
 public class MathTagExt
 		extends
@@ -64,10 +63,10 @@ public class MathTagExt
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				ExpansionFrame frame,
 				TagExtension tagExt,
-				Map<String, NodeList> attrs,
+				Map<String, WtList> attrs,
 				String body)
 		{
 			return null;

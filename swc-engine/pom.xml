@@ -97,6 +97,7 @@
             <configuration>
               <sources>
                 <source>src/main/autogen</source>
+                <source>src/main/generated</source>
               </sources>
             </configuration>
           </execution>
@@ -142,6 +143,7 @@
       -->
 
       <!-- Generate Ast Nodes -->
+      <!-- 
       <plugin>
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-nodegen-maven-plugin</artifactId>
@@ -153,8 +155,10 @@
           </ratsInputFiles>
         </configuration>
       </plugin>
+      -->
 
       <!-- Generate Ast Printers -->
+      <!--
       <plugin>
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-printergen-maven-plugin</artifactId>
@@ -166,6 +170,7 @@
           </aptInputFiles>
         </configuration>
       </plugin>
+      -->
 
       <!-- Check and format license headers -->
       <plugin>

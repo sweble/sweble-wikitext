@@ -16,7 +16,7 @@ ParsedWikitextPage(
             {N} protocol = "http"
         )
         [
-          Text("title1a ")
+          WtText("title1a ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -26,7 +26,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(" title1b")
+          WtText(" title1b")
         ]
       )
     ])

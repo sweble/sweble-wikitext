@@ -1,11 +1,11 @@
 --------------------------------------------------------------------------------
-  //Template[contains(name//Text[@content],"Infobox country")]//TemplateArgument[contains(name//Text[@content],"capital")]/value
+  //Template[contains(name//WtText[@content],"Infobox country")]//TemplateArgument[contains(name//WtText[@content],"capital")]/value
 --------------------------------------------------------------------------------
 [
-  Text("[[")
-  Text("Berlin")
-  Text("]]")
-  Text("\n")
+  WtText("[[")
+  WtText("Berlin")
+  WtText("]]")
+  WtText("\n")
 ]
 
 ================================================================================

@@ -17,7 +17,9 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astTagExtension;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astXmlAttrib;
 
 import java.util.List;
 import java.util.ListIterator;
@@ -30,12 +32,12 @@ import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.XmlGrammar;
 
 public class CorePfnFunctionsMiscellaneous
@@ -92,10 +94,10 @@ public class CorePfnFunctionsMiscellaneous
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> argsValues)
+				List<? extends WikitextNode> argsValues)
 		{
 			if (argsValues.size() < 2)
 				return pfn;
@@ -105,7 +107,7 @@ public class CorePfnFunctionsMiscellaneous
 			String nameStr;
 			try
 			{
-				AstNode expNameNode = frame.expand(nameNode.getValue());
+				WikitextNode expNameNode = frame.expand(nameNode.getValue());
 				nameStr = StringConverter.convert(expNameNode).trim();
 			}
 			catch (StringConversionException e)
@@ -116,7 +118,7 @@ public class CorePfnFunctionsMiscellaneous
 			// FIXME: Meld 'name=' part into value
 			// FIXME: Do something about the "remove comments" hack
 			TemplateArgument bodyNode = (TemplateArgument) argsValues.get(1);
-			AstNode expValueNode = frame.expand(bodyNode.getValue());
+			WikitextNode expValueNode = frame.expand(bodyNode.getValue());
 			expValueNode = stripComments(expValueNode);
 			String bodyStr = RtWikitextPrinter.print(expValueNode);
 			
@@ -125,12 +127,12 @@ public class CorePfnFunctionsMiscellaneous
 					.withBody(bodyStr)
 					.build();
 			
-			NodeList attribs = astList();
+			WtList attribs = astList();
 			for (int i = 2; i < argsValues.size(); ++i)
 			{
 				TemplateArgument arg = (TemplateArgument) argsValues.get(i);
-				AstNode argNameNode = frame.expand(arg.getName());
-				AstNode argValueNode = frame.expand(arg.getValue());
+				WikitextNode argNameNode = frame.expand(arg.getName());
+				WikitextNode argValueNode = frame.expand(arg.getValue());
 				if (argNameNode == null || argValueNode == null)
 					continue;
 				
@@ -159,12 +161,12 @@ public class CorePfnFunctionsMiscellaneous
 			return frame.expand(tagExt);
 		}
 		
-		private AstNode stripComments(AstNode n)
+		private WikitextNode stripComments(WikitextNode n)
 		{
-			ListIterator<AstNode> i = n.listIterator();
+			ListIterator<WikitextNode> i = n.listIterator();
 			while (i.hasNext())
 			{
-				AstNode child = i.next();
+				WikitextNode child = i.next();
 				switch (child.getNodeType())
 				{
 					case AstNodeTypes.NT_XML_COMMENT:

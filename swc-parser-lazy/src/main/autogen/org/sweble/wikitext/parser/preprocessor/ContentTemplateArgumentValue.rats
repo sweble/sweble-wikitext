@@ -30,7 +30,7 @@ void ContentStringStopper +=
   / <PrefixClosingBraces>  "}}"
 ;
 
-NodeList TemplateArgumentValueStar =
+WtList TemplateArgumentValueStar =
   ContentStar
 ;
 

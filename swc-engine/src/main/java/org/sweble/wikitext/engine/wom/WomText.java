@@ -19,7 +19,7 @@ package org.sweble.wikitext.engine.wom;
 /**
  * A node containing plain text.
  * 
- * Corresponds to the XHTML 1.0 Transitional type "Text".
+ * Corresponds to the XHTML 1.0 Transitional type "WtText".
  * 
  * <b>Child elements:</b> -
  */

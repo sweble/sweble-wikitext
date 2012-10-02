@@ -1,7 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-
 /**
  * <h1>Link Option: LinkTarget</h1> <h2>Grammar</h2>
  * <ul>
@@ -27,11 +25,11 @@ public class LinkOptionLinkTarget
 	
 	public LinkOptionLinkTarget()
 	{
-		super((AstNode) null);
+		super((WikitextNode) null);
 		
 	}
 	
-	public LinkOptionLinkTarget(AstNode target)
+	public LinkOptionLinkTarget(WikitextNode target)
 	{
 		super(target);
 		
@@ -46,14 +44,14 @@ public class LinkOptionLinkTarget
 	// =========================================================================
 	// Children
 	
-	public final void setTarget(AstNode target)
+	public final void setTarget(WikitextNode target)
 	{
 		set(0, target);
 	}
 	
-	public final AstNode getTarget()
+	public final WikitextNode getTarget()
 	{
-		return (AstNode) get(0);
+		return (WikitextNode) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "target" };

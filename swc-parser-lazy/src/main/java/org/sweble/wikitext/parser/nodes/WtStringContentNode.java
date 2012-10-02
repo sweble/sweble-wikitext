@@ -1,12 +1,12 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
+import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
 import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
-import de.fau.cs.osr.ptk.common.ast.StringContentNode;
 
 public abstract class WtStringContentNode
 		extends
-			StringContentNode
+			GenericStringContentNode<WikitextNode>
 		implements
 			WikitextNode
 {

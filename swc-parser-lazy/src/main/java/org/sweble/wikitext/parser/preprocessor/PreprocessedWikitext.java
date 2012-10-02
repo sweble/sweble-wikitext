@@ -20,15 +20,15 @@
  */
 package org.sweble.wikitext.parser.preprocessor;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
+import org.sweble.wikitext.parser.WtEntityMap;
 
 public final class PreprocessedWikitext
 {
 	private String wikitext;
 	
-	private EntityMap entityMap;
+	private WtEntityMap entityMap;
 	
-	public PreprocessedWikitext(String wikitext, EntityMap entityMap)
+	public PreprocessedWikitext(String wikitext, WtEntityMap entityMap)
 	{
 		this.wikitext = wikitext;
 		this.entityMap = entityMap;
@@ -39,7 +39,7 @@ public final class PreprocessedWikitext
 		return wikitext;
 	}
 	
-	public EntityMap getEntityMap()
+	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}

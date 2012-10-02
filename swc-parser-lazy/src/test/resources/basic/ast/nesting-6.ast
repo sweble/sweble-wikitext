@@ -17,7 +17,7 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            Text("\n")
+            WtText("\n")
             Table(
               Properties:
                 RTD = RtData: [0] = "{|", [1] = "\n", [2] = " |}"
@@ -32,16 +32,16 @@ ParsedWikitextPage(
                   [
                     Newline("\n")
                     Paragraph([
-                      Text("* item 1")
+                      WtText("* item 1")
                       Newline("\n")
-                      Text("* item 2")
+                      WtText("* item 2")
                     ])
                     Newline("\n")
                   ]
                 )
               ]
             )
-            Text("\n")
+            WtText("\n")
           ]
         )
       )

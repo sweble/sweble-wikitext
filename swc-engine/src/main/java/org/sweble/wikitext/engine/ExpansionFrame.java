@@ -23,11 +23,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.Warning;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
 
 public class ExpansionFrame
 {
@@ -39,17 +39,17 @@ public class ExpansionFrame
 	
 	private final PageTitle title;
 	
-	private final Map<String, AstNode> arguments;
+	private final Map<String, WikitextNode> arguments;
 	
 	private final boolean forInclusion;
 	
-	private final ContentNode frameLog;
+	private final WtContentNode frameLog;
 	
 	private final ExpansionCallback callback;
 	
 	private final List<Warning> warnings;
 	
-	private final EntityMap entityMap;
+	private final WtEntityMap entityMap;
 	
 	private final boolean noRedirect;
 	
@@ -66,10 +66,10 @@ public class ExpansionFrame
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
-			EntityMap entityMap,
+			WtEntityMap entityMap,
 			boolean noRedirect,
 			List<Warning> warnings,
-			ContentNode frameLog,
+			WtContentNode frameLog,
 			boolean timingEnabled,
 			boolean catchAll)
 	{
@@ -77,7 +77,7 @@ public class ExpansionFrame
 		this.callback = callback;
 		this.title = title;
 		this.entityMap = entityMap;
-		this.arguments = new HashMap<String, AstNode>();
+		this.arguments = new HashMap<String, WikitextNode>();
 		this.forInclusion = false;
 		this.noRedirect = noRedirect;
 		this.warnings = warnings;
@@ -98,14 +98,14 @@ public class ExpansionFrame
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
-			EntityMap entityMap,
-			Map<String, AstNode> arguments,
+			WtEntityMap entityMap,
+			Map<String, WikitextNode> arguments,
 			boolean forInclusion,
 			boolean noRedirect,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
 			List<Warning> warnings,
-			ContentNode frameLog,
+			WtContentNode frameLog,
 			boolean timingEnabled,
 			boolean catchAll)
 	{
@@ -151,7 +151,7 @@ public class ExpansionFrame
 		return title;
 	}
 	
-	public Map<String, AstNode> getArguments()
+	public Map<String, WikitextNode> getArguments()
 	{
 		return arguments;
 	}
@@ -161,7 +161,7 @@ public class ExpansionFrame
 		return forInclusion;
 	}
 	
-	public ContentNode getFrameLog()
+	public WtContentNode getFrameLog()
 	{
 		return frameLog;
 	}
@@ -186,7 +186,7 @@ public class ExpansionFrame
 		return warnings;
 	}
 	
-	public EntityMap getEntityMap()
+	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}
@@ -208,11 +208,11 @@ public class ExpansionFrame
 	
 	// =========================================================================
 	
-	public AstNode expand(AstNode ppAst) throws ExpansionException
+	public WikitextNode expand(WikitextNode ppAst) throws ExpansionException
 	{
 		try
 		{
-			return (AstNode) expansionVisitor.go(ppAst);
+			return (WikitextNode) expansionVisitor.go(ppAst);
 		}
 		catch (Exception e)
 		{

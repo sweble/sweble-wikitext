@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.config;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.StringReader;
 import java.io.StringWriter;

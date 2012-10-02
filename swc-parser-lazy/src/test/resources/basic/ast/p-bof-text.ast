@@ -5,11 +5,11 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text("text")
+      WtText("text")
       Newline("\n")
-      Text("text")
+      WtText("text")
       Newline("\n")
-      Text("text")
+      WtText("text")
     ])
     Newline("\n")
   ]

@@ -8,9 +8,7 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>Lists</h1> <h2>Grammar</h2>
@@ -37,7 +35,11 @@ public class RawListItem
 		
 	}
 	
-	public RawListItem(NodeList content, String rt0, AstNode rt1, String prefix)
+	public RawListItem(
+			WtList content,
+			String rt0,
+			WikitextNode rt1,
+			String prefix)
 	{
 		super(content);
 		setRt0(rt0);
@@ -69,16 +71,16 @@ public class RawListItem
 		return old;
 	}
 	
-	private AstNode rt1;
+	private WikitextNode rt1;
 	
-	public final AstNode getRt1()
+	public final WikitextNode getRt1()
 	{
 		return this.rt1;
 	}
 	
-	public final AstNode setRt1(AstNode rt1)
+	public final WikitextNode setRt1(WikitextNode rt1)
 	{
-		AstNode old = this.rt1;
+		WikitextNode old = this.rt1;
 		this.rt1 = rt1;
 		return old;
 	}
@@ -156,7 +158,7 @@ public class RawListItem
 					case 0:
 						return RawListItem.this.setRt0((String) value);
 					case 1:
-						return RawListItem.this.setRt1((AstNode) value);
+						return RawListItem.this.setRt1((WikitextNode) value);
 					case 2:
 						return RawListItem.this.setPrefix((String) value);
 						

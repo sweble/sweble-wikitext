@@ -46,7 +46,7 @@ module org.sweble.wikitext.parser.parser.Url;
 
 body
 {
-  private boolean isProtocol(Text text, String path)
+  private boolean isProtocol(WtText text, String path)
   {
     String proto = extractProtocol(text);
     if (proto == null)
@@ -68,7 +68,7 @@ body
     return getState().getConfig().isUrlProtocol(protocol);
   }
 
-  private AstNode makeExternalLink(Text text, String path)
+  private WikitextNode makeExternalLink(WtText text, String path)
   {
     String p = extractProtocol(text);
     String t = text.getContent();
@@ -81,10 +81,10 @@ body
     if (b.isEmpty())
       return url;
 
-    return new NodeList(new Text(b), url);
+    return new WtList(new WtText(b), url);
   }
 
-  private String extractProtocol(Text text)
+  private String extractProtocol(WtText text)
   {
     String s = text.getContent();
     if (s.isEmpty())

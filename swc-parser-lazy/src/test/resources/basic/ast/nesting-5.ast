@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[target|"
           warnings = 
@@ -20,13 +20,13 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
-        [ Text(" item 1") ]
+        [ WtText(" item 1") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
-        [ Text(" item 2") ]
+        [ WtText(" item 2") ]
       )
     ])
     Newline("\n")
@@ -41,7 +41,7 @@ ParsedWikitextPage(
         LinkTitle([ ])
       )
       Newline("\n")
-      Text("]]")
+      WtText("]]")
     ])
     Newline("\n")
   ]

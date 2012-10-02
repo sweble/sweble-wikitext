@@ -5,7 +5,7 @@ import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
 public interface WikitextNode
 		extends
-			AstNodeInterface
+			AstNodeInterface<WikitextNode>
 {
 	public RtDataPtk setRtd(RtDataPtk rtd);
 	

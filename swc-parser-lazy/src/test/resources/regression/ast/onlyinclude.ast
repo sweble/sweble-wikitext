@@ -3,5 +3,5 @@ ParsedWikitextPage(
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
-  [ Paragraph([ Text("don't touch me!") ]) ]
+  [ Paragraph([ WtText("don't touch me!") ]) ]
 )

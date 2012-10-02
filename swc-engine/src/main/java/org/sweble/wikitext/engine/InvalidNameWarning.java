@@ -18,8 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.WarningSeverity;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public class InvalidNameWarning
         extends
@@ -35,7 +34,7 @@ public class InvalidNameWarning
 	public InvalidNameWarning(
 	        WarningSeverity severity,
 	        String origin,
-	        AstNode name)
+	        WikitextNode name)
 	{
 		super(name, severity, origin, message);
 	}
@@ -43,7 +42,7 @@ public class InvalidNameWarning
 	public InvalidNameWarning(
 	        WarningSeverity severity,
 	        Class<?> origin,
-	        AstNode name)
+	        WikitextNode name)
 	{
 		super(name, severity, origin, message);
 	}

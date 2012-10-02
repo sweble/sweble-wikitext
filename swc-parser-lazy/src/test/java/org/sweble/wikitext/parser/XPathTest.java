@@ -26,11 +26,11 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.junit.Test;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.utils.AstPrinter;
 import org.sweble.wikitext.parser.utils.FullParser;
 
 import xtc.parser.ParseException;
-import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -59,7 +59,7 @@ public class XPathTest
 	{
 		String title = "raw-France";
 		
-		AstNode ast = parse(title);
+		WikitextNode ast = parse(title);
 		
 		JXPathContext context = JXPathContext.newContext(ast);
 		
@@ -69,7 +69,7 @@ public class XPathTest
 		
 		doQuery(context, b, "(//Section[@level=3])[1]");
 		
-		doQuery(context, b, "//Template[contains(name//Text[@content],\"Infobox Country\")]//TemplateArgument[contains(name//Text[@content],\"capital\")]/value");
+		doQuery(context, b, "//Template[contains(name//WtText[@content],\"Infobox Country\")]//TemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
 		String actual = b.toString().replace("\r\n", "\n");
 		
@@ -90,13 +90,13 @@ public class XPathTest
 	{
 		String title = "raw-Germany";
 		
-		AstNode ast = parse(title);
+		WikitextNode ast = parse(title);
 		
 		JXPathContext context = JXPathContext.newContext(ast);
 		
 		StringBuilder b = new StringBuilder();
 		
-		doQuery(context, b, "//Template[contains(name//Text[@content],\"Infobox country\")]//TemplateArgument[contains(name//Text[@content],\"capital\")]/value");
+		doQuery(context, b, "//Template[contains(name//WtText[@content],\"Infobox country\")]//TemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
 		String actual = b.toString().replace("\r\n", "\n");
 		
@@ -112,9 +112,9 @@ public class XPathTest
 		Assert.assertEquals(expected, actual);
 	}
 	
-	private AstNode parse(String title) throws IOException, ParseException
+	private WikitextNode parse(String title) throws IOException, ParseException
 	{
-		AstNode ast = parser.parseArticle(
+		WikitextNode ast = parser.parseArticle(
 				load(PATH + "/wikitext/" + title + ".wikitext"),
 				title);
 		
@@ -149,7 +149,7 @@ public class XPathTest
 				b.append(StringUtils.strrep('-', 80));
 				b.append('\n');
 			}
-			b.append(AstPrinter.print((AstNode) i.next()));
+			b.append(AstPrinter.print((WikitextNode) i.next()));
 			b.append('\n');
 			++j;
 		}

@@ -17,7 +17,8 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astProtected;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -38,11 +39,10 @@ import org.sweble.wikitext.engine.utils.UrlEncoding;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class CorePfnFunctionsUrlData
 		extends
@@ -92,10 +92,10 @@ public class CorePfnFunctionsUrlData
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> argsValues)
+				List<? extends WikitextNode> argsValues)
 		{
 			if (argsValues.size() < 1)
 			{
@@ -117,7 +117,7 @@ public class CorePfnFunctionsUrlData
 								pfn));
 			}
 			
-			AstNode titleNode = argsValues.get(0);
+			WikitextNode titleNode = argsValues.get(0);
 			
 			String titleStr;
 			try
@@ -170,7 +170,7 @@ public class CorePfnFunctionsUrlData
 			String queryStr = null;
 			if (argsValues.size() >= 2)
 			{
-				AstNode queryNode = argsValues.get(1);
+				WikitextNode queryNode = argsValues.get(1);
 				
 				try
 				{
@@ -211,7 +211,7 @@ public class CorePfnFunctionsUrlData
 					UrlType.FULL,
 					titleUrl);
 			
-			return new Text(url.toExternalForm());
+			return new WtText(url.toExternalForm());
 		}
 	}
 	
@@ -243,10 +243,10 @@ public class CorePfnFunctionsUrlData
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
 				return pfn;
@@ -340,10 +340,10 @@ public class CorePfnFunctionsUrlData
 		}
 		
 		@Override
-		public AstNode invoke(
+		public WikitextNode invoke(
 				Template pfn,
 				ExpansionFrame frame,
-				List<? extends AstNode> args)
+				List<? extends WikitextNode> args)
 		{
 			if (args.size() < 1)
 				return pfn;

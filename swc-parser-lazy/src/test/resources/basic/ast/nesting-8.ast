@@ -17,7 +17,7 @@ ParsedWikitextPage(
           [ ]
           [
             Paragraph([
-              Text("1")
+              WtText("1")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -29,10 +29,10 @@ ParsedWikitextPage(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
-                  [ Text("a\nb") ]
+                  [ WtText("a\nb") ]
                 )
               )
-              Text("||2")
+              WtText("||2")
             ])
             Newline("\n")
           ]

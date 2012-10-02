@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.MIXED_INLINE;
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;

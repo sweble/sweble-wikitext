@@ -2,7 +2,7 @@
   /*[1]/Paragraph[3]
 --------------------------------------------------------------------------------
 Paragraph([
-  Text("France is a ")
+  WtText("France is a ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -14,10 +14,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("unitary") ]
+      [ WtText("unitary") ]
     )
   )
-  Text(" ")
+  WtText(" ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -29,10 +29,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("semi-presidential") ]
+      [ WtText("semi-presidential") ]
     )
   )
-  Text(" ")
+  WtText(" ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -42,7 +42,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(" with its main ideals expressed in the ")
+  WtText(" with its main ideals expressed in the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -52,7 +52,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(". France is one of the most ")
+  WtText(". France is one of the most ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -64,7 +64,7 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("developed countries") ]
+      [ WtText("developed countries") ]
     )
   )
   TagExtension(
@@ -75,7 +75,7 @@ Paragraph([
 
     [ ]
   )
-  Text(" and possesses the fifth largest economy by ")
+  WtText(" and possesses the fifth largest economy by ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -87,7 +87,7 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("nominal GDP") ]
+      [ WtText("nominal GDP") ]
     )
   )
   TagExtension(
@@ -98,7 +98,7 @@ Paragraph([
 
     [ ]
   )
-  Text(" and seventh largest economy by ")
+  WtText(" and seventh largest economy by ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -110,10 +110,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("purchasing power parity") ]
+      [ WtText("purchasing power parity") ]
     )
   )
-  Text(".")
+  WtText(".")
   TagExtension(
     Properties:
           RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}</ref>"
@@ -122,7 +122,7 @@ Paragraph([
 
     [ ]
   )
-  Text(" France enjoys a ")
+  WtText(" France enjoys a ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -134,10 +134,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("high standard of living") ]
+      [ WtText("high standard of living") ]
     )
   )
-  Text(" as well as a ")
+  WtText(" as well as a ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -149,10 +149,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("high public education level") ]
+      [ WtText("high public education level") ]
     )
   )
-  Text(", and has also one of the world's highest ")
+  WtText(", and has also one of the world's highest ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -164,10 +164,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("life expectancies") ]
+      [ WtText("life expectancies") ]
     )
   )
-  Text(".")
+  WtText(".")
   TagExtension(
     Properties:
           RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}</ref>"
@@ -176,7 +176,7 @@ Paragraph([
 
     [ ]
   )
-  Text(" It is the most visited country in the world, receiving 82 million foreign tourists annually.")
+  WtText(" It is the most visited country in the world, receiving 82 million foreign tourists annually.")
   TagExtension(
     Properties:
           RTD = RtData: [0] = "<ref", [1] = ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>"
@@ -190,11 +190,11 @@ Paragraph([
           {N} hasValue = true
           {N} name = "name"
 
-        [ Text("tourism.stat") ]
+        [ WtText("tourism.stat") ]
       )
     ]
   )
-  Text(" France is a founding member of the ")
+  WtText(" France is a founding member of the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -204,7 +204,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(", and a member of the ")
+  WtText(", and a member of the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -214,7 +214,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(", the ")
+  WtText(", the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -224,7 +224,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(", ")
+  WtText(", ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -236,10 +236,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("G20") ]
+      [ WtText("G20") ]
     )
   )
-  Text(", ")
+  WtText(", ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -249,7 +249,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(", ")
+  WtText(", ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -259,7 +259,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(", ")
+  WtText(", ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -271,10 +271,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("WTO") ]
+      [ WtText("WTO") ]
     )
   )
-  Text(", and the ")
+  WtText(", and the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -284,7 +284,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(". It is one of the five ")
+  WtText(". It is one of the five ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -296,10 +296,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("permanent members of the UN Security Council") ]
+      [ WtText("permanent members of the UN Security Council") ]
     )
   )
-  Text(" and possesses the third largest ")
+  WtText(" and possesses the third largest ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -311,10 +311,10 @@ Paragraph([
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
-      [ Text("nuclear weapons stockpile") ]
+      [ WtText("nuclear weapons stockpile") ]
     )
   )
-  Text(" in the world ")
+  WtText(" in the world ")
   TagExtension(
     Properties:
           RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}</ref>"
@@ -323,7 +323,7 @@ Paragraph([
 
     [ ]
   )
-  Text(" with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ")
+  WtText(" with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -333,7 +333,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(" and 24th on the ")
+  WtText(" and 24th on the ")
   InternalLink(
     Properties:
       {N} postfix = ""
@@ -343,7 +343,7 @@ Paragraph([
 
     LinkTitle([ ])
   )
-  Text(".")
+  WtText(".")
 ])
 
 ================================================================================
@@ -355,11 +355,11 @@ Section(
         RTD = RtData: [0] = "===", [1] = "===", [2]
     {N} level = 3
 
-  [ Text(" Rome to Revolution ") ]
+  [ WtText(" Rome to Revolution ") ]
   [
     Newline("\n")
     Paragraph([
-      Text("The borders of modern France are approximately the same as those of ancient ")
+      WtText("The borders of modern France are approximately the same as those of ancient ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -369,7 +369,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(", which was inhabited by ")
+      WtText(", which was inhabited by ")
       InternalLink(
         Properties:
           {N} postfix = "ic"
@@ -379,14 +379,14 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" ")
+      WtText(" ")
       Italics(
         Properties:
               RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("Gauls") ]
+        [ WtText("Gauls") ]
       )
-      Text(". Gaul was conquered by ")
+      WtText(". Gaul was conquered by ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -398,10 +398,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Rome") ]
+          [ WtText("Rome") ]
         )
       )
-      Text(" under ")
+      WtText(" under ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -411,7 +411,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" in the 1st century BC,")
+      WtText(" in the 1st century BC,")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].</ref>"
@@ -420,7 +420,7 @@ Section(
 
         [ ]
       )
-      Text(" and the Gauls eventually adopted ")
+      WtText(" and the Gauls eventually adopted ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -432,10 +432,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Roman") ]
+          [ WtText("Roman") ]
         )
       )
-      Text(" speech (")
+      WtText(" speech (")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -445,7 +445,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(", from which the ")
+      WtText(", from which the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -455,7 +455,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" evolved) and Roman culture. ")
+      WtText(" evolved) and Roman culture. ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -467,10 +467,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Christianity") ]
+          [ WtText("Christianity") ]
         )
       )
-      Text(" first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ")
+      WtText(" first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -480,7 +480,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
+      WtText(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
     ])
     Newline("\n")
     Newline("\n")
@@ -518,7 +518,7 @@ Section(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            Text("France after the ")
+            WtText("France after the ")
             InternalLink(
               Properties:
                 {N} postfix = ""
@@ -528,9 +528,9 @@ Section(
 
               LinkTitle([ ])
             )
-            Text(". Red line")
-            Text(":")
-            Text(" Boundary of the ")
+            WtText(". Red line")
+            WtText(":")
+            WtText(" Boundary of the ")
             InternalLink(
               Properties:
                 {N} postfix = ""
@@ -540,14 +540,14 @@ Section(
 
               LinkTitle([ ])
             )
-            Text("; Light blue")
-            Text(":")
-            Text(" the directly held royal domain")
+            WtText("; Light blue")
+            WtText(":")
+            WtText(" the directly held royal domain")
           ]
         )
       )
       Newline("\n")
-      Text("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
+      WtText("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -557,7 +557,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" was overrun by ")
+      WtText(" was overrun by ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -569,10 +569,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Germanic tribes") ]
+          [ WtText("Germanic tribes") ]
         )
       )
-      Text(", principally the ")
+      WtText(", principally the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -582,7 +582,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
+      WtText(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -594,10 +594,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Capetian") ]
+          [ WtText("Capetian") ]
         )
       )
-      Text(" Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ")
+      WtText(" Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -609,10 +609,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Catholic") ]
+          [ WtText("Catholic") ]
         )
       )
-      Text(" Christianity rather than ")
+      WtText(" Christianity rather than ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -622,7 +622,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" (their King ")
+      WtText(" (their King ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -634,17 +634,17 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Clovis") ]
+          [ WtText("Clovis") ]
         )
       )
-      Text(" did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (")
+      WtText(" did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (")
       Italics(
         Properties:
               RTD = RtData: [0] = "''", [1] = "''"
 
-        [ Text("La fille a\u00EEn\u00E9e de l\u2019\u00C9glise") ]
+        [ WtText("La fille a\u00EEn\u00E9e de l\u2019\u00C9glise") ]
       )
-      Text("),")
+      WtText("),")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]</ref>"
@@ -653,7 +653,7 @@ Section(
 
         [ ]
       )
-      Text(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
+      WtText(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
     ])
     Newline("\n")
     Newline("\n")
@@ -691,7 +691,7 @@ Section(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            Text("The ")
+            WtText("The ")
             InternalLink(
               Properties:
                 {N} postfix = ""
@@ -701,7 +701,7 @@ Section(
 
               LinkTitle([ ])
             )
-            Text(" (1572) during the ")
+            WtText(" (1572) during the ")
             InternalLink(
               Properties:
                 {N} postfix = ""
@@ -711,7 +711,7 @@ Section(
 
               LinkTitle([ ])
             )
-            Text(".")
+            WtText(".")
           ]
         )
       )
@@ -758,14 +758,14 @@ Section(
 
               LinkTitle([ ])
             )
-            Text(", ")
+            WtText(", ")
             Italics(
               Properties:
                     RTD = RtData: [0] = "''", [1] = "''"
 
-              [ Text("Empereur des Fran\u00E7ais") ]
+              [ WtText("Empereur des Fran\u00E7ais") ]
             )
-            Text(", built a ")
+            WtText(", built a ")
             InternalLink(
               Properties:
                 {N} postfix = ""
@@ -777,10 +777,10 @@ Section(
                 Properties:
                   {N} rtd = RTD[ "|" <o> "" ]
 
-                [ Text("Great Empire") ]
+                [ WtText("Great Empire") ]
               )
             )
-            Text(" across Europe.")
+            WtText(" across Europe.")
           ]
         )
       )
@@ -832,7 +832,7 @@ Section(
 
               LinkTitle([ ])
             )
-            Text(" by ")
+            WtText(" by ")
             InternalLink(
               Properties:
                 {N} postfix = ""
@@ -844,15 +844,15 @@ Section(
                 Properties:
                   {N} rtd = RTD[ "|" <o> "" ]
 
-                [ Text("Le Brun de Charmettes") ]
+                [ WtText("Le Brun de Charmettes") ]
               )
             )
-            Text(".")
+            WtText(".")
           ]
         )
       )
       Newline("\n")
-      Text("Existence as a separate entity began with the ")
+      WtText("Existence as a separate entity began with the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -862,7 +862,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" (843), with the division of ")
+      WtText(" (843), with the division of ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -872,7 +872,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text("'s ")
+      WtText("'s ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -882,7 +882,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" into ")
+      WtText(" into ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -892,7 +892,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(", ")
+      WtText(", ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -902,7 +902,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" and ")
+      WtText(" and ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -912,7 +912,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
+      WtText(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks</ref>"
@@ -922,7 +922,7 @@ Section(
         [ ]
       )
       Newline("\n")
-      Text("The ")
+      WtText("The ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -932,7 +932,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" ruled France until 987, when ")
+      WtText(" ruled France until 987, when ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -944,10 +944,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Hugh Capet") ]
+          [ WtText("Hugh Capet") ]
         )
       )
-      Text(", Duke of France and Count of Paris, was crowned ")
+      WtText(", Duke of France and Count of Paris, was crowned ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -957,7 +957,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(".")
+      WtText(".")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World</ref>"
@@ -966,12 +966,12 @@ Section(
 
         [ ]
       )
-      Text(" ")
+      WtText(" ")
     ])
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("His descendants, the ")
+      WtText("His descendants, the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -983,10 +983,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Direct Capetians") ]
+          [ WtText("Direct Capetians") ]
         )
       )
-      Text(", the ")
+      WtText(", the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -996,7 +996,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" and the ")
+      WtText(" and the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1006,7 +1006,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(", progressively unified the country through a series of wars and dynastic inheritance into a ")
+      WtText(", progressively unified the country through a series of wars and dynastic inheritance into a ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1018,12 +1018,12 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Kingdom of France") ]
+          [ WtText("Kingdom of France") ]
         )
       )
-      Text(".")
+      WtText(".")
       Newline("\n")
-      Text("The ")
+      WtText("The ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1033,7 +1033,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" was launched in 1209 to eliminate the heretical ")
+      WtText(" was launched in 1209 to eliminate the heretical ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1043,7 +1043,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" of ")
+      WtText(" of ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1053,7 +1053,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
+      WtText(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}</ref>"
@@ -1063,7 +1063,7 @@ Section(
         [ ]
       )
       Newline("\n")
-      Text("In 1066, the ")
+      WtText("In 1066, the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1075,15 +1075,15 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Duke of Normandy") ]
+          [ WtText("Duke of Normandy") ]
         )
       )
-      Text(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
+      WtText(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
     ])
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("The exact boundaries changed greatly with time, but French landholdings of the ")
+      WtText("The exact boundaries changed greatly with time, but French landholdings of the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1095,10 +1095,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("English Kings") ]
+          [ WtText("English Kings") ]
         )
       )
-      Text(" remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ")
+      WtText(" remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1108,7 +1108,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(", won back mainland territory until only ")
+      WtText(", won back mainland territory until only ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1118,7 +1118,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" remained. Under ")
+      WtText(" remained. Under ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1128,7 +1128,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" this was lost to the ")
+      WtText(" this was lost to the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1138,12 +1138,12 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(".")
+      WtText(".")
     ])
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("Charles IV (The Fair) died without an heir in 1328.")
+      WtText("Charles IV (The Fair) died without an heir in 1328.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>"
@@ -1157,11 +1157,11 @@ Section(
               {N} hasValue = true
               {N} name = "name"
 
-            [ Text("guerard") ]
+            [ WtText("guerard") ]
           )
         ]
       )
-      Text("  Under the rules of the ")
+      WtText("  Under the rules of the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1171,7 +1171,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
+      WtText(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = "/>"
@@ -1185,11 +1185,11 @@ Section(
               {N} hasValue = true
               {N} name = "name"
 
-            [ Text("guerard") ]
+            [ WtText("guerard") ]
           )
         ]
       )
-      Text(" Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ")
+      WtText(" Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1201,10 +1201,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Philip of Valois") ]
+          [ WtText("Philip of Valois") ]
         )
       )
-      Text(", the French monarchy reached the height of its medieval power.")
+      WtText(", the French monarchy reached the height of its medieval power.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = "/>"
@@ -1218,11 +1218,11 @@ Section(
               {N} hasValue = true
               {N} name = "name"
 
-            [ Text("guerard") ]
+            [ WtText("guerard") ]
           )
         ]
       )
-      Text(" However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ")
+      WtText(" However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1232,7 +1232,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(",")
+      WtText(",")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>"
@@ -1258,7 +1258,7 @@ Section(
           )
         ]
       )
-      Text(" England and France went to war in what would become known as the ")
+      WtText(" England and France went to war in what would become known as the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1268,7 +1268,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(".")
+      WtText(".")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.</ref>"
@@ -1281,7 +1281,7 @@ Section(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("In the most notorious incident during the ")
+      WtText("In the most notorious incident during the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1291,7 +1291,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" (1562\u201398), thousands of ")
+      WtText(" (1562\u201398), thousands of ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1301,7 +1301,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" were murdered in the ")
+      WtText(" were murdered in the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1311,7 +1311,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(" of 1572.")
+      WtText(" of 1572.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].</ref>"
@@ -1324,7 +1324,7 @@ Section(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("The monarchy reached its height during the 17th century and the reign of ")
+      WtText("The monarchy reached its height during the 17th century and the reign of ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1336,10 +1336,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Louis XIV") ]
+          [ WtText("Louis XIV") ]
         )
       )
-      Text(". At this time, France possessed the largest population in Europe (see ")
+      WtText(". At this time, France possessed the largest population in Europe (see ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1349,7 +1349,7 @@ Section(
 
         LinkTitle([ ])
       )
-      Text(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
+      WtText(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1361,10 +1361,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("French") ]
+          [ WtText("French") ]
         )
       )
-      Text(" was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.")
+      WtText(" was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.")
       TagExtension(
         Properties:
               RTD = RtData: [0] = "<ref", [1] = ">[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations</ref>"
@@ -1373,7 +1373,7 @@ Section(
 
         [ ]
       )
-      Text(" Much of the ")
+      WtText(" Much of the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -1385,10 +1385,10 @@ Section(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Enlightenment") ]
+          [ WtText("Enlightenment") ]
         )
       )
-      Text(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
+      WtText(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
     ])
     Newline("\n")
     Newline("\n")
@@ -1397,14 +1397,14 @@ Section(
 
 ================================================================================
 --------------------------------------------------------------------------------
-  //Template[contains(name//Text[@content],"Infobox Country")]//TemplateArgument[contains(name//Text[@content],"capital")]/value
+  //Template[contains(name//WtText[@content],"Infobox Country")]//TemplateArgument[contains(name//WtText[@content],"capital")]/value
 --------------------------------------------------------------------------------
 [
-  Text(" ")
-  Text("[[")
-  Text("Paris")
-  Text("]]")
-  Text("\n")
+  WtText(" ")
+  WtText("[[")
+  WtText("Paris")
+  WtText("]]")
+  WtText("\n")
 ]
 
 ================================================================================

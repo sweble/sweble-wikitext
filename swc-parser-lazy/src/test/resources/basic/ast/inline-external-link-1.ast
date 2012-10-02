@@ -15,7 +15,7 @@ ParsedWikitextPage(
             {N} path = "//example.com"
             {N} protocol = "http"
         )
-        [ Text("Example") ]
+        [ WtText("Example") ]
       )
     ])
   ]

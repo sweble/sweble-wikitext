@@ -5,6 +5,6 @@ ParsedWikitextPage(
 
   [
     Newline("\n")
-    Paragraph([ Text("Hallo") ])
+    Paragraph([ WtText("Hallo") ])
   ]
 )

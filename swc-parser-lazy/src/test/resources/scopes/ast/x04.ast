@@ -12,7 +12,7 @@ ParsedWikitextPage(
           {N} name = "i"
 
         [ ]
-        [ Text(" aaa ") ]
+        [ WtText(" aaa ") ]
       )
     ])
   ]

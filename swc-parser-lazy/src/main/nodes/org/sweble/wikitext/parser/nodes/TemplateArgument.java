@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>TemplateArgument</h1> <h2>Grammar</h2>
@@ -25,18 +24,18 @@ public class TemplateArgument
 	
 	public TemplateArgument()
 	{
-		super(new NodeList(), new NodeList());
+		super(new WtList(), new WtList());
 		
 	}
 	
-	public TemplateArgument(NodeList value, boolean hasName)
+	public TemplateArgument(WtList value, boolean hasName)
 	{
-		super(new NodeList(), value);
+		super(new WtList(), value);
 		setHasName(hasName);
 		
 	}
 	
-	public TemplateArgument(NodeList name, NodeList value, boolean hasName)
+	public TemplateArgument(WtList name, WtList value, boolean hasName)
 	{
 		super(name, value);
 		setHasName(hasName);
@@ -127,24 +126,24 @@ public class TemplateArgument
 	// =========================================================================
 	// Children
 	
-	public final void setName(NodeList name)
+	public final void setName(WtList name)
 	{
 		set(0, name);
 	}
 	
-	public final NodeList getName()
+	public final WtList getName()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
-	public final void setValue(NodeList value)
+	public final void setValue(WtList value)
 	{
 		set(1, value);
 	}
 	
-	public final NodeList getValue()
+	public final WtList getValue()
 	{
-		return (NodeList) get(1);
+		return (WtList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "value" };

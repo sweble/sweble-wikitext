@@ -43,15 +43,15 @@ import org.sweble.wikitext.parser.utils.Warnings;
 
 // -- Signature ----------------------------------------------------------------
 
-AstNode Signature =
+WikitextNode Signature =
     "~~" yyValue:SignatureChoice
   / "~~"
     {
-      yyValue = new Text("~~");
+      yyValue = new WtText("~~");
     }
 ;
 
-private inline AstNode SignatureChoice =
+private inline WikitextNode SignatureChoice =
     count:( "~~~" / "~~" / "~" ) w:TooManyTildesWarning?
     {
       int tildes = 2 + count.length();
@@ -62,7 +62,7 @@ private inline AstNode SignatureChoice =
       {
         fileOddSyntaxWarning(
             yyValue,
-            makeSpan(yyStart - 2, w._1),
+            makeSpan(yyStart - 2, w.getForeign(0, int.class)),
             WS_INFO,
             "Signatures consist only of 3 to 5 tildes.");
       }
@@ -73,10 +73,10 @@ private inline AstNode SignatureChoice =
   / &{ isWarningsEnabled() } SignatureAutoCorrect
 ;
 
-private inline AstNode SignatureAutoCorrect =
+private inline WikitextNode SignatureAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
-    yyValue = new Text("~~");
+    yyValue = new WtText("~~");
 
     fileLooksLikeWarning(
         yyValue,
@@ -87,10 +87,10 @@ private inline AstNode SignatureAutoCorrect =
   }
 ;
 
-private transient Tuple1<Integer> TooManyTildesWarning =
+private transient ForeignNode TooManyTildesWarning =
   &{ isWarningLevelEnabled(WS_NONE) } &'~'+
   {
-    yyValue = Tuple.from(new Integer(yyRepetition1));
+    yyValue = ForeignNode.from(yyRepetition1);
   }
 ;
 

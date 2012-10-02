@@ -16,25 +16,25 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "~~~"
               {N} tildeCount = 3
           )
-          Text(" ")
+          WtText(" ")
           Italics(
             Properties:
               RTD = RtData: [0] = "''", [1] = "''"
 
             [
-              Text(" ")
+              WtText(" ")
               Signature(
                 Properties:
                   RTD = RtData: [0] = "~~~~"
                   {N} tildeCount = 4
               )
-              Text(" ")
+              WtText(" ")
               Bold(
                 Properties:
                   RTD = RtData: [0] = "'''", [1] = "'''"
 
                 [
-                  Text(" ")
+                  WtText(" ")
                   XmlComment(
                     Properties:
                       RTD = RtData: [0] = "<!-- comment -->"
@@ -42,20 +42,20 @@ ParsedWikitextPage(
                       {N} prefix = null
                       {N} suffix = null
                   )
-                  Text(" ")
+                  WtText(" ")
                   Signature(
                     Properties:
                       RTD = RtData: [0] = "~~~~~"
                       {N} tildeCount = 5
                   )
-                  Text(" ")
+                  WtText(" ")
                   Url(
                     Properties:
                       RTD = RtData: [0] = "http://example.com"
                       {N} path = "//example.com"
                       {N} protocol = "http"
                   )
-                  Text(" ")
+                  WtText(" ")
                   ExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> "" <o> "]" ]
@@ -68,25 +68,25 @@ ParsedWikitextPage(
                     )
                     [ ]
                   )
-                  Text(" ")
+                  WtText(" ")
                 ]
               )
             ]
           )
-          Text(" ")
+          WtText(" ")
           PageSwitch(
             Properties:
               RTD = RtData: [0] = "__NOTOC__"
               {N} name = "NOTOC"
           )
-          Text(" ")
+          WtText(" ")
           XmlEntityRef(
             Properties:
               RTD = RtData: [0] = "&amp;"
               {N} name = "amp"
               {N} resolved = "&"
           )
-          Text(" ignored ")
+          WtText(" ignored ")
         ]
       )
     ])

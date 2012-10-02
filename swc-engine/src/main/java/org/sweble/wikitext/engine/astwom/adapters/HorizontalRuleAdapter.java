@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.SHOULD_BE_EMPTY;
 import lombok.AccessLevel;
 import lombok.Delegate;
 import lombok.Getter;
@@ -38,9 +38,9 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomValueWithUnit;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.Utils;
 
 public class HorizontalRuleAdapter
@@ -96,8 +96,8 @@ public class HorizontalRuleAdapter
 		return Toolbox.addRtData(new XmlElement(
 				TAG_AND_NODE_NAME,
 				true,
-				new NodeList(),
-				new NodeList()));
+				new WtList(),
+				new WtList()));
 	}
 	
 	// =========================================================================

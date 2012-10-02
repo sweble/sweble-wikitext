@@ -4,7 +4,7 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Paragraph([ Text("Whitespace before Eol!") ])
+    Paragraph([ WtText("Whitespace before Eol!") ])
     Newline("\n")
     Table(
       Properties:
@@ -17,7 +17,7 @@ ParsedWikitextPage(
             {N} hasValue = true
             {N} name = "x"
 
-          [ Text("hallo") ]
+          [ WtText("hallo") ]
         )
       ]
       [
@@ -32,7 +32,7 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "x"
 
-              [ Text("hallo") ]
+              [ WtText("hallo") ]
             )
           ]
           [ ]

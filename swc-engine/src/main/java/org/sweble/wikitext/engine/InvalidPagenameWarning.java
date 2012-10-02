@@ -18,8 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.WarningSeverity;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public class InvalidPagenameWarning
         extends
@@ -34,7 +33,7 @@ public class InvalidPagenameWarning
 	public InvalidPagenameWarning(
 	        WarningSeverity severity,
 	        String origin,
-	        AstNode titleNode,
+	        WikitextNode titleNode,
 	        String titleString)
 	{
 		super(titleNode, severity, origin, makeMessage(titleString));
@@ -44,7 +43,7 @@ public class InvalidPagenameWarning
 	public InvalidPagenameWarning(
 	        WarningSeverity severity,
 	        Class<?> origin,
-	        AstNode titleNode,
+	        WikitextNode titleNode,
 	        String titleString)
 	{
 		super(titleNode, severity, origin, makeMessage(titleString));

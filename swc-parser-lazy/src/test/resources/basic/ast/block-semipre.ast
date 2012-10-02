@@ -9,36 +9,36 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = " ", [1]
 
-        [ Text("Line 1") ]
+        [ WtText("Line 1") ]
       )
       SemiPreLine(
         Properties:
           RTD = RtData: [0] = "\n<!-- Comment --> ", [1]
 
-        [ Text("Line 2") ]
+        [ WtText("Line 2") ]
       )
       SemiPreLine(
         Properties:
           RTD = RtData: [0] = "\n ", [1]
 
-        [ Text("Line 3") ]
+        [ WtText("Line 3") ]
       )
     ])
     Newline("\n")
-    Paragraph([ Text("\tdiscontinued") ])
+    Paragraph([ WtText("\tdiscontinued") ])
     Newline("\n")
     SemiPre([
       SemiPreLine(
         Properties:
           RTD = RtData: [0] = " ", [1]
 
-        [ Text("Line 5") ]
+        [ WtText("Line 5") ]
       )
       SemiPreLine(
         Properties:
           RTD = RtData: [0] = "\n ", [1]
 
-        [ Text("Line 6") ]
+        [ WtText("Line 6") ]
       )
     ])
   ]

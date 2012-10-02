@@ -16,7 +16,7 @@ ParsedWikitextPage(
 
         [ ]
         [
-          Text("\n")
+          WtText("\n")
           XmlElement(
             Properties:
               RTD = RtData: [0] = "<tr", [1] = ">", [2] = "</tr>"
@@ -25,7 +25,7 @@ ParsedWikitextPage(
 
             [ ]
             [
-              Text("\n")
+              WtText("\n")
               XmlElement(
                 Properties:
                   RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
@@ -33,9 +33,9 @@ ParsedWikitextPage(
                   {N} name = "td"
 
                 [ ]
-                [ Text("x") ]
+                [ WtText("x") ]
               )
-              Text("\n")
+              WtText("\n")
               XmlElement(
                 Properties:
                   RTD = RtData: [0] = "<td", [1] = ">", [2] = "</td>"
@@ -43,9 +43,9 @@ ParsedWikitextPage(
                   {N} name = "td"
 
                 [ ]
-                [ Text("x") ]
+                [ WtText("x") ]
               )
-              Text("\n\n")
+              WtText("\n\n")
             ]
           )
         ]
@@ -57,13 +57,13 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "</tr>"
           {N} name = "tr"
       )
-      Text("\n")
+      WtText("\n")
       XmlEndTag(
         Properties:
           RTD = RtData: [0] = "</table>"
           {N} name = "table"
       )
-      Text("\n")
+      WtText("\n")
     ])
   ]
 )

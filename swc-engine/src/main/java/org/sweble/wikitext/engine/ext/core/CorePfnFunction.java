@@ -23,8 +23,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.parser.nodes.Template;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public abstract class CorePfnFunction
 		extends
@@ -47,16 +46,16 @@ public abstract class CorePfnFunction
 	// =========================================================================
 	
 	@Override
-	public final AstNode invoke(
-			AstNode pfn,
+	public final WikitextNode invoke(
+			WikitextNode pfn,
 			ExpansionFrame frame,
-			List<? extends AstNode> argsValues)
+			List<? extends WikitextNode> argsValues)
 	{
 		return invoke((Template) pfn, frame, argsValues);
 	}
 	
-	public abstract AstNode invoke(
+	public abstract WikitextNode invoke(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends AstNode> argsValues);
+			List<? extends WikitextNode> argsValues);
 }

@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text("a ")
+      WtText("a ")
       XmlElement(
         Properties:
           RTD = RtData: [0] = "<i", [1] = ">", [2]
@@ -13,7 +13,7 @@ ParsedWikitextPage(
           {N} name = "i"
 
         [ ]
-        [ Text(" b ") ]
+        [ WtText(" b ") ]
       )
     ])
     XmlElement(
@@ -31,7 +31,7 @@ ParsedWikitextPage(
             {N} name = "i"
 
           [ ]
-          [ Text(" c ") ]
+          [ WtText(" c ") ]
         )
         XmlElement(
           Properties:
@@ -49,19 +49,19 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Text(" d ")
+                WtText(" d ")
                 XmlEndTag(
                   Properties:
                     RTD = RtData: [0] = "</div>"
                     {N} name = "div"
                 )
-                Text(" e ")
+                WtText(" e ")
               ]
             )
-            Text(" f ")
+            WtText(" f ")
           ]
         )
-        Text(" g")
+        WtText(" g")
       ]
     )
   ]

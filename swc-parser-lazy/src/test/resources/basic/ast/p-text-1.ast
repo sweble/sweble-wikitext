@@ -9,19 +9,19 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = " ", [1]
 
-        [ Text(" text") ]
+        [ WtText(" text") ]
       )
       SemiPreLine(
         Properties:
           RTD = RtData: [0] = "\n ", [1]
 
-        [ Text("text  ") ]
+        [ WtText("text  ") ]
       )
       SemiPreLine(
         Properties:
           RTD = RtData: [0] = "\n ", [1]
 
-        [ Text(" text") ]
+        [ WtText(" text") ]
       )
     ])
   ]

@@ -22,15 +22,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
-import de.fau.cs.osr.ptk.common.VisitingException;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.ParserEntity;
-import de.fau.cs.osr.ptk.common.ast.Text;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtParserEntity;
+import org.sweble.wikitext.parser.nodes.WtText;
+
+import de.fau.cs.osr.utils.visitor.VisitingException;
 
 public class PtkAstVisitor
 {
-	public final Object go(AstNode node)
+	public final Object go(WikitextNode node)
 	{
 		return dispatch(node);
 	}
@@ -42,7 +43,7 @@ public class PtkAstVisitor
 	 * the visitation. If the given node is <code>null</code> this method
 	 * returns immediately with <code>null</code> as result.
 	 */
-	protected final Object dispatch(AstNode node)
+	protected final Object dispatch(WikitextNode node)
 	{
 		try
 		{
@@ -61,22 +62,22 @@ public class PtkAstVisitor
 		}
 	}
 	
-	protected final void iterate(AstNode node)
+	protected final void iterate(WikitextNode node)
 	{
 		if (node != null)
 		{
-			for (AstNode n : node)
+			for (WikitextNode n : node)
 				dispatch(n);
 		}
 	}
 	
-	protected final List<Object> map(AstNode node)
+	protected final List<Object> map(WikitextNode node)
 	{
 		if (node == null)
 			return Collections.emptyList();
 		
 		List<Object> result = new ArrayList<Object>(node.size());
-		for (AstNode n : node)
+		for (WikitextNode n : node)
 			result.add(dispatch(n));
 		return result;
 	}
@@ -84,26 +85,26 @@ public class PtkAstVisitor
 	/**
 	 * Iterates over the children of an AST node and replaces each child node
 	 * with the result of the visitation of the respective child. If the given
-	 * AST node is a NodeList, the call will be passed to mapInPlace(NodeList)
+	 * AST node is a WtList, the call will be passed to mapInPlace(WtList)
 	 * which has special semantics.
 	 */
-	protected final void mapInPlace(AstNode node)
+	protected final void mapInPlace(WikitextNode node)
 	{
 		if (node == null)
 		{
 			return;
 		}
-		else if (node.getNodeType() == AstNode.NT_NODE_LIST)
+		else if (node.getNodeType() == WikitextNode.NT_NODE_LIST)
 		{
-			mapInPlace((NodeList) node);
+			mapInPlace((WtList) node);
 		}
 		else
 		{
-			ListIterator<AstNode> i = node.listIterator();
+			ListIterator<WikitextNode> i = node.listIterator();
 			while (i.hasNext())
 			{
-				AstNode current = i.next();
-				AstNode result = (AstNode) dispatch(current);
+				WikitextNode current = i.next();
+				WikitextNode result = (WikitextNode) dispatch(current);
 				if (result != current)
 					i.set(result);
 			}
@@ -111,25 +112,25 @@ public class PtkAstVisitor
 	}
 	
 	/**
-	 * Iterates over a NodeList and replaces each node with the result of the
+	 * Iterates over a WtList and replaces each node with the result of the
 	 * visitation. If a visit() call returns <code>null</code>, the node that
 	 * was passed to the visit() method will be removed from the list. If the
-	 * visit() call returns another NodeList as result, the result's children
+	 * visit() call returns another WtList as result, the result's children
 	 * will replace the node that was being visited. The visitation will
 	 * continue after the embedded children. Otherwise, each visited node will
 	 * simply be replaced by the result of the visit() call.
 	 */
-	protected final void mapInPlace(NodeList list)
+	protected final void mapInPlace(WtList list)
 	{
 		if (list == null)
 			return;
 		
-		ListIterator<AstNode> i = list.listIterator();
+		ListIterator<WikitextNode> i = list.listIterator();
 		while (i.hasNext())
 		{
-			AstNode current = i.next();
+			WikitextNode current = i.next();
 			
-			AstNode result = (AstNode) dispatch(current);
+			WikitextNode result = (WikitextNode) dispatch(current);
 			if (result == current)
 				continue;
 			
@@ -137,7 +138,7 @@ public class PtkAstVisitor
 			{
 				i.remove();
 			}
-			else if (result.getNodeType() == AstNode.NT_NODE_LIST)
+			else if (result.getNodeType() == WikitextNode.NT_NODE_LIST)
 			{
 				i.remove();
 				i.add(result);
@@ -151,16 +152,16 @@ public class PtkAstVisitor
 	
 	// =========================================================================
 	
-	protected Object resolveAndVisit(AstNode node, int type) throws Exception
+	protected Object resolveAndVisit(WikitextNode node, int type) throws Exception
 	{
 		switch (type)
 		{
-			case AstNode.NT_NODE_LIST:
-				return visit((NodeList) node);
-			case AstNode.NT_TEXT:
-				return visit((Text) node);
-			case AstNode.NT_PARSER_ENTITY:
-				return visit((ParserEntity) node);
+			case WikitextNode.NT_NODE_LIST:
+				return visit((WtList) node);
+			case WikitextNode.NT_TEXT:
+				return visit((WtText) node);
+			case WikitextNode.NT_PARSER_ENTITY:
+				return visit((WtParserEntity) node);
 			default:
 				return visitUnspecific(node);
 		}
@@ -168,22 +169,22 @@ public class PtkAstVisitor
 	
 	// =========================================================================
 	
-	protected Object visitUnspecific(AstNode node) throws Exception
+	protected Object visitUnspecific(WikitextNode node) throws Exception
 	{
 		return node;
 	}
 	
-	protected Object visit(Text node) throws Exception
+	protected Object visit(WtText node) throws Exception
 	{
 		return visitUnspecific(node);
 	}
 	
-	protected Object visit(NodeList node) throws Exception
+	protected Object visit(WtList node) throws Exception
 	{
 		return visitUnspecific(node);
 	}
 	
-	protected Object visit(ParserEntity node) throws Exception
+	protected Object visit(WtParserEntity node) throws Exception
 	{
 		return visitUnspecific(node);
 	}

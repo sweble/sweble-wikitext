@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.io.Writer;
 
 import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public final class TypedWikitextPrinter
 		implements
@@ -36,6 +35,7 @@ public final class TypedWikitextPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		WikitextPrinter.print(out, (AstNode) ast);
+		throw new InternalError();
+		//WikitextPrinter.print(out, (WikitextNode) ast);
 	}
 }

@@ -31,11 +31,11 @@ import org.sweble.wikitext.engine.astwom.NativeOrXmlElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.Utils;
 
 public abstract class NativeOrXmlElementWithUniversalAttributes
@@ -57,7 +57,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	
 	// =========================================================================
 	
-	protected NativeOrXmlElementWithUniversalAttributes(AstNode astNode)
+	protected NativeOrXmlElementWithUniversalAttributes(WikitextNode astNode)
 	{
 		super(astNode);
 	}
@@ -65,7 +65,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	protected NativeOrXmlElementWithUniversalAttributes(
 			FullElementContentType contentType,
 			AstToWomNodeFactory factory,
-			ContentNode astNode)
+			WtContentNode astNode)
 	{
 		super(astNode);
 		addContent(contentType, factory, astNode.getContent());
@@ -85,9 +85,9 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	// =========================================================================
 	
 	@Override
-	public NodeList getAstChildContainer()
+	public WtList getAstChildContainer()
 	{
-		return isXml() ? xml().getBody() : ((ContentNode) getAstNode()).getContent();
+		return isXml() ? xml().getBody() : ((WtContentNode) getAstNode()).getContent();
 	}
 	
 	@Override
@@ -105,7 +105,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 		return Toolbox.addRtData(new XmlElement(
 				getNodeName(),
 				false,
-				new NodeList(),
+				new WtList(),
 				getAstChildContainer()));
 	}
 }

@@ -24,6 +24,7 @@ import java.net.URL;
 import junit.framework.Assert;
 
 import org.apache.commons.io.IOUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AppTest

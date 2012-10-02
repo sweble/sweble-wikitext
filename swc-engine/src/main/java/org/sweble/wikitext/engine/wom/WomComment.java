@@ -21,7 +21,7 @@ package org.sweble.wikitext.engine.wom;
  * 
  * Corresponds to the WXML 1.0 element "comment".
  * 
- * <b>Child elements:</b> Text
+ * <b>Child elements:</b> WtText
  */
 public interface WomComment
         extends

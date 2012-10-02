@@ -13,12 +13,12 @@ ParsedWikitextPage(
       [ ]
       [
         Newline("\n")
-        Text("P1")
+        WtText("P1")
         Newline("\n")
       ]
     )
     Newline("\n")
-    Text("P2")
+    WtText("P2")
     Newline("\n")
     XmlEndTag(
       Properties:
@@ -26,7 +26,7 @@ ParsedWikitextPage(
         {N} name = "p"
     )
     Newline("\n")
-    Text("P3")
+    WtText("P3")
     Newline("\n")
     XmlElement(
       Properties:
@@ -37,7 +37,7 @@ ParsedWikitextPage(
       [ ]
       [
         Newline("\n")
-        Text("P4")
+        WtText("P4")
         Newline("\n")
       ]
     )
@@ -50,7 +50,7 @@ ParsedWikitextPage(
       [ ]
       [
         Newline("\n")
-        Text("asdf")
+        WtText("asdf")
         Newline("\n")
       ]
     )

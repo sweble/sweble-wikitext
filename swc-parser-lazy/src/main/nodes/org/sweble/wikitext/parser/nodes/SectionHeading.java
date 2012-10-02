@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>Section SectionHeading</h1> <h2>Grammar</h2>
@@ -39,7 +38,7 @@ import de.fau.cs.osr.ptk.common.ast.NodeList;
  * </li>
  * <li>
  * <p>
- * ParserEntity
+ * WtParserEntity
  * </p>
  * </li>
  * <li>
@@ -122,7 +121,7 @@ public class SectionHeading
 		
 	}
 	
-	public SectionHeading(NodeList content, int level)
+	public SectionHeading(WtList content, int level)
 	{
 		super(content);
 		setLevel(level);

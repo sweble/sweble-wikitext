@@ -41,7 +41,7 @@ body
   // ===========================================================================
 
   private void fileLooksLikeWarning(
-      AstNodeInterface attach,
+      WikitextNode attach,
       Span range,
       WarningSeverity severity,
       String looksLikeWhat,
@@ -62,7 +62,7 @@ body
   // ===========================================================================
 
   private void fileOddSyntaxWarning(
-      AstNodeInterface attach,
+      WikitextNode attach,
       Span range,
       WarningSeverity severity,
       String message)
@@ -80,7 +80,7 @@ body
 
   // ===========================================================================
 
-  private List<Warning> getWarnings(AstNodeInterface attach)
+  private List<Warning> getWarnings(WikitextNode attach)
   {
     @SuppressWarnings("unchecked")
     List<Warning> warnings = (List<Warning>) attach.getAttribute("warnings");

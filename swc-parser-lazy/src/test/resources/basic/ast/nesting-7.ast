@@ -11,7 +11,7 @@ ParsedWikitextPage(
         {N} level = 2
 
       [
-        Text(
+        WtText(
           Properties:
             {N} content = "text[[target|text"
             warnings = 
@@ -22,11 +22,11 @@ ParsedWikitextPage(
       ]
       [
         Newline("\n")
-        Paragraph([ Text("text]]") ])
+        Paragraph([ WtText("text]]") ])
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Text("==")
+          WtText("==")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -38,10 +38,10 @@ ParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
-              [ Text("text\n") ]
+              [ WtText("text\n") ]
             )
           )
-          Text("==")
+          WtText("==")
         ])
       ]
     )

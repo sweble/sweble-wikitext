@@ -17,7 +17,7 @@ ParsedWikitextPage(
           [ ]
           [
             Paragraph([
-              Text(
+              WtText(
                 Properties:
                   {N} content = "1[[T|a"
                   warnings = 
@@ -34,7 +34,7 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "|", [1], [2]
 
           [ ]
-          [ Text("b]]") ]
+          [ WtText("b]]") ]
         )
         TableCell(
           Properties:
@@ -42,7 +42,7 @@ ParsedWikitextPage(
 
           [ ]
           [
-            Paragraph([ Text("2") ])
+            Paragraph([ WtText("2") ])
             Newline("\n")
           ]
         )

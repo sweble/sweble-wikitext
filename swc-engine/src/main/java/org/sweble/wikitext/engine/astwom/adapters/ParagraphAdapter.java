@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.MIXED_INLINE;
 
 import java.util.ListIterator;
 
@@ -41,11 +41,11 @@ import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.Utils;
 
@@ -143,12 +143,12 @@ public class ParagraphAdapter
 		return Toolbox.addRtData(new XmlElement(
 				"p",
 				false,
-				new NodeList(),
+				new WtList(),
 				getAstChildContainer()));
 	}
 	
 	@Override
-	public NodeList getAstChildContainer()
+	public WtList getAstChildContainer()
 	{
 		return isXml() ? xml().getBody() : ((Paragraph) getAstNode()).getContent();
 	}
@@ -157,21 +157,21 @@ public class ParagraphAdapter
 	
 	private void gapsFromAst(AstToWomNodeFactory womNodeFactory)
 	{
-		AstNode first = null;
-		AstNode last = null;
+		WikitextNode first = null;
+		WikitextNode last = null;
 		
-		NodeList container = getAstChildContainer();
-		ListIterator<AstNode> i;
+		WtList container = getAstChildContainer();
+		ListIterator<WikitextNode> i;
 		
 		int topGap = 0;
 		i = container.listIterator();
 		outer: while (i.hasNext())
 		{
-			AstNode n = i.next();
+			WikitextNode n = i.next();
 			switch (n.getNodeType())
 			{
-				case AstNode.NT_TEXT:
-					if (StringUtils.isWhitespace(((Text) n).getContent()))
+				case WikitextNode.NT_TEXT:
+					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
 				case AstNodeTypes.NT_NEWLINE:
@@ -189,11 +189,11 @@ public class ParagraphAdapter
 		i = container.listIterator(container.size());
 		outer: while (i.hasPrevious())
 		{
-			AstNode n = i.previous();
+			WikitextNode n = i.previous();
 			switch (n.getNodeType())
 			{
-				case AstNode.NT_TEXT:
-					if (StringUtils.isWhitespace(((Text) n).getContent()))
+				case WikitextNode.NT_TEXT:
+					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
 				case AstNodeTypes.NT_NEWLINE:
@@ -222,17 +222,17 @@ public class ParagraphAdapter
 	
 	private void setTopGapInAst(int lines)
 	{
-		NodeList container = getAstChildContainer();
-		ListIterator<AstNode> i = container.listIterator();
+		WtList container = getAstChildContainer();
+		ListIterator<WikitextNode> i = container.listIterator();
 		
 		int j = 0;
 		outer: while (i.hasNext())
 		{
-			AstNode n = i.next();
+			WikitextNode n = i.next();
 			switch (n.getNodeType())
 			{
-				case AstNode.NT_TEXT:
-					if (StringUtils.isWhitespace(((Text) n).getContent()))
+				case WikitextNode.NT_TEXT:
+					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
 				case AstNodeTypes.NT_NEWLINE:
@@ -261,11 +261,11 @@ public class ParagraphAdapter
 			// i points to last newline
 			outer: while (i.hasNext())
 			{
-				AstNode n = i.next();
+				WikitextNode n = i.next();
 				switch (n.getNodeType())
 				{
-					case AstNode.NT_TEXT:
-						if (StringUtils.isWhitespace(((Text) n).getContent()))
+					case WikitextNode.NT_TEXT:
+						if (StringUtils.isWhitespace(((WtText) n).getContent()))
 							i.remove();
 						break outer;
 					case AstNodeTypes.NT_NEWLINE:
@@ -280,8 +280,8 @@ public class ParagraphAdapter
 	
 	private void setBottomGapInAst(int lines)
 	{
-		NodeList container = getAstChildContainer();
-		ListIterator<AstNode> i = container.listIterator(container.size());
+		WtList container = getAstChildContainer();
+		ListIterator<WikitextNode> i = container.listIterator(container.size());
 		
 		// We need one more newline at the end if we want "lines"
 		// empty lines in the document.
@@ -290,11 +290,11 @@ public class ParagraphAdapter
 		int j = 0;
 		outer: while (i.hasPrevious())
 		{
-			AstNode n = i.previous();
+			WikitextNode n = i.previous();
 			switch (n.getNodeType())
 			{
-				case AstNode.NT_TEXT:
-					if (StringUtils.isWhitespace(((Text) n).getContent()))
+				case WikitextNode.NT_TEXT:
+					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
 				case AstNodeTypes.NT_NEWLINE:
@@ -323,11 +323,11 @@ public class ParagraphAdapter
 			// i points to last newline
 			outer: while (i.hasPrevious())
 			{
-				AstNode n = i.previous();
+				WikitextNode n = i.previous();
 				switch (n.getNodeType())
 				{
-					case AstNode.NT_TEXT:
-						if (StringUtils.isWhitespace(((Text) n).getContent()))
+					case WikitextNode.NT_TEXT:
+						if (StringUtils.isWhitespace(((WtText) n).getContent()))
 							i.remove();
 						break outer;
 					case AstNodeTypes.NT_NEWLINE:

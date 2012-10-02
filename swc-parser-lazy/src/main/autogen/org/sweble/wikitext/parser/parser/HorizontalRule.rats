@@ -37,7 +37,7 @@ module org.sweble.wikitext.parser.parser.HorizontalRule;
 
 // -- Horizontal Rule --[ State Aware Memoization ]-----------------------------
 
-noinline transient AstNode HorizontalRule =
+noinline transient WikitextNode HorizontalRule =
  ^{
     StateAwareResult r = (StateAwareResult) pHorizontalRuleMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -49,7 +49,7 @@ noinline transient AstNode HorizontalRule =
   }
 ;
 
-noinline memoized AstNode HorizontalRuleMemoized =
+noinline memoized WikitextNode HorizontalRuleMemoized =
  ^{
     Result yyResult = new StateAwareResult("HorizontalRule", getContext(), pHorizontalRuleTransient(yyBase));
     if (returnTrue(yyResult))
@@ -62,11 +62,11 @@ noinline memoized AstNode HorizontalRuleMemoized =
 
 // -- Horizontal Rule ----------------------------------------------------------
 
-noinline transient AstNode HorizontalRuleTransient =
+noinline transient WikitextNode HorizontalRuleTransient =
     "---" &{ accept(ParserAtoms.HORIZONTAL_RULE) } yyValue:HorizontalRuleChoice
   / "---"
     {
-      yyValue = new Text("---");
+      yyValue = new WtText("---");
     }
 ;
 
@@ -82,10 +82,10 @@ private inline WikitextNode HorizontalRuleChoice =
   / &{ isWarningsEnabled() } HorizontalRuleAutoCorrect
 ;
 
-private inline AstNodeInterface HorizontalRuleAutoCorrect =
+private inline WikitextNode HorizontalRuleAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
-    yyValue = new Text("---");
+    yyValue = new WtText("---");
 
     fileLooksLikeWarning(
         yyValue,

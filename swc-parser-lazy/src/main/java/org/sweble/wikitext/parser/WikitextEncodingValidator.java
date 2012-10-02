@@ -23,14 +23,12 @@ import java.io.StringReader;
 import org.sweble.wikitext.parser.encval.EncodingValidatorLexer;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
-
 public class WikitextEncodingValidator
 {
 	public ValidatedWikitext validate(
 			String source,
 			String title,
-			EntityMap entityMap)
+			WtEntityMap entityMap)
 			throws IOException
 	{
 		StringReader in = new StringReader(source);
@@ -52,7 +50,7 @@ public class WikitextEncodingValidator
 		StringReader in = new StringReader(source);
 		EncodingValidatorLexer lexer = new EncodingValidatorLexer(in);
 		
-		EntityMap entityMap = new EntityMap();
+		WtEntityMap entityMap = new WtEntityMap();
 		
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);

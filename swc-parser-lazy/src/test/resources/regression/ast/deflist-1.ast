@@ -5,13 +5,13 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text("t")
+      WtText("t")
       Ticks(
         Properties:
           RTD = RtData: [0] = "''"
           {N} tickCount = 2
       )
-      Text(":t")
+      WtText(":t")
     ])
   ]
 )

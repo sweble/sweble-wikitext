@@ -38,10 +38,17 @@ public abstract class XmlElementWithUniversalAttributes
 {
 	private static final long serialVersionUID = 1L;
 	
-	@Getter(AccessLevel.PROTECTED)
+	//@Getter(AccessLevel.PROTECTED)
 	@Setter(AccessLevel.PROTECTED)
 	@Delegate(types = { WomUniversalAttributes.class })
 	private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
+	
+	@Override
+	protected AttributeManagerBase getAttribManager()
+	{
+		// TODO Auto-generated method stub
+		return super.getAttribManager();
+	}
 	
 	// =========================================================================
 	

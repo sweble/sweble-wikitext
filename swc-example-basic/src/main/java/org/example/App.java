@@ -27,7 +27,6 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
-import org.sweble.wikitext.engine.utils.HtmlPrinter;
 
 public class App
 {
@@ -93,11 +92,15 @@ public class App
 		
 		if (renderHtml)
 		{
+			/*
 			HtmlPrinter p = new HtmlPrinter(w, pageTitle.getDenormalizedFullTitle());
 			p.setCssResource("/org/sweble/wikitext/engine/utils/HtmlPrinter.css", "");
 			p.setStandaloneHtml(true, "");
 			p.go(cp.getPage());
 			return w.toString();
+			*/
+			// FIXME:
+			throw new UnsupportedOperationException("Rendering to HTML is currently not supported :(");
 		}
 		else
 		{

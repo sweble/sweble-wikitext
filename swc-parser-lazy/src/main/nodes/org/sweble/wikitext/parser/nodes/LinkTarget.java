@@ -8,7 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-
 /**
  * <h1>Link Target</h1> <h2>Grammar</h2>
  * <ul>

@@ -4,7 +4,7 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Paragraph([ Text("a ") ])
+    Paragraph([ WtText("a ") ])
     XmlElement(
       Properties:
         RTD = RtData: [0] = "<div", [1] = ">", [2]
@@ -12,7 +12,7 @@ ParsedWikitextPage(
         {N} name = "div"
 
       [ ]
-      [ Text(" b ") ]
+      [ WtText(" b ") ]
     )
     InternalLink(
       Properties:
@@ -25,9 +25,9 @@ ParsedWikitextPage(
         Properties:
           {N} rtd = RTD[ "|" <o> "" ]
 
-        [ Text(" c  d ") ]
+        [ WtText(" c  d ") ]
       )
     )
-    Text(" e ")
+    WtText(" e ")
   ]
 )

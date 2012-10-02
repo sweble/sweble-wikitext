@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import de.fau.cs.osr.ptk.common.VisitingException;
+import de.fau.cs.osr.utils.visitor.VisitingException;
 
 /**
  * A wrapper for exceptions that occurred during the expansion process.

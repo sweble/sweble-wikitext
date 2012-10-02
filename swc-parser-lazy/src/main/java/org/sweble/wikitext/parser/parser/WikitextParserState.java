@@ -20,16 +20,16 @@ package org.sweble.wikitext.parser.parser;
 import java.util.regex.Pattern;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ParserState;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class WikitextParserState
 		extends
 			ParserState<WikitextParserContext>
 {
-	private EntityMap entityMap = new EntityMap();
+	private WtEntityMap entityMap = new WtEntityMap();
 	
 	private ParserConfig config;
 	
@@ -58,12 +58,12 @@ public class WikitextParserState
 	
 	// =========================================================================
 	
-	public EntityMap getEntityMap()
+	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}
 	
-	public AstNode getEntity(int id)
+	public WikitextNode getEntity(int id)
 	{
 		return entityMap.getEntity(id);
 	}
@@ -75,7 +75,7 @@ public class WikitextParserState
 		return config;
 	}
 	
-	public void init(ParserConfig config, EntityMap entityMap)
+	public void init(ParserConfig config, WtEntityMap entityMap)
 	{
 		this.config = config;
 		

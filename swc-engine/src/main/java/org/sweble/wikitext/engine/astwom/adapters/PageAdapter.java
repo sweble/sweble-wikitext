@@ -38,9 +38,9 @@ import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomRedirect;
 import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 import de.fau.cs.osr.utils.Utils;
 
 public class PageAdapter
@@ -117,9 +117,9 @@ public class PageAdapter
 	}
 	
 	@Override
-	public ContentNode getAstNode()
+	public WtContentNode getAstNode()
 	{
-		return (ContentNode) super.getAstNode();
+		return (WtContentNode) super.getAstNode();
 	}
 	
 	// =========================================================================
@@ -229,7 +229,7 @@ public class PageAdapter
 		RedirectAdapter newRedirect =
 				Toolbox.expectType(RedirectAdapter.class, redirect);
 		
-		NodeList container = ((BodyAdapter) getBody()).getAstNode();
+		WtList container = ((BodyAdapter) getBody()).getAstNode();
 		
 		if (this.redirect != null)
 		{
@@ -303,7 +303,7 @@ public class PageAdapter
 		}
 		else
 		{
-			NodeList container = this.body.getAstNode();
+			WtList container = this.body.getAstNode();
 			
 			cat = new CategoryAdapter(container, name);
 			
@@ -326,7 +326,7 @@ public class PageAdapter
 	 * @param link
 	 *            The category link from the AST.
 	 */
-	public void setCategory(NodeList container, InternalLink link)
+	public void setCategory(WtList container, InternalLink link)
 	{
 		String name = CategoryAdapter.getNameFromAst(link);
 		String lcName = name.toLowerCase();
@@ -358,9 +358,9 @@ public class PageAdapter
 	 *            The AST node to attach.
 	 * @return The container to which the ast node was attached.
 	 */
-	protected NodeList reAttachCategory(InternalLink astNode)
+	protected WtList reAttachCategory(InternalLink astNode)
 	{
-		NodeList container = this.body.getAstNode();
+		WtList container = this.body.getAstNode();
 		
 		container.add(astNode);
 		
@@ -421,7 +421,7 @@ public class PageAdapter
 		this.body.link(this, prevSibling, null);
 		
 		// Set AST
-		NodeList oldAstBody = null;
+		WtList oldAstBody = null;
 		if (old != null)
 			oldAstBody = old.getAstNode();
 		getAstNode().setContent(newBody.getAstNode());

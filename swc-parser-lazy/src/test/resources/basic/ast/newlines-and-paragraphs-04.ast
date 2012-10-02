@@ -8,7 +8,7 @@ ParsedWikitextPage(
     Paragraph([
       Newline("\n")
       Newline("\n")
-      Text("Hallo")
+      WtText("Hallo")
     ])
   ]
 )

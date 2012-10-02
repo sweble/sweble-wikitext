@@ -24,7 +24,7 @@ ParsedWikitextPage(
               [ ]
             )
           ]
-          [ Text(" A ") ]
+          [ WtText(" A ") ]
         )
         TableHeader(
           Properties:
@@ -41,7 +41,7 @@ ParsedWikitextPage(
             )
           ]
           [
-            Paragraph([ Text(" B") ])
+            Paragraph([ WtText(" B") ])
             Newline("\n")
           ]
         )
@@ -56,7 +56,7 @@ ParsedWikitextPage(
                 RTD = RtData: [0] = "|", [1], [2]
 
               [ ]
-              [ Text(" X ") ]
+              [ WtText(" X ") ]
             )
             TableCell(
               Properties:
@@ -64,7 +64,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ Text(" Y") ])
+                Paragraph([ WtText(" Y") ])
                 Newline("\n")
               ]
             )

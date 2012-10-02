@@ -26,8 +26,7 @@ import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import org.sweble.wikitext.parser.nodes.WtList;
 
 public abstract class ContainerElement
 		extends
@@ -43,13 +42,13 @@ public abstract class ContainerElement
 	
 	public ContainerElement()
 	{
-		super(new NodeList());
+		super(new WtList());
 	}
 	
 	public ContainerElement(
 			FullElementContentType contentType,
 			AstToWomNodeFactory factory,
-			NodeList content)
+			WtList content)
 	{
 		super(content);
 		
@@ -62,9 +61,9 @@ public abstract class ContainerElement
 	// =========================================================================
 	
 	@Override
-	public NodeList getAstNode()
+	public WtList getAstNode()
 	{
-		return (NodeList) super.getAstNode();
+		return (WtList) super.getAstNode();
 	}
 	
 	@Override
@@ -76,7 +75,7 @@ public abstract class ContainerElement
 	// =========================================================================
 	
 	@Override
-	public NodeList getAstChildContainer()
+	public WtList getAstChildContainer()
 	{
 		return getAstNode();
 	}

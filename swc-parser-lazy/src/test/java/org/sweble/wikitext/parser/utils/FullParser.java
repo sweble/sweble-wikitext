@@ -27,12 +27,12 @@ import org.sweble.wikitext.parser.WikitextPreprocessor;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.ParserCommon;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public final class FullParser
 		extends
@@ -62,7 +62,7 @@ public final class FullParser
 	// =========================================================================
 	
 	@Override
-	public AstNode parseArticle(String source, String title) throws IOException, ParseException
+	public WikitextNode parseArticle(String source, String title) throws IOException, ParseException
 	{
 		// Encoding validation
 		

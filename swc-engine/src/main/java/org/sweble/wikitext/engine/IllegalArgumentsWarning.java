@@ -18,8 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.WarningSeverity;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 
 public class IllegalArgumentsWarning
         extends
@@ -33,7 +32,7 @@ public class IllegalArgumentsWarning
 	        WarningSeverity severity,
 	        String origin,
 	        String message,
-	        AstNode template)
+	        WikitextNode template)
 	{
 		super(template, severity, origin, message);
 	}
@@ -42,7 +41,7 @@ public class IllegalArgumentsWarning
 	        WarningSeverity severity,
 	        Class<?> origin,
 	        String message,
-	        AstNode template)
+	        WikitextNode template)
 	{
 		super(template, severity, origin, message);
 	}

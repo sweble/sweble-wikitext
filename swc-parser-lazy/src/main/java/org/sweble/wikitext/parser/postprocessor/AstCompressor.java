@@ -25,24 +25,24 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.Location;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 /**
- * Collapses adjacent Text nodes into a single Text node.
+ * Collapses adjacent WtText nodes into a single WtText node.
  */
 public class AstCompressor
 		extends
-			AstVisitor
+			AstVisitor<WikitextNode>
 {
-	public static AstNode process(AstNode a)
+	public static WikitextNode process(WikitextNode a)
 	{
-		return (AstNode) new AstCompressor().go(a);
+		return (WikitextNode) new AstCompressor().go(a);
 	}
 	
 	/**
@@ -56,30 +56,30 @@ public class AstCompressor
 	// =========================================================================
 	
 	@Override
-	protected Object after(AstNode node, Object result)
+	protected Object after(WikitextNode node, Object result)
 	{
 		return node;
 	}
 	
 	// =========================================================================
 	
-	public void visit(AstNode n)
+	public void visit(WikitextNode n)
 	{
 		iterate(n);
 	}
 	
-	public void visit(NodeList n)
+	public void visit(WtList n)
 	{
-		ListIterator<AstNode> i = n.listIterator();
+		ListIterator<WikitextNode> i = n.listIterator();
 		while (i.hasNext())
 		{
-			AstNode current = i.next();
-			if (current.getNodeType() == AstNode.NT_TEXT)
+			WikitextNode current = i.next();
+			if (current.getNodeType() == WikitextNode.NT_TEXT)
 			{
 				if (i.hasNext())
 				{
-					AstNode next = i.next();
-					if (next.getNodeType() == AstNode.NT_TEXT)
+					WikitextNode next = i.next();
+					if (next.getNodeType() == WikitextNode.NT_TEXT)
 					{
 						i.previous();
 						i.previous();
@@ -99,21 +99,21 @@ public class AstCompressor
 		}
 	}
 	
-	private void compress(ListIterator<AstNode> i, Location location)
+	private void compress(ListIterator<WikitextNode> i, Location location)
 	{
 		String ct = "";
 		HashMap<String, Object> ca = null;
 		
 		while (i.hasNext())
 		{
-			AstNode n = i.next();
-			if (n.getNodeType() != AstNode.NT_TEXT)
+			WikitextNode n = i.next();
+			if (n.getNodeType() != WikitextNode.NT_TEXT)
 			{
 				i.previous();
 				break;
 			}
 			
-			Text t = (Text) n;
+			WtText t = (WtText) n;
 			
 			ct += t.getContent();
 			
@@ -133,7 +133,7 @@ public class AstCompressor
 			i.remove();
 		}
 		
-		Text text = new Text(ct);
+		WtText text = new WtText(ct);
 		if (ca != null)
 			text.setAttributes(ca);
 		if (location != null)

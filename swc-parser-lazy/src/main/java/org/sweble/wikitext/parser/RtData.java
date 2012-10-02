@@ -20,9 +20,9 @@ package org.sweble.wikitext.parser;
 import java.io.Serializable;
 import java.util.Arrays;
 
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class RtData
@@ -68,9 +68,9 @@ public class RtData
 						continue;
 					
 					String s;
-					if (o instanceof AstNode)
+					if (o instanceof WikitextNode)
 					{
-						s = RtWikitextPrinter.print((AstNode) o);
+						s = RtWikitextPrinter.print((WikitextNode) o);
 					}
 					else
 					{

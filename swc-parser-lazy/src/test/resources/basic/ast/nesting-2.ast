@@ -16,7 +16,7 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Title1a [http://heise.de] Title1b") ]
+          [ WtText("Title1a [http://heise.de] Title1b") ]
         )
       )
     ])

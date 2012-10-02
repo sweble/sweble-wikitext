@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Link!"
           warnings = 
@@ -20,10 +20,10 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text(" SectionHeading ") ]
+      [ WtText(" SectionHeading ") ]
       [
         Newline("\n")
-        Paragraph([ Text("]]") ])
+        Paragraph([ WtText("]]") ])
       ]
     )
   ]

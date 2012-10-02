@@ -24,13 +24,13 @@ import org.sweble.wikitext.engine.astwom.AttributeDescriptor.Normalization;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.XmlGrammar;
 
@@ -42,7 +42,7 @@ public abstract class AttributeSupportingElement
 	
 	// =========================================================================
 	
-	public AttributeSupportingElement(AstNode astNode)
+	public AttributeSupportingElement(WikitextNode astNode)
 	{
 		super(astNode);
 	}
@@ -159,7 +159,7 @@ public abstract class AttributeSupportingElement
 	 * @return The AST attribute container node or <code>null</code> if the AST
 	 *         element doesn't support attributes.
 	 */
-	protected NodeList getAstAttribContainer()
+	protected WtList getAstAttribContainer()
 	{
 		return null;
 	}
@@ -177,7 +177,7 @@ public abstract class AttributeSupportingElement
 	 * @throws UnsupportedOperationException
 	 *             Thrown if no conversion is possible.
 	 */
-	protected NodeList addAstAttribSupport()
+	protected WtList addAstAttribSupport()
 	{
 		return null;
 	}
@@ -203,9 +203,9 @@ public abstract class AttributeSupportingElement
 	 * deactivate AttributeSupportingElement
 	 * @enduml
 	 */
-	protected final NodeList getAstAttribContainerOrAddSupport()
+	protected final WtList getAstAttribContainerOrAddSupport()
 	{
-		NodeList attribContainer = getAstAttribContainer();
+		WtList attribContainer = getAstAttribContainer();
 		if (attribContainer == null)
 			attribContainer = addAstAttribSupport();
 		return attribContainer;
@@ -564,7 +564,7 @@ public abstract class AttributeSupportingElement
 	
 	// =========================================================================
 	
-	protected void addAttributes(NodeList xmlAttributes)
+	protected void addAttributes(WtList xmlAttributes)
 	{
 		if (xmlAttributes == null)
 			throw new NullPointerException();
@@ -574,13 +574,13 @@ public abstract class AttributeSupportingElement
 	}
 	
 	protected void addAttributes(
-			NodeList xmlAttributes,
+			WtList xmlAttributes,
 			AttributeManagerBase attribManager)
 	{
-		Iterator<AstNode> i = xmlAttributes.iterator();
+		Iterator<WikitextNode> i = xmlAttributes.iterator();
 		while (i.hasNext())
 		{
-			AstNode n = i.next();
+			WikitextNode n = i.next();
 			if (n.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
 				continue;
 			
@@ -643,7 +643,7 @@ public abstract class AttributeSupportingElement
 	
 	// =========================================================================
 	
-	protected static String normalize(Normalization normalizationMode, NodeList value)
+	protected static String normalize(Normalization normalizationMode, WtList value)
 	{
 		switch (normalizationMode)
 		{
@@ -658,15 +658,15 @@ public abstract class AttributeSupportingElement
 		}
 	}
 	
-	private static String convertAstToString(NodeList value)
+	private static String convertAstToString(WtList value)
 	{
 		StringBuilder b = new StringBuilder();
-		for (AstNode n : value)
+		for (WikitextNode n : value)
 		{
 			switch (n.getNodeType())
 			{
-				case AstNode.NT_TEXT:
-					b.append(((Text) n).getContent());
+				case WikitextNode.NT_TEXT:
+					b.append(((WtText) n).getContent());
 					break;
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				{
@@ -695,15 +695,15 @@ public abstract class AttributeSupportingElement
 		return b.toString();
 	}
 	
-	private static String convertAstToStringAndNormalize(NodeList value)
+	private static String convertAstToStringAndNormalize(WtList value)
 	{
 		StringBuilder b = new StringBuilder();
-		for (AstNode n : value)
+		for (WikitextNode n : value)
 		{
 			switch (n.getNodeType())
 			{
-				case AstNode.NT_TEXT:
-					normalizeWhitespace(b, ((Text) n).getContent());
+				case WikitextNode.NT_TEXT:
+					normalizeWhitespace(b, ((WtText) n).getContent());
 					break;
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				{

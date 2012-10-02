@@ -26,10 +26,9 @@ import org.sweble.wikitext.engine.astwom.ChildManagerBase;
 import org.sweble.wikitext.engine.astwom.FullElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomNodeType;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class XmlElementWithChildren
 		extends
@@ -48,8 +47,8 @@ public abstract class XmlElementWithChildren
 		super(Toolbox.addRtData(new XmlElement(
 				tagName,
 				true,
-				new NodeList(),
-				new NodeList())));
+				new WtList(),
+				new WtList())));
 	}
 	
 	public XmlElementWithChildren(
@@ -87,7 +86,7 @@ public abstract class XmlElementWithChildren
 	// =========================================================================
 	
 	@Override
-	protected void appendToAst(NodeList container, AstNode child)
+	protected void appendToAst(WtList container, WikitextNode child)
 	{
 		if (container.isEmpty())
 		{
@@ -100,7 +99,7 @@ public abstract class XmlElementWithChildren
 	}
 	
 	@Override
-	protected void removeFromAst(NodeList container, AstNode removeNode)
+	protected void removeFromAst(WtList container, WikitextNode removeNode)
 	{
 		super.removeFromAst(container, removeNode);
 		

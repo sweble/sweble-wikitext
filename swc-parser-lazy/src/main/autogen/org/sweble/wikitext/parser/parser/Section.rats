@@ -27,7 +27,7 @@
  *     - ExternalLink
  *     - InternalLink
  *     - PageSwitch
- *     - ParserEntity
+ *     - WtParserEntity
  *     - PlainExternalLink
  *     - Signature
  *     - Ticks
@@ -66,8 +66,8 @@
  *       level   : int
  *
  *     Children:
- *       title : NodeList
- *       body  : NodeList
+ *       title : WtList
+ *       body  : WtList
  *
  */
 
@@ -93,11 +93,11 @@ body
   private SectionHeading createHeading(
       int spanFrom,
       Result spanTo,
-      AstNode rt0,
+      WikitextNode rt0,
       int oCount,
-      NodeList title,
+      WtList title,
       int cCount,
-      AstNode rt1)
+      WikitextNode rt1)
   {
     int oOdd = 0;
     int cOdd = 0;
@@ -130,7 +130,7 @@ body
 
     SectionHeading heading = new SectionHeading(title, level);
 
-    Text oOddText = null;
+    WtText oOddText = null;
     if (oOdd > 0)
     {
       if (isWarningLevelEnabled(WS_NORMAL))
@@ -139,10 +139,10 @@ body
             makeSpan(spanFrom, spanTo),
             WS_NORMAL,
             "Odd number of opening equals");
-      oOddText = new Text(StringUtils.strrep('=', oOdd));
+      oOddText = new WtText(StringUtils.strrep('=', oOdd));
     }
 
-    Text cOddText = null;
+    WtText cOddText = null;
     if (cOdd > 0)
     {
       if (isWarningLevelEnabled(WS_NORMAL))
@@ -151,10 +151,10 @@ body
             makeSpan(spanFrom, spanTo),
             WS_NORMAL,
             "Odd number of closing equals");
-      cOddText = new Text(StringUtils.strrep('=', cOdd));
+      cOddText = new WtText(StringUtils.strrep('=', cOdd));
     }
 
-    heading.setContent(new NodeList(oOddText, title, cOddText));
+    heading.setContent(new WtList(oOddText, title, cOddText));
 
     if (isGatherRtData())
     {
@@ -184,12 +184,12 @@ body
       section.setAttribute("warnings", warnings);
   }
 
-  private AstNode makeSections(Section first, Pair<Section> tail)
+  private WikitextNode makeSections(Section first, Pair<Section> tail)
   {
     Stack<Section> stack = new Stack<Section>();
     stack.push(first);
 
-    NodeList result = new NodeList(first);
+    WtList result = new WtList(first);
 
     Pair<Section> i = tail;
     while (!i.isEmpty())
@@ -205,7 +205,7 @@ body
       else
       {
         // TODO: Dangerous! We must clone the section instead!
-        stack.peek().setBody(new NodeList(stack.peek().getBody(), s));
+        stack.peek().setBody(new WtList(stack.peek().getBody(), s));
       }
 
       stack.push(s);
@@ -222,7 +222,7 @@ body
 
 // -- Sections --[ State Aware Memoization ]------------------------------------
 
-noinline transient AstNode Sections =
+noinline transient WikitextNode Sections =
  ^{
     StateAwareResult r = (StateAwareResult) pSectionsMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -234,7 +234,7 @@ noinline transient AstNode Sections =
   }
 ;
 
-noinline memoized AstNode SectionsMemoized =
+noinline memoized WikitextNode SectionsMemoized =
  ^{
     Result yyResult = new StateAwareResult("Sections", getContext(), pSectionsTransient(yyBase));
     if (returnTrue(yyResult))
@@ -247,7 +247,7 @@ noinline memoized AstNode SectionsMemoized =
 
 // -- Sections -----------------------------------------------------------------
 
-noinline transient AstNode SectionsTransient =
+noinline transient WikitextNode SectionsTransient =
   &{ accept(ParserAtoms.SECTIONS) } first:Section tail:Section*
   {
     yyValue = makeSections(first, tail);
@@ -270,7 +270,7 @@ inline void BlockStopperNextSection =
 private noinline transient Section Section =
     h:SectionHeading Eof
     {
-      yyValue = new Section(h.getLevel(), h.getContent(), new NodeList());
+      yyValue = new Section(h.getLevel(), h.getContent(), new WtList());
       fixSectionMetadata(h, yyValue);
     }
   / h:SectionHeading body:SectionContentStar
@@ -325,14 +325,14 @@ private transient String EqualsStr = "="+ ;
 
 // -- Content ------------------------------------------------------------------
 
-private inline stateful NodeList HeadingContentStar =
+private inline stateful WtList HeadingContentStar =
   {
     enter(ParserScopes.SECTION_HEADING);
   }
   InlineContentPlus
 ;
 
-private inline stateful NodeList SectionContentStar =
+private inline stateful WtList SectionContentStar =
   {
     enter(ParserScopes.SECTION_BODY);
   }

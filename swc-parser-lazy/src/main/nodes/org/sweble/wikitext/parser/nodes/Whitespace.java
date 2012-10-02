@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>Whitespace</h1>
@@ -29,7 +28,7 @@ public class Whitespace
 		
 	}
 	
-	public Whitespace(NodeList content, boolean hasNewline)
+	public Whitespace(WtList content, boolean hasNewline)
 	{
 		super(content);
 		setHasNewline(hasNewline);

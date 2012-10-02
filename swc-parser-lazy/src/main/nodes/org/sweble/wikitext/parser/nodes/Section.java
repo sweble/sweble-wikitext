@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>Section</h1>
@@ -25,11 +24,11 @@ public class Section
 	
 	public Section()
 	{
-		super(new NodeList(), new NodeList());
+		super(new WtList(), new WtList());
 		
 	}
 	
-	public Section(int level, NodeList title, NodeList body)
+	public Section(int level, WtList title, WtList body)
 	{
 		super(title, body);
 		setLevel(level);
@@ -120,24 +119,24 @@ public class Section
 	// =========================================================================
 	// Children
 	
-	public final void setTitle(NodeList title)
+	public final void setTitle(WtList title)
 	{
 		set(0, title);
 	}
 	
-	public final NodeList getTitle()
+	public final WtList getTitle()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
-	public final void setBody(NodeList body)
+	public final void setBody(WtList body)
 	{
 		set(1, body);
 	}
 	
-	public final NodeList getBody()
+	public final WtList getBody()
 	{
-		return (NodeList) get(1);
+		return (WtList) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "title", "body" };

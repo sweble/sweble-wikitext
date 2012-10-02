@@ -8,7 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-
 /**
  * <h1>XML Attribute Garbage</h1>
  */

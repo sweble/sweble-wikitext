@@ -9,10 +9,10 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "===", [1] = "===", [2]
         {N} level = 3
 
-      [ Text(" Hallo 1 ") ]
+      [ WtText(" Hallo 1 ") ]
       [
         Newline("\n")
-        Paragraph([ Text("Welt 1") ])
+        Paragraph([ WtText("Welt 1") ])
         Newline("\n")
         Newline("\n")
       ]
@@ -22,7 +22,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
 
-      [ Text(" Hallo 2 ") ]
+      [ WtText(" Hallo 2 ") ]
       [
         Newline("\n")
         UnorderedList([
@@ -30,13 +30,13 @@ ParsedWikitextPage(
             Properties:
               RTD = RtData: [0] = "*", [1] = "\n"
 
-            [ Text(" a") ]
+            [ WtText(" a") ]
           )
           ListItem(
             Properties:
               RTD = RtData: [0] = "*", [1]
 
-            [ Text(" b") ]
+            [ WtText(" b") ]
           )
         ])
         Newline("\n")
@@ -47,10 +47,10 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
 
-      [ Text(" Hallo 3 ") ]
+      [ WtText(" Hallo 3 ") ]
       [
         Newline("\n")
-        Paragraph([ Text("Welt 3") ])
+        Paragraph([ WtText("Welt 3") ])
         Newline("\n")
         Newline("\n")
         Section(
@@ -58,20 +58,20 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "==", [1] = "==", [2]
             {N} level = 2
 
-          [ Text(" Hallo 4 ") ]
+          [ WtText(" Hallo 4 ") ]
           [
             Newline("\n")
-            Paragraph([ Text("Welt 4") ])
+            Paragraph([ WtText("Welt 4") ])
             Newline("\n")
             Section(
               Properties:
                 RTD = RtData: [0] = "===", [1] = "===", [2]
                 {N} level = 3
 
-              [ Text(" Hallo 5 ") ]
+              [ WtText(" Hallo 5 ") ]
               [
                 Newline("\n")
-                Paragraph([ Text("Welt 5") ])
+                Paragraph([ WtText("Welt 5") ])
                 Newline("\n")
               ]
             )
@@ -80,11 +80,11 @@ ParsedWikitextPage(
                 RTD = RtData: [0] = "===", [1] = "===", [2]
                 {N} level = 3
 
-              [ Text(" Hallo 6 ") ]
+              [ WtText(" Hallo 6 ") ]
               [
                 Newline("\n")
                 Paragraph([
-                  Text("Welt 6")
+                  WtText("Welt 6")
                   Newline("\n")
                 ])
                 Newline("\n")
@@ -98,20 +98,20 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "==", [1] = "==", [2]
             {N} level = 2
 
-          [ Text(" Hallo 7 ") ]
+          [ WtText(" Hallo 7 ") ]
           [
             Newline("\n")
-            Paragraph([ Text("Welt 7") ])
+            Paragraph([ WtText("Welt 7") ])
             Newline("\n")
             Section(
               Properties:
                 RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
 
-              [ Text(" Hallo 8 ") ]
+              [ WtText(" Hallo 8 ") ]
               [
                 Newline("\n")
-                Paragraph([ Text("Welt 8") ])
+                Paragraph([ WtText("Welt 8") ])
                 Newline("\n")
               ]
             )
@@ -124,11 +124,11 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
 
-      [ Text(" Hallo 9 ") ]
+      [ WtText(" Hallo 9 ") ]
       [
         Newline("\n")
         Paragraph([
-          Text("Welt 9")
+          WtText("Welt 9")
           Newline("\n")
         ])
         Newline("\n")
@@ -144,7 +144,7 @@ ParsedWikitextPage(
           Warning (normal): /basic/wikitext/block-section.wikitext:26:1 - 14: "= Hallo 10 ==" : Odd number of closing equals.
         ]
 
-      [ Text(" Hallo 10 =") ]
+      [ WtText(" Hallo 10 =") ]
       [ Newline("\n") ]
     )
     Section(
@@ -156,7 +156,7 @@ ParsedWikitextPage(
           Warning (normal): /basic/wikitext/block-section.wikitext:27:1 - 14: "== Hallo 11 =" : Odd number of opening equals.
         ]
 
-      [ Text("= Hallo 11 ") ]
+      [ WtText("= Hallo 11 ") ]
       [ ]
     )
   ]

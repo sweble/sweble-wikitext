@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.BLOCK_OR_MIXED_INLINE;
 
 import java.util.Date;
 

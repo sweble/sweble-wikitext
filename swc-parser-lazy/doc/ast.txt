@@ -25,7 +25,7 @@ Here's the meaning of those tags:
 
 Some important nodes:
 
-  AstNode: The father of all nodes.
+  WikitextNode: The father of all nodes.
   
   InnerNode: The father of all inner nodes.
   
@@ -38,18 +38,18 @@ Some important nodes:
 
   TextNode: A node to represent plain text.
 
-  NodeList: The only node that has variable number of children.
+  WtList: The only node that has variable number of children.
 
 
 
 ==[ Special ]===================================================================
 
  *   AST node: [ABSTRACT]
-       Name        : AstNode
+       Name        : WikitextNode
 
  *   AST node: [ABSTRACT]
        Name        : InnerNode
-       Extends     : AstNode
+       Extends     : WikitextNode
 
  *   AST node: [ABSTRACT]
        Name        : InnerNode[1-4]
@@ -57,7 +57,7 @@ Some important nodes:
 
  *   AST node: [ABSTRACT]
        Name        : LeafNode
-       Extends     : AstNode
+       Extends     : WikitextNode
 
  *   AST node: [ABSTRACT]
        Name        : ContentNode
@@ -65,32 +65,32 @@ Some important nodes:
        Constructor : content
 
        Children:
-         content : NodeList
+         content : WtList
 
  *   AST node: [ABSTRACT]
        Name        : StringContentNode 
        Extends     : LeafNode
-       NodeType    : de.fau.cs.osr.ptk.common.ast.AstNode.NT_TEXT
+       NodeType    : de.fau.cs.osr.ptk.common.ast.WikitextNode.NT_TEXT
        Constructor : content
 
        Properties:
          content : String
 
  *   AST node:
-       Name        : NodeList
+       Name        : WtList
        Extends     : InnerNode 
-       NodeType    : de.fau.cs.osr.ptk.common.ast.AstNode.NT_NODE_LIST
+       NodeType    : de.fau.cs.osr.ptk.common.ast.WikitextNode.NT_NODE_LIST
 
  *   AST node:
        Name        : Text
        Extends     : StringContentNode
-       NodeType    : de.fau.cs.osr.ptk.common.ast.AstNode.NT_TEXT
+       NodeType    : de.fau.cs.osr.ptk.common.ast.WikitextNode.NT_TEXT
        Constructor : content
 
  *   AST node: [INTERMEDIATE]
-       Name        : ParserEntity
+       Name        : WtParserEntity
        Extends     : LeafNode
-       NodeType    : de.fau.cs.osr.ptk.common.ast.AstNode.NT_PARSER_ENTITY
+       NodeType    : de.fau.cs.osr.ptk.common.ast.WikitextNode.NT_PARSER_ENTITY
        Constructor : id
 
        Properties:
@@ -165,7 +165,7 @@ Some important nodes:
          body : String
 
        Children:
-         xmlAttributes : NodeList
+         xmlAttributes : WtList
 
  *   AST node:
        Name        : Template
@@ -174,8 +174,8 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE
 
        Children:
-         name : NodeList
-         args : NodeList
+         name : WtList
+         args : WtList
 
  *   AST node:
        Name        : TemplateParameter
@@ -184,9 +184,9 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_PARAMETER
 
        Children:
-         name         : NodeList
+         name         : WtList
          defaultValue : TemplateArgument
-         garbage      : NodeList
+         garbage      : WtList
 
  *   AST node:
        Name        : TemplateArgument
@@ -199,8 +199,8 @@ Some important nodes:
          hasName : boolean
 
        Children:
-         name  : NodeList
-         value : NodeList
+         name  : WtList
+         value : WtList
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : OnlyInclude
@@ -291,7 +291,7 @@ Some important nodes:
 
        Children:
          target : Url
-         title  : NodeList
+         title  : WtList
 
  *   AST node:
        Name        : InternalLink
@@ -315,7 +315,7 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IMAGE_LINK
 
        Children:
-         options : NodeList
+         options : WtList
          title   : LinkTitle
 
        Properties:
@@ -375,7 +375,7 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
 
        Children:
-         target : AstNode
+         target : WikitextNode
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : LinkOptionAltText
@@ -397,8 +397,8 @@ Some important nodes:
          level   : int
 
        Children:
-         title : NodeList
-         body  : NodeList
+         title : WtList
+         body  : WtList
 
  *   AST node: [INTERMEDIATE NODE]
        Name        : SectionHeading
@@ -495,7 +495,7 @@ Some important nodes:
 
        Properties:
          rt0     : String
-         rt1     : AstNode
+         rt1     : WikitextNode
          prefix  : String
 
 
@@ -509,8 +509,8 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE
 
        Children:
-         xmlAttributes : NodeList
-         body          : NodeList
+         xmlAttributes : WtList
+         body          : WtList
 
  *   AST node:
        Name        : TableCaption
@@ -519,8 +519,8 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CAPTION
 
        Children:
-         xmlAttributes : NodeList
-         body          : NodeList
+         xmlAttributes : WtList
+         body          : WtList
 
  *   AST node:
        Name        : TableRow
@@ -529,8 +529,8 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_ROW
 
        Children:
-         xmlAttributes : NodeList
-         body          : NodeList
+         xmlAttributes : WtList
+         body          : WtList
 
  *   AST node:
        Name        : TableHeader
@@ -539,8 +539,8 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_HEADER
 
        Children:
-         xmlAttributes : NodeList
-         body          : NodeList
+         xmlAttributes : WtList
+         body          : WtList
 
  *   AST node:
        Name        : TableCell
@@ -549,8 +549,8 @@ Some important nodes:
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CELL
 
        Children:
-         xmlAttributes : NodeList
-         body          : NodeList
+         xmlAttributes : WtList
+         body          : WtList
 
 
 
@@ -568,8 +568,8 @@ Some important nodes:
          empty : Boolean
 
        Children:
-         xmlAttributes : NodeList
-         body          : NodeList
+         xmlAttributes : WtList
+         body          : WtList
 
  *   AST node:
        Name        : XmlAttribute
@@ -583,7 +583,7 @@ Some important nodes:
          hasValue : boolean
 
        Children:
-         value : NodeList
+         value : WtList
 
  *   AST node:
        Name        : XmlCharRef
@@ -626,7 +626,7 @@ Some important nodes:
          name : String
 
        Children:
-         xmlAttributes : NodeList
+         xmlAttributes : WtList
 
  *   AST node: [INTERMEDIATE/ERROR NODE]
        Name        : XmlEndTag
@@ -649,4 +649,4 @@ Some important nodes:
          name : String
 
        Children:
-         xmlAttributes : NodeList
+         xmlAttributes : WtList

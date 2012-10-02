@@ -8,7 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-
 /**
  * <h1>Newline</h1>
  */

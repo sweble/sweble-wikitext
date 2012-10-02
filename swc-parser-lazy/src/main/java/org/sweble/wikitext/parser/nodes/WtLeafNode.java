@@ -1,12 +1,12 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.LeafNode;
+import de.fau.cs.osr.ptk.common.ast.GenericLeafNode;
 import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
 public abstract class WtLeafNode
 		extends
-			LeafNode
+			GenericLeafNode<WikitextNode>
 		implements
 			WikitextNode
 {

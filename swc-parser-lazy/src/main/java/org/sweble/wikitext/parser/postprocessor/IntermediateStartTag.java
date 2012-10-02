@@ -17,9 +17,8 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlStartTag;
-
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class IntermediateStartTag
 		extends
@@ -37,7 +36,7 @@ public class IntermediateStartTag
 	
 	public IntermediateStartTag(IntermediateTags type)
 	{
-		super(type.getElementName(), new NodeList());
+		super(type.getElementName(), new WtList());
 		
 		this.type = type;
 		this.synthetic = false;
@@ -45,7 +44,7 @@ public class IntermediateStartTag
 	
 	public IntermediateStartTag(IntermediateTags type, boolean synthetic)
 	{
-		super(type.getElementName(), new NodeList());
+		super(type.getElementName(), new WtList());
 		
 		this.type = type;
 		this.synthetic = synthetic;

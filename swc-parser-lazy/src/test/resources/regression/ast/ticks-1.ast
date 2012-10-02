@@ -10,14 +10,14 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "''", [1] = "''"
 
         [
-          Text(" A ")
+          WtText(" A ")
           Bold(
             Properties:
               RTD = RtData: [0] = "'''", [1] = "'''"
 
-            [ Text(" B ") ]
+            [ WtText(" B ") ]
           )
-          Text(" C ")
+          WtText(" C ")
         ]
       )
     ])

@@ -9,7 +9,7 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = ";", [1] = "\n"
 
-        [ Text("Other") ]
+        [ WtText("Other") ]
       )
     ])
     UnorderedList([
@@ -17,19 +17,19 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
-        [ Text("x") ]
+        [ WtText("x") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
-        [ Text("y") ]
+        [ WtText("y") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
-        [ Text("z") ]
+        [ WtText("z") ]
       )
     ])
     Newline("\n")

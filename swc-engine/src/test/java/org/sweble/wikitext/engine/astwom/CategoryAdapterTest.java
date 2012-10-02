@@ -16,8 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womComment;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -32,9 +35,8 @@ import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
-
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public class CategoryAdapterTest
 {
@@ -85,7 +87,7 @@ public class CategoryAdapterTest
 		assertTrue(womPage.hasCategory("Test"));
 		assertTrue(astBold.getBody().isEmpty());
 		
-		NodeList body = ((BodyAdapter) womPage.getBody()).getAstNode();
+		WtList body = ((BodyAdapter) womPage.getBody()).getAstNode();
 		assertTrue(body.get(body.size() - 1) instanceof InternalLink);
 	}
 	

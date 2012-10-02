@@ -17,11 +17,11 @@
 
 package org.sweble.wikitext.parser;
 
-import static de.fau.cs.osr.ptk.common.ast.AstNode.*;
+import de.fau.cs.osr.ptk.common.ast.AstNodeInterface;
 
 public interface AstNodeTypes
 {
-	public static final int NT_MW_NODE_BITS /* ............ */= NT_CUSTOM_BIT | 0x20000;
+	public static final int NT_MW_NODE_BITS /* ............ */= AstNodeInterface.NT_CUSTOM_BIT | 0x20000;
 	
 	public static final int NT_ENCVAL_BITS /* ............. */= NT_MW_NODE_BITS | 0x40000;
 	

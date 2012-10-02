@@ -26,7 +26,7 @@ modify org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 
 // -- XmlAttribute modifications -----------------------------------------------
 
-NodeList TableAttributeStar = XmlAttributeStar ;
+WtList TableAttributeStar = XmlAttributeStar ;
 
 void XmlAttrGarbageStopper := &pEol ;
 

@@ -1,7 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>Link Option: AltText</h1> <h2>Grammar</h2>
  * <ul>
@@ -26,7 +24,7 @@ public class LinkOptionAltText
 		
 	}
 	
-	public LinkOptionAltText(NodeList content)
+	public LinkOptionAltText(WtList content)
 	{
 		super(content);
 		

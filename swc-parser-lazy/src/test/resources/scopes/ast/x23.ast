@@ -6,7 +6,7 @@ ParsedWikitextPage(
   [
     Newline("\n")
     Paragraph([
-      Text("x")
+      WtText("x")
       Newline("\n")
     ])
     XmlElement(
@@ -16,10 +16,10 @@ ParsedWikitextPage(
         {N} name = "div"
 
       [ ]
-      [ Text("Hallo") ]
+      [ WtText("Hallo") ]
     )
     Newline("\n")
-    Text("y")
+    WtText("y")
     Newline("\n")
   ]
 )

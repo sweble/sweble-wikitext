@@ -17,15 +17,16 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.inOrder;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 import org.mockito.InOrder;
 import org.sweble.wikitext.engine.astwom.ChildManagerBase.ChildManager;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 
 public class ChildManagerTest
 {
@@ -37,10 +38,10 @@ public class ChildManagerTest
 		FullElement child = mock(FullElement.class);
 		FullElement parent = mock(FullElement.class);
 		
-		NodeList astContainer = new NodeList();
+		WtList astContainer = new WtList();
 		when(parent.getAstAttribContainer()).thenReturn(astContainer);
 		
-		AstNode astChild = new Text("...");
+		WikitextNode astChild = new WtText("...");
 		when(child.getAstNode()).thenReturn(astChild);
 		
 		cm.appendChild(child, parent, astContainer);

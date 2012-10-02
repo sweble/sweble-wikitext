@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "\n["
           warnings = [Warning: This looks like a External Link, however the finishing `]' is missing: "[http://example.com"]
@@ -16,10 +16,10 @@ ParsedWikitextPage(
           {N} path = "//example.com"
           {N} protocol = "http"
       )
-      Text(" Example\n\n")
+      WtText(" Example\n\n")
     ])
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "["
           warnings = [Warning: This looks like a External Link, however the finishing `]' is missing: "[http://example.com"]
@@ -30,17 +30,17 @@ ParsedWikitextPage(
           {N} path = "//example.com"
           {N} protocol = "http"
       )
-      Text("\n\n")
+      WtText("\n\n")
     ])
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[http:\n\n"
           warnings = [Warning: This looks like a External Link, however the actual URL is missing: "["]
       )
     ])
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[\n"
           warnings = [Warning: This looks like a External Link, however the actual URL is missing: "["]

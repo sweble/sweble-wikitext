@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Target1|Title1a "
           warnings = 
@@ -24,10 +24,10 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Title2") ]
+          [ WtText("Title2") ]
         )
       )
-      Text(" Title1b]]")
+      WtText(" Title1b]]")
     ])
   ]
 )

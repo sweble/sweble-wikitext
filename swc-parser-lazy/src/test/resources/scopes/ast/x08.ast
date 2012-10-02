@@ -17,7 +17,7 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            Text(" a ")
+            WtText(" a ")
             XmlElement(
               Properties:
                 RTD = RtData: [0] = "<i", [1] = ">", [2]
@@ -25,7 +25,7 @@ ParsedWikitextPage(
                 {N} name = "i"
 
               [ ]
-              [ Text(" b ") ]
+              [ WtText(" b ") ]
             )
           ]
         )
@@ -38,7 +38,7 @@ ParsedWikitextPage(
 
         [ ]
         [
-          Text(" c ")
+          WtText(" c ")
           XmlElement(
             Properties:
               RTD = RtData: [0] = "<b", [1] = ">", [2]
@@ -46,7 +46,7 @@ ParsedWikitextPage(
               {N} name = "b"
 
             [ ]
-            [ Text(" d ") ]
+            [ WtText(" d ") ]
           )
         ]
       )

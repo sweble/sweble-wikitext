@@ -17,8 +17,8 @@
 
 package org.sweble.wikitext.engine.utils;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtText;
 
 public class ApplyToText
 {
@@ -33,22 +33,22 @@ public class ApplyToText
 	
 	// =========================================================================
 	
-	public void go(AstNode arg0)
+	public void go(WikitextNode arg0)
 	{
-		if (arg0.getNodeType() == AstNode.NT_TEXT)
+		if (arg0.getNodeType() == WikitextNode.NT_TEXT)
 		{
-			apply((Text) arg0);
+			apply((WtText) arg0);
 		}
 		else
 		{
-			for (AstNode n : arg0)
+			for (WikitextNode n : arg0)
 			{
 				if (n == null)
 					continue;
 				
-				if (n.isNodeType(AstNode.NT_TEXT))
+				if (n.isNodeType(WikitextNode.NT_TEXT))
 				{
-					apply((Text) n);
+					apply((WtText) n);
 				}
 				else
 				{
@@ -58,7 +58,7 @@ public class ApplyToText
 		}
 	}
 	
-	private void apply(Text arg0)
+	private void apply(WtText arg0)
 	{
 		arg0.setContent(fn.apply(arg0.getContent()));
 	}

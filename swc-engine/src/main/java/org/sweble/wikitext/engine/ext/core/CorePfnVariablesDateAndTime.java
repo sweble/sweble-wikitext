@@ -23,9 +23,8 @@ import java.util.GregorianCalendar;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.nodes.Template;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.Text;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtText;
 
 public class CorePfnVariablesDateAndTime
 		extends
@@ -66,10 +65,10 @@ public class CorePfnVariablesDateAndTime
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
-			return new Text(String.valueOf(cal.get(GregorianCalendar.YEAR)));
+			return new WtText(String.valueOf(cal.get(GregorianCalendar.YEAR)));
 		}
 	}
 	
@@ -91,10 +90,10 @@ public class CorePfnVariablesDateAndTime
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
-			return new Text(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
+			return new WtText(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
 		}
 	}
 	
@@ -124,10 +123,10 @@ public class CorePfnVariablesDateAndTime
 		}
 		
 		@Override
-		protected final AstNode invoke(Template var, ExpansionFrame frame)
+		protected final WikitextNode invoke(Template var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
-			return new Text(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
+			return new WtText(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
 		}
 	}
 	

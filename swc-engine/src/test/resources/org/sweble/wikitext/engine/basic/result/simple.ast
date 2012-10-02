@@ -1,25 +1,25 @@
 Page([
   Newline("\n")
-  Paragraph([ Text("Some text in a paragraph.") ])
+  Paragraph([ WtText("Some text in a paragraph.") ])
   Newline("\n")
   Newline("\n")
   Paragraph([
-    Text("Some text with a newline")
+    WtText("Some text with a newline")
     Newline("\n")
-    Text("and some special tokens like ")
+    WtText("and some special tokens like ")
     XmlEntityRef(
       Properties:
             RTD = RtData: [0] = "&amp;"
         {N} name = "amp"
         {N} resolved = "&"
     )
-    Text(" and ")
+    WtText(" and ")
     XmlCharRef(
       Properties:
             RTD = RtData: [0] = "&#41;"
         {N} codePoint = 41
     )
-    Text(".")
+    WtText(".")
   ])
   Newline("\n")
   Newline("\n")
@@ -37,7 +37,7 @@ Page([
             {N} hasValue = true
             {N} name = "name"
 
-          [ Text("value") ]
+          [ WtText("value") ]
         )
       ]
       [ ]
@@ -50,7 +50,7 @@ Page([
       Properties:
             RTD = RtData: [0] = "'''", [1] = "'''"
 
-      [ Text(" Native bold text ") ]
+      [ WtText(" Native bold text ") ]
     )
   ])
   Newline("\n")
@@ -63,7 +63,7 @@ Page([
         {N} name = "b"
 
       [ ]
-      [ Text(" HTML bold text ") ]
+      [ WtText(" HTML bold text ") ]
     )
     Newline("\n")
     Newline("\n")

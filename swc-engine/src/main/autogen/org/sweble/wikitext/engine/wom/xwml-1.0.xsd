@@ -145,7 +145,7 @@
     <xs:restriction base="xs:nonNegativeInteger" />
   </xs:simpleType>
 
-  <xs:simpleType name="Text">
+  <xs:simpleType name="WtText">
     <xs:annotation>
       <xs:documentation>
         see
@@ -423,7 +423,7 @@
     <xs:attribute name="id" type="xs:ID" />
     <xs:attribute name="class" type="xs:NMTOKENS" />
     <xs:attribute name="style" type="StyleSheet" />
-    <xs:attribute name="title" type="Text" />
+    <xs:attribute name="title" type="WtText" />
   </xs:attributeGroup>
 
   <xs:attributeGroup name="attributes.i18n">
@@ -761,7 +761,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="Text" />
+        <xs:extension base="WtText" />
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
@@ -859,7 +859,7 @@
       <xs:attribute name="upright" type="Enum.upright" />
       <xs:attribute name="urllink" type="URI" />
       <xs:attribute name="pagelink" type="PageTitle" />
-      <xs:attribute name="alt" type="Text" />
+      <xs:attribute name="alt" type="WtText" />
     </xs:complexType>
   </xs:element>
 
@@ -925,7 +925,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="Text" />
+        <xs:extension base="WtText" />
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
@@ -973,7 +973,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="Text">
+        <xs:extension base="WtText">
           <xs:attributeGroup ref="attributes.universal" />
           <xs:attribute name="width" type="Number" />
           <xs:attribute ref="xml:space" fixed="preserve" />
@@ -1060,7 +1060,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="Text" />
+        <xs:extension base="WtText" />
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
@@ -1509,7 +1509,7 @@
         </xs:choice>
       </xs:sequence>
       <xs:attributeGroup ref="attributes.universal" />
-      <xs:attribute name="summary" type="Text" />
+      <xs:attribute name="summary" type="WtText" />
       <xs:attribute name="width" type="Length" />
       <xs:attribute name="border" type="Pixels" />
       <xs:attribute name="frame" type="Enum.tableFrame" />
@@ -1561,7 +1561,7 @@
           <xs:attributeGroup ref="attributes.universal" />
           <xs:attributeGroup ref="attributes.cellHAlign" />
           <xs:attributeGroup ref="attributes.cellVAlign" />
-          <xs:attribute name="abbr" type="Text" />
+          <xs:attribute name="abbr" type="WtText" />
           <xs:attribute name="axis" />
           <xs:attribute name="bgcolor" type="Color" />
           <xs:attribute name="colspan" default="1" type="Number" />
@@ -1583,7 +1583,7 @@
           <xs:attributeGroup ref="attributes.universal" />
           <xs:attributeGroup ref="attributes.cellHAlign" />
           <xs:attributeGroup ref="attributes.cellVAlign" />
-          <xs:attribute name="abbr" type="Text" />
+          <xs:attribute name="abbr" type="WtText" />
           <xs:attribute name="axis" />
           <xs:attribute name="bgcolor" type="Color" />
           <xs:attribute name="colspan" default="1" type="Number" />

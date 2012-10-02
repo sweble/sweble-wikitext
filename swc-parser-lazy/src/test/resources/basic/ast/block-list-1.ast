@@ -9,13 +9,13 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
-        [ Text(" Hallo") ]
+        [ WtText(" Hallo") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
-        [ Text(" Welt") ]
+        [ WtText(" Welt") ]
       )
     ])
     Newline("\n")
@@ -25,13 +25,13 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "*", [1] = "\n"
 
-        [ Text(" Hallo") ]
+        [ WtText(" Hallo") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "*", [1]
 
-        [ Text(" Welt") ]
+        [ WtText(" Welt") ]
       )
     ])
     Newline("\n")
@@ -41,13 +41,13 @@ ParsedWikitextPage(
         Properties:
           RTD = RtData: [0] = "<!-- Comment 1 -->*", [1] = "\n"
 
-        [ Text(" Hallo") ]
+        [ WtText(" Hallo") ]
       )
       ListItem(
         Properties:
           RTD = RtData: [0] = "<!-- Comment 2 -->*", [1]
 
-        [ Text(" Welt") ]
+        [ WtText(" Welt") ]
       )
     ])
   ]

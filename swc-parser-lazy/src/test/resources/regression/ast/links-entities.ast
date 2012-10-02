@@ -31,7 +31,7 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Hallo %00 Hallo]]"
           warnings = 
@@ -43,7 +43,7 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Hallo %7F Hallo]]"
           warnings = 
@@ -55,7 +55,7 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Hallo %80 Hallo]]"
           warnings = 
@@ -106,7 +106,7 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Hallo "
           warnings = 
@@ -120,12 +120,12 @@ ParsedWikitextPage(
           {N} name = "amplifier"
           {N} resolved = null
       )
-      Text(" Hallo]]")
+      WtText(" Hallo]]")
     ])
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Hallo "
           warnings = 
@@ -139,7 +139,7 @@ ParsedWikitextPage(
           {N} name = "amp"
           {N} resolved = "&"
       )
-      Text("amp; Hallo]]")
+      WtText("amp; Hallo]]")
     ])
     Newline("\n")
     Newline("\n")
@@ -170,7 +170,7 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Hallo &%42mp; Hallo]]"
           warnings = 

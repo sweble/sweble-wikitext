@@ -18,12 +18,11 @@
 package org.sweble.wikitext.parser.preprocessor;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
-
-import de.fau.cs.osr.ptk.common.ast.Text;
+import org.sweble.wikitext.parser.nodes.WtText;
 
 public class ProtectedText
 		extends
-			Text
+			WtText
 {
 	private static final long serialVersionUID = 1L;
 	

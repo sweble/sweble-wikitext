@@ -36,29 +36,29 @@ import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 
 public class DefaultAstToWomNodeFactory
 		extends
-			AstVisitor
+			AstVisitor<WikitextNode>
 		implements
 			AstToWomNodeFactory
 {
 	public static final class AstCategory
 	{
-		private NodeList container;
+		private WtList container;
 		
 		private InternalLink link;
 		
-		public AstCategory(NodeList container, InternalLink link)
+		public AstCategory(WtList container, InternalLink link)
 		{
 			this.container = container;
 			this.link = link;
@@ -73,7 +73,7 @@ public class DefaultAstToWomNodeFactory
 	
 	private final LinkedList<AstCategory> categories = new LinkedList<AstCategory>();
 	
-	private NodeList container;
+	private WtList container;
 	
 	// =========================================================================
 	
@@ -90,7 +90,7 @@ public class DefaultAstToWomNodeFactory
 	// =========================================================================
 	
 	@Override
-	public WomNode create(NodeList container, AstNode node)
+	public WomNode create(WtList container, WikitextNode node)
 	{
 		this.container = container;
 		return (WomNode) go(node);
@@ -108,7 +108,7 @@ public class DefaultAstToWomNodeFactory
 		return p;
 	}
 	
-	public WomNode visit(Text text)
+	public WomNode visit(WtText text)
 	{
 		return new TextAdapter(text);
 	}

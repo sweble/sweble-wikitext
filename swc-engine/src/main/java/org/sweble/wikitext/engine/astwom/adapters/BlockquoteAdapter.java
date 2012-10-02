@@ -16,7 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom.adapters;
 
-import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.*;
+import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.BLOCK_ELEMENTS;
 import lombok.AccessLevel;
 import lombok.Delegate;
 import lombok.Getter;

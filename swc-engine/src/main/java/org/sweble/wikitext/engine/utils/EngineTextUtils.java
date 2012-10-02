@@ -20,35 +20,35 @@ package org.sweble.wikitext.engine.utils;
 import java.util.ListIterator;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
+import org.sweble.wikitext.parser.nodes.WtText;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-import de.fau.cs.osr.ptk.common.ast.Text;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class EngineTextUtils
 {
 	
-	public static AstNode trim(AstNode n)
+	public static WikitextNode trim(WikitextNode n)
 	{
 		return trimRight(trimLeft(n));
 	}
 	
-	public static AstNode trimLeft(AstNode n)
+	public static WikitextNode trimLeft(WikitextNode n)
 	{
 		switch (n.getNodeType())
 		{
-			case AstNode.NT_NODE_LIST:
+			case WikitextNode.NT_NODE_LIST:
 			{
-				NodeList l = (NodeList) n;
-				ListIterator<AstNode> i = l.listIterator();
+				WtList l = (WtList) n;
+				ListIterator<WikitextNode> i = l.listIterator();
 				outer: while (i.hasNext())
 				{
-					AstNode item = i.next();
+					WikitextNode item = i.next();
 					switch (item.getNodeType())
 					{
-						case AstNode.NT_TEXT:
-							Text t = (Text) item;
+						case WikitextNode.NT_TEXT:
+							WtText t = (WtText) item;
 							String text = t.getContent();
 							if (text.isEmpty())
 							{
@@ -81,9 +81,9 @@ public class EngineTextUtils
 				}
 				return n;
 			}
-			case AstNode.NT_TEXT:
+			case WikitextNode.NT_TEXT:
 			{
-				Text t = (Text) n;
+				WtText t = (WtText) n;
 				t.setContent(StringUtils.trimLeft(t.getContent()));
 				return n;
 			}
@@ -92,21 +92,21 @@ public class EngineTextUtils
 		}
 	}
 	
-	public static AstNode trimRight(AstNode n)
+	public static WikitextNode trimRight(WikitextNode n)
 	{
 		switch (n.getNodeType())
 		{
-			case AstNode.NT_NODE_LIST:
+			case WikitextNode.NT_NODE_LIST:
 			{
-				NodeList l = (NodeList) n;
-				ListIterator<AstNode> i = l.listIterator(l.size());
+				WtList l = (WtList) n;
+				ListIterator<WikitextNode> i = l.listIterator(l.size());
 				outer: while (i.hasPrevious())
 				{
-					AstNode item = i.previous();
+					WikitextNode item = i.previous();
 					switch (item.getNodeType())
 					{
-						case AstNode.NT_TEXT:
-							Text t = (Text) item;
+						case WikitextNode.NT_TEXT:
+							WtText t = (WtText) item;
 							String text = t.getContent();
 							if (text.isEmpty())
 							{
@@ -139,9 +139,9 @@ public class EngineTextUtils
 				}
 				return n;
 			}
-			case AstNode.NT_TEXT:
+			case WikitextNode.NT_TEXT:
 			{
-				Text t = (Text) n;
+				WtText t = (WtText) n;
 				t.setContent(StringUtils.trimRight(t.getContent()));
 				return n;
 			}

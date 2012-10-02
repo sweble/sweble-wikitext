@@ -1,15 +1,13 @@
 package org.sweble.wikitext.parser.nodes;
 
 import xtc.tree.Location;
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.ContentNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
+import de.fau.cs.osr.ptk.common.ast.GenericContentNode;
 import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
 public abstract class WtContentNode
 		extends
-			ContentNode
+			GenericContentNode<WikitextNode, WtList>
 		implements
 			WikitextNode
 {
@@ -21,27 +19,22 @@ public abstract class WtContentNode
 	
 	public WtContentNode()
 	{
-		super();
+		super(new WtList());
 	}
 	
-	public WtContentNode(AstNode content, Location location)
+	public WtContentNode(Location arg0, WikitextNode n0)
 	{
-		super(content, location);
+		super(arg0, n0);
 	}
 	
-	public WtContentNode(AstNode content)
+	public WtContentNode(Location arg0)
 	{
-		super(content);
+		super(arg0, new WtList());
 	}
 	
-	public WtContentNode(NodeList content, Location location)
+	public WtContentNode(WikitextNode n0)
 	{
-		super(content, location);
-	}
-	
-	public WtContentNode(NodeList content)
-	{
-		super(content);
+		super(n0);
 	}
 	
 	// =========================================================================
@@ -143,7 +136,7 @@ public abstract class WtContentNode
 			}
 		}
 	}
-
+	
 	// =========================================================================
 	
 	@Override

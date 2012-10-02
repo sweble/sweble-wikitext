@@ -1,6 +1,6 @@
 ParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [Text("wikiquotepar")], [1] = [TemplateArgument([0] = [], [1] = [Text("MythBusters")])]), 1=XmlComment(" This is the episode number within the entire series "), 2=XmlComment(" This is the episode number within the current season "), 3=Template([0] = [Text("Episode list\n")], [1] = [TemplateArgument([0] = [Text("EpisodeNumber   ")], [1] = [Text(" SP11\n")]), TemplateArgument([0] = [Text("EpisodeNumber2  ")], [1] = [Text(" Special 1\n")]), TemplateArgument([0] = [Text("Title           ")], [1] = [Text(" Young Scientist Special\n")]), TemplateArgument([0] = [Text("RTitle          ")], [1] = [Text(" \n")]), TemplateArgument([0] = [Text("OriginalAirDate ")], [1] = [Text(" "), Template([0] = [Text("Start date")], [1] = [TemplateArgument([0] = [], [1] = [Text("2008")]), TemplateArgument([0] = [], [1] = [Text("4")]), TemplateArgument([0] = [], [1] = [Text("26")])]), Text("\n")]), TemplateArgument([0] = [Text("ShortSummary    ")], [1] = [Text(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), TemplateArgument([0] = [Text("LineColor       ")], [1] = [Text(" DBE9F4\n")])]), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=Template([0] = [Text("inc-video")], [1] = []), 10=Template([0] = [Text("Reflist")], [1] = []), 11=Template([0] = [Text("imdb title")], [1] = [TemplateArgument([0] = [Text("id")], [1] = [Text("0383126")]), TemplateArgument([0] = [Text("title")], [1] = [Text("MythBusters")])]), 12=Template([0] = [Text("MythBusters")], [1] = []), 13=Template([0] = [Text("DEFAULTSORT:Mythbusters")], [1] = [])}
+    {N} entityMap = EntityMap {0=Template([0] = [WtText("wikiquotepar")], [1] = [TemplateArgument([0] = [], [1] = [WtText("MythBusters")])]), 1=XmlComment(" This is the episode number within the entire series "), 2=XmlComment(" This is the episode number within the current season "), 3=Template([0] = [WtText("Episode list\n")], [1] = [TemplateArgument([0] = [WtText("EpisodeNumber   ")], [1] = [WtText(" SP11\n")]), TemplateArgument([0] = [WtText("EpisodeNumber2  ")], [1] = [WtText(" Special 1\n")]), TemplateArgument([0] = [WtText("Title           ")], [1] = [WtText(" Young Scientist Special\n")]), TemplateArgument([0] = [WtText("RTitle          ")], [1] = [WtText(" \n")]), TemplateArgument([0] = [WtText("OriginalAirDate ")], [1] = [WtText(" "), Template([0] = [WtText("Start date")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2008")]), TemplateArgument([0] = [], [1] = [WtText("4")]), TemplateArgument([0] = [], [1] = [WtText("26")])]), WtText("\n")]), TemplateArgument([0] = [WtText("ShortSummary    ")], [1] = [WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), TemplateArgument([0] = [WtText("LineColor       ")], [1] = [WtText(" DBE9F4\n")])]), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=Template([0] = [WtText("inc-video")], [1] = []), 10=Template([0] = [WtText("Reflist")], [1] = []), 11=Template([0] = [WtText("imdb title")], [1] = [TemplateArgument([0] = [WtText("id")], [1] = [WtText("0383126")]), TemplateArgument([0] = [WtText("title")], [1] = [WtText("MythBusters")])]), 12=Template([0] = [WtText("MythBusters")], [1] = []), 13=Template([0] = [WtText("DEFAULTSORT:Mythbusters")], [1] = [])}
     {N} warnings = []
 
   [
@@ -10,7 +10,7 @@ ParsedWikitextPage(
           RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
 
-        [ Text("wikiquotepar") ]
+        [ WtText("wikiquotepar") ]
         [
           TemplateArgument(
             Properties:
@@ -18,12 +18,12 @@ ParsedWikitextPage(
               {N} hasName = false
 
             [ ]
-            [ Text("MythBusters") ]
+            [ WtText("MythBusters") ]
           )
         ]
       )
       Newline("\n")
-      Text("The cast of the television series ")
+      WtText("The cast of the television series ")
       Italics(
         Properties:
           RTD = RtData: [0] = "''", [1] = "''"
@@ -40,7 +40,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      Text(" perform experiments to verify or debunk ")
+      WtText(" perform experiments to verify or debunk ")
       InternalLink(
         Properties:
           {N} postfix = "s"
@@ -50,7 +50,7 @@ ParsedWikitextPage(
 
         LinkTitle([ ])
       )
-      Text(", ")
+      WtText(", ")
       InternalLink(
         Properties:
           {N} postfix = "s"
@@ -60,7 +60,7 @@ ParsedWikitextPage(
 
         LinkTitle([ ])
       )
-      Text(", and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is ")
+      WtText(", and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -72,15 +72,15 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Busted, Plausible, or Confirmed") ]
+          [ WtText("Busted, Plausible, or Confirmed") ]
         )
       )
-      Text(").")
+      WtText(").")
     ])
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Text("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
+      WtText("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -90,7 +90,7 @@ ParsedWikitextPage(
 
         LinkTitle([ ])
       )
-      Text(" website.")
+      WtText(" website.")
     ])
     Newline("\n")
     Newline("\n")
@@ -99,7 +99,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("Episode overview") ]
+      [ WtText("Episode overview") ]
       [
         Newline("\n")
         Newline("\n")
@@ -114,7 +114,7 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "class"
 
-              [ Text("wikitable") ]
+              [ WtText("wikitable") ]
             )
             XmlAttribute(
               Properties:
@@ -122,7 +122,7 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "style"
 
-              [ Text("width:100%; margin:auto; background:#FFFFFF;") ]
+              [ WtText("width:100%; margin:auto; background:#FFFFFF;") ]
             )
           ]
           [
@@ -143,12 +143,12 @@ ParsedWikitextPage(
                         {N} hasValue = true
                         {N} name = "style"
 
-                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
                     )
                   ]
                   [
                     Paragraph([
-                      Text("Series # ")
+                      WtText("Series # ")
                       XmlComment(
                         Properties:
                           RTD = RtData: [0] = "<!-- This is the episode number within the entire series -->"
@@ -171,12 +171,12 @@ ParsedWikitextPage(
                         {N} hasValue = true
                         {N} name = "style"
 
-                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
                     )
                   ]
                   [
                     Paragraph([
-                      Text("Season # ")
+                      WtText("Season # ")
                       XmlComment(
                         Properties:
                           RTD = RtData: [0] = "<!-- This is the episode number within the current season -->"
@@ -199,11 +199,11 @@ ParsedWikitextPage(
                         {N} hasValue = true
                         {N} name = "style"
 
-                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
                     )
                   ]
                   [
-                    Paragraph([ Text("Title") ])
+                    Paragraph([ WtText("Title") ])
                     Newline("\n")
                   ]
                 )
@@ -218,66 +218,66 @@ ParsedWikitextPage(
                         {N} hasValue = true
                         {N} name = "style"
 
-                      [ Text("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
                     )
                   ]
                   [
                     Paragraph([
-                      Text("Original airdate")
+                      WtText("Original airdate")
                       Newline("\n")
                       Template(
                         Properties:
                           RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
 
-                        [ Text("Episode list\n") ]
+                        [ WtText("Episode list\n") ]
                         [
                           TemplateArgument(
                             Properties:
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("EpisodeNumber   ") ]
-                            [ Text(" SP11\n") ]
+                            [ WtText("EpisodeNumber   ") ]
+                            [ WtText(" SP11\n") ]
                           )
                           TemplateArgument(
                             Properties:
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("EpisodeNumber2  ") ]
-                            [ Text(" Special 1\n") ]
+                            [ WtText("EpisodeNumber2  ") ]
+                            [ WtText(" Special 1\n") ]
                           )
                           TemplateArgument(
                             Properties:
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("Title           ") ]
-                            [ Text(" Young Scientist Special\n") ]
+                            [ WtText("Title           ") ]
+                            [ WtText(" Young Scientist Special\n") ]
                           )
                           TemplateArgument(
                             Properties:
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("RTitle          ") ]
-                            [ Text(" \n") ]
+                            [ WtText("RTitle          ") ]
+                            [ WtText(" \n") ]
                           )
                           TemplateArgument(
                             Properties:
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("OriginalAirDate ") ]
+                            [ WtText("OriginalAirDate ") ]
                             [
-                              Text(" ")
+                              WtText(" ")
                               Template(
                                 Properties:
                                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                   {N} precededByNewline = false
 
-                                [ Text("Start date") ]
+                                [ WtText("Start date") ]
                                 [
                                   TemplateArgument(
                                     Properties:
@@ -285,7 +285,7 @@ ParsedWikitextPage(
                                       {N} hasName = false
 
                                     [ ]
-                                    [ Text("2008") ]
+                                    [ WtText("2008") ]
                                   )
                                   TemplateArgument(
                                     Properties:
@@ -293,7 +293,7 @@ ParsedWikitextPage(
                                       {N} hasName = false
 
                                     [ ]
-                                    [ Text("4") ]
+                                    [ WtText("4") ]
                                   )
                                   TemplateArgument(
                                     Properties:
@@ -301,11 +301,11 @@ ParsedWikitextPage(
                                       {N} hasName = false
 
                                     [ ]
-                                    [ Text("26") ]
+                                    [ WtText("26") ]
                                   )
                                 ]
                               )
-                              Text("\n")
+                              WtText("\n")
                             ]
                           )
                           TemplateArgument(
@@ -313,16 +313,16 @@ ParsedWikitextPage(
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("ShortSummary    ") ]
-                            [ Text(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ]
+                            [ WtText("ShortSummary    ") ]
+                            [ WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ]
                           )
                           TemplateArgument(
                             Properties:
                               RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
 
-                            [ Text("LineColor       ") ]
-                            [ Text(" DBE9F4\n") ]
+                            [ WtText("LineColor       ") ]
+                            [ WtText(" DBE9F4\n") ]
                           )
                         ]
                       )
@@ -344,7 +344,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("Specials") ]
+      [ WtText("Specials") ]
       [
         Newline("\n")
         Section(
@@ -352,7 +352,7 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
-          [ Text(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
+          [ WtText(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
           [
             Newline("\n")
             UnorderedList([
@@ -361,7 +361,7 @@ ParsedWikitextPage(
                   RTD = RtData: [0] = "*", [1]
 
                 [
-                  Text(" Original airdate: April 26, 2008 on ")
+                  WtText(" Original airdate: April 26, 2008 on ")
                   InternalLink(
                     Properties:
                       {N} postfix = ""
@@ -377,7 +377,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Text("This episode aired first on ")
+              WtText("This episode aired first on ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -387,7 +387,7 @@ ParsedWikitextPage(
 
                 LinkTitle([ ])
               )
-              Text(", as opposed to the show's regular home of ")
+              WtText(", as opposed to the show's regular home of ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -397,7 +397,7 @@ ParsedWikitextPage(
 
                 LinkTitle([ ])
               )
-              Text(".  A team of winners in Discovery's \"Young Scientist Challenge\" competitions tested environmental myths with the team.  Former MythBuster ")
+              WtText(".  A team of winners in Discovery's \"Young Scientist Challenge\" competitions tested environmental myths with the team.  Former MythBuster ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -407,7 +407,7 @@ ParsedWikitextPage(
 
                 LinkTitle([ ])
               )
-              Text(" returned to assist with a myth.")
+              WtText(" returned to assist with a myth.")
             ])
             Newline("\n")
             Table(
@@ -421,7 +421,7 @@ ParsedWikitextPage(
                     {N} hasValue = true
                     {N} name = "class"
 
-                  [ Text("wikitable") ]
+                  [ WtText("wikitable") ]
                 )
               ]
               [
@@ -431,7 +431,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Myth statement") ])
+                    Paragraph([ WtText(" Myth statement") ])
                     Newline("\n")
                   ]
                 )
@@ -441,7 +441,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Status") ])
+                    Paragraph([ WtText(" Status") ])
                     Newline("\n")
                   ]
                 )
@@ -451,7 +451,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Notes") ])
+                    Paragraph([ WtText(" Notes") ])
                     Newline("\n")
                   ]
                 )
@@ -467,7 +467,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Greenhouse gases increase the amount of heat absorbed by air.") ])
+                        Paragraph([ WtText(" Greenhouse gases increase the amount of heat absorbed by air.") ])
                         Newline("\n")
                       ]
                     )
@@ -478,7 +478,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" ")
+                          WtText(" ")
                           XmlElement(
                             Properties:
                               RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
@@ -492,10 +492,10 @@ ParsedWikitextPage(
                                   {N} hasValue = true
                                   {N} name = "color"
 
-                                [ Text("green") ]
+                                [ WtText("green") ]
                               )
                             ]
-                            [ Text(" Confirmed ") ]
+                            [ WtText(" Confirmed ") ]
                           )
                         ])
                         Newline("\n")
@@ -507,7 +507,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.") ])
+                        Paragraph([ WtText(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.") ])
                         Newline("\n")
                       ]
                     )
@@ -526,7 +526,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" ")
+                          WtText(" ")
                           InternalLink(
                             Properties:
                               {N} postfix = "s"
@@ -536,7 +536,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(" are more sluggish than ")
+                          WtText(" are more sluggish than ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -546,7 +546,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text("-powered cars.")
+                          WtText("-powered cars.")
                         ])
                         Newline("\n")
                       ]
@@ -558,7 +558,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" ")
+                          WtText(" ")
                           XmlElement(
                             Properties:
                               RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
@@ -572,10 +572,10 @@ ParsedWikitextPage(
                                   {N} hasValue = true
                                   {N} name = "color"
 
-                                [ Text("red") ]
+                                [ WtText("red") ]
                               )
                             ]
-                            [ Text(" Busted ") ]
+                            [ WtText(" Busted ") ]
                           )
                         ])
                         Newline("\n")
@@ -587,7 +587,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.") ])
+                        Paragraph([ WtText(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.") ])
                         Newline("\n")
                       ]
                     )
@@ -605,7 +605,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Cows hurt the environment.") ])
+                        Paragraph([ WtText(" Cows hurt the environment.") ])
                         Newline("\n")
                       ]
                     )
@@ -616,7 +616,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" ")
+                          WtText(" ")
                           XmlElement(
                             Properties:
                               RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
@@ -630,10 +630,10 @@ ParsedWikitextPage(
                                   {N} hasValue = true
                                   {N} name = "color"
 
-                                [ Text("green") ]
+                                [ WtText("green") ]
                               )
                             ]
-                            [ Text(" Confirmed ") ]
+                            [ WtText(" Confirmed ") ]
                           )
                         ])
                         Newline("\n")
@@ -646,7 +646,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" Cows emit ")
+                          WtText(" Cows emit ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -662,14 +662,14 @@ ParsedWikitextPage(
                               {N} name = "mdash"
                               {N} resolved = "\u2014"
                           )
-                          Text("though not mostly from flatulence, but from belching ")
+                          WtText("though not mostly from flatulence, but from belching ")
                           XmlEntityRef(
                             Properties:
                               RTD = RtData: [0] = "&mdash;"
                               {N} name = "mdash"
                               {N} resolved = "\u2014"
                           )
-                          Text(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
+                          WtText(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
                         ])
                         Newline("\n")
                       ]
@@ -688,7 +688,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Cow manure can be used to help the environment.") ])
+                        Paragraph([ WtText(" Cow manure can be used to help the environment.") ])
                         Newline("\n")
                       ]
                     )
@@ -699,7 +699,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" ")
+                          WtText(" ")
                           XmlElement(
                             Properties:
                               RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
@@ -713,10 +713,10 @@ ParsedWikitextPage(
                                   {N} hasValue = true
                                   {N} name = "color"
 
-                                [ Text("green") ]
+                                [ WtText("green") ]
                               )
                             ]
-                            [ Text(" Confirmed ") ]
+                            [ WtText(" Confirmed ") ]
                           )
                         ])
                         Newline("\n")
@@ -728,7 +728,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.") ])
+                        Paragraph([ WtText(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.") ])
                         Newline("\n")
                       ]
                     )
@@ -747,11 +747,11 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("Mini Myths") ]
+      [ WtText("Mini Myths") ]
       [
         Newline("\n")
         Paragraph([
-          Text("The mini-myths are shown in video clips that are available from the ")
+          WtText("The mini-myths are shown in video clips that are available from the ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -761,14 +761,14 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(" website, as well as during the commercials in between ")
+          WtText(" website, as well as during the commercials in between ")
           Italics(
             Properties:
               RTD = RtData: [0] = "''", [1] = "''"
 
-            [ Text("MythBusters") ]
+            [ WtText("MythBusters") ]
           )
-          Text(" episodes.")
+          WtText(" episodes.")
         ])
         Newline("\n")
         Newline("\n")
@@ -777,11 +777,11 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
-          [ Text("\"Egg-uinox\"") ]
+          [ WtText("\"Egg-uinox\"") ]
           [
             Newline("\n")
             Paragraph([
-              Text("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
+              WtText("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
               TagExtension(
                 Properties:
                   RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
@@ -803,7 +803,7 @@ ParsedWikitextPage(
                     {N} hasValue = true
                     {N} name = "class"
 
-                  [ Text("wikitable") ]
+                  [ WtText("wikitable") ]
                 )
               ]
               [
@@ -813,7 +813,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Myth statement") ])
+                    Paragraph([ WtText(" Myth statement") ])
                     Newline("\n")
                   ]
                 )
@@ -823,7 +823,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Status") ])
+                    Paragraph([ WtText(" Status") ])
                     Newline("\n")
                   ]
                 )
@@ -833,7 +833,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Notes") ])
+                    Paragraph([ WtText(" Notes") ])
                     Newline("\n")
                   ]
                 )
@@ -850,7 +850,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" An egg can be balanced on its ends only during the spring and fall ")
+                          WtText(" An egg can be balanced on its ends only during the spring and fall ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -860,7 +860,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(".")
+                          WtText(".")
                         ])
                         Newline("\n")
                       ]
@@ -876,11 +876,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:red") ]
+                          [ WtText("color:red") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Busted") ])
+                        Paragraph([ WtText(" Busted") ])
                         Newline("\n")
                       ]
                     )
@@ -891,7 +891,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" This is a ")
+                          WtText(" This is a ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -903,10 +903,10 @@ ParsedWikitextPage(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
-                              [ Text("Chinese") ]
+                              [ WtText("Chinese") ]
                             )
                           )
-                          Text(" folk belief, sometimes called ")
+                          WtText(" folk belief, sometimes called ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -918,10 +918,10 @@ ParsedWikitextPage(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
-                              [ Text("Li Chun egg balancing") ]
+                              [ WtText("Li Chun egg balancing") ]
                             )
                           )
-                          Text(" after the first day of spring in the Chinese calendar. There is nothing special about the spring and fall equinoxes that allows an egg to balance on end. A person with enough ")
+                          WtText(" after the first day of spring in the Chinese calendar. There is nothing special about the spring and fall equinoxes that allows an egg to balance on end. A person with enough ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -931,7 +931,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(" can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.")
+                          WtText(" can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.")
                         ])
                         Newline("\n")
                       ]
@@ -949,11 +949,11 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
-          [ Text("\"Breakstep Bridge\"") ]
+          [ WtText("\"Breakstep Bridge\"") ]
           [
             Newline("\n")
             Paragraph([
-              Text("In a revisit of the ")
+              WtText("In a revisit of the ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -965,10 +965,10 @@ ParsedWikitextPage(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
-                  [ Text("Breakstep Bridge") ]
+                  [ WtText("Breakstep Bridge") ]
                 )
               )
-              Text(" myth, Adam and Jamie decide that the suspension bridge that Adam had built was too stable to accurately test, so they build a simple ")
+              WtText(" myth, Adam and Jamie decide that the suspension bridge that Adam had built was too stable to accurately test, so they build a simple ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -978,7 +978,7 @@ ParsedWikitextPage(
 
                 LinkTitle([ ])
               )
-              Text(" and test it under Adam's weight.")
+              WtText(" and test it under Adam's weight.")
               TagExtension(
                 Properties:
                   RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
@@ -987,7 +987,7 @@ ParsedWikitextPage(
 
                 [ ]
               )
-              Text(" This test was also aired in ")
+              WtText(" This test was also aired in ")
               Italics(
                 Properties:
                   RTD = RtData: [0] = "''", [1] = "''"
@@ -1004,12 +1004,12 @@ ParsedWikitextPage(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
-                      [ Text("MythBusters Outtakes") ]
+                      [ WtText("MythBusters Outtakes") ]
                     )
                   )
                 ]
               )
-              Text(".")
+              WtText(".")
             ])
             Newline("\n")
             Newline("\n")
@@ -1024,7 +1024,7 @@ ParsedWikitextPage(
                     {N} hasValue = true
                     {N} name = "class"
 
-                  [ Text("wikitable") ]
+                  [ WtText("wikitable") ]
                 )
               ]
               [
@@ -1034,7 +1034,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Myth statement") ])
+                    Paragraph([ WtText(" Myth statement") ])
                     Newline("\n")
                   ]
                 )
@@ -1044,7 +1044,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Status") ])
+                    Paragraph([ WtText(" Status") ])
                     Newline("\n")
                   ]
                 )
@@ -1054,7 +1054,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Notes") ])
+                    Paragraph([ WtText(" Notes") ])
                     Newline("\n")
                   ]
                 )
@@ -1070,7 +1070,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.") ])
+                        Paragraph([ WtText(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.") ])
                         Newline("\n")
                       ]
                     )
@@ -1085,11 +1085,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:orange") ]
+                          [ WtText("color:orange") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Plausible") ])
+                        Paragraph([ WtText(" Plausible") ])
                         Newline("\n")
                       ]
                     )
@@ -1099,7 +1099,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" The bridge was able to hold Adam's weight until he started bouncing on it.") ])
+                        Paragraph([ WtText(" The bridge was able to hold Adam's weight until he started bouncing on it.") ])
                         Newline("\n")
                       ]
                     )
@@ -1116,18 +1116,18 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
-          [ Text("\"Mini Shark Myths\"") ]
+          [ WtText("\"Mini Shark Myths\"") ]
           [
             Newline("\n")
             Paragraph([
-              Text("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
+              WtText("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
               Italics(
                 Properties:
                   RTD = RtData: [0] = "''", [1] = "''"
 
-                [ Text("Jaws") ]
+                [ WtText("Jaws") ]
               )
-              Text(" in particular.")
+              WtText(" in particular.")
               TagExtension(
                 Properties:
                   RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
@@ -1150,7 +1150,7 @@ ParsedWikitextPage(
                     {N} hasValue = true
                     {N} name = "class"
 
-                  [ Text("wikitable") ]
+                  [ WtText("wikitable") ]
                 )
               ]
               [
@@ -1160,7 +1160,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Myth statement") ])
+                    Paragraph([ WtText(" Myth statement") ])
                     Newline("\n")
                   ]
                 )
@@ -1170,7 +1170,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Status") ])
+                    Paragraph([ WtText(" Status") ])
                     Newline("\n")
                   ]
                 )
@@ -1180,7 +1180,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Notes") ])
+                    Paragraph([ WtText(" Notes") ])
                     Newline("\n")
                   ]
                 )
@@ -1196,7 +1196,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Sharks tend to be attracted to brighter colors like yellow.") ])
+                        Paragraph([ WtText(" Sharks tend to be attracted to brighter colors like yellow.") ])
                         Newline("\n")
                       ]
                     )
@@ -1211,11 +1211,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:orange") ]
+                          [ WtText("color:orange") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Plausible") ])
+                        Paragraph([ WtText(" Plausible") ])
                         Newline("\n")
                       ]
                     )
@@ -1225,7 +1225,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.") ])
+                        Paragraph([ WtText(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.") ])
                         Newline("\n")
                       ]
                     )
@@ -1243,7 +1243,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Sharks can detect a single drop of blood dropped into a pool of water.") ])
+                        Paragraph([ WtText(" Sharks can detect a single drop of blood dropped into a pool of water.") ])
                         Newline("\n")
                       ]
                     )
@@ -1258,11 +1258,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:red") ]
+                          [ WtText("color:red") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Busted") ])
+                        Paragraph([ WtText(" Busted") ])
                         Newline("\n")
                       ]
                     )
@@ -1273,7 +1273,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ")
+                          WtText(" The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ")
                           InternalLink(
                             Properties:
                               {N} postfix = "s"
@@ -1283,7 +1283,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(", and ")
+                          WtText(", and ")
                           InternalLink(
                             Properties:
                               {N} postfix = "s"
@@ -1295,10 +1295,10 @@ ParsedWikitextPage(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
-                              [ Text("great white") ]
+                              [ WtText("great white") ]
                             )
                           )
-                          Text(" or ")
+                          WtText(" or ")
                           InternalLink(
                             Properties:
                               {N} postfix = "s"
@@ -1308,7 +1308,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(" might have gotten different results.")
+                          WtText(" might have gotten different results.")
                         ])
                         Newline("\n")
                       ]
@@ -1328,7 +1328,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" A shark's skin is rough enough to be used as ")
+                          WtText(" A shark's skin is rough enough to be used as ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -1338,7 +1338,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(".")
+                          WtText(".")
                         ])
                         Newline("\n")
                       ]
@@ -1354,11 +1354,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:green") ]
+                          [ WtText("color:green") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Confirmed") ])
+                        Paragraph([ WtText(" Confirmed") ])
                         Newline("\n")
                       ]
                     )
@@ -1368,7 +1368,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.") ])
+                        Paragraph([ WtText(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.") ])
                         Newline("\n")
                       ]
                     )
@@ -1387,7 +1387,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" There is a ")
+                          WtText(" There is a ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -1397,7 +1397,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(" a casual observer can use to adequately estimate the size of a shark.")
+                          WtText(" a casual observer can use to adequately estimate the size of a shark.")
                         ])
                         Newline("\n")
                       ]
@@ -1413,11 +1413,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:red") ]
+                          [ WtText("color:red") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Busted") ])
+                        Paragraph([ WtText(" Busted") ])
                         Newline("\n")
                       ]
                     )
@@ -1427,7 +1427,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.") ])
+                        Paragraph([ WtText(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.") ])
                         Newline("\n")
                       ]
                     )
@@ -1446,10 +1446,10 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("Outtakes") ]
+      [ WtText("Outtakes") ]
       [
         Newline("\n")
-        Paragraph([ Text("During live appearances by the MythBusters, they have screened additional segments that were not aired.") ])
+        Paragraph([ WtText("During live appearances by the MythBusters, they have screened additional segments that were not aired.") ])
         Newline("\n")
         Newline("\n")
         Section(
@@ -1457,11 +1457,11 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
-          [ Text("\"Facts About Flatulence\"") ]
+          [ WtText("\"Facts About Flatulence\"") ]
           [
             Newline("\n")
             Paragraph([
-              Text("There were two additional myths addressed in addition to those in the ")
+              WtText("There were two additional myths addressed in addition to those in the ")
               Italics(
                 Properties:
                   RTD = RtData: [0] = "''", [1] = "''"
@@ -1478,12 +1478,12 @@ ParsedWikitextPage(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
-                      [ Text("Franklin's Kite") ]
+                      [ WtText("Franklin's Kite") ]
                     )
                   )
                 ]
               )
-              Text(" episode.  These two myths did not air because they were thought to be inappropriate for younger viewers.")
+              WtText(" episode.  These two myths did not air because they were thought to be inappropriate for younger viewers.")
             ])
             Newline("\n")
             Newline("\n")
@@ -1498,7 +1498,7 @@ ParsedWikitextPage(
                     {N} hasValue = true
                     {N} name = "class"
 
-                  [ Text("wikitable") ]
+                  [ WtText("wikitable") ]
                 )
               ]
               [
@@ -1508,7 +1508,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Myth statement") ])
+                    Paragraph([ WtText(" Myth statement") ])
                     Newline("\n")
                   ]
                 )
@@ -1518,7 +1518,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Status") ])
+                    Paragraph([ WtText(" Status") ])
                     Newline("\n")
                   ]
                 )
@@ -1528,7 +1528,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Notes") ])
+                    Paragraph([ WtText(" Notes") ])
                     Newline("\n")
                   ]
                 )
@@ -1544,7 +1544,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Attractive women do not pass gas.") ])
+                        Paragraph([ WtText(" Attractive women do not pass gas.") ])
                         Newline("\n")
                       ]
                     )
@@ -1559,11 +1559,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:red") ]
+                          [ WtText("color:red") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Busted") ])
+                        Paragraph([ WtText(" Busted") ])
                         Newline("\n")
                       ]
                     )
@@ -1574,7 +1574,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" Kari wore underwear equipped with a microphone connected to an amplifier and a ")
+                          WtText(" Kari wore underwear equipped with a microphone connected to an amplifier and a ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -1584,7 +1584,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(" meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.")
+                          WtText(" meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.")
                           TagExtension(
                             Properties:
                               RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>"
@@ -1612,7 +1612,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" A ")
+                          WtText(" A ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -1622,7 +1622,7 @@ ParsedWikitextPage(
 
                             LinkTitle([ ])
                           )
-                          Text(" ")
+                          WtText(" ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -1634,10 +1634,10 @@ ParsedWikitextPage(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
-                              [ Text("can be ignited") ]
+                              [ WtText("can be ignited") ]
                             )
                           )
-                          Text(".")
+                          WtText(".")
                         ])
                         Newline("\n")
                       ]
@@ -1653,11 +1653,11 @@ ParsedWikitextPage(
                             {N} hasValue = true
                             {N} name = "style"
 
-                          [ Text("color:green") ]
+                          [ WtText("color:green") ]
                         )
                       ]
                       [
-                        Paragraph([ Text(" Confirmed") ])
+                        Paragraph([ WtText(" Confirmed") ])
                         Newline("\n")
                       ]
                     )
@@ -1668,7 +1668,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.")
+                          WtText(" Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.")
                           TagExtension(
                             Properties:
                               RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>"
@@ -1677,11 +1677,11 @@ ParsedWikitextPage(
 
                             [ ]
                           )
-                          Text(" The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).")
+                          WtText(" The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).")
                         ])
                         Newline("\n")
                         Newline("\n")
-                        Paragraph([ Text("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.") ])
+                        Paragraph([ WtText("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.") ])
                         Newline("\n")
                       ]
                     )
@@ -1698,11 +1698,11 @@ ParsedWikitextPage(
             RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
 
-          [ Text("\"MythBusters Teeth Challenge\"") ]
+          [ WtText("\"MythBusters Teeth Challenge\"") ]
           [
             Newline("\n")
             Paragraph([
-              Text("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
+              WtText("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -1714,10 +1714,10 @@ ParsedWikitextPage(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
-                  [ Text("Steam Cannon") ]
+                  [ WtText("Steam Cannon") ]
                 )
               )
-              Text("\" episode. However, on the Discovery Europe version, it is included in the episode.")
+              WtText("\" episode. However, on the Discovery Europe version, it is included in the episode.")
             ])
             Newline("\n")
             Newline("\n")
@@ -1732,7 +1732,7 @@ ParsedWikitextPage(
                     {N} hasValue = true
                     {N} name = "class"
 
-                  [ Text("wikitable") ]
+                  [ WtText("wikitable") ]
                 )
               ]
               [
@@ -1742,7 +1742,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Myth statement") ])
+                    Paragraph([ WtText(" Myth statement") ])
                     Newline("\n")
                   ]
                 )
@@ -1752,7 +1752,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Status") ])
+                    Paragraph([ WtText(" Status") ])
                     Newline("\n")
                   ]
                 )
@@ -1762,7 +1762,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" Notes") ])
+                    Paragraph([ WtText(" Notes") ])
                     Newline("\n")
                   ]
                 )
@@ -1778,7 +1778,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ Text(" Of all the MythBusters, Adam is the one with the brownest teeth. ") ])
+                        Paragraph([ WtText(" Of all the MythBusters, Adam is the one with the brownest teeth. ") ])
                         Newline("\n")
                       ]
                     )
@@ -1789,7 +1789,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" ")
+                          WtText(" ")
                           XmlElement(
                             Properties:
                               RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
@@ -1803,12 +1803,12 @@ ParsedWikitextPage(
                                   {N} hasValue = true
                                   {N} name = "color"
 
-                                [ Text("red") ]
+                                [ WtText("red") ]
                               )
                             ]
-                            [ Text("Busted") ]
+                            [ WtText("Busted") ]
                           )
-                          Text(", then ")
+                          WtText(", then ")
                           XmlElement(
                             Properties:
                               RTD = RtData: [0] = "<font", [1] = ">", [2] = "</font>"
@@ -1822,10 +1822,10 @@ ParsedWikitextPage(
                                   {N} hasValue = true
                                   {N} name = "color"
 
-                                [ Text("green") ]
+                                [ WtText("green") ]
                               )
                             ]
-                            [ Text("Confirmed") ]
+                            [ WtText("Confirmed") ]
                           )
                         ])
                         Newline("\n")
@@ -1838,7 +1838,7 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Paragraph([
-                          Text(" Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ")
+                          WtText(" Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ")
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -1850,10 +1850,10 @@ ParsedWikitextPage(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
-                              [ Text("teeth bleached") ]
+                              [ WtText("teeth bleached") ]
                             )
                           )
-                          Text(" to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).")
+                          WtText(" to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).")
                         ])
                         Newline("\n")
                       ]
@@ -1883,7 +1883,7 @@ ParsedWikitextPage(
 
           LinkTitle([ ])
         )
-        Text(" re-edited half hour shows")
+        WtText(" re-edited half hour shows")
       ]
       [
         Newline("\n")
@@ -1893,7 +1893,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
 
-            [ Text("inc-video") ]
+            [ WtText("inc-video") ]
             [ ]
           )
         ])
@@ -1909,14 +1909,14 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text("'s editions of ")
+          WtText("'s editions of ")
           Italics(
             Properties:
               RTD = RtData: [0] = "''", [1] = "''"
 
-            [ Text("MythBusters") ]
+            [ WtText("MythBusters") ]
           )
-          Text(" are narrated by ")
+          WtText(" are narrated by ")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -1926,7 +1926,7 @@ ParsedWikitextPage(
 
             LinkTitle([ ])
           )
-          Text(" in an energetic and irreverent style.")
+          WtText(" in an energetic and irreverent style.")
         ])
         Newline("\n")
         Newline("\n")
@@ -1941,7 +1941,7 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "class"
 
-              [ Text("wikitable") ]
+              [ WtText("wikitable") ]
             )
           ]
           [
@@ -1951,7 +1951,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ Text(" Date broadcast") ])
+                Paragraph([ WtText(" Date broadcast") ])
                 Newline("\n")
               ]
             )
@@ -1961,7 +1961,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ Text(" Myths") ])
+                Paragraph([ WtText(" Myths") ])
                 Newline("\n")
               ]
             )
@@ -1977,7 +1977,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" July 27, 2006") ])
+                    Paragraph([ WtText(" July 27, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -1988,7 +1988,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2000,10 +2000,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Penny Drop") ]
+                          [ WtText("Penny Drop") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2015,10 +2015,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Who Gets Wetter?") ]
+                          [ WtText("Who Gets Wetter?") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2030,7 +2030,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Exploding Toilet") ]
+                          [ WtText("Exploding Toilet") ]
                         )
                       )
                     ])
@@ -2051,7 +2051,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" August 3, 2006") ])
+                    Paragraph([ WtText(" August 3, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2062,7 +2062,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2074,10 +2074,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("CD-ROM Shattering") ]
+                          [ WtText("CD-ROM Shattering") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2089,10 +2089,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Silicone Breasts") ]
+                          [ WtText("Silicone Breasts") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2104,7 +2104,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Cell Phone Destruction") ]
+                          [ WtText("Cell Phone Destruction") ]
                         )
                       )
                     ])
@@ -2125,7 +2125,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" September 7, 2006") ])
+                    Paragraph([ WtText(" September 7, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2136,7 +2136,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2148,10 +2148,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Lightning Strikes Tongue Piercing") ]
+                          [ WtText("Lightning Strikes Tongue Piercing") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2163,10 +2163,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Cola Myths (partial; cleaning blood, pennies and chrome, dissolving teeth and steaks)") ]
+                          [ WtText("Cola Myths (partial; cleaning blood, pennies and chrome, dissolving teeth and steaks)") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2178,7 +2178,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Hammer Bridge Drop") ]
+                          [ WtText("Hammer Bridge Drop") ]
                         )
                       )
                     ])
@@ -2199,7 +2199,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" September 14, 2006") ])
+                    Paragraph([ WtText(" September 14, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2210,7 +2210,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2222,7 +2222,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("JATO Car, Pop Rocks and Soda (called \"Space Dust\" in the British narration, as it is the more common name for Pop Rocks in the UK)") ]
+                          [ WtText("JATO Car, Pop Rocks and Soda (called \"Space Dust\" in the British narration, as it is the more common name for Pop Rocks in the UK)") ]
                         )
                       )
                     ])
@@ -2243,7 +2243,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" September 21, 2006") ])
+                    Paragraph([ WtText(" September 21, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2254,7 +2254,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2266,10 +2266,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Buried Alive") ]
+                          [ WtText("Buried Alive") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2281,7 +2281,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Beat the Breath Test") ]
+                          [ WtText("Beat the Breath Test") ]
                         )
                       )
                     ])
@@ -2302,7 +2302,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" September 28, 2006") ])
+                    Paragraph([ WtText(" September 28, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2313,7 +2313,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2325,10 +2325,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Explosive Decompression") ]
+                          [ WtText("Explosive Decompression") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2340,10 +2340,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Rear Axle") ]
+                          [ WtText("Rear Axle") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2355,7 +2355,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Frog Giggin'") ]
+                          [ WtText("Frog Giggin'") ]
                         )
                       )
                     ])
@@ -2376,7 +2376,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" October 5, 2006") ])
+                    Paragraph([ WtText(" October 5, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2387,7 +2387,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2399,10 +2399,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Mad Trombonist") ]
+                          [ WtText("Mad Trombonist") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2414,10 +2414,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Goldfish Memory") ]
+                          [ WtText("Goldfish Memory") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2429,7 +2429,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Down with the Titanic") ]
+                          [ WtText("Down with the Titanic") ]
                         )
                       )
                     ])
@@ -2450,7 +2450,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" October 12, 2006") ])
+                    Paragraph([ WtText(" October 12, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2472,10 +2472,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Escape from Alcatraz") ]
+                          [ WtText("Escape from Alcatraz") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2487,10 +2487,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Mind Control Chips") ]
+                          [ WtText("Mind Control Chips") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2502,7 +2502,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Does a Duck's Quack Echo?") ]
+                          [ WtText("Does a Duck's Quack Echo?") ]
                         )
                       )
                     ])
@@ -2523,7 +2523,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" October 19, 2006") ])
+                    Paragraph([ WtText(" October 19, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2545,10 +2545,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Row Skiing") ]
+                          [ WtText("Row Skiing") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2560,10 +2560,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Surprise Toothbrush") ]
+                          [ WtText("Surprise Toothbrush") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2575,7 +2575,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Breakstep Bridge") ]
+                          [ WtText("Breakstep Bridge") ]
                         )
                       )
                     ])
@@ -2596,7 +2596,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" October 31, 2006") ])
+                    Paragraph([ WtText(" October 31, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2607,7 +2607,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2619,10 +2619,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("The Hunt for Hoffa") ]
+                          [ WtText("The Hunt for Hoffa") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2634,10 +2634,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Daddy Long-Legs") ]
+                          [ WtText("Daddy Long-Legs") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2649,7 +2649,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Jet Taxi") ]
+                          [ WtText("Jet Taxi") ]
                         )
                       )
                     ])
@@ -2670,7 +2670,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" November 7, 2006") ])
+                    Paragraph([ WtText(" November 7, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2681,7 +2681,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2693,10 +2693,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Lawn Chair Balloon") ]
+                          [ WtText("Lawn Chair Balloon") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2708,10 +2708,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Poppy Seed Drug Test") ]
+                          [ WtText("Poppy Seed Drug Test") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       Italics(
                         Properties:
                           RTD = RtData: [0] = "''", [1] = "''"
@@ -2728,7 +2728,7 @@ ParsedWikitextPage(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
-                              [ Text("Goldfinger") ]
+                              [ WtText("Goldfinger") ]
                             )
                           )
                         ]
@@ -2751,7 +2751,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" November 14, 2006") ])
+                    Paragraph([ WtText(" November 14, 2006") ])
                     Newline("\n")
                   ]
                 )
@@ -2762,7 +2762,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2774,10 +2774,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Chicken Gun (frozen or thawed?)") ]
+                          [ WtText("Chicken Gun (frozen or thawed?)") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2789,7 +2789,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Killer Laundry!") ]
+                          [ WtText("Killer Laundry!") ]
                         )
                       )
                     ])
@@ -2810,7 +2810,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ Text(" February 19, 2007") ])
+                    Paragraph([ WtText(" February 19, 2007") ])
                     Newline("\n")
                   ]
                 )
@@ -2821,7 +2821,7 @@ ParsedWikitextPage(
                   [ ]
                   [
                     Paragraph([
-                      Text(" ")
+                      WtText(" ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2833,10 +2833,10 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Vacuum Toilet") ]
+                          [ WtText("Vacuum Toilet") ]
                         )
                       )
-                      Text(", ")
+                      WtText(", ")
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -2848,7 +2848,7 @@ ParsedWikitextPage(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
-                          [ Text("Exploding Shopping") ]
+                          [ WtText("Exploding Shopping") ]
                         )
                       )
                     ])
@@ -2868,7 +2868,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("See also") ]
+      [ WtText("See also") ]
       [
         Newline("\n")
         UnorderedList([
@@ -2877,7 +2877,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1]
 
             [
-              Text(" ")
+              WtText(" ")
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -2899,7 +2899,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("References") ]
+      [ WtText("References") ]
       [
         Newline("\n")
         Paragraph([
@@ -2908,7 +2908,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
 
-            [ Text("Reflist") ]
+            [ WtText("Reflist") ]
             [ ]
           )
         ])
@@ -2921,7 +2921,7 @@ ParsedWikitextPage(
         RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
 
-      [ Text("External links") ]
+      [ WtText("External links") ]
       [
         Newline("\n")
         UnorderedList([
@@ -2930,7 +2930,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [
-              Text(" ")
+              WtText(" ")
               ExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> " " <o> "]" ]
@@ -2941,7 +2941,7 @@ ParsedWikitextPage(
                     {N} path = "//dsc.discovery.com/fansites/mythbusters/mythbusters.html"
                     {N} protocol = "http"
                 )
-                [ Text("MythBusters Official site") ]
+                [ WtText("MythBusters Official site") ]
               )
             ]
           )
@@ -2950,7 +2950,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1] = "\n"
 
             [
-              Text(" ")
+              WtText(" ")
               ExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> " " <o> "]" ]
@@ -2962,14 +2962,14 @@ ParsedWikitextPage(
                     {N} protocol = "http"
                 )
                 [
-                  Text("View the ")
+                  WtText("View the ")
                   Italics(
                     Properties:
                       RTD = RtData: [0] = "''", [1] = "''"
 
-                    [ Text("Facts About Flatulence") ]
+                    [ WtText("Facts About Flatulence") ]
                   )
-                  Text(" outtakes")
+                  WtText(" outtakes")
                 ]
               )
             ]
@@ -2979,29 +2979,29 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "*", [1]
 
             [
-              Text(" ")
+              WtText(" ")
               Template(
                 Properties:
                   RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
 
-                [ Text("imdb title") ]
+                [ WtText("imdb title") ]
                 [
                   TemplateArgument(
                     Properties:
                       RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
 
-                    [ Text("id") ]
-                    [ Text("0383126") ]
+                    [ WtText("id") ]
+                    [ WtText("0383126") ]
                   )
                   TemplateArgument(
                     Properties:
                       RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
 
-                    [ Text("title") ]
-                    [ Text("MythBusters") ]
+                    [ WtText("title") ]
+                    [ WtText("MythBusters") ]
                   )
                 ]
               )
@@ -3016,7 +3016,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
 
-            [ Text("MythBusters") ]
+            [ WtText("MythBusters") ]
             [ ]
           )
         ])
@@ -3028,7 +3028,7 @@ ParsedWikitextPage(
               RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
 
-            [ Text("DEFAULTSORT:Mythbusters") ]
+            [ WtText("DEFAULTSORT:Mythbusters") ]
             [ ]
           )
           Newline("\n")
@@ -3043,7 +3043,7 @@ ParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
-              [ Text("Special") ]
+              [ WtText("Special") ]
             )
           )
         ])

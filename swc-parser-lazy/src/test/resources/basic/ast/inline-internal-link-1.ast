@@ -5,7 +5,7 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[Link!"
           warnings = 
@@ -17,7 +17,7 @@ ParsedWikitextPage(
       Newline("\n")
     ])
     Paragraph([
-      Text(
+      WtText(
         Properties:
           {N} content = "[[File:Image.png|Title]"
           warnings = 
@@ -70,7 +70,7 @@ ParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
-              [ Text("Alternativer alternativer Text\n\t") ]
+              [ WtText("Alternativer alternativer Text\n\t") ]
             )
           {N} border = false
           {N} format = FRAME
@@ -106,7 +106,7 @@ ParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
-            [ Text("Alternativer Text\n\t") ]
+            [ WtText("Alternativer Text\n\t") ]
           )
           LinkOptionResize(
             Properties:
@@ -140,14 +140,14 @@ ParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
-            [ Text("Alternativer alternativer Text\n\t") ]
+            [ WtText("Alternativer alternativer Text\n\t") ]
           )
         ]
         LinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Title") ]
+          [ WtText("Title") ]
         )
       )
       Newline("\n")
@@ -201,7 +201,7 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("visible") ]
+          [ WtText("visible") ]
         )
       )
       Newline("\n")
@@ -233,7 +233,7 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Title") ]
+          [ WtText("Title") ]
         )
       )
       Newline("\n")
@@ -276,7 +276,7 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("Title") ]
+          [ WtText("Title") ]
         )
       )
       Newline("\n")
@@ -294,7 +294,7 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("arg0") ]
+          [ WtText("arg0") ]
         )
       )
       Newline("\n")
@@ -309,7 +309,7 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("arg0|http://blub.com") ]
+          [ WtText("arg0|http://blub.com") ]
         )
       )
       Newline("\n")
@@ -324,10 +324,10 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("arg0|[http://blub.com") ]
+          [ WtText("arg0|[http://blub.com") ]
         )
       )
-      Text("]")
+      WtText("]")
       Newline("\n")
       InternalLink(
         Properties:
@@ -340,10 +340,10 @@ ParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
-          [ Text("arg0|[http://bl|ub.com") ]
+          [ WtText("arg0|[http://bl|ub.com") ]
         )
       )
-      Text("]")
+      WtText("]")
       Newline("\n")
       Newline("\n")
     ])
@@ -358,7 +358,7 @@ ParsedWikitextPage(
         LinkTitle([ ])
       )
       Newline("\n")
-      Text("text ")
+      WtText("text ")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -368,9 +368,9 @@ ParsedWikitextPage(
 
         LinkTitle([ ])
       )
-      Text(" text")
+      WtText(" text")
       Newline("\n")
-      Text("text ")
+      WtText("text ")
       InternalLink(
         Properties:
           {N} postfix = "z"
@@ -380,9 +380,9 @@ ParsedWikitextPage(
 
         LinkTitle([ ])
       )
-      Text(" text")
+      WtText(" text")
       Newline("\n")
-      Text("text ")
+      WtText("text ")
       InternalLink(
         Properties:
           {N} postfix = "z"
@@ -392,7 +392,7 @@ ParsedWikitextPage(
 
         LinkTitle([ ])
       )
-      Text(" text")
+      WtText(" text")
     ])
   ]
 )

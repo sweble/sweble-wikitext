@@ -8,8 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>Semi Pre Block Level Element</h1> <h2>Grammar</h2>
  * <ul>
@@ -35,7 +33,7 @@ public class SemiPre
 		
 	}
 	
-	public SemiPre(NodeList content)
+	public SemiPre(WtList content)
 	{
 		super(content);
 		

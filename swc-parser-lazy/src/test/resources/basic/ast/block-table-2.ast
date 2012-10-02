@@ -15,7 +15,7 @@ ParsedWikitextPage(
             {N} hasValue = true
             {N} name = "border"
 
-          [ Text("1") ]
+          [ WtText("1") ]
         )
       ]
       [
@@ -30,11 +30,11 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "class"
 
-              [ Text("bar") ]
+              [ WtText("bar") ]
             )
           ]
           [
-            Paragraph([ Text(" Header") ])
+            Paragraph([ WtText(" Header") ])
             Newline("\n")
           ]
         )
@@ -59,7 +59,7 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "border"
 
-              [ Text("2") ]
+              [ WtText("2") ]
             )
           ]
           [
@@ -69,7 +69,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ Text(" class=\"foo\"") ])
+                Paragraph([ WtText(" class=\"foo\"") ])
                 Newline("\n")
               ]
             )

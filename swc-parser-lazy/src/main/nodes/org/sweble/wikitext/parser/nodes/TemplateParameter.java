@@ -9,7 +9,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 /**
  * <h1>TemplateParameter</h1> <h2>Grammar</h2>
@@ -25,14 +24,14 @@ public class TemplateParameter
 	
 	public TemplateParameter()
 	{
-		super(new NodeList(), new TemplateArgument(), new NodeList());
+		super(new WtList(), new TemplateArgument(), new WtList());
 		
 	}
 	
 	public TemplateParameter(
-			NodeList name,
+			WtList name,
 			TemplateArgument defaultValue,
-			NodeList garbage)
+			WtList garbage)
 	{
 		super(name, defaultValue, garbage);
 		
@@ -122,14 +121,14 @@ public class TemplateParameter
 	// =========================================================================
 	// Children
 	
-	public final void setName(NodeList name)
+	public final void setName(WtList name)
 	{
 		set(0, name);
 	}
 	
-	public final NodeList getName()
+	public final WtList getName()
 	{
-		return (NodeList) get(0);
+		return (WtList) get(0);
 	}
 	
 	public final void setDefaultValue(TemplateArgument defaultValue)
@@ -142,14 +141,14 @@ public class TemplateParameter
 		return (TemplateArgument) get(1);
 	}
 	
-	public final void setGarbage(NodeList garbage)
+	public final void setGarbage(WtList garbage)
 	{
 		set(2, garbage);
 	}
 	
-	public final NodeList getGarbage()
+	public final WtList getGarbage()
 	{
-		return (NodeList) get(2);
+		return (WtList) get(2);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "defaultValue", "garbage" };

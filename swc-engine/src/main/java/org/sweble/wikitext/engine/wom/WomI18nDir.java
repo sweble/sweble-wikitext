@@ -17,7 +17,7 @@
 package org.sweble.wikitext.engine.wom;
 
 /**
- * Text direction inside an element.
+ * WtText direction inside an element.
  */
 public enum WomI18nDir
 {

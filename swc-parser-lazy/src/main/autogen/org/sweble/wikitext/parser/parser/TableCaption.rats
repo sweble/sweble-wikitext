@@ -30,8 +30,8 @@
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CAPTION
  *
  *     Children:
- *       xmlAttributes : NodeList
- *       body          : NodeList
+ *       xmlAttributes : WtList
+ *       body          : WtList
  *
  */
 
@@ -48,7 +48,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 // -- Table Caption --[ State Aware Memoization ]-------------------------------
 
-noinline transient AstNode TableCaption =
+noinline transient WikitextNode TableCaption =
  ^{
     StateAwareResult r = (StateAwareResult) pTableCaptionMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -60,7 +60,7 @@ noinline transient AstNode TableCaption =
   }
 ;
 
-noinline memoized AstNode TableCaptionMemoized =
+noinline memoized WikitextNode TableCaptionMemoized =
   ^{
       Result yyResult = new StateAwareResult("TableCaption", getContext(), pTableCaptionTransient(yyBase));
       if (returnTrue(yyResult))
@@ -73,26 +73,26 @@ noinline memoized AstNode TableCaptionMemoized =
 
 // -- Table Caption ------------------------------------------------------------
 
-noinline transient AstNode TableCaptionTransient =
+noinline transient WikitextNode TableCaptionTransient =
     rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &FollowUpSanityCheck
     {
-      yyValue = new TableCaption(attributes._1, body);
+      yyValue = new TableCaption(attributes.getForeign(0, WtList.class), body);
 
       // TODO: Issue warning if garbage is more than just whitespace
       if (isGatherRtData())
         addRtData(yyValue,
             joinRt(rt0, "|+"),
-            (Object[]) attributes._2,
+            (Object[]) attributes.getForeign(1, Object.class),
             joinRt(garbage));
     }
   / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
     {
-      yyValue = new TableCaption(attributes._1, body);
+      yyValue = new TableCaption(attributes.getForeign(0, WtList.class), body);
 
       if (isGatherRtData())
         addRtData(yyValue,
             joinRt(rt0, "|+"),
-            (Object[]) attributes._2,
+            (Object[]) attributes.getForeign(1, Object.class),
             null);
     }
 ;
@@ -121,13 +121,13 @@ private inline void ExpectedFollowUp =
 
 // -- Table Caption Attributes -------------------------------------------------
 
-private Tuple2<NodeList, Object> Attributes =
+private ForeignNode Attributes =
     &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
     {
-      yyValue = Tuple.from(attrs, (Object) joinRt(ws, '|'));
+      yyValue = ForeignNode.from(attrs, (Object) joinRt(ws, '|'));
     }
   / {
-      yyValue = Tuple.from(new NodeList(), null);
+      yyValue = ForeignNode.from(new WtList(), null);
     }
 ;
 
@@ -140,14 +140,14 @@ private transient void AttrPossible =
 
 // -- Table Caption Content ----------------------------------------------------
 
-private inline stateful NodeList InlineContentStar =
+private inline stateful WtList InlineContentStar =
   {
     enter(ParserScopes.TABLE_INLINE_CELL);
   }
   InlineContentPlus
 ;
 
-private inline stateful NodeList BlockContentStar =
+private inline stateful WtList BlockContentStar =
   {
     enter(ParserScopes.TABLE_CELL);
   }

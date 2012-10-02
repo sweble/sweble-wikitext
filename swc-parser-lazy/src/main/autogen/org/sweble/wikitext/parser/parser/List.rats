@@ -25,13 +25,13 @@
  *
  *   AST node:
  *     Name        : RawListItem
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "content, rt0, rt1, prefix"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_RAW_LIST_ITEM
  *
  *     Properties:
  *       rt0     : String
- *       rt1     : AstNode
+ *       rt1     : WikitextNode
  *       prefix  : String
  *
  * OrderedList
@@ -39,7 +39,7 @@
  *
  *   AST node:
  *     Name        : OrderedList
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
  *
  * ListItem
@@ -47,7 +47,7 @@
  *
  *   AST node:
  *     Name        : ListItem
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
  *
@@ -56,7 +56,7 @@
  *
  *   AST node:
  *     Name        : UnorderedList
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
  *
  * ListItem
@@ -64,7 +64,7 @@
  *
  *   AST node:
  *     Name        : ListItem
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
  *
@@ -73,7 +73,7 @@
  *
  *   AST node:
  *     Name        : DefinitionList
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
  *
  * DefinitionListTerm
@@ -81,7 +81,7 @@
  *
  *   AST node:
  *     Name        : DefinitionListTerm
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
  *
@@ -90,7 +90,7 @@
  *
  *   AST node:
  *     Name        : DefinitionListDef
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION
  *
@@ -125,9 +125,9 @@ body
   {
     public ListType type;
 
-    public ContentNode node;
+    public WtContentNode node;
 
-    public ListNode(ListType type, ContentNode node)
+    public ListNode(ListType type, WtContentNode node)
     {
       this.type = type;
       this.node = node;
@@ -174,13 +174,13 @@ body
     if (createItem)
     {
       // FIXME: Issue warning!
-      pushNewListItem(listStack, ch, new NodeList());
+      pushNewListItem(listStack, ch, new WtList());
     }
   }
 
-  private AstNode pushNewListItem(Vector<ListNode> listStack, char ch, NodeList content)
+  private WikitextNode pushNewListItem(Vector<ListNode> listStack, char ch, WtList content)
   {
-    AstNode n = null;
+    WikitextNode n = null;
     switch (ch)
     {
       case '*':
@@ -200,24 +200,24 @@ body
     return n;
   }
 
-  private NodeList getCurrentListContent(Vector<ListNode> listStack)
+  private WtList getCurrentListContent(Vector<ListNode> listStack)
   {
     return listStack.lastElement().node.getContent();
   }
 
-  private NodeList getLastItemContent(Vector<ListNode> listStack)
+  private WtList getLastItemContent(Vector<ListNode> listStack)
   {
-    NodeList items = getCurrentListContent(listStack);
-    ContentNode lastItem = (ContentNode) items.get(items.size() - 1);
-    NodeList lastItemContent = lastItem.getContent();
+    WtList items = getCurrentListContent(listStack);
+    WtContentNode lastItem = (WtContentNode) items.get(items.size() - 1);
+    WtList lastItemContent = lastItem.getContent();
     return lastItemContent;
   }
 
-  private NodeList makeList(RawListItem first, Pair<RawListItem> tail)
+  private WtList makeList(RawListItem first, Pair<RawListItem> tail)
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
-    NodeList items = new NodeList();
+    WtList items = new WtList();
 
     RtData lastItem = processListItem(listStack, items, first);
 
@@ -237,7 +237,7 @@ body
     return items;
   }
 
-  private RtData processListItem(Vector<ListNode> listStack, NodeList items, RawListItem p)
+  private RtData processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
   {
     String prefix = p.getPrefix();
 
@@ -260,10 +260,10 @@ body
       pushNewList(listStack, prefix.charAt(j), j < last);
 
     // push the actual list item
-    AstNode item = pushNewListItem(
+    WikitextNode item = pushNewListItem(
         listStack,
         prefix.charAt(last),
-        new NodeList(p.getContent()));
+        new WtList(p.getContent()));
 
     RtData rtData = null;
     if (isGatherRtData())
@@ -281,7 +281,7 @@ body
 
 // -- List --[ State Aware Memoization ]-------------------------------------
 
-noinline transient AstNode List =
+noinline transient WikitextNode List =
  ^{
     StateAwareResult r = (StateAwareResult) pListMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -293,7 +293,7 @@ noinline transient AstNode List =
   }
 ;
 
-noinline memoized AstNode ListMemoized =
+noinline memoized WikitextNode ListMemoized =
  ^{
     Result yyResult = new StateAwareResult("List", getContext(), pListTransient(yyBase));
     if (returnTrue(yyResult))
@@ -306,7 +306,7 @@ noinline memoized AstNode ListMemoized =
 
 // -- List ------------------------------------------------------------------
 
-noinline transient AstNode ListTransient =
+noinline transient WikitextNode ListTransient =
   &{ accept(ParserAtoms.LIST) } first:ListItem tail:( &slEol ListItem )*
   {
     yyValue = makeList(first, tail);
@@ -336,7 +336,7 @@ private transient String ListPrefixStr =
   [*#:]+
 ;
 
-private inline stateful NodeList ListItemContentStar =
+private inline stateful WtList ListItemContentStar =
   {
     enter(ParserScopes.LIST_ITEM);
   }

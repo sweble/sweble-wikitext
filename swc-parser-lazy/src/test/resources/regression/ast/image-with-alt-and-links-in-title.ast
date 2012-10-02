@@ -12,7 +12,7 @@ ParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
-              [ Text("Y") ]
+              [ WtText("Y") ]
             )
           {N} border = false
           {N} format = THUMBNAIL
@@ -36,7 +36,7 @@ ParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
-            [ Text("Y") ]
+            [ WtText("Y") ]
           )
         ]
         LinkTitle(

@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 

@@ -85,13 +85,13 @@ header
 
 body
 {
-  private AstNode makeP(NodeList pre, NodeList p, NodeList post)
+  private WikitextNode makeP(WtList pre, WtList p, WtList post)
   {
-    NodeList l = null;
+    WtList l = null;
     if (pre != null)
     {
       int i = 0;
-      for (AstNode n : pre)
+      for (WikitextNode n : pre)
       {
         if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
         {
@@ -103,10 +103,10 @@ body
 
       if (i > 2)
       {
-        l = new NodeList();
+        l = new WtList();
 
         i = 0;
-        for (AstNode n : pre)
+        for (WikitextNode n : pre)
         {
           if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
           {
@@ -132,14 +132,14 @@ body
       }
       else
       {
-        l = new NodeList();
+        l = new WtList();
         l.add(pre);
         l.add(IntermediateTags.PARAGRAPH.createOpen(false));
       }
     }
     else
     {
-      l = new NodeList();
+      l = new WtList();
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
     }
 
@@ -151,7 +151,7 @@ body
     int i = 0;
     if (post != null)
     {
-      for (AstNode n : post)
+      for (WikitextNode n : post)
       {
         if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
           ++i;
@@ -160,7 +160,7 @@ body
 
     if (i > 2)
     {
-      for (AstNode n : post)
+      for (WikitextNode n : post)
       {
         if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
         {
@@ -194,24 +194,24 @@ body
 /* BolBlockContent = ( LineStartProd / Paragraph )*
  */
 
-noinline transient NodeList BolBlockContent =
+noinline transient WtList BolBlockContent =
   content:Block*
   {
-    yyValue = new NodeList(content);
+    yyValue = new WtList(content);
   }
 ;
 
 /* BlockContent = Paragraph ( LineStartProd / Paragraph )*
  */
 
-noinline transient NodeList BlockContent =
+noinline transient WtList BlockContent =
   head:Paragraph tail:Block*
   {
-    yyValue = new NodeList(head, tail);
+    yyValue = new WtList(head, tail);
   }
 ;
 
-private inline AstNode Block =
+private inline WikitextNode Block =
   !BlockStopper ( LineStartProd / Paragraph )
 ;
 
@@ -220,7 +220,7 @@ private inline void BlockStopper =
   / BlockStopperNextTableElement
 ;
 
-private noinline transient AstNode LineStartProd =
+private noinline transient WikitextNode LineStartProd =
     &( pExtSpaceStar "{|"   ) Table
   / &( pTpStar       "---"  ) HorizontalRule
   / &( pTpStar       [*#:;] ) List
@@ -233,7 +233,7 @@ private noinline transient AstNode LineStartProd =
 
 // -- Paragraph --[ State Aware Memoization ]-----------------------------------
 
-noinline transient AstNode Paragraph =
+noinline transient WikitextNode Paragraph =
  ^{
     StateAwareResult r = (StateAwareResult) pParagraphMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -245,7 +245,7 @@ noinline transient AstNode Paragraph =
   }
 ;
 
-noinline memoized AstNode ParagraphMemoized =
+noinline memoized WikitextNode ParagraphMemoized =
  ^{
     Result yyResult = new StateAwareResult("Paragraph", getContext(), pParagraphTransient(yyBase));
     if (returnTrue(yyResult))
@@ -263,12 +263,12 @@ noinline memoized AstNode ParagraphMemoized =
  *           / ParagraphText PostParaWs?
  */
 
-noinline transient AstNode ParagraphTransient =
+noinline transient WikitextNode ParagraphTransient =
     pre:PreParaWs !ParagraphStopper p:ParagraphText post:PostParaWs?
     {
-      yyValue = makeP(pre, (NodeList) p, post);
+      yyValue = makeP(pre, (WtList) p, post);
       /*
-      NodeList l = new NodeList();
+      WtList l = new WtList();
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
       l.add(pre);
       l.add(p);
@@ -279,13 +279,13 @@ noinline transient AstNode ParagraphTransient =
     }
   / PreParaWs
     {
-      yyValue = makeP((NodeList) yyResult.semanticValue(), null, null);
+      yyValue = makeP((WtList) yyResult.semanticValue(), null, null);
     }
   / p:ParagraphText post:PostParaWs?
     {
-      yyValue = makeP(null, (NodeList) p, post);
+      yyValue = makeP(null, (WtList) p, post);
       /*
-      NodeList l = new NodeList();
+      WtList l = new WtList();
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
       l.add(p);
       l.add(post);
@@ -303,43 +303,43 @@ private inline void ParagraphStopper =
 /* PreParaWs = S* EOL ( S* EOL )*
  */
 
-private noinline transient NodeList PreParaWs =
+private noinline transient WtList PreParaWs =
   s:pExtSpaceStar lt:pEolNode tail:PreParaWsMore*
   {
-    yyValue = new NodeList(s, lt, new NodeList(tail));
+    yyValue = new WtList(s, lt, new WtList(tail));
     /*
     yyValue = new Whitespace(
-        new NodeList(s, new Text(lt), new NodeList(tail)),
+        new WtList(s, new WtText(lt), new WtList(tail)),
         true);
     */
   }
 ;
 
-private inline NodeList PreParaWsMore =
+private inline WtList PreParaWsMore =
   !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
-    yyValue = new NodeList(s, lt);
+    yyValue = new WtList(s, lt);
   }
 ;
 
 /* ParagraphText = Content+ ( EOL Content+ )*
  */
 
-private noinline transient AstNode ParagraphText =
+private noinline transient WikitextNode ParagraphText =
   head:InlineContentPlus tail:ParagraphTextMore*
   {
-    yyValue = new NodeList(head, tail);
+    yyValue = new WtList(head, tail);
   }
 ;
 
-private inline AstNode ParagraphTextMore =
+private inline WikitextNode ParagraphTextMore =
   lt:pEolNode !ParagraphStopper s:pExtSpaceStar c:InlineContentPlus
   {
-    yyValue = new NodeList(lt, s, c);
+    yyValue = new WtList(lt, s, c);
     /*
-    yyValue = new NodeList(
+    yyValue = new WtList(
         new Whitespace(
-          new NodeList(new Text(lt)),
+          new WtList(new WtText(lt)),
           true),
         s,
         c);
@@ -350,26 +350,26 @@ private inline AstNode ParagraphTextMore =
 /* PostParaWs = EOL ( S* EOL )*
  */
 
-private noinline transient NodeList PostParaWs =
+private noinline transient WtList PostParaWs =
   lt:pEolNode tail:PostParaWsMore* ( &ParagraphStopper / !ParagraphText )
   {
-    yyValue = new NodeList(lt, tail);
+    yyValue = new WtList(lt, tail);
     /*
-    yyValue = new NodeList(
-        new Whitespace(new NodeList(new Text(lt)), true),
+    yyValue = new WtList(
+        new Whitespace(new WtList(new WtText(lt)), true),
         tail);
     */
   }
 ;
 
-private inline NodeList PostParaWsMore =
+private inline WtList PostParaWsMore =
   !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
-    yyValue = new NodeList(s, lt);
+    yyValue = new WtList(s, lt);
     /*
-    yyValue = new NodeList(
+    yyValue = new WtList(
         s,
-        new Whitespace(new NodeList(new Text(lt)), true));
+        new Whitespace(new WtList(new WtText(lt)), true));
     */
   }
 ;
@@ -379,15 +379,15 @@ private noinline transient Whitespace PostParaWs =
   lt:pEol tail:PostParaWsMore*
   {
     yyValue = new Whitespace(
-        new NodeList(new Text(lt), new NodeList(tail)),
+        new WtList(new WtText(lt), new WtList(tail)),
         true);
   }
 ;
 
-private inline NodeList PostParaWsMore =
+private inline WtList PostParaWsMore =
   !ParagraphStopper s:pExtSpaceStar lt:pEol
   {
-    yyValue = new NodeList(s, new Text(lt));
+    yyValue = new WtList(s, new WtText(lt));
   }
 ;
 */
@@ -400,14 +400,14 @@ private inline NodeList PostParaWsMore =
 /* InlineBlockContent = InlineTextBlock ( LineStartProd / InlineTextBlock )
  */
 
-noinline transient NodeList InlineBlockContent =
+noinline transient WtList InlineBlockContent =
   head:( !BlockStopper InlineTextBlock )? tail:InlineBlock*
   {
-    yyValue = new NodeList(head, new NodeList(tail));
+    yyValue = new WtList(head, new WtList(tail));
   }
 ;
 
-private inline AstNode InlineBlock =
+private inline WikitextNode InlineBlock =
   !BlockStopper ( LineStartProd / InlineTextBlock )
 ;
 
@@ -415,21 +415,21 @@ private inline AstNode InlineBlock =
  *                 /          ( EOL Content* )+
  */
 
-private transient AstNode InlineTextBlock =
+private transient WikitextNode InlineTextBlock =
     head:InlineContentPlus tail:InlineTextBlockMore*
     {
-      yyValue = new NodeList(head, tail);
+      yyValue = new WtList(head, tail);
     }
   / tail:InlineTextBlockMore+
     {
-      yyValue = new NodeList(tail);
+      yyValue = new WtList(tail);
     }
 ;
 
-private inline AstNode InlineTextBlockMore =
+private inline WikitextNode InlineTextBlockMore =
   lt:pEol more:( !ParagraphStopper InlineContentPlus )?
   {
-    yyValue = new NodeList(new Text(lt), more);
+    yyValue = new WtList(new WtText(lt), more);
   }
 ;
 
@@ -438,17 +438,17 @@ private inline AstNode InlineTextBlockMore =
 
 // -- Inline Content -----------------------------------------------------------
 
-transient NodeList InlineContentStar =
+transient WtList InlineContentStar =
   content:InlineContentChoice*
   {
-    yyValue = new NodeList(content);
+    yyValue = new WtList(content);
   }
 ;
 
-transient NodeList InlineContentPlus =
+transient WtList InlineContentPlus =
   content:InlineContentChoice+
   {
-    yyValue = new NodeList(content);
+    yyValue = new WtList(content);
   }
 ;
 
@@ -457,7 +457,7 @@ transient NodeList InlineContentPlus =
  * ContentAtoms will never fail if there is a ContentAtom prefix. If it's not a
  * real ContentAtom or the respective ContentAtom is not allowed in a given
  * context the production responsible for the prefix will consume a part of the
- * prefix and return a Text node containing only the consumed prefix. That's
+ * prefix and return a WtText node containing only the consumed prefix. That's
  * why ContentAtoms will never fail if there is a ContentAtom prefix.
  *
  * Eventually this production will only fail, if it encounters a
@@ -470,7 +470,7 @@ transient NodeList InlineContentPlus =
  * details). The same goes for internal links and their prefix.
  */
 
-private transient AstNode InlineContentChoice =
+private transient WikitextNode InlineContentChoice =
     text:TextPlus ':' &{ accept(ParserAtoms.PLAIN_EXTERNAL_LINK) } path:UrlPathString &{ isProtocol(text, path) }
     {
       yyValue = makeExternalLink(text, path);
@@ -479,13 +479,13 @@ private transient AstNode InlineContentChoice =
     {
       yyValue = link.isNodeType(AstNodeTypes.NT_INTERNAL_LINK) ?
           addLinkPrefix(text, (InternalLink) link) :
-          new NodeList(text, link);
+          new WtList(text, link);
     }
   / TextPlus
   / !InlineContentStopper InlineContentAtom
   / !InlineContentStopper text:TextStopperPrefix
     {
-      yyValue = new Text(text);
+      yyValue = new WtText(text);
     }
 ;
 
@@ -494,7 +494,7 @@ private transient AstNode InlineContentChoice =
  * And sort of to remind us which production is responsible for which prefix.
  */
 
-private inline AstNode InlineContentAtom =
+private inline WikitextNode InlineContentAtom =
     &"~~"     Signature
   / &"[["     InternalLink
   / &"["      ExternalLink
@@ -502,7 +502,7 @@ private inline AstNode InlineContentAtom =
   / &"__"     PageSwitch
   / &"<"      XmlElement
   / &"&"      XmlReference
-  / &"\uE000" ParserEntity
+  / &"\uE000" WtParserEntity
 ;
 
 private inline void InlineContentStopper =
@@ -515,17 +515,17 @@ private inline void InlineContentStopper =
 ;
 
 /* Plain text is basically everything that is not a ContentAtom (semantically,
- * a Text node is also a ContentAtom, however, it is not part of the respective
+ * a WtText node is also a ContentAtom, however, it is not part of the respective
  * production). Also plain text has to stop at so-called TextStoppers. These
  * are syntactic elements which are significant to the surrounding production
  * and must not become part of the plain text (in order for the surrounding
  * production to see and consume them).
  */
 
-private Text TextPlus =
+private WtText TextPlus =
   text:TextPlusStr
   {
-    yyValue = new Text(text);
+    yyValue = new WtText(text);
   }
 ;
 

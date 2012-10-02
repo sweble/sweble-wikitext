@@ -29,8 +29,8 @@
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_HEADER
  *
  *     Children:
- *       xmlAttributes : NodeList
- *       body          : NodeList
+ *       xmlAttributes : WtList
+ *       body          : WtList
  *
  */
 
@@ -47,7 +47,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 // -- Table Header --[ State Aware Memoization ]--------------------------------
 
-noinline transient AstNode TableHeader =
+noinline transient WikitextNode TableHeader =
  ^{
     StateAwareResult r = (StateAwareResult) pTableHeaderMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -59,7 +59,7 @@ noinline transient AstNode TableHeader =
   }
 ;
 
-noinline memoized AstNode TableHeaderMemoized =
+noinline memoized WikitextNode TableHeaderMemoized =
   ^{
       Result yyResult = new StateAwareResult("TableHeader", getContext(), pTableHeaderTransient(yyBase));
     if (returnTrue(yyResult))
@@ -72,10 +72,10 @@ noinline memoized AstNode TableHeaderMemoized =
 
 // -- Table Header -------------------------------------------------------------
 
-noinline transient AstNode TableHeaderTransient =
+noinline transient WikitextNode TableHeaderTransient =
     &( pExtSpaceStar '!' ) inline:TableInlineHeaderPlus last:TableBlockHeader?
     {
-      yyValue = new NodeList(inline, last);
+      yyValue = new WtList(inline, last);
     }
   / &( pExtSpaceStar '!' ) header:TableBlockHeader
     {
@@ -92,22 +92,22 @@ inline void InlineContentStopperTableHeader =
 
 // -- Table Inline Header ------------------------------------------------------
 
-private transient NodeList TableInlineHeaderPlus =
+private transient WtList TableInlineHeaderPlus =
   headers:( TableInlineHeader &( "||" / "!!" ) )+
   {
-    yyValue = new NodeList(headers);
+    yyValue = new WtList(headers);
   }
 ;
 
 private inline TableHeader TableInlineHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = new TableHeader(attributes._1, body);
+    yyValue = new TableHeader(attributes.getForeign(0, WtList.class), body);
 
     if (isGatherRtData())
       addRtData(yyValue,
           joinRt(rt0, prefix),
-          (Object[]) attributes._2,
+          (Object[]) attributes.getForeign(1, Object.class),
           null);
   }
 ;
@@ -120,12 +120,12 @@ private inline TableHeader TableInlineHeader =
 private inline TableHeader TableBlockHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = new TableHeader(attributes._1, body);
+    yyValue = new TableHeader(attributes.getForeign(0, WtList.class), body);
 
     if (isGatherRtData())
       addRtData(yyValue,
           joinRt(rt0, prefix),
-          (Object[]) attributes._2,
+          (Object[]) attributes.getForeign(1, Object.class),
           null);
   }
 ;
@@ -143,13 +143,13 @@ private inline void ExpectedFollowUp =
 
 // -- Table Header Attributes --------------------------------------------------
 
-private Tuple2<NodeList, Object> Attributes =
+private ForeignNode Attributes =
     &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
     {
-      yyValue = Tuple.from(attrs, (Object) joinRt(ws, '|'));
+      yyValue = ForeignNode.from(attrs, (Object) joinRt(ws, '|'));
     }
   / {
-      yyValue = Tuple.from(new NodeList(), null);
+      yyValue = ForeignNode.from(new WtList(), null);
     }
 ;
 
@@ -162,14 +162,14 @@ private transient void AttrPossible =
 
 // -- Table Header Inline Content ----------------------------------------------
 
-private inline stateful NodeList InlineContentStar =
+private inline stateful WtList InlineContentStar =
   {
     enter(ParserScopes.TABLE_INLINE_HEADER);
   }
   InlineContentPlus
 ;
 
-private inline stateful NodeList BlockContentStar =
+private inline stateful WtList BlockContentStar =
   {
     enter(ParserScopes.TABLE_CELL);
   }

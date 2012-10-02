@@ -21,7 +21,7 @@ ParsedWikitextPage(
                 {N} hasValue = true
                 {N} name = "border"
 
-              [ Text("2") ]
+              [ WtText("2") ]
             )
           ]
           [
@@ -31,7 +31,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ Text(" class=\"foo\"") ])
+                Paragraph([ WtText(" class=\"foo\"") ])
                 Newline("\n")
               ]
             )

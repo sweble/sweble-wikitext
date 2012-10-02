@@ -68,25 +68,25 @@ import org.sweble.wikitext.parser.utils.XmlName;
 
 // -- References ---------------------------------------------------------------
 
-AstNode XmlReference =
+WikitextNode XmlReference =
     '&' yyValue:XmlReferenceChoice
   / '&'
     {
-      yyValue = new Text("&");
+      yyValue = new WtText("&");
     }
 ;
 
-private inline AstNode XmlReferenceChoice =
+private inline WikitextNode XmlReferenceChoice =
     "#" yyValue:XmlCharRefChoice
   /     yyValue:XmlEntityRefChoice
   / &{ isWarningsEnabled() }
         yyValue:XmlReferenceAutoCorrect
 ;
 
-private inline AstNode XmlReferenceAutoCorrect =
+private inline WikitextNode XmlReferenceAutoCorrect =
   &{ isWarningLevelEnabled(WS_INFO) }
   {
-    yyValue = new Text("&");
+    yyValue = new WtText("&");
 
     fileLooksLikeWarning(
         yyValue,
@@ -97,7 +97,7 @@ private inline AstNode XmlReferenceAutoCorrect =
   }
 ;
 
-private inline AstNode XmlCharRefChoice =
+private inline WikitextNode XmlCharRefChoice =
     'x' ch:HexDigitPlus ';'
     {
       // TODO: check if valid char ref
@@ -121,7 +121,7 @@ private inline AstNode XmlCharRefChoice =
 /// &{ isWarningsEnabled() } XmlCharRefAutoCorrect
 ;
 
-private inline AstNode XmlEntityRefChoice =
+private inline WikitextNode XmlEntityRefChoice =
     name:XmlName ';'
     {
       // TODO: check if valid entity name

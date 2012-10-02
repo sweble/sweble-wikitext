@@ -36,7 +36,7 @@ body
       return getState().isGatherRtData();
   }
 
-  protected static RtData addRtData(AstNode yyValue, Object[]... rts)
+  protected static RtData addRtData(WikitextNode yyValue, Object[]... rts)
   {
   	return TextUtils.addRtData(yyValue, rts);
   }
@@ -51,7 +51,7 @@ body
   	TextUtils.rtAddString(result, so);
   }
 
-  protected static void prependRtData(AstNode n, String data)
+  protected static void prependRtData(WikitextNode n, String data)
   {
   	TextUtils.prependRtData(n, data);
   }

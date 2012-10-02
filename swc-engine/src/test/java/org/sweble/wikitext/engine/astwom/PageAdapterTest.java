@@ -16,8 +16,15 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womBody;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
 
 import org.junit.Rule;
 import org.junit.Test;

@@ -48,8 +48,8 @@
  *     Import      : java.util.List
  *
  *     Children:
- *       xmlAttributes : NodeList
- *       body          : NodeList
+ *       xmlAttributes : WtList
+ *       body          : WtList
  *
  */
 /*
@@ -58,7 +58,7 @@
  *     Properties:
  *       caption       : TableCaption
  *       header        : TableRow
- *       body          : NodeList
+ *       body          : WtList
  *       cols          : int
  */
 
@@ -83,13 +83,13 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 body
 {
   /*
-  private Table makeTable(NodeList attributes, NodeList body)
+  private Table makeTable(WtList attributes, WtList body)
   {
     int numCols = 0;
 
     TableCaption caption = null;
 
-    ArrayList<AstNode> cols = null;
+    ArrayList<WikitextNode> cols = null;
 
     TableRow header = null;
 
@@ -98,7 +98,7 @@ body
 
     boolean first = true;
 
-    for (AstNode node : body)
+    for (WikitextNode node : body)
     {
       switch (node.getNodeType())
       {
@@ -123,7 +123,7 @@ body
           if (curRow == null)
           {
             if (cols == null)
-              cols = new ArrayList<AstNode>();
+              cols = new ArrayList<WikitextNode>();
             cols.add(node);
           }
           break;
@@ -148,12 +148,12 @@ body
             caption,
             numCols,
             header,
-            new NodeList(rows));
+            new WtList(rows));
 
     return table;
   }
 
-  private int processRow(TableRow curRow, ArrayList<TableRow> rows, ArrayList<AstNode> cols)
+  private int processRow(TableRow curRow, ArrayList<TableRow> rows, ArrayList<WikitextNode> cols)
   {
     int size = 0;
     if (curRow != null)
@@ -164,7 +164,7 @@ body
     else if (cols != null)
     {
       size = cols.size();
-      rows.add(new TableRow(new NodeList(), new NodeList(cols)));
+      rows.add(new TableRow(new WtList(), new WtList(cols)));
     }
     return size;
   }
@@ -176,7 +176,7 @@ body
 
 // -- Table --[ State Aware Memoization ]---------------------------------------
 
-noinline transient AstNode Table =
+noinline transient WikitextNode Table =
  ^{
     StateAwareResult r = (StateAwareResult) pTableMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -188,7 +188,7 @@ noinline transient AstNode Table =
   }
 ;
 
-noinline memoized AstNode TableMemoized =
+noinline memoized WikitextNode TableMemoized =
  ^{
     Result yyResult = new StateAwareResult("Table", getContext(), pTableTransient(yyBase));
     if (returnTrue(yyResult))
@@ -219,45 +219,45 @@ inline void BlockStopperNextTableElement =
 private inline Table TableBody =
     head:TableHead rt2:pEol body:TableContentStar rt3:pExtSpaceStar close:"|}"?
     {
-      //yyValue = makeTable(head._2, body);
-      yyValue = new Table(head._2, body);
+      //yyValue = makeTable(head.getForeign(1, WtList.class), body);
+      yyValue = new Table(head.getForeign(1, WtList.class), body);
       if (isGatherRtData())
         addRtData(yyValue,
-                joinRt(head._1, "{|"),
-                joinRt(head._3, rt2),
+                joinRt(head.getForeign(0, WikitextNode.class), "{|"),
+                joinRt(head.getForeign(2, WikitextNode.class), rt2),
                 joinRt(rt3, close));
     }
   / head:TableHead Eof
     {
-      //yyValue = makeTable(head._2, new NodeList());
-      yyValue = new Table(head._2, new NodeList());
+      //yyValue = makeTable(head.getForeign(1, WtList.class), new WtList());
+      yyValue = new Table(head.getForeign(1, WtList.class), new WtList());
       if (isGatherRtData())
         addRtData(yyValue,
-                joinRt(head._1, "{|"),
-                joinRt(head._3),
+                joinRt(head.getForeign(0, WikitextNode.class), "{|"),
+                joinRt(head.getForeign(2, WikitextNode.class)),
                 null);
     }
   / &ShouldNotBeHere SantiyCheckEnd { yyValue = null; }
 ;
 
-private inline Tuple3<AstNode, NodeList, AstNode> TableHead =
+private inline ForeignNode TableHead =
   rt0:pExtSpaceStar "{|" attrs:TableAttributeStar rt1:pExtSpaceStar
   {
-    yyValue = Tuple.from(rt0, attrs, rt1);
+    yyValue = ForeignNode.from(rt0, attrs, rt1);
   }
 ;
 
-private transient stateful NodeList TableContentStar =
+private transient stateful WtList TableContentStar =
   {
     enter(ParserScopes.TABLE_ELEMENTS);
   }
   garbage:InlineBlockContent content:TableElement*
   {
-    yyValue = new NodeList(garbage, content);
+    yyValue = new WtList(garbage, content);
   }
 ;
 
-private transient AstNode TableElement =
+private transient WikitextNode TableElement =
     &TableElementPrefix ( TableCaption / TableRow / TableCell / TableHeader )
   / &( TableDoneSanityCheck / ShouldNotBeHere ) SantiyCheckEnd
 ;

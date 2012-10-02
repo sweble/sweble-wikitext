@@ -21,10 +21,9 @@ import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class ParserFunctionIf
 		extends
@@ -50,9 +49,9 @@ public class ParserFunctionIf
 	protected boolean evaluateCondition(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends AstNode> args)
+			List<? extends WikitextNode> args)
 	{
-		AstNode test = frame.expand(args.get(0));
+		WikitextNode test = frame.expand(args.get(0));
 		
 		String testStr = null;
 		try

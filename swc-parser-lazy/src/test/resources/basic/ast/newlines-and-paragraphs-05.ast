@@ -4,9 +4,9 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Paragraph([ Text("Hallo") ])
+    Paragraph([ WtText("Hallo") ])
     Newline("\n")
     Newline("\n")
-    Paragraph([ Text("Hallo") ])
+    Paragraph([ WtText("Hallo") ])
   ]
 )

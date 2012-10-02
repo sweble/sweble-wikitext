@@ -52,7 +52,7 @@ public class CompilerTest
 		Assert.assertEquals(
 				"Page([\n" +
 						"  Paragraph([\n" +
-						"    Text(\"Founded in \")\n" +
+						"    WtText(\"Founded in \")\n" +
 						"    InternalLink(\n" +
 						"      Properties:\n" +
 						"        {N} postfix = \"\"\n" +
@@ -64,10 +64,10 @@ public class CompilerTest
 						"        Properties:\n" +
 						"          {N} rtd = RTD[ \"|\" <o> \"\" ]\n" +
 						"\n" +
-						"        [ Text(\"1901\") ]\n" +
+						"        [ WtText(\"1901\") ]\n" +
 						"      )\n" +
 						"    )\n" +
-						"    Text(\" as one\")\n" +
+						"    WtText(\" as one\")\n" +
 						"  ])\n" +
 						"])\n",
 				AstPrinter.print(cp.getPage()));

@@ -16,7 +16,7 @@ ParsedWikitextPage(
 
           [ ]
           [
-            Paragraph([ Text(" Header") ])
+            Paragraph([ WtText(" Header") ])
             Newline("\n")
           ]
         )

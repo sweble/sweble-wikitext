@@ -17,9 +17,9 @@
 
 package org.sweble.wikitext.parser.encval;
 
+import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
 
-import de.fau.cs.osr.ptk.common.EntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;
 
 
@@ -39,7 +39,7 @@ import de.fau.cs.osr.ptk.common.ast.Location;
 
 
 %{
-	private EntityMap entityMap = null;
+	private WtEntityMap entityMap = null;
 	
 	private StringBuilder text = new StringBuilder();
 	
@@ -55,12 +55,12 @@ import de.fau.cs.osr.ptk.common.ast.Location;
 		return file;
 	}
 	
-	public void setEntityMap(EntityMap entityMap)
+	public void setEntityMap(WtEntityMap entityMap)
 	{
 		this.entityMap = entityMap;
 	}
 	
-	public EntityMap getEntityMap()
+	public WtEntityMap getEntityMap()
 	{
 		return entityMap;
 	}

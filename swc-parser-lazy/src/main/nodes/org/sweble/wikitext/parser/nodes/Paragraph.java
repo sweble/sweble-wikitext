@@ -8,8 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>Paragraph</h1> <h2>Grammar</h2>
  * <ul>
@@ -35,7 +33,7 @@ public class Paragraph
 		
 	}
 	
-	public Paragraph(NodeList content)
+	public Paragraph(WtList content)
 	{
 		super(content);
 		

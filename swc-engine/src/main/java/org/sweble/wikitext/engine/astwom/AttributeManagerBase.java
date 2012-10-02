@@ -31,10 +31,9 @@ import org.sweble.wikitext.engine.wom.WomI18nDir;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomValueWithUnit;
 import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
+import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-import de.fau.cs.osr.ptk.common.ast.NodeList;
 
 public abstract class AttributeManagerBase
 		implements
@@ -63,26 +62,26 @@ public abstract class AttributeManagerBase
 	public abstract NativeOrXmlAttributeAdapter removeAttribute(
 			AttributeDescriptor descriptor,
 			String name,
-			NodeList attrContainer);
+			WtList attrContainer);
 	
 	public abstract void removeAttributeNode(
 			AttributeDescriptor descriptor,
 			WomAttribute attr,
 			WomBackbone parent,
-			NodeList attrContainer) throws IllegalArgumentException;
+			WtList attrContainer) throws IllegalArgumentException;
 	
 	public abstract NativeOrXmlAttributeAdapter setAttribute(
 			AttributeDescriptor descriptor,
 			String name,
 			String value,
 			WomBackbone parent,
-			NodeList attrContainer);
+			WtList attrContainer);
 	
 	public abstract NativeOrXmlAttributeAdapter setAttributeNode(
 			AttributeDescriptor descriptor,
 			WomAttribute attr,
 			WomBackbone parent,
-			NodeList attrContainer) throws IllegalArgumentException;
+			WtList attrContainer) throws IllegalArgumentException;
 	
 	// =========================================================================
 	
@@ -488,7 +487,7 @@ public abstract class AttributeManagerBase
 		public NativeOrXmlAttributeAdapter removeAttribute(
 				AttributeDescriptor descriptor,
 				String name,
-				NodeList attrContainer)
+				WtList attrContainer)
 		{
 			// Doesn't fail if an attribute with the specified name doesn't
 			// exist and therefore should also not fail if the node has no
@@ -501,7 +500,7 @@ public abstract class AttributeManagerBase
 				AttributeDescriptor descriptor,
 				WomAttribute attr,
 				WomBackbone parent,
-				NodeList attrContainer) throws IllegalArgumentException
+				WtList attrContainer) throws IllegalArgumentException
 		{
 			// The node has no attributes yet someone passes an attribute he
 			// claims to be of this node ...
@@ -514,7 +513,7 @@ public abstract class AttributeManagerBase
 				String name,
 				String value,
 				WomBackbone parent,
-				NodeList attrContainer)
+				WtList attrContainer)
 		{
 			unsupported();
 			return null;
@@ -525,7 +524,7 @@ public abstract class AttributeManagerBase
 				AttributeDescriptor descriptor,
 				WomAttribute attr,
 				WomBackbone parent,
-				NodeList attrContainer) throws IllegalArgumentException
+				WtList attrContainer) throws IllegalArgumentException
 		{
 			unsupported();
 			return null;
@@ -633,7 +632,7 @@ public abstract class AttributeManagerBase
 		public NativeOrXmlAttributeAdapter removeAttribute(
 				AttributeDescriptor descriptor,
 				String name,
-				NodeList attrContainer)
+				WtList attrContainer)
 		{
 			if (name == null)
 				throw new IllegalArgumentException("Argument `name' is null.");
@@ -652,7 +651,7 @@ public abstract class AttributeManagerBase
 				AttributeDescriptor descriptor,
 				WomAttribute attr,
 				WomBackbone parent,
-				NodeList attrContainer) throws IllegalArgumentException
+				WtList attrContainer) throws IllegalArgumentException
 		{
 			if (attr == null)
 				throw new IllegalArgumentException("Argument `attr' is null.");
@@ -700,7 +699,7 @@ public abstract class AttributeManagerBase
 				String name,
 				String value,
 				WomBackbone parent,
-				NodeList attrContainer)
+				WtList attrContainer)
 		{
 			if (name == null)
 				throw new IllegalArgumentException("Argument `name' and/or `value' is null.");
@@ -733,7 +732,7 @@ public abstract class AttributeManagerBase
 				AttributeDescriptor descriptor,
 				WomAttribute attr,
 				WomBackbone parent,
-				NodeList attrContainer) throws IllegalArgumentException
+				WtList attrContainer) throws IllegalArgumentException
 		{
 			if (attr == null)
 				throw new IllegalArgumentException("Argument `attr' is null.");
@@ -778,7 +777,7 @@ public abstract class AttributeManagerBase
 		private void removeAttribute(
 				AttributeDescriptor descriptor,
 				NativeOrXmlAttributeAdapter attribute,
-				NodeList attrContainer)
+				WtList attrContainer)
 		{
 			WomBackbone parent = attribute.getParent();
 			
@@ -795,14 +794,14 @@ public abstract class AttributeManagerBase
 		
 		private void removeAttributeFromAst(
 				NativeOrXmlAttributeAdapter remove,
-				NodeList attrContainer) throws AssertionError
+				WtList attrContainer) throws AssertionError
 		{
 			// remove from AST
 			// the ast can contain an attribute with the same name multiple times!
-			Iterator<AstNode> i = attrContainer.iterator();
+			Iterator<WikitextNode> i = attrContainer.iterator();
 			while (i.hasNext())
 			{
-				AstNode node = i.next();
+				WikitextNode node = i.next();
 				// there could also be garbage nodes ...
 				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
 					continue;
@@ -852,7 +851,7 @@ public abstract class AttributeManagerBase
 				final NativeOrXmlAttributeAdapter oldAttr,
 				final NativeOrXmlAttributeAdapter newAttr,
 				WomBackbone parent,
-				NodeList attrContainer)
+				WtList attrContainer)
 		{
 			// replace in WOM
 			WomBackbone prev = null;
@@ -890,7 +889,7 @@ public abstract class AttributeManagerBase
 		private void replaceAttributeInAst(
 				final NativeOrXmlAttributeAdapter oldAttr,
 				final NativeOrXmlAttributeAdapter newAttr,
-				NodeList attrContainer) throws AssertionError
+				WtList attrContainer) throws AssertionError
 		{
 			if (newAttr.getAstNode() == null)
 				newAttr.attachAstNode();
@@ -907,10 +906,10 @@ public abstract class AttributeManagerBase
 			
 			boolean replaced = false;
 			
-			ListIterator<AstNode> i = attrContainer.listIterator();
+			ListIterator<WikitextNode> i = attrContainer.listIterator();
 			while (i.hasNext())
 			{
-				AstNode node = i.next();
+				WikitextNode node = i.next();
 				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
 					continue;
 				

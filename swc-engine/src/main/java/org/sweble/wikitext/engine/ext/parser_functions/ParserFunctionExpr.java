@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.util.List;
 
@@ -25,10 +25,9 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
 import org.sweble.wikitext.engine.ext.parser_functions.ExprParser.ExprError;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class ParserFunctionExpr
 		extends
@@ -42,15 +41,15 @@ public class ParserFunctionExpr
 	}
 	
 	@Override
-	public AstNode invoke(
+	public WikitextNode invoke(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends AstNode> args)
+			List<? extends WikitextNode> args)
 	{
 		if (args.size() < 1)
 			return astText("");
 		
-		AstNode arg0 = frame.expand(args.get(0));
+		WikitextNode arg0 = frame.expand(args.get(0));
 		
 		String expr = null;
 		try

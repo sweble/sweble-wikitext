@@ -8,8 +8,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.NodeList;
-
 /**
  * <h1>Italics</h1>
  */
@@ -28,7 +26,7 @@ public class Italics
 		
 	}
 	
-	public Italics(NodeList content)
+	public Italics(WtList content)
 	{
 		super(content);
 		

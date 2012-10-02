@@ -22,7 +22,7 @@
  *
  *   AST node:
  *     Name        : CompilerLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *
  *     Properties:
  *       title    : String
@@ -33,7 +33,7 @@
  *
  *   AST node:
  *     Name        : ValidatorLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     
  *     Properties:
  *       timeNeeded : Long
@@ -43,7 +43,7 @@
  *
  *   AST node:
  *     Name        : PreprocessorLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     
  *     Properties:
  *       forInclusion : boolean
@@ -54,7 +54,7 @@
  *
  *   AST node:
  *     Name        : PpResolverLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     
  *     Properties:
  *       timeNeeded : Long
@@ -64,7 +64,7 @@
  *
  *   AST node:
  *     Name        : ParserLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     
  *     Properties:
  *       timeNeeded : Long
@@ -74,7 +74,7 @@
  *
  *   AST node:
  *     Name        : PostprocessorLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     
  *     Properties:
  *       timeNeeded : Long
@@ -84,7 +84,7 @@
  *
  *   AST node:
  *     Name        : ResolveRedirectLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "target, success"
  *     
  *     Properties:
@@ -98,7 +98,7 @@
  *
  *   AST node:
  *     Name        : ResolveParserFunctionLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "name, success"
  *     
  *     Properties:
@@ -111,7 +111,7 @@
  *
  *   AST node:
  *     Name        : ResolveTransclusionLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "target, success"
  *     
  *     Properties:
@@ -125,7 +125,7 @@
  *
  *   AST node:
  *     Name        : ResolveTagExtensionLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "target, success"
  *     
  *     Properties:
@@ -139,7 +139,7 @@
  *
  *   AST node:
  *     Name        : ResolveMagicWordLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "name, success"
  *     
  *     Properties:
@@ -152,7 +152,7 @@
  *
  *   AST node:
  *     Name        : ResolveParameterLog
- *     Extends     : ContentNode
+ *     Extends     : WtContentNode
  *     Constructor : "name, success"
  *     
  *     Properties:
@@ -165,7 +165,7 @@
  *
  *   AST node:
  *     Name        : ParseException
- *     Extends     : LeafNode
+ *     Extends     : WtLeafNode
  *     Constructor : message
  *     
  *     Properties:
@@ -176,21 +176,21 @@
  *
  *   AST node:
  *     Name        : IllegalNameException
- *     Extends     : InnerNode.InnerNode1
+ *     Extends     : WtInnerNode1
  *     Constructor : "name, message"
  *
  *     Properties:
  *       message    : String
  *
  *     Children:
- *       name : AstNode
+ *       name : WikitextNode
  *
  * Unhandled Exception
  * -------------------
  *
  *   AST node:
  *     Name        : UnhandledException
- *     Extends     : LeafNode
+ *     Extends     : WtLeafNode
  *     Constructor : "exception, dump"
  *     
  *     Properties:

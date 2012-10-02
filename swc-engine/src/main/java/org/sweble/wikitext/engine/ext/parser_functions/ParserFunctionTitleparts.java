@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.*;
+import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,10 +27,9 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
-
-import de.fau.cs.osr.ptk.common.ast.AstNode;
 
 public class ParserFunctionTitleparts
 		extends
@@ -44,15 +43,15 @@ public class ParserFunctionTitleparts
 	}
 	
 	@Override
-	public AstNode invoke(
+	public WikitextNode invoke(
 			Template pfn,
 			ExpansionFrame frame,
-			List<? extends AstNode> args)
+			List<? extends WikitextNode> args)
 	{
 		if (args.size() < 1)
 			return pfn;
 		
-		AstNode arg0 = frame.expand(args.get(0));
+		WikitextNode arg0 = frame.expand(args.get(0));
 		
 		if (args.size() < 2)
 			return arg0;
@@ -65,7 +64,7 @@ public class ParserFunctionTitleparts
 			String titleStr = StringConverter.convert(arg0).trim();
 			pageTitle = PageTitle.make(frame.getWikiConfig(), titleStr);
 			
-			AstNode arg1 = frame.expand(args.get(1));
+			WikitextNode arg1 = frame.expand(args.get(1));
 			String countStr = StringConverter.convert(arg1).trim();
 			try
 			{
@@ -75,7 +74,7 @@ public class ParserFunctionTitleparts
 			{
 			}
 			
-			AstNode arg2 = frame.expand(args.get(2));
+			WikitextNode arg2 = frame.expand(args.get(2));
 			String firstStr = StringConverter.convert(arg2).trim();
 			try
 			{

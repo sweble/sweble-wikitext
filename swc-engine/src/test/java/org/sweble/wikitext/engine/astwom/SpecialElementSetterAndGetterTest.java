@@ -17,8 +17,9 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.*;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
+import static org.junit.Assert.assertEquals;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womBold;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
 
 import org.junit.Ignore;
 import org.junit.Test;
