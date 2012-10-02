@@ -219,23 +219,16 @@ inline void BlockStopperNextTableElement =
 private inline Table TableBody =
     head:TableHead rt2:pEol body:TableContentStar rt3:pExtSpaceStar close:"|}"?
     {
-      //yyValue = makeTable(head.getForeign(1, WtList.class), body);
-      yyValue = new Table(head.getForeign(1, WtList.class), body);
-      if (isGatherRtData())
-        addRtData(yyValue,
-                joinRt(head.getForeign(0, WikitextNode.class), "{|"),
-                joinRt(head.getForeign(2, WikitextNode.class), rt2),
-                joinRt(rt3, close));
+      yyValue = setRtd(new Table(head.getForeign(1, WtList.class), body),
+          head.getForeign(0, WikitextNode.class), "{|", SEP,
+          head.getForeign(2, WikitextNode.class), rt2, SEP,
+          rt3, close);
     }
   / head:TableHead Eof
     {
-      //yyValue = makeTable(head.getForeign(1, WtList.class), new WtList());
-      yyValue = new Table(head.getForeign(1, WtList.class), new WtList());
-      if (isGatherRtData())
-        addRtData(yyValue,
-                joinRt(head.getForeign(0, WikitextNode.class), "{|"),
-                joinRt(head.getForeign(2, WikitextNode.class)),
-                null);
+      yyValue = setRtd(new Table(head.getForeign(1, WtList.class), new WtList()),
+          head.getForeign(0, WikitextNode.class), "{|", SEP,
+          head.getForeign(2, WikitextNode.class), SEP);
     }
   / &ShouldNotBeHere SantiyCheckEnd { yyValue = null; }
 ;

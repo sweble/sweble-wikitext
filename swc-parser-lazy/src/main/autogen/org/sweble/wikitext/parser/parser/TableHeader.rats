@@ -102,13 +102,9 @@ private transient WtList TableInlineHeaderPlus =
 private inline TableHeader TableInlineHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = new TableHeader(attributes.getForeign(0, WtList.class), body);
-
-    if (isGatherRtData())
-      addRtData(yyValue,
-          joinRt(rt0, prefix),
-          (Object[]) attributes.getForeign(1, Object.class),
-          null);
+    yyValue = setRtd(new TableHeader(attributes.getForeign(0, WtList.class), body),
+        rt0, prefix, SEP,
+        attributes.getForeign(1, Object.class), SEP);
   }
 ;
 
@@ -120,13 +116,9 @@ private inline TableHeader TableInlineHeader =
 private inline TableHeader TableBlockHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = new TableHeader(attributes.getForeign(0, WtList.class), body);
-
-    if (isGatherRtData())
-      addRtData(yyValue,
-          joinRt(rt0, prefix),
-          (Object[]) attributes.getForeign(1, Object.class),
-          null);
+    yyValue = setRtd(new TableHeader(attributes.getForeign(0, WtList.class), body),
+        rt0, prefix, SEP,
+        attributes.getForeign(1, Object.class), SEP);
   }
 ;
 

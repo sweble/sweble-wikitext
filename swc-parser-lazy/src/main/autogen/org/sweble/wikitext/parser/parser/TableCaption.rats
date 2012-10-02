@@ -76,24 +76,16 @@ noinline memoized WikitextNode TableCaptionMemoized =
 noinline transient WikitextNode TableCaptionTransient =
     rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &FollowUpSanityCheck
     {
-      yyValue = new TableCaption(attributes.getForeign(0, WtList.class), body);
-
-      // TODO: Issue warning if garbage is more than just whitespace
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt(rt0, "|+"),
-            (Object[]) attributes.getForeign(1, Object.class),
-            joinRt(garbage));
+      yyValue = setRtd(new TableCaption(attributes.getForeign(0, WtList.class), body),
+          rt0, "|+", SEP,
+          attributes.getForeign(1, Object.class), SEP,
+          garbage);
     }
   / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
     {
-      yyValue = new TableCaption(attributes.getForeign(0, WtList.class), body);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt(rt0, "|+"),
-            (Object[]) attributes.getForeign(1, Object.class),
-            null);
+      yyValue = setRtd(new TableCaption(attributes.getForeign(0, WtList.class), body),
+          rt0, "|+", SEP,
+          attributes.getForeign(1, Object.class), SEP);
     }
 ;
 

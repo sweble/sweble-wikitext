@@ -102,13 +102,9 @@ private transient WtList TableInlineCellPlus =
 private inline TableCell TableInlineCell =
   rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = new TableCell(attributes.getForeign(0, WtList.class), body);
-
-    if (isGatherRtData())
-      addRtData(yyValue,
-          joinRt(rt0, prefix),
-          (Object[]) attributes.getForeign(1, Object.class),
-          null);
+    yyValue = setRtd(new TableCell(attributes.getForeign(0, WtList.class), body),
+        rt0, prefix, SEP,
+        attributes.getForeign(1, Object.class), SEP);
   }
 ;
 
@@ -120,13 +116,9 @@ private inline TableCell TableInlineCell =
 private inline TableCell TableBlockCell =
   rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = new TableCell(attributes.getForeign(0, WtList.class), body);
-
-    if (isGatherRtData())
-      addRtData(yyValue,
-          joinRt(rt0, prefix),
-          (Object[]) attributes.getForeign(1, Object.class),
-          null);
+    yyValue = setRtd(new TableCell(attributes.getForeign(0, WtList.class), body),
+        joinRt(rt0, prefix), SEP,
+        attributes.getForeign(1, Object.class), SEP);
   }
 ;
 

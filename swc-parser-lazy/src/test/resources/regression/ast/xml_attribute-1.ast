@@ -6,7 +6,7 @@ ParsedWikitextPage(
   [
     Table(
       Properties:
-        RTD = RtData: [0] = "{|", [1] = "", [2]
+        {N} rtd = RTD[ "{|" <o> "" <o> "" ]
 
       [
         XmlAttribute(

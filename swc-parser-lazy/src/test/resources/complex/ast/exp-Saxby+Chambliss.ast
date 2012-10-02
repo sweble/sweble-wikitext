@@ -7,7 +7,7 @@ ParsedWikitextPage(
     Newline("\n")
     Table(
       Properties:
-        RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+        {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
       [
         XmlAttribute(
@@ -30,7 +30,7 @@ ParsedWikitextPage(
       [
         TableCell(
           Properties:
-            RTD = RtData: [0] = "|", [1] = "|", [2]
+            {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
           [
             XmlAttribute(
@@ -84,13 +84,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "  |", [2]
+                {N} rtd = RTD[ "|" <o> "  |" <o> "" ]
 
               [
                 XmlAttribute(
@@ -172,14 +172,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n")
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -273,14 +273,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n")
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -327,13 +327,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -426,14 +426,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -452,7 +452,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -475,28 +475,28 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n")
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -631,13 +631,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -711,14 +711,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -737,7 +737,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -760,13 +760,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -785,7 +785,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -825,14 +825,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -904,14 +904,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n")
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -985,14 +985,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1011,7 +1011,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1034,13 +1034,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1059,7 +1059,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1082,97 +1082,97 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n") ]
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = "|", [2]
+                {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
               [
                 XmlAttribute(
@@ -1201,13 +1201,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1217,7 +1217,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1330,14 +1330,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1356,7 +1356,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1384,14 +1384,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1401,7 +1401,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1413,14 +1413,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1430,7 +1430,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1] = " |", [2]
+                {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
               [
                 XmlAttribute(
@@ -1462,13 +1462,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1503,7 +1503,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1541,13 +1541,13 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1557,7 +1557,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1569,14 +1569,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1586,7 +1586,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1614,14 +1614,14 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n")
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1631,7 +1631,7 @@ ParsedWikitextPage(
             )
             TableCell(
               Properties:
-                RTD = RtData: [0] = "|", [1], [2]
+                {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [
@@ -1657,7 +1657,7 @@ ParsedWikitextPage(
         )
         TableRow(
           Properties:
-            RTD = RtData: [0] = "|-", [1] = "\n", [2]
+            {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
@@ -3804,7 +3804,7 @@ ParsedWikitextPage(
         Newline("\n")
         Table(
           Properties:
-            RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+            {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
           [
             XmlAttribute(
@@ -3827,7 +3827,7 @@ ParsedWikitextPage(
           [
             TableCaption(
               Properties:
-                RTD = RtData: [0] = "|+", [1], [2]
+                {N} rtd = RTD[ "|+" <o> "" <o> "" ]
 
               [ ]
               [
@@ -3866,7 +3866,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3876,14 +3876,14 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3893,7 +3893,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3903,7 +3903,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3913,14 +3913,14 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3930,7 +3930,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3940,7 +3940,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -3950,20 +3950,20 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [
@@ -3988,14 +3988,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4014,7 +4014,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4041,7 +4041,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4060,14 +4060,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4093,7 +4093,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4120,7 +4120,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4139,7 +4139,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
@@ -4148,13 +4148,13 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [
@@ -4179,14 +4179,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4205,7 +4205,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4232,7 +4232,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4251,14 +4251,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4284,7 +4284,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4311,7 +4311,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4330,7 +4330,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
@@ -4339,13 +4339,13 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [
@@ -4370,14 +4370,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4396,7 +4396,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4423,7 +4423,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4442,14 +4442,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4475,7 +4475,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4502,7 +4502,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4521,7 +4521,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
@@ -4530,13 +4530,13 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [
@@ -4561,14 +4561,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4602,7 +4602,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4629,7 +4629,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4648,14 +4648,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4681,7 +4681,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4708,7 +4708,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -4727,7 +4727,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
@@ -4740,7 +4740,7 @@ ParsedWikitextPage(
         Newline("\n")
         Table(
           Properties:
-            RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+            {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
           [
             XmlAttribute(
@@ -4763,7 +4763,7 @@ ParsedWikitextPage(
           [
             TableCaption(
               Properties:
-                RTD = RtData: [0] = "|+", [1], [2]
+                {N} rtd = RTD[ "|+" <o> "" <o> "" ]
 
               [ ]
               [
@@ -4807,7 +4807,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4817,14 +4817,14 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4834,7 +4834,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4844,7 +4844,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4854,14 +4854,14 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4871,7 +4871,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4881,7 +4881,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4891,14 +4891,14 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4908,7 +4908,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4918,7 +4918,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4928,7 +4928,7 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1] = "|", [2]
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
               [ ]
               [
@@ -4938,20 +4938,20 @@ ParsedWikitextPage(
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!", [1], [2]
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ Newline("\n") ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [
@@ -4976,14 +4976,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5012,7 +5012,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5039,7 +5039,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5058,14 +5058,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5110,7 +5110,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5137,7 +5137,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5156,14 +5156,14 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5182,7 +5182,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5216,7 +5216,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5243,7 +5243,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5270,7 +5270,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1], [2]
+                    {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ Newline("\n") ]
@@ -5282,7 +5282,7 @@ ParsedWikitextPage(
         Newline("\n")
         Table(
           Properties:
-            RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+            {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
           [
             XmlAttribute(
@@ -5321,7 +5321,7 @@ ParsedWikitextPage(
           [
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -5336,7 +5336,7 @@ ParsedWikitextPage(
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = "|", [2]
+                    {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5377,7 +5377,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -5392,7 +5392,7 @@ ParsedWikitextPage(
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = "|", [2]
+                    {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5419,7 +5419,7 @@ ParsedWikitextPage(
                 )
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = "|", [2]
+                    {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5438,7 +5438,7 @@ ParsedWikitextPage(
                 )
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = "|", [2]
+                    {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5457,7 +5457,7 @@ ParsedWikitextPage(
                 )
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = "|", [2]
+                    {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5476,7 +5476,7 @@ ParsedWikitextPage(
                 )
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = "|", [2]
+                    {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5497,14 +5497,14 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n") ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -5519,7 +5519,7 @@ ParsedWikitextPage(
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = " |", [2]
+                    {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5535,7 +5535,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5578,7 +5578,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5609,7 +5609,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5628,7 +5628,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5647,7 +5647,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5668,14 +5668,14 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n") ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -5690,7 +5690,7 @@ ParsedWikitextPage(
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = " |", [2]
+                    {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5706,7 +5706,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5749,7 +5749,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5784,7 +5784,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5803,7 +5803,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5822,7 +5822,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5843,14 +5843,14 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n\n") ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -5865,7 +5865,7 @@ ParsedWikitextPage(
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5900,7 +5900,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5919,7 +5919,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5938,7 +5938,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -5959,14 +5959,14 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n\n") ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -5981,7 +5981,7 @@ ParsedWikitextPage(
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -6031,7 +6031,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -6050,7 +6050,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -6069,7 +6069,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = " |", [2]
+                    {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -6090,7 +6090,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n\n") ]
@@ -6786,7 +6786,7 @@ ParsedWikitextPage(
         Newline("\n")
         Table(
           Properties:
-            RTD = RtData: [0] = "{|", [1] = "\n", [2] = "|}"
+            {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
           [
             XmlAttribute(
@@ -6809,13 +6809,13 @@ ParsedWikitextPage(
           [
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = " |", [2]
+                    {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -6855,7 +6855,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = " \n", [2]
+                {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -6870,7 +6870,7 @@ ParsedWikitextPage(
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -6951,7 +6951,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7090,7 +7090,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7190,20 +7190,20 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = " |", [2]
+                    {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7243,7 +7243,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -7259,7 +7259,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = " \n", [2]
+                {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -7274,7 +7274,7 @@ ParsedWikitextPage(
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7355,7 +7355,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7483,7 +7483,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7527,20 +7527,20 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = " |", [2]
+                    {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7570,7 +7570,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = " \n", [2]
+                {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -7585,7 +7585,7 @@ ParsedWikitextPage(
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7703,7 +7703,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7779,7 +7779,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7899,20 +7899,20 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
                 TableHeader(
                   Properties:
-                    RTD = RtData: [0] = "!", [1] = " |", [2]
+                    {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -7952,7 +7952,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = " \n", [2]
+                {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
               [
                 XmlAttribute(
@@ -7967,7 +7967,7 @@ ParsedWikitextPage(
               [
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -8085,7 +8085,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -8174,7 +8174,7 @@ ParsedWikitextPage(
                 )
                 TableCell(
                   Properties:
-                    RTD = RtData: [0] = "|", [1] = "|", [2]
+                    {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
                   [
                     XmlAttribute(
@@ -8286,7 +8286,7 @@ ParsedWikitextPage(
             )
             TableRow(
               Properties:
-                RTD = RtData: [0] = "|-", [1] = "\n", [2]
+                {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]

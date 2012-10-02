@@ -78,13 +78,9 @@ noinline memoized WikitextNode TableRowMemoized =
 noinline transient WikitextNode TableRowTransient =
   rt0:pExtSpaceStar "|-" attributes:TableAttributeStar body:TableRowBody
   {
-    yyValue = new TableRow(attributes, body.getForeign(2, WtList.class));
-
-    if (isGatherRtData())
-      addRtData(yyValue,
-          joinRt(rt0, "|-"),
-          joinRt(body.getForeign(0, WikitextNode.class), body.getForeign(1, String.class)),
-          null);
+    yyValue = setRtd(new TableRow(attributes, body.getForeign(2, WtList.class)),
+        rt0, "|-", SEP,
+        body.getForeign(0, WikitextNode.class), body.getForeign(1, String.class), SEP);
   }
 ;
 

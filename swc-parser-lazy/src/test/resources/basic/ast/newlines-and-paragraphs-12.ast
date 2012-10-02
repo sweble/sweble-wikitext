@@ -13,13 +13,13 @@ ParsedWikitextPage(
     Newline("\n")
     Table(
       Properties:
-        RTD = RtData: [0] = "{|", [1] = "\n", [2] = " |}"
+        {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
       [ ]
       [
         TableCell(
           Properties:
-            RTD = RtData: [0] = " |", [1], [2]
+            {N} rtd = RTD[ " |" <o> "" <o> "" ]
 
           [ ]
           [ Newline("\n") ]

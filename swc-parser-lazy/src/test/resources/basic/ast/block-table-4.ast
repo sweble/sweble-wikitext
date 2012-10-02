@@ -6,26 +6,26 @@ ParsedWikitextPage(
   [
     Table(
       Properties:
-        RTD = RtData: [0] = "{|", [1] = "\n", [2] = " |}"
+        {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
       [ ]
       [
         TableRow(
           Properties:
-            RTD = RtData: [0] = " |-", [1] = "\n", [2]
+            {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
           [ ]
           [
             TableHeader(
               Properties:
-                RTD = RtData: [0] = " !", [1], [2]
+                {N} rtd = RTD[ " !" <o> "" <o> "" ]
 
               [ ]
               [ WtText(" Header 1 ") ]
             )
             TableHeader(
               Properties:
-                RTD = RtData: [0] = "!!", [1], [2]
+                {N} rtd = RTD[ "!!" <o> "" <o> "" ]
 
               [ ]
               [
