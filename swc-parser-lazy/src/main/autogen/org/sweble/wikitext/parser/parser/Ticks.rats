@@ -64,10 +64,7 @@ Ticks Ticks =
   {
     int count = 2 + ticks.size();
 
-    yyValue = new Ticks(count);
-
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(StringUtils.strrep('\'', count)));
+    yyValue = setRtd(new Ticks(count), StringUtils.strrep('\'', count));
   }
 ;
 
