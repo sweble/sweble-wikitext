@@ -1503,9 +1503,9 @@ ParsedWikitextPage(
       WtText(". The territory of Germany covers an area of 357,021")
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&nbsp;"
           {N} name = "nbsp"
           {N} resolved = "\u00A0"
+          {N} rtd = RTD[ "&nbsp;" ]
       )
       WtText("km")
       XmlElement(
@@ -1535,9 +1535,9 @@ ParsedWikitextPage(
       WtText(". With 81.8")
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&nbsp;"
           {N} name = "nbsp"
           {N} resolved = "\u00A0"
+          {N} rtd = RTD[ "&nbsp;" ]
       )
       WtText("million inhabitants, it is the most populous member state of the ")
       InternalLink(
@@ -1633,9 +1633,9 @@ ParsedWikitextPage(
       WtText(" before AD")
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&nbsp;"
           {N} name = "nbsp"
           {N} resolved = "\u00A0"
+          {N} rtd = RTD[ "&nbsp;" ]
       )
       WtText("100. Beginning in the 10th century, German territories formed a central part of the ")
       InternalLink(
@@ -2406,9 +2406,9 @@ ParsedWikitextPage(
                     WtText(" 750 BC \u2013 AD")
                     XmlEntityRef(
                       Properties:
-                        RTD = RtData: [0] = "&nbsp;"
                         {N} name = "nbsp"
                         {N} resolved = "\u00A0"
+                        {N} rtd = RTD[ "&nbsp;" ]
                     )
                     WtText("1")
                   ]
@@ -2463,9 +2463,9 @@ ParsedWikitextPage(
               WtText(". From southern Scandinavia and northern Germany, the tribes began expanding south, east and west in the 1st century")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("BC, coming into contact with the ")
               InternalLink(
@@ -2617,9 +2617,9 @@ ParsedWikitextPage(
               WtText("), and it was in this period that the Germanic tribes became familiar with Roman tactics of warfare while maintaining their tribal identity. In AD")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("9, three ")
               InternalLink(
@@ -2684,9 +2684,9 @@ ParsedWikitextPage(
               WtText(", thus remained outside the Roman Empire. By AD")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("100, the time of ")
               InternalLink(
@@ -3125,9 +3125,9 @@ ParsedWikitextPage(
                     WtText(", created around AD")
                     XmlEntityRef(
                       Properties:
-                        RTD = RtData: [0] = "&nbsp;"
                         {N} name = "nbsp"
                         {N} resolved = "\u00A0"
+                        {N} rtd = RTD[ "&nbsp;" ]
                     )
                     WtText("1000")
                   ]
@@ -6040,9 +6040,9 @@ ParsedWikitextPage(
               WtText(" World War II and the Nazi genocide were responsible for more than 40")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million dead in Europe.")
               TagExtension(
@@ -6255,9 +6255,9 @@ ParsedWikitextPage(
                     WtText("the expulsion of about 15")
                     XmlEntityRef(
                       Properties:
-                        RTD = RtData: [0] = "&nbsp;"
                         {N} name = "nbsp"
                         {N} resolved = "\u00A0"
+                        {N} rtd = RTD[ "&nbsp;" ]
                     )
                     WtText("million Germans")
                   ]
@@ -12457,9 +12457,9 @@ ParsedWikitextPage(
               WtText("The Bundeswehr employs 200,500 professional soldiers, 55,000 18\u201325")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("year-old conscripts who serve for at least six months under current rules, and 2,500 active reservists at any given time. Roughly 300,000 reservists are available to the Armed Forces and participate in defence exercises as well as deployments abroad.")
             ])
@@ -12899,9 +12899,9 @@ ParsedWikitextPage(
           WtText(" of $189.7")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("billion.")
           TagExtension(
@@ -13018,9 +13018,9 @@ ParsedWikitextPage(
           WtText(" The modernisation and integration of the eastern German economy continues to be a long-term process scheduled to last until the year 2019, with annual transfers from west to east amounting to roughly $80")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("billion.")
           TagExtension(
@@ -13062,16 +13062,16 @@ ParsedWikitextPage(
           WtText(" In January 2009 the German government under Angela Merkel approved a \u20AC50")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("billion ($70")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("billion) economic stimulus plan to protect several sectors from a downturn and a subsequent rise in unemployment rates.")
           TagExtension(
@@ -13563,9 +13563,9 @@ ParsedWikitextPage(
                         WtText("(Mil.")
                         XmlEntityRef(
                           Properties:
-                            RTD = RtData: [0] = "&nbsp;"
                             {N} name = "nbsp"
                             {N} resolved = "\u00A0"
+                            {N} rtd = RTD[ "&nbsp;" ]
                         )
                         WtText("\u20AC) ")
                       ]
@@ -13598,9 +13598,9 @@ ParsedWikitextPage(
                         WtText("(Mil.")
                         XmlEntityRef(
                           Properties:
-                            RTD = RtData: [0] = "&nbsp;"
                             {N} name = "nbsp"
                             {N} resolved = "\u00A0"
+                            {N} rtd = RTD[ "&nbsp;" ]
                         )
                         WtText("\u20AC) ")
                       ]
@@ -14777,16 +14777,16 @@ ParsedWikitextPage(
               WtText(" and serves major German cities as well as destinations in neighbouring countries. The train maximum speed varies between 160")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("km/h and 300")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("km/h. Connections are offered at either 30-minute, hourly, or two-hourly intervals.")
               TagExtension(
@@ -16045,9 +16045,9 @@ ParsedWikitextPage(
               WtText(" is granted to ten scientists and academics every year. With a maximum of \u20AC2.5")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million per award it is one of highest endowed research prizes in the world.")
               TagExtension(
@@ -16145,9 +16145,9 @@ ParsedWikitextPage(
           WtText("With estimated 81.8")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("million inhabitants in January 2010,")
           TagExtension(
@@ -16479,16 +16479,16 @@ ParsedWikitextPage(
               WtText(", about 5% or 10")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million of all 191")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million migrants.")
               TagExtension(
@@ -16572,9 +16572,9 @@ ParsedWikitextPage(
               WtText(", the largest national group of people with a migrant background was from Turkey (2.5")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million), followed by Italy (776,000) and Poland (687,000).")
               TagExtension(
@@ -16594,9 +16594,9 @@ ParsedWikitextPage(
               WtText("United States (50")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million),")
               TagExtension(
@@ -16620,9 +16620,9 @@ ParsedWikitextPage(
               WtText(" (5")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million)")
               TagExtension(
@@ -16636,9 +16636,9 @@ ParsedWikitextPage(
               WtText(" and Canada (3")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million).")
               TagExtension(
@@ -16652,9 +16652,9 @@ ParsedWikitextPage(
               WtText(" About 3")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million \"Aussiedler\"\u2014ethnic Germans, mainly from Eastern Europe and the former Soviet Union\u2014have resettled in Germany since 1987.")
               TagExtension(
@@ -16799,9 +16799,9 @@ ParsedWikitextPage(
               WtText(" region (12")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million), including ")
               InternalLink(
@@ -17247,9 +17247,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                         ])
                         Newline("\n")
@@ -19661,9 +19661,9 @@ ParsedWikitextPage(
               WtText("Around the world, German has approximately 100")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million ")
               InternalLink(
@@ -19683,9 +19683,9 @@ ParsedWikitextPage(
               WtText(" and also about 80")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million non-native speakers.")
               TagExtension(
@@ -19708,9 +19708,9 @@ ParsedWikitextPage(
               WtText(" German is the main language of about 90")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million people (18%) in the EU. 67% of German citizens claim to be able to communicate in at least one foreign language, 27% in at least two languages other than their own.")
               TagExtension(
@@ -19864,9 +19864,9 @@ ParsedWikitextPage(
               WtText("Christianity is the largest religion in Germany, with around 49.4")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million adherents (62.8%) in 2008")
               TagExtension(
@@ -19889,9 +19889,9 @@ ParsedWikitextPage(
               WtText(" of which 24.5")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million are ")
               InternalLink(
@@ -19911,9 +19911,9 @@ ParsedWikitextPage(
               WtText(" (29.9%) belonging to the EKD and 24.9")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million are Catholics (30.0%) in 2008, the remainder belong to small denominations (each (considerably ) less than 0.5% of the German population).")
               TagExtension(
@@ -19942,9 +19942,9 @@ ParsedWikitextPage(
               WtText(" with an estimated 3.8 to 4.3")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million adherents (4.6 to 5.2%)")
               TagExtension(
@@ -20362,9 +20362,9 @@ ParsedWikitextPage(
               WtText("Of the roughly 4")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million Muslims, most are ")
               InternalLink(
@@ -21571,23 +21571,23 @@ ParsedWikitextPage(
           WtText("In Germany, the federated states are in charge of the cultural institutions. There are 240 subsidised theatres, hundreds of symphonic orchestras, thousands of museums and over 25,000 libraries spread over the 16 states. These cultural opportunities are enjoyed by many millions: there are over 91")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("million German museum visits every year; annually, 20")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("million go to theatres and operas; while 3.6")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&nbsp;"
               {N} name = "nbsp"
               {N} resolved = "\u00A0"
+              {N} rtd = RTD[ "&nbsp;" ]
           )
           WtText("million listen to the great symphonic orchestras.")
           TagExtension(
@@ -24457,9 +24457,9 @@ ParsedWikitextPage(
               WtText("Germany's television market is the largest in Europe, with some 34")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million TV households.")
               Newline("\n")
@@ -24539,9 +24539,9 @@ ParsedWikitextPage(
               WtText("The German-speaking book publishers produce about 700")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million copies of books every year, with about 80,000 titles, nearly 60,000 of them new publications. Germany is in third place on international statistics after the English-speaking book market and the People\u2019s Republic of China.")
               TagExtension(
@@ -24717,9 +24717,9 @@ ParsedWikitextPage(
               WtText(" is the most popular sport. With more than 6.3")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("million official members, the ")
               InternalLink(
@@ -26112,9 +26112,9 @@ ParsedWikitextPage(
               WtText("With an expenditure of \u20AC67")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("billion on international travel in 2008, Germans spent more money on travel than any other country. The most visited destinations were Spain, Italy and Austria.")
               TagExtension(

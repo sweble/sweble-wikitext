@@ -7,9 +7,9 @@ ParsedWikitextPage(
     Paragraph([
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&amp;"
           {N} name = "amp"
           {N} resolved = "&"
+          {N} rtd = RTD[ "&amp;" ]
       )
       Newline("\n")
       WtText(
@@ -23,9 +23,9 @@ ParsedWikitextPage(
       Newline("\n")
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&myinvention;"
           {N} name = "myinvention"
           {N} resolved = null
+          {N} rtd = RTD[ "&myinvention;" ]
       )
       Newline("\n")
       WtText(
@@ -39,14 +39,14 @@ ParsedWikitextPage(
       Newline("\n")
       XmlCharRef(
         Properties:
-          RTD = RtData: [0] = "&#10;"
           {N} codePoint = 10
+          {N} rtd = RTD[ "&#10;" ]
       )
       Newline("\n")
       XmlCharRef(
         Properties:
-          RTD = RtData: [0] = "&#xFF;"
           {N} codePoint = 255
+          {N} rtd = RTD[ "&#xFF;" ]
       )
       Newline("\n")
       WtText(

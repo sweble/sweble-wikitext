@@ -116,9 +116,9 @@ ParsedWikitextPage(
       )
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&amplifier;"
           {N} name = "amplifier"
           {N} resolved = null
+          {N} rtd = RTD[ "&amplifier;" ]
       )
       WtText(" Hallo]]")
     ])
@@ -135,9 +135,9 @@ ParsedWikitextPage(
       )
       XmlEntityRef(
         Properties:
-          RTD = RtData: [0] = "&amp;"
           {N} name = "amp"
           {N} resolved = "&"
+          {N} rtd = RTD[ "&amp;" ]
       )
       WtText("amp; Hallo]]")
     ])

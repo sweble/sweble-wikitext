@@ -658,16 +658,16 @@ ParsedWikitextPage(
                           )
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&mdash;"
                               {N} name = "mdash"
                               {N} resolved = "\u2014"
+                              {N} rtd = RTD[ "&mdash;" ]
                           )
                           WtText("though not mostly from flatulence, but from belching ")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&mdash;"
                               {N} name = "mdash"
                               {N} resolved = "\u2014"
+                              {N} rtd = RTD[ "&mdash;" ]
                           )
                           WtText(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
                         ])

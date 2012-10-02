@@ -2194,9 +2194,9 @@ ParsedWikitextPage(
                       WtText(" Cell 1 (no modifier")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("\u2014 not aligned)")
                     ])
@@ -3159,9 +3159,9 @@ ParsedWikitextPage(
             [
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&amp;"
                   {N} name = "amp"
                   {N} resolved = "&"
+                  {N} rtd = RTD[ "&amp;" ]
               )
               WtText("nbsp;")
             ]
@@ -3177,16 +3177,16 @@ ParsedWikitextPage(
             [
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("nowiki>|")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/nowiki>")
             ]
@@ -3202,9 +3202,9 @@ ParsedWikitextPage(
             [
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&amp;"
                   {N} name = "amp"
                   {N} resolved = "&"
+                  {N} rtd = RTD[ "&amp;" ]
               )
               WtText("#124;")
             ]
@@ -7063,9 +7063,9 @@ ParsedWikitextPage(
                               WtText(" ")
                               XmlEntityRef(
                                 Properties:
-                                  RTD = RtData: [0] = "&nbsp;"
                                   {N} name = "nbsp"
                                   {N} resolved = "\u00A0"
+                                  {N} rtd = RTD[ "&nbsp;" ]
                               )
                             ])
                             Newline("\n")
@@ -7738,9 +7738,9 @@ ParsedWikitextPage(
                           )
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText("Temple of ")
                           InternalLink(
@@ -7759,9 +7759,9 @@ ParsedWikitextPage(
                           )
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText(" (floating).")
                         ])
@@ -8252,9 +8252,9 @@ ParsedWikitextPage(
                     WtText("| ")
                     XmlEntityRef(
                       Properties:
-                        RTD = RtData: [0] = "&amp;"
                         {N} name = "amp"
                         {N} resolved = "&"
+                        {N} rtd = RTD[ "&amp;" ]
                     )
                     WtText("alpha;")
                     XmlElement(
@@ -9513,9 +9513,9 @@ ParsedWikitextPage(
                 [
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&amp;"
                       {N} name = "amp"
                       {N} resolved = "&"
+                      {N} rtd = RTD[ "&amp;" ]
                   )
                   WtText("nbsp;")
                 ]
@@ -12423,16 +12423,16 @@ ParsedWikitextPage(
             [
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("big")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
             ]
           )
@@ -15276,9 +15276,9 @@ ParsedWikitextPage(
               WtText("which generates \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("table ")
               Italics(
@@ -15290,9 +15290,9 @@ ParsedWikitextPage(
               WtText(">")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/table>\".")
             ])
@@ -15312,16 +15312,16 @@ ParsedWikitextPage(
               WtText("For each table, an HTML ")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("tr")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText(" tag will be generated for the first row. To start a new row, use:")
             ])
@@ -15339,16 +15339,16 @@ ParsedWikitextPage(
               WtText("which generates another \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("tr")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("\".")
             ])
@@ -15377,9 +15377,9 @@ ParsedWikitextPage(
               WtText("which generates \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("tr ")
               Italics(
@@ -15390,9 +15390,9 @@ ParsedWikitextPage(
               )
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("\".")
             ])
@@ -15409,30 +15409,30 @@ ParsedWikitextPage(
                   WtText(" ")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("tr")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText(" tags will be automatically opened at the first ")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("td")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText(" equivalent")
                 ]
@@ -15445,44 +15445,44 @@ ParsedWikitextPage(
                   WtText(" ")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("tr")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText(" tags will be automatically closed at ")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("tr")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText(" and ")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("/table")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText(" equivalents")
                 ]
@@ -15538,84 +15538,84 @@ ParsedWikitextPage(
               WtText("which both generate \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("td")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("cell1")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/td")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("td")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("cell2")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/td")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("td")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("cell3")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/td")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("\". The \"||\" equals \"newline\" + \"|\".")
             ])
@@ -15665,9 +15665,9 @@ ParsedWikitextPage(
                 [
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("td ")
                   Italics(
@@ -15678,23 +15678,23 @@ ParsedWikitextPage(
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText("cell1")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("/td")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                 ]
               )
@@ -15705,9 +15705,9 @@ ParsedWikitextPage(
                 [
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("td ")
                   Italics(
@@ -15718,23 +15718,23 @@ ParsedWikitextPage(
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText("cell2")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("/td")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                 ]
               )
@@ -15745,9 +15745,9 @@ ParsedWikitextPage(
                 [
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("td ")
                   Italics(
@@ -15758,23 +15758,23 @@ ParsedWikitextPage(
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                   WtText("cell3")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&lt;"
                       {N} name = "lt"
                       {N} resolved = "<"
+                      {N} rtd = RTD[ "&lt;" ]
                   )
                   WtText("/td")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&gt;"
                       {N} name = "gt"
                       {N} resolved = ">"
+                      {N} rtd = RTD[ "&gt;" ]
                   )
                 ]
               )
@@ -15851,16 +15851,16 @@ ParsedWikitextPage(
               WtText("A ")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("caption")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText(" tag is created by")
             ])
@@ -15878,30 +15878,30 @@ ParsedWikitextPage(
               WtText("which generates the HTML \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("caption")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("Caption")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/caption")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("\".")
             ])
@@ -15931,9 +15931,9 @@ ParsedWikitextPage(
               WtText("which will generate \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("caption ")
               Italics(
@@ -15944,23 +15944,23 @@ ParsedWikitextPage(
               )
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("Caption")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("/caption")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&gt;"
                   {N} name = "gt"
                   {N} resolved = ">"
+                  {N} rtd = RTD[ "&gt;" ]
               )
               WtText("\".")
             ])
@@ -17527,9 +17527,9 @@ ParsedWikitextPage(
           WtText("A wikitable can be used to display side-by-side images, in the manner of an image gallery (formatted by \"")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&lt;"
               {N} name = "lt"
               {N} resolved = "<"
+              {N} rtd = RTD[ "&lt;" ]
           )
           WtText("gallery>\"), but with larger images and less vacant area around photos.")
         ])
@@ -17712,9 +17712,9 @@ ParsedWikitextPage(
           WtText("Another issue about the standard \"")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&lt;"
               {N} name = "lt"
               {N} resolved = "<"
+              {N} rtd = RTD[ "&lt;" ]
           )
           WtText("gallery>\" tag, in 2007-2008, was that it put 4 images per line, overrunning the right margin of a wiki article displayed in portrait-style width (like 800x600), unless the gallery had only 3 images. However, a wikitable uses typical image-links with sizes, such as ")
           TagExtension(
@@ -17974,9 +17974,9 @@ ParsedWikitextPage(
           WtText("Another advantage about wikitable images, compared to \"")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&lt;"
               {N} name = "lt"
               {N} resolved = "<"
+              {N} rtd = RTD[ "&lt;" ]
           )
           WtText("gallery>\" formatting, is the ability to \"square\" each image when similar heights are needed, so consider putting 2-number image sizes (such as \"199x95px\"), where the 2nd number limits height:")
         ])
@@ -18229,9 +18229,9 @@ ParsedWikitextPage(
           WtText("Therefore, the use of size \"199x95px\" (or \"999x95px\") produces the auto-height-sizing beyond the \"")
           XmlEntityRef(
             Properties:
-              RTD = RtData: [0] = "&lt;"
               {N} name = "lt"
               {N} resolved = "<"
+              {N} rtd = RTD[ "&lt;" ]
           )
           WtText("gallery>\" tag, and with the option to set taller thumbnails (\"199x105px\"), or even to have some images purposely smaller than other images of \"95px\" height.  A very short height (\"70px\") allows many more images across the table:")
         ])
@@ -18522,16 +18522,16 @@ ParsedWikitextPage(
               WtText("Images within a wikitable can be shifted by inserting non-breaking spaces (\"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&amp;"
                   {N} name = "amp"
                   {N} resolved = "&"
+                  {N} rtd = RTD[ "&amp;" ]
               )
               WtText("nbsp;\") before or after the image-link (\"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&amp;"
                   {N} name = "amp"
                   {N} resolved = "&"
+                  {N} rtd = RTD[ "&amp;" ]
               )
               WtText(
                 Properties:
@@ -18574,16 +18574,16 @@ ParsedWikitextPage(
               WtText("In the example below, note how Col2 uses ")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("center>, but Col3 uses \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&amp;"
                   {N} name = "amp"
                   {N} resolved = "&"
+                  {N} rtd = RTD[ "&amp;" ]
               )
               WtText("nbsp;\":")
             ])
@@ -18610,9 +18610,9 @@ ParsedWikitextPage(
               WtText("The above coding generates the table below: note the middle garden image is centered (but not the left image), and the right image has 2 spaces before \" ")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&nbsp;"
                   {N} name = "nbsp"
                   {N} resolved = "\u00A0"
+                  {N} rtd = RTD[ "&nbsp;" ]
               )
               WtText("View...\":")
             ])
@@ -18738,9 +18738,9 @@ ParsedWikitextPage(
                         Paragraph([
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           ImageLink(
                             Properties:
@@ -18770,9 +18770,9 @@ ParsedWikitextPage(
                           )
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                         ])
                         Newline("\n")
@@ -18815,15 +18815,15 @@ ParsedWikitextPage(
                         Paragraph([
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           XmlElement(
                             Properties:
@@ -18847,9 +18847,9 @@ ParsedWikitextPage(
               WtText("Also note that the tag \"")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&lt;"
                   {N} name = "lt"
                   {N} resolved = "<"
+                  {N} rtd = RTD[ "&lt;" ]
               )
               WtText("small>\" made a smaller text-size caption. However, fonts also can be sized by percent (style=\"font-size: 87%;\"), where the actual percent-size as displayed depends on the various sizes allowed for a particular font.")
               Newline("\n")

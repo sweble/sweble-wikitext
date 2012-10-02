@@ -127,19 +127,19 @@ ParsedWikitextPage(
                     WtText(" ")
                     XmlCharRef(
                       Properties:
-                        RTD = RtData: [0] = "&#91;"
                         {N} codePoint = 91
+                        {N} rtd = RTD[ "&#91;" ]
                     )
                     XmlCharRef(
                       Properties:
-                        RTD = RtData: [0] = "&#91;"
                         {N} codePoint = 91
+                        {N} rtd = RTD[ "&#91;" ]
                     )
                     WtText("User talk: Grant65")
                     XmlCharRef(
                       Properties:
-                        RTD = RtData: [0] = "&#124;"
                         {N} codePoint = 124
+                        {N} rtd = RTD[ "&#124;" ]
                     )
                     WtText(" (Talk)]] 09:44, 15 November 2005 (UTC)")
                   ]
@@ -402,9 +402,9 @@ ParsedWikitextPage(
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&mdash;"
                       {N} name = "mdash"
                       {N} resolved = "\u2014"
+                      {N} rtd = RTD[ "&mdash;" ]
                   )
                   WtText(" it was in ")
                   InternalLink(
@@ -2406,9 +2406,9 @@ ParsedWikitextPage(
               WtText(" ")
               XmlEntityRef(
                 Properties:
-                  RTD = RtData: [0] = "&equiv;"
                   {N} name = "equiv"
                   {N} resolved = "\u2261"
+                  {N} rtd = RTD[ "&equiv;" ]
               )
               WtText(" ")
               InternalLink(
@@ -5740,9 +5740,9 @@ ParsedWikitextPage(
                   WtText("I still think that this is ok")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&mdash;"
                       {N} name = "mdash"
                       {N} resolved = "\u2014"
+                      {N} rtd = RTD[ "&mdash;" ]
                   )
                   WtText(" perhaps your use of the word unpopular got my back up (fails to mention the degree of popularity...?) My understanding is that it is quite popular in some countries, esp. the US. Shouldn't be too hard to find references")
                 ]
@@ -5755,9 +5755,9 @@ ParsedWikitextPage(
                   WtText("And I still think you're taking this one too far")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&mdash;"
                       {N} name = "mdash"
                       {N} resolved = "\u2014"
+                      {N} rtd = RTD[ "&mdash;" ]
                   )
                   WtText(" Everything in the article must be sourced, but that does not mean that everything in the article must be directly quoted from somewhere (granted, \"elite\" is possibly not the best word)")
                 ]
@@ -6058,9 +6058,9 @@ ParsedWikitextPage(
                     WtText(" ")
                     XmlEntityRef(
                       Properties:
-                        RTD = RtData: [0] = "&equiv;"
                         {N} name = "equiv"
                         {N} resolved = "\u2261"
+                        {N} rtd = RTD[ "&equiv;" ]
                     )
                     WtText(" ")
                     InternalLink(
@@ -6310,9 +6310,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&equiv;"
                               {N} name = "equiv"
                               {N} resolved = "\u2261"
+                              {N} rtd = RTD[ "&equiv;" ]
                           )
                           WtText(" ")
                           InternalLink(

@@ -363,16 +363,16 @@ ParsedWikitextPage(
                       WtText("Assumed")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("office")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                     ]
                   )
@@ -398,16 +398,16 @@ ParsedWikitextPage(
                   WtText("Serving")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("with")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   InternalLink(
                     Properties:
@@ -441,9 +441,9 @@ ParsedWikitextPage(
                   WtText(" Preceded")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("by")
                 ])
@@ -559,23 +559,23 @@ ParsedWikitextPage(
                           WtText("U.S.")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText("House")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText("of")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText("Representatives")
                         ]
@@ -667,9 +667,9 @@ ParsedWikitextPage(
                       WtText("In")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("office")
                     ]
@@ -686,21 +686,21 @@ ParsedWikitextPage(
                   WtText("January 3, 1995")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&ndash;"
                       {N} name = "ndash"
                       {N} resolved = "\u2013"
+                      {N} rtd = RTD[ "&ndash;" ]
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("January 3, 2003")
                 ])
@@ -726,9 +726,9 @@ ParsedWikitextPage(
                   WtText(" Preceded")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("by")
                 ])
@@ -774,9 +774,9 @@ ParsedWikitextPage(
                   WtText(" Succeeded")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("by")
                 ])
@@ -941,9 +941,9 @@ ParsedWikitextPage(
                       WtText("In")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("office")
                     ]
@@ -960,21 +960,21 @@ ParsedWikitextPage(
                   WtText("January 3, 2005")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&ndash;"
                       {N} name = "ndash"
                       {N} resolved = "\u2013"
+                      {N} rtd = RTD[ "&ndash;" ]
                   )
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("January 3, 2007")
                 ])
@@ -1000,9 +1000,9 @@ ParsedWikitextPage(
                   WtText(" Preceded")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("by")
                 ])
@@ -1048,9 +1048,9 @@ ParsedWikitextPage(
                   WtText(" Succeeded")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("by")
                 ])
@@ -1282,9 +1282,9 @@ ParsedWikitextPage(
                       WtText(" (age")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("67)")
                     ]
@@ -1345,9 +1345,9 @@ ParsedWikitextPage(
                   WtText(" Political")
                   XmlEntityRef(
                     Properties:
-                      RTD = RtData: [0] = "&nbsp;"
                       {N} name = "nbsp"
                       {N} resolved = "\u00A0"
+                      {N} rtd = RTD[ "&nbsp;" ]
                   )
                   WtText("party")
                 ])
@@ -1489,9 +1489,9 @@ ParsedWikitextPage(
                         WtText("Alma")
                         XmlEntityRef(
                           Properties:
-                            RTD = RtData: [0] = "&nbsp;"
                             {N} name = "nbsp"
                             {N} resolved = "\u00A0"
+                            {N} rtd = RTD[ "&nbsp;" ]
                         )
                         WtText("mater")
                       ]
@@ -2512,8 +2512,8 @@ ParsedWikitextPage(
                 [
                   XmlCharRef(
                     Properties:
-                      RTD = RtData: [0] = "&#91;"
                       {N} codePoint = 91
+                      {N} rtd = RTD[ "&#91;" ]
                   )
                   XmlElement(
                     Properties:
@@ -2541,8 +2541,8 @@ ParsedWikitextPage(
                   )
                   XmlCharRef(
                     Properties:
-                      RTD = RtData: [0] = "&#93;"
                       {N} codePoint = 93
+                      {N} rtd = RTD[ "&#93;" ]
                   )
                 ]
               )
@@ -6903,9 +6903,9 @@ ParsedWikitextPage(
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -6989,23 +6989,23 @@ ParsedWikitextPage(
                           WtText("Member")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText("of")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           WtText("the")
                           XmlEntityRef(
                             Properties:
-                              RTD = RtData: [0] = "&nbsp;"
                               {N} name = "nbsp"
                               {N} resolved = "\u00A0"
+                              {N} rtd = RTD[ "&nbsp;" ]
                           )
                           InternalLink(
                             Properties:
@@ -7022,23 +7022,23 @@ ParsedWikitextPage(
                                 WtText("U.S.")
                                 XmlEntityRef(
                                   Properties:
-                                    RTD = RtData: [0] = "&nbsp;"
                                     {N} name = "nbsp"
                                     {N} resolved = "\u00A0"
+                                    {N} rtd = RTD[ "&nbsp;" ]
                                 )
                                 WtText("House")
                                 XmlEntityRef(
                                   Properties:
-                                    RTD = RtData: [0] = "&nbsp;"
                                     {N} name = "nbsp"
                                     {N} resolved = "\u00A0"
+                                    {N} rtd = RTD[ "&nbsp;" ]
                                 )
                                 WtText("of")
                                 XmlEntityRef(
                                   Properties:
-                                    RTD = RtData: [0] = "&nbsp;"
                                     {N} name = "nbsp"
                                     {N} resolved = "\u00A0"
+                                    {N} rtd = RTD[ "&nbsp;" ]
                                 )
                                 WtText("Representatives")
                               ]
@@ -7123,9 +7123,9 @@ ParsedWikitextPage(
                       WtText(" Succeeded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -7307,9 +7307,9 @@ ParsedWikitextPage(
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -7426,9 +7426,9 @@ ParsedWikitextPage(
                       WtText("2003 ")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&ndash;"
                           {N} name = "ndash"
                           {N} resolved = "\u2013"
+                          {N} rtd = RTD[ "&ndash;" ]
                       )
                       WtText(" present        ")
                       XmlElement(
@@ -7618,9 +7618,9 @@ ParsedWikitextPage(
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -7812,9 +7812,9 @@ ParsedWikitextPage(
                       WtText(" Succeeded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -8000,9 +8000,9 @@ ParsedWikitextPage(
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -8207,9 +8207,9 @@ ParsedWikitextPage(
                       WtText(" Succeeded")
                       XmlEntityRef(
                         Properties:
-                          RTD = RtData: [0] = "&nbsp;"
                           {N} name = "nbsp"
                           {N} resolved = "\u00A0"
+                          {N} rtd = RTD[ "&nbsp;" ]
                       )
                       WtText("by")
                       XmlElement(
@@ -8545,8 +8545,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -8558,16 +8558,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -8631,8 +8631,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -8644,16 +8644,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -10204,8 +10204,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -10217,16 +10217,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -10290,8 +10290,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -10303,16 +10303,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -10666,9 +10666,9 @@ ParsedWikitextPage(
                                           WtText("Lynn")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Westmoreland")
                                         ]
@@ -10676,9 +10676,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10696,9 +10696,9 @@ ParsedWikitextPage(
                                           WtText("Hank")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Johnson")
                                         ]
@@ -10706,9 +10706,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(D), ")
                                     InternalLink(
@@ -10726,9 +10726,9 @@ ParsedWikitextPage(
                                           WtText("John")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Lewis")
                                         ]
@@ -10736,9 +10736,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(D), ")
                                     InternalLink(
@@ -10756,9 +10756,9 @@ ParsedWikitextPage(
                                           WtText("Tom")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Price")
                                         ]
@@ -10766,9 +10766,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10786,9 +10786,9 @@ ParsedWikitextPage(
                                           WtText("Rob")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Woodall")
                                         ]
@@ -10796,9 +10796,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10816,9 +10816,9 @@ ParsedWikitextPage(
                                           WtText("Austin")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Scott")
                                         ]
@@ -10826,9 +10826,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10846,9 +10846,9 @@ ParsedWikitextPage(
                                           WtText("Tom")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Graves")
                                         ]
@@ -10856,9 +10856,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10872,9 +10872,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10892,9 +10892,9 @@ ParsedWikitextPage(
                                           WtText("Phil")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Gingrey")
                                         ]
@@ -10902,9 +10902,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(R), ")
                                     InternalLink(
@@ -10922,9 +10922,9 @@ ParsedWikitextPage(
                                           WtText("John")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Barrow")
                                         ]
@@ -10932,9 +10932,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(D), ")
                                     InternalLink(
@@ -10952,9 +10952,9 @@ ParsedWikitextPage(
                                           WtText("David")
                                           XmlEntityRef(
                                             Properties:
-                                              RTD = RtData: [0] = "&nbsp;"
                                               {N} name = "nbsp"
                                               {N} resolved = "\u00A0"
+                                              {N} rtd = RTD[ "&nbsp;" ]
                                           )
                                           WtText("Scott")
                                         ]
@@ -10962,9 +10962,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("(D)")
                                   ]
@@ -11066,9 +11066,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11087,9 +11087,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11108,9 +11108,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11129,9 +11129,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11150,9 +11150,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11171,9 +11171,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11192,9 +11192,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11213,9 +11213,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11234,9 +11234,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11255,9 +11255,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11276,9 +11276,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11297,9 +11297,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11318,9 +11318,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11339,9 +11339,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11360,9 +11360,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11381,9 +11381,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11402,9 +11402,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11423,9 +11423,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11444,9 +11444,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11465,9 +11465,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11486,9 +11486,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11507,9 +11507,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11528,9 +11528,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11549,9 +11549,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11570,9 +11570,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11591,9 +11591,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11612,9 +11612,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11633,9 +11633,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11654,9 +11654,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11675,9 +11675,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11696,9 +11696,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11717,9 +11717,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11738,9 +11738,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11759,9 +11759,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11780,9 +11780,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11801,9 +11801,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11822,9 +11822,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11843,9 +11843,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11864,9 +11864,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11885,9 +11885,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11906,9 +11906,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11927,9 +11927,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11948,9 +11948,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11969,9 +11969,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -11990,9 +11990,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12011,9 +12011,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12032,9 +12032,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12053,9 +12053,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12074,9 +12074,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12095,9 +12095,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     XmlElement(
@@ -12116,8 +12116,8 @@ ParsedWikitextPage(
                                             WtText("Non")
                                             XmlCharRef(
                                               Properties:
-                                                RTD = RtData: [0] = "&#8209;"
                                                 {N} codePoint = 8209
+                                                {N} rtd = RTD[ "&#8209;" ]
                                             )
                                             WtText("voting:")
                                           ]
@@ -12126,9 +12126,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     InternalLink(
                                       Properties:
@@ -12146,9 +12146,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12167,9 +12167,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12188,9 +12188,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12209,9 +12209,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12230,9 +12230,9 @@ ParsedWikitextPage(
                                     )
                                     XmlEntityRef(
                                       Properties:
-                                        RTD = RtData: [0] = "&nbsp;"
                                         {N} name = "nbsp"
                                         {N} resolved = "\u00A0"
+                                        {N} rtd = RTD[ "&nbsp;" ]
                                     )
                                     WtText("\u2022 ")
                                     InternalLink(
@@ -12515,8 +12515,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -12528,16 +12528,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -12601,8 +12601,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -12614,16 +12614,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -13135,9 +13135,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13199,9 +13199,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13263,9 +13263,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13332,9 +13332,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13396,9 +13396,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13460,9 +13460,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13524,9 +13524,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13588,9 +13588,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13652,9 +13652,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13716,9 +13716,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13780,9 +13780,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13844,9 +13844,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13908,9 +13908,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -13972,9 +13972,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14036,9 +14036,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14100,9 +14100,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14169,9 +14169,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14233,9 +14233,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14298,9 +14298,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14363,9 +14363,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14450,9 +14450,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14514,9 +14514,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14578,9 +14578,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14642,9 +14642,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14706,9 +14706,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14770,9 +14770,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14834,9 +14834,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14898,9 +14898,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -14962,9 +14962,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15026,9 +15026,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15090,9 +15090,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15154,9 +15154,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15218,9 +15218,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15282,9 +15282,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15346,9 +15346,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15410,9 +15410,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15474,9 +15474,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15543,9 +15543,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15613,9 +15613,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15678,9 +15678,9 @@ ParsedWikitextPage(
                                                                                 WtText(") ")
                                                                                 XmlEntityRef(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "&ndash;"
                                                                                     {N} name = "ndash"
                                                                                     {N} resolved = "\u2013"
+                                                                                    {N} rtd = RTD[ "&ndash;" ]
                                                                                 )
                                                                                 WtText(" ")
                                                                                 Italics(
@@ -15994,8 +15994,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -16007,16 +16007,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -16080,8 +16080,8 @@ ParsedWikitextPage(
                                               [
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                                 XmlElement(
                                                   Properties:
@@ -16093,16 +16093,16 @@ ParsedWikitextPage(
                                                   [
                                                     XmlEntityRef(
                                                       Properties:
-                                                        RTD = RtData: [0] = "&middot;"
                                                         {N} name = "middot"
                                                         {N} resolved = "\u00B7"
+                                                        {N} rtd = RTD[ "&middot;" ]
                                                     )
                                                   ]
                                                 )
                                                 XmlCharRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&#32;"
                                                     {N} codePoint = 32
+                                                    {N} rtd = RTD[ "&#32;" ]
                                                 )
                                               ]
                                             )
@@ -16324,21 +16324,21 @@ ParsedWikitextPage(
                                               [
                                                 XmlEntityRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&nbsp;"
                                                     {N} name = "nbsp"
                                                     {N} resolved = "\u00A0"
+                                                    {N} rtd = RTD[ "&nbsp;" ]
                                                 )
                                                 XmlEntityRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&nbsp;"
                                                     {N} name = "nbsp"
                                                     {N} resolved = "\u00A0"
+                                                    {N} rtd = RTD[ "&nbsp;" ]
                                                 )
                                                 XmlEntityRef(
                                                   Properties:
-                                                    RTD = RtData: [0] = "&nbsp;"
                                                     {N} name = "nbsp"
                                                     {N} resolved = "\u00A0"
+                                                    {N} rtd = RTD[ "&nbsp;" ]
                                                 )
                                               ]
                                             )
