@@ -2006,9 +2006,9 @@ ParsedWikitextPage(
               WtText("Sun Valley Charter High School, Ramona. Closed as of February 3, 2008 due to lack of funding.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]</ref>"
                   {N} body = "[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]</ref>" ]
 
                 [ ]
               )

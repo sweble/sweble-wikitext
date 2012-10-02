@@ -549,9 +549,9 @@ ParsedWikitextPage(
               WtText("137,847 ")
               XmlComment(
                 Properties:
-                  RTD = RtData: [0] = "<!--Do not remove per [[WP:MOSNUM]]-->"
                   {N} content = "Do not remove per [[WP:MOSNUM]]"
                   {N} prefix = null
+                  {N} rtd = RTD[ "<!--Do not remove per [[WP:MOSNUM]]-->" ]
                   {N} suffix = null
               )
               WtText("\n")
@@ -655,9 +655,9 @@ ParsedWikitextPage(
               WtText(" 593 ")
               XmlComment(
                 Properties:
-                  RTD = RtData: [0] = "<!--Do not remove per [[WP:MOSNUM]]-->"
                   {N} content = "Do not remove per [[WP:MOSNUM]]"
                   {N} prefix = null
+                  {N} rtd = RTD[ "<!--Do not remove per [[WP:MOSNUM]]-->" ]
                   {N} suffix = null
               )
               WtText("\n")
@@ -689,9 +689,9 @@ ParsedWikitextPage(
               WtText(" $2.932&nbsp;trillion")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite encyclopedia|url=http://www.imf.org/external/pubs/ft/weo/2010/02/weodata/weorept.aspx?pr.x=61&pr.y=14&sy=2008&ey=2015&scsm=1&ssd=1&sort=country&ds=.&br=1&c=134&s=NGDP_R%2CNGDP_RPCH%2CNGDP%2CNGDPD%2CNGDP_D%2CNGDPRPC%2CNGDPPC%2CNGDPDPC%2CNGAP_NPGDP%2CPPPGDP%2CPPPPC%2CPPPSH%2CPPPEX%2CNID_NGDP%2CNGSD_NGDP&grp=0&a=|title=Germany|publisher=International Monetary Fund|accessdate=20 February 2011}}</ref>"
                   {N} body = "{{cite encyclopedia|url=http://www.imf.org/external/pubs/ft/weo/2010/02/weodata/weorept.aspx?pr.x=61&pr.y=14&sy=2008&ey=2015&scsm=1&ssd=1&sort=country&ds=.&br=1&c=134&s=NGDP_R%2CNGDP_RPCH%2CNGDP%2CNGDPD%2CNGDP_D%2CNGDPRPC%2CNGDPPC%2CNGDPDPC%2CNGAP_NPGDP%2CPPPGDP%2CPPPPC%2CPPPSH%2CPPPEX%2CNID_NGDP%2CNGSD_NGDP&grp=0&a=|title=Germany|publisher=International Monetary Fund|accessdate=20 February 2011}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite encyclopedia|url=http://www.imf.org/external/pubs/ft/weo/2010/02/weodata/weorept.aspx?pr.x=61&pr.y=14&sy=2008&ey=2015&scsm=1&ssd=1&sort=country&ds=.&br=1&c=134&s=NGDP_R%2CNGDP_RPCH%2CNGDP%2CNGDPD%2CNGDP_D%2CNGDPRPC%2CNGDPPC%2CNGDPDPC%2CNGAP_NPGDP%2CPPPGDP%2CPPPPC%2CPPPSH%2CPPPEX%2CNID_NGDP%2CNGSD_NGDP&grp=0&a=|title=Germany|publisher=International Monetary Fund|accessdate=20 February 2011}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -725,9 +725,9 @@ ParsedWikitextPage(
               WtText("$35,930")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -761,9 +761,9 @@ ParsedWikitextPage(
               WtText("$3.305&nbsp;trillion")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -805,9 +805,9 @@ ParsedWikitextPage(
               WtText("$40,511")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -857,9 +857,9 @@ ParsedWikitextPage(
               WtText(" 0.885")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2010_EN_Table1.pdf|title=Human development indices|publisher=[[United Nations Development Programme]]|accessdate=4 November 2010}}</ref>"
                   {N} body = "{{cite web|url=http://hdr.undp.org/en/media/HDR_2010_EN_Table1.pdf|title=Human development indices|publisher=[[United Nations Development Programme]]|accessdate=4 November 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2010_EN_Table1.pdf|title=Human development indices|publisher=[[United Nations Development Programme]]|accessdate=4 November 2010}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -1333,9 +1333,9 @@ ParsedWikitextPage(
       WtText("),")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite book |editor=Max Mangold (ed.)|title=Duden, Aussprachew\u00F6rterbuch (Duden Pronunciation Dictionary) |edition=6th |year=1995 |publisher=Dudenverlag Bibliographisches Institut & F.A. Brockhaus |location=Mannheim |language=German |isbn=3-411-04066-1|pages=271, 53f}}</ref>"
           {N} body = "{{cite book |editor=Max Mangold (ed.)|title=Duden, Aussprachew\u00F6rterbuch (Duden Pronunciation Dictionary) |edition=6th |year=1995 |publisher=Dudenverlag Bibliographisches Institut & F.A. Brockhaus |location=Mannheim |language=German |isbn=3-411-04066-1|pages=271, 53f}}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite book |editor=Max Mangold (ed.)|title=Duden, Aussprachew\u00F6rterbuch (Duden Pronunciation Dictionary) |edition=6th |year=1995 |publisher=Dudenverlag Bibliographisches Institut & F.A. Brockhaus |location=Mannheim |language=German |isbn=3-411-04066-1|pages=271, 53f}}</ref>" ]
 
         [
           XmlAttribute(
@@ -1350,9 +1350,9 @@ ParsedWikitextPage(
       )
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">The country's long name in its [[Languages of Germany|regional languages]] include:\n*{{lang-dsb|Nimska zw\u011Bzkowa republika}};\n*{{lang-hsb|N\u011Bmska zwjazkowa republika}};\n*{{lang-da|Forbundsrepublikken Tyskland}};\n*{{lang-nds| Bundsrepubliek D\u00FC\u00FCtschland}};\n*{{lang-rmy|I Federalni Republika Jermaniya}};\n*[[Frisian language|Frisian]]: B\u00FBnsrepublyk D\u00FAtsl\u00E2n;\n*[[Palatinate German]]: Bundesrepublik vun Daitschlond</ref>"
           {N} body = "The country's long name in its [[Languages of Germany|regional languages]] include:\n*{{lang-dsb|Nimska zw\u011Bzkowa republika}};\n*{{lang-hsb|N\u011Bmska zwjazkowa republika}};\n*{{lang-da|Forbundsrepublikken Tyskland}};\n*{{lang-nds| Bundsrepubliek D\u00FC\u00FCtschland}};\n*{{lang-rmy|I Federalni Republika Jermaniya}};\n*[[Frisian language|Frisian]]: B\u00FBnsrepublyk D\u00FAtsl\u00E2n;\n*[[Palatinate German]]: Bundesrepublik vun Daitschlond"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">The country's long name in its [[Languages of Germany|regional languages]] include:\n*{{lang-dsb|Nimska zw\u011Bzkowa republika}};\n*{{lang-hsb|N\u011Bmska zwjazkowa republika}};\n*{{lang-da|Forbundsrepublikken Tyskland}};\n*{{lang-nds| Bundsrepubliek D\u00FC\u00FCtschland}};\n*{{lang-rmy|I Federalni Republika Jermaniya}};\n*[[Frisian language|Frisian]]: B\u00FBnsrepublyk D\u00FAtsl\u00E2n;\n*[[Palatinate German]]: Bundesrepublik vun Daitschlond</ref>" ]
 
         [
           XmlAttribute(
@@ -1552,9 +1552,9 @@ ParsedWikitextPage(
       WtText(",")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-QA-09-047/EN/KS-QA-09-047-EN.PDF |title=First demographic estimates for 2009 |publisher=[[Eurostat]] |accessdate=31 January 2010}}</ref>"
           {N} body = "{{cite web |url=http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-QA-09-047/EN/KS-QA-09-047-EN.PDF |title=First demographic estimates for 2009 |publisher=[[Eurostat]] |accessdate=31 January 2010}}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=http://epp.eurostat.ec.europa.eu/cache/ITY_OFFPUB/KS-QA-09-047/EN/KS-QA-09-047-EN.PDF |title=First demographic estimates for 2009 |publisher=[[Eurostat]] |accessdate=31 January 2010}}</ref>" ]
 
         [
           XmlAttribute(
@@ -1585,9 +1585,9 @@ ParsedWikitextPage(
       WtText(" worldwide.")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=http://www.migrationinformation.org/datahub/countrydata/country.cfm |title=Germany: Inflow of foreign population by country of nationality, 1994 to 2003 | publisher = Migrationinformation.org |accessdate=4 January 2010}}</ref>"
           {N} body = "{{cite web |url=http://www.migrationinformation.org/datahub/countrydata/country.cfm |title=Germany: Inflow of foreign population by country of nationality, 1994 to 2003 | publisher = Migrationinformation.org |accessdate=4 January 2010}}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=http://www.migrationinformation.org/datahub/countrydata/country.cfm |title=Germany: Inflow of foreign population by country of nationality, 1994 to 2003 | publisher = Migrationinformation.org |accessdate=4 January 2010}}</ref>" ]
 
         [ ]
       )
@@ -1820,17 +1820,17 @@ ParsedWikitextPage(
       WtText(".")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite news |title=On Jan.&nbsp;1, out of many arises one Euro |newspaper=St. Petersburg Times |location= Florida, USA |first= Susan | last = Taylor Martin |date=28 December 1998 |page=National, 1.A }}</ref>"
           {N} body = "{{cite news |title=On Jan.&nbsp;1, out of many arises one Euro |newspaper=St. Petersburg Times |location= Florida, USA |first= Susan | last = Taylor Martin |date=28 December 1998 |page=National, 1.A }}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite news |title=On Jan.&nbsp;1, out of many arises one Euro |newspaper=St. Petersburg Times |location= Florida, USA |first= Susan | last = Taylor Martin |date=28 December 1998 |page=National, 1.A }}</ref>" ]
 
         [ ]
       )
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{Cite news|title = Germans Say Goodbye to the Mark, a Symbol of Strength and Unity |newspaper=The New York Times| accessdate = 26 April 2010| url = http://www.nytimes.com/2002/01/01/world/germans-say-goodbye-to-the-mark-a-symbol-of-strength-and-unity.html?pagewanted=1 |first=Edmund L. | last = Andrews |date=1 January 2002 }}</ref>"
           {N} body = "{{Cite news|title = Germans Say Goodbye to the Mark, a Symbol of Strength and Unity |newspaper=The New York Times| accessdate = 26 April 2010| url = http://www.nytimes.com/2002/01/01/world/germans-say-goodbye-to-the-mark-a-symbol-of-strength-and-unity.html?pagewanted=1 |first=Edmund L. | last = Andrews |date=1 January 2002 }}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{Cite news|title = Germans Say Goodbye to the Mark, a Symbol of Strength and Unity |newspaper=The New York Times| accessdate = 26 April 2010| url = http://www.nytimes.com/2002/01/01/world/germans-say-goodbye-to-the-mark-a-symbol-of-strength-and-unity.html?pagewanted=1 |first=Edmund L. | last = Andrews |date=1 January 2002 }}</ref>" ]
 
         [
           XmlAttribute(
@@ -1845,9 +1845,9 @@ ParsedWikitextPage(
       )
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{Cite news |title = Euro notes and coins to flood continent |first=David | last = Smith |date=15 June 2001 |newspaper=New Straits Times| location = Kuala Lumpur | accessdate = 26 April 2010| url = http://news.google.co.uk/newspapers?id=liwhAAAAIBAJ&sjid=j3gFAAAAIBAJ&pg=1283,3813941&dq=germany+euro+currency+introduced+1999&hl=en }}</ref>"
           {N} body = "{{Cite news |title = Euro notes and coins to flood continent |first=David | last = Smith |date=15 June 2001 |newspaper=New Straits Times| location = Kuala Lumpur | accessdate = 26 April 2010| url = http://news.google.co.uk/newspapers?id=liwhAAAAIBAJ&sjid=j3gFAAAAIBAJ&pg=1283,3813941&dq=germany+euro+currency+introduced+1999&hl=en }}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{Cite news |title = Euro notes and coins to flood continent |first=David | last = Smith |date=15 June 2001 |newspaper=New Straits Times| location = Kuala Lumpur | accessdate = 26 April 2010| url = http://news.google.co.uk/newspapers?id=liwhAAAAIBAJ&sjid=j3gFAAAAIBAJ&pg=1283,3813941&dq=germany+euro+currency+introduced+1999&hl=en }}</ref>" ]
 
         [ ]
       )
@@ -2078,9 +2078,9 @@ ParsedWikitextPage(
       WtText(" budget in the world,")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite news | url = http://www.topnews.in/germany-worlds-second-biggest-aid-donor-after-us-229970 | title = Germany world's second biggest aid donor after US | work = TopNews India | accessdate = 10 April 2008 | agency = DPA | date = 4 April 2008 }}</ref>"
           {N} body = "{{cite news | url = http://www.topnews.in/germany-worlds-second-biggest-aid-donor-after-us-229970 | title = Germany world's second biggest aid donor after US | work = TopNews India | accessdate = 10 April 2008 | agency = DPA | date = 4 April 2008 }}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite news | url = http://www.topnews.in/germany-worlds-second-biggest-aid-donor-after-us-229970 | title = Germany world's second biggest aid donor after US | work = TopNews India | accessdate = 10 April 2008 | agency = DPA | date = 4 April 2008 }}</ref>" ]
 
         [ ]
       )
@@ -2102,9 +2102,9 @@ ParsedWikitextPage(
       WtText(".")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archiveurl=http://web.archive.org/web/20070814224502/http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archivedate=14 August 2007 |title=The fifteen major spenders in 2006 |accessdate=23 August 2007 |year=2007 |format=PDF |work=Recent trends in military expenditure| publisher=Stockholm International Peace Research Institute}}</ref>"
           {N} body = "{{cite web |url=http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archiveurl=http://web.archive.org/web/20070814224502/http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archivedate=14 August 2007 |title=The fifteen major spenders in 2006 |accessdate=23 August 2007 |year=2007 |format=PDF |work=Recent trends in military expenditure| publisher=Stockholm International Peace Research Institute}}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archiveurl=http://web.archive.org/web/20070814224502/http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archivedate=14 August 2007 |title=The fifteen major spenders in 2006 |accessdate=23 August 2007 |year=2007 |format=PDF |work=Recent trends in military expenditure| publisher=Stockholm International Peace Research Institute}}</ref>" ]
 
         [ ]
       )
@@ -2136,18 +2136,18 @@ ParsedWikitextPage(
       WtText(". It holds a key position in European affairs and maintains a multitude of close partnerships on a global level.")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite news | url=http://www.iht.com/articles/2008/04/04/europe/poll.php | title = The leader of Europe? Answers an ocean apart | newspaper = International Herald Tribune | date = 4 April 2008 | accessdate =4 April 2008 | location = Paris }}</ref>"
           {N} body = "{{cite news | url=http://www.iht.com/articles/2008/04/04/europe/poll.php | title = The leader of Europe? Answers an ocean apart | newspaper = International Herald Tribune | date = 4 April 2008 | accessdate =4 April 2008 | location = Paris }}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite news | url=http://www.iht.com/articles/2008/04/04/europe/poll.php | title = The leader of Europe? Answers an ocean apart | newspaper = International Herald Tribune | date = 4 April 2008 | accessdate =4 April 2008 | location = Paris }}</ref>" ]
 
         [ ]
       )
       WtText(" Germany is recognised as a scientific and technological leader in several fields.")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">[http://www.innovations-report.de/html/berichte/informationstechnologie/bericht-109339.html Confidently into the Future with Reliable Technology] www.innovations-report.de. 7 May 2008. Retrieved 4 April 2008.</ref>"
           {N} body = "[http://www.innovations-report.de/html/berichte/informationstechnologie/bericht-109339.html Confidently into the Future with Reliable Technology] www.innovations-report.de. 7 May 2008. Retrieved 4 April 2008."
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://www.innovations-report.de/html/berichte/informationstechnologie/bericht-109339.html Confidently into the Future with Reliable Technology] www.innovations-report.de. 7 May 2008. Retrieved 4 April 2008.</ref>" ]
 
         [ ]
       )
@@ -2239,9 +2239,9 @@ ParsedWikitextPage(
               WtText(" ")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book|last = St\u00FCmpel|first = Gustav|title = Name und Nationalit\u00E4t der Germanen. Eine neue Untersuchung zu Poseidonios, Caesar und Tacitus|origyear = 1932|publisher = Dieterich|location = Leipzig|language = German|pages = 60}}</ref>"
                   {N} body = "{{cite book|last = St\u00FCmpel|first = Gustav|title = Name und Nationalit\u00E4t der Germanen. Eine neue Untersuchung zu Poseidonios, Caesar und Tacitus|origyear = 1932|publisher = Dieterich|location = Leipzig|language = German|pages = 60}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book|last = St\u00FCmpel|first = Gustav|title = Name und Nationalit\u00E4t der Germanen. Eine neue Untersuchung zu Poseidonios, Caesar und Tacitus|origyear = 1932|publisher = Dieterich|location = Leipzig|language = German|pages = 60}}</ref>" ]
 
                 [ ]
               )
@@ -2293,25 +2293,25 @@ ParsedWikitextPage(
               WtText(" that could possibly have meant \"neighbour\", or \"men of forests\", or even \"men with spears\".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book |last= Schulze |first=Hagen |authorlink=Hagen Schulze |title=Germany: A New History |publisher= [[Harvard University Press]]|page=4 |year=1998 |isbn= 0-674-80688-3}}</ref>"
                   {N} body = "{{cite book |last= Schulze |first=Hagen |authorlink=Hagen Schulze |title=Germany: A New History |publisher= [[Harvard University Press]]|page=4 |year=1998 |isbn= 0-674-80688-3}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book |last= Schulze |first=Hagen |authorlink=Hagen Schulze |title=Germany: A New History |publisher= [[Harvard University Press]]|page=4 |year=1998 |isbn= 0-674-80688-3}}</ref>" ]
 
                 [ ]
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | url=http://www.oxfordreference.com/views/ENTRY.html?subview=Main&entry=t27.e6407 | section = German | title = The Concise Oxford Dictionary of English Etymology | editor = Hoad, T.F. | publisher = Oxford University Press | year = 1996 | accessdate = 4 March 2008 }}</ref>"
                   {N} body = "{{cite book | url=http://www.oxfordreference.com/views/ENTRY.html?subview=Main&entry=t27.e6407 | section = German | title = The Concise Oxford Dictionary of English Etymology | editor = Hoad, T.F. | publisher = Oxford University Press | year = 1996 | accessdate = 4 March 2008 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | url=http://www.oxfordreference.com/views/ENTRY.html?subview=Main&entry=t27.e6407 | section = German | title = The Concise Oxford Dictionary of English Etymology | editor = Hoad, T.F. | publisher = Oxford University Press | year = 1996 | accessdate = 4 March 2008 }}</ref>" ]
 
                 [ ]
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.zeno.org/Meyers-1905/A/G%C4%93r |title=Meyers Encyclopedia:Ger |publisher=Zeno.org |accessdate=26 September 2010}}</ref>"
                   {N} body = "{{cite web|url=http://www.zeno.org/Meyers-1905/A/G%C4%93r |title=Meyers Encyclopedia:Ger |publisher=Zeno.org |accessdate=26 September 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.zeno.org/Meyers-1905/A/G%C4%93r |title=Meyers Encyclopedia:Ger |publisher=Zeno.org |accessdate=26 September 2010}}</ref>" ]
 
                 [ ]
               )
@@ -2555,9 +2555,9 @@ ParsedWikitextPage(
               WtText(", etymological research and archaeological finds.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | first = Jill N. | last = Claster | title = Medieval Experience: 300\u20131400 | publisher = [[New York University Press]] | year = 1982 | page = 35 | isbn=0-8147-1381-5 }}</ref>"
                   {N} body = "{{cite book | first = Jill N. | last = Claster | title = Medieval Experience: 300\u20131400 | publisher = [[New York University Press]] | year = 1982 | page = 35 | isbn=0-8147-1381-5 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | first = Jill N. | last = Claster | title = Medieval Experience: 300\u20131400 | publisher = [[New York University Press]] | year = 1982 | page = 35 | isbn=0-8147-1381-5 }}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -2823,9 +2823,9 @@ ParsedWikitextPage(
               WtText(". Around 260, the Germanic peoples broke through the Limes and the Danube frontier into Roman-controlled lands.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | series= The Cambridge Ancient History | title = The crisis of empire, A.D. 193\u2013337 | volume = 12 | page = 442 | isbn=0-521-30199-8 | first = Alan K. | last = Bowman | first2 = Peter | last2 = Garnsey | first3 = Averil | last3 = Cameron | publisher = Cambridge University Press | year = 2005}}</ref>"
                   {N} body = "{{cite book | series= The Cambridge Ancient History | title = The crisis of empire, A.D. 193\u2013337 | volume = 12 | page = 442 | isbn=0-521-30199-8 | first = Alan K. | last = Bowman | first2 = Peter | last2 = Garnsey | first3 = Averil | last3 = Cameron | publisher = Cambridge University Press | year = 2005}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | series= The Cambridge Ancient History | title = The crisis of empire, A.D. 193\u2013337 | volume = 12 | page = 442 | isbn=0-521-30199-8 | first = Alan K. | last = Bowman | first2 = Peter | last2 = Garnsey | first3 = Averil | last3 = Cameron | publisher = Cambridge University Press | year = 2005}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -3542,9 +3542,9 @@ ParsedWikitextPage(
               WtText(" of 1348\u201350, the population of Germany plummeted.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315\u20131317) and the Black Death (1346\u20131351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}</ref>"
                   {N} body = "{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315\u20131317) and the Black Death (1346\u20131351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315\u20131317) and the Black Death (1346\u20131351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}</ref>" ]
 
                 [ ]
               )
@@ -3680,18 +3680,18 @@ ParsedWikitextPage(
               WtText(" (1618\u20131648), which devastated German lands.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Rempel, Gerhard. [http://mars.wnec.edu/~grempel/courses/wc2/lectures/30yearswar.html The Thirty-Years-War]. Western [[New England College]].</ref>"
                   {N} body = "Rempel, Gerhard. [http://mars.wnec.edu/~grempel/courses/wc2/lectures/30yearswar.html The Thirty-Years-War]. Western [[New England College]]."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Rempel, Gerhard. [http://mars.wnec.edu/~grempel/courses/wc2/lectures/30yearswar.html The Thirty-Years-War]. Western [[New England College]].</ref>" ]
 
                 [ ]
               )
               WtText(" The population of the German states was reduced by about 30%.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | url=http://books.google.com/?id=eGsCGAdH4YQC&pg=PA51&dq#v=onepage&q=&f=false | title = The savage wars of peace: England, Japan and the Malthusian trap | first = Alan | last = Macfarlane | year = 1997 | page=51 |isbn = 0-631-18117-2 }}</ref>"
                   {N} body = "{{cite book | url=http://books.google.com/?id=eGsCGAdH4YQC&pg=PA51&dq#v=onepage&q=&f=false | title = The savage wars of peace: England, Japan and the Malthusian trap | first = Alan | last = Macfarlane | year = 1997 | page=51 |isbn = 0-631-18117-2 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | url=http://books.google.com/?id=eGsCGAdH4YQC&pg=PA51&dq#v=onepage&q=&f=false | title = The savage wars of peace: England, Japan and the Malthusian trap | first = Alan | last = Macfarlane | year = 1997 | page=51 |isbn = 0-631-18117-2 }}</ref>" ]
 
                 [ ]
               )
@@ -3767,9 +3767,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | last = Fulbrook | first = Mary | title = A Concise History of Germany | publisher = Cambridge University Press | year = 1991 | page = 97 | isbn = 0-521-54071-2 }}</ref>"
                   {N} body = "{{cite book | last = Fulbrook | first = Mary | title = A Concise History of Germany | publisher = Cambridge University Press | year = 1991 | page = 97 | isbn = 0-521-54071-2 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | last = Fulbrook | first = Mary | title = A Concise History of Germany | publisher = Cambridge University Press | year = 1991 | page = 97 | isbn = 0-521-54071-2 }}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -4019,9 +4019,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815\u20131866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006.</ref>"
                   {N} body = "Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815\u20131866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815\u20131866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -4796,9 +4796,9 @@ ParsedWikitextPage(
               WtText(" conflicts of all time. An estimated two million German soldiers died in World War I.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite news | url = http://www.spiegel.de/international/germany/0,1518,530319,00.html | title = Last German World War I Veteran Believed to Have Died | newspaper = Spiegel Online | date = 22 January 2008 | first = David | last = Crossland }}</ref>"
                   {N} body = "{{cite news | url = http://www.spiegel.de/international/germany/0,1518,530319,00.html | title = Last German World War I Veteran Believed to Have Died | newspaper = Spiegel Online | date = 22 January 2008 | first = David | last = Crossland }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite news | url = http://www.spiegel.de/international/germany/0,1518,530319,00.html | title = Last German World War I Veteran Believed to Have Died | newspaper = Spiegel Online | date = 22 January 2008 | first = David | last = Crossland }}</ref>" ]
 
                 [ ]
               )
@@ -4865,9 +4865,9 @@ ParsedWikitextPage(
               WtText(" in the country.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | first = Stephen J. | last = Lee | title = Europe, 1890\u20131945 | publisher = Routledge | year = 2003 | page = 131 | isbn = 0-415-25455-8 | location = London}}</ref>"
                   {N} body = "{{cite book | first = Stephen J. | last = Lee | title = Europe, 1890\u20131945 | publisher = Routledge | year = 2003 | page = 131 | isbn = 0-415-25455-8 | location = London}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | first = Stephen J. | last = Lee | title = Europe, 1890\u20131945 | publisher = Routledge | year = 2003 | page = 131 | isbn = 0-415-25455-8 | location = London}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -5468,9 +5468,9 @@ ParsedWikitextPage(
               WtText(" had already been imprisoned.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=http://www.dhm.de/lemo/html/nazi/innenpolitik/ermaechtigungsgesetz/index.html |title=Das Erm\u00E4chtigungsgesetz 1933 |accessdate=12 September 2008 |publisher=[[Deutsches Historisches Museum]]| language=German |quote=An der Abstimmung nicht teilnehmen konnten die 81 Abgeordneten der Kommunistischen Partei Deutschlands (KPD). Ihre Mandate waren auf Basis der Reichstagsbrandverordnung bereits am 8. M\u00E4rz 1933 annulliert worden. }}<br />Stackelberg, Roderick (1999). ''Hitler's Germany: origins, interpretations, legacies''. Routledge. p. 103. ISBN 0-415-20114-4. <br />Scheck, Raffael. [http://www.colby.edu/personal/r/rmscheck/GermanyE1.html Establishing a Dictatorship: The Stabilization of Nazi Power] Colby College. Retrieved 12 July 2006.</ref>"
                   {N} body = "{{cite web |url=http://www.dhm.de/lemo/html/nazi/innenpolitik/ermaechtigungsgesetz/index.html |title=Das Erm\u00E4chtigungsgesetz 1933 |accessdate=12 September 2008 |publisher=[[Deutsches Historisches Museum]]| language=German |quote=An der Abstimmung nicht teilnehmen konnten die 81 Abgeordneten der Kommunistischen Partei Deutschlands (KPD). Ihre Mandate waren auf Basis der Reichstagsbrandverordnung bereits am 8. M\u00E4rz 1933 annulliert worden. }}<br />Stackelberg, Roderick (1999). ''Hitler's Germany: origins, interpretations, legacies''. Routledge. p. 103. ISBN 0-415-20114-4. <br />Scheck, Raffael. [http://www.colby.edu/personal/r/rmscheck/GermanyE1.html Establishing a Dictatorship: The Stabilization of Nazi Power] Colby College. Retrieved 12 July 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=http://www.dhm.de/lemo/html/nazi/innenpolitik/ermaechtigungsgesetz/index.html |title=Das Erm\u00E4chtigungsgesetz 1933 |accessdate=12 September 2008 |publisher=[[Deutsches Historisches Museum]]| language=German |quote=An der Abstimmung nicht teilnehmen konnten die 81 Abgeordneten der Kommunistischen Partei Deutschlands (KPD). Ihre Mandate waren auf Basis der Reichstagsbrandverordnung bereits am 8. M\u00E4rz 1933 annulliert worden. }}<br />Stackelberg, Roderick (1999). ''Hitler's Germany: origins, interpretations, legacies''. Routledge. p. 103. ISBN 0-415-20114-4. <br />Scheck, Raffael. [http://www.colby.edu/personal/r/rmscheck/GermanyE1.html Establishing a Dictatorship: The Stabilization of Nazi Power] Colby College. Retrieved 12 July 2006.</ref>" ]
 
                 [ ]
               )
@@ -5487,9 +5487,9 @@ ParsedWikitextPage(
               WtText(" within months. Industry was revitalised with a focus on military rearmament.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=http://www.dhm.de/lemo/html/nazi/wirtschaft/index.html|title=Industrie und Wirtschaft |accessdate=12 September 2008 |publisher=Deutsches Historisches Museum |language=German |quote=Der Vierjahresplan sollte ab 1936 die wirtschaftliche Kriegsf\u00E4higkeit Deutschlands herbeif\u00FChren. . . .Bereits im Februar 1933 erkl\u00E4rte Hitler, dass alle \u00F6ffentlichen Ma\u00DFnahmen zur Arbeitsbeschaffung zugleich der \"Wehrhaftmachung\" zu dienen h\u00E4tten und den Interessen des Staates untergeordnet seien. . . .}}</ref>"
                   {N} body = "{{cite web |url=http://www.dhm.de/lemo/html/nazi/wirtschaft/index.html|title=Industrie und Wirtschaft |accessdate=12 September 2008 |publisher=Deutsches Historisches Museum |language=German |quote=Der Vierjahresplan sollte ab 1936 die wirtschaftliche Kriegsf\u00E4higkeit Deutschlands herbeif\u00FChren. . . .Bereits im Februar 1933 erkl\u00E4rte Hitler, dass alle \u00F6ffentlichen Ma\u00DFnahmen zur Arbeitsbeschaffung zugleich der \"Wehrhaftmachung\" zu dienen h\u00E4tten und den Interessen des Staates untergeordnet seien. . . .}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=http://www.dhm.de/lemo/html/nazi/wirtschaft/index.html|title=Industrie und Wirtschaft |accessdate=12 September 2008 |publisher=Deutsches Historisches Museum |language=German |quote=Der Vierjahresplan sollte ab 1936 die wirtschaftliche Kriegsf\u00E4higkeit Deutschlands herbeif\u00FChren. . . .Bereits im Februar 1933 erkl\u00E4rte Hitler, dass alle \u00F6ffentlichen Ma\u00DFnahmen zur Arbeitsbeschaffung zugleich der \"Wehrhaftmachung\" zu dienen h\u00E4tten und den Interessen des Staates untergeordnet seien. . . .}}</ref>" ]
 
                 [ ]
               )
@@ -5928,9 +5928,9 @@ ParsedWikitextPage(
               WtText(" from Eastern Europe \u2013 died during World War II.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Steinberg, Heinz G\u00FCnter. ''Die Bev\u00F6lkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem \u00DCberblick \u00FCber die Entwicklung von 1945 bis 1990.'' Bonn 1991.</ref>"
                   {N} body = "Steinberg, Heinz G\u00FCnter. ''Die Bev\u00F6lkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem \u00DCberblick \u00FCber die Entwicklung von 1945 bis 1990.'' Bonn 1991."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Steinberg, Heinz G\u00FCnter. ''Die Bev\u00F6lkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem \u00DCberblick \u00FCber die Entwicklung von 1945 bis 1990.'' Bonn 1991.</ref>" ]
 
                 [ ]
               )
@@ -6031,9 +6031,9 @@ ParsedWikitextPage(
               WtText(", homosexuals, and members of the political opposition.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Niewyk, Donald L.; Nicosia, Francis R. [http://books.google.ca/books?id=lpDTIUklB2MC&pg=PP1&dq=Niewyk,+Donald+L.+The+Columbia+Guide+to+the+Holocaust&sig=4igufxQHRCNrkjwRuMt1if_mf5M#PPA45,M1 ''The Columbia Guide to the Holocaust''], [[Columbia University Press]], 2000, pp. 45\u201352.</ref>"
                   {N} body = "Niewyk, Donald L.; Nicosia, Francis R. [http://books.google.ca/books?id=lpDTIUklB2MC&pg=PP1&dq=Niewyk,+Donald+L.+The+Columbia+Guide+to+the+Holocaust&sig=4igufxQHRCNrkjwRuMt1if_mf5M#PPA45,M1 ''The Columbia Guide to the Holocaust''], [[Columbia University Press]], 2000, pp. 45\u201352."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Niewyk, Donald L.; Nicosia, Francis R. [http://books.google.ca/books?id=lpDTIUklB2MC&pg=PP1&dq=Niewyk,+Donald+L.+The+Columbia+Guide+to+the+Holocaust&sig=4igufxQHRCNrkjwRuMt1if_mf5M#PPA45,M1 ''The Columbia Guide to the Holocaust''], [[Columbia University Press]], 2000, pp. 45\u201352.</ref>" ]
 
                 [ ]
               )
@@ -6047,9 +6047,9 @@ ParsedWikitextPage(
               WtText("million dead in Europe.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite news | url = http://news.bbc.co.uk/2/hi/europe/4530565.stm | title = Leaders mourn Soviet wartime dead | work = BBC News Online |location = London | date = 9 May 2005 }}</ref>"
                   {N} body = "{{cite news | url = http://news.bbc.co.uk/2/hi/europe/4530565.stm | title = Leaders mourn Soviet wartime dead | work = BBC News Online |location = London | date = 9 May 2005 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite news | url = http://news.bbc.co.uk/2/hi/europe/4530565.stm | title = Leaders mourn Soviet wartime dead | work = BBC News Online |location = London | date = 9 May 2005 }}</ref>" ]
 
                 [ ]
               )
@@ -6076,9 +6076,9 @@ ParsedWikitextPage(
               WtText(" were held after World War II.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">\"[http://www.bbc.co.uk/history/worldwars/wwtwo/nuremberg_article_01.shtml Nuremberg: Nazis On Trial]\". Professor Richard Overy. BBC History.</ref>"
                   {N} body = "\"[http://www.bbc.co.uk/history/worldwars/wwtwo/nuremberg_article_01.shtml Nuremberg: Nazis On Trial]\". Professor Richard Overy. BBC History."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">\"[http://www.bbc.co.uk/history/worldwars/wwtwo/nuremberg_article_01.shtml Nuremberg: Nazis On Trial]\". Professor Richard Overy. BBC History.</ref>" ]
 
                 [ ]
               )
@@ -6296,9 +6296,9 @@ ParsedWikitextPage(
               WtText(";")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 409\u2013412 | quote = Altogether at least 2&nbsp;million German women are thought to have been raped . . . }}<br />{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 31\u201332 | quote =He [the Komsomol leader, Maltsev] went on to boast that '2&nbsp;million of our children were born in Germany.' }}</ref>"
                   {N} body = "{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 409\u2013412 | quote = Altogether at least 2&nbsp;million German women are thought to have been raped . . . }}<br />{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 31\u201332 | quote =He [the Komsomol leader, Maltsev] went on to boast that '2&nbsp;million of our children were born in Germany.' }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 409\u2013412 | quote = Altogether at least 2&nbsp;million German women are thought to have been raped . . . }}<br />{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 31\u201332 | quote =He [the Komsomol leader, Maltsev] went on to boast that '2&nbsp;million of our children were born in Germany.' }}</ref>" ]
 
                 [ ]
               )
@@ -6420,9 +6420,9 @@ ParsedWikitextPage(
               WtText(" that was to be overcome one day.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite book | last = Wise | first = Michael Z. | title = Capital dilemma: Germany's search for a new architecture of democracy| year = 1998| publisher = Princeton Architectural Press | isbn =978-1-56898-134-5 | page = 23 | chapter = Bonn, Capital of Self-Effacement}}</ref>"
                   {N} body = "{{cite book | last = Wise | first = Michael Z. | title = Capital dilemma: Germany's search for a new architecture of democracy| year = 1998| publisher = Princeton Architectural Press | isbn =978-1-56898-134-5 | page = 23 | chapter = Bonn, Capital of Self-Effacement}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite book | last = Wise | first = Michael Z. | title = Capital dilemma: Germany's search for a new architecture of democracy| year = 1998| publisher = Princeton Architectural Press | isbn =978-1-56898-134-5 | page = 23 | chapter = Bonn, Capital of Self-Effacement}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -6716,9 +6716,9 @@ ParsedWikitextPage(
               WtText(" was based on the benefits of the GDR's social programs and the alleged constant threat of a West German invasion, many of her citizens looked to the West for political freedoms and economic prosperity.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{cite news | last = Colchester | first = Nico | url = http://www.ft.com/cms/s/504285c4-68b6-11da-bd30-0000779e2340,dwp_uuid=6f876a3c-e19f-11da-bf4c-0000779e2340.html | title = D-mark day dawns | newspaper = [[Financial Times]] | location = London | date = 1 January 2001 | accessdate = 7 December 2006 }}</ref>"
                   {N} body = "{{cite news | last = Colchester | first = Nico | url = http://www.ft.com/cms/s/504285c4-68b6-11da-bd30-0000779e2340,dwp_uuid=6f876a3c-e19f-11da-bf4c-0000779e2340.html | title = D-mark day dawns | newspaper = [[Financial Times]] | location = London | date = 1 January 2001 | accessdate = 7 December 2006 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{cite news | last = Colchester | first = Nico | url = http://www.ft.com/cms/s/504285c4-68b6-11da-bd30-0000779e2340,dwp_uuid=6f876a3c-e19f-11da-bf4c-0000779e2340.html | title = D-mark day dawns | newspaper = [[Financial Times]] | location = London | date = 1 January 2001 | accessdate = 7 December 2006 }}</ref>" ]
 
                 [ ]
               )
@@ -6996,9 +6996,9 @@ ParsedWikitextPage(
                     WtText(", began circulating on 1 January 2002.")
                     TagExtension(
                       Properties:
-                        RTD = RtData: [0] = "<ref", [1] = "/>"
                         {N} body = null
                         {N} name = "ref"
+                        {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                       [
                         XmlAttribute(
@@ -7028,17 +7028,17 @@ ParsedWikitextPage(
               WtText(" (federal city) retaining some federal ministries.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [http://www.wdr.de/themen/politik/nrw03/bonn_berlin/060914.jhtml?rubrikenstyle=politik Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 14 September 2006.</ref>"
                   {N} body = "{{de icon}} [http://www.wdr.de/themen/politik/nrw03/bonn_berlin/060914.jhtml?rubrikenstyle=politik Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 14 September 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [http://www.wdr.de/themen/politik/nrw03/bonn_berlin/060914.jhtml?rubrikenstyle=politik Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 14 September 2006.</ref>" ]
 
                 [ ]
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [http://www.wdr.de/themen/politik/deutschland/bonn_berlin/060619.jhtml?rubrikenstyle=politik Deutschlands heimliche Hauptstadt Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 20 June 2006.</ref>"
                   {N} body = "{{de icon}} [http://www.wdr.de/themen/politik/deutschland/bonn_berlin/060619.jhtml?rubrikenstyle=politik Deutschlands heimliche Hauptstadt Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 20 June 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [http://www.wdr.de/themen/politik/deutschland/bonn_berlin/060619.jhtml?rubrikenstyle=politik Deutschlands heimliche Hauptstadt Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 20 June 2006.</ref>" ]
 
                 [ ]
               )
@@ -7125,9 +7125,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Dempsey, Judy. [http://www.iht.com/articles/2006/10/31/news/germany.php Germany is planning a Bosnia withdrawal] International Herald Tribune. 31 October 2006. Retrieved 30 November 2006.</ref>"
                   {N} body = "Dempsey, Judy. [http://www.iht.com/articles/2006/10/31/news/germany.php Germany is planning a Bosnia withdrawal] International Herald Tribune. 31 October 2006. Retrieved 30 November 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Dempsey, Judy. [http://www.iht.com/articles/2006/10/31/news/germany.php Germany is planning a Bosnia withdrawal] International Herald Tribune. 31 October 2006. Retrieved 30 November 2006.</ref>" ]
 
                 [
                   XmlAttribute(
@@ -7717,9 +7717,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web| url = https://www.cia.gov/library/publications/the-world-factbook/geos/gm.html| title = CIA Factbook | accessdate = 23 October 2010| author=CIA | authorlink = Central Intelligence Agency}}</ref>"
               {N} body = "{{Cite web| url = https://www.cia.gov/library/publications/the-world-factbook/geos/gm.html| title = CIA Factbook | accessdate = 23 October 2010| author=CIA | authorlink = Central Intelligence Agency}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite web| url = https://www.cia.gov/library/publications/the-world-factbook/geos/gm.html| title = CIA Factbook | accessdate = 23 October 2010| author=CIA | authorlink = Central Intelligence Agency}}</ref>" ]
 
             [
               XmlAttribute(
@@ -9594,9 +9594,9 @@ ParsedWikitextPage(
               WtText("In addition to the maritime and continental climates that predominate over most of the country, the Alpine regions in the extreme south and, to a lesser degree, some areas of the Central German Uplands have a so-called mountain climate. This climate is characterised by lower temperatures because of higher altitudes and greater precipitation caused by air becoming moisture-laden as it lifts over higher terrain.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.germanculture.com.ua/library/facts/bl_climate.htm Climate In Germany] GermanCulture. Retrieved 2010-26-08.</ref>"
                   {N} body = "[http://www.germanculture.com.ua/library/facts/bl_climate.htm Climate In Germany] GermanCulture. Retrieved 2010-26-08."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.germanculture.com.ua/library/facts/bl_climate.htm Climate In Germany] GermanCulture. Retrieved 2010-26-08.</ref>" ]
 
                 [ ]
               )
@@ -9746,9 +9746,9 @@ ParsedWikitextPage(
               WtText(": European-Mediterranean montane mixed forests and Northeast-Atlantic shelf marine.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.panda.org/about_our_earth/ecoregions/ecoregion_list/ List of Ecoregions: Terrestrial Ecoregions] WWF. Retrieved 21 November 2000.</ref>"
                   {N} body = "[http://www.panda.org/about_our_earth/ecoregions/ecoregion_list/ List of Ecoregions: Terrestrial Ecoregions] WWF. Retrieved 21 November 2000."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.panda.org/about_our_earth/ecoregions/ecoregion_list/ List of Ecoregions: Terrestrial Ecoregions] WWF. Retrieved 21 November 2000.</ref>" ]
 
                 [ ]
               )
@@ -9903,18 +9903,18 @@ ParsedWikitextPage(
               WtText(", wildlife parks, aquaria, and bird parks.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.eupedia.com/europe/zoological_gardens_europe.shtml List of famous Zoological gardens in European countries] www.eupedia.com. Retrieved 17 October 2008.</ref>"
                   {N} body = "[http://www.eupedia.com/europe/zoological_gardens_europe.shtml List of famous Zoological gardens in European countries] www.eupedia.com. Retrieved 17 October 2008."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.eupedia.com/europe/zoological_gardens_europe.shtml List of famous Zoological gardens in European countries] www.eupedia.com. Retrieved 17 October 2008.</ref>" ]
 
                 [ ]
               )
               WtText(" More than 400 registered zoos and animal parks operate in Germany, which is believed to be the largest number in any single country of the world.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.americanzoos.info/Zoofacts.html Some interesting zoo facts] www.americanzoos.info/. Retrieved 17 October 2008.</ref>"
                   {N} body = "[http://www.americanzoos.info/Zoofacts.html Some interesting zoo facts] www.americanzoos.info/. Retrieved 17 October 2008."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.americanzoos.info/Zoofacts.html Some interesting zoo facts] www.americanzoos.info/. Retrieved 17 October 2008.</ref>" ]
 
                 [ ]
               )
@@ -9936,9 +9936,9 @@ ParsedWikitextPage(
               WtText(" is the oldest zoo in Germany and presents the most comprehensive collection of species in the world.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}}[http://www.zoo-berlin.de/en/understand/zahlen-fakten.html Tierstatistik 2008]{{dead link|date=September 2010}}, Zoo Berlin. Retrieved 19 November 2009.</ref>"
                   {N} body = "{{de icon}}[http://www.zoo-berlin.de/en/understand/zahlen-fakten.html Tierstatistik 2008]{{dead link|date=September 2010}}, Zoo Berlin. Retrieved 19 November 2009."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}}[http://www.zoo-berlin.de/en/understand/zahlen-fakten.html Tierstatistik 2008]{{dead link|date=September 2010}}, Zoo Berlin. Retrieved 19 November 2009.</ref>" ]
 
                 [ ]
               )
@@ -10044,9 +10044,9 @@ ParsedWikitextPage(
               WtText("Germany is known for its environmental consciousness.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://docs.google.com/viewer?a=v&q=cache:ULS2JqlpDgEJ:dzforum.de/downloads/020101311.pdf+Starting+points+and+focus+of+environmental+communication+site:dzforum.de&hl=en&pid=bl&srcid=ADGEESiPmGynU-6SalJJqHpsYQsnf6um5_nPW6Wz6R3HgEOQZEV2kxltI0OWaCuWNrWugnjPki98ww1R0r_-VfGBYjxnfLY2Zg8tzzwsagtvTi-w1-FgqsPK-iEYJgRjRyvzIsVQJgrF&sig=AHIEtbTTWzlVX6stOR-oJP4FxK20wmyGmA Starting points and focus of environmental communication], German Federal Environmental Foundation, 16 October 2004.</ref>"
                   {N} body = "[http://docs.google.com/viewer?a=v&q=cache:ULS2JqlpDgEJ:dzforum.de/downloads/020101311.pdf+Starting+points+and+focus+of+environmental+communication+site:dzforum.de&hl=en&pid=bl&srcid=ADGEESiPmGynU-6SalJJqHpsYQsnf6um5_nPW6Wz6R3HgEOQZEV2kxltI0OWaCuWNrWugnjPki98ww1R0r_-VfGBYjxnfLY2Zg8tzzwsagtvTi-w1-FgqsPK-iEYJgRjRyvzIsVQJgrF&sig=AHIEtbTTWzlVX6stOR-oJP4FxK20wmyGmA Starting points and focus of environmental communication], German Federal Environmental Foundation, 16 October 2004."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://docs.google.com/viewer?a=v&q=cache:ULS2JqlpDgEJ:dzforum.de/downloads/020101311.pdf+Starting+points+and+focus+of+environmental+communication+site:dzforum.de&hl=en&pid=bl&srcid=ADGEESiPmGynU-6SalJJqHpsYQsnf6um5_nPW6Wz6R3HgEOQZEV2kxltI0OWaCuWNrWugnjPki98ww1R0r_-VfGBYjxnfLY2Zg8tzzwsagtvTi-w1-FgqsPK-iEYJgRjRyvzIsVQJgrF&sig=AHIEtbTTWzlVX6stOR-oJP4FxK20wmyGmA Starting points and focus of environmental communication], German Federal Environmental Foundation, 16 October 2004.</ref>" ]
 
                 [ ]
               )
@@ -10073,9 +10073,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web| url = http://www.worldpublicopinion.org/pipa/pdf/sep07/BBCClimate_Sep07_rpt.pdf| title = All Countries Need to Take Major Steps on Climate Change: Global Poll| accessdate = 11 February 2008 | author=PIPA| date =24 September 2007| format = PDF|publisher=BBC World service Poll, carried out by Globescan| publisher=[[Program on International Policy Attitudes]] at the [[University of Maryland, College Park]]|quote=Eighty-seven percent of German respondents agree that human activity is a significant cause of climate change and 95 percent think it is necessary to take measures to deal with the problem.}}</ref>"
                   {N} body = "{{Cite web| url = http://www.worldpublicopinion.org/pipa/pdf/sep07/BBCClimate_Sep07_rpt.pdf| title = All Countries Need to Take Major Steps on Climate Change: Global Poll| accessdate = 11 February 2008 | author=PIPA| date =24 September 2007| format = PDF|publisher=BBC World service Poll, carried out by Globescan| publisher=[[Program on International Policy Attitudes]] at the [[University of Maryland, College Park]]|quote=Eighty-seven percent of German respondents agree that human activity is a significant cause of climate change and 95 percent think it is necessary to take measures to deal with the problem.}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web| url = http://www.worldpublicopinion.org/pipa/pdf/sep07/BBCClimate_Sep07_rpt.pdf| title = All Countries Need to Take Major Steps on Climate Change: Global Poll| accessdate = 11 February 2008 | author=PIPA| date =24 September 2007| format = PDF|publisher=BBC World service Poll, carried out by Globescan| publisher=[[Program on International Policy Attitudes]] at the [[University of Maryland, College Park]]|quote=Eighty-seven percent of German respondents agree that human activity is a significant cause of climate change and 95 percent think it is necessary to take measures to deal with the problem.}}</ref>" ]
 
                 [ ]
               )
@@ -10092,9 +10092,9 @@ ParsedWikitextPage(
               WtText(" and several other treaties promoting biodiversity, low emission standards, recycling, and the use of renewable energy, and supports sustainable development at a global level.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.umweltbundesamt.de/uba-info-presse-e/2004/pe04-056.htm Reinforcing Germany's environmental protection industry]{{dead link|date=September 2010}} Umweltbundesamt. Retrieved 25 November 2007.</ref>"
                   {N} body = "[http://www.umweltbundesamt.de/uba-info-presse-e/2004/pe04-056.htm Reinforcing Germany's environmental protection industry]{{dead link|date=September 2010}} Umweltbundesamt. Retrieved 25 November 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.umweltbundesamt.de/uba-info-presse-e/2004/pe04-056.htm Reinforcing Germany's environmental protection industry]{{dead link|date=September 2010}} Umweltbundesamt. Retrieved 25 November 2007.</ref>" ]
 
                 [ ]
               )
@@ -10105,9 +10105,9 @@ ParsedWikitextPage(
               WtText("The German government has initiated wide-ranging emission reduction activities and the country's overall emissions are falling.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://timesofindia.indiatimes.com/Earth/Germany_greenest_country_in_the_world/articleshow/3151766.cms Germany greenest country in the world] ''Times of India''. Retrieved 25 November 2008.</ref>"
                   {N} body = "[http://timesofindia.indiatimes.com/Earth/Germany_greenest_country_in_the_world/articleshow/3151766.cms Germany greenest country in the world] ''Times of India''. Retrieved 25 November 2008."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://timesofindia.indiatimes.com/Earth/Germany_greenest_country_in_the_world/articleshow/3151766.cms Germany greenest country in the world] ''Times of India''. Retrieved 25 November 2008.</ref>" ]
 
                 [ ]
               )
@@ -10327,9 +10327,9 @@ ParsedWikitextPage(
           WtText(" generally require a two-thirds majority of both chambers of the parliament; the fundamental principles of the constitution, as expressed in the articles guaranteeing human dignity, the separation of powers, the federal structure, and the rule of law are valid in perpetuity.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.gesetze-im-internet.de/gg/art_79.html|title=Article 79 of the ''Grundgesetz''|work=Bundesministerium der Justiz|publisher=www.gesetze-im-internet.de|language=German|accessdate=7 December 2008}}</ref>"
               {N} body = "{{Cite web|url=http://www.gesetze-im-internet.de/gg/art_79.html|title=Article 79 of the ''Grundgesetz''|work=Bundesministerium der Justiz|publisher=www.gesetze-im-internet.de|language=German|accessdate=7 December 2008}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.gesetze-im-internet.de/gg/art_79.html|title=Article 79 of the ''Grundgesetz''|work=Bundesministerium der Justiz|publisher=www.gesetze-im-internet.de|language=German|accessdate=7 December 2008}}</ref>" ]
 
             [
               XmlAttribute(
@@ -10891,9 +10891,9 @@ ParsedWikitextPage(
               WtText(" (which has controlled seats in parliament since 1983) have also played important roles,")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://countrystudies.us/germany/159.htm Christian Democratic Union/Christian Social Union] U.S. Library of Congress. Retrieved 7 December 2006.</ref>"
                   {N} body = "[http://countrystudies.us/germany/159.htm Christian Democratic Union/Christian Social Union] U.S. Library of Congress. Retrieved 7 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://countrystudies.us/germany/159.htm Christian Democratic Union/Christian Social Union] U.S. Library of Congress. Retrieved 7 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -11093,9 +11093,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.bundesverfassungsgericht.de/en/index.html Federal Constitutional Court], Bundesverfassungsgericht.de. Retrieved 13 April 2007.</ref>"
                   {N} body = "[http://www.bundesverfassungsgericht.de/en/index.html Federal Constitutional Court], Bundesverfassungsgericht.de. Retrieved 13 April 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.bundesverfassungsgericht.de/en/index.html Federal Constitutional Court], Bundesverfassungsgericht.de. Retrieved 13 April 2007.</ref>" ]
 
                 [ ]
               )
@@ -11393,9 +11393,9 @@ ParsedWikitextPage(
               WtText(" respectively. The German penal system is aimed towards rehabilitation of the criminal; its secondary goal is the protection of the general public.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [http://www.gesetze-im-internet.de/stvollzg/__2.html \u00A7 2 Strafvollzugsgesetz] Bundesministerium der Justiz. Retrieved 19 November 2009.</ref>"
                   {N} body = "{{de icon}} [http://www.gesetze-im-internet.de/stvollzg/__2.html \u00A7 2 Strafvollzugsgesetz] Bundesministerium der Justiz. Retrieved 19 November 2009."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [http://www.gesetze-im-internet.de/stvollzg/__2.html \u00A7 2 Strafvollzugsgesetz] Bundesministerium der Justiz. Retrieved 19 November 2009.</ref>" ]
 
                 [ ]
               )
@@ -11665,9 +11665,9 @@ ParsedWikitextPage(
               WtText("Germany maintains a network of 229 diplomatic missions abroad and holds relations with more than 190 countries.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.auswaertiges-amt.de/EN/AAmt/Auslandsvertretungen/Uebersicht_node.html German Missions Abroad] German Federal Foreign Office. Retrieved 31 December 2010.</ref>"
                   {N} body = "[http://www.auswaertiges-amt.de/EN/AAmt/Auslandsvertretungen/Uebersicht_node.html German Missions Abroad] German Federal Foreign Office. Retrieved 31 December 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.auswaertiges-amt.de/EN/AAmt/Auslandsvertretungen/Uebersicht_node.html German Missions Abroad] German Federal Foreign Office. Retrieved 31 December 2010.</ref>" ]
 
                 [ ]
               )
@@ -11744,18 +11744,18 @@ ParsedWikitextPage(
               WtText(". Germany is at the forefront of European states seeking to advance the creation of a more unified European political, defence, and security apparatus.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.elysee.fr/elysee/anglais/speeches_and_documents/2004/declaration_by_the_franco-german_defence_and_security_council.1096.html Declaration by the Franco-German Defence and Security Council] Elysee.fr 13 May 3004. Retrieved 3 December 2006.</ref>"
                   {N} body = "[http://www.elysee.fr/elysee/anglais/speeches_and_documents/2004/declaration_by_the_franco-german_defence_and_security_council.1096.html Declaration by the Franco-German Defence and Security Council] Elysee.fr 13 May 3004. Retrieved 3 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.elysee.fr/elysee/anglais/speeches_and_documents/2004/declaration_by_the_franco-german_defence_and_security_council.1096.html Declaration by the Franco-German Defence and Security Council] Elysee.fr 13 May 3004. Retrieved 3 December 2006.</ref>" ]
 
                 [ ]
               )
               WtText(" For a number of decades after WWII, the Federal Republic of Germany kept a notably low profile in international relations, because of both its recent history and its occupation by foreign powers.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007.</ref>"
                   {N} body = "Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007.</ref>" ]
 
                 [ ]
               )
@@ -11849,9 +11849,9 @@ ParsedWikitextPage(
               WtText(" of the 1970s.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Harrison, Hope. {{PDFlink|[http://www.ghi-dc.org/files/publications/bu_supp/supp1/supp-01_005.pdf ''The Berlin Wall, Ostpolitik and D\u00E9tente]|91.1&nbsp;KB}} German historical institute, Washington, DC, Bulletin supplement 1, 2004, ''American d\u00E9tente and German ostpolitik, 1969\u20131972\".</ref>"
                   {N} body = "Harrison, Hope. {{PDFlink|[http://www.ghi-dc.org/files/publications/bu_supp/supp1/supp-01_005.pdf ''The Berlin Wall, Ostpolitik and D\u00E9tente]|91.1&nbsp;KB}} German historical institute, Washington, DC, Bulletin supplement 1, 2004, ''American d\u00E9tente and German ostpolitik, 1969\u20131972\"."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Harrison, Hope. {{PDFlink|[http://www.ghi-dc.org/files/publications/bu_supp/supp1/supp-01_005.pdf ''The Berlin Wall, Ostpolitik and D\u00E9tente]|91.1&nbsp;KB}} German historical institute, Washington, DC, Bulletin supplement 1, 2004, ''American d\u00E9tente and German ostpolitik, 1969\u20131972\".</ref>" ]
 
                 [ ]
               )
@@ -11883,9 +11883,9 @@ ParsedWikitextPage(
               WtText(" and by sending German troops into combat for the first time since World War II.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006.</ref>"
                   {N} body = "[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -11947,9 +11947,9 @@ ParsedWikitextPage(
               WtText("The governments of Germany and the United States are close political allies.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.state.gov/r/pa/ei/bgn/3997.htm Background Note: Germany] U.S. Department of State. 6 July 2006. Retrieved 3 December 2006.</ref>"
                   {N} body = "[http://www.state.gov/r/pa/ei/bgn/3997.htm Background Note: Germany] U.S. Department of State. 6 July 2006. Retrieved 3 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.state.gov/r/pa/ei/bgn/3997.htm Background Note: Germany] U.S. Department of State. 6 July 2006. Retrieved 3 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -11986,18 +11986,18 @@ ParsedWikitextPage(
               WtText(" and a relative cooling of German-American relations.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.economist.com/world/europe/displaystory.cfm?story_id=7141311 ''Ready for a Bush hug?''], [[The Economist]], 6 July 2006. Retrieved 31 December 2006.</ref>"
                   {N} body = "[http://www.economist.com/world/europe/displaystory.cfm?story_id=7141311 ''Ready for a Bush hug?''], [[The Economist]], 6 July 2006. Retrieved 31 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.economist.com/world/europe/displaystory.cfm?story_id=7141311 ''Ready for a Bush hug?''], [[The Economist]], 6 July 2006. Retrieved 31 December 2006.</ref>" ]
 
                 [ ]
               )
               WtText(" The two countries are also economically interdependent: 8.8% of German exports are U.S.-bound and 6.6% of German imports originate from the U.S.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{PDFlink|[http://germany.usembassy.gov/germany/img/assets/9336/econ_factsheet_may2006.pdf U.S.-German Economic Relations Factsheet]|32.8&nbsp;KB}} U.S. Embassy in Berlin. May 2006. Retrieved 3 December 2006.</ref>"
                   {N} body = "{{PDFlink|[http://germany.usembassy.gov/germany/img/assets/9336/econ_factsheet_may2006.pdf U.S.-German Economic Relations Factsheet]|32.8&nbsp;KB}} U.S. Embassy in Berlin. May 2006. Retrieved 3 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{PDFlink|[http://germany.usembassy.gov/germany/img/assets/9336/econ_factsheet_may2006.pdf U.S.-German Economic Relations Factsheet]|32.8&nbsp;KB}} U.S. Embassy in Berlin. May 2006. Retrieved 3 December 2006.</ref>" ]
 
                 [
                   XmlAttribute(
@@ -12013,9 +12013,9 @@ ParsedWikitextPage(
               WtText(" Other signs of the close ties include the continuing position of German-Americans as the largest ethnic group in the U.S.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.census.gov/Press-Release/www/releases/archives/census_2000/001870.html German Still Most Frequently Reported Ancestry] [[U.S. Census Bureau]] 30 June 2004. Retrieved 3 December 2006. {{Dead link|date=June 2010| bot=DASHBot}}</ref>"
                   {N} body = "[http://www.census.gov/Press-Release/www/releases/archives/census_2000/001870.html German Still Most Frequently Reported Ancestry] [[U.S. Census Bureau]] 30 June 2004. Retrieved 3 December 2006. {{Dead link|date=June 2010| bot=DASHBot}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.census.gov/Press-Release/www/releases/archives/census_2000/001870.html German Still Most Frequently Reported Ancestry] [[U.S. Census Bureau]] 30 June 2004. Retrieved 3 December 2006. {{Dead link|date=June 2010| bot=DASHBot}}</ref>" ]
 
                 [ ]
               )
@@ -12042,9 +12042,9 @@ ParsedWikitextPage(
               WtText(") as the largest U.S. military community outside the U.S.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006.</ref>"
                   {N} body = "[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -12055,18 +12055,18 @@ ParsedWikitextPage(
               WtText("The development policy of the Federal Republic of Germany is an independent area of German foreign policy. It is formulated by the Federal Ministry for Economic Cooperation and Development (BMZ) and carried out by the implementing organisations. The German government sees development policy as a joint responsibility of the international community.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.bmz.de/en/index.html Aims of German development policy] Federal Ministry for Economic Cooperation and Development 10 April 2008. Retrieved 7 December 2008.</ref>"
                   {N} body = "[http://www.bmz.de/en/index.html Aims of German development policy] Federal Ministry for Economic Cooperation and Development 10 April 2008. Retrieved 7 December 2008."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.bmz.de/en/index.html Aims of German development policy] Federal Ministry for Economic Cooperation and Development 10 April 2008. Retrieved 7 December 2008.</ref>" ]
 
                 [ ]
               )
               WtText(" It is the world's third biggest aid donor after the United States and France.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.oecd.org/dataoecd/17/9/44981892.pdf Table: Net Official Development Assistance 2009] OECD</ref>"
                   {N} body = "[http://www.oecd.org/dataoecd/17/9/44981892.pdf Table: Net Official Development Assistance 2009] OECD"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.oecd.org/dataoecd/17/9/44981892.pdf Table: Net Official Development Assistance 2009] OECD</ref>" ]
 
                 [ ]
               )
@@ -12358,9 +12358,9 @@ ParsedWikitextPage(
               WtText(". In 2005, military spending was an estimated 1.5% of the country's GDP.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -12383,9 +12383,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz f\u00FCr die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}</ref>"
                   {N} body = "{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz f\u00FCr die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz f\u00FCr die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}</ref>" ]
 
                 [ ]
               )
@@ -12562,9 +12562,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.bundeswehr.de/portal/a/bwde/einsaetze/einsatzzahlen?yw_contentURL=/C1256EF4002AED30/W264VFT2439INFODE/content.jsp|title=Einsatzzahlen \u2013 Die St\u00E4rke der deutschen Einsatzkontingente|accessdate=8 November 2009|publisher=[[Bundeswehr]]|language=German}}</ref>"
                   {N} body = "{{Cite web|url=http://www.bundeswehr.de/portal/a/bwde/einsaetze/einsatzzahlen?yw_contentURL=/C1256EF4002AED30/W264VFT2439INFODE/content.jsp|title=Einsatzzahlen \u2013 Die St\u00E4rke der deutschen Einsatzkontingente|accessdate=8 November 2009|publisher=[[Bundeswehr]]|language=German}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.bundeswehr.de/portal/a/bwde/einsaetze/einsatzzahlen?yw_contentURL=/C1256EF4002AED30/W264VFT2439INFODE/content.jsp|title=Einsatzzahlen \u2013 Die St\u00E4rke der deutschen Einsatzkontingente|accessdate=8 November 2009|publisher=[[Bundeswehr]]|language=German}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -12651,9 +12651,9 @@ ParsedWikitextPage(
                 WtText("A Mercedes-Benz automobile. Germany was the world's leading exporter of goods from 2003 to 2008.")
                 TagExtension(
                   Properties:
-                    RTD = RtData: [0] = "<ref", [1] = ">{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}</ref>"
                     {N} body = "{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}"
                     {N} name = "ref"
+                    {N} rtd = RTD[ "<ref" <o> ">{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}</ref>" ]
 
                   [ ]
                 )
@@ -12707,9 +12707,9 @@ ParsedWikitextPage(
           WtText(", a low level of corruption,")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web |url=http://www.transparency.org/policy_research/surveys_indices/cpi/2009/cpi_2009_table |title=CPI 2009 table |publisher=Transparency International |accessdate=18 November 2009}}</ref>"
               {N} body = "{{Cite web |url=http://www.transparency.org/policy_research/surveys_indices/cpi/2009/cpi_2009_table |title=CPI 2009 table |publisher=Transparency International |accessdate=18 November 2009}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite web |url=http://www.transparency.org/policy_research/surveys_indices/cpi/2009/cpi_2009_table |title=CPI 2009 table |publisher=Transparency International |accessdate=18 November 2009}}</ref>" ]
 
             [ ]
           )
@@ -12726,9 +12726,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.nam.org/innovationreport.pdf |title=The Innovation Imperative in Manufacturing: How the United States Can Restore Its Edge |format=PDF |date= |accessdate=26 September 2010}}</ref>"
               {N} body = "{{Cite web|url=http://www.nam.org/innovationreport.pdf |title=The Innovation Imperative in Manufacturing: How the United States Can Restore Its Edge |format=PDF |date= |accessdate=26 September 2010}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.nam.org/innovationreport.pdf |title=The Innovation Imperative in Manufacturing: How the United States Can Restore Its Edge |format=PDF |date= |accessdate=26 September 2010}}</ref>" ]
 
             [ ]
           )
@@ -12780,9 +12780,9 @@ ParsedWikitextPage(
           WtText(" contributes around 70% of the total GDP, industry 29.1%, and agriculture 0.9%. In July 2010 the average national unemployment rate was 7.5%, ranging from 4.1% in Bavaria to 13.6% in Berlin. First estimations indicate a 3.6% increase in the price-adjusted Gross Domestic Product (GDP) for 2010, which followed a 4.7% drop recorded in 2009.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">\"German Economy Experiences Record Growth in 2010\" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]</ref>"
               {N} body = "\"German Economy Experiences Record Growth in 2010\" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">\"German Economy Experiences Record Growth in 2010\" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]</ref>" ]
 
             [ ]
           )
@@ -12906,9 +12906,9 @@ ParsedWikitextPage(
           WtText("billion.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010.</ref>"
               {N} body = "[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010.</ref>" ]
 
             [ ]
           )
@@ -12919,9 +12919,9 @@ ParsedWikitextPage(
           WtText("Most of the country's export products are in engineering, especially in machinery, automobiles, chemical goods and metals.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = "/>"
               {N} body = null
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> "/>" ]
 
             [
               XmlAttribute(
@@ -12937,9 +12937,9 @@ ParsedWikitextPage(
           WtText(" Germany is the leading producer of wind turbines and solar power technology in the world. The largest annual international trade fairs and congresses are held in several German cities such as Hanover, Frankfurt, and Berlin.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006.</ref>"
               {N} body = "[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006.</ref>" ]
 
             [ ]
           )
@@ -13000,9 +13000,9 @@ ParsedWikitextPage(
           WtText(" and per capita incomes remain significantly higher in the states of the former West Germany than in the former East.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">Berg, S., Winter, S., Wassermann, A. [http://www.spiegel.de/international/spiegel/0,1518,373639,00.html The Price of a Failed Reunification] Spiegel Online International. 5 September 2005. Retrieved 28 November 2006.</ref>"
               {N} body = "Berg, S., Winter, S., Wassermann, A. [http://www.spiegel.de/international/spiegel/0,1518,373639,00.html The Price of a Failed Reunification] Spiegel Online International. 5 September 2005. Retrieved 28 November 2006."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">Berg, S., Winter, S., Wassermann, A. [http://www.spiegel.de/international/spiegel/0,1518,373639,00.html The Price of a Failed Reunification] Spiegel Online International. 5 September 2005. Retrieved 28 November 2006.</ref>" ]
 
             [
               XmlAttribute(
@@ -13025,9 +13025,9 @@ ParsedWikitextPage(
           WtText("billion.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}</ref>"
               {N} body = "{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}</ref>" ]
 
             [ ]
           )
@@ -13053,9 +13053,9 @@ ParsedWikitextPage(
           WtText(" cycle.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite news| url= http://www.guardian.co.uk/world/2008/nov/14/oecd-recession-germany-inflation-deflation | title= Germany officially in recession as OECD expects US to lead recovery|work=The Guardian |location=UK |date=14 November 2008 | first=Kathryn | last=Hopkins | accessdate=31 March 2010}}</ref>"
               {N} body = "{{Cite news| url= http://www.guardian.co.uk/world/2008/nov/14/oecd-recession-germany-inflation-deflation | title= Germany officially in recession as OECD expects US to lead recovery|work=The Guardian |location=UK |date=14 November 2008 | first=Kathryn | last=Hopkins | accessdate=31 March 2010}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite news| url= http://www.guardian.co.uk/world/2008/nov/14/oecd-recession-germany-inflation-deflation | title= Germany officially in recession as OECD expects US to lead recovery|work=The Guardian |location=UK |date=14 November 2008 | first=Kathryn | last=Hopkins | accessdate=31 March 2010}}</ref>" ]
 
             [ ]
           )
@@ -13076,9 +13076,9 @@ ParsedWikitextPage(
           WtText("billion) economic stimulus plan to protect several sectors from a downturn and a subsequent rise in unemployment rates.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}</ref>"
               {N} body = "{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}</ref>" ]
 
             [ ]
           )
@@ -13390,9 +13390,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://web.archive.org/web/20080106165521/http://bwnt.businessweek.com/brand/2006/ The 100 Top Brands 2006], Businessweek. Retrieved 26 November 2007.</ref>"
                   {N} body = "[http://web.archive.org/web/20080106165521/http://bwnt.businessweek.com/brand/2006/ The 100 Top Brands 2006], Businessweek. Retrieved 26 November 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://web.archive.org/web/20080106165521/http://bwnt.businessweek.com/brand/2006/ The 100 Top Brands 2006], Businessweek. Retrieved 26 November 2007.</ref>" ]
 
                 [ ]
               )
@@ -13428,9 +13428,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.businessweek.com/news/2010-09-23/germany-has-1-000-market-leading-companies-manager-magazin-says.html Germany Has 1,000 Market-Leading Companies, Manager-Magazin Says], Businessweek. Retrieved 23 September 2010.</ref>"
                   {N} body = "[http://www.businessweek.com/news/2010-09-23/germany-has-1-000-market-leading-companies-manager-magazin-says.html Germany Has 1,000 Market-Leading Companies, Manager-Magazin Says], Businessweek. Retrieved 23 September 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.businessweek.com/news/2010-09-23/germany-has-1-000-market-leading-companies-manager-magazin-says.html Germany Has 1,000 Market-Leading Companies, Manager-Magazin Says], Businessweek. Retrieved 23 September 2010.</ref>" ]
 
                 [ ]
               )
@@ -13495,9 +13495,9 @@ ParsedWikitextPage(
                         WtText(" Rank")
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<ref", [1] = ">[http://money.cnn.com/magazines/fortune/global500/2010/countries/Germany.html], CNN Money. Retrieved 7 August 2010.</ref>"
                             {N} body = "[http://money.cnn.com/magazines/fortune/global500/2010/countries/Germany.html], CNN Money. Retrieved 7 August 2010."
                             {N} name = "ref"
+                            {N} rtd = RTD[ "<ref" <o> ">[http://money.cnn.com/magazines/fortune/global500/2010/countries/Germany.html], CNN Money. Retrieved 7 August 2010.</ref>" ]
 
                           [ ]
                         )
@@ -14713,9 +14713,9 @@ ParsedWikitextPage(
               WtText(") network ranks worldwide third largest in its total length and features a lack of blanket speed limits on the majority of routes.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|authorlink=www.adac.de/verkehrs-experten|title=Autobahn-Temporegelung|publisher=[[ADAC]]|date=October 2007|url=http://www.adac.de/images/SP_Tempolimit_V%201%2E0_tcm8-199598.pdf|format=PDF|language=German|accessdate=15 November 2008}} {{Dead link|date=June 2010| bot=DASHBot}}</ref>"
                   {N} body = "{{Cite web|authorlink=www.adac.de/verkehrs-experten|title=Autobahn-Temporegelung|publisher=[[ADAC]]|date=October 2007|url=http://www.adac.de/images/SP_Tempolimit_V%201%2E0_tcm8-199598.pdf|format=PDF|language=German|accessdate=15 November 2008}} {{Dead link|date=June 2010| bot=DASHBot}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|authorlink=www.adac.de/verkehrs-experten|title=Autobahn-Temporegelung|publisher=[[ADAC]]|date=October 2007|url=http://www.adac.de/images/SP_Tempolimit_V%201%2E0_tcm8-199598.pdf|format=PDF|language=German|accessdate=15 November 2008}} {{Dead link|date=June 2010| bot=DASHBot}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -14791,9 +14791,9 @@ ParsedWikitextPage(
               WtText("km/h. Connections are offered at either 30-minute, hourly, or two-hourly intervals.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Gesch\u00E4ftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009.</ref>"
                   {N} body = "{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Gesch\u00E4ftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Gesch\u00E4ftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009.</ref>" ]
 
                 [ ]
               )
@@ -15123,9 +15123,9 @@ ParsedWikitextPage(
               WtText(" by 2021.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://news.bbc.co.uk/2/hi/europe/4295389.stm Germany split over green energy], BBC. Retrieved 13 April 2007.</ref>"
                   {N} body = "[http://news.bbc.co.uk/2/hi/europe/4295389.stm Germany split over green energy], BBC. Retrieved 13 April 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://news.bbc.co.uk/2/hi/europe/4295389.stm Germany split over green energy], BBC. Retrieved 13 April 2007.</ref>" ]
 
                 [ ]
               )
@@ -15227,9 +15227,9 @@ ParsedWikitextPage(
                     WtText(".")
                     TagExtension(
                       Properties:
-                        RTD = RtData: [0] = "<ref", [1] = ">[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.</ref>"
                         {N} body = "[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08."
                         {N} name = "ref"
+                        {N} rtd = RTD[ "<ref" <o> ">[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.</ref>" ]
 
                       [ ]
                     )
@@ -15313,9 +15313,9 @@ ParsedWikitextPage(
               WtText(", who built the first fully automatic digital computer.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Horst, Zuse. [http://www.epemag.com/zuse/ The Life and Work of Konrad Zuse]{{dead link|date=September 2010}} Everyday Practical Electronics (EPE) Online. Retrieved 2 January 2007. {{Wayback|url=http://www.epemag.com/zuse/|date =20070220074134|bot=DASHBot}}{{dead link|date=September 2010}}</ref>"
                   {N} body = "Horst, Zuse. [http://www.epemag.com/zuse/ The Life and Work of Konrad Zuse]{{dead link|date=September 2010}} Everyday Practical Electronics (EPE) Online. Retrieved 2 January 2007. {{Wayback|url=http://www.epemag.com/zuse/|date =20070220074134|bot=DASHBot}}{{dead link|date=September 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Horst, Zuse. [http://www.epemag.com/zuse/ The Life and Work of Konrad Zuse]{{dead link|date=September 2010}} Everyday Practical Electronics (EPE) Online. Retrieved 2 January 2007. {{Wayback|url=http://www.epemag.com/zuse/|date =20070220074134|bot=DASHBot}}{{dead link|date=September 2010}}</ref>" ]
 
                 [ ]
               )
@@ -15392,17 +15392,17 @@ ParsedWikitextPage(
               WtText(" helped shape modern automotive and air transportation technology.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|title=Automobile|publisher=Microsoft Encarta Online Encyclopedia 2006|accessdate=2 January 2007|archiveurl=http://web.archive.org/web/20080420212258/http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|archivedate=20 April 2008}}</ref>"
                   {N} body = "{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|title=Automobile|publisher=Microsoft Encarta Online Encyclopedia 2006|accessdate=2 January 2007|archiveurl=http://web.archive.org/web/20080420212258/http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|archivedate=20 April 2008}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|title=Automobile|publisher=Microsoft Encarta Online Encyclopedia 2006|accessdate=2 January 2007|archiveurl=http://web.archive.org/web/20080420212258/http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|archivedate=20 April 2008}}</ref>" ]
 
                 [ ]
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007.</ref>"
                   {N} body = "[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007.</ref>" ]
 
                 [ ]
               )
@@ -15502,9 +15502,9 @@ ParsedWikitextPage(
               WtText(" was pivotal to the development of modern telecommunication.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007.</ref>"
                   {N} body = "[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007.</ref>" ]
 
                 [ ]
               )
@@ -15550,9 +15550,9 @@ ParsedWikitextPage(
               WtText(", with almost 5,000 registrations for patents between them in 2008, are among the Top 5 of more than 35,000 companies registering patents. Together with the USA and Japan, with regard to patents for nano, bio and new technologies Germany is one of the world\u2019s most active nations. With around one third of triadic patents Germany leads the way worldwide in the field of vehicle emission reduction.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08.</ref>"
                   {N} body = "[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08.</ref>" ]
 
                 [ ]
               )
@@ -15662,9 +15662,9 @@ ParsedWikitextPage(
               WtText(". Germany has been the home of some of the most prominent researchers in various scientific fields.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany \u2013 A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006.</ref>"
                   {N} body = "[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany \u2013 A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany \u2013 A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -15700,9 +15700,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://nobelprize.org/ Nobel Prize], Nobelprize.org. Retrieved 19 November 2009.</ref>"
                   {N} body = "[http://nobelprize.org/ Nobel Prize], Nobelprize.org. Retrieved 19 November 2009."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://nobelprize.org/ Nobel Prize], Nobelprize.org. Retrieved 19 November 2009.</ref>" ]
 
                 [ ]
               )
@@ -15769,17 +15769,17 @@ ParsedWikitextPage(
               WtText(").")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.sciencenews.org/view/generic/id/63944/title/Swedish_academy_awards Swedish academy awards] ScienceNews web edition, 1 October 2010.</ref>"
                   {N} body = "[http://www.sciencenews.org/view/generic/id/63944/title/Swedish_academy_awards Swedish academy awards] ScienceNews web edition, 1 October 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.sciencenews.org/view/generic/id/63944/title/Swedish_academy_awards Swedish academy awards] ScienceNews web edition, 1 October 2010.</ref>" ]
 
                 [ ]
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">National Science Nobel Prize shares 1901\u20132009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[J\u00FCrgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]</ref>"
                   {N} body = "National Science Nobel Prize shares 1901\u20132009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[J\u00FCrgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">National Science Nobel Prize shares 1901\u20132009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[J\u00FCrgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]</ref>" ]
 
                 [ ]
               )
@@ -15840,9 +15840,9 @@ ParsedWikitextPage(
               WtText(" developed further.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Roberts, J. M. ''The New Penguin History of the World'', Penguin History, 2002. Pg. 1014. ISBN 0-14-100723-0.</ref>"
                   {N} body = "Roberts, J. M. ''The New Penguin History of the World'', Penguin History, 2002. Pg. 1014. ISBN 0-14-100723-0."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Roberts, J. M. ''The New Penguin History of the World'', Penguin History, 2002. Pg. 1014. ISBN 0-14-100723-0.</ref>" ]
 
                 [ ]
               )
@@ -15916,9 +15916,9 @@ ParsedWikitextPage(
               WtText(" in 1901.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://web.archive.org/web/20080402061044/http://www.history.com/encyclopedia.do?articleId=226611 The Alfred B. Nobel Prize Winners, 1901\u20132003] History Channel from ''The World Almanac and Book of Facts'' 2006. Retrieved 2 January 2007.</ref>"
                   {N} body = "[http://web.archive.org/web/20080402061044/http://www.history.com/encyclopedia.do?articleId=226611 The Alfred B. Nobel Prize Winners, 1901\u20132003] History Channel from ''The World Almanac and Book of Facts'' 2006. Retrieved 2 January 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://web.archive.org/web/20080402061044/http://www.history.com/encyclopedia.do?articleId=226611 The Alfred B. Nobel Prize Winners, 1901\u20132003] History Channel from ''The World Almanac and Book of Facts'' 2006. Retrieved 2 January 2007.</ref>" ]
 
                 [ ]
               )
@@ -16052,9 +16052,9 @@ ParsedWikitextPage(
               WtText("million per award it is one of highest endowed research prizes in the world.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007.</ref>"
                   {N} body = "[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007.</ref>" ]
 
                 [ ]
               )
@@ -16152,9 +16152,9 @@ ParsedWikitextPage(
           WtText("million inhabitants in January 2010,")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = " />"
               {N} body = null
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> " />" ]
 
             [
               XmlAttribute(
@@ -16250,9 +16250,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web |url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2010/01/PD10__034__12641,templateId=renderPrint.psml|title=Durchschnittliche Kinderzahl 2008 in den neuen L\u00E4ndern angestiegen|author=[[Federal Statistical Office of Germany|Destatis]] |language=German|accessdate=31 January 2010}}</ref>"
               {N} body = "{{Cite web |url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2010/01/PD10__034__12641,templateId=renderPrint.psml|title=Durchschnittliche Kinderzahl 2008 in den neuen L\u00E4ndern angestiegen|author=[[Federal Statistical Office of Germany|Destatis]] |language=German|accessdate=31 January 2010}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite web |url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2010/01/PD10__034__12641,templateId=renderPrint.psml|title=Durchschnittliche Kinderzahl 2008 in den neuen L\u00E4ndern angestiegen|author=[[Federal Statistical Office of Germany|Destatis]] |language=German|accessdate=31 January 2010}}</ref>" ]
 
             [ ]
           )
@@ -16279,9 +16279,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web | title = Demographic Transition Model | publisher=Barcelona Field Studies Centre | date = 27 September 2009 | url = http://geographyfieldwork.com/DemographicTransition.htm | accessdate = 23 May 2010}}</ref>"
               {N} body = "{{Cite web | title = Demographic Transition Model | publisher=Barcelona Field Studies Centre | date = 27 September 2009 | url = http://geographyfieldwork.com/DemographicTransition.htm | accessdate = 23 May 2010}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite web | title = Demographic Transition Model | publisher=Barcelona Field Studies Centre | date = 27 September 2009 | url = http://geographyfieldwork.com/DemographicTransition.htm | accessdate = 23 May 2010}}</ref>" ]
 
             [ ]
           )
@@ -16302,9 +16302,9 @@ ParsedWikitextPage(
           WtText(" forecast that, as a result, the population will shrink to between 65 and 70 million by 2060 (depending on the level of net migration).")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder \u00E4lter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>\nMore details on the methodology, detailed tables broken down by age and sex, etc. are provided at \n{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bev\u00F6lkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}</ref>"
               {N} body = "The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder \u00E4lter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>\nMore details on the methodology, detailed tables broken down by age and sex, etc. are provided at \n{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bev\u00F6lkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder \u00E4lter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>\nMore details on the methodology, detailed tables broken down by age and sex, etc. are provided at \n{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bev\u00F6lkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}</ref>" ]
 
             [ ]
           )
@@ -16493,9 +16493,9 @@ ParsedWikitextPage(
               WtText("million migrants.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.unfpa.org/publications/detail.cfm?ID=294&filterListType= State of World Population 2006] United Nations Population Fund. 2006. Retrieved 1 January 2007.</ref>"
                   {N} body = "[http://www.unfpa.org/publications/detail.cfm?ID=294&filterListType= State of World Population 2006] United Nations Population Fund. 2006. Retrieved 1 January 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.unfpa.org/publications/detail.cfm?ID=294&filterListType= State of World Population 2006] United Nations Population Fund. 2006. Retrieved 1 January 2007.</ref>" ]
 
                 [ ]
               )
@@ -16532,9 +16532,9 @@ ParsedWikitextPage(
               WtText(" and immigration, the number of immigrants seeking asylum or claiming German ethnicity (mostly from the former Soviet Union) has been declining steadily since 2000.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">\"[http://www.focus-migration.de/Germany.1509.0.html?&L=1 Focus-Migration: Germany]\".</ref>"
                   {N} body = "\"[http://www.focus-migration.de/Germany.1509.0.html?&L=1 Focus-Migration: Germany]\"."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">\"[http://www.focus-migration.de/Germany.1509.0.html?&L=1 Focus-Migration: Germany]\".</ref>" ]
 
                 [ ]
               )
@@ -16545,9 +16545,9 @@ ParsedWikitextPage(
               WtText("In 2009, 20% of the population had immigrant roots, the highest since records were kept since 1945.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news | title=20% of Germans have immigrant roots | newspaper=Burlington Free Press | location=Burlington, Vermont, USA | pages= 4A | date=15 July 2010 }}</ref>"
                   {N} body = "{{Cite news | title=20% of Germans have immigrant roots | newspaper=Burlington Free Press | location=Burlington, Vermont, USA | pages= 4A | date=15 July 2010 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news | title=20% of Germans have immigrant roots | newspaper=Burlington Free Press | location=Burlington, Vermont, USA | pages= 4A | date=15 July 2010 }}</ref>" ]
 
                 [ ]
               )
@@ -16579,9 +16579,9 @@ ParsedWikitextPage(
               WtText("million), followed by Italy (776,000) and Poland (687,000).")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Content/Statistiken/Bevoelkerung/MigrationIntegration/Migrationshintergrund/Tabellen/Content100/MigrationshintergrundStaatsangehoerigkeit,templateId=renderPrint.psml|title=Bev\u00F6lkerung nach Migrationshintergrund|accessdate=26 March 2010|publisher=German Federal Statistical Office|language=German}}</ref>"
                   {N} body = "{{Cite web|url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Content/Statistiken/Bevoelkerung/MigrationIntegration/Migrationshintergrund/Tabellen/Content100/MigrationshintergrundStaatsangehoerigkeit,templateId=renderPrint.psml|title=Bev\u00F6lkerung nach Migrationshintergrund|accessdate=26 March 2010|publisher=German Federal Statistical Office|language=German}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Content/Statistiken/Bevoelkerung/MigrationIntegration/Migrationshintergrund/Tabellen/Content100/MigrationshintergrundStaatsangehoerigkeit,templateId=renderPrint.psml|title=Bev\u00F6lkerung nach Migrationshintergrund|accessdate=26 March 2010|publisher=German Federal Statistical Office|language=German}}</ref>" ]
 
                 [ ]
               )
@@ -16601,9 +16601,9 @@ ParsedWikitextPage(
               WtText("million),")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web |url=http://factfinder.census.gov/servlet/IPTable?_bm=y&-reg=ACS_2005_EST_G00_S0201:535;ACS_2005_EST_G00_S0201PR:535;ACS_2005_EST_G00_S0201T:535;ACS_2005_EST_G00_S0201TPR:535&-qr_name=ACS_2005_EST_G00_S0201&-qr_name=ACS_2005_EST_G00_S0201PR&-qr_name=ACS_2005_EST_G00_S0201T&-qr_name=ACS_2005_EST_G00_S0201TPR&-ds_name=ACS_2005_EST_G00_&-TABLE_NAMEX=&-ci_type=A&-redoLog=false&-charIterations=047&-geo_id=01000US&-format=&-_lang=en|coauthors=United States Census Bureau|title=U.S. Census Bureau, 2005 American Community Survey|accessdate=15 April 2007}} The 1990 census gives 57.9&nbsp;million, or 23.3% of the U.S. population.</ref>"
                   {N} body = "{{Cite web |url=http://factfinder.census.gov/servlet/IPTable?_bm=y&-reg=ACS_2005_EST_G00_S0201:535;ACS_2005_EST_G00_S0201PR:535;ACS_2005_EST_G00_S0201T:535;ACS_2005_EST_G00_S0201TPR:535&-qr_name=ACS_2005_EST_G00_S0201&-qr_name=ACS_2005_EST_G00_S0201PR&-qr_name=ACS_2005_EST_G00_S0201T&-qr_name=ACS_2005_EST_G00_S0201TPR&-ds_name=ACS_2005_EST_G00_&-TABLE_NAMEX=&-ci_type=A&-redoLog=false&-charIterations=047&-geo_id=01000US&-format=&-_lang=en|coauthors=United States Census Bureau|title=U.S. Census Bureau, 2005 American Community Survey|accessdate=15 April 2007}} The 1990 census gives 57.9&nbsp;million, or 23.3% of the U.S. population."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web |url=http://factfinder.census.gov/servlet/IPTable?_bm=y&-reg=ACS_2005_EST_G00_S0201:535;ACS_2005_EST_G00_S0201PR:535;ACS_2005_EST_G00_S0201T:535;ACS_2005_EST_G00_S0201TPR:535&-qr_name=ACS_2005_EST_G00_S0201&-qr_name=ACS_2005_EST_G00_S0201PR&-qr_name=ACS_2005_EST_G00_S0201T&-qr_name=ACS_2005_EST_G00_S0201TPR&-ds_name=ACS_2005_EST_G00_&-TABLE_NAMEX=&-ci_type=A&-redoLog=false&-charIterations=047&-geo_id=01000US&-format=&-_lang=en|coauthors=United States Census Bureau|title=U.S. Census Bureau, 2005 American Community Survey|accessdate=15 April 2007}} The 1990 census gives 57.9&nbsp;million, or 23.3% of the U.S. population.</ref>" ]
 
                 [ ]
               )
@@ -16627,9 +16627,9 @@ ParsedWikitextPage(
               WtText("million)")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{pt icon}} [http://www.passeiweb.com/na_ponta_lingua/sala_de_aula/geografia/geografia_do_brasil/demografia_imigracoes/brasil_imigracoes_alemanha A Imigra\u00E7\u00E3o Alem\u00E3 no Brasil] Deutsche Welle. Retrieved 19 November 2009.</ref>"
                   {N} body = "{{pt icon}} [http://www.passeiweb.com/na_ponta_lingua/sala_de_aula/geografia/geografia_do_brasil/demografia_imigracoes/brasil_imigracoes_alemanha A Imigra\u00E7\u00E3o Alem\u00E3 no Brasil] Deutsche Welle. Retrieved 19 November 2009."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{pt icon}} [http://www.passeiweb.com/na_ponta_lingua/sala_de_aula/geografia/geografia_do_brasil/demografia_imigracoes/brasil_imigracoes_alemanha A Imigra\u00E7\u00E3o Alem\u00E3 no Brasil] Deutsche Welle. Retrieved 19 November 2009.</ref>" ]
 
                 [ ]
               )
@@ -16643,9 +16643,9 @@ ParsedWikitextPage(
               WtText("million).")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www12.statcan.ca/english/census01/products/highlight/ETO/Table1.cfm?Lang=E&T=501&GV=1&GID=0 2001 Canadian Census] gives 2,742,765 total respondents stating their ''ethnic origin'' as partly German, with 705,600 stating \"single-ancestry\".</ref>"
                   {N} body = "[http://www12.statcan.ca/english/census01/products/highlight/ETO/Table1.cfm?Lang=E&T=501&GV=1&GID=0 2001 Canadian Census] gives 2,742,765 total respondents stating their ''ethnic origin'' as partly German, with 705,600 stating \"single-ancestry\"."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www12.statcan.ca/english/census01/products/highlight/ETO/Table1.cfm?Lang=E&T=501&GV=1&GID=0 2001 Canadian Census] gives 2,742,765 total respondents stating their ''ethnic origin'' as partly German, with 705,600 stating \"single-ancestry\".</ref>" ]
 
                 [ ]
               )
@@ -16659,9 +16659,9 @@ ParsedWikitextPage(
               WtText("million \"Aussiedler\"\u2014ethnic Germans, mainly from Eastern Europe and the former Soviet Union\u2014have resettled in Germany since 1987.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.migrationinformation.org/Feature/display.cfm?ID=201 \"Fewer Ethnic Germans Immigrating to Ancestral Homeland\"]. ''Migration Information Source.'' February 2004</ref>"
                   {N} body = "[http://www.migrationinformation.org/Feature/display.cfm?ID=201 \"Fewer Ethnic Germans Immigrating to Ancestral Homeland\"]. ''Migration Information Source.'' February 2004"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.migrationinformation.org/Feature/display.cfm?ID=201 \"Fewer Ethnic Germans Immigrating to Ancestral Homeland\"]. ''Migration Information Source.'' February 2004</ref>" ]
 
                 [ ]
               )
@@ -19227,9 +19227,9 @@ ParsedWikitextPage(
               WtText("German is the official and predominant spoken language in Germany.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -19430,9 +19430,9 @@ ParsedWikitextPage(
               WtText(". Most German vocabulary is derived from the Germanic branch of the Indo-European language family.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|title=Many tongues, one family. Languages in the European Union|publisher=[[Europa (web portal)]] |author=[[European Commission]] |year=2004|url=http://ec.europa.eu/publications/booklets/move/45/en.pdf|format=PDF |accessdate=3 February 2007}}</ref>"
                   {N} body = "{{Cite web|title=Many tongues, one family. Languages in the European Union|publisher=[[Europa (web portal)]] |author=[[European Commission]] |year=2004|url=http://ec.europa.eu/publications/booklets/move/45/en.pdf|format=PDF |accessdate=3 February 2007}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|title=Many tongues, one family. Languages in the European Union|publisher=[[Europa (web portal)]] |author=[[European Commission]] |year=2004|url=http://ec.europa.eu/publications/booklets/move/45/en.pdf|format=PDF |accessdate=3 February 2007}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -19690,9 +19690,9 @@ ParsedWikitextPage(
               WtText("million non-native speakers.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite book|authorlink=National Geographic|title=National Geographic Collegiate Atlas of the World|publisher=R.R Donnelley & Sons Company|year=2006|month=April|location=Willard, Ohio|pages=257\u2013270|isbn=Regular:0-7922-3662-9, 978-0-7922-3662-7. Deluxe:0-7922-7976-X, 978-0-7922-7976-1}}</ref>"
                   {N} body = "{{Cite book|authorlink=National Geographic|title=National Geographic Collegiate Atlas of the World|publisher=R.R Donnelley & Sons Company|year=2006|month=April|location=Willard, Ohio|pages=257\u2013270|isbn=Regular:0-7922-3662-9, 978-0-7922-3662-7. Deluxe:0-7922-7976-X, 978-0-7922-7976-1}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite book|authorlink=National Geographic|title=National Geographic Collegiate Atlas of the World|publisher=R.R Donnelley & Sons Company|year=2006|month=April|location=Willard, Ohio|pages=257\u2013270|isbn=Regular:0-7922-3662-9, 978-0-7922-3662-7. Deluxe:0-7922-7976-X, 978-0-7922-7976-1}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -19715,9 +19715,9 @@ ParsedWikitextPage(
               WtText("million people (18%) in the EU. 67% of German citizens claim to be able to communicate in at least one foreign language, 27% in at least two languages other than their own.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Survey)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_en.pdf| format=PDF |accessdate=3 February 2007}}<br />{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Executive Summary)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_sum_en.pdf|format=PDF|doi=|accessdate=3 February 2007}}</ref>"
                   {N} body = "{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Survey)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_en.pdf| format=PDF |accessdate=3 February 2007}}<br />{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Executive Summary)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_sum_en.pdf|format=PDF|doi=|accessdate=3 February 2007}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Survey)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_en.pdf| format=PDF |accessdate=3 February 2007}}<br />{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Executive Summary)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_sum_en.pdf|format=PDF|doi=|accessdate=3 February 2007}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -19851,9 +19851,9 @@ ParsedWikitextPage(
               WtText(". According to a poll by Der Spiegel magazine, 45% believe in God, and just a quarter in Jesus Christ.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}</ref>"
                   {N} body = "{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}</ref>" ]
 
                 [ ]
               )
@@ -19871,9 +19871,9 @@ ParsedWikitextPage(
               WtText("million adherents (62.8%) in 2008")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} {{Cite web|url=http://www.ekd.de/statistik/mitglieder.html |title=EKD-Statistik: Christen in Deutschland 2007 |publisher=Evangelische Kirche in Deutschland |date= |accessdate=13 February 2010}}</ref>"
                   {N} body = "{{de icon}} {{Cite web|url=http://www.ekd.de/statistik/mitglieder.html |title=EKD-Statistik: Christen in Deutschland 2007 |publisher=Evangelische Kirche in Deutschland |date= |accessdate=13 February 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} {{Cite web|url=http://www.ekd.de/statistik/mitglieder.html |title=EKD-Statistik: Christen in Deutschland 2007 |publisher=Evangelische Kirche in Deutschland |date= |accessdate=13 February 2010}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -19918,9 +19918,9 @@ ParsedWikitextPage(
               WtText("million are Catholics (30.0%) in 2008, the remainder belong to small denominations (each (considerably ) less than 0.5% of the German population).")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://fowid.de/fileadmin/datenarchiv/Religionszugehoerigkeit_Bevoelkerung__1950-2008.pdf Konfessionen in Deutschland](German), fowid. Retrieved 2010, 9 September-09.</ref>"
                   {N} body = "[http://fowid.de/fileadmin/datenarchiv/Religionszugehoerigkeit_Bevoelkerung__1950-2008.pdf Konfessionen in Deutschland](German), fowid. Retrieved 2010, 9 September-09."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://fowid.de/fileadmin/datenarchiv/Religionszugehoerigkeit_Bevoelkerung__1950-2008.pdf Konfessionen in Deutschland](German), fowid. Retrieved 2010, 9 September-09.</ref>" ]
 
                 [ ]
               )
@@ -19949,9 +19949,9 @@ ParsedWikitextPage(
               WtText("million adherents (4.6 to 5.2%)")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -20349,9 +20349,9 @@ ParsedWikitextPage(
               WtText(" and major metropolitan areas.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009.</ref>"
                   {N} body = "{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009.</ref>" ]
 
                 [ ]
               )
@@ -20419,9 +20419,9 @@ ParsedWikitextPage(
               WtText(" and other denominations.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt f\u00FCr Migration und Fl\u00FCchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page = 80 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Demnach leben in Deutschland zwischen 3,8 und4,3 Millionen Muslime [. . .] betr\u00E4gt der Anteil der Muslime an der Gesamtbev\u00F6lkerungzwischen 4,6 und 5,2 Prozent. Rund 45 Prozent der in Deutschland lebenden Muslime sind deutsche Staatsangeh\u00F6rige,rund 55 Prozent haben eine ausl\u00E4ndische Staatsangeh\u00F6rigkeit. }}</ref>"
                   {N} body = "{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt f\u00FCr Migration und Fl\u00FCchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page = 80 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Demnach leben in Deutschland zwischen 3,8 und4,3 Millionen Muslime [. . .] betr\u00E4gt der Anteil der Muslime an der Gesamtbev\u00F6lkerungzwischen 4,6 und 5,2 Prozent. Rund 45 Prozent der in Deutschland lebenden Muslime sind deutsche Staatsangeh\u00F6rige,rund 55 Prozent haben eine ausl\u00E4ndische Staatsangeh\u00F6rigkeit. }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt f\u00FCr Migration und Fl\u00FCchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page = 80 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Demnach leben in Deutschland zwischen 3,8 und4,3 Millionen Muslime [. . .] betr\u00E4gt der Anteil der Muslime an der Gesamtbev\u00F6lkerungzwischen 4,6 und 5,2 Prozent. Rund 45 Prozent der in Deutschland lebenden Muslime sind deutsche Staatsangeh\u00F6rige,rund 55 Prozent haben eine ausl\u00E4ndische Staatsangeh\u00F6rigkeit. }}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -20436,9 +20436,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt f\u00FCr Migration und Fl\u00FCchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page= 97 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Der Anteil der Sunniten unter den in den Haushalten lebenden Muslimen betr\u00E4gt 74 Prozent }}\n* 74.1% [[Sunni Islam|Sunni]]\n* 12.7% [[Alevi]]te\n* 7.1% [[Shia Islam|Schiite]]\n* 1.7% [[Ahmadiyya|Ahmadi]]\n* 0.3% [[Ibadi]]\n* 0.1% [[Sufism|Sufi]]/mystic\n* 4.0% other\n</ref>"
                   {N} body = "{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt f\u00FCr Migration und Fl\u00FCchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page= 97 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Der Anteil der Sunniten unter den in den Haushalten lebenden Muslimen betr\u00E4gt 74 Prozent }}\n* 74.1% [[Sunni Islam|Sunni]]\n* 12.7% [[Alevi]]te\n* 7.1% [[Shia Islam|Schiite]]\n* 1.7% [[Ahmadiyya|Ahmadi]]\n* 0.3% [[Ibadi]]\n* 0.1% [[Sufism|Sufi]]/mystic\n* 4.0% other\n"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite book | title = Muslimisches Leben in Deutschland |trans_title= Muslim Life in Germany | url = http://www.bmi.bund.de/cae/servlet/contentblob/566008/publicationFile/31710/vollversion_studie_muslim_leben_deutschland_.pdf;jsessionid=6B8CD26E2AC179111AF4F75650B84B1A | format = PDF | accessdate = 9 September 2010 | year = 2009 | month = June | publisher=Federal Office for Migration and Refugees (German: Bundesamt f\u00FCr Migration und Fl\u00FCchtlinge), an agency of the [[Federal Ministry of the Interior (Germany)]] | location = [[Nuremberg]] | language = German | isbn =978-3-9812115-1-1| page= 97 | chapter = Chapter 2: Wie viele Muslime leben in Deutschland?|trans_chapter=How many Muslims live in Germany?| quote =Der Anteil der Sunniten unter den in den Haushalten lebenden Muslimen betr\u00E4gt 74 Prozent }}\n* 74.1% [[Sunni Islam|Sunni]]\n* 12.7% [[Alevi]]te\n* 7.1% [[Shia Islam|Schiite]]\n* 1.7% [[Ahmadiyya|Ahmadi]]\n* 0.3% [[Ibadi]]\n* 0.1% [[Sufism|Sufi]]/mystic\n* 4.0% other\n</ref>" ]
 
                 [
                   XmlAttribute(
@@ -20484,9 +20484,9 @@ ParsedWikitextPage(
               WtText(" being the most numerous.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -20517,9 +20517,9 @@ ParsedWikitextPage(
               WtText(" (after France and the United Kingdom).")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Blake, Mariah. [http://www.csmonitor.com/2006/1110/p25s02-woeu.html In Nazi cradle, Germany marks Jewish renaissance] [[Christian Science Monitor]]. 10 November 2006. Retrieved 30 November 2006.</ref>"
                   {N} body = "Blake, Mariah. [http://www.csmonitor.com/2006/1110/p25s02-woeu.html In Nazi cradle, Germany marks Jewish renaissance] [[Christian Science Monitor]]. 10 November 2006. Retrieved 30 November 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Blake, Mariah. [http://www.csmonitor.com/2006/1110/p25s02-woeu.html In Nazi cradle, Germany marks Jewish renaissance] [[Christian Science Monitor]]. 10 November 2006. Retrieved 30 November 2006.</ref>" ]
 
                 [ ]
               )
@@ -20581,9 +20581,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.eurojewcong.org/ejc/news.php?id_article=81 The Jewish Community of Germany] European Jewish Congress. Retrieved 30 November 2006.</ref>"
                   {N} body = "[http://www.eurojewcong.org/ejc/news.php?id_article=81 The Jewish Community of Germany] European Jewish Congress. Retrieved 30 November 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.eurojewcong.org/ejc/news.php?id_article=81 The Jewish Community of Germany] European Jewish Congress. Retrieved 30 November 2006.</ref>" ]
 
                 [ ]
               )
@@ -20605,9 +20605,9 @@ ParsedWikitextPage(
               WtText(" live in Germany; 50% of them are Asian immigrants.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{de icon}} [[Die Zeit]] 12/07, page 13</ref>"
                   {N} body = "{{de icon}} [[Die Zeit]] 12/07, page 13"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{de icon}} [[Die Zeit]] 12/07, page 13</ref>" ]
 
                 [ ]
               )
@@ -20628,9 +20628,9 @@ ParsedWikitextPage(
               WtText(" poll 2005, 47% of German citizens agreed with the statement \"I believe there is a God\", whereas 25% agreed with \"I believe there is some sort of spirit or life force\" and 25% said \"I do not believe there is any sort of spirit, god, or life force\".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_225_report_en.pdf|title=Eurobarometer on Social Values, Science and technology 2005 (page 11)|accessdate=5 May 2007|format=PDF}}</ref>"
                   {N} body = "{{Cite web|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_225_report_en.pdf|title=Eurobarometer on Social Values, Science and technology 2005 (page 11)|accessdate=5 May 2007|format=PDF}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_225_report_en.pdf|title=Eurobarometer on Social Values, Science and technology 2005 (page 11)|accessdate=5 May 2007|format=PDF}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -20738,9 +20738,9 @@ ParsedWikitextPage(
               WtText(" individually, whilst the federal government only has a minor role.")
               XmlComment(
                 Properties:
-                  RTD = RtData: [0] = "<!--Kulturhoheit-->"
                   {N} content = "Kulturhoheit"
                   {N} prefix = null
+                  {N} rtd = RTD[ "<!--Kulturhoheit-->" ]
                   {N} suffix = null
               )
               WtText(" Optional ")
@@ -20771,9 +20771,9 @@ ParsedWikitextPage(
               WtText(" for at least nine years. Primary education usually lasts for four years and public schools are not stratified at this stage.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{PDFlink|[http://lcweb2.loc.gov/frd/cs/profiles/Germany.pdf Country profile: Germany]|177&nbsp;KB}} U.S. Library of Congress. December 2005. Retrieved 4 December 2006.</ref>"
                   {N} body = "{{PDFlink|[http://lcweb2.loc.gov/frd/cs/profiles/Germany.pdf Country profile: Germany]|177&nbsp;KB}} U.S. Library of Congress. December 2005. Retrieved 4 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{PDFlink|[http://lcweb2.loc.gov/frd/cs/profiles/Germany.pdf Country profile: Germany]|177&nbsp;KB}} U.S. Library of Congress. December 2005. Retrieved 4 December 2006.</ref>" ]
 
                 [
                   XmlAttribute(
@@ -20928,9 +20928,9 @@ ParsedWikitextPage(
               WtText(" (PISA), first published in 2001, prompted a nation-wide debate about the school system, and in particular about the social selectivity of early stratification;")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">In PISA 2000, Germany was the country with the highest correlation between test score and social background index. In the following test periods, this result could not be replicated.</ref>"
                   {N} body = "In PISA 2000, Germany was the country with the highest correlation between test score and social background index. In the following test periods, this result could not be replicated."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">In PISA 2000, Germany was the country with the highest correlation between test score and social background index. In the following test periods, this result could not be replicated.</ref>" ]
 
                 [ ]
               )
@@ -20959,9 +20959,9 @@ ParsedWikitextPage(
               WtText(" to learn in a company as well as in a state-run vocational school.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -21063,9 +21063,9 @@ ParsedWikitextPage(
               WtText(" ranking for 2008, six of the top 100 universities in the world are in Germany, and 18 in the top 200.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|title=Top 100 World Universities|publisher=[[Academic Ranking of World Universities|ARWU]]|url=http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archiveurl=http://web.archive.org/web/20080822124509/http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archivedate=22 August 2008|accessdate=14 March 2009}}</ref>"
                   {N} body = "{{Cite web|title=Top 100 World Universities|publisher=[[Academic Ranking of World Universities|ARWU]]|url=http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archiveurl=http://web.archive.org/web/20080822124509/http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archivedate=22 August 2008|accessdate=14 March 2009}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|title=Top 100 World Universities|publisher=[[Academic Ranking of World Universities|ARWU]]|url=http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archiveurl=http://web.archive.org/web/20080822124509/http://www.arwu.org/rank2008/ARWU2008_A(EN).htm|archivedate=22 August 2008|accessdate=14 March 2009}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -21081,9 +21081,9 @@ ParsedWikitextPage(
               WtText(" Nearly all German universities are public (i.e. non-private) institutions, charging tuition fees ranging from \u20AC50\u2013500 per semester for each student.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006.</ref>"
                   {N} body = "[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006.</ref>" ]
 
                 [ ]
               )
@@ -21222,9 +21222,9 @@ ParsedWikitextPage(
               WtText(" was 77% government-funded and 23% privately funded as of 2004.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.who.int/whosis/database/core/core_select.cfm World Health Organization Statistical Information System: Core Health Indicators]. Retrieved 13 November 2010.</ref>"
                   {N} body = "[http://www.who.int/whosis/database/core/core_select.cfm World Health Organization Statistical Information System: Core Health Indicators]. Retrieved 13 November 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.who.int/whosis/database/core/core_select.cfm World Health Organization Statistical Information System: Core Health Indicators]. Retrieved 13 November 2010.</ref>" ]
 
                 [
                   XmlAttribute(
@@ -21355,9 +21355,9 @@ ParsedWikitextPage(
               WtText(". According to a 2003 survey, 37 percent of adult males and 28 percent of adult females in Germany are smokers. A 2007 study shows Germany has the highest number of overweight people in Europe.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news|title=Topping the EU Fat Stats, Germany Plans Anti-Obesity Drive|url=http://www.dw-world.de/dw/article/0,,2449356,00.html|publisher=Deutsche Welle|date=20 April 2007|accessdate=25 June 2010}}</ref>"
                   {N} body = "{{Cite news|title=Topping the EU Fat Stats, Germany Plans Anti-Obesity Drive|url=http://www.dw-world.de/dw/article/0,,2449356,00.html|publisher=Deutsche Welle|date=20 April 2007|accessdate=25 June 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news|title=Topping the EU Fat Stats, Germany Plans Anti-Obesity Drive|url=http://www.dw-world.de/dw/article/0,,2449356,00.html|publisher=Deutsche Welle|date=20 April 2007|accessdate=25 June 2010}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -21372,9 +21372,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news|title=Germany launches obesity campaign|url=http://news.bbc.co.uk/2/hi/health/6639227.stm|publisher=BBC|date=9 May 2007|accessdate =25 June 2010}}</ref>"
                   {N} body = "{{Cite news|title=Germany launches obesity campaign|url=http://news.bbc.co.uk/2/hi/health/6639227.stm|publisher=BBC|date=9 May 2007|accessdate =25 June 2010}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news|title=Germany launches obesity campaign|url=http://news.bbc.co.uk/2/hi/health/6639227.stm|publisher=BBC|date=9 May 2007|accessdate =25 June 2010}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -21534,17 +21534,17 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|title=Federal Republic of Germany: Culture|publisher=Encarta Online Encyclopedia 2006|accessdate=5 November 2010|archiveurl=http://web.archive.org/web/20080328162029/http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|archivedate=28 March 2008}}</ref>"
               {N} body = "{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|title=Federal Republic of Germany: Culture|publisher=Encarta Online Encyclopedia 2006|accessdate=5 November 2010|archiveurl=http://web.archive.org/web/20080328162029/http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|archivedate=28 March 2008}}"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|title=Federal Republic of Germany: Culture|publisher=Encarta Online Encyclopedia 2006|accessdate=5 November 2010|archiveurl=http://web.archive.org/web/20080328162029/http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|archivedate=28 March 2008}}</ref>" ]
 
             [ ]
           )
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.scribd.com/doc/30887674/Modern-German-Culture The Cambridge Companion to Modern German Culture]. Retrieved 9 November 2010.</ref>"
               {N} body = "[http://www.scribd.com/doc/30887674/Modern-German-Culture The Cambridge Companion to Modern German Culture]. Retrieved 9 November 2010."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://www.scribd.com/doc/30887674/Modern-German-Culture The Cambridge Companion to Modern German Culture]. Retrieved 9 November 2010.</ref>" ]
 
             [ ]
           )
@@ -21558,9 +21558,9 @@ ParsedWikitextPage(
           WtText(" (the land of poets and thinkers).")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Sp\u00E4tzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006.</ref>"
               {N} body = "Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Sp\u00E4tzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Sp\u00E4tzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006.</ref>" ]
 
             [ ]
           )
@@ -21592,9 +21592,9 @@ ParsedWikitextPage(
           WtText("million listen to the great symphonic orchestras.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008.</ref>"
               {N} body = "[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008.</ref>" ]
 
             [ ]
           )
@@ -21654,9 +21654,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010.</ref>"
               {N} body = "[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010.</ref>" ]
 
             [ ]
           )
@@ -21882,9 +21882,9 @@ ParsedWikitextPage(
           WtText(", also from Germany, became one of the world's most renowned architects in the second half of the 20th century. The glass fa\u00E7ade skyscraper was his idea.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8</ref>"
               {N} body = "2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8</ref>" ]
 
             [ ]
           )
@@ -22036,9 +22036,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://nobelprize.org/nobel_prizes/literature/articles/espmark/index.html|title=The Nobel Prize in Literature|publisher=Nobelprize.org|date=3 December 1999|author=Kjell Espmark|accessdate=14 August 2006}}</ref>"
                   {N} body = "{{Cite web|url=http://nobelprize.org/nobel_prizes/literature/articles/espmark/index.html|title=The Nobel Prize in Literature|publisher=Nobelprize.org|date=3 December 1999|author=Kjell Espmark|accessdate=14 August 2006}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://nobelprize.org/nobel_prizes/literature/articles/espmark/index.html|title=The Nobel Prize in Literature|publisher=Nobelprize.org|date=3 December 1999|author=Kjell Espmark|accessdate=14 August 2006}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -22873,9 +22873,9 @@ ParsedWikitextPage(
               WtText("In the 21st century Germany has been an important country for the development of contemporary analytic philosophy in continental Europe, along with France, Austria, Switzerland and the Scandinavian countries.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">Searle, John. (1987). ''The Blackwell Companion to Philosophy'', \"Introduction\". Wiley-Blackwell.</ref>"
                   {N} body = "Searle, John. (1987). ''The Blackwell Companion to Philosophy'', \"Introduction\". Wiley-Blackwell."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">Searle, John. (1987). ''The Blackwell Companion to Philosophy'', \"Introduction\". Wiley-Blackwell.</ref>" ]
 
                 [ ]
               )
@@ -23103,9 +23103,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite book |last= Bordwell |first= David |authorlink= David Bordwell |coauthors= Kristin Thompson|title= Film History: An Introduction|origdate= |origyear= 1994 |edition= 2nd |year= 2003 |publisher=McGraw-Hill |location= New York City |isbn= 978-0-07-115141-2 |page= 204 |chapter= The Introduction of Sound}}</ref>"
                   {N} body = "{{Cite book |last= Bordwell |first= David |authorlink= David Bordwell |coauthors= Kristin Thompson|title= Film History: An Introduction|origdate= |origyear= 1994 |edition= 2nd |year= 2003 |publisher=McGraw-Hill |location= New York City |isbn= 978-0-07-115141-2 |page= 204 |chapter= The Introduction of Sound}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite book |last= Bordwell |first= David |authorlink= David Bordwell |coauthors= Kristin Thompson|title= Film History: An Introduction|origdate= |origyear= 1994 |edition= 2nd |year= 2003 |publisher=McGraw-Hill |location= New York City |isbn= 978-0-07-115141-2 |page= 204 |chapter= The Introduction of Sound}}</ref>" ]
 
                 [ ]
               )
@@ -23142,9 +23142,9 @@ ParsedWikitextPage(
               WtText(" still introduced new aesthetics to film.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007.</ref>"
                   {N} body = "[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007.</ref>" ]
 
                 [ ]
               )
@@ -23256,9 +23256,9 @@ ParsedWikitextPage(
               WtText(" put West German cinema back on the international stage with their often provocative films.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.fassbinderfoundation.de/node.php/en/home Rainer Werner Fassbinder], Fassbinder Foundation. Retrieved 13 April 2007.</ref>"
                   {N} body = "[http://www.fassbinderfoundation.de/node.php/en/home Rainer Werner Fassbinder], Fassbinder Foundation. Retrieved 13 April 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.fassbinderfoundation.de/node.php/en/home Rainer Werner Fassbinder], Fassbinder Foundation. Retrieved 13 April 2007.</ref>" ]
 
                 [ ]
               )
@@ -23420,9 +23420,9 @@ ParsedWikitextPage(
               WtText(" in 2007.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.imdb.com/title/tt0405094/awards Awards:Das Leben der Anderen], IMDb. Retrieved 13 April 2007.</ref>"
                   {N} body = "[http://www.imdb.com/title/tt0405094/awards Awards:Das Leben der Anderen], IMDb. Retrieved 13 April 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.imdb.com/title/tt0405094/awards Awards:Das Leben der Anderen], IMDb. Retrieved 13 April 2007.</ref>" ]
 
                 [ ]
               )
@@ -23494,9 +23494,9 @@ ParsedWikitextPage(
               WtText(", held annually since 1951, is one of the world's foremost film festivals. An international jury places emphasis on representing films from all over the world and awards the winners with the Golden and Silver Bears.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">''[http://www.fiapf.org/pdf/2006accreditedFestivalsDirectory.pdf 2006 FIAPF accredited Festivals Directory], International Federation of Film Producers Associations, retrieved on 11 December 2006.''</ref>"
                   {N} body = "''[http://www.fiapf.org/pdf/2006accreditedFestivalsDirectory.pdf 2006 FIAPF accredited Festivals Directory], International Federation of Film Producers Associations, retrieved on 11 December 2006.''"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">''[http://www.fiapf.org/pdf/2006accreditedFestivalsDirectory.pdf 2006 FIAPF accredited Festivals Directory], International Federation of Film Producers Associations, retrieved on 11 December 2006.''</ref>" ]
 
                 [ ]
               )
@@ -23704,9 +23704,9 @@ ParsedWikitextPage(
               WtText(".")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://web.archive.org/web/20070205193206/http://news.warez.com/p2pnet/music-market-worth-us32-billion.html Music market worth US$ 32&nbsp;billion] P2pnet.net 7 April 2004. Retrieved 7 December 2006.</ref>"
                   {N} body = "[http://web.archive.org/web/20070205193206/http://news.warez.com/p2pnet/music-market-worth-us32-billion.html Music market worth US$ 32&nbsp;billion] P2pnet.net 7 April 2004. Retrieved 7 December 2006."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://web.archive.org/web/20070205193206/http://news.warez.com/p2pnet/music-market-worth-us32-billion.html Music market worth US$ 32&nbsp;billion] P2pnet.net 7 April 2004. Retrieved 7 December 2006.</ref>" ]
 
                 [ ]
               )
@@ -24491,9 +24491,9 @@ ParsedWikitextPage(
               WtText(" offer a range of digital-only channels.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://news.bbc.co.uk/2/hi/europe/country_profiles/1047864.stm Country profile: Germany], BBC News. Retrieved 7 December 2007.</ref>"
                   {N} body = "[http://news.bbc.co.uk/2/hi/europe/country_profiles/1047864.stm Country profile: Germany], BBC News. Retrieved 7 December 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://news.bbc.co.uk/2/hi/europe/country_profiles/1047864.stm Country profile: Germany], BBC News. Retrieved 7 December 2007.</ref>" ]
 
                 [ ]
               )
@@ -24546,9 +24546,9 @@ ParsedWikitextPage(
               WtText("million copies of books every year, with about 80,000 titles, nearly 60,000 of them new publications. Germany is in third place on international statistics after the English-speaking book market and the People\u2019s Republic of China.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.land-der-ideen.de/CDA/facts_printing,4563,0,,en.html Germany \u2013 Land of ideas], www.land-der-ideen.de Retrieved 12 December 2010.</ref>"
                   {N} body = "[http://www.land-der-ideen.de/CDA/facts_printing,4563,0,,en.html Germany \u2013 Land of ideas], www.land-der-ideen.de Retrieved 12 December 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.land-der-ideen.de/CDA/facts_printing,4563,0,,en.html Germany \u2013 Land of ideas], www.land-der-ideen.de Retrieved 12 December 2010.</ref>" ]
 
                 [ ]
               )
@@ -24689,9 +24689,9 @@ ParsedWikitextPage(
               WtText("Sport forms an integral part of German life. Twenty-seven million Germans are members of a sports club and an additional twelve million pursue such an activity individually.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web | url = http://www.germany.info/relaunch/culture/life/sports.html | title = Germany Info: Culture & Life: Sports | publisher=Germany Embassy in Washington, D.C | accessdate = 28 December 2006}}</ref>"
                   {N} body = "{{Cite web | url = http://www.germany.info/relaunch/culture/life/sports.html | title = Germany Info: Culture & Life: Sports | publisher=Germany Embassy in Washington, D.C | accessdate = 28 December 2006}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web | url = http://www.germany.info/relaunch/culture/life/sports.html | title = Germany Info: Culture & Life: Sports | publisher=Germany Embassy in Washington, D.C | accessdate = 28 December 2006}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -24741,9 +24741,9 @@ ParsedWikitextPage(
               WtText(") is the largest sports organisation of its kind worldwide.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -24955,9 +24955,9 @@ ParsedWikitextPage(
               WtText(", and tennis.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = "/>"
                   {N} body = null
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                 [
                   XmlAttribute(
@@ -25083,9 +25083,9 @@ ParsedWikitextPage(
               WtText(" and more Formula One races than any other driver since Formula One's debut season in 1950. He is one of the highest paid sportsmen in history and became a billionaire athlete.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news | url = http://sport.guardian.co.uk/formulaone/story/0,,1929091,00.html | title = What we will miss about Michael Schumacher | newspaper=The Guardian | date = 23 October 2006 | accessdate = 19 October 2007 | location=London | first=David | last=Ornstein }}</ref>"
                   {N} body = "{{Cite news | url = http://sport.guardian.co.uk/formulaone/story/0,,1929091,00.html | title = What we will miss about Michael Schumacher | newspaper=The Guardian | date = 23 October 2006 | accessdate = 19 October 2007 | location=London | first=David | last=Ornstein }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news | url = http://sport.guardian.co.uk/formulaone/story/0,,1929091,00.html | title = What we will miss about Michael Schumacher | newspaper=The Guardian | date = 23 October 2006 | accessdate = 19 October 2007 | location=London | first=David | last=Ornstein }}</ref>" ]
 
                 [ ]
               )
@@ -25182,9 +25182,9 @@ ParsedWikitextPage(
               WtText(", Germany finished fifth in the medal count,")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web | url = http://results.beijing2008.cn/WRM/ENG/INF/GL/95A/GL0000000.shtml | title = Beijing 2008 Medal Table | publisher=The Official Website of the Beijing 2008 Olympic Games | accessdate = 8 September 2008}}</ref>"
                   {N} body = "{{Cite web | url = http://results.beijing2008.cn/WRM/ENG/INF/GL/95A/GL0000000.shtml | title = Beijing 2008 Medal Table | publisher=The Official Website of the Beijing 2008 Olympic Games | accessdate = 8 September 2008}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web | url = http://results.beijing2008.cn/WRM/ENG/INF/GL/95A/GL0000000.shtml | title = Beijing 2008 Medal Table | publisher=The Official Website of the Beijing 2008 Olympic Games | accessdate = 8 September 2008}}</ref>" ]
 
                 [ ]
               )
@@ -25201,9 +25201,9 @@ ParsedWikitextPage(
               WtText(" they finished first.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web | url = http://www.olympic.org/uk/games/past/table_uk.asp?OLGT=2&OLGY=2006 | title = Turin 2006 Medal Table | publisher=International Olympic Committee | accessdate = 28 December 2006}}</ref>"
                   {N} body = "{{Cite web | url = http://www.olympic.org/uk/games/past/table_uk.asp?OLGT=2&OLGY=2006 | title = Turin 2006 Medal Table | publisher=International Olympic Committee | accessdate = 28 December 2006}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web | url = http://www.olympic.org/uk/games/past/table_uk.asp?OLGT=2&OLGY=2006 | title = Turin 2006 Medal Table | publisher=International Olympic Committee | accessdate = 28 December 2006}}</ref>" ]
 
                 [ ]
               )
@@ -25397,9 +25397,9 @@ ParsedWikitextPage(
               WtText(" and Swabia, for instance, share a culinary culture with Switzerland and Austria. Pork, beef, and poultry are the main varieties of meat consumed in Germany, with pork being the most popular.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web | url = http://www.nationmaster.com/country/gm-germany/foo-food | title = German food stats | publisher=www.nationmaster.com | accessdate = 26 November 2007}}</ref>"
                   {N} body = "{{Cite web | url = http://www.nationmaster.com/country/gm-germany/foo-food | title = German food stats | publisher=www.nationmaster.com | accessdate = 26 November 2007}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web | url = http://www.nationmaster.com/country/gm-germany/foo-food | title = German food stats | publisher=www.nationmaster.com | accessdate = 26 November 2007}}</ref>" ]
 
                 [ ]
               )
@@ -25426,9 +25426,9 @@ ParsedWikitextPage(
               WtText(" has gained a market share of around 3.0%, and is predicted to increase further.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}</ref>"
                   {N} body = "{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}</ref>" ]
 
                 [ ]
               )
@@ -25449,18 +25449,18 @@ ParsedWikitextPage(
               WtText(" is less common but widespread.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.cp-pc.ca/english/germany/eating.html Eating the German way], Cultural Profiles Project. Retrieved 2007, 26 November.</ref>"
                   {N} body = "[http://www.cp-pc.ca/english/germany/eating.html Eating the German way], Cultural Profiles Project. Retrieved 2007, 26 November."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.cp-pc.ca/english/germany/eating.html Eating the German way], Cultural Profiles Project. Retrieved 2007, 26 November.</ref>" ]
 
                 [ ]
               )
               WtText(" More than 300 types of bread are sold in bakery shops across the country.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November.</ref>"
                   {N} body = "[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November.</ref>" ]
 
                 [ ]
               )
@@ -25689,18 +25689,18 @@ ParsedWikitextPage(
               WtText(" has awarded nine restaurants three stars, the highest designation, while 15 more received two stars.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.dw-world.de/dw/article/0,2144,2914502,00.html Schnitzel Outcooks Spaghetti in Michelin Guide], Deutsche Welle. Retrieved 2007, 26 November.</ref>"
                   {N} body = "[http://www.dw-world.de/dw/article/0,2144,2914502,00.html Schnitzel Outcooks Spaghetti in Michelin Guide], Deutsche Welle. Retrieved 2007, 26 November."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.dw-world.de/dw/article/0,2144,2914502,00.html Schnitzel Outcooks Spaghetti in Michelin Guide], Deutsche Welle. Retrieved 2007, 26 November.</ref>" ]
 
                 [ ]
               )
               WtText(" German restaurants have become the world's second most decorated eateries after France.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November.</ref>"
                   {N} body = "[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November.</ref>" ]
 
                 [ ]
               )
@@ -25711,9 +25711,9 @@ ParsedWikitextPage(
               WtText("Although wine is becoming more popular in many parts of Germany, the national alcoholic drink is beer. German beer consumption per person is declining but\u2014at 116 litres annually\u2014it is still among the highest in the world.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.royalunibrew.com/Default.aspx?ID=266 Europe's largest beer market], royalunibrew.com. Retrieved 2007, 26 November.</ref>"
                   {N} body = "[http://www.royalunibrew.com/Default.aspx?ID=266 Europe's largest beer market], royalunibrew.com. Retrieved 2007, 26 November."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.royalunibrew.com/Default.aspx?ID=266 Europe's largest beer market], royalunibrew.com. Retrieved 2007, 26 November.</ref>" ]
 
                 [ ]
               )
@@ -25815,9 +25815,9 @@ ParsedWikitextPage(
               WtText(". Among 18 surveyed western countries, Germany ranked 14th in the list of per capita consumption of soft drinks in general, while it ranked third in the consumption of fruit juices.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.nationmaster.com/graph/foo_sof_dri_con-food-soft-drink-consumption Soft drink consumption], www.nationmaster.com. Retrieved 2007, 26 November.</ref>"
                   {N} body = "[http://www.nationmaster.com/graph/foo_sof_dri_con-food-soft-drink-consumption Soft drink consumption], www.nationmaster.com. Retrieved 2007, 26 November."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.nationmaster.com/graph/foo_sof_dri_con-food-soft-drink-consumption Soft drink consumption], www.nationmaster.com. Retrieved 2007, 26 November.</ref>" ]
 
                 [ ]
               )
@@ -25912,9 +25912,9 @@ ParsedWikitextPage(
               WtText("Germany is a modern, cosmopolitan, creative society, shaped by a plurality of lifestyles and regional identities.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.germany.info/Vertretung/usa/en/07__Culture__Lifestyle__Travel/01/__Society.html Society] The German Mission to the United states. Retrieved 16 October 2010.</ref>"
                   {N} body = "[http://www.germany.info/Vertretung/usa/en/07__Culture__Lifestyle__Travel/01/__Society.html Society] The German Mission to the United states. Retrieved 16 October 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.germany.info/Vertretung/usa/en/07__Culture__Lifestyle__Travel/01/__Society.html Society] The German Mission to the United states. Retrieved 16 October 2010.</ref>" ]
 
                 [ ]
               )
@@ -25956,9 +25956,9 @@ ParsedWikitextPage(
               WtText(" have been permitted since 2001.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.news24.com/News24/World/News/0,,2-10-1462_1613010,00.html Germany extends gay rights]{{dead link|date=September 2010}} News24.com. Retrieved 25 November 2007.</ref>"
                   {N} body = "[http://www.news24.com/News24/World/News/0,,2-10-1462_1613010,00.html Germany extends gay rights]{{dead link|date=September 2010}} News24.com. Retrieved 25 November 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.news24.com/News24/World/News/0,,2-10-1462_1613010,00.html Germany extends gay rights]{{dead link|date=September 2010}} News24.com. Retrieved 25 November 2007.</ref>" ]
 
                 [ ]
               )
@@ -25985,9 +25985,9 @@ ParsedWikitextPage(
               WtText(", are openly gay.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news |last=Weinthal |first=Benjamin |title=He's Gay, and That's Okay |newspaper=[[Gay City News]] | location = New York |date=31 August 2006 |url=http://www.gaycitynews.com/articles/2006/08/31/gay_city_news_archives/past%20issues/17334472.txt |accessdate=3 September 2009}}</ref>"
                   {N} body = "{{Cite news |last=Weinthal |first=Benjamin |title=He's Gay, and That's Okay |newspaper=[[Gay City News]] | location = New York |date=31 August 2006 |url=http://www.gaycitynews.com/articles/2006/08/31/gay_city_news_archives/past%20issues/17334472.txt |accessdate=3 September 2009}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news |last=Weinthal |first=Benjamin |title=He's Gay, and That's Okay |newspaper=[[Gay City News]] | location = New York |date=31 August 2006 |url=http://www.gaycitynews.com/articles/2006/08/31/gay_city_news_archives/past%20issues/17334472.txt |accessdate=3 September 2009}}</ref>" ]
 
                 [
                   XmlAttribute(
@@ -26040,9 +26040,9 @@ ParsedWikitextPage(
               WtText("During the last decade of the 20th century, Germany changed its attitude towards immigrants. Until the mid-1990s the opinion was widespread that Germany is not a country of immigration, even though about 20% of the population were of non-German origin. Today the government and a majority of the German society are acknowledging that immigrants from diverse ethnocultural backgrounds are part of the German society and that controlled immigration should be initiated based on qualification standards.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite book | first = Friedrich | last = Heckmann | url = http://books.google.com/?id=l9yTtCAnQWwC&pg=PA53&lpg=PA53&dq=cdu+immigrant+einwanderungsland#PPA53,M1 | title = The Integration of Immigrants in European Societies: national differences and trends of convergence| publisher=Lucius & Lucius | location = Stuttgart | pages = 51 ff. | year = 2003 | isbn = 978-3-8282-0181-1 | accessdate = 28 October 2010 }}</ref>"
                   {N} body = "{{Cite book | first = Friedrich | last = Heckmann | url = http://books.google.com/?id=l9yTtCAnQWwC&pg=PA53&lpg=PA53&dq=cdu+immigrant+einwanderungsland#PPA53,M1 | title = The Integration of Immigrants in European Societies: national differences and trends of convergence| publisher=Lucius & Lucius | location = Stuttgart | pages = 51 ff. | year = 2003 | isbn = 978-3-8282-0181-1 | accessdate = 28 October 2010 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite book | first = Friedrich | last = Heckmann | url = http://books.google.com/?id=l9yTtCAnQWwC&pg=PA53&lpg=PA53&dq=cdu+immigrant+einwanderungsland#PPA53,M1 | title = The Integration of Immigrants in European Societies: national differences and trends of convergence| publisher=Lucius & Lucius | location = Stuttgart | pages = 51 ff. | year = 2003 | isbn = 978-3-8282-0181-1 | accessdate = 28 October 2010 }}</ref>" ]
 
                 [ ]
               )
@@ -26053,9 +26053,9 @@ ParsedWikitextPage(
               WtText("Since the 2006 FIFA World Cup, the internal and external evaluation of Germany's national image has changed.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.brandovation.net/ How Germany won the World Cup of Nation Branding] BrandOvation. Retrieved 25 November 2007.</ref>"
                   {N} body = "[http://www.brandovation.net/ How Germany won the World Cup of Nation Branding] BrandOvation. Retrieved 25 November 2007."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.brandovation.net/ How Germany won the World Cup of Nation Branding] BrandOvation. Retrieved 25 November 2007.</ref>" ]
 
                 [ ]
               )
@@ -26072,9 +26072,9 @@ ParsedWikitextPage(
               WtText(", Germany became significantly and repeatedly more highly ranked after the tournament. People in 20 different states assessed the country's reputation in terms of culture, politics, exports, its people and its attractiveness to tourists, immigrants and investments. Germany has been named the world's second most valued nation among 50 countries in 2010.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite press release | title = 2010 Anholt-GfK Roper Nation Brands Index | publisher=[[GfK]] | date = 12 October 2010 | url = http://www.gfk.com/group/press_information/press_releases/006688/index.en.html | accessdate = 15 October 2010 }}</ref>"
                   {N} body = "{{Cite press release | title = 2010 Anholt-GfK Roper Nation Brands Index | publisher=[[GfK]] | date = 12 October 2010 | url = http://www.gfk.com/group/press_information/press_releases/006688/index.en.html | accessdate = 15 October 2010 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite press release | title = 2010 Anholt-GfK Roper Nation Brands Index | publisher=[[GfK]] | date = 12 October 2010 | url = http://www.gfk.com/group/press_information/press_releases/006688/index.en.html | accessdate = 15 October 2010 }}</ref>" ]
 
                 [ ]
               )
@@ -26091,17 +26091,17 @@ ParsedWikitextPage(
               WtText(", revealed that Germany is recognised for the most positive influence in the world in 2010. A majority of 59% have a positive view of the country, while 14% have a negative view.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news | url = http://news.bbc.co.uk/2/hi/8626041.stm | title = World warming to US under Obama, BBC poll suggests |publisher=BBC News Online | location = London | date = 19 April 2010 |accessdate = 28 October 2010 }}</ref>"
                   {N} body = "{{Cite news | url = http://news.bbc.co.uk/2/hi/8626041.stm | title = World warming to US under Obama, BBC poll suggests |publisher=BBC News Online | location = London | date = 19 April 2010 |accessdate = 28 October 2010 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news | url = http://news.bbc.co.uk/2/hi/8626041.stm | title = World warming to US under Obama, BBC poll suggests |publisher=BBC News Online | location = London | date = 19 April 2010 |accessdate = 28 October 2010 }}</ref>" ]
 
                 [ ]
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://news.bbc.co.uk/2/shared/bsp/hi/pdfs/160410bbcwspoll.pdf BBC World Service Poll], BBC News. Retrieved 19 April 2010.</ref>"
                   {N} body = "[http://news.bbc.co.uk/2/shared/bsp/hi/pdfs/160410bbcwspoll.pdf BBC World Service Poll], BBC News. Retrieved 19 April 2010."
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://news.bbc.co.uk/2/shared/bsp/hi/pdfs/160410bbcwspoll.pdf BBC World Service Poll], BBC News. Retrieved 19 April 2010.</ref>" ]
 
                 [ ]
               )
@@ -26119,9 +26119,9 @@ ParsedWikitextPage(
               WtText("billion on international travel in 2008, Germans spent more money on travel than any other country. The most visited destinations were Spain, Italy and Austria.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite news | url = http://economictimes.indiatimes.com/ET-Cetera/Germans-spend-most-on-foreign-trips-Industry-group/articleshow/4250332.cms | title = Germans spend most on foreign trips: Industry group] | date = 10 March 2009 | location = New Delhi | newspaper=The Economic Times |accessdate = 15 March 2009 }}</ref>"
                   {N} body = "{{Cite news | url = http://economictimes.indiatimes.com/ET-Cetera/Germans-spend-most-on-foreign-trips-Industry-group/articleshow/4250332.cms | title = Germans spend most on foreign trips: Industry group] | date = 10 March 2009 | location = New Delhi | newspaper=The Economic Times |accessdate = 15 March 2009 }}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite news | url = http://economictimes.indiatimes.com/ET-Cetera/Germans-spend-most-on-foreign-trips-Industry-group/articleshow/4250332.cms | title = Germans spend most on foreign trips: Industry group] | date = 10 March 2009 | location = New Delhi | newspaper=The Economic Times |accessdate = 15 March 2009 }}</ref>" ]
 
                 [ ]
               )

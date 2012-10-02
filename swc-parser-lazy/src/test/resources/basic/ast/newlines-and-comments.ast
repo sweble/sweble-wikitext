@@ -10,9 +10,9 @@ ParsedWikitextPage(
     Paragraph([
       XmlComment(
         Properties:
-          RTD = RtData: [0] = "  <!-- comment ... -->  \n"
           {N} content = " comment ... "
           {N} prefix = "  "
+          {N} rtd = RTD[ "  <!-- comment ... -->  \n" ]
           {N} suffix = "  \n"
       )
       Newline("\n")

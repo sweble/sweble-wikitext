@@ -28,9 +28,9 @@ ParsedWikitextPage(
             WtText("1")
             TagExtension(
               Properties:
-                RTD = RtData: [0] = "<pre", [1] = ">T|a\n|b</pre>"
                 {N} body = "T|a\n|b"
                 {N} name = "pre"
+                {N} rtd = RTD[ "<pre" <o> ">T|a\n|b</pre>" ]
 
               [ ]
             )

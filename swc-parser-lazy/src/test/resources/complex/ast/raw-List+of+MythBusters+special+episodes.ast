@@ -151,9 +151,9 @@ ParsedWikitextPage(
                       WtText("Series # ")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- This is the episode number within the entire series -->"
                           {N} content = " This is the episode number within the entire series "
                           {N} prefix = null
+                          {N} rtd = RTD[ "<!-- This is the episode number within the entire series -->" ]
                           {N} suffix = null
                       )
                     ])
@@ -179,9 +179,9 @@ ParsedWikitextPage(
                       WtText("Season # ")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- This is the episode number within the current season -->"
                           {N} content = " This is the episode number within the current season "
                           {N} prefix = null
+                          {N} rtd = RTD[ "<!-- This is the episode number within the current season -->" ]
                           {N} suffix = null
                       )
                     ])
@@ -784,9 +784,9 @@ ParsedWikitextPage(
               WtText("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
                   {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
 
                 [ ]
               )
@@ -981,9 +981,9 @@ ParsedWikitextPage(
               WtText(" and test it under Adam's weight.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
                   {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
 
                 [ ]
               )
@@ -1130,9 +1130,9 @@ ParsedWikitextPage(
               WtText(" in particular.")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>"
                   {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
 
                 [ ]
               )
@@ -1587,9 +1587,9 @@ ParsedWikitextPage(
                           WtText(" meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>"
                               {N} body = "{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
                               {N} name = "ref"
+                              {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
 
                             [ ]
                           )
@@ -1671,9 +1671,9 @@ ParsedWikitextPage(
                           WtText(" Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<ref", [1] = ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>"
                               {N} body = "{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
                               {N} name = "ref"
+                              {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
 
                             [ ]
                           )

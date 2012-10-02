@@ -440,9 +440,9 @@ ParsedWikitextPage(
           Newline("\n")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<pre", [1] = ">\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n</pre>"
               {N} body = "\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n"
               {N} name = "pre"
+              {N} rtd = RTD[ "<pre" <o> ">\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n</pre>" ]
 
             [
               XmlAttribute(
@@ -929,9 +929,9 @@ ParsedWikitextPage(
                     [
                       TagExtension(
                         Properties:
-                          RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                           {N} body = "{|"
                           {N} name = "nowiki"
+                          {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                         [ ]
                       )
@@ -984,9 +984,9 @@ ParsedWikitextPage(
                     [
                       TagExtension(
                         Properties:
-                          RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                           {N} body = "|}"
                           {N} name = "nowiki"
+                          {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                         [ ]
                       )
@@ -1041,9 +1041,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -1078,9 +1078,9 @@ ParsedWikitextPage(
                     [
                       TagExtension(
                         Properties:
-                          RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                           {N} body = "|+"
                           {N} name = "nowiki"
+                          {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                         [ ]
                       )
@@ -1118,9 +1118,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -1197,9 +1197,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -1212,9 +1212,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                   {N} body = "|+"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                 [ ]
               )
@@ -1250,9 +1250,9 @@ ParsedWikitextPage(
                     [
                       TagExtension(
                         Properties:
-                          RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                           {N} body = "|-"
                           {N} name = "nowiki"
+                          {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                         [ ]
                       )
@@ -1305,9 +1305,9 @@ ParsedWikitextPage(
                     [
                       TagExtension(
                         Properties:
-                          RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                           {N} body = "|-"
                           {N} name = "nowiki"
+                          {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                         [ ]
                       )
@@ -1338,9 +1338,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -1390,9 +1390,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -1405,9 +1405,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                   {N} body = "|+"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                 [ ]
               )
@@ -1421,9 +1421,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -1475,9 +1475,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -1568,9 +1568,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -1604,9 +1604,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -1619,9 +1619,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                   {N} body = "|+"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                 [ ]
               )
@@ -1635,9 +1635,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -1682,9 +1682,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -1793,9 +1793,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -1820,9 +1820,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{| border=\"1\"</nowiki>"
                   {N} body = "{| border=\"1\""
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{| border=\"1\"</nowiki>" ]
 
                 [ ]
               )
@@ -1835,9 +1835,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -1850,9 +1850,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|format modifier (not displayed)</nowiki>"
                   {N} body = "|format modifier (not displayed)"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|format modifier (not displayed)</nowiki>" ]
 
                 [ ]
               )
@@ -1884,9 +1884,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">These all </nowiki>"
                   {N} body = "These all "
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">These all </nowiki>" ]
 
                 [ ]
               )
@@ -1918,9 +1918,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">(including the pipes)</nowiki>"
                   {N} body = "(including the pipes)"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">(including the pipes)</nowiki>" ]
 
                 [ ]
               )
@@ -1952,9 +1952,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">go into </nowiki>"
                   {N} body = "go into "
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">go into </nowiki>" ]
 
                 [ ]
               )
@@ -1986,9 +1986,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">the first cell</nowiki>"
                   {N} body = "the first cell"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">the first cell</nowiki>" ]
 
                 [ ]
               )
@@ -2001,9 +2001,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -2077,9 +2077,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{| border=\"1\"</nowiki>"
                   {N} body = "{| border=\"1\""
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{| border=\"1\"</nowiki>" ]
 
                 [ ]
               )
@@ -2092,9 +2092,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2107,9 +2107,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">| Cell 1 (no modifier&nbsp;\u2014 not aligned)</nowiki>"
                   {N} body = "| Cell 1 (no modifier&nbsp;\u2014 not aligned)"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">| Cell 1 (no modifier&nbsp;\u2014 not aligned)</nowiki>" ]
 
                 [ ]
               )
@@ -2122,9 +2122,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2137,9 +2137,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">| align=\"right\" | Cell 2 (right aligned)</nowiki>"
                   {N} body = "| align=\"right\" | Cell 2 (right aligned)"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">| align=\"right\" | Cell 2 (right aligned)</nowiki>" ]
 
                 [ ]
               )
@@ -2152,9 +2152,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -2265,9 +2265,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -2280,9 +2280,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                   {N} body = "|+"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                 [ ]
               )
@@ -2394,9 +2394,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2415,9 +2415,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2448,9 +2448,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -2484,9 +2484,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -2499,9 +2499,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                   {N} body = "|+"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                 [ ]
               )
@@ -2533,9 +2533,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2586,9 +2586,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2645,9 +2645,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -2681,9 +2681,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                   {N} body = "{|"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                 [ ]
               )
@@ -2722,9 +2722,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|+</nowiki>"
                   {N} body = "|+"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|+</nowiki>" ]
 
                 [ ]
               )
@@ -2756,9 +2756,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2783,9 +2783,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|-</nowiki>"
                   {N} body = "|-"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|-</nowiki>" ]
 
                 [ ]
               )
@@ -2816,9 +2816,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                   {N} body = "|}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                 [ ]
               )
@@ -3275,9 +3275,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n</pre>"
                   {N} body = "\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n</pre>" ]
 
                 [ ]
               )
@@ -3287,9 +3287,9 @@ ParsedWikitextPage(
             Paragraph([
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{|\n| A || B\n|-\n| C || D\n|}\n</pre>"
                   {N} body = "\n{|\n| A || B\n|-\n| C || D\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{|\n| A || B\n|-\n| C || D\n|}\n</pre>" ]
 
                 [ ]
               )
@@ -3403,9 +3403,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</pre>"
                   {N} body = "\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -3876,9 +3876,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n</pre>"
                   {N} body = "\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -4023,9 +4023,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n</pre>"
                   {N} body = "\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -4367,9 +4367,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n</pre>"
                   {N} body = "\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -4619,9 +4619,9 @@ ParsedWikitextPage(
                   Newline("\n")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<pre", [1] = ">\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n</pre>"
                       {N} body = "\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n"
                       {N} name = "pre"
+                      {N} rtd = RTD[ "<pre" <o> ">\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n</pre>" ]
 
                     [
                       XmlAttribute(
@@ -4844,9 +4844,9 @@ ParsedWikitextPage(
                 Paragraph([
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<pre", [1] = ">\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n</pre>"
                       {N} body = "\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n"
                       {N} name = "pre"
+                      {N} rtd = RTD[ "<pre" <o> ">\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n</pre>" ]
 
                     [
                       XmlAttribute(
@@ -5721,9 +5721,9 @@ ParsedWikitextPage(
             Paragraph([
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n</pre>"
                   {N} body = "\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -6024,9 +6024,9 @@ ParsedWikitextPage(
             Paragraph([
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n</pre>"
                   {N} body = "\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -6552,9 +6552,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n</pre>"
                   {N} body = "\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -6886,9 +6886,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n</pre>"
                   {N} body = "\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -7363,9 +7363,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n</pre>"
                   {N} body = "\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -7555,9 +7555,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n</pre>"
                   {N} body = "\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -8232,9 +8232,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     TagExtension(
                       Properties:
-                        RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                         {N} body = "{|"
                         {N} name = "nowiki"
+                        {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                       [ ]
                     )
@@ -8303,9 +8303,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                                 {N} body = "{|"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                               [ ]
                             )
@@ -8315,9 +8315,9 @@ ParsedWikitextPage(
                         WtText(" ")
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<nowiki", [1] = "><!--</nowiki>"
                             {N} body = "<!--"
                             {N} name = "nowiki"
+                            {N} rtd = RTD[ "<nowiki" <o> "><!--</nowiki>" ]
 
                           [ ]
                         )
@@ -8331,9 +8331,9 @@ ParsedWikitextPage(
                         WtText(" ")
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<nowiki", [1] = ">--></nowiki>"
                             {N} body = "-->"
                             {N} name = "nowiki"
+                            {N} rtd = RTD[ "<nowiki" <o> ">--></nowiki>" ]
 
                           [ ]
                         )
@@ -8402,9 +8402,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                                 {N} body = "|}"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                               [ ]
                             )
@@ -8470,9 +8470,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                                 {N} body = "{|"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                               [ ]
                             )
@@ -8512,9 +8512,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                                 {N} body = "|}"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                               [ ]
                             )
@@ -8537,9 +8537,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                                 {N} body = "{|"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                               [ ]
                             )
@@ -8579,9 +8579,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                                 {N} body = "|}"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                               [ ]
                             )
@@ -8636,9 +8636,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                                 {N} body = "{|"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                               [ ]
                             )
@@ -8678,9 +8678,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                                 {N} body = "|}"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                               [ ]
                             )
@@ -8703,9 +8703,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">{|</nowiki>"
                                 {N} body = "{|"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">{|</nowiki>" ]
 
                               [ ]
                             )
@@ -8745,9 +8745,9 @@ ParsedWikitextPage(
                           [
                             TagExtension(
                               Properties:
-                                RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                                 {N} body = "|}"
                                 {N} name = "nowiki"
+                                {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                               [ ]
                             )
@@ -8768,9 +8768,9 @@ ParsedWikitextPage(
                     Newline("\n")
                     TagExtension(
                       Properties:
-                        RTD = RtData: [0] = "<nowiki", [1] = ">|}</nowiki>"
                         {N} body = "|}"
                         {N} name = "nowiki"
+                        {N} rtd = RTD[ "<nowiki" <o> ">|}</nowiki>" ]
 
                       [ ]
                     )
@@ -9168,9 +9168,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n</pre>"
                   {N} body = "\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -9546,9 +9546,9 @@ ParsedWikitextPage(
                 [
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<nowiki", [1] = ">{| style=\"margin: 1em auto 1em auto;\"</nowiki>"
                       {N} body = "{| style=\"margin: 1em auto 1em auto;\""
                       {N} name = "nowiki"
+                      {N} rtd = RTD[ "<nowiki" <o> ">{| style=\"margin: 1em auto 1em auto;\"</nowiki>" ]
 
                     [ ]
                   )
@@ -9567,9 +9567,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n</pre>"
                   {N} body = "\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -9756,9 +9756,9 @@ ParsedWikitextPage(
             Paragraph([
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n</pre>"
                   {N} body = "\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -9909,9 +9909,9 @@ ParsedWikitextPage(
                         WtText(" ")
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<nowiki", [1] = ">* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.</nowiki>"
                             {N} body = "* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward."
                             {N} name = "nowiki"
+                            {N} rtd = RTD[ "<nowiki" <o> ">* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.</nowiki>" ]
 
                           [ ]
                         )
@@ -10003,9 +10003,9 @@ ParsedWikitextPage(
                         WtText(" ")
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<nowiki", [1] = ">* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.</nowiki>"
                             {N} body = "* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table."
                             {N} name = "nowiki"
+                            {N} rtd = RTD[ "<nowiki" <o> ">* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.</nowiki>" ]
 
                           [ ]
                         )
@@ -10161,9 +10161,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n</pre>"
                   {N} body = "\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -10340,9 +10340,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n</pre>"
                   {N} body = "\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -10955,9 +10955,9 @@ ParsedWikitextPage(
                       [
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<pre", [1] = "><nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki></pre>"
                             {N} body = "<nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>"
                             {N} name = "pre"
+                            {N} rtd = RTD[ "<pre" <o> "><nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki></pre>" ]
 
                           [ ]
                         )
@@ -11467,9 +11467,9 @@ ParsedWikitextPage(
                       [
                         TagExtension(
                           Properties:
-                            RTD = RtData: [0] = "<pre", [1] = "><nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki></pre>"
                             {N} body = "<nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>"
                             {N} name = "pre"
+                            {N} rtd = RTD[ "<pre" <o> "><nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki></pre>" ]
 
                           [ ]
                         )
@@ -11982,9 +11982,9 @@ ParsedWikitextPage(
           [
             TagExtension(
               Properties:
-                RTD = RtData: [0] = "<pre", [1] = "><nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki></pre>"
                 {N} body = "<nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>"
                 {N} name = "pre"
+                {N} rtd = RTD[ "<pre" <o> "><nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki></pre>" ]
 
               [ ]
             )
@@ -12447,9 +12447,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">''text''</nowiki>"
                   {N} body = "''text''"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">''text''</nowiki>" ]
 
                 [ ]
               )
@@ -12473,9 +12473,9 @@ ParsedWikitextPage(
             Paragraph([
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n</pre>"
                   {N} body = "\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -12697,9 +12697,9 @@ ParsedWikitextPage(
           [
             TagExtension(
               Properties:
-                RTD = RtData: [0] = "<pre", [1] = "><nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki></pre>"
                 {N} body = "<nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>"
                 {N} name = "pre"
+                {N} rtd = RTD[ "<pre" <o> "><nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki></pre>" ]
 
               [ ]
             )
@@ -13107,9 +13107,9 @@ ParsedWikitextPage(
               [
                 TagExtension(
                   Properties:
-                    RTD = RtData: [0] = "<pre", [1] = "><nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki></pre>"
                     {N} body = "<nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>"
                     {N} name = "pre"
+                    {N} rtd = RTD[ "<pre" <o> "><nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki></pre>" ]
 
                   [ ]
                 )
@@ -13644,9 +13644,9 @@ ParsedWikitextPage(
           Newline("\n")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<pre", [1] = ">\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n</pre>"
               {N} body = "\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n"
               {N} name = "pre"
+              {N} rtd = RTD[ "<pre" <o> ">\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n</pre>" ]
 
             [
               XmlAttribute(
@@ -13858,9 +13858,9 @@ ParsedWikitextPage(
           Newline("\n")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<pre", [1] = ">\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n</pre>"
               {N} body = "\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n"
               {N} name = "pre"
+              {N} rtd = RTD[ "<pre" <o> ">\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n</pre>" ]
 
             [
               XmlAttribute(
@@ -14015,9 +14015,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = "><td></nowiki>"
                   {N} body = "<td>"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> "><td></nowiki>" ]
 
                 [ ]
               )
@@ -14045,27 +14045,27 @@ ParsedWikitextPage(
           )
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<nowiki", [1] = "><td></nowiki>"
               {N} body = "<td>"
               {N} name = "nowiki"
+              {N} rtd = RTD[ "<nowiki" <o> "><td></nowiki>" ]
 
             [ ]
           )
           WtText(" syntax (i.e., unclosed ")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<nowiki", [1] = "><td></nowiki>"
               {N} body = "<td>"
               {N} name = "nowiki"
+              {N} rtd = RTD[ "<nowiki" <o> "><td></nowiki>" ]
 
             [ ]
           )
           WtText(" and ")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<nowiki", [1] = "><tr></nowiki>"
               {N} body = "<tr>"
               {N} name = "nowiki"
+              {N} rtd = RTD[ "<nowiki" <o> "><tr></nowiki>" ]
 
             [ ]
           )
@@ -14264,9 +14264,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><table></table></pre>"
                               {N} body = "<table></table>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><table></table></pre>" ]
 
                             [ ]
                           )
@@ -14284,9 +14284,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">{|\n|}</pre>"
                               {N} body = "{|\n|}"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">{|\n|}</pre>" ]
 
                             [ ]
                           )
@@ -14331,9 +14331,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><caption>caption</caption></pre>"
                               {N} body = "<caption>caption</caption>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><caption>caption</caption></pre>" ]
 
                             [ ]
                           )
@@ -14351,9 +14351,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">|+ caption</pre>"
                               {N} body = "|+ caption"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">|+ caption</pre>" ]
 
                             [ ]
                           )
@@ -14398,9 +14398,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><tr></tr></pre>"
                               {N} body = "<tr></tr>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><tr></tr></pre>" ]
 
                             [ ]
                           )
@@ -14418,9 +14418,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">|-</pre>"
                               {N} body = "|-"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">|-</pre>" ]
 
                             [ ]
                           )
@@ -14465,9 +14465,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><td>cell1</td><td>cell2</td>\n<td>cell3</td></pre>"
                               {N} body = "<td>cell1</td><td>cell2</td>\n<td>cell3</td>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><td>cell1</td><td>cell2</td>\n<td>cell3</td></pre>" ]
 
                             [ ]
                           )
@@ -14485,9 +14485,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">| cell1 || cell2\n| cell3</pre>"
                               {N} body = "| cell1 || cell2\n| cell3"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">| cell1 || cell2\n| cell3</pre>" ]
 
                             [ ]
                           )
@@ -14532,9 +14532,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><th scope=\"col\">column heading</th></pre>"
                               {N} body = "<th scope=\"col\">column heading</th>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><th scope=\"col\">column heading</th></pre>" ]
 
                             [ ]
                           )
@@ -14549,9 +14549,9 @@ ParsedWikitextPage(
                           )
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><th scope=\"row\">row heading</th></pre>"
                               {N} body = "<th scope=\"row\">row heading</th>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><th scope=\"row\">row heading</th></pre>" ]
 
                             [ ]
                           )
@@ -14569,9 +14569,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">! scope=\"col\" | column heading</pre>"
                               {N} body = "! scope=\"col\" | column heading"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">! scope=\"col\" | column heading</pre>" ]
 
                             [ ]
                           )
@@ -14586,9 +14586,9 @@ ParsedWikitextPage(
                           )
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">! scope=\"row\" | row heading</pre>"
                               {N} body = "! scope=\"row\" | row heading"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">! scope=\"row\" | row heading</pre>" ]
 
                             [ ]
                           )
@@ -14784,9 +14784,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = "><table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table></pre>"
                               {N} body = "<table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table>"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> "><table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table></pre>" ]
 
                             [ ]
                           )
@@ -14804,9 +14804,9 @@ ParsedWikitextPage(
                           WtText(" ")
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<pre", [1] = ">{|\n| 1 || 2\n|-\n| 3 || 4\n|}</pre>"
                               {N} body = "{|\n| 1 || 2\n|-\n| 3 || 4\n|}"
                               {N} name = "pre"
+                              {N} rtd = RTD[ "<pre" <o> ">{|\n| 1 || 2\n|-\n| 3 || 4\n|}</pre>" ]
 
                             [ ]
                           )
@@ -15200,9 +15200,9 @@ ParsedWikitextPage(
           WtText(", substitutes pipes (")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<nowiki", [1] = ">|</nowiki>"
               {N} body = "|"
               {N} name = "nowiki"
+              {N} rtd = RTD[ "<nowiki" <o> ">|</nowiki>" ]
 
             [ ]
           )
@@ -15266,9 +15266,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">\n {| ''params''\n |}\n</nowiki>"
                   {N} body = "\n {| ''params''\n |}\n"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">\n {| ''params''\n |}\n</nowiki>" ]
 
                 [ ]
               )
@@ -15801,9 +15801,9 @@ ParsedWikitextPage(
                 [
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<nowiki", [1] = ">!</nowiki>"
                       {N} body = "!"
                       {N} name = "nowiki"
+                      {N} rtd = RTD[ "<nowiki" <o> ">!</nowiki>" ]
 
                     [ ]
                   )
@@ -15992,9 +15992,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n</pre>"
                   {N} body = "\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n</pre>" ]
 
                 [
                   XmlAttribute(
@@ -16252,9 +16252,9 @@ ParsedWikitextPage(
         Paragraph([
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<pre", [1] = ">\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n</pre>"
               {N} body = "\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n"
               {N} name = "pre"
+              {N} rtd = RTD[ "<pre" <o> ">\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n</pre>" ]
 
             [
               XmlAttribute(
@@ -17452,9 +17452,9 @@ ParsedWikitextPage(
         Paragraph([
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<pre", [1] = ">\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n</pre>"
               {N} body = "\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n"
               {N} name = "pre"
+              {N} rtd = RTD[ "<pre" <o> ">\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n</pre>" ]
 
             [
               XmlAttribute(
@@ -17484,9 +17484,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">[[File:wpvg_hd_date_page.svg|link=]]</nowiki>"
                   {N} body = "[[File:wpvg_hd_date_page.svg|link=]]"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">[[File:wpvg_hd_date_page.svg|link=]]</nowiki>" ]
 
                 [ ]
               )
@@ -17546,9 +17546,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable--></nowiki>"
                   {N} body = "\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable-->"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable--></nowiki>" ]
 
                 [ ]
               )
@@ -17719,9 +17719,9 @@ ParsedWikitextPage(
           WtText("gallery>\" tag, in 2007-2008, was that it put 4 images per line, overrunning the right margin of a wiki article displayed in portrait-style width (like 800x600), unless the gallery had only 3 images. However, a wikitable uses typical image-links with sizes, such as ")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<nowiki", [1] = ">\"[[</nowiki>"
               {N} body = "\"[["
               {N} name = "nowiki"
+              {N} rtd = RTD[ "<nowiki" <o> ">\"[[</nowiki>" ]
 
             [ ]
           )
@@ -17737,9 +17737,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable--></nowiki>"
                   {N} body = "\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable-->"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable--></nowiki>" ]
 
                 [ ]
               )
@@ -17990,9 +17990,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable--></nowiki>"
                   {N} body = "\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable-->"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable--></nowiki>" ]
 
                 [ ]
               )
@@ -18245,9 +18245,9 @@ ParsedWikitextPage(
             [
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}</nowiki>"
                   {N} body = "\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}</nowiki>" ]
 
                 [ ]
               )
@@ -18560,9 +18560,9 @@ ParsedWikitextPage(
               )
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<nowiki", [1] = ">(\"<center>[[File:..]]</center>\")</nowiki>"
                   {N} body = "(\"<center>[[File:..]]</center>\")"
                   {N} name = "nowiki"
+                  {N} rtd = RTD[ "<nowiki" <o> ">(\"<center>[[File:..]]</center>\")</nowiki>" ]
 
                 [ ]
               )
@@ -18596,9 +18596,9 @@ ParsedWikitextPage(
                 [
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<nowiki", [1] = ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}</nowiki>"
                       {N} body = "\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}"
                       {N} name = "nowiki"
+                      {N} rtd = RTD[ "<nowiki" <o> ">\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}</nowiki>" ]
 
                     [ ]
                   )
@@ -18855,9 +18855,9 @@ ParsedWikitextPage(
               Newline("\n")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<pre", [1] = ">\n | style=\"font-size: 87%;\" | View from bell tower\n</pre>"
                   {N} body = "\n | style=\"font-size: 87%;\" | View from bell tower\n"
                   {N} name = "pre"
+                  {N} rtd = RTD[ "<pre" <o> ">\n | style=\"font-size: 87%;\" | View from bell tower\n</pre>" ]
 
                 [ ]
               )

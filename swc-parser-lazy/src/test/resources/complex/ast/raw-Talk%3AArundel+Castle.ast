@@ -97,16 +97,16 @@ ParsedWikitextPage(
                       WtText("start\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- B-Class checklist -->\n"
                           {N} content = " B-Class checklist "
                           {N} prefix = ""
+                          {N} rtd = RTD[ "<!-- B-Class checklist -->\n" ]
                           {N} suffix = "\n"
                       )
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 1. It is suitably referenced, and all \nmajor points are appropriately cited. -->"
                           {N} content = " 1. It is suitably referenced, and all \nmajor points are appropriately cited. "
                           {N} prefix = null
+                          {N} rtd = RTD[ "<!-- 1. It is suitably referenced, and all \nmajor points are appropriately cited. -->" ]
                           {N} suffix = null
                       )
                       WtText("\n")
@@ -122,9 +122,9 @@ ParsedWikitextPage(
                       WtText("no\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. -->\n"
                           {N} content = " 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. "
                           {N} prefix = ""
+                          {N} rtd = RTD[ "<!-- 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. -->\n" ]
                           {N} suffix = "\n"
                       )
                     ]
@@ -139,9 +139,9 @@ ParsedWikitextPage(
                       WtText("\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 3. It has a defined structure, including \na lead section and one or more sections of content. -->\n"
                           {N} content = " 3. It has a defined structure, including \na lead section and one or more sections of content. "
                           {N} prefix = ""
+                          {N} rtd = RTD[ "<!-- 3. It has a defined structure, including \na lead section and one or more sections of content. -->\n" ]
                           {N} suffix = "\n"
                       )
                     ]
@@ -156,9 +156,9 @@ ParsedWikitextPage(
                       WtText("\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 4. It is free from major grammatical errors. -->\n"
                           {N} content = " 4. It is free from major grammatical errors. "
                           {N} prefix = ""
+                          {N} rtd = RTD[ "<!-- 4. It is free from major grammatical errors. -->\n" ]
                           {N} suffix = "\n"
                       )
                     ]
@@ -173,9 +173,9 @@ ParsedWikitextPage(
                       WtText("\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. -->\n"
                           {N} content = " 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. "
                           {N} prefix = ""
+                          {N} rtd = RTD[ "<!-- 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. -->\n" ]
                           {N} suffix = "\n"
                       )
                     ]
@@ -190,9 +190,9 @@ ParsedWikitextPage(
                       WtText("no infobox, no plan or map\n")
                       XmlComment(
                         Properties:
-                          RTD = RtData: [0] = "<!-- Task force tags -->\n"
                           {N} content = " Task force tags "
                           {N} prefix = ""
+                          {N} rtd = RTD[ "<!-- Task force tags -->\n" ]
                           {N} suffix = "\n"
                       )
                     ]
@@ -256,9 +256,9 @@ ParsedWikitextPage(
       WtText("Okay, what's the problem? Zvesoulis put a ")
       TagExtension(
         Properties:
-          RTD = RtData: [0] = "<nowiki", [1] = ">{{cleanup}}</nowiki>"
           {N} body = "{{cleanup}}"
           {N} name = "nowiki"
+          {N} rtd = RTD[ "<nowiki" <o> ">{{cleanup}}</nowiki>" ]
 
         [ ]
       )
@@ -391,17 +391,17 @@ ParsedWikitextPage(
           )
           XmlComment(
             Properties:
-              RTD = RtData: [0] = "<!-- Template:UnsignedIP -->"
               {N} content = " Template:UnsignedIP "
               {N} prefix = null
+              {N} rtd = RTD[ "<!-- Template:UnsignedIP -->" ]
               {N} suffix = null
           )
           WtText(" ")
           XmlComment(
             Properties:
-              RTD = RtData: [0] = "<!--Autosigned by SineBot-->"
               {N} content = "Autosigned by SineBot"
               {N} prefix = null
+              {N} rtd = RTD[ "<!--Autosigned by SineBot-->" ]
               {N} suffix = null
           )
         ])
@@ -828,9 +828,9 @@ ParsedWikitextPage(
                 [
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<nowiki", [1] = ">==The Biography==</nowiki>"
                       {N} body = "==The Biography=="
                       {N} name = "nowiki"
+                      {N} rtd = RTD[ "<nowiki" <o> ">==The Biography==</nowiki>" ]
 
                     [ ]
                   )
@@ -844,9 +844,9 @@ ParsedWikitextPage(
                 [
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<nowiki", [1] = ">==Biography==</nowiki>"
                       {N} body = "==Biography=="
                       {N} name = "nowiki"
+                      {N} rtd = RTD[ "<nowiki" <o> ">==Biography==</nowiki>" ]
 
                     [ ]
                   )

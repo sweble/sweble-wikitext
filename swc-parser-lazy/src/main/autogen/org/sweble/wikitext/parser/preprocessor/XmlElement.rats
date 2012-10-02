@@ -118,25 +118,19 @@ private inline WtText Greater =
 transient WikitextNode XmlCommentTrimmed =
     eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
     {
-      XmlComment c = new XmlComment(content, prefix, suffix + eol2);
-      if (isGatherRtData())
-        addRtData(c, joinRt(prefix, "<!--", content, "-->", suffix, eol2));
+      XmlComment c = setRtd(new XmlComment(content, prefix, suffix + eol2), prefix, "<!--", content, "-->", suffix, eol2);
 
       yyValue = new WtList(new WtText(eol1), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
     {
-      XmlComment c = new XmlComment(content);
-      if (isGatherRtData())
-        addRtData(c, joinRt("<!--", content, "-->"));
+      XmlComment c = setRtd(new XmlComment(content), "<!--", content, "-->");
 
       yyValue = new WtList(new WtText(eol1 + prefix), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
     {
-      XmlComment c = new XmlComment(content);
-      if (isGatherRtData())
-        addRtData(c, joinRt("<!--", content));
+      XmlComment c = setRtd(new XmlComment(content), "<!--", content);
 
       yyValue = new WtList(new WtText(eol1 + prefix), c);
     }
@@ -149,17 +143,11 @@ private transient String PureSpaceStar =
 private transient XmlComment XmlComment =
     content:XmlCommentContent "-->"
     {
-      yyValue = new XmlComment(content);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("<!--" + content + "-->"));
+      yyValue = setRtd(new XmlComment(content), "<!--" + content + "-->");
     }
   / content:XmlCommentContent Eof
     {
-      yyValue = new XmlComment(content);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("<!--" + content));
+      yyValue = setRtd(new XmlComment(content), "<!--" + content);
     }
 ;
 
@@ -177,10 +165,7 @@ private transient WikitextNode IgnoredClosingTag =
   {
     String content = "</" + name + garbage + ">";
 
-    yyValue = new Ignored(content);
-
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(content));
+    yyValue = setRtd(new Ignored(content), content);
   }
 ;
 
@@ -189,10 +174,7 @@ private transient WikitextNode IgnoredOpeningTag =
   {
     String content = "<" + name + garbage + ">";
 
-    yyValue = new Ignored(content);
-
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(content));
+    yyValue = setRtd(new Ignored(content), content);
   }
 ;
 
@@ -218,19 +200,13 @@ private transient WikitextNode IgnoredElements =
     {
       String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + ">" + body.getForeign(0, String.class) + body.getForeign(1, String.class);
 
-      yyValue = new Ignored(content);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt(content));
+      yyValue = setRtd(new Ignored(content), content);
     }
   / header:IgnoredElementHeader "/>"
     {
       String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + "/>";
 
-      yyValue = new Ignored(content);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt(content));
+      yyValue = setRtd(new Ignored(content), content);
     }
 ;
 
@@ -257,24 +233,20 @@ private transient TagExtension TagExtension =
     }
     body:TagBody
     {
-      yyValue = new TagExtension(
-        header.getForeign(0, String.class), 
-        header.getForeign(1, WtList.class), 
-        body.getForeign(0, String.class));
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt('<', header.getForeign(0, String.class)),
-            joinRt(header.getForeign(2, String.class), '>', body.getForeign(0, String.class), body.getForeign(1, String.class)));
+      yyValue = setRtd(
+        new TagExtension(
+          header.getForeign(0, String.class),
+          header.getForeign(1, WtList.class),
+          body.getForeign(0, String.class)),
+        '<', header.getForeign(0, String.class), SEP,
+        header.getForeign(2, String.class), '>', body.getForeign(0, String.class), body.getForeign(1, String.class));
     }
   / header:TagHeader "/>"
     {
-      yyValue = new TagExtension(header.getForeign(0, String.class), header.getForeign(1, WtList.class), null);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt('<', header.getForeign(0, String.class)),
-            joinRt(header.getForeign(2, WtList.class), "/>"));
+      yyValue = setRtd(
+        new TagExtension(header.getForeign(0, String.class), header.getForeign(1, WtList.class), null),
+        '<', header.getForeign(0, String.class), SEP,
+        header.getForeign(2, WtList.class), "/>");
     }
 ;
 

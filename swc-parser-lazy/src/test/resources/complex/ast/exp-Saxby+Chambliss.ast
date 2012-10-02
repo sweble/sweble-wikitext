@@ -802,9 +802,9 @@ ParsedWikitextPage(
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">In 2002, Georgia was redistricted as per the 2000 Census and some districts were renumbered. Democrat [[Jim Marshall (U.S. politician)|Jim Marshall]] took the seat in {{ushr|Georgia|3|}}, which was substantially the same as the old 8th district Chambliss represented.</ref>"
                       {N} body = "In 2002, Georgia was redistricted as per the 2000 Census and some districts were renumbered. Democrat [[Jim Marshall (U.S. politician)|Jim Marshall]] took the seat in {{ushr|Georgia|3|}}, which was substantially the same as the old 8th district Chambliss represented."
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">In 2002, Georgia was redistricted as per the 2000 Census and some districts were renumbered. Democrat [[Jim Marshall (U.S. politician)|Jim Marshall]] took the seat in {{ushr|Georgia|3|}}, which was substantially the same as the old 8th district Chambliss represented.</ref>" ]
 
                     [
                       XmlAttribute(
@@ -1754,9 +1754,9 @@ ParsedWikitextPage(
           WtText(" minister,")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">\"R. Saxby Chambliss.\" Biography Resource Center Online. Gale Group, 2002. Reproduced in Biography Resource Center. Farmington Hills, Mich.: Gale, 2009.</ref>"
               {N} body = "\"R. Saxby Chambliss.\" Biography Resource Center Online. Gale Group, 2002. Reproduced in Biography Resource Center. Farmington Hills, Mich.: Gale, 2009."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">\"R. Saxby Chambliss.\" Biography Resource Center Online. Gale Group, 2002. Reproduced in Biography Resource Center. Farmington Hills, Mich.: Gale, 2009.</ref>" ]
 
             [
               XmlAttribute(
@@ -1857,9 +1857,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = "/>"
               {N} body = null
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> "/>" ]
 
             [
               XmlAttribute(
@@ -1930,9 +1930,9 @@ ParsedWikitextPage(
           WtText(" injury.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">Tom Robbins, [http://www.villagevoice.com/news/0434,robbins,56166,1.html \"The Sunshine Patriots\"], ''[[Village Voice]]'', August 17, 2004</ref>"
               {N} body = "Tom Robbins, [http://www.villagevoice.com/news/0434,robbins,56166,1.html \"The Sunshine Patriots\"], ''[[Village Voice]]'', August 17, 2004"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">Tom Robbins, [http://www.villagevoice.com/news/0434,robbins,56166,1.html \"The Sunshine Patriots\"], ''[[Village Voice]]'', August 17, 2004</ref>" ]
 
             [ ]
           )
@@ -1999,9 +1999,9 @@ ParsedWikitextPage(
           WtText(", of which the Senator is a member. The Senator's office enacted a policy that prevents Bo from lobbying the Senator or his staff.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.usnews.com/usnews/news/articles/060307/7congress.htm?track=rss ''Democrats target Georgia's Chambliss over son's lobbying'' \u2014 USNews.com 3/7/06]</ref>"
               {N} body = "[http://www.usnews.com/usnews/news/articles/060307/7congress.htm?track=rss ''Democrats target Georgia's Chambliss over son's lobbying'' \u2014 USNews.com 3/7/06]"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://www.usnews.com/usnews/news/articles/060307/7congress.htm?track=rss ''Democrats target Georgia's Chambliss over son's lobbying'' \u2014 USNews.com 3/7/06]</ref>" ]
 
             [ ]
           )
@@ -2137,9 +2137,9 @@ ParsedWikitextPage(
           WtText(", the House Intelligence Subcommittee on Terrorism and Homeland Security, which Chambliss chaired, investigated intelligence issues related to the attacks. The committee's investigation resulted in the first comprehensive report detailing critical shortfalls within the United States intelligence community's performance and technological capabilities.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://archives.cnn.com/2001/COMMUNITY/10/02/chambliss/ Rep. Saxby Chambliss: Anti-terrorism measures in the U.S.], ''[[CNN.com]]'', October 2, 2001</ref>"
               {N} body = "[http://archives.cnn.com/2001/COMMUNITY/10/02/chambliss/ Rep. Saxby Chambliss: Anti-terrorism measures in the U.S.], ''[[CNN.com]]'', October 2, 2001"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://archives.cnn.com/2001/COMMUNITY/10/02/chambliss/ Rep. Saxby Chambliss: Anti-terrorism measures in the U.S.], ''[[CNN.com]]'', October 2, 2001</ref>" ]
 
             [ ]
           )
@@ -2170,9 +2170,9 @@ ParsedWikitextPage(
           WtText(" that crosses the state line.\" Chambliss apologized for the remarks.")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">Melanie Eversley, \"Chambliss apologizes for remark on Muslims\", ''[[Atlanta Journal-Constitution]]'', November 21, 2001.</ref>"
               {N} body = "Melanie Eversley, \"Chambliss apologizes for remark on Muslims\", ''[[Atlanta Journal-Constitution]]'', November 21, 2001."
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">Melanie Eversley, \"Chambliss apologizes for remark on Muslims\", ''[[Atlanta Journal-Constitution]]'', November 21, 2001.</ref>" ]
 
             [ ]
           )
@@ -2193,9 +2193,9 @@ ParsedWikitextPage(
           WtText(".")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.msnbc.msn.com/id/10723902/ Bush, lawmakers returning Abramoff donations], ''[[MSNBC]]'', January 5, 2006</ref>"
               {N} body = "[http://www.msnbc.msn.com/id/10723902/ Bush, lawmakers returning Abramoff donations], ''[[MSNBC]]'', January 5, 2006"
               {N} name = "ref"
+              {N} rtd = RTD[ "<ref" <o> ">[http://www.msnbc.msn.com/id/10723902/ Bush, lawmakers returning Abramoff donations], ''[[MSNBC]]'', January 5, 2006</ref>" ]
 
             [ ]
           )
@@ -2553,9 +2553,9 @@ ParsedWikitextPage(
               WtText("In 2008, he was named one of 10 worst congressmen by Esquire Magazine, which described the competition as \"staggering.\" ")
               TagExtension(
                 Properties:
-                  RTD = RtData: [0] = "<ref", [1] = ">[http://www.esquire.com/features/esquire-endorsements-2008/10-worst-members-congress-1108], ''Esquire Magainze'', October 13, 2008</ref>"
                   {N} body = "[http://www.esquire.com/features/esquire-endorsements-2008/10-worst-members-congress-1108], ''Esquire Magainze'', October 13, 2008"
                   {N} name = "ref"
+                  {N} rtd = RTD[ "<ref" <o> ">[http://www.esquire.com/features/esquire-endorsements-2008/10-worst-members-congress-1108], ''Esquire Magainze'', October 13, 2008</ref>" ]
 
                 [ ]
               )
@@ -2774,9 +2774,9 @@ ParsedWikitextPage(
                   WtText(", highlighting Cleland's record on the issues of war and terrorism.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">[http://www.youtube.com/watch?v=tKFYpd0q9nE Chambliss Ad (Cleland)], ''You Tube'', August 02, 2006</ref>"
                       {N} body = "[http://www.youtube.com/watch?v=tKFYpd0q9nE Chambliss Ad (Cleland)], ''You Tube'', August 02, 2006"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">[http://www.youtube.com/watch?v=tKFYpd0q9nE Chambliss Ad (Cleland)], ''You Tube'', August 02, 2006</ref>" ]
 
                     [ ]
                   )
@@ -2834,27 +2834,27 @@ ParsedWikitextPage(
                   WtText(" said the ads were \"beyond offensive to me.\"")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">[http://mediamatters.org/items/200407300007 ''Carlson attempted to downplay Republican attacks on Cleland'' \u2014 Media Matters, July 30, 2004]</ref>"
                       {N} body = "[http://mediamatters.org/items/200407300007 ''Carlson attempted to downplay Republican attacks on Cleland'' \u2014 Media Matters, July 30, 2004]"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">[http://mediamatters.org/items/200407300007 ''Carlson attempted to downplay Republican attacks on Cleland'' \u2014 Media Matters, July 30, 2004]</ref>" ]
 
                     [ ]
                   )
                   WtText(" On the other hand, Chambliss supporters say the ad did not question Cleland's patriotism, but rather his judgment.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{citenews|first=Michael|last=Crowley|authorlink=|author=|coauthors=|title=Former Sen. Max Cleland: How the disabled war veteran became the Democrats' mascot|url=http://slate.msn.com/id/2098171|date=April 2, 2004|accessdate=2009-01-23}}</ref>"
                       {N} body = "{{citenews|first=Michael|last=Crowley|authorlink=|author=|coauthors=|title=Former Sen. Max Cleland: How the disabled war veteran became the Democrats' mascot|url=http://slate.msn.com/id/2098171|date=April 2, 2004|accessdate=2009-01-23}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{citenews|first=Michael|last=Crowley|authorlink=|author=|coauthors=|title=Former Sen. Max Cleland: How the disabled war veteran became the Democrats' mascot|url=http://slate.msn.com/id/2098171|date=April 2, 2004|accessdate=2009-01-23}}</ref>" ]
 
                     [ ]
                   )
                   Newline("\n")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{citenews|first=Ann|last=Coulter|authorlink=Ann Coulter|author=|coauthors=|title=Teaching Democrats New Tricks|url=http://anncoulter.com/cgi-local/article.cgi?article=291|date=December 31, 2008|accessdate=2009-01-23}}</ref>"
                       {N} body = "{{citenews|first=Ann|last=Coulter|authorlink=Ann Coulter|author=|coauthors=|title=Teaching Democrats New Tricks|url=http://anncoulter.com/cgi-local/article.cgi?article=291|date=December 31, 2008|accessdate=2009-01-23}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{citenews|first=Ann|last=Coulter|authorlink=Ann Coulter|author=|coauthors=|title=Teaching Democrats New Tricks|url=http://anncoulter.com/cgi-local/article.cgi?article=291|date=December 31, 2008|accessdate=2009-01-23}}</ref>" ]
 
                     [
                       XmlAttribute(
@@ -3140,9 +3140,9 @@ ParsedWikitextPage(
                 WtText(" received 3.4% of the vote.")
                 TagExtension(
                   Properties:
-                    RTD = RtData: [0] = "<ref", [1] = ">{{cite news\n  | title = \" Georgia Election Results\"\n  | publisher = ''[[Secretary of State of Georgia]]''\n  | date = 2008-11-04\n  | url = http://www.sos.georgia.gov/elections/election_results/2008_1104/swfed.htm\n  | accessdate = 2008-11-12 }}</ref>"
                     {N} body = "{{cite news\n  | title = \" Georgia Election Results\"\n  | publisher = ''[[Secretary of State of Georgia]]''\n  | date = 2008-11-04\n  | url = http://www.sos.georgia.gov/elections/election_results/2008_1104/swfed.htm\n  | accessdate = 2008-11-12 }}"
                     {N} name = "ref"
+                    {N} rtd = RTD[ "<ref" <o> ">{{cite news\n  | title = \" Georgia Election Results\"\n  | publisher = ''[[Secretary of State of Georgia]]''\n  | date = 2008-11-04\n  | url = http://www.sos.georgia.gov/elections/election_results/2008_1104/swfed.htm\n  | accessdate = 2008-11-12 }}</ref>" ]
 
                   [
                     XmlAttribute(
@@ -3164,9 +3164,9 @@ ParsedWikitextPage(
                   WtText("Chambliss defeated Martin 57.5% to 42.5% in the runoff election.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news\n  | title = \"U.S. Senate Election Results\"\n  | publisher = ''Action News, Atlanta''\n  | date = 2008-12-02\n  | url = http://projects.ajc.com/election-results/2008/12/02/us-senate/\n  | accessdate = 2008-12-02 }}</ref>"
                       {N} body = "{{cite news\n  | title = \"U.S. Senate Election Results\"\n  | publisher = ''Action News, Atlanta''\n  | date = 2008-12-02\n  | url = http://projects.ajc.com/election-results/2008/12/02/us-senate/\n  | accessdate = 2008-12-02 }}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news\n  | title = \"U.S. Senate Election Results\"\n  | publisher = ''Action News, Atlanta''\n  | date = 2008-12-02\n  | url = http://projects.ajc.com/election-results/2008/12/02/us-senate/\n  | accessdate = 2008-12-02 }}</ref>" ]
 
                     [
                       XmlAttribute(
@@ -3181,9 +3181,9 @@ ParsedWikitextPage(
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news |title=Georgia Election Results |curly=y |url=http://sos.georgia.gov/elections/election_results/2008_1202/003.htm |work=State of Georgia Secretary of State |date=December 2, 2008 |accessdate=3 December 2008}}</ref>"
                       {N} body = "{{cite news |title=Georgia Election Results |curly=y |url=http://sos.georgia.gov/elections/election_results/2008_1202/003.htm |work=State of Georgia Secretary of State |date=December 2, 2008 |accessdate=3 December 2008}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news |title=Georgia Election Results |curly=y |url=http://sos.georgia.gov/elections/election_results/2008_1202/003.htm |work=State of Georgia Secretary of State |date=December 2, 2008 |accessdate=3 December 2008}}</ref>" ]
 
                     [
                       XmlAttribute(
@@ -3238,34 +3238,34 @@ ParsedWikitextPage(
                   WtText("-based sugar refinery that exploded on Feb. 7, 2008. Chambliss was accused of \"harassing\"")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news | last = Peterson | first = Larry | title = Chambliss in sugar furor | publisher = Savannah morning news| date = 2008-07-31| url = http://savannahnow.com/node/542481 | accessdate = 2008-11-25}}</ref>"
                       {N} body = "{{cite news | last = Peterson | first = Larry | title = Chambliss in sugar furor | publisher = Savannah morning news| date = 2008-07-31| url = http://savannahnow.com/node/542481 | accessdate = 2008-11-25}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news | last = Peterson | first = Larry | title = Chambliss in sugar furor | publisher = Savannah morning news| date = 2008-07-31| url = http://savannahnow.com/node/542481 | accessdate = 2008-11-25}}</ref>" ]
 
                     [ ]
                   )
                   WtText(" a former sugar company executive. In a statement, Chambliss said he has referred the matter to Senate lawyers. Chambliss has stated: \"I continue to sympathize with the families who were devastated by this tragedy and I will continue to work to protect the interests of those families.\" Savannah attorney Mark Tate, \"an active backer of Democratic candidates,\" insisted that \"there is nothing political\" about the timing of the subpoena. When Tate subpoenaed Chambliss to testify in the case, Chambliss claimed \"legislative immunity.\"")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news | last = Peterson | first = Larry | title = Chambliss subpoenaed in Imperial Sugar case | publisher = Savannah morning news| date = 2008-10-24| url = http://savannahnow.com/node/601053 | accessdate = 2008-11-25}}</ref>"
                       {N} body = "{{cite news | last = Peterson | first = Larry | title = Chambliss subpoenaed in Imperial Sugar case | publisher = Savannah morning news| date = 2008-10-24| url = http://savannahnow.com/node/601053 | accessdate = 2008-11-25}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news | last = Peterson | first = Larry | title = Chambliss subpoenaed in Imperial Sugar case | publisher = Savannah morning news| date = 2008-10-24| url = http://savannahnow.com/node/601053 | accessdate = 2008-11-25}}</ref>" ]
 
                     [ ]
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news | last = Peterson | first = Larry | title = Chambliss says he doesn't have to obey order to testify in Imperial Sugar lawsuit | publisher = Savannah morning news| date = 2008-11-16| url = http://savannahnow.com/node/618254 | accessdate = 2008-11-25}}</ref>"
                       {N} body = "{{cite news | last = Peterson | first = Larry | title = Chambliss says he doesn't have to obey order to testify in Imperial Sugar lawsuit | publisher = Savannah morning news| date = 2008-11-16| url = http://savannahnow.com/node/618254 | accessdate = 2008-11-25}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news | last = Peterson | first = Larry | title = Chambliss says he doesn't have to obey order to testify in Imperial Sugar lawsuit | publisher = Savannah morning news| date = 2008-11-16| url = http://savannahnow.com/node/618254 | accessdate = 2008-11-25}}</ref>" ]
 
                     [ ]
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news | last = ATKINS | first = MICHAEL| title = Imperial Sugar executive defends Chambliss | publisher = Savannah morning news| date = 2008-11-20| url = http://savannahnow.com/node/620312 | accessdate = 2008-11-25 }}</ref>"
                       {N} body = "{{cite news | last = ATKINS | first = MICHAEL| title = Imperial Sugar executive defends Chambliss | publisher = Savannah morning news| date = 2008-11-20| url = http://savannahnow.com/node/620312 | accessdate = 2008-11-25 }}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news | last = ATKINS | first = MICHAEL| title = Imperial Sugar executive defends Chambliss | publisher = Savannah morning news| date = 2008-11-20| url = http://savannahnow.com/node/620312 | accessdate = 2008-11-25 }}</ref>" ]
 
                     [ ]
                   )
@@ -3296,17 +3296,17 @@ ParsedWikitextPage(
                   WtText("Chambliss's voting record is typically that of voting in line with conservative issues.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3960 | title=American Conservative Union Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3960 | title=American Conservative Union Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3960 | title=American Conservative Union Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4279 | title=Christian Coalition Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4279 | title=Christian Coalition Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4279 | title=Christian Coalition Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3385,9 +3385,9 @@ ParsedWikitextPage(
                   WtText(") in 2007")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite news\n  | title = Scrambling the red states\n  | publisher = ''The Economist''\n  | date = 2008-10-23\n  | url = http://www.economist.com/world/unitedstates/displaystory.cfm?story_id=12480320\n  | accessdate = 2008-10-23 }}</ref>"
                       {N} body = "{{cite news\n  | title = Scrambling the red states\n  | publisher = ''The Economist''\n  | date = 2008-10-23\n  | url = http://www.economist.com/world/unitedstates/displaystory.cfm?story_id=12480320\n  | accessdate = 2008-10-23 }}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite news\n  | title = Scrambling the red states\n  | publisher = ''The Economist''\n  | date = 2008-10-23\n  | url = http://www.economist.com/world/unitedstates/displaystory.cfm?story_id=12480320\n  | accessdate = 2008-10-23 }}</ref>" ]
 
                     [
                       XmlAttribute(
@@ -3413,9 +3413,9 @@ ParsedWikitextPage(
                   WtText(",")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = "/>"
                       {N} body = null
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                     [
                       XmlAttribute(
@@ -3486,17 +3486,17 @@ ParsedWikitextPage(
                   WtText(" identify him as having a anti-abortion voting record. The National Right to Life Committee gave him a 100% rating, while NARAL Pro-Choice America gave him a 0% rating.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=154 | title=National Right to Life Committee Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=154 | title=National Right to Life Committee Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=154 | title=National Right to Life Committee Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3920 | title=NARAL Pro-Choice America Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3920 | title=NARAL Pro-Choice America Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3920 | title=NARAL Pro-Choice America Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3537,17 +3537,17 @@ ParsedWikitextPage(
                   WtText(" gave Chambliss an \"A+\" rating and the NRA also endorsed him.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.fb.org/index.php?fuseaction=legislative.109c | title= Friend of Farm Bureau - 109th Congress  | publisher=American Farm Bureau Federation}}</ref>"
                       {N} body = "{{cite web | url=http://www.fb.org/index.php?fuseaction=legislative.109c | title= Friend of Farm Bureau - 109th Congress  | publisher=American Farm Bureau Federation}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.fb.org/index.php?fuseaction=legislative.109c | title= Friend of Farm Bureau - 109th Congress  | publisher=American Farm Bureau Federation}}</ref>" ]
 
                     [ ]
                   )
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.fb.org/index.php?fuseaction=legislative.108c | title= Friend of Farm Bureau - 108th Congress  | publisher=American Farm Bureau Federation}}</ref>"
                       {N} body = "{{cite web | url=http://www.fb.org/index.php?fuseaction=legislative.108c | title= Friend of Farm Bureau - 108th Congress  | publisher=American Farm Bureau Federation}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.fb.org/index.php?fuseaction=legislative.108c | title= Friend of Farm Bureau - 108th Congress  | publisher=American Farm Bureau Federation}}</ref>" ]
 
                     [ ]
                   )
@@ -3568,9 +3568,9 @@ ParsedWikitextPage(
                   WtText(" gave Chambliss its \"Friend of the Farm Bureau\" award throughout his service in the U.S. Senate.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.nrapvf.org/Elections/State.aspx?y=2008&State=GA | title=Vote Freedom First | publisher=NRA-Political Victory Fund}}</ref>"
                       {N} body = "{{cite web | url=http://www.nrapvf.org/Elections/State.aspx?y=2008&State=GA | title=Vote Freedom First | publisher=NRA-Political Victory Fund}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.nrapvf.org/Elections/State.aspx?y=2008&State=GA | title=Vote Freedom First | publisher=NRA-Political Victory Fund}}</ref>" ]
 
                     [ ]
                   )
@@ -3581,9 +3581,9 @@ ParsedWikitextPage(
                   WtText("On economic issues including voting on the national budget, national spending, and taxes, in 2007, the National Tax Limitation Committee gave Chambliss a 90% rating,")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4234 | title=National Tax Limitation Committee Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4234 | title=National Tax Limitation Committee Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4234 | title=National Tax Limitation Committee Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3600,9 +3600,9 @@ ParsedWikitextPage(
                   WtText(" gave him a 100% rating.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4183 | title=Americans for Tax Reform Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4183 | title=Americans for Tax Reform Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4183 | title=Americans for Tax Reform Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3628,9 +3628,9 @@ ParsedWikitextPage(
                   WtText(" gave him a 17% rating,")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3864 | title=American Civil Liberties Union Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3864 | title=American Civil Liberties Union Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3864 | title=American Civil Liberties Union Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3647,9 +3647,9 @@ ParsedWikitextPage(
                   WtText(" gave him a 27% rating.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3919 | title=National Association for the Advancement of Colored People Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3919 | title=National Association for the Advancement of Colored People Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3919 | title=National Association for the Advancement of Colored People Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3660,9 +3660,9 @@ ParsedWikitextPage(
                   WtText("On education issues, in 2008, the Center for Education Reform, gave Chambliss a score of 9 out of 9, and called him a \"real reformer\",")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web| url=http://www.edreform.com/2008votersguide/states/CER_SenateScorecard08.pdf | format=PDF | title=US Senate Candidate Scorecard | publisher=The Center for Education Reform}}</ref>"
                       {N} body = "{{cite web| url=http://www.edreform.com/2008votersguide/states/CER_SenateScorecard08.pdf | format=PDF | title=US Senate Candidate Scorecard | publisher=The Center for Education Reform}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web| url=http://www.edreform.com/2008votersguide/states/CER_SenateScorecard08.pdf | format=PDF | title=US Senate Candidate Scorecard | publisher=The Center for Education Reform}}</ref>" ]
 
                     [ ]
                   )
@@ -3679,9 +3679,9 @@ ParsedWikitextPage(
                   WtText(" gave him an \"F\" in 2007.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4224 | title=National Education Association Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4224 | title=National Education Association Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4224 | title=National Education Association Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3702,9 +3702,9 @@ ParsedWikitextPage(
                   WtText(" gave Chambliss a 11% rating,")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3929 | title=AFL-CIO Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3929 | title=AFL-CIO Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=3929 | title=AFL-CIO Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3721,9 +3721,9 @@ ParsedWikitextPage(
                   WtText(" gave him an 85% rating.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4268 | title=International Foodservice Distributors Association Ratings | publisher=Project Vote Smart}}</ref>"
                       {N} body = "{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4268 | title=International Foodservice Distributors Association Ratings | publisher=Project Vote Smart}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.votesmart.org/issue_rating_detail.php?r_id=4268 | title=International Foodservice Distributors Association Ratings | publisher=Project Vote Smart}}</ref>" ]
 
                     [ ]
                   )
@@ -3744,9 +3744,9 @@ ParsedWikitextPage(
                   WtText(" gave Chambliss a 0% rating.")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web | url=http://www.ontheissues.org/Senate/Saxby_Chambliss.htm#Environment | title=OnTheIssues Ratings | publisher=OnTheIssues}}</ref>"
                       {N} body = "{{cite web | url=http://www.ontheissues.org/Senate/Saxby_Chambliss.htm#Environment | title=OnTheIssues Ratings | publisher=OnTheIssues}}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web | url=http://www.ontheissues.org/Senate/Saxby_Chambliss.htm#Environment | title=OnTheIssues Ratings | publisher=OnTheIssues}}</ref>" ]
 
                     [ ]
                   )
@@ -3845,9 +3845,9 @@ ParsedWikitextPage(
                   WtText(": Results 1994\u20132000")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=http://clerk.house.gov/member_info/electionInfo/index.html |title=Election Statistics |accessdate=2007-08-08 |publisher=Office of the Clerk of the House of Representatives }}</ref>"
                       {N} body = "{{cite web |url=http://clerk.house.gov/member_info/electionInfo/index.html |title=Election Statistics |accessdate=2007-08-08 |publisher=Office of the Clerk of the House of Representatives }}"
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=http://clerk.house.gov/member_info/electionInfo/index.html |title=Election Statistics |accessdate=2007-08-08 |publisher=Office of the Clerk of the House of Representatives }}</ref>" ]
 
                     [
                       XmlAttribute(
@@ -4786,9 +4786,9 @@ ParsedWikitextPage(
                   WtText(": 2002 results")
                   TagExtension(
                     Properties:
-                      RTD = RtData: [0] = "<ref", [1] = " />"
                       {N} body = null
                       {N} name = "ref"
+                      {N} rtd = RTD[ "<ref" <o> " />" ]
 
                     [
                       XmlAttribute(
@@ -5353,9 +5353,9 @@ ParsedWikitextPage(
                       WtText("2008 Georgia U.S. Senator general election runoff")
                       TagExtension(
                         Properties:
-                          RTD = RtData: [0] = "<ref", [1] = "/>"
                           {N} body = null
                           {N} name = "ref"
+                          {N} rtd = RTD[ "<ref" <o> "/>" ]
 
                         [
                           XmlAttribute(
@@ -7066,9 +7066,9 @@ ParsedWikitextPage(
                           )
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<nowiki", [1] = "></nowiki>"
                               {N} body = ""
                               {N} name = "nowiki"
+                              {N} rtd = RTD[ "<nowiki" <o> "></nowiki>" ]
 
                             [ ]
                           )
@@ -7165,9 +7165,9 @@ ParsedWikitextPage(
                           )
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<ref", [1] = " />"
                               {N} body = null
                               {N} name = "ref"
+                              {N} rtd = RTD[ "<ref" <o> " />" ]
 
                             [
                               XmlAttribute(
@@ -7406,9 +7406,9 @@ ParsedWikitextPage(
                           )
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<nowiki", [1] = "></nowiki>"
                               {N} body = ""
                               {N} name = "nowiki"
+                              {N} rtd = RTD[ "<nowiki" <o> "></nowiki>" ]
 
                             [ ]
                           )
@@ -7755,9 +7755,9 @@ ParsedWikitextPage(
                           )
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<nowiki", [1] = "></nowiki>"
                               {N} body = ""
                               {N} name = "nowiki"
+                              {N} rtd = RTD[ "<nowiki" <o> "></nowiki>" ]
 
                             [ ]
                           )
@@ -8150,9 +8150,9 @@ ParsedWikitextPage(
                         [
                           TagExtension(
                             Properties:
-                              RTD = RtData: [0] = "<nowiki", [1] = "></nowiki>"
                               {N} body = ""
                               {N} name = "nowiki"
+                              {N} rtd = RTD[ "<nowiki" <o> "></nowiki>" ]
 
                             [ ]
                           )

@@ -69,9 +69,9 @@ Paragraph([
   )
   TagExtension(
     Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}</ref>"
       {N} body = "{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}"
       {N} name = "ref"
+      {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}</ref>" ]
 
     [ ]
   )
@@ -92,9 +92,9 @@ Paragraph([
   )
   TagExtension(
     Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook</ref>"
       {N} body = "[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook"
       {N} name = "ref"
+      {N} rtd = RTD[ "<ref" <o> ">[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook</ref>" ]
 
     [ ]
   )
@@ -116,9 +116,9 @@ Paragraph([
   WtText(".")
   TagExtension(
     Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}</ref>"
       {N} body = "{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}"
       {N} name = "ref"
+      {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}</ref>" ]
 
     [ ]
   )
@@ -170,18 +170,18 @@ Paragraph([
   WtText(".")
   TagExtension(
     Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}</ref>"
       {N} body = "{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}"
       {N} name = "ref"
+      {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}</ref>" ]
 
     [ ]
   )
   WtText(" It is the most visited country in the world, receiving 82 million foreign tourists annually.")
   TagExtension(
     Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>"
       {N} body = "{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}"
       {N} name = "ref"
+      {N} rtd = RTD[ "<ref" <o> ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>" ]
 
     [
       XmlAttribute(
@@ -317,9 +317,9 @@ Paragraph([
   WtText(" in the world ")
   TagExtension(
     Properties:
-          RTD = RtData: [0] = "<ref", [1] = ">{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}</ref>"
       {N} body = "{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}"
       {N} name = "ref"
+      {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}</ref>" ]
 
     [ ]
   )
@@ -414,9 +414,9 @@ Section(
       WtText(" in the 1st century BC,")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].</ref>"
           {N} body = "[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]]."
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].</ref>" ]
 
         [ ]
       )
@@ -647,9 +647,9 @@ Section(
       WtText("),")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]</ref>"
           {N} body = "[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]</ref>" ]
 
         [ ]
       )
@@ -915,9 +915,9 @@ Section(
       WtText(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks</ref>"
           {N} body = "[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks</ref>" ]
 
         [ ]
       )
@@ -960,9 +960,9 @@ Section(
       WtText(".")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World</ref>"
           {N} body = "[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World</ref>" ]
 
         [ ]
       )
@@ -1056,9 +1056,9 @@ Section(
       WtText(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}</ref>"
           {N} body = "{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}</ref>" ]
 
         [ ]
       )
@@ -1146,9 +1146,9 @@ Section(
       WtText("Charles IV (The Fair) died without an heir in 1328.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>"
           {N} body = "Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101."
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>" ]
 
         [
           XmlAttribute(
@@ -1174,9 +1174,9 @@ Section(
       WtText(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = "/>"
           {N} body = null
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> "/>" ]
 
         [
           XmlAttribute(
@@ -1207,9 +1207,9 @@ Section(
       WtText(", the French monarchy reached the height of its medieval power.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = "/>"
           {N} body = null
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> "/>" ]
 
         [
           XmlAttribute(
@@ -1235,9 +1235,9 @@ Section(
       WtText(",")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>"
           {N} body = "[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009."
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>" ]
 
         [
           XmlAttribute(
@@ -1271,9 +1271,9 @@ Section(
       WtText(".")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.</ref>"
           {N} body = "Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''."
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.</ref>" ]
 
         [ ]
       )
@@ -1314,9 +1314,9 @@ Section(
       WtText(" of 1572.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].</ref>"
           {N} body = "[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]]."
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].</ref>" ]
 
         [ ]
       )
@@ -1367,9 +1367,9 @@ Section(
       WtText(" was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.")
       TagExtension(
         Properties:
-              RTD = RtData: [0] = "<ref", [1] = ">[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations</ref>"
           {N} body = "[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations"
           {N} name = "ref"
+          {N} rtd = RTD[ "<ref" <o> ">[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations</ref>" ]
 
         [ ]
       )

@@ -7148,9 +7148,9 @@ ParsedWikitextPage(
           WtText("A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ")
           TagExtension(
             Properties:
-              RTD = RtData: [0] = "<nowiki", [1] = ">[[Category:Football_in_Australia]]</nowiki>"
               {N} body = "[[Category:Football_in_Australia]]"
               {N} name = "nowiki"
+              {N} rtd = RTD[ "<nowiki" <o> ">[[Category:Football_in_Australia]]</nowiki>" ]
 
             [ ]
           )

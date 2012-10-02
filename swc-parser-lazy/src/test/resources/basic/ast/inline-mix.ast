@@ -37,9 +37,9 @@ ParsedWikitextPage(
                   WtText(" ")
                   XmlComment(
                     Properties:
-                      RTD = RtData: [0] = "<!-- comment -->"
                       {N} content = " comment "
                       {N} prefix = null
+                      {N} rtd = RTD[ "<!-- comment -->" ]
                       {N} suffix = null
                   )
                   WtText(" ")
