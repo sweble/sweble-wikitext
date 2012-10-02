@@ -325,17 +325,17 @@ ParsedWikitextPage(
             [
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " style=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "style"
+                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                 [ WtText("font-size: smaller;") ]
               )
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " class=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "class"
+                  {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                 [ WtText("autosigned") ]
               )
@@ -940,9 +940,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " color='", [1] = "'"
                             {N} hasValue = true
                             {N} name = "color"
+                            {N} rtd = RTD[ " color='" <o> "'" ]
 
                           [ WtText("red") ]
                         )
@@ -969,9 +969,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " color='", [1] = "'"
                             {N} hasValue = true
                             {N} name = "color"
+                            {N} rtd = RTD[ " color='" <o> "'" ]
 
                           [ WtText("red") ]
                         )
@@ -1006,9 +1006,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " color='", [1] = "'"
                             {N} hasValue = true
                             {N} name = "color"
+                            {N} rtd = RTD[ " color='" <o> "'" ]
 
                           [ WtText("red") ]
                         )

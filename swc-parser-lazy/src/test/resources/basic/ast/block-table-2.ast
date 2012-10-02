@@ -11,9 +11,9 @@ ParsedWikitextPage(
       [
         XmlAttribute(
           Properties:
-            RTD = RtData: [0] = " border=\"", [1] = "\""
             {N} hasValue = true
             {N} name = "border"
+            {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
           [ WtText("1") ]
         )
@@ -26,9 +26,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("bar") ]
             )
@@ -55,9 +55,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " border=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "border"
+                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
               [ WtText("2") ]
             )

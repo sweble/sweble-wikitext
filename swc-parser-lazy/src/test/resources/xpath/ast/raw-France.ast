@@ -186,9 +186,9 @@ Paragraph([
     [
       XmlAttribute(
         Properties:
-              RTD = RtData: [0] = " name=\"", [1] = "\""
           {N} hasValue = true
           {N} name = "name"
+          {N} rtd = RTD[ " name=\"" <o> "\"" ]
 
         [ WtText("tourism.stat") ]
       )
@@ -1153,9 +1153,9 @@ Section(
         [
           XmlAttribute(
             Properties:
-                  RTD = RtData: [0] = " name=\"", [1] = "\""
               {N} hasValue = true
               {N} name = "name"
+              {N} rtd = RTD[ " name=\"" <o> "\"" ]
 
             [ WtText("guerard") ]
           )
@@ -1181,9 +1181,9 @@ Section(
         [
           XmlAttribute(
             Properties:
-                  RTD = RtData: [0] = " name=\"", [1] = "\""
               {N} hasValue = true
               {N} name = "name"
+              {N} rtd = RTD[ " name=\"" <o> "\"" ]
 
             [ WtText("guerard") ]
           )
@@ -1214,9 +1214,9 @@ Section(
         [
           XmlAttribute(
             Properties:
-                  RTD = RtData: [0] = " name=\"", [1] = "\""
               {N} hasValue = true
               {N} name = "name"
+              {N} rtd = RTD[ " name=\"" <o> "\"" ]
 
             [ WtText("guerard") ]
           )
@@ -1242,17 +1242,17 @@ Section(
         [
           XmlAttribute(
             Properties:
-                  RTD = RtData: [0] = " name =", [1]
               {N} hasValue = true
               {N} name = "name"
+              {N} rtd = RTD[ " name =" <o> "" ]
 
             [ ]
           )
           XmlAttribute(
             Properties:
-                  RTD = RtData: [0] = " Encarta", [1]
               {N} hasValue = false
               {N} name = "Encarta"
+              {N} rtd = RTD[ " Encarta" <o> "" ]
 
             [ ]
           )

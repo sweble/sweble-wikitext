@@ -13,9 +13,9 @@ ParsedWikitextPage(
       [
         XmlAttribute(
           Properties:
-            RTD = RtData: [0] = " class=\"", [1] = "\""
             {N} hasValue = true
             {N} name = "class"
+            {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
           [ WtText("dablink") ]
         )
@@ -54,9 +54,9 @@ ParsedWikitextPage(
       [
         XmlAttribute(
           Properties:
-            RTD = RtData: [0] = " style=\"", [1] = "\""
             {N} hasValue = true
             {N} name = "style"
+            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
           [ WtText("padding:0.3em; float:right; margin-left:15px; margin-bottom:8px; border:1px solid #A3B1BF; background:#f5faff; text-align:center; font-size:95%; line-height:1.5em;;") ]
         )
@@ -72,9 +72,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background:#cee0f2; padding:0.3em; font-size:1.1em;") ]
             )
@@ -447,9 +447,9 @@ ParsedWikitextPage(
             [
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " style=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "style"
+                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                 [ WtText("display: inline-block;") ]
               )
@@ -464,9 +464,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
@@ -631,17 +631,17 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " border=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "border"
+                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
               [ WtText("3") ]
             )
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("margin-left: 3em;") ]
             )
@@ -660,9 +660,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -679,9 +679,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -698,9 +698,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -725,9 +725,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("row") ]
                     )
@@ -772,9 +772,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("row") ]
                     )
@@ -914,9 +914,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -969,9 +969,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1063,9 +1063,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1235,9 +1235,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1290,9 +1290,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1443,9 +1443,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1497,9 +1497,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1536,9 +1536,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1657,9 +1657,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1704,9 +1704,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1736,9 +1736,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1768,9 +1768,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1866,9 +1866,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1900,9 +1900,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1934,9 +1934,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -1968,9 +1968,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2020,9 +2020,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " border=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "border"
+                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
               [ WtText("1") ]
             )
@@ -2041,17 +2041,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " format", [1]
                         {N} hasValue = false
                         {N} name = "format"
+                        {N} rtd = RTD[ " format" <o> "" ]
 
                       [ ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " modifier", [1]
                         {N} hasValue = false
                         {N} name = "modifier"
+                        {N} rtd = RTD[ " modifier" <o> "" ]
 
                       [ ]
                     )
@@ -2170,9 +2170,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " border=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "border"
+                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
               [ WtText("1") ]
             )
@@ -2218,9 +2218,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("text-align: right;") ]
                     )
@@ -2303,9 +2303,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2336,9 +2336,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2369,9 +2369,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2555,9 +2555,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2608,9 +2608,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2697,9 +2697,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("color: #a63;") ]
                   )
@@ -2839,9 +2839,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
             )
@@ -2855,9 +2855,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " border=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "border"
+                    {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                   [ WtText("1") ]
                 )
@@ -2880,9 +2880,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -2899,9 +2899,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -2918,9 +2918,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -2943,9 +2943,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -2987,9 +2987,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -3309,9 +3309,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -3410,9 +3410,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("overflow: auto;") ]
                   )
@@ -3452,9 +3452,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -3468,17 +3468,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " class=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "class"
+                        {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                       [ WtText("wikitable") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("text-align: center; width: 200px; height: 200px;") ]
                     )
@@ -3507,9 +3507,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -3526,9 +3526,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -3545,9 +3545,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -3564,9 +3564,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -3591,9 +3591,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("row") ]
                             )
@@ -3642,9 +3642,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("row") ]
                             )
@@ -3693,9 +3693,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("row") ]
                             )
@@ -3744,9 +3744,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("row") ]
                             )
@@ -3795,9 +3795,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("row") ]
                             )
@@ -3883,9 +3883,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -3907,9 +3907,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -3935,9 +3935,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: red; color: white") ]
                             )
@@ -3964,9 +3964,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: red;") ]
                             )
@@ -3983,9 +3983,9 @@ ParsedWikitextPage(
                                 [
                                   XmlAttribute(
                                     Properties:
-                                      RTD = RtData: [0] = " style=\"", [1] = "\""
                                       {N} hasValue = true
                                       {N} name = "style"
+                                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                     [ WtText("color: white;") ]
                                   )
@@ -4030,9 +4030,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -4054,9 +4054,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -4070,9 +4070,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("background: yellow; color: green") ]
                     )
@@ -4117,9 +4117,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background: red; color: white") ]
                         )
@@ -4171,9 +4171,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: silver") ]
                             )
@@ -4374,9 +4374,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -4398,9 +4398,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -4414,17 +4414,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:75%; height:200px") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
@@ -4469,9 +4469,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("height: 100px;") ]
                         )
@@ -4491,9 +4491,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("width: 200px;") ]
                             )
@@ -4626,9 +4626,9 @@ ParsedWikitextPage(
                     [
                       XmlAttribute(
                         Properties:
-                          RTD = RtData: [0] = " style=\"", [1] = "\""
                           {N} hasValue = true
                           {N} name = "style"
+                          {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                         [ WtText("display: inline-block;") ]
                       )
@@ -4646,9 +4646,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("background: white; border: 1px solid black; padding: 1em;") ]
                     )
@@ -4662,17 +4662,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " border=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "border"
+                            {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                           [ WtText("1") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "cellpadding"
+                            {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -4691,17 +4691,17 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " width=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "width"
+                                    {N} rtd = RTD[ " width=\"" <o> "\"" ]
 
                                   [ WtText("50") ]
                                 )
@@ -4718,17 +4718,17 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width: 225px;") ]
                                 )
@@ -4745,17 +4745,17 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width: 225px;") ]
                                 )
@@ -4851,9 +4851,9 @@ ParsedWikitextPage(
                     [
                       XmlAttribute(
                         Properties:
-                          RTD = RtData: [0] = " style=\"", [1] = "\""
                           {N} hasValue = true
                           {N} name = "style"
+                          {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                         [ WtText("display: inline-block;") ]
                       )
@@ -4871,9 +4871,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("background: white; border: 1px solid black; padding: 1em;") ]
                     )
@@ -4887,17 +4887,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " border=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "border"
+                            {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                           [ WtText("1") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "cellpadding"
+                            {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -4916,9 +4916,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width: 100pt;") ]
                                 )
@@ -4935,9 +4935,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width: 200pt;") ]
                                 )
@@ -4954,9 +4954,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width: 300pt;") ]
                                 )
@@ -5017,17 +5017,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellpadding"
+                        {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                       [ WtText("2") ]
                     )
@@ -5046,17 +5046,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("width: 350px;") ]
                             )
@@ -5073,17 +5073,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("width: 225px;") ]
                             )
@@ -5131,17 +5131,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellpadding"
+                        {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                       [ WtText("2") ]
                     )
@@ -5160,17 +5160,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("width: 350px;") ]
                             )
@@ -5187,17 +5187,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("width: 225px;") ]
                             )
@@ -5271,9 +5271,9 @@ ParsedWikitextPage(
                         XmlAttributeGarbage("\"class=wikitable sortable\"")
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " border=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "border"
+                            {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                           [ WtText("1") ]
                         )
@@ -5292,9 +5292,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
@@ -5311,9 +5311,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
@@ -5330,9 +5330,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
@@ -5483,9 +5483,9 @@ ParsedWikitextPage(
                         XmlAttributeGarbage("\"class=wikitable sortable\"")
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " border=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "border"
+                            {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                           [ WtText("1") ]
                         )
@@ -5504,9 +5504,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
@@ -5523,9 +5523,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
@@ -5542,9 +5542,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " scope=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "scope"
+                                    {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                   [ WtText("col") ]
                                 )
@@ -5607,9 +5607,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = "style=", [1]
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ "style=" <o> "" ]
 
                                   [ WtText("white-space:nowrap") ]
                                 )
@@ -5664,9 +5664,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = "style=", [1]
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ "style=" <o> "" ]
 
                                   [ WtText("white-space:nowrap") ]
                                 )
@@ -5728,9 +5728,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -5748,17 +5748,17 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "cellpadding"
+                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                   [ WtText("2") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("border: 1px solid darkgrey; margin-left: 4em;") ]
                 )
@@ -5777,9 +5777,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 140px;") ]
                         )
@@ -5796,9 +5796,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 150px;") ]
                         )
@@ -5815,9 +5815,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 130px;") ]
                         )
@@ -5836,9 +5836,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("0") ]
                     )
@@ -5977,9 +5977,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " align=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "align"
+                        {N} rtd = RTD[ " align=\"" <o> "\"" ]
 
                       [ WtText("center") ]
                     )
@@ -6031,9 +6031,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -6051,17 +6051,17 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "cellpadding"
+                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                   [ WtText("2") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("border: 1px solid darkgrey; margin-left:4em;") ]
                 )
@@ -6080,9 +6080,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:140px;") ]
                         )
@@ -6096,9 +6096,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:150px;") ]
                         )
@@ -6112,9 +6112,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:130px;") ]
                         )
@@ -6133,9 +6133,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " align=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "align"
+                        {N} rtd = RTD[ " align=\"" <o> "\"" ]
 
                       [ WtText("center") ]
                     )
@@ -6148,9 +6148,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("border: 1px solid blue;") ]
                         )
@@ -6195,9 +6195,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("border: 1px solid #777;") ]
                         )
@@ -6247,9 +6247,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("border: 1px solid #2a5;") ]
                         )
@@ -6301,9 +6301,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " align=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "align"
+                        {N} rtd = RTD[ " align=\"" <o> "\"" ]
 
                       [ WtText("center") ]
                     )
@@ -6361,25 +6361,25 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " border=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "border"
+                    {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                   [ WtText("1") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "cellpadding"
+                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                   [ WtText("2") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("width:400px; margin-left:6em;") ]
                 )
@@ -6398,17 +6398,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:10%;") ]
                         )
@@ -6425,9 +6425,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:70%;") ]
                         )
@@ -6444,9 +6444,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:20%;") ]
                         )
@@ -6471,9 +6471,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -6509,9 +6509,9 @@ ParsedWikitextPage(
                             [
                               XmlAttribute(
                                 Properties:
-                                  RTD = RtData: [0] = " style=\"", [1] = "\""
                                   {N} hasValue = true
                                   {N} name = "style"
+                                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                 [ WtText("color: #13a;") ]
                               )
@@ -6559,9 +6559,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -6577,25 +6577,25 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " border=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "border"
+                    {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                   [ WtText("1") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "cellpadding"
+                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                   [ WtText("2") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("width: 400px; margin-left: 6em;") ]
                 )
@@ -6608,9 +6608,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " valign=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "valign"
+                        {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                       [ WtText("top") ]
                     )
@@ -6623,17 +6623,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 10%;") ]
                         )
@@ -6650,9 +6650,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 70%;") ]
                         )
@@ -6669,9 +6669,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 20%;") ]
                         )
@@ -6690,9 +6690,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " valign=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "valign"
+                        {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                       [ WtText("top") ]
                     )
@@ -6705,9 +6705,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -6743,9 +6743,9 @@ ParsedWikitextPage(
                             [
                               XmlAttribute(
                                 Properties:
-                                  RTD = RtData: [0] = " style=\"", [1] = "\""
                                   {N} hasValue = true
                                   {N} name = "style"
+                                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                 [ WtText("color: #14a;") ]
                               )
@@ -6893,9 +6893,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -6917,9 +6917,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -6933,33 +6933,33 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellpadding"
+                        {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellspacing"
+                        {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                       [ WtText("0") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("margin: auto;") ]
                     )
@@ -6996,9 +6996,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #efefef;") ]
                             )
@@ -7015,17 +7015,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " colspan=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "colspan"
+                                {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #ffdead;") ]
                             )
@@ -7078,17 +7078,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " rowspan=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "rowspan"
+                                {N} rtd = RTD[ " rowspan=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("border-bottom: 3px solid gray; vertical-align: top;") ]
                             )
@@ -7114,9 +7114,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("border-bottom: 3px solid gray;") ]
                             )
@@ -7133,9 +7133,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("border-bottom: 3px solid gray;") ]
                             )
@@ -7160,17 +7160,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " colspan=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "colspan"
+                                {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                               [ WtText("3") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("text-align: center;") ]
                             )
@@ -7184,9 +7184,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " border=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "border"
+                                    {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                                   [ WtText("0") ]
                                 )
@@ -7217,9 +7217,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " style=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "style"
+                                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                       [ WtText("text-align: center;") ]
                                     )
@@ -7263,9 +7263,9 @@ ParsedWikitextPage(
                                       [
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " style=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "style"
+                                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                           [ WtText("width: 150px;") ]
                                         )
@@ -7311,17 +7311,17 @@ ParsedWikitextPage(
                                       [
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "colspan"
+                                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                                           [ WtText("2") ]
                                         )
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " style=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "style"
+                                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                           [ WtText("text-align: center; border-top: 1px solid red;  border-right: 1px solid red; border-bottom: 2px solid red;  border-left: 1px solid red;") ]
                                         )
@@ -7370,9 +7370,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -7394,9 +7394,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -7417,17 +7417,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("float: right;") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
@@ -7456,9 +7456,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " rowspan=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "rowspan"
+                                {N} rtd = RTD[ " rowspan=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
@@ -7562,9 +7562,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -7582,17 +7582,17 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("infobox") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("width: 90px;") ]
                 )
@@ -7611,9 +7611,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "colspan"
+                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -7638,9 +7638,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "colspan"
+                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -7662,9 +7662,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;") ]
                 )
@@ -7677,9 +7677,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("font-size: 86%;") ]
                     )
@@ -7692,9 +7692,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " valign=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "valign"
+                            {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                           [ WtText("top") ]
                         )
@@ -7780,9 +7780,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("float: right; clear:right; border: 1px solid black;") ]
                 )
@@ -7795,9 +7795,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " valign=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "valign"
+                        {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                       [ WtText("top") ]
                     )
@@ -7876,9 +7876,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("float: right; margin-left:0.2em; border: 1px solid #BBB;") ]
                 )
@@ -7891,9 +7891,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("font-size: 87%;") ]
                     )
@@ -7906,9 +7906,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " valign=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "valign"
+                            {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                           [ WtText("top") ]
                         )
@@ -7967,9 +7967,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("float: right; margin-left:0.2em; border: 1px solid #BBB;") ]
                 )
@@ -7982,9 +7982,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("font-size: 87%;") ]
                     )
@@ -7997,9 +7997,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " valign=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "valign"
+                            {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                           [ WtText("top") ]
                         )
@@ -8058,9 +8058,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("float: right; margin-left:0.2em; border: 1px solid #BBB;") ]
                 )
@@ -8073,9 +8073,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("font-size: 87%;") ]
                     )
@@ -8088,9 +8088,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " valign=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "valign"
+                            {N} rtd = RTD[ " valign=\"" <o> "\"" ]
 
                           [ WtText("top") ]
                         )
@@ -8213,9 +8213,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("border: 1px dashed #2f6fab; background: #f9f9f9; padding: 1em") ]
                 )
@@ -8287,9 +8287,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("color: navy;") ]
                         )
@@ -8454,9 +8454,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("color: navy;") ]
                         )
@@ -8620,9 +8620,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("color: navy;") ]
                         )
@@ -8798,9 +8798,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " border=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "border"
+                    {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                   [ WtText("1") ]
                 )
@@ -8829,9 +8829,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("text-align: center;") ]
                         )
@@ -8846,17 +8846,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " border=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "border"
+                                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #ABCDEF;") ]
                             )
@@ -8910,9 +8910,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("vertical-align: bottom;") ]
                         )
@@ -8929,9 +8929,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 100px;") ]
                         )
@@ -8945,17 +8945,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " border=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "border"
+                                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #ABCDEF;") ]
                             )
@@ -8989,17 +8989,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " border=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "border"
+                                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #ABCDEF;") ]
                             )
@@ -9042,9 +9042,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width: 50px;") ]
                         )
@@ -9058,17 +9058,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " border=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "border"
+                                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #ABCDEF; float:left;") ]
                             )
@@ -9102,17 +9102,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " border=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "border"
+                                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("background: #ABCDEF; float: right;") ]
                             )
@@ -9175,9 +9175,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -9203,25 +9203,25 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " border=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "border"
+                    {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                   [ WtText("1") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "cellpadding"
+                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                   [ WtText("5") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "cellspacing"
+                    {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                   [ WtText("0") ]
                 )
@@ -9272,9 +9272,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " rowspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "rowspan"
+                            {N} rtd = RTD[ " rowspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -9291,17 +9291,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "colspan"
+                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("text-align: center;") ]
                         )
@@ -9364,25 +9364,25 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " rowspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "rowspan"
+                            {N} rtd = RTD[ " rowspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "colspan"
+                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("text-align: center;") ]
                         )
@@ -9425,17 +9425,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "colspan"
+                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                           [ WtText("3") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("text-align: center;") ]
                         )
@@ -9574,9 +9574,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -9602,17 +9602,17 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("wikitable") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("margin: 1em auto 1em auto;") ]
                 )
@@ -9763,9 +9763,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -9783,9 +9783,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("color:white") ]
                 )
@@ -9804,9 +9804,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background:red;") ]
                         )
@@ -9820,9 +9820,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("width:300px; background:blue;") ]
                         )
@@ -9836,9 +9836,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background:green;") ]
                         )
@@ -9944,9 +9944,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("border: 1px solid black") ]
                                 )
@@ -10038,9 +10038,9 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("background: #fafeff;") ]
                                 )
@@ -10080,9 +10080,9 @@ ParsedWikitextPage(
                                           [
                                             XmlAttribute(
                                               Properties:
-                                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                                 {N} hasValue = true
                                                 {N} name = "style"
+                                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                               [ WtText("height:11px;") ]
                                             )
@@ -10105,9 +10105,9 @@ ParsedWikitextPage(
                                                   [
                                                     XmlAttribute(
                                                       Properties:
-                                                        RTD = RtData: [0] = " style=\"", [1] = "\""
                                                         {N} hasValue = true
                                                         {N} name = "style"
+                                                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                                       [ WtText("border: 1px solid black; font-size:60%") ]
                                                     )
@@ -10168,9 +10168,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -10192,9 +10192,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background:white; border: 1px solid darkgrey;") ]
                 )
@@ -10208,17 +10208,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellpadding"
+                        {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                       [ WtText("0") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellspacing"
+                        {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                       [ WtText("0") ]
                     )
@@ -10237,9 +10237,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " align=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "align"
+                                {N} rtd = RTD[ " align=\"" <o> "\"" ]
 
                               [ WtText("right") ]
                             )
@@ -10271,9 +10271,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " align=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "align"
+                                {N} rtd = RTD[ " align=\"" <o> "\"" ]
 
                               [ WtText("right") ]
                             )
@@ -10305,9 +10305,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " align=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "align"
+                                {N} rtd = RTD[ " align=\"" <o> "\"" ]
 
                               [ WtText("right") ]
                             )
@@ -10347,9 +10347,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -10371,9 +10371,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background:white; border: 1px solid darkgrey;") ]
                 )
@@ -10387,25 +10387,25 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " border=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "border"
+                        {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                       [ WtText("1") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellpadding"
+                        {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                       [ WtText("4") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "cellspacing"
+                        {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                       [ WtText("2") ]
                     )
@@ -10425,25 +10425,25 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "cellpadding"
+                                {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                               [ WtText("0") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "cellspacing"
+                                {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                               [ WtText("0") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("width: 100px;") ]
                             )
@@ -10462,9 +10462,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " style=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "style"
+                                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                       [ WtText("text-align: right; width: 50%;") ]
                                     )
@@ -10478,9 +10478,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " style=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "style"
+                                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                       [ WtText("width: 50%;") ]
                                     )
@@ -10517,25 +10517,25 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "cellpadding"
+                                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                                   [ WtText("0") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "cellspacing"
+                                    {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                                   [ WtText("0") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width:100px;") ]
                                 )
@@ -10554,9 +10554,9 @@ ParsedWikitextPage(
                                       [
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " style=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "style"
+                                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                           [ WtText("text-align: right; width: 50%;") ]
                                         )
@@ -10570,9 +10570,9 @@ ParsedWikitextPage(
                                       [
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " style=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "style"
+                                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                           [ WtText("width: 50%;") ]
                                         )
@@ -10611,25 +10611,25 @@ ParsedWikitextPage(
                               [
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "cellpadding"
+                                    {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                                   [ WtText("0") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "cellspacing"
+                                    {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                                   [ WtText("0") ]
                                 )
                                 XmlAttribute(
                                   Properties:
-                                    RTD = RtData: [0] = " style=\"", [1] = "\""
                                     {N} hasValue = true
                                     {N} name = "style"
+                                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                   [ WtText("width:100px;") ]
                                 )
@@ -10648,9 +10648,9 @@ ParsedWikitextPage(
                                       [
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " style=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "style"
+                                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                           [ WtText("text-align: right; width: 50%;") ]
                                         )
@@ -10664,9 +10664,9 @@ ParsedWikitextPage(
                                       [
                                         XmlAttribute(
                                           Properties:
-                                            RTD = RtData: [0] = " style=\"", [1] = "\""
                                             {N} hasValue = true
                                             {N} name = "style"
+                                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                                           [ WtText("width: 50%;") ]
                                         )
@@ -10894,17 +10894,17 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " border=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "border"
+                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
               [ WtText("0") ]
             )
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("margin: auto;") ]
             )
@@ -10927,9 +10927,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:46%;") ]
                     )
@@ -10945,9 +10945,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background:white; border:0 solid rgb(153, 153, 153); padding:1em;") ]
                         )
@@ -10984,9 +10984,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:48%;") ]
                     )
@@ -11002,9 +11002,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background:white; border:0 solid rgb(153, 153, 153); padding:1em;") ]
                         )
@@ -11018,9 +11018,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "cellpadding"
+                                {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                               [ WtText("2") ]
                             )
@@ -11049,9 +11049,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11068,9 +11068,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11087,9 +11087,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11106,9 +11106,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11133,9 +11133,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11184,9 +11184,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11235,9 +11235,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11286,9 +11286,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11337,9 +11337,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11402,17 +11402,17 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " colspan=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "colspan"
+                        {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                       [ WtText("3") ]
                     )
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("text-align: center;") ]
                     )
@@ -11439,9 +11439,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:46%;") ]
                     )
@@ -11457,9 +11457,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                         )
@@ -11496,9 +11496,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:48%;") ]
                     )
@@ -11514,9 +11514,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " style=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "style"
+                            {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                           [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                         )
@@ -11530,9 +11530,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " class=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "class"
+                                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                               [ WtText("wikitable") ]
                             )
@@ -11561,9 +11561,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11580,9 +11580,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11599,9 +11599,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11618,9 +11618,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("col") ]
                                     )
@@ -11645,9 +11645,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11696,9 +11696,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11747,9 +11747,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11798,9 +11798,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11849,9 +11849,9 @@ ParsedWikitextPage(
                                   [
                                     XmlAttribute(
                                       Properties:
-                                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                                         {N} hasValue = true
                                         {N} name = "scope"
+                                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                                       [ WtText("row") ]
                                     )
@@ -11972,9 +11972,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
             )
@@ -12011,9 +12011,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
             )
@@ -12027,17 +12027,17 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("wikitable") ]
                 )
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("font-style:italic; font-size:120%; border: 3px dashed red;") ]
                 )
@@ -12066,9 +12066,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12085,9 +12085,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12104,9 +12104,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12123,9 +12123,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12150,9 +12150,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -12201,9 +12201,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -12252,9 +12252,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -12303,9 +12303,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -12354,9 +12354,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -12480,9 +12480,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("display: inline-block;") ]
                   )
@@ -12501,9 +12501,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("wikitable collapsible collapsed") ]
                 )
@@ -12687,9 +12687,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
             )
@@ -12726,9 +12726,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
             )
@@ -12742,9 +12742,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("wikitable sortable") ]
                 )
@@ -12773,9 +12773,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12792,9 +12792,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12811,9 +12811,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -12830,17 +12830,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " class=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "class"
+                            {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                           [ WtText("unsortable") ]
                         )
@@ -13097,9 +13097,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -13137,9 +13137,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("background: white; border: 1px solid rgb(153, 153, 153); padding: 1em;") ]
                 )
@@ -13153,9 +13153,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " class=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "class"
+                        {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                       [ WtText("wikitable sortable collapsible") ]
                     )
@@ -13184,9 +13184,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -13203,9 +13203,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -13222,9 +13222,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
@@ -13241,17 +13241,17 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " scope=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "scope"
+                                {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                               [ WtText("col") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " class=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "class"
+                                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                               [ WtText("unsortable") ]
                             )
@@ -13651,9 +13651,9 @@ ParsedWikitextPage(
             [
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " style=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "style"
+                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                 [ WtText("display: inline-block;") ]
               )
@@ -13670,9 +13670,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable sortable") ]
             )
@@ -13691,9 +13691,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -13710,9 +13710,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -13729,9 +13729,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -13865,9 +13865,9 @@ ParsedWikitextPage(
             [
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " style=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "style"
+                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                 [ WtText("display: inline-block;") ]
               )
@@ -13884,9 +13884,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
@@ -13905,9 +13905,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("row") ]
                     )
@@ -13944,9 +13944,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("row") ]
                     )
@@ -14173,9 +14173,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("wikitable") ]
                 )
@@ -14198,9 +14198,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -14217,9 +14217,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " scope=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "scope"
+                        {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                       [ WtText("col") ]
                     )
@@ -14242,9 +14242,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -14309,9 +14309,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -14376,9 +14376,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -14443,9 +14443,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -14510,9 +14510,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -14611,17 +14611,17 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " rowspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "rowspan"
+                            {N} rtd = RTD[ " rowspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -14638,9 +14638,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " colspan=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "colspan"
+                            {N} rtd = RTD[ " colspan=\"" <o> "\"" ]
 
                           [ WtText("2") ]
                         )
@@ -14656,33 +14656,33 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " style=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "style"
+                                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                               [ WtText("margin: auto;") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " border=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "border"
+                                {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
                               [ WtText("1") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " cellspacing=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "cellspacing"
+                                {N} rtd = RTD[ " cellspacing=\"" <o> "\"" ]
 
                               [ WtText("0") ]
                             )
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " cellpadding=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "cellpadding"
+                                {N} rtd = RTD[ " cellpadding=\"" <o> "\"" ]
 
                               [ WtText("3") ]
                             )
@@ -14823,9 +14823,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("vertical-align: top;") ]
                     )
@@ -14838,9 +14838,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -14937,9 +14937,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("vertical-align: top;") ]
                     )
@@ -14952,9 +14952,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("row") ]
                         )
@@ -15099,9 +15099,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -15118,9 +15118,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -15137,9 +15137,9 @@ ParsedWikitextPage(
                       [
                         XmlAttribute(
                           Properties:
-                            RTD = RtData: [0] = " scope=\"", [1] = "\""
                             {N} hasValue = true
                             {N} name = "scope"
+                            {N} rtd = RTD[ " scope=\"" <o> "\"" ]
 
                           [ WtText("col") ]
                         )
@@ -15999,9 +15999,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " style=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "style"
+                      {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                     [ WtText("overflow:auto;") ]
                   )
@@ -16018,9 +16018,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " summary=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "summary"
+                    {N} rtd = RTD[ " summary=\"" <o> "\"" ]
 
                   [ WtText("Artistic renderings of Germania became more triumphant and monumental.") ]
                 )
@@ -16259,9 +16259,9 @@ ParsedWikitextPage(
             [
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " style=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "style"
+                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                 [ WtText("display: inline-block;") ]
               )
@@ -16279,9 +16279,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background:none; margin: auto;") ]
             )
@@ -16465,9 +16465,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background:none; margin: auto;") ]
             )
@@ -16598,9 +16598,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("background:none; margin: auto;") ]
             )
@@ -16753,17 +16753,17 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " style=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "style"
+                {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
               [ WtText("text-align: center;") ]
             )
@@ -16776,9 +16776,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " style=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "style"
+                    {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                   [ WtText("vertical-align: bottom;") ]
                 )
@@ -16791,9 +16791,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -16837,9 +16837,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -16884,9 +16884,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -16931,9 +16931,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -16978,9 +16978,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -17025,9 +17025,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -17072,9 +17072,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -17119,9 +17119,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -17166,9 +17166,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -17213,9 +17213,9 @@ ParsedWikitextPage(
                   [
                     XmlAttribute(
                       Properties:
-                        RTD = RtData: [0] = " style=\"", [1] = "\""
                         {N} hasValue = true
                         {N} name = "style"
+                        {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                       [ WtText("width:3em;") ]
                     )
@@ -17459,9 +17459,9 @@ ParsedWikitextPage(
             [
               XmlAttribute(
                 Properties:
-                  RTD = RtData: [0] = " style=\"", [1] = "\""
                   {N} hasValue = true
                   {N} name = "style"
+                  {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
                 [ WtText("display: inline-block;") ]
               )
@@ -17566,9 +17566,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
@@ -17755,9 +17755,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
@@ -18010,9 +18010,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
@@ -18264,9 +18264,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("wikitable") ]
             )
@@ -18624,9 +18624,9 @@ ParsedWikitextPage(
               [
                 XmlAttribute(
                   Properties:
-                    RTD = RtData: [0] = " class=\"", [1] = "\""
                     {N} hasValue = true
                     {N} name = "class"
+                    {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                   [ WtText("wikitable") ]
                 )
@@ -18690,9 +18690,9 @@ ParsedWikitextPage(
                           [
                             XmlAttribute(
                               Properties:
-                                RTD = RtData: [0] = " class=\"", [1] = "\""
                                 {N} hasValue = true
                                 {N} name = "class"
+                                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
                               [ WtText("center") ]
                             )
@@ -18913,9 +18913,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " class=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "class"
+                {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
               [ WtText("rellink\uE000128\uE001relarticle mainarticle") ]
             )

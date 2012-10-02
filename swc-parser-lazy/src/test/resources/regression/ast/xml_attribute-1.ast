@@ -11,9 +11,9 @@ ParsedWikitextPage(
       [
         XmlAttribute(
           Properties:
-            RTD = RtData: [0] = " x=", [1]
             {N} hasValue = true
             {N} name = "x"
+            {N} rtd = RTD[ " x=" <o> "" ]
 
           [
             WtText(

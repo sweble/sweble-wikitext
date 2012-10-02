@@ -130,39 +130,19 @@ private inline void GarbageStringStopper =
 private XmlAttribute ValidXmlAttribute =
     ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
     {
-      yyValue = new XmlAttribute(name, value, true);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt(ws0, name, ws1, '=', ws2, '\''),
-            joinRt('\''));
+      yyValue = setRtd(new XmlAttribute(name, value, true), ws0, name, ws1, '=', ws2, '\'', SEP, '\'');
     }
   / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? '"' value:ValueDqStar '"' &AttrEnd
     {
-      yyValue = new XmlAttribute(name, value, true);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt(ws0, name, ws1, '=', ws2, '"'),
-            joinRt('"'));
+      yyValue = setRtd(new XmlAttribute(name, value, true), ws0, name, ws1, '=', ws2, '"', SEP, '"');
     }
   / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' value:ValueNqStar &AttrEnd
     {
-      yyValue = new XmlAttribute(name, value, true);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt(ws0, name, ws1, '='),
-            null);
+      yyValue = setRtd(new XmlAttribute(name, value, true), ws0, name, ws1, '=', SEP);
     }
   / ws0:XmlAttrWs? name:XmlName &AttrEnd
     {
-      yyValue = new XmlAttribute(name, false);
-
-      if (isGatherRtData())
-        addRtData(yyValue,
-            joinRt(ws0, name),
-            null);
+      yyValue = setRtd(new XmlAttribute(name, false), ws0, name, SEP);
     }
 ;
 

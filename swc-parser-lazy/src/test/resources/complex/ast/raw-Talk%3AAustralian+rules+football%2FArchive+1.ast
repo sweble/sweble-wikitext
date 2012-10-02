@@ -6602,9 +6602,9 @@ ParsedWikitextPage(
                     [
                       XmlAttribute(
                         Properties:
-                          RTD = RtData: [0] = " color=\"", [1] = "\""
                           {N} hasValue = true
                           {N} name = "color"
+                          {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                         [ WtText("darkblue") ]
                       )
@@ -6635,9 +6635,9 @@ ParsedWikitextPage(
                     [
                       XmlAttribute(
                         Properties:
-                          RTD = RtData: [0] = " color=\"", [1] = "\""
                           {N} hasValue = true
                           {N} name = "color"
+                          {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                         [ WtText("red") ]
                       )
@@ -6668,9 +6668,9 @@ ParsedWikitextPage(
                     [
                       XmlAttribute(
                         Properties:
-                          RTD = RtData: [0] = " color=\"", [1] = "\""
                           {N} hasValue = true
                           {N} name = "color"
+                          {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                         [ WtText("darkblue") ]
                       )
@@ -6717,9 +6717,9 @@ ParsedWikitextPage(
                         [
                           XmlAttribute(
                             Properties:
-                              RTD = RtData: [0] = " color=\"", [1] = "\""
                               {N} hasValue = true
                               {N} name = "color"
+                              {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                             [ WtText("black") ]
                           )
@@ -7278,9 +7278,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " color=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "color"
+                      {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                     [ WtText("darkblue") ]
                   )
@@ -7311,9 +7311,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " color=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "color"
+                      {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                     [ WtText("red") ]
                   )
@@ -7344,9 +7344,9 @@ ParsedWikitextPage(
                 [
                   XmlAttribute(
                     Properties:
-                      RTD = RtData: [0] = " color=\"", [1] = "\""
                       {N} hasValue = true
                       {N} name = "color"
+                      {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                     [ WtText("darkblue") ]
                   )
@@ -7393,9 +7393,9 @@ ParsedWikitextPage(
                     [
                       XmlAttribute(
                         Properties:
-                          RTD = RtData: [0] = " color=\"", [1] = "\""
                           {N} hasValue = true
                           {N} name = "color"
+                          {N} rtd = RTD[ " color=\"" <o> "\"" ]
 
                         [ WtText("black") ]
                       )

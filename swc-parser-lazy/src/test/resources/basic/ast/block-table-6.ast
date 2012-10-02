@@ -17,9 +17,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " S=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "S"
+                {N} rtd = RTD[ " S=\"" <o> "\"" ]
 
               [ ]
             )
@@ -33,9 +33,9 @@ ParsedWikitextPage(
           [
             XmlAttribute(
               Properties:
-                RTD = RtData: [0] = " S=\"", [1] = "\""
                 {N} hasValue = true
                 {N} name = "S"
+                {N} rtd = RTD[ " S=\"" <o> "\"" ]
 
               [ ]
             )
