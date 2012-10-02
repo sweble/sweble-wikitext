@@ -240,8 +240,8 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("disambig") ]
             [ ]

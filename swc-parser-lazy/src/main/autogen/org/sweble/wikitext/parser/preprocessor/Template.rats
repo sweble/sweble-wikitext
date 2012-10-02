@@ -191,20 +191,18 @@ private transient WikitextNode TemplateTailPart =
           garbage = new WtList(args.subList(1, args.size()));
       }
 
-      yyValue = new TemplateParameter(content.getForeign(0, WtList.class), defaultValue, garbage);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("{{{"), null, null, joinRt("}}}"));
+      yyValue = setRtd(
+        new TemplateParameter(content.getForeign(0, WtList.class), defaultValue, garbage),
+        "{{{", SEP, SEP, SEP, "}}}");
 
       getState().eatTemplateBraces(3);
     }
   / content:TemplateTailPart2
     {
       // content = (name, args)
-      yyValue = new Template(content.getForeign(0, WtList.class), content.getForeign(1, WtList.class));
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("{{"), null, joinRt("}}"));
+      yyValue = setRtd(
+        new Template(content.getForeign(0, WtList.class), content.getForeign(1, WtList.class)),
+        "{{", SEP, SEP, "}}");
 
       getState().eatTemplateBraces(2);
     }
@@ -243,17 +241,15 @@ private transient void TemplateTailPart3 =
 private transient WikitextNode TemplateArgumentChoice =
     parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
     {
-      yyValue = new TemplateArgument(parameter, value, true);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt('|'), joinRt('='), null);
+      yyValue = setRtd(
+        new TemplateArgument(parameter, value, true),
+        '|', SEP, '=', SEP);
     }
   / value:TemplateArgumentValueStar
     {
-      yyValue = new TemplateArgument(value, false);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt('|'), null, null);
+      yyValue = setRtd(
+        new TemplateArgument(value, false),
+        '|', SEP, SEP);
     }
 ;
 

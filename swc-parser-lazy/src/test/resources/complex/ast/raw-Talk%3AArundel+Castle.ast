@@ -7,46 +7,46 @@ ParsedWikitextPage(
     Paragraph([
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("WikiProjectBannerShell") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("1") ]
             [
               WtText("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("WikiProject Sussex") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("class") ]
                     [ WtText("start") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("importance") ]
                     [ WtText("Mid") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("unref") ]
                     [ ]
@@ -56,23 +56,23 @@ ParsedWikitextPage(
               WtText("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("WikiProject Architecture") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("class") ]
                     [ WtText("start") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("importance") ]
                     [ WtText("mid") ]
@@ -82,15 +82,15 @@ ParsedWikitextPage(
               WtText("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("WPMILHIST\n") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("class") ]
                     [
@@ -114,8 +114,8 @@ ParsedWikitextPage(
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("B-Class-1") ]
                     [
@@ -131,8 +131,8 @@ ParsedWikitextPage(
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("B-Class-2") ]
                     [
@@ -148,8 +148,8 @@ ParsedWikitextPage(
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("B-Class-3") ]
                     [
@@ -165,8 +165,8 @@ ParsedWikitextPage(
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("B-Class-4") ]
                     [
@@ -182,8 +182,8 @@ ParsedWikitextPage(
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("B-Class-5") ]
                     [
@@ -199,40 +199,40 @@ ParsedWikitextPage(
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("British-task-force") ]
                     [ WtText("yes\n") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("Fortifications-task-force") ]
                     [ WtText("yes\n") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("Medieval-task-force") ]
                     [ WtText("yes\n") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("Technology-task-force") ]
                     [ WtText("yes") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("Early-Modern-task-force") ]
                     [ WtText("yes") ]
@@ -421,15 +421,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = false
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [
               WtText("#ifeq:")
               TemplateParameter(
                 Properties:
-                  RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 
                 [ WtText("name") ]
               )
@@ -437,16 +437,16 @@ ParsedWikitextPage(
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Arundel Castle") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)") ]
@@ -479,8 +479,8 @@ ParsedWikitextPage(
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Done") ]
                 [ ]
@@ -565,8 +565,8 @@ ParsedWikitextPage(
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Not done") ]
                 [ ]
@@ -686,8 +686,8 @@ ParsedWikitextPage(
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Done") ]
                 [ ]
@@ -804,8 +804,8 @@ ParsedWikitextPage(
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Done") ]
                 [ ]
@@ -887,8 +887,8 @@ ParsedWikitextPage(
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Not done") ]
                 [ ]

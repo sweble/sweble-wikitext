@@ -7,38 +7,38 @@ ParsedWikitextPage(
     Paragraph([
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("name") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("arg0") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("arg1") ]
             [ WtText("value1") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("arg2") ]
             [
               TemplateParameter(
                 Properties:
-                  RTD = RtData: [0] = "{{{", [1], [2], [3] = "}}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 
                 [ WtText("parameter2") ]
               )

@@ -7,15 +7,15 @@ ParsedWikitextPage(
     Paragraph([
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("wikiquotepar") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("MythBusters") ]
@@ -227,78 +227,78 @@ ParsedWikitextPage(
                       Newline("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("Episode list\n") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("EpisodeNumber   ") ]
                             [ WtText(" SP11\n") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("EpisodeNumber2  ") ]
                             [ WtText(" Special 1\n") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("Title           ") ]
                             [ WtText(" Young Scientist Special\n") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("RTitle          ") ]
                             [ WtText(" \n") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("OriginalAirDate ") ]
                             [
                               WtText(" ")
                               Template(
                                 Properties:
-                                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                   {N} precededByNewline = false
+                                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                 [ WtText("Start date") ]
                                 [
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1], [2]
                                       {N} hasName = false
+                                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                     [ ]
                                     [ WtText("2008") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1], [2]
                                       {N} hasName = false
+                                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                     [ ]
                                     [ WtText("4") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1], [2]
                                       {N} hasName = false
+                                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                     [ ]
                                     [ WtText("26") ]
@@ -310,16 +310,16 @@ ParsedWikitextPage(
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("ShortSummary    ") ]
                             [ WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1] = "=", [2]
                               {N} hasName = true
+                              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                             [ WtText("LineColor       ") ]
                             [ WtText(" DBE9F4\n") ]
@@ -1890,8 +1890,8 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("inc-video") ]
             [ ]
@@ -2905,8 +2905,8 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Reflist") ]
             [ ]
@@ -2982,23 +2982,23 @@ ParsedWikitextPage(
               WtText(" ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("imdb title") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("id") ]
                     [ WtText("0383126") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("title") ]
                     [ WtText("MythBusters") ]
@@ -3013,8 +3013,8 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("MythBusters") ]
             [ ]
@@ -3025,8 +3025,8 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("DEFAULTSORT:Mythbusters") ]
             [ ]

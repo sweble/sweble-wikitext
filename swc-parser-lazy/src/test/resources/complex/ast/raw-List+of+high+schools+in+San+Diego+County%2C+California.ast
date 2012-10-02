@@ -910,8 +910,8 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText(":San Diego Unified School District") ]
                 [ ]
@@ -1616,8 +1616,8 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText(":Roman Catholic Diocese of San Diego") ]
                 [ ]

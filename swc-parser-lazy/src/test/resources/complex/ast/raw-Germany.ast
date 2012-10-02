@@ -7,15 +7,15 @@ ParsedWikitextPage(
     Paragraph([
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("Dablink") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("This article is about the country. For other uses of terms redirecting here, see [[Germany (disambiguation)]] and [[Deutschland (disambiguation)]].") ]
@@ -25,15 +25,15 @@ ParsedWikitextPage(
       Newline("\n")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = true
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("Use dmy dates") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("date") ]
             [ WtText("January 2011") ]
@@ -43,15 +43,15 @@ ParsedWikitextPage(
       Newline("\n")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = true
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("pp-semi-protected") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("small") ]
             [ WtText("yes") ]
@@ -61,8 +61,8 @@ ParsedWikitextPage(
       Newline("\n")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = true
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("pp-move-indef") ]
         [ ]
@@ -70,8 +70,8 @@ ParsedWikitextPage(
       Newline("\n")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = true
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("Featured article") ]
         [ ]
@@ -79,38 +79,38 @@ ParsedWikitextPage(
       Newline("\n")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = true
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("Infobox country\n") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("native_name") ]
             [
               WtText("<span style=\"line-height:1.33em;\">")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''Bundesrepublik Deutschland''") ]
@@ -122,47 +122,47 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("conventional_long_name") ]
             [ WtText("<span style=\"line-height:1.33em;\">Federal Republic of Germany</span>\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("common_name") ]
             [ WtText("Germany\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("national_anthem") ]
             [
               WtText("<center>[[File:Deutschlandlied played by USAREUR Band.ogg]]</center><br />The third stanza of ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Deutschlandlied|Das Lied der Deutschen]]''") ]
@@ -174,86 +174,86 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("image_flag") ]
             [ WtText("Flag of Germany.svg\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("image_coat") ]
             [ WtText("Coat of Arms of Germany.svg\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("image_map") ]
             [ WtText("EU-Germany.svg\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("map_caption") ]
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("map_caption") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("location_color") ]
                     [ WtText("dark green") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("region") ]
                     [ WtText("Europe") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("region_color") ]
                     [ WtText("dark grey") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("subregion") ]
                     [ WtText("the [[European Union]]") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("subregion_color") ]
                     [ WtText("green") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("legend") ]
                     [ WtText("EU-Germany.svg") ]
@@ -265,23 +265,23 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("official_languages") ]
             [
               WtText("[[German language|German]] ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Ref") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("1") ]
@@ -293,256 +293,256 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("demonym") ]
             [ WtText("German\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("capital") ]
             [ WtText("[[Berlin]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("latd") ]
             [ WtText("52") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("latm") ]
             [ WtText("31") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("latNS") ]
             [ WtText("N") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("longd") ]
             [ WtText("13") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("longm") ]
             [ WtText("23") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("longEW") ]
             [ WtText("E\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("largest_city") ]
             [ WtText("capital\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("government_type") ]
             [ WtText("[[Federal republic|Federal]] [[parliamentary republic]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_title1") ]
             [ WtText("[[President of Germany|President (Head of State)]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_name1") ]
             [ WtText("[[Christian Wulff]] ([[Christian Democratic Union (Germany)|CDU]])\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_title2") ]
             [ WtText("[[Chancellor of Germany (Federal Republic of Germany)|Chancellor (Head of Government)]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_name2") ]
             [ WtText("[[Angela Merkel]] ([[Christian Democratic Union (Germany)|CDU]])\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_title3") ]
             [ WtText("[[President of the Bundestag]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_name3") ]
             [ WtText("[[Norbert Lammert]] ([[Christian Democratic Union (Germany)|CDU]])\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_title4") ]
             [ WtText("[[President of the Bundesrat]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("leader_name4") ]
             [ WtText("[[Hannelore Kraft]] ([[Social Democratic Party of Germany|SPD]])\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("sovereignty_type") ]
             [ WtText("[[Kingdom of Germany|Formation]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("sovereignty_note") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_event1") ]
             [ WtText("[[Holy Roman Empire]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_date1") ]
             [ WtText("2 February 962\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_event2") ]
             [ WtText("[[Unification of Germany|Unification]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_date2") ]
             [ WtText("18 January 1871\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_event3") ]
             [ WtText("[[History of Germany|Federal Republic]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_date3") ]
             [ WtText("23 May 1949\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_event4") ]
             [ WtText("[[German reunification|Reunification]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("established_date4") ]
             [ WtText("3 October 1990\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("accessionEUdate") ]
             [ WtText("25 March 1957\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("EUseats") ]
             [ WtText("99\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("area_km2") ]
             [ WtText("357,021\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("area_sq_mi") ]
             [
@@ -559,96 +559,96 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("area_rank") ]
             [ WtText("63rd\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("area_magnitude") ]
             [ WtText("1 E11\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("percent_water") ]
             [ WtText("2.416\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_estimate ") ]
             [ WtText(" 81,757,600\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_estimate_year ") ]
             [ WtText(" 2010\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_estimate_rank ") ]
             [ WtText(" 15th\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_census ") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_census_year ") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_estimate_year ") ]
             [ WtText(" Jan.&nbsp;1,&nbsp;2010\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_estimate_rank ") ]
             [ WtText(" 15th\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_density_km2 ") ]
             [ WtText(" 229\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_density_sq_mi ") ]
             [
@@ -665,24 +665,24 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("population_density_rank ") ]
             [ WtText(" 55th\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_PPP_year ") ]
             [ WtText(" 2010\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_PPP ") ]
             [
@@ -709,16 +709,16 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_PPP_rank") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_PPP_per_capita") ]
             [
@@ -745,16 +745,16 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_PPP_per_capita_rank") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_nominal") ]
             [
@@ -781,24 +781,24 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_nominal_rank") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_nominal_year") ]
             [ WtText("2010\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_nominal_per_capita") ]
             [
@@ -825,31 +825,31 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("GDP_nominal_per_capita_rank") ]
             [ WtText("\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("HDI_year") ]
             [ WtText("2010\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("HDI") ]
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("increase") ]
                 [ ]
@@ -877,55 +877,55 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("HDI_rank") ]
             [ WtText("10th\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("HDI_category") ]
             [ WtText("<span style=\"color:#090;\">very&nbsp;high</span>\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("Gini") ]
             [
               WtText("27 ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Update after") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("2011") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("04") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("reason") ]
                     [ WtText("Regularly check CIA factbook or http://www.wider.unu.edu/research/Database/en_GB/wiid/ ") ]
@@ -937,39 +937,39 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("Gini_year") ]
             [ WtText("2006\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("Gini_category") ]
             [ WtText("<span style=\"color:#090;\">low</span>\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("currency") ]
             [
               WtText("[[Euro]] ([[Euro sign|\u20AC]])")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Ref") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("2") ]
@@ -981,71 +981,71 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("currency_code") ]
             [ WtText("EUR\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("time_zone") ]
             [ WtText("CET\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("utc_offset") ]
             [ WtText("+1\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("time_zone_DST") ]
             [ WtText("CEST\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("utc_offset_DST") ]
             [ WtText("+2\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("drives_on") ]
             [ WtText("right\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("cctld") ]
             [
               WtText(" [[.de]] ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Ref") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("3") ]
@@ -1057,78 +1057,78 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("calling_code") ]
             [ WtText("[[Telephone numbers in Germany|49]]\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("ISO_3166-1_alpha2") ]
             [ WtText("DE\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("ISO_3166-1_alpha3") ]
             [ WtText("DEU\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("ISO_3166-1_numeric") ]
             [ WtText("?\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("alt_sport_code") ]
             [ WtText("GER\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("vehicle_code") ]
             [ WtText("D\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("aircraft_code") ]
             [ WtText("D\n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("footnote1") ]
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("note") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("1") ]
@@ -1140,23 +1140,23 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("footnote2") ]
             [
               WtText(" ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("note") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("2") ]
@@ -1168,22 +1168,22 @@ ParsedWikitextPage(
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1] = "=", [2]
               {N} hasName = true
+              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("footnote3") ]
             [
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("note") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("3") ]
@@ -1208,63 +1208,63 @@ ParsedWikitextPage(
       WtText(" (")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("IPAc-en") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("En-uk-Germany.ogg") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("\u02C8") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("d\u0292") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("\u025Cr") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("m") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("\u0259n") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("i") ]
@@ -1281,15 +1281,15 @@ ParsedWikitextPage(
       WtText(" (")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("lang-de") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("Bundesrepublik Deutschland") ]
@@ -1299,31 +1299,31 @@ ParsedWikitextPage(
       WtText(", ")
       Template(
         Properties:
-          RTD = RtData: [0] = "{{", [1], [2] = "}}"
           {N} precededByNewline = false
+          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("IPA-de") ]
         [
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("\u02C8b\u028And\u0259s\u0281epu\u02CCbli\u02D0k \u02C8d\u0254\u028Ft\u0283lant") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("pron") ]
           )
           TemplateArgument(
             Properties:
-              RTD = RtData: [0] = "|", [1], [2]
               {N} hasName = false
+              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
             [ ]
             [ WtText("De-Bundesrepublik_Deutschland.ogg") ]
@@ -2165,15 +2165,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Main") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("History of Germany") ]
@@ -2194,23 +2194,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Names of Germany") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("List of country name etymologies") ]
@@ -2331,23 +2331,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Germanic peoples") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Germania") ]
@@ -2854,23 +2854,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Migration Period") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Franks") ]
@@ -3022,15 +3022,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Holy Roman Empire") ]
@@ -3040,23 +3040,23 @@ ParsedWikitextPage(
               Newline("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("See also") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Medieval demography") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Ostsiedlung") ]
@@ -3798,15 +3798,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("German Confederation") ]
@@ -4201,23 +4201,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("German Empire") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("World War I") ]
@@ -4378,23 +4378,23 @@ ParsedWikitextPage(
               WtText(" dynasty of Prussia ruled the new empire, whose capital was Berlin. The empire was a unification of all the scattered parts of Germany except Austria (")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("[[Kleindeutsche L\u00F6sung|''Kleindeutschland'']]") ]
@@ -4475,23 +4475,23 @@ ParsedWikitextPage(
               WtText("In the ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Gr\u00FCnderzeit]]''") ]
@@ -4896,15 +4896,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Weimar Republic") ]
@@ -5122,23 +5122,23 @@ ParsedWikitextPage(
               WtText(", and Nazi) ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Dolchsto\u00DFlegende]]''") ]
@@ -5188,23 +5188,23 @@ ParsedWikitextPage(
               WtText("\" in favour of a ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Council communism|R\u00E4terepublik]]''") ]
@@ -5293,15 +5293,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Nazi Germany") ]
@@ -6085,8 +6085,8 @@ ParsedWikitextPage(
               Newline("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Clear") ]
                 [ ]
@@ -6107,15 +6107,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("History of Germany (1945\u20131990)") ]
@@ -6452,23 +6452,23 @@ ParsedWikitextPage(
               WtText("\", was allied with the United States, the UK and France. The country came to enjoy prolonged economic growth beginning in the early 1950s (")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Wirtschaftswunder]]''") ]
@@ -6508,23 +6508,23 @@ ParsedWikitextPage(
               WtText(" became part of West Germany by virtue of article 23 ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Grundgesetz]]''") ]
@@ -6760,23 +6760,23 @@ ParsedWikitextPage(
               WtText("'s ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("lang") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("de") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("''[[Ostpolitik]]''") ]
@@ -6939,15 +6939,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("History of Germany since 1990") ]
@@ -7249,15 +7249,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Main") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Geography of Germany") ]
@@ -7312,47 +7312,47 @@ ParsedWikitextPage(
           WtText("Germany is located in the Central Europe, the territory covers ")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = false
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("convert") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("357021") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("km2") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("sqmi") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("0") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("abbr") ]
                 [ WtText("on") ]
@@ -7362,47 +7362,47 @@ ParsedWikitextPage(
           WtText(", consisting of ")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = false
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("convert") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("349223") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("km2") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("sqmi") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("0") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("abbr") ]
                 [ WtText("on") ]
@@ -7412,47 +7412,47 @@ ParsedWikitextPage(
           WtText(" of land and ")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = false
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("convert") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("7798") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("km2") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("sqmi") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("0") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("abbr") ]
                 [ WtText("on") ]
@@ -7557,47 +7557,47 @@ ParsedWikitextPage(
           WtText(" at ")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = false
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("convert") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("2962") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("m") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("ft") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("0") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("disp") ]
                 [ WtText("s") ]
@@ -7637,47 +7637,47 @@ ParsedWikitextPage(
           WtText(" at ")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = false
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("convert") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("3.54") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("m") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("ft") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("1") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("disp") ]
                 [ WtText("s") ]
@@ -7816,23 +7816,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("States of Germany") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("List of administrative divisions of Germany") ]
@@ -7901,15 +7901,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("German Federal States") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("options") ]
                     [ WtText("float:left; font-size:90%; border:3px; max-width:480px; width:50%;") ]
@@ -9371,79 +9371,79 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("multiple image\n   ") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" align ") ]
                     [ WtText(" right\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image1 ") ]
                     [ WtText(" Sylt Rotes Kliff.jpg\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width1 ") ]
                     [ WtText(" 177\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption1 ") ]
                     [ WtText(" Summer coastal climate on the island [[Sylt]]  in [[Schleswig-Holstein]]\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt1 ") ]
                     [ WtText(" Coastal dunes\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image2 ") ]
                     [ WtText(" Th\u00FCringerwald.JPG\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width2 ") ]
                     [ WtText(" 210\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption2 ") ]
                     [ WtText("  [[Thuringian Forest]]s during wintertime\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt2 ") ]
                     [ WtText(" Thuringian Forest\n\n") ]
@@ -9532,39 +9532,39 @@ ParsedWikitextPage(
               WtText("Winters are mild and summers tend to be cool, though temperatures can exceed ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("convert") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("30") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("\u00B0C") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("\u00B0F") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("lk") ]
                     [ WtText("on") ]
@@ -9616,79 +9616,79 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("multiple image\n   ") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" align ") ]
                     [ WtText(" right\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width2 ") ]
                     [ WtText(" 202\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image2    ") ]
                     [ WtText(" Hintersee.jpg\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption2   ") ]
                     [ WtText(" [[Alps|Alpine]] terrain in [[Bavaria]]. One third of the country's area is covered with woods.\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt2 ") ]
                     [ WtText(" Alpine terrain\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width1 ") ]
                     [ WtText(" 180\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image1    ") ]
                     [ WtText(" Cervus elaphus 11.jpg\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption1   ") ]
                     [ WtText(" [[Red Deer|Deer]] are widespread species to be found in the wild.\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt1 ") ]
                     [ WtText(" Red Deer\n") ]
@@ -9958,79 +9958,79 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("multiple image\n   ") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" align ") ]
                     [ WtText(" right\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width2 ") ]
                     [ WtText(" 200\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image2    ") ]
                     [ WtText(" Aquila chrysaetos Flickr.jpg\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption2   ") ]
                     [ WtText(" The [[golden eagle|eagle]] is a protected bird of prey and the national [[heraldic animal]].\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt2 ") ]
                     [ WtText(" Eagle\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width1 ") ]
                     [ WtText(" 185\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image1    ") ]
                     [ WtText(" HeideblueteTiefental.JPG\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption1   ") ]
                     [ WtText(" The [[L\u00FCneburg Heath Nature Reserve]] in [[Lower Saxony]]\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt1 ") ]
                     [ WtText(" L\u00FCneburg Heath\n") ]
@@ -10158,15 +10158,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Main") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Politics of Germany") ]
@@ -10924,23 +10924,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Judiciary of Germany") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Law enforcement in Germany") ]
@@ -11580,15 +11580,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Foreign relations of Germany") ]
@@ -12087,15 +12087,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Bundeswehr") ]
@@ -12471,23 +12471,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("As of") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("2009") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("11") ]
@@ -12580,8 +12580,8 @@ ParsedWikitextPage(
               Newline("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("clearleft") ]
                 [ ]
@@ -12604,15 +12604,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Main") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Economy of Germany") ]
@@ -14630,23 +14630,23 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Transport in Germany") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Rail transport in Germany") ]
@@ -14948,15 +14948,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Energy in Germany") ]
@@ -15146,15 +15146,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("German inventors and discoverers") ]
@@ -15572,15 +15572,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Science and technology in Germany") ]
@@ -16107,31 +16107,31 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Main") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Demographics of Germany") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Germans") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Social issues in Germany") ]
@@ -16554,15 +16554,15 @@ ParsedWikitextPage(
               WtText(" ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("As of") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("2008") ]
@@ -16681,31 +16681,31 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("See also") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Metropolitan Regions in Germany") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("List of cities in Germany") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("List of cities in Germany with more than 100,000 inhabitants") ]
@@ -19089,55 +19089,55 @@ ParsedWikitextPage(
                               WtText("Source: ")
                               Template(
                                 Properties:
-                                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                   {N} precededByNewline = false
+                                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                 [ WtText("cite web ") ]
                                 [
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1] = "=", [2]
                                       {N} hasName = true
+                                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                     [ WtText("title") ]
                                     [ WtText("Mitglieder des Deutschen St\u00E4dtetages ") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1] = "=", [2]
                                       {N} hasName = true
+                                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                     [ WtText("publisher") ]
                                     [ WtText("Deutschen St\u00E4dtetag ") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1] = "=", [2]
                                       {N} hasName = true
+                                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                     [ WtText("date") ]
                                     [ WtText("31 December 2009 ") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1] = "=", [2]
                                       {N} hasName = true
+                                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                     [ WtText("accessdate") ]
                                     [ WtText("18 February 2011 ") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1] = "=", [2]
                                       {N} hasName = true
+                                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                     [ WtText("url") ]
                                     [ WtText("http://www.staedtetag.de/10/staedte/nach_einwohner/index.html ") ]
                                   )
                                   TemplateArgument(
                                     Properties:
-                                      RTD = RtData: [0] = "|", [1] = "=", [2]
                                       {N} hasName = true
+                                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                     [ WtText("language") ]
                                     [ WtText("German") ]
@@ -19169,15 +19169,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Languages of Germany") ]
@@ -19508,79 +19508,79 @@ ParsedWikitextPage(
               Newline("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("multiple image\n   ") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" align ") ]
                     [ WtText(" left\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width2 ") ]
                     [ WtText(" 170\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image2    ") ]
                     [ WtText(" De-Faust - Der Trag\u00F6die erster Teil-Prolog und Auf dem Theater-wikisource.ogg\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption2   ") ]
                     [ WtText(" Spoken German in [[Goethe's Faust]]\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt2 ") ]
                     [ WtText(" Goethe\u00B4s German\n\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" width1 ") ]
                     [ WtText(" 100\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" image1    ") ]
                     [ WtText(" Faust spricht mit dem Erdgeist, Margret Hofheinz-D\u00F6ring, \u00D6l, 1969 (WV-Nr.4385).jpg\n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" caption1   ") ]
                     [ WtText(" \n   ") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText(" alt1 ") ]
                     [ WtText(" Faust\n") ]
@@ -19746,15 +19746,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Religion in Germany") ]
@@ -19998,70 +19998,70 @@ ParsedWikitextPage(
               Newline("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("bar box\n") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("title") ]
                     [ WtText("Religion in Germany (2008)\n") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("titlebar") ]
                     [ WtText("#ddd\n") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("float") ]
                     [ WtText("left\n") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("bars") ]
                     [
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Irreligion|No Religion]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("Yellow") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("34.1") ]
@@ -20071,31 +20071,31 @@ ParsedWikitextPage(
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Roman Catholicism]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("Orange") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("30.0") ]
@@ -20105,31 +20105,31 @@ ParsedWikitextPage(
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Protestantism]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("MediumAquamarine") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("29.9") ]
@@ -20139,31 +20139,31 @@ ParsedWikitextPage(
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Islam]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("#f99") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("4.0") ]
@@ -20173,31 +20173,31 @@ ParsedWikitextPage(
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Eastern Orthodox Church|Orthodox Christianity]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("DarkGray") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("1.6") ]
@@ -20207,31 +20207,31 @@ ParsedWikitextPage(
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Judaism]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("Blue") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("0.2") ]
@@ -20241,31 +20241,31 @@ ParsedWikitextPage(
                       WtText("\n")
                       Template(
                         Properties:
-                          RTD = RtData: [0] = "{{", [1], [2] = "}}"
                           {N} precededByNewline = true
+                          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("bar percent") ]
                         [
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("[[Buddhism]]") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("Black") ]
                           )
                           TemplateArgument(
                             Properties:
-                              RTD = RtData: [0] = "|", [1], [2]
                               {N} hasName = false
+                              {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                             [ ]
                             [ WtText("0.2") ]
@@ -20659,15 +20659,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Education in Germany") ]
@@ -21103,15 +21103,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Health in Germany") ]
@@ -21405,15 +21405,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Main") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Culture of Germany") ]
@@ -21902,15 +21902,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("German literature") ]
@@ -22575,15 +22575,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("German philosophy") ]
@@ -22895,15 +22895,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Cinema of Germany") ]
@@ -23547,15 +23547,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Music of Germany") ]
@@ -24604,15 +24604,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Sport in Germany") ]
@@ -25310,15 +25310,15 @@ ParsedWikitextPage(
             Paragraph([
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Main") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("German cuisine") ]
@@ -26002,31 +26002,31 @@ ParsedWikitextPage(
               )
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("Update after") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("2011") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("09") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1] = "=", [2]
                       {N} hasName = true
+                      {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                     [ WtText("reason") ]
                     [ WtText("elections in Berlin") ]
@@ -26128,8 +26128,8 @@ ParsedWikitextPage(
               Newline("\n")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = true
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("-") ]
                 [ ]
@@ -26152,23 +26152,23 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Portal box") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Germany") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("European Union") ]
@@ -26200,31 +26200,31 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Template group\n") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("title ") ]
                 [ WtText(" Articles Related to Germany\n") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("list ") ]
                 [
                   WtText("\n")
                   Template(
                     Properties:
-                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                       {N} precededByNewline = true
+                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                     [ WtText("Germany topics") ]
                     [ ]
@@ -26232,15 +26232,15 @@ ParsedWikitextPage(
                   WtText("\n")
                   Template(
                     Properties:
-                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                       {N} precededByNewline = true
+                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                     [ WtText("States of Germany ") ]
                     [
                       TemplateArgument(
                         Properties:
-                          RTD = RtData: [0] = "|", [1] = "=", [2]
                           {N} hasName = true
+                          {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                         [ WtText("titlestyle") ]
                         [ WtText("background:#ddf;") ]
@@ -26250,53 +26250,53 @@ ParsedWikitextPage(
                   WtText("\n")
                   Template(
                     Properties:
-                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                       {N} precededByNewline = true
+                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                     [ WtText("Template group\n") ]
                     [
                       TemplateArgument(
                         Properties:
-                          RTD = RtData: [0] = "|", [1] = "=", [2]
                           {N} hasName = true
+                          {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                         [ WtText("title ") ]
                         [ WtText(" Geographic locale\n") ]
                       )
                       TemplateArgument(
                         Properties:
-                          RTD = RtData: [0] = "|", [1] = "=", [2]
                           {N} hasName = true
+                          {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                         [ WtText("list ") ]
                         [
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("Geographic location\n ") ]
                             [
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" Northwest ") ]
                                 [
                                   WtText(" ''[[North Sea]]'' <br /> ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("The Netherlands") ]
@@ -26308,23 +26308,23 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" North ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Denmark") ]
@@ -26336,31 +26336,31 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" Northeast ") ]
                                 [ WtText(" ''[[Baltic Sea]]''\n ") ]
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" West ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Belgium") ]
@@ -26370,15 +26370,15 @@ ParsedWikitextPage(
                                   WtText(" <br /> ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Luxembourg") ]
@@ -26390,23 +26390,23 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" Centre ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flagicon") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Germany") ]
@@ -26418,23 +26418,23 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" East ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Poland") ]
@@ -26444,15 +26444,15 @@ ParsedWikitextPage(
                                   WtText(" <br /> ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Czech Republic") ]
@@ -26464,23 +26464,23 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" Southwest ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("France") ]
@@ -26492,23 +26492,23 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" South ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Switzerland") ]
@@ -26518,15 +26518,15 @@ ParsedWikitextPage(
                                   WtText(" \u2022 ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Austria") ]
@@ -26538,23 +26538,23 @@ ParsedWikitextPage(
                               )
                               TemplateArgument(
                                 Properties:
-                                  RTD = RtData: [0] = "|", [1] = "=", [2]
                                   {N} hasName = true
+                                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                                 [ WtText(" Southeast ") ]
                                 [
                                   WtText(" ")
                                   Template(
                                     Properties:
-                                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                                       {N} precededByNewline = false
+                                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                     [ WtText("Flag") ]
                                     [
                                       TemplateArgument(
                                         Properties:
-                                          RTD = RtData: [0] = "|", [1], [2]
                                           {N} hasName = false
+                                          {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                                         [ ]
                                         [ WtText("Austria") ]
@@ -26569,8 +26569,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("Sovereign states of Europe") ]
                             [ ]
@@ -26578,8 +26578,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("Countries bordering the Baltic Sea") ]
                             [ ]
@@ -26592,31 +26592,31 @@ ParsedWikitextPage(
                   WtText("\n")
                   Template(
                     Properties:
-                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                       {N} precededByNewline = true
+                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                     [ WtText("Template group\n") ]
                     [
                       TemplateArgument(
                         Properties:
-                          RTD = RtData: [0] = "|", [1] = "=", [2]
                           {N} hasName = true
+                          {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                         [ WtText("title ") ]
                         [ WtText(" International membership\n") ]
                       )
                       TemplateArgument(
                         Properties:
-                          RTD = RtData: [0] = "|", [1] = "=", [2]
                           {N} hasName = true
+                          {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                         [ WtText("list ") ]
                         [
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("EU members") ]
                             [ ]
@@ -26624,8 +26624,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("North Atlantic Treaty Organisation (NATO)") ]
                             [ ]
@@ -26633,8 +26633,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("Organisation for Economic Co-operation and Development") ]
                             [ ]
@@ -26642,8 +26642,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("G8 nations") ]
                             [ ]
@@ -26651,8 +26651,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("G20") ]
                             [ ]
@@ -26660,8 +26660,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("WTO members") ]
                             [ ]
@@ -26669,8 +26669,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("Council of Europe") ]
                             [ ]
@@ -26678,8 +26678,8 @@ ParsedWikitextPage(
                           WtText("\n")
                           Template(
                             Properties:
-                              RTD = RtData: [0] = "{{", [1], [2] = "}}"
                               {N} precededByNewline = true
+                              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                             [ WtText("OSCE") ]
                             [ ]
@@ -26692,8 +26692,8 @@ ParsedWikitextPage(
                   WtText("\n")
                   Template(
                     Properties:
-                      RTD = RtData: [0] = "{{", [1], [2] = "}}"
                       {N} precededByNewline = true
+                      {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                     [ WtText("National personifications") ]
                     [ ]
@@ -26719,15 +26719,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Reflist") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("group") ]
                 [ WtText("note") ]
@@ -26749,15 +26749,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Reflist") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1] = "=", [2]
                   {N} hasName = true
+                  {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
                 [ WtText("colwidth") ]
                 [ WtText("30em") ]
@@ -26780,31 +26780,31 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Spoken Wikipedia-2") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("2008-06-24") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Germany (Spoken Article) Part 1.ogg") ]
               )
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Germany (Spoken Article) Part 2.ogg") ]
@@ -26814,15 +26814,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Sister project links") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Germany") ]
@@ -26923,23 +26923,23 @@ ParsedWikitextPage(
               WtText(" ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("CIA World Factbook link") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("gm") ]
                   )
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Germany") ]
@@ -27020,15 +27020,15 @@ ParsedWikitextPage(
               WtText(" ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("dmoz") ]
                 [
                   TemplateArgument(
                     Properties:
-                      RTD = RtData: [0] = "|", [1], [2]
                       {N} hasName = false
+                      {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                     [ ]
                     [ WtText("Regional/Europe/Germany") ]
@@ -27042,15 +27042,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Wikiatlas") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("Germany") ]
@@ -27102,8 +27102,8 @@ ParsedWikitextPage(
               WtText(" \u2013 Federal Statistical Office Germany ")
               Template(
                 Properties:
-                  RTD = RtData: [0] = "{{", [1], [2] = "}}"
                   {N} precededByNewline = false
+                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("en icon") ]
                 [ ]
@@ -27115,15 +27115,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("osmrelation-inline") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("51477") ]
@@ -27304,15 +27304,15 @@ ParsedWikitextPage(
         Paragraph([
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link GA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("da") ]
@@ -27322,15 +27322,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link GA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("de") ]
@@ -27340,15 +27340,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link GA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("eo") ]
@@ -27358,15 +27358,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link GA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("es") ]
@@ -27376,15 +27376,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link GA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("lt") ]
@@ -27394,15 +27394,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link GA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("zh") ]
@@ -27412,15 +27412,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("af") ]
@@ -27430,15 +27430,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("gv") ]
@@ -27448,15 +27448,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("hr") ]
@@ -27466,15 +27466,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("lv") ]
@@ -27484,15 +27484,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("mr") ]
@@ -27502,15 +27502,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("nah") ]
@@ -27520,15 +27520,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("pt") ]
@@ -27538,15 +27538,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("sq") ]
@@ -27556,15 +27556,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("tr") ]
@@ -27574,15 +27574,15 @@ ParsedWikitextPage(
           Newline("\n")
           Template(
             Properties:
-              RTD = RtData: [0] = "{{", [1], [2] = "}}"
               {N} precededByNewline = true
+              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
             [ WtText("Link FA") ]
             [
               TemplateArgument(
                 Properties:
-                  RTD = RtData: [0] = "|", [1], [2]
                   {N} hasName = false
+                  {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                 [ ]
                 [ WtText("yi") ]

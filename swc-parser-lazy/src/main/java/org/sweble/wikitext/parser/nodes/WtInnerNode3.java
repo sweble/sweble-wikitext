@@ -91,7 +91,7 @@ public abstract class WtInnerNode3
 		return new WtInnerNode3PropertyIterator();
 	}
 	
-	private class WtInnerNode3PropertyIterator
+	protected class WtInnerNode3PropertyIterator
 			extends
 				AstNodePropertyIterator
 	{
