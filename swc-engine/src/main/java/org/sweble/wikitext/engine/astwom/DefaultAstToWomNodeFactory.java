@@ -31,7 +31,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.LinkTargetType;
-import org.sweble.wikitext.parser.nodes.Bold;
+import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.Newline;
@@ -128,9 +128,9 @@ public class DefaultAstToWomNodeFactory
 		return new ParagraphAdapter(this, para);
 	}
 	
-	public WomNode visit(Bold bold)
+	public WomNode visit(WtBold wtBold)
 	{
-		return new BoldAdapter(this, bold);
+		return new BoldAdapter(this, wtBold);
 	}
 	
 	public WomNode visit(HorizontalRule hr)

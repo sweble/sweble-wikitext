@@ -23,10 +23,10 @@ import java.util.regex.Pattern;
 import lombok.Getter;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.Bold;
+import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.Italics;
+import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.Redirect;
 import org.sweble.wikitext.parser.nodes.TagExtension;
@@ -232,13 +232,13 @@ public class Toolbox
 		return n;
 	}
 	
-	public static Bold addRtData(Bold n)
+	public static WtBold addRtData(WtBold n)
 	{
 		n.setRtd("'''", RtData.SEP, "'''");
 		return n;
 	}
 	
-	public static WtNode addRtData(Italics n)
+	public static WtNode addRtData(WtItalics n)
 	{
 		n.setRtd("''", RtData.SEP, "''");
 		return n;

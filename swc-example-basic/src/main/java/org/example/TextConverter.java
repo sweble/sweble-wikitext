@@ -24,13 +24,11 @@ import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.nodes.Bold;
 import org.sweble.wikitext.parser.nodes.ExternalLink;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.Italics;
 import org.sweble.wikitext.parser.nodes.ListItem;
 import org.sweble.wikitext.parser.nodes.OrderedList;
 import org.sweble.wikitext.parser.nodes.PageSwitch;
@@ -43,6 +41,8 @@ import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
 import org.sweble.wikitext.parser.nodes.Url;
 import org.sweble.wikitext.parser.nodes.Whitespace;
+import org.sweble.wikitext.parser.nodes.WtBold;
+import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -182,17 +182,17 @@ public class TextConverter
 		write(" ");
 	}
 	
-	public void visit(Bold b)
+	public void visit(WtBold b)
 	{
 		write("**");
-		iterate(b.getContent());
+		iterate(b);
 		write("**");
 	}
 	
-	public void visit(Italics i)
+	public void visit(WtItalics i)
 	{
 		write("//");
-		iterate(i.getContent());
+		iterate(i);
 		write("//");
 	}
 	

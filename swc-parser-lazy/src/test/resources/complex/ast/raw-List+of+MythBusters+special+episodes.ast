@@ -24,7 +24,7 @@ ParsedWikitextPage(
       )
       Newline("\n")
       WtText("The cast of the television series ")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -762,7 +762,7 @@ ParsedWikitextPage(
             LinkTitle([ ])
           )
           WtText(" website, as well as during the commercials in between ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -988,7 +988,7 @@ ParsedWikitextPage(
                 [ ]
               )
               WtText(" This test was also aired in ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -1121,7 +1121,7 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([
               WtText("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -1462,7 +1462,7 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([
               WtText("There were two additional myths addressed in addition to those in the ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -1910,7 +1910,7 @@ ParsedWikitextPage(
             LinkTitle([ ])
           )
           WtText("'s editions of ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -2712,7 +2712,7 @@ ParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      Italics(
+                      WtItalics(
                         Properties:
                           {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -2963,7 +2963,7 @@ ParsedWikitextPage(
                 )
                 [
                   WtText("View the ")
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 

@@ -5,13 +5,13 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [
           WtText(" A ")
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 

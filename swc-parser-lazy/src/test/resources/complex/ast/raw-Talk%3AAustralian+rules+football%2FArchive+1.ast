@@ -17,7 +17,7 @@ ParsedWikitextPage(
     Newline("\n")
     Newline("\n")
     Paragraph([
-      Bold(
+      WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -260,7 +260,7 @@ ParsedWikitextPage(
 
                   [
                     WtText("It's funny that I should be accused of parochialism when I am trying to direct everyone to the available evidence - rather than simpy relying on the superficial similarity between Gaelic Football and aussie rules.  I can assure everyone that if you wanted to do an in depth analysis of the rules of both codes that you would find more dissimilarities than similarities.  And it's not just Geoff Blainey, even as a kid growing up in the 60s I was aware that the first game of footy took place in 1858 between Melb Grammar and Scotch, and that a letter had appeared in the paper around the same time imploring cricketers to take up footy over the winter to keep fit.  As I have said before, we know a fair bit about how and why footy came to be played in Melbourne, and the personalities involved - but it is equally true that we do not know all that much about that first game.  What I can be confident of is that it would have looked nothing like either aussie rules or gaelic of the modern age but rather more like a version of rugby a la Tom Brown's Schooldays (was that his name?  you know what I mean).  And it is instructive that I should refer to him, because that book is set in the English public schools of the 1840s and without doubt, that is the source of the Aussie Rules that was played in 1850s and 1860s - all the main pioneers of aussie rules had attended these schools.  In other words, like all the different rules of football at that time, there was a constant tension between running with the ball and kicking the ball - so it should not surprise any of us that ")
-                    Bold(
+                    WtBold(
                       Properties:
                         {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -342,21 +342,21 @@ ParsedWikitextPage(
 
                 [
                   WtText("Pippu, you say: \"I can assure everyone that if you wanted to do an in depth analysis of the rules of both codes that you would find more dissimilarities than similarities.\" But rules on paper are just that, rules on paper; the two games are clearly similar in the way they are played. Can you imagine a compromise/hybrid (like International rules) between Aussie rules and either code of rugby? Or soccer and rugby? I'm sorry, I know it's an institution, but the 1858 game between Melb Grammar and Scotch was ")
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("not") ]
                   )
                   WtText(" the first time any kind of football was played in Melbourne, and since we don't know what rules they used, it has as much to do with Aussie rules as a game of rugby (codified in 1845) or soccer. IMO, Wills' letter to ")
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("Bell's Life") ]
                   )
                   WtText(" is the beginning, as was the experimental game played in the Richmond Paddock (Yarra Park) as a result, three weeks later. The same day Melbourne Grammar played a St Kilda team. This was ")
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -370,7 +370,7 @@ ParsedWikitextPage(
                         Warning (none): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:15:1220 - 1221: "[" : This looks like a External Link, however the actual URL is missing.
                       ]
                   )
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -492,7 +492,7 @@ ParsedWikitextPage(
 
                     [
                       WtText("Are we in disagreement on any of these points?  All I am saying is that the Gaelic influence on aussie rules is inconclusive (at best!) and that ")
-                      Bold(
+                      WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -625,14 +625,14 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([
           WtText("No, I agree with the author of the article. Where he says there are other ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("leagues") ]
           )
           WtText(" in Australia, he is not referring to variants of the sport, he is referring to other groups of teams who play each other- other divisions, so to speak. For instance, in Western Australia, there is the WAFL- the ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -1008,7 +1008,7 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([
           WtText("I just had another look at Blainey's ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -1022,7 +1022,7 @@ ParsedWikitextPage(
                 Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:69:132 - 133: "&" : This looks like a XML Reference, however the entity name or character code is missing.
               ]
           )
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -1588,7 +1588,7 @@ ParsedWikitextPage(
                       LinkTitle([ ])
                     )
                     WtText(". I beleive that the Hall of Fame does not belong because it is the ")
-                    Bold(
+                    WtBold(
                       Properties:
                         {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -2493,7 +2493,7 @@ ParsedWikitextPage(
 
             [
               WtText("This was the passage I restored (in ")
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -2513,7 +2513,7 @@ ParsedWikitextPage(
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -2549,7 +2549,7 @@ ParsedWikitextPage(
                         LinkTitle([ ])
                       )
                       WtText(" in which it is played")
-                      Bold(
+                      WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -2761,7 +2761,7 @@ ParsedWikitextPage(
               {N} rtd = RTD[ ":" <o> "" ]
 
             [
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -2778,7 +2778,7 @@ ParsedWikitextPage(
               {N} rtd = RTD[ ":" <o> "" ]
 
             [
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -2796,7 +2796,7 @@ ParsedWikitextPage(
               {N} rtd = RTD[ ":" <o> "" ]
 
             [
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -2909,7 +2909,7 @@ ParsedWikitextPage(
                   {N} rtd = RTD[ "::" <o> "" ]
 
                 [
-                  Bold(
+                  WtBold(
                     Properties:
                       {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -3959,14 +3959,14 @@ ParsedWikitextPage(
 
             [
               WtText("Sources should definitely be added. If you have any more examples of POV sections, then please point them out, but please try to avoid reading things that aren't there. I have agreed with you that the wording \"most popular spectator sport\" is possibly misleading, and regarded as the national sport is dodgy, and have changed the article accordingly. I'm not sure what you are getting at with the rest of your comments. You do seem to think television audiences are important, so if you have some sources about them, please tell us, rather than complaining about the existence of other statistics. No one at all has implied that the ABS figures give an overall indicator of the popularity of the sport, they have simply used them for what they ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("are") ]
               )
               WtText(" valid for, so I am still not sure what you are referring to. I will say again that the ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -3994,7 +3994,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4140,7 +4140,7 @@ ParsedWikitextPage(
 
             [
               WtText("That site doesn't have stats yet for the last Socceroos game. Every source I have seen says that soccer is the biggest sport in terms of ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -4209,7 +4209,7 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([
           Newline("\n")
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4222,7 +4222,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4258,7 +4258,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4670,7 +4670,7 @@ ParsedWikitextPage(
         Paragraph([
           WtText("To BJMurph")
           Newline("\n")
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4683,7 +4683,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4695,7 +4695,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4707,7 +4707,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4723,7 +4723,7 @@ ParsedWikitextPage(
           Newline("\n")
           WtText("To Grant65")
           Newline("\n")
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4735,7 +4735,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4747,7 +4747,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -4797,7 +4797,7 @@ ParsedWikitextPage(
 
             [
               WtText("You have indeed misunderstood my point, I beleive the article claims that Australian Football is the most popular ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -4861,7 +4861,7 @@ ParsedWikitextPage(
         Newline("\n")
         Newline("\n")
         Paragraph([
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5125,7 +5125,7 @@ ParsedWikitextPage(
           [
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5174,7 +5174,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5319,7 +5319,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5331,7 +5331,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5404,7 +5404,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5452,7 +5452,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5483,7 +5483,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5491,7 +5491,7 @@ ParsedWikitextPage(
               )
               Newline("\n")
               WtText("Great.  Now the participation section.  Easily verifiable by the Australian Bureau of statistics web site.  One problem.  It's a pretty vague comment.  ")
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5502,7 +5502,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5554,7 +5554,7 @@ ParsedWikitextPage(
             Newline("\n")
             Newline("\n")
             Paragraph([
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -5573,7 +5573,7 @@ ParsedWikitextPage(
 
                 [
                   WtText("Stating a rank is completley meaningless when there is so much of an argument over what that rank is. The very fact your arguing illustrates that \"one of the most popular\" is the ")
-                  Italics(
+                  WtItalics(
                     Properties:
                       {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -6085,7 +6085,7 @@ ParsedWikitextPage(
 
                         [
                           WtText("I too played \"Aussie Rules\" or \"Australian Rules Football\" (in amongst kick-to-kick, waxing, going for speccies and having pot shots at goal from impossible angles).  All I can add is that I have noticed a trend over the last 10 to 15 years to use the term \"Australian Football\", and indeed some of the major leagues around the country (and maybe even some club names), that may have once had the term \"Rules\" in them, have dropped it of late.  I accept that this is just a gut-feel and I have not surveyed anyone - either way, ")
-                          Italics(
+                          WtItalics(
                             Properties:
                               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -6489,7 +6489,7 @@ ParsedWikitextPage(
               {N} rtd = RTD[ ":" <o> "" ]
 
             [
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -6695,7 +6695,7 @@ ParsedWikitextPage(
                 ]
               )
               WtText(" ")
-              Italics(
+              WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -7371,7 +7371,7 @@ ParsedWikitextPage(
             ]
           )
           WtText(" ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -7491,7 +7491,7 @@ ParsedWikitextPage(
 
               [
                 WtText("poll on references to Aussie rules in the ")
-                Bold(
+                WtBold(
                   Properties:
                     {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -7643,7 +7643,7 @@ ParsedWikitextPage(
         Paragraph([
           WtText("I've added the following text in a comment in the external links section - feel free to change if you don't think it is appropriate:")
           Newline("\n")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "''" ]
 

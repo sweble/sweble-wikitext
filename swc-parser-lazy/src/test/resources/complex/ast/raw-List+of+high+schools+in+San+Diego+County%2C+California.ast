@@ -6,7 +6,7 @@ ParsedWikitextPage(
   [
     Paragraph([
       WtText("This is a ")
-      Bold(
+      WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
 

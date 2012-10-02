@@ -49,7 +49,7 @@ ParsedWikitextPage(
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "" ]
 

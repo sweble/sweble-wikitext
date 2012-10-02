@@ -77,7 +77,7 @@ import de.fau.cs.osr.utils.StringUtils;
  * note "HorizontalRule, \nParagraph" as InheritFromNativeOrXmlElement
  * NativeOrXmlElement .. InheritFromNativeOrXmlElement
  * 
- * note "Bold, Italics" as InheritFromNativeOrXmlElementWithUniversalAttributes
+ * note "WtBold, WtItalics" as InheritFromNativeOrXmlElementWithUniversalAttributes
  * NativeOrXmlElementWithUniversalAttributes .. InheritFromNativeOrXmlElementWithUniversalAttributes
  * 
  * note "Blockquote, Break, \nDel, Div, Font, Ins" as InheritFromXmlElementWithChildren

@@ -5,26 +5,26 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("italic") ]
       )
       Newline("\n")
-      Bold(
+      WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("bold") ]
       )
       Newline("\n")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -37,21 +37,21 @@ ParsedWikitextPage(
     Newline("\n")
     Paragraph([
       WtText("'")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("hmmm") ]
       )
       Newline("\n")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("hmm'") ]
       )
       Newline("\n")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -59,7 +59,7 @@ ParsedWikitextPage(
       )
       WtText("s")
       Newline("\n")
-      Bold(
+      WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
 
@@ -76,7 +76,7 @@ ParsedWikitextPage(
 
         [
           WtText(" ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "" ]
 
@@ -90,7 +90,7 @@ ParsedWikitextPage(
 
         [
           WtText(" ")
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "" ]
 
@@ -104,12 +104,12 @@ ParsedWikitextPage(
 
         [
           WtText(" ")
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "" ]
 
             [
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "" ]
 
@@ -128,7 +128,7 @@ ParsedWikitextPage(
           {N} rtd = RTD[ " " <o> "" ]
 
         [
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "" ]
 
@@ -141,7 +141,7 @@ ParsedWikitextPage(
           {N} rtd = RTD[ "\n " <o> "" ]
 
         [
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "" ]
 
@@ -154,12 +154,12 @@ ParsedWikitextPage(
           {N} rtd = RTD[ "\n " <o> "" ]
 
         [
-          Italics(
+          WtItalics(
             Properties:
               {N} rtd = RTD[ "''" <o> "" ]
 
             [
-              Bold(
+              WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "" ]
 

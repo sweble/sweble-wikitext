@@ -18,8 +18,8 @@
 package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
-import org.sweble.wikitext.parser.nodes.Bold;
-import org.sweble.wikitext.parser.nodes.Italics;
+import org.sweble.wikitext.parser.nodes.WtBold;
+import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -43,7 +43,7 @@ public enum IntermediateTags
 				IntermediateEndTag c,
 				WtNodeList body)
 		{
-			Italics e = new Italics(body);
+			WtItalics e = new WtItalics(body);
 			if (config.isGatherRtData())
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "''";
@@ -69,7 +69,7 @@ public enum IntermediateTags
 				IntermediateEndTag c,
 				WtNodeList body)
 		{
-			Bold e = new Bold(body);
+			WtBold e = new WtBold(body);
 			if (config.isGatherRtData())
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "'''";

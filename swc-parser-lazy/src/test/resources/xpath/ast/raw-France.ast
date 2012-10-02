@@ -380,7 +380,7 @@ Section(
         LinkTitle([ ])
       )
       WtText(" ")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -638,7 +638,7 @@ Section(
         )
       )
       WtText(" did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
@@ -759,7 +759,7 @@ Section(
               LinkTitle([ ])
             )
             WtText(", ")
-            Italics(
+            WtItalics(
               Properties:
                 {N} rtd = RTD[ "''" <o> "''" ]
 

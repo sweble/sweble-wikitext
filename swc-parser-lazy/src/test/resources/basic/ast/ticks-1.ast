@@ -5,26 +5,26 @@ ParsedWikitextPage(
 
   [
     Paragraph([
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("Hallo") ]
       )
       Newline("\n")
-      Bold(
+      WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Hallo") ]
       )
       Newline("\n")
-      Italics(
+      WtItalics(
         Properties:
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [
-          Bold(
+          WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
 
