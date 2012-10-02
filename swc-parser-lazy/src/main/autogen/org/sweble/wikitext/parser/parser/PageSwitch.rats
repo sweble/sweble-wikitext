@@ -54,10 +54,7 @@ WikitextNode PageSwitch =
 private inline WikitextNode PageSwitchChoice =
     name:SwitchName "__"
     {
-      yyValue = new PageSwitch(name);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("__", name, "__"));
+      yyValue = setRtd(new PageSwitch(name), "__", name, "__");
     }
   / &{ isWarningsEnabled() } PageSwitchAutoCorrect
 ;
@@ -65,10 +62,7 @@ private inline WikitextNode PageSwitchChoice =
 private inline WikitextNode PageSwitchAutoCorrect =
     &{ isAutoCorrect(WS_NORMAL) } name:SwitchName '_'
     {
-      yyValue = new PageSwitch(name);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("__", name, "__"));
+      yyValue = setRtd(new PageSwitch(name), "__", name, "__");
 
       fileLooksLikeWarning(
           yyValue,
@@ -90,10 +84,7 @@ private inline WikitextNode PageSwitchAutoCorrect =
     }
   / &{ isAutoCorrect(WS_INFO) } name:SwitchName
     {
-      yyValue = new PageSwitch(name);
-
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt("__", name));
+      yyValue = setRtd(new PageSwitch(name), "__", name);
 
       fileLooksLikeWarning(
           yyValue,
