@@ -36,26 +36,6 @@ body
       return getState().isGatherRtData();
   }
 
-  protected static RtData addRtData(WikitextNode yyValue, Object[]... rts)
-  {
-  	return TextUtils.addRtData(yyValue, rts);
-  }
-
-  protected static Object[] joinRt(Object... objects)
-  {
-  	return TextUtils.joinRt(objects);
-  }
-
-  private static void rtAddString(ArrayList<Object> result, String so)
-  {
-  	TextUtils.rtAddString(result, so);
-  }
-
-  protected static void prependRtData(WikitextNode n, String data)
-  {
-  	TextUtils.prependRtData(n, data);
-  }
-
   private <T extends WikitextNode> T setRtd(T node, String... glue)
   {
     if (isGatherRtData())

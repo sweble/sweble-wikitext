@@ -262,7 +262,7 @@ ParsedWikitextPage(
       WtText("A ")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("wikitable") ]
       )
@@ -432,7 +432,7 @@ ParsedWikitextPage(
           WtText("The following text is inserted when ")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Insert a table") ]
           )
@@ -871,7 +871,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("{|") ]
                   )
@@ -888,7 +888,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|}") ]
                   )
@@ -924,7 +924,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       TagExtension(
@@ -949,7 +949,7 @@ ParsedWikitextPage(
               WtText("  ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("table code goes here") ]
               )
@@ -979,7 +979,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       TagExtension(
@@ -1007,7 +1007,7 @@ ParsedWikitextPage(
               WtText(" An optional ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("table caption") ]
               )
@@ -1022,7 +1022,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|+") ]
                   )
@@ -1073,7 +1073,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       TagExtension(
@@ -1087,7 +1087,7 @@ ParsedWikitextPage(
                       WtText(" ")
                       Italics(
                         Properties:
-                          RTD = RtData: [0] = "''", [1] = "''"
+                          {N} rtd = RTD[ "''" <o> "''" ]
 
                         [ WtText("caption") ]
                       )
@@ -1105,7 +1105,7 @@ ParsedWikitextPage(
               WtText("  ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("table code goes here") ]
               )
@@ -1137,7 +1137,7 @@ ParsedWikitextPage(
               WtText(" To start a new ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [
                   WtText("table ")
@@ -1178,7 +1178,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|-") ]
                   )
@@ -1245,7 +1245,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       TagExtension(
@@ -1270,7 +1270,7 @@ ParsedWikitextPage(
               WtText("  ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("row code goes here") ]
               )
@@ -1300,7 +1300,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       TagExtension(
@@ -1325,7 +1325,7 @@ ParsedWikitextPage(
               WtText("  ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("row code goes here") ]
               )
@@ -1357,7 +1357,7 @@ ParsedWikitextPage(
               WtText(" Type the codes for each ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("table ")
@@ -1453,7 +1453,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -1462,7 +1462,7 @@ ParsedWikitextPage(
               WtText(" ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("cell codes go here") ]
               )
@@ -1507,7 +1507,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -1516,7 +1516,7 @@ ParsedWikitextPage(
               WtText(" ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("cells in the next row go here") ]
               )
@@ -1546,7 +1546,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -1555,7 +1555,7 @@ ParsedWikitextPage(
               WtText(" ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("more cells in the same row here") ]
               )
@@ -1587,7 +1587,7 @@ ParsedWikitextPage(
               WtText(" Cells can be separated with either a new line and new bar, or by a double bar \"")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("||") ]
               )
@@ -1667,7 +1667,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|Cell 1 || Cell 2 || Cell 3") ]
                   )
@@ -1714,7 +1714,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|Cell A") ]
                   )
@@ -1746,7 +1746,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|Cell B") ]
                   )
@@ -1778,7 +1778,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|Cell C") ]
                   )
@@ -1876,7 +1876,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -1910,7 +1910,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -1944,7 +1944,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -1978,7 +1978,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("|") ]
                   )
@@ -2248,7 +2248,7 @@ ParsedWikitextPage(
               WtText(" a row of ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("column headings") ]
               )
@@ -2313,7 +2313,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("! scope=\"col\" | Column heading 1") ]
                   )
@@ -2346,7 +2346,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("! scope=\"col\" | Column heading 2") ]
                   )
@@ -2379,7 +2379,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("! scope=\"col\" | Column heading 3") ]
                   )
@@ -2467,7 +2467,7 @@ ParsedWikitextPage(
               WtText(" the first cell of a row is identified as a ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("row heading") ]
               )
@@ -2565,7 +2565,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("! scope=\"row\" | Row heading 1") ]
                   )
@@ -2618,7 +2618,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("! scope=\"row\" | Row heading A") ]
                   )
@@ -2664,7 +2664,7 @@ ParsedWikitextPage(
               WtText(" Optional ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("parameters") ]
               )
@@ -2707,7 +2707,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("border=\"1\"") ]
                   )
@@ -3425,7 +3425,7 @@ ParsedWikitextPage(
               WtText("As it appears in a browser (see ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -5710,7 +5710,7 @@ ParsedWikitextPage(
               WtText("Table borders default to a complex shaded double-line (the default in HTML); however, those borders can be set to a thin solid line by using a style-parameter (style=\"border: 1px solid darkgray\"), as in the following (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Note: if you intend to use the 'cellpadding' or 'cellspacing' options along with a border, you MUST use this format") ]
               )
@@ -6520,7 +6520,7 @@ ParsedWikitextPage(
                               WtText("Imagine someone scrolling down the page, seeing the tops of \"empty\" columns, and wondering why they're empty. Use \"")
                               Bold(
                                 Properties:
-                                  RTD = RtData: [0] = "'''", [1] = "'''"
+                                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                 [ WtText("valign=top") ]
                               )
@@ -6754,7 +6754,7 @@ ParsedWikitextPage(
                               WtText("Imagine someone scrolling down the page, seeing the tops of \"empty\" columns, and wondering why they're empty. Use \"")
                               Bold(
                                 Properties:
-                                  RTD = RtData: [0] = "'''", [1] = "'''"
+                                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                 [ WtText("valign=top") ]
                               )
@@ -6834,7 +6834,7 @@ ParsedWikitextPage(
             Paragraph([
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("Note: This example is not ")
@@ -6975,7 +6975,7 @@ ParsedWikitextPage(
                           WtText(" ")
                           Bold(
                             Properties:
-                              RTD = RtData: [0] = "'''", [1] = "'''"
+                              {N} rtd = RTD[ "'''" <o> "'''" ]
 
                             [ WtText("An example table") ]
                           )
@@ -7202,7 +7202,7 @@ ParsedWikitextPage(
                                       WtText(" ")
                                       Italics(
                                         Properties:
-                                          RTD = RtData: [0] = "''", [1] = "''"
+                                          {N} rtd = RTD[ "''" <o> "''" ]
 
                                         [ WtText("A table in a table") ]
                                       )
@@ -7859,7 +7859,7 @@ ParsedWikitextPage(
               WtText("Note the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("order of precedence") ]
               )
@@ -8159,7 +8159,7 @@ ParsedWikitextPage(
             Paragraph([
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("Note: because they cause ")
@@ -8188,7 +8188,7 @@ ParsedWikitextPage(
               WtText("Seven different (blue) tables are shown nested inside the cells of a table. Automatically the two tables |A| and |B|B| are vertically aligned instead of the usual side by side of text characters in a cell. \"float\" is used to fix each of tables |C| and |D| to their own position within one cell of the table. This may be used for charts and schemes.  ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Nested tables must start on a new line.") ]
               )
@@ -8198,7 +8198,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Wiki markup") ]
               )
@@ -8298,7 +8298,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8324,7 +8324,7 @@ ParsedWikitextPage(
                         WtText(" ")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("The nested table must be on a new line") ]
                         )
@@ -8349,7 +8349,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("| NESTED") ]
                         )
@@ -8365,7 +8365,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("|-") ]
                         )
@@ -8381,7 +8381,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("| TABLE") ]
                         )
@@ -8397,7 +8397,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8465,7 +8465,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8491,7 +8491,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("| A") ]
                         )
@@ -8507,7 +8507,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8532,7 +8532,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8558,7 +8558,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("| B || B") ]
                         )
@@ -8574,7 +8574,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8631,7 +8631,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8657,7 +8657,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("| C") ]
                         )
@@ -8673,7 +8673,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8698,7 +8698,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8724,7 +8724,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [ WtText("| D") ]
                         )
@@ -8740,7 +8740,7 @@ ParsedWikitextPage(
                         Newline("\n")
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             TagExtension(
@@ -8784,7 +8784,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("As it appears in a browser") ]
               )
@@ -9161,7 +9161,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Wiki markup") ]
               )
@@ -9189,7 +9189,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("As it appears in a browser") ]
               )
@@ -9465,7 +9465,7 @@ ParsedWikitextPage(
               WtText(" for cell ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("G") ]
               )
@@ -9482,21 +9482,21 @@ ParsedWikitextPage(
               WtText(" for cell ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("F") ]
               )
               WtText(" to get another row below ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("G") ]
               )
               WtText(" and ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("F") ]
               )
@@ -9560,7 +9560,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Wiki markup") ]
               )
@@ -9588,7 +9588,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("As it appears in a browser") ]
               )
@@ -9628,7 +9628,7 @@ ParsedWikitextPage(
                       WtText(" ")
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Cells left-aligned, table centered") ]
                       )
@@ -9878,7 +9878,7 @@ ParsedWikitextPage(
               WtText(", a table has always forced an implicit line-wrap (or ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("line-break") ]
               )
@@ -9895,7 +9895,7 @@ ParsedWikitextPage(
                   WtText(" Wikicode (")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("showing table forces line-break") ]
                   )
@@ -9989,7 +9989,7 @@ ParsedWikitextPage(
                   WtText(" Wikicode (")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("table-within-table") ]
                   )
@@ -10742,7 +10742,7 @@ ParsedWikitextPage(
               WtText(" ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("See also ")
@@ -11914,7 +11914,7 @@ ParsedWikitextPage(
           WtText(".  This is because the ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("wikitable") ]
           )
@@ -11931,7 +11931,7 @@ ParsedWikitextPage(
           WtText(" contains a number of ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("table.wikitable") ]
           )
@@ -11957,7 +11957,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Wiki markup") ]
           )
@@ -11995,7 +11995,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("As it appears in a browser") ]
           )
@@ -12403,7 +12403,7 @@ ParsedWikitextPage(
           WtText("Notice that the table retains the gray background of the wikitable class, and the headers are still bold and centered.  But now the text formatting has been overridden by the local ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("style") ]
           )
@@ -12587,7 +12587,7 @@ ParsedWikitextPage(
             [
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("Further information ")
@@ -12626,7 +12626,7 @@ ParsedWikitextPage(
           WtText("; for details see ")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [
               InternalLink(
@@ -12672,7 +12672,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Wiki markup") ]
           )
@@ -12710,7 +12710,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("As it appears in a browser") ]
           )
@@ -13082,7 +13082,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Wiki markup") ]
               )
@@ -13121,7 +13121,7 @@ ParsedWikitextPage(
               Newline("\n")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("As it appears in a browser") ]
               )
@@ -13986,7 +13986,7 @@ ParsedWikitextPage(
           WtText("Other types of ")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("table") ]
           )
@@ -14024,7 +14024,7 @@ ParsedWikitextPage(
               WtText(" syntax (")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Do not use") ]
               )
@@ -15283,7 +15283,7 @@ ParsedWikitextPage(
               WtText("table ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("params") ]
               )
@@ -15365,7 +15365,7 @@ ParsedWikitextPage(
                   WtText("|- ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15384,7 +15384,7 @@ ParsedWikitextPage(
               WtText("tr ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("params") ]
               )
@@ -15632,21 +15632,21 @@ ParsedWikitextPage(
                   WtText("|")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
                   WtText("|cell1||")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
                   WtText("|cell2||")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15672,7 +15672,7 @@ ParsedWikitextPage(
                   WtText("td ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15712,7 +15712,7 @@ ParsedWikitextPage(
                   WtText("td ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15752,7 +15752,7 @@ ParsedWikitextPage(
                   WtText("td ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15809,7 +15809,7 @@ ParsedWikitextPage(
                   )
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15918,7 +15918,7 @@ ParsedWikitextPage(
                   WtText("|+ ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("params") ]
                   )
@@ -15938,7 +15938,7 @@ ParsedWikitextPage(
               WtText("caption ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("params") ]
               )
@@ -16081,7 +16081,7 @@ ParsedWikitextPage(
                             WtText("Philipp Veit, ")
                             Italics(
                               Properties:
-                                RTD = RtData: [0] = "''", [1] = "''"
+                                {N} rtd = RTD[ "''" <o> "''" ]
 
                               [ WtText("Germania") ]
                             )
@@ -16148,7 +16148,7 @@ ParsedWikitextPage(
                             WtText("Philipp Veit, ")
                             Italics(
                               Properties:
-                                RTD = RtData: [0] = "''", [1] = "''"
+                                {N} rtd = RTD[ "''" <o> "''" ]
 
                               [ WtText("Germania") ]
                             )
@@ -16215,7 +16215,7 @@ ParsedWikitextPage(
                             WtText("Johannes Schilling, ")
                             Italics(
                               Properties:
-                                RTD = RtData: [0] = "''", [1] = "''"
+                                {N} rtd = RTD[ "''" <o> "''" ]
 
                               [ WtText("Germania") ]
                             )
@@ -17431,7 +17431,7 @@ ParsedWikitextPage(
           WtText("Normally, one problem with this approach is that readers are directed to different pages when they click on the images. To eliminate this problem\u2014or to direct readers to a ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("different") ]
           )
@@ -17515,7 +17515,7 @@ ParsedWikitextPage(
             [
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("This section is local to Wikipedia (hard-coded here now).") ]
               )
@@ -18870,7 +18870,7 @@ ParsedWikitextPage(
               WtText("A font-size: 65% is very small, while style=\"font-size: 87%;\" is a mid-size font, larger than the tag ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("small") ]
               )

@@ -8,7 +8,7 @@ ParsedWikitextPage(
       WtText("This is a ")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [
           WtText("list of high schools in ")

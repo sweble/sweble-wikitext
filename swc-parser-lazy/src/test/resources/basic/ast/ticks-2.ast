@@ -7,26 +7,26 @@ ParsedWikitextPage(
     Paragraph([
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("italic") ]
       )
       Newline("\n")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("bold") ]
       )
       Newline("\n")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("bold+italic") ]
           )
@@ -39,21 +39,21 @@ ParsedWikitextPage(
       WtText("'")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("hmmm") ]
       )
       Newline("\n")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("hmm'") ]
       )
       Newline("\n")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("Mark'") ]
       )
@@ -61,7 +61,7 @@ ParsedWikitextPage(
       Newline("\n")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Mark'") ]
       )
@@ -78,7 +78,7 @@ ParsedWikitextPage(
           WtText(" ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1]
+              {N} rtd = RTD[ "''" <o> "" ]
 
             [ WtText("Item 1") ]
           )
@@ -92,7 +92,7 @@ ParsedWikitextPage(
           WtText(" ")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1]
+              {N} rtd = RTD[ "'''" <o> "" ]
 
             [ WtText("Item 2") ]
           )
@@ -106,12 +106,12 @@ ParsedWikitextPage(
           WtText(" ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1]
+              {N} rtd = RTD[ "''" <o> "" ]
 
             [
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1]
+                  {N} rtd = RTD[ "'''" <o> "" ]
 
                 [ WtText("Item 3") ]
               )
@@ -130,7 +130,7 @@ ParsedWikitextPage(
         [
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1]
+              {N} rtd = RTD[ "''" <o> "" ]
 
             [ WtText("Pre 1") ]
           )
@@ -143,7 +143,7 @@ ParsedWikitextPage(
         [
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1]
+              {N} rtd = RTD[ "'''" <o> "" ]
 
             [ WtText("Pre 2") ]
           )
@@ -156,12 +156,12 @@ ParsedWikitextPage(
         [
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1]
+              {N} rtd = RTD[ "''" <o> "" ]
 
             [
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1]
+                  {N} rtd = RTD[ "'''" <o> "" ]
 
                 [ WtText("Pre 3") ]
               )

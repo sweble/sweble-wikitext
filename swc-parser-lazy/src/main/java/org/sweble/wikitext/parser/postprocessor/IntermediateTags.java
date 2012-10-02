@@ -23,7 +23,8 @@ import org.sweble.wikitext.parser.nodes.Italics;
 import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.nodes.WtList;
-import org.sweble.wikitext.parser.utils.TextUtils;
+
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
 public enum IntermediateTags
 {
@@ -45,9 +46,9 @@ public enum IntermediateTags
 			Italics e = new Italics(body);
 			if (config.isGatherRtData())
 			{
-				Object[] r0 = (o == null || o.isSynthetic()) ? null : TextUtils.joinRt("''");
-				Object[] r1 = (c == null || c.isSynthetic()) ? null : TextUtils.joinRt("''");
-				TextUtils.addRtData(e, r0, r1);
+				String r0 = (o == null || o.isSynthetic()) ? null : "''";
+				String r1 = (c == null || c.isSynthetic()) ? null : "''";
+				e.setRtd(r0, RtDataPtk.SEP, r1);
 			}
 			return e;
 		}
@@ -71,9 +72,9 @@ public enum IntermediateTags
 			Bold e = new Bold(body);
 			if (config.isGatherRtData())
 			{
-				Object[] r0 = (o == null || o.isSynthetic()) ? null : TextUtils.joinRt("'''");
-				Object[] r1 = (c == null || c.isSynthetic()) ? null : TextUtils.joinRt("'''");
-				TextUtils.addRtData(e, r0, r1);
+				String r0 = (o == null || o.isSynthetic()) ? null : "'''";
+				String r1 = (c == null || c.isSynthetic()) ? null : "'''";
+				e.setRtd(r0, RtDataPtk.SEP, r1);
 			}
 			return e;
 		}

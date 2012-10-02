@@ -7,14 +7,14 @@ ParsedWikitextPage(
     Paragraph([
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("asdf") ]
       )
       WtText(" or ")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("ASDF") ]
       )

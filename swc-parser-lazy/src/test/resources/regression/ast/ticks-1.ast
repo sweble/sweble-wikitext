@@ -7,13 +7,13 @@ ParsedWikitextPage(
     Paragraph([
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [
           WtText(" A ")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText(" B ") ]
           )

@@ -48,7 +48,7 @@ Page([
   Paragraph([
     Bold(
       Properties:
-            RTD = RtData: [0] = "'''", [1] = "'''"
+        {N} rtd = RTD[ "'''" <o> "'''" ]
 
       [ WtText(" Native bold text ") ]
     )

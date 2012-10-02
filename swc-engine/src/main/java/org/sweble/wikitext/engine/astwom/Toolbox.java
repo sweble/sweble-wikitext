@@ -38,8 +38,8 @@ import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
-import org.sweble.wikitext.parser.utils.TextUtils;
 
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 import de.fau.cs.osr.utils.XmlGrammar;
 
 public class Toolbox
@@ -164,7 +164,9 @@ public class Toolbox
 		return null;
 	}
 	
-	public static void removeAstNode(ListIterator<WikitextNode> i, WikitextNode astNode)
+	public static void removeAstNode(
+			ListIterator<WikitextNode> i,
+			WikitextNode astNode)
 	{
 		while (i.hasNext())
 		{
@@ -203,19 +205,11 @@ public class Toolbox
 	{
 		if (n.getEmpty())
 		{
-			TextUtils.addRtData(
-					(WikitextNode) n,
-					TextUtils.joinRt('<', n.getName()),
-					TextUtils.joinRt(" />"),
-					null);
+			n.setRtd('<', n.getName(), RtDataPtk.SEP, " />", RtDataPtk.SEP);
 		}
 		else
 		{
-			TextUtils.addRtData(
-					(WikitextNode) n,
-					TextUtils.joinRt('<', n.getName()),
-					TextUtils.joinRt('>'),
-					TextUtils.joinRt("</", n.getName(), '>'));
+			n.setRtd('<', n.getName(), RtDataPtk.SEP, '>', RtDataPtk.SEP, "</", n.getName(), '>');
 		}
 		
 		for (WikitextNode attr : n.getXmlAttributes())
@@ -228,17 +222,11 @@ public class Toolbox
 	{
 		if (n.getHasValue())
 		{
-			TextUtils.addRtData(
-					n,
-					TextUtils.joinRt(' ', n.getName(), "=\""),
-					TextUtils.joinRt('"'));
+			n.setRtd(' ', n.getName(), "=\"", RtDataPtk.SEP, '"');
 		}
 		else
 		{
-			TextUtils.addRtData(
-					n,
-					TextUtils.joinRt(' ', n.getName()),
-					null);
+			n.setRtd(' ', n.getName(), RtDataPtk.SEP);
 		}
 		
 		return n;
@@ -246,52 +234,37 @@ public class Toolbox
 	
 	public static Bold addRtData(Bold n)
 	{
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("'''"),
-				TextUtils.joinRt("'''"));
+		n.setRtd("'''", RtDataPtk.SEP, "'''");
 		return n;
 	}
 	
 	public static WikitextNode addRtData(Italics n)
 	{
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("''"),
-				TextUtils.joinRt("''"));
+		n.setRtd("''", RtDataPtk.SEP, "''");
 		return n;
 	}
 	
 	public static InternalLink addRtData(InternalLink n)
 	{
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("[[", n.getTarget()),
-				TextUtils.joinRt("]]"));
+		n.setRtd("[[", n.getTarget(), RtDataPtk.SEP, "]]");
 		return n;
 	}
 	
 	public static XmlComment addRtData(XmlComment n)
 	{
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("<!--", n.getContent(), "-->"));
+		n.setRtd("<!--", n.getContent(), "-->");
 		return n;
 	}
 	
 	public static HorizontalRule addRtData(HorizontalRule n)
 	{
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("----"));
+		n.setRtd("----");
 		return n;
 	}
 	
 	public static Redirect addRtData(Redirect n)
 	{
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("#REDIRECT[[", n.getTarget(), "]]"));
+		n.setRtd("#REDIRECT[[", n.getTarget(), "]]");
 		return n;
 	}
 	
@@ -304,10 +277,7 @@ public class Toolbox
 			addRtData((XmlAttribute) attr);
 		}
 		
-		TextUtils.addRtData(
-				n,
-				TextUtils.joinRt("<", n.getName()),
-				TextUtils.joinRt(">", n.getBody(), "</", n.getName(), ">"));
+		n.setRtd("<", n.getName(), RtDataPtk.SEP, ">", n.getBody(), "</", n.getName(), ">");
 		return n;
 	}
 	

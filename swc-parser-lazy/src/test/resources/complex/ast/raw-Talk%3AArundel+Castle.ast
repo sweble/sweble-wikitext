@@ -265,7 +265,7 @@ ParsedWikitextPage(
       WtText(" tag on the article, but I've read the thing through several times and don't see a problem warranting the tag. Moreover, this is the very first entry in the talk page which strikes me as meaning we have a ways to go before we start throwing tags around. I removed the tag and made a couple of other edits. If anyone has any thoughts on what needs to be ")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("cleaned up") ]
       )
@@ -631,7 +631,7 @@ ParsedWikitextPage(
             [
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("NA") ]
               )
@@ -720,7 +720,7 @@ ParsedWikitextPage(
               WtText("; for example, instead of (if such appeared in the article) using ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -754,7 +754,7 @@ ParsedWikitextPage(
               WtText(", use ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -823,7 +823,7 @@ ParsedWikitextPage(
               WtText(", headings generally do not start with articles ('the', 'a(n)'). For example, if there was a section called ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   TagExtension(
@@ -839,7 +839,7 @@ ParsedWikitextPage(
               WtText(", it should be changed to ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   TagExtension(

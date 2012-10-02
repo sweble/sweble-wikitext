@@ -19,7 +19,7 @@ ParsedWikitextPage(
     Paragraph([
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Archive 1") ]
       )
@@ -262,7 +262,7 @@ ParsedWikitextPage(
                     WtText("It's funny that I should be accused of parochialism when I am trying to direct everyone to the available evidence - rather than simpy relying on the superficial similarity between Gaelic Football and aussie rules.  I can assure everyone that if you wanted to do an in depth analysis of the rules of both codes that you would find more dissimilarities than similarities.  And it's not just Geoff Blainey, even as a kid growing up in the 60s I was aware that the first game of footy took place in 1858 between Melb Grammar and Scotch, and that a letter had appeared in the paper around the same time imploring cricketers to take up footy over the winter to keep fit.  As I have said before, we know a fair bit about how and why footy came to be played in Melbourne, and the personalities involved - but it is equally true that we do not know all that much about that first game.  What I can be confident of is that it would have looked nothing like either aussie rules or gaelic of the modern age but rather more like a version of rugby a la Tom Brown's Schooldays (was that his name?  you know what I mean).  And it is instructive that I should refer to him, because that book is set in the English public schools of the 1840s and without doubt, that is the source of the Aussie Rules that was played in 1850s and 1860s - all the main pioneers of aussie rules had attended these schools.  In other words, like all the different rules of football at that time, there was a constant tension between running with the ball and kicking the ball - so it should not surprise any of us that ")
                     Bold(
                       Properties:
-                        RTD = RtData: [0] = "'''", [1] = "'''"
+                        {N} rtd = RTD[ "'''" <o> "'''" ]
 
                       [ WtText("all") ]
                     )
@@ -344,21 +344,21 @@ ParsedWikitextPage(
                   WtText("Pippu, you say: \"I can assure everyone that if you wanted to do an in depth analysis of the rules of both codes that you would find more dissimilarities than similarities.\" But rules on paper are just that, rules on paper; the two games are clearly similar in the way they are played. Can you imagine a compromise/hybrid (like International rules) between Aussie rules and either code of rugby? Or soccer and rugby? I'm sorry, I know it's an institution, but the 1858 game between Melb Grammar and Scotch was ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("not") ]
                   )
                   WtText(" the first time any kind of football was played in Melbourne, and since we don't know what rules they used, it has as much to do with Aussie rules as a game of rugby (codified in 1845) or soccer. IMO, Wills' letter to ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("Bell's Life") ]
                   )
                   WtText(" is the beginning, as was the experimental game played in the Richmond Paddock (Yarra Park) as a result, three weeks later. The same day Melbourne Grammar played a St Kilda team. This was ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("one week before") ]
                   )
@@ -372,7 +372,7 @@ ParsedWikitextPage(
                   )
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("one") ]
                   )
@@ -494,7 +494,7 @@ ParsedWikitextPage(
                       WtText("Are we in disagreement on any of these points?  All I am saying is that the Gaelic influence on aussie rules is inconclusive (at best!) and that ")
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("all") ]
                       )
@@ -627,14 +627,14 @@ ParsedWikitextPage(
           WtText("No, I agree with the author of the article. Where he says there are other ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("leagues") ]
           )
           WtText(" in Australia, he is not referring to variants of the sport, he is referring to other groups of teams who play each other- other divisions, so to speak. For instance, in Western Australia, there is the WAFL- the ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("West") ]
           )
@@ -1010,7 +1010,7 @@ ParsedWikitextPage(
           WtText("I just had another look at Blainey's ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("A Game of Our Own") ]
           )
@@ -1024,7 +1024,7 @@ ParsedWikitextPage(
           )
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("More Than A Game") ]
           )
@@ -1590,7 +1590,7 @@ ParsedWikitextPage(
                     WtText(". I beleive that the Hall of Fame does not belong because it is the ")
                     Bold(
                       Properties:
-                        RTD = RtData: [0] = "'''", [1] = "'''"
+                        {N} rtd = RTD[ "'''" <o> "'''" ]
 
                       [ WtText("AFL") ]
                     )
@@ -2495,7 +2495,7 @@ ParsedWikitextPage(
               WtText("This was the passage I restored (in ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("bold") ]
               )
@@ -2515,7 +2515,7 @@ ParsedWikitextPage(
                 [
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [
                       WtText("Australian rules which was invented in ")
@@ -2551,7 +2551,7 @@ ParsedWikitextPage(
                       WtText(" in which it is played")
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [
                           WtText(" with the exception of ")
@@ -2763,7 +2763,7 @@ ParsedWikitextPage(
             [
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Record crowd figures at Canberra's 2005 AFL games have virtually guaranteed the ACT will remain the Kangaroos' interstate home beyond next year.") ]
               )
@@ -2780,7 +2780,7 @@ ParsedWikitextPage(
             [
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("An average 12,180 fans attended the Kangaroos' three premiership games this season, boosted by a 13,481 gate at the annual blockbuster against Sydney in round two.") ]
               )
@@ -2798,7 +2798,7 @@ ParsedWikitextPage(
             [
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Manuka Oval's 2005 AFL attendance total was 36,538, breaking the previous record of 34,105 set in 2001.") ]
               )
@@ -2911,7 +2911,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [ WtText("BigFooty") ]
                   )
@@ -3961,14 +3961,14 @@ ParsedWikitextPage(
               WtText("Sources should definitely be added. If you have any more examples of POV sections, then please point them out, but please try to avoid reading things that aren't there. I have agreed with you that the wording \"most popular spectator sport\" is possibly misleading, and regarded as the national sport is dodgy, and have changed the article accordingly. I'm not sure what you are getting at with the rest of your comments. You do seem to think television audiences are important, so if you have some sources about them, please tell us, rather than complaining about the existence of other statistics. No one at all has implied that the ABS figures give an overall indicator of the popularity of the sport, they have simply used them for what they ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("are") ]
               )
               WtText(" valid for, so I am still not sure what you are referring to. I will say again that the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("main") ]
               )
@@ -3996,7 +3996,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("I will say again that the main purpose of the section is *not* to make comparisons with other sports, but to describe what popularity the code has.") ]
           )
@@ -4142,7 +4142,7 @@ ParsedWikitextPage(
               WtText("That site doesn't have stats yet for the last Socceroos game. Every source I have seen says that soccer is the biggest sport in terms of ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("participation") ]
               )
@@ -4211,7 +4211,7 @@ ParsedWikitextPage(
           Newline("\n")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Why measure popularity by majority per state? The popularity of sports doesn't respect state borders, especially when it comes to the AFL. For example: ") ]
           )
@@ -4224,7 +4224,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Every source I have seen says that soccer is the biggest sport in terms of participation (probably because because of the number of kids, including girls playing), but Aussie rules is second ") ]
           )
@@ -4260,7 +4260,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [
               WtText(
@@ -4672,7 +4672,7 @@ ParsedWikitextPage(
           Newline("\n")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("You are being extremely incosistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. ") ]
           )
@@ -4685,7 +4685,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("The most recent version of the sweeney report") ]
           )
@@ -4697,7 +4697,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("gives swimming as the most popular sport, with tennis cricket and AF tied on second") ]
           )
@@ -4709,7 +4709,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("And please stop editing other peoples comments, it's just confuses things") ]
           )
@@ -4725,7 +4725,7 @@ ParsedWikitextPage(
           Newline("\n")
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Inconsistency doesn't cover it. The WAFL reference was a light hearted reference to your enigmatic comments about the state Aussie rules comps, which I still don't understand.") ]
           )
@@ -4737,7 +4737,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("I gladly defer to the ABS, which also shows Aussie rules to be the number one spectator sport: ") ]
           )
@@ -4749,7 +4749,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Logically the biggest problem for league in terms of its following is not Aussie rules but rugby union") ]
           )
@@ -4799,7 +4799,7 @@ ParsedWikitextPage(
               WtText("You have indeed misunderstood my point, I beleive the article claims that Australian Football is the most popular ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("spectator") ]
               )
@@ -4863,7 +4863,7 @@ ParsedWikitextPage(
         Paragraph([
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Cricket is the most common summer spectator sport in Australia, and is usually played on the same grounds as Australian Football. In the past, many elite-level footballers played representative cricket, but the increasingly professional nature of the game made this impossible by the 1980s. Of the other organised sports or physical activities played by aussie rules footballers in Australia, outdoor cricket is the most popular.") ]
           )
@@ -5127,7 +5127,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Spectacular high marks (\"speccies\") are regarded as one of the game's main attributes as a spectator sport.") ]
               )
@@ -5176,7 +5176,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Domestic Migration") ]
               )
@@ -5321,7 +5321,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("attracts more interest than any other winter sport") ]
               )
@@ -5333,7 +5333,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("In the Australian Capital Territory (ACT) rugby union is arguably more popular.") ]
               )
@@ -5406,7 +5406,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("In recent years, there has been a boom in Australian Football in Brisbane, and this appears to be closely linked to the success of the Brisbane Lions, who won three premierships in a row (2001-2003), and were runners-up in 2004.") ]
               )
@@ -5454,7 +5454,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("In both the ACT and south-western NSW, Australian Football has rivalled the two varieties of rugby in popularity over many decades.") ]
               )
@@ -5485,7 +5485,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("With nearly 400,000 participants, Australian Football is also one of the most played sports in the Australia.") ]
               )
@@ -5493,7 +5493,7 @@ ParsedWikitextPage(
               WtText("Great.  Now the participation section.  Easily verifiable by the Australian Bureau of statistics web site.  One problem.  It's a pretty vague comment.  ")
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("One of the most played sports") ]
               )
@@ -5504,7 +5504,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("Australian Football is also now played in more than 20 countries around the world.") ]
               )
@@ -5556,7 +5556,7 @@ ParsedWikitextPage(
             Paragraph([
               Bold(
                 Properties:
-                  RTD = RtData: [0] = "'''", [1] = "'''"
+                  {N} rtd = RTD[ "'''" <o> "'''" ]
 
                 [ WtText("The most powerful organisation and competition within the game is the elite, professional Australian Football League (AFL)") ]
               )
@@ -5575,7 +5575,7 @@ ParsedWikitextPage(
                   WtText("Stating a rank is completley meaningless when there is so much of an argument over what that rank is. The very fact your arguing illustrates that \"one of the most popular\" is the ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("most") ]
                   )
@@ -6087,7 +6087,7 @@ ParsedWikitextPage(
                           WtText("I too played \"Aussie Rules\" or \"Australian Rules Football\" (in amongst kick-to-kick, waxing, going for speccies and having pot shots at goal from impossible angles).  All I can add is that I have noticed a trend over the last 10 to 15 years to use the term \"Australian Football\", and indeed some of the major leagues around the country (and maybe even some club names), that may have once had the term \"Rules\" in them, have dropped it of late.  I accept that this is just a gut-feel and I have not surveyed anyone - either way, ")
                           Italics(
                             Properties:
-                              RTD = RtData: [0] = "''", [1] = "''"
+                              {N} rtd = RTD[ "''" <o> "''" ]
 
                             [ WtText("Australian rules football") ]
                           )
@@ -6491,7 +6491,7 @@ ParsedWikitextPage(
             [
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("The lengthy discussion regarding padding has been moved to ")
@@ -6697,7 +6697,7 @@ ParsedWikitextPage(
               WtText(" ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   XmlElement(
@@ -7373,7 +7373,7 @@ ParsedWikitextPage(
           WtText(" ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [
               XmlElement(
@@ -7493,7 +7493,7 @@ ParsedWikitextPage(
                 WtText("poll on references to Aussie rules in the ")
                 Bold(
                   Properties:
-                    RTD = RtData: [0] = "'''", [1] = "'''"
+                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                   [ WtText("Football") ]
                 )
@@ -7645,7 +7645,7 @@ ParsedWikitextPage(
           Newline("\n")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("Please DO NOT add other external links here unless they offer something specific that isn't available at any other site.  There are hundreds of unofficial fan sites and they can not all be listed here.  Preference will be given to links added by editors who contribute content, as opposed to editors who sign up specifically to promote a particular website.") ]
           )

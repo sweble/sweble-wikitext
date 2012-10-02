@@ -305,7 +305,7 @@ ParsedWikitextPage(
                   WtText(" ")
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       InternalLink(
@@ -357,7 +357,7 @@ ParsedWikitextPage(
                 Paragraph([
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       WtText("Assumed")
@@ -661,7 +661,7 @@ ParsedWikitextPage(
                 Paragraph([
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       WtText("In")
@@ -935,7 +935,7 @@ ParsedWikitextPage(
                 Paragraph([
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       WtText("In")
@@ -1669,7 +1669,7 @@ ParsedWikitextPage(
     Paragraph([
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Clarence Saxby Chambliss") ]
       )
@@ -2228,7 +2228,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       InternalLink(
@@ -2257,7 +2257,7 @@ ParsedWikitextPage(
                         WtText("As Ranking Member of the full committee, Sen. Chambliss may serve as an ")
                         Italics(
                           Properties:
-                            RTD = RtData: [0] = "''", [1] = "''"
+                            {N} rtd = RTD[ "''" <o> "''" ]
 
                           [ WtText("ex officio") ]
                         )
@@ -2274,7 +2274,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       InternalLink(
@@ -2367,7 +2367,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       InternalLink(
@@ -2395,7 +2395,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       InternalLink(
@@ -2423,7 +2423,7 @@ ParsedWikitextPage(
                 [
                   Bold(
                     Properties:
-                      RTD = RtData: [0] = "'''", [1] = "'''"
+                      {N} rtd = RTD[ "'''" <o> "'''" ]
 
                     [
                       InternalLink(
@@ -3044,12 +3044,12 @@ ParsedWikitextPage(
                             Newline("\n")
                             Italics(
                               Properties:
-                                RTD = RtData: [0] = "''", [1] = "''"
+                                {N} rtd = RTD[ "''" <o> "''" ]
 
                               [
                                 Bold(
                                   Properties:
-                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                   [
                                     InternalLink(
@@ -3323,7 +3323,7 @@ ParsedWikitextPage(
                   WtText(" of the tax-reform proposal ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [
                       InternalLink(
@@ -4083,7 +4083,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Saxby Chambliss") ]
                       )
@@ -4274,7 +4274,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Saxby Chambliss") ]
                       )
@@ -4465,7 +4465,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Saxby Chambliss") ]
                       )
@@ -4671,7 +4671,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Saxby Chambliss") ]
                       )
@@ -5098,7 +5098,7 @@ ParsedWikitextPage(
                         [
                           Bold(
                             Properties:
-                              RTD = RtData: [0] = "'''", [1] = "'''"
+                              {N} rtd = RTD[ "'''" <o> "'''" ]
 
                             [ WtText("Saxby Chambliss") ]
                           )
@@ -5890,7 +5890,7 @@ ParsedWikitextPage(
                       WtText(" ")
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Majority") ]
                       )
@@ -6006,7 +6006,7 @@ ParsedWikitextPage(
                       WtText(" ")
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [
                           InternalLink(
@@ -6234,12 +6234,12 @@ ParsedWikitextPage(
                     WtText(" Wikimedia Commons has media related to: ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             InternalLink(
@@ -6293,7 +6293,7 @@ ParsedWikitextPage(
               WtText(", ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("official campaign site") ]
               )
@@ -6476,12 +6476,12 @@ ParsedWikitextPage(
                     WtText(" has a collection of quotations related to: ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [
                         Bold(
                           Properties:
-                            RTD = RtData: [0] = "'''", [1] = "'''"
+                            {N} rtd = RTD[ "'''" <o> "'''" ]
 
                           [
                             InternalLink(
@@ -6535,7 +6535,7 @@ ParsedWikitextPage(
               WtText(", ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("official U.S. Senate site") ]
               )
@@ -6566,7 +6566,7 @@ ParsedWikitextPage(
               WtText(" at the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -6603,7 +6603,7 @@ ParsedWikitextPage(
               WtText(" maintained by ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -6983,7 +6983,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [
                           WtText("Member")
@@ -7387,7 +7387,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [
                           InternalLink(
@@ -7451,7 +7451,7 @@ ParsedWikitextPage(
                           WtText("Served alongside: ")
                           Bold(
                             Properties:
-                              RTD = RtData: [0] = "'''", [1] = "'''"
+                              {N} rtd = RTD[ "'''" <o> "'''" ]
 
                             [
                               InternalLink(
@@ -7515,7 +7515,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [ WtText("Incumbent") ]
                       )
@@ -7735,7 +7735,7 @@ ParsedWikitextPage(
                     Paragraph([
                       Bold(
                         Properties:
-                          RTD = RtData: [0] = "'''", [1] = "'''"
+                          {N} rtd = RTD[ "'''" <o> "'''" ]
 
                         [
                           WtText("Chairman of the ")
@@ -8117,12 +8117,12 @@ ParsedWikitextPage(
                     Paragraph([
                       Italics(
                         Properties:
-                          RTD = RtData: [0] = "''", [1] = "''"
+                          {N} rtd = RTD[ "''" <o> "''" ]
 
                         [
                           Bold(
                             Properties:
-                              RTD = RtData: [0] = "'''", [1]
+                              {N} rtd = RTD[ "'''" <o> "" ]
 
                             [
                               InternalLink(
@@ -8145,7 +8145,7 @@ ParsedWikitextPage(
                       )
                       Bold(
                         Properties:
-                          RTD = RtData: [0], [1] = "'''"
+                          {N} rtd = RTD[ "" <o> "'''" ]
 
                         [
                           TagExtension(
@@ -12110,7 +12110,7 @@ ParsedWikitextPage(
                                       [
                                         Italics(
                                           Properties:
-                                            RTD = RtData: [0] = "''", [1] = "''"
+                                            {N} rtd = RTD[ "''" <o> "''" ]
 
                                           [
                                             WtText("Non")
@@ -13108,7 +13108,7 @@ ParsedWikitextPage(
                                                                                 Newline("\n")
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13142,7 +13142,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13172,7 +13172,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13206,7 +13206,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13236,7 +13236,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13270,7 +13270,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13300,7 +13300,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13339,7 +13339,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13369,7 +13369,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13403,7 +13403,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13433,7 +13433,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13467,7 +13467,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13497,7 +13497,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13531,7 +13531,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13561,7 +13561,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13595,7 +13595,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13625,7 +13625,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13659,7 +13659,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13689,7 +13689,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13723,7 +13723,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13753,7 +13753,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13787,7 +13787,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13817,7 +13817,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13851,7 +13851,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13881,7 +13881,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13915,7 +13915,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13945,7 +13945,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -13979,7 +13979,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14009,7 +14009,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14043,7 +14043,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14073,7 +14073,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14107,7 +14107,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14137,7 +14137,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14176,7 +14176,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14206,7 +14206,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14240,7 +14240,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14271,7 +14271,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14305,7 +14305,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14336,7 +14336,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14370,7 +14370,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14423,7 +14423,7 @@ ParsedWikitextPage(
                                                                                 Newline("\n")
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14457,7 +14457,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14487,7 +14487,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14521,7 +14521,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14551,7 +14551,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14585,7 +14585,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14615,7 +14615,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14649,7 +14649,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14679,7 +14679,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14713,7 +14713,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14743,7 +14743,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14777,7 +14777,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14807,7 +14807,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14841,7 +14841,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14871,7 +14871,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14905,7 +14905,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14935,7 +14935,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14969,7 +14969,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -14999,7 +14999,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15033,7 +15033,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15063,7 +15063,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15097,7 +15097,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15127,7 +15127,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15161,7 +15161,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15191,7 +15191,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15225,7 +15225,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15255,7 +15255,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15289,7 +15289,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15319,7 +15319,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15353,7 +15353,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15383,7 +15383,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15417,7 +15417,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15447,7 +15447,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15481,7 +15481,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15511,7 +15511,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15550,7 +15550,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15581,7 +15581,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15620,7 +15620,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15651,7 +15651,7 @@ ParsedWikitextPage(
                                                                                 )
                                                                                 Bold(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "'''", [1] = "'''"
+                                                                                    {N} rtd = RTD[ "'''" <o> "'''" ]
 
                                                                                   [
                                                                                     InternalLink(
@@ -15685,7 +15685,7 @@ ParsedWikitextPage(
                                                                                 WtText(" ")
                                                                                 Italics(
                                                                                   Properties:
-                                                                                    RTD = RtData: [0] = "''", [1] = "''"
+                                                                                    {N} rtd = RTD[ "''" <o> "''" ]
 
                                                                                   [
                                                                                     InternalLink(

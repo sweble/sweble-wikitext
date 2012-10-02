@@ -1201,7 +1201,7 @@ ParsedWikitextPage(
     Paragraph([
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Germany") ]
       )
@@ -1274,7 +1274,7 @@ ParsedWikitextPage(
       WtText("), officially the ")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Federal Republic of Germany") ]
       )
@@ -2701,7 +2701,7 @@ ParsedWikitextPage(
               WtText("' ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -2991,7 +2991,7 @@ ParsedWikitextPage(
               WtText(" had to sign the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Edictum Chlotharii") ]
               )
@@ -3225,7 +3225,7 @@ ParsedWikitextPage(
               WtText(" (or the Old Empire), it was officially called the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Sacrum Romanum Imperium Nationis Germanic\u00E6") ]
               )
@@ -3488,7 +3488,7 @@ ParsedWikitextPage(
               WtText(" in these areas and further east ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   WtText("(")
@@ -3708,7 +3708,7 @@ ParsedWikitextPage(
               WtText(" (1648) ended religious warfare among the German states, but the empire was ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("de facto") ]
               )
@@ -3750,7 +3750,7 @@ ParsedWikitextPage(
               WtText(" dominated German history. In 1806, the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Imperium") ]
               )
@@ -3957,7 +3957,7 @@ ParsedWikitextPage(
               WtText(". The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -4294,7 +4294,7 @@ ParsedWikitextPage(
               WtText("The state known as ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Germany") ]
               )
@@ -5100,7 +5100,7 @@ ParsedWikitextPage(
               WtText(", ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -5354,7 +5354,7 @@ ParsedWikitextPage(
                     WtText(", chancellor of the ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [
                         InternalLink(
@@ -6325,7 +6325,7 @@ ParsedWikitextPage(
               WtText("The western sectors, controlled by France, the United Kingdom, and the United States, were merged on 23 May 1949, to form the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -6347,14 +6347,14 @@ ParsedWikitextPage(
               WtText(" (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundesrepublik Deutschland") ]
               )
               WtText("); on 7 October 1949, the Soviet Zone became the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -6376,7 +6376,7 @@ ParsedWikitextPage(
               WtText(" (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Deutsche Demokratische Republik") ]
               )
@@ -6413,7 +6413,7 @@ ParsedWikitextPage(
               WtText(". However, West Germany declared the status of its capital Bonn as provisional, in order to emphasise its stance that the two-state solution was an artificial ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("status quo") ]
               )
@@ -6630,7 +6630,7 @@ ParsedWikitextPage(
               WtText(". While claiming to be a democracy, political power was solely executed by leading members (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -6660,7 +6660,7 @@ ParsedWikitextPage(
                     WtText("SED (")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [ WtText("Socialist Unity Party of Germany") ]
                     )
@@ -6786,7 +6786,7 @@ ParsedWikitextPage(
               WtText(", which included the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("de facto") ]
               )
@@ -6857,7 +6857,7 @@ ParsedWikitextPage(
                   [
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [ WtText("Wende") ]
                     )
@@ -6868,7 +6868,7 @@ ParsedWikitextPage(
               WtText(" in East Germany, which finally concluded with the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -7021,7 +7021,7 @@ ParsedWikitextPage(
               WtText("Based on the Bonn-Berlin Act, adopted by the parliament on 10 March 1994, Berlin once again became the capital of the reunified Germany, while Bonn obtained the unique status of a ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundesstadt") ]
               )
@@ -7861,7 +7861,7 @@ ParsedWikitextPage(
               WtText(" (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundesl\u00E4nder") ]
               )
@@ -7883,14 +7883,14 @@ ParsedWikitextPage(
               WtText(" (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Kreise") ]
               )
               WtText(") and cities (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("kreisfreie St\u00E4dte") ]
               )
@@ -10291,7 +10291,7 @@ ParsedWikitextPage(
               [
                 Italics(
                   Properties:
-                    RTD = RtData: [0] = "''", [1] = "''"
+                    {N} rtd = RTD[ "''" <o> "''" ]
 
                   [ WtText("Grundgesetz") ]
                 )
@@ -10301,14 +10301,14 @@ ParsedWikitextPage(
           WtText(" (Basic Law). By calling the document ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("Grundgesetz") ]
           )
           WtText(", rather than ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("Verfassung") ]
           )
@@ -10320,7 +10320,7 @@ ParsedWikitextPage(
           WtText("Amendments to the ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("Grundgesetz") ]
           )
@@ -10345,7 +10345,7 @@ ParsedWikitextPage(
           WtText(" Despite the initial intention, the ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("Grundgesetz") ]
           )
@@ -10455,7 +10455,7 @@ ParsedWikitextPage(
               WtText(" and invested primarily with representative responsibilities and powers. He is elected by the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -10477,7 +10477,7 @@ ParsedWikitextPage(
               WtText(" (federal convention), an institution consisting of the members of the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
@@ -10499,7 +10499,7 @@ ParsedWikitextPage(
               WtText(" is the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestagspr\u00E4sident") ]
               )
@@ -10519,7 +10519,7 @@ ParsedWikitextPage(
                     WtText("President of the ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [ WtText("Bundestag") ]
                     )
@@ -10529,7 +10529,7 @@ ParsedWikitextPage(
               WtText("), who is elected by the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
@@ -10551,14 +10551,14 @@ ParsedWikitextPage(
               WtText(" is the Chancellor, who is appointed by the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundespr\u00E4sident") ]
               )
               WtText(" after being elected by the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
@@ -10575,14 +10575,14 @@ ParsedWikitextPage(
               WtText(" by the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
               WtText(", where constructive implies that the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
@@ -10726,7 +10726,7 @@ ParsedWikitextPage(
               WtText(" is vested in the parliament consisting of the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -10743,7 +10743,7 @@ ParsedWikitextPage(
               WtText(" (Federal Diet) and ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -10765,7 +10765,7 @@ ParsedWikitextPage(
               WtText(" (Federal Council), which together form a unique type of legislative body. The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
@@ -10807,7 +10807,7 @@ ParsedWikitextPage(
               WtText("). The members of the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundesrat") ]
               )
@@ -10874,7 +10874,7 @@ ParsedWikitextPage(
               WtText(" (which has had members in the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundestag") ]
               )
@@ -11061,7 +11061,7 @@ ParsedWikitextPage(
               WtText(". The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -11117,7 +11117,7 @@ ParsedWikitextPage(
               WtText("Germany's supreme court system, called ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Oberste Gerichtsh\u00F6fe des Bundes") ]
               )
@@ -11359,7 +11359,7 @@ ParsedWikitextPage(
               WtText(" are codified on the national level in the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -11376,7 +11376,7 @@ ParsedWikitextPage(
               WtText(" and the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -11402,14 +11402,14 @@ ParsedWikitextPage(
               WtText(" To achieve the latter, a convicted criminal can be put in preventive detention (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Sicherungsverwahrung") ]
               )
               WtText(") in addition to the regular sentence if he is considered to be a threat to the general public. The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -11474,7 +11474,7 @@ ParsedWikitextPage(
               WtText("Any federal law overrides state law if the legislative power lies at the federal level. A famous example is the purported Hessian provision for the death penalty, which goes against the ban on capital punishment under the Basic Law, rendering the Hessian provision invalid. The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -11496,7 +11496,7 @@ ParsedWikitextPage(
               WtText(" is the federal organ through which the states participate in national legislation. State participation in federal legislation is necessary if the law falls within the area of concurrent legislative power, requires states to administer federal regulations, or is so designated by the Basic Law. Every state has its own constitutional court. The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -11513,14 +11513,14 @@ ParsedWikitextPage(
               WtText(", ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Landgerichte") ]
               )
               WtText(" and ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Oberlandesgerichte") ]
               )
@@ -11552,14 +11552,14 @@ ParsedWikitextPage(
               WtText(" remain in the jurisdiction of the states, though most states base their own laws in that area on the 1976 ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Verwaltungsverfahrensgesetz") ]
               )
               WtText(" (Administrative Proceedings Act) covering important points of administrative law. The ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Oberverwaltungsgerichte") ]
               )
@@ -11832,7 +11832,7 @@ ParsedWikitextPage(
               WtText(" made it a symbol of East-West tensions and a political battleground in Europe. However, Willy Brandt's Ostpolitik was a key factor in the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12139,7 +12139,7 @@ ParsedWikitextPage(
                     WtText("The ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [ WtText("Mecklenburg-Vorpommern") ]
                     )
@@ -12179,7 +12179,7 @@ ParsedWikitextPage(
               WtText("Germany's military, the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12196,7 +12196,7 @@ ParsedWikitextPage(
               WtText(", is a military force with ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12218,7 +12218,7 @@ ParsedWikitextPage(
               WtText(" (Army), ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12240,7 +12240,7 @@ ParsedWikitextPage(
               WtText(" (Navy), ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12269,7 +12269,7 @@ ParsedWikitextPage(
                   [
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [ WtText("Zentraler Sanit\u00E4tsdienst") ]
                     )
@@ -12279,7 +12279,7 @@ ParsedWikitextPage(
               WtText(" (Central Medical Services) and ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12296,7 +12296,7 @@ ParsedWikitextPage(
               WtText(" (Joint Support Service) branches. Military service is compulsory for men at the age of 18, and conscripts serve six-month tours of duty. Conscientious objectors may instead opt for an equal length of ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -12376,7 +12376,7 @@ ParsedWikitextPage(
               WtText(" In peacetime, the Bundeswehr is commanded by the Minister of Defence. If Germany went to war, which according to the constitution is allowed only for defensive purposes, the Chancellor would become commander in chief of the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Bundeswehr") ]
               )
@@ -14760,7 +14760,7 @@ ParsedWikitextPage(
               WtText(" or ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("ICE") ]
               )
@@ -15899,7 +15899,7 @@ ParsedWikitextPage(
               WtText(", which are called ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("R\u00F6ntgenstrahlen") ]
               )
@@ -19493,14 +19493,14 @@ ParsedWikitextPage(
               WtText(" or ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("scharfes S") ]
               )
               WtText(" (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("sharp s") ]
               )
@@ -20789,7 +20789,7 @@ ParsedWikitextPage(
               WtText(" In contrast, secondary education includes three traditional types of schools based on a pupil's ability as determined by teacher recommendations: the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -20811,7 +20811,7 @@ ParsedWikitextPage(
               WtText(" enrolls the most gifted children and prepares students for university studies, and attendance lasts eight or nine years depending on the state; the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -20828,7 +20828,7 @@ ParsedWikitextPage(
               WtText(" has a broader range of emphasis for intermediate students and lasts six years; the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -20901,7 +20901,7 @@ ParsedWikitextPage(
               WtText("Since the 1960s, a reform movement attempted to unify secondary education in a ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Gesamtschule") ]
               )
@@ -20942,7 +20942,7 @@ ParsedWikitextPage(
               WtText("A special system of apprenticeship called ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Duale Ausbildung") ]
               )
@@ -20996,7 +20996,7 @@ ParsedWikitextPage(
               WtText(", high school students are generally required to take the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -21551,7 +21551,7 @@ ParsedWikitextPage(
           WtText(" Historically Germany has been called ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("Das Land der Dichter und Denker") ]
           )
@@ -22956,7 +22956,7 @@ ParsedWikitextPage(
                     WtText(" in ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [
                         InternalLink(
@@ -23066,7 +23066,7 @@ ParsedWikitextPage(
               WtText(" directed ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23266,7 +23266,7 @@ ParsedWikitextPage(
               WtText("More recently, films such as ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23283,7 +23283,7 @@ ParsedWikitextPage(
               WtText(" (2003), ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23305,7 +23305,7 @@ ParsedWikitextPage(
               WtText(" (2004), ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23327,7 +23327,7 @@ ParsedWikitextPage(
               WtText(" (2004), and ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23359,7 +23359,7 @@ ParsedWikitextPage(
               WtText(" went to the German production ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23381,7 +23381,7 @@ ParsedWikitextPage(
               WtText(" in 1979, to ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -23398,7 +23398,7 @@ ParsedWikitextPage(
               WtText(" in 2002, and to ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -24734,7 +24734,7 @@ ParsedWikitextPage(
               WtText(" (")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Deutscher Fu\u00DFball-Bund") ]
               )
@@ -25357,7 +25357,7 @@ ParsedWikitextPage(
                     WtText("A ")
                     Italics(
                       Properties:
-                        RTD = RtData: [0] = "''", [1] = "''"
+                        {N} rtd = RTD[ "''" <o> "''" ]
 
                       [
                         InternalLink(
@@ -25824,7 +25824,7 @@ ParsedWikitextPage(
               WtText(" Furthermore, carbonated mineral water and ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -26969,7 +26969,7 @@ ParsedWikitextPage(
               WtText(" entry at ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -27006,7 +27006,7 @@ ParsedWikitextPage(
               WtText(" at ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("UCB Libraries GovPubs") ]
               )

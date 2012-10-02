@@ -23,7 +23,6 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
@@ -86,9 +85,7 @@ public class BuiltInParserFunctions
 					.withArguments(tmplArgs)
 					.build();
 			
-			RtData rtd = (RtData) template.getAttribute("RTD");
-			if (rtd != null)
-				tmpl.setAttribute("RTD", rtd);
+			tmpl.setRtd(template.getRtd());
 			
 			return preprocessorFrame.expand(tmpl);
 		}

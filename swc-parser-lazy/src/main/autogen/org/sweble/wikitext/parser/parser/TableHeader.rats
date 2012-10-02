@@ -138,7 +138,7 @@ private inline void ExpectedFollowUp =
 private ForeignNode Attributes =
     &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
     {
-      yyValue = ForeignNode.from(attrs, (Object) joinRt(ws, '|'));
+      yyValue = ForeignNode.from(attrs, new Object[] {ws, '|'});
     }
   / {
       yyValue = ForeignNode.from(new WtList(), null);

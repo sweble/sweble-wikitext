@@ -26,7 +26,7 @@ ParsedWikitextPage(
       WtText("The cast of the television series ")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [
           InternalLink(
@@ -764,7 +764,7 @@ ParsedWikitextPage(
           WtText(" website, as well as during the commercials in between ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("MythBusters") ]
           )
@@ -990,7 +990,7 @@ ParsedWikitextPage(
               WtText(" This test was also aired in ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -1123,7 +1123,7 @@ ParsedWikitextPage(
               WtText("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [ WtText("Jaws") ]
               )
@@ -1464,7 +1464,7 @@ ParsedWikitextPage(
               WtText("There were two additional myths addressed in addition to those in the ")
               Italics(
                 Properties:
-                  RTD = RtData: [0] = "''", [1] = "''"
+                  {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
                   InternalLink(
@@ -1912,7 +1912,7 @@ ParsedWikitextPage(
           WtText("'s editions of ")
           Italics(
             Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+              {N} rtd = RTD[ "''" <o> "''" ]
 
             [ WtText("MythBusters") ]
           )
@@ -2714,7 +2714,7 @@ ParsedWikitextPage(
                       WtText(", ")
                       Italics(
                         Properties:
-                          RTD = RtData: [0] = "''", [1] = "''"
+                          {N} rtd = RTD[ "''" <o> "''" ]
 
                         [
                           InternalLink(
@@ -2965,7 +2965,7 @@ ParsedWikitextPage(
                   WtText("View the ")
                   Italics(
                     Properties:
-                      RTD = RtData: [0] = "''", [1] = "''"
+                      {N} rtd = RTD[ "''" <o> "''" ]
 
                     [ WtText("Facts About Flatulence") ]
                   )

@@ -28,7 +28,6 @@ import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
-import org.sweble.wikitext.parser.utils.TextUtils;
 
 public class BuiltInTagExtensions
 		extends
@@ -110,16 +109,12 @@ public class BuiltInTagExtensions
 			if (tagExt.getBody() == null)
 			{
 				pt = new ProtectedText("");
-				TextUtils.addRtData(
-						pt,
-						TextUtils.joinRt("<nowiki />"));
+				pt.setRtd("<nowiki />");
 			}
 			else
 			{
 				pt = new ProtectedText(body);
-				TextUtils.addRtData(
-						pt,
-						TextUtils.joinRt("<nowiki>", tagExt.getBody(), "</nowiki>"));
+				pt.setRtd("<nowiki>", tagExt.getBody(), "</nowiki>");
 			}
 			return pt;
 		}

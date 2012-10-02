@@ -25,10 +25,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+
+import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
 
 public class CommentAdapterTest
 {
@@ -69,7 +70,7 @@ public class CommentAdapterTest
 		assertNull(c.getSuffix());
 		assertEquals(" Default Comment WtText ", c.getContent());
 		assertEquals(
-				RtData.build("<!-- Default Comment WtText -->"),
-				c.getAttribute("RTD"));
+				new RtDataPtk(1, "<!-- Default Comment WtText -->"),
+				c.getRtd());
 	}
 }

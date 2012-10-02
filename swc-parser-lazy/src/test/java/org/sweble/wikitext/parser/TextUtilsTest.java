@@ -18,8 +18,8 @@ package org.sweble.wikitext.parser;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.sweble.wikitext.parser.utils.WtPrinter;
 import org.sweble.wikitext.parser.utils.TextUtils;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 
 public class TextUtilsTest
 {
@@ -34,23 +34,23 @@ public class TextUtilsTest
 						"  WtText(\"H\")\n" +
 						"  XmlEntityRef(\n" +
 						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"&amp;\"\n" +
 						"      {N} name = \"amp\"\n" +
 						"      {N} resolved = \"&\"\n" +
+						"      {N} rtd = RTD[ \"&amp;\" ]\n" +
 						"  )\n" +
 						"  WtText(\"llo \")\n" +
 						"  XmlEntityRef(\n" +
 						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"&lt;\"\n" +
 						"      {N} name = \"lt\"\n" +
 						"      {N} resolved = \"<\"\n" +
+						"      {N} rtd = RTD[ \"&lt;\" ]\n" +
 						"  )\n" +
 						"  WtText(\"Welt\")\n" +
 						"  XmlEntityRef(\n" +
 						"    Properties:\n" +
-						"          RTD = RtData: [0] = \"&gt;\"\n" +
 						"      {N} name = \"gt\"\n" +
 						"      {N} resolved = \">\"\n" +
+						"      {N} rtd = RTD[ \"&gt;\" ]\n" +
 						"  )\n" +
 						"  WtText(\"!\")\n" +
 						"]\n";

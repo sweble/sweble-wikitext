@@ -382,7 +382,7 @@ Section(
       WtText(" ")
       Italics(
         Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("Gauls") ]
       )
@@ -640,7 +640,7 @@ Section(
       WtText(" did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (")
       Italics(
         Properties:
-              RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("La fille a\u00EEn\u00E9e de l\u2019\u00C9glise") ]
       )
@@ -761,7 +761,7 @@ Section(
             WtText(", ")
             Italics(
               Properties:
-                    RTD = RtData: [0] = "''", [1] = "''"
+                {N} rtd = RTD[ "''" <o> "''" ]
 
               [ WtText("Empereur des Fran\u00E7ais") ]
             )

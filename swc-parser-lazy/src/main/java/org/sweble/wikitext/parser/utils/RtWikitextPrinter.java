@@ -21,7 +21,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.nodes.WtList;
 
@@ -70,17 +69,17 @@ public class RtWikitextPrinter
 			
 			default:
 			{
-				RtData rtd = (RtData) node.getAttribute("RTD");
+				RtDataPtk rtd = node.getRtd();
 				if (rtd != null)
 				{
 					int i = 0;
 					for (WikitextNode n : node)
 					{
-						printRtd(rtd.getRts()[i++]);
+						printRtd(rtd.getField(i++));
 						if (n != null)
 							go(n);
 					}
-					printRtd(rtd.getRts()[i]);
+					printRtd(rtd.getField(i));
 				}
 				else
 				{

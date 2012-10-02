@@ -18,10 +18,8 @@
 package org.sweble.wikitext.parser.utils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.RtData;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.nodes.WtList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -156,7 +154,7 @@ public final class TextUtils
 	public static void setXmlCharRef(XmlCharRef xmlCharRef, int codePoint)
 	{
 		xmlCharRef.setCodePoint(codePoint);
-		addRtData(xmlCharRef, joinRt(StringUtils.hexCharRef(codePoint)));
+		xmlCharRef.setRtd(StringUtils.hexCharRef(codePoint));
 	}
 	
 	public static XmlEntityRef xmlEntity(String name, String resolved)
@@ -169,7 +167,7 @@ public final class TextUtils
 	private static void setXmlEntityRef(XmlEntityRef xmlEntityRef, String name)
 	{
 		xmlEntityRef.setName(name);
-		addRtData(xmlEntityRef, joinRt(StringUtils.entityRef(name)));
+		xmlEntityRef.setRtd(StringUtils.entityRef(name));
 	}
 	
 	// =========================================================================
@@ -346,6 +344,7 @@ public final class TextUtils
 	
 	// =========================================================================
 	
+	/*
 	public static RtData addRtData(WikitextNode yyValue, Object[]... rts)
 	{
 		if (rts.length != yyValue.size() + 1)
@@ -450,4 +449,5 @@ public final class TextUtils
 			n.setAttribute("RTD", new RtData(rts));
 		}
 	}
+	*/
 }

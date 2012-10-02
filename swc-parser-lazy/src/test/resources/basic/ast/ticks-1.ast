@@ -7,26 +7,26 @@ ParsedWikitextPage(
     Paragraph([
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [ WtText("Hallo") ]
       )
       Newline("\n")
       Bold(
         Properties:
-          RTD = RtData: [0] = "'''", [1] = "'''"
+          {N} rtd = RTD[ "'''" <o> "'''" ]
 
         [ WtText("Hallo") ]
       )
       Newline("\n")
       Italics(
         Properties:
-          RTD = RtData: [0] = "''", [1] = "''"
+          {N} rtd = RTD[ "''" <o> "''" ]
 
         [
           Bold(
             Properties:
-              RTD = RtData: [0] = "'''", [1] = "'''"
+              {N} rtd = RTD[ "'''" <o> "'''" ]
 
             [ WtText("Hallo") ]
           )
