@@ -2937,9 +2937,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://dsc.discovery.com/fansites/mythbusters/mythbusters.html"
                     {N} path = "//dsc.discovery.com/fansites/mythbusters/mythbusters.html"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://dsc.discovery.com/fansites/mythbusters/mythbusters.html" ]
                 )
                 [ WtText("MythBusters Official site") ]
               )
@@ -2957,9 +2957,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/"
                     {N} path = "//drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/" ]
                 )
                 [
                   WtText("View the ")

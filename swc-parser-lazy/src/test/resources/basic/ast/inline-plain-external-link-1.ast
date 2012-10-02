@@ -7,9 +7,9 @@ ParsedWikitextPage(
     Paragraph([
       Url(
         Properties:
-          RTD = RtData: [0] = "http://example.com"
           {N} path = "//example.com"
           {N} protocol = "http"
+          {N} rtd = RTD[ "http://example.com" ]
       )
     ])
   ]

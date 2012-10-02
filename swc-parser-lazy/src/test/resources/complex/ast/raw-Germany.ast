@@ -26844,9 +26844,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.deutschland.de/"
                     {N} path = "//www.deutschland.de/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.deutschland.de/" ]
                 )
                 [ WtText("Deutschland.de") ]
               )
@@ -26865,9 +26865,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.bundeskanzlerin.de/"
                     {N} path = "//www.bundeskanzlerin.de/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.bundeskanzlerin.de/" ]
                 )
                 [ WtText("Official site of German Chancellor") ]
               )
@@ -26886,9 +26886,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.dw-world.de/"
                     {N} path = "//www.dw-world.de/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.dw-world.de/" ]
                 )
                 [ WtText("Deutsche Welle") ]
               )
@@ -26907,9 +26907,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "https://www.cia.gov/library/publications/world-leaders-1/world-leaders-g/germany.html"
                     {N} path = "//www.cia.gov/library/publications/world-leaders-1/world-leaders-g/germany.html"
                     {N} protocol = "https"
+                    {N} rtd = RTD[ "https://www.cia.gov/library/publications/world-leaders-1/world-leaders-g/germany.html" ]
                 )
                 [ WtText("Chief of State and Cabinet Members") ]
               )
@@ -26960,9 +26960,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.britannica.com/EBchecked/topic/231186/Germany"
                     {N} path = "//www.britannica.com/EBchecked/topic/231186/Germany"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.britannica.com/EBchecked/topic/231186/Germany" ]
                 )
                 [ WtText("Germany") ]
               )
@@ -26997,9 +26997,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://ucblibraries.colorado.edu/govpubs/for/germany.htm"
                     {N} path = "//ucblibraries.colorado.edu/govpubs/for/germany.htm"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://ucblibraries.colorado.edu/govpubs/for/germany.htm" ]
                 )
                 [ WtText("Germany") ]
               )
@@ -27072,9 +27072,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.tatsachen-ueber-deutschland.de/en/"
                     {N} path = "//www.tatsachen-ueber-deutschland.de/en/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.tatsachen-ueber-deutschland.de/en/" ]
                 )
                 [ WtText("Facts about Germany") ]
               )
@@ -27093,9 +27093,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.destatis.de/e_home.htm"
                     {N} path = "//www.destatis.de/e_home.htm"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.destatis.de/e_home.htm" ]
                 )
                 [ WtText("Destatis.de") ]
               )

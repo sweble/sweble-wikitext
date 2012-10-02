@@ -1643,9 +1643,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://www.saxby.org"
                         {N} path = "//www.saxby.org"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://www.saxby.org" ]
                     )
                     [ WtText("www.Saxby.org") ]
                   )
@@ -6284,9 +6284,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.saxby.org"
                     {N} path = "//www.saxby.org"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.saxby.org" ]
                 )
                 [ WtText("Chambliss for US Senate") ]
               )
@@ -6310,9 +6310,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.youtube.com/saxbychambliss08"
                     {N} path = "//www.youtube.com/saxbychambliss08"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.youtube.com/saxbychambliss08" ]
                 )
                 [ WtText("Chambliss For Senate YouTube Channel") ]
               )
@@ -6330,9 +6330,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.facebook.com/enjoythego"
                     {N} path = "//www.facebook.com/enjoythego"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.facebook.com/enjoythego" ]
                 )
                 [ WtText("Saxby Chambliss Facebook Page") ]
               )
@@ -6526,9 +6526,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://chambliss.senate.gov/"
                     {N} path = "//chambliss.senate.gov/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://chambliss.senate.gov/" ]
                 )
                 [ WtText("United States Senator Saxby Chambliss") ]
               )
@@ -6557,9 +6557,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://bioguide.congress.gov/scripts/biodisplay.pl?index=c000286"
                     {N} path = "//bioguide.congress.gov/scripts/biodisplay.pl?index=c000286"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://bioguide.congress.gov/scripts/biodisplay.pl?index=c000286" ]
                 )
                 [ WtText("Biography") ]
               )
@@ -6594,9 +6594,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://projects.washingtonpost.com/congress/members/c000286"
                     {N} path = "//projects.washingtonpost.com/congress/members/c000286"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://projects.washingtonpost.com/congress/members/c000286" ]
                 )
                 [ WtText("Voting record") ]
               )
@@ -6631,9 +6631,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.votesmart.org/bio.php?can_id=CNIP7909"
                     {N} path = "//www.votesmart.org/bio.php?can_id=CNIP7909"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.votesmart.org/bio.php?can_id=CNIP7909" ]
                 )
                 [ WtText("Biography") ]
               )
@@ -6644,9 +6644,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.votesmart.org/voting_category.php?can_id=CNIP7909"
                     {N} path = "//www.votesmart.org/voting_category.php?can_id=CNIP7909"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.votesmart.org/voting_category.php?can_id=CNIP7909" ]
                 )
                 [ WtText("voting record") ]
               )
@@ -6657,9 +6657,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.votesmart.org/issue_rating_category.php?can_id=CNIP7909"
                     {N} path = "//www.votesmart.org/issue_rating_category.php?can_id=CNIP7909"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.votesmart.org/issue_rating_category.php?can_id=CNIP7909" ]
                 )
                 [ WtText("interest group ratings") ]
               )
@@ -6687,9 +6687,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.ontheissues.org/Senate/Saxby_Chambliss.htm"
                     {N} path = "//www.ontheissues.org/Senate/Saxby_Chambliss.htm"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.ontheissues.org/Senate/Saxby_Chambliss.htm" ]
                 )
                 [ WtText("Issue positions and quotes") ]
               )
@@ -6708,9 +6708,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.opensecrets.org/politicians/summary.php?CID=N00002685"
                     {N} path = "//www.opensecrets.org/politicians/summary.php?CID=N00002685"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.opensecrets.org/politicians/summary.php?CID=N00002685" ]
                 )
                 [ WtText("Financial information") ]
               )
@@ -6743,9 +6743,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://herndon1.sdrdc.com/cgi-bin/can_detail/S2GA00118"
                     {N} path = "//herndon1.sdrdc.com/cgi-bin/can_detail/S2GA00118"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://herndon1.sdrdc.com/cgi-bin/can_detail/S2GA00118" ]
                 )
                 [ WtText("Campaign finance reports and data") ]
               )
@@ -6772,9 +6772,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.sourcewatch.org/index.php?title=Saxby_Chambliss"
                     {N} path = "//www.sourcewatch.org/index.php?title=Saxby_Chambliss"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.sourcewatch.org/index.php?title=Saxby_Chambliss" ]
                 )
                 [ WtText("SourceWatch Congresspedia \u2014 Saxby Chambliss") ]
               )
@@ -8663,9 +8663,9 @@ ParsedWikitextPage(
 
                                               Url(
                                                 Properties:
-                                                  RTD = RtData: [0] = "http://en.wikipedia.org/w/index.php?title=Template:USSenGA&action=edit"
                                                   {N} path = "//en.wikipedia.org/w/index.php?title=Template:USSenGA&action=edit"
                                                   {N} protocol = "http"
+                                                  {N} rtd = RTD[ "http://en.wikipedia.org/w/index.php?title=Template:USSenGA&action=edit" ]
                                               )
                                               [
                                                 XmlElement(
@@ -10322,9 +10322,9 @@ ParsedWikitextPage(
 
                                               Url(
                                                 Properties:
-                                                  RTD = RtData: [0] = "http://en.wikipedia.org/w/index.php?title=Template:GA-FedRep&action=edit"
                                                   {N} path = "//en.wikipedia.org/w/index.php?title=Template:GA-FedRep&action=edit"
                                                   {N} protocol = "http"
+                                                  {N} rtd = RTD[ "http://en.wikipedia.org/w/index.php?title=Template:GA-FedRep&action=edit" ]
                                               )
                                               [
                                                 XmlElement(
@@ -12633,9 +12633,9 @@ ParsedWikitextPage(
 
                                               Url(
                                                 Properties:
-                                                  RTD = RtData: [0] = "http://en.wikipedia.org/w/index.php?title=Template:USSenChairs&action=edit"
                                                   {N} path = "//en.wikipedia.org/w/index.php?title=Template:USSenChairs&action=edit"
                                                   {N} protocol = "http"
+                                                  {N} rtd = RTD[ "http://en.wikipedia.org/w/index.php?title=Template:USSenChairs&action=edit" ]
                                               )
                                               [
                                                 XmlElement(
@@ -16112,9 +16112,9 @@ ParsedWikitextPage(
 
                                               Url(
                                                 Properties:
-                                                  RTD = RtData: [0] = "http://en.wikipedia.org/w/index.php?title=Template:Current_U.S._Senators&action=edit"
                                                   {N} path = "//en.wikipedia.org/w/index.php?title=Template:Current_U.S._Senators&action=edit"
                                                   {N} protocol = "http"
+                                                  {N} rtd = RTD[ "http://en.wikipedia.org/w/index.php?title=Template:Current_U.S._Senators&action=edit" ]
                                               )
                                               [
                                                 XmlElement(

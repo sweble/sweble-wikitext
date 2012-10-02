@@ -80,9 +80,9 @@ ParsedWikitextPage(
           {N} linkUrl = 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://example.com"
                 {N} path = "//example.com"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
             )
           {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
@@ -120,9 +120,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://example.com"
                 {N} path = "//example.com"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
             )
           )
           LinkOptionResize(
@@ -249,9 +249,9 @@ ParsedWikitextPage(
           {N} linkUrl = 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://example.com"
                 {N} path = "//example.com"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
             )
           {N} rtd = RTD[ "[[File:Image.png" <o> "" <o> "]]" ]
           {N} target = "File:Image.png"
@@ -266,9 +266,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://example.com"
                 {N} path = "//example.com"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://example.com" ]
             )
           )
         ]

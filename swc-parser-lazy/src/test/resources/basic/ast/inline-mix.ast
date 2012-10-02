@@ -51,9 +51,9 @@ ParsedWikitextPage(
                   WtText(" ")
                   Url(
                     Properties:
-                      RTD = RtData: [0] = "http://example.com"
                       {N} path = "//example.com"
                       {N} protocol = "http"
+                      {N} rtd = RTD[ "http://example.com" ]
                   )
                   WtText(" ")
                   ExternalLink(
@@ -62,9 +62,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://example.com"
                         {N} path = "//example.com"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://example.com" ]
                     )
                     [ ]
                   )

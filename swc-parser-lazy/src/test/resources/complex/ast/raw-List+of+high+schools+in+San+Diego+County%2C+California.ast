@@ -1853,9 +1853,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://www.tcps.org"
                         {N} path = "//www.tcps.org"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://www.tcps.org" ]
                     )
                     [ WtText("The Child's Primary School") ]
                   )
@@ -2172,9 +2172,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.sdcoe.k12.ca.us/"
                     {N} path = "//www.sdcoe.k12.ca.us/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.sdcoe.k12.ca.us/" ]
                 )
                 [ WtText("San Diego County Office of Education") ]
               )
@@ -2191,9 +2191,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://california.schooltree.org/high/San-Diego-County-Schools.html"
                     {N} path = "//california.schooltree.org/high/San-Diego-County-Schools.html"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://california.schooltree.org/high/San-Diego-County-Schools.html" ]
                 )
                 [ WtText("San Diego County Schools") ]
               )

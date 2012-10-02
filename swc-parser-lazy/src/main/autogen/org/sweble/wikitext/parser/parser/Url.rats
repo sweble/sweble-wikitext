@@ -74,9 +74,7 @@ body
     String t = text.getContent();
     String b = t.substring(0, t.length() - p.length());
 
-    Url url = new Url(p, path);
-    if (isGatherRtData())
-      addRtData(url, joinRt(p, ':', path));
+    Url url = setRtd(new Url(p, path), p, ':', path);
 
     if (b.isEmpty())
       return url;
@@ -167,15 +165,11 @@ body
 Url Url =
     protocol:UrlProtocolString ':' path:UrlPathString &{ isProtocol(protocol, path) }
     {
-      yyValue = new Url(protocol, path);
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt(protocol, ':', path));
+      yyValue = setRtd(new Url(protocol, path), protocol, ':', path);
     }
   / &"//" path:UrlPathString
     {
-      yyValue = new Url(null, path);
-      if (isGatherRtData())
-        addRtData(yyValue, joinRt(path));
+      yyValue = setRtd(new Url(null, path), path);
     }
 ;
 

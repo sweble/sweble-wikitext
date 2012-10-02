@@ -3045,9 +3045,9 @@ ParsedWikitextPage(
         WtText(", see  ")
         Url(
           Properties:
-            RTD = RtData: [0] = "http://www.w3.org/TR/html401/struct/tables.html#edef-TABLE"
             {N} path = "//www.w3.org/TR/html401/struct/tables.html#edef-TABLE"
             {N} protocol = "http"
+            {N} rtd = RTD[ "http://www.w3.org/TR/html401/struct/tables.html#edef-TABLE" ]
         )
         WtText(" and ")
         InternalLink(
@@ -10828,9 +10828,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://svn.wikimedia.org/viewvc/mediawiki/trunk/phase3/skins/common/shared.css?view=markup"
                     {N} path = "//svn.wikimedia.org/viewvc/mediawiki/trunk/phase3/skins/common/shared.css?view=markup"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://svn.wikimedia.org/viewvc/mediawiki/trunk/phase3/skins/common/shared.css?view=markup" ]
                 )
                 [ WtText("shared.css") ]
               )
@@ -13634,9 +13634,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://meta.wikimedia.org//w/index.php?title=Help:Table/example_row_template&action=edit"
                 {N} path = "//meta.wikimedia.org//w/index.php?title=Help:Table/example_row_template&action=edit"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://meta.wikimedia.org//w/index.php?title=Help:Table/example_row_template&action=edit" ]
             )
             [ WtText("edit") ]
           )
@@ -15213,9 +15213,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://www.uni-bonn.de/~manfear/html2wiki-tables.php"
                 {N} path = "//www.uni-bonn.de/~manfear/html2wiki-tables.php"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://www.uni-bonn.de/~manfear/html2wiki-tables.php" ]
             )
             [ WtText("on-line script") ]
           )
@@ -18978,9 +18978,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://excel2wiki.net/wikipedia.php"
                 {N} path = "//excel2wiki.net/wikipedia.php"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://excel2wiki.net/wikipedia.php" ]
             )
             [
               WtText(
@@ -19010,9 +19010,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://toolserver.org/~al/data2mwGenerators/csv2wikitable.php"
                 {N} path = "//toolserver.org/~al/data2mwGenerators/csv2wikitable.php"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://toolserver.org/~al/data2mwGenerators/csv2wikitable.php" ]
             )
             [ WtText("csv2wikitable") ]
           )
@@ -19430,9 +19430,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.cnic.org/html2mediawiki.html"
                     {N} path = "//www.cnic.org/html2mediawiki.html"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.cnic.org/html2mediawiki.html" ]
                 )
                 [ WtText("HTML tables to wiki converter at cnic.org") ]
               )
@@ -19450,9 +19450,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://area23.brightbyte.de/csv2wp.php"
                     {N} path = "//area23.brightbyte.de/csv2wp.php"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://area23.brightbyte.de/csv2wp.php" ]
                 )
                 [ WtText("csv2wp") ]
               )
@@ -19501,9 +19501,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.uni-bonn.de/~manfear/html2wiki-tables.php"
                     {N} path = "//www.uni-bonn.de/~manfear/html2wiki-tables.php"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.uni-bonn.de/~manfear/html2wiki-tables.php" ]
                 )
                 [ WtText("HTML tables to wiki converter at uni-bonn.de") ]
               )
@@ -19521,9 +19521,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://diberri.dyndns.org/html2wiki.html"
                     {N} path = "//diberri.dyndns.org/html2wiki.html"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://diberri.dyndns.org/html2wiki.html" ]
                 )
                 [ WtText("HTML tables to wiki converter at diberri.dyndns.org") ]
               )
@@ -19541,9 +19541,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://pywikipediabot.sourceforge.net/"
                     {N} path = "//pywikipediabot.sourceforge.net/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://pywikipediabot.sourceforge.net/" ]
                 )
                 [ WtText("pywikipediabot") ]
               )
@@ -19562,9 +19562,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://search.cpan.org/~diberri/"
                     {N} path = "//search.cpan.org/~diberri/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://search.cpan.org/~diberri/" ]
                 )
                 [ WtText("HTML-WikiConverter") ]
               )
@@ -19583,9 +19583,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://en.wikibooks.org/wiki/Editing_Wikitext/Tables"
                     {N} path = "//en.wikibooks.org/wiki/Editing_Wikitext/Tables"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://en.wikibooks.org/wiki/Editing_Wikitext/Tables" ]
                 )
                 [ WtText("Making Wiki Tables") ]
               )
@@ -19604,9 +19604,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://en.wikibooks.org/wiki/Editing_Wikitext/Tables_Ready_to_Use"
                     {N} path = "//en.wikibooks.org/wiki/Editing_Wikitext/Tables_Ready_to_Use"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://en.wikibooks.org/wiki/Editing_Wikitext/Tables_Ready_to_Use" ]
                 )
                 [ WtText("Wiki and HTML Tables Ready to Use") ]
               )
@@ -19625,9 +19625,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.w3.org/TR/css3-color/"
                     {N} path = "//www.w3.org/TR/css3-color/"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.w3.org/TR/css3-color/" ]
                 )
                 [ WtText("Table of CSS color names and HEX codes") ]
               )

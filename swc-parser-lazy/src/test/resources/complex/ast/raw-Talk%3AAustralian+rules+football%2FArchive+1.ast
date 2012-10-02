@@ -841,9 +841,9 @@ ParsedWikitextPage(
 
                                   Url(
                                     Properties:
-                                      RTD = RtData: [0] = "http://www.bom.gov.au/climate/averages/tables/cw_070282.shtml"
                                       {N} path = "//www.bom.gov.au/climate/averages/tables/cw_070282.shtml"
                                       {N} protocol = "http"
+                                      {N} rtd = RTD[ "http://www.bom.gov.au/climate/averages/tables/cw_070282.shtml" ]
                                   )
                                   [ WtText("Canberra") ]
                                 )
@@ -854,9 +854,9 @@ ParsedWikitextPage(
 
                                   Url(
                                     Properties:
-                                      RTD = RtData: [0] = "http://www.bom.gov.au/climate/averages/tables/cw_086071.shtml"
                                       {N} path = "//www.bom.gov.au/climate/averages/tables/cw_086071.shtml"
                                       {N} protocol = "http"
+                                      {N} rtd = RTD[ "http://www.bom.gov.au/climate/averages/tables/cw_086071.shtml" ]
                                   )
                                   [ WtText("Melbourne") ]
                                 )
@@ -867,9 +867,9 @@ ParsedWikitextPage(
 
                                   Url(
                                     Properties:
-                                      RTD = RtData: [0] = "http://www.bom.gov.au/climate/averages/tables/cw_040214.shtml"
                                       {N} path = "//www.bom.gov.au/climate/averages/tables/cw_040214.shtml"
                                       {N} protocol = "http"
+                                      {N} rtd = RTD[ "http://www.bom.gov.au/climate/averages/tables/cw_040214.shtml" ]
                                   )
                                   [ WtText("Brissie") ]
                                 )
@@ -934,9 +934,9 @@ ParsedWikitextPage(
           WtText("The history section on this page needs to be corrected to bring it into line with the information on this site ")
           Url(
             Properties:
-              RTD = RtData: [0] = "http://www.fullpointsfooty.net/melbourne.htm,"
               {N} path = "//www.fullpointsfooty.net/melbourne.htm,"
               {N} protocol = "http"
+              {N} rtd = RTD[ "http://www.fullpointsfooty.net/melbourne.htm," ]
           )
           WtText(" but I'l leave that to the Aussies. ")
           InternalLink(
@@ -1219,9 +1219,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://www.statelibrary.vic.gov.au/slv/slvnews/aussierulesonline.pdf"
                 {N} path = "//www.statelibrary.vic.gov.au/slv/slvnews/aussierulesonline.pdf"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://www.statelibrary.vic.gov.au/slv/slvnews/aussierulesonline.pdf" ]
             )
             [ ]
           )
@@ -2733,9 +2733,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://foxsports.news.com.au/story/0,8659,16485151-23214,00.html"
                 {N} path = "//foxsports.news.com.au/story/0,8659,16485151-23214,00.html"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://foxsports.news.com.au/story/0,8659,16485151-23214,00.html" ]
             )
             [ ]
           )
@@ -2746,9 +2746,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://canberra.yourguide.com.au/detail.asp?class=sport&subclass=local&category=general%20sport&story_id=421562&y=2005&m=9"
                 {N} path = "//canberra.yourguide.com.au/detail.asp?class=sport&subclass=local&category=general%20sport&story_id=421562&y=2005&m=9"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://canberra.yourguide.com.au/detail.asp?class=sport&subclass=local&category=general%20sport&story_id=421562&y=2005&m=9" ]
             )
             [ ]
           )
@@ -2825,9 +2825,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://www.gg.gov.au/speeches/html/speeches/2005/050202.html"
                 {N} path = "//www.gg.gov.au/speeches/html/speeches/2005/050202.html"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://www.gg.gov.au/speeches/html/speeches/2005/050202.html" ]
             )
             [ ]
           )
@@ -3010,9 +3010,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://kangaroos.com.au/default.asp?pg=canberra&spg=display&articleid=242973"
                         {N} path = "//kangaroos.com.au/default.asp?pg=canberra&spg=display&articleid=242973"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://kangaroos.com.au/default.asp?pg=canberra&spg=display&articleid=242973" ]
                     )
                     [ ]
                   )
@@ -3023,9 +3023,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://sydneyswans.com.au/default.asp?pg=news&spg=display&articleid=237653"
                         {N} path = "//sydneyswans.com.au/default.asp?pg=news&spg=display&articleid=237653"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://sydneyswans.com.au/default.asp?pg=news&spg=display&articleid=237653" ]
                     )
                     [ ]
                   )
@@ -3453,9 +3453,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://www.smh.com.au/articles/2003/05/22/1053196670542.html"
                 {N} path = "//www.smh.com.au/articles/2003/05/22/1053196670542.html"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://www.smh.com.au/articles/2003/05/22/1053196670542.html" ]
             )
             [ ]
           )
@@ -4114,9 +4114,9 @@ ParsedWikitextPage(
               WtText("source: ")
               Url(
                 Properties:
-                  RTD = RtData: [0] = "http://www.oztam.com.au/archives.aspx?Year=2005"
                   {N} path = "//www.oztam.com.au/archives.aspx?Year=2005"
                   {N} protocol = "http"
+                  {N} rtd = RTD[ "http://www.oztam.com.au/archives.aspx?Year=2005" ]
               )
             ]
           )
@@ -4165,9 +4165,9 @@ ParsedWikitextPage(
 
                 Url(
                   Properties:
-                    RTD = RtData: [0] = "http://www.claremontfc.com/2005season/modules.php?name=News&file=article&sid=87"
                     {N} path = "//www.claremontfc.com/2005season/modules.php?name=News&file=article&sid=87"
                     {N} protocol = "http"
+                    {N} rtd = RTD[ "http://www.claremontfc.com/2005season/modules.php?name=News&file=article&sid=87" ]
                 )
                 [ ]
               )
@@ -4238,9 +4238,9 @@ ParsedWikitextPage(
           Newline("\n")
           Url(
             Properties:
-              RTD = RtData: [0] = "http://www.abs.gov.au/Ausstats/abs@.nsf/0/DAAADA81176E2F89CA256F7200833023?Open"
               {N} path = "//www.abs.gov.au/Ausstats/abs@.nsf/0/DAAADA81176E2F89CA256F7200833023?Open"
               {N} protocol = "http"
+              {N} rtd = RTD[ "http://www.abs.gov.au/Ausstats/abs@.nsf/0/DAAADA81176E2F89CA256F7200833023?Open" ]
           )
         ])
         Newline("\n")
@@ -4250,9 +4250,9 @@ ParsedWikitextPage(
           Newline("\n")
           Url(
             Properties:
-              RTD = RtData: [0] = "http://search.abs.gov.au/servlet/SearchDocuments?query=Australian+rules+football+soccer+rugby+league&docID=CA256FE8004F86D9&docURL=HTTP://www.abs.gov.au/Ausstats/abs%40.nsf/0/57E1C764BFA85942CA256F7200832FBC%3FOpen"
               {N} path = "//search.abs.gov.au/servlet/SearchDocuments?query=Australian+rules+football+soccer+rugby+league&docID=CA256FE8004F86D9&docURL=HTTP://www.abs.gov.au/Ausstats/abs%40.nsf/0/57E1C764BFA85942CA256F7200832FBC%3FOpen"
               {N} protocol = "http"
+              {N} rtd = RTD[ "http://search.abs.gov.au/servlet/SearchDocuments?query=Australian+rules+football+soccer+rugby+league&docID=CA256FE8004F86D9&docURL=HTTP://www.abs.gov.au/Ausstats/abs%40.nsf/0/57E1C764BFA85942CA256F7200832FBC%3FOpen" ]
           )
         ])
         Newline("\n")
@@ -4301,9 +4301,9 @@ ParsedWikitextPage(
           WtText("You are being extremely inconsistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. The most recent version of the sweeney report, mentioned above, which uses participation as well as watching and attending, gives swimming as the most popular sport, with tennis, cricket and AF tied on second. Taking only TV (your favourite statistic) AF is the highest. Again, it contains many forms of exercise as well. If you want to read it - ")
           Url(
             Properties:
-              RTD = RtData: [0] = "http://www.sweeneyresearch.com.au/PDF/Interest.pdf."
               {N} path = "//www.sweeneyresearch.com.au/PDF/Interest.pdf."
               {N} protocol = "http"
+              {N} rtd = RTD[ "http://www.sweeneyresearch.com.au/PDF/Interest.pdf." ]
           )
           WtText(" ")
           XmlElement(
@@ -4556,9 +4556,9 @@ ParsedWikitextPage(
                 [
                   Url(
                     Properties:
-                      RTD = RtData: [0] = "http://www.abs.gov.au/Ausstats/abs@.nsf/0/e298cee24565c911ca256def007248ff?OpenDocument"
                       {N} path = "//www.abs.gov.au/Ausstats/abs@.nsf/0/e298cee24565c911ca256def007248ff?OpenDocument"
                       {N} protocol = "http"
+                      {N} rtd = RTD[ "http://www.abs.gov.au/Ausstats/abs@.nsf/0/e298cee24565c911ca256def007248ff?OpenDocument" ]
                   )
                 ]
               )
@@ -5909,9 +5909,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://www.national.com.au/Sponsorships/0,,66975,00.html"
                         {N} path = "//www.national.com.au/Sponsorships/0,,66975,00.html"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://www.national.com.au/Sponsorships/0,,66975,00.html" ]
                     )
                     [ ]
                   )
@@ -6410,9 +6410,9 @@ ParsedWikitextPage(
 
             Url(
               Properties:
-                RTD = RtData: [0] = "http://stats.rleague.com/afl/afl_index.html"
                 {N} path = "//stats.rleague.com/afl/afl_index.html"
                 {N} protocol = "http"
+                {N} rtd = RTD[ "http://stats.rleague.com/afl/afl_index.html" ]
             )
             [ WtText("me") ]
           )
@@ -6511,9 +6511,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://en.wikipedia.org/w/index.php?title=Talk:Australian_rules_football&oldid=32944830#padding"
                         {N} path = "//en.wikipedia.org/w/index.php?title=Talk:Australian_rules_football&oldid=32944830#padding"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://en.wikipedia.org/w/index.php?title=Talk:Australian_rules_football&oldid=32944830#padding" ]
                     )
                     [ WtText("click here") ]
                   )
@@ -6766,9 +6766,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://en.wikipedia.org/wiki/Image:Australian_rules_01.jpg"
                         {N} path = "//en.wikipedia.org/wiki/Image:Australian_rules_01.jpg"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://en.wikipedia.org/wiki/Image:Australian_rules_01.jpg" ]
                     )
                     [ WtText("Australian_rules_01.jpg") ]
                   )
@@ -6779,9 +6779,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://en.wikipedia.org/wiki/Image:Australian_rules_02.jpg"
                         {N} path = "//en.wikipedia.org/wiki/Image:Australian_rules_02.jpg"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://en.wikipedia.org/wiki/Image:Australian_rules_02.jpg" ]
                     )
                     [ WtText("Australian_rules_02.jpg") ]
                   )
@@ -6792,9 +6792,9 @@ ParsedWikitextPage(
 
                     Url(
                       Properties:
-                        RTD = RtData: [0] = "http://en.wikipedia.org/wiki/Image:Australian_rules_03.jpg"
                         {N} path = "//en.wikipedia.org/wiki/Image:Australian_rules_03.jpg"
                         {N} protocol = "http"
+                        {N} rtd = RTD[ "http://en.wikipedia.org/wiki/Image:Australian_rules_03.jpg" ]
                     )
                     [ WtText("Australian_rules_03.jpg") ]
                   )
