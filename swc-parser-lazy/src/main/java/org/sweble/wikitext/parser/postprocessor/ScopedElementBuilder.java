@@ -50,7 +50,7 @@ import org.sweble.wikitext.parser.parser.NamedXmlElement;
 import org.sweble.wikitext.parser.postprocessor.ElementScopeStack.Scope;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
@@ -711,8 +711,8 @@ public class ScopedElementBuilder
 		
 		if (config.isGatherRtData())
 		{
-			RtDataPtk rtd = new RtDataPtk(3);
-			RtDataPtk rtdEmpty = e.getRtd();
+			RtData rtd = new RtData(3);
+			RtData rtdEmpty = e.getRtd();
 			if (rtdEmpty == null)
 			{
 				rtd.setField(0, '<', e.getName());
@@ -743,10 +743,10 @@ public class ScopedElementBuilder
 		
 		if (config.isGatherRtData())
 		{
-			RtDataPtk rtd = new RtDataPtk(3);
+			RtData rtd = new RtData(3);
 			if (hasOpen)
 			{
-				RtDataPtk rtdOpen = open.getRtd();
+				RtData rtdOpen = open.getRtd();
 				if (rtdOpen == null)
 				{
 					rtd.setField(0, '<', open.getName());
@@ -761,7 +761,7 @@ public class ScopedElementBuilder
 			
 			if (close != null)
 			{
-				RtDataPtk rtdClose = close.getRtd();
+				RtData rtdClose = close.getRtd();
 				if (rtdClose == null)
 				{
 					rtd.setField(2, "</", open.getName(), '>');

@@ -34,7 +34,7 @@ import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class HorizontalRuleAdapterTest
 {
@@ -59,7 +59,7 @@ public class HorizontalRuleAdapterTest
 		HorizontalRule hr = (HorizontalRule) astPageContent.get(0);
 		
 		assertEquals(
-				new RtDataPtk(1, "----"),
+				new RtData(1, "----"),
 				hr.getRtd());
 	}
 	
@@ -79,7 +79,7 @@ public class HorizontalRuleAdapterTest
 		assertEquals("foo", ((WtText) a.getValue().get(0)).getContent());
 		
 		assertEquals(
-				new RtDataPtk(3, "<hr", RtDataPtk.SEP, " />", RtDataPtk.SEP),
+				new RtData(3, "<hr", RtData.SEP, " />", RtData.SEP),
 				e.getRtd());
 	}
 	
@@ -91,7 +91,7 @@ public class HorizontalRuleAdapterTest
 		XmlElement e = (XmlElement) astPageContent.get(0);
 		
 		assertEquals(
-				new RtDataPtk(3, "<hr", RtDataPtk.SEP, ">", RtDataPtk.SEP, "</hr>"),
+				new RtData(3, "<hr", RtData.SEP, ">", RtData.SEP, "</hr>"),
 				e.getRtd());
 	}
 	
@@ -106,7 +106,7 @@ public class HorizontalRuleAdapterTest
 		
 		assertTrue(e.getEmpty());
 		assertEquals(
-				new RtDataPtk(3, "<hr", RtDataPtk.SEP, " />", RtDataPtk.SEP),
+				new RtData(3, "<hr", RtData.SEP, " />", RtData.SEP),
 				e.getRtd());
 	}
 	

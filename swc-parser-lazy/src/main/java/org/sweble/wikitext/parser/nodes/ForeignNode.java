@@ -1,7 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.GenericLeafNode;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class ForeignNode
 		extends
@@ -32,25 +32,25 @@ public abstract class ForeignNode
 	// =========================================================================
 	
 	@Override
-	public RtDataPtk setRtd(RtDataPtk rtd)
+	public RtData setRtd(RtData rtd)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtDataPtk setRtd(Object... glue)
+	public RtData setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtDataPtk setRtd(String... glue)
+	public RtData setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtDataPtk getRtd()
+	public RtData getRtd()
 	{
 		return null;
 	}

@@ -29,7 +29,7 @@ import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class CommentAdapterTest
 {
@@ -70,7 +70,7 @@ public class CommentAdapterTest
 		assertNull(c.getSuffix());
 		assertEquals(" Default Comment WtText ", c.getContent());
 		assertEquals(
-				new RtDataPtk(1, "<!-- Default Comment WtText -->"),
+				new RtData(1, "<!-- Default Comment WtText -->"),
 				c.getRtd());
 	}
 }

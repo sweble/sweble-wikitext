@@ -24,7 +24,7 @@ import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.nodes.WtList;
 
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public enum IntermediateTags
 {
@@ -48,7 +48,7 @@ public enum IntermediateTags
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "''";
 				String r1 = (c == null || c.isSynthetic()) ? null : "''";
-				e.setRtd(r0, RtDataPtk.SEP, r1);
+				e.setRtd(r0, RtData.SEP, r1);
 			}
 			return e;
 		}
@@ -74,7 +74,7 @@ public enum IntermediateTags
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "'''";
 				String r1 = (c == null || c.isSynthetic()) ? null : "'''";
-				e.setRtd(r0, RtDataPtk.SEP, r1);
+				e.setRtd(r0, RtData.SEP, r1);
 			}
 			return e;
 		}

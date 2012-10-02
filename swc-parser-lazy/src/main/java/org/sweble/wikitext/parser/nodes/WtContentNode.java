@@ -3,7 +3,7 @@ package org.sweble.wikitext.parser.nodes;
 import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.GenericContentNode;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtContentNode
 		extends
@@ -13,7 +13,7 @@ public abstract class WtContentNode
 {
 	private static final long serialVersionUID = -4825960747538151723L;
 	
-	private RtDataPtk rtd = null;
+	private RtData rtd = null;
 	
 	// =========================================================================
 	
@@ -40,29 +40,29 @@ public abstract class WtContentNode
 	// =========================================================================
 	
 	@Override
-	public RtDataPtk setRtd(RtDataPtk rtd)
+	public RtData setRtd(RtData rtd)
 	{
-		RtDataPtk old = this.rtd;
+		RtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
 	}
 	
 	@Override
-	public RtDataPtk setRtd(Object... glue)
+	public RtData setRtd(Object... glue)
 	{
-		rtd = new RtDataPtk(this, glue);
+		rtd = new RtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtDataPtk setRtd(String... glue)
+	public RtData setRtd(String... glue)
 	{
-		rtd = new RtDataPtk(this, glue);
+		rtd = new RtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtDataPtk getRtd()
+	public RtData getRtd()
 	{
 		return rtd;
 	}
@@ -129,7 +129,7 @@ public abstract class WtContentNode
 			switch (index)
 			{
 				case 0:
-					return WtContentNode.this.setRtd((RtDataPtk) value);
+					return WtContentNode.this.setRtd((RtData) value);
 					
 				default:
 					throw new IndexOutOfBoundsException();
@@ -143,7 +143,7 @@ public abstract class WtContentNode
 	public Object clone() throws CloneNotSupportedException
 	{
 		WtContentNode n = (WtContentNode) super.clone();
-		n.rtd = (RtDataPtk) n.rtd.clone();
+		n.rtd = (RtData) n.rtd.clone();
 		return n;
 	}
 }

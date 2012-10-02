@@ -219,7 +219,7 @@ body
 
     WtList items = new WtList();
 
-    RtDataPtk lastItem = processListItem(listStack, items, first);
+    RtData lastItem = processListItem(listStack, items, first);
 
     Pair<RawListItem> i = tail;
     while (!i.isEmpty())
@@ -241,7 +241,7 @@ body
     return items;
   }
 
-  private RtDataPtk processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
+  private RtData processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
   {
     String prefix = p.getPrefix();
 
@@ -270,9 +270,9 @@ body
         new WtList(p.getContent()));
 
     //RtData rtData = null;
-    RtDataPtk rtd = null;
+    RtData rtd = null;
     if (isGatherRtData()){
-      rtd = new RtDataPtk(2, p.getRt1(), p.getPrefix(), SEP);
+      rtd = new RtData(2, p.getRt1(), p.getPrefix(), SEP);
       item.setRtd(rtd);
       //rtData = addRtData(item, joinRt(p.getRt1(), p.getPrefix()), null);
     }

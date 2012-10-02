@@ -25,7 +25,7 @@ import org.sweble.wikitext.parser.nodes.WikitextNode;
 import org.sweble.wikitext.parser.nodes.WtList;
 
 import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class RtWikitextPrinter
 {
@@ -69,7 +69,7 @@ public class RtWikitextPrinter
 			
 			default:
 			{
-				RtDataPtk rtd = node.getRtd();
+				RtData rtd = node.getRtd();
 				if (rtd != null)
 				{
 					int i = 0;
@@ -83,7 +83,7 @@ public class RtWikitextPrinter
 				}
 				else
 				{
-					RtDataPtk rtd2 = (RtDataPtk) node.getProperty("rtd", null);
+					RtData rtd2 = (RtData) node.getProperty("rtd", null);
 					if (rtd2 != null)
 					{
 						int i = 0;

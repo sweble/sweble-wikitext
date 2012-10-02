@@ -2,7 +2,7 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtStringContentNode
 		extends
@@ -12,7 +12,7 @@ public abstract class WtStringContentNode
 {
 	private static final long serialVersionUID = -2087712873453224402L;
 	
-	private RtDataPtk rtd = null;
+	private RtData rtd = null;
 	
 	// =========================================================================
 	
@@ -29,29 +29,29 @@ public abstract class WtStringContentNode
 	// =========================================================================
 	
 	@Override
-	public RtDataPtk setRtd(RtDataPtk rtd)
+	public RtData setRtd(RtData rtd)
 	{
-		RtDataPtk old = this.rtd;
+		RtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
 	}
 	
 	@Override
-	public RtDataPtk setRtd(Object... glue)
+	public RtData setRtd(Object... glue)
 	{
-		rtd = new RtDataPtk(this, glue);
+		rtd = new RtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtDataPtk setRtd(String... glue)
+	public RtData setRtd(String... glue)
 	{
-		rtd = new RtDataPtk(this, glue);
+		rtd = new RtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtDataPtk getRtd()
+	public RtData getRtd()
 	{
 		return rtd;
 	}
@@ -123,7 +123,7 @@ public abstract class WtStringContentNode
 			switch (index - getSuperPropertyCount())
 			{
 				case 0:
-					return WtStringContentNode.this.setRtd((RtDataPtk) value);
+					return WtStringContentNode.this.setRtd((RtData) value);
 					
 				default:
 					return super.setValue(index, value);
@@ -137,7 +137,7 @@ public abstract class WtStringContentNode
 	public Object clone() throws CloneNotSupportedException
 	{
 		WtStringContentNode n = (WtStringContentNode) super.clone();
-		n.rtd = (RtDataPtk) n.rtd.clone();
+		n.rtd = (RtData) n.rtd.clone();
 		return n;
 	}
 }

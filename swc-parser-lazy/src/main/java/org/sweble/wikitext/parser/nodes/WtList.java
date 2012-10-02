@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.GenericNodeList;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class WtList
 		extends
@@ -65,25 +65,25 @@ public class WtList
 	// =========================================================================
 	
 	@Override
-	public RtDataPtk setRtd(RtDataPtk rtd)
+	public RtData setRtd(RtData rtd)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtDataPtk setRtd(Object... glue)
+	public RtData setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtDataPtk setRtd(String... glue)
+	public RtData setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtDataPtk getRtd()
+	public RtData getRtd()
 	{
 		throw null;
 	}

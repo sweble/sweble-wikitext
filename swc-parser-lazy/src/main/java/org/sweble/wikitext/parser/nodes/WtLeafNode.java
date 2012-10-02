@@ -2,7 +2,7 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.GenericLeafNode;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtLeafNode
 		extends
@@ -12,34 +12,34 @@ public abstract class WtLeafNode
 {
 	private static final long serialVersionUID = -2024251471331960556L;
 	
-	private RtDataPtk rtd = null;
+	private RtData rtd = null;
 	
 	// =========================================================================
 	
 	@Override
-	public RtDataPtk setRtd(RtDataPtk rtd)
+	public RtData setRtd(RtData rtd)
 	{
-		RtDataPtk old = this.rtd;
+		RtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
 	}
 	
 	@Override
-	public RtDataPtk setRtd(Object... glue)
+	public RtData setRtd(Object... glue)
 	{
-		rtd = new RtDataPtk(this, glue);
+		rtd = new RtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtDataPtk setRtd(String... glue)
+	public RtData setRtd(String... glue)
 	{
-		rtd = new RtDataPtk(this, glue);
+		rtd = new RtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtDataPtk getRtd()
+	public RtData getRtd()
 	{
 		return rtd;
 	}
@@ -106,7 +106,7 @@ public abstract class WtLeafNode
 			switch (index)
 			{
 				case 0:
-					return WtLeafNode.this.setRtd((RtDataPtk) value);
+					return WtLeafNode.this.setRtd((RtData) value);
 					
 				default:
 					throw new IndexOutOfBoundsException();
@@ -120,7 +120,7 @@ public abstract class WtLeafNode
 	public Object clone() throws CloneNotSupportedException
 	{
 		WtLeafNode n = (WtLeafNode) super.clone();
-		n.rtd = (RtDataPtk) n.rtd.clone();
+		n.rtd = (RtData) n.rtd.clone();
 		return n;
 	}
 }

@@ -39,7 +39,7 @@ import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 import de.fau.cs.osr.utils.XmlGrammar;
 
 public class Toolbox
@@ -205,11 +205,11 @@ public class Toolbox
 	{
 		if (n.getEmpty())
 		{
-			n.setRtd('<', n.getName(), RtDataPtk.SEP, " />", RtDataPtk.SEP);
+			n.setRtd('<', n.getName(), RtData.SEP, " />", RtData.SEP);
 		}
 		else
 		{
-			n.setRtd('<', n.getName(), RtDataPtk.SEP, '>', RtDataPtk.SEP, "</", n.getName(), '>');
+			n.setRtd('<', n.getName(), RtData.SEP, '>', RtData.SEP, "</", n.getName(), '>');
 		}
 		
 		for (WikitextNode attr : n.getXmlAttributes())
@@ -222,11 +222,11 @@ public class Toolbox
 	{
 		if (n.getHasValue())
 		{
-			n.setRtd(' ', n.getName(), "=\"", RtDataPtk.SEP, '"');
+			n.setRtd(' ', n.getName(), "=\"", RtData.SEP, '"');
 		}
 		else
 		{
-			n.setRtd(' ', n.getName(), RtDataPtk.SEP);
+			n.setRtd(' ', n.getName(), RtData.SEP);
 		}
 		
 		return n;
@@ -234,19 +234,19 @@ public class Toolbox
 	
 	public static Bold addRtData(Bold n)
 	{
-		n.setRtd("'''", RtDataPtk.SEP, "'''");
+		n.setRtd("'''", RtData.SEP, "'''");
 		return n;
 	}
 	
 	public static WikitextNode addRtData(Italics n)
 	{
-		n.setRtd("''", RtDataPtk.SEP, "''");
+		n.setRtd("''", RtData.SEP, "''");
 		return n;
 	}
 	
 	public static InternalLink addRtData(InternalLink n)
 	{
-		n.setRtd("[[", n.getTarget(), RtDataPtk.SEP, "]]");
+		n.setRtd("[[", n.getTarget(), RtData.SEP, "]]");
 		return n;
 	}
 	
@@ -277,7 +277,7 @@ public class Toolbox
 			addRtData((XmlAttribute) attr);
 		}
 		
-		n.setRtd("<", n.getName(), RtDataPtk.SEP, ">", n.getBody(), "</", n.getName(), ">");
+		n.setRtd("<", n.getName(), RtData.SEP, ">", n.getBody(), "</", n.getName(), ">");
 		return n;
 	}
 	

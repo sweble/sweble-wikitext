@@ -1,19 +1,19 @@
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.AstNodeInterface;
-import de.fau.cs.osr.ptk.common.ast.RtDataPtk;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public interface WikitextNode
 		extends
-			AstNodeInterface<WikitextNode>
+			AstNode<WikitextNode>
 {
-	public RtDataPtk setRtd(RtDataPtk rtd);
+	public RtData setRtd(RtData rtd);
 	
-	public RtDataPtk setRtd(Object... glue);
+	public RtData setRtd(Object... glue);
 	
-	public RtDataPtk setRtd(String... glue);
+	public RtData setRtd(String... glue);
 	
-	public RtDataPtk getRtd();
+	public RtData getRtd();
 	
 	public void clearRtd();
 	
