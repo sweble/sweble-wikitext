@@ -33,7 +33,7 @@ ParsedWikitextPage(
         [
           Signature(
             Properties:
-              RTD = RtData: [0] = "~~~"
+              {N} rtd = RTD[ "~~~" ]
               {N} tildeCount = 3
           )
         ]
@@ -45,7 +45,7 @@ ParsedWikitextPage(
         [
           Signature(
             Properties:
-              RTD = RtData: [0] = "~~~~"
+              {N} rtd = RTD[ "~~~~" ]
               {N} tildeCount = 4
           )
         ]
@@ -57,7 +57,7 @@ ParsedWikitextPage(
         [
           Signature(
             Properties:
-              RTD = RtData: [0] = "~~~~~"
+              {N} rtd = RTD[ "~~~~~" ]
               {N} tildeCount = 5
           )
         ]
@@ -69,7 +69,7 @@ ParsedWikitextPage(
         [
           Signature(
             Properties:
-              RTD = RtData: [0] = "~~~~~"
+              {N} rtd = RTD[ "~~~~~" ]
               {N} tildeCount = 5
               warnings = 
               [
@@ -86,7 +86,7 @@ ParsedWikitextPage(
         [
           Signature(
             Properties:
-              RTD = RtData: [0] = "~~~~~"
+              {N} rtd = RTD[ "~~~~~" ]
               {N} tildeCount = 5
               warnings = 
               [
