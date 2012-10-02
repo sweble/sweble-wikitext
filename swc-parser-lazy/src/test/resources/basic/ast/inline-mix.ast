@@ -8,7 +8,7 @@ ParsedWikitextPage(
     SemiPre([
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = " ", [1]
+          {N} rtd = RTD[ " " <o> "" ]
 
         [
           Signature(

@@ -902,7 +902,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               XmlElement(
@@ -943,7 +943,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               WtText("  ")
@@ -957,7 +957,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1036,7 +1036,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -1051,7 +1051,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1099,7 +1099,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               WtText("  ")
@@ -1113,7 +1113,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1192,7 +1192,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -1207,7 +1207,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1223,7 +1223,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1264,7 +1264,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               WtText("  ")
@@ -1278,7 +1278,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1319,7 +1319,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               WtText("  ")
@@ -1333,7 +1333,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1385,7 +1385,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -1400,7 +1400,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1416,7 +1416,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1431,7 +1431,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1470,7 +1470,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1485,7 +1485,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1524,7 +1524,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1563,7 +1563,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1599,7 +1599,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -1614,7 +1614,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1630,7 +1630,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1645,7 +1645,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1677,7 +1677,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1692,7 +1692,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1724,7 +1724,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1756,7 +1756,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -1788,7 +1788,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1815,7 +1815,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -1830,7 +1830,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1845,7 +1845,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -1996,7 +1996,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2072,7 +2072,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -2087,7 +2087,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2102,7 +2102,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2117,7 +2117,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2132,7 +2132,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2147,7 +2147,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2260,7 +2260,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -2275,7 +2275,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2291,7 +2291,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -2324,7 +2324,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -2357,7 +2357,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -2389,7 +2389,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2404,13 +2404,13 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell 1 || Cell 2 || Cell 3") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2425,25 +2425,25 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell A") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell B") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell C") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2479,7 +2479,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -2494,7 +2494,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2510,25 +2510,25 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 1 ") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 2 ") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 3") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2543,7 +2543,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -2575,13 +2575,13 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell 2 || Cell 3") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2596,7 +2596,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               XmlElement(
@@ -2628,19 +2628,19 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell B") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell C") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2676,7 +2676,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -2717,7 +2717,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2733,25 +2733,25 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 1 ") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 2 ") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 3") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2766,19 +2766,19 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"row\" | Row heading 1") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell 2 || Cell 3") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -2793,25 +2793,25 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"row\" | Row heading A") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell B") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell C") ]
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               TagExtension(
@@ -10698,19 +10698,19 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("432.1") ]
               )
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = "\n ", [1]
+                  {N} rtd = RTD[ "\n " <o> "" ]
 
                 [ WtText(" 43.21") ]
               )
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = "\n ", [1]
+                  {N} rtd = RTD[ "\n " <o> "" ]
 
                 [ WtText("  4.321") ]
               )
@@ -15329,7 +15329,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("|-") ]
               )
@@ -15359,7 +15359,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [
                   WtText("|- ")
@@ -15505,19 +15505,19 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("|cell1") ]
               )
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = "\n ", [1]
+                  {N} rtd = RTD[ "\n " <o> "" ]
 
                 [ WtText("|cell2") ]
               )
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = "\n ", [1]
+                  {N} rtd = RTD[ "\n " <o> "" ]
 
                 [ WtText("|cell3") ]
               )
@@ -15528,7 +15528,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("|cell1||cell2||cell3") ]
               )
@@ -15626,7 +15626,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [
                   WtText("|")
@@ -15660,7 +15660,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [
                   XmlEntityRef(
@@ -15700,7 +15700,7 @@ ParsedWikitextPage(
               )
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = "\n ", [1]
+                  {N} rtd = RTD[ "\n " <o> "" ]
 
                 [
                   XmlEntityRef(
@@ -15740,7 +15740,7 @@ ParsedWikitextPage(
               )
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = "\n ", [1]
+                  {N} rtd = RTD[ "\n " <o> "" ]
 
                 [
                   XmlEntityRef(
@@ -15796,7 +15796,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [
                   TagExtension(
@@ -15868,7 +15868,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("|+ Caption") ]
               )
@@ -15912,7 +15912,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [
                   WtText("|+ ")
@@ -17541,7 +17541,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -17732,7 +17732,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -17985,7 +17985,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -18240,7 +18240,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               TagExtension(
@@ -18591,7 +18591,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [
                   TagExtension(

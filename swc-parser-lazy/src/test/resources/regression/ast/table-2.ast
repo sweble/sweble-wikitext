@@ -34,7 +34,7 @@ ParsedWikitextPage(
         SemiPre([
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = " ", [1]
+              {N} rtd = RTD[ " " <o> "" ]
 
             [
               XmlEndTag(
@@ -46,7 +46,7 @@ ParsedWikitextPage(
           )
           SemiPreLine(
             Properties:
-              RTD = RtData: [0] = "\n ", [1]
+              {N} rtd = RTD[ "\n " <o> "" ]
 
             [
               Bold(

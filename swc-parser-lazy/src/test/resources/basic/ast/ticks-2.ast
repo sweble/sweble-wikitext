@@ -125,7 +125,7 @@ ParsedWikitextPage(
     SemiPre([
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = " ", [1]
+          {N} rtd = RTD[ " " <o> "" ]
 
         [
           Italics(
@@ -138,7 +138,7 @@ ParsedWikitextPage(
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n ", [1]
+          {N} rtd = RTD[ "\n " <o> "" ]
 
         [
           Bold(
@@ -151,7 +151,7 @@ ParsedWikitextPage(
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n ", [1]
+          {N} rtd = RTD[ "\n " <o> "" ]
 
         [
           Italics(

@@ -89,20 +89,14 @@ noinline transient WikitextNode SemiPreTransient =
 private inline SemiPreLine FirstSemiPreLine =
   !EmptyLine rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
-    yyValue = new SemiPreLine(content);
-
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(rt1, ' '), null);
+    yyValue = setRtd(new SemiPreLine(content), rt1, ' ', SEP);
   }
 ;
 
 private inline SemiPreLine SemiPreLine =
   rt0:pEol rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
-    yyValue = new SemiPreLine(content);
-
-    if (isGatherRtData())
-      addRtData(yyValue, joinRt(rt0, rt1, ' '), null);
+    yyValue = setRtd(new SemiPreLine(content), rt0, rt1, ' ', SEP);
   }
 ;
 

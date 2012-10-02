@@ -1367,7 +1367,7 @@ ParsedWikitextPage(
             SemiPre([
               SemiPreLine(
                 Properties:
-                  RTD = RtData: [0] = " ", [1]
+                  {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("      Each quarter runs for 20 minutes. Over time is what causes the game to go past the 20 minute mark. Overtime can be caused by a number of factors such as ") ]
               )

@@ -7,19 +7,19 @@ ParsedWikitextPage(
     SemiPre([
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = " ", [1]
+          {N} rtd = RTD[ " " <o> "" ]
 
         [ WtText(" text") ]
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n ", [1]
+          {N} rtd = RTD[ "\n " <o> "" ]
 
         [ WtText("text  ") ]
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n ", [1]
+          {N} rtd = RTD[ "\n " <o> "" ]
 
         [ WtText(" text") ]
       )

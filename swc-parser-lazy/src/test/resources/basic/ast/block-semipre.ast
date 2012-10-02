@@ -7,19 +7,19 @@ ParsedWikitextPage(
     SemiPre([
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = " ", [1]
+          {N} rtd = RTD[ " " <o> "" ]
 
         [ WtText("Line 1") ]
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n<!-- Comment --> ", [1]
+          {N} rtd = RTD[ "\nXmlComment(\" Comment \") " <o> "" ]
 
         [ WtText("Line 2") ]
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n ", [1]
+          {N} rtd = RTD[ "\n " <o> "" ]
 
         [ WtText("Line 3") ]
       )
@@ -30,13 +30,13 @@ ParsedWikitextPage(
     SemiPre([
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = " ", [1]
+          {N} rtd = RTD[ " " <o> "" ]
 
         [ WtText("Line 5") ]
       )
       SemiPreLine(
         Properties:
-          RTD = RtData: [0] = "\n ", [1]
+          {N} rtd = RTD[ "\n " <o> "" ]
 
         [ WtText("Line 6") ]
       )
