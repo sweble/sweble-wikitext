@@ -30,16 +30,16 @@ ParsedWikitextPage(
     Newline("\n")
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Public schools") ]
       [
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Borrego Springs Unified School District") ]
           [
@@ -75,8 +75,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Coronado Unified School District") ]
           [
@@ -117,8 +117,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -236,8 +236,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Fallbrook Union High School District") ]
           [
@@ -279,8 +279,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -544,8 +544,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Julian Union High School District") ]
           [
@@ -587,8 +587,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Lakeside Union School District") ]
           [
@@ -618,8 +618,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Mountain Empire Unified School District") ]
           [
@@ -649,8 +649,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Oceanside Unified School District") ]
           [
@@ -714,8 +714,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -838,8 +838,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Ramona Unified School District") ]
           [
@@ -886,8 +886,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -923,8 +923,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -1027,8 +1027,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("San Marcos Unified School District") ]
           [
@@ -1098,8 +1098,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -1376,8 +1376,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Valley Center-Pauma Unified School District") ]
           [
@@ -1455,8 +1455,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Vista Unified School District") ]
           [
@@ -1534,8 +1534,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Warner Unified School District") ]
           [
@@ -1573,16 +1573,16 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Private schools") ]
       [
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Baptist") ]
           [
@@ -1592,8 +1592,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             InternalLink(
@@ -1629,8 +1629,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Episcopal") ]
           [
@@ -1665,8 +1665,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Jewish") ]
           [
@@ -1730,8 +1730,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Lutheran") ]
           [
@@ -1799,8 +1799,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Non-Denominational") ]
           [
@@ -1835,8 +1835,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Nonsectarian") ]
           [
@@ -1991,8 +1991,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Closed schools") ]
       [
@@ -2022,8 +2022,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("See also") ]
       [
@@ -2132,8 +2132,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" References ") ]
       [
@@ -2154,8 +2154,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("External links") ]
       [

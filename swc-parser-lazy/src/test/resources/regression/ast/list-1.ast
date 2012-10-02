@@ -6,8 +6,8 @@ ParsedWikitextPage(
   [
     Section(
       Properties:
-        RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
+        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
 
       [ WtText("C") ]
       [

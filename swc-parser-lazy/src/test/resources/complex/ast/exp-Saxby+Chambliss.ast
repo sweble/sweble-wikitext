@@ -1734,8 +1734,8 @@ ParsedWikitextPage(
     Newline("\n")
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Early life, education, and family") ]
       [
@@ -2012,8 +2012,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("House of Representatives, 1995-2003") ]
       [
@@ -2206,16 +2206,16 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Senate, 2003-present") ]
       [
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Committee assignments") ]
           [
@@ -2566,8 +2566,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Caucus memberships") ]
           [
@@ -2628,16 +2628,16 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Elections") ]
           [
             Newline("\n")
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText("2002 race") ]
               [
@@ -2877,8 +2877,8 @@ ParsedWikitextPage(
             )
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText("2008 race") ]
               [
@@ -3203,8 +3203,8 @@ ParsedWikitextPage(
             )
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText("Imperial Sugar") ]
               [
@@ -3278,16 +3278,16 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Political positions") ]
           [
             Newline("\n")
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText("Voting Record") ]
               [
@@ -3446,8 +3446,8 @@ ParsedWikitextPage(
             )
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText("Interest groups ratings") ]
               [
@@ -3761,8 +3761,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Electoral history") ]
       [
@@ -6103,8 +6103,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("External links") ]
       [
@@ -21405,8 +21405,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("References") ]
       [

@@ -28,8 +28,8 @@ ParsedWikitextPage(
     Newline("\n")
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("The Irish connection ") ]
       [
@@ -579,8 +579,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Miscellaneous") ]
       [
@@ -734,8 +734,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Winter") ]
       [
@@ -924,8 +924,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("History") ]
       [
@@ -1185,8 +1185,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Rules") ]
       [
@@ -1261,8 +1261,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Length of the Game") ]
           [
@@ -1392,8 +1392,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Rugby League") ]
       [
@@ -1477,8 +1477,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [
         WtText(" ")
@@ -1954,8 +1954,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("IAFC") ]
       [
@@ -2115,8 +2115,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Diagrams ") ]
       [
@@ -2148,8 +2148,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Footy ") ]
       [
@@ -2188,8 +2188,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" What is a \"clearance\"? ") ]
       [
@@ -2316,8 +2316,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Latest edit ") ]
       [
@@ -2435,8 +2435,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" ACT ") ]
       [
@@ -3055,8 +3055,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Aussie rules in Australia ") ]
       [
@@ -3121,8 +3121,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Rules ") ]
       [
@@ -3370,8 +3370,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Attendance Record Cop-Outs and Factoids ") ]
       [
@@ -4853,8 +4853,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Another example of out of control non-NPOV ") ]
       [
@@ -5118,8 +5118,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Openning Paragraph") ]
           [
@@ -5166,8 +5166,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Popularity") ]
           [
@@ -5546,8 +5546,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Leagues") ]
           [
@@ -5936,8 +5936,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Rename? ") ]
       [
@@ -6345,8 +6345,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" External links ") ]
       [
@@ -6476,8 +6476,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Padding ") ]
       [
@@ -6528,8 +6528,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Piccies") ]
       [
@@ -6895,8 +6895,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("POV") ]
       [
@@ -7138,8 +7138,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Help!") ]
       [
@@ -7233,8 +7233,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Tactics/Terminology") ]
       [
@@ -7470,8 +7470,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Please vote") ]
       [
@@ -7538,8 +7538,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" External links ") ]
       [

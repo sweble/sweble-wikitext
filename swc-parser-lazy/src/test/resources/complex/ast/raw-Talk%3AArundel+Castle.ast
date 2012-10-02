@@ -308,8 +308,8 @@ ParsedWikitextPage(
     Newline("\n")
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Ghosts ") ]
       [
@@ -411,8 +411,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Automated peer review ") ]
       [

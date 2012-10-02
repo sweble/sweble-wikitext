@@ -6,8 +6,8 @@ ParsedWikitextPage(
   [
     Section(
       Properties:
-        RTD = RtData: [0] = "===", [1] = "===", [2]
         {N} level = 3
+        {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
       [ WtText(" Hallo 1 ") ]
       [
@@ -19,8 +19,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
+        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
 
       [ WtText(" Hallo 2 ") ]
       [
@@ -44,8 +44,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
+        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
 
       [ WtText(" Hallo 3 ") ]
       [
@@ -55,8 +55,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "==", [1] = "==", [2]
             {N} level = 2
+            {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
           [ WtText(" Hallo 4 ") ]
           [
@@ -65,8 +65,8 @@ ParsedWikitextPage(
             Newline("\n")
             Section(
               Properties:
-                RTD = RtData: [0] = "===", [1] = "===", [2]
                 {N} level = 3
+                {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
               [ WtText(" Hallo 5 ") ]
               [
@@ -77,8 +77,8 @@ ParsedWikitextPage(
             )
             Section(
               Properties:
-                RTD = RtData: [0] = "===", [1] = "===", [2]
                 {N} level = 3
+                {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
               [ WtText(" Hallo 6 ") ]
               [
@@ -95,8 +95,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "==", [1] = "==", [2]
             {N} level = 2
+            {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
           [ WtText(" Hallo 7 ") ]
           [
@@ -105,8 +105,8 @@ ParsedWikitextPage(
             Newline("\n")
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText(" Hallo 8 ") ]
               [
@@ -121,8 +121,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
+        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
 
       [ WtText(" Hallo 9 ") ]
       [
@@ -137,8 +137,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
+        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
         warnings = 
         [
           Warning (normal): /basic/wikitext/block-section.wikitext:26:1 - 14: "= Hallo 10 ==" : Odd number of closing equals.
@@ -149,8 +149,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "=", [1] = "=", [2]
         {N} level = 1
+        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
         warnings = 
         [
           Warning (normal): /basic/wikitext/block-section.wikitext:27:1 - 14: "== Hallo 11 =" : Odd number of opening equals.

@@ -96,8 +96,8 @@ ParsedWikitextPage(
     Newline("\n")
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Episode overview") ]
       [
@@ -341,16 +341,16 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Specials") ]
       [
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
           [
@@ -744,8 +744,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Mini Myths") ]
       [
@@ -774,8 +774,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("\"Egg-uinox\"") ]
           [
@@ -946,8 +946,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("\"Breakstep Bridge\"") ]
           [
@@ -1113,8 +1113,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("\"Mini Shark Myths\"") ]
           [
@@ -1443,8 +1443,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("Outtakes") ]
       [
@@ -1454,8 +1454,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("\"Facts About Flatulence\"") ]
           [
@@ -1695,8 +1695,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("\"MythBusters Teeth Challenge\"") ]
           [
@@ -1870,8 +1870,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [
         InternalLink(
@@ -2865,8 +2865,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("See also") ]
       [
@@ -2896,8 +2896,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("References") ]
       [
@@ -2918,8 +2918,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText("External links") ]
       [

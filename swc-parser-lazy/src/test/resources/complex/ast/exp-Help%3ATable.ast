@@ -272,8 +272,8 @@ ParsedWikitextPage(
     Newline("\n")
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Using the toolbar ") ]
       [
@@ -617,8 +617,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Pipe syntax tutorial ") ]
       [
@@ -3252,8 +3252,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Examples ") ]
       [
@@ -3261,8 +3261,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Simple example ") ]
           [
@@ -3391,8 +3391,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Multiplication table ") ]
           [
@@ -3844,8 +3844,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Color; scope of parameters ") ]
           [
@@ -4353,8 +4353,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Width, height ") ]
           [
@@ -4588,8 +4588,8 @@ ParsedWikitextPage(
             Newline("\n")
             Section(
               Properties:
-                RTD = RtData: [0] = "====", [1] = "====", [2]
                 {N} level = 4
+                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
               [ WtText(" Setting column widths ") ]
               [
@@ -5240,8 +5240,8 @@ ParsedWikitextPage(
                 Newline("\n")
                 Section(
                   Properties:
-                    RTD = RtData: [0] = "=====", [1] = "=====", [2]
                     {N} level = 5
+                    {N} rtd = RTD[ "=====" <o> "=====" <o> "" ]
 
                   [ WtText("Nowrap") ]
                   [
@@ -5700,8 +5700,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Setting borders ") ]
           [
@@ -6345,8 +6345,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Vertical alignment ") ]
           [
@@ -6785,8 +6785,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Positioning ") ]
           [
@@ -6825,8 +6825,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" M\u00E9lange ") ]
           [
@@ -7352,8 +7352,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Floating table ") ]
           [
@@ -7537,8 +7537,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Floating images in the center ") ]
           [
@@ -8150,8 +8150,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Nested tables ") ]
           [
@@ -9151,8 +9151,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Combined use of COLSPAN and ROWSPAN ") ]
           [
@@ -9528,8 +9528,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Centering tables ") ]
           [
@@ -9732,8 +9732,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Setting parameters ") ]
           [
@@ -9858,8 +9858,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Tiny tables within a text line ") ]
           [
@@ -10150,8 +10150,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Decimal point alignment ") ]
           [
@@ -10726,8 +10726,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Style classes ") ]
       [
@@ -12461,8 +12461,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Collapsible tables ") ]
           [
@@ -12573,8 +12573,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Sorting ") ]
       [
@@ -13056,8 +13056,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText("Sorting and collapsing") ]
           [
@@ -13495,8 +13495,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Row template ") ]
       [
@@ -13847,8 +13847,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Conditional table row ") ]
       [
@@ -13976,8 +13976,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Other table syntax ") ]
       [
@@ -14160,8 +14160,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Comparison of table syntax ") ]
           [
@@ -15175,8 +15175,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Pipe syntax in terms of the HTML produced ") ]
       [
@@ -15240,8 +15240,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Tables ") ]
           [
@@ -15302,8 +15302,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Rows ") ]
           [
@@ -15494,8 +15494,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Cells ") ]
           [
@@ -15785,8 +15785,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Headers ") ]
           [
@@ -15823,8 +15823,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [
             WtText(" ")
@@ -15970,8 +15970,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Summaries ") ]
           [
@@ -16237,8 +16237,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Square monitors ") ]
       [
@@ -16737,8 +16737,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Vertically oriented column headers ") ]
       [
@@ -17500,8 +17500,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Wikitable as image gallery ") ]
       [
@@ -18511,8 +18511,8 @@ ParsedWikitextPage(
         Newline("\n")
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Shifting/centering ") ]
           [
@@ -18882,8 +18882,8 @@ ParsedWikitextPage(
         )
         Section(
           Properties:
-            RTD = RtData: [0] = "===", [1] = "===", [2]
             {N} level = 3
+            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
           [ WtText(" Speed/transfer rates ") ]
           [
@@ -18898,8 +18898,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Generate a chart with a table ") ]
       [
@@ -18964,8 +18964,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" Converting spreadsheet to wikitable format ") ]
       [
@@ -19024,8 +19024,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" See also ") ]
       [
@@ -19393,8 +19393,8 @@ ParsedWikitextPage(
     )
     Section(
       Properties:
-        RTD = RtData: [0] = "==", [1] = "==", [2]
         {N} level = 2
+        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
       [ WtText(" External links ") ]
       [
