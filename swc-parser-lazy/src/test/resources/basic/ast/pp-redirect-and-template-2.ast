@@ -7,7 +7,7 @@ ParsedWikitextPage(
     Paragraph([
       Redirect(
         Properties:
-          RTD = RtData: [0] = "#REDIRECT[[link]]"
+          {N} rtd = RTD[ "#REDIRECT[[link]]" ]
           {N} target = "link"
       )
       Newline("\n")

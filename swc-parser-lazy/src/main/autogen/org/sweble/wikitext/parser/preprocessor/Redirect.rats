@@ -47,11 +47,9 @@ import org.sweble.wikitext.parser.parser.LinkTarget;
 WikitextNode Redirect =
   ws0:pWsStar '#' keyword:RedirectKeyword ws1:pWsStar target:RedirectLink
   {
-    yyValue = new Redirect(target.getForeign(1, String.class));
-
-    if (isGatherRtData())
-      addRtData(yyValue,
-          joinRt(ws0, '#', keyword, ws1, target.getForeign(0, String.class), target.getForeign(1, String.class), target.getForeign(2, String.class)));
+    yyValue = setRtd(
+      new Redirect(target.getForeign(1, String.class)),
+      ws0, '#', keyword, ws1, target.getForeign(0, String.class), target.getForeign(1, String.class), target.getForeign(2, String.class));
   }
 ;
 
