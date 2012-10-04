@@ -17,56 +17,133 @@
 
 package org.sweble.wikitext.parser.utils;
 
+import java.io.StringWriter;
 import java.io.Writer;
 
 import org.sweble.wikitext.parser.nodes.Whitespace;
+import org.sweble.wikitext.parser.nodes.WtContentNodeMarkTwo;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
+import de.fau.cs.osr.utils.PrinterBase.Memoize;
+import de.fau.cs.osr.utils.PrinterBase.OutputBuffer;
 
 public class WtPrinter
 		extends
 			AstPrinter<WtNode>
 {
-	public WtPrinter(Writer writer)
+	public void visit(WtContentNodeMarkTwo n)
 	{
-		super(writer);
+		Memoize m = p.memoizeStart(n);
+		if (m != null)
+		{
+			if (hasVisibleProperties(n))
+			{
+				// FIXME: Temporary!
+				p.indent(n.getNodeName());
+				p.println('(');
+				
+				p.incIndent();
+				if (hasVisibleProperties(n))
+				{
+					printProperties(n);
+					if (!n.isEmpty())
+						p.needNewlines(2);
+				}
+				
+				OutputBuffer b = p.outputBufferStart();
+				printListOfNodes(n);
+				b.stop();
+				
+				String output = b.getBuffer().trim();
+				if (isSingleLine(output))
+				{
+					p.indent("[ ");
+					p.print(output);
+					p.println(" ]");
+				}
+				else
+				{
+					p.indentln('[');
+					
+					p.incIndent();
+					printListOfNodes(n);
+					p.decIndent();
+					
+					p.indentln(']');
+				}
+				p.decIndent();
+				
+				p.indentln(')');
+			}
+			else if (n.isEmpty())
+			{
+				p.indent(n.getClass().getSimpleName());
+				p.println("[]");
+			}
+			else
+			{
+				p.indent(n.getClass().getSimpleName());
+				p.println('[');
+				
+				p.incIndent();
+				printListOfNodes(n);
+				p.decIndent();
+				
+				p.indentln(']');
+			}
+			p.memoizeStop(m);
+		}
 	}
 	
 	public void visit(Whitespace n)
 	{
-		if (n.hasAttributes())
+		Memoize m = p.memoizeStart(n);
+		if (m != null)
 		{
-			visit((WtNode) n);
-		}
-		else if (n.getContent().isEmpty())
-		{
-			indent();
-			out.println("Whitespace(NO EOL: [ ])");
-		}
-		else
-		{
-			String singleLine = printNodeContentToString(n.getContent());
-			
-			String eolInfo = n.getHasNewline() ? "EOL" : "NO EOL";
-			
-			if (singleLine != null)
+			if (hasVisibleProperties(n))
 			{
-				indent();
-				out.println("Whitespace(" + eolInfo + ": [ " + singleLine + " ])");
+				printNode(n);
+			}
+			else if (n.getContent().isEmpty())
+			{
+				p.indentln("Whitespace(NO EOL: [ ])");
 			}
 			else
 			{
-				indent();
-				out.println("Whitespace(" + eolInfo + ": [");
+				String eolInfo = n.getHasNewline() ? "EOL" : "NO EOL";
 				
-				incIndent();
-				printNodeContent(n.getContent());
-				decIndent();
+				p.indent("Whitespace(");
+				p.print(eolInfo);
+				p.println(": [");
 				
-				indent();
-				out.println("])");
+				p.incIndent();
+				printListOfNodes(n);
+				p.decIndent();
+				
+				p.indentln("])");
 			}
+			p.memoizeStop(m);
 		}
+	}
+	
+	// =========================================================================
+	
+	public static String print(WtNode node)
+	{
+		return WtPrinter.print(new StringWriter(), node).toString();
+	}
+	
+	public static Writer print(Writer writer, WtNode node)
+	{
+		new WtPrinter(writer).go(node);
+		return writer;
+	}
+	
+	// =========================================================================
+	
+	public WtPrinter(Writer writer)
+	{
+		super(writer);
 	}
 }

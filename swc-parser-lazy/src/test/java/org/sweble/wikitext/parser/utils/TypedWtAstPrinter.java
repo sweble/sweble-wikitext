@@ -23,7 +23,7 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
 
-public final class TypedAstPrinter
+public final class TypedWtAstPrinter
 		implements
 			GenericPrinterInterface
 {
@@ -36,9 +36,6 @@ public final class TypedAstPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		WtPrinter printer = new WtPrinter(out);
-		
-		printer.setLegacyIndentation(true);
-		printer.go((WtNode) ast);
+		new WtPrinter(out).go((WtNode) ast);
 	}
 }
