@@ -21,10 +21,11 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
+import org.sweble.wikitext.parser.nodes.WtContentNodeMarkTwo;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtStringContentNode;
+import org.sweble.wikitext.parser.nodes.WtText;
 
-import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class RtWikitextPrinter
@@ -57,86 +58,104 @@ public class RtWikitextPrinter
 	
 	public void go(WtNode node)
 	{
+		visit(node);
+	}
+	
+	protected void visit(WtNode node)
+	{
 		switch (node.getNodeType())
 		{
-			case WtNode.NT_NODE_LIST:
-			{
-				for (WtNode c : (WtNodeList) node)
-					go(c);
-				
+			case WtNode.NT_TEXT:
+				printText((WtText) node);
 				break;
-			}
+			
+			case WtNode.NT_NODE_LIST:
+				printNodeList(node);
+				break;
 			
 			default:
-			{
 				RtData rtd = node.getRtd();
-				if (rtd != null)
+				if (node instanceof WtStringContentNode)
 				{
-					int i = 0;
-					for (WtNode n : node)
-					{
-						printRtd(rtd.getField(i++));
-						if (n != null)
-							go(n);
-					}
-					printRtd(rtd.getField(i));
+					printStringContentNode(rtd, (WtStringContentNode) node);
+				}
+				else if (node instanceof WtContentNodeMarkTwo)
+				{
+					printContentNode(rtd, (WtContentNodeMarkTwo) node);
 				}
 				else
 				{
-					RtData rtd2 = (RtData) node.getProperty("rtd", null);
-					if (rtd2 != null)
-					{
-						int i = 0;
-						for (WtNode n : node)
-						{
-							printRtd2(rtd2.getField(i++));
-							if (n != null)
-								go(n);
-						}
-						printRtd2(rtd2.getField(i));
-					}
-					else
-					{
-						if (node instanceof GenericStringContentNode)
-						{
-							w.print(((GenericStringContentNode<WtNode>) node).getContent());
-						}
-						else
-						{
-							for (WtNode n : node)
-							{
-								if (n != null)
-									go(n);
-							}
-						}
-					}
+					printAnyOtherNode(rtd, node);
 				}
 				break;
-			}
 		}
 	}
 	
-	protected void printRtd(Object[] objects)
+	// =========================================================================
+	
+	protected void printText(WtText text)
 	{
-		if (objects != null)
+		w.print(text.getContent());
+	}
+	
+	protected void printNodeList(WtNode node)
+	{
+		iterate(node);
+	}
+	
+	protected void printContentNode(RtData rtd, WtContentNodeMarkTwo contentNode)
+	{
+		if (rtd != null)
 		{
-			for (Object o : objects)
-			{
-				if (o instanceof WtNode)
-				{
-					go((WtNode) o);
-				}
-				else
-				{
-					w.print(o);
-				}
-			}
+			printRtd(rtd.getField(0));
+			printNodeList(contentNode);
+			printRtd(rtd.getField(1));
+		}
+		else
+		{
+			printNodeList(contentNode);
 		}
 	}
 	
-	protected void printRtd2(Object[] objects)
+	protected void printStringContentNode(
+			RtData rtd,
+			WtStringContentNode contentNode)
 	{
-		for (Object o : objects)
+		if (rtd != null)
+		{
+			printRtd(rtd.getField(0));
+		}
+		else
+		{
+			w.print(contentNode.getContent());
+		}
+	}
+	
+	protected void printAnyOtherNode(RtData rtd, WtNode node)
+	{
+		if (rtd != null)
+		{
+			int i = 0;
+			for (WtNode n : node)
+			{
+				printRtd(rtd.getField(i++));
+				// FIXME: Remove this check!
+				if (n != null)
+					go(n);
+			}
+			printRtd(rtd.getField(i));
+		}
+		else
+		{
+			printNodeList(node);
+		}
+	}
+	
+	// =========================================================================
+	
+	protected void printRtd(Object[] fields)
+	{
+		for (Object o : fields)
 		{
 			if (o instanceof WtNode)
 			{
@@ -147,5 +166,11 @@ public class RtWikitextPrinter
 				w.print(o);
 			}
 		}
+	}
+	
+	protected void iterate(WtNode node)
+	{
+		for (WtNode c : node)
+			go(c);
 	}
 }
