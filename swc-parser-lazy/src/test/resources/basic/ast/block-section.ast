@@ -201,7 +201,7 @@ WtParsedWikitextPage(
 
         [ WtText("= Hallo 11 ") ]
       )
-      WtSectionBody[]
+      WtSectionBody([ ])
     )
   ]
 )

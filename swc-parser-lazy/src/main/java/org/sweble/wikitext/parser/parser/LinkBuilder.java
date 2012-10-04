@@ -24,9 +24,9 @@ import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.LinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.LinkTarget;
-import org.sweble.wikitext.parser.nodes.LinkTitle;
+import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.Url;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -41,9 +41,9 @@ public class LinkBuilder
 	
 	private Url linkUrl;
 	
-	private LinkOptionAltText alt;
+	private WtLinkOptionAltText alt;
 	
-	private LinkTitle title;
+	private WtLinkTitle title;
 	
 	// -- format
 	
@@ -181,12 +181,12 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public void setAlt(LinkOptionAltText alt)
+	public void setAlt(WtLinkOptionAltText alt)
 	{
 		this.alt = alt;
 	}
 	
-	public void setTitle(LinkTitle title)
+	public void setTitle(WtLinkTitle title)
 	{
 		this.title = title;
 	}
@@ -196,7 +196,7 @@ public class LinkBuilder
 	public WtNode build(WtNodeList options, String postfix)
 	{
 		if (this.title == null)
-			this.title = new LinkTitle();
+			this.title = new WtLinkTitle();
 		
 		if (this.targetType == LinkTargetType.IMAGE)
 		{
@@ -210,7 +210,7 @@ public class LinkBuilder
 				format = ImageViewFormat.UNRESTRAINED;
 			
 			if (alt == null)
-				alt = new LinkOptionAltText();
+				alt = new WtLinkOptionAltText();
 			
 			ImageLink result = new ImageLink(
 					target,

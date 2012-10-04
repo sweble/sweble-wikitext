@@ -35,7 +35,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Alabama State Defense Force" <o> "]]" ]
               {N} target = "Alabama State Defense Force"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(", a military entity")
         ]
@@ -53,7 +53,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Alaska State Defense Force" <o> "]]" ]
               {N} target = "Alaska State Defense Force"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(", a military entity")
         ]
@@ -71,7 +71,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Another System Definition Facility" <o> "]]" ]
               {N} target = "Another System Definition Facility"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(", the most commonly used build system for Common Lisp")
         ]
@@ -89,7 +89,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Association of Synchronous Data Formats" <o> "]]" ]
               {N} target = "Association of Synchronous Data Formats"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(", an organization that advances the use of synchronous data transmission technology")
         ]
@@ -107,7 +107,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[pitch detection algorithm" <o> "]]s" ]
               {N} target = "pitch detection algorithm"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
         ]
       )
@@ -124,7 +124,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[home row" <o> "]]" ]
               {N} target = "home row"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" on a ")
           InternalLink(
@@ -134,7 +134,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[QWERTY" <o> "]]" ]
               {N} target = "QWERTY"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" keyboard")
         ]
@@ -152,7 +152,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[viral video" <o> "]]s" ]
               {N} target = "viral video"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
         ]
       )
@@ -190,7 +190,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Hoverboard ASDF" <o> "]]" ]
                   {N} target = "Hoverboard ASDF"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -207,7 +207,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Japan Air Self-Defense Force" <o> "]]" ]
                   {N} target = "Japan Air Self-Defense Force"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -224,7 +224,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[QWERTY" <o> "]]" ]
                   {N} target = "QWERTY"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -239,7 +239,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Category:Initialisms" <o> "]]" ]
               {N} target = "Category:Initialisms"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           Template(
@@ -261,7 +261,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[de:ASDF" <o> "]]" ]
               {N} target = "de:ASDF"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -271,7 +271,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fr:ASDF" <o> "]]" ]
               {N} target = "fr:ASDF"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
         ])
         Newline("\n")

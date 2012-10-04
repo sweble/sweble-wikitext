@@ -121,7 +121,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 				+ "                  {N} rtd = RTD[ \"[[some link\" <o> \"]]\" ]\n"
 				+ "                  {N} target = \"some link\"\n"
 				+ "\n"
-				+ "                LinkTitle([ ])\n"
+				+ "                WtLinkTitle([ ])\n"
 				+ "              )\n"
 				+ "            ]\n"
 				+ "          )\n"

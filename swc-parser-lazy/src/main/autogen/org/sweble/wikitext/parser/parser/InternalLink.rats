@@ -38,7 +38,7 @@
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_INTERNAL_LINK
  *
  *     Children:
- *       title : LinkTitle
+ *       title : WtLinkTitle
  *
  *     Properties:
  *       target    : String
@@ -73,7 +73,7 @@
  *
  *     Children:
  *       options : WtNodeList
- *       title   : LinkTitle
+ *       title   : WtLinkTitle
  *
  *     Properties:
  *       target   : String
@@ -86,7 +86,7 @@
  *       border   : boolean
  *       linkPage : String
  *       linkUrl  : Url
- *       alt      : LinkOptionAltText
+ *       alt      : WtLinkOptionAltText
  *
  * Link Option: Resize
  * -------------------
@@ -104,7 +104,7 @@
  *     to -1.
  *
  *   AST node:
- *     Name        : LinkOptionResize
+ *     Name        : WtLinkOptionResize
  *     Extends     : WtLeafNode
  *     Constructor : "width, height"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_RESIZE
@@ -120,7 +120,7 @@
  *     - LinkOptionKeyword ::= Ws* LinkOptionKeyword Ws*
  *
  *   AST node:
- *     Name        : LinkOptionKeyword
+ *     Name        : WtLinkOptionKeyword
  *     Extends     : WtLeafNode
  *     Constructor : "keyword"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_KEYWORD
@@ -136,7 +136,7 @@
  *     - LinkOptionLinkTarget ::= Ws* 'link=' Url Ws*
  *
  *   AST node:
- *     Name        : LinkOptionLinkTarget
+ *     Name        : WtLinkOptionLinkTarget
  *     Extends     : WtInnerNode1
  *     Constructor : target
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
@@ -151,7 +151,7 @@
  *     - LinkOptionAltText ::= Ws* 'alt=' LinkTitleContent{ALT}*
  *
  *   AST node:
- *     Name        : LinkOptionAltText
+ *     Name        : WtLinkOptionAltText
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_ALT_TEXT
@@ -163,7 +163,7 @@
  *     - LinkOptionGarbage ::= LinkTitleContent{ALT}* &'|'
  *
  *   AST node:
- *     Name        : LinkOptionGarbage
+ *     Name        : WtLinkOptionGarbage
  *     Extends     : WtStringContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_GARBAGE
@@ -193,7 +193,7 @@
  *     - PageSwitch
  *
  *   AST node:
- *     Name        : LinkTitle
+ *     Name        : WtLinkTitle
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TITLE
@@ -446,7 +446,7 @@ private inline WtNode LinkOptionChoice =
 
 // -- Link Option Resize -------------------------------------------------------
 
-private LinkOptionResize LinkOptionResize =
+private WtLinkOptionResize LinkOptionResize =
     rt0:pExtWsStar width:DigitPlus rt1:pSpaceStar "px" rt2:pExtWsStar
     {
       int w = toInt(width);
@@ -460,7 +460,7 @@ private LinkOptionResize LinkOptionResize =
 
       getLinkBuilder().setWidth(w);
 
-      yyValue = setRtd(new LinkOptionResize(w, -1), '|', rt0, width, rt1, "px", rt2);
+      yyValue = setRtd(new WtLinkOptionResize(w, -1), '|', rt0, width, rt1, "px", rt2);
     }
   / rt0:pExtWsStar width:DigitPlus 'x' height:DigitPlus? rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -477,7 +477,7 @@ private LinkOptionResize LinkOptionResize =
       getLinkBuilder().setWidth(w);
       getLinkBuilder().setHeight(h);
 
-      yyValue = setRtd(new LinkOptionResize(w, h), '|', rt0, width, 'x', height, rt1, "px", rt2);
+      yyValue = setRtd(new WtLinkOptionResize(w, h), '|', rt0, width, 'x', height, rt1, "px", rt2);
     }
   / rt0:pExtWsStar 'x' height:DigitPlus rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -492,7 +492,7 @@ private LinkOptionResize LinkOptionResize =
 
       getLinkBuilder().setHeight(h);
 
-      yyValue = setRtd(new LinkOptionResize(-1, h), '|', rt0, 'x', height, rt1, "px", rt2);
+      yyValue = setRtd(new WtLinkOptionResize(-1, h), '|', rt0, 'x', height, rt1, "px", rt2);
     }
 ;
 
@@ -501,10 +501,10 @@ private LinkOptionResize LinkOptionResize =
 
 // -- Link Option Keyword ------------------------------------------------------
 
-private LinkOptionKeyword LinkOptionKeyword =
+private WtLinkOptionKeyword LinkOptionKeyword =
   rt0:pExtWsStar keyword:LinkOptionKeywordString &{ getLinkBuilder().addKeyword(keyword) } rt1:pExtWsStar
   {
-    yyValue = setRtd(new LinkOptionKeyword(keyword), '|', rt0, keyword, rt1);
+    yyValue = setRtd(new WtLinkOptionKeyword(keyword), '|', rt0, keyword, rt1);
   }
 ;
 
@@ -522,7 +522,7 @@ private transient stateful WtNode LinkOptionNameValue =
     {
       getLinkBuilder().setLink(target);
 
-      yyValue = setRtd(new LinkOptionLinkTarget(target), '|', rt0, "link=", SEP, rt1);
+      yyValue = setRtd(new WtLinkOptionLinkTarget(target), '|', rt0, "link=", SEP, rt1);
     }
   / rt0:pExtWsStar "alt="
     {
@@ -530,8 +530,8 @@ private transient stateful WtNode LinkOptionNameValue =
     }
     alt:LinkTitleContentStar
     {
-      yyValue = setRtd(new LinkOptionAltText(alt), '|', rt0, "alt=", SEP);
-      getLinkBuilder().setAlt((LinkOptionAltText) yyValue);
+      yyValue = setRtd(new WtLinkOptionAltText(alt), '|', rt0, "alt=", SEP);
+      getLinkBuilder().setAlt((WtLinkOptionAltText) yyValue);
     }
   // TODO: Support page=...
 ;
@@ -546,7 +546,7 @@ private inline WtNode LinkTargetOverride =
 
 // -- Link Option Garbage ------------------------------------------------------
 
-private inline stateful LinkOptionGarbage LinkOptionGarbage =
+private inline stateful WtLinkOptionGarbage LinkOptionGarbage =
   {
     enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_ALT :
@@ -555,7 +555,7 @@ private inline stateful LinkOptionGarbage LinkOptionGarbage =
   LinkTitleContentStar
   {
     String content = difference(yyStart, yyResult);
-    yyValue = setRtd(new LinkOptionGarbage(content), '|', content);
+    yyValue = setRtd(new WtLinkOptionGarbage(content), '|', content);
   }
 ;
 
@@ -564,7 +564,7 @@ private inline stateful LinkOptionGarbage LinkOptionGarbage =
 
 // -- Link Title ---------------------------------------------------------------
 
-private inline stateful LinkTitle LinkTitle =
+private inline stateful WtLinkTitle LinkTitle =
   {
     enter(getLinkBuilder().isImageTarget() ?
         ParserScopes.IMAGE_LINK_TITLE :
@@ -572,7 +572,7 @@ private inline stateful LinkTitle LinkTitle =
   }
   '|' title:LinkTitleContentStar
   {
-    yyValue = setRtd(new LinkTitle(title), '|');
+    yyValue = setRtd(new WtLinkTitle(title), '|');
     getLinkBuilder().setTitle(yyValue);
   }
 ;

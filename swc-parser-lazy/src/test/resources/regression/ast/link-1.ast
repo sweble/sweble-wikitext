@@ -8,7 +8,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText(
+            WtLinkOptionAltText(
               Properties:
                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
@@ -27,20 +27,20 @@ WtParsedWikitextPage(
           {N} width = 225
 
         [
-          LinkOptionResize(
+          WtLinkOptionResize(
             Properties:
               {N} height = -1
               {N} rtd = RTD[ "|225px" ]
               {N} width = 225
           )
-          LinkOptionAltText(
+          WtLinkOptionAltText(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ ]
           )
         ]
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 

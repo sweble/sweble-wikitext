@@ -29,7 +29,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[Help:Wikitable" <o> "]]" ]
             {N} target = "Help:Wikitable"
 
-          LinkTitle([ ])
+          WtLinkTitle([ ])
         )
         WtText(". For style considerations, see ")
         InternalLink(
@@ -39,7 +39,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[Wikipedia:Manual of Style (tables)" <o> "]]" ]
             {N} target = "Wikipedia:Manual of Style (tables)"
 
-          LinkTitle([ ])
+          WtLinkTitle([ ])
         )
         WtText(".")
       ]
@@ -105,7 +105,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Wikipedia:Cheatsheet" <o> "]]" ]
                     {N} target = "Wikipedia:Cheatsheet"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -128,7 +128,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Wiki markup" <o> "]]" ]
                     {N} target = "Help:Wiki markup"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -151,7 +151,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Visual file markup" <o> "]]" ]
                     {N} target = "Help:Visual file markup"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -174,7 +174,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Sound file markup" <o> "]]" ]
                     {N} target = "Help:Sound file markup"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -197,7 +197,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Table" <o> "]]" ]
                     {N} target = "Help:Table"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -220,7 +220,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Template" <o> "]]" ]
                     {N} target = "Help:Template"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -243,7 +243,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:HTML in wikitext" <o> "]]" ]
                     {N} target = "Help:HTML in wikitext"
 
-                  LinkTitle(
+                  WtLinkTitle(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -286,7 +286,7 @@ WtParsedWikitextPage(
           ImageLink(
             Properties:
               {N} alt = 
-                LinkOptionAltText([ ])
+                WtLinkOptionAltText([ ])
               {N} border = false
               {N} format = FRAME
               {N} hAlign = CENTER
@@ -300,18 +300,18 @@ WtParsedWikitextPage(
               {N} width = -1
 
             [
-              LinkOptionKeyword(
+              WtLinkOptionKeyword(
                 Properties:
                   {N} keyword = "frame"
                   {N} rtd = RTD[ "|frame" ]
               )
-              LinkOptionKeyword(
+              WtLinkOptionKeyword(
                 Properties:
                   {N} keyword = "center"
                   {N} rtd = RTD[ "|center" ]
               )
             ]
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -322,7 +322,7 @@ WtParsedWikitextPage(
           ImageLink(
             Properties:
               {N} alt = 
-                LinkOptionAltText([ ])
+                WtLinkOptionAltText([ ])
               {N} border = false
               {N} format = FRAME
               {N} hAlign = CENTER
@@ -336,18 +336,18 @@ WtParsedWikitextPage(
               {N} width = -1
 
             [
-              LinkOptionKeyword(
+              WtLinkOptionKeyword(
                 Properties:
                   {N} keyword = "frame"
                   {N} rtd = RTD[ "|frame" ]
               )
-              LinkOptionKeyword(
+              WtLinkOptionKeyword(
                 Properties:
                   {N} keyword = "center"
                   {N} rtd = RTD[ "|center" ]
               )
             ]
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -362,7 +362,7 @@ WtParsedWikitextPage(
           ImageLink(
             Properties:
               {N} alt = 
-                LinkOptionAltText([ ])
+                WtLinkOptionAltText([ ])
               {N} border = false
               {N} format = UNRESTRAINED
               {N} hAlign = NONE
@@ -376,13 +376,13 @@ WtParsedWikitextPage(
               {N} width = -1
 
             [ ]
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" or ")
           ImageLink(
             Properties:
               {N} alt = 
-                LinkOptionAltText([ ])
+                WtLinkOptionAltText([ ])
               {N} border = false
               {N} format = UNRESTRAINED
               {N} hAlign = NONE
@@ -396,7 +396,7 @@ WtParsedWikitextPage(
               {N} width = -1
 
             [ ]
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" (Insert a table) on the ")
           InternalLink(
@@ -406,7 +406,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Help:Edit toolbar" <o> "]]" ]
               {N} target = "Help:Edit toolbar"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -421,7 +421,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[mw:Customizing edit toolbar" <o> "]]" ]
               {N} target = "mw:Customizing edit toolbar"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -827,7 +827,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[wikicode" <o> "]]" ]
               {N} target = "wikicode"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" can be used as a shortcut to create a table.  The pipe (")
           InternalLink(
@@ -837,7 +837,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:vertical bar" <o> "]]" ]
               {N} target = "w:vertical bar"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -852,7 +852,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:HTML table" <o> "]]" ]
               {N} target = "w:HTML table"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1156,7 +1156,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[row" <o> "]]" ]
                       {N} target = "row"
 
-                    LinkTitle([ ])
+                    WtLinkTitle([ ])
                   )
                 ]
               )
@@ -1168,7 +1168,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:hyphen" <o> "]]" ]
                   {N} target = "w:hyphen"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1376,7 +1376,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[w:cell" <o> "]]" ]
                       {N} target = "w:cell"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3043,7 +3043,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[w:HTML" <o> "]]" ]
             {N} target = "w:HTML"
 
-          LinkTitle(
+          WtLinkTitle(
             Properties:
               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3065,7 +3065,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[w:Table (HTML)" <o> "]]" ]
             {N} target = "w:Table (HTML)"
 
-          LinkTitle(
+          WtLinkTitle(
             Properties:
               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3130,7 +3130,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[Help:HTML in wikitext#Permitted HTML" <o> "]]" ]
             {N} target = "Help:HTML in wikitext#Permitted HTML"
 
-          LinkTitle(
+          WtLinkTitle(
             Properties:
               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3149,7 +3149,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[meta:Template talk:Square 8x8 pentomino example" <o> "]]" ]
               {N} target = "meta:Template talk:Square 8x8 pentomino example"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(".  An \"image\" in the form of a table is much more convenient to edit than an uploaded image.")
         ])
@@ -3230,7 +3230,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Help:Table#M\u00E9lange" <o> "]]" ]
               {N} target = "Help:Table#M\u00E9lange"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3245,7 +3245,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[help:sorting" <o> "]]" ]
               {N} target = "help:sorting"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3455,7 +3455,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Help:User style" <o> "]]" ]
                       {N} target = "Help:User style"
 
-                    LinkTitle([ ])
+                    WtLinkTitle([ ])
                   )
                 ]
               )
@@ -3884,7 +3884,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Colours" <o> "]]" ]
                   {N} target = "Wikipedia:Colours"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4267,7 +4267,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:User style" <o> "]]" ]
                   {N} target = "Help:User style"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4318,7 +4318,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:style" <o> "]]" ]
                   {N} target = "w:style"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4333,7 +4333,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:background" <o> "]]" ]
                   {N} target = "w:background"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4348,7 +4348,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:list of colors" <o> "]]" ]
                   {N} target = "w:list of colors"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4363,7 +4363,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:web colors" <o> "]]" ]
                   {N} target = "w:web colors"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4635,7 +4635,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[word wrap" <o> "]]" ]
                       {N} target = "word wrap"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5420,7 +5420,7 @@ WtParsedWikitextPage(
                                       {N} rtd = RTD[ "[[Lorem ipsum" <o> "]]" ]
                                       {N} target = "Lorem ipsum"
 
-                                    LinkTitle([ ])
+                                    WtLinkTitle([ ])
                                   )
                                   WtText(" dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                                 ])
@@ -5895,7 +5895,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -5909,14 +5909,14 @@ WtParsedWikitextPage(
                               {N} width = 120
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|120px" ]
                                   {N} width = 120
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                         ])
                         Newline("\n")
@@ -5933,7 +5933,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -5947,14 +5947,14 @@ WtParsedWikitextPage(
                               {N} width = 120
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|120px" ]
                                   {N} width = 120
                               )
                             ]
-                            LinkTitle(
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5976,7 +5976,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -5990,14 +5990,14 @@ WtParsedWikitextPage(
                               {N} width = 120
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|120px" ]
                                   {N} width = 120
                               )
                             ]
-                            LinkTitle(
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6201,7 +6201,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -6215,14 +6215,14 @@ WtParsedWikitextPage(
                               {N} width = 120
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|120px" ]
                                   {N} width = 120
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                         ])
                         Newline("\n")
@@ -6248,7 +6248,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -6262,14 +6262,14 @@ WtParsedWikitextPage(
                               {N} width = 120
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|120px" ]
                                   {N} width = 120
                               )
                             ]
-                            LinkTitle(
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6300,7 +6300,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -6314,14 +6314,14 @@ WtParsedWikitextPage(
                               {N} width = 120
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|120px" ]
                                   {N} width = 120
                               )
                             ]
-                            LinkTitle(
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6848,7 +6848,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Template talk:Table demo" <o> "]]" ]
                   {N} target = "m:Template talk:Table demo"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(". Prior to April 2009, using \"float\" to position a table was discouraged; however, it no longer always breaks page rendering at large font sizes. See a floated image, below, under \"")
               InternalLink(
@@ -6858,7 +6858,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[#Floating images in the center" <o> "]]" ]
                   {N} target = "#Floating images in the center"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6897,7 +6897,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Wikipedia:Manual of Style (accessibility)" <o> "]]" ]
                       {N} target = "Wikipedia:Manual of Style (accessibility)"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6919,7 +6919,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[help:sorting" <o> "]]" ]
                   {N} target = "help:sorting"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7288,7 +7288,7 @@ WtParsedWikitextPage(
                                           ImageLink(
                                             Properties:
                                               {N} alt = 
-                                                LinkOptionAltText([ ])
+                                                WtLinkOptionAltText([ ])
                                               {N} border = false
                                               {N} format = UNRESTRAINED
                                               {N} hAlign = NONE
@@ -7302,7 +7302,7 @@ WtParsedWikitextPage(
                                               {N} width = -1
 
                                             [ ]
-                                            LinkTitle([ ])
+                                            WtLinkTitle([ ])
                                           )
                                         ])
                                         Newline("\n")
@@ -7328,7 +7328,7 @@ WtParsedWikitextPage(
                                           ImageLink(
                                             Properties:
                                               {N} alt = 
-                                                LinkOptionAltText([ ])
+                                                WtLinkOptionAltText([ ])
                                               {N} border = false
                                               {N} format = UNRESTRAINED
                                               {N} hAlign = NONE
@@ -7342,7 +7342,7 @@ WtParsedWikitextPage(
                                               {N} width = -1
 
                                             [ ]
-                                            LinkTitle([ ])
+                                            WtLinkTitle([ ])
                                           )
                                         ])
                                         Newline("\n")
@@ -7764,7 +7764,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -7778,14 +7778,14 @@ WtParsedWikitextPage(
                               {N} width = 180
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|180px" ]
                                   {N} width = 180
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                           XmlElement(
                             Properties:
@@ -7810,7 +7810,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[Bel (mythology)" <o> "]]" ]
                               {N} target = "Bel (mythology)"
 
-                            LinkTitle(
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7867,7 +7867,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = RIGHT
@@ -7881,18 +7881,18 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "right"
                               {N} rtd = RTD[ "|right" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7978,7 +7978,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -7992,14 +7992,14 @@ WtParsedWikitextPage(
                               {N} width = 105
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|105px" ]
                                   {N} width = 105
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                           XmlElement(
                             Properties:
@@ -8069,7 +8069,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -8083,14 +8083,14 @@ WtParsedWikitextPage(
                               {N} width = 105
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|105px" ]
                                   {N} width = 105
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                           XmlElement(
                             Properties:
@@ -8160,7 +8160,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -8174,14 +8174,14 @@ WtParsedWikitextPage(
                               {N} width = 105
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = -1
                                   {N} rtd = RTD[ "|105px" ]
                                   {N} width = 105
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                           XmlElement(
                             Properties:
@@ -8234,7 +8234,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Wikipedia:Manual_of_Style_(accessibility)#Tables" <o> "]]" ]
                       {N} target = "Wikipedia:Manual_of_Style_(accessibility)#Tables"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -9953,7 +9953,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[HTML" <o> "]]" ]
                   {N} target = "HTML"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(", a table has always forced an implicit line-wrap (or ")
               WtItalics(
@@ -10841,7 +10841,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Help:User style" <o> "]]" ]
                       {N} target = "Help:User style"
 
-                    LinkTitle([ ])
+                    WtLinkTitle([ ])
                   )
                   WtText(".")
                 ]
@@ -10860,7 +10860,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:Cascading Style Sheets" <o> "]]" ]
               {N} target = "w:Cascading Style Sheets"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -10884,7 +10884,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[#Sorting" <o> "]]" ]
                   {N} target = "#Sorting"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -10907,7 +10907,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[MediaWiki:Common.css" <o> "]]" ]
                   {N} target = "MediaWiki:Common.css"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(" (for example, on this and some other projects there is or was the class wikitable, later moved to ")
               ExternalLink(
@@ -10938,7 +10938,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[MediaWiki:Monobook.css" <o> "]]" ]
                   {N} target = "MediaWiki:Monobook.css"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(" etc.")
             ]
@@ -12014,7 +12014,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[MediaWiki:Common.css" <o> "]]" ]
               {N} target = "MediaWiki:Common.css"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" contains a number of ")
           WtItalics(
@@ -12031,7 +12031,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:CSS" <o> "]]" ]
               {N} target = "w:CSS"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -12694,7 +12694,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[meta:Help:Sorting" <o> "]]" ]
                       {N} target = "meta:Help:Sorting"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -12732,7 +12732,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Sorting" <o> "]]" ]
                   {N} target = "Help:Sorting"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -13668,7 +13668,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Sorting" <o> "]]" ]
                   {N} target = "Help:Sorting"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -13699,7 +13699,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:help:table/example row template" <o> "]]" ]
               {N} target = "m:help:table/example row template"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" (")
           InternalLink(
@@ -13709,7 +13709,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:help talk:table/example row template" <o> "]]" ]
               {N} target = "m:help talk:table/example row template"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -13724,7 +13724,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:Special:Whatlinkshere/help:table/example row template" <o> "]]" ]
               {N} target = "m:Special:Whatlinkshere/help:table/example row template"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -14194,7 +14194,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:HTML element#Tables" <o> "]]" ]
               {N} target = "w:HTML element#Tables"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -14259,7 +14259,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Help:HTML in wikitext#Permitted HTML" <o> "]]" ]
               {N} target = "Help:HTML in wikitext#Permitted HTML"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -15173,7 +15173,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[Template:!" <o> "]]" ]
                                   {N} target = "Template:!"
 
-                                LinkTitle([ ])
+                                WtLinkTitle([ ])
                               )
                               WtText(" to pass a \"|\" in a parameter.")
                             ]
@@ -15191,7 +15191,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[Help:Newlines and spaces" <o> "]]" ]
                                   {N} target = "Help:Newlines and spaces"
 
-                                LinkTitle([ ])
+                                WtLinkTitle([ ])
                               )
                               WtText(".")
                             ]
@@ -15279,7 +15279,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Template talk:For#Tables" <o> "]]" ]
                   {N} target = "Template talk:For#Tables"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(".")
             ])
@@ -15310,7 +15310,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:User: Magnus Manske" <o> "]]" ]
               {N} target = "m:User: Magnus Manske"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -15379,7 +15379,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:Table (HTML)" <o> "]]" ]
                   {N} target = "w:Table (HTML)"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -15974,7 +15974,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Table Caption" <o> "]]" ]
                   {N} target = "Help:Table Caption"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16130,7 +16130,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[screen reader" <o> "]]s" ]
                   {N} target = "screen reader"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(" to give visually impaired readers the overall gist of the table, without having to listen to the entire table. For example:")
               Newline("\n")
@@ -16181,7 +16181,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText(
+                            WtLinkOptionAltText(
                               Properties:
                                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
@@ -16200,24 +16200,24 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "upright"
                               {N} rtd = RTD[ "|upright" ]
                           )
-                          LinkOptionAltText(
+                          WtLinkOptionAltText(
                             Properties:
                               {N} rtd = RTD[ "|alt=" <o> "" ]
 
                             [ WtText("Robed woman, seated, with sword on her lap") ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16248,7 +16248,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText(
+                            WtLinkOptionAltText(
                               Properties:
                                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
@@ -16267,24 +16267,24 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "upright"
                               {N} rtd = RTD[ "|upright" ]
                           )
-                          LinkOptionAltText(
+                          WtLinkOptionAltText(
                             Properties:
                               {N} rtd = RTD[ "|alt=" <o> "" ]
 
                             [ WtText("Robed woman, standing, holding a sword") ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16315,7 +16315,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText(
+                            WtLinkOptionAltText(
                               Properties:
                                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
@@ -16334,24 +16334,24 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "upright"
                               {N} rtd = RTD[ "|upright" ]
                           )
-                          LinkOptionAltText(
+                          WtLinkOptionAltText(
                             Properties:
                               {N} rtd = RTD[ "|alt=" <o> "" ]
 
                             [ WtText("Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another") ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16452,7 +16452,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16466,24 +16466,24 @@ WtParsedWikitextPage(
                           {N} width = 192
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 155
                               {N} rtd = RTD[ "|192x155px" ]
                               {N} width = 192
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16505,7 +16505,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16519,24 +16519,24 @@ WtParsedWikitextPage(
                           {N} width = 192
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 170
                               {N} rtd = RTD[ "|192x170px" ]
                               {N} width = 192
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16558,7 +16558,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16572,24 +16572,24 @@ WtParsedWikitextPage(
                           {N} width = 192
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 155
                               {N} rtd = RTD[ "|192x155px" ]
                               {N} width = 192
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16638,7 +16638,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16652,24 +16652,24 @@ WtParsedWikitextPage(
                           {N} width = 192
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 155
                               {N} rtd = RTD[ "|192x155px" ]
                               {N} width = 192
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16691,7 +16691,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16705,24 +16705,24 @@ WtParsedWikitextPage(
                           {N} width = 328
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 55
                               {N} rtd = RTD[ "|328x55px" ]
                               {N} width = 328
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16771,7 +16771,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16785,24 +16785,24 @@ WtParsedWikitextPage(
                           {N} width = 205
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|205px" ]
                               {N} width = 205
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16833,7 +16833,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = THUMBNAIL
                           {N} hAlign = LEFT
@@ -16847,24 +16847,24 @@ WtParsedWikitextPage(
                           {N} width = 388
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|388px" ]
                               {N} width = 388
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "thumb"
                               {N} rtd = RTD[ "|thumb" ]
                           )
-                          LinkOptionKeyword(
+                          WtLinkOptionKeyword(
                             Properties:
                               {N} keyword = "left"
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        LinkTitle(
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16956,7 +16956,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -16970,13 +16970,13 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17002,7 +17002,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17016,7 +17016,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17027,7 +17027,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17053,7 +17053,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17067,7 +17067,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17078,7 +17078,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17104,7 +17104,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17118,7 +17118,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17129,7 +17129,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17155,7 +17155,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17169,7 +17169,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17180,7 +17180,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17206,7 +17206,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17220,7 +17220,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17231,7 +17231,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17257,7 +17257,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17271,7 +17271,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17282,7 +17282,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17308,7 +17308,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17322,7 +17322,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17333,7 +17333,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17359,7 +17359,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17373,7 +17373,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17384,7 +17384,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17410,7 +17410,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17424,7 +17424,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [
-                          LinkOptionLinkTarget(
+                          WtLinkOptionLinkTarget(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -17435,7 +17435,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17782,7 +17782,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17796,14 +17796,14 @@ WtParsedWikitextPage(
                           {N} width = 265
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|265px" ]
                               {N} width = 265
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17819,7 +17819,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17833,14 +17833,14 @@ WtParsedWikitextPage(
                           {N} width = 235
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|235px" ]
                               {N} width = 235
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17879,7 +17879,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[Rhine" <o> "]]" ]
                           {N} target = "Rhine"
 
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -17971,7 +17971,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -17985,14 +17985,14 @@ WtParsedWikitextPage(
                           {N} width = 130
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|130px" ]
                               {N} width = 130
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18008,7 +18008,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18022,14 +18022,14 @@ WtParsedWikitextPage(
                           {N} width = 125
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|125px" ]
                               {N} width = 125
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18045,7 +18045,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18059,14 +18059,14 @@ WtParsedWikitextPage(
                           {N} width = 125
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|125px" ]
                               {N} width = 125
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18082,7 +18082,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18096,14 +18096,14 @@ WtParsedWikitextPage(
                           {N} width = 115
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = -1
                               {N} rtd = RTD[ "|115px" ]
                               {N} width = 115
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18226,7 +18226,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18240,14 +18240,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 95
                               {N} rtd = RTD[ "|199x95px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18263,7 +18263,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18277,14 +18277,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 95
                               {N} rtd = RTD[ "|199x95px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18300,7 +18300,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18314,14 +18314,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 95
                               {N} rtd = RTD[ "|199x95px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18337,7 +18337,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18351,14 +18351,14 @@ WtParsedWikitextPage(
                           {N} width = 100
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 95
                               {N} rtd = RTD[ "|100x95px" ]
                               {N} width = 100
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18480,7 +18480,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18494,14 +18494,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 70
                               {N} rtd = RTD[ "|199x70px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18517,7 +18517,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18531,14 +18531,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 70
                               {N} rtd = RTD[ "|199x70px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18554,7 +18554,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18568,14 +18568,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 70
                               {N} rtd = RTD[ "|199x70px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18591,7 +18591,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18605,14 +18605,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 70
                               {N} rtd = RTD[ "|199x70px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18628,7 +18628,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18642,14 +18642,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 70
                               {N} rtd = RTD[ "|199x70px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18665,7 +18665,7 @@ WtParsedWikitextPage(
                       ImageLink(
                         Properties:
                           {N} alt = 
-                            LinkOptionAltText([ ])
+                            WtLinkOptionAltText([ ])
                           {N} border = false
                           {N} format = UNRESTRAINED
                           {N} hAlign = NONE
@@ -18679,14 +18679,14 @@ WtParsedWikitextPage(
                           {N} width = 199
 
                         [
-                          LinkOptionResize(
+                          WtLinkOptionResize(
                             Properties:
                               {N} height = 70
                               {N} rtd = RTD[ "|199x70px" ]
                               {N} width = 199
                           )
                         ]
-                        LinkTitle([ ])
+                        WtLinkTitle([ ])
                       )
                     ])
                     Newline("\n")
@@ -18844,7 +18844,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -18858,14 +18858,14 @@ WtParsedWikitextPage(
                               {N} width = 299
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = 125
                                   {N} rtd = RTD[ "|299x125px" ]
                                   {N} width = 299
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                         ])
                         Newline("\n")
@@ -18897,7 +18897,7 @@ WtParsedWikitextPage(
                             ImageLink(
                               Properties:
                                 {N} alt = 
-                                  LinkOptionAltText([ ])
+                                  WtLinkOptionAltText([ ])
                                 {N} border = false
                                 {N} format = UNRESTRAINED
                                 {N} hAlign = NONE
@@ -18911,14 +18911,14 @@ WtParsedWikitextPage(
                                 {N} width = 299
 
                               [
-                                LinkOptionResize(
+                                WtLinkOptionResize(
                                   Properties:
                                     {N} height = 125
                                     {N} rtd = RTD[ "|299x125px" ]
                                     {N} width = 299
                                 )
                               ]
-                              LinkTitle([ ])
+                              WtLinkTitle([ ])
                             )
                           ]
                         )
@@ -18941,7 +18941,7 @@ WtParsedWikitextPage(
                           ImageLink(
                             Properties:
                               {N} alt = 
-                                LinkOptionAltText([ ])
+                                WtLinkOptionAltText([ ])
                               {N} border = false
                               {N} format = UNRESTRAINED
                               {N} hAlign = NONE
@@ -18955,14 +18955,14 @@ WtParsedWikitextPage(
                               {N} width = 299
 
                             [
-                              LinkOptionResize(
+                              WtLinkOptionResize(
                                 Properties:
                                   {N} height = 125
                                   {N} rtd = RTD[ "|299x125px" ]
                                   {N} width = 299
                               )
                             ]
-                            LinkTitle([ ])
+                            WtLinkTitle([ ])
                           )
                           XmlEntityRef(
                             Properties:
@@ -19133,7 +19133,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "[[meta:Visualizer for Wikimedia projects" <o> "]]" ]
                 {N} target = "meta:Visualizer for Wikimedia projects"
 
-              LinkTitle(
+              WtLinkTitle(
                 Properties:
                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19209,7 +19209,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[.csv" <o> "]]" ]
               {N} target = ".csv"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" and use the ")
           ExternalLink(
@@ -19256,7 +19256,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Wikitable" <o> "]]" ]
                   {N} target = "Help:Wikitable"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19273,7 +19273,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Manual of Style (tables)" <o> "]]" ]
                   {N} target = "Wikipedia:Manual of Style (tables)"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19290,7 +19290,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:How to make a table in Wikipedia" <o> "]]" ]
                   {N} target = "Wikipedia:How to make a table in Wikipedia"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19307,7 +19307,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[mw:Table" <o> "]]" ]
                   {N} target = "mw:Table"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19324,7 +19324,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[mw:Simplified table syntax" <o> "]]" ]
                   {N} target = "mw:Simplified table syntax"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19341,7 +19341,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Wiki markup tables" <o> "]]" ]
                   {N} target = "m:Wiki markup tables"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19358,7 +19358,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Table background colors" <o> "]]" ]
                   {N} target = "m:Table background colors"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19375,7 +19375,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Dcljr/Tables" <o> "]]" ]
                   {N} target = "User:Dcljr/Tables"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19392,7 +19392,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:Table (HTML)" <o> "]]" ]
                   {N} target = "w:Table (HTML)"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19409,7 +19409,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Help:Template#A parameter value containing a pipe character" <o> "]]" ]
                   {N} target = "m:Help:Template#A parameter value containing a pipe character"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19426,7 +19426,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:Category:Table and column templates" <o> "]]" ]
                   {N} target = "w:Category:Table and column templates"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19450,7 +19450,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Template:Chess diagram" <o> "]]" ]
                         {N} target = "Template:Chess diagram"
 
-                      LinkTitle(
+                      WtLinkTitle(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19472,7 +19472,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Template:Goban" <o> "]]" ]
                         {N} target = "Template:Goban"
 
-                      LinkTitle(
+                      WtLinkTitle(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19494,7 +19494,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Monopoly (game)#Board" <o> "]]" ]
                         {N} target = "Monopoly (game)#Board"
 
-                      LinkTitle(
+                      WtLinkTitle(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19516,7 +19516,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[m:Template talk:Square 8x8 pentomino example" <o> "]]" ]
                         {N} target = "m:Template talk:Square 8x8 pentomino example"
 
-                      LinkTitle(
+                      WtLinkTitle(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19541,7 +19541,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[commons:Commons:Convert tables and charts to wiki code" <o> "]]" ]
                   {N} target = "commons:Commons:Convert tables and charts to wiki code"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19563,7 +19563,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[commons:Commons:Chart and graph resources" <o> "]]" ]
                   {N} target = "commons:Commons:Chart and graph resources"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19594,7 +19594,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:Category:Articles requiring tables" <o> "]]" ]
                   {N} target = ":Category:Articles requiring tables"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
             ]
           )
@@ -19629,7 +19629,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:de:Wikipedia:Helferlein/VBA-Macro for EXCEL tableconversion" <o> "]]" ]
                   {N} target = ":de:Wikipedia:Helferlein/VBA-Macro for EXCEL tableconversion"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(" published in German-Wikipediaproject (English instructions included)")
             ]
@@ -19680,7 +19680,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:comma-separated values" <o> "]]" ]
                   {N} target = "w:comma-separated values"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19695,7 +19695,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:de:Benutzer:Duesentrieb/csv2wp (en)" <o> "]]" ]
                   {N} target = ":de:Benutzer:Duesentrieb/csv2wp (en)"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19860,7 +19860,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Category:Wikipedia how-to" <o> "]]" ]
               {N} target = "Category:Wikipedia how-to"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19870,7 +19870,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Category:Wikipedia text help" <o> "]]" ]
               {N} target = "Category:Wikipedia text help"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
         ])
         Newline("\n")
@@ -19883,7 +19883,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ar:\u0645\u0633\u0627\u0639\u062F\u0629:\u062C\u062F\u0648\u0644" <o> "]]" ]
               {N} target = "ar:\u0645\u0633\u0627\u0639\u062F\u0629:\u062C\u062F\u0648\u0644"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19893,7 +19893,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[bg:\u0423\u0438\u043A\u0438\u043F\u0435\u0434\u0438\u044F:\u0422\u0430\u0431\u043B\u0438\u0446\u0438" <o> "]]" ]
               {N} target = "bg:\u0423\u0438\u043A\u0438\u043F\u0435\u0434\u0438\u044F:\u0422\u0430\u0431\u043B\u0438\u0446\u0438"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19903,7 +19903,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ca:Ajuda:Taula" <o> "]]" ]
               {N} target = "ca:Ajuda:Taula"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19913,7 +19913,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[cs:N\u00E1pov\u011Bda:Tabulky" <o> "]]" ]
               {N} target = "cs:N\u00E1pov\u011Bda:Tabulky"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19923,7 +19923,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[de:Hilfe:Tabellen" <o> "]]" ]
               {N} target = "de:Hilfe:Tabellen"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19933,7 +19933,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[dsb:Pomoc:Tabela" <o> "]]" ]
               {N} target = "dsb:Pomoc:Tabela"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19943,7 +19943,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[es:Ayuda:Tablas" <o> "]]" ]
               {N} target = "es:Ayuda:Tablas"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19953,7 +19953,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[eo:Helpo:Vikitabeloj" <o> "]]" ]
               {N} target = "eo:Helpo:Vikitabeloj"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19963,7 +19963,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fa:\u0631\u0627\u0647\u0646\u0645\u0627:\u062C\u062F\u0648\u0644\u200C\u0647\u0627" <o> "]]" ]
               {N} target = "fa:\u0631\u0627\u0647\u0646\u0645\u0627:\u062C\u062F\u0648\u0644\u200C\u0647\u0627"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19973,7 +19973,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fr:Aide:Les tableaux pour les novices" <o> "]]" ]
               {N} target = "fr:Aide:Les tableaux pour les novices"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19983,7 +19983,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[hsb:Pomoc:Tabela" <o> "]]" ]
               {N} target = "hsb:Pomoc:Tabela"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -19993,7 +19993,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[hu:Wikip\u00E9dia:T\u00E1bl\u00E1zatok" <o> "]]" ]
               {N} target = "hu:Wikip\u00E9dia:T\u00E1bl\u00E1zatok"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20003,7 +20003,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[id:Bantuan:Tabel" <o> "]]" ]
               {N} target = "id:Bantuan:Tabel"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20013,7 +20013,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[it:Aiuto:Tabelle" <o> "]]" ]
               {N} target = "it:Aiuto:Tabelle"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20023,7 +20023,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ja:Help:\u8868\u306E\u4F5C\u308A\u65B9" <o> "]]" ]
               {N} target = "ja:Help:\u8868\u306E\u4F5C\u308A\u65B9"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20033,7 +20033,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ka:\u10D3\u10D0\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0:\u10EA\u10EE\u10E0\u10D8\u10DA\u10D8\u10E1 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D0" <o> "]]" ]
               {N} target = "ka:\u10D3\u10D0\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0:\u10EA\u10EE\u10E0\u10D8\u10DA\u10D8\u10E1 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D0"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20043,7 +20043,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[km:\u1787\u17C6\u1793\u17BD\u1799:\u178F\u17B6\u179A\u17B6\u1784" <o> "]]" ]
               {N} target = "km:\u1787\u17C6\u1793\u17BD\u1799:\u178F\u17B6\u179A\u17B6\u1784"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20053,7 +20053,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ko:\uC704\uD0A4\uBC31\uACFC:\uD45C" <o> "]]" ]
               {N} target = "ko:\uC704\uD0A4\uBC31\uACFC:\uD45C"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20063,7 +20063,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[lb:H\u00EBllef:Tabellen" <o> "]]" ]
               {N} target = "lb:H\u00EBllef:Tabellen"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20073,7 +20073,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[lt:Pagalba:Lentel\u0117" <o> "]]" ]
               {N} target = "lt:Pagalba:Lentel\u0117"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20083,7 +20083,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ml:\u0D38\u0D39\u0D3E\u0D2F\u0D02:\u0D2A\u0D1F\u0D4D\u0D1F\u0D3F\u0D15" <o> "]]" ]
               {N} target = "ml:\u0D38\u0D39\u0D3E\u0D2F\u0D02:\u0D2A\u0D1F\u0D4D\u0D1F\u0D3F\u0D15"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20093,7 +20093,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[mn:\u0422\u0443\u0441\u043B\u0430\u043C\u0436:\u0425\u04AF\u0441\u043D\u044D\u0433\u0442 \u044F\u0430\u0436 \u0445\u0438\u0439\u0445 \u0432\u044D?" <o> "]]" ]
               {N} target = "mn:\u0422\u0443\u0441\u043B\u0430\u043C\u0436:\u0425\u04AF\u0441\u043D\u044D\u0433\u0442 \u044F\u0430\u0436 \u0445\u0438\u0439\u0445 \u0432\u044D?"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20103,7 +20103,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[nl:Help:Gebruik van tabellen" <o> "]]" ]
               {N} target = "nl:Help:Gebruik van tabellen"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20113,7 +20113,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[no:Hjelp:Tabeller" <o> "]]" ]
               {N} target = "no:Hjelp:Tabeller"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20123,7 +20123,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[pl:Pomoc:Tabele" <o> "]]" ]
               {N} target = "pl:Pomoc:Tabele"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20133,7 +20133,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[pt:Ajuda:Guia de edi\u00E7\u00E3o/Usar tabelas" <o> "]]" ]
               {N} target = "pt:Ajuda:Guia de edi\u00E7\u00E3o/Usar tabelas"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20143,7 +20143,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ro:Ajutor:Tabele" <o> "]]" ]
               {N} target = "ro:Ajutor:Tabele"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20153,7 +20153,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[qu:Yanapa:Tawla" <o> "]]" ]
               {N} target = "qu:Yanapa:Tawla"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20163,7 +20163,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[sq:Ndihm\u00EB:Tabela" <o> "]]" ]
               {N} target = "sq:Ndihm\u00EB:Tabela"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20173,7 +20173,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[simple:Help:Tables" <o> "]]" ]
               {N} target = "simple:Help:Tables"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20183,7 +20183,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[sk:Pomoc:Tabu\u013Eky" <o> "]]" ]
               {N} target = "sk:Pomoc:Tabu\u013Eky"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20193,7 +20193,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[sr:\u041F\u043E\u043C\u043E\u045B:\u0422\u0430\u0431\u0435\u043B\u0430" <o> "]]" ]
               {N} target = "sr:\u041F\u043E\u043C\u043E\u045B:\u0422\u0430\u0431\u0435\u043B\u0430"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20203,7 +20203,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fi:Ohje:Taulukot" <o> "]]" ]
               {N} target = "fi:Ohje:Taulukot"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20213,7 +20213,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[tt:\u042F\u0440\u0434\u04D9\u043C:T\u00FC\u015F\u00E4w" <o> "]]" ]
               {N} target = "tt:\u042F\u0440\u0434\u04D9\u043C:T\u00FC\u015F\u00E4w"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20223,7 +20223,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[th:\u0E27\u0E34\u0E18\u0E35\u0E43\u0E0A\u0E49:\u0E15\u0E32\u0E23\u0E32\u0E07" <o> "]]" ]
               {N} target = "th:\u0E27\u0E34\u0E18\u0E35\u0E43\u0E0A\u0E49:\u0E15\u0E32\u0E23\u0E32\u0E07"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20233,7 +20233,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[uk:\u0414\u043E\u0432\u0456\u0434\u043A\u0430:\u0422\u0430\u0431\u043B\u0438\u0446\u0456" <o> "]]" ]
               {N} target = "uk:\u0414\u043E\u0432\u0456\u0434\u043A\u0430:\u0422\u0430\u0431\u043B\u0438\u0446\u0456"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20243,7 +20243,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[vi:Tr\u1EE3 gi\u00FAp:T\u1EA1o b\u1EA3ng" <o> "]]" ]
               {N} target = "vi:Tr\u1EE3 gi\u00FAp:T\u1EA1o b\u1EA3ng"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           Newline("\n")
           InternalLink(
@@ -20253,7 +20253,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[zh:Help:\u8868\u683C" <o> "]]" ]
               {N} target = "zh:Help:\u8868\u683C"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
         ])
         Newline("\n")

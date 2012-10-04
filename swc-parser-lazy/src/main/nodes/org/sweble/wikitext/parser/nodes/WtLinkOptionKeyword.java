@@ -7,12 +7,12 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  * <ul>
  * <li>
  * <p>
- * LinkOptionKeyword ::= Ws* LinkOptionKeyword Ws*
+ * WtLinkOptionKeyword ::= Ws* WtLinkOptionKeyword Ws*
  * </p>
  * </li>
  * </ul>
  */
-public class LinkOptionKeyword
+public class WtLinkOptionKeyword
 		extends
 			WtLeafNode
 {
@@ -20,17 +20,13 @@ public class LinkOptionKeyword
 	
 	// =========================================================================
 	
-	public LinkOptionKeyword()
+	public WtLinkOptionKeyword()
 	{
-		super();
-		
 	}
 	
-	public LinkOptionKeyword(String keyword)
+	public WtLinkOptionKeyword(String keyword)
 	{
-		super();
 		setKeyword(keyword);
-		
 	}
 	
 	@Override
@@ -75,7 +71,7 @@ public class LinkOptionKeyword
 			@Override
 			protected int getPropertyCount()
 			{
-				return LinkOptionKeyword.this.getPropertyCount();
+				return WtLinkOptionKeyword.this.getPropertyCount();
 			}
 			
 			@Override
@@ -97,7 +93,7 @@ public class LinkOptionKeyword
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return LinkOptionKeyword.this.getKeyword();
+						return WtLinkOptionKeyword.this.getKeyword();
 						
 					default:
 						return super.getValue(index);
@@ -110,7 +106,7 @@ public class LinkOptionKeyword
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return LinkOptionKeyword.this.setKeyword((String) value);
+						return WtLinkOptionKeyword.this.setKeyword((String) value);
 						
 					default:
 						return super.setValue(index, value);

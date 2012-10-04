@@ -5,12 +5,12 @@ package org.sweble.wikitext.parser.nodes;
  * <ul>
  * <li>
  * <p>
- * LinkOptionGarbage ::= LinkTitleContent{ALT}* &'|'
+ * WtLinkOptionGarbage ::= LinkTitleContent{ALT}* &'|'
  * </p>
  * </li>
  * </ul>
  */
-public class LinkOptionGarbage
+public class WtLinkOptionGarbage
 		extends
 			WtStringContentNode
 {
@@ -18,16 +18,13 @@ public class LinkOptionGarbage
 	
 	// =========================================================================
 	
-	public LinkOptionGarbage()
+	public WtLinkOptionGarbage()
 	{
-		super();
-		
 	}
 	
-	public LinkOptionGarbage(String content)
+	public WtLinkOptionGarbage(String content)
 	{
 		super(content);
-		
 	}
 	
 	@Override

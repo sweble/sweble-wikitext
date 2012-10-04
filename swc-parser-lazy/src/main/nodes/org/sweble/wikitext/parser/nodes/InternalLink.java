@@ -15,14 +15,14 @@ public class InternalLink
 	
 	public InternalLink()
 	{
-		super(new LinkTitle());
+		super(new WtLinkTitle());
 		
 	}
 	
 	public InternalLink(
 			String prefix,
 			String target,
-			LinkTitle title,
+			WtLinkTitle title,
 			String postfix)
 	{
 		super(title);
@@ -161,14 +161,14 @@ public class InternalLink
 	// =========================================================================
 	// Children
 	
-	public final void setTitle(LinkTitle title)
+	public final void setTitle(WtLinkTitle title)
 	{
 		set(0, title);
 	}
 	
-	public final LinkTitle getTitle()
+	public final WtLinkTitle getTitle()
 	{
-		return (LinkTitle) get(0);
+		return (WtLinkTitle) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "title" };

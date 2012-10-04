@@ -34,7 +34,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.LinkTitle;
+import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
@@ -85,7 +85,7 @@ public class CategoryAdapter
 	protected CategoryAdapter(WtNodeList container, String name)
 	{
 		// Just a dummy node which will get corrected later:
-		super(new InternalLink("", null, new LinkTitle(), ""));
+		super(new InternalLink("", null, new WtLinkTitle(), ""));
 		
 		if (container == null)
 			throw new NullPointerException();
@@ -322,7 +322,7 @@ public class CategoryAdapter
 	{
 		removeCategoryAstNodes();
 		
-		InternalLink astNode = new InternalLink("", null, new LinkTitle(), "");
+		InternalLink astNode = new InternalLink("", null, new WtLinkTitle(), "");
 		
 		setAstNode(astNode);
 		renameInAst(getName());

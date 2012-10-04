@@ -5,17 +5,17 @@ package org.sweble.wikitext.parser.nodes;
  * <ul>
  * <li>
  * <p>
- * LinkOptionLinkTarget ::= Ws* 'link=' LinkTarget Ws*
+ * WtLinkOptionLinkTarget ::= Ws* 'link=' LinkTarget Ws*
  * </p>
  * </li>
  * <li>
  * <p>
- * LinkOptionLinkTarget ::= Ws* 'link=' Url Ws*
+ * WtLinkOptionLinkTarget ::= Ws* 'link=' Url Ws*
  * </p>
  * </li>
  * </ul>
  */
-public class LinkOptionLinkTarget
+public class WtLinkOptionLinkTarget
 		extends
 			WtInnerNode1
 {
@@ -23,16 +23,14 @@ public class LinkOptionLinkTarget
 	
 	// =========================================================================
 	
-	public LinkOptionLinkTarget()
+	public WtLinkOptionLinkTarget()
 	{
 		super((WtNode) null);
-		
 	}
 	
-	public LinkOptionLinkTarget(WtNode target)
+	public WtLinkOptionLinkTarget(WtNode target)
 	{
 		super(target);
-		
 	}
 	
 	@Override

@@ -38,7 +38,7 @@
  *   Grammar:
  *
  *   AST node:
- *     Name        : OnlyInclude
+ *     Name        : WtOnlyInclude
  *     Extends     : ContentNode
  *     Constructor : "content, elementType"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ONLY_INCLUDE
@@ -68,7 +68,7 @@ private transient WtNodeList tOnlyIncludeContent =
   {
     yyValue = new WtNodeList(ignored, repeat);
     if (last != null)
-        yyValue.add(new OnlyInclude(last, XmlElementType.UNCLOSED_ELEMENT));
+        yyValue.add(new WtOnlyInclude(last, XmlElementType.UNCLOSED_ELEMENT));
   }
 ;
 
@@ -76,7 +76,7 @@ private inline WtNodeList OnlyIncludeRepeat =
   KwOnlyIncludeOpen content:ContentStar KwOnlyIncludeClose ignored:Ignored
   {
     yyValue = new WtNodeList(
-        new OnlyInclude(content, XmlElementType.UNCLOSED_ELEMENT),
+        new WtOnlyInclude(content, XmlElementType.UNCLOSED_ELEMENT),
         ignored);
   }
 ;

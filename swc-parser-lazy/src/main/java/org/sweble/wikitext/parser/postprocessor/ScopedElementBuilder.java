@@ -104,21 +104,21 @@ public class ScopedElementBuilder
 	public void visit(ExternalLink n)
 	{
 		openScope(ScopeType.WT_INLINE, n);
-		n.setTitle(processScope(n.getTitle()));
+		n.getTitle().exchange(processScope(n.getTitle()));
 		closeScope(ScopeType.WT_INLINE, n);
 	}
 	
 	public void visit(InternalLink n)
 	{
 		openScope(ScopeType.WT_INLINE, n);
-		processScope(n.getTitle());
+		n.getTitle().exchange(processScope(n.getTitle()));
 		closeScope(ScopeType.WT_INLINE, n);
 	}
 	
 	public void visit(ImageLink n)
 	{
 		openScope(ScopeType.WT_INLINE, n);
-		processScope(n.getTitle());
+		n.getTitle().exchange(processScope(n.getTitle()));
 		closeScope(ScopeType.WT_INLINE, n);
 	}
 	

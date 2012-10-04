@@ -19,14 +19,14 @@ public class ImageLink
 	
 	public ImageLink()
 	{
-		super(new WtNodeList(), new LinkTitle());
+		super(new WtNodeList(), new WtLinkTitle());
 		
 	}
 	
 	public ImageLink(
 			String target,
 			WtNodeList options,
-			LinkTitle title,
+			WtLinkTitle title,
 			ImageViewFormat format,
 			boolean border,
 			ImageHorizAlign hAlign,
@@ -36,7 +36,7 @@ public class ImageLink
 			boolean upright,
 			String linkPage,
 			Url linkUrl,
-			LinkOptionAltText alt)
+			WtLinkOptionAltText alt)
 	{
 		super(options, title);
 		setTarget(target);
@@ -202,16 +202,16 @@ public class ImageLink
 		return old;
 	}
 	
-	private LinkOptionAltText alt;
+	private WtLinkOptionAltText alt;
 	
-	public final LinkOptionAltText getAlt()
+	public final WtLinkOptionAltText getAlt()
 	{
 		return this.alt;
 	}
 	
-	public final LinkOptionAltText setAlt(LinkOptionAltText alt)
+	public final WtLinkOptionAltText setAlt(WtLinkOptionAltText alt)
 	{
-		LinkOptionAltText old = this.alt;
+		WtLinkOptionAltText old = this.alt;
 		this.alt = alt;
 		return old;
 	}
@@ -330,7 +330,7 @@ public class ImageLink
 					case 9:
 						return ImageLink.this.setLinkUrl((Url) value);
 					case 10:
-						return ImageLink.this.setAlt((LinkOptionAltText) value);
+						return ImageLink.this.setAlt((WtLinkOptionAltText) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -352,14 +352,14 @@ public class ImageLink
 		return (WtNodeList) get(0);
 	}
 	
-	public final void setTitle(LinkTitle title)
+	public final void setTitle(WtLinkTitle title)
 	{
 		set(1, title);
 	}
 	
-	public final LinkTitle getTitle()
+	public final WtLinkTitle getTitle()
 	{
-		return (LinkTitle) get(1);
+		return (WtLinkTitle) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "options", "title" };

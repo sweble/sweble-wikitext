@@ -277,7 +277,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[User:Duckecho" <o> "]]" ]
           {N} target = "User:Duckecho"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -292,7 +292,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[User talk:Duckecho" <o> "]]" ]
           {N} target = "User talk:Duckecho"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -353,7 +353,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Signatures" <o> "]]" ]
                   {N} target = "Wikipedia:Signatures"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -368,7 +368,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Special:Contributions/88.17.252.156" <o> "]]" ]
                   {N} target = "Special:Contributions/88.17.252.156"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -383,7 +383,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:88.17.252.156" <o> "]]" ]
                   {N} target = "User talk:88.17.252.156"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -469,7 +469,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:AndyZ/peerreviewer" <o> "]]" ]
               {N} target = "User:AndyZ/peerreviewer"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -501,7 +501,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Only make links that are relevant to the context" <o> "]]" ]
                   {N} target = "Wikipedia:Only make links that are relevant to the context"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -516,7 +516,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Manual of Style (dates and numbers)" <o> "]]" ]
                   {N} target = "Wikipedia:Manual of Style (dates and numbers)"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -531,7 +531,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[WP:CONTEXT" <o> "]]" ]
                   {N} target = "WP:CONTEXT"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -554,7 +554,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:AndyZ/G#contxt" <o> "]]" ]
                       {N} target = "User:AndyZ/G#contxt"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -587,7 +587,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:What is a featured article?" <o> "]]" ]
                   {N} target = "Wikipedia:What is a featured article?"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(", ")
               InternalLink(
@@ -597,7 +597,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[WP:IMAGE" <o> "]]" ]
                   {N} target = "WP:IMAGE"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -620,7 +620,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:AndyZ/G#caption" <o> "]]" ]
                       {N} target = "User:AndyZ/G#caption"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -651,7 +651,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[WP:INFOBOX" <o> "]]" ]
                   {N} target = "WP:INFOBOX"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -674,7 +674,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:AndyZ/G#infobox" <o> "]]" ]
                       {N} target = "User:AndyZ/G#infobox"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -708,7 +708,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Manual of Style (dates and numbers)" <o> "]]" ]
                   {N} target = "Wikipedia:Manual of Style (dates and numbers)"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -738,7 +738,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[January 30" <o> "]]" ]
                       {N} target = "January 30"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -772,7 +772,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[January 30" <o> "]]" ]
                       {N} target = "January 30"
 
-                    LinkTitle([ ])
+                    WtLinkTitle([ ])
                   )
                   WtText(" was a great day")
                 ]
@@ -793,7 +793,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:AndyZ/G#dateth" <o> "]]" ]
                       {N} target = "User:AndyZ/G#dateth"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -826,7 +826,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Manual of Style (headings)" <o> "]]" ]
                   {N} target = "Wikipedia:Manual of Style (headings)"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(", headings generally do not start with articles ('the', 'a(n)'). For example, if there was a section called ")
               WtItalics(
@@ -876,7 +876,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:AndyZ/G#headingthe" <o> "]]" ]
                       {N} target = "User:AndyZ/G#headingthe"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -909,7 +909,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Tony1/How_to_satisfy_Criterion_2a#Redundancy" <o> "]]" ]
                   {N} target = "User:Tony1/How_to_satisfy_Criterion_2a#Redundancy"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -924,7 +924,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Tony1/How to satisfy Criterion 1a: redundancy exercises" <o> "]]" ]
                   {N} target = "User:Tony1/How to satisfy Criterion 1a: redundancy exercises"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1061,7 +1061,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[WP:WIAFA" <o> "]]" ]
                   {N} target = "WP:WIAFA"
 
-                LinkTitle(
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1076,7 +1076,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Tony1/How to satisfy Criterion 1a" <o> "]]" ]
                   {N} target = "User:Tony1/How to satisfy Criterion 1a"
 
-                LinkTitle([ ])
+                WtLinkTitle([ ])
               )
               WtText(".")
               XmlElement(
@@ -1094,7 +1094,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:AndyZ/G#copyedit" <o> "]]" ]
                       {N} target = "User:AndyZ/G#copyedit"
 
-                    LinkTitle(
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1117,7 +1117,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:AndyZ/Suggestions" <o> "]]" ]
               {N} target = "User:AndyZ/Suggestions"
 
-            LinkTitle([ ])
+            WtLinkTitle([ ])
           )
           WtText(" for further ideas. Thanks, ")
           InternalLink(
@@ -1127,7 +1127,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:MortimerCat" <o> "]]" ]
               {N} target = "User:MortimerCat"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1142,7 +1142,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk:MortimerCat" <o> "]]" ]
               {N} target = "User talk:MortimerCat"
 
-            LinkTitle(
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 

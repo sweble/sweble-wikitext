@@ -8,7 +8,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText(
+            WtLinkOptionAltText(
               Properties:
                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
@@ -27,19 +27,19 @@ WtParsedWikitextPage(
           {N} width = -1
 
         [
-          LinkOptionKeyword(
+          WtLinkOptionKeyword(
             Properties:
               {N} keyword = "thumb"
               {N} rtd = RTD[ "|thumb" ]
           )
-          LinkOptionAltText(
+          WtLinkOptionAltText(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ WtText("Y") ]
           )
         ]
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -51,7 +51,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "[[Z" <o> "]]" ]
                 {N} target = "Z"
 
-              LinkTitle([ ])
+              WtLinkTitle([ ])
             )
           ]
         )

@@ -5,29 +5,26 @@ package org.sweble.wikitext.parser.nodes;
  * <ul>
  * <li>
  * <p>
- * LinkOptionAltText ::= Ws* 'alt=' LinkTitleContent{ALT}*
+ * WtLinkOptionAltText ::= Ws* 'alt=' LinkTitleContent{ALT}*
  * </p>
  * </li>
  * </ul>
  */
-public class LinkOptionAltText
+public class WtLinkOptionAltText
 		extends
-			WtContentNode
+			WtContentNodeMarkTwo
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public LinkOptionAltText()
+	public WtLinkOptionAltText()
 	{
-		super();
-		
 	}
 	
-	public LinkOptionAltText(WtNodeList content)
+	public WtLinkOptionAltText(WtNodeList content)
 	{
 		super(content);
-		
 	}
 	
 	@Override

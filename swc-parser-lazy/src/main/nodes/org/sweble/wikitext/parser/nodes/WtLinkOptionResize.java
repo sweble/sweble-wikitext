@@ -7,17 +7,17 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  * <ul>
  * <li>
  * <p>
- * LinkOptionResize ::= Ws* Digit+ Space* 'px' Ws*
+ * WtLinkOptionResize ::= Ws* Digit+ Space* 'px' Ws*
  * </p>
  * </li>
  * <li>
  * <p>
- * LinkOptionResize ::= Ws* Digit+ 'x' Digit* Space* 'px' Ws*
+ * WtLinkOptionResize ::= Ws* Digit+ 'x' Digit* Space* 'px' Ws*
  * </p>
  * </li>
  * <li>
  * <p>
- * LinkOptionResize ::= Ws* 'x' Digit+ Space* 'px' Ws*
+ * WtLinkOptionResize ::= Ws* 'x' Digit+ Space* 'px' Ws*
  * </p>
  * </li>
  * </ul>
@@ -50,7 +50,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  * </li>
  * </ul>
  */
-public class LinkOptionResize
+public class WtLinkOptionResize
 		extends
 			WtLeafNode
 {
@@ -58,18 +58,14 @@ public class LinkOptionResize
 	
 	// =========================================================================
 	
-	public LinkOptionResize()
+	public WtLinkOptionResize()
 	{
-		super();
-		
 	}
 	
-	public LinkOptionResize(int width, int height)
+	public WtLinkOptionResize(int width, int height)
 	{
-		super();
 		setWidth(width);
 		setHeight(height);
-		
 	}
 	
 	@Override
@@ -128,7 +124,7 @@ public class LinkOptionResize
 			@Override
 			protected int getPropertyCount()
 			{
-				return LinkOptionResize.this.getPropertyCount();
+				return WtLinkOptionResize.this.getPropertyCount();
 			}
 			
 			@Override
@@ -152,9 +148,9 @@ public class LinkOptionResize
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return LinkOptionResize.this.getWidth();
+						return WtLinkOptionResize.this.getWidth();
 					case 1:
-						return LinkOptionResize.this.getHeight();
+						return WtLinkOptionResize.this.getHeight();
 						
 					default:
 						return super.getValue(index);
@@ -167,9 +163,9 @@ public class LinkOptionResize
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return LinkOptionResize.this.setWidth((Integer) value);
+						return WtLinkOptionResize.this.setWidth((Integer) value);
 					case 1:
-						return LinkOptionResize.this.setHeight((Integer) value);
+						return WtLinkOptionResize.this.setHeight((Integer) value);
 						
 					default:
 						return super.setValue(index, value);

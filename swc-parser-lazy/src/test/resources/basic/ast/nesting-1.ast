@@ -20,7 +20,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Target2" <o> "]]" ]
           {N} target = "Target2"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 

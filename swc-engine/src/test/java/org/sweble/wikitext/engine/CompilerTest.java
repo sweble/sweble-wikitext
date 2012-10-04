@@ -60,7 +60,7 @@ public class CompilerTest
 						"        {N} rtd = RTD[ \"[[1901 in baseball\" <o> \"]]\" ]\n" +
 						"        {N} target = \"1901 in baseball\"\n" +
 						"\n" +
-						"      LinkTitle(\n" +
+						"      WtLinkTitle(\n" +
 						"        Properties:\n" +
 						"          {N} rtd = RTD[ \"|\" <o> \"\" ]\n" +
 						"\n" +

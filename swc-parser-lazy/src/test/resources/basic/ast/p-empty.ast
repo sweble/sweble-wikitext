@@ -2,5 +2,6 @@ WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
-  [  ]
+
+  [ ]
 )

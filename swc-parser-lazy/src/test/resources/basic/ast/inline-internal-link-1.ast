@@ -32,7 +32,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText([ ])
+            WtLinkOptionAltText([ ])
           {N} border = false
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
@@ -50,14 +50,14 @@ WtParsedWikitextPage(
           {N} width = -1
 
         [
-          LinkOptionResize(
+          WtLinkOptionResize(
             Properties:
               {N} height = -1
               {N} rtd = RTD[ "|1000000000000000000xpx" ]
               {N} width = -2
           )
         ]
-        LinkTitle([ ])
+        WtLinkTitle([ ])
       )
       Newline("\n")
       Newline("\n")
@@ -66,7 +66,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText(
+            WtLinkOptionAltText(
               Properties:
                 {N} rtd = RTD[ "|alt=" <o> "" ]
 
@@ -91,30 +91,30 @@ WtParsedWikitextPage(
           {N} width = 15
 
         [
-          LinkOptionKeyword(
+          WtLinkOptionKeyword(
             Properties:
               {N} keyword = "frame"
               {N} rtd = RTD[ "|frame\n\t" ]
           )
-          LinkOptionResize(
+          WtLinkOptionResize(
             Properties:
               {N} height = 20
               {N} rtd = RTD[ "|10x20px\n\t" ]
               {N} width = 10
           )
-          LinkOptionAltText(
+          WtLinkOptionAltText(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ WtText("Alternativer Text\n\t") ]
           )
-          LinkOptionResize(
+          WtLinkOptionResize(
             Properties:
               {N} height = -1
               {N} rtd = RTD[ "|15xpx\n\t" ]
               {N} width = 15
           )
-          LinkOptionLinkTarget(
+          WtLinkOptionLinkTarget(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "\n\t" ]
 
@@ -125,25 +125,25 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "http://example.com" ]
             )
           )
-          LinkOptionResize(
+          WtLinkOptionResize(
             Properties:
               {N} height = 15
               {N} rtd = RTD[ "|x15px<!-- Comment -->\n\t" ]
               {N} width = -1
           )
-          LinkOptionKeyword(
+          WtLinkOptionKeyword(
             Properties:
               {N} keyword = "top"
               {N} rtd = RTD[ "|top\n\t" ]
           )
-          LinkOptionAltText(
+          WtLinkOptionAltText(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ WtText("Alternativer alternativer Text\n\t") ]
           )
         ]
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -157,7 +157,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText([ ])
+            WtLinkOptionAltText([ ])
           {N} border = false
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
@@ -171,13 +171,13 @@ WtParsedWikitextPage(
           {N} width = -1
 
         [ ]
-        LinkTitle([ ])
+        WtLinkTitle([ ])
       )
       Newline("\n")
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText([ ])
+            WtLinkOptionAltText([ ])
           {N} border = false
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
@@ -191,13 +191,13 @@ WtParsedWikitextPage(
           {N} width = -1
 
         [
-          LinkOptionGarbage(
+          WtLinkOptionGarbage(
             Properties:
               {N} content = "invisible"
               {N} rtd = RTD[ "|invisible" ]
           )
         ]
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -208,7 +208,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText([ ])
+            WtLinkOptionAltText([ ])
           {N} border = false
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
@@ -222,14 +222,14 @@ WtParsedWikitextPage(
           {N} width = -1
 
         [
-          LinkOptionLinkTarget(
+          WtLinkOptionLinkTarget(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "" ]
 
             LinkTarget("Some Page Title")
           )
         ]
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -240,7 +240,7 @@ WtParsedWikitextPage(
       ImageLink(
         Properties:
           {N} alt = 
-            LinkOptionAltText([ ])
+            WtLinkOptionAltText([ ])
           {N} border = false
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
@@ -260,7 +260,7 @@ WtParsedWikitextPage(
           {N} width = -1
 
         [
-          LinkOptionLinkTarget(
+          WtLinkOptionLinkTarget(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "" ]
 
@@ -272,7 +272,7 @@ WtParsedWikitextPage(
             )
           )
         ]
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -290,7 +290,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -305,7 +305,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -320,7 +320,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -336,7 +336,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        LinkTitle(
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -355,7 +355,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        LinkTitle([ ])
+        WtLinkTitle([ ])
       )
       Newline("\n")
       WtText("text ")
@@ -366,7 +366,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "a[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        LinkTitle([ ])
+        WtLinkTitle([ ])
       )
       WtText(" text")
       Newline("\n")
@@ -378,7 +378,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]z" ]
           {N} target = "Hallo"
 
-        LinkTitle([ ])
+        WtLinkTitle([ ])
       )
       WtText(" text")
       Newline("\n")
@@ -390,7 +390,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "a[[Hallo" <o> "]]z" ]
           {N} target = "Hallo"
 
-        LinkTitle([ ])
+        WtLinkTitle([ ])
       )
       WtText(" text")
     ])
