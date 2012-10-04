@@ -53,5 +53,4 @@ public class WtText
 	public void clearRtd()
 	{
 	}
-	
 }

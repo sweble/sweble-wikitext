@@ -1,17 +1,11 @@
 package org.sweble.wikitext.parser.nodes;
 
-import java.util.Collection;
-
-import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.GenericNodeList;
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
-public class WtContentNodeMarkTwo
+public abstract class WtContentNodeMarkTwo
 		extends
-			GenericNodeList<WtNode>
-		implements
-			WtNode
+			WtNodeList
 {
 	private static final long serialVersionUID = 3407356901471138122L;
 	
@@ -24,44 +18,9 @@ public class WtContentNodeMarkTwo
 		super();
 	}
 	
-	public WtContentNodeMarkTwo(Collection<? extends WtNode> list)
+	public WtContentNodeMarkTwo(WtNodeList content)
 	{
-		super(list);
-	}
-	
-	public WtContentNodeMarkTwo(Pair<? extends WtNode> list)
-	{
-		super(list);
-	}
-	
-	public WtContentNodeMarkTwo(WtNode car, Pair<? extends WtNode> cdr)
-	{
-		super(car, cdr);
-	}
-	
-	public WtContentNodeMarkTwo(WtNode a, WtNode b, WtNode c, WtNode d)
-	{
-		super(a, b, c, d);
-	}
-	
-	public WtContentNodeMarkTwo(WtNode a, WtNode b, WtNode c)
-	{
-		super(a, b, c);
-	}
-	
-	public WtContentNodeMarkTwo(WtNode a, WtNode b)
-	{
-		super(a, b);
-	}
-	
-	public WtContentNodeMarkTwo(WtNode... children)
-	{
-		super(children);
-	}
-	
-	public WtContentNodeMarkTwo(WtNode child)
-	{
-		super(child);
+		super(content);
 	}
 	
 	// =========================================================================
@@ -69,6 +28,8 @@ public class WtContentNodeMarkTwo
 	@Override
 	public RtData setRtd(RtData rtd)
 	{
+		if (rtd != null && rtd.size() != 2)
+			throw new IllegalArgumentException();
 		RtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
@@ -77,14 +38,14 @@ public class WtContentNodeMarkTwo
 	@Override
 	public RtData setRtd(Object... glue)
 	{
-		rtd = new RtData(this, glue);
+		rtd = new RtData(2, glue);
 		return rtd;
 	}
 	
 	@Override
 	public RtData setRtd(String... glue)
 	{
-		rtd = new RtData(this, glue);
+		rtd = new RtData(2, glue);
 		return rtd;
 	}
 	

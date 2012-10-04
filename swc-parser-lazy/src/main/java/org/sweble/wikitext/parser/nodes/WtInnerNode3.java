@@ -46,6 +46,8 @@ public abstract class WtInnerNode3
 	@Override
 	public RtData setRtd(RtData rtd)
 	{
+		if (rtd != null && rtd.size() != this.size() + 1)
+			throw new IllegalArgumentException();
 		RtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
