@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.Ticks;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
@@ -181,7 +181,7 @@ public class TicksAnalyzer
 			previous = null;
 		}
 		
-		public void visit(Newline ws)
+		public void visit(WtNewline ws)
 		{
 			finishLine();
 		}
@@ -417,7 +417,7 @@ public class TicksAnalyzer
 			return result;
 		}
 		
-		public WtNode visit(Newline newline)
+		public WtNode visit(WtNewline newline)
 		{
 			WtNodeList result = closeRemainingTags();
 			if (result == null)

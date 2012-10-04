@@ -18,13 +18,13 @@
 package org.sweble.wikitext.parser.parser;
 
 import org.sweble.wikitext.parser.WtEntityMap;
-import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtOnlyInclude;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
@@ -143,12 +143,12 @@ public class PreprocessorToParserTransformer
 			builder.append(n.getContent());
 		}
 		
-		public void visit(Ignored n)
+		public void visit(WtIgnored n)
 		{
 			// Always trimmed
 		}
 		
-		public void visit(XmlComment n)
+		public void visit(WtXmlComment n)
 		{
 			if (!trim)
 			{

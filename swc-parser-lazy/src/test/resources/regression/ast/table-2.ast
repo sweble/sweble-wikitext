@@ -27,7 +27,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
               [ ]
-              [ Newline("\n") ]
+              [ WtNewline("\n") ]
             )
           ]
         )

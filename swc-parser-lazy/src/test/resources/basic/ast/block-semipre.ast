@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=XmlComment(" Comment ")}
+    {N} entityMap = EntityMap {0=WtXmlComment(" Comment ")}
     {N} warnings = []
 
   [
@@ -13,7 +13,7 @@ WtParsedWikitextPage(
       )
       WtSemiPreLine(
         Properties:
-          {N} rtd = RTD[ "\n" + XmlComment(" Comment ") + " " <o> "" ]
+          {N} rtd = RTD[ "\n" + WtXmlComment(" Comment ") + " " <o> "" ]
 
         [ WtText("Line 2") ]
       )
@@ -24,9 +24,9 @@ WtParsedWikitextPage(
         [ WtText("Line 3") ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([ WtText("\tdiscontinued") ])
-    Newline("\n")
+    WtNewline("\n")
     WtSemiPre([
       WtSemiPreLine(
         Properties:

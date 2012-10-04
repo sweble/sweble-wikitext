@@ -62,7 +62,7 @@ WtParsedWikitextPage(
           [ ]
           [
             WtParagraph([ WtText("3") ])
-            Newline("\n")
+            WtNewline("\n")
           ]
         )
       ]

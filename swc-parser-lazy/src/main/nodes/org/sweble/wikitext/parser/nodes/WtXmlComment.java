@@ -5,7 +5,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 /**
  * <h1>XmlComment</h1> <h2>Grammar</h2>
  */
-public class XmlComment
+public class WtXmlComment
 		extends
 			WtStringContentNode
 {
@@ -13,24 +13,20 @@ public class XmlComment
 	
 	// =========================================================================
 	
-	public XmlComment()
+	public WtXmlComment()
 	{
-		super();
-		
 	}
 	
-	public XmlComment(String content)
+	public WtXmlComment(String content)
 	{
 		super(content);
-		
 	}
 	
-	public XmlComment(String content, String prefix, String suffix)
+	public WtXmlComment(String content, String prefix, String suffix)
 	{
 		super(content);
 		setPrefix(prefix);
 		setSuffix(suffix);
-		
 	}
 	
 	@Override
@@ -89,7 +85,7 @@ public class XmlComment
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlComment.this.getPropertyCount();
+				return WtXmlComment.this.getPropertyCount();
 			}
 			
 			@Override
@@ -113,9 +109,9 @@ public class XmlComment
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlComment.this.getPrefix();
+						return WtXmlComment.this.getPrefix();
 					case 1:
-						return XmlComment.this.getSuffix();
+						return WtXmlComment.this.getSuffix();
 						
 					default:
 						return super.getValue(index);
@@ -128,9 +124,9 @@ public class XmlComment
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlComment.this.setPrefix((String) value);
+						return WtXmlComment.this.setPrefix((String) value);
 					case 1:
-						return XmlComment.this.setSuffix((String) value);
+						return WtXmlComment.this.setSuffix((String) value);
 						
 					default:
 						return super.setValue(index, value);

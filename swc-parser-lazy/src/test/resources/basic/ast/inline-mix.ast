@@ -1,10 +1,10 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=XmlComment(" comment ")}
+    {N} entityMap = EntityMap {0=WtXmlComment(" comment ")}
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtSemiPre([
       WtSemiPreLine(
         Properties:
@@ -35,7 +35,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText(" ")
-                  XmlComment(
+                  WtXmlComment(
                     Properties:
                       {N} content = " comment "
                       {N} prefix = null
@@ -90,6 +90,6 @@ WtParsedWikitextPage(
         ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

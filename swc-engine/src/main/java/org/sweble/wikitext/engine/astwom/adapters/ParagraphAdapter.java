@@ -39,7 +39,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -251,7 +251,7 @@ public class ParagraphAdapter
 			// i points to the first non-newline (or to end-of-list)
 			while (j < lines)
 			{
-				i.add(new Newline("\n"));
+				i.add(new WtNewline("\n"));
 				++j;
 			}
 		}
@@ -313,7 +313,7 @@ public class ParagraphAdapter
 			// i points to the last non-newline (or to end-of-list)
 			while (j < lines)
 			{
-				i.add(new Newline("\n"));
+				i.add(new WtNewline("\n"));
 				++j;
 			}
 		}

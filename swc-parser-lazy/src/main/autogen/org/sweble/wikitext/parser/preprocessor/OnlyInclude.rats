@@ -81,10 +81,10 @@ private inline WtNodeList OnlyIncludeRepeat =
   }
 ;
 
-private inline Ignored Ignored =
+private inline WtIgnored Ignored =
   content:IgnoredString
   {
-    yyValue = new Ignored(content);
+    yyValue = new WtIgnored(content);
   }
 ;
 

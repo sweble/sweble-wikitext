@@ -24,7 +24,7 @@ import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -89,7 +89,7 @@ public class TextAdapter
 		text = astNode.getContent();
 	}
 	
-	public TextAdapter(Newline newline)
+	public TextAdapter(WtNewline newline)
 	{
 		super(newline);
 		text = "\n";

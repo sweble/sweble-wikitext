@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=XmlComment(" Comment 1 "), 1=XmlComment(" Comment 2 ")}
+    {N} entityMap = EntityMap {0=WtXmlComment(" Comment 1 "), 1=WtXmlComment(" Comment 2 ")}
     {N} warnings = []
 
   [
@@ -18,8 +18,8 @@ WtParsedWikitextPage(
         [ WtText(" Welt") ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtUnorderedList([
       WtListItem(
         Properties:
@@ -34,18 +34,18 @@ WtParsedWikitextPage(
         [ WtText(" Welt") ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtUnorderedList([
       WtListItem(
         Properties:
-          {N} rtd = RTD[ XmlComment(" Comment 1 ") + "*" <o> "\n" ]
+          {N} rtd = RTD[ WtXmlComment(" Comment 1 ") + "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
       WtListItem(
         Properties:
-          {N} rtd = RTD[ XmlComment(" Comment 2 ") + "*" <o> "" ]
+          {N} rtd = RTD[ WtXmlComment(" Comment 2 ") + "*" <o> "" ]
 
         [ WtText(" Welt") ]
       )

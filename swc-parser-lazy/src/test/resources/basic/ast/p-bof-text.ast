@@ -6,11 +6,11 @@ WtParsedWikitextPage(
   [
     WtParagraph([
       WtText("text")
-      Newline("\n")
+      WtNewline("\n")
       WtText("text")
-      Newline("\n")
+      WtNewline("\n")
       WtText("text")
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

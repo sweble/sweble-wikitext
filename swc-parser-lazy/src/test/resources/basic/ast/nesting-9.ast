@@ -26,7 +26,7 @@ WtParsedWikitextPage(
                   ]
               )
             ])
-            Newline("\n")
+            WtNewline("\n")
           ]
         )
         TableCell(
@@ -43,7 +43,7 @@ WtParsedWikitextPage(
           [ ]
           [
             WtParagraph([ WtText("2") ])
-            Newline("\n")
+            WtNewline("\n")
           ]
         )
       ]

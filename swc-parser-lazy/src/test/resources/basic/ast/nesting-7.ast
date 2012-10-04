@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtSection(
       Properties:
         {N} level = 2
@@ -25,10 +25,10 @@ WtParsedWikitextPage(
         ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([ WtText("text]]") ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           WtText("==")
           InternalLink(

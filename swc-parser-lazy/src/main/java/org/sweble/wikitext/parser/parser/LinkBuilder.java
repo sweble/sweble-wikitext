@@ -25,7 +25,7 @@ import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
-import org.sweble.wikitext.parser.nodes.LinkTarget;
+import org.sweble.wikitext.parser.nodes.WtLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.Url;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -170,7 +170,7 @@ public class LinkBuilder
 				// second occurrence wins, url beats page
 				if (this.linkUrl != null)
 					return;
-				this.linkPage = ((LinkTarget) target).getContent();
+				this.linkPage = ((WtLinkTarget) target).getContent();
 			}
 		}
 		else

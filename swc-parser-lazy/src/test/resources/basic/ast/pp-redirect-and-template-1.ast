@@ -10,7 +10,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "#ReDiReCt[[link|garbage]]" ]
           {N} target = "link"
       )
-      Newline("\n")
+      WtNewline("\n")
       Template(
         Properties:
           {N} precededByNewline = true

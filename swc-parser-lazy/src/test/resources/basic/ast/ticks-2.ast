@@ -6,24 +6,24 @@ WtParsedWikitextPage(
   [
     WtParagraph([
       WtText("italic")
-      Newline("\n")
+      WtNewline("\n")
       WtText("bold")
-      Newline("\n")
+      WtNewline("\n")
       WtText("bold+italic")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("'hmmm")
-      Newline("\n")
+      WtNewline("\n")
       WtText("hmm'")
-      Newline("\n")
+      WtNewline("\n")
       WtText("Mark's")
-      Newline("\n")
+      WtNewline("\n")
       WtText("Mark's")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtUnorderedList([
       WtListItem(
         Properties:
@@ -75,8 +75,8 @@ WtParsedWikitextPage(
         ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtSemiPre([
       WtSemiPreLine(
         Properties:
@@ -125,6 +125,6 @@ WtParsedWikitextPage(
         ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

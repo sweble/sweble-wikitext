@@ -30,13 +30,13 @@ WtParsedWikitextPage(
 
                   [ ]
                   [
-                    Newline("\n")
+                    WtNewline("\n")
                     WtParagraph([
                       WtText("* item 1")
-                      Newline("\n")
+                      WtNewline("\n")
                       WtText("* item 2")
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -46,6 +46,6 @@ WtParsedWikitextPage(
         )
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

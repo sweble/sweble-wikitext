@@ -16,13 +16,13 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "http://example.com" ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("before ")
       Url(
@@ -33,6 +33,6 @@ WtParsedWikitextPage(
       )
       WtText(" after")
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

@@ -30,7 +30,7 @@ WtParsedWikitextPage(
               [ ]
               [
                 WtParagraph([ WtText(" Header 2 ") ])
-                Newline("\n")
+                WtNewline("\n")
               ]
             )
           ]

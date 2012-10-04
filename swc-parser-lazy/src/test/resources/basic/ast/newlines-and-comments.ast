@@ -1,21 +1,21 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=XmlComment(" comment ... ")}
+    {N} entityMap = EntityMap {0=WtXmlComment(" comment ... ")}
     {N} warnings = []
 
   [
     WtParagraph([ WtText("Hallo") ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
-      XmlComment(
+      WtXmlComment(
         Properties:
           {N} content = " comment ... "
           {N} prefix = "  "
           {N} rtd = RTD[ "  <!-- comment ... -->  \n" ]
           {N} suffix = "  \n"
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("Hallo")
     ])
   ]

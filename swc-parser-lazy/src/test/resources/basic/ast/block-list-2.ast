@@ -1,13 +1,13 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=XmlComment("Comment")}
+    {N} entityMap = EntityMap {0=WtXmlComment("Comment")}
     {N} warnings = []
 
   [
     WtUnorderedList([
       WtListItem(
         Properties:
-          {N} rtd = RTD[ XmlComment("Comment") + "*" <o> "" ]
+          {N} rtd = RTD[ WtXmlComment("Comment") + "*" <o> "" ]
 
         [ WtText(" Hallo") ]
       )

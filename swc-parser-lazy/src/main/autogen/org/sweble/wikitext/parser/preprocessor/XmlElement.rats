@@ -60,7 +60,7 @@
  *   Grammar:
  *
  *   AST node:
- *     Name        : XmlComment
+ *     Name        : WtXmlComment
  *     Extends     : StringContentNode
  *     Constructor : content
  *     Constructor : "content, prefix, suffix"
@@ -118,19 +118,19 @@ private inline WtText Greater =
 transient WtNode XmlCommentTrimmed =
     eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
     {
-      XmlComment c = setRtd(new XmlComment(content, prefix, suffix + eol2), prefix, "<!--", content, "-->", suffix, eol2);
+      WtXmlComment c = setRtd(new WtXmlComment(content, prefix, suffix + eol2), prefix, "<!--", content, "-->", suffix, eol2);
 
       yyValue = new WtNodeList(new WtText(eol1), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
     {
-      XmlComment c = setRtd(new XmlComment(content), "<!--", content, "-->");
+      WtXmlComment c = setRtd(new WtXmlComment(content), "<!--", content, "-->");
 
       yyValue = new WtNodeList(new WtText(eol1 + prefix), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
     {
-      XmlComment c = setRtd(new XmlComment(content), "<!--", content);
+      WtXmlComment c = setRtd(new WtXmlComment(content), "<!--", content);
 
       yyValue = new WtNodeList(new WtText(eol1 + prefix), c);
     }
@@ -140,14 +140,14 @@ private transient String PureSpaceStar =
   ' '*
 ;
 
-private transient XmlComment XmlComment =
+private transient WtXmlComment XmlComment =
     content:XmlCommentContent "-->"
     {
-      yyValue = setRtd(new XmlComment(content), "<!--" + content + "-->");
+      yyValue = setRtd(new WtXmlComment(content), "<!--" + content + "-->");
     }
   / content:XmlCommentContent Eof
     {
-      yyValue = setRtd(new XmlComment(content), "<!--" + content);
+      yyValue = setRtd(new WtXmlComment(content), "<!--" + content);
     }
 ;
 
@@ -165,7 +165,7 @@ private transient WtNode IgnoredClosingTag =
   {
     String content = "</" + name + garbage + ">";
 
-    yyValue = setRtd(new Ignored(content), content);
+    yyValue = setRtd(new WtIgnored(content), content);
   }
 ;
 
@@ -174,7 +174,7 @@ private transient WtNode IgnoredOpeningTag =
   {
     String content = "<" + name + garbage + ">";
 
-    yyValue = setRtd(new Ignored(content), content);
+    yyValue = setRtd(new WtIgnored(content), content);
   }
 ;
 
@@ -200,13 +200,13 @@ private transient WtNode IgnoredElements =
     {
       String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + ">" + body.getForeign(0, String.class) + body.getForeign(1, String.class);
 
-      yyValue = setRtd(new Ignored(content), content);
+      yyValue = setRtd(new WtIgnored(content), content);
     }
   / header:IgnoredElementHeader "/>"
     {
       String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + "/>";
 
-      yyValue = setRtd(new Ignored(content), content);
+      yyValue = setRtd(new WtIgnored(content), content);
     }
 ;
 

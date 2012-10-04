@@ -14,7 +14,7 @@ WtParsedWikitextPage(
         [ ]
         [ WtText("<") ]
       )
-      Newline("\n")
+      WtNewline("\n")
       XmlStartTag(
         Properties:
           {N} name = "blub"

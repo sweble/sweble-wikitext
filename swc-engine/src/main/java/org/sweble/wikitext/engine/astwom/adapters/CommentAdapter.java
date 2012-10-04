@@ -20,7 +20,7 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
 import org.sweble.wikitext.engine.wom.WomComment;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 
 public class CommentAdapter
 		extends
@@ -34,11 +34,11 @@ public class CommentAdapter
 	
 	public CommentAdapter(String text)
 	{
-		super(new XmlComment());
+		super(new WtXmlComment());
 		setValue(text);
 	}
 	
-	public CommentAdapter(XmlComment astNode)
+	public CommentAdapter(WtXmlComment astNode)
 	{
 		super(astNode);
 	}
@@ -58,9 +58,9 @@ public class CommentAdapter
 	}
 	
 	@Override
-	public XmlComment getAstNode()
+	public WtXmlComment getAstNode()
 	{
-		return (XmlComment) super.getAstNode();
+		return (WtXmlComment) super.getAstNode();
 	}
 	
 	@Override

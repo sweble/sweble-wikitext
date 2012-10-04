@@ -26,7 +26,7 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
@@ -64,7 +64,7 @@ public class CommentAdapterTest
 	@Test
 	public void theAstOfAWomCommentIsCorrect()
 	{
-		XmlComment c = (XmlComment) astPage.getContent().get(0);
+		WtXmlComment c = (WtXmlComment) astPage.getContent().get(0);
 		
 		assertNull(c.getPrefix());
 		assertNull(c.getSuffix());

@@ -27,7 +27,7 @@ import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
-import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.Redirect;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -35,7 +35,7 @@ import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
@@ -250,7 +250,7 @@ public class Toolbox
 		return n;
 	}
 	
-	public static XmlComment addRtData(XmlComment n)
+	public static WtXmlComment addRtData(WtXmlComment n)
 	{
 		n.setRtd("<!--", n.getContent(), "-->");
 		return n;
@@ -396,7 +396,7 @@ public class Toolbox
 				return ((WtText) n).getContent();
 				
 			case AstNodeTypes.NT_NEWLINE:
-				return ((Newline) n).getContent();
+				return ((WtNewline) n).getContent();
 				
 			case AstNodeTypes.NT_XML_COMMENT:
 			case AstNodeTypes.NT_IGNORED:

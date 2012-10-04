@@ -4,10 +4,10 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("x")
-      Newline("\n")
+      WtNewline("\n")
     ])
     XmlElement(
       Properties:
@@ -18,8 +18,8 @@ WtParsedWikitextPage(
       [ ]
       [ WtText("Hallo") ]
     )
-    Newline("\n")
+    WtNewline("\n")
     WtText("y")
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

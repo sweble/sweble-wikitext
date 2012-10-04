@@ -44,7 +44,7 @@ import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.WarningSeverity;
-import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.PageSwitch;
 import org.sweble.wikitext.parser.nodes.Redirect;
 import org.sweble.wikitext.parser.nodes.TagExtension;
@@ -128,7 +128,7 @@ public final class ExpansionVisitor
 			case WtNode.NT_TEXT:
 				return visitText((WtText) n);
 			case AstNodeTypes.NT_NEWLINE:
-				return visitNewline((Newline) n);
+				return visitNewline((WtNewline) n);
 				
 				// -- We must NOT reset hadNewline for these elements! --
 				
@@ -171,7 +171,7 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WtNode visitNewline(Newline n)
+	private WtNode visitNewline(WtNewline n)
 	{
 		hadNewlineGlobal = true;
 		return n;

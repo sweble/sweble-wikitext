@@ -32,6 +32,6 @@ WtParsedWikitextPage(
         [ WtText("z") ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

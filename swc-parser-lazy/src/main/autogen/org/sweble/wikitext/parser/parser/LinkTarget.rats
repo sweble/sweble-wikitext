@@ -24,7 +24,7 @@
  *     - LinkOptionTarget ::= [^\u0000-\u001F\u007F\uFFFD<>{}|[\]]+
  *
  *   AST node:
- *     Name        : LinkTarget
+ *     Name        : WtLinkTarget
  *     Extends     : StringContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TARGET
@@ -38,10 +38,10 @@ module org.sweble.wikitext.parser.parser.LinkTarget;
 
 // -- Target -------------------------------------------------------------------
 
-LinkTarget LinkTarget =
+WtLinkTarget LinkTarget =
   target:LinkTargetString
   {
-    yyValue = setRtd(new LinkTarget(target), target);
+    yyValue = setRtd(new WtLinkTarget(target), target);
   }
 ;
 

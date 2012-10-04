@@ -13,8 +13,8 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-internal-link-1.wikitext:1:1 - 8: "[[Link!" : This looks like a Internal Link, however the finishing `]]' is missing.
           ]
       )
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
     WtParagraph([
       WtText(
@@ -25,8 +25,8 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-internal-link-1.wikitext:3:1 - 17: "[[File:Image.png" : This looks like a Internal Link, however the finishing `]]' is missing.
           ]
       )
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
     WtParagraph([
       ImageLink(
@@ -59,8 +59,8 @@ WtParsedWikitextPage(
         ]
         WtLinkTitle([ ])
       )
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
     WtParagraph([
       ImageLink(
@@ -150,8 +150,8 @@ WtParsedWikitextPage(
           [ WtText("Title") ]
         )
       )
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
     WtParagraph([
       ImageLink(
@@ -173,7 +173,7 @@ WtParsedWikitextPage(
         [ ]
         WtLinkTitle([ ])
       )
-      Newline("\n")
+      WtNewline("\n")
       ImageLink(
         Properties:
           {N} alt = 
@@ -204,7 +204,7 @@ WtParsedWikitextPage(
           [ WtText("visible") ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       ImageLink(
         Properties:
           {N} alt = 
@@ -226,7 +226,7 @@ WtParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "" ]
 
-            LinkTarget("Some Page Title")
+            WtLinkTarget("Some Page Title")
           )
         ]
         WtLinkTitle(
@@ -236,7 +236,7 @@ WtParsedWikitextPage(
           [ WtText("Title") ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       ImageLink(
         Properties:
           {N} alt = 
@@ -279,8 +279,8 @@ WtParsedWikitextPage(
           [ WtText("Title") ]
         )
       )
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
     WtParagraph([
       InternalLink(
@@ -297,7 +297,7 @@ WtParsedWikitextPage(
           [ WtText("arg0") ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -312,7 +312,7 @@ WtParsedWikitextPage(
           [ WtText("arg0|http://blub.com") ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -328,7 +328,7 @@ WtParsedWikitextPage(
         )
       )
       WtText("]")
-      Newline("\n")
+      WtNewline("\n")
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -344,8 +344,8 @@ WtParsedWikitextPage(
         )
       )
       WtText("]")
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
     WtParagraph([
       InternalLink(
@@ -357,7 +357,7 @@ WtParsedWikitextPage(
 
         WtLinkTitle([ ])
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("text ")
       InternalLink(
         Properties:
@@ -369,7 +369,7 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
       WtText(" text")
-      Newline("\n")
+      WtNewline("\n")
       WtText("text ")
       InternalLink(
         Properties:
@@ -381,7 +381,7 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
       WtText(" text")
-      Newline("\n")
+      WtNewline("\n")
       WtText("text ")
       InternalLink(
         Properties:

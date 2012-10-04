@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
-import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
@@ -29,7 +29,7 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
@@ -51,19 +51,19 @@ public class AstBuilder
 		return new XmlCommentBuilder();
 	}
 	
-	public static XmlComment astComment(String text)
+	public static WtXmlComment astComment(String text)
 	{
-		return new XmlComment(text);
+		return new WtXmlComment(text);
 	}
 	
-	public static Ignored astIgnored()
+	public static WtIgnored astIgnored()
 	{
-		return new Ignored("This should be ignored");
+		return new WtIgnored("This should be ignored");
 	}
 	
-	public static Ignored astIgnored(String text)
+	public static WtIgnored astIgnored(String text)
 	{
-		return new Ignored(text);
+		return new WtIgnored(text);
 	}
 	
 	public static HorizontalRuleBuilder astHr()
@@ -129,9 +129,9 @@ public class AstBuilder
 			return this;
 		}
 		
-		public XmlComment build()
+		public WtXmlComment build()
 		{
-			return new XmlComment(this.content);
+			return new WtXmlComment(this.content);
 		}
 	}
 	

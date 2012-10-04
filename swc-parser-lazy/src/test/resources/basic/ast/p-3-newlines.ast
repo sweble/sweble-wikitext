@@ -4,10 +4,10 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
   ]
 )

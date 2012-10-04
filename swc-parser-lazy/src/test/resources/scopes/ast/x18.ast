@@ -13,7 +13,7 @@ WtParsedWikitextPage(
       [ ]
       [ WtText("item1") ]
     )
-    Newline("\n")
+    WtNewline("\n")
     XmlElement(
       Properties:
         {N} empty = false
@@ -31,7 +31,7 @@ WtParsedWikitextPage(
 
           [ ]
           [
-            Newline("\n")
+            WtNewline("\n")
             XmlElement(
               Properties:
                 {N} empty = false

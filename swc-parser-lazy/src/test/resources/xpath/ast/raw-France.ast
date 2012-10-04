@@ -361,7 +361,7 @@ WtSection(
     [ WtText(" Rome to Revolution ") ]
   )
   WtSectionBody([
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("The borders of modern France are approximately the same as those of ancient ")
       InternalLink(
@@ -486,8 +486,8 @@ WtSection(
       )
       WtText(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       ImageLink(
         Properties:
@@ -550,7 +550,7 @@ WtSection(
           ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
       InternalLink(
         Properties:
@@ -659,8 +659,8 @@ WtSection(
       )
       WtText(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       ImageLink(
         Properties:
@@ -719,7 +719,7 @@ WtSection(
           ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       ImageLink(
         Properties:
           {N} alt = 
@@ -788,7 +788,7 @@ WtSection(
           ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       ImageLink(
         Properties:
           {N} alt = 
@@ -855,7 +855,7 @@ WtSection(
           ]
         )
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("Existence as a separate entity began with the ")
       InternalLink(
         Properties:
@@ -925,7 +925,7 @@ WtSection(
 
         [ ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("The ")
       InternalLink(
         Properties:
@@ -972,8 +972,8 @@ WtSection(
       )
       WtText(" ")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("His descendants, the ")
       InternalLink(
@@ -1026,7 +1026,7 @@ WtSection(
         )
       )
       WtText(".")
-      Newline("\n")
+      WtNewline("\n")
       WtText("The ")
       InternalLink(
         Properties:
@@ -1066,7 +1066,7 @@ WtSection(
 
         [ ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("In 1066, the ")
       InternalLink(
         Properties:
@@ -1084,8 +1084,8 @@ WtSection(
       )
       WtText(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("The exact boundaries changed greatly with time, but French landholdings of the ")
       InternalLink(
@@ -1144,8 +1144,8 @@ WtSection(
       )
       WtText(".")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("Charles IV (The Fair) died without an heir in 1328.")
       TagExtension(
@@ -1282,8 +1282,8 @@ WtSection(
         [ ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("In the most notorious incident during the ")
       InternalLink(
@@ -1325,8 +1325,8 @@ WtSection(
         [ ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("The monarchy reached its height during the 17th century and the reign of ")
       InternalLink(
@@ -1394,8 +1394,8 @@ WtSection(
       )
       WtText(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
   ])
 )
 

@@ -35,13 +35,13 @@ WtParsedWikitextPage(
           ]
           [
             WtParagraph([ WtText(" Header") ])
-            Newline("\n")
+            WtNewline("\n")
           ]
         )
       ]
     )
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     Table(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
@@ -70,7 +70,7 @@ WtParsedWikitextPage(
               [ ]
               [
                 WtParagraph([ WtText(" class=\"foo\"") ])
-                Newline("\n")
+                WtNewline("\n")
               ]
             )
           ]

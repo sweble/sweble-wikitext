@@ -21,7 +21,7 @@
  * -------
  *
  *   AST node:
- *     Name        : Ignored
+ *     Name        : WtIgnored
  *     Extends     : StringContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IGNORED
  *     Constructor : content

@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtDefinitionList([
       WtDefinitionListDef([
         WtDefinitionList([
@@ -56,8 +56,8 @@ WtParsedWikitextPage(
 
       [ ]
       [
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ]
     )
     WtDefinitionList([
@@ -85,7 +85,7 @@ WtParsedWikitextPage(
         {N} rtd = RTD[ "" <o> "" <o> "" ]
 
       [ ]
-      [ Newline("\n") ]
+      [ WtNewline("\n") ]
     )
   ]
 )

@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtSection(
       Properties:
         {N} level = 2
@@ -34,7 +34,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "" <o> "" <o> "" ]
 
           [ ]
-          [ Newline("\n") ]
+          [ WtNewline("\n") ]
         )
         WtParagraph([
           XmlElement(
@@ -54,7 +54,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "" <o> "" <o> "" ]
 
           [ ]
-          [ Newline("\n") ]
+          [ WtNewline("\n") ]
         )
       ])
     )

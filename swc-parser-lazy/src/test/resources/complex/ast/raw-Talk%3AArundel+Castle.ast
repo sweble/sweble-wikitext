@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [WtText("WikiProjectBannerShell")], [1] = [TemplateArgument([0] = [WtText("1")], [1] = [WtText("\n"), Template([0] = [WtText("WikiProject Sussex")], [1] = [TemplateArgument([0] = [WtText("class")], [1] = [WtText("start")]), TemplateArgument([0] = [WtText("importance")], [1] = [WtText("Mid")]), TemplateArgument([0] = [WtText("unref")], [1] = [])]), WtText("\n"), Template([0] = [WtText("WikiProject Architecture")], [1] = [TemplateArgument([0] = [WtText("class")], [1] = [WtText("start")]), TemplateArgument([0] = [WtText("importance")], [1] = [WtText("mid")])]), WtText("\n"), Template([0] = [WtText("WPMILHIST\n")], [1] = [TemplateArgument([0] = [WtText("class")], [1] = [WtText("start\n"), XmlComment(" B-Class checklist "), XmlComment(" 1. It is suitably referenced, and all \nmajor points are appropriately cited. "), WtText("\n")]), TemplateArgument([0] = [WtText("B-Class-1")], [1] = [WtText("no\n"), XmlComment(" 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. ")]), TemplateArgument([0] = [WtText("B-Class-2")], [1] = [WtText("\n"), XmlComment(" 3. It has a defined structure, including \na lead section and one or more sections of content. ")]), TemplateArgument([0] = [WtText("B-Class-3")], [1] = [WtText("\n"), XmlComment(" 4. It is free from major grammatical errors. ")]), TemplateArgument([0] = [WtText("B-Class-4")], [1] = [WtText("\n"), XmlComment(" 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. ")]), TemplateArgument([0] = [WtText("B-Class-5")], [1] = [WtText("no infobox, no plan or map\n"), XmlComment(" Task force tags ")]), TemplateArgument([0] = [WtText("British-task-force")], [1] = [WtText("yes\n")]), TemplateArgument([0] = [WtText("Fortifications-task-force")], [1] = [WtText("yes\n")]), TemplateArgument([0] = [WtText("Medieval-task-force")], [1] = [WtText("yes\n")]), TemplateArgument([0] = [WtText("Technology-task-force")], [1] = [WtText("yes")]), TemplateArgument([0] = [WtText("Early-Modern-task-force")], [1] = [WtText("yes")])]), WtText("\n")])]), 1=TagExtension([0] = []), 2=XmlComment(" Template:UnsignedIP "), 3=XmlComment("Autosigned by SineBot"), 4=Template([0] = [WtText("#ifeq:"), TemplateParameter([0] = [WtText("name")], [1] = null, [2] = null)], [1] = [TemplateArgument([0] = [], [1] = [WtText("Arundel Castle")]), TemplateArgument([0] = [], [1] = [WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)")])]), 5=Template([0] = [WtText("Done")], [1] = []), 6=Template([0] = [WtText("Not done")], [1] = []), 7=Template([0] = [WtText("Done")], [1] = []), 8=Template([0] = [WtText("Done")], [1] = []), 9=TagExtension([0] = []), 10=TagExtension([0] = []), 11=Template([0] = [WtText("Not done")], [1] = [])}
+    {N} entityMap = EntityMap {0=Template([0] = [WtText("WikiProjectBannerShell")], [1] = [TemplateArgument([0] = [WtText("1")], [1] = [WtText("\n"), Template([0] = [WtText("WikiProject Sussex")], [1] = [TemplateArgument([0] = [WtText("class")], [1] = [WtText("start")]), TemplateArgument([0] = [WtText("importance")], [1] = [WtText("Mid")]), TemplateArgument([0] = [WtText("unref")], [1] = [])]), WtText("\n"), Template([0] = [WtText("WikiProject Architecture")], [1] = [TemplateArgument([0] = [WtText("class")], [1] = [WtText("start")]), TemplateArgument([0] = [WtText("importance")], [1] = [WtText("mid")])]), WtText("\n"), Template([0] = [WtText("WPMILHIST\n")], [1] = [TemplateArgument([0] = [WtText("class")], [1] = [WtText("start\n"), WtXmlComment(" B-Class checklist "), WtXmlComment(" 1. It is suitably referenced, and all \nmajor points are appropriately cited. "), WtText("\n")]), TemplateArgument([0] = [WtText("B-Class-1")], [1] = [WtText("no\n"), WtXmlComment(" 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. ")]), TemplateArgument([0] = [WtText("B-Class-2")], [1] = [WtText("\n"), WtXmlComment(" 3. It has a defined structure, including \na lead section and one or more sections of content. ")]), TemplateArgument([0] = [WtText("B-Class-3")], [1] = [WtText("\n"), WtXmlComment(" 4. It is free from major grammatical errors. ")]), TemplateArgument([0] = [WtText("B-Class-4")], [1] = [WtText("\n"), WtXmlComment(" 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. ")]), TemplateArgument([0] = [WtText("B-Class-5")], [1] = [WtText("no infobox, no plan or map\n"), WtXmlComment(" Task force tags ")]), TemplateArgument([0] = [WtText("British-task-force")], [1] = [WtText("yes\n")]), TemplateArgument([0] = [WtText("Fortifications-task-force")], [1] = [WtText("yes\n")]), TemplateArgument([0] = [WtText("Medieval-task-force")], [1] = [WtText("yes\n")]), TemplateArgument([0] = [WtText("Technology-task-force")], [1] = [WtText("yes")]), TemplateArgument([0] = [WtText("Early-Modern-task-force")], [1] = [WtText("yes")])]), WtText("\n")])]), 1=TagExtension([0] = []), 2=WtXmlComment(" Template:UnsignedIP "), 3=WtXmlComment("Autosigned by SineBot"), 4=Template([0] = [WtText("#ifeq:"), TemplateParameter([0] = [WtText("name")], [1] = null, [2] = null)], [1] = [TemplateArgument([0] = [], [1] = [WtText("Arundel Castle")]), TemplateArgument([0] = [], [1] = [WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)")])]), 5=Template([0] = [WtText("Done")], [1] = []), 6=Template([0] = [WtText("Not done")], [1] = []), 7=Template([0] = [WtText("Done")], [1] = []), 8=Template([0] = [WtText("Done")], [1] = []), 9=TagExtension([0] = []), 10=TagExtension([0] = []), 11=Template([0] = [WtText("Not done")], [1] = [])}
     {N} warnings = []
 
   [
@@ -95,14 +95,14 @@ WtParsedWikitextPage(
                     [ WtText("class") ]
                     [
                       WtText("start\n")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " B-Class checklist "
                           {N} prefix = ""
                           {N} rtd = RTD[ "<!-- B-Class checklist -->\n" ]
                           {N} suffix = "\n"
                       )
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " 1. It is suitably referenced, and all \nmajor points are appropriately cited. "
                           {N} prefix = null
@@ -120,7 +120,7 @@ WtParsedWikitextPage(
                     [ WtText("B-Class-1") ]
                     [
                       WtText("no\n")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. "
                           {N} prefix = ""
@@ -137,7 +137,7 @@ WtParsedWikitextPage(
                     [ WtText("B-Class-2") ]
                     [
                       WtText("\n")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " 3. It has a defined structure, including \na lead section and one or more sections of content. "
                           {N} prefix = ""
@@ -154,7 +154,7 @@ WtParsedWikitextPage(
                     [ WtText("B-Class-3") ]
                     [
                       WtText("\n")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " 4. It is free from major grammatical errors. "
                           {N} prefix = ""
@@ -171,7 +171,7 @@ WtParsedWikitextPage(
                     [ WtText("B-Class-4") ]
                     [
                       WtText("\n")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. "
                           {N} prefix = ""
@@ -188,7 +188,7 @@ WtParsedWikitextPage(
                     [ WtText("B-Class-5") ]
                     [
                       WtText("no infobox, no plan or map\n")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " Task force tags "
                           {N} prefix = ""
@@ -245,13 +245,13 @@ WtParsedWikitextPage(
         ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("Okay, what's the problem? Zvesoulis put a ")
       TagExtension(
@@ -301,11 +301,11 @@ WtParsedWikitextPage(
       )
       WtText(" 7 July 2005 19:52 (UTC)")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([ WtText("The history section states that the castle was first built in 1068 and that it was built during Edward the Confessor's reign.  Which is correct?") ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtSection(
       Properties:
         {N} level = 2
@@ -317,7 +317,7 @@ WtParsedWikitextPage(
         [ WtText(" Ghosts ") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([
           WtText("What about the 4 ghosts living in the castle? there should be some reference  ")
           XmlElement(
@@ -393,7 +393,7 @@ WtParsedWikitextPage(
               WtText(") 00:33, 8 March 2010 (UTC)")
             ]
           )
-          XmlComment(
+          WtXmlComment(
             Properties:
               {N} content = " Template:UnsignedIP "
               {N} prefix = null
@@ -401,7 +401,7 @@ WtParsedWikitextPage(
               {N} suffix = null
           )
           WtText(" ")
-          XmlComment(
+          WtXmlComment(
             Properties:
               {N} content = "Autosigned by SineBot"
               {N} prefix = null
@@ -409,8 +409,8 @@ WtParsedWikitextPage(
               {N} suffix = null
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -424,8 +424,8 @@ WtParsedWikitextPage(
         [ WtText(" Automated peer review ") ]
       )
       WtSectionBody([
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           Template(
             Properties:
@@ -478,7 +478,7 @@ WtParsedWikitextPage(
           )
           WtText(", and might not be applicable for the article in question.")
         ])
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -1107,7 +1107,7 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([
           WtText("You may wish to browse through ")
           InternalLink(
@@ -1151,7 +1151,7 @@ WtParsedWikitextPage(
           )
           WtText(") 00:02, 14 April 2008 (UTC)")
         ])
-        Newline("\n")
+        WtNewline("\n")
       ])
     )
   ]

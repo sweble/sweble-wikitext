@@ -15,10 +15,10 @@ WtParsedWikitextPage(
         [ WtText(" Hallo 1 ") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([ WtText("Welt 1") ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -32,7 +32,7 @@ WtParsedWikitextPage(
         [ WtText(" Hallo 2 ") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -47,7 +47,7 @@ WtParsedWikitextPage(
             [ WtText(" b") ]
           )
         ])
-        Newline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -61,10 +61,10 @@ WtParsedWikitextPage(
         [ WtText(" Hallo 3 ") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([ WtText("Welt 3") ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 2
@@ -76,9 +76,9 @@ WtParsedWikitextPage(
             [ WtText(" Hallo 4 ") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([ WtText("Welt 4") ])
-            Newline("\n")
+            WtNewline("\n")
             WtSection(
               Properties:
                 {N} level = 3
@@ -90,9 +90,9 @@ WtParsedWikitextPage(
                 [ WtText(" Hallo 5 ") ]
               )
               WtSectionBody([
-                Newline("\n")
+                WtNewline("\n")
                 WtParagraph([ WtText("Welt 5") ])
-                Newline("\n")
+                WtNewline("\n")
               ])
             )
             WtSection(
@@ -106,13 +106,13 @@ WtParsedWikitextPage(
                 [ WtText(" Hallo 6 ") ]
               )
               WtSectionBody([
-                Newline("\n")
+                WtNewline("\n")
                 WtParagraph([
                   WtText("Welt 6")
-                  Newline("\n")
+                  WtNewline("\n")
                 ])
-                Newline("\n")
-                Newline("\n")
+                WtNewline("\n")
+                WtNewline("\n")
               ])
             )
           ])
@@ -128,9 +128,9 @@ WtParsedWikitextPage(
             [ WtText(" Hallo 7 ") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([ WtText("Welt 7") ])
-            Newline("\n")
+            WtNewline("\n")
             WtSection(
               Properties:
                 {N} level = 4
@@ -142,9 +142,9 @@ WtParsedWikitextPage(
                 [ WtText(" Hallo 8 ") ]
               )
               WtSectionBody([
-                Newline("\n")
+                WtNewline("\n")
                 WtParagraph([ WtText("Welt 8") ])
-                Newline("\n")
+                WtNewline("\n")
               ])
             )
           ])
@@ -162,13 +162,13 @@ WtParsedWikitextPage(
         [ WtText(" Hallo 9 ") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([
           WtText("Welt 9")
-          Newline("\n")
+          WtNewline("\n")
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -185,7 +185,7 @@ WtParsedWikitextPage(
 
         [ WtText(" Hallo 10 =") ]
       )
-      WtSectionBody([ Newline("\n") ])
+      WtSectionBody([ WtNewline("\n") ])
     )
     WtSection(
       Properties:

@@ -11,7 +11,7 @@ WtParsedWikitextPage(
           {N} resolved = "&"
           {N} rtd = RTD[ "&amp;" ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText(
         Properties:
           {N} content = "&amp"
@@ -20,14 +20,14 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-xmlref.wikitext:2:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
           ]
       )
-      Newline("\n")
+      WtNewline("\n")
       XmlEntityRef(
         Properties:
           {N} name = "myinvention"
           {N} resolved = null
           {N} rtd = RTD[ "&myinvention;" ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText(
         Properties:
           {N} content = "&myinvention"
@@ -36,19 +36,19 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-xmlref.wikitext:4:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
           ]
       )
-      Newline("\n")
+      WtNewline("\n")
       XmlCharRef(
         Properties:
           {N} codePoint = 10
           {N} rtd = RTD[ "&#10;" ]
       )
-      Newline("\n")
+      WtNewline("\n")
       XmlCharRef(
         Properties:
           {N} codePoint = 255
           {N} rtd = RTD[ "&#xFF;" ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText(
         Properties:
           {N} content = "&#;"
@@ -57,7 +57,7 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-xmlref.wikitext:7:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
           ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText(
         Properties:
           {N} content = "&#"
@@ -66,7 +66,7 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-xmlref.wikitext:8:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
           ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText(
         Properties:
           {N} content = "&"

@@ -5,8 +5,8 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([ WtText("Hallo") ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([ WtText("Hallo") ])
   ]
 )

@@ -34,13 +34,13 @@ import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.Newline;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
@@ -113,12 +113,12 @@ public class DefaultAstToWomNodeFactory
 		return new TextAdapter(text);
 	}
 	
-	public WomNode visit(Newline newline)
+	public WomNode visit(WtNewline newline)
 	{
 		return new TextAdapter(newline);
 	}
 	
-	public WomNode visit(XmlComment comment)
+	public WomNode visit(WtXmlComment comment)
 	{
 		return new CommentAdapter(comment);
 	}

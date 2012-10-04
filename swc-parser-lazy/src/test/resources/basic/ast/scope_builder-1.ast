@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([ ])
     XmlElement(
       Properties:
@@ -14,12 +14,12 @@ WtParsedWikitextPage(
 
       [ ]
       [
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           WtText("\ttext")
-          Newline("\n")
-          Newline("\n")
+          WtNewline("\n")
+          WtNewline("\n")
         ])
         WtParagraph([ WtText("\t") ])
         XmlElement(
@@ -30,7 +30,7 @@ WtParsedWikitextPage(
 
           [ ]
           [
-            Newline("\n")
+            WtNewline("\n")
             WtText("\t\t")
             XmlElement(
               Properties:
@@ -41,7 +41,7 @@ WtParsedWikitextPage(
               [ ]
               [ WtText("Cell 1.1") ]
             )
-            Newline("\n")
+            WtNewline("\n")
             WtText("\t\t")
             XmlElement(
               Properties:
@@ -52,12 +52,12 @@ WtParsedWikitextPage(
               [ ]
               [ WtText("Cell 1.2") ]
             )
-            Newline("\n")
+            WtNewline("\n")
             WtText("\t")
           ]
         )
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([ WtText("\t") ])
         XmlElement(
           Properties:
@@ -67,7 +67,7 @@ WtParsedWikitextPage(
 
           [ ]
           [
-            Newline("\n")
+            WtNewline("\n")
             WtText("\t\t")
             XmlElement(
               Properties:
@@ -78,7 +78,7 @@ WtParsedWikitextPage(
               [ ]
               [ WtText("Cell 2.1") ]
             )
-            Newline("\n")
+            WtNewline("\n")
             WtText("\t\t")
             XmlElement(
               Properties:
@@ -89,15 +89,15 @@ WtParsedWikitextPage(
               [ ]
               [ WtText("Cell 2.2") ]
             )
-            Newline("\n")
+            WtNewline("\n")
             WtText("\t")
           ]
         )
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([ ])
       ]
     )
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

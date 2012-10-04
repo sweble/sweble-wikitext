@@ -24,10 +24,10 @@ WtParsedWikitextPage(
         ]
       )
       WtText(". It includes public and private schools and is arranged by school district (public schools) or affiliation (private schools).  These schools offer grades 9 through 12.  Junior High schools are not listed here.")
-      Newline("\n")
+      WtNewline("\n")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtSection(
       Properties:
         {N} level = 2
@@ -39,7 +39,7 @@ WtParsedWikitextPage(
         [ WtText("Public schools") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 3
@@ -51,7 +51,7 @@ WtParsedWikitextPage(
             [ WtText("Borrego Springs Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -77,8 +77,8 @@ WtParsedWikitextPage(
                 [ WtText("Palm Canyon High School (continuation), Borrego Springs") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -92,7 +92,7 @@ WtParsedWikitextPage(
             [ WtText("Coronado Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -123,8 +123,8 @@ WtParsedWikitextPage(
                 [ WtText("Palm Academy for Learning, Coronado") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -153,7 +153,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -246,8 +246,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -261,7 +261,7 @@ WtParsedWikitextPage(
             [ WtText("Fallbrook Union High School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -293,8 +293,8 @@ WtParsedWikitextPage(
                 [ WtText("Oasis High School (alternative), Fallbrook") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -318,7 +318,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -562,8 +562,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -577,7 +577,7 @@ WtParsedWikitextPage(
             [ WtText("Julian Union High School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -609,8 +609,8 @@ WtParsedWikitextPage(
                 [ WtText("Summit High Community Day, Julian") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -624,7 +624,7 @@ WtParsedWikitextPage(
             [ WtText("Lakeside Union School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -644,8 +644,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -659,7 +659,7 @@ WtParsedWikitextPage(
             [ WtText("Mountain Empire Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -679,8 +679,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -694,7 +694,7 @@ WtParsedWikitextPage(
             [ WtText("Oceanside Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -748,8 +748,8 @@ WtParsedWikitextPage(
                 [ WtText("Pacific View Charter School, Oceanside") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -773,7 +773,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -876,8 +876,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -891,7 +891,7 @@ WtParsedWikitextPage(
             [ WtText("Ramona Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -928,8 +928,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -958,7 +958,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               Template(
                 Properties:
@@ -969,8 +969,8 @@ WtParsedWikitextPage(
                 [ ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -994,7 +994,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1077,8 +1077,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1092,7 +1092,7 @@ WtParsedWikitextPage(
             [ WtText("San Marcos Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1152,8 +1152,8 @@ WtParsedWikitextPage(
                 [ WtText("Twin Oaks High School (alternative), San Marcos") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1177,7 +1177,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1434,8 +1434,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1449,7 +1449,7 @@ WtParsedWikitextPage(
             [ WtText("Valley Center-Pauma Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1517,8 +1517,8 @@ WtParsedWikitextPage(
                 [ WtText("Valley Center Adult Education, Valley Center") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1532,7 +1532,7 @@ WtParsedWikitextPage(
             [ WtText("Vista Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1600,8 +1600,8 @@ WtParsedWikitextPage(
                 [ WtText(" North County Trade Tech High School (charter), Vista") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1615,7 +1615,7 @@ WtParsedWikitextPage(
             [ WtText("Warner Unified School District") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1641,8 +1641,8 @@ WtParsedWikitextPage(
                 [ WtText("San Jose Valley Continuation High School, Warner Springs") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
       ])
@@ -1658,7 +1658,7 @@ WtParsedWikitextPage(
         [ WtText("Private schools") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 3
@@ -1670,8 +1670,8 @@ WtParsedWikitextPage(
             [ WtText("Baptist") ]
           )
           WtSectionBody([
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1700,7 +1700,7 @@ WtParsedWikitextPage(
             ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               Template(
                 Properties:
@@ -1711,8 +1711,8 @@ WtParsedWikitextPage(
                 [ ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1726,7 +1726,7 @@ WtParsedWikitextPage(
             [ WtText("Episcopal") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1751,8 +1751,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1766,7 +1766,7 @@ WtParsedWikitextPage(
             [ WtText("Jewish") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1820,8 +1820,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1835,7 +1835,7 @@ WtParsedWikitextPage(
             [ WtText("Lutheran") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1855,8 +1855,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1893,8 +1893,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1908,7 +1908,7 @@ WtParsedWikitextPage(
             [ WtText("Non-Denominational") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -1933,8 +1933,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1948,7 +1948,7 @@ WtParsedWikitextPage(
             [ WtText("Nonsectarian") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -2090,9 +2090,9 @@ WtParsedWikitextPage(
                 [ WtText("Pacific Ridge School, Carlsbad") ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
-            WtParagraph([ Newline("\n") ])
+            WtNewline("\n")
+            WtNewline("\n")
+            WtParagraph([ WtNewline("\n") ])
           ])
         )
       ])
@@ -2108,7 +2108,7 @@ WtParsedWikitextPage(
         [ WtText("Closed schools") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -2128,8 +2128,8 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -2143,7 +2143,7 @@ WtParsedWikitextPage(
         [ WtText("See also") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -2242,8 +2242,8 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -2257,8 +2257,8 @@ WtParsedWikitextPage(
         [ WtText(" References ") ]
       )
       WtSectionBody([
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           XmlEmptyTag(
             Properties:
@@ -2268,8 +2268,8 @@ WtParsedWikitextPage(
             [ ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -2283,7 +2283,7 @@ WtParsedWikitextPage(
         [ WtText("External links") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -2325,8 +2325,8 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           InternalLink(
             Properties:
@@ -2342,7 +2342,7 @@ WtParsedWikitextPage(
               [ WtText("*") ]
             )
           )
-          Newline("\n")
+          WtNewline("\n")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -2358,7 +2358,7 @@ WtParsedWikitextPage(
             )
           )
         ])
-        Newline("\n")
+        WtNewline("\n")
       ])
     )
   ]

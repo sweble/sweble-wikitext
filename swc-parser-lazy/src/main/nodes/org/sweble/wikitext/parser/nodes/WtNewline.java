@@ -1,9 +1,9 @@
 package org.sweble.wikitext.parser.nodes;
 
 /**
- * <h1>Ignored</h1>
+ * <h1>Newline</h1>
  */
-public class Ignored
+public class WtNewline
 		extends
 			WtStringContentNode
 {
@@ -11,21 +11,18 @@ public class Ignored
 	
 	// =========================================================================
 	
-	public Ignored()
+	public WtNewline()
 	{
-		super();
-		
 	}
 	
-	public Ignored(String content)
+	public WtNewline(String content)
 	{
 		super(content);
-		
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_IGNORED;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_NEWLINE;
 	}
 }

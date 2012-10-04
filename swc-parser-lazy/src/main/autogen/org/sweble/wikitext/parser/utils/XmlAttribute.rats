@@ -44,7 +44,7 @@
  * ---------------------
  *
  *   AST node:
- *     Name        : XmlAttributeGarbage
+ *     Name        : WtXmlAttributeGarbage
  *     Extends     : StringContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE
@@ -111,10 +111,10 @@ private inline WtNode XmlTailAttributeChoice =
   / XmlAttributeGarbage
 ;
 
-private inline XmlAttributeGarbage XmlAttributeGarbage =
+private inline WtXmlAttributeGarbage XmlAttributeGarbage =
   garbage:GarbageString
   {
-    yyValue = new XmlAttributeGarbage(garbage);
+    yyValue = new WtXmlAttributeGarbage(garbage);
   }
 ;
 

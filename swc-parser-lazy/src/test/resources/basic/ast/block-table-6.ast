@@ -42,7 +42,7 @@ WtParsedWikitextPage(
           ]
           [
             WtParagraph([ WtText(" B") ])
-            Newline("\n")
+            WtNewline("\n")
           ]
         )
         TableRow(
@@ -65,7 +65,7 @@ WtParsedWikitextPage(
               [ ]
               [
                 WtParagraph([ WtText(" Y") ])
-                Newline("\n")
+                WtNewline("\n")
               ]
             )
           ]

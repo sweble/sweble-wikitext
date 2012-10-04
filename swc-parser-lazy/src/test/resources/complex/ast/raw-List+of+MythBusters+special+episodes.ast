@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [WtText("wikiquotepar")], [1] = [TemplateArgument([0] = [], [1] = [WtText("MythBusters")])]), 1=XmlComment(" This is the episode number within the entire series "), 2=XmlComment(" This is the episode number within the current season "), 3=Template([0] = [WtText("Episode list\n")], [1] = [TemplateArgument([0] = [WtText("EpisodeNumber   ")], [1] = [WtText(" SP11\n")]), TemplateArgument([0] = [WtText("EpisodeNumber2  ")], [1] = [WtText(" Special 1\n")]), TemplateArgument([0] = [WtText("Title           ")], [1] = [WtText(" Young Scientist Special\n")]), TemplateArgument([0] = [WtText("RTitle          ")], [1] = [WtText(" \n")]), TemplateArgument([0] = [WtText("OriginalAirDate ")], [1] = [WtText(" "), Template([0] = [WtText("Start date")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2008")]), TemplateArgument([0] = [], [1] = [WtText("4")]), TemplateArgument([0] = [], [1] = [WtText("26")])]), WtText("\n")]), TemplateArgument([0] = [WtText("ShortSummary    ")], [1] = [WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), TemplateArgument([0] = [WtText("LineColor       ")], [1] = [WtText(" DBE9F4\n")])]), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=Template([0] = [WtText("inc-video")], [1] = []), 10=Template([0] = [WtText("Reflist")], [1] = []), 11=Template([0] = [WtText("imdb title")], [1] = [TemplateArgument([0] = [WtText("id")], [1] = [WtText("0383126")]), TemplateArgument([0] = [WtText("title")], [1] = [WtText("MythBusters")])]), 12=Template([0] = [WtText("MythBusters")], [1] = []), 13=Template([0] = [WtText("DEFAULTSORT:Mythbusters")], [1] = [])}
+    {N} entityMap = EntityMap {0=Template([0] = [WtText("wikiquotepar")], [1] = [TemplateArgument([0] = [], [1] = [WtText("MythBusters")])]), 1=WtXmlComment(" This is the episode number within the entire series "), 2=WtXmlComment(" This is the episode number within the current season "), 3=Template([0] = [WtText("Episode list\n")], [1] = [TemplateArgument([0] = [WtText("EpisodeNumber   ")], [1] = [WtText(" SP11\n")]), TemplateArgument([0] = [WtText("EpisodeNumber2  ")], [1] = [WtText(" Special 1\n")]), TemplateArgument([0] = [WtText("Title           ")], [1] = [WtText(" Young Scientist Special\n")]), TemplateArgument([0] = [WtText("RTitle          ")], [1] = [WtText(" \n")]), TemplateArgument([0] = [WtText("OriginalAirDate ")], [1] = [WtText(" "), Template([0] = [WtText("Start date")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2008")]), TemplateArgument([0] = [], [1] = [WtText("4")]), TemplateArgument([0] = [], [1] = [WtText("26")])]), WtText("\n")]), TemplateArgument([0] = [WtText("ShortSummary    ")], [1] = [WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), TemplateArgument([0] = [WtText("LineColor       ")], [1] = [WtText(" DBE9F4\n")])]), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=Template([0] = [WtText("inc-video")], [1] = []), 10=Template([0] = [WtText("Reflist")], [1] = []), 11=Template([0] = [WtText("imdb title")], [1] = [TemplateArgument([0] = [WtText("id")], [1] = [WtText("0383126")]), TemplateArgument([0] = [WtText("title")], [1] = [WtText("MythBusters")])]), 12=Template([0] = [WtText("MythBusters")], [1] = []), 13=Template([0] = [WtText("DEFAULTSORT:Mythbusters")], [1] = [])}
     {N} warnings = []
 
   [
@@ -22,7 +22,7 @@ WtParsedWikitextPage(
           )
         ]
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("The cast of the television series ")
       WtItalics(
         Properties:
@@ -77,8 +77,8 @@ WtParsedWikitextPage(
       )
       WtText(").")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
       InternalLink(
@@ -92,8 +92,8 @@ WtParsedWikitextPage(
       )
       WtText(" website.")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtSection(
       Properties:
         {N} level = 2
@@ -105,8 +105,8 @@ WtParsedWikitextPage(
         [ WtText("Episode overview") ]
       )
       WtSectionBody([
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         Table(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -153,7 +153,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText("Series # ")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " This is the episode number within the entire series "
                           {N} prefix = null
@@ -161,7 +161,7 @@ WtParsedWikitextPage(
                           {N} suffix = null
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -181,7 +181,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText("Season # ")
-                      XmlComment(
+                      WtXmlComment(
                         Properties:
                           {N} content = " This is the episode number within the current season "
                           {N} prefix = null
@@ -189,7 +189,7 @@ WtParsedWikitextPage(
                           {N} suffix = null
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -208,7 +208,7 @@ WtParsedWikitextPage(
                   ]
                   [
                     WtParagraph([ WtText("Title") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -228,7 +228,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText("Original airdate")
-                      Newline("\n")
+                      WtNewline("\n")
                       Template(
                         Properties:
                           {N} precededByNewline = true
@@ -331,16 +331,16 @@ WtParsedWikitextPage(
                         ]
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
             )
           ]
         )
-        Newline("\n")
-        Newline("\n")
-        WtParagraph([ Newline("\n") ])
+        WtNewline("\n")
+        WtNewline("\n")
+        WtParagraph([ WtNewline("\n") ])
       ])
     )
     WtSection(
@@ -354,7 +354,7 @@ WtParsedWikitextPage(
         [ WtText("Specials") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 3
@@ -366,7 +366,7 @@ WtParsedWikitextPage(
             [ WtText(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtUnorderedList([
               WtListItem(
                 Properties:
@@ -386,8 +386,8 @@ WtParsedWikitextPage(
                 ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
             WtParagraph([
               WtText("This episode aired first on ")
               InternalLink(
@@ -421,7 +421,7 @@ WtParsedWikitextPage(
               )
               WtText(" returned to assist with a myth.")
             ])
-            Newline("\n")
+            WtNewline("\n")
             Table(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -444,7 +444,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Myth statement") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -454,7 +454,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Status") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -464,7 +464,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Notes") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableRow(
@@ -480,7 +480,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Greenhouse gases increase the amount of heat absorbed by air.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -510,7 +510,7 @@ WtParsedWikitextPage(
                             [ WtText(" Confirmed ") ]
                           )
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -520,7 +520,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -560,7 +560,7 @@ WtParsedWikitextPage(
                           )
                           WtText("-powered cars.")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -590,7 +590,7 @@ WtParsedWikitextPage(
                             [ WtText(" Busted ") ]
                           )
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -600,7 +600,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -618,7 +618,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Cows hurt the environment.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -648,7 +648,7 @@ WtParsedWikitextPage(
                             [ WtText(" Confirmed ") ]
                           )
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -683,7 +683,7 @@ WtParsedWikitextPage(
                           )
                           WtText(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -701,7 +701,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Cow manure can be used to help the environment.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -731,7 +731,7 @@ WtParsedWikitextPage(
                             [ WtText(" Confirmed ") ]
                           )
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -741,15 +741,15 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
                 )
               ]
             )
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
       ])
@@ -765,7 +765,7 @@ WtParsedWikitextPage(
         [ WtText("Mini Myths") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([
           WtText("The mini-myths are shown in video clips that are available from the ")
           InternalLink(
@@ -786,8 +786,8 @@ WtParsedWikitextPage(
           )
           WtText(" episodes.")
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 3
@@ -799,7 +799,7 @@ WtParsedWikitextPage(
             [ WtText("\"Egg-uinox\"") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               WtText("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
               TagExtension(
@@ -811,7 +811,7 @@ WtParsedWikitextPage(
                 [ ]
               )
             ])
-            Newline("\n")
+            WtNewline("\n")
             Table(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -834,7 +834,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Myth statement") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -844,7 +844,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Status") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -854,7 +854,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Notes") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableRow(
@@ -882,7 +882,7 @@ WtParsedWikitextPage(
                           )
                           WtText(".")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -901,7 +901,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Busted") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -953,15 +953,15 @@ WtParsedWikitextPage(
                           )
                           WtText(" can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
                 )
               ]
             )
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -975,7 +975,7 @@ WtParsedWikitextPage(
             [ WtText("\"Breakstep Bridge\"") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               WtText("In a revisit of the ")
               InternalLink(
@@ -1035,8 +1035,8 @@ WtParsedWikitextPage(
               )
               WtText(".")
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
             Table(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -1059,7 +1059,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Myth statement") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1069,7 +1069,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Status") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1079,7 +1079,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Notes") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableRow(
@@ -1095,7 +1095,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1114,7 +1114,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Plausible") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1124,15 +1124,15 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" The bridge was able to hold Adam's weight until he started bouncing on it.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
                 )
               ]
             )
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1146,7 +1146,7 @@ WtParsedWikitextPage(
             [ WtText("\"Mini Shark Myths\"") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               WtText("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
               WtItalics(
@@ -1165,8 +1165,8 @@ WtParsedWikitextPage(
                 [ ]
               )
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
             Table(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -1189,7 +1189,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Myth statement") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1199,7 +1199,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Status") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1209,7 +1209,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Notes") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableRow(
@@ -1225,7 +1225,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Sharks tend to be attracted to brighter colors like yellow.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1244,7 +1244,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Plausible") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1254,7 +1254,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -1272,7 +1272,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Sharks can detect a single drop of blood dropped into a pool of water.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1291,7 +1291,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Busted") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1338,7 +1338,7 @@ WtParsedWikitextPage(
                           )
                           WtText(" might have gotten different results.")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -1368,7 +1368,7 @@ WtParsedWikitextPage(
                           )
                           WtText(".")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1387,7 +1387,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Confirmed") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1397,7 +1397,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -1427,7 +1427,7 @@ WtParsedWikitextPage(
                           )
                           WtText(" a casual observer can use to adequately estimate the size of a shark.")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1446,7 +1446,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Busted") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1456,15 +1456,15 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
                 )
               ]
             )
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
       ])
@@ -1480,10 +1480,10 @@ WtParsedWikitextPage(
         [ WtText("Outtakes") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([ WtText("During live appearances by the MythBusters, they have screened additional segments that were not aired.") ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 3
@@ -1495,7 +1495,7 @@ WtParsedWikitextPage(
             [ WtText("\"Facts About Flatulence\"") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               WtText("There were two additional myths addressed in addition to those in the ")
               WtItalics(
@@ -1521,8 +1521,8 @@ WtParsedWikitextPage(
               )
               WtText(" episode.  These two myths did not air because they were thought to be inappropriate for younger viewers.")
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
             Table(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -1545,7 +1545,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Myth statement") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1555,7 +1555,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Status") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1565,7 +1565,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Notes") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableRow(
@@ -1581,7 +1581,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Attractive women do not pass gas.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1600,7 +1600,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Busted") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1630,7 +1630,7 @@ WtParsedWikitextPage(
                             [ ]
                           )
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
@@ -1675,7 +1675,7 @@ WtParsedWikitextPage(
                           )
                           WtText(".")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1694,7 +1694,7 @@ WtParsedWikitextPage(
                       ]
                       [
                         WtParagraph([ WtText(" Confirmed") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1715,18 +1715,18 @@ WtParsedWikitextPage(
                           )
                           WtText(" The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).")
                         ])
-                        Newline("\n")
-                        Newline("\n")
+                        WtNewline("\n")
+                        WtNewline("\n")
                         WtParagraph([ WtText("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
                 )
               ]
             )
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
         WtSection(
@@ -1740,7 +1740,7 @@ WtParsedWikitextPage(
             [ WtText("\"MythBusters Teeth Challenge\"") ]
           )
           WtSectionBody([
-            Newline("\n")
+            WtNewline("\n")
             WtParagraph([
               WtText("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
               InternalLink(
@@ -1759,8 +1759,8 @@ WtParsedWikitextPage(
               )
               WtText("\" episode. However, on the Discovery Europe version, it is included in the episode.")
             ])
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
             Table(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -1783,7 +1783,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Myth statement") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1793,7 +1793,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Status") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableHeader(
@@ -1803,7 +1803,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" Notes") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableRow(
@@ -1819,7 +1819,7 @@ WtParsedWikitextPage(
                       [ ]
                       [
                         WtParagraph([ WtText(" Of all the MythBusters, Adam is the one with the brownest teeth. ") ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1868,7 +1868,7 @@ WtParsedWikitextPage(
                             [ WtText("Confirmed") ]
                           )
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                     TableCell(
@@ -1895,15 +1895,15 @@ WtParsedWikitextPage(
                           )
                           WtText(" to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).")
                         ])
-                        Newline("\n")
+                        WtNewline("\n")
                       ]
                     )
                   ]
                 )
               ]
             )
-            Newline("\n")
-            Newline("\n")
+            WtNewline("\n")
+            WtNewline("\n")
           ])
         )
       ])
@@ -1930,7 +1930,7 @@ WtParsedWikitextPage(
         ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([
           Template(
             Properties:
@@ -1941,8 +1941,8 @@ WtParsedWikitextPage(
             [ ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           InternalLink(
             Properties:
@@ -1972,8 +1972,8 @@ WtParsedWikitextPage(
           )
           WtText(" in an energetic and irreverent style.")
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         Table(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
@@ -1996,7 +1996,7 @@ WtParsedWikitextPage(
               [ ]
               [
                 WtParagraph([ WtText(" Date broadcast") ])
-                Newline("\n")
+                WtNewline("\n")
               ]
             )
             TableHeader(
@@ -2006,7 +2006,7 @@ WtParsedWikitextPage(
               [ ]
               [
                 WtParagraph([ WtText(" Myths") ])
-                Newline("\n")
+                WtNewline("\n")
               ]
             )
             TableRow(
@@ -2022,7 +2022,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" July 27, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2078,7 +2078,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2096,7 +2096,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" August 3, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2152,7 +2152,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2170,7 +2170,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" September 7, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2226,7 +2226,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2244,7 +2244,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" September 14, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2270,7 +2270,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2288,7 +2288,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" September 21, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2329,7 +2329,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2347,7 +2347,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" September 28, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2403,7 +2403,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2421,7 +2421,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" October 5, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2477,7 +2477,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2495,7 +2495,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" October 12, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2550,7 +2550,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2568,7 +2568,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" October 19, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2623,7 +2623,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2641,7 +2641,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" October 31, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2697,7 +2697,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2715,7 +2715,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" November 7, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2778,7 +2778,7 @@ WtParsedWikitextPage(
                         ]
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2796,7 +2796,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" November 14, 2006") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2837,7 +2837,7 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
@@ -2855,7 +2855,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([ WtText(" February 19, 2007") ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
                 TableCell(
@@ -2896,15 +2896,15 @@ WtParsedWikitextPage(
                         )
                       )
                     ])
-                    Newline("\n")
+                    WtNewline("\n")
                   ]
                 )
               ]
             )
           ]
         )
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -2918,7 +2918,7 @@ WtParsedWikitextPage(
         [ WtText("See also") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -2938,8 +2938,8 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -2953,7 +2953,7 @@ WtParsedWikitextPage(
         [ WtText("References") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtParagraph([
           Template(
             Properties:
@@ -2964,8 +2964,8 @@ WtParsedWikitextPage(
             [ ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
       ])
     )
     WtSection(
@@ -2979,7 +2979,7 @@ WtParsedWikitextPage(
         [ WtText("External links") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -3064,8 +3064,8 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           Template(
             Properties:
@@ -3076,8 +3076,8 @@ WtParsedWikitextPage(
             [ ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           Template(
             Properties:
@@ -3087,7 +3087,7 @@ WtParsedWikitextPage(
             [ WtText("DEFAULTSORT:Mythbusters") ]
             [ ]
           )
-          Newline("\n")
+          WtNewline("\n")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -3103,8 +3103,8 @@ WtParsedWikitextPage(
             )
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           InternalLink(
             Properties:
@@ -3115,7 +3115,7 @@ WtParsedWikitextPage(
 
             WtLinkTitle([ ])
           )
-          Newline("\n")
+          WtNewline("\n")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -3125,7 +3125,7 @@ WtParsedWikitextPage(
 
             WtLinkTitle([ ])
           )
-          Newline("\n")
+          WtNewline("\n")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -3136,7 +3136,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
         ])
-        Newline("\n")
+        WtNewline("\n")
       ])
     )
   ]

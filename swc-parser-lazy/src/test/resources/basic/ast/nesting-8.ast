@@ -34,7 +34,7 @@ WtParsedWikitextPage(
               )
               WtText("||2")
             ])
-            Newline("\n")
+            WtNewline("\n")
           ]
         )
       ]

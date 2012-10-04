@@ -33,7 +33,7 @@
  * -------
  *
  *   AST node:
- *     Name        : Newline
+ *     Name        : WtNewline
  *     Extends     : StringContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_NEWLINE
  *     Constructor : "content"
@@ -85,10 +85,10 @@ void Eol :=
   <DUMMY> &{ acceptEol() } slEol
 ;
 
-Newline pEolNode =
+WtNewline pEolNode =
   eol:pEol
   {
-    yyValue = new Newline(eol);
+    yyValue = new WtNewline(eol);
   }
 ;
 

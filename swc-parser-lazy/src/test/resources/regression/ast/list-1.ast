@@ -15,7 +15,7 @@ WtParsedWikitextPage(
         [ WtText("C") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:

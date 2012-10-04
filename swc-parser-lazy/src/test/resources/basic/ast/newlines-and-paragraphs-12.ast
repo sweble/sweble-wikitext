@@ -6,11 +6,11 @@ WtParsedWikitextPage(
   [
     WtParagraph([
       WtText("Hallo")
-      Newline("\n")
-      Newline("\n")
+      WtNewline("\n")
+      WtNewline("\n")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     Table(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
@@ -22,7 +22,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ " |" <o> "" <o> "" ]
 
           [ ]
-          [ Newline("\n") ]
+          [ WtNewline("\n") ]
         )
       ]
     )

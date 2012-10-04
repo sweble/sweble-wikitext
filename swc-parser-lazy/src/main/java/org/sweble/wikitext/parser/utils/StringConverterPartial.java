@@ -20,12 +20,12 @@ package org.sweble.wikitext.parser.utils;
 import java.util.Iterator;
 
 import org.sweble.wikitext.parser.ParserConfig;
-import org.sweble.wikitext.parser.nodes.Ignored;
+import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 import org.sweble.wikitext.parser.preprocessor.ProtectedText;
 
@@ -190,13 +190,13 @@ public class StringConverterPartial
 				result.append(n.getContent());
 		}
 		
-		public void visit(XmlComment n)
+		public void visit(WtXmlComment n)
 		{
 			if (opt(StringConverter.FAIL_ON_XML_COMMENTS))
 				failedOnNode = n;
 		}
 		
-		public void visit(Ignored n)
+		public void visit(WtIgnored n)
 		{
 			if (opt(StringConverter.FAIL_ON_IGNORED))
 				failedOnNode = n;

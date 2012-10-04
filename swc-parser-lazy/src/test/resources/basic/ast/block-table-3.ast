@@ -32,7 +32,7 @@ WtParsedWikitextPage(
               [ ]
               [
                 WtParagraph([ WtText(" class=\"foo\"") ])
-                Newline("\n")
+                WtNewline("\n")
               ]
             )
           ]

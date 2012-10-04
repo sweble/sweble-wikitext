@@ -14,7 +14,7 @@ WtParsedWikitextPage(
           ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
     WtUnorderedList([
       WtListItem(
         Properties:
@@ -29,7 +29,7 @@ WtParsedWikitextPage(
         [ WtText(" item 2") ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -40,9 +40,9 @@ WtParsedWikitextPage(
 
         WtLinkTitle([ ])
       )
-      Newline("\n")
+      WtNewline("\n")
       WtText("]]")
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

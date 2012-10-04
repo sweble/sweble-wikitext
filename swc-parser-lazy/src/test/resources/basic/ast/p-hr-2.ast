@@ -8,8 +8,8 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]

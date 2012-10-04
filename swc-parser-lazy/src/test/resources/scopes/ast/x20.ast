@@ -12,22 +12,22 @@ WtParsedWikitextPage(
 
       [ ]
       [
-        Newline("\n")
+        WtNewline("\n")
         WtText("P1")
-        Newline("\n")
+        WtNewline("\n")
       ]
     )
-    Newline("\n")
+    WtNewline("\n")
     WtText("P2")
-    Newline("\n")
+    WtNewline("\n")
     XmlEndTag(
       Properties:
         {N} name = "p"
         {N} rtd = RTD[ "</p>" ]
     )
-    Newline("\n")
+    WtNewline("\n")
     WtText("P3")
-    Newline("\n")
+    WtNewline("\n")
     XmlElement(
       Properties:
         {N} empty = false
@@ -36,9 +36,9 @@ WtParsedWikitextPage(
 
       [ ]
       [
-        Newline("\n")
+        WtNewline("\n")
         WtText("P4")
-        Newline("\n")
+        WtNewline("\n")
       ]
     )
     XmlElement(
@@ -49,9 +49,9 @@ WtParsedWikitextPage(
 
       [ ]
       [
-        Newline("\n")
+        WtNewline("\n")
         WtText("asdf")
-        Newline("\n")
+        WtNewline("\n")
       ]
     )
   ]

@@ -20,7 +20,7 @@ WtParsedWikitextPage(
       )
       WtText(" may refer to ")
     ])
-    Newline("\n")
+    WtNewline("\n")
     WtUnorderedList([
       WtListItem(
         Properties:
@@ -163,7 +163,7 @@ WtParsedWikitextPage(
         [ WtText(" Asdf.com is a random chat board where the point is to not always stay on topic.") ]
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
     WtSection(
       Properties:
         {N} level = 2
@@ -175,7 +175,7 @@ WtParsedWikitextPage(
         [ WtText(" See also ") ]
       )
       WtSectionBody([
-        Newline("\n")
+        WtNewline("\n")
         WtUnorderedList([
           WtListItem(
             Properties:
@@ -229,8 +229,8 @@ WtParsedWikitextPage(
             ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           InternalLink(
             Properties:
@@ -241,7 +241,7 @@ WtParsedWikitextPage(
 
             WtLinkTitle([ ])
           )
-          Newline("\n")
+          WtNewline("\n")
           Template(
             Properties:
               {N} precededByNewline = true
@@ -251,8 +251,8 @@ WtParsedWikitextPage(
             [ ]
           )
         ])
-        Newline("\n")
-        Newline("\n")
+        WtNewline("\n")
+        WtNewline("\n")
         WtParagraph([
           InternalLink(
             Properties:
@@ -263,7 +263,7 @@ WtParsedWikitextPage(
 
             WtLinkTitle([ ])
           )
-          Newline("\n")
+          WtNewline("\n")
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -274,7 +274,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
         ])
-        Newline("\n")
+        WtNewline("\n")
       ])
     )
   ]

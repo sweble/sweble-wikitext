@@ -15,8 +15,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -28,8 +28,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText(
         Properties:
@@ -40,8 +40,8 @@ WtParsedWikitextPage(
           ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText(
         Properties:
@@ -52,8 +52,8 @@ WtParsedWikitextPage(
           ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText(
         Properties:
@@ -64,8 +64,8 @@ WtParsedWikitextPage(
           ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -77,8 +77,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -90,8 +90,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -103,8 +103,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText(
         Properties:
@@ -122,8 +122,8 @@ WtParsedWikitextPage(
       )
       WtText(" Hallo]]")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText(
         Properties:
@@ -141,8 +141,8 @@ WtParsedWikitextPage(
       )
       WtText("amp; Hallo]]")
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -154,8 +154,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -167,8 +167,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       WtText(
         Properties:
@@ -180,8 +180,8 @@ WtParsedWikitextPage(
           ]
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -193,8 +193,8 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
-    Newline("\n")
+    WtNewline("\n")
+    WtNewline("\n")
     WtParagraph([
       InternalLink(
         Properties:
@@ -206,6 +206,6 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
     ])
-    Newline("\n")
+    WtNewline("\n")
   ]
 )

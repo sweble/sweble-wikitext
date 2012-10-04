@@ -47,7 +47,7 @@ import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtUnorderedList;
 import org.sweble.wikitext.parser.nodes.WtWhitespace;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlComment;
+import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEntityRef;
 
@@ -344,7 +344,7 @@ public class TextConverter
 	{
 	}
 	
-	public void visit(XmlComment n)
+	public void visit(WtXmlComment n)
 	{
 	}
 	
