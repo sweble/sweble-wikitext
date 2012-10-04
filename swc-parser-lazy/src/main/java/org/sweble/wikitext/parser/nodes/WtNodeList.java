@@ -2,9 +2,10 @@ package org.sweble.wikitext.parser.nodes;
 
 import java.util.Collection;
 
+import org.sweble.wikitext.parser.WtRtData;
+
 import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.GenericNodeList;
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public class WtNodeList
 		extends
@@ -65,25 +66,25 @@ public class WtNodeList
 	// =========================================================================
 	
 	@Override
-	public RtData setRtd(RtData rtd)
+	public WtRtData setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtData setRtd(Object... glue)
+	public WtRtData setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtData setRtd(String... glue)
+	public WtRtData setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public RtData getRtd()
+	public WtRtData getRtd()
 	{
 		throw null;
 	}

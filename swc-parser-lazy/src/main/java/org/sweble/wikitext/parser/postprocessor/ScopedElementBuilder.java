@@ -21,6 +21,7 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.DefinitionList;
 import org.sweble.wikitext.parser.nodes.DefinitionListDef;
 import org.sweble.wikitext.parser.nodes.DefinitionListTerm;
@@ -50,7 +51,6 @@ import org.sweble.wikitext.parser.parser.NamedXmlElement;
 import org.sweble.wikitext.parser.postprocessor.ElementScopeStack.Scope;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.RtData;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
 
 public class ScopedElementBuilder
@@ -718,8 +718,8 @@ public class ScopedElementBuilder
 		
 		if (config.isGatherRtData())
 		{
-			RtData rtd = new RtData(3);
-			RtData rtdEmpty = e.getRtd();
+			WtRtData rtd = new WtRtData(3);
+			WtRtData rtdEmpty = e.getRtd();
 			if (rtdEmpty == null)
 			{
 				rtd.setField(0, '<', e.getName());
@@ -750,10 +750,10 @@ public class ScopedElementBuilder
 		
 		if (config.isGatherRtData())
 		{
-			RtData rtd = new RtData(3);
+			WtRtData rtd = new WtRtData(3);
 			if (hasOpen)
 			{
-				RtData rtdOpen = open.getRtd();
+				WtRtData rtdOpen = open.getRtd();
 				if (rtdOpen == null)
 				{
 					rtd.setField(0, '<', open.getName());
@@ -768,7 +768,7 @@ public class ScopedElementBuilder
 			
 			if (close != null)
 			{
-				RtData rtdClose = close.getRtd();
+				WtRtData rtdClose = close.getRtd();
 				if (rtdClose == null)
 				{
 					rtd.setField(2, "</", open.getName(), '>');

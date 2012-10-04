@@ -1,7 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.WtRtData;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtContentNodeMarkTwo
 		extends
@@ -9,7 +10,7 @@ public abstract class WtContentNodeMarkTwo
 {
 	private static final long serialVersionUID = 3407356901471138122L;
 	
-	private RtData rtd = null;
+	private WtRtData rtd = null;
 	
 	// =========================================================================
 	
@@ -26,31 +27,31 @@ public abstract class WtContentNodeMarkTwo
 	// =========================================================================
 	
 	@Override
-	public RtData setRtd(RtData rtd)
+	public WtRtData setRtd(WtRtData rtd)
 	{
 		if (rtd != null && rtd.size() != 2)
 			throw new IllegalArgumentException();
-		RtData old = this.rtd;
+		WtRtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
 	}
 	
 	@Override
-	public RtData setRtd(Object... glue)
+	public WtRtData setRtd(Object... glue)
 	{
-		rtd = new RtData(2, glue);
+		rtd = new WtRtData(2, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtData setRtd(String... glue)
+	public WtRtData setRtd(String... glue)
 	{
-		rtd = new RtData(2, glue);
+		rtd = new WtRtData(2, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtData getRtd()
+	public WtRtData getRtd()
 	{
 		return rtd;
 	}
@@ -117,7 +118,7 @@ public abstract class WtContentNodeMarkTwo
 			switch (index)
 			{
 				case 0:
-					return WtContentNodeMarkTwo.this.setRtd((RtData) value);
+					return WtContentNodeMarkTwo.this.setRtd((WtRtData) value);
 					
 				default:
 					throw new IndexOutOfBoundsException();

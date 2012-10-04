@@ -1,9 +1,10 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.WtRtData;
+
 import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.GenericInnerNode.GenericInnerNode1;
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtInnerNode1
 		extends
@@ -14,7 +15,7 @@ public abstract class WtInnerNode1
 	
 	private static final long serialVersionUID = -3023143947405463528L;
 	
-	private RtData rtd = null;
+	private WtRtData rtd = null;
 	
 	// =========================================================================
 	
@@ -41,31 +42,31 @@ public abstract class WtInnerNode1
 	// =========================================================================
 	
 	@Override
-	public RtData setRtd(RtData rtd)
+	public WtRtData setRtd(WtRtData rtd)
 	{
 		if (rtd != null && rtd.size() != this.size() + 1)
 			throw new IllegalArgumentException();
-		RtData old = this.rtd;
+		WtRtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
 	}
 	
 	@Override
-	public RtData setRtd(Object... glue)
+	public WtRtData setRtd(Object... glue)
 	{
-		rtd = new RtData(this, glue);
+		rtd = new WtRtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtData setRtd(String... glue)
+	public WtRtData setRtd(String... glue)
 	{
-		rtd = new RtData(this, glue);
+		rtd = new WtRtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtData getRtd()
+	public WtRtData getRtd()
 	{
 		return rtd;
 	}
@@ -132,7 +133,7 @@ public abstract class WtInnerNode1
 			switch (index)
 			{
 				case 0:
-					return WtInnerNode1.this.setRtd((RtData) value);
+					return WtInnerNode1.this.setRtd((WtRtData) value);
 					
 				default:
 					throw new IndexOutOfBoundsException();
@@ -146,7 +147,7 @@ public abstract class WtInnerNode1
 	public Object clone() throws CloneNotSupportedException
 	{
 		WtInnerNode1 n = (WtInnerNode1) super.clone();
-		n.rtd = (RtData) n.rtd.clone();
+		n.rtd = (WtRtData) n.rtd.clone();
 		return n;
 	}
 }

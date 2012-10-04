@@ -219,7 +219,7 @@ body
 
     WtNodeList items = new WtNodeList();
 
-    RtData lastItem = processListItem(listStack, items, first);
+    WtRtData lastItem = processListItem(listStack, items, first);
 
     Pair<RawListItem> i = tail;
     while (!i.isEmpty())
@@ -241,7 +241,7 @@ body
     return items;
   }
 
-  private RtData processListItem(Vector<ListNode> listStack, WtNodeList items, RawListItem p)
+  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, RawListItem p)
   {
     String prefix = p.getPrefix();
 
@@ -269,10 +269,10 @@ body
         prefix.charAt(last),
         new WtNodeList(p.getContent()));
 
-    //RtData rtData = null;
-    RtData rtd = null;
+    //WtRtData rtData = null;
+    WtRtData rtd = null;
     if (isGatherRtData()){
-      rtd = new RtData(2, p.getRt1(), p.getPrefix(), SEP);
+      rtd = new WtRtData(2, p.getRt1(), p.getPrefix(), SEP);
       item.setRtd(rtd);
       //rtData = addRtData(item, joinRt(p.getRt1(), p.getPrefix()), null);
     }

@@ -1,8 +1,9 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.WtRtData;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public abstract class WtStringContentNode
 		extends
@@ -12,7 +13,7 @@ public abstract class WtStringContentNode
 {
 	private static final long serialVersionUID = -2087712873453224402L;
 	
-	private RtData rtd = null;
+	private WtRtData rtd = null;
 	
 	// =========================================================================
 	
@@ -29,31 +30,31 @@ public abstract class WtStringContentNode
 	// =========================================================================
 	
 	@Override
-	public RtData setRtd(RtData rtd)
+	public WtRtData setRtd(WtRtData rtd)
 	{
 		if (rtd != null && rtd.size() != this.size() + 1)
 			throw new IllegalArgumentException();
-		RtData old = this.rtd;
+		WtRtData old = this.rtd;
 		this.rtd = rtd;
 		return old;
 	}
 	
 	@Override
-	public RtData setRtd(Object... glue)
+	public WtRtData setRtd(Object... glue)
 	{
-		rtd = new RtData(this, glue);
+		rtd = new WtRtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtData setRtd(String... glue)
+	public WtRtData setRtd(String... glue)
 	{
-		rtd = new RtData(this, glue);
+		rtd = new WtRtData(this, glue);
 		return rtd;
 	}
 	
 	@Override
-	public RtData getRtd()
+	public WtRtData getRtd()
 	{
 		return rtd;
 	}
@@ -125,7 +126,7 @@ public abstract class WtStringContentNode
 			switch (index - getSuperPropertyCount())
 			{
 				case 0:
-					return WtStringContentNode.this.setRtd((RtData) value);
+					return WtStringContentNode.this.setRtd((WtRtData) value);
 					
 				default:
 					return super.setValue(index, value);
@@ -139,7 +140,7 @@ public abstract class WtStringContentNode
 	public Object clone() throws CloneNotSupportedException
 	{
 		WtStringContentNode n = (WtStringContentNode) super.clone();
-		n.rtd = (RtData) n.rtd.clone();
+		n.rtd = (WtRtData) n.rtd.clone();
 		return n;
 	}
 }

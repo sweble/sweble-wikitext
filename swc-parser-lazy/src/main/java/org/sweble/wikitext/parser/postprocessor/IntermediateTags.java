@@ -18,13 +18,12 @@
 package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtItalics;
-import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public enum IntermediateTags
 {
@@ -48,7 +47,7 @@ public enum IntermediateTags
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "''";
 				String r1 = (c == null || c.isSynthetic()) ? null : "''";
-				e.setRtd(r0, RtData.SEP, r1);
+				e.setRtd(r0, WtRtData.SEP, r1);
 			}
 			return e;
 		}
@@ -74,7 +73,7 @@ public enum IntermediateTags
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "'''";
 				String r1 = (c == null || c.isSynthetic()) ? null : "'''";
-				e.setRtd(r0, RtData.SEP, r1);
+				e.setRtd(r0, WtRtData.SEP, r1);
 			}
 			return e;
 		}

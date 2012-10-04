@@ -29,7 +29,7 @@ header
 
 body
 {
-  private static final String SEP = RtData.SEP;
+  private static final String SEP = WtRtData.SEP;
 
   protected boolean isGatherRtData()
   {

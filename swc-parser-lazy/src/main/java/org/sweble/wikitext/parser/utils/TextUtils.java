@@ -345,11 +345,11 @@ public final class TextUtils
 	// =========================================================================
 	
 	/*
-	public static RtData addRtData(WtNode yyValue, Object[]... rts)
+	public static WtRtData addRtData(WtNode yyValue, Object[]... rts)
 	{
 		if (rts.length != yyValue.size() + 1)
 			rts = Arrays.copyOf(rts, yyValue.size() + 1);
-		RtData data = new RtData(rts);
+		WtRtData data = new WtRtData(rts);
 		yyValue.setAttribute("RTD", data);
 		return data;
 	}
@@ -420,7 +420,7 @@ public final class TextUtils
 	
 	public static void prependRtData(WtNode n, String data)
 	{
-		RtData rtd = (RtData) n.getAttribute("RTD");
+		WtRtData rtd = (WtRtData) n.getAttribute("RTD");
 		if (rtd == null || rtd.getRts().length == 0)
 		{
 			addRtData(n, joinRt(data));
@@ -446,7 +446,7 @@ public final class TextUtils
 			
 			Object[][] rts = rtd.getRts().clone();
 			rts[0] = rtd0;
-			n.setAttribute("RTD", new RtData(rts));
+			n.setAttribute("RTD", new WtRtData(rts));
 		}
 	}
 	*/
