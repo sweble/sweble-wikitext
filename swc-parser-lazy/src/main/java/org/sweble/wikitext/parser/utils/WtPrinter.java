@@ -46,36 +46,42 @@ public class WtPrinter
 				if (hasVisibleProperties(n))
 				{
 					printProperties(n);
-					if (!n.isEmpty())
-						p.needNewlines(2);
+					p.needNewlines(2);
 				}
 				
-				boolean singleLine = false;
-				if (isCompact() && n.size() <= 1)
+				if (n.isEmpty())
 				{
-					OutputBuffer b = p.outputBufferStart();
-					printListOfNodes(n);
-					b.stop();
-					
-					String output = b.getBuffer().trim();
-					if (isSingleLine(output))
+					p.indentln("[ ]");
+				}
+				else
+				{
+					boolean singleLine = false;
+					if (isCompact() && n.size() <= 1)
 					{
-						p.indent("[ ");
-						p.print(output);
-						p.println(" ]");
-						singleLine = true;
+						OutputBuffer b = p.outputBufferStart();
+						printListOfNodes(n);
+						b.stop();
+						
+						String output = b.getBuffer().trim();
+						if (isSingleLine(output))
+						{
+							p.indent("[ ");
+							p.print(output);
+							p.println(" ]");
+							singleLine = true;
+						}
 					}
-				}
-				
-				if (!singleLine)
-				{
-					p.indentln('[');
 					
-					p.incIndent();
-					printListOfNodes(n);
-					p.decIndent();
-					
-					p.indentln(']');
+					if (!singleLine)
+					{
+						p.indentln('[');
+						
+						p.incIndent();
+						printListOfNodes(n);
+						p.decIndent();
+						
+						p.indentln(']');
+					}
 				}
 				p.decIndent();
 				
@@ -84,7 +90,7 @@ public class WtPrinter
 			else if (n.isEmpty())
 			{
 				p.indent(n.getClass().getSimpleName());
-				p.println("[]");
+				p.println("([ ])");
 			}
 			else
 			{
