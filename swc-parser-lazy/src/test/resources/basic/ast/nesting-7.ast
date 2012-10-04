@@ -5,22 +5,26 @@ ParsedWikitextPage(
 
   [
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [
-        WtText(
-          Properties:
-            {N} content = "text[[target|text"
-            warnings = 
-            [
-              Warning (informative): /basic/wikitext/nesting-7.wikitext:2:7 - 15: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing.
-            ]
-        )
-      ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [
+          WtText(
+            Properties:
+              {N} content = "text[[target|text"
+              warnings = 
+              [
+                Warning (informative): /basic/wikitext/nesting-7.wikitext:2:7 - 15: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing.
+              ]
+          )
+        ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("text]]") ])
         Newline("\n")

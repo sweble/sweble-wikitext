@@ -94,13 +94,17 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Episode overview") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Episode overview") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Table(
@@ -339,21 +343,29 @@ ParsedWikitextPage(
         Paragraph([ Newline("\n") ])
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Specials") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Specials") ]
+      )
+      WtSectionBody[
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -742,13 +754,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Mini Myths") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Mini Myths") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("The mini-myths are shown in video clips that are available from the ")
@@ -772,13 +788,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("\"Egg-uinox\"") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("\"Egg-uinox\"") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
@@ -944,13 +964,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("\"Breakstep Bridge\"") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("\"Breakstep Bridge\"") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("In a revisit of the ")
@@ -1111,13 +1135,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("\"Mini Shark Myths\"") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("\"Mini Shark Myths\"") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
@@ -1441,24 +1469,32 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Outtakes") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Outtakes") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("During live appearances by the MythBusters, they have screened additional segments that were not aired.") ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("\"Facts About Flatulence\"") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("\"Facts About Flatulence\"") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("There were two additional myths addressed in addition to those in the ")
@@ -1693,13 +1729,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("\"MythBusters Teeth Challenge\"") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("\"MythBusters Teeth Challenge\"") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
@@ -1868,24 +1908,28 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [
-        InternalLink(
-          Properties:
-            {N} postfix = ""
-            {N} prefix = ""
-            {N} rtd = RTD[ "[[BBC Two" <o> "]]" ]
-            {N} target = "BBC Two"
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
 
-          LinkTitle([ ])
-        )
-        WtText(" re-edited half hour shows")
-      ]
-      [
+        [
+          InternalLink(
+            Properties:
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} rtd = RTD[ "[[BBC Two" <o> "]]" ]
+              {N} target = "BBC Two"
+
+            LinkTitle([ ])
+          )
+          WtText(" re-edited half hour shows")
+        ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -2863,13 +2907,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("See also") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("See also") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(
@@ -2894,13 +2942,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("References") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("References") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -2916,13 +2968,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("External links") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("External links") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(

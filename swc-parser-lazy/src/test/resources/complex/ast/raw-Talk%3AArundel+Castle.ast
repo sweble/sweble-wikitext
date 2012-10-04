@@ -306,13 +306,17 @@ ParsedWikitextPage(
     Paragraph([ WtText("The history section states that the castle was first built in 1068 and that it was built during Edward the Confessor's reign.  Which is correct?") ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Ghosts ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Ghosts ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("What about the 4 ghosts living in the castle? there should be some reference  ")
@@ -409,13 +413,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Automated peer review ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Automated peer review ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([

@@ -15,13 +15,17 @@ ParsedWikitextPage(
       )
     ])
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" SectionHeading ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" SectionHeading ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("]]") ])
       ]

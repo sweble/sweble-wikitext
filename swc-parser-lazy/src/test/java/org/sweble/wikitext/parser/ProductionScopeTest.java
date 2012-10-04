@@ -24,7 +24,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.parser.postprocessor.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
-import org.sweble.wikitext.parser.utils.TypedAstPrinter;
+import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ParserInterface;
@@ -79,6 +79,6 @@ public class ProductionScopeTest
 				visitors,
 				INPUT_SUB_DIR,
 				EXPECTED_SUB_DIR,
-				new TypedAstPrinter());
+				new TypedWtAstPrinter());
 	}
 }

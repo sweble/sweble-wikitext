@@ -270,13 +270,17 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Using the toolbar ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Using the toolbar ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           ImageLink(
@@ -615,13 +619,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Pipe syntax tutorial ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Pipe syntax tutorial ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Table(
@@ -3250,22 +3258,30 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Examples ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Examples ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Simple example ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Simple example ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([ WtText("Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.") ])
             Newline("\n")
@@ -3389,13 +3405,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Multiplication table ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Multiplication table ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -3842,13 +3862,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Color; scope of parameters ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Color; scope of parameters ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -4351,13 +4375,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Width, height ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Width, height ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([ WtText("The width and height of the whole table can be specified, as well as the height of a row. To specify the width of a column one can specify the width of an arbitrary cell in it. If the width is not specified for all columns, and/or the height is not specified for all rows, then there is some ambiguity, and the result depends on the browser.") ])
             Newline("\n")
@@ -4586,13 +4614,17 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Section(
+            WtSection(
               Properties:
                 {N} level = 4
-                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
-              [ WtText(" Setting column widths ") ]
-              [
+              WtSectionHeading(
+                Properties:
+                  {N} rtd = RTD[ "====" <o> "====" ]
+
+                [ WtText(" Setting column widths ") ]
+              )
+              WtSectionBody[
                 Newline("\n")
                 Paragraph([
                   WtText("To force column widths to specific requirements, rather than accepting the width of the widest text element in a column's cells, follow this example. Note that ")
@@ -5238,13 +5270,17 @@ ParsedWikitextPage(
                 )
                 Newline("\n")
                 Newline("\n")
-                Section(
+                WtSection(
                   Properties:
                     {N} level = 5
-                    {N} rtd = RTD[ "=====" <o> "=====" <o> "" ]
 
-                  [ WtText("Nowrap") ]
-                  [
+                  WtSectionHeading(
+                    Properties:
+                      {N} rtd = RTD[ "=====" <o> "=====" ]
+
+                    [ WtText("Nowrap") ]
+                  )
+                  WtSectionBody[
                     Newline("\n")
                     Paragraph([
                       WtText("In a table that spans the entire width of a page, cells narrower than the widest cell tend to wrap. To keep an entire column from wrapping, use ")
@@ -5698,13 +5734,17 @@ ParsedWikitextPage(
             )
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Setting borders ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Setting borders ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("Table borders default to a complex shaded double-line (the default in HTML); however, those borders can be set to a thin solid line by using a style-parameter (style=\"border: 1px solid darkgray\"), as in the following (")
@@ -6343,13 +6383,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Vertical alignment ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Vertical alignment ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([ WtText("By default data in tables is vertically centrally aligned, which results in odd-looking layouts like this:") ])
             Newline("\n")
@@ -6783,13 +6827,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Positioning ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Positioning ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("You can position the table itself, the contents of a row, and the contents of a cell, but not with a single parameter for all the contents of the table. See ")
@@ -6823,13 +6871,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" M\u00E9lange ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" M\u00E9lange ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtItalics(
@@ -7350,13 +7402,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Floating table ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Floating table ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("The wiki markup coding:")
@@ -7535,13 +7591,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Floating images in the center ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Floating images in the center ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText(
@@ -8148,13 +8208,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Nested tables ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Nested tables ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtItalics(
@@ -9149,13 +9213,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Combined use of COLSPAN and ROWSPAN ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Combined use of COLSPAN and ROWSPAN ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -9526,13 +9594,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Centering tables ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Centering tables ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("Centered tables can be achieved, but they will not \"float\"; that is to say, no text will appear to either side. The trick is ")
@@ -9730,13 +9802,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Setting parameters ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Setting parameters ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("At the start of a cell, add your parameter followed by a single pipe. For example ")
@@ -9856,13 +9932,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Tiny tables within a text line ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Tiny tables within a text line ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("For years in ")
@@ -10148,13 +10228,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Decimal point alignment ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Decimal point alignment ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("A method to get columns of numbers aligned at the decimal point is as follows:")
@@ -10724,13 +10808,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Style classes ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Style classes ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         DefinitionList([
@@ -12459,13 +12547,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Collapsible tables ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Collapsible tables ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([ WtText("Classes can also be used to collapse tables, so they are hidden by default.  Use the style 'collapsible' to enable collapsing behaviour.  By default, a collapsible table will begin expanded.  To change this, include the additional class 'collapsed' or 'autocollapse' (i.e. only collapse if 3 other collapsible tables are present). You must include a header row, where the 'hide' option will be displayed. Example:") ])
             Newline("\n")
@@ -12571,13 +12663,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Sorting ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Sorting ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         DefinitionList([
           DefinitionListDef(
@@ -13054,13 +13150,17 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Sorting and collapsing") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Sorting and collapsing") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -13493,13 +13593,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Row template ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Row template ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("Regardless of whether wikitable format or HTML is used, the wikitext of the rows within a table, and sometimes even within a collection of tables, has much in common, e.g.:") ])
         Newline("\n")
@@ -13845,13 +13949,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Conditional table row ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Conditional table row ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("For a conditional row in a table, we can have:")
@@ -13974,13 +14082,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Other table syntax ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Other table syntax ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("Other types of ")
@@ -14158,13 +14270,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Comparison of table syntax ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Comparison of table syntax ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Table(
               Properties:
@@ -15173,13 +15289,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Pipe syntax in terms of the HTML produced ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Pipe syntax in terms of the HTML produced ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("The pipe syntax, developed by ")
@@ -15238,13 +15358,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Tables ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Tables ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("A ")
@@ -15300,13 +15424,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Rows ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Rows ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtText("For each table, an HTML ")
@@ -15492,13 +15620,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Cells ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Cells ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([ WtText("Cells are generated either like this:") ])
             Newline("\n")
@@ -15783,13 +15915,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Headers ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Headers ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([ WtText("Produces a TH, functioning the same way as TD, but with different style. \"!\" is used instead of the opening \"|\". \"!!\" can be used instead of \"||\". Parameters still use \"|\", though.  Example:") ])
             Newline("\n")
@@ -15821,30 +15957,34 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            WtText(" ")
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[Help:Table Caption" <o> "]]" ]
-                {N} target = "Help:Table Caption"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle(
+            [
+              WtText(" ")
+              InternalLink(
                 Properties:
-                  {N} rtd = RTD[ "|" <o> "" ]
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[Help:Table Caption" <o> "]]" ]
+                  {N} target = "Help:Table Caption"
 
-                [ WtText("Captions") ]
+                LinkTitle(
+                  Properties:
+                    {N} rtd = RTD[ "|" <o> "" ]
+
+                  [ WtText("Captions") ]
+                )
               )
-            )
-            WtText(" ")
-          ]
-          [
+              WtText(" ")
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -15968,13 +16108,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Summaries ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Summaries ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -16235,13 +16379,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Square monitors ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Square monitors ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("To format for a square monitor or window, use a tape measure. Determine the height of your rectangular screen. Using that figure measure under the screen to determine the width your monitor\u2019s screen would be if it were square. Mark that location using ink or tape under the screen. Drag the side of your browser\u2019s window to that location so the window is square based on accurate measurements. Square monitors and reading windows are not able to contain tables and galleries made for rectangular and wide screens. When a table or gallery is wider than the monitor, it makes every line of text wider than the screen as well. The px amounts of the following gallery were determined after measuring the window to make sure it was square:") ])
         Newline("\n")
@@ -16735,13 +16883,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Vertically oriented column headers ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Vertically oriented column headers ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("Sometimes it is desirable (such as in a table predominantly made of numbers) to rotate text such that it proceeds from top to bottom or bottom to top instead of from left to right or right to left. Currently, browser support for this type of styling as a component of HTML or CSS is sporadic (Internet Explorer is one of the few browsers that supports this in cascading stylesheets, albeit in a non-standard way). An alternative solution that works in most if not all browsers is to use images in place of the text. For instance, the following table uses SVG images instead of text to produce the rotated column headings:") ])
         Newline("\n")
@@ -16868,7 +17020,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -16915,7 +17071,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia talk:WikiProject Video games")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia talk:WikiProject Video games"
+                                {N} rtd = RTD[ "Wikipedia talk:WikiProject Video games" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -16962,7 +17122,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Portal:Video games")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Portal:Video games"
+                                {N} rtd = RTD[ "Portal:Video games" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17009,7 +17173,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games/Article guidelines")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games/Article guidelines"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games/Article guidelines" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17056,7 +17224,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games/Templates")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games/Templates"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games/Templates" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17103,7 +17275,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games/Sources")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games/Sources"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games/Sources" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17150,7 +17326,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games/Assessment")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games/Assessment"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games/Assessment" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17197,7 +17377,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games/Cleanup")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games/Cleanup"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games/Cleanup" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17244,7 +17428,11 @@ ParsedWikitextPage(
                             Properties:
                               {N} rtd = RTD[ "|link=" <o> "" ]
 
-                            LinkTarget("Wikipedia:WikiProject Video games/Requests")
+                            LinkTarget(
+                              Properties:
+                                {N} content = "Wikipedia:WikiProject Video games/Requests"
+                                {N} rtd = RTD[ "Wikipedia:WikiProject Video games/Requests" ]
+                            )
                           )
                         ]
                         LinkTitle([ ])
@@ -17498,13 +17686,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Wikitable as image gallery ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Wikitable as image gallery ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         DefinitionList([
@@ -18509,13 +18701,17 @@ ParsedWikitextPage(
         Paragraph([ WtText("Once images have been placed in a wikitable, control of formatting can be adjusted when more images are added.") ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Shifting/centering ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Shifting/centering ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -18880,13 +19076,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText(" Speed/transfer rates ") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText(" Speed/transfer rates ") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([ WtText("Actual transfer/display speeds depend on individual files. In 2007 to March 2009 some serious flaws existed in the thumbnailing process when combined with the gallery-display, making thumbnails sometimes larger than the originals. For this reason some users explicitly used tables instead of the gallery tag. However, these issues are fixed as of March 2009.") ])
@@ -18896,13 +19096,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Generate a chart with a table ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Generate a chart with a table ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         XmlElement(
           Properties:
@@ -18962,13 +19166,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Converting spreadsheet to wikitable format ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Converting spreadsheet to wikitable format ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("To convert from spreadsheets such as Gnumeric, MS Excel or OpenOffice.org Calc, you can use the ")
@@ -19022,13 +19230,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" See also ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" See also ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(
@@ -19391,13 +19603,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" External links ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" External links ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(

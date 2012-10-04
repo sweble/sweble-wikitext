@@ -26,13 +26,17 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("The Irish connection ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("The Irish connection ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("Mmmm, it is very similar to Irish football, I wonder - was there significant Irish immigration in Australia at the time. {end sarcasm} Australian Rules = Irish Football played on a cricket pitch. It's ironic that us Aussie's love to play up AFL's uniqueness, yet it's uniqueness that gives away the fact that it's a bastardisation of an immigrant sport that's only played in one other country in the world. - CS") ])
         Newline("\n")
@@ -577,13 +581,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Miscellaneous") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Miscellaneous") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([ WtText("Are there really no older professional teams? I have found some older cricket teams but don't know if they are professional or not.   ---rmhermen") ])
         Newline("\n")
@@ -732,13 +740,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Winter") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Winter") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("What is the difference between summer and winter in Australia, that the same fields are used but for different sports? -- ")
@@ -922,13 +934,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("History") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("History") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("The history section on this page needs to be corrected to bring it into line with the information on this site ")
@@ -1183,13 +1199,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Rules") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Rules") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("I think the section on the rules could be expanded. Basic information like the number of players is lacking, and can only be deduced from studying the images. ")
@@ -1259,13 +1279,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Length of the Game") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Length of the Game") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -1390,13 +1414,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Rugby League") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Rugby League") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -1475,35 +1503,39 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [
-        WtText(" ")
-        InternalLink(
-          Properties:
-            {N} postfix = ""
-            {N} prefix = ""
-            {N} rtd = RTD[ "[[Australian Rules Football" <o> "]]" ]
-            {N} target = "Australian Rules Football"
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
 
-          LinkTitle([ ])
-        )
-        WtText(" <-> ")
-        InternalLink(
-          Properties:
-            {N} postfix = ""
-            {N} prefix = ""
-            {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
-            {N} target = "Australian Football League"
+        [
+          WtText(" ")
+          InternalLink(
+            Properties:
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} rtd = RTD[ "[[Australian Rules Football" <o> "]]" ]
+              {N} target = "Australian Rules Football"
 
-          LinkTitle([ ])
-        )
-        WtText(" ")
-      ]
-      [
+            LinkTitle([ ])
+          )
+          WtText(" <-> ")
+          InternalLink(
+            Properties:
+              {N} postfix = ""
+              {N} prefix = ""
+              {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
+              {N} target = "Australian Football League"
+
+            LinkTitle([ ])
+          )
+          WtText(" ")
+        ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -1952,13 +1984,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("IAFC") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("IAFC") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("The article indicates that the IAFC is the official administrative body for Australian rules football internationally but I think you would get a very different view on that from the AFL, who see themselves as the official international representative body for the sport.  If someone can come up with a statement from the AFL that it recognises the IAFC as the official international body though, I'd be happy to retain the reference.  --")
@@ -2113,13 +2149,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Diagrams ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Diagrams ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -2146,13 +2186,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Footy ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Footy ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("Is this section really necessary or appropriate?") ])
@@ -2186,13 +2230,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" What is a \"clearance\"? ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" What is a \"clearance\"? ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("When I watch AFL football on TV, I often hear the announcers talking about \"clearances\" and \"disposals\", which events are also tabulated among the statistics.  Unfortunately, no one ever bothers to tell us Americans what those terms mean.  I decided that a Web search would provide me the answers.  Actually, I have searched extensively; and, though I did find here a definition of \"disposal\", I am still at a loss for an exact definition of \"clearance\".  I suppose that a clearance has occurred when the ball is kicked a long ways, but I suspect field position has something to do with it.  I don't know if a hand pass can count as a clearance.") ])
@@ -2314,13 +2362,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Latest edit ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Latest edit ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("The latest anonimous edit looks like a bit of POV mischief from a banana bender with taped back ears and no neck who doesn't mind sniffing the odd backside.  Anyone with sufficient powers out there agree on a roll back?  --")
@@ -2433,13 +2485,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" ACT ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" ACT ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("Re the Brain's most recent edit, that wasn't me that deleted that line that he has restored, but I always thought that it was inaccurate in relation to the ACT (i.e. Canberra).  In fact, Canberra was an aussie rules stronghold until at least 1982 because the first two generations of public servants came predominantly from Melbourne. With time this balance swung more to Sydney and then around 1982 the Canberra Raiders joined the then NSWRL.  Rugby league certainly has overtaken aussie rules in general popularity (if you are counting TV ratings) but in terms of participation I would think that it would be roughly on par with aussie rules and rugby union, and all three are likely to be behind soccer.  In terms spectators attending games, I imagine the ACT Brumbies currently outstrip all, the Canberra Raiders only get about half, and for some of the three or four games the Kangaroos play in Canberra, they will often get more than the average Raiders game.  All in all - I think it is not an accurate statement about Canberra (not to mention that in souther NSW, aussie rules is stronger than rugby league).  --")
@@ -3053,13 +3109,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Aussie rules in Australia ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Aussie rules in Australia ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -3119,13 +3179,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Rules ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Rules ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("The Rules section is getting rather long and unwieldly, especially the holding the ball subsection (which I started, when it actually was \"easily summarised\"), so moving it to another article seems like a good idea. But the name of such an article is an interesting topic - I would suggest \"Australian Football Rules\", just to confuse people (and to make User 139.132.1.1 happy). Possible alternatives are \"Australian Rules Football Rules\", or \"Rules of Australian Rules Football\", or even \"Australian Rules\". Seriously, probably the best name would be \"Rules of Australian Football\", regardless of whether you think that Australian Football is a good name. Incidentally, my copy of the rulebook has on the cover \"Laws of Australian Football\", so maybe thats an even better one (or \"Laws of Australian Rules Football\" come to think of it). If someone else wants to actually move the stuff, that would be good, or I'll probably do it in a week or two when I have more time. Of course the alternative is to just delete half the stuff, but that's probably not a good idea.") ])
@@ -3368,13 +3432,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Attendance Record Cop-Outs and Factoids ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Attendance Record Cop-Outs and Factoids ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("Aussie Rules fans go to games.  Rugby league fans watch games on tv.  Using attendance records as a means to determine popularity is severely flawed.  Put simply, it's a cop out.") ])
@@ -4851,13 +4919,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Another example of out of control non-NPOV ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Another example of out of control non-NPOV ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -5116,13 +5188,17 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([ WtText("OUT OF CONTROL NON-NPOV") ])
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Openning Paragraph") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Openning Paragraph") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               WtBold(
@@ -5164,13 +5240,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Popularity") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Popularity") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -5544,13 +5624,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Leagues") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Leagues") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -5934,13 +6018,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Rename? ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Rename? ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -6343,13 +6431,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" External links ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" External links ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -6474,13 +6566,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" Padding ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" Padding ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         DefinitionList([
@@ -6526,13 +6622,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Piccies") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Piccies") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("I ask again:   are these the very best photos we can get our hands on of the great Australian game?  The one photo we show, looks more like the old Sun \"Spot the Ball\"  competition.  C'mon, let's lift our game!  ")
@@ -6893,13 +6993,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("POV") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("POV") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("Well, this article is pretty good, so congrats to the people involved. I do feel however, that it glorifies the sport a bit much, I know it is popular, but this article is a tad misleading, reading through it, it reads as if AFL is the be all and end all of Australian sport. Im not here to bag AFL by any means, and I know that there are sources provided and so on, but I do feel the article is not really written in a NPOV. ")
@@ -7136,13 +7240,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Help!") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Help!") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ")
@@ -7231,13 +7339,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Tactics/Terminology") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Tactics/Terminology") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("I propose a section in the article on some of the tactics and terminology used in the game, drawing from ")
@@ -7468,13 +7580,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Please vote") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Please vote") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("...in a ")
@@ -7536,13 +7652,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" External links ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" External links ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([

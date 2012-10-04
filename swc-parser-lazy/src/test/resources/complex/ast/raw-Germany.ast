@@ -2154,13 +2154,17 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("History") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("History") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -2183,13 +2187,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Etymology") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Etymology") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -2320,13 +2328,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Germanic tribes 750 BC\u2013260") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Germanic tribes 750 BC\u2013260") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -2843,13 +2855,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Migration Period and Frankish Empire 260-800") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Migration Period and Frankish Empire 260-800") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -3011,13 +3027,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Holy Roman Empire 962\u20131806") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Holy Roman Empire 962\u20131806") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -3787,13 +3807,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Restoration and revolution 1814\u20131871") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Restoration and revolution 1814\u20131871") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -4190,13 +4214,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("German Empire 1871\u20131918") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("German Empire 1871\u20131918") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -4885,13 +4913,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Weimar Republic 1919\u20131933") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Weimar Republic 1919\u20131933") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -5282,13 +5314,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Third Reich 1933\u20131945") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Third Reich 1933\u20131945") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -6096,13 +6132,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Division and reunification 1945\u20131990") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Division and reunification 1945\u20131990") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -6928,13 +6968,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Berlin Republic and the EU 1990\u2013present") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Berlin Republic and the EU 1990\u2013present") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -7238,13 +7282,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Geography") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Geography") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -7805,13 +7853,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Administrative divisions") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Administrative divisions") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -9360,13 +9412,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Climate") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Climate") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -9605,13 +9661,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Biodiversity") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Biodiversity") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -9947,13 +10007,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Environment") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Environment") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -10147,13 +10211,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Politics") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Politics") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -10363,13 +10431,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Government") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Government") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -10913,13 +10985,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Law") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Law") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -11569,13 +11645,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Foreign relations") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Foreign relations") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -12076,13 +12156,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Military") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Military") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -12593,13 +12677,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Economy") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Economy") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -13085,13 +13173,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Corporations") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Corporations") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -14619,13 +14711,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Transport") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Transport") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -14937,13 +15033,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Energy") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Energy") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -15135,13 +15235,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Technology") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Technology") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -15561,13 +15665,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Science") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Science") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -16065,13 +16173,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Demographics") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Demographics") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           ImageLink(
@@ -16396,13 +16508,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Migration") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Migration") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -16670,13 +16786,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Urbanisation") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Urbanisation") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -19158,13 +19278,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Languages") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Languages") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -19735,13 +19859,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Religion") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Religion") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -20648,13 +20776,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Education") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Education") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -21092,13 +21224,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Health") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Health") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -21394,13 +21530,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Culture") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Culture") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -21891,13 +22031,17 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Literature") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Literature") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -22564,13 +22708,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Philosophy") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Philosophy") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -22884,13 +23032,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Cinema") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Cinema") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -23536,13 +23688,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Music") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Music") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -24399,13 +24555,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Media") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Media") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -24593,13 +24753,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Sports") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Sports") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -25299,13 +25463,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Cuisine") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Cuisine") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -25849,13 +26017,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Society") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Society") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -26141,13 +26313,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("See also") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("See also") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -26708,13 +26884,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Notes") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Notes") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -26738,13 +26918,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("References") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("References") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(
@@ -26769,13 +26953,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("External links") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("External links") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           Template(

@@ -1732,13 +1732,17 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Early life, education, and family") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Early life, education, and family") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("Chambliss, the son of an ")
@@ -2010,13 +2014,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("House of Representatives, 1995-2003") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("House of Representatives, 1995-2003") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Paragraph([
           WtText("Chambliss was elected to the ")
@@ -2204,21 +2212,29 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Senate, 2003-present") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Senate, 2003-present") ]
+      )
+      WtSectionBody[
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Committee assignments") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Committee assignments") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -2564,13 +2580,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Caucus memberships") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Caucus memberships") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -2626,21 +2646,29 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Elections") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Elections") ]
+          )
+          WtSectionBody[
             Newline("\n")
-            Section(
+            WtSection(
               Properties:
                 {N} level = 4
-                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
-              [ WtText("2002 race") ]
-              [
+              WtSectionHeading(
+                Properties:
+                  {N} rtd = RTD[ "====" <o> "====" ]
+
+                [ WtText("2002 race") ]
+              )
+              WtSectionBody[
                 Newline("\n")
                 XmlElement(
                   Properties:
@@ -2875,13 +2903,17 @@ ParsedWikitextPage(
                 Newline("\n")
               ]
             )
-            Section(
+            WtSection(
               Properties:
                 {N} level = 4
-                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
-              [ WtText("2008 race") ]
-              [
+              WtSectionHeading(
+                Properties:
+                  {N} rtd = RTD[ "====" <o> "====" ]
+
+                [ WtText("2008 race") ]
+              )
+              WtSectionBody[
                 Newline("\n")
                 XmlElement(
                   Properties:
@@ -3201,13 +3233,17 @@ ParsedWikitextPage(
                 Newline("\n")
               ]
             )
-            Section(
+            WtSection(
               Properties:
                 {N} level = 4
-                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
-              [ WtText("Imperial Sugar") ]
-              [
+              WtSectionHeading(
+                Properties:
+                  {N} rtd = RTD[ "====" <o> "====" ]
+
+                [ WtText("Imperial Sugar") ]
+              )
+              WtSectionBody[
                 Newline("\n")
                 Paragraph([
                   WtText("During the run-off period, Chambliss received a subpoena regarding the investigation of a lawsuit against ")
@@ -3276,21 +3312,29 @@ ParsedWikitextPage(
             )
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Political positions") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Political positions") ]
+          )
+          WtSectionBody[
             Newline("\n")
-            Section(
+            WtSection(
               Properties:
                 {N} level = 4
-                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
-              [ WtText("Voting Record") ]
-              [
+              WtSectionHeading(
+                Properties:
+                  {N} rtd = RTD[ "====" <o> "====" ]
+
+                [ WtText("Voting Record") ]
+              )
+              WtSectionBody[
                 Newline("\n")
                 Paragraph([
                   WtText("Chambliss's voting record is typically that of voting in line with conservative issues.")
@@ -3444,13 +3488,17 @@ ParsedWikitextPage(
                 Newline("\n")
               ]
             )
-            Section(
+            WtSection(
               Properties:
                 {N} level = 4
-                {N} rtd = RTD[ "====" <o> "====" <o> "" ]
 
-              [ WtText("Interest groups ratings") ]
-              [
+              WtSectionHeading(
+                Properties:
+                  {N} rtd = RTD[ "====" <o> "====" ]
+
+                [ WtText("Interest groups ratings") ]
+              )
+              WtSectionBody[
                 Newline("\n")
                 Paragraph([
                   WtText("On abortion issues, the ratings given Chambliss as of 2007 by ")
@@ -3759,13 +3807,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Electoral history") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Electoral history") ]
+      )
+      WtSectionBody[
         Newline("\n")
         XmlElement(
           Properties:
@@ -6101,13 +6153,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("External links") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("External links") ]
+      )
+      WtSectionBody[
         Newline("\n")
         XmlElement(
           Properties:
@@ -21403,13 +21459,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("References") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("References") ]
+      )
+      WtSectionBody[
         Newline("\n")
         XmlElement(
           Properties:

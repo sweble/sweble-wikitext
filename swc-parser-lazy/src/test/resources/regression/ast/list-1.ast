@@ -4,13 +4,17 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    Section(
+    WtSection(
       Properties:
         {N} level = 1
-        {N} rtd = RTD[ "=" <o> "=" <o> "" ]
 
-      [ WtText("C") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "=" <o> "=" ]
+
+        [ WtText("C") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(

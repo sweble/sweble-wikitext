@@ -348,15 +348,19 @@ Paragraph([
 
 ================================================================================
 --------------------------------------------------------------------------------
-  (//Section[@level=3])[1]
+  (//WtSection[@level=3])[1]
 --------------------------------------------------------------------------------
-Section(
+WtSection(
   Properties:
     {N} level = 3
-    {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-  [ WtText(" Rome to Revolution ") ]
-  [
+  WtSectionHeading(
+    Properties:
+      {N} rtd = RTD[ "===" <o> "===" ]
+
+    [ WtText(" Rome to Revolution ") ]
+  )
+  WtSectionBody[
     Newline("\n")
     Paragraph([
       WtText("The borders of modern France are approximately the same as those of ancient ")

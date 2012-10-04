@@ -17,7 +17,7 @@
 
 /*!
  *
- * Section SectionHeading
+ * WtSection SectionHeading
  * ---------------
  *
  *   Grammar:
@@ -53,11 +53,11 @@
  *     Properties:
  *       level : int
  *
- * Section
+ * WtSection
  * -------
  *
  *   AST node:
- *     Name        : Section
+ *     Name        : WtSection
  *     Extends     : WtInnerNode2
  *     Constructor : "level, title, body"
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SECTION
@@ -90,7 +90,7 @@ header
 
 body
 {
-  private SectionHeading createHeading(
+  private WtForeignNode createHeading(
       int spanFrom,
       Result spanTo,
       WtNode rt0,
@@ -128,7 +128,7 @@ body
       oCount -= oCount - cCount;
     }
 
-    SectionHeading heading = new SectionHeading(title, level);
+    WtSectionHeading heading = new WtSectionHeading(title);
 
     WtText oOddText = null;
     if (oOdd > 0)
@@ -140,6 +140,7 @@ body
             WS_NORMAL,
             "Odd number of opening equals");
       oOddText = new WtText(StringUtils.strrep('=', oOdd));
+      heading.add(0, oOddText);
     }
 
     WtText cOddText = null;
@@ -152,17 +153,17 @@ body
             WS_NORMAL,
             "Odd number of closing equals");
       cOddText = new WtText(StringUtils.strrep('=', cOdd));
+      heading.add(cOddText);
     }
-
-    heading.setContent(new WtNodeList(oOddText, title, cOddText));
 
     String equals = StringUtils.strrep('=', level);
     setRtd(heading, rt0, equals, SEP, equals, rt1);
 
-    return heading;
+    return WtForeignNode.from(level, heading);
   }
 
-  private void fixSectionMetadata(SectionHeading heading, Section section)
+  /*
+  private void fixSectionMetadata(WtSectionHeading heading, WtSection section)
   {
     if (heading.getRtd() != null)
       section.setRtd(heading.getRtd().getField(0), SEP, heading.getRtd().getField(1), SEP);
@@ -171,18 +172,19 @@ body
     if (warnings != null)
       section.setAttribute("warnings", warnings);
   }
+  */
 
-  private WtNode makeSections(Section first, Pair<Section> tail)
+  private WtNode makeSections(WtSection first, Pair<WtSection> tail)
   {
-    Stack<Section> stack = new Stack<Section>();
+    Stack<WtSection> stack = new Stack<WtSection>();
     stack.push(first);
 
     WtNodeList result = new WtNodeList(first);
 
-    Pair<Section> i = tail;
+    Pair<WtSection> i = tail;
     while (!i.isEmpty())
     {
-      Section s = i.head();
+      WtSection s = i.head();
       while (!stack.isEmpty() && s.getLevel() <= stack.peek().getLevel())
         stack.pop();
 
@@ -193,7 +195,8 @@ body
       else
       {
         // TODO: Dangerous! We must clone the section instead!
-        stack.peek().setBody(new WtNodeList(stack.peek().getBody(), s));
+        stack.peek().getBody().add(s);
+        //stack.peek().setBody(new WtNodeList(stack.peek().getBody(), s));
       }
 
       stack.push(s);
@@ -236,7 +239,7 @@ noinline memoized WtNode SectionsMemoized =
 // -- Sections -----------------------------------------------------------------
 
 noinline transient WtNode SectionsTransient =
-  &{ accept(ParserAtoms.SECTIONS) } first:Section tail:Section*
+  &{ accept(ParserAtoms.SECTIONS) } first:WtSection tail:WtSection*
   {
     yyValue = makeSections(first, tail);
   }
@@ -253,18 +256,18 @@ inline void BlockStopperNextSection =
 
 
 
-// -- Section ------------------------------------------------------------------
+// -- WtSection ------------------------------------------------------------------
 
-private noinline transient Section Section =
+private noinline transient WtSection WtSection =
     h:SectionHeading Eof
     {
-      yyValue = new Section(h.getLevel(), h.getContent(), new WtNodeList());
-      fixSectionMetadata(h, yyValue);
+      yyValue = new WtSection(h.getForeign(0, int.class), h.getForeign(1, WtSectionHeading.class), new WtSectionBody());
+      //fixSectionMetadata(h, yyValue);
     }
   / h:SectionHeading body:SectionContentStar
     {
-      yyValue = new Section(h.getLevel(), h.getContent(), body);
-      fixSectionMetadata(h, yyValue);
+      yyValue = new WtSection(h.getForeign(0, int.class), h.getForeign(1, WtSectionHeading.class), body);
+      //fixSectionMetadata(h, yyValue);
     }
 ;
 
@@ -273,7 +276,7 @@ private noinline transient Section Section =
 
 // -- SectionHeading --[ State Aware Memoization ]-------------------------------------
 
-noinline transient SectionHeading SectionHeading =
+noinline transient WtForeignNode SectionHeading =
  ^{
     StateAwareResult r = (StateAwareResult) pHeadingMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -285,7 +288,7 @@ noinline transient SectionHeading SectionHeading =
   }
 ;
 
-noinline memoized SectionHeading HeadingMemoized =
+noinline memoized WtForeignNode HeadingMemoized =
  ^{
     Result yyResult = new StateAwareResult("SectionHeading", getContext(), pHeadingTransient(yyBase));
     if (returnTrue(yyResult))
@@ -298,7 +301,7 @@ noinline memoized SectionHeading HeadingMemoized =
 
 // -- SectionHeading ------------------------------------------------------------------
 
-noinline transient SectionHeading HeadingTransient =
+noinline transient WtForeignNode HeadingTransient =
   rt0:pTpStar open:EqualsStr heading:HeadingContentStar close:EqualsStr rt1:pExtSpaceStar &slEolOrEof
   {
     // TODO: add warning productions
@@ -320,11 +323,14 @@ private inline stateful WtNodeList HeadingContentStar =
   InlineContentPlus
 ;
 
-private inline stateful WtNodeList SectionContentStar =
+private inline stateful WtSectionBody SectionContentStar =
   {
     enter(ParserScopes.SECTION_BODY);
   }
-  BlockContent
+  content:BlockContent
+  {
+    yyValue = new WtSectionBody(content);
+  }
 ;
 
 

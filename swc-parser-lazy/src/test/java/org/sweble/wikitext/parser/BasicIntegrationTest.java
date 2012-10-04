@@ -26,7 +26,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.parser.postprocessor.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
-import org.sweble.wikitext.parser.utils.TypedAstPrinter;
+import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 import org.sweble.wikitext.parser.utils.TypedRtWikitextPrinter;
 
 import xtc.parser.ParseException;
@@ -85,7 +85,7 @@ public class BasicIntegrationTest
 				visitors,
 				INPUT_SUB_DIR,
 				EXPECTED_AST_SUB_DIR,
-				new TypedAstPrinter());
+				new TypedWtAstPrinter());
 	}
 	
 	@Test

@@ -5,24 +5,28 @@ ParsedWikitextPage(
 
   [
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [
-        WtText(" A ")
-        XmlElement(
-          Properties:
-            {N} empty = false
-            {N} name = "i"
-            {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
 
-          [ ]
-          [ WtText(" B ") ]
-        )
-      ]
-      [
+        [
+          WtText(" A ")
+          XmlElement(
+            Properties:
+              {N} empty = false
+              {N} name = "i"
+              {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
+
+            [ ]
+            [ WtText(" B ") ]
+          )
+        ]
+      )
+      WtSectionBody[
         XmlElement(
           Properties:
             {N} empty = false

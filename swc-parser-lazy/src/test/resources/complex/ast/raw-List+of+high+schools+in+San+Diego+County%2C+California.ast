@@ -28,21 +28,29 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Public schools") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Public schools") ]
+      )
+      WtSectionBody[
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Borrego Springs Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Borrego Springs Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -73,13 +81,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Coronado Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Coronado Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -115,28 +127,32 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[Escondido Union School District" <o> "]]" ]
-                {N} target = "Escondido Union School District"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle(
+            [
+              InternalLink(
                 Properties:
-                  {N} rtd = RTD[ "|" <o> "" ]
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[Escondido Union School District" <o> "]]" ]
+                  {N} target = "Escondido Union School District"
 
-                [ WtText("Escondido Union High School District") ]
+                LinkTitle(
+                  Properties:
+                    {N} rtd = RTD[ "|" <o> "" ]
+
+                  [ WtText("Escondido Union High School District") ]
+                )
               )
-            )
-          ]
-          [
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -234,13 +250,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Fallbrook Union High School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Fallbrook Union High School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -277,23 +297,27 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[Grossmont Union High School District" <o> "]]" ]
-                {N} target = "Grossmont Union High School District"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle([ ])
-            )
-          ]
-          [
+            [
+              InternalLink(
+                Properties:
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[Grossmont Union High School District" <o> "]]" ]
+                  {N} target = "Grossmont Union High School District"
+
+                LinkTitle([ ])
+              )
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -542,13 +566,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Julian Union High School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Julian Union High School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -585,13 +613,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Lakeside Union School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Lakeside Union School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -616,13 +648,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Mountain Empire Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Mountain Empire Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -647,13 +683,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Oceanside Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Oceanside Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -712,23 +752,27 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[Poway Unified School District" <o> "]]" ]
-                {N} target = "Poway Unified School District"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle([ ])
-            )
-          ]
-          [
+            [
+              InternalLink(
+                Properties:
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[Poway Unified School District" <o> "]]" ]
+                  {N} target = "Poway Unified School District"
+
+                LinkTitle([ ])
+              )
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -836,13 +880,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Ramona Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Ramona Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -884,28 +932,32 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[San Diego City Schools" <o> "]]" ]
-                {N} target = "San Diego City Schools"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle(
+            [
+              InternalLink(
                 Properties:
-                  {N} rtd = RTD[ "|" <o> "" ]
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[San Diego City Schools" <o> "]]" ]
+                  {N} target = "San Diego City Schools"
 
-                [ WtText("San Diego Unified School District") ]
+                LinkTitle(
+                  Properties:
+                    {N} rtd = RTD[ "|" <o> "" ]
+
+                  [ WtText("San Diego Unified School District") ]
+                )
               )
-            )
-          ]
-          [
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -921,23 +973,27 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[San Dieguito Union High School District" <o> "]]" ]
-                {N} target = "San Dieguito Union High School District"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle([ ])
-            )
-          ]
-          [
+            [
+              InternalLink(
+                Properties:
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[San Dieguito Union High School District" <o> "]]" ]
+                  {N} target = "San Dieguito Union High School District"
+
+                LinkTitle([ ])
+              )
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1025,13 +1081,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("San Marcos Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("San Marcos Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1096,23 +1156,27 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[Sweetwater Union High School District" <o> "]]" ]
-                {N} target = "Sweetwater Union High School District"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle([ ])
-            )
-          ]
-          [
+            [
+              InternalLink(
+                Properties:
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[Sweetwater Union High School District" <o> "]]" ]
+                  {N} target = "Sweetwater Union High School District"
+
+                LinkTitle([ ])
+              )
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1374,13 +1438,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Valley Center-Pauma Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Valley Center-Pauma Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1453,13 +1521,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Vista Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Vista Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1532,13 +1604,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Warner Unified School District") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Warner Unified School District") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1571,47 +1647,59 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Private schools") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Private schools") ]
+      )
+      WtSectionBody[
         Newline("\n")
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Baptist") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Baptist") ]
+          )
+          WtSectionBody[
             Newline("\n")
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [
-            InternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[Roman Catholic Diocese of San Diego" <o> "]]" ]
-                {N} target = "Roman Catholic Diocese of San Diego"
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
 
-              LinkTitle(
+            [
+              InternalLink(
                 Properties:
-                  {N} rtd = RTD[ "|" <o> "" ]
+                  {N} postfix = ""
+                  {N} prefix = ""
+                  {N} rtd = RTD[ "[[Roman Catholic Diocese of San Diego" <o> "]]" ]
+                  {N} target = "Roman Catholic Diocese of San Diego"
 
-                [ WtText("Catholic") ]
+                LinkTitle(
+                  Properties:
+                    {N} rtd = RTD[ "|" <o> "" ]
+
+                  [ WtText("Catholic") ]
+                )
               )
-            )
-          ]
-          [
+            ]
+          )
+          WtSectionBody[
             Newline("\n")
             Paragraph([
               Template(
@@ -1627,13 +1715,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Episcopal") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Episcopal") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1663,13 +1755,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Jewish") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Jewish") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1728,13 +1824,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Lutheran") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Lutheran") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1797,13 +1897,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Non-Denominational") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Non-Denominational") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1833,13 +1937,17 @@ ParsedWikitextPage(
             Newline("\n")
           ]
         )
-        Section(
+        WtSection(
           Properties:
             {N} level = 3
-            {N} rtd = RTD[ "===" <o> "===" <o> "" ]
 
-          [ WtText("Nonsectarian") ]
-          [
+          WtSectionHeading(
+            Properties:
+              {N} rtd = RTD[ "===" <o> "===" ]
+
+            [ WtText("Nonsectarian") ]
+          )
+          WtSectionBody[
             Newline("\n")
             UnorderedList([
               ListItem(
@@ -1989,13 +2097,17 @@ ParsedWikitextPage(
         )
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("Closed schools") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("Closed schools") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(
@@ -2020,13 +2132,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("See also") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("See also") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(
@@ -2130,13 +2246,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" References ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" References ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -2152,13 +2272,17 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText("External links") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText("External links") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(

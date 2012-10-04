@@ -67,7 +67,7 @@ public class XPathTest
 		
 		doQuery(context, b, "/*[1]/Paragraph[3]");
 		
-		doQuery(context, b, "(//Section[@level=3])[1]");
+		doQuery(context, b, "(//WtSection[@level=3])[1]");
 		
 		doQuery(context, b, "//Template[contains(name//WtText[@content],\"Infobox Country\")]//TemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		

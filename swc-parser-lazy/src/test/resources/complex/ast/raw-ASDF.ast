@@ -164,13 +164,17 @@ ParsedWikitextPage(
       )
     ])
     Newline("\n")
-    Section(
+    WtSection(
       Properties:
         {N} level = 2
-        {N} rtd = RTD[ "==" <o> "==" <o> "" ]
 
-      [ WtText(" See also ") ]
-      [
+      WtSectionHeading(
+        Properties:
+          {N} rtd = RTD[ "==" <o> "==" ]
+
+        [ WtText(" See also ") ]
+      )
+      WtSectionBody[
         Newline("\n")
         UnorderedList([
           ListItem(

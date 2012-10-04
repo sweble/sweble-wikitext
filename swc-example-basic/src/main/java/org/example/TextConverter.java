@@ -33,7 +33,7 @@ import org.sweble.wikitext.parser.nodes.ListItem;
 import org.sweble.wikitext.parser.nodes.OrderedList;
 import org.sweble.wikitext.parser.nodes.PageSwitch;
 import org.sweble.wikitext.parser.nodes.Paragraph;
-import org.sweble.wikitext.parser.nodes.Section;
+import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
@@ -255,7 +255,7 @@ public class TextConverter
 		write(link.getPostfix());
 	}
 	
-	public void visit(Section s)
+	public void visit(WtSection s)
 	{
 		finishLine();
 		StringBuilder saveSb = sb;
@@ -264,7 +264,7 @@ public class TextConverter
 		sb = new StringBuilder();
 		noWrap = true;
 		
-		iterate(s.getTitle());
+		iterate(s.getHeading());
 		finishLine();
 		String title = sb.toString().trim();
 		

@@ -30,7 +30,6 @@ import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.ListItem;
 import org.sweble.wikitext.parser.nodes.OrderedList;
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.Section;
 import org.sweble.wikitext.parser.nodes.SemiPre;
 import org.sweble.wikitext.parser.nodes.SemiPreLine;
 import org.sweble.wikitext.parser.nodes.Table;
@@ -39,9 +38,10 @@ import org.sweble.wikitext.parser.nodes.TableCell;
 import org.sweble.wikitext.parser.nodes.TableHeader;
 import org.sweble.wikitext.parser.nodes.TableRow;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
-import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.XmlEndTag;
@@ -122,11 +122,11 @@ public class ScopedElementBuilder
 		closeScope(ScopeType.WT_INLINE, n);
 	}
 	
-	public void visit(Section n)
+	public void visit(WtSection n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
-		n.setTitle(processScope(n.getTitle()));
-		n.setBody(processScope(n.getBody()));
+		n.getHeading().exchange(processScope(n.getHeading()));
+		n.getBody().exchange(processScope(n.getBody()));
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
@@ -309,6 +309,13 @@ public class ScopedElementBuilder
 	{
 		n.setContent(processScope(n.getContent()));
 	}
+	
+	/*
+	private void processScope(WtContentNodeMarkTwo n)
+	{
+		n.exchange(processScope(n));
+	}
+	*/
 	
 	private WtNodeList processScope(WtNodeList n)
 	{

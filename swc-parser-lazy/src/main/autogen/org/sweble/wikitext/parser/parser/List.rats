@@ -241,11 +241,7 @@ body
     return items;
   }
 
-<<<<<<< Updated upstream
-  private RtData processListItem(Vector<ListNode> listStack, WtList items, RawListItem p)
-=======
-  private RtDataPtk processListItem(Vector<ListNode> listStack, WtNodeList items, RawListItem p)
->>>>>>> Stashed changes
+  private RtData processListItem(Vector<ListNode> listStack, WtNodeList items, RawListItem p)
   {
     String prefix = p.getPrefix();
 

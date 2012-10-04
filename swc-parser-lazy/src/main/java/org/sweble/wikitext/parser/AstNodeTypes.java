@@ -149,11 +149,13 @@ public interface AstNodeTypes
 	
 	public static final int NT_XML_TAG_OPEN /* ............. */= NT_PARSER_BITS + 40;
 	
-	public static final int NT_HEADING /* .................. */= NT_PARSER_BITS + 41;
+	public static final int NT_SECTION_HEADING /* .......... */= NT_PARSER_BITS + 41;
 	
 	public static final int NT_SECTION /* .................. */= NT_PARSER_BITS + 42;
 	
 	public static final int NT_PAGE_SWITCH /* .............. */= NT_PARSER_BITS + 43;
 	
 	public static final int NT_SIGNATURE /* ................ */= NT_PARSER_BITS + 44;
+	
+	public static final int NT_SECTION_BODY /* ............. */= NT_PARSER_BITS + 45;
 }
