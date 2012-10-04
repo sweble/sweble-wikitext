@@ -25,7 +25,6 @@ import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.ExternalLink;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.Table;
 import org.sweble.wikitext.parser.nodes.TableCaption;
 import org.sweble.wikitext.parser.nodes.TableCell;
@@ -39,6 +38,7 @@ import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtOrderedList;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtSemiPre;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
@@ -63,11 +63,11 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	public static ParsedWikitextPage process(
+	public static WtParsedWikitextPage process(
 			ParserConfig config,
 			WtNode ast)
 	{
-		return (ParsedWikitextPage) new ScopedElementBuilder(config).go(ast);
+		return (WtParsedWikitextPage) new ScopedElementBuilder(config).go(ast);
 	}
 	
 	// =========================================================================
@@ -94,10 +94,10 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	public void visit(ParsedWikitextPage n)
+	public void visit(WtParsedWikitextPage n)
 	{
 		openScope(ScopeType.PAGE, n);
-		processScope(n);
+		n.exchange(processScope(n));
 		closeScope(ScopeType.PAGE, n);
 	}
 	

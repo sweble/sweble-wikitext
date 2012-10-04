@@ -79,7 +79,7 @@ public abstract class WtContentNodeMarkTwo
 		return new WtContentNodeMarkTwoPropertyIterator();
 	}
 	
-	private class WtContentNodeMarkTwoPropertyIterator
+	public class WtContentNodeMarkTwoPropertyIterator
 			extends
 				AstNodePropertyIterator
 	{

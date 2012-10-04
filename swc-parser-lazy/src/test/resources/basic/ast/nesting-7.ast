@@ -1,4 +1,4 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
@@ -26,10 +26,10 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([ WtText("text]]") ])
+        WtParagraph([ WtText("text]]") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("==")
           InternalLink(
             Properties:

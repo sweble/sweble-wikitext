@@ -1,4 +1,4 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
@@ -8,7 +8,7 @@ ParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Paragraph([
+    WtParagraph([
       Url(
         Properties:
           {N} path = "//example.com"
@@ -23,7 +23,7 @@ ParsedWikitextPage(
     )
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("before ")
       Url(
         Properties:

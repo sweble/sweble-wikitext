@@ -40,7 +40,7 @@ import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.Newline;
-import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -72,10 +72,10 @@ public class ParagraphAdapter
 	
 	public ParagraphAdapter()
 	{
-		super(new Paragraph());
+		super(new WtParagraph());
 	}
 	
-	public ParagraphAdapter(AstToWomNodeFactory factory, Paragraph astNode)
+	public ParagraphAdapter(AstToWomNodeFactory factory, WtParagraph astNode)
 	{
 		super(astNode);
 		// Done by gapsFromAst!
@@ -150,7 +150,7 @@ public class ParagraphAdapter
 	@Override
 	public WtNodeList getAstChildContainer()
 	{
-		return isXml() ? xml().getBody() : ((Paragraph) getAstNode()).getContent();
+		return isXml() ? xml().getBody() : ((WtParagraph) getAstNode()).getContent();
 	}
 	
 	// =========================================================================

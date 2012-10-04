@@ -1,4 +1,4 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
@@ -14,14 +14,14 @@ ParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Paragraph([ WtText("text") ])
+    WtParagraph([ WtText("text") ])
     Newline("\n")
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
     Newline("\n")
-    Paragraph([ WtText("t") ])
+    WtParagraph([ WtText("t") ])
     Newline("\n")
     HorizontalRule(
       Properties:

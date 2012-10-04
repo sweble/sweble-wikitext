@@ -51,7 +51,7 @@ public interface AstNodeTypes
 	
 	// -- Preprocessor nodes ---------------------------------------------------
 	
-	public static final int NT_PREPROCESSED_WIKITEXT_PAGE /* ... */= NT_PREPROC_BITS + 1;
+	public static final int NT_PREPRO_WIKITEXT_PAGE /* ... */= NT_PREPROC_BITS + 1;
 	
 	public static final int NT_XML_COMMENT /* .............. */= NT_PREPROC_BITS + 2;
 	
@@ -115,11 +115,11 @@ public interface AstNodeTypes
 	
 	public static final int NT_RAW_LIST_ITEM /* ............ */= NT_PARSER_BITS + 23;
 	
-	public static final int NT_DEFINITION_DEFINITION /* .... */= NT_PARSER_BITS + 24;
+	public static final int NT_DEFINITION_LIST_DEF /* .... */= NT_PARSER_BITS + 24;
 	
 	public static final int NT_DEFINITION_LIST /* .......... */= NT_PARSER_BITS + 25;
 	
-	public static final int NT_DEFINITION_TERM /* .......... */= NT_PARSER_BITS + 26;
+	public static final int NT_DEFINITION_LIST_TERM /* .......... */= NT_PARSER_BITS + 26;
 	
 	public static final int NT_ORDERED_LIST /* .............. */= NT_PARSER_BITS + 27;
 	
@@ -127,7 +127,7 @@ public interface AstNodeTypes
 	
 	public static final int NT_UNORDERED_LIST /* .............. */= NT_PARSER_BITS + 29;
 	
-	public static final int NT_ITEMIZATION_ITEM /* ......... */= NT_PARSER_BITS + 30;
+	public static final int NT_LIST_ITEM /* ......... */= NT_PARSER_BITS + 30;
 	
 	public static final int NT_SEMI_PRE /* ................. */= NT_PARSER_BITS + 31;
 	

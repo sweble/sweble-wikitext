@@ -19,8 +19,8 @@ package org.sweble.wikitext.parser.parser;
 
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.Ignored;
-import org.sweble.wikitext.parser.nodes.OnlyInclude;
-import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtOnlyInclude;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -33,7 +33,7 @@ import de.fau.cs.osr.ptk.common.AstVisitor;
 public class PreprocessorToParserTransformer
 {
 	public static PreprocessedWikitext transform(
-			PreproWikitextPage preprocessedArticle,
+			WtPreproWikitextPage preprocessedArticle,
 			WtEntityMap entityMap)
 	{
 		return new PreprocessedWikitext(
@@ -42,7 +42,7 @@ public class PreprocessorToParserTransformer
 	}
 	
 	public static PreprocessedWikitext transform(
-			PreproWikitextPage preprocessedArticle)
+			WtPreproWikitextPage preprocessedArticle)
 	{
 		WtEntityMap entityMap = preprocessedArticle.getEntityMap();
 		return new PreprocessedWikitext(
@@ -51,7 +51,7 @@ public class PreprocessorToParserTransformer
 	}
 	
 	public static PreprocessedWikitext transform(
-			PreproWikitextPage preprocessedArticle,
+			WtPreproWikitextPage preprocessedArticle,
 			WtEntityMap entityMap,
 			boolean trim)
 	{
@@ -61,7 +61,7 @@ public class PreprocessorToParserTransformer
 	}
 	
 	public static PreprocessedWikitext transform(
-			PreproWikitextPage preprocessedArticle,
+			WtPreproWikitextPage preprocessedArticle,
 			boolean trim)
 	{
 		WtEntityMap entityMap = preprocessedArticle.getEntityMap();
@@ -105,7 +105,7 @@ public class PreprocessorToParserTransformer
 		
 		// =====================================================================
 		
-		public void visit(PreproWikitextPage n)
+		public void visit(WtPreproWikitextPage n)
 		{
 			iterate(n);
 		}
@@ -133,7 +133,7 @@ public class PreprocessorToParserTransformer
 			iterate(n);
 		}
 		
-		public void visit(OnlyInclude n)
+		public void visit(WtOnlyInclude n)
 		{
 			iterate(n);
 		}

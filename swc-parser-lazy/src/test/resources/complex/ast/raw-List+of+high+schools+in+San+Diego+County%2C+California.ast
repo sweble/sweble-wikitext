@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=Template([0] = [WtText(":San Diego Unified School District")], [1] = []), 1=Template([0] = [WtText(":Roman Catholic Diocese of San Diego")], [1] = []), 2=TagExtension([0] = [])}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       WtText("This is a ")
       WtBold(
         Properties:
@@ -959,7 +959,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -1701,7 +1701,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -2092,7 +2092,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ Newline("\n") ])
+            WtParagraph([ Newline("\n") ])
           ])
         )
       ])
@@ -2259,7 +2259,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           XmlEmptyTag(
             Properties:
               {N} name = "references"
@@ -2327,7 +2327,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""

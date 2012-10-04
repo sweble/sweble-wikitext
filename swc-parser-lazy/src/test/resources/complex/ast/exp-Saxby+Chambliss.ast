@@ -1,4 +1,4 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=TagExtension([0] = [XmlAttribute([0] = [WtText("sucessessordistrict")])]), 1=TagExtension([0] = [XmlAttribute([0] = [WtText("BRC")])]), 2=TagExtension([0] = [XmlAttribute([0] = [WtText("BRC")])]), 3=TagExtension([0] = []), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=TagExtension([0] = []), 10=TagExtension([0] = []), 11=TagExtension([0] = []), 12=TagExtension([0] = []), 13=TagExtension([0] = []), 14=TagExtension([0] = [XmlAttribute([0] = [WtText("anncoulter.com")])]), 15=TagExtension([0] = []), 17=TagExtension([0] = [XmlAttribute([0] = [WtText("runoffreturns")])]), 16=TagExtension([0] = [XmlAttribute([0] = [WtText("secretaryofstate")])]), 19=TagExtension([0] = []), 18=TagExtension([0] = [XmlAttribute([0] = [WtText("Georgia Election Results")])]), 21=TagExtension([0] = []), 20=TagExtension([0] = []), 23=TagExtension([0] = []), 22=TagExtension([0] = []), 25=TagExtension([0] = [XmlAttribute([0] = [WtText("economist")])]), 24=TagExtension([0] = []), 27=TagExtension([0] = []), 26=TagExtension([0] = [XmlAttribute([0] = [WtText("economist")])]), 29=TagExtension([0] = []), 28=TagExtension([0] = []), 31=TagExtension([0] = []), 30=TagExtension([0] = []), 34=TagExtension([0] = []), 35=TagExtension([0] = []), 32=TagExtension([0] = []), 33=TagExtension([0] = []), 38=TagExtension([0] = []), 39=TagExtension([0] = []), 36=TagExtension([0] = []), 37=TagExtension([0] = []), 42=TagExtension([0] = [XmlAttribute([0] = [WtText("clerkresults")])]), 43=TagExtension([0] = [XmlAttribute([0] = [WtText("clerkresults")])]), 40=TagExtension([0] = []), 41=TagExtension([0] = []), 46=TagExtension([0] = []), 47=TagExtension([0] = []), 44=TagExtension([0] = [XmlAttribute([0] = [WtText("Georgia Election Results")])]), 45=TagExtension([0] = []), 51=TagExtension([0] = []), 50=TagExtension([0] = []), 49=TagExtension([0] = []), 48=TagExtension([0] = [XmlAttribute([0] = [WtText("sucessessordistrict")])])}
     {N} warnings = []
@@ -59,7 +59,7 @@ ParsedWikitextPage(
             )
           ]
           [
-            Paragraph([
+            WtParagraph([
               XmlElement(
                 Properties:
                   {N} empty = false
@@ -111,7 +111,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   ImageLink(
                     Properties:
@@ -301,7 +301,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   WtBold(
                     Properties:
@@ -354,7 +354,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([
+                WtParagraph([
                   WtBold(
                     Properties:
                       {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -437,7 +437,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" Preceded")
                   XmlEntityRef(
                     Properties:
@@ -456,7 +456,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -658,7 +658,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([
+                WtParagraph([
                   WtBold(
                     Properties:
                       {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -722,7 +722,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" Preceded")
                   XmlEntityRef(
                     Properties:
@@ -741,7 +741,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -770,7 +770,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" Succeeded")
                   XmlEntityRef(
                     Properties:
@@ -789,7 +789,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -853,7 +853,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([ WtText(" ") ])
+                WtParagraph([ WtText(" ") ])
                 XmlElement(
                   Properties:
                     {N} empty = true
@@ -932,7 +932,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([
+                WtParagraph([
                   WtBold(
                     Properties:
                       {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -996,7 +996,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" Preceded")
                   XmlEntityRef(
                     Properties:
@@ -1015,7 +1015,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1044,7 +1044,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" Succeeded")
                   XmlEntityRef(
                     Properties:
@@ -1063,7 +1063,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1211,7 +1211,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Born") ])
+                WtParagraph([ WtText(" Born") ])
                 Newline("\n")
               ]
             )
@@ -1221,7 +1221,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" November 10, 1943")
                   XmlElement(
                     Properties:
@@ -1341,7 +1341,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" Political")
                   XmlEntityRef(
                     Properties:
@@ -1360,7 +1360,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1395,7 +1395,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Spouse(s)") ])
+                WtParagraph([ WtText(" Spouse(s)") ])
                 Newline("\n")
               ]
             )
@@ -1405,7 +1405,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Julianne Chambliss") ])
+                WtParagraph([ WtText(" Julianne Chambliss") ])
                 Newline("\n")
               ]
             )
@@ -1424,7 +1424,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Residence") ])
+                WtParagraph([ WtText(" Residence") ])
                 Newline("\n")
               ]
             )
@@ -1443,7 +1443,7 @@ ParsedWikitextPage(
                 )
               ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1472,7 +1472,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1507,7 +1507,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1551,7 +1551,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Occupation") ])
+                WtParagraph([ WtText(" Occupation") ])
                 Newline("\n")
               ]
             )
@@ -1561,7 +1561,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Lawyer") ])
+                WtParagraph([ WtText(" Lawyer") ])
                 Newline("\n")
               ]
             )
@@ -1580,7 +1580,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Religion") ])
+                WtParagraph([ WtText(" Religion") ])
                 Newline("\n")
               ]
             )
@@ -1590,7 +1590,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -1625,7 +1625,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText(" Website") ])
+                WtParagraph([ WtText(" Website") ])
                 Newline("\n")
               ]
             )
@@ -1635,7 +1635,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   ExternalLink(
                     Properties:
@@ -1666,7 +1666,7 @@ ParsedWikitextPage(
     )
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -1744,7 +1744,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Chambliss, the son of an ")
           InternalLink(
             Properties:
@@ -1910,7 +1910,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("During the ")
           InternalLink(
             Properties:
@@ -1944,7 +1944,7 @@ ParsedWikitextPage(
         Newline("\n")
         WtText("\t ")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Chambliss is a member of ")
           InternalLink(
             Properties:
@@ -1974,7 +1974,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Chambliss's son Bo is a registered lobbyist for the ")
           InternalLink(
             Properties:
@@ -2026,7 +2026,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Chambliss was elected to the ")
           InternalLink(
             Properties:
@@ -2081,7 +2081,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Chambliss was elected from the ")
           InternalLink(
             Properties:
@@ -2111,7 +2111,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("During his four terms in the House, Chambliss served on the ")
           InternalLink(
             Properties:
@@ -2126,7 +2126,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Less than a month after the ")
           InternalLink(
             Properties:
@@ -2154,7 +2154,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Chambliss was criticized for remarks he made during a November 19, 2001 meeting with first responders in ")
           InternalLink(
             Properties:
@@ -2187,7 +2187,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("In 2006, Chambliss was among several congressional Republicans and Democrats who returned campaign donations from ")
           InternalLink(
             Properties:
@@ -2458,7 +2458,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Sen. Chambliss is the only senator since 1947 to have chaired a full standing Senate Committee (")
               InternalLink(
                 Properties:
@@ -2565,7 +2565,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In 2008, he was named one of 10 worst congressmen by Esquire Magazine, which described the competition as \"staggering.\" ")
               TagExtension(
                 Properties:
@@ -2758,7 +2758,7 @@ ParsedWikitextPage(
                 WtText(".")
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("Chambliss focused on the issue of ")
                   InternalLink(
                     Properties:
@@ -2811,7 +2811,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("Chambliss received criticism from Democrats and Republicans for this ad, pointing out that he, who hadn't served in the Vietnam War due to receiving military deferments, had attacked a Vietnam War veteran who lost three limbs during his service for not being tough enough on issues of war and homeland security. Republican Senator ")
                   InternalLink(
                     Properties:
@@ -2898,7 +2898,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([ WtText("Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.") ])
+                WtParagraph([ WtText("Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.") ])
                 Newline("\n")
                 Newline("\n")
               ])
@@ -3189,10 +3189,10 @@ ParsedWikitextPage(
                 )
                 Newline("\n")
                 Newline("\n")
-                Paragraph([ WtText("Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008.") ])
+                WtParagraph([ WtText("Since no candidate exceeded 50% of the vote, a runoff election between Chambliss and Martin was held on December 2, 2008.") ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("Chambliss defeated Martin 57.5% to 42.5% in the runoff election.")
                   TagExtension(
                     Properties:
@@ -3245,7 +3245,7 @@ ParsedWikitextPage(
               )
               WtSectionBody([
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("During the run-off period, Chambliss received a subpoena regarding the investigation of a lawsuit against ")
                   InternalLink(
                     Properties:
@@ -3336,7 +3336,7 @@ ParsedWikitextPage(
               )
               WtSectionBody([
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("Chambliss's voting record is typically that of voting in line with conservative issues.")
                   TagExtension(
                     Properties:
@@ -3390,7 +3390,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("Although Chambliss has a conservative voting record, he has participated in bi-partisan legislation\u2014such as the ")
                   InternalLink(
                     Properties:
@@ -3500,7 +3500,7 @@ ParsedWikitextPage(
               )
               WtSectionBody([
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On abortion issues, the ratings given Chambliss as of 2007 by ")
                   InternalLink(
                     Properties:
@@ -3551,7 +3551,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On ")
                   InternalLink(
                     Properties:
@@ -3602,7 +3602,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On agricultural issues, the ")
                   InternalLink(
                     Properties:
@@ -3625,7 +3625,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On economic issues including voting on the national budget, national spending, and taxes, in 2007, the National Tax Limitation Committee gave Chambliss a 90% rating,")
                   TagExtension(
                     Properties:
@@ -3657,7 +3657,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On civil liberties and civil rights issues, in 2007, the ")
                   InternalLink(
                     Properties:
@@ -3704,7 +3704,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On education issues, in 2008, the Center for Education Reform, gave Chambliss a score of 9 out of 9, and called him a \"real reformer\",")
                   TagExtension(
                     Properties:
@@ -3736,7 +3736,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On organized labor issues, in 2007 the ")
                   InternalLink(
                     Properties:
@@ -3778,7 +3778,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("On environmental issues, in 2003 the ")
                   InternalLink(
                     Properties:
@@ -3883,7 +3883,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -3922,7 +3922,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Year") ])
+                WtParagraph([ WtText("Year") ])
                 Newline("\n")
               ]
             )
@@ -3939,7 +3939,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Democrat") ])
+                WtParagraph([ WtText("Democrat") ])
                 Newline("\n")
               ]
             )
@@ -3949,7 +3949,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Votes") ])
+                WtParagraph([ WtText("Votes") ])
                 Newline("\n")
               ]
             )
@@ -3959,7 +3959,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Pct") ])
+                WtParagraph([ WtText("Pct") ])
                 Newline("\n")
               ]
             )
@@ -3976,7 +3976,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Republican") ])
+                WtParagraph([ WtText("Republican") ])
                 Newline("\n")
               ]
             )
@@ -3986,7 +3986,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Votes") ])
+                WtParagraph([ WtText("Votes") ])
                 Newline("\n")
               ]
             )
@@ -3996,7 +3996,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Pct") ])
+                WtParagraph([ WtText("Pct") ])
                 Newline("\n")
               ]
             )
@@ -4019,7 +4019,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -4060,7 +4060,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Craig Mathis") ])
+                    WtParagraph([ WtText("Craig Mathis") ])
                     Newline("\n")
                   ]
                 )
@@ -4087,7 +4087,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("53,408") ])
+                    WtParagraph([ WtText("53,408") ])
                     Newline("\n")
                   ]
                 )
@@ -4106,7 +4106,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("37%") ])
+                    WtParagraph([ WtText("37%") ])
                     Newline("\n")
                   ]
                 )
@@ -4132,7 +4132,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4166,7 +4166,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("89,591") ])
+                    WtParagraph([ WtText("89,591") ])
                     Newline("\n")
                   ]
                 )
@@ -4185,7 +4185,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("63%") ])
+                    WtParagraph([ WtText("63%") ])
                     Newline("\n")
                   ]
                 )
@@ -4210,7 +4210,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -4251,7 +4251,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Jim Wiggins") ])
+                    WtParagraph([ WtText("Jim Wiggins") ])
                     Newline("\n")
                   ]
                 )
@@ -4278,7 +4278,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("84,506") ])
+                    WtParagraph([ WtText("84,506") ])
                     Newline("\n")
                   ]
                 )
@@ -4297,7 +4297,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("47%") ])
+                    WtParagraph([ WtText("47%") ])
                     Newline("\n")
                   ]
                 )
@@ -4323,7 +4323,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4357,7 +4357,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("93,619") ])
+                    WtParagraph([ WtText("93,619") ])
                     Newline("\n")
                   ]
                 )
@@ -4376,7 +4376,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("53%") ])
+                    WtParagraph([ WtText("53%") ])
                     Newline("\n")
                   ]
                 )
@@ -4401,7 +4401,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -4442,7 +4442,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Ronald L. Cain") ])
+                    WtParagraph([ WtText("Ronald L. Cain") ])
                     Newline("\n")
                   ]
                 )
@@ -4469,7 +4469,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("53,079") ])
+                    WtParagraph([ WtText("53,079") ])
                     Newline("\n")
                   ]
                 )
@@ -4488,7 +4488,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("38%") ])
+                    WtParagraph([ WtText("38%") ])
                     Newline("\n")
                   ]
                 )
@@ -4514,7 +4514,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4548,7 +4548,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("87,993") ])
+                    WtParagraph([ WtText("87,993") ])
                     Newline("\n")
                   ]
                 )
@@ -4567,7 +4567,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("62%") ])
+                    WtParagraph([ WtText("62%") ])
                     Newline("\n")
                   ]
                 )
@@ -4592,7 +4592,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -4633,7 +4633,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -4675,7 +4675,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("79,051") ])
+                    WtParagraph([ WtText("79,051") ])
                     Newline("\n")
                   ]
                 )
@@ -4694,7 +4694,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("41%") ])
+                    WtParagraph([ WtText("41%") ])
                     Newline("\n")
                   ]
                 )
@@ -4720,7 +4720,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4754,7 +4754,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("113,380") ])
+                    WtParagraph([ WtText("113,380") ])
                     Newline("\n")
                   ]
                 )
@@ -4773,7 +4773,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("59%") ])
+                    WtParagraph([ WtText("59%") ])
                     Newline("\n")
                   ]
                 )
@@ -4819,7 +4819,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([
+                WtParagraph([
                   WtText(" ")
                   InternalLink(
                     Properties:
@@ -4863,7 +4863,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Year") ])
+                WtParagraph([ WtText("Year") ])
                 Newline("\n")
               ]
             )
@@ -4880,7 +4880,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Democrat") ])
+                WtParagraph([ WtText("Democrat") ])
                 Newline("\n")
               ]
             )
@@ -4890,7 +4890,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Votes") ])
+                WtParagraph([ WtText("Votes") ])
                 Newline("\n")
               ]
             )
@@ -4900,44 +4900,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Pct") ])
-                Newline("\n")
-              ]
-            )
-            TableHeader(
-              Properties:
-                {N} rtd = RTD[ "!" <o> "" <o> "" ]
-
-              [ ]
-              [ Newline("\n") ]
-            )
-            TableHeader(
-              Properties:
-                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
-
-              [ ]
-              [
-                Paragraph([ WtText("Republican") ])
-                Newline("\n")
-              ]
-            )
-            TableHeader(
-              Properties:
-                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
-
-              [ ]
-              [
-                Paragraph([ WtText("Votes") ])
-                Newline("\n")
-              ]
-            )
-            TableHeader(
-              Properties:
-                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
-
-              [ ]
-              [
-                Paragraph([ WtText("Pct") ])
+                WtParagraph([ WtText("Pct") ])
                 Newline("\n")
               ]
             )
@@ -4954,7 +4917,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("3rd Party") ])
+                WtParagraph([ WtText("Republican") ])
                 Newline("\n")
               ]
             )
@@ -4964,7 +4927,7 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Party") ])
+                WtParagraph([ WtText("Votes") ])
                 Newline("\n")
               ]
             )
@@ -4974,7 +4937,24 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Votes") ])
+                WtParagraph([ WtText("Pct") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                {N} rtd = RTD[ "!" <o> "" <o> "" ]
+
+              [ ]
+              [ Newline("\n") ]
+            )
+            TableHeader(
+              Properties:
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
+
+              [ ]
+              [
+                WtParagraph([ WtText("3rd Party") ])
                 Newline("\n")
               ]
             )
@@ -4984,7 +4964,27 @@ ParsedWikitextPage(
 
               [ ]
               [
-                Paragraph([ WtText("Pct") ])
+                WtParagraph([ WtText("Party") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
+
+              [ ]
+              [
+                WtParagraph([ WtText("Votes") ])
+                Newline("\n")
+              ]
+            )
+            TableHeader(
+              Properties:
+                {N} rtd = RTD[ "!" <o> "|" <o> "" ]
+
+              [ ]
+              [
+                WtParagraph([ WtText("Pct") ])
                 Newline("\n")
               ]
             )
@@ -5007,7 +5007,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -5048,7 +5048,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -5085,7 +5085,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("932,422") ])
+                    WtParagraph([ WtText("932,422") ])
                     Newline("\n")
                   ]
                 )
@@ -5104,7 +5104,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("46%") ])
+                    WtParagraph([ WtText("46%") ])
                     Newline("\n")
                   ]
                 )
@@ -5130,7 +5130,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       XmlElement(
                         Properties:
                           {N} empty = false
@@ -5183,7 +5183,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("1,071,352") ])
+                    WtParagraph([ WtText("1,071,352") ])
                     Newline("\n")
                   ]
                 )
@@ -5202,7 +5202,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("53%") ])
+                    WtParagraph([ WtText("53%") ])
                     Newline("\n")
                   ]
                 )
@@ -5228,7 +5228,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Claude \"Sandy\" Thomas") ])
+                    WtParagraph([ WtText("Claude \"Sandy\" Thomas") ])
                     Newline("\n")
                   ]
                 )
@@ -5247,7 +5247,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       InternalLink(
                         Properties:
                           {N} postfix = ""
@@ -5289,7 +5289,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("27,830") ])
+                    WtParagraph([ WtText("27,830") ])
                     Newline("\n")
                   ]
                 )
@@ -5316,7 +5316,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("1%") ])
+                    WtParagraph([ WtText("1%") ])
                     Newline("\n")
                   ]
                 )
@@ -5401,7 +5401,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText("2008 Georgia U.S. Senator general election runoff")
                       TagExtension(
                         Properties:
@@ -5465,7 +5465,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Party") ])
+                    WtParagraph([ WtText("Party") ])
                     Newline("\n")
                   ]
                 )
@@ -5484,7 +5484,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Candidate") ])
+                    WtParagraph([ WtText("Candidate") ])
                     Newline("\n")
                   ]
                 )
@@ -5503,7 +5503,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("Votes") ])
+                    WtParagraph([ WtText("Votes") ])
                     Newline("\n")
                   ]
                 )
@@ -5522,7 +5522,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("%") ])
+                    WtParagraph([ WtText("%") ])
                     Newline("\n")
                   ]
                 )
@@ -5541,7 +5541,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("\u00B1%") ])
+                    WtParagraph([ WtText("\u00B1%") ])
                     Newline("\n")
                   ]
                 )
@@ -5608,7 +5608,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       InternalLink(
                         Properties:
@@ -5643,7 +5643,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" Saxby Chambliss (")
                       InternalLink(
                         Properties:
@@ -5674,7 +5674,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 1,226,528") ])
+                    WtParagraph([ WtText(" 1,226,528") ])
                     Newline("\n")
                   ]
                 )
@@ -5693,7 +5693,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 57.5%") ])
+                    WtParagraph([ WtText(" 57.5%") ])
                     Newline("\n")
                   ]
                 )
@@ -5779,7 +5779,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       InternalLink(
                         Properties:
@@ -5814,7 +5814,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       InternalLink(
                         Properties:
@@ -5849,7 +5849,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 907,916") ])
+                    WtParagraph([ WtText(" 907,916") ])
                     Newline("\n")
                   ]
                 )
@@ -5868,7 +5868,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 42.5%") ])
+                    WtParagraph([ WtText(" 42.5%") ])
                     Newline("\n")
                   ]
                 )
@@ -5938,7 +5938,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       WtBold(
                         Properties:
@@ -5965,7 +5965,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 318,612") ])
+                    WtParagraph([ WtText(" 318,612") ])
                     Newline("\n")
                   ]
                 )
@@ -5984,7 +5984,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 14.9%") ])
+                    WtParagraph([ WtText(" 14.9%") ])
                     Newline("\n")
                   ]
                 )
@@ -6054,7 +6054,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       WtBold(
                         Properties:
@@ -6096,7 +6096,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" 2,134,444") ])
+                    WtParagraph([ WtText(" 2,134,444") ])
                     Newline("\n")
                   ]
                 )
@@ -6892,7 +6892,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       InternalLink(
                         Properties:
@@ -6955,7 +6955,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
@@ -7036,7 +7036,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -7175,7 +7175,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" Succeeded")
                       XmlEntityRef(
                         Properties:
@@ -7280,7 +7280,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       InternalLink(
                         Properties:
@@ -7359,7 +7359,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
@@ -7440,7 +7440,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -7568,7 +7568,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -7617,7 +7617,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Political offices") ])
+                    WtParagraph([ WtText(" Political offices") ])
                     Newline("\n")
                     Newline("\n")
                   ]
@@ -7670,7 +7670,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
@@ -7788,7 +7788,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtBold(
                         Properties:
                           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -7864,7 +7864,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" Succeeded")
                       XmlEntityRef(
                         Properties:
@@ -7989,7 +7989,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       InternalLink(
                         Properties:
@@ -8052,7 +8052,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText("Preceded")
                       XmlEntityRef(
                         Properties:
@@ -8170,7 +8170,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtItalics(
                         Properties:
                           {N} rtd = RTD[ "''" <o> "''" ]
@@ -8259,7 +8259,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" Succeeded")
                       XmlEntityRef(
                         Properties:
@@ -21522,7 +21522,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Newline("\n")
           InternalLink(
             Properties:
@@ -21656,7 +21656,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""

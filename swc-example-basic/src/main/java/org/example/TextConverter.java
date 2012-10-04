@@ -30,7 +30,6 @@ import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.PageSwitch;
-import org.sweble.wikitext.parser.nodes.Paragraph;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
@@ -42,6 +41,7 @@ import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtOrderedList;
+import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtUnorderedList;
@@ -308,9 +308,9 @@ public class TextConverter
 		sections.add(sections.removeLast() + 1);
 	}
 	
-	public void visit(Paragraph p)
+	public void visit(WtParagraph p)
 	{
-		iterate(p.getContent());
+		iterate(p);
 		newline(2);
 	}
 	

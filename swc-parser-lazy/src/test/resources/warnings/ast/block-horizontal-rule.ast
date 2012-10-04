@@ -1,25 +1,25 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([ WtText("\n--\n\n") ])
+    WtParagraph([ WtText("\n--\n\n") ])
     WtText(
       Properties:
         {N} content = "---"
         warnings = [Warning: This looks like a Horizontal Rule, however a horizontal rule consists of at least 4 dashes: "---"]
     )
-    Paragraph([ WtText("\n\n") ])
+    WtParagraph([ WtText("\n\n") ])
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
-    Paragraph([ WtText("\n\n") ])
+    WtParagraph([ WtText("\n\n") ])
     HorizontalRule(
       Properties:
         {N} rtd = RTD[ "-----" ]
     )
-    Paragraph([ WtText("\n") ])
+    WtParagraph([ WtText("\n") ])
   ]
 )

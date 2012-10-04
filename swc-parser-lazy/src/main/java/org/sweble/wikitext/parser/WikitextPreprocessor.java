@@ -22,7 +22,7 @@ import java.io.Reader;
 import java.io.StringReader;
 
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
-import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
@@ -78,9 +78,9 @@ public class WikitextPreprocessor
 		{
 			SemanticValue v = (SemanticValue) r;
 			
-			if (v.value instanceof PreproWikitextPage)
+			if (v.value instanceof WtPreproWikitextPage)
 			{
-				return process((PreproWikitextPage) v.value);
+				return process((WtPreproWikitextPage) v.value);
 			}
 			else
 			{
@@ -128,9 +128,9 @@ public class WikitextPreprocessor
 		{
 			SemanticValue v = (SemanticValue) r;
 			
-			if (v.value instanceof PreproWikitextPage)
+			if (v.value instanceof WtPreproWikitextPage)
 			{
-				return (WtNode) process((PreproWikitextPage) v.value);
+				return (WtNode) process((WtPreproWikitextPage) v.value);
 			}
 			else
 			{

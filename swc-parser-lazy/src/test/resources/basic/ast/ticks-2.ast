@@ -1,71 +1,26 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("italic") ]
-      )
+    WtParagraph([
+      WtText("italic")
       Newline("\n")
-      WtBold(
-        Properties:
-          {N} rtd = RTD[ "'''" <o> "'''" ]
-
-        [ WtText("bold") ]
-      )
+      WtText("bold")
       Newline("\n")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [
-          WtBold(
-            Properties:
-              {N} rtd = RTD[ "'''" <o> "'''" ]
-
-            [ WtText("bold+italic") ]
-          )
-        ]
-      )
+      WtText("bold+italic")
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
-      WtText("'")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("hmmm") ]
-      )
+    WtParagraph([
+      WtText("'hmmm")
       Newline("\n")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("hmm'") ]
-      )
+      WtText("hmm'")
       Newline("\n")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("Mark'") ]
-      )
-      WtText("s")
+      WtText("Mark's")
       Newline("\n")
-      WtBold(
-        Properties:
-          {N} rtd = RTD[ "'''" <o> "'''" ]
-
-        [ WtText("Mark'") ]
-      )
-      WtText("s")
+      WtText("Mark's")
     ])
     Newline("\n")
     Newline("\n")

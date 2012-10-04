@@ -68,13 +68,13 @@
  *     - this preprocessor does recognize #REDIRECT [[...]] statements
  *     - this preprocessor tries to extract attributes for tag extensions
  *
- * PreproWikitextPage
+ * WtPreproWikitextPage
  * --------------------
  *
  *   Grammar:
  *
  *   AST node:
- *     Name        : PreproWikitextPage
+ *     Name        : WtPreproWikitextPage
  *     Extends     : ContentNode
  *     Constructor : "content, warnings"
  *     Constructor : "content, warnings, entityMap"
@@ -125,10 +125,10 @@ option
 
 // -- Article ------------------------------------------------------------------
 
-public transient PreproWikitextPage Article =
+public transient WtPreproWikitextPage Article =
   redirect:Redirect? content:Content &Eof
   {
-    yyValue = new PreproWikitextPage(
+    yyValue = new WtPreproWikitextPage(
         new WtNodeList(redirect, content),
         new ArrayList<Warning>(),
         getState().getEntityMap());

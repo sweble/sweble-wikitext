@@ -24,7 +24,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -48,9 +48,9 @@ public class AstCompressor
 	/**
 	 * @deprecated Will be removed
 	 */
-	public static ParsedWikitextPage process(ParsedWikitextPage a)
+	public static WtParsedWikitextPage process(WtParsedWikitextPage a)
 	{
-		return (ParsedWikitextPage) new AstCompressor().go(a);
+		return (WtParsedWikitextPage) new AstCompressor().go(a);
 	}
 	
 	// =========================================================================

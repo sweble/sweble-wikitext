@@ -31,7 +31,7 @@ import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -625,8 +625,8 @@ public class Serializer
 	private void compare(WtNode deserialize)
 	{
 		// FIXME: Comparing entity maps fails since ast nodes are not comparable
-		((ParsedWikitextPage) original).setEntityMap(null);
-		((ParsedWikitextPage) deserialize).setEntityMap(null);
+		((WtParsedWikitextPage) original).setEntityMap(null);
+		((WtParsedWikitextPage) deserialize).setEntityMap(null);
 		if (!AstComparer.compare(original, deserialize, true, true))
 			throw new InternalError("Deserialized AST differs from original AST!");
 	}

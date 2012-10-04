@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=Redirect(), 1=Template([0] = [WtText("name")], [1] = [TemplateArgument([0] = [], [1] = [WtText("arg0")]), TemplateArgument([0] = [WtText("arg1")], [1] = [WtText("value1")]), TemplateArgument([0] = [WtText("arg2")], [1] = [TemplateParameter([0] = [WtText("parameter2")], [1] = null, [2] = null)])])}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       Redirect(
         Properties:
           {N} rtd = RTD[ "#REDIRECT[[link]]" ]

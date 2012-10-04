@@ -35,7 +35,7 @@ import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.Newline;
-import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -123,7 +123,7 @@ public class DefaultAstToWomNodeFactory
 		return new CommentAdapter(comment);
 	}
 	
-	public WomNode visit(Paragraph para)
+	public WomNode visit(WtParagraph para)
 	{
 		return new ParagraphAdapter(this, para);
 	}

@@ -51,7 +51,7 @@ public class CompilerTest
 		CompiledPage cp = postprocess("Boston Red Sox", false);
 		Assert.assertEquals(
 				"Page([\n" +
-						"  Paragraph([\n" +
+						"  WtParagraph([\n" +
 						"    WtText(\"Founded in \")\n" +
 						"    InternalLink(\n" +
 						"      Properties:\n" +

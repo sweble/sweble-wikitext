@@ -1,9 +1,16 @@
 package org.sweble.wikitext.parser.nodes;
 
 /**
- * <h1>WtDefinitionListDef</h1>
+ * <h1>WtParagraph</h1> <h2>Grammar</h2>
+ * <ul>
+ * <li>
+ * <p>
+ * ( '\n' Space* &'\n' )+
+ * </p>
+ * </li>
+ * </ul>
  */
-public class WtDefinitionListDef
+public class WtParagraph
 		extends
 			WtContentNodeMarkTwo
 {
@@ -11,11 +18,11 @@ public class WtDefinitionListDef
 	
 	// =========================================================================
 	
-	public WtDefinitionListDef()
+	public WtParagraph()
 	{
 	}
 	
-	public WtDefinitionListDef(WtNodeList content)
+	public WtParagraph(WtNodeList content)
 	{
 		super(content);
 	}
@@ -23,6 +30,6 @@ public class WtDefinitionListDef
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST_DEF;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_PARAGRAPH;
 	}
 }

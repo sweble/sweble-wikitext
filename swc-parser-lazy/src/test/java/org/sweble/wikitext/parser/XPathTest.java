@@ -65,7 +65,7 @@ public class XPathTest
 		
 		StringBuilder b = new StringBuilder();
 		
-		doQuery(context, b, "/*[1]/Paragraph[3]");
+		doQuery(context, b, "/WtParagraph[3]");
 		
 		doQuery(context, b, "(//WtSection[@level=3])[1]");
 		

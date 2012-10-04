@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
-  /*[1]/Paragraph[3]
+  /WtParagraph[3]
 --------------------------------------------------------------------------------
-Paragraph([
+WtParagraph([
   WtText("France is a ")
   InternalLink(
     Properties:
@@ -362,7 +362,7 @@ WtSection(
   )
   WtSectionBody([
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("The borders of modern France are approximately the same as those of ancient ")
       InternalLink(
         Properties:
@@ -488,7 +488,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       ImageLink(
         Properties:
           {N} alt = 
@@ -661,7 +661,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       ImageLink(
         Properties:
           {N} alt = 
@@ -974,7 +974,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("His descendants, the ")
       InternalLink(
         Properties:
@@ -1086,7 +1086,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("The exact boundaries changed greatly with time, but French landholdings of the ")
       InternalLink(
         Properties:
@@ -1146,7 +1146,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("Charles IV (The Fair) died without an heir in 1328.")
       TagExtension(
         Properties:
@@ -1284,7 +1284,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("In the most notorious incident during the ")
       InternalLink(
         Properties:
@@ -1327,7 +1327,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("The monarchy reached its height during the 17th century and the reign of ")
       InternalLink(
         Properties:

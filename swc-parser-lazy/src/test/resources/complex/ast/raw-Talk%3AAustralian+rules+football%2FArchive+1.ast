@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=Template([0] = [WtText("talkarchive")], [1] = []), 1=TagExtension([0] = [])}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       Template(
         Properties:
           {N} precededByNewline = false
@@ -16,7 +16,7 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -38,7 +38,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([ WtText("Mmmm, it is very similar to Irish football, I wonder - was there significant Irish immigration in Australia at the time. {end sarcasm} Australian Rules = Irish Football played on a cricket pitch. It's ironic that us Aussie's love to play up AFL's uniqueness, yet it's uniqueness that gives away the fact that it's a bastardisation of an immigrant sport that's only played in one other country in the world. - CS") ])
+        WtParagraph([ WtText("Mmmm, it is very similar to Irish football, I wonder - was there significant Irish immigration in Australia at the time. {end sarcasm} Australian Rules = Irish Football played on a cricket pitch. It's ironic that us Aussie's love to play up AFL's uniqueness, yet it's uniqueness that gives away the fact that it's a bastardisation of an immigrant sport that's only played in one other country in the world. - CS") ])
         Newline("\n")
         WtUnorderedList([
           WtListItem(
@@ -154,7 +154,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("I appreciate both your points. Am I driven by a partisan viewpoint? Perhaps, though to be honest I don't really enjoy either game being mainly a follower of rugby league. I'm just dumbfounded by the vehemence towards the idea that the game has Irish roots. And I can't help but think this was driven historically by the very real Irish/English divisions that existed in Australia up until the first wave of Southern European migration last century. The rules of Irish football may not have been codified until 30 years after Aussie Rules, but the game was played 100's of years previously. To dismiss out of hand, that a game familiar to a large (ethnic) part of a new society, had no influence on the development of a game with practically identical rules within that society is laughable. And then to \"draw a long bow\" to claim that the game is \"originally\" Australian because the natives were sometimes seen to kick a stuffed wombat around is ludicrous. Would you also deny the influence of African music on rock and roll because europeans played string instruments before exposure to African rhythms?") ])
+        WtParagraph([ WtText("I appreciate both your points. Am I driven by a partisan viewpoint? Perhaps, though to be honest I don't really enjoy either game being mainly a follower of rugby league. I'm just dumbfounded by the vehemence towards the idea that the game has Irish roots. And I can't help but think this was driven historically by the very real Irish/English divisions that existed in Australia up until the first wave of Southern European migration last century. The rules of Irish football may not have been codified until 30 years after Aussie Rules, but the game was played 100's of years previously. To dismiss out of hand, that a game familiar to a large (ethnic) part of a new society, had no influence on the development of a game with practically identical rules within that society is laughable. And then to \"draw a long bow\" to claim that the game is \"originally\" Australian because the natives were sometimes seen to kick a stuffed wombat around is ludicrous. Would you also deny the influence of African music on rock and roll because europeans played string instruments before exposure to African rhythms?") ])
         Newline("\n")
         WtUnorderedList([
           WtListItem(
@@ -593,13 +593,13 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([ WtText("Are there really no older professional teams? I have found some older cricket teams but don't know if they are professional or not.   ---rmhermen") ])
+        WtParagraph([ WtText("Are there really no older professional teams? I have found some older cricket teams but don't know if they are professional or not.   ---rmhermen") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("well, its older than soccer. thats good enough for me.") ])
+        WtParagraph([ WtText("well, its older than soccer. thats good enough for me.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("In fact, professionalism was not allowed by the VFL until its Rule 29 of 1911 (although under-the-table payments may well have occurred), and Melbourne FC was famous for being amateur for many years afterwards, so I don't think this can be justified. ")
           InternalLink(
             Properties:
@@ -624,14 +624,14 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
-        Paragraph([ WtText("I understand and appreciate the writer's enthusiasm for the sport, but the last sentence in partciular needs to be rephrased to be less partisan about its alleged superiority over other variants of football.") ])
+        WtParagraph([ WtText("I understand and appreciate the writer's enthusiasm for the sport, but the last sentence in partciular needs to be rephrased to be less partisan about its alleged superiority over other variants of football.") ])
         Newline("\n")
         HorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("No, I agree with the author of the article. Where he says there are other ")
           WtItalics(
             Properties:
@@ -669,7 +669,7 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "-----" ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("By the way, I wrote a bunch more stuff for this article months ago that seems to have been lost by somebody's errant revision.  I hope the new wikipedia software will support a complete revision history. . . ")
           InternalLink(
             Properties:
@@ -694,7 +694,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("I saw some games on TV in the US.  Who's the guy in the white suit who waves around  flags when a goal is scored?  Shouldn't this be mentioned in the article somewhere?") ])
+        WtParagraph([ WtText("I saw some games on TV in the US.  Who's the guy in the white suit who waves around  flags when a goal is scored?  Shouldn't this be mentioned in the article somewhere?") ])
         Newline("\n")
         Newline("\n")
         WtDefinitionList([
@@ -713,7 +713,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I like the diagrams, but the font is much too small.  ")
           InternalLink(
             Properties:
@@ -752,7 +752,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("What is the difference between summer and winter in Australia, that the same fields are used but for different sports? -- ")
           InternalLink(
             Properties:
@@ -905,13 +905,13 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
-        Paragraph([ WtText("I have to take issue with the following -") ])
+        WtParagraph([ WtText("I have to take issue with the following -") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("\"All of the original VFL clubs are still in existence, with the exception of South Melbourne Football Club who in 1982 relocated to Sydney and became known as the Sydney Swans and the Fitzroy which merged with the Brisbane in 1996 due to financial difficulties.\"") ])
+        WtParagraph([ WtText("\"All of the original VFL clubs are still in existence, with the exception of South Melbourne Football Club who in 1982 relocated to Sydney and became known as the Sydney Swans and the Fitzroy which merged with the Brisbane in 1996 due to financial difficulties.\"") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Does \"exist\" mean the club no longer plays in the VFL/AFL, or no longer exists?")
           Newline("\n")
           WtText("Fitzroy still exists as an amateur club. ")
@@ -946,7 +946,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The history section on this page needs to be corrected to bring it into line with the information on this site ")
           Url(
             Properties:
@@ -988,7 +988,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Mintguy has a point, although I've said to him elsewhere ")
           InternalLink(
             Properties:
@@ -1022,7 +1022,7 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I just had another look at Blainey's ")
           WtItalics(
             Properties:
@@ -1048,7 +1048,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText(
             Properties:
               {N} content = "Hess & Stewart barely mention the Melbourne Grammar v. Scotch College match on August 7. Blainey is a prolific promoter of that game (cynics might say because of his own background), but he doesn't discuss the rules either. (However, it is known that Wills did umpire that game.) "
@@ -1060,7 +1060,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText(
             Properties:
               {N} content = "Re. the other drafters of the 1859 rules, Hess & Stewart say that, like Wills, Hammersley and Thompson were ex-Cambridge University, and Smith was Irish and had attended Trinity College in Dublin. (There are some similarities between the Cambridge rules and Aussie rules, see "
@@ -1114,7 +1114,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Grant. You've just reminded me of something with that last sentence. Some time ago I tried to find out about early proponents of Association football in Australia but I found virtually no information about this. I did find out that early bodies subscribing to the FA rules included the Southern British Football Association in New South Wales, the Anglo-Australian Football Association in Victoria and the British Football Associations of Queensland, South Australia and Tasmania. But I couldn't find any dates relating to the establishment and/or demise of these organisations. ")
           InternalLink(
             Properties:
@@ -1149,7 +1149,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Mintguy, see the latest comments on my talk page. ")
           InternalLink(
             Properties:
@@ -1174,10 +1174,10 @@ ParsedWikitextPage(
             {N} rtd = RTD[ "----" ]
         )
         Newline("\n")
-        Paragraph([ WtText("The article states that the VFA was formed in 1877, but the list of teams is incorrect. For example, Essendon is not listed as a team in the VFA in 1877, but they finished fourth in that year.") ])
+        WtParagraph([ WtText("The article states that the VFA was formed in 1877, but the list of teams is incorrect. For example, Essendon is not listed as a team in the VFA in 1877, but they finished fourth in that year.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("There is also no mention of the earlier Victorian competition that preceded the VFA.")
           Newline("\n")
           InternalLink(
@@ -1211,7 +1211,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I think the section on the rules could be expanded. Basic information like the number of players is lacking, and can only be deduced from studying the images. ")
           InternalLink(
             Properties:
@@ -1231,7 +1231,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("It seems that I am far from the only one who has mixed up the various games played in 1858. ")
           ExternalLink(
             Properties:
@@ -1292,7 +1292,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Seems an obvious thing to have, yet it's currently missing. As far as I know it's four quarters of thirty minutes, but I don't know who keeps time and whether it can go over thirty, or what happens if the scores are level at full time. Aussie input welcome! ")
               InternalLink(
                 Properties:
@@ -1397,7 +1397,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("-the umpire returning the ball to the center to be bounced and resume play (30-40sec. each time)")
               Newline("\n")
               WtText("-a player getting injured and needing to be carried off the feild (3-6min)")
@@ -1427,7 +1427,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("To explain my last edit: it's not accurate to say that Aussie Rules was \"developed as an alternative to Rugby\", with a link to ")
           InternalLink(
             Properties:
@@ -1538,7 +1538,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I added a section today, under the \"Future teams\" heading.  However on re-reading it seems that the entire \"teams\" section, as well as my additional section, should really go in the ")
           InternalLink(
             Properties:
@@ -1846,7 +1846,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I would like to see the names of the 12 AHoF \"legends\" (at least) remain in this article, as there were very few mentions of players when I originally added the HoF section. A separate article on the HoF would still be a good idea, as it has a lot more members than just the 12 legends. By the way, almost none of the legends had article when I added that list and Wikipedia is still short of articles on Aussie rules players. (Except for the fan contributions on current players like ")
           InternalLink(
             Properties:
@@ -1890,7 +1890,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("It seems silly to have the Hall of Fame information duplicated on both this page and the AFL page.  I agree that it needs its own page but perhaps there should be some consensus about where it really should go?  My vote, fwiw, is to leave it on this page in preparation for moving it to its own page later.--")
           InternalLink(
             Properties:
@@ -1996,7 +1996,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The article indicates that the IAFC is the official administrative body for Australian rules football internationally but I think you would get a very different view on that from the AFL, who see themselves as the official international representative body for the sport.  If someone can come up with a statement from the AFL that it recognises the IAFC as the official international body though, I'd be happy to retain the reference.  --")
           InternalLink(
             Properties:
@@ -2162,7 +2162,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Anyone want to have a go at adding the new centre circle into the diagrams? --")
           InternalLink(
             Properties:
@@ -2199,7 +2199,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Is this section really necessary or appropriate?") ])
+        WtParagraph([ WtText("Is this section really necessary or appropriate?") ])
         Newline("\n")
         WtDefinitionList([
           WtDefinitionListDef(
@@ -2243,13 +2243,13 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("When I watch AFL football on TV, I often hear the announcers talking about \"clearances\" and \"disposals\", which events are also tabulated among the statistics.  Unfortunately, no one ever bothers to tell us Americans what those terms mean.  I decided that a Web search would provide me the answers.  Actually, I have searched extensively; and, though I did find here a definition of \"disposal\", I am still at a loss for an exact definition of \"clearance\".  I suppose that a clearance has occurred when the ball is kicked a long ways, but I suspect field position has something to do with it.  I don't know if a hand pass can count as a clearance.") ])
+        WtParagraph([ WtText("When I watch AFL football on TV, I often hear the announcers talking about \"clearances\" and \"disposals\", which events are also tabulated among the statistics.  Unfortunately, no one ever bothers to tell us Americans what those terms mean.  I decided that a Web search would provide me the answers.  Actually, I have searched extensively; and, though I did find here a definition of \"disposal\", I am still at a loss for an exact definition of \"clearance\".  I suppose that a clearance has occurred when the ball is kicked a long ways, but I suspect field position has something to do with it.  I don't know if a hand pass can count as a clearance.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("I hope that someone who knows will add to the article a definition of \"clearance\".") ])
+        WtParagraph([ WtText("I hope that someone who knows will add to the article a definition of \"clearance\".") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -2374,7 +2374,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The latest anonimous edit looks like a bit of POV mischief from a banana bender with taped back ears and no neck who doesn't mind sniffing the odd backside.  Anyone with sufficient powers out there agree on a roll back?  --")
           InternalLink(
             Properties:
@@ -2497,7 +2497,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Re the Brain's most recent edit, that wasn't me that deleted that line that he has restored, but I always thought that it was inaccurate in relation to the ACT (i.e. Canberra).  In fact, Canberra was an aussie rules stronghold until at least 1982 because the first two generations of public servants came predominantly from Melbourne. With time this balance swung more to Sydney and then around 1982 the Canberra Raiders joined the then NSWRL.  Rugby league certainly has overtaken aussie rules in general popularity (if you are counting TV ratings) but in terms of participation I would think that it would be roughly on par with aussie rules and rugby union, and all three are likely to be behind soccer.  In terms spectators attending games, I imagine the ACT Brumbies currently outstrip all, the Canberra Raiders only get about half, and for some of the three or four games the Kangaroos play in Canberra, they will often get more than the average Raiders game.  All in all - I think it is not an accurate statement about Canberra (not to mention that in souther NSW, aussie rules is stronger than rugby league).  --")
           InternalLink(
             Properties:
@@ -2781,7 +2781,7 @@ ParsedWikitextPage(
           ])
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The crowd at the last Raiders match (v Manly) was 10,366;")
           ExternalLink(
             Properties:
@@ -2863,7 +2863,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("On that basis you I think it have to be said that Aussies rules is at least equal to rugby league, and is growing at the moment. When the ")
           InternalLink(
             Properties:
@@ -3122,7 +3122,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The ")
           InternalLink(
             Properties:
@@ -3192,10 +3192,10 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("The Rules section is getting rather long and unwieldly, especially the holding the ball subsection (which I started, when it actually was \"easily summarised\"), so moving it to another article seems like a good idea. But the name of such an article is an interesting topic - I would suggest \"Australian Football Rules\", just to confuse people (and to make User 139.132.1.1 happy). Possible alternatives are \"Australian Rules Football Rules\", or \"Rules of Australian Rules Football\", or even \"Australian Rules\". Seriously, probably the best name would be \"Rules of Australian Football\", regardless of whether you think that Australian Football is a good name. Incidentally, my copy of the rulebook has on the cover \"Laws of Australian Football\", so maybe thats an even better one (or \"Laws of Australian Rules Football\" come to think of it). If someone else wants to actually move the stuff, that would be good, or I'll probably do it in a week or two when I have more time. Of course the alternative is to just delete half the stuff, but that's probably not a good idea.") ])
+        WtParagraph([ WtText("The Rules section is getting rather long and unwieldly, especially the holding the ball subsection (which I started, when it actually was \"easily summarised\"), so moving it to another article seems like a good idea. But the name of such an article is an interesting topic - I would suggest \"Australian Football Rules\", just to confuse people (and to make User 139.132.1.1 happy). Possible alternatives are \"Australian Rules Football Rules\", or \"Rules of Australian Rules Football\", or even \"Australian Rules\". Seriously, probably the best name would be \"Rules of Australian Football\", regardless of whether you think that Australian Football is a good name. Incidentally, my copy of the rulebook has on the cover \"Laws of Australian Football\", so maybe thats an even better one (or \"Laws of Australian Rules Football\" come to think of it). If someone else wants to actually move the stuff, that would be good, or I'll probably do it in a week or two when I have more time. Of course the alternative is to just delete half the stuff, but that's probably not a good idea.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("On an unrelated note, exactly how high is \"elbow height\"? ")
           InternalLink(
             Properties:
@@ -3445,25 +3445,25 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Aussie Rules fans go to games.  Rugby league fans watch games on tv.  Using attendance records as a means to determine popularity is severely flawed.  Put simply, it's a cop out.") ])
+        WtParagraph([ WtText("Aussie Rules fans go to games.  Rugby league fans watch games on tv.  Using attendance records as a means to determine popularity is severely flawed.  Put simply, it's a cop out.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Another copout is the state count.  Try adding up the populations of the AFL states in comparison to the non-AFL states!  You have more than 50% of the entire country's population when you aggregate NSW and Qld populations alone.") ])
+        WtParagraph([ WtText("Another copout is the state count.  Try adding up the populations of the AFL states in comparison to the non-AFL states!  You have more than 50% of the entire country's population when you aggregate NSW and Qld populations alone.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("I'm not suggesting that RL has higher popularity, just that AFL popularity in comparison is incredibly overstated by the non-NPOV wording in this article.") ])
+        WtParagraph([ WtText("I'm not suggesting that RL has higher popularity, just that AFL popularity in comparison is incredibly overstated by the non-NPOV wording in this article.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Newline("\n")
           WtText("Now for the backup stats.  This is from the Australian Bureau of Statistics.  State populations as of june 30 2003...")
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("I've even given you the benefit of the doubt on NT being an AFL zone!  I'm not convinced.") ])
+        WtParagraph([ WtText("I've even given you the benefit of the doubt on NT being an AFL zone!  I'm not convinced.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Non AFL States and Territories...")
           Newline("\n")
           WtText("NSW: 668 6644")
@@ -3476,7 +3476,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("AFL States and Territories...")
           Newline("\n")
           WtText("Vic: 4 917 394")
@@ -3493,7 +3493,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Sorry to Burst your bubble AFL Fans! ")
           InternalLink(
             Properties:
@@ -3513,7 +3513,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I'm not really sure what you're trying to say, since your arguments are as dodgy as the ones you are apparaently debunking, not to mention noone ever used a state count to prove anything. Aussie Rules is the most popular code of football in Australia, by any measure (eg ")
           ExternalLink(
             Properties:
@@ -4000,7 +4000,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("By the way, I noticed you didn't comment on my suggestion that this article is loaded with Non-NPov original material with little or no source citation to back it up.")
           InternalLink(
             Properties:
@@ -4061,7 +4061,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4073,7 +4073,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I will, as you suggest, add some sources, citable statistics and non-npov wording to the article.")
           InternalLink(
             Properties:
@@ -4275,7 +4275,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Newline("\n")
           WtBold(
             Properties:
@@ -4286,10 +4286,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Didn't suggest we do but your suggestion reinforces the meaningless nature of the state based stats when trying to draw a conclusion from a national standpoint.  If you'd read my comments you'd see I actually suggested using viewership as the main component of such an argument.  So thanks for backing my argument and supplying some usefull stats.  I'd like to see some of the viewership stats in the article.") ])
+        WtParagraph([ WtText("Didn't suggest we do but your suggestion reinforces the meaningless nature of the state based stats when trying to draw a conclusion from a national standpoint.  If you'd read my comments you'd see I actually suggested using viewership as the main component of such an argument.  So thanks for backing my argument and supplying some usefull stats.  I'd like to see some of the viewership stats in the article.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4301,7 +4301,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("This link includes all forms of exercise as well as sports.  Aussie rules doesn't even rank in the top 10.  Soccer is number 10...")
           Newline("\n")
           Url(
@@ -4313,7 +4313,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("This article is limited to organised sports and shows stats for children alone.  Aussie Rules is ranked 6th after swimming, soccer, netball, tennis and basketball")
           Newline("\n")
           Url(
@@ -4325,7 +4325,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4346,7 +4346,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -4365,7 +4365,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("You are being extremely inconsistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. The most recent version of the sweeney report, mentioned above, which uses participation as well as watching and attending, gives swimming as the most popular sport, with tennis, cricket and AF tied on second. Taking only TV (your favourite statistic) AF is the highest. Again, it contains many forms of exercise as well. If you want to read it - ")
           Url(
             Properties:
@@ -4735,7 +4735,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("To BJMurph")
           Newline("\n")
           WtBold(
@@ -4747,10 +4747,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("OK feel free to quote me out of context!  What I said was that the ABS doesn't provide statistics that will tell us which sport is more popular or how popular Australian sports are in comparison to one another.  Where i've used abs stats it has been specifically in relation to participation in sport.") ])
+        WtParagraph([ WtText("OK feel free to quote me out of context!  What I said was that the ABS doesn't provide statistics that will tell us which sport is more popular or how popular Australian sports are in comparison to one another.  Where i've used abs stats it has been specifically in relation to participation in sport.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4762,7 +4762,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4774,7 +4774,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4786,7 +4786,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Newline("\n")
           Newline("\n")
           WtText("To Grant65")
@@ -4802,7 +4802,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4814,7 +4814,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4826,10 +4826,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Please read the prior discussion before adding anything further to this discussion.  And please cease using dirty debating tactics.  I'm familiar with all of the logical fallacies.  We might even improve this article as a result!") ])
+        WtParagraph([ WtText("Please read the prior discussion before adding anything further to this discussion.  And please cease using dirty debating tactics.  I'm familiar with all of the logical fallacies.  We might even improve this article as a result!") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -4932,7 +4932,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -4942,7 +4942,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I think we're forgetting what the CG part of MCG stands for!")
           InternalLink(
             Properties:
@@ -5140,7 +5140,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           XmlElement(
             Properties:
               {N} empty = false
@@ -5186,7 +5186,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("OUT OF CONTROL NON-NPOV") ])
+        WtParagraph([ WtText("OUT OF CONTROL NON-NPOV") ])
         Newline("\n")
         WtSection(
           Properties:
@@ -5200,7 +5200,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5253,7 +5253,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5284,7 +5284,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("--")
               InternalLink(
                 Properties:
@@ -5319,7 +5319,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Very true.  And i'm happy to admit I came to this page knowing it would be loaded with non-npov statments due to the incredible level of fanaticism with the sport.  The level of fanaticism can only be compared to sports such as soccer in europe and GAA sports in country areas of Ireland (GAA sports are not popular in dublin where everyone just follows british soccer).  When visiting Melbourne many a cab driver has become upset with me when my response to the question 'which team do you follow?' is the Brisbane Broncos ")
               InternalLink(
                 Properties:
@@ -5398,7 +5398,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5410,7 +5410,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5483,7 +5483,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5531,7 +5531,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5562,7 +5562,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5581,7 +5581,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5637,7 +5637,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -5647,7 +5647,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Oh they're elite.  Is that another non-NPOV comment?  how about quoting somebody saying that?") ])
+            WtParagraph([ WtText("Oh they're elite.  Is that another non-NPOV comment?  how about quoting somebody saying that?") ])
             Newline("\n")
             Newline("\n")
             WtOrderedList([
@@ -5681,10 +5681,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("I notice that all your arguments come from the sections that were removed from the intro. They are terefore summarising what should have been further into the article. I was not a fan of the leagues section, seeing as there is a teams and leagues section further in.") ])
+            WtParagraph([ WtText("I notice that all your arguments come from the sections that were removed from the intro. They are terefore summarising what should have been further into the article. I was not a fan of the leagues section, seeing as there is a teams and leagues section further in.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -5764,7 +5764,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -5783,7 +5783,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("I just took a look at the article for the first time since writing this and see that the issues i brought up have been addressed.  I'm impressed.  I think the article is better as a result.  Still needs more verifiable citations and quotations.")
               InternalLink(
                 Properties:
@@ -5803,7 +5803,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Newline("\n")
               WtText("I wasn't trying to say anything about your comments, rather that until a few weeks ago, everything up to and including the leagues section was in the intro. I haven't liked it is(or like it was), and have felt it sub par, but not quite sure how to go about fixing it.")
             ])
@@ -5848,7 +5848,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -5960,7 +5960,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("You have a good point. I guess I feel that the meaning of elite being used here is the one that refers to the skill level of the competition, rather than the power and money of the organisation (governing body). It would be good to rewrite/split the sentence to that it adequately reflects both aspects. ")
               InternalLink(
                 Properties:
@@ -6031,7 +6031,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Should this article be renamed from \"Australian rules football\" to \"Australian Rules Football\"?  It seems to be that the former sounds like a statement about a person in charge of football :) But in all seriousness, the latter is the correct title, is it not?  The history in the redirect appears to show the reverse was done on 11 November 2004, I but cannot think why. \"rules\" (uncapitalised) implies something other than a title. -- ")
           InternalLink(
             Properties:
@@ -6444,7 +6444,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I notice that some of the lists in the article have been columnised, drawing attention to something I was planning to raise earlier - should we really have that many external links listed? Most of them seem to be fairly good sites, but we aren't meant to be a link directory. The links at ")
           InternalLink(
             Properties:
@@ -6474,7 +6474,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I don't think it's too bad. I agree it's as long as it should be, and maybe could be tightened slightly, but don't think a drastic cull is necessary.--")
           InternalLink(
             Properties:
@@ -6494,7 +6494,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Bah :p Many links, but none to ")
           ExternalLink(
             Properties:
@@ -6634,7 +6634,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I ask again:   are these the very best photos we can get our hands on of the great Australian game?  The one photo we show, looks more like the old Sun \"Spot the Ball\"  competition.  C'mon, let's lift our game!  ")
           InternalLink(
             Properties:
@@ -7005,7 +7005,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Well, this article is pretty good, so congrats to the people involved. I do feel however, that it glorifies the sport a bit much, I know it is popular, but this article is a tad misleading, reading through it, it reads as if AFL is the be all and end all of Australian sport. Im not here to bag AFL by any means, and I know that there are sources provided and so on, but I do feel the article is not really written in a NPOV. ")
           InternalLink(
             Properties:
@@ -7252,7 +7252,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ")
           TagExtension(
             Properties:
@@ -7351,7 +7351,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I propose a section in the article on some of the tactics and terminology used in the game, drawing from ")
           InternalLink(
             Properties:
@@ -7592,7 +7592,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("...in a ")
           InternalLink(
             Properties:
@@ -7665,7 +7665,7 @@ ParsedWikitextPage(
       WtSectionBody([
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I've just reverted the additional of a generic football forum a couple of times.  Could someone more knowledgeable go through and trim the external links? -- ")
           InternalLink(
             Properties:
@@ -7760,7 +7760,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("I've added the following text in a comment in the external links section - feel free to change if you don't think it is appropriate:")
           Newline("\n")
           WtItalics(

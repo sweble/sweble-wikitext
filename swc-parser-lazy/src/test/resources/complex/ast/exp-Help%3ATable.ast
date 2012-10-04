@@ -1,4 +1,4 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 1=TagExtension([0] = []), 2=TagExtension([0] = []), 3=TagExtension([0] = []), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=TagExtension([0] = []), 10=TagExtension([0] = []), 11=TagExtension([0] = []), 12=TagExtension([0] = []), 13=TagExtension([0] = []), 14=TagExtension([0] = []), 15=TagExtension([0] = []), 17=TagExtension([0] = []), 16=TagExtension([0] = []), 19=TagExtension([0] = []), 18=TagExtension([0] = []), 21=TagExtension([0] = []), 20=TagExtension([0] = []), 23=TagExtension([0] = []), 22=TagExtension([0] = []), 25=TagExtension([0] = []), 24=TagExtension([0] = []), 27=TagExtension([0] = []), 26=TagExtension([0] = []), 29=TagExtension([0] = []), 28=TagExtension([0] = []), 31=TagExtension([0] = []), 30=TagExtension([0] = []), 34=TagExtension([0] = []), 35=TagExtension([0] = []), 32=TagExtension([0] = []), 33=TagExtension([0] = []), 38=TagExtension([0] = []), 39=TagExtension([0] = []), 36=TagExtension([0] = []), 37=TagExtension([0] = []), 42=TagExtension([0] = []), 43=TagExtension([0] = []), 40=TagExtension([0] = []), 41=TagExtension([0] = []), 46=TagExtension([0] = []), 47=TagExtension([0] = []), 44=TagExtension([0] = []), 45=TagExtension([0] = []), 51=TagExtension([0] = []), 50=TagExtension([0] = []), 49=TagExtension([0] = []), 48=TagExtension([0] = []), 55=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 54=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 53=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 52=TagExtension([0] = [XmlAttribute([0] = [WtText("overflow: auto;")])]), 59=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 58=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 57=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 56=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 63=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 62=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 61=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 60=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 68=TagExtension([0] = []), 69=TagExtension([0] = []), 70=TagExtension([0] = []), 71=TagExtension([0] = []), 64=TagExtension([0] = []), 65=TagExtension([0] = []), 66=TagExtension([0] = []), 67=TagExtension([0] = []), 76=TagExtension([0] = []), 77=TagExtension([0] = []), 78=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 79=TagExtension([0] = []), 72=TagExtension([0] = []), 73=TagExtension([0] = []), 74=TagExtension([0] = []), 75=TagExtension([0] = []), 85=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 84=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 87=TagExtension([0] = []), 86=TagExtension([0] = []), 81=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 80=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 83=TagExtension([0] = []), 82=TagExtension([0] = []), 93=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 92=TagExtension([0] = []), 95=TagExtension([0] = []), 94=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 89=TagExtension([0] = []), 88=TagExtension([0] = []), 91=TagExtension([0] = []), 90=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 102=TagExtension([0] = []), 103=TagExtension([0] = []), 100=TagExtension([0] = []), 101=TagExtension([0] = []), 98=TagExtension([0] = []), 99=TagExtension([0] = []), 96=TagExtension([0] = []), 97=TagExtension([0] = []), 110=TagExtension([0] = []), 111=TagExtension([0] = []), 108=TagExtension([0] = []), 109=TagExtension([0] = []), 106=TagExtension([0] = []), 107=TagExtension([0] = []), 104=TagExtension([0] = []), 105=TagExtension([0] = []), 119=TagExtension([0] = []), 118=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 117=TagExtension([0] = [XmlAttribute([0] = [WtText("display: inline-block;")])]), 116=TagExtension([0] = [XmlAttribute([0] = [WtText("overflow:auto;")])]), 115=TagExtension([0] = []), 114=TagExtension([0] = []), 113=TagExtension([0] = []), 112=TagExtension([0] = []), 127=TagExtension([0] = []), 126=TagExtension([0] = []), 125=TagExtension([0] = []), 124=TagExtension([0] = []), 123=TagExtension([0] = []), 122=TagExtension([0] = []), 121=TagExtension([0] = []), 120=TagExtension([0] = []), 129=Template([0] = [WtText("[[Template:visualizer|visualizer]]")], [1] = []), 128=TagExtension([0] = []), 131=Template([0] = [WtText("[[Template:Listtable|Listtable]]")], [1] = []), 130=Template([0] = [WtText("[[Template:metavisualizer|metavisualizer]]")], [1] = [])}
     {N} warnings = []
@@ -258,7 +258,7 @@ ParsedWikitextPage(
     )
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("A ")
       WtBold(
         Properties:
@@ -282,7 +282,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           ImageLink(
             Properties:
               {N} alt = 
@@ -357,7 +357,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("To automatically insert a table, click ")
           ImageLink(
             Properties:
@@ -432,7 +432,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The following text is inserted when ")
           WtBold(
             Properties:
@@ -502,7 +502,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Header 3") ])
+                    WtParagraph([ WtText(" Header 3") ])
                     Newline("\n")
                   ]
                 )
@@ -534,7 +534,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" row 1, cell 3") ])
+                    WtParagraph([ WtText(" row 1, cell 3") ])
                     Newline("\n")
                   ]
                 )
@@ -566,7 +566,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" row 2, cell 3") ])
+                    WtParagraph([ WtText(" row 2, cell 3") ])
                     Newline("\n")
                   ]
                 )
@@ -598,7 +598,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" row 3, cell 3") ])
+                    WtParagraph([ WtText(" row 3, cell 3") ])
                     Newline("\n")
                   ]
                 )
@@ -607,7 +607,7 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The sample text (\"Header 1\" or \"row 1, cell 1\") is to be replaced with actual data.")
           XmlEndTag(
             Properties:
@@ -676,7 +676,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Column heading 1 ") ])
+                    WtParagraph([ WtText(" Column heading 1 ") ])
                     Newline("\n")
                   ]
                 )
@@ -695,7 +695,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Column heading 2 ") ])
+                    WtParagraph([ WtText(" Column heading 2 ") ])
                     Newline("\n")
                   ]
                 )
@@ -714,7 +714,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Column heading 3") ])
+                    WtParagraph([ WtText(" Column heading 3") ])
                     Newline("\n")
                   ]
                 )
@@ -741,7 +741,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Row heading 1") ])
+                    WtParagraph([ WtText(" Row heading 1") ])
                     Newline("\n")
                   ]
                 )
@@ -751,7 +751,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Cell 2 ") ])
+                    WtParagraph([ WtText(" Cell 2 ") ])
                     Newline("\n")
                   ]
                 )
@@ -761,7 +761,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Cell 3") ])
+                    WtParagraph([ WtText(" Cell 3") ])
                     Newline("\n")
                   ]
                 )
@@ -788,7 +788,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Row heading A") ])
+                    WtParagraph([ WtText(" Row heading A") ])
                     Newline("\n")
                   ]
                 )
@@ -798,7 +798,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Cell B") ])
+                    WtParagraph([ WtText(" Cell B") ])
                     Newline("\n")
                   ]
                 )
@@ -808,7 +808,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Cell C") ])
+                    WtParagraph([ WtText(" Cell C") ])
                     Newline("\n")
                   ]
                 )
@@ -818,7 +818,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Although HTML table syntax also works, special ")
           InternalLink(
             Properties:
@@ -2019,7 +2019,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([ WtText("which is probably not what you want:") ])
+        WtParagraph([ WtText("which is probably not what you want:") ])
         Newline("\n")
         Table(
           Properties:
@@ -2066,7 +2066,7 @@ ParsedWikitextPage(
                     XmlAttributeGarbage(" (not displayed)")
                   ]
                   [
-                    Paragraph([ WtText("These all |(including the pipes)|go into |the first cell") ])
+                    WtParagraph([ WtText("These all |(including the pipes)|go into |the first cell") ])
                     Newline("\n")
                   ]
                 )
@@ -2075,7 +2075,7 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Paragraph([ WtText("However, the format modifier is useful:") ])
+        WtParagraph([ WtText("However, the format modifier is useful:") ])
         Newline("\n")
         WtSemiPre([
           WtSemiPreLine(
@@ -2198,7 +2198,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" Cell 1 (no modifier")
                       XmlEntityRef(
                         Properties:
@@ -2234,7 +2234,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Cell 2 (right aligned)") ])
+                    WtParagraph([ WtText(" Cell 2 (right aligned)") ])
                     Newline("\n")
                   ]
                 )
@@ -2244,7 +2244,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Just remember: no more than 2 single pipes on a line!") ])
+        WtParagraph([ WtText("Just remember: no more than 2 single pipes on a line!") ])
         Newline("\n")
         Newline("\n")
         WtUnorderedList([
@@ -2834,7 +2834,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The final table would display like this:")
           Newline("\n")
         ])
@@ -2877,7 +2877,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" The table's caption") ])
+                    WtParagraph([ WtText(" The table's caption") ])
                     Newline("\n")
                   ]
                 )
@@ -2896,7 +2896,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Column heading 1 ") ])
+                    WtParagraph([ WtText(" Column heading 1 ") ])
                     Newline("\n")
                   ]
                 )
@@ -2915,7 +2915,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Column heading 2 ") ])
+                    WtParagraph([ WtText(" Column heading 2 ") ])
                     Newline("\n")
                   ]
                 )
@@ -2934,7 +2934,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Column heading 3") ])
+                    WtParagraph([ WtText(" Column heading 3") ])
                     Newline("\n")
                   ]
                 )
@@ -2959,7 +2959,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row heading 1") ])
+                        WtParagraph([ WtText(" Row heading 1") ])
                         Newline("\n")
                       ]
                     )
@@ -2976,7 +2976,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Cell 3") ])
+                        WtParagraph([ WtText(" Cell 3") ])
                         Newline("\n")
                       ]
                     )
@@ -3003,7 +3003,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row heading A") ])
+                        WtParagraph([ WtText(" Row heading A") ])
                         Newline("\n")
                       ]
                     )
@@ -3013,7 +3013,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Cell B") ])
+                        WtParagraph([ WtText(" Cell B") ])
                         Newline("\n")
                       ]
                     )
@@ -3023,7 +3023,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Cell C") ])
+                        WtParagraph([ WtText(" Cell C") ])
                         Newline("\n")
                       ]
                     )
@@ -3140,7 +3140,7 @@ ParsedWikitextPage(
         WtText(".")
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("A table can be useful even if none of the cells have content.  For example, the background colors of cells can be changed with cell parameters, making the table into a diagram, like ")
           InternalLink(
             Properties:
@@ -3155,7 +3155,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Each row must have the same number of cells as the other rows, so that the number of columns in the table remains consistent. For empty cells, use the non-breaking space ")
           XmlElement(
             Properties:
@@ -3221,7 +3221,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("With colspan and rowspan cells can span several columns or rows, see the ")
           InternalLink(
             Properties:
@@ -3283,10 +3283,10 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([ WtText("Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.") ])
+            WtParagraph([ WtText("Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The wiki markup code:")
               Newline("\n")
               TagExtension(
@@ -3300,7 +3300,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               TagExtension(
                 Properties:
                   {N} body = "\n{|\n| A || B\n|-\n| C || D\n|}\n"
@@ -3312,7 +3312,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser (note that there are no borders):")
               Newline("\n")
             ])
@@ -3352,7 +3352,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" A") ])
+                            WtParagraph([ WtText(" A") ])
                             Newline("\n")
                           ]
                         )
@@ -3362,7 +3362,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" B") ])
+                            WtParagraph([ WtText(" B") ])
                             Newline("\n")
                           ]
                         )
@@ -3380,7 +3380,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" C") ])
+                            WtParagraph([ WtText(" C") ])
                             Newline("\n")
                           ]
                         )
@@ -3390,7 +3390,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" D") ])
+                            WtParagraph([ WtText(" D") ])
                             Newline("\n")
                           ]
                         )
@@ -3418,7 +3418,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Here is the wiki markup code:")
               Newline("\n")
               TagExtension(
@@ -3441,7 +3441,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser (see ")
               WtItalics(
                 Properties:
@@ -3510,7 +3510,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Multiplication table") ])
+                        WtParagraph([ WtText(" Multiplication table") ])
                         Newline("\n")
                       ]
                     )
@@ -3535,7 +3535,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" \u00D7 ") ])
+                            WtParagraph([ WtText(" \u00D7 ") ])
                             Newline("\n")
                           ]
                         )
@@ -3554,7 +3554,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 1 ") ])
+                            WtParagraph([ WtText(" 1 ") ])
                             Newline("\n")
                           ]
                         )
@@ -3573,7 +3573,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 2 ") ])
+                            WtParagraph([ WtText(" 2 ") ])
                             Newline("\n")
                           ]
                         )
@@ -3592,7 +3592,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 3") ])
+                            WtParagraph([ WtText(" 3") ])
                             Newline("\n")
                           ]
                         )
@@ -3619,7 +3619,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 1") ])
+                            WtParagraph([ WtText(" 1") ])
                             Newline("\n")
                           ]
                         )
@@ -3643,7 +3643,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" 3") ])
+                            WtParagraph([ WtText(" 3") ])
                             Newline("\n")
                           ]
                         )
@@ -3670,7 +3670,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 2") ])
+                            WtParagraph([ WtText(" 2") ])
                             Newline("\n")
                           ]
                         )
@@ -3694,7 +3694,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" 6") ])
+                            WtParagraph([ WtText(" 6") ])
                             Newline("\n")
                           ]
                         )
@@ -3721,7 +3721,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 3") ])
+                            WtParagraph([ WtText(" 3") ])
                             Newline("\n")
                           ]
                         )
@@ -3745,7 +3745,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" 9") ])
+                            WtParagraph([ WtText(" 9") ])
                             Newline("\n")
                           ]
                         )
@@ -3772,7 +3772,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 4") ])
+                            WtParagraph([ WtText(" 4") ])
                             Newline("\n")
                           ]
                         )
@@ -3796,7 +3796,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" 12") ])
+                            WtParagraph([ WtText(" 12") ])
                             Newline("\n")
                           ]
                         )
@@ -3823,7 +3823,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" 5") ])
+                            WtParagraph([ WtText(" 5") ])
                             Newline("\n")
                           ]
                         )
@@ -3847,7 +3847,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" 15") ])
+                            WtParagraph([ WtText(" 15") ])
                             Newline("\n")
                           ]
                         )
@@ -3875,7 +3875,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Two ways of specifying ")
               InternalLink(
                 Properties:
@@ -3895,7 +3895,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The wiki markup code:")
               Newline("\n")
               TagExtension(
@@ -3918,7 +3918,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -3967,7 +3967,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" abc") ])
+                            WtParagraph([ WtText(" abc") ])
                             Newline("\n")
                           ]
                         )
@@ -3977,7 +3977,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" def") ])
+                            WtParagraph([ WtText(" def") ])
                             Newline("\n")
                           ]
                         )
@@ -3996,7 +3996,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([
+                            WtParagraph([
                               WtText(" ")
                               XmlElement(
                                 Properties:
@@ -4026,7 +4026,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" jkl") ])
+                            WtParagraph([ WtText(" jkl") ])
                             Newline("\n")
                           ]
                         )
@@ -4039,10 +4039,10 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Like other parameters, colors can also be specified for a whole row or the whole table; parameters for a row override the value for the table, and those for a cell override those for a row.  (Note that there is no easy way to specify a color for a whole column\u2014each cell in the column must be individually specified.  Tools can make it easier.):") ])
+            WtParagraph([ WtText("Like other parameters, colors can also be specified for a whole row or the whole table; parameters for a row override the value for the table, and those for a cell override those for a row.  (Note that there is no easy way to specify a color for a whole column\u2014each cell in the column must be individually specified.  Tools can make it easier.):") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The wiki markup code:")
               Newline("\n")
               TagExtension(
@@ -4065,7 +4065,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -4128,7 +4128,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" ghi") ])
+                            WtParagraph([ WtText(" ghi") ])
                             Newline("\n")
                           ]
                         )
@@ -4169,7 +4169,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" pqr") ])
+                            WtParagraph([ WtText(" pqr") ])
                             Newline("\n")
                           ]
                         )
@@ -4210,7 +4210,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" yz") ])
+                            WtParagraph([ WtText(" yz") ])
                             Newline("\n")
                           ]
                         )
@@ -4223,7 +4223,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("To make the table blend in with the background, use ")
               XmlElement(
                 Properties:
@@ -4258,7 +4258,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("To force a cell to match one of the default colors of the ")
               InternalLink(
                 Properties:
@@ -4309,7 +4309,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("See : ")
               InternalLink(
                 Properties:
@@ -4387,10 +4387,10 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([ WtText("The width and height of the whole table can be specified, as well as the height of a row. To specify the width of a column one can specify the width of an arbitrary cell in it. If the width is not specified for all columns, and/or the height is not specified for all rows, then there is some ambiguity, and the result depends on the browser.") ])
+            WtParagraph([ WtText("The width and height of the whole table can be specified, as well as the height of a row. To specify the width of a column one can specify the width of an arbitrary cell in it. If the width is not specified for all columns, and/or the height is not specified for all rows, then there is some ambiguity, and the result depends on the browser.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The wiki markup code:")
               Newline("\n")
               TagExtension(
@@ -4413,7 +4413,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -4484,7 +4484,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" ghi") ])
+                            WtParagraph([ WtText(" ghi") ])
                             Newline("\n")
                           ]
                         )
@@ -4534,7 +4534,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" pqr") ])
+                            WtParagraph([ WtText(" pqr") ])
                             Newline("\n")
                           ]
                         )
@@ -4566,7 +4566,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" yz") ])
+                            WtParagraph([ WtText(" yz") ])
                             Newline("\n")
                           ]
                         )
@@ -4579,7 +4579,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Note that ")
               XmlElement(
                 Properties:
@@ -4626,7 +4626,7 @@ ParsedWikitextPage(
               )
               WtSectionBody([
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("To force column widths to specific requirements, rather than accepting the width of the widest text element in a column's cells, follow this example. Note that ")
                   InternalLink(
                     Properties:
@@ -4646,7 +4646,7 @@ ParsedWikitextPage(
                 ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("The wiki markup code:")
                   Newline("\n")
                   TagExtension(
@@ -4739,7 +4739,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Name") ])
+                                WtParagraph([ WtText(" Name") ])
                                 Newline("\n")
                               ]
                             )
@@ -4766,7 +4766,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Effect") ])
+                                WtParagraph([ WtText(" Effect") ])
                                 Newline("\n")
                               ]
                             )
@@ -4793,7 +4793,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Games Found In") ])
+                                WtParagraph([ WtText(" Games Found In") ])
                                 Newline("\n")
                               ]
                             )
@@ -4825,7 +4825,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText(" All Versions") ])
+                                WtParagraph([ WtText(" All Versions") ])
                                 Newline("\n")
                               ]
                             )
@@ -4857,7 +4857,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText(" All Versions") ])
+                                WtParagraph([ WtText(" All Versions") ])
                                 Newline("\n")
                               ]
                             )
@@ -4870,10 +4870,10 @@ ParsedWikitextPage(
                 )
                 Newline("\n")
                 Newline("\n")
-                Paragraph([ WtText("To set column widths in a table without headers, specify the width in the first cell for each column, like this:") ])
+                WtParagraph([ WtText("To set column widths in a table without headers, specify the width in the first cell for each column, like this:") ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   TagExtension(
                     Properties:
                       {N} body = "\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n"
@@ -4956,7 +4956,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" This column is 100 points wide") ])
+                                WtParagraph([ WtText(" This column is 100 points wide") ])
                                 Newline("\n")
                               ]
                             )
@@ -4975,7 +4975,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" This column is 200 points wide") ])
+                                WtParagraph([ WtText(" This column is 200 points wide") ])
                                 Newline("\n")
                               ]
                             )
@@ -4994,7 +4994,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" This column is 300 points wide") ])
+                                WtParagraph([ WtText(" This column is 300 points wide") ])
                                 Newline("\n")
                               ]
                             )
@@ -5026,7 +5026,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText(" bluh") ])
+                                WtParagraph([ WtText(" bluh") ])
                                 Newline("\n")
                               ]
                             )
@@ -5039,7 +5039,7 @@ ParsedWikitextPage(
                 )
                 Newline("\n")
                 Newline("\n")
-                Paragraph([ WtText("One application of setting the widths is aligning columns of consecutive tables:") ])
+                WtParagraph([ WtText("One application of setting the widths is aligning columns of consecutive tables:") ])
                 Newline("\n")
                 Newline("\n")
                 Table(
@@ -5094,7 +5094,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Country") ])
+                            WtParagraph([ WtText(" Country") ])
                             Newline("\n")
                           ]
                         )
@@ -5121,7 +5121,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Capital") ])
+                            WtParagraph([ WtText(" Capital") ])
                             Newline("\n")
                           ]
                         )
@@ -5146,7 +5146,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" Amsterdam") ])
+                            WtParagraph([ WtText(" Amsterdam") ])
                             Newline("\n")
                           ]
                         )
@@ -5208,7 +5208,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Country") ])
+                            WtParagraph([ WtText(" Country") ])
                             Newline("\n")
                           ]
                         )
@@ -5235,7 +5235,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Capital") ])
+                            WtParagraph([ WtText(" Capital") ])
                             Newline("\n")
                           ]
                         )
@@ -5260,7 +5260,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" Paris") ])
+                            WtParagraph([ WtText(" Paris") ])
                             Newline("\n")
                           ]
                         )
@@ -5282,7 +5282,7 @@ ParsedWikitextPage(
                   )
                   WtSectionBody([
                     Newline("\n")
-                    Paragraph([
+                    WtParagraph([
                       WtText("In a table that spans the entire width of a page, cells narrower than the widest cell tend to wrap. To keep an entire column from wrapping, use ")
                       XmlElement(
                         Properties:
@@ -5297,7 +5297,7 @@ ParsedWikitextPage(
                     ])
                     Newline("\n")
                     Newline("\n")
-                    Paragraph([ WtText("Before:") ])
+                    WtParagraph([ WtText("Before:") ])
                     Newline("\n")
                     Table(
                       Properties:
@@ -5336,7 +5336,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Episode") ])
+                                WtParagraph([ WtText(" Episode") ])
                                 Newline("\n")
                               ]
                             )
@@ -5355,7 +5355,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Date") ])
+                                WtParagraph([ WtText(" Date") ])
                                 Newline("\n")
                               ]
                             )
@@ -5374,7 +5374,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Summary") ])
+                                WtParagraph([ WtText(" Summary") ])
                                 Newline("\n")
                               ]
                             )
@@ -5392,7 +5392,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("\"The Journey Begins\"") ])
+                                WtParagraph([ WtText("\"The Journey Begins\"") ])
                                 Newline("\n")
                               ]
                             )
@@ -5402,7 +5402,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("January 1, 2010") ])
+                                WtParagraph([ WtText("January 1, 2010") ])
                                 Newline("\n")
                               ]
                             )
@@ -5412,7 +5412,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([
+                                WtParagraph([
                                   InternalLink(
                                     Properties:
                                       {N} postfix = ""
@@ -5441,7 +5441,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("\"When Episodes Attack\"") ])
+                                WtParagraph([ WtText("\"When Episodes Attack\"") ])
                                 Newline("\n")
                               ]
                             )
@@ -5451,7 +5451,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("January 8, 2010") ])
+                                WtParagraph([ WtText("January 8, 2010") ])
                                 Newline("\n")
                               ]
                             )
@@ -5461,7 +5461,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
+                                WtParagraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
                                 Newline("\n")
                               ]
                             )
@@ -5479,7 +5479,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("\"So Long\"") ])
+                                WtParagraph([ WtText("\"So Long\"") ])
                                 Newline("\n")
                               ]
                             )
@@ -5489,7 +5489,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("January 15, 2010") ])
+                                WtParagraph([ WtText("January 15, 2010") ])
                                 Newline("\n")
                               ]
                             )
@@ -5499,7 +5499,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
+                                WtParagraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
                                 Newline("\n")
                               ]
                             )
@@ -5509,7 +5509,7 @@ ParsedWikitextPage(
                     )
                     Newline("\n")
                     Newline("\n")
-                    Paragraph([ WtText("After:") ])
+                    WtParagraph([ WtText("After:") ])
                     Newline("\n")
                     Table(
                       Properties:
@@ -5548,7 +5548,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Episode") ])
+                                WtParagraph([ WtText(" Episode") ])
                                 Newline("\n")
                               ]
                             )
@@ -5567,7 +5567,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Date") ])
+                                WtParagraph([ WtText(" Date") ])
                                 Newline("\n")
                               ]
                             )
@@ -5586,7 +5586,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Summary") ])
+                                WtParagraph([ WtText(" Summary") ])
                                 Newline("\n")
                               ]
                             )
@@ -5604,7 +5604,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("\"The Journey Begins\"") ])
+                                WtParagraph([ WtText("\"The Journey Begins\"") ])
                                 Newline("\n")
                               ]
                             )
@@ -5614,7 +5614,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("January 1, 2010") ])
+                                WtParagraph([ WtText("January 1, 2010") ])
                                 Newline("\n")
                               ]
                             )
@@ -5624,7 +5624,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
+                                WtParagraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
                                 Newline("\n")
                               ]
                             )
@@ -5651,7 +5651,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("\"When Episodes Attack\"") ])
+                                WtParagraph([ WtText("\"When Episodes Attack\"") ])
                                 Newline("\n")
                               ]
                             )
@@ -5661,7 +5661,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("January 8, 2010") ])
+                                WtParagraph([ WtText("January 8, 2010") ])
                                 Newline("\n")
                               ]
                             )
@@ -5671,7 +5671,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
+                                WtParagraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
                                 Newline("\n")
                               ]
                             )
@@ -5689,7 +5689,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("\"So Long\"") ])
+                                WtParagraph([ WtText("\"So Long\"") ])
                                 Newline("\n")
                               ]
                             )
@@ -5708,7 +5708,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("January 15, 2010") ])
+                                WtParagraph([ WtText("January 15, 2010") ])
                                 Newline("\n")
                               ]
                             )
@@ -5718,7 +5718,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
+                                WtParagraph([ WtText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.") ])
                                 Newline("\n")
                               ]
                             )
@@ -5746,7 +5746,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Table borders default to a complex shaded double-line (the default in HTML); however, those borders can be set to a thin solid line by using a style-parameter (style=\"border: 1px solid darkgray\"), as in the following (")
               WtItalics(
                 Properties:
@@ -5758,7 +5758,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               TagExtension(
                 Properties:
                   {N} body = "\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n"
@@ -5825,7 +5825,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Left") ])
+                        WtParagraph([ WtText(" Left") ])
                         Newline("\n")
                       ]
                     )
@@ -5844,7 +5844,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Middle") ])
+                        WtParagraph([ WtText(" Middle") ])
                         Newline("\n")
                       ]
                     )
@@ -5863,7 +5863,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Right") ])
+                        WtParagraph([ WtText(" Right") ])
                         Newline("\n")
                       ]
                     )
@@ -5890,7 +5890,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -5928,7 +5928,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -5971,7 +5971,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -6045,7 +6045,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Green star") ])
+                        WtParagraph([ WtText(" Green star") ])
                         Newline("\n")
                       ]
                     )
@@ -6055,13 +6055,13 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("As long as the \"Image:\" specs omit the parameter \"thumb|\" they will not show the caption lines in the table (only during mouse-over). The border color \"darkgray\" matches typical tables or infoboxes in articles; however, it could be any color name (such as style=\"border: 1px solid darkgreen;\") or use a hex-color (such as: #DDCCBB).") ])
+            WtParagraph([ WtText("As long as the \"Image:\" specs omit the parameter \"thumb|\" they will not show the caption lines in the table (only during mouse-over). The border color \"darkgray\" matches typical tables or infoboxes in articles; however, it could be any color name (such as style=\"border: 1px solid darkgreen;\") or use a hex-color (such as: #DDCCBB).") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("A column format-specifier (enclosed in \"|...|\") can have a style-parameter to set borders on each cell, as follows:") ])
+            WtParagraph([ WtText("A column format-specifier (enclosed in \"|...|\") can have a style-parameter to set borders on each cell, as follows:") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               TagExtension(
                 Properties:
                   {N} body = "\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n"
@@ -6082,7 +6082,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Note only the image cells, here, have individual borders, not the text.") ])
+            WtParagraph([ WtText("Note only the image cells, here, have individual borders, not the text.") ])
             Newline("\n")
             Table(
               Properties:
@@ -6160,7 +6160,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText("Right") ])
+                        WtParagraph([ WtText("Right") ])
                         Newline("\n")
                       ]
                     )
@@ -6197,7 +6197,7 @@ ParsedWikitextPage(
                       ]
                       [
                         Newline("\n")
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -6244,7 +6244,7 @@ ParsedWikitextPage(
                       ]
                       [
                         Newline("\n")
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -6296,7 +6296,7 @@ ParsedWikitextPage(
                       ]
                       [
                         Newline("\n")
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -6369,7 +6369,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Green star") ])
+                        WtParagraph([ WtText(" Green star") ])
                         Newline("\n")
                       ]
                     )
@@ -6378,7 +6378,7 @@ ParsedWikitextPage(
               ]
             )
             Newline("\n")
-            Paragraph([ WtText("The lower hex-colors (such as: #616161) are closer to black. Typically, all borders in a table would be one specific color.") ])
+            WtParagraph([ WtText("The lower hex-colors (such as: #616161) are closer to black. Typically, all borders in a table would be one specific color.") ])
             Newline("\n")
             Newline("\n")
           ])
@@ -6395,7 +6395,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([ WtText("By default data in tables is vertically centrally aligned, which results in odd-looking layouts like this:") ])
+            WtParagraph([ WtText("By default data in tables is vertically centrally aligned, which results in odd-looking layouts like this:") ])
             Newline("\n")
             Newline("\n")
             Table(
@@ -6458,7 +6458,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row heading") ])
+                        WtParagraph([ WtText(" Row heading") ])
                         Newline("\n")
                       ]
                     )
@@ -6477,7 +6477,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText("A longer piece of text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.") ])
+                        WtParagraph([ WtText("A longer piece of text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.") ])
                         Newline("\n")
                       ]
                     )
@@ -6496,7 +6496,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText("short text") ])
+                        WtParagraph([ WtText("short text") ])
                         Newline("\n")
                       ]
                     )
@@ -6523,7 +6523,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row heading") ])
+                        WtParagraph([ WtText(" Row heading") ])
                         Newline("\n")
                       ]
                     )
@@ -6533,7 +6533,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                           XmlElement(
                             Properties:
@@ -6581,7 +6581,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" short text") ])
+                        WtParagraph([ WtText(" short text") ])
                         Newline("\n")
                       ]
                     )
@@ -6591,7 +6591,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("To fix this, apply the valign=\"top\" attribute to the rows (unfortunately it seems to be necessary to apply this individually to every single row). For example:")
               Newline("\n")
               TagExtension(
@@ -6683,7 +6683,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row heading") ])
+                        WtParagraph([ WtText(" Row heading") ])
                         Newline("\n")
                       ]
                     )
@@ -6702,7 +6702,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" A longer piece of text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.") ])
+                        WtParagraph([ WtText(" A longer piece of text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.") ])
                         Newline("\n")
                       ]
                     )
@@ -6721,7 +6721,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" short text") ])
+                        WtParagraph([ WtText(" short text") ])
                         Newline("\n")
                       ]
                     )
@@ -6757,7 +6757,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row heading") ])
+                        WtParagraph([ WtText(" Row heading") ])
                         Newline("\n")
                       ]
                     )
@@ -6767,7 +6767,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                           XmlElement(
                             Properties:
@@ -6815,7 +6815,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" short text") ])
+                        WtParagraph([ WtText(" short text") ])
                         Newline("\n")
                       ]
                     )
@@ -6839,7 +6839,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("You can position the table itself, the contents of a row, and the contents of a cell, but not with a single parameter for all the contents of the table. See ")
               InternalLink(
                 Properties:
@@ -6883,7 +6883,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
@@ -6910,7 +6910,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Here's a more advanced example, showing some more options available for making up tables. Note however that with colspan and rowspan ")
               InternalLink(
                 Properties:
@@ -6930,10 +6930,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("You can play with these settings in your own table to see what effect they have. Not all of these techniques may be appropriate in all cases; just because you can add colored backgrounds, for example, doesn't mean it's always a good idea. Try to keep the markup in your tables relatively simple -- remember, other people are going to be editing the article too! This example should give you an idea of what is possible, though.") ])
+            WtParagraph([ WtText("You can play with these settings in your own table to see what effect they have. Not all of these techniques may be appropriate in all cases; just because you can add colored backgrounds, for example, doesn't mean it's always a good idea. Try to keep the markup in your tables relatively simple -- remember, other people are going to be editing the article too! This example should give you an idea of what is possible, though.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The wiki markup code:")
               Newline("\n")
               TagExtension(
@@ -6956,7 +6956,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -7023,7 +7023,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           WtBold(
                             Properties:
@@ -7056,7 +7056,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" First header") ])
+                            WtParagraph([ WtText(" First header") ])
                             Newline("\n")
                           ]
                         )
@@ -7083,7 +7083,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Second header") ])
+                            WtParagraph([ WtText(" Second header") ])
                             Newline("\n")
                           ]
                         )
@@ -7101,7 +7101,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" upper left") ])
+                            WtParagraph([ WtText(" upper left") ])
                             Newline("\n")
                           ]
                         )
@@ -7111,7 +7111,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([
+                            WtParagraph([
                               WtText(" ")
                               XmlEntityRef(
                                 Properties:
@@ -7147,7 +7147,7 @@ ParsedWikitextPage(
                           ]
                           [
                             Newline("\n")
-                            Paragraph([ WtText("right side") ])
+                            WtParagraph([ WtText("right side") ])
                             Newline("\n")
                           ]
                         )
@@ -7174,7 +7174,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" lower left") ])
+                            WtParagraph([ WtText(" lower left") ])
                             Newline("\n")
                           ]
                         )
@@ -7193,7 +7193,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" lower middle") ])
+                            WtParagraph([ WtText(" lower middle") ])
                             Newline("\n")
                           ]
                         )
@@ -7250,7 +7250,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([
+                                    WtParagraph([
                                       WtText(" ")
                                       WtItalics(
                                         Properties:
@@ -7283,7 +7283,7 @@ ParsedWikitextPage(
 
                                       [ ]
                                       [
-                                        Paragraph([
+                                        WtParagraph([
                                           WtText(" ")
                                           ImageLink(
                                             Properties:
@@ -7323,7 +7323,7 @@ ParsedWikitextPage(
                                         )
                                       ]
                                       [
-                                        Paragraph([
+                                        WtParagraph([
                                           WtText(" ")
                                           ImageLink(
                                             Properties:
@@ -7380,7 +7380,7 @@ ParsedWikitextPage(
                                       ]
                                       [
                                         Newline("\n")
-                                        Paragraph([ WtText("Two Wikipedia logos") ])
+                                        WtParagraph([ WtText("Two Wikipedia logos") ])
                                         Newline("\n")
                                       ]
                                     )
@@ -7414,7 +7414,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The wiki markup coding:")
               Newline("\n")
               TagExtension(
@@ -7437,7 +7437,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -7460,7 +7460,7 @@ ParsedWikitextPage(
               [
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("This paragraph is before the table.  Lorem ipsum dolor sit")
                   Newline("\n")
                   WtText("amet, consectetur adipisicing elit, sed do eiusmod...")
@@ -7501,7 +7501,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" Col 1, row 1") ])
+                            WtParagraph([ WtText(" Col 1, row 1") ])
                             Newline("\n")
                           ]
                         )
@@ -7520,7 +7520,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Col 2, row 1 (and 2)") ])
+                            WtParagraph([ WtText(" Col 2, row 1 (and 2)") ])
                             Newline("\n")
                           ]
                         )
@@ -7530,7 +7530,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" Col 3, row 1") ])
+                            WtParagraph([ WtText(" Col 3, row 1") ])
                             Newline("\n")
                           ]
                         )
@@ -7548,7 +7548,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" Col 1, row 2") ])
+                            WtParagraph([ WtText(" Col 1, row 2") ])
                             Newline("\n")
                           ]
                         )
@@ -7558,7 +7558,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" Col 3, row 2") ])
+                            WtParagraph([ WtText(" Col 3, row 2") ])
                             Newline("\n")
                           ]
                         )
@@ -7567,10 +7567,10 @@ ParsedWikitextPage(
                   ]
                 )
                 Newline("\n")
-                Paragraph([ WtText("Note the floating-table to the right.") ])
+                WtParagraph([ WtText("Note the floating-table to the right.") ])
                 Newline("\n")
                 Newline("\n")
-                Paragraph([
+                WtParagraph([
                   WtText("This paragraph is after the table.  The text in column 2")
                   Newline("\n")
                   WtText("will span both rows due to format specifier \"rowspan=2\" so there")
@@ -7603,7 +7603,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText(
                 Properties:
                   {N} content = "A table can be used to wrap an image, so that the table can float towards the center of the page (such as using: style=\"float: right;\"). However, the table margins, border and font-size must be precisely set to match a typical image display. The Image-spec parameter \"thumb|\" (although auto-thumbnailing to user-preference width) forces a wide left-margin that squeezes the nearby text, so the parameter \"center|\" can be added to suppress the left-margin padding. However, \"center\" sometimes shoves the caption to a 2nd line (under a centered box \"[]\"), so \"thumb|\" could be omitted and just hard-code the image size, adding a gray (#BBB) border. Using precise parameters to match other images, a floating-image table can be coded as follows:"
@@ -7633,7 +7633,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("The text inside the floating-table is sized by style=\"font-size: 86%;\". That floating-image table floats a typical image-box, but allows adjusting the left-hand margin of the image (see temple-example floating below).") ])
+            WtParagraph([ WtText("The text inside the floating-table is sized by style=\"font-size: 86%;\". That floating-image table floats a typical image-box, but allows adjusting the left-hand margin of the image (see temple-example floating below).") ])
             Newline("\n")
             Table(
               Properties:
@@ -7679,7 +7679,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Infobox A") ])
+                        WtParagraph([ WtText(" Infobox A") ])
                         Newline("\n")
                       ]
                     )
@@ -7706,7 +7706,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" This sample infobox shows how the floating image-box aligns toward the center.") ])
+                        WtParagraph([ WtText(" This sample infobox shows how the floating image-box aligns toward the center.") ])
                         Newline("\n")
                       ]
                     )
@@ -7760,7 +7760,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -7863,7 +7863,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -7906,16 +7906,16 @@ ParsedWikitextPage(
               ]
             )
             Newline("\n")
-            Paragraph([ WtText("The caption-text can be omitted, or remove the parameter \"thumb|\" so the caption is hidden until \"mouse-over display\". Unfortunately the parameter \"thumb|\" (used for displaying the caption) also controls the auto-thumbnailing to re-size images by user-preferences size. In April 2009, it was not possible to have auto-thumbnail sizing while also concealing the caption: parameter \"thumb|\" triggers both actions and forces the caption to display.") ])
+            WtParagraph([ WtText("The caption-text can be omitted, or remove the parameter \"thumb|\" so the caption is hidden until \"mouse-over display\". Unfortunately the parameter \"thumb|\" (used for displaying the caption) also controls the auto-thumbnailing to re-size images by user-preferences size. In April 2009, it was not possible to have auto-thumbnail sizing while also concealing the caption: parameter \"thumb|\" triggers both actions and forces the caption to display.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("An image set with parameter \"left|\" will gain a wide right-side margin (opposite margin of parameter \"right|\"), so floating toward the left would require an image set as \"center|\" inside a table with style=\"float:left; margin:0.46em 0.2em\".") ])
+            WtParagraph([ WtText("An image set with parameter \"left|\" will gain a wide right-side margin (opposite margin of parameter \"right|\"), so floating toward the left would require an image set as \"center|\" inside a table with style=\"float:left; margin:0.46em 0.2em\".") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Recall that, outside an image-table, the parameter \"right|\" causes an image to align (either) above or below an infobox, but would not float alongside the infobox.") ])
+            WtParagraph([ WtText("Recall that, outside an image-table, the parameter \"right|\" causes an image to align (either) above or below an infobox, but would not float alongside the infobox.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Note the ")
               WtItalics(
                 Properties:
@@ -7927,7 +7927,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("If multiple single image-tables are stacked, they will float to align across the page, depending on page-width. The text will be squeezed to allow as many floating-tables as can fit, as auto-aligned, then wrap whatever text (can still fit) at the left-hand side.") ])
+            WtParagraph([ WtText("If multiple single image-tables are stacked, they will float to align across the page, depending on page-width. The text will be squeezed to allow as many floating-tables as can fit, as auto-aligned, then wrap whatever text (can still fit) at the left-hand side.") ])
             Newline("\n")
             Table(
               Properties:
@@ -7974,7 +7974,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -8065,7 +8065,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -8156,7 +8156,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -8203,7 +8203,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("That auto-aligning feature can be used to create a \"floating-gallery\" of images: a set of 20 floating-tables will wrap (backward, right-to-left) as if each table were a word of text to wrap across and down the page. To wrap in the typical direction (wrapping left-to-right) define all those floating-tables, instead, as left-side tables using the top parameter style=\"float:left; margin:0.46em 0.2em\". Multiple floating-images empower more flexible typesetting of images around the text.") ])
+            WtParagraph([ WtText("That auto-aligning feature can be used to create a \"floating-gallery\" of images: a set of 20 floating-tables will wrap (backward, right-to-left) as if each table were a word of text to wrap across and down the page. To wrap in the typical direction (wrapping left-to-right) define all those floating-tables, instead, as left-side tables using the top parameter style=\"float:left; margin:0.46em 0.2em\". Multiple floating-images empower more flexible typesetting of images around the text.") ])
             Newline("\n")
             Newline("\n")
           ])
@@ -8220,7 +8220,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtItalics(
                 Properties:
                   {N} rtd = RTD[ "''" <o> "''" ]
@@ -8248,7 +8248,7 @@ ParsedWikitextPage(
             Newline("\n")
             WtText(" ")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Seven different (blue) tables are shown nested inside the cells of a table. Automatically the two tables |A| and |B|B| are vertically aligned instead of the usual side by side of text characters in a cell. \"float\" is used to fix each of tables |C| and |D| to their own position within one cell of the table. This may be used for charts and schemes.  ")
               WtItalics(
                 Properties:
@@ -8259,7 +8259,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -8845,7 +8845,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -8882,7 +8882,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" \u03B1") ])
+                        WtParagraph([ WtText(" \u03B1") ])
                         Newline("\n")
                       ]
                     )
@@ -8901,7 +8901,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" cell2") ])
+                        WtParagraph([ WtText(" cell2") ])
                         Newline("\n")
                         Table(
                           Properties:
@@ -8938,7 +8938,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" NESTED") ])
+                                    WtParagraph([ WtText(" NESTED") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -8956,7 +8956,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" TABLE") ])
+                                    WtParagraph([ WtText(" TABLE") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -8982,7 +8982,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" the original table again") ])
+                        WtParagraph([ WtText(" the original table again") ])
                         Newline("\n")
                       ]
                     )
@@ -9037,7 +9037,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" A") ])
+                                    WtParagraph([ WtText(" A") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -9088,7 +9088,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" B") ])
+                                    WtParagraph([ WtText(" B") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -9150,7 +9150,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" C") ])
+                                    WtParagraph([ WtText(" C") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -9194,7 +9194,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" D") ])
+                                    WtParagraph([ WtText(" D") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -9226,7 +9226,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -9254,7 +9254,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -9321,7 +9321,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Column 3") ])
+                        WtParagraph([ WtText(" Column 3") ])
                         Newline("\n")
                       ]
                     )
@@ -9348,7 +9348,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" A") ])
+                        WtParagraph([ WtText(" A") ])
                         Newline("\n")
                       ]
                     )
@@ -9375,7 +9375,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" B") ])
+                        WtParagraph([ WtText(" B") ])
                         Newline("\n")
                       ]
                     )
@@ -9393,7 +9393,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" C ") ])
+                        WtParagraph([ WtText(" C ") ])
                         Newline("\n")
                       ]
                     )
@@ -9403,7 +9403,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" D") ])
+                        WtParagraph([ WtText(" D") ])
                         Newline("\n")
                       ]
                     )
@@ -9421,7 +9421,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" E") ])
+                        WtParagraph([ WtText(" E") ])
                         Newline("\n")
                       ]
                     )
@@ -9456,7 +9456,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" F") ])
+                        WtParagraph([ WtText(" F") ])
                         Newline("\n")
                       ]
                     )
@@ -9474,7 +9474,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" G ") ])
+                        WtParagraph([ WtText(" G ") ])
                         Newline("\n")
                       ]
                     )
@@ -9509,7 +9509,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" H") ])
+                        WtParagraph([ WtText(" H") ])
                         Newline("\n")
                       ]
                     )
@@ -9519,7 +9519,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Note that using ")
               XmlElement(
                 Properties:
@@ -9606,7 +9606,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Centered tables can be achieved, but they will not \"float\"; that is to say, no text will appear to either side. The trick is ")
               XmlElement(
                 Properties:
@@ -9629,7 +9629,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -9657,7 +9657,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -9696,7 +9696,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       WtBold(
                         Properties:
@@ -9728,7 +9728,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" irure") ])
+                    WtParagraph([ WtText(" irure") ])
                     Newline("\n")
                   ]
                 )
@@ -9758,7 +9758,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" in voluptate velit") ])
+                        WtParagraph([ WtText(" in voluptate velit") ])
                         Newline("\n")
                       ]
                     )
@@ -9790,7 +9790,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" pariatur.") ])
+                        WtParagraph([ WtText(" pariatur.") ])
                         Newline("\n")
                       ]
                     )
@@ -9814,7 +9814,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("At the start of a cell, add your parameter followed by a single pipe. For example ")
               XmlElement(
                 Properties:
@@ -9829,7 +9829,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               TagExtension(
                 Properties:
                   {N} body = "\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n"
@@ -9850,7 +9850,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("As it appears in a browser:") ])
+            WtParagraph([ WtText("As it appears in a browser:") ])
             Newline("\n")
             Table(
               Properties:
@@ -9920,7 +9920,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText("cell3") ])
+                        WtParagraph([ WtText("cell3") ])
                         Newline("\n")
                       ]
                     )
@@ -9944,7 +9944,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("For years in ")
               InternalLink(
                 Properties:
@@ -10223,7 +10223,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([ WtText("Use style=\"font-size:60%\" to shrink the text within the box. However, the small text could be replaced with small images (aligned inside the inner table). The outer table is for one line only, so to make a 2nd line appear even, the exact length of line 1 must be pre-determined, to match the length of other lines.") ])
+            WtParagraph([ WtText("Use style=\"font-size:60%\" to shrink the text within the box. However, the small text could be replaced with small images (aligned inside the inner table). The outer table is for one line only, so to make a 2nd line appear even, the exact length of line 1 must be pre-determined, to match the length of other lines.") ])
             Newline("\n")
             Newline("\n")
           ])
@@ -10240,7 +10240,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A method to get columns of numbers aligned at the decimal point is as follows:")
               Newline("\n")
               TagExtension(
@@ -10263,7 +10263,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -10336,7 +10336,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" .1") ])
+                            WtParagraph([ WtText(" .1") ])
                             Newline("\n")
                           ]
                         )
@@ -10370,7 +10370,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" .21") ])
+                            WtParagraph([ WtText(" .21") ])
                             Newline("\n")
                           ]
                         )
@@ -10404,7 +10404,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" .321") ])
+                            WtParagraph([ WtText(" .321") ])
                             Newline("\n")
                           ]
                         )
@@ -10417,7 +10417,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("If the column of numbers appears in a table with cell padding or cell spacing, you can still align the decimal points without an unsightly gap in the middle.  Embed a table in each number's cell and specify its column widths.  Make the embedded tables' column widths the same for each cell in the column.  (If decimal points are still misaligned using this method, the main table's column may be too narrow.  Add a parameter to increase the column's width.)")
               Newline("\n")
               WtText("The wiki markup code:")
@@ -10442,7 +10442,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As it appears in a browser:")
               Newline("\n")
             ])
@@ -10570,7 +10570,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" .1") ])
+                                    WtParagraph([ WtText(" .1") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -10662,7 +10662,7 @@ ParsedWikitextPage(
                                         )
                                       ]
                                       [
-                                        Paragraph([ WtText(" .21") ])
+                                        WtParagraph([ WtText(" .21") ])
                                         Newline("\n")
                                       ]
                                     )
@@ -10756,7 +10756,7 @@ ParsedWikitextPage(
                                         )
                                       ]
                                       [
-                                        Paragraph([ WtText(" .321") ])
+                                        WtParagraph([ WtText(" .321") ])
                                         Newline("\n")
                                       ]
                                     )
@@ -10776,7 +10776,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("In the case of preformatted text, you can dispense with the table feature entirely and simply start the lines with a space, and put spaces to position the numbers:") ])
+            WtParagraph([ WtText("In the case of preformatted text, you can dispense with the table feature entirely and simply start the lines with a space, and put spaces to position the numbers:") ])
             Newline("\n")
             Newline("\n")
             WtSemiPre([
@@ -10801,7 +10801,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("However, there should be a good reason to use pre-formatted text in an article.") ])
+            WtParagraph([ WtText("However, there should be a good reason to use pre-formatted text in an article.") ])
             Newline("\n")
             Newline("\n")
           ])
@@ -10851,7 +10851,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("In the first line of table code, after the \"{|\", instead of specifying a style directly, you can also specify a ")
           InternalLink(
             Properties:
@@ -10958,7 +10958,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Instead of remembering table parameters, you just include an appropriate style class after the ")
           XmlElement(
             Properties:
@@ -11120,7 +11120,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText(" Multiplication table") ])
+                                WtParagraph([ WtText(" Multiplication table") ])
                                 Newline("\n")
                               ]
                             )
@@ -11145,7 +11145,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" \u00D7") ])
+                                    WtParagraph([ WtText(" \u00D7") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11164,7 +11164,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 1") ])
+                                    WtParagraph([ WtText(" 1") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11183,7 +11183,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 2") ])
+                                    WtParagraph([ WtText(" 2") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11202,7 +11202,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 3") ])
+                                    WtParagraph([ WtText(" 3") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11229,7 +11229,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 1") ])
+                                    WtParagraph([ WtText(" 1") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11253,7 +11253,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 3") ])
+                                    WtParagraph([ WtText(" 3") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11280,7 +11280,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 2") ])
+                                    WtParagraph([ WtText(" 2") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11304,7 +11304,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 6") ])
+                                    WtParagraph([ WtText(" 6") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11331,7 +11331,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 3") ])
+                                    WtParagraph([ WtText(" 3") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11355,7 +11355,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 9") ])
+                                    WtParagraph([ WtText(" 9") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11382,7 +11382,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 4") ])
+                                    WtParagraph([ WtText(" 4") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11406,7 +11406,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 12") ])
+                                    WtParagraph([ WtText(" 12") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11433,7 +11433,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 5") ])
+                                    WtParagraph([ WtText(" 5") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11457,7 +11457,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 15") ])
+                                    WtParagraph([ WtText(" 15") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11632,7 +11632,7 @@ ParsedWikitextPage(
 
                               [ ]
                               [
-                                Paragraph([ WtText(" Multiplication table") ])
+                                WtParagraph([ WtText(" Multiplication table") ])
                                 Newline("\n")
                               ]
                             )
@@ -11657,7 +11657,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" \u00D7") ])
+                                    WtParagraph([ WtText(" \u00D7") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11676,7 +11676,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 1") ])
+                                    WtParagraph([ WtText(" 1") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11695,7 +11695,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 2") ])
+                                    WtParagraph([ WtText(" 2") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11714,7 +11714,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 3") ])
+                                    WtParagraph([ WtText(" 3") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11741,7 +11741,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 1") ])
+                                    WtParagraph([ WtText(" 1") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11765,7 +11765,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 3") ])
+                                    WtParagraph([ WtText(" 3") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11792,7 +11792,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 2") ])
+                                    WtParagraph([ WtText(" 2") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11816,7 +11816,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 6") ])
+                                    WtParagraph([ WtText(" 6") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11843,7 +11843,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 3") ])
+                                    WtParagraph([ WtText(" 3") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11867,7 +11867,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 9") ])
+                                    WtParagraph([ WtText(" 9") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11894,7 +11894,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 4") ])
+                                    WtParagraph([ WtText(" 4") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11918,7 +11918,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 12") ])
+                                    WtParagraph([ WtText(" 12") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11945,7 +11945,7 @@ ParsedWikitextPage(
                                     )
                                   ]
                                   [
-                                    Paragraph([ WtText(" 5") ])
+                                    WtParagraph([ WtText(" 5") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11969,7 +11969,7 @@ ParsedWikitextPage(
 
                                   [ ]
                                   [
-                                    Paragraph([ WtText(" 15") ])
+                                    WtParagraph([ WtText(" 15") ])
                                     Newline("\n")
                                   ]
                                 )
@@ -11988,7 +11988,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("simply by replacing inline CSS for the table by ")
           XmlElement(
             Properties:
@@ -12042,7 +12042,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -12080,7 +12080,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -12137,7 +12137,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Multiplication table") ])
+                    WtParagraph([ WtText(" Multiplication table") ])
                     Newline("\n")
                   ]
                 )
@@ -12162,7 +12162,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" \u00D7") ])
+                        WtParagraph([ WtText(" \u00D7") ])
                         Newline("\n")
                       ]
                     )
@@ -12181,7 +12181,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 1") ])
+                        WtParagraph([ WtText(" 1") ])
                         Newline("\n")
                       ]
                     )
@@ -12200,7 +12200,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 2") ])
+                        WtParagraph([ WtText(" 2") ])
                         Newline("\n")
                       ]
                     )
@@ -12219,7 +12219,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 3") ])
+                        WtParagraph([ WtText(" 3") ])
                         Newline("\n")
                       ]
                     )
@@ -12246,7 +12246,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 1") ])
+                        WtParagraph([ WtText(" 1") ])
                         Newline("\n")
                       ]
                     )
@@ -12270,7 +12270,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 3") ])
+                        WtParagraph([ WtText(" 3") ])
                         Newline("\n")
                       ]
                     )
@@ -12297,7 +12297,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 2") ])
+                        WtParagraph([ WtText(" 2") ])
                         Newline("\n")
                       ]
                     )
@@ -12321,7 +12321,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 6") ])
+                        WtParagraph([ WtText(" 6") ])
                         Newline("\n")
                       ]
                     )
@@ -12348,7 +12348,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 3") ])
+                        WtParagraph([ WtText(" 3") ])
                         Newline("\n")
                       ]
                     )
@@ -12372,7 +12372,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 9") ])
+                        WtParagraph([ WtText(" 9") ])
                         Newline("\n")
                       ]
                     )
@@ -12399,7 +12399,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 4") ])
+                        WtParagraph([ WtText(" 4") ])
                         Newline("\n")
                       ]
                     )
@@ -12423,7 +12423,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 12") ])
+                        WtParagraph([ WtText(" 12") ])
                         Newline("\n")
                       ]
                     )
@@ -12450,7 +12450,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 5") ])
+                        WtParagraph([ WtText(" 5") ])
                         Newline("\n")
                       ]
                     )
@@ -12474,7 +12474,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 15") ])
+                        WtParagraph([ WtText(" 15") ])
                         Newline("\n")
                       ]
                     )
@@ -12487,7 +12487,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Notice that the table retains the gray background of the wikitable class, and the headers are still bold and centered.  But now the text formatting has been overridden by the local ")
           WtItalics(
             Properties:
@@ -12499,7 +12499,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Of course this works only for browsers supporting inline CSS, if it's important use XHTML markup like ")
           XmlElement(
             Properties:
@@ -12559,10 +12559,10 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([ WtText("Classes can also be used to collapse tables, so they are hidden by default.  Use the style 'collapsible' to enable collapsing behaviour.  By default, a collapsible table will begin expanded.  To change this, include the additional class 'collapsed' or 'autocollapse' (i.e. only collapse if 3 other collapsible tables are present). You must include a header row, where the 'hide' option will be displayed. Example:") ])
+            WtParagraph([ WtText("Classes can also be used to collapse tables, so they are hidden by default.  Use the style 'collapsible' to enable collapsing behaviour.  By default, a collapsible table will begin expanded.  To change this, include the additional class 'collapsed' or 'autocollapse' (i.e. only collapse if 3 other collapsible tables are present). You must include a header row, where the 'hide' option will be displayed. Example:") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               TagExtension(
                 Properties:
                   {N} body = "\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n"
@@ -12583,7 +12583,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Gives:") ])
+            WtParagraph([ WtText("Gives:") ])
             Newline("\n")
             Newline("\n")
             Table(
@@ -12613,7 +12613,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Header") ])
+                        WtParagraph([ WtText(" Header") ])
                         Newline("\n")
                       ]
                     )
@@ -12631,7 +12631,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Content which starts hidden") ])
+                        WtParagraph([ WtText(" Content which starts hidden") ])
                         Newline("\n")
                       ]
                     )
@@ -12649,7 +12649,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" more hidden content") ])
+                        WtParagraph([ WtText(" more hidden content") ])
                         Newline("\n")
                       ]
                     )
@@ -12708,7 +12708,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Tables can be made sortable by adding ")
           XmlElement(
             Properties:
@@ -12762,10 +12762,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("A long form of abbreviated content can be put as legend outside the table.") ])
+        WtParagraph([ WtText("A long form of abbreviated content can be put as legend outside the table.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -12803,7 +12803,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtBold(
             Properties:
               {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -12852,7 +12852,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" Sortable table") ])
+                    WtParagraph([ WtText(" Sortable table") ])
                     Newline("\n")
                   ]
                 )
@@ -12877,7 +12877,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Alphabetic") ])
+                        WtParagraph([ WtText(" Alphabetic") ])
                         Newline("\n")
                       ]
                     )
@@ -12896,7 +12896,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Numeric") ])
+                        WtParagraph([ WtText(" Numeric") ])
                         Newline("\n")
                       ]
                     )
@@ -12915,7 +12915,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Date") ])
+                        WtParagraph([ WtText(" Date") ])
                         Newline("\n")
                       ]
                     )
@@ -12942,7 +12942,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Unsortable") ])
+                        WtParagraph([ WtText(" Unsortable") ])
                         Newline("\n")
                       ]
                     )
@@ -12981,7 +12981,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" This") ])
+                        WtParagraph([ WtText(" This") ])
                         Newline("\n")
                       ]
                     )
@@ -13020,7 +13020,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" column") ])
+                        WtParagraph([ WtText(" column") ])
                         Newline("\n")
                       ]
                     )
@@ -13059,7 +13059,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" cannot") ])
+                        WtParagraph([ WtText(" cannot") ])
                         Newline("\n")
                       ]
                     )
@@ -13098,7 +13098,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" be") ])
+                        WtParagraph([ WtText(" be") ])
                         Newline("\n")
                       ]
                     )
@@ -13137,7 +13137,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" sorted.") ])
+                        WtParagraph([ WtText(" sorted.") ])
                         Newline("\n")
                       ]
                     )
@@ -13163,7 +13163,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("It is possible to collapse a sortable table. To do so, you need to use the code ")
               Newline("\n")
               XmlElement(
@@ -13179,7 +13179,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtBold(
                 Properties:
                   {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -13217,7 +13217,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Newline("\n")
               WtBold(
                 Properties:
@@ -13267,7 +13267,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" Sortable and collapsible table") ])
+                        WtParagraph([ WtText(" Sortable and collapsible table") ])
                         Newline("\n")
                       ]
                     )
@@ -13292,7 +13292,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Alphabetic") ])
+                            WtParagraph([ WtText(" Alphabetic") ])
                             Newline("\n")
                           ]
                         )
@@ -13311,7 +13311,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Numeric") ])
+                            WtParagraph([ WtText(" Numeric") ])
                             Newline("\n")
                           ]
                         )
@@ -13330,7 +13330,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Date") ])
+                            WtParagraph([ WtText(" Date") ])
                             Newline("\n")
                           ]
                         )
@@ -13357,7 +13357,7 @@ ParsedWikitextPage(
                             )
                           ]
                           [
-                            Paragraph([ WtText(" Unsortable") ])
+                            WtParagraph([ WtText(" Unsortable") ])
                             Newline("\n")
                           ]
                         )
@@ -13396,7 +13396,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" This") ])
+                            WtParagraph([ WtText(" This") ])
                             Newline("\n")
                           ]
                         )
@@ -13435,7 +13435,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" column") ])
+                            WtParagraph([ WtText(" column") ])
                             Newline("\n")
                           ]
                         )
@@ -13474,7 +13474,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" cannot") ])
+                            WtParagraph([ WtText(" cannot") ])
                             Newline("\n")
                           ]
                         )
@@ -13513,7 +13513,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" be") ])
+                            WtParagraph([ WtText(" be") ])
                             Newline("\n")
                           ]
                         )
@@ -13552,7 +13552,7 @@ ParsedWikitextPage(
 
                           [ ]
                           [
-                            Paragraph([ WtText(" sorted.") ])
+                            WtParagraph([ WtText(" sorted.") ])
                             Newline("\n")
                           ]
                         )
@@ -13565,7 +13565,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("If you want the table to default to collapsed state, use the code ")
               XmlElement(
                 Properties:
@@ -13605,7 +13605,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([ WtText("Regardless of whether wikitable format or HTML is used, the wikitext of the rows within a table, and sometimes even within a collection of tables, has much in common, e.g.:") ])
+        WtParagraph([ WtText("Regardless of whether wikitable format or HTML is used, the wikitext of the rows within a table, and sometimes even within a collection of tables, has much in common, e.g.:") ])
         Newline("\n")
         WtUnorderedList([
           WtListItem(
@@ -13634,7 +13634,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([ WtText("In that case it can be useful to create a template that produces the syntax for a table row, with the data as parameters. This can have many advantages:") ])
+        WtParagraph([ WtText("In that case it can be useful to create a template that produces the syntax for a table row, with the data as parameters. This can have many advantages:") ])
         Newline("\n")
         WtUnorderedList([
           WtListItem(
@@ -13687,10 +13687,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Example:") ])
+        WtParagraph([ WtText("Example:") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Using ")
           InternalLink(
             Properties:
@@ -13803,7 +13803,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" a") ])
+                    WtParagraph([ WtText(" a") ])
                     Newline("\n")
                   ]
                 )
@@ -13822,7 +13822,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" b") ])
+                    WtParagraph([ WtText(" b") ])
                     Newline("\n")
                   ]
                 )
@@ -13841,7 +13841,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" a/b") ])
+                    WtParagraph([ WtText(" a/b") ])
                     Newline("\n")
                   ]
                 )
@@ -13873,7 +13873,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("0.25") ])
+                    WtParagraph([ WtText("0.25") ])
                     Newline("\n")
                   ]
                 )
@@ -13905,7 +13905,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("0.72727272727273") ])
+                    WtParagraph([ WtText("0.72727272727273") ])
                     Newline("\n")
                   ]
                 )
@@ -13937,7 +13937,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("12.345679012346") ])
+                    WtParagraph([ WtText("12.345679012346") ])
                     Newline("\n")
                   ]
                 )
@@ -13961,7 +13961,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("For a conditional row in a table, we can have:")
           Newline("\n")
           TagExtension(
@@ -14021,7 +14021,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText("  row one, column one") ])
+                    WtParagraph([ WtText("  row one, column one") ])
                     Newline("\n")
                   ]
                 )
@@ -14031,7 +14031,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("row one, column two") ])
+                    WtParagraph([ WtText("row one, column two") ])
                     Newline("\n")
                     WtText("  ")
                     Newline("\n")
@@ -14060,7 +14060,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" row three, column one") ])
+                    WtParagraph([ WtText(" row three, column one") ])
                     Newline("\n")
                   ]
                 )
@@ -14070,7 +14070,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" row three, column two") ])
+                    WtParagraph([ WtText(" row three, column two") ])
                     Newline("\n")
                   ]
                 )
@@ -14094,7 +14094,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Other types of ")
           WtBold(
             Properties:
@@ -14146,7 +14146,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText(
             Properties:
               {N} content = "All three are supported by MediaWiki and create (currently) valid HTML output, but the pipe syntax is the simplest. Also, HTML & wiki-"
@@ -14185,7 +14185,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("See also ")
           InternalLink(
             Properties:
@@ -14322,7 +14322,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" XHTML") ])
+                    WtParagraph([ WtText(" XHTML") ])
                     Newline("\n")
                   ]
                 )
@@ -14341,7 +14341,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Wiki-pipe") ])
+                    WtParagraph([ WtText(" Wiki-pipe") ])
                     Newline("\n")
                   ]
                 )
@@ -14366,7 +14366,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Table") ])
+                        WtParagraph([ WtText(" Table") ])
                         Newline("\n")
                       ]
                     )
@@ -14376,7 +14376,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14396,7 +14396,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14433,7 +14433,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Caption") ])
+                        WtParagraph([ WtText(" Caption") ])
                         Newline("\n")
                       ]
                     )
@@ -14443,7 +14443,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14463,7 +14463,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14500,7 +14500,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Row") ])
+                        WtParagraph([ WtText(" Row") ])
                         Newline("\n")
                       ]
                     )
@@ -14510,7 +14510,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14530,7 +14530,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14567,7 +14567,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Data cell") ])
+                        WtParagraph([ WtText(" Data cell") ])
                         Newline("\n")
                       ]
                     )
@@ -14577,7 +14577,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14597,7 +14597,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14634,7 +14634,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Header cell") ])
+                        WtParagraph([ WtText(" Header cell") ])
                         Newline("\n")
                       ]
                     )
@@ -14644,7 +14644,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14681,7 +14681,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14743,7 +14743,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Sample table") ])
+                        WtParagraph([ WtText(" Sample table") ])
                         Newline("\n")
                       ]
                     )
@@ -14896,7 +14896,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14916,7 +14916,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           TagExtension(
                             Properties:
@@ -14962,7 +14962,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Pros") ])
+                        WtParagraph([ WtText(" Pros") ])
                         Newline("\n")
                       ]
                     )
@@ -15076,7 +15076,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Cons") ])
+                        WtParagraph([ WtText(" Cons") ])
                         Newline("\n")
                       ]
                     )
@@ -15242,7 +15242,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" XHTML") ])
+                        WtParagraph([ WtText(" XHTML") ])
                         Newline("\n")
                       ]
                     )
@@ -15261,7 +15261,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Wiki-pipe") ])
+                        WtParagraph([ WtText(" Wiki-pipe") ])
                         Newline("\n")
                       ]
                     )
@@ -15270,7 +15270,7 @@ ParsedWikitextPage(
               ]
             )
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("See also ")
               InternalLink(
                 Properties:
@@ -15301,7 +15301,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The pipe syntax, developed by ")
           InternalLink(
             Properties:
@@ -15343,7 +15343,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The pipes must start at the beginning of a new line, except when separating parameters from content or when using ")
           XmlElement(
             Properties:
@@ -15370,7 +15370,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A ")
               InternalLink(
                 Properties:
@@ -15436,7 +15436,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("For each table, an HTML ")
               XmlEntityRef(
                 Properties:
@@ -15463,7 +15463,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("which generates another \"")
               XmlEntityRef(
                 Properties:
@@ -15482,7 +15482,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Parameters can be added like this:") ])
+            WtParagraph([ WtText("Parameters can be added like this:") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -15501,7 +15501,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("which generates \"")
               XmlEntityRef(
                 Properties:
@@ -15526,7 +15526,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Note:") ])
+            WtParagraph([ WtText("Note:") ])
             Newline("\n")
             WtUnorderedList([
               WtListItem(
@@ -15632,7 +15632,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([ WtText("Cells are generated either like this:") ])
+            WtParagraph([ WtText("Cells are generated either like this:") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -15655,7 +15655,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([ WtText("or like this:") ])
+            WtParagraph([ WtText("or like this:") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -15666,7 +15666,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("which both generate \"")
               XmlEntityRef(
                 Properties:
@@ -15753,7 +15753,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Parameters in cells can be used like this:") ])
+            WtParagraph([ WtText("Parameters in cells can be used like this:") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -15787,7 +15787,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([ WtText("which will result in") ])
+            WtParagraph([ WtText("which will result in") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -15927,7 +15927,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([ WtText("Produces a TH, functioning the same way as TD, but with different style. \"!\" is used instead of the opening \"|\". \"!!\" can be used instead of \"||\". Parameters still use \"|\", though.  Example:") ])
+            WtParagraph([ WtText("Produces a TH, functioning the same way as TD, but with different style. \"!\" is used instead of the opening \"|\". \"!!\" can be used instead of \"||\". Parameters still use \"|\", though.  Example:") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -15987,7 +15987,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A ")
               XmlEntityRef(
                 Properties:
@@ -16014,7 +16014,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("which generates the HTML \"")
               XmlEntityRef(
                 Properties:
@@ -16047,7 +16047,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("You can also use parameters:") ])
+            WtParagraph([ WtText("You can also use parameters:") ])
             Newline("\n")
             WtSemiPre([
               WtSemiPreLine(
@@ -16067,7 +16067,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("which will generate \"")
               XmlEntityRef(
                 Properties:
@@ -16121,7 +16121,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A summary is produced by adding a summary attribute after the start of the table. It can be used by ")
               InternalLink(
                 Properties:
@@ -16176,7 +16176,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16243,7 +16243,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16310,7 +16310,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16391,13 +16391,13 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([ WtText("To format for a square monitor or window, use a tape measure. Determine the height of your rectangular screen. Using that figure measure under the screen to determine the width your monitor\u2019s screen would be if it were square. Mark that location using ink or tape under the screen. Drag the side of your browser\u2019s window to that location so the window is square based on accurate measurements. Square monitors and reading windows are not able to contain tables and galleries made for rectangular and wide screens. When a table or gallery is wider than the monitor, it makes every line of text wider than the screen as well. The px amounts of the following gallery were determined after measuring the window to make sure it was square:") ])
+        WtParagraph([ WtText("To format for a square monitor or window, use a tape measure. Determine the height of your rectangular screen. Using that figure measure under the screen to determine the width your monitor\u2019s screen would be if it were square. Mark that location using ink or tape under the screen. Drag the side of your browser\u2019s window to that location so the window is square based on accurate measurements. Square monitors and reading windows are not able to contain tables and galleries made for rectangular and wide screens. When a table or gallery is wider than the monitor, it makes every line of text wider than the screen as well. The px amounts of the following gallery were determined after measuring the window to make sure it was square:") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Type this:") ])
+        WtParagraph([ WtText("Type this:") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           TagExtension(
             Properties:
               {N} body = "\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n"
@@ -16418,7 +16418,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("For this:") ])
+        WtParagraph([ WtText("For this:") ])
         Newline("\n")
         Table(
           Properties:
@@ -16447,7 +16447,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16500,7 +16500,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16553,7 +16553,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16633,7 +16633,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16686,7 +16686,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16766,7 +16766,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16828,7 +16828,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16895,7 +16895,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([ WtText("Sometimes it is desirable (such as in a table predominantly made of numbers) to rotate text such that it proceeds from top to bottom or bottom to top instead of from left to right or right to left. Currently, browser support for this type of styling as a component of HTML or CSS is sporadic (Internet Explorer is one of the few browsers that supports this in cascading stylesheets, albeit in a non-standard way). An alternative solution that works in most if not all browsers is to use images in place of the text. For instance, the following table uses SVG images instead of text to produce the rotated column headings:") ])
+        WtParagraph([ WtText("Sometimes it is desirable (such as in a table predominantly made of numbers) to rotate text such that it proceeds from top to bottom or bottom to top instead of from left to right or right to left. Currently, browser support for this type of styling as a component of HTML or CSS is sporadic (Internet Explorer is one of the few browsers that supports this in cascading stylesheets, albeit in a non-standard way). An alternative solution that works in most if not all browsers is to use images in place of the text. For instance, the following table uses SVG images instead of text to produce the rotated column headings:") ])
         Newline("\n")
         Newline("\n")
         Table(
@@ -16951,7 +16951,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -16997,7 +16997,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17048,7 +17048,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17099,7 +17099,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17150,7 +17150,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17201,7 +17201,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17252,7 +17252,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17303,7 +17303,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17354,7 +17354,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17405,7 +17405,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText(" ")
                       ImageLink(
                         Properties:
@@ -17455,7 +17455,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" 05/08") ])
+                    WtParagraph([ WtText(" 05/08") ])
                     Newline("\n")
                   ]
                 )
@@ -17521,7 +17521,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" 231") ])
+                    WtParagraph([ WtText(" 231") ])
                     Newline("\n")
                   ]
                 )
@@ -17539,7 +17539,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" 04/08") ])
+                    WtParagraph([ WtText(" 04/08") ])
                     Newline("\n")
                   ]
                 )
@@ -17605,7 +17605,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText(" 301") ])
+                    WtParagraph([ WtText(" 301") ])
                     Newline("\n")
                   ]
                 )
@@ -17615,7 +17615,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Normally, one problem with this approach is that readers are directed to different pages when they click on the images. To eliminate this problem\u2014or to direct readers to a ")
           WtItalics(
             Properties:
@@ -17637,7 +17637,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           TagExtension(
             Properties:
               {N} body = "\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n"
@@ -17660,7 +17660,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("By setting the link to an empty string (e.g. ")
           XmlElement(
             Properties:
@@ -17715,7 +17715,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("A wikitable can be used to display side-by-side images, in the manner of an image gallery (formatted by \"")
           XmlEntityRef(
             Properties:
@@ -17727,7 +17727,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("A simple framed gallery can be formatted using class=\"wikitable\" to generate the minimal thin-lines around images/photos within the table:") ])
+        WtParagraph([ WtText("A simple framed gallery can be formatted using class=\"wikitable\" to generate the minimal thin-lines around images/photos within the table:") ])
         Newline("\n")
         Newline("\n")
         WtSemiPre([
@@ -17749,7 +17749,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Note the result below (with thin-lined cells):") ])
+        WtParagraph([ WtText("Note the result below (with thin-lined cells):") ])
         Newline("\n")
         Table(
           Properties:
@@ -17778,7 +17778,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -17815,7 +17815,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -17860,7 +17860,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       WtText("Nibelungen Bridge to Worms")
                       XmlElement(
                         Properties:
@@ -17891,7 +17891,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Worms and its sister cities") ])
+                    WtParagraph([ WtText("Worms and its sister cities") ])
                     Newline("\n")
                   ]
                 )
@@ -17900,7 +17900,7 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Another issue about the standard \"")
           XmlEntityRef(
             Properties:
@@ -17967,7 +17967,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18004,7 +18004,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18041,7 +18041,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18078,7 +18078,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18123,7 +18123,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Nibelungen Bridge to Worms") ])
+                    WtParagraph([ WtText("Nibelungen Bridge to Worms") ])
                     Newline("\n")
                   ]
                 )
@@ -18133,7 +18133,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Worms and its sister cities") ])
+                    WtParagraph([ WtText("Worms and its sister cities") ])
                     Newline("\n")
                   ]
                 )
@@ -18143,7 +18143,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Statue of Liberty") ])
+                    WtParagraph([ WtText("Statue of Liberty") ])
                     Newline("\n")
                   ]
                 )
@@ -18153,7 +18153,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("New York City") ])
+                    WtParagraph([ WtText("New York City") ])
                     Newline("\n")
                   ]
                 )
@@ -18162,7 +18162,7 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Another advantage about wikitable images, compared to \"")
           XmlEntityRef(
             Properties:
@@ -18193,7 +18193,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Note the 3 images sized \"199x95px\" appear identical height, of 95px (4th image purposely smaller). The \"95px\" forces height, while \"199x\" fits the various widths (could even be \"999x\"):") ])
+        WtParagraph([ WtText("Note the 3 images sized \"199x95px\" appear identical height, of 95px (4th image purposely smaller). The \"95px\" forces height, while \"199x\" fits the various widths (could even be \"999x\"):") ])
         Newline("\n")
         Table(
           Properties:
@@ -18222,7 +18222,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18259,7 +18259,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18296,7 +18296,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18333,7 +18333,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18378,7 +18378,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Statue of Liberty") ])
+                    WtParagraph([ WtText("Statue of Liberty") ])
                     Newline("\n")
                   ]
                 )
@@ -18388,7 +18388,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("New York City") ])
+                    WtParagraph([ WtText("New York City") ])
                     Newline("\n")
                   ]
                 )
@@ -18398,7 +18398,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Star on blue") ])
+                    WtParagraph([ WtText("Star on blue") ])
                     Newline("\n")
                   ]
                 )
@@ -18408,7 +18408,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([ WtText("Bridge to Worms") ])
+                    WtParagraph([ WtText("Bridge to Worms") ])
                     Newline("\n")
                   ]
                 )
@@ -18417,7 +18417,7 @@ ParsedWikitextPage(
           ]
         )
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Therefore, the use of size \"199x95px\" (or \"999x95px\") produces the auto-height-sizing beyond the \"")
           XmlEntityRef(
             Properties:
@@ -18447,7 +18447,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([ WtText("The above wikitable-coding produces the result below, of 6 columns:") ])
+        WtParagraph([ WtText("The above wikitable-coding produces the result below, of 6 columns:") ])
         Newline("\n")
         Table(
           Properties:
@@ -18476,7 +18476,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18513,7 +18513,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18550,7 +18550,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18587,7 +18587,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18624,7 +18624,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18661,7 +18661,7 @@ ParsedWikitextPage(
 
                   [ ]
                   [
-                    Paragraph([
+                    WtParagraph([
                       ImageLink(
                         Properties:
                           {N} alt = 
@@ -18698,7 +18698,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Once images have been placed in a wikitable, control of formatting can be adjusted when more images are added.") ])
+        WtParagraph([ WtText("Once images have been placed in a wikitable, control of formatting can be adjusted when more images are added.") ])
         Newline("\n")
         Newline("\n")
         WtSection(
@@ -18714,7 +18714,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Images within a wikitable can be shifted by inserting non-breaking spaces (\"")
               XmlEntityRef(
                 Properties:
@@ -18766,7 +18766,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In the example below, note how Col2 uses ")
               XmlEntityRef(
                 Properties:
@@ -18802,7 +18802,7 @@ ParsedWikitextPage(
               )
             ])
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The above coding generates the table below: note the middle garden image is centered (but not the left image), and the right image has 2 spaces before \" ")
               XmlEntityRef(
                 Properties:
@@ -18840,7 +18840,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           ImageLink(
                             Properties:
                               {N} alt = 
@@ -18931,7 +18931,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           XmlEntityRef(
                             Properties:
                               {N} name = "nbsp"
@@ -18988,7 +18988,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText("Dom tower from Brigittenstraat") ])
+                        WtParagraph([ WtText("Dom tower from Brigittenstraat") ])
                         Newline("\n")
                       ]
                     )
@@ -18998,7 +18998,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText("Cloister garth of the Utrecht Dom Church") ])
+                        WtParagraph([ WtText("Cloister garth of the Utrecht Dom Church") ])
                         Newline("\n")
                       ]
                     )
@@ -19008,7 +19008,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           XmlEntityRef(
                             Properties:
                               {N} name = "nbsp"
@@ -19039,7 +19039,7 @@ ParsedWikitextPage(
               ]
             )
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Also note that the tag \"")
               XmlEntityRef(
                 Properties:
@@ -19062,7 +19062,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A font-size: 65% is very small, while style=\"font-size: 87%;\" is a mid-size font, larger than the tag ")
               WtItalics(
                 Properties:
@@ -19089,7 +19089,7 @@ ParsedWikitextPage(
           WtSectionBody([
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Actual transfer/display speeds depend on individual files. In 2007 to March 2009 some serious flaws existed in the thumbnailing process when combined with the gallery-display, making thumbnails sometimes larger than the originals. For this reason some users explicitly used tables instead of the gallery tag. However, these issues are fixed as of March 2009.") ])
+            WtParagraph([ WtText("Actual transfer/display speeds depend on individual files. In 2007 to March 2009 some serious flaws existed in the thumbnailing process when combined with the gallery-display, making thumbnails sometimes larger than the originals. For this reason some users explicitly used tables instead of the gallery tag. However, these issues are fixed as of March 2009.") ])
             Newline("\n")
             Newline("\n")
           ])
@@ -19178,7 +19178,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("To convert from spreadsheets such as Gnumeric, MS Excel or OpenOffice.org Calc, you can use the ")
           ExternalLink(
             Properties:
@@ -19852,7 +19852,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -19875,7 +19875,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""

@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=Template([0] = [WtText("Dablink")], [1] = [TemplateArgument([0] = [], [1] = [WtText("This article is about the country. For other uses of terms redirecting here, see [[Germany (disambiguation)]] and [[Deutschland (disambiguation)]].")])]), 1=Template([0] = [WtText("Use dmy dates")], [1] = [TemplateArgument([0] = [WtText("date")], [1] = [WtText("January 2011")])]), 2=Template([0] = [WtText("pp-semi-protected")], [1] = [TemplateArgument([0] = [WtText("small")], [1] = [WtText("yes")])]), 3=Template([0] = [WtText("pp-move-indef")], [1] = []), 4=Template([0] = [WtText("Featured article")], [1] = []), 5=Template([0] = [WtText("Infobox country\n")], [1] = [TemplateArgument([0] = [WtText("native_name")], [1] = [WtText("<span style=\"line-height:1.33em;\">"), Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''Bundesrepublik Deutschland''")])]), WtText("\n")]), TemplateArgument([0] = [WtText("conventional_long_name")], [1] = [WtText("<span style=\"line-height:1.33em;\">Federal Republic of Germany</span>\n")]), TemplateArgument([0] = [WtText("common_name")], [1] = [WtText("Germany\n")]), TemplateArgument([0] = [WtText("national_anthem")], [1] = [WtText("<center>[[File:Deutschlandlied played by USAREUR Band.ogg]]</center><br />The third stanza of "), Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Deutschlandlied|Das Lied der Deutschen]]''")])]), WtText("\n")]), TemplateArgument([0] = [WtText("image_flag")], [1] = [WtText("Flag of Germany.svg\n")]), TemplateArgument([0] = [WtText("image_coat")], [1] = [WtText("Coat of Arms of Germany.svg\n")]), TemplateArgument([0] = [WtText("image_map")], [1] = [WtText("EU-Germany.svg\n")]), TemplateArgument([0] = [WtText("map_caption")], [1] = [Template([0] = [WtText("map_caption")], [1] = [TemplateArgument([0] = [WtText("location_color")], [1] = [WtText("dark green")]), TemplateArgument([0] = [WtText("region")], [1] = [WtText("Europe")]), TemplateArgument([0] = [WtText("region_color")], [1] = [WtText("dark grey")]), TemplateArgument([0] = [WtText("subregion")], [1] = [WtText("the [[European Union]]")]), TemplateArgument([0] = [WtText("subregion_color")], [1] = [WtText("green")]), TemplateArgument([0] = [WtText("legend")], [1] = [WtText("EU-Germany.svg")])]), WtText("\n")]), TemplateArgument([0] = [WtText("official_languages")], [1] = [WtText("[[German language|German]] "), Template([0] = [WtText("Ref")], [1] = [TemplateArgument([0] = [], [1] = [WtText("1")])]), WtText("\n")]), TemplateArgument([0] = [WtText("demonym")], [1] = [WtText("German\n")]), TemplateArgument([0] = [WtText("capital")], [1] = [WtText("[[Berlin]]\n")]), TemplateArgument([0] = [WtText("latd")], [1] = [WtText("52")]), TemplateArgument([0] = [WtText("latm")], [1] = [WtText("31")]), TemplateArgument([0] = [WtText("latNS")], [1] = [WtText("N")]), TemplateArgument([0] = [WtText("longd")], [1] = [WtText("13")]), TemplateArgument([0] = [WtText("longm")], [1] = [WtText("23")]), TemplateArgument([0] = [WtText("longEW")], [1] = [WtText("E\n")]), TemplateArgument([0] = [WtText("largest_city")], [1] = [WtText("capital\n")]), TemplateArgument([0] = [WtText("government_type")], [1] = [WtText("[[Federal republic|Federal]] [[parliamentary republic]]\n")]), TemplateArgument([0] = [WtText("leader_title1")], [1] = [WtText("[[President of Germany|President (Head of State)]]\n")]), TemplateArgument([0] = [WtText("leader_name1")], [1] = [WtText("[[Christian Wulff]] ([[Christian Democratic Union (Germany)|CDU]])\n")]), TemplateArgument([0] = [WtText("leader_title2")], [1] = [WtText("[[Chancellor of Germany (Federal Republic of Germany)|Chancellor (Head of Government)]]\n")]), TemplateArgument([0] = [WtText("leader_name2")], [1] = [WtText("[[Angela Merkel]] ([[Christian Democratic Union (Germany)|CDU]])\n")]), TemplateArgument([0] = [WtText("leader_title3")], [1] = [WtText("[[President of the Bundestag]]\n")]), TemplateArgument([0] = [WtText("leader_name3")], [1] = [WtText("[[Norbert Lammert]] ([[Christian Democratic Union (Germany)|CDU]])\n")]), TemplateArgument([0] = [WtText("leader_title4")], [1] = [WtText("[[President of the Bundesrat]]\n")]), TemplateArgument([0] = [WtText("leader_name4")], [1] = [WtText("[[Hannelore Kraft]] ([[Social Democratic Party of Germany|SPD]])\n")]), TemplateArgument([0] = [WtText("sovereignty_type")], [1] = [WtText("[[Kingdom of Germany|Formation]]\n")]), TemplateArgument([0] = [WtText("sovereignty_note")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("established_event1")], [1] = [WtText("[[Holy Roman Empire]]\n")]), TemplateArgument([0] = [WtText("established_date1")], [1] = [WtText("2 February 962\n")]), TemplateArgument([0] = [WtText("established_event2")], [1] = [WtText("[[Unification of Germany|Unification]]\n")]), TemplateArgument([0] = [WtText("established_date2")], [1] = [WtText("18 January 1871\n")]), TemplateArgument([0] = [WtText("established_event3")], [1] = [WtText("[[History of Germany|Federal Republic]]\n")]), TemplateArgument([0] = [WtText("established_date3")], [1] = [WtText("23 May 1949\n")]), TemplateArgument([0] = [WtText("established_event4")], [1] = [WtText("[[German reunification|Reunification]]\n")]), TemplateArgument([0] = [WtText("established_date4")], [1] = [WtText("3 October 1990\n")]), TemplateArgument([0] = [WtText("accessionEUdate")], [1] = [WtText("25 March 1957\n")]), TemplateArgument([0] = [WtText("EUseats")], [1] = [WtText("99\n")]), TemplateArgument([0] = [WtText("area_km2")], [1] = [WtText("357,021\n")]), TemplateArgument([0] = [WtText("area_sq_mi")], [1] = [WtText("137,847 "), XmlComment("Do not remove per [[WP:MOSNUM]]"), WtText("\n")]), TemplateArgument([0] = [WtText("area_rank")], [1] = [WtText("63rd\n")]), TemplateArgument([0] = [WtText("area_magnitude")], [1] = [WtText("1 E11\n")]), TemplateArgument([0] = [WtText("percent_water")], [1] = [WtText("2.416\n")]), TemplateArgument([0] = [WtText("population_estimate ")], [1] = [WtText(" 81,757,600\n")]), TemplateArgument([0] = [WtText("population_estimate_year ")], [1] = [WtText(" 2010\n")]), TemplateArgument([0] = [WtText("population_estimate_rank ")], [1] = [WtText(" 15th\n")]), TemplateArgument([0] = [WtText("population_census ")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("population_census_year ")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("population_estimate_year ")], [1] = [WtText(" Jan.&nbsp;1,&nbsp;2010\n")]), TemplateArgument([0] = [WtText("population_estimate_rank ")], [1] = [WtText(" 15th\n")]), TemplateArgument([0] = [WtText("population_density_km2 ")], [1] = [WtText(" 229\n")]), TemplateArgument([0] = [WtText("population_density_sq_mi ")], [1] = [WtText(" 593 "), XmlComment("Do not remove per [[WP:MOSNUM]]"), WtText("\n")]), TemplateArgument([0] = [WtText("population_density_rank ")], [1] = [WtText(" 55th\n")]), TemplateArgument([0] = [WtText("GDP_PPP_year ")], [1] = [WtText(" 2010\n")]), TemplateArgument([0] = [WtText("GDP_PPP ")], [1] = [WtText(" $2.932&nbsp;trillion"), TagExtension([0] = [XmlAttribute([0] = [WtText("IMF")])]), WtText("\n")]), TemplateArgument([0] = [WtText("GDP_PPP_rank")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("GDP_PPP_per_capita")], [1] = [WtText("$35,930"), TagExtension([0] = [XmlAttribute([0] = [WtText("IMF")])]), WtText("\n")]), TemplateArgument([0] = [WtText("GDP_PPP_per_capita_rank")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("GDP_nominal")], [1] = [WtText("$3.305&nbsp;trillion"), TagExtension([0] = [XmlAttribute([0] = [WtText("IMF")])]), WtText("\n")]), TemplateArgument([0] = [WtText("GDP_nominal_rank")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("GDP_nominal_year")], [1] = [WtText("2010\n")]), TemplateArgument([0] = [WtText("GDP_nominal_per_capita")], [1] = [WtText("$40,511"), TagExtension([0] = [XmlAttribute([0] = [WtText("IMF")])]), WtText("\n")]), TemplateArgument([0] = [WtText("GDP_nominal_per_capita_rank")], [1] = [WtText("\n")]), TemplateArgument([0] = [WtText("HDI_year")], [1] = [WtText("2010\n")]), TemplateArgument([0] = [WtText("HDI")], [1] = [Template([0] = [WtText("increase")], [1] = []), WtText(" 0.885"), TagExtension([0] = [XmlAttribute([0] = [WtText("UNDP")])]), WtText("\n")]), TemplateArgument([0] = [WtText("HDI_rank")], [1] = [WtText("10th\n")]), TemplateArgument([0] = [WtText("HDI_category")], [1] = [WtText("<span style=\"color:#090;\">very&nbsp;high</span>\n")]), TemplateArgument([0] = [WtText("Gini")], [1] = [WtText("27 "), Template([0] = [WtText("Update after")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2011")]), TemplateArgument([0] = [], [1] = [WtText("04")]), TemplateArgument([0] = [WtText("reason")], [1] = [WtText("Regularly check CIA factbook or http://www.wider.unu.edu/research/Database/en_GB/wiid/ ")])]), WtText("\n")]), TemplateArgument([0] = [WtText("Gini_year")], [1] = [WtText("2006\n")]), TemplateArgument([0] = [WtText("Gini_category")], [1] = [WtText("<span style=\"color:#090;\">low</span>\n")]), TemplateArgument([0] = [WtText("currency")], [1] = [WtText("[[Euro]] ([[Euro sign|\u20AC]])"), Template([0] = [WtText("Ref")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2")])]), WtText("(2002 \u2013 present)\n")]), TemplateArgument([0] = [WtText("currency_code")], [1] = [WtText("EUR\n")]), TemplateArgument([0] = [WtText("time_zone")], [1] = [WtText("CET\n")]), TemplateArgument([0] = [WtText("utc_offset")], [1] = [WtText("+1\n")]), TemplateArgument([0] = [WtText("time_zone_DST")], [1] = [WtText("CEST\n")]), TemplateArgument([0] = [WtText("utc_offset_DST")], [1] = [WtText("+2\n")]), TemplateArgument([0] = [WtText("drives_on")], [1] = [WtText("right\n")]), TemplateArgument([0] = [WtText("cctld")], [1] = [WtText(" [[.de]] "), Template([0] = [WtText("Ref")], [1] = [TemplateArgument([0] = [], [1] = [WtText("3")])]), WtText("\n")]), TemplateArgument([0] = [WtText("calling_code")], [1] = [WtText("[[Telephone numbers in Germany|49]]\n")]), TemplateArgument([0] = [WtText("ISO_3166-1_alpha2")], [1] = [WtText("DE\n")]), TemplateArgument([0] = [WtText("ISO_3166-1_alpha3")], [1] = [WtText("DEU\n")]), TemplateArgument([0] = [WtText("ISO_3166-1_numeric")], [1] = [WtText("?\n")]), TemplateArgument([0] = [WtText("alt_sport_code")], [1] = [WtText("GER\n")]), TemplateArgument([0] = [WtText("vehicle_code")], [1] = [WtText("D\n")]), TemplateArgument([0] = [WtText("aircraft_code")], [1] = [WtText("D\n")]), TemplateArgument([0] = [WtText("footnote1")], [1] = [Template([0] = [WtText("note")], [1] = [TemplateArgument([0] = [], [1] = [WtText("1")])]), WtText(" Danish, [[Low German]], [[Sorbian languages|Sorbian]], [[Romani language|Romany]], and [[Frisian languages|Frisian]] are officially recognised and protected by the [[European Charter for Regional or Minority Languages|ECRML]].\n")]), TemplateArgument([0] = [WtText("footnote2")], [1] = [WtText(" "), Template([0] = [WtText("note")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2")])]), WtText(" Before 2002: [[Deutsche Mark]] (DEM).\n")]), TemplateArgument([0] = [WtText("footnote3")], [1] = [Template([0] = [WtText("note")], [1] = [TemplateArgument([0] = [], [1] = [WtText("3")])]), WtText(" Also [[.eu]], shared with other [[European Union]] member states.\n")])]), 6=Template([0] = [WtText("IPAc-en")], [1] = [TemplateArgument([0] = [], [1] = [WtText("En-uk-Germany.ogg")]), TemplateArgument([0] = [], [1] = [WtText("\u02C8")]), TemplateArgument([0] = [], [1] = [WtText("d\u0292")]), TemplateArgument([0] = [], [1] = [WtText("\u025Cr")]), TemplateArgument([0] = [], [1] = [WtText("m")]), TemplateArgument([0] = [], [1] = [WtText("\u0259n")]), TemplateArgument([0] = [], [1] = [WtText("i")])]), 7=Template([0] = [WtText("lang-de")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Bundesrepublik Deutschland")])]), 8=Template([0] = [WtText("IPA-de")], [1] = [TemplateArgument([0] = [], [1] = [WtText("\u02C8b\u028And\u0259s\u0281epu\u02CCbli\u02D0k \u02C8d\u0254\u028Ft\u0283lant")]), TemplateArgument([0] = [], [1] = [WtText("pron")]), TemplateArgument([0] = [], [1] = [WtText("De-Bundesrepublik_Deutschland.ogg")])]), 9=TagExtension([0] = [XmlAttribute([0] = [WtText("Duden6")])]), 10=TagExtension([0] = [XmlAttribute([0] = [WtText("note")])]), 11=TagExtension([0] = [XmlAttribute([0] = [WtText("population")])]), 12=TagExtension([0] = []), 13=TagExtension([0] = []), 14=TagExtension([0] = [XmlAttribute([0] = [WtText("euroc")])]), 15=TagExtension([0] = []), 17=TagExtension([0] = []), 16=TagExtension([0] = []), 19=TagExtension([0] = []), 18=TagExtension([0] = []), 21=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Names of Germany")]), TemplateArgument([0] = [], [1] = [WtText("List of country name etymologies")])]), 20=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("History of Germany")])]), 23=TagExtension([0] = []), 22=TagExtension([0] = []), 25=TagExtension([0] = []), 24=TagExtension([0] = []), 27=TagExtension([0] = [XmlAttribute([0] = [WtText("Claster")])]), 26=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Germanic peoples")]), TemplateArgument([0] = [], [1] = [WtText("Germania")])]), 29=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Migration Period")]), TemplateArgument([0] = [], [1] = [WtText("Franks")])]), 28=TagExtension([0] = [XmlAttribute([0] = [WtText("Cambridge ancient history")])]), 31=Template([0] = [WtText("See also")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Medieval demography")]), TemplateArgument([0] = [], [1] = [WtText("Ostsiedlung")])]), 30=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Holy Roman Empire")])]), 34=TagExtension([0] = []), 35=TagExtension([0] = [XmlAttribute([0] = [WtText("concise h")])]), 32=TagExtension([0] = []), 33=TagExtension([0] = []), 38=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("German Empire")]), TemplateArgument([0] = [], [1] = [WtText("World War I")])]), 39=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("[[Kleindeutsche L\u00F6sung|''Kleindeutschland'']]")])]), 36=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("German Confederation")])]), 37=TagExtension([0] = []), 42=TagExtension([0] = [XmlAttribute([0] = [WtText("lee h")])]), 43=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Weimar Republic")])]), 40=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Gr\u00FCnderzeit]]''")])]), 41=TagExtension([0] = []), 46=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Nazi Germany")])]), 47=TagExtension([0] = []), 44=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Dolchsto\u00DFlegende]]''")])]), 45=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Council communism|R\u00E4terepublik]]''")])]), 51=TagExtension([0] = []), 50=TagExtension([0] = []), 49=TagExtension([0] = []), 48=TagExtension([0] = []), 55=TagExtension([0] = []), 54=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("History of Germany (1945\u20131990)")])]), 53=Template([0] = [WtText("Clear")], [1] = []), 52=TagExtension([0] = []), 59=TagExtension([0] = []), 58=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Grundgesetz]]''")])]), 57=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Wirtschaftswunder]]''")])]), 56=TagExtension([0] = [XmlAttribute([0] = [WtText("provisional")])]), 63=TagExtension([0] = []), 62=TagExtension([0] = [XmlAttribute([0] = [WtText("euroc")])]), 61=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("History of Germany since 1990")])]), 60=Template([0] = [WtText("lang")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")]), TemplateArgument([0] = [], [1] = [WtText("''[[Ostpolitik]]''")])]), 68=Template([0] = [WtText("convert")], [1] = [TemplateArgument([0] = [], [1] = [WtText("349223")]), TemplateArgument([0] = [], [1] = [WtText("km2")]), TemplateArgument([0] = [], [1] = [WtText("sqmi")]), TemplateArgument([0] = [], [1] = [WtText("0")]), TemplateArgument([0] = [WtText("abbr")], [1] = [WtText("on")])]), 69=Template([0] = [WtText("convert")], [1] = [TemplateArgument([0] = [], [1] = [WtText("7798")]), TemplateArgument([0] = [], [1] = [WtText("km2")]), TemplateArgument([0] = [], [1] = [WtText("sqmi")]), TemplateArgument([0] = [], [1] = [WtText("0")]), TemplateArgument([0] = [WtText("abbr")], [1] = [WtText("on")])]), 70=Template([0] = [WtText("convert")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2962")]), TemplateArgument([0] = [], [1] = [WtText("m")]), TemplateArgument([0] = [], [1] = [WtText("ft")]), TemplateArgument([0] = [], [1] = [WtText("0")]), TemplateArgument([0] = [WtText("disp")], [1] = [WtText("s")])]), 71=Template([0] = [WtText("convert")], [1] = [TemplateArgument([0] = [], [1] = [WtText("3.54")]), TemplateArgument([0] = [], [1] = [WtText("m")]), TemplateArgument([0] = [], [1] = [WtText("ft")]), TemplateArgument([0] = [], [1] = [WtText("1")]), TemplateArgument([0] = [WtText("disp")], [1] = [WtText("s")])]), 64=TagExtension([0] = []), 65=TagExtension([0] = [XmlAttribute([0] = [WtText("ARM")])]), 66=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Geography of Germany")])]), 67=Template([0] = [WtText("convert")], [1] = [TemplateArgument([0] = [], [1] = [WtText("357021")]), TemplateArgument([0] = [], [1] = [WtText("km2")]), TemplateArgument([0] = [], [1] = [WtText("sqmi")]), TemplateArgument([0] = [], [1] = [WtText("0")]), TemplateArgument([0] = [WtText("abbr")], [1] = [WtText("on")])]), 76=Template([0] = [WtText("convert")], [1] = [TemplateArgument([0] = [], [1] = [WtText("30")]), TemplateArgument([0] = [], [1] = [WtText("\u00B0C")]), TemplateArgument([0] = [], [1] = [WtText("\u00B0F")]), TemplateArgument([0] = [WtText("lk")], [1] = [WtText("on")])]), 77=TagExtension([0] = []), 78=Template([0] = [WtText("multiple image\n   ")], [1] = [TemplateArgument([0] = [WtText(" align ")], [1] = [WtText(" right\n\n   ")]), TemplateArgument([0] = [WtText(" width2 ")], [1] = [WtText(" 202\n   ")]), TemplateArgument([0] = [WtText(" image2    ")], [1] = [WtText(" Hintersee.jpg\n   ")]), TemplateArgument([0] = [WtText(" caption2   ")], [1] = [WtText(" [[Alps|Alpine]] terrain in [[Bavaria]]. One third of the country's area is covered with woods.\n   ")]), TemplateArgument([0] = [WtText(" alt2 ")], [1] = [WtText(" Alpine terrain\n\n   ")]), TemplateArgument([0] = [WtText(" width1 ")], [1] = [WtText(" 180\n   ")]), TemplateArgument([0] = [WtText(" image1    ")], [1] = [WtText(" Cervus elaphus 11.jpg\n   ")]), TemplateArgument([0] = [WtText(" caption1   ")], [1] = [WtText(" [[Red Deer|Deer]] are widespread species to be found in the wild.\n   ")]), TemplateArgument([0] = [WtText(" alt1 ")], [1] = [WtText(" Red Deer\n")])]), 79=TagExtension([0] = []), 72=TagExtension([0] = [XmlAttribute([0] = [WtText("CIA")])]), 73=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("States of Germany")]), TemplateArgument([0] = [], [1] = [WtText("List of administrative divisions of Germany")])]), 74=Template([0] = [WtText("German Federal States")], [1] = [TemplateArgument([0] = [WtText("options")], [1] = [WtText("float:left; font-size:90%; border:3px; max-width:480px; width:50%;")])]), 75=Template([0] = [WtText("multiple image\n   ")], [1] = [TemplateArgument([0] = [WtText(" align ")], [1] = [WtText(" right\n\n   ")]), TemplateArgument([0] = [WtText(" image1 ")], [1] = [WtText(" Sylt Rotes Kliff.jpg\n   ")]), TemplateArgument([0] = [WtText(" width1 ")], [1] = [WtText(" 177\n   ")]), TemplateArgument([0] = [WtText(" caption1 ")], [1] = [WtText(" Summer coastal climate on the island [[Sylt]]  in [[Schleswig-Holstein]]\n   ")]), TemplateArgument([0] = [WtText(" alt1 ")], [1] = [WtText(" Coastal dunes\n\n   ")]), TemplateArgument([0] = [WtText(" image2 ")], [1] = [WtText(" Th\u00FCringerwald.JPG\n   ")]), TemplateArgument([0] = [WtText(" width2 ")], [1] = [WtText(" 210\n   ")]), TemplateArgument([0] = [WtText(" caption2 ")], [1] = [WtText("  [[Thuringian Forest]]s during wintertime\n   ")]), TemplateArgument([0] = [WtText(" alt2 ")], [1] = [WtText(" Thuringian Forest\n\n")])]), 85=TagExtension([0] = []), 84=TagExtension([0] = []), 87=TagExtension([0] = []), 86=TagExtension([0] = []), 81=TagExtension([0] = []), 80=TagExtension([0] = []), 83=Template([0] = [WtText("multiple image\n   ")], [1] = [TemplateArgument([0] = [WtText(" align ")], [1] = [WtText(" right\n\n   ")]), TemplateArgument([0] = [WtText(" width2 ")], [1] = [WtText(" 200\n   ")]), TemplateArgument([0] = [WtText(" image2    ")], [1] = [WtText(" Aquila chrysaetos Flickr.jpg\n   ")]), TemplateArgument([0] = [WtText(" caption2   ")], [1] = [WtText(" The [[golden eagle|eagle]] is a protected bird of prey and the national [[heraldic animal]].\n   ")]), TemplateArgument([0] = [WtText(" alt2 ")], [1] = [WtText(" Eagle\n\n   ")]), TemplateArgument([0] = [WtText(" width1 ")], [1] = [WtText(" 185\n   ")]), TemplateArgument([0] = [WtText(" image1    ")], [1] = [WtText(" HeideblueteTiefental.JPG\n   ")]), TemplateArgument([0] = [WtText(" caption1   ")], [1] = [WtText(" The [[L\u00FCneburg Heath Nature Reserve]] in [[Lower Saxony]]\n   ")]), TemplateArgument([0] = [WtText(" alt1 ")], [1] = [WtText(" L\u00FCneburg Heath\n")])]), 82=TagExtension([0] = []), 93=TagExtension([0] = []), 92=TagExtension([0] = []), 95=TagExtension([0] = []), 94=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Foreign relations of Germany")])]), 89=TagExtension([0] = [XmlAttribute([0] = [WtText("Art 79")])]), 88=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Politics of Germany")])]), 91=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Judiciary of Germany")]), TemplateArgument([0] = [], [1] = [WtText("Law enforcement in Germany")])]), 90=TagExtension([0] = []), 102=TagExtension([0] = [XmlAttribute([0] = [WtText("econ_factsheet_may2006")])]), 103=TagExtension([0] = []), 100=TagExtension([0] = []), 101=TagExtension([0] = []), 98=TagExtension([0] = []), 99=TagExtension([0] = []), 96=TagExtension([0] = []), 97=TagExtension([0] = []), 110=Template([0] = [WtText("As of")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2009")]), TemplateArgument([0] = [], [1] = [WtText("11")])]), 111=TagExtension([0] = [XmlAttribute([0] = [WtText("Bundeswehr1")])]), 108=TagExtension([0] = [XmlAttribute([0] = [WtText("CIA")])]), 109=TagExtension([0] = []), 106=TagExtension([0] = []), 107=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Bundeswehr")])]), 104=TagExtension([0] = []), 105=TagExtension([0] = []), 119=TagExtension([0] = [XmlAttribute([0] = [WtText("CIA")])]), 118=TagExtension([0] = []), 117=TagExtension([0] = []), 116=TagExtension([0] = []), 115=TagExtension([0] = []), 114=TagExtension([0] = []), 113=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Economy of Germany")])]), 112=Template([0] = [WtText("clearleft")], [1] = []), 127=TagExtension([0] = []), 126=TagExtension([0] = []), 125=TagExtension([0] = []), 124=TagExtension([0] = []), 123=TagExtension([0] = []), 122=TagExtension([0] = []), 121=TagExtension([0] = [XmlAttribute([0] = [WtText("FR")])]), 120=TagExtension([0] = []), 137=TagExtension([0] = []), 136=TagExtension([0] = []), 139=TagExtension([0] = []), 138=TagExtension([0] = []), 141=TagExtension([0] = []), 140=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Science and technology in Germany")])]), 143=TagExtension([0] = []), 142=TagExtension([0] = []), 129=TagExtension([0] = [XmlAttribute([0] = [WtText("adac")])]), 128=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Transport in Germany")]), TemplateArgument([0] = [], [1] = [WtText("Rail transport in Germany")])]), 131=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Energy in Germany")])]), 130=TagExtension([0] = []), 133=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("German inventors and discoverers")])]), 132=TagExtension([0] = []), 135=TagExtension([0] = []), 134=TagExtension([0] = []), 152=TagExtension([0] = []), 153=TagExtension([0] = []), 154=TagExtension([0] = []), 155=TagExtension([0] = []), 156=Template([0] = [WtText("As of")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2008")])]), 157=TagExtension([0] = []), 158=TagExtension([0] = []), 159=TagExtension([0] = []), 144=TagExtension([0] = []), 145=TagExtension([0] = []), 146=TagExtension([0] = []), 147=TagExtension([0] = []), 148=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Demographics of Germany")]), TemplateArgument([0] = [], [1] = [WtText("Germans")]), TemplateArgument([0] = [], [1] = [WtText("Social issues in Germany")])]), 149=TagExtension([0] = [XmlAttribute([0] = [WtText("population")])]), 150=TagExtension([0] = []), 151=TagExtension([0] = []), 171=TagExtension([0] = []), 170=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Religion in Germany")])]), 169=TagExtension([0] = [XmlAttribute([0] = [WtText("Eurobarometer Languages")])]), 168=TagExtension([0] = [XmlAttribute([0] = [WtText("natgeo2006")])]), 175=Template([0] = [WtText("bar box\n")], [1] = [TemplateArgument([0] = [WtText("title")], [1] = [WtText("Religion in Germany (2008)\n")]), TemplateArgument([0] = [WtText("titlebar")], [1] = [WtText("#ddd\n")]), TemplateArgument([0] = [WtText("float")], [1] = [WtText("left\n")]), TemplateArgument([0] = [WtText("bars")], [1] = [WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Irreligion|No Religion]]")]), TemplateArgument([0] = [], [1] = [WtText("Yellow")]), TemplateArgument([0] = [], [1] = [WtText("34.1")])]), WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Roman Catholicism]]")]), TemplateArgument([0] = [], [1] = [WtText("Orange")]), TemplateArgument([0] = [], [1] = [WtText("30.0")])]), WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Protestantism]]")]), TemplateArgument([0] = [], [1] = [WtText("MediumAquamarine")]), TemplateArgument([0] = [], [1] = [WtText("29.9")])]), WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Islam]]")]), TemplateArgument([0] = [], [1] = [WtText("#f99")]), TemplateArgument([0] = [], [1] = [WtText("4.0")])]), WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Eastern Orthodox Church|Orthodox Christianity]]")]), TemplateArgument([0] = [], [1] = [WtText("DarkGray")]), TemplateArgument([0] = [], [1] = [WtText("1.6")])]), WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Judaism]]")]), TemplateArgument([0] = [], [1] = [WtText("Blue")]), TemplateArgument([0] = [], [1] = [WtText("0.2")])]), WtText("\n"), Template([0] = [WtText("bar percent")], [1] = [TemplateArgument([0] = [], [1] = [WtText("[[Buddhism]]")]), TemplateArgument([0] = [], [1] = [WtText("Black")]), TemplateArgument([0] = [], [1] = [WtText("0.2")])]), WtText("\n")])]), 174=TagExtension([0] = [XmlAttribute([0] = [WtText("MLD 2.1")])]), 173=TagExtension([0] = []), 172=TagExtension([0] = [XmlAttribute([0] = [WtText("ekd")])]), 163=Template([0] = [WtText("cite web ")], [1] = [TemplateArgument([0] = [WtText("title")], [1] = [WtText("Mitglieder des Deutschen St\u00E4dtetages ")]), TemplateArgument([0] = [WtText("publisher")], [1] = [WtText("Deutschen St\u00E4dtetag ")]), TemplateArgument([0] = [WtText("date")], [1] = [WtText("31 December 2009 ")]), TemplateArgument([0] = [WtText("accessdate")], [1] = [WtText("18 February 2011 ")]), TemplateArgument([0] = [WtText("url")], [1] = [WtText("http://www.staedtetag.de/10/staedte/nach_einwohner/index.html ")]), TemplateArgument([0] = [WtText("language")], [1] = [WtText("German")])]), 162=Template([0] = [WtText("See also")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Metropolitan Regions in Germany")]), TemplateArgument([0] = [], [1] = [WtText("List of cities in Germany")]), TemplateArgument([0] = [], [1] = [WtText("List of cities in Germany with more than 100,000 inhabitants")])]), 161=TagExtension([0] = []), 160=TagExtension([0] = []), 167=Template([0] = [WtText("multiple image\n   ")], [1] = [TemplateArgument([0] = [WtText(" align ")], [1] = [WtText(" left\n\n   ")]), TemplateArgument([0] = [WtText(" width2 ")], [1] = [WtText(" 170\n   ")]), TemplateArgument([0] = [WtText(" image2    ")], [1] = [WtText(" De-Faust - Der Trag\u00F6die erster Teil-Prolog und Auf dem Theater-wikisource.ogg\n   ")]), TemplateArgument([0] = [WtText(" caption2   ")], [1] = [WtText(" Spoken German in [[Goethe's Faust]]\n   ")]), TemplateArgument([0] = [WtText(" alt2 ")], [1] = [WtText(" Goethe\u00B4s German\n\n   ")]), TemplateArgument([0] = [WtText(" width1 ")], [1] = [WtText(" 100\n   ")]), TemplateArgument([0] = [WtText(" image1    ")], [1] = [WtText(" Faust spricht mit dem Erdgeist, Margret Hofheinz-D\u00F6ring, \u00D6l, 1969 (WV-Nr.4385).jpg\n   ")]), TemplateArgument([0] = [WtText(" caption1   ")], [1] = [WtText(" \n   ")]), TemplateArgument([0] = [WtText(" alt1 ")], [1] = [WtText(" Faust\n")])]), 166=TagExtension([0] = [XmlAttribute([0] = [WtText("Many tongues, one family")])]), 165=TagExtension([0] = [XmlAttribute([0] = [WtText("Eurobarometer Languages")])]), 164=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Languages of Germany")])]), 186=TagExtension([0] = [XmlAttribute([0] = [WtText("ED")])]), 187=TagExtension([0] = []), 184=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Education in Germany")])]), 185=XmlComment("Kulturhoheit"), 190=TagExtension([0] = []), 191=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Health in Germany")])]), 188=TagExtension([0] = [XmlAttribute([0] = [WtText("ED")])]), 189=TagExtension([0] = [XmlAttribute([0] = [WtText("ARWU")])]), 178=TagExtension([0] = [XmlAttribute([0] = [WtText("MLD 2.2")])]), 179=TagExtension([0] = [XmlAttribute([0] = [WtText("ekd")])]), 176=TagExtension([0] = []), 177=TagExtension([0] = [XmlAttribute([0] = [WtText("MLD 2.1")])]), 182=TagExtension([0] = []), 183=TagExtension([0] = [XmlAttribute([0] = [WtText("EUROBAROMETER")])]), 180=TagExtension([0] = []), 181=TagExtension([0] = []), 205=TagExtension([0] = []), 204=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("German philosophy")])]), 207=TagExtension([0] = []), 206=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Cinema of Germany")])]), 201=TagExtension([0] = []), 200=TagExtension([0] = []), 203=TagExtension([0] = [XmlAttribute([0] = [WtText("nobel")])]), 202=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("German literature")])]), 197=TagExtension([0] = []), 196=TagExtension([0] = []), 199=TagExtension([0] = []), 198=TagExtension([0] = []), 193=TagExtension([0] = [XmlAttribute([0] = [WtText("DW1")])]), 192=TagExtension([0] = [XmlAttribute([0] = [WtText("WHOSIS")])]), 195=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Culture of Germany")])]), 194=TagExtension([0] = [XmlAttribute([0] = [WtText("BBC1")])]), 220=TagExtension([0] = []), 221=TagExtension([0] = []), 222=TagExtension([0] = []), 223=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("German cuisine")])]), 216=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Sport in Germany")])]), 217=TagExtension([0] = [XmlAttribute([0] = [WtText("sports")])]), 218=TagExtension([0] = [XmlAttribute([0] = [WtText("sports")])]), 219=TagExtension([0] = [XmlAttribute([0] = [WtText("sports")])]), 212=Template([0] = [WtText("Main")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Music of Germany")])]), 213=TagExtension([0] = []), 214=TagExtension([0] = []), 215=TagExtension([0] = []), 208=TagExtension([0] = []), 209=TagExtension([0] = []), 210=TagExtension([0] = []), 211=TagExtension([0] = []), 239=TagExtension([0] = []), 238=TagExtension([0] = []), 237=TagExtension([0] = []), 236=TagExtension([0] = []), 235=Template([0] = [WtText("Update after")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2011")]), TemplateArgument([0] = [], [1] = [WtText("09")]), TemplateArgument([0] = [WtText("reason")], [1] = [WtText("elections in Berlin")])]), 234=TagExtension([0] = [XmlAttribute([0] = [WtText("gayscity")])]), 233=TagExtension([0] = []), 232=TagExtension([0] = []), 231=TagExtension([0] = []), 230=TagExtension([0] = []), 229=TagExtension([0] = []), 228=TagExtension([0] = []), 227=TagExtension([0] = []), 226=TagExtension([0] = []), 225=TagExtension([0] = []), 224=TagExtension([0] = []), 254=Template([0] = [WtText("osmrelation-inline")], [1] = [TemplateArgument([0] = [], [1] = [WtText("51477")])]), 255=Template([0] = [WtText("Link GA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("da")])]), 252=Template([0] = [WtText("Wikiatlas")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Germany")])]), 253=Template([0] = [WtText("en icon")], [1] = []), 250=Template([0] = [WtText("CIA World Factbook link")], [1] = [TemplateArgument([0] = [], [1] = [WtText("gm")]), TemplateArgument([0] = [], [1] = [WtText("Germany")])]), 251=Template([0] = [WtText("dmoz")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Regional/Europe/Germany")])]), 248=Template([0] = [WtText("Sister project links")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Germany")])]), 249=XmlComment("\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n"), 246=Template([0] = [WtText("Reflist")], [1] = [TemplateArgument([0] = [WtText("colwidth")], [1] = [WtText("30em")])]), 247=Template([0] = [WtText("Spoken Wikipedia-2")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2008-06-24")]), TemplateArgument([0] = [], [1] = [WtText("Germany (Spoken Article) Part 1.ogg")]), TemplateArgument([0] = [], [1] = [WtText("Germany (Spoken Article) Part 2.ogg")])]), 244=Template([0] = [WtText("Template group\n")], [1] = [TemplateArgument([0] = [WtText("title ")], [1] = [WtText(" Articles Related to Germany\n")]), TemplateArgument([0] = [WtText("list ")], [1] = [WtText("\n"), Template([0] = [WtText("Germany topics")], [1] = []), WtText("\n"), Template([0] = [WtText("States of Germany ")], [1] = [TemplateArgument([0] = [WtText("titlestyle")], [1] = [WtText("background:#ddf;")])]), WtText("\n"), Template([0] = [WtText("Template group\n")], [1] = [TemplateArgument([0] = [WtText("title ")], [1] = [WtText(" Geographic locale\n")]), TemplateArgument([0] = [WtText("list ")], [1] = [WtText("\n"), Template([0] = [WtText("Geographic location\n ")], [1] = [TemplateArgument([0] = [WtText(" Northwest ")], [1] = [WtText(" ''[[North Sea]]'' <br /> "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("The Netherlands")])]), WtText("\n ")]), TemplateArgument([0] = [WtText(" North ")], [1] = [WtText(" "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Denmark")])]), WtText("\n ")]), TemplateArgument([0] = [WtText(" Northeast ")], [1] = [WtText(" ''[[Baltic Sea]]''\n ")]), TemplateArgument([0] = [WtText(" West ")], [1] = [WtText(" "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Belgium")])]), WtText(" <br /> "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Luxembourg")])]), WtText("\n ")]), TemplateArgument([0] = [WtText(" Centre ")], [1] = [WtText(" "), Template([0] = [WtText("Flagicon")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Germany")])]), WtText(" [[Outline of Germany|Germany]]\n ")]), TemplateArgument([0] = [WtText(" East ")], [1] = [WtText(" "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Poland")])]), WtText(" <br /> "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Czech Republic")])]), WtText("\n ")]), TemplateArgument([0] = [WtText(" Southwest ")], [1] = [WtText(" "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("France")])]), WtText("\n ")]), TemplateArgument([0] = [WtText(" South ")], [1] = [WtText(" "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Switzerland")])]), WtText(" \u2022 "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Austria")])]), WtText("\n ")]), TemplateArgument([0] = [WtText(" Southeast ")], [1] = [WtText(" "), Template([0] = [WtText("Flag")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Austria")])]), WtText("\n")])]), WtText("\n"), Template([0] = [WtText("Sovereign states of Europe")], [1] = []), WtText("\n"), Template([0] = [WtText("Countries bordering the Baltic Sea")], [1] = []), WtText("\n")])]), WtText("\n"), Template([0] = [WtText("Template group\n")], [1] = [TemplateArgument([0] = [WtText("title ")], [1] = [WtText(" International membership\n")]), TemplateArgument([0] = [WtText("list ")], [1] = [WtText("\n"), Template([0] = [WtText("EU members")], [1] = []), WtText("\n"), Template([0] = [WtText("North Atlantic Treaty Organisation (NATO)")], [1] = []), WtText("\n"), Template([0] = [WtText("Organisation for Economic Co-operation and Development")], [1] = []), WtText("\n"), Template([0] = [WtText("G8 nations")], [1] = []), WtText("\n"), Template([0] = [WtText("G20")], [1] = []), WtText("\n"), Template([0] = [WtText("WTO members")], [1] = []), WtText("\n"), Template([0] = [WtText("Council of Europe")], [1] = []), WtText("\n"), Template([0] = [WtText("OSCE")], [1] = []), WtText("\n")])]), WtText("\n"), Template([0] = [WtText("National personifications")], [1] = []), WtText("\n")])]), 245=Template([0] = [WtText("Reflist")], [1] = [TemplateArgument([0] = [WtText("group")], [1] = [WtText("note")])]), 242=Template([0] = [WtText("-")], [1] = []), 243=Template([0] = [WtText("Portal box")], [1] = [TemplateArgument([0] = [], [1] = [WtText("Germany")]), TemplateArgument([0] = [], [1] = [WtText("European Union")])]), 240=TagExtension([0] = []), 241=TagExtension([0] = []), 258=Template([0] = [WtText("Link GA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("es")])]), 259=Template([0] = [WtText("Link GA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("lt")])]), 256=Template([0] = [WtText("Link GA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("de")])]), 257=Template([0] = [WtText("Link GA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("eo")])]), 262=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("gv")])]), 263=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("hr")])]), 260=Template([0] = [WtText("Link GA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("zh")])]), 261=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("af")])]), 266=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("nah")])]), 267=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("pt")])]), 264=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("lv")])]), 265=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("mr")])]), 270=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("yi")])]), 268=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("sq")])]), 269=Template([0] = [WtText("Link FA")], [1] = [TemplateArgument([0] = [], [1] = [WtText("tr")])])}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       Template(
         Properties:
           {N} precededByNewline = false
@@ -1198,7 +1198,7 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtBold(
         Properties:
           {N} rtd = RTD[ "'''" <o> "'''" ]
@@ -1594,7 +1594,7 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("A region named ")
       InternalLink(
         Properties:
@@ -1854,7 +1854,7 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("Germany is a ")
       InternalLink(
         Properties:
@@ -2166,7 +2166,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -2199,7 +2199,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -2228,7 +2228,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The English word \"Germany\" derives from the ")
               InternalLink(
                 Properties:
@@ -2340,7 +2340,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -2585,7 +2585,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Under ")
               InternalLink(
                 Properties:
@@ -2867,7 +2867,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -3039,7 +3039,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -3156,7 +3156,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("On 25 December 800, ")
               InternalLink(
                 Properties:
@@ -3253,7 +3253,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -3319,7 +3319,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Under the reign of the ")
               InternalLink(
                 Properties:
@@ -3571,7 +3571,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The edict of the ")
               InternalLink(
                 Properties:
@@ -3626,7 +3626,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The monk ")
               InternalLink(
                 Properties:
@@ -3819,7 +3819,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -3882,7 +3882,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Following the fall of ")
               InternalLink(
                 Properties:
@@ -4052,7 +4052,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In the light of a ")
               InternalLink(
                 Properties:
@@ -4226,7 +4226,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -4318,7 +4318,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The state known as ")
               WtItalics(
                 Properties:
@@ -4448,7 +4448,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -4499,7 +4499,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In the ")
               Template(
                 Properties:
@@ -4645,7 +4645,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany's imperialism reached outside its own country, and it joined many other powers in Europe in claiming its share of Africa. The ")
               InternalLink(
                 Properties:
@@ -4740,7 +4740,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -4925,7 +4925,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -5008,7 +5008,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("At the beginning of the German Revolution, Germany was declared a ")
               InternalLink(
                 Properties:
@@ -5083,7 +5083,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Suffering from the ")
               InternalLink(
                 Properties:
@@ -5247,7 +5247,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Discontentment with the new Weimar government helped fuel the growth of the ")
               InternalLink(
                 Properties:
@@ -5326,7 +5326,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -5415,7 +5415,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("On 27 February 1933 the ")
               InternalLink(
                 Properties:
@@ -5568,7 +5568,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Leading to ")
               InternalLink(
                 Properties:
@@ -5748,7 +5748,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -5973,7 +5973,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In what later became known as ")
               InternalLink(
                 Properties:
@@ -6144,7 +6144,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -6248,7 +6248,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The war resulted in the ")
               InternalLink(
                 Properties:
@@ -6361,7 +6361,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The western sectors, controlled by France, the United Kingdom, and the United States, were merged on 23 May 1949, to form the ")
               WtItalics(
                 Properties:
@@ -6478,7 +6478,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("West Germany, established as a federal parliamentary republic with a \"")
               InternalLink(
                 Properties:
@@ -6575,7 +6575,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -6636,7 +6636,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("East Germany was an ")
               InternalLink(
                 Properties:
@@ -6786,7 +6786,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Tensions between East and West Germany were somewhat reduced in the early 1970s by Chancellor ")
               InternalLink(
                 Properties:
@@ -6834,7 +6834,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In summer 1989, Hungary decided (2 May) to dismantle the ")
               InternalLink(
                 Properties:
@@ -6980,7 +6980,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -7061,7 +7061,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Based on the Bonn-Berlin Act, adopted by the parliament on 10 March 1994, Berlin once again became the capital of the reunified Germany, while Bonn obtained the unique status of a ")
               WtItalics(
                 Properties:
@@ -7090,7 +7090,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Since reunification, Germany has taken a more active role in the ")
               InternalLink(
                 Properties:
@@ -7188,7 +7188,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In 2005, ")
               InternalLink(
                 Properties:
@@ -7294,7 +7294,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -7356,7 +7356,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Germany is located in the Central Europe, the territory covers ")
           Template(
             Properties:
@@ -7581,7 +7581,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Elevation ranges from the mountains of the ")
           InternalLink(
             Properties:
@@ -7783,7 +7783,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Germany shares borders with more European countries than any other country on the continent. Its neighbours are Denmark in the north, Poland and the Czech Republic in the east, Austria and Switzerland in the south, France and ")
           InternalLink(
             Properties:
@@ -7798,7 +7798,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The most significant natural resources are iron ore, coal, ")
           InternalLink(
             Properties:
@@ -7865,7 +7865,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -7894,7 +7894,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany comprises ")
               InternalLink(
                 Properties:
@@ -7950,7 +7950,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -8118,7 +8118,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText(" Population") ])
+                                WtParagraph([ WtText(" Population") ])
                                 Newline("\n")
                               ]
                             )
@@ -8199,7 +8199,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("10,717,000") ])
+                                WtParagraph([ WtText("10,717,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8280,7 +8280,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("12,444,000") ])
+                                WtParagraph([ WtText("12,444,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8337,7 +8337,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("3,400,000") ])
+                                WtParagraph([ WtText("3,400,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8418,7 +8418,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("2,568,000") ])
+                                WtParagraph([ WtText("2,568,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8504,7 +8504,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("663,000") ])
+                                WtParagraph([ WtText("663,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8585,7 +8585,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("1,735,000") ])
+                                WtParagraph([ WtText("1,735,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8666,7 +8666,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("6,098,000") ])
+                                WtParagraph([ WtText("6,098,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8747,7 +8747,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("1,720,000") ])
+                                WtParagraph([ WtText("1,720,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8828,7 +8828,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("8,001,000") ])
+                                WtParagraph([ WtText("8,001,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8909,7 +8909,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("18,075,000") ])
+                                WtParagraph([ WtText("18,075,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -8990,7 +8990,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("4,061,000") ])
+                                WtParagraph([ WtText("4,061,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -9071,7 +9071,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("1,056,000") ])
+                                WtParagraph([ WtText("1,056,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -9152,7 +9152,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("4,296,000") ])
+                                WtParagraph([ WtText("4,296,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -9233,7 +9233,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("2,494,000") ])
+                                WtParagraph([ WtText("2,494,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -9314,7 +9314,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("2,829,000") ])
+                                WtParagraph([ WtText("2,829,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -9395,7 +9395,7 @@ ParsedWikitextPage(
                                 )
                               ]
                               [
-                                Paragraph([ WtText("2,355,000") ])
+                                WtParagraph([ WtText("2,355,000") ])
                                 Newline("\n")
                               ]
                             )
@@ -9424,7 +9424,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -9509,7 +9509,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Most of Germany has a ")
               InternalLink(
                 Properties:
@@ -9584,7 +9584,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Winters are mild and summers tend to be cool, though temperatures can exceed ")
               Template(
                 Properties:
@@ -9646,7 +9646,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In addition to the maritime and continental climates that predominate over most of the country, the Alpine regions in the extreme south and, to a lesser degree, some areas of the Central German Uplands have a so-called mountain climate. This climate is characterised by lower temperatures because of higher altitudes and greater precipitation caused by air becoming moisture-laden as it lifts over higher terrain.")
               TagExtension(
                 Properties:
@@ -9673,7 +9673,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -9758,7 +9758,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -9846,10 +9846,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Plants and animals are those generally common to middle Europe. Beeches, oaks, and other deciduous trees constitute one-third of the forests; conifers are increasing as a result of reforestation. Spruce and fir trees predominate in the upper mountains, while pine and larch are found in sandy soil. There are many species of ferns, flowers, fungi, and mosses. Fish abound in the rivers and the North Sea. Wild animals include deer, wild boar, mouflon, fox, badger, hare, and small numbers of beavers. Various migratory birds cross Germany in the spring and autumn.") ])
+            WtParagraph([ WtText("Plants and animals are those generally common to middle Europe. Beeches, oaks, and other deciduous trees constitute one-third of the forests; conifers are increasing as a result of reforestation. Spruce and fir trees predominate in the upper mountains, while pine and larch are found in sandy soil. There are many species of ferns, flowers, fungi, and mosses. Fish abound in the rivers and the North Sea. Wild animals include deer, wild boar, mouflon, fox, badger, hare, and small numbers of beavers. Various migratory birds cross Germany in the spring and autumn.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -9949,7 +9949,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is known for its many ")
               InternalLink(
                 Properties:
@@ -10019,7 +10019,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -10104,7 +10104,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is known for its environmental consciousness.")
               TagExtension(
                 Properties:
@@ -10165,7 +10165,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The German government has initiated wide-ranging emission reduction activities and the country's overall emissions are falling.")
               TagExtension(
                 Properties:
@@ -10204,7 +10204,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Emissions from coal-burning utilities and industries contribute to air pollution. Acid rain, resulting from sulphur dioxide emissions, continues to damage German forests. Pollution in the Baltic Sea from raw sewage and industrial effluents from rivers in former East Germany have been reduced. The government under Chancellor Schr\u00F6der announced the intention to end the use of nuclear power for producing electricity. Germany is working to meet EU commitments to identify nature preservation areas in line with the EU's Flora, Fauna, and Habitat directive. Germany's last glaciers in the Alpine region are experiencing deglaciation. Natural hazards are river flooding in spring and stormy winds occurring in all regions.") ])
+            WtParagraph([ WtText("Emissions from coal-burning utilities and industries contribute to air pollution. Acid rain, resulting from sulphur dioxide emissions, continues to damage German forests. Pollution in the Baltic Sea from raw sewage and industrial effluents from rivers in former East Germany have been reduced. The government under Chancellor Schr\u00F6der announced the intention to end the use of nuclear power for producing electricity. Germany is working to meet EU commitments to identify nature preservation areas in line with the EU's Flora, Fauna, and Habitat directive. Germany's last glaciers in the Alpine region are experiencing deglaciation. Natural hazards are river flooding in spring and stormy winds occurring in all regions.") ])
             Newline("\n")
             Newline("\n")
           ])
@@ -10223,7 +10223,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -10298,7 +10298,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Germany is a ")
           InternalLink(
             Properties:
@@ -10384,7 +10384,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Amendments to the ")
           WtItalics(
             Properties:
@@ -10443,7 +10443,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -10503,7 +10503,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The President, ")
               InternalLink(
                 Properties:
@@ -10557,7 +10557,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The second highest official in the ")
               InternalLink(
                 Properties:
@@ -10609,7 +10609,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The third-highest official and the ")
               InternalLink(
                 Properties:
@@ -10662,7 +10662,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -10719,7 +10719,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -10902,7 +10902,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Since 1949, the party system has been dominated by the ")
               InternalLink(
                 Properties:
@@ -10997,7 +10997,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -11088,7 +11088,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -11189,7 +11189,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany's supreme court system, called ")
               WtItalics(
                 Properties:
@@ -11341,7 +11341,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -11412,7 +11412,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -11543,10 +11543,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself.") ])
+            WtParagraph([ WtText("Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Any federal law overrides state law if the legislative power lies at the federal level. A famous example is the purported Hessian provision for the death penalty, which goes against the ban on capital punishment under the Basic Law, rendering the Hessian provision invalid. The ")
               WtItalics(
                 Properties:
@@ -11614,7 +11614,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Many of the fundamental matters of ")
               InternalLink(
                 Properties:
@@ -11657,7 +11657,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -11741,7 +11741,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany maintains a network of 229 diplomatic missions abroad and holds relations with more than 190 countries.")
               TagExtension(
                 Properties:
@@ -11755,7 +11755,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany has played a leading role in the European Union since its inception and has maintained a ")
               InternalLink(
                 Properties:
@@ -11842,7 +11842,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -11898,7 +11898,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("During the Cold War, Germany's partition by the ")
               InternalLink(
                 Properties:
@@ -11972,7 +11972,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -12023,7 +12023,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The governments of Germany and the United States are close political allies.")
               TagExtension(
                 Properties:
@@ -12131,7 +12131,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The development policy of the Federal Republic of Germany is an independent area of German foreign policy. It is formulated by the Federal Ministry for Economic Cooperation and Development (BMZ) and carried out by the implementing organisations. The German government sees development policy as a joint responsibility of the international community.")
               TagExtension(
                 Properties:
@@ -12168,7 +12168,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -12259,7 +12259,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany's military, the ")
               WtItalics(
                 Properties:
@@ -12476,7 +12476,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -12537,7 +12537,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The Bundeswehr employs 200,500 professional soldiers, 55,000 18\u201325")
               XmlEntityRef(
                 Properties:
@@ -12549,10 +12549,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far.") ])
+            WtParagraph([ WtText("Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far.") ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -12689,7 +12689,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -12751,7 +12751,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Germany has a ")
           InternalLink(
             Properties:
@@ -12877,7 +12877,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           ImageLink(
             Properties:
               {N} alt = 
@@ -12948,7 +12948,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Since the age of ")
           InternalLink(
             Properties:
@@ -13003,7 +13003,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Most of the country's export products are in engineering, especially in machinery, automobiles, chemical goods and metals.")
           TagExtension(
             Properties:
@@ -13034,7 +13034,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Germany is an advocate of closer European economic and political integration. Its commercial policies are increasingly determined by agreements among European Union (EU) members and EU ")
           InternalLink(
             Properties:
@@ -13059,7 +13059,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Two decades after ")
           InternalLink(
             Properties:
@@ -13122,7 +13122,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The nominal GDP of Germany contracted in the second and third quarters of 2008, putting the country in a technical recession following a global and ")
           InternalLink(
             Properties:
@@ -13185,7 +13185,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -13313,7 +13313,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Of the world's 500 largest stock market listed companies measured by ")
               InternalLink(
                 Properties:
@@ -13358,7 +13358,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Well known global brands are ")
               InternalLink(
                 Properties:
@@ -13491,7 +13491,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is recognised for its highly specialised ")
               InternalLink(
                 Properties:
@@ -13529,7 +13529,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([ WtText("The list includes the largest companies by turnover in 2009. Unranked are the largest bank and the largest insurance company in 2007:") ])
+            WtParagraph([ WtText("The list includes the largest companies by turnover in 2009. Unranked are the largest bank and the largest insurance company in 2007:") ])
             Newline("\n")
             Table(
               Properties:
@@ -13712,7 +13712,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" Employees")
                           XmlElement(
                             Properties:
@@ -13819,7 +13819,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 329,305") ])
+                        WtParagraph([ WtText(" 329,305") ])
                         Newline("\n")
                       ]
                     )
@@ -13914,7 +13914,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 272,382") ])
+                        WtParagraph([ WtText(" 272,382") ])
                         Newline("\n")
                       ]
                     )
@@ -14009,7 +14009,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 398,200") ])
+                        WtParagraph([ WtText(" 398,200") ])
                         Newline("\n")
                       ]
                     )
@@ -14109,7 +14109,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 87,815") ])
+                        WtParagraph([ WtText(" 87,815") ])
                         Newline("\n")
                       ]
                     )
@@ -14204,7 +14204,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 242,378") ])
+                        WtParagraph([ WtText(" 242,378") ])
                         Newline("\n")
                       ]
                     )
@@ -14299,7 +14299,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 475,100") ])
+                        WtParagraph([ WtText(" 475,100") ])
                         Newline("\n")
                       ]
                     )
@@ -14394,7 +14394,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 241,426") ])
+                        WtParagraph([ WtText(" 241,426") ])
                         Newline("\n")
                       ]
                     )
@@ -14499,7 +14499,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 95,175") ])
+                        WtParagraph([ WtText(" 95,175") ])
                         Newline("\n")
                       ]
                     )
@@ -14594,7 +14594,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 107,539") ])
+                        WtParagraph([ WtText(" 107,539") ])
                         Newline("\n")
                       ]
                     )
@@ -14699,7 +14699,7 @@ ParsedWikitextPage(
 
                       [ ]
                       [
-                        Paragraph([ WtText(" 191,350") ])
+                        WtParagraph([ WtText(" 191,350") ])
                         Newline("\n")
                       ]
                     )
@@ -14723,7 +14723,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -14795,7 +14795,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("With its central position in Europe, Germany is an important transportation hub. This is reflected in its dense and modern transportation networks. The extensive motorway (")
               InternalLink(
                 Properties:
@@ -14827,7 +14827,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany has established a polycentric network of ")
               InternalLink(
                 Properties:
@@ -14896,7 +14896,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The largest German airports are the ")
               InternalLink(
                 Properties:
@@ -15045,7 +15045,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -15124,7 +15124,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is the world's fifth largest consumer of energy, and two-thirds of its primary energy was imported in 2002. In the same year, Germany was Europe's largest consumer of electricity, totalling 512.9 terawatt-hours. Government policy promotes energy conservation and the development of ")
               InternalLink(
                 Properties:
@@ -15194,7 +15194,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In 2000, the government and the ")
               InternalLink(
                 Properties:
@@ -15247,7 +15247,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -15343,7 +15343,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany has been the home of many famous inventors and ")
               InternalLink(
                 Properties:
@@ -15513,7 +15513,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -15615,7 +15615,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("With regard to triadic patents Germany is in third place after the USA and Japan. With more than 26,500 registrations for patents submitted to the European Patent Office, Germany is the leading European nation. ")
               InternalLink(
                 Properties:
@@ -15677,7 +15677,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -15779,7 +15779,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -15894,7 +15894,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The work of ")
               InternalLink(
                 Properties:
@@ -16104,7 +16104,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Important research institutions in Germany are the ")
               InternalLink(
                 Properties:
@@ -16185,7 +16185,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           ImageLink(
             Properties:
               {N} alt = 
@@ -16253,7 +16253,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("With estimated 81.8")
           XmlEntityRef(
             Properties:
@@ -16313,7 +16313,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The overall ")
           InternalLink(
             Properties:
@@ -16400,7 +16400,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The ")
           InternalLink(
             Properties:
@@ -16471,10 +16471,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class.") ])
+        WtParagraph([ WtText("Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class.") ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -16520,7 +16520,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -16566,7 +16566,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -16657,7 +16657,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In 2009, 20% of the population had immigrant roots, the highest since records were kept since 1945.")
               TagExtension(
                 Properties:
@@ -16704,7 +16704,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Large numbers of people with full or significant German ancestry are found in the")
               Newline("\n")
               WtText("United States (50")
@@ -16798,7 +16798,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -16835,7 +16835,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany has a number of large cities; the most populous are: ")
               InternalLink(
                 Properties:
@@ -17051,7 +17051,7 @@ ParsedWikitextPage(
                     )
                   ]
                   [
-                    Paragraph([ WtText(" Largest cities of Germany") ])
+                    WtParagraph([ WtText(" Largest cities of Germany") ])
                     Newline("\n")
                   ]
                 )
@@ -17092,7 +17092,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -17298,7 +17298,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Rank") ])
+                        WtParagraph([ WtText(" Rank") ])
                         Newline("\n")
                       ]
                     )
@@ -17317,7 +17317,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" City") ])
+                        WtParagraph([ WtText(" City") ])
                         Newline("\n")
                       ]
                     )
@@ -17336,7 +17336,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Population") ])
+                        WtParagraph([ WtText(" Population") ])
                         Newline("\n")
                       ]
                     )
@@ -17363,7 +17363,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           XmlEntityRef(
                             Properties:
@@ -17390,7 +17390,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Rank") ])
+                        WtParagraph([ WtText(" Rank") ])
                         Newline("\n")
                       ]
                     )
@@ -17409,7 +17409,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" City") ])
+                        WtParagraph([ WtText(" City") ])
                         Newline("\n")
                       ]
                     )
@@ -17428,7 +17428,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" Population") ])
+                        WtParagraph([ WtText(" Population") ])
                         Newline("\n")
                       ]
                     )
@@ -17463,7 +17463,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -17735,7 +17735,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 3,442,675") ])
+                        WtParagraph([ WtText(" 3,442,675") ])
                         Newline("\n")
                       ]
                     )
@@ -17806,7 +17806,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 520,966") ])
+                        WtParagraph([ WtText(" 520,966") ])
                         Newline("\n")
                       ]
                     )
@@ -17885,7 +17885,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 1,774,224") ])
+                        WtParagraph([ WtText(" 1,774,224") ])
                         Newline("\n")
                       ]
                     )
@@ -17956,7 +17956,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 518,862") ])
+                        WtParagraph([ WtText(" 518,862") ])
                         Newline("\n")
                       ]
                     )
@@ -18035,7 +18035,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 1,330,440") ])
+                        WtParagraph([ WtText(" 1,330,440") ])
                         Newline("\n")
                       ]
                     )
@@ -18106,7 +18106,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 517,052") ])
+                        WtParagraph([ WtText(" 517,052") ])
                         Newline("\n")
                       ]
                     )
@@ -18185,7 +18185,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 998,105") ])
+                        WtParagraph([ WtText(" 998,105") ])
                         Newline("\n")
                       ]
                     )
@@ -18256,7 +18256,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 503,673") ])
+                        WtParagraph([ WtText(" 503,673") ])
                         Newline("\n")
                       ]
                     )
@@ -18340,7 +18340,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 671,927") ])
+                        WtParagraph([ WtText(" 671,927") ])
                         Newline("\n")
                       ]
                     )
@@ -18411,7 +18411,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 491,931") ])
+                        WtParagraph([ WtText(" 491,931") ])
                         Newline("\n")
                       ]
                     )
@@ -18490,7 +18490,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 601,646") ])
+                        WtParagraph([ WtText(" 601,646") ])
                         Newline("\n")
                       ]
                     )
@@ -18561,7 +18561,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 376,319") ])
+                        WtParagraph([ WtText(" 376,319") ])
                         Newline("\n")
                       ]
                     )
@@ -18640,7 +18640,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 586,217") ])
+                        WtParagraph([ WtText(" 586,217") ])
                         Newline("\n")
                       ]
                     )
@@ -18711,7 +18711,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 351,050") ])
+                        WtParagraph([ WtText(" 351,050") ])
                         Newline("\n")
                       ]
                     )
@@ -18790,7 +18790,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 581,308") ])
+                        WtParagraph([ WtText(" 581,308") ])
                         Newline("\n")
                       ]
                     )
@@ -18861,7 +18861,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 323,084") ])
+                        WtParagraph([ WtText(" 323,084") ])
                         Newline("\n")
                       ]
                     )
@@ -18940,7 +18940,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 576,259") ])
+                        WtParagraph([ WtText(" 576,259") ])
                         Newline("\n")
                       ]
                     )
@@ -19011,7 +19011,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 319,841") ])
+                        WtParagraph([ WtText(" 319,841") ])
                         Newline("\n")
                       ]
                     )
@@ -19090,7 +19090,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 547,685") ])
+                        WtParagraph([ WtText(" 547,685") ])
                         Newline("\n")
                       ]
                     )
@@ -19161,7 +19161,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([ WtText(" 311,969") ])
+                        WtParagraph([ WtText(" 311,969") ])
                         Newline("\n")
                       ]
                     )
@@ -19196,7 +19196,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           XmlElement(
                             Properties:
@@ -19290,7 +19290,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -19347,7 +19347,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("German is the official and predominant spoken language in Germany.")
               TagExtension(
                 Properties:
@@ -19485,7 +19485,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Standard German is a ")
               InternalLink(
                 Properties:
@@ -19781,7 +19781,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Around the world, German has approximately 100")
               XmlEntityRef(
                 Properties:
@@ -19871,7 +19871,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -19960,7 +19960,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("According to organisational reporting based on projections in 2008 about 34.1% Germans have ")
               InternalLink(
                 Properties:
@@ -19988,7 +19988,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Christianity is the largest religion in Germany, with around 49.4")
               XmlEntityRef(
                 Properties:
@@ -20408,7 +20408,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Protestantism is concentrated in the north and east and ")
               InternalLink(
                 Properties:
@@ -20486,7 +20486,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Of the roughly 4")
               XmlEntityRef(
                 Properties:
@@ -20742,7 +20742,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("According to the ")
               InternalLink(
                 Properties:
@@ -20788,7 +20788,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -20851,7 +20851,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Responsibility for educational oversight in Germany lies primarily with the ")
               InternalLink(
                 Properties:
@@ -20978,7 +20978,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -21029,7 +21029,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Since the 1960s, a reform movement attempted to unify secondary education in a ")
               WtItalics(
                 Properties:
@@ -21070,7 +21070,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A special system of apprenticeship called ")
               WtItalics(
                 Properties:
@@ -21109,7 +21109,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("To enter a ")
               InternalLink(
                 Properties:
@@ -21236,7 +21236,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -21299,7 +21299,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany has the world's oldest ")
               InternalLink(
                 Properties:
@@ -21377,7 +21377,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany ranked 20th in the world in ")
               InternalLink(
                 Properties:
@@ -21432,7 +21432,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In 2002 the top diagnosis for male patients released from the hospital was ")
               InternalLink(
                 Properties:
@@ -21542,7 +21542,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -21615,7 +21615,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("German culture began long before the rise of Germany as a ")
           InternalLink(
             Properties:
@@ -21707,7 +21707,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("In Germany, the federated states are in charge of the cultural institutions. There are 240 subsidised theatres, hundreds of symphonic orchestras, thousands of museums and over 25,000 libraries spread over the 16 states. These cultural opportunities are enjoyed by many millions: there are over 91")
           XmlEntityRef(
             Properties:
@@ -21741,7 +21741,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           ImageLink(
             Properties:
               {N} alt = 
@@ -21775,7 +21775,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("The UNESCO inscribed 33 properties in ")
           InternalLink(
             Properties:
@@ -21803,7 +21803,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("Numerous German painters have enjoyed international prestige through their work in diverse artistic styles. ")
           InternalLink(
             Properties:
@@ -22043,7 +22043,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -22064,7 +22064,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("German literature can be traced back to the Middle Ages and the works of writers such as ")
               InternalLink(
                 Properties:
@@ -22242,7 +22242,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -22294,7 +22294,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -22341,7 +22341,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -22388,7 +22388,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -22435,7 +22435,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -22668,7 +22668,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -22720,7 +22720,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -22788,7 +22788,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany's influence on philosophy is historically significant and many notable German philosophers have helped shape ")
               InternalLink(
                 Properties:
@@ -22803,7 +22803,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               InternalLink(
                 Properties:
                   {N} postfix = ""
@@ -23017,7 +23017,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In the 21st century Germany has been an important country for the development of contemporary analytic philosophy in continental Europe, along with France, Austria, Switzerland and the Scandinavian countries.")
               TagExtension(
                 Properties:
@@ -23044,7 +23044,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -23129,7 +23129,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("German cinema dates back to the very early years of the medium with the work of ")
               InternalLink(
                 Properties:
@@ -23204,7 +23204,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("In 1930 Austrian-American ")
               InternalLink(
                 Properties:
@@ -23303,7 +23303,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -23354,7 +23354,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("During the 1970s and 80s, ")
               InternalLink(
                 Properties:
@@ -23497,7 +23497,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -23632,7 +23632,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The ")
               InternalLink(
                 Properties:
@@ -23700,7 +23700,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -23721,7 +23721,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany claims some of the world's most renowned classical music composers, including ")
               InternalLink(
                 Properties:
@@ -23913,7 +23913,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -23975,7 +23975,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -24042,7 +24042,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -24104,7 +24104,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -24166,7 +24166,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -24228,7 +24228,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           InternalLink(
                             Properties:
                               {N} postfix = ""
@@ -24515,7 +24515,7 @@ ParsedWikitextPage(
                         )
                       ]
                       [
-                        Paragraph([
+                        WtParagraph([
                           WtText(" ")
                           ImageLink(
                             Properties:
@@ -24567,7 +24567,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -24613,7 +24613,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany's television market is the largest in Europe, with some 34")
               XmlEntityRef(
                 Properties:
@@ -24660,7 +24660,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is home to some of the world's largest media conglomerates, including ")
               InternalLink(
                 Properties:
@@ -24695,7 +24695,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The German-speaking book publishers produce about 700")
               XmlEntityRef(
                 Properties:
@@ -24726,7 +24726,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("The country's news is provided for English speakers e.g. by news magazine ")
               InternalLink(
                 Properties:
@@ -24765,7 +24765,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -24849,7 +24849,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Sport forms an integral part of German life. Twenty-seven million Germans are members of a sports club and an additional twelve million pursue such an activity individually.")
               TagExtension(
                 Properties:
@@ -25137,7 +25137,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -25208,7 +25208,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is one of the leading motor sports countries in the world. Race-winning cars, teams and drivers have come from Germany. The most successful ")
               InternalLink(
                 Properties:
@@ -25322,7 +25322,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Historically, German sportsmen have been some of the most successful contenders in the Olympic Games, ranking third in an ")
               InternalLink(
                 Properties:
@@ -25475,7 +25475,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               Template(
                 Properties:
                   {N} precededByNewline = true
@@ -25546,7 +25546,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("German cuisine varies from region to region. The southern regions of ")
               InternalLink(
                 Properties:
@@ -25603,7 +25603,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("A popular German saying has the meaning: \"Breakfast like an emperor, lunch like a king, and dine like a beggar.\" Breakfast is usually a selection of breads and rolls with jam and honey or cold meats and cheese, sometimes accompanied by a boiled egg. Cereals or muesli with milk or ")
               InternalLink(
                 Properties:
@@ -25635,7 +25635,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -25686,7 +25686,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("As a country with many immigrants, Germany has adopted many international dishes into its cuisine and daily eating habits. ")
               InternalLink(
                 Properties:
@@ -25875,7 +25875,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Although wine is becoming more popular in many parts of Germany, the national alcoholic drink is beer. German beer consumption per person is declining but\u2014at 116 litres annually\u2014it is still among the highest in the world.")
               TagExtension(
                 Properties:
@@ -26029,7 +26029,7 @@ ParsedWikitextPage(
           )
           WtSectionBody([
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               ImageLink(
                 Properties:
                   {N} alt = 
@@ -26080,7 +26080,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Germany is a modern, cosmopolitan, creative society, shaped by a plurality of lifestyles and regional identities.")
               TagExtension(
                 Properties:
@@ -26208,7 +26208,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("During the last decade of the 20th century, Germany changed its attitude towards immigrants. Until the mid-1990s the opinion was widespread that Germany is not a country of immigration, even though about 20% of the population were of non-German origin. Today the government and a majority of the German society are acknowledging that immigrants from diverse ethnocultural backgrounds are part of the German society and that controlled immigration should be initiated based on qualification standards.")
               TagExtension(
                 Properties:
@@ -26221,7 +26221,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("Since the 2006 FIFA World Cup, the internal and external evaluation of Germany's national image has changed.")
               TagExtension(
                 Properties:
@@ -26280,7 +26280,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            Paragraph([
+            WtParagraph([
               WtText("With an expenditure of \u20AC67")
               XmlEntityRef(
                 Properties:
@@ -26325,7 +26325,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -26373,7 +26373,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -26896,7 +26896,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -26930,7 +26930,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -26965,7 +26965,7 @@ ParsedWikitextPage(
       )
       WtSectionBody([
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -27227,7 +27227,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -27300,7 +27300,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true
@@ -27321,7 +27321,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           InternalLink(
             Properties:
               {N} postfix = ""
@@ -27489,7 +27489,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           Template(
             Properties:
               {N} precededByNewline = true

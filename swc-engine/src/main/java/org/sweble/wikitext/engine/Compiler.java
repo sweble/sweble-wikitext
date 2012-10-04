@@ -41,8 +41,8 @@ import org.sweble.wikitext.parser.WikitextPostprocessor;
 import org.sweble.wikitext.parser.WikitextPreprocessor;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
-import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
@@ -155,13 +155,13 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		PreproWikitextPage pprAst;
+		WtPreproWikitextPage pprAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			PreproWikitextPage ppAst =
+			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
 			
 			pprAst = ppAst;
@@ -229,16 +229,16 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		PreproWikitextPage pAst;
+		WtPreproWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			PreproWikitextPage ppAst =
+			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
 			
-			PreproWikitextPage pprAst = ppAst;
+			WtPreproWikitextPage pprAst = ppAst;
 			pprAst = expand(callback, title, ppAst, null, forInclusion, log);
 			
 			pAst = pprAst;
@@ -287,16 +287,16 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		ParsedWikitextPage pAst;
+		WtParsedWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			PreproWikitextPage ppAst =
+			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, false, log);
 			
-			PreproWikitextPage pprAst = ppAst;
+			WtPreproWikitextPage pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
 			
@@ -346,16 +346,16 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		ParsedWikitextPage pAst;
+		WtParsedWikitextPage pAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, null);
 			
-			PreproWikitextPage ppAst =
+			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, false, log);
 			
-			PreproWikitextPage pprAst = ppAst;
+			WtPreproWikitextPage pprAst = ppAst;
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
 			
@@ -390,7 +390,7 @@ public class Compiler
 	 */
 	public CompiledPage postprocessPpOrExpAst(
 			PageId pageId,
-			PreproWikitextPage pprAst)
+			WtPreproWikitextPage pprAst)
 			throws CompilerException
 	{
 		if (pageId == null)
@@ -402,7 +402,7 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		ParsedWikitextPage pAst;
+		WtParsedWikitextPage pAst;
 		try
 		{
 			pAst = parse(title, pprAst, log);
@@ -461,13 +461,13 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		PreproWikitextPage pprAst;
+		WtPreproWikitextPage pprAst;
 		try
 		{
 			ValidatedWikitext validatedWikitext =
 					validate(title, wikitext, log, entityMap);
 			
-			PreproWikitextPage ppAst =
+			WtPreproWikitextPage ppAst =
 					preprocess(title, validatedWikitext, forInclusion, log);
 			
 			pprAst = expand(
@@ -499,7 +499,7 @@ public class Compiler
 	protected CompiledPage expand(
 			ExpansionCallback callback,
 			PageId pageId,
-			PreproWikitextPage ppAst,
+			WtPreproWikitextPage ppAst,
 			WtEntityMap entityMap,
 			boolean forInclusion,
 			Map<String, WtNode> arguments,
@@ -519,7 +519,7 @@ public class Compiler
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
-		PreproWikitextPage pprAst;
+		WtPreproWikitextPage pprAst;
 		try
 		{
 			pprAst = expand(
@@ -600,7 +600,7 @@ public class Compiler
 	/**
 	 * Preprocesses validated wikitext and substitutes entities.
 	 */
-	private PreproWikitextPage preprocess(
+	private WtPreproWikitextPage preprocess(
 			PageTitle title,
 			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
@@ -619,8 +619,8 @@ public class Compiler
 		{
 			WikitextPreprocessor preprocessor = new WikitextPreprocessor(parserConfig);
 			
-			PreproWikitextPage preprocessedAst =
-					(PreproWikitextPage) preprocessor.parseArticle(
+			WtPreproWikitextPage preprocessedAst =
+					(WtPreproWikitextPage) preprocessor.parseArticle(
 							validatedWikitext,
 							title.getDenormalizedFullTitle(),
 							forInclusion);
@@ -654,10 +654,10 @@ public class Compiler
 	 * Starts the expansion process of a preprocessed page with the preprocessed
 	 * page as root of the expansion process.
 	 */
-	private PreproWikitextPage expand(
+	private WtPreproWikitextPage expand(
 			ExpansionCallback callback,
 			PageTitle title,
-			PreproWikitextPage ppAst,
+			WtPreproWikitextPage ppAst,
 			LinkedHashMap<String, WtNode> arguments,
 			boolean forInclusion,
 			WtContentNode parentLog)
@@ -677,10 +677,10 @@ public class Compiler
 	/**
 	 * Starts the expansion process of a preprocessed page.
 	 */
-	private PreproWikitextPage expand(
+	private WtPreproWikitextPage expand(
 			ExpansionCallback callback,
 			PageTitle title,
-			PreproWikitextPage ppAst,
+			WtPreproWikitextPage ppAst,
 			Map<String, WtNode> arguments,
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
@@ -733,8 +733,8 @@ public class Compiler
 						catchAll);
 			}
 			
-			PreproWikitextPage expanded =
-					(PreproWikitextPage) frame.expand(ppAst);
+			WtPreproWikitextPage expanded =
+					(WtPreproWikitextPage) frame.expand(ppAst);
 			
 			return expanded;
 		}
@@ -758,9 +758,9 @@ public class Compiler
 	/**
 	 * Parses a preprocessed page and substitutes entities.
 	 */
-	private ParsedWikitextPage parse(
+	private WtParsedWikitextPage parse(
 			PageTitle title,
-			PreproWikitextPage ppAst,
+			WtPreproWikitextPage ppAst,
 			WtContentNode parentLog)
 			throws CompilerException
 	{
@@ -779,8 +779,8 @@ public class Compiler
 			
 			WikitextParser parser = new WikitextParser(parserConfig);
 			
-			ParsedWikitextPage parsedAst =
-					(ParsedWikitextPage) parser.parseArticle(
+			WtParsedWikitextPage parsedAst =
+					(WtParsedWikitextPage) parser.parseArticle(
 							preprocessedWikitext,
 							title.getTitle());
 			
@@ -811,9 +811,9 @@ public class Compiler
 		}
 	}
 	
-	private ParsedWikitextPage postprocess(
+	private WtParsedWikitextPage postprocess(
 			PageTitle title,
-			ParsedWikitextPage pAst,
+			WtParsedWikitextPage pAst,
 			CompilerLog parentLog)
 			throws CompilerException
 	{
@@ -827,7 +827,7 @@ public class Compiler
 		{
 			WikitextPostprocessor lpp = new WikitextPostprocessor(parserConfig);
 			
-			pAst = (ParsedWikitextPage) lpp.postprocess(pAst, title.getTitle());
+			pAst = (WtParsedWikitextPage) lpp.postprocess(pAst, title.getTitle());
 			
 			return pAst;
 		}

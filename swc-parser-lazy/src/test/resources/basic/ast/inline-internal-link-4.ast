@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "[[Link1|Title1 "

@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {0=TagExtension([0] = [])}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       TagExtension(
         Properties:
           {N} body = "\n\tBlock\n"

@@ -1,11 +1,11 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
     Newline("\n")
-    Paragraph([
+    WtParagraph([
       WtText("x")
       Newline("\n")
     ])

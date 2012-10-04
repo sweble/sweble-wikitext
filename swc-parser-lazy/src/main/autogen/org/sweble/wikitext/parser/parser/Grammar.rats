@@ -23,7 +23,7 @@
  *   Grammar:
  *
  *   AST node:
- *     Name        : ParsedWikitextPage
+ *     Name        : WtParsedWikitextPage
  *     Extends     : WtContentNode
  *     Constructor : "content, warnings"
  *     Constructor : "content, warnings, entityMap"
@@ -138,14 +138,14 @@ option
 
 public
 transient
-ParsedWikitextPage
+WtParsedWikitextPage
 Article =
   {
     enter(ParserScopes.PAGE);
   }
   content:BolBlockContent &Eof
   {
-    yyValue = new ParsedWikitextPage(
+    yyValue = new WtParsedWikitextPage(
         fixNewlinesAtBoa(content),
         new ArrayList<Warning>(), 
         getState().getEntityMap());

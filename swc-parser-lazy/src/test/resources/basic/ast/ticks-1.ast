@@ -1,37 +1,15 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("Hallo") ]
-      )
+    WtParagraph([
+      WtText("Hallo")
       Newline("\n")
-      WtBold(
-        Properties:
-          {N} rtd = RTD[ "'''" <o> "'''" ]
-
-        [ WtText("Hallo") ]
-      )
+      WtText("Hallo")
       Newline("\n")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [
-          WtBold(
-            Properties:
-              {N} rtd = RTD[ "'''" <o> "'''" ]
-
-            [ WtText("Hallo") ]
-          )
-        ]
-      )
+      WtText("Hallo")
     ])
   ]
 )

@@ -27,8 +27,8 @@ import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.WtEntityMap;
-import org.sweble.wikitext.parser.nodes.Paragraph;
-import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtParagraph;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -85,7 +85,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 				+ "    {N} warnings = []\n"
 				+ "\n"
 				+ "  Page([\n"
-				+ "    Paragraph([\n"
+				+ "    WtParagraph([\n"
 				+ "      WtBold(\n"
 				+ "        Properties:\n"
 				+ "          {N} rtd = RTD[ \"'''\" <o> \"'''\" ]\n"
@@ -181,7 +181,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 			if (defVal.isEmpty())
 				return defValArg;
 			
-			PreproWikitextPage pprAst = new PreproWikitextPage(
+			WtPreproWikitextPage pprAst = new WtPreproWikitextPage(
 					defVal, warnings, entityMap);
 			
 			CompiledPage parsed = compiler.postprocessPpOrExpAst(pageId, pprAst);
@@ -193,7 +193,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 			// paragraph node. We try to catch at least simple cases to improve
 			// the resulting AST
 			if (content.size() == 1 && content.get(0).getNodeType() == AstNodeTypes.NT_PARAGRAPH)
-				content = ((Paragraph) content.get(0)).getContent();
+				content = ((WtParagraph) content.get(0)).getContent();
 			
 			return content;
 		}

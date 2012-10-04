@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([ WtText("a ") ])
+    WtParagraph([ WtText("a ") ])
     XmlElement(
       Properties:
         {N} empty = false

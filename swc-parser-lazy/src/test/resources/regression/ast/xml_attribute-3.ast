@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([ WtText("Whitespace before Eol!") ])
+    WtParagraph([ WtText("Whitespace before Eol!") ])
     Newline("\n")
     Table(
       Properties:

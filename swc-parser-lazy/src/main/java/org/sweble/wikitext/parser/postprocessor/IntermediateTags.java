@@ -19,7 +19,7 @@ package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.Paragraph;
+import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -94,7 +94,7 @@ public enum IntermediateTags
 				IntermediateEndTag close,
 				WtNodeList body)
 		{
-			Paragraph e = new Paragraph(body);
+			WtParagraph e = new WtParagraph(body);
 			return e;
 		}
 	};

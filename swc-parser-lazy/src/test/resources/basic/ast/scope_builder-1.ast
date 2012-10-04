@@ -1,11 +1,11 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
     Newline("\n")
-    Paragraph([ ])
+    WtParagraph([ ])
     XmlElement(
       Properties:
         {N} empty = false
@@ -16,12 +16,12 @@ ParsedWikitextPage(
       [
         Newline("\n")
         Newline("\n")
-        Paragraph([
+        WtParagraph([
           WtText("\ttext")
           Newline("\n")
           Newline("\n")
         ])
-        Paragraph([ WtText("\t") ])
+        WtParagraph([ WtText("\t") ])
         XmlElement(
           Properties:
             {N} empty = false
@@ -58,7 +58,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([ WtText("\t") ])
+        WtParagraph([ WtText("\t") ])
         XmlElement(
           Properties:
             {N} empty = false
@@ -95,7 +95,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-        Paragraph([ ])
+        WtParagraph([ ])
       ]
     )
     Newline("\n")

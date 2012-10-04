@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       XmlEntityRef(
         Properties:
           {N} name = "amp"

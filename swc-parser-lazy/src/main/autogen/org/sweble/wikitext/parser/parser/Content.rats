@@ -36,14 +36,14 @@
  *       of a closing element is encountered in the text and this prefix is also
  *       the prefix of a one of these special things.
  *
- * Paragraph
+ * WtParagraph
  * ---------
  *
  *   Grammar:
  *     - ( '\n' Space* &'\n' )+
  *
  *   AST node:
- *     Name        : Paragraph
+ *     Name        : WtParagraph
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PARAGRAPH

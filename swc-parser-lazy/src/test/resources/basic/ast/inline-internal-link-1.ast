@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "[[Link!"
@@ -16,7 +16,7 @@ ParsedWikitextPage(
       Newline("\n")
       Newline("\n")
     ])
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "[[File:Image.png|Title]"
@@ -28,7 +28,7 @@ ParsedWikitextPage(
       Newline("\n")
       Newline("\n")
     ])
-    Paragraph([
+    WtParagraph([
       ImageLink(
         Properties:
           {N} alt = 
@@ -62,7 +62,7 @@ ParsedWikitextPage(
       Newline("\n")
       Newline("\n")
     ])
-    Paragraph([
+    WtParagraph([
       ImageLink(
         Properties:
           {N} alt = 
@@ -153,7 +153,7 @@ ParsedWikitextPage(
       Newline("\n")
       Newline("\n")
     ])
-    Paragraph([
+    WtParagraph([
       ImageLink(
         Properties:
           {N} alt = 
@@ -282,7 +282,7 @@ ParsedWikitextPage(
       Newline("\n")
       Newline("\n")
     ])
-    Paragraph([
+    WtParagraph([
       InternalLink(
         Properties:
           {N} postfix = ""
@@ -347,7 +347,7 @@ ParsedWikitextPage(
       Newline("\n")
       Newline("\n")
     ])
-    Paragraph([
+    WtParagraph([
       InternalLink(
         Properties:
           {N} postfix = ""

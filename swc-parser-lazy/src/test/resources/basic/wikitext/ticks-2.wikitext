@@ -1,11 +1,11 @@
-''italic''
-'''bold'''
-'''''bold+italic'''''
+italic
+bold
+bold+italic
 
-'''hmmm''
-''hmm'''
-''Mark'''s
-'''Mark''''s
+'hmmm
+hmm'
+Mark's
+Mark's
 
 * ''Item 1
 * '''Item 2

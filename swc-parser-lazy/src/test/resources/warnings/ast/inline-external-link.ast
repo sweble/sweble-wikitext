@@ -1,10 +1,10 @@
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "\n["
@@ -18,7 +18,7 @@ ParsedWikitextPage(
       )
       WtText(" Example\n\n")
     ])
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "["
@@ -32,14 +32,14 @@ ParsedWikitextPage(
       )
       WtText("\n\n")
     ])
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "[http:\n\n"
           warnings = [Warning: This looks like a External Link, however the actual URL is missing: "["]
       )
     ])
-    Paragraph([
+    WtParagraph([
       WtText(
         Properties:
           {N} content = "[\n"

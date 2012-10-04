@@ -27,8 +27,8 @@ import org.sweble.wikitext.parser.WikitextParser;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
 import org.sweble.wikitext.parser.WikitextPreprocessor;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
-import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.PreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
@@ -74,8 +74,8 @@ public final class FullParser
 		
 		WikitextPreprocessor prep = new WikitextPreprocessor(parserConfig);
 		
-		PreproWikitextPage prepArticle =
-				(PreproWikitextPage) prep.parseArticle(validated, title, false);
+		WtPreproWikitextPage prepArticle =
+				(WtPreproWikitextPage) prep.parseArticle(validated, title, false);
 		
 		// Parsing
 		
@@ -84,19 +84,19 @@ public final class FullParser
 		
 		WikitextParser p = new WikitextParser(parserConfig);
 		
-		ParsedWikitextPage parsedArticle =
-				(ParsedWikitextPage) p.parseArticle(ppw, title);
+		WtParsedWikitextPage parsedArticle =
+				(WtParsedWikitextPage) p.parseArticle(ppw, title);
 		
 		// Post-processing
 		
 		WikitextPostprocessor postp = new WikitextPostprocessor(parserConfig);
 		
-		ParsedWikitextPage postpArticle =
-				(ParsedWikitextPage) postp.postprocess(parsedArticle, title);
+		WtParsedWikitextPage postpArticle =
+				(WtParsedWikitextPage) postp.postprocess(parsedArticle, title);
 		
 		// User-defined processing
 		
-		ParsedWikitextPage userProcessed = (ParsedWikitextPage) process(postpArticle);
+		WtParsedWikitextPage userProcessed = (WtParsedWikitextPage) process(postpArticle);
 		
 		return userProcessed;
 	}

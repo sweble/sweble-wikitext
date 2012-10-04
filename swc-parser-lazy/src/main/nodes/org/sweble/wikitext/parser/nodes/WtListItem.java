@@ -24,6 +24,6 @@ public class WtListItem
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_LIST_ITEM;
 	}
 }

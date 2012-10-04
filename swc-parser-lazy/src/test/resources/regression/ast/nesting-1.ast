@@ -1,13 +1,13 @@
 WRONG!
 The paragraph interrupts the table!
 
-ParsedWikitextPage(
+WtParsedWikitextPage(
   Properties:
     {N} entityMap = EntityMap {}
     {N} warnings = []
 
   [
-    Paragraph([
+    WtParagraph([
       XmlElement(
         Properties:
           {N} empty = false
@@ -51,7 +51,7 @@ ParsedWikitextPage(
         ]
       )
     ])
-    Paragraph([
+    WtParagraph([
       XmlEndTag(
         Properties:
           {N} name = "tr"
