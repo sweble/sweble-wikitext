@@ -29,7 +29,7 @@ import org.sweble.wikitext.parser.nodes.ListItem;
 import org.sweble.wikitext.parser.nodes.Newline;
 import org.sweble.wikitext.parser.nodes.SemiPreLine;
 import org.sweble.wikitext.parser.nodes.Ticks;
-import org.sweble.wikitext.parser.nodes.Whitespace;
+import org.sweble.wikitext.parser.nodes.WtWhitespace;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
@@ -180,7 +180,7 @@ public class TicksAnalyzer
 			finishLine();
 		}
 		
-		public void visit(Whitespace ws)
+		public void visit(WtWhitespace ws)
 		{
 			if (ws.getHasNewline())
 				finishLine();
@@ -422,7 +422,7 @@ public class TicksAnalyzer
 			return result;
 		}
 		
-		public WtNode visit(Whitespace ws)
+		public WtNode visit(WtWhitespace ws)
 		{
 			if (!ws.getHasNewline())
 				return ws;

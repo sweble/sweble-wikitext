@@ -20,7 +20,6 @@ package org.sweble.wikitext.parser.utils;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.nodes.Whitespace;
 import org.sweble.wikitext.parser.nodes.WtContentNodeMarkTwo;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
@@ -91,37 +90,6 @@ public class WtPrinter
 				p.decIndent();
 				
 				p.indentln(']');
-			}
-			p.memoizeStop(m);
-		}
-	}
-	
-	public void visit(Whitespace n)
-	{
-		Memoize m = p.memoizeStart(n);
-		if (m != null)
-		{
-			if (hasVisibleProperties(n))
-			{
-				printNode(n);
-			}
-			else if (n.getContent().isEmpty())
-			{
-				p.indentln("Whitespace(NO EOL: [ ])");
-			}
-			else
-			{
-				String eolInfo = n.getHasNewline() ? "EOL" : "NO EOL";
-				
-				p.indent("Whitespace(");
-				p.print(eolInfo);
-				p.println(": [");
-				
-				p.incIndent();
-				printListOfNodes(n);
-				p.decIndent();
-				
-				p.indentln("])");
 			}
 			p.memoizeStop(m);
 		}

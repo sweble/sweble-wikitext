@@ -308,7 +308,7 @@ private noinline transient WtNodeList PreParaWs =
   {
     yyValue = new WtNodeList(s, lt, new WtNodeList(tail));
     /*
-    yyValue = new Whitespace(
+    yyValue = new WtWhitespace(
         new WtNodeList(s, new WtText(lt), new WtNodeList(tail)),
         true);
     */
@@ -338,7 +338,7 @@ private inline WtNode ParagraphTextMore =
     yyValue = new WtNodeList(lt, s, c);
     /*
     yyValue = new WtNodeList(
-        new Whitespace(
+        new WtWhitespace(
           new WtNodeList(new WtText(lt)),
           true),
         s,
@@ -356,7 +356,7 @@ private noinline transient WtNodeList PostParaWs =
     yyValue = new WtNodeList(lt, tail);
     /*
     yyValue = new WtNodeList(
-        new Whitespace(new WtNodeList(new WtText(lt)), true),
+        new WtWhitespace(new WtNodeList(new WtText(lt)), true),
         tail);
     */
   }
@@ -369,7 +369,7 @@ private inline WtNodeList PostParaWsMore =
     /*
     yyValue = new WtNodeList(
         s,
-        new Whitespace(new WtNodeList(new WtText(lt)), true));
+        new WtWhitespace(new WtNodeList(new WtText(lt)), true));
     */
   }
 ;
@@ -378,7 +378,7 @@ private inline WtNodeList PostParaWsMore =
 private noinline transient Whitespace PostParaWs =
   lt:pEol tail:PostParaWsMore*
   {
-    yyValue = new Whitespace(
+    yyValue = new WtWhitespace(
         new WtNodeList(new WtText(lt), new WtNodeList(tail)),
         true);
   }

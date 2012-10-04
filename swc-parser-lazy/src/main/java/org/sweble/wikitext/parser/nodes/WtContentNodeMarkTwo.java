@@ -1,5 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.IOException;
+import java.util.Iterator;
+
 import org.sweble.wikitext.parser.WtRtData;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
@@ -126,4 +129,31 @@ public abstract class WtContentNodeMarkTwo
 		}
 	}
 	
+	// =========================================================================
+	
+	@Override
+	public void toString(Appendable out) throws IOException
+	{
+		out.append(getNodeName());
+		out.append('[');
+		
+		for (Iterator<WtNode> i = this.iterator(); i.hasNext();)
+		{
+			WtNode node = i.next();
+			if (node == null)
+			{
+				// TODO: Remove this case!
+				out.append("null");
+			}
+			else
+			{
+				node.toString(out);
+			}
+			
+			if (i.hasNext())
+				out.append(", ");
+		}
+		
+		out.append(']');
+	}
 }

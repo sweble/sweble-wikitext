@@ -222,7 +222,7 @@ Some important nodes:
 ==[ Text ]======================================================================
 
  *   AST node:
-       Name        : Whitespace
+       Name        : WtWhitespace
        Extends     : ContentNode
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_WHITESPACE
        Constructor : "content, hasNewline"

@@ -40,7 +40,7 @@ import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
 import org.sweble.wikitext.parser.nodes.UnorderedList;
 import org.sweble.wikitext.parser.nodes.Url;
-import org.sweble.wikitext.parser.nodes.Whitespace;
+import org.sweble.wikitext.parser.nodes.WtWhitespace;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -177,7 +177,7 @@ public class TextConverter
 		write(text.getContent());
 	}
 	
-	public void visit(Whitespace w)
+	public void visit(WtWhitespace w)
 	{
 		write(" ");
 	}
