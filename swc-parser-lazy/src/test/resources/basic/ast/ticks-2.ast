@@ -69,8 +69,8 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -84,7 +84,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -98,7 +98,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 
@@ -122,8 +122,8 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    SemiPre([
-      SemiPreLine(
+    WtSemiPre([
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ " " <o> "" ]
 
@@ -136,7 +136,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -149,7 +149,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n " <o> "" ]
 

@@ -433,13 +433,13 @@ Some important nodes:
 ==[ Preformatted ]==============================================================
 
  *   AST node:
-       Name        : SemiPre
+       Name        : WtSemiPre
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE
 
  *   AST node:
-       Name        : SemiPreLine
+       Name        : WtSemiPreLine
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE_LINE
@@ -449,40 +449,40 @@ Some important nodes:
 ==[ Lists ]=====================================================================
 
  *   AST node:
-       Name        : OrderedList
+       Name        : WtOrderedList
        Extends     : ContentNode
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
 
  *   AST node:
-       Name        : ListItem
+       Name        : WtListItem
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
 
  *   AST node:
-       Name        : UnorderedList
+       Name        : WtUnorderedList
        Extends     : ContentNode
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
 
  *   AST node:
-       Name        : ListItem
+       Name        : WtListItem
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
 
  *   AST node:
-       Name        : DefinitionList
+       Name        : WtDefinitionList
        Extends     : ContentNode
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
 
  *   AST node:
-       Name        : DefinitionListTerm
+       Name        : WtDefinitionListTerm
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
 
  *   AST node:
-       Name        : DefinitionListDef
+       Name        : WtDefinitionListDef
        Extends     : ContentNode
        Constructor : content
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION

@@ -4,14 +4,14 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 
@@ -20,14 +20,14 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 
@@ -36,14 +36,14 @@ ParsedWikitextPage(
     ])
     Newline("\n")
     Newline("\n")
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ XmlComment(" Comment 1 ") + "*" <o> "\n" ]
 
         [ WtText(" Hallo") ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ XmlComment(" Comment 2 ") + "*" <o> "" ]
 

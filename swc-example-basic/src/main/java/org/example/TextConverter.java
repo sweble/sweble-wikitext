@@ -29,23 +29,23 @@ import org.sweble.wikitext.parser.nodes.HorizontalRule;
 import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.ListItem;
-import org.sweble.wikitext.parser.nodes.OrderedList;
 import org.sweble.wikitext.parser.nodes.PageSwitch;
 import org.sweble.wikitext.parser.nodes.Paragraph;
-import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.TagExtension;
 import org.sweble.wikitext.parser.nodes.Template;
 import org.sweble.wikitext.parser.nodes.TemplateArgument;
 import org.sweble.wikitext.parser.nodes.TemplateParameter;
-import org.sweble.wikitext.parser.nodes.UnorderedList;
 import org.sweble.wikitext.parser.nodes.Url;
-import org.sweble.wikitext.parser.nodes.WtWhitespace;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtItalics;
+import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtOrderedList;
+import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtUnorderedList;
+import org.sweble.wikitext.parser.nodes.WtWhitespace;
 import org.sweble.wikitext.parser.nodes.XmlCharRef;
 import org.sweble.wikitext.parser.nodes.XmlComment;
 import org.sweble.wikitext.parser.nodes.XmlElement;
@@ -151,20 +151,20 @@ public class TextConverter
 		iterate(n);
 	}
 	
-	public void visit(UnorderedList e)
+	public void visit(WtUnorderedList e)
 	{
-		iterate(e.getContent());
+		iterate(e);
 	}
 	
-	public void visit(OrderedList e)
+	public void visit(WtOrderedList e)
 	{
-		iterate(e.getContent());
+		iterate(e);
 	}
 	
-	public void visit(ListItem item)
+	public void visit(WtListItem item)
 	{
 		newline(1);
-		iterate(item.getContent());
+		iterate(item);
 	}
 	
 	public void visit(Page p)

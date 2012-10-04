@@ -34,62 +34,62 @@
  *       rt1     : WtNode
  *       prefix  : String
  *
- * OrderedList
+ * WtOrderedList
  * -----------
  *
  *   AST node:
- *     Name        : OrderedList
+ *     Name        : WtOrderedList
  *     Extends     : WtContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
  *
- * ListItem
+ * WtListItem
  * ---------------
  *
  *   AST node:
- *     Name        : ListItem
+ *     Name        : WtListItem
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
  *
- * UnorderedList
+ * WtUnorderedList
  * -----------
  *
  *   AST node:
- *     Name        : UnorderedList
+ *     Name        : WtUnorderedList
  *     Extends     : WtContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
  *
- * ListItem
+ * WtListItem
  * ---------------
  *
  *   AST node:
- *     Name        : ListItem
+ *     Name        : WtListItem
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
  *
- * DefinitionList
+ * WtDefinitionList
  * --------------
  *
  *   AST node:
- *     Name        : DefinitionList
+ *     Name        : WtDefinitionList
  *     Extends     : WtContentNode
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
  *
- * DefinitionListTerm
+ * WtDefinitionListTerm
  * --------------
  *
  *   AST node:
- *     Name        : DefinitionListTerm
+ *     Name        : WtDefinitionListTerm
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
  *
- * DefinitionListDef
+ * WtDefinitionListDef
  * --------------------
  *
  *   AST node:
- *     Name        : DefinitionListDef
+ *     Name        : WtDefinitionListDef
  *     Extends     : WtContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION
@@ -125,9 +125,9 @@ body
   {
     public ListType type;
 
-    public WtContentNode node;
+    public WtContentNodeMarkTwo node;
 
-    public ListNode(ListType type, WtContentNode node)
+    public ListNode(ListType type, WtContentNodeMarkTwo node)
     {
       this.type = type;
       this.node = node;
@@ -155,14 +155,14 @@ body
     switch (ch)
     {
       case '*':
-        node = new ListNode(ListType.ITEMIZATION, new UnorderedList());
+        node = new ListNode(ListType.ITEMIZATION, new WtUnorderedList());
         break;
       case '#':
-        node = new ListNode(ListType.ENUMERATION, new OrderedList());
+        node = new ListNode(ListType.ENUMERATION, new WtOrderedList());
         break;
       case ':':
       case ';':
-        node = new ListNode(ListType.DEFINITION, new DefinitionList());
+        node = new ListNode(ListType.DEFINITION, new WtDefinitionList());
         break;
     }
 
@@ -184,16 +184,16 @@ body
     switch (ch)
     {
       case '*':
-        n = new ListItem(content);
+        n = new WtListItem(content);
         break;
       case '#':
-        n = new ListItem(content);
+        n = new WtListItem(content);
         break;
       case ':':
-        n = new DefinitionListDef(content);
+        n = new WtDefinitionListDef(content);
         break;
       case ';':
-        n = new DefinitionListTerm(content);
+        n = new WtDefinitionListTerm(content);
         break;
     }
     getCurrentListContent(listStack).add(n);
@@ -202,15 +202,13 @@ body
 
   private WtNodeList getCurrentListContent(Vector<ListNode> listStack)
   {
-    return listStack.lastElement().node.getContent();
+    return listStack.lastElement().node;
   }
 
   private WtNodeList getLastItemContent(Vector<ListNode> listStack)
   {
     WtNodeList items = getCurrentListContent(listStack);
-    WtContentNode lastItem = (WtContentNode) items.get(items.size() - 1);
-    WtNodeList lastItemContent = lastItem.getContent();
-    return lastItemContent;
+    return (WtContentNodeMarkTwo) items.get(items.size() - 1);
   }
 
   private WtNodeList makeList(RawListItem first, Pair<RawListItem> tail)

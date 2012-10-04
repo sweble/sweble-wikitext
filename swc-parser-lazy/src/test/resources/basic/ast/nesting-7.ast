@@ -24,7 +24,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("text]]") ])
         Newline("\n")
@@ -47,7 +47,7 @@ ParsedWikitextPage(
           )
           WtText("==")
         ])
-      ]
+      ])
     )
   ]
 )

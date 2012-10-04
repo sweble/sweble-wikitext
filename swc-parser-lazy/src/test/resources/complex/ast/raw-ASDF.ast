@@ -21,8 +21,8 @@ ParsedWikitextPage(
       WtText(" may refer to ")
     ])
     Newline("\n")
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -40,7 +40,7 @@ ParsedWikitextPage(
           WtText(", a military entity")
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -58,7 +58,7 @@ ParsedWikitextPage(
           WtText(", a military entity")
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -76,7 +76,7 @@ ParsedWikitextPage(
           WtText(", the most commonly used build system for Common Lisp")
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -94,7 +94,7 @@ ParsedWikitextPage(
           WtText(", an organization that advances the use of synchronous data transmission technology")
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -111,7 +111,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -139,7 +139,7 @@ ParsedWikitextPage(
           WtText(" keyboard")
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -156,7 +156,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 
@@ -174,10 +174,10 @@ ParsedWikitextPage(
 
         [ WtText(" See also ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -194,7 +194,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -211,7 +211,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -275,7 +275,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-      ]
+      ])
     )
   ]
 )

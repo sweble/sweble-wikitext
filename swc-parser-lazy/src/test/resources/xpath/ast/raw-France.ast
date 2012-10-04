@@ -360,7 +360,7 @@ WtSection(
 
     [ WtText(" Rome to Revolution ") ]
   )
-  WtSectionBody[
+  WtSectionBody([
     Newline("\n")
     Paragraph([
       WtText("The borders of modern France are approximately the same as those of ancient ")
@@ -1396,7 +1396,7 @@ WtSection(
     ])
     Newline("\n")
     Newline("\n")
-  ]
+  ])
 )
 
 ================================================================================

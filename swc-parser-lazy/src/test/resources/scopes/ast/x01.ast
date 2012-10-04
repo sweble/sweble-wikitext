@@ -26,7 +26,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      WtSectionBody[
+      WtSectionBody([
         XmlElement(
           Properties:
             {N} empty = false
@@ -56,7 +56,7 @@ ParsedWikitextPage(
           [ ]
           [ Newline("\n") ]
         )
-      ]
+      ])
     )
   ]
 )

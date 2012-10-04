@@ -4,20 +4,20 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    SemiPre([
-      SemiPreLine(
+    WtSemiPre([
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ " " <o> "" ]
 
         [ WtText("Line 1") ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n" + XmlComment(" Comment ") + " " <o> "" ]
 
         [ WtText("Line 2") ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -27,14 +27,14 @@ ParsedWikitextPage(
     Newline("\n")
     Paragraph([ WtText("\tdiscontinued") ])
     Newline("\n")
-    SemiPre([
-      SemiPreLine(
+    WtSemiPre([
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ " " <o> "" ]
 
         [ WtText("Line 5") ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n " <o> "" ]
 

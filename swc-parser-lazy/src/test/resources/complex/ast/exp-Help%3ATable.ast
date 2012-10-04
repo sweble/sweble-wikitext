@@ -280,7 +280,7 @@ ParsedWikitextPage(
 
         [ WtText(" Using the toolbar ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           ImageLink(
@@ -617,7 +617,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -629,7 +629,7 @@ ParsedWikitextPage(
 
         [ WtText(" Pipe syntax tutorial ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Table(
@@ -862,8 +862,8 @@ ParsedWikitextPage(
           WtText(" markup, so a knowledge of HTML table code will help in understanding pipe code.  The shortcuts are as follows:")
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -907,8 +907,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -949,7 +949,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -963,7 +963,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1006,8 +1006,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -1041,8 +1041,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -1057,7 +1057,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1105,7 +1105,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1119,7 +1119,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1136,8 +1136,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -1197,8 +1197,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -1213,7 +1213,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1229,7 +1229,7 @@ ParsedWikitextPage(
               WtText(" The table's caption")
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1270,7 +1270,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1284,7 +1284,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1325,7 +1325,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1339,7 +1339,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1356,8 +1356,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -1390,8 +1390,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -1406,7 +1406,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1422,7 +1422,7 @@ ParsedWikitextPage(
               WtText(" The table's caption")
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1437,7 +1437,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1476,7 +1476,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1491,7 +1491,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1530,7 +1530,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1569,7 +1569,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1586,8 +1586,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -1604,8 +1604,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -1620,7 +1620,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1636,7 +1636,7 @@ ParsedWikitextPage(
               WtText(" The table's caption")
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1651,7 +1651,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1683,7 +1683,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1698,7 +1698,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1730,7 +1730,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1762,7 +1762,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1794,7 +1794,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1811,8 +1811,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -1820,8 +1820,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -1836,7 +1836,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -1851,7 +1851,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2002,7 +2002,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2077,8 +2077,8 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([ WtText("However, the format modifier is useful:") ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -2093,7 +2093,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2108,7 +2108,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2123,7 +2123,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2138,7 +2138,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2153,7 +2153,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2247,8 +2247,8 @@ ParsedWikitextPage(
         Paragraph([ WtText("Just remember: no more than 2 single pipes on a line!") ])
         Newline("\n")
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -2265,8 +2265,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -2281,7 +2281,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2297,7 +2297,7 @@ ParsedWikitextPage(
               WtText(" The table's caption")
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2330,7 +2330,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2363,7 +2363,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2395,7 +2395,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2410,13 +2410,13 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell 1 || Cell 2 || Cell 3") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2431,25 +2431,25 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell A") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell B") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell C") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2466,8 +2466,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -2484,8 +2484,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -2500,7 +2500,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2516,25 +2516,25 @@ ParsedWikitextPage(
               WtText(" The table's caption")
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 1 ") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 2 ") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 3") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2549,7 +2549,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2581,13 +2581,13 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell 2 || Cell 3") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2602,7 +2602,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2634,19 +2634,19 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell B") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell C") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2663,8 +2663,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -2681,8 +2681,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -2723,7 +2723,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2739,25 +2739,25 @@ ParsedWikitextPage(
               WtText(" The table's caption")
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 1 ") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 2 ") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"col\" | Column heading 3") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2772,19 +2772,19 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"row\" | Row heading 1") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell 2 || Cell 3") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -2799,25 +2799,25 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("! scope=\"row\" | Row heading A") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell B") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
             [ WtText("| Cell C") ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -3256,7 +3256,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -3268,7 +3268,7 @@ ParsedWikitextPage(
 
         [ WtText(" Examples ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         WtSection(
@@ -3281,7 +3281,7 @@ ParsedWikitextPage(
 
             [ WtText(" Simple example ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([ WtText("Both of these generate the same output.  Choose a style based on the number of cells in each row and the total text inside each cell.") ])
             Newline("\n")
@@ -3403,7 +3403,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -3415,7 +3415,7 @@ ParsedWikitextPage(
 
             [ WtText(" Multiplication table ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -3860,7 +3860,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -3872,7 +3872,7 @@ ParsedWikitextPage(
 
             [ WtText(" Color; scope of parameters ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -4373,7 +4373,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -4385,7 +4385,7 @@ ParsedWikitextPage(
 
             [ WtText(" Width, height ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([ WtText("The width and height of the whole table can be specified, as well as the height of a row. To specify the width of a column one can specify the width of an arbitrary cell in it. If the width is not specified for all columns, and/or the height is not specified for all rows, then there is some ambiguity, and the result depends on the browser.") ])
             Newline("\n")
@@ -4624,7 +4624,7 @@ ParsedWikitextPage(
 
                 [ WtText(" Setting column widths ") ]
               )
-              WtSectionBody[
+              WtSectionBody([
                 Newline("\n")
                 Paragraph([
                   WtText("To force column widths to specific requirements, rather than accepting the width of the widest text element in a column's cells, follow this example. Note that ")
@@ -5280,7 +5280,7 @@ ParsedWikitextPage(
 
                     [ WtText("Nowrap") ]
                   )
-                  WtSectionBody[
+                  WtSectionBody([
                     Newline("\n")
                     Paragraph([
                       WtText("In a table that spans the entire width of a page, cells narrower than the widest cell tend to wrap. To keep an entire column from wrapping, use ")
@@ -5728,11 +5728,11 @@ ParsedWikitextPage(
                     )
                     Newline("\n")
                     Newline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -5744,7 +5744,7 @@ ParsedWikitextPage(
 
             [ WtText(" Setting borders ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("Table borders default to a complex shaded double-line (the default in HTML); however, those borders can be set to a thin solid line by using a style-parameter (style=\"border: 1px solid darkgray\"), as in the following (")
@@ -6381,7 +6381,7 @@ ParsedWikitextPage(
             Paragraph([ WtText("The lower hex-colors (such as: #616161) are closer to black. Typically, all borders in a table would be one specific color.") ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -6393,7 +6393,7 @@ ParsedWikitextPage(
 
             [ WtText(" Vertical alignment ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([ WtText("By default data in tables is vertically centrally aligned, which results in odd-looking layouts like this:") ])
             Newline("\n")
@@ -6825,7 +6825,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -6837,7 +6837,7 @@ ParsedWikitextPage(
 
             [ WtText(" Positioning ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("You can position the table itself, the contents of a row, and the contents of a cell, but not with a single parameter for all the contents of the table. See ")
@@ -6869,7 +6869,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -6881,7 +6881,7 @@ ParsedWikitextPage(
 
             [ WtText(" M\u00E9lange ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtItalics(
@@ -7400,7 +7400,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -7412,7 +7412,7 @@ ParsedWikitextPage(
 
             [ WtText(" Floating table ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("The wiki markup coding:")
@@ -7589,7 +7589,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -7601,7 +7601,7 @@ ParsedWikitextPage(
 
             [ WtText(" Floating images in the center ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText(
@@ -8206,7 +8206,7 @@ ParsedWikitextPage(
             Paragraph([ WtText("That auto-aligning feature can be used to create a \"floating-gallery\" of images: a set of 20 floating-tables will wrap (backward, right-to-left) as if each table were a word of text to wrap across and down the page. To wrap in the typical direction (wrapping left-to-right) define all those floating-tables, instead, as left-side tables using the top parameter style=\"float:left; margin:0.46em 0.2em\". Multiple floating-images empower more flexible typesetting of images around the text.") ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -8218,7 +8218,7 @@ ParsedWikitextPage(
 
             [ WtText(" Nested tables ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtItalics(
@@ -9211,7 +9211,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -9223,7 +9223,7 @@ ParsedWikitextPage(
 
             [ WtText(" Combined use of COLSPAN and ROWSPAN ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -9592,7 +9592,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -9604,7 +9604,7 @@ ParsedWikitextPage(
 
             [ WtText(" Centering tables ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("Centered tables can be achieved, but they will not \"float\"; that is to say, no text will appear to either side. The trick is ")
@@ -9800,7 +9800,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -9812,7 +9812,7 @@ ParsedWikitextPage(
 
             [ WtText(" Setting parameters ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("At the start of a cell, add your parameter followed by a single pipe. For example ")
@@ -9930,7 +9930,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -9942,7 +9942,7 @@ ParsedWikitextPage(
 
             [ WtText(" Tiny tables within a text line ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("For years in ")
@@ -9966,8 +9966,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -9980,8 +9980,8 @@ ParsedWikitextPage(
                     [ WtText("showing table forces line-break") ]
                   )
                   WtText("):")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -10000,16 +10000,16 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("Result:")
-                  DefinitionList([
-                    DefinitionListDef([
-                      UnorderedList([
-                        ListItem(
+                  WtDefinitionList([
+                    WtDefinitionListDef([
+                      WtUnorderedList([
+                        WtListItem(
                           Properties:
                             {N} rtd = RTD[ "::*" <o> "\n" ]
 
@@ -10061,7 +10061,7 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -10074,8 +10074,8 @@ ParsedWikitextPage(
                     [ WtText("table-within-table") ]
                   )
                   WtText("):")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -10094,16 +10094,16 @@ ParsedWikitextPage(
                   ])
                 ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("Result:")
-                  DefinitionList([
-                    DefinitionListDef([
-                      UnorderedList([
-                        ListItem(
+                  WtDefinitionList([
+                    WtDefinitionListDef([
+                      WtUnorderedList([
+                        WtListItem(
                           Properties:
                             {N} rtd = RTD[ "::*" <o> "" ]
 
@@ -10226,7 +10226,7 @@ ParsedWikitextPage(
             Paragraph([ WtText("Use style=\"font-size:60%\" to shrink the text within the box. However, the small text could be replaced with small images (aligned inside the inner table). The outer table is for one line only, so to make a 2nd line appear even, the exact length of line 1 must be pre-determined, to match the length of other lines.") ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -10238,7 +10238,7 @@ ParsedWikitextPage(
 
             [ WtText(" Decimal point alignment ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("A method to get columns of numbers aligned at the decimal point is as follows:")
@@ -10779,20 +10779,20 @@ ParsedWikitextPage(
             Paragraph([ WtText("In the case of preformatted text, you can dispense with the table feature entirely and simply start the lines with a space, and put spaces to position the numbers:") ])
             Newline("\n")
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("432.1") ]
               )
-              SemiPreLine(
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ "\n " <o> "" ]
 
                 [ WtText(" 43.21") ]
               )
-              SemiPreLine(
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -10804,9 +10804,9 @@ ParsedWikitextPage(
             Paragraph([ WtText("However, there should be a good reason to use pre-formatted text in an article.") ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -10818,11 +10818,11 @@ ParsedWikitextPage(
 
         [ WtText(" Style classes ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -10870,8 +10870,8 @@ ParsedWikitextPage(
           WtText(" class. The style for this class can be specified in various ways:")
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -10894,7 +10894,7 @@ ParsedWikitextPage(
               WtText(")")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -10925,7 +10925,7 @@ ParsedWikitextPage(
               WtText(")")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -10943,13 +10943,13 @@ ParsedWikitextPage(
               WtText(" etc.")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" individually on one wiki in a user subpage") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -12557,7 +12557,7 @@ ParsedWikitextPage(
 
             [ WtText(" Collapsible tables ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([ WtText("Classes can also be used to collapse tables, so they are hidden by default.  Use the style 'collapsible' to enable collapsing behaviour.  By default, a collapsible table will begin expanded.  To change this, include the additional class 'collapsed' or 'autocollapse' (i.e. only collapse if 3 other collapsible tables are present). You must include a header row, where the 'hide' option will be displayed. Example:") ])
             Newline("\n")
@@ -12659,9 +12659,9 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -12673,10 +12673,10 @@ ParsedWikitextPage(
 
         [ WtText(" Sorting ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -12740,20 +12740,20 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" Do not divide a table into sections by subheaders spanning several rows. Instead, an extra column can be made showing the content of these headers on each row, in a short form.") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" Do not have elements spanning several columns; instead, again, repeat the content on each row, in a short form.") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -13160,7 +13160,7 @@ ParsedWikitextPage(
 
             [ WtText("Sorting and collapsing") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -13589,9 +13589,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -13603,30 +13603,30 @@ ParsedWikitextPage(
 
         [ WtText(" Row template ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("Regardless of whether wikitable format or HTML is used, the wikitext of the rows within a table, and sometimes even within a collection of tables, has much in common, e.g.:") ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" the basic code for a table row") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" code for color, alignment, and sorting mode") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" fixed texts such as units") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -13636,26 +13636,26 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([ WtText("In that case it can be useful to create a template that produces the syntax for a table row, with the data as parameters. This can have many advantages:") ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" easily changing the order of columns, or removing a column") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" easily adding a new column if many elements of the new column are left blank (if the column is inserted and the existing fields are unnamed, use a named parameter for the new field to avoid adding blank parameter values to many template calls)") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [ WtText(" computing fields from other fields, e.g. population density from population and area") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -13678,7 +13678,7 @@ ParsedWikitextPage(
               WtText(" and another for display")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -13947,7 +13947,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -13959,7 +13959,7 @@ ParsedWikitextPage(
 
         [ WtText(" Conditional table row ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("For a conditional row in a table, we can have:")
@@ -14080,7 +14080,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -14092,7 +14092,7 @@ ParsedWikitextPage(
 
         [ WtText(" Other table syntax ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("Other types of ")
@@ -14105,14 +14105,14 @@ ParsedWikitextPage(
           WtText(" syntax that MediaWiki supports:")
         ])
         Newline("\n")
-        OrderedList([
-          ListItem(
+        WtOrderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "#" <o> "\n" ]
 
             [ WtText("XHTML") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "#" <o> "" ]
 
@@ -14280,7 +14280,7 @@ ParsedWikitextPage(
 
             [ WtText(" Comparison of table syntax ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Table(
               Properties:
@@ -14973,32 +14973,32 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        UnorderedList([
-                          ListItem(
+                        WtUnorderedList([
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Can preview or debug with any XHTML editor") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Can be indented for easier reading") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Well-known") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Insensitive to newlines") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -15015,26 +15015,26 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        UnorderedList([
-                          ListItem(
+                        WtUnorderedList([
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Easy to write") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Easy to read") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Takes little space") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -15087,38 +15087,38 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        UnorderedList([
-                          ListItem(
+                        WtUnorderedList([
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Tedious") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Takes a lot of space") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Difficult to read quickly") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Accidentally putting \"tr\" for \"td\" can cause confusion for hours.") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Indented code might not match nesting.") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -15135,32 +15135,32 @@ ParsedWikitextPage(
                       [ ]
                       [
                         Newline("\n")
-                        UnorderedList([
-                          ListItem(
+                        WtUnorderedList([
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Unfamiliar syntax") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Rigid structure") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Cannot be indented") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
                             [ WtText(" Text (as in HTML tags) may be easier for some people to read than series of pipes, plus signs, dashes, etc.") ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -15178,7 +15178,7 @@ ParsedWikitextPage(
                               WtText(" to pass a \"|\" in a parameter.")
                             ]
                           )
-                          ListItem(
+                          WtListItem(
                             Properties:
                               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -15285,9 +15285,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -15299,7 +15299,7 @@ ParsedWikitextPage(
 
         [ WtText(" Pipe syntax in terms of the HTML produced ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("The pipe syntax, developed by ")
@@ -15368,7 +15368,7 @@ ParsedWikitextPage(
 
             [ WtText(" Tables ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("A ")
@@ -15422,7 +15422,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15434,7 +15434,7 @@ ParsedWikitextPage(
 
             [ WtText(" Rows ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtText("For each table, an HTML ")
@@ -15454,8 +15454,8 @@ ParsedWikitextPage(
               WtText(" tag will be generated for the first row. To start a new row, use:")
             ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -15484,8 +15484,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ WtText("Parameters can be added like this:") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -15528,8 +15528,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ WtText("Note:") ])
             Newline("\n")
-            UnorderedList([
-              ListItem(
+            WtUnorderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -15565,7 +15565,7 @@ ParsedWikitextPage(
                   WtText(" equivalent")
                 ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "*" <o> "" ]
 
@@ -15618,7 +15618,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15630,24 +15630,24 @@ ParsedWikitextPage(
 
             [ WtText(" Cells ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([ WtText("Cells are generated either like this:") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
                 [ WtText("|cell1") ]
               )
-              SemiPreLine(
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ "\n " <o> "" ]
 
                 [ WtText("|cell2") ]
               )
-              SemiPreLine(
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -15657,8 +15657,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ WtText("or like this:") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -15755,8 +15755,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ WtText("Parameters in cells can be used like this:") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -15789,8 +15789,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ WtText("which will result in") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -15830,7 +15830,7 @@ ParsedWikitextPage(
                   )
                 ]
               )
-              SemiPreLine(
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -15870,7 +15870,7 @@ ParsedWikitextPage(
                   )
                 ]
               )
-              SemiPreLine(
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ "\n " <o> "" ]
 
@@ -15913,7 +15913,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15925,12 +15925,12 @@ ParsedWikitextPage(
 
             [ WtText(" Headers ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([ WtText("Produces a TH, functioning the same way as TD, but with different style. \"!\" is used instead of the opening \"|\". \"!!\" can be used instead of \"||\". Parameters still use \"|\", though.  Example:") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -15955,7 +15955,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15984,7 +15984,7 @@ ParsedWikitextPage(
               WtText(" ")
             ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -16005,8 +16005,8 @@ ParsedWikitextPage(
               WtText(" tag is created by")
             ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -16049,8 +16049,8 @@ ParsedWikitextPage(
             Newline("\n")
             Paragraph([ WtText("You can also use parameters:") ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -16106,7 +16106,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -16118,7 +16118,7 @@ ParsedWikitextPage(
 
             [ WtText(" Summaries ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -16375,9 +16375,9 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -16389,7 +16389,7 @@ ParsedWikitextPage(
 
         [ WtText(" Square monitors ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("To format for a square monitor or window, use a tape measure. Determine the height of your rectangular screen. Using that figure measure under the screen to determine the width your monitor\u2019s screen would be if it were square. Mark that location using ink or tape under the screen. Drag the side of your browser\u2019s window to that location so the window is square based on accurate measurements. Square monitors and reading windows are not able to contain tables and galleries made for rectangular and wide screens. When a table or gallery is wider than the monitor, it makes every line of text wider than the screen as well. The px amounts of the following gallery were determined after measuring the window to make sure it was square:") ])
         Newline("\n")
@@ -16881,7 +16881,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -16893,7 +16893,7 @@ ParsedWikitextPage(
 
         [ WtText(" Vertically oriented column headers ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("Sometimes it is desirable (such as in a table predominantly made of numbers) to rotate text such that it proceeds from top to bottom or bottom to top instead of from left to right or right to left. Currently, browser support for this type of styling as a component of HTML or CSS is sporadic (Internet Explorer is one of the few browsers that supports this in cascading stylesheets, albeit in a non-standard way). An alternative solution that works in most if not all browsers is to use images in place of the text. For instance, the following table uses SVG images instead of text to produce the rotated column headings:") ])
         Newline("\n")
@@ -17684,7 +17684,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -17696,11 +17696,11 @@ ParsedWikitextPage(
 
         [ WtText(" Wikitable as image gallery ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -17730,8 +17730,8 @@ ParsedWikitextPage(
         Paragraph([ WtText("A simple framed gallery can be formatted using class=\"wikitable\" to generate the minimal thin-lines around images/photos within the table:") ])
         Newline("\n")
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -17921,8 +17921,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -18174,8 +18174,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -18429,8 +18429,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -18711,7 +18711,7 @@ ParsedWikitextPage(
 
             [ WtText(" Shifting/centering ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -18784,8 +18784,8 @@ ParsedWikitextPage(
               WtText("nbsp;\":")
             ])
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -19074,7 +19074,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -19086,15 +19086,15 @@ ParsedWikitextPage(
 
             [ WtText(" Speed/transfer rates ") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([ WtText("Actual transfer/display speeds depend on individual files. In 2007 to March 2009 some serious flaws existed in the thumbnailing process when combined with the gallery-display, making thumbnails sometimes larger than the originals. For this reason some users explicitly used tables instead of the gallery tag. However, these issues are fixed as of March 2009.") ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -19106,7 +19106,7 @@ ParsedWikitextPage(
 
         [ WtText(" Generate a chart with a table ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         XmlElement(
           Properties:
@@ -19164,7 +19164,7 @@ ParsedWikitextPage(
         WtText(".")
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -19176,7 +19176,7 @@ ParsedWikitextPage(
 
         [ WtText(" Converting spreadsheet to wikitable format ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("To convert from spreadsheets such as Gnumeric, MS Excel or OpenOffice.org Calc, you can use the ")
@@ -19228,7 +19228,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -19240,10 +19240,10 @@ ParsedWikitextPage(
 
         [ WtText(" See also ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19260,7 +19260,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19277,7 +19277,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19294,7 +19294,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19311,7 +19311,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19328,7 +19328,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19345,7 +19345,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19362,7 +19362,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19379,7 +19379,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19396,7 +19396,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19413,7 +19413,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19430,14 +19430,14 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText(" Examples:")
-              UnorderedList([
-                ListItem(
+              WtUnorderedList([
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -19459,7 +19459,7 @@ ParsedWikitextPage(
                     )
                   ]
                 )
-                ListItem(
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -19481,7 +19481,7 @@ ParsedWikitextPage(
                     )
                   ]
                 )
-                ListItem(
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -19503,7 +19503,7 @@ ParsedWikitextPage(
                     )
                   ]
                 )
-                ListItem(
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -19528,7 +19528,7 @@ ParsedWikitextPage(
               ])
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19550,7 +19550,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19572,7 +19572,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -19601,7 +19601,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -19613,10 +19613,10 @@ ParsedWikitextPage(
 
         [ WtText(" External links ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19634,7 +19634,7 @@ ParsedWikitextPage(
               WtText(" published in German-Wikipediaproject (English instructions included)")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19654,7 +19654,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19705,7 +19705,7 @@ ParsedWikitextPage(
               WtText(")")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19725,7 +19725,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19745,7 +19745,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19766,7 +19766,7 @@ ParsedWikitextPage(
               WtText(" (can convert HTML tables to wiki)")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19787,7 +19787,7 @@ ParsedWikitextPage(
               WtText(" Various versions and languages")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19808,7 +19808,7 @@ ParsedWikitextPage(
               WtText(" with good examples")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -19829,7 +19829,7 @@ ParsedWikitextPage(
               WtText(": A selection of tables and their Wiki/HTML code")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -20258,7 +20258,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
   ]
 )

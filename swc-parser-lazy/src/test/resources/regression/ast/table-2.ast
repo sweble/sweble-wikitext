@@ -31,8 +31,8 @@ ParsedWikitextPage(
             )
           ]
         )
-        SemiPre([
-          SemiPreLine(
+        WtSemiPre([
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ " " <o> "" ]
 
@@ -44,7 +44,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          SemiPreLine(
+          WtSemiPreLine(
             Properties:
               {N} rtd = RTD[ "\n " <o> "" ]
 

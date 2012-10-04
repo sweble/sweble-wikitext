@@ -4,20 +4,20 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    SemiPre([
-      SemiPreLine(
+    WtSemiPre([
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ " " <o> "" ]
 
         [ WtText(" text") ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n " <o> "" ]
 
         [ WtText("text  ") ]
       )
-      SemiPreLine(
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ "\n " <o> "" ]
 

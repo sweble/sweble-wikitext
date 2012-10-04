@@ -14,17 +14,17 @@ ParsedWikitextPage(
 
         [ WtText("C") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText("1")
-              UnorderedList([
-                ListItem(
+              WtUnorderedList([
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "" ]
 
@@ -34,7 +34,7 @@ ParsedWikitextPage(
             ]
           )
         ])
-      ]
+      ])
     )
   ]
 )

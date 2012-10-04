@@ -5,10 +5,10 @@ ParsedWikitextPage(
 
   [
     Newline("\n")
-    DefinitionList([
-      DefinitionListDef([
-        DefinitionList([
-          DefinitionListDef(
+    WtDefinitionList([
+      WtDefinitionListDef([
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ "::" <o> "" ]
 
@@ -60,8 +60,8 @@ ParsedWikitextPage(
         Newline("\n")
       ]
     )
-    DefinitionList([
-      DefinitionListDef(
+    WtDefinitionList([
+      WtDefinitionListDef(
         Properties:
           {N} rtd = RTD[ ":" <o> "" ]
 

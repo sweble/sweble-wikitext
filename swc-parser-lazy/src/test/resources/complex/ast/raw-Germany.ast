@@ -2164,7 +2164,7 @@ ParsedWikitextPage(
 
         [ WtText("History") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -2197,7 +2197,7 @@ ParsedWikitextPage(
 
             [ WtText("Etymology") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -2326,7 +2326,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -2338,7 +2338,7 @@ ParsedWikitextPage(
 
             [ WtText("Germanic tribes 750 BC\u2013260") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -2853,7 +2853,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -2865,7 +2865,7 @@ ParsedWikitextPage(
 
             [ WtText("Migration Period and Frankish Empire 260-800") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -3025,7 +3025,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -3037,7 +3037,7 @@ ParsedWikitextPage(
 
             [ WtText("Holy Roman Empire 962\u20131806") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -3805,7 +3805,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -3817,7 +3817,7 @@ ParsedWikitextPage(
 
             [ WtText("Restoration and revolution 1814\u20131871") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -4212,7 +4212,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -4224,7 +4224,7 @@ ParsedWikitextPage(
 
             [ WtText("German Empire 1871\u20131918") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -4911,7 +4911,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -4923,7 +4923,7 @@ ParsedWikitextPage(
 
             [ WtText("Weimar Republic 1919\u20131933") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -5312,7 +5312,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -5324,7 +5324,7 @@ ParsedWikitextPage(
 
             [ WtText("Third Reich 1933\u20131945") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -6130,7 +6130,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -6142,7 +6142,7 @@ ParsedWikitextPage(
 
             [ WtText("Division and reunification 1945\u20131990") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -6966,7 +6966,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -6978,7 +6978,7 @@ ParsedWikitextPage(
 
             [ WtText("Berlin Republic and the EU 1990\u2013present") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -7278,9 +7278,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -7292,7 +7292,7 @@ ParsedWikitextPage(
 
         [ WtText("Geography") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -7863,7 +7863,7 @@ ParsedWikitextPage(
 
             [ WtText("Administrative divisions") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -9410,7 +9410,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -9422,7 +9422,7 @@ ParsedWikitextPage(
 
             [ WtText("Climate") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -9659,7 +9659,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -9671,7 +9671,7 @@ ParsedWikitextPage(
 
             [ WtText("Biodiversity") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -10005,7 +10005,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -10017,7 +10017,7 @@ ParsedWikitextPage(
 
             [ WtText("Environment") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -10207,9 +10207,9 @@ ParsedWikitextPage(
             Paragraph([ WtText("Emissions from coal-burning utilities and industries contribute to air pollution. Acid rain, resulting from sulphur dioxide emissions, continues to damage German forests. Pollution in the Baltic Sea from raw sewage and industrial effluents from rivers in former East Germany have been reduced. The government under Chancellor Schr\u00F6der announced the intention to end the use of nuclear power for producing electricity. Germany is working to meet EU commitments to identify nature preservation areas in line with the EU's Flora, Fauna, and Habitat directive. Germany's last glaciers in the Alpine region are experiencing deglaciation. Natural hazards are river flooding in spring and stormy winds occurring in all regions.") ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -10221,7 +10221,7 @@ ParsedWikitextPage(
 
         [ WtText("Politics") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -10441,7 +10441,7 @@ ParsedWikitextPage(
 
             [ WtText("Government") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -10983,7 +10983,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -10995,7 +10995,7 @@ ParsedWikitextPage(
 
             [ WtText("Law") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -11643,7 +11643,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -11655,7 +11655,7 @@ ParsedWikitextPage(
 
             [ WtText("Foreign relations") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -12154,7 +12154,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -12166,7 +12166,7 @@ ParsedWikitextPage(
 
             [ WtText("Military") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -12673,9 +12673,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -12687,7 +12687,7 @@ ParsedWikitextPage(
 
         [ WtText("Economy") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -13183,7 +13183,7 @@ ParsedWikitextPage(
 
             [ WtText("Corporations") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -14709,7 +14709,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -14721,7 +14721,7 @@ ParsedWikitextPage(
 
             [ WtText("Transport") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -15031,7 +15031,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15043,7 +15043,7 @@ ParsedWikitextPage(
 
             [ WtText("Energy") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -15233,7 +15233,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15245,7 +15245,7 @@ ParsedWikitextPage(
 
             [ WtText("Technology") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -15663,7 +15663,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -15675,7 +15675,7 @@ ParsedWikitextPage(
 
             [ WtText("Science") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -16169,9 +16169,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -16183,7 +16183,7 @@ ParsedWikitextPage(
 
         [ WtText("Demographics") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           ImageLink(
@@ -16518,7 +16518,7 @@ ParsedWikitextPage(
 
             [ WtText("Migration") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -16784,7 +16784,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -16796,7 +16796,7 @@ ParsedWikitextPage(
 
             [ WtText("Urbanisation") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -19276,7 +19276,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -19288,7 +19288,7 @@ ParsedWikitextPage(
 
             [ WtText("Languages") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -19857,7 +19857,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -19869,7 +19869,7 @@ ParsedWikitextPage(
 
             [ WtText("Religion") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -20774,7 +20774,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -20786,7 +20786,7 @@ ParsedWikitextPage(
 
             [ WtText("Education") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -21222,7 +21222,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -21234,7 +21234,7 @@ ParsedWikitextPage(
 
             [ WtText("Health") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -21526,9 +21526,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -21540,7 +21540,7 @@ ParsedWikitextPage(
 
         [ WtText("Culture") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -22041,7 +22041,7 @@ ParsedWikitextPage(
 
             [ WtText("Literature") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -22706,7 +22706,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -22718,7 +22718,7 @@ ParsedWikitextPage(
 
             [ WtText("Philosophy") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -23030,7 +23030,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -23042,7 +23042,7 @@ ParsedWikitextPage(
 
             [ WtText("Cinema") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -23686,7 +23686,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -23698,7 +23698,7 @@ ParsedWikitextPage(
 
             [ WtText("Music") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -24553,7 +24553,7 @@ ParsedWikitextPage(
             )
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -24565,7 +24565,7 @@ ParsedWikitextPage(
 
             [ WtText("Media") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -24751,7 +24751,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -24763,7 +24763,7 @@ ParsedWikitextPage(
 
             [ WtText("Sports") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -25461,7 +25461,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -25473,7 +25473,7 @@ ParsedWikitextPage(
 
             [ WtText("Cuisine") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               Template(
@@ -26015,7 +26015,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -26027,7 +26027,7 @@ ParsedWikitextPage(
 
             [ WtText("Society") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               ImageLink(
@@ -26309,9 +26309,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -26323,7 +26323,7 @@ ParsedWikitextPage(
 
         [ WtText("See also") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -26353,8 +26353,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -26882,7 +26882,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -26894,7 +26894,7 @@ ParsedWikitextPage(
 
         [ WtText("Notes") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -26916,7 +26916,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -26928,7 +26928,7 @@ ParsedWikitextPage(
 
         [ WtText("References") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -26951,7 +26951,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -26963,7 +26963,7 @@ ParsedWikitextPage(
 
         [ WtText("External links") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           Template(
@@ -27019,8 +27019,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ XmlComment("\nWikipedia is not a link list nor a Web directory. If your link points to a site that does not cover many subjects about Germany, it's most likely in the wrong place here and you should go and search for a more specific article.\n") + "*" <o> "\n" ]
 
@@ -27041,7 +27041,7 @@ ParsedWikitextPage(
               WtText(" \u2013 Official Germany portal (non-profit)")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27062,7 +27062,7 @@ ParsedWikitextPage(
               WtText(" (German and English)")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27083,7 +27083,7 @@ ParsedWikitextPage(
               WtText(" \u2013 Germany's international broadcaster")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27103,7 +27103,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27136,7 +27136,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27173,7 +27173,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27200,7 +27200,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -27247,8 +27247,8 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -27269,7 +27269,7 @@ ParsedWikitextPage(
               WtText(" \u2013 by the German Federal Foreign Office")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -30098,7 +30098,7 @@ ParsedWikitextPage(
             LinkTitle([ ])
           )
         ])
-      ]
+      ])
     )
   ]
 )

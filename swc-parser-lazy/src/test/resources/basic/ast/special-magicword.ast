@@ -4,8 +4,8 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -18,7 +18,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -33,7 +33,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -48,7 +48,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -63,7 +63,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -78,7 +78,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -93,7 +93,7 @@ ParsedWikitextPage(
           )
         ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 

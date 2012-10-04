@@ -25,10 +25,10 @@ ParsedWikitextPage(
 
         [ WtText(" SectionHeading ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("]]") ])
-      ]
+      ])
     )
   ]
 )

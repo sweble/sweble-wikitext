@@ -36,12 +36,12 @@ ParsedWikitextPage(
 
         [ WtText("The Irish connection ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("Mmmm, it is very similar to Irish football, I wonder - was there significant Irish immigration in Australia at the time. {end sarcasm} Australian Rules = Irish Football played on a cricket pitch. It's ironic that us Aussie's love to play up AFL's uniqueness, yet it's uniqueness that gives away the fact that it's a bastardisation of an immigrant sport that's only played in one other country in the world. - CS") ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -87,8 +87,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(" 07:11, 15 November 2005 (UTC) ps I am Catholic.")
-              UnorderedList([
-                ListItem(
+              WtUnorderedList([
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "" ]
 
@@ -156,8 +156,8 @@ ParsedWikitextPage(
         Newline("\n")
         Paragraph([ WtText("I appreciate both your points. Am I driven by a partisan viewpoint? Perhaps, though to be honest I don't really enjoy either game being mainly a follower of rugby league. I'm just dumbfounded by the vehemence towards the idea that the game has Irish roots. And I can't help but think this was driven historically by the very real Irish/English divisions that existed in Australia up until the first wave of Southern European migration last century. The rules of Irish football may not have been codified until 30 years after Aussie Rules, but the game was played 100's of years previously. To dismiss out of hand, that a game familiar to a large (ethnic) part of a new society, had no influence on the development of a game with practically identical rules within that society is laughable. And then to \"draw a long bow\" to claim that the game is \"originally\" Australian because the natives were sometimes seen to kick a stuffed wombat around is ludicrous. Would you also deny the influence of African music on rock and roll because europeans played string instruments before exposure to African rhythms?") ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -206,10 +206,10 @@ ParsedWikitextPage(
             ]
           )
         ])
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -250,15 +250,15 @@ ParsedWikitextPage(
             ])
           ])
         ])
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
               WtText("\"the rules of both Aussie rules and Gaelic football are not similar at all\" Let me assure you, my friend, that the games are closer in rules and style than the two rugby codes that people from the southern and western states seem to commonly lump together.  \"zero evidence of a Gaelic influence\" - again I can only shake my head, it is amazing that a code of football can generate such a fierce and defensive parochialism.")
-              UnorderedList([
-                ListItem(
+              WtUnorderedList([
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -337,10 +337,10 @@ ParsedWikitextPage(
             ]
           )
         ])
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -388,10 +388,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -485,12 +485,12 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -579,7 +579,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -591,7 +591,7 @@ ParsedWikitextPage(
 
         [ WtText("Miscellaneous") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([ WtText("Are there really no older professional teams? I have found some older cricket teams but don't know if they are professional or not.   ---rmhermen") ])
         Newline("\n")
@@ -697,8 +697,8 @@ ParsedWikitextPage(
         Paragraph([ WtText("I saw some games on TV in the US.  Who's the guy in the white suit who waves around  flags when a goal is scored?  Shouldn't this be mentioned in the article somewhere?") ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -738,7 +738,7 @@ ParsedWikitextPage(
         )
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -750,7 +750,7 @@ ParsedWikitextPage(
 
         [ WtText("Winter") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("What is the difference between summer and winter in Australia, that the same fields are used but for different sports? -- ")
@@ -771,10 +771,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -795,8 +795,8 @@ ParsedWikitextPage(
                     )
                   )
                   WtText(" 14:06, 21 November 2005 (UTC)")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -827,21 +827,21 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef([
-                    DefinitionList([
-                      DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef([
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ "::::" <o> "\n" ]
 
                         [
                           WtText("You can have as many extreme days as you like but the average summer temperature for melbourne is still 22 degrees which is only 2 degrees warmer than the average winter temp for Brisbane.")
-                          DefinitionList([
-                            DefinitionListDef(
+                          WtDefinitionList([
+                            WtDefinitionListDef(
                               Properties:
                                 {N} rtd = RTD[ ":::::" <o> "" ]
 
@@ -932,7 +932,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -944,7 +944,7 @@ ParsedWikitextPage(
 
         [ WtText("History") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("The history section on this page needs to be corrected to bring it into line with the information on this site ")
@@ -1197,7 +1197,7 @@ ParsedWikitextPage(
           WtText(" 12:54, 28 Sep 2004 (UTC)")
         ])
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -1209,7 +1209,7 @@ ParsedWikitextPage(
 
         [ WtText("Rules") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("I think the section on the rules could be expanded. Basic information like the number of players is lacking, and can only be deduced from studying the images. ")
@@ -1289,7 +1289,7 @@ ParsedWikitextPage(
 
             [ WtText("Length of the Game") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -1311,8 +1311,8 @@ ParsedWikitextPage(
               WtText(" 19:45, 24 September 2005 (UTC)")
             ])
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -1358,8 +1358,8 @@ ParsedWikitextPage(
                     )
                   )
                   WtText(" 10:09, 25 September 2005 (UTC)")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ "::" <o> "" ]
 
@@ -1388,8 +1388,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            SemiPre([
-              SemiPreLine(
+            WtSemiPre([
+              WtSemiPreLine(
                 Properties:
                   {N} rtd = RTD[ " " <o> "" ]
 
@@ -1410,9 +1410,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -1424,7 +1424,7 @@ ParsedWikitextPage(
 
         [ WtText("Rugby League") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -1501,7 +1501,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -1535,7 +1535,7 @@ ParsedWikitextPage(
           WtText(" ")
         ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -1567,8 +1567,8 @@ ParsedWikitextPage(
           WtText(" 00:16, 20 Jul 2004 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -1603,8 +1603,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(" 18:50, Apr 8, 2005 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -1642,8 +1642,8 @@ ParsedWikitextPage(
                       )
                     )
                     WtText(" 09:47, 5 May 2005 (UTC)")
-                    DefinitionList([
-                      DefinitionListDef(
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "\n" ]
 
@@ -1725,8 +1725,8 @@ ParsedWikitextPage(
                             ]
                           )
                           WtText(" 13:03, May 5, 2005 (UTC)")
-                          DefinitionList([
-                            DefinitionListDef(
+                          WtDefinitionList([
+                            WtDefinitionListDef(
                               Properties:
                                 {N} rtd = RTD[ "::::" <o> "\n" ]
 
@@ -1747,8 +1747,8 @@ ParsedWikitextPage(
                                   )
                                 )
                                 WtText(" 13:17, 5 May 2005 (UTC)")
-                                DefinitionList([
-                                  DefinitionListDef(
+                                WtDefinitionList([
+                                  WtDefinitionListDef(
                                     Properties:
                                       {N} rtd = RTD[ ":::::" <o> "" ]
 
@@ -1910,8 +1910,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -1951,10 +1951,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -1982,7 +1982,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -1994,7 +1994,7 @@ ParsedWikitextPage(
 
         [ WtText("IAFC") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("The article indicates that the IAFC is the official administrative body for Australian rules football internationally but I think you would get a very different view on that from the AFL, who see themselves as the official international representative body for the sport.  If someone can come up with a statement from the AFL that it recognises the IAFC as the official international body though, I'd be happy to retain the reference.  --")
@@ -2015,8 +2015,8 @@ ParsedWikitextPage(
           WtText(" 04:05, 10 Oct 2004 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -2103,8 +2103,8 @@ ParsedWikitextPage(
                 ]
               )
               WtText(" 18:36, Apr 8, 2005 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "" ]
 
@@ -2147,7 +2147,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -2159,7 +2159,7 @@ ParsedWikitextPage(
 
         [ WtText(" Diagrams ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -2184,7 +2184,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -2196,13 +2196,13 @@ ParsedWikitextPage(
 
         [ WtText(" Footy ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("Is this section really necessary or appropriate?") ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2228,7 +2228,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -2240,7 +2240,7 @@ ParsedWikitextPage(
 
         [ WtText(" What is a \"clearance\"? ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("When I watch AFL football on TV, I often hear the announcers talking about \"clearances\" and \"disposals\", which events are also tabulated among the statistics.  Unfortunately, no one ever bothers to tell us Americans what those terms mean.  I decided that a Web search would provide me the answers.  Actually, I have searched extensively; and, though I did find here a definition of \"disposal\", I am still at a loss for an exact definition of \"clearance\".  I suppose that a clearance has occurred when the ball is kicked a long ways, but I suspect field position has something to do with it.  I don't know if a hand pass can count as a clearance.") ])
@@ -2267,8 +2267,8 @@ ParsedWikitextPage(
           WtText(" 15:17, 26 August 2005 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2277,8 +2277,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2304,10 +2304,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -2360,7 +2360,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -2372,7 +2372,7 @@ ParsedWikitextPage(
 
         [ WtText(" Latest edit ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("The latest anonimous edit looks like a bit of POV mischief from a banana bender with taped back ears and no neck who doesn't mind sniffing the odd backside.  Anyone with sufficient powers out there agree on a roll back?  --")
@@ -2419,8 +2419,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2483,7 +2483,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -2495,7 +2495,7 @@ ParsedWikitextPage(
 
         [ WtText(" ACT ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("Re the Brain's most recent edit, that wasn't me that deleted that line that he has restored, but I always thought that it was inaccurate in relation to the ACT (i.e. Canberra).  In fact, Canberra was an aussie rules stronghold until at least 1982 because the first two generations of public servants came predominantly from Melbourne. With time this balance swung more to Sydney and then around 1982 the Canberra Raiders joined the then NSWRL.  Rugby league certainly has overtaken aussie rules in general popularity (if you are counting TV ratings) but in terms of participation I would think that it would be roughly on par with aussie rules and rugby union, and all three are likely to be behind soccer.  In terms spectators attending games, I imagine the ACT Brumbies currently outstrip all, the Canberra Raiders only get about half, and for some of the three or four games the Kangaroos play in Canberra, they will often get more than the average Raiders game.  All in all - I think it is not an accurate statement about Canberra (not to mention that in souther NSW, aussie rules is stronger than rugby league).  --")
@@ -2542,8 +2542,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2561,10 +2561,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -2666,7 +2666,7 @@ ParsedWikitextPage(
               )
             ])
           ])
-          DefinitionListDef(
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2675,8 +2675,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2685,8 +2685,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2712,12 +2712,12 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -2811,8 +2811,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2828,8 +2828,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2846,8 +2846,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2920,8 +2920,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2930,8 +2930,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -2957,10 +2957,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -2995,10 +2995,10 @@ ParsedWikitextPage(
         Newline("\n")
         WtText(" ")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -3051,10 +3051,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -3107,7 +3107,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -3119,7 +3119,7 @@ ParsedWikitextPage(
 
         [ WtText(" Aussie rules in Australia ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -3177,7 +3177,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -3189,7 +3189,7 @@ ParsedWikitextPage(
 
         [ WtText(" Rules ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("The Rules section is getting rather long and unwieldly, especially the holding the ball subsection (which I started, when it actually was \"easily summarised\"), so moving it to another article seems like a good idea. But the name of such an article is an interesting topic - I would suggest \"Australian Football Rules\", just to confuse people (and to make User 139.132.1.1 happy). Possible alternatives are \"Australian Rules Football Rules\", or \"Rules of Australian Rules Football\", or even \"Australian Rules\". Seriously, probably the best name would be \"Rules of Australian Football\", regardless of whether you think that Australian Football is a good name. Incidentally, my copy of the rulebook has on the cover \"Laws of Australian Football\", so maybe thats an even better one (or \"Laws of Australian Rules Football\" come to think of it). If someone else wants to actually move the stuff, that would be good, or I'll probably do it in a week or two when I have more time. Of course the alternative is to just delete half the stuff, but that's probably not a good idea.") ])
@@ -3214,8 +3214,8 @@ ParsedWikitextPage(
           WtText(" 17:39, 9 November 2005 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -3266,10 +3266,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -3297,12 +3297,12 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -3347,8 +3347,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -3389,10 +3389,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -3430,7 +3430,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -3442,7 +3442,7 @@ ParsedWikitextPage(
 
         [ WtText(" Attendance Record Cop-Outs and Factoids ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([ WtText("Aussie Rules fans go to games.  Rugby league fans watch games on tv.  Using attendance records as a means to determine popularity is severely flawed.  Put simply, it's a cop out.") ])
@@ -3546,10 +3546,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -3577,19 +3577,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("The paragraph describes the geographical spread of the popularity of Aussie Rules. ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3622,19 +3622,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("It does not \"boast the # of states where the game is the most popular sport\". ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3667,19 +3667,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("If you read the paragraph as a description of the game's popularity, rather than assuming it was trying to make ridiculous claims, it might make more sense to you. ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3712,19 +3712,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("Your argument about other leagues is nonsense. ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3757,19 +3757,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("I didn't mention the ABS, so I'm not sure what you are referring to. ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3802,19 +3802,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("The Sweeny Report that I mentioned uses as a criteria simply whether a person claims to be interested in the sport. ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3847,19 +3847,19 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText("Is that broad enough for you? There is more to life than television,")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "\n" ]
 
@@ -3900,14 +3900,14 @@ ParsedWikitextPage(
                       ])
                     ]
                   )
-                  DefinitionListDef(
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
                     [
                       WtText(" but if you want to add information on the viewing figures, then do that. ")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -3940,12 +3940,12 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "\n" ]
 
@@ -3966,8 +3966,8 @@ ParsedWikitextPage(
                         )
                       )
                       WtText(" 10:17, 22 November 2005 (UTC)")
-                      DefinitionList([
-                        DefinitionListDef(
+                      WtDefinitionList([
+                        WtDefinitionListDef(
                           Properties:
                             {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -4020,8 +4020,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4093,8 +4093,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4103,8 +4103,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4113,8 +4113,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4123,8 +4123,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4133,8 +4133,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4143,8 +4143,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4153,8 +4153,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4163,8 +4163,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4173,8 +4173,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4191,8 +4191,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4201,8 +4201,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4220,8 +4220,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4426,12 +4426,12 @@ ParsedWikitextPage(
           WtText(" 15:22, 22 November 2005 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -4486,8 +4486,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4496,8 +4496,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4506,10 +4506,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -4520,10 +4520,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -4534,76 +4534,76 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Australian rules: 2,509.2; 16.8 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Horse racing: 1,756.4; 11.8 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Motor sports: 1,574.3; 10.6 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Rugby league: 1,501.1; 10.1 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Cricket: 942.5 6.3 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Soccer: 621.2; 4.2 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Harness racing: 534.8; 3.6 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Basketball: 526.0; 3.5 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Rugby union: 446.2; 3.0 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Tennis: 444.0; 3.0 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "\n" ]
 
                 [ WtText("Dog racing: 276.4; 1.9 ") ]
               )
-              DefinitionListDef(
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -4614,10 +4614,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -4635,8 +4635,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -4672,8 +4672,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(" 15:33, 22 November 2005 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -4719,8 +4719,8 @@ ParsedWikitextPage(
                       )
                     )
                     WtText(" 16:12, 22 November 2005 (UTC)")
-                    DefinitionList([
-                      DefinitionListDef(
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -4848,8 +4848,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4858,8 +4858,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4917,7 +4917,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -4929,7 +4929,7 @@ ParsedWikitextPage(
 
         [ WtText(" Another example of out of control non-NPOV ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -4962,8 +4962,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -4989,10 +4989,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -5003,12 +5003,12 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -5038,14 +5038,14 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef([
-                    DefinitionList([
-                      DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef([
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -5060,16 +5060,16 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef([
-                    DefinitionList([
-                      DefinitionListDef([
-                        DefinitionList([
-                          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef([
+                    WtDefinitionList([
+                      WtDefinitionListDef([
+                        WtDefinitionList([
+                          WtDefinitionListDef(
                             Properties:
                               {N} rtd = RTD[ ":::::" <o> "" ]
 
@@ -5118,14 +5118,14 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef([
-                    DefinitionList([
-                      DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef([
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -5198,7 +5198,7 @@ ParsedWikitextPage(
 
             [ WtText("Openning Paragraph") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Paragraph([
               WtBold(
@@ -5211,8 +5211,8 @@ ParsedWikitextPage(
               WtText("From who's 'point of view' is it spectacular?")
             ])
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "" ]
 
@@ -5238,7 +5238,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -5250,7 +5250,7 @@ ParsedWikitextPage(
 
             [ WtText("Popularity") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -5264,8 +5264,8 @@ ParsedWikitextPage(
               WtText("I'm a northerner and a rugby league fan, experientially I can't deny that AFL seems to be Australia's most popular winter sport and is growing in popularity. This point should be made though:")
             ])
             Newline("\n")
-            UnorderedList([
-              ListItem(
+            WtUnorderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "*" <o> "" ]
 
@@ -5274,8 +5274,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            UnorderedList([
-              ListItem(
+            WtUnorderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "*" <o> "" ]
 
@@ -5340,8 +5340,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "" ]
 
@@ -5367,10 +5367,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ "::" <o> "" ]
 
@@ -5421,15 +5421,15 @@ ParsedWikitextPage(
               WtText("Arguable by whom?  Who is being quoted here?  Where's the source to back this up?  Looks like heresay to me.")
             ])
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("I am not a rugby fan but I live in Canberra and I can tell you that Rugby Union (at the elite level) easily attracts, on average, more spectators per game.  It's a non contest so drop it.")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -5450,8 +5450,8 @@ ParsedWikitextPage(
                           )
                         )
                         WtText(" 09:13, 23 November 2005 (UTC)")
-                        DefinitionList([
-                          DefinitionListDef(
+                        WtDefinitionList([
+                          WtDefinitionListDef(
                             Properties:
                               {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -5494,15 +5494,15 @@ ParsedWikitextPage(
               WtText("Who is being quoted here?  Where is the citation and stats to back up the claim?  Looks like an assumption based on anecdotal evidence to me.")
             ])
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("We can look at Brisbane Lions membership and crowd attendance (through the roof), and participation rates of school-age children in the Brisbane metropolitan area, especially in the Auskick program.")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ "::" <o> "" ]
 
@@ -5542,15 +5542,15 @@ ParsedWikitextPage(
               WtText("Over many decades?  I find that difficult to believe.  And again I ask, where's the source of this information?")
             ])
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ ":" <o> "\n" ]
 
                 [
                   WtText("This is a stupid question, it is common knowledge, like the sky is blue.  Southern NSW has alsways been Aussie rules territory, some of the best players in history have come from Albury and Wagga.  In fact in the 1996 grand final, the two captains of the opposing teams both came from Wagga.  As for the ACT, only someone who doesn't know the history of Canberra would query this fact.")
-                  DefinitionList([
-                    DefinitionListDef(
+                  WtDefinitionList([
+                    WtDefinitionListDef(
                       Properties:
                         {N} rtd = RTD[ "::" <o> "" ]
 
@@ -5592,10 +5592,10 @@ ParsedWikitextPage(
               WtText("This fails to express how unpopular the sport is in those 20 countries?")
             ])
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ "::" <o> "" ]
 
@@ -5622,7 +5622,7 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
         WtSection(
           Properties:
@@ -5634,7 +5634,7 @@ ParsedWikitextPage(
 
             [ WtText("Leagues") ]
           )
-          WtSectionBody[
+          WtSectionBody([
             Newline("\n")
             Newline("\n")
             Paragraph([
@@ -5650,8 +5650,8 @@ ParsedWikitextPage(
             Paragraph([ WtText("Oh they're elite.  Is that another non-NPOV comment?  how about quoting somebody saying that?") ])
             Newline("\n")
             Newline("\n")
-            OrderedList([
-              ListItem(
+            WtOrderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
@@ -5666,13 +5666,13 @@ ParsedWikitextPage(
                   WtText(" neutral thing we can say.")
                 ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
                 [ WtText("It does not matter how unpopular it is, it is saying how many countries it is played in. Does it say, \"AF is the best sport ever, with national leagues in 20 countries\"?") ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "" ]
 
@@ -5728,10 +5728,10 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ "::" <o> "" ]
 
@@ -5742,20 +5742,20 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            OrderedList([
-              ListItem(
+            WtOrderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
                 [ WtText("With regards to rank, there is no dispute regarding the ranking as a participant sport.  The ABS provides these figures and even if we disputed it, it wouldn't matter.  You can still say \"the ABS says...\".") ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
                 [ WtText("How popular it is in those countries is very interesting and usefull information.  The absence of this information can be interpreted as non-npov writing.") ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "" ]
 
@@ -5809,14 +5809,14 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            OrderedList([
-              ListItem(
+            WtOrderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
                 [ WtText("Fair enough") ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
@@ -5831,7 +5831,7 @@ ParsedWikitextPage(
                   WtText(" perhaps your use of the word unpopular got my back up (fails to mention the degree of popularity...?) My understanding is that it is quite popular in some countries, esp. the US. Shouldn't be too hard to find references")
                 ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "" ]
 
@@ -5894,20 +5894,20 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            OrderedList([
-              ListItem(
+            WtOrderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
                 [ WtText("The participation information should not have been removed from the page. I think it is fair enough to say it is one of the most played sports, as the definition of sport differs from survey to survey. (A lot of people swim, a lot less swim compeititively), but we should definitely give the figures from the ABS. The emphasis should be on the nubmers, not the comparison.") ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "\n" ]
 
                 [ WtText("Including \"amateur\" probably makes enough difference, but you were being a bit fussy to start with - don't read too much into a sentence. At any rate, more detail is given later in the article.") ]
               )
-              ListItem(
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "" ]
 
@@ -5933,8 +5933,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            OrderedList([
-              ListItem(
+            WtOrderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "" ]
 
@@ -5980,8 +5980,8 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-            OrderedList([
-              ListItem(
+            WtOrderedList([
+              WtListItem(
                 Properties:
                   {N} rtd = RTD[ "#" <o> "" ]
 
@@ -6014,9 +6014,9 @@ ParsedWikitextPage(
             ])
             Newline("\n")
             Newline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -6028,7 +6028,7 @@ ParsedWikitextPage(
 
         [ WtText(" Rename? ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -6065,8 +6065,8 @@ ParsedWikitextPage(
           WtText(" 02:27, 25 November 2005 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -6122,8 +6122,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(" 03:06, 25 November 2005 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -6166,8 +6166,8 @@ ParsedWikitextPage(
                       )
                     )
                     WtText(" 04:18, 25 November 2005 (UTC)")
-                    DefinitionList([
-                      DefinitionListDef(
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "\n" ]
 
@@ -6222,7 +6222,7 @@ ParsedWikitextPage(
                           WtText(" 04:50, 25 November 2005 (UTC)")
                         ]
                       )
-                      DefinitionListDef(
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -6254,14 +6254,14 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        OrderedList([
-          ListItem(
+        WtOrderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "#" <o> "\n" ]
 
             [ WtText("When I was playing in the junior ranks (rare for a queenslander) our sport was referred to as 'Australian Footy' which was a cut down version where you couldn't kick the ball off the ground.  The senior players played a game called 'Australian Football'.  That's how it was officially termed.") ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "#" <o> "" ]
 
@@ -6287,8 +6287,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -6309,8 +6309,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(" 10:04, 25 November 2005 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -6356,16 +6356,16 @@ ParsedWikitextPage(
                       )
                     )
                     WtText(" 11:28, 25 November 2005 (UTC)")
-                    DefinitionList([
-                      DefinitionListDef(
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "\n" ]
 
                         [ WtText("There may have been 'a push', but I don't think that's the standard term yet. I call it \"Australian football\" when explaining it to foreigners, but that's still a bit of a neologism.") ]
                       )
                     ])
-                    UnorderedList([
-                      ListItem(
+                    WtUnorderedList([
+                      WtListItem(
                         Properties:
                           {N} rtd = RTD[ "::*" <o> "" ]
 
@@ -6429,7 +6429,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -6441,7 +6441,7 @@ ParsedWikitextPage(
 
         [ WtText(" External links ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -6527,8 +6527,8 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -6564,7 +6564,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -6576,11 +6576,11 @@ ParsedWikitextPage(
 
         [ WtText(" Padding ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -6620,7 +6620,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -6632,7 +6632,7 @@ ParsedWikitextPage(
 
         [ WtText("Piccies") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("I ask again:   are these the very best photos we can get our hands on of the great Australian game?  The one photo we show, looks more like the old Sun \"Spot the Ball\"  competition.  C'mon, let's lift our game!  ")
@@ -6678,8 +6678,8 @@ ParsedWikitextPage(
           WtText(" 22:57, 8 February 2006 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -6851,10 +6851,10 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef(
                 Properties:
                   {N} rtd = RTD[ "::" <o> "" ]
 
@@ -6921,12 +6921,12 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef([
-            DefinitionList([
-              DefinitionListDef([
-                DefinitionList([
-                  DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef([
+            WtDefinitionList([
+              WtDefinitionListDef([
+                WtDefinitionList([
+                  WtDefinitionListDef(
                     Properties:
                       {N} rtd = RTD[ ":::" <o> "" ]
 
@@ -6991,7 +6991,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -7003,7 +7003,7 @@ ParsedWikitextPage(
 
         [ WtText("POV") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("Well, this article is pretty good, so congrats to the people involved. I do feel however, that it glorifies the sport a bit much, I know it is popular, but this article is a tad misleading, reading through it, it reads as if AFL is the be all and end all of Australian sport. Im not here to bag AFL by any means, and I know that there are sources provided and so on, but I do feel the article is not really written in a NPOV. ")
@@ -7024,8 +7024,8 @@ ParsedWikitextPage(
           WtText(" 03:51, 19 February 2006 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -7071,8 +7071,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(" 05:20, 19 February 2006 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "\n" ]
 
@@ -7093,8 +7093,8 @@ ParsedWikitextPage(
                       )
                     )
                     WtText(" 09:31, 19 February 2006 (UTC)")
-                    DefinitionList([
-                      DefinitionListDef(
+                    WtDefinitionList([
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "\n" ]
 
@@ -7142,7 +7142,7 @@ ParsedWikitextPage(
                           WtText(" 11:54, 19 February 2006 (UTC)")
                         ]
                       )
-                      DefinitionListDef(
+                      WtDefinitionListDef(
                         Properties:
                           {N} rtd = RTD[ ":::" <o> "\n" ]
 
@@ -7188,8 +7188,8 @@ ParsedWikitextPage(
                             )
                           )
                           WtText(" 11:57, 19 February 2006 (UTC)")
-                          DefinitionList([
-                            DefinitionListDef(
+                          WtDefinitionList([
+                            WtDefinitionListDef(
                               Properties:
                                 {N} rtd = RTD[ "::::" <o> "" ]
 
@@ -7238,7 +7238,7 @@ ParsedWikitextPage(
           )
         ])
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -7250,7 +7250,7 @@ ParsedWikitextPage(
 
         [ WtText("Help!") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ")
@@ -7295,8 +7295,8 @@ ParsedWikitextPage(
           WtText(" 10:16, 22 February 2006 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -7337,7 +7337,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -7349,7 +7349,7 @@ ParsedWikitextPage(
 
         [ WtText("Tactics/Terminology") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("I propose a section in the article on some of the tactics and terminology used in the game, drawing from ")
@@ -7536,8 +7536,8 @@ ParsedWikitextPage(
           WtText(" 11:18, 22 February 2006 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "" ]
 
@@ -7578,7 +7578,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -7590,7 +7590,7 @@ ParsedWikitextPage(
 
         [ WtText("Please vote") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("...in a ")
@@ -7650,7 +7650,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -7662,7 +7662,7 @@ ParsedWikitextPage(
 
         [ WtText(" External links ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -7684,8 +7684,8 @@ ParsedWikitextPage(
           WtText(" 06:45, 31 March 2006 (UTC)")
         ])
         Newline("\n")
-        DefinitionList([
-          DefinitionListDef(
+        WtDefinitionList([
+          WtDefinitionListDef(
             Properties:
               {N} rtd = RTD[ ":" <o> "\n" ]
 
@@ -7731,8 +7731,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(") 09:45, 31 March 2006 (UTC)")
-              DefinitionList([
-                DefinitionListDef(
+              WtDefinitionList([
+                WtDefinitionListDef(
                   Properties:
                     {N} rtd = RTD[ "::" <o> "" ]
 
@@ -7788,7 +7788,7 @@ ParsedWikitextPage(
           WtText(" 00:32, 3 April 2006 (UTC)")
         ])
         Newline("\n")
-      ]
+      ])
     )
   ]
 )

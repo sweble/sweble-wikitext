@@ -4,28 +4,28 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    DefinitionList([
-      DefinitionListTerm(
+    WtDefinitionList([
+      WtDefinitionListTerm(
         Properties:
           {N} rtd = RTD[ ";" <o> "\n" ]
 
         [ WtText("Other") ]
       )
     ])
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText("x") ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText("y") ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 

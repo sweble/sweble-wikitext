@@ -4,8 +4,8 @@ ParsedWikitextPage(
     {N} warnings = []
 
   [
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ XmlComment("Comment") + "*" <o> "" ]
 

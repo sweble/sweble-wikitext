@@ -24,7 +24,7 @@
  *     - SemiPreLine (Eol SemiPreLine)*
  *
  *   AST node:
- *     Name        : SemiPre
+ *     Name        : WtSemiPre
  *     Extends     : ContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE
@@ -36,7 +36,7 @@
  *     - Eol? ' ' SemiPreContentStar
  *
  *   AST node:
- *     Name        : SemiPreLine
+ *     Name        : WtSemiPreLine
  *     Extends     : ContentNode
  *     Constructor : content
  *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE_LINE
@@ -82,21 +82,21 @@ noinline memoized WtNode SemiPreMemoized =
 noinline transient WtNode SemiPreTransient =
   &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
   {
-    yyValue = new SemiPre(new WtNodeList(first, tail));
+    yyValue = new WtSemiPre(new WtNodeList(first, tail));
   }
 ;
 
-private inline SemiPreLine FirstSemiPreLine =
+private inline WtSemiPreLine FirstSemiPreLine =
   !EmptyLine rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
-    yyValue = setRtd(new SemiPreLine(content), rt1, ' ', SEP);
+    yyValue = setRtd(new WtSemiPreLine(content), rt1, ' ', SEP);
   }
 ;
 
-private inline SemiPreLine SemiPreLine =
+private inline WtSemiPreLine SemiPreLine =
   rt0:pEol rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
-    yyValue = setRtd(new SemiPreLine(content), rt0, rt1, ' ', SEP);
+    yyValue = setRtd(new WtSemiPreLine(content), rt0, rt1, ' ', SEP);
   }
 ;
 

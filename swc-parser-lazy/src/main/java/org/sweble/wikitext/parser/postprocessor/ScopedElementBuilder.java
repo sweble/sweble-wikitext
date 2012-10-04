@@ -22,27 +22,27 @@ import java.util.LinkedList;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.DefinitionList;
-import org.sweble.wikitext.parser.nodes.DefinitionListDef;
-import org.sweble.wikitext.parser.nodes.DefinitionListTerm;
 import org.sweble.wikitext.parser.nodes.ExternalLink;
 import org.sweble.wikitext.parser.nodes.ImageLink;
 import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.ListItem;
-import org.sweble.wikitext.parser.nodes.OrderedList;
 import org.sweble.wikitext.parser.nodes.ParsedWikitextPage;
-import org.sweble.wikitext.parser.nodes.SemiPre;
-import org.sweble.wikitext.parser.nodes.SemiPreLine;
 import org.sweble.wikitext.parser.nodes.Table;
 import org.sweble.wikitext.parser.nodes.TableCaption;
 import org.sweble.wikitext.parser.nodes.TableCell;
 import org.sweble.wikitext.parser.nodes.TableHeader;
 import org.sweble.wikitext.parser.nodes.TableRow;
-import org.sweble.wikitext.parser.nodes.UnorderedList;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtDefinitionList;
+import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
+import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
+import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtOrderedList;
 import org.sweble.wikitext.parser.nodes.WtSection;
+import org.sweble.wikitext.parser.nodes.WtSemiPre;
+import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
+import org.sweble.wikitext.parser.nodes.WtUnorderedList;
 import org.sweble.wikitext.parser.nodes.XmlElement;
 import org.sweble.wikitext.parser.nodes.XmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.XmlEndTag;
@@ -165,52 +165,52 @@ public class ScopedElementBuilder
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
-	public void visit(DefinitionList n)
+	public void visit(WtDefinitionList n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
-		iterate(n.getContent());
+		iterate(n);
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(DefinitionListTerm n)
+	public void visit(WtDefinitionListTerm n)
 	{
-		processScope(n);
+		n.exchange(processScope(n));
 	}
 	
-	public void visit(DefinitionListDef n)
+	public void visit(WtDefinitionListDef n)
 	{
-		processScope(n);
+		n.exchange(processScope(n));
 	}
 	
-	public void visit(OrderedList n)
+	public void visit(WtOrderedList n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
-		iterate(n.getContent());
+		iterate(n);
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(UnorderedList n)
+	public void visit(WtUnorderedList n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
-		iterate(n.getContent());
+		iterate(n);
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(ListItem n)
+	public void visit(WtListItem n)
 	{
-		processScope(n);
+		n.exchange(processScope(n));
 	}
 	
-	public void visit(SemiPre n)
+	public void visit(WtSemiPre n)
 	{
 		openScope(ScopeType.WT_BLOCK, n);
-		iterate(n.getContent());
+		iterate(n);
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(SemiPreLine n)
+	public void visit(WtSemiPreLine n)
 	{
-		processScope(n);
+		n.exchange(processScope(n));
 	}
 	
 	// =========================================================================

@@ -17,25 +17,26 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.*;
+import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.BOLD;
+import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.ITALICS;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.nodes.DefinitionListDef;
-import org.sweble.wikitext.parser.nodes.DefinitionListTerm;
-import org.sweble.wikitext.parser.nodes.ListItem;
 import org.sweble.wikitext.parser.nodes.Newline;
-import org.sweble.wikitext.parser.nodes.SemiPreLine;
 import org.sweble.wikitext.parser.nodes.Ticks;
-import org.sweble.wikitext.parser.nodes.WtWhitespace;
-import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
+import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
+import org.sweble.wikitext.parser.nodes.WtListItem;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
 import org.sweble.wikitext.parser.nodes.WtStringContentNode;
 import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtWhitespace;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.FmtInternalLogicError;
@@ -166,6 +167,11 @@ public class TicksAnalyzer
 		
 		public void visit(WtNodeList list)
 		{
+			iterateContent(list);
+		}
+		
+		private void iterateContent(WtNodeList list)
+		{
 			previous = null;
 			for (WtNode n : list)
 			{
@@ -186,27 +192,27 @@ public class TicksAnalyzer
 				finishLine();
 		}
 		
-		public void visit(ListItem n)
+		public void visit(WtListItem n)
 		{
-			visit(n.getContent());
+			iterateContent(n);
 			finishLine();
 		}
 		
-		public void visit(DefinitionListTerm n)
+		public void visit(WtDefinitionListTerm n)
 		{
-			visit(n.getContent());
+			iterateContent(n);
 			finishLine();
 		}
 		
-		public void visit(DefinitionListDef n)
+		public void visit(WtDefinitionListDef n)
 		{
-			visit(n.getContent());
+			iterateContent(n);
 			finishLine();
 		}
 		
-		public void visit(SemiPreLine n)
+		public void visit(WtSemiPreLine n)
 		{
-			visit(n.getContent());
+			iterateContent(n);
 			finishLine();
 		}
 		
@@ -364,7 +370,7 @@ public class TicksAnalyzer
 	
 	protected final static class TicksConverter
 			extends
-				AstVisitor
+				AstVisitor<WtNode>
 	{
 		private static enum State
 		{
@@ -436,32 +442,31 @@ public class TicksAnalyzer
 			return result;
 		}
 		
-		public WtNode visit(ListItem n)
+		public WtNode visit(WtListItem n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public WtNode visit(DefinitionListTerm n)
+		public WtNode visit(WtDefinitionListTerm n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public WtNode visit(DefinitionListDef n)
+		public WtNode visit(WtDefinitionListDef n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		public WtNode visit(SemiPreLine n)
+		public WtNode visit(WtSemiPreLine n)
 		{
 			return implicitLineScope(n);
 		}
 		
-		private WtNode implicitLineScope(WtContentNode n)
+		private WtNode implicitLineScope(WtNodeList content)
 		{
-			WtNodeList content = n.getContent();
 			mapInPlace(content);
 			finishLine(content);
-			return n;
+			return content;
 		}
 		
 		private void finishLine(WtNodeList body)

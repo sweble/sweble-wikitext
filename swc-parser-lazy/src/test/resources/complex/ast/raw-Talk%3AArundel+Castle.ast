@@ -316,7 +316,7 @@ ParsedWikitextPage(
 
         [ WtText(" Ghosts ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Paragraph([
           WtText("What about the 4 ghosts living in the castle? there should be some reference  ")
@@ -411,7 +411,7 @@ ParsedWikitextPage(
         ])
         Newline("\n")
         Newline("\n")
-      ]
+      ])
     )
     WtSection(
       Properties:
@@ -423,7 +423,7 @@ ParsedWikitextPage(
 
         [ WtText(" Automated peer review ") ]
       )
-      WtSectionBody[
+      WtSectionBody([
         Newline("\n")
         Newline("\n")
         Paragraph([
@@ -479,8 +479,8 @@ ParsedWikitextPage(
           WtText(", and might not be applicable for the article in question.")
         ])
         Newline("\n")
-        UnorderedList([
-          ListItem(
+        WtUnorderedList([
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -566,7 +566,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -632,7 +632,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -687,7 +687,7 @@ ParsedWikitextPage(
               WtText(" (Note that there might not be an applicable infobox; remember that these suggestions are not generated manually)")
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -805,7 +805,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -888,7 +888,7 @@ ParsedWikitextPage(
               )
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "\n" ]
 
@@ -932,8 +932,8 @@ ParsedWikitextPage(
                 )
               )
               WtText(".)")
-              UnorderedList([
-                ListItem(
+              WtUnorderedList([
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -999,7 +999,7 @@ ParsedWikitextPage(
                     WtText(" ways to turn them green.\u201D")
                   ]
                 )
-                ListItem(
+                WtListItem(
                   Properties:
                     {N} rtd = RTD[ "**" <o> "\n" ]
 
@@ -1048,7 +1048,7 @@ ParsedWikitextPage(
               ])
             ]
           )
-          ListItem(
+          WtListItem(
             Properties:
               {N} rtd = RTD[ "*" <o> "" ]
 
@@ -1152,7 +1152,7 @@ ParsedWikitextPage(
           WtText(") 00:02, 14 April 2008 (UTC)")
         ])
         Newline("\n")
-      ]
+      ])
     )
   ]
 )

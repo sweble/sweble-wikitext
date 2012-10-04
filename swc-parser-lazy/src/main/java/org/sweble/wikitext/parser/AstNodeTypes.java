@@ -121,11 +121,11 @@ public interface AstNodeTypes
 	
 	public static final int NT_DEFINITION_TERM /* .......... */= NT_PARSER_BITS + 26;
 	
-	public static final int NT_ENUMERATION /* .............. */= NT_PARSER_BITS + 27;
+	public static final int NT_ORDERED_LIST /* .............. */= NT_PARSER_BITS + 27;
 	
 	public static final int NT_ENUMERATION_ITEM /* ......... */= NT_PARSER_BITS + 28;
 	
-	public static final int NT_ITEMIZATION /* .............. */= NT_PARSER_BITS + 29;
+	public static final int NT_UNORDERED_LIST /* .............. */= NT_PARSER_BITS + 29;
 	
 	public static final int NT_ITEMIZATION_ITEM /* ......... */= NT_PARSER_BITS + 30;
 	

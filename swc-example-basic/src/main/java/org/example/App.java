@@ -18,7 +18,6 @@
 package org.example;
 
 import java.io.File;
-import java.io.StringWriter;
 
 import org.apache.commons.io.FileUtils;
 import org.sweble.wikitext.engine.CompiledPage;
@@ -88,7 +87,9 @@ public class App
 		CompiledPage cp = compiler.postprocess(pageId, wikitext, null);
 		
 		// Render the compiled page as HTML
+		/*
 		StringWriter w = new StringWriter();
+		*/
 		
 		if (renderHtml)
 		{

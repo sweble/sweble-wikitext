@@ -5,8 +5,8 @@ ParsedWikitextPage(
 
   [
     Newline("\n")
-    SemiPre([
-      SemiPreLine(
+    WtSemiPre([
+      WtSemiPreLine(
         Properties:
           {N} rtd = RTD[ " " <o> "" ]
 

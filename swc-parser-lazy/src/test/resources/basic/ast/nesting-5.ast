@@ -15,14 +15,14 @@ ParsedWikitextPage(
       )
     ])
     Newline("\n")
-    UnorderedList([
-      ListItem(
+    WtUnorderedList([
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [ WtText(" item 1") ]
       )
-      ListItem(
+      WtListItem(
         Properties:
           {N} rtd = RTD[ "*" <o> "" ]
 

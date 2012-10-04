@@ -1,38 +1,35 @@
 package org.sweble.wikitext.parser.nodes;
 
 /**
- * <h1>Semi Pre Line</h1> <h2>Grammar</h2>
+ * <h1>Semi Pre Block Level Element</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
- * Eol? ' ' SemiPreContentStar
+ * WtSemiPreLine (Eol WtSemiPreLine)*
  * </p>
  * </li>
  * </ul>
  */
-public class SemiPreLine
+public class WtSemiPre
 		extends
-			WtContentNode
+			WtContentNodeMarkTwo
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public SemiPreLine()
+	public WtSemiPre()
 	{
-		super();
-		
 	}
 	
-	public SemiPreLine(WtNodeList content)
+	public WtSemiPre(WtNodeList content)
 	{
 		super(content);
-		
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE_LINE;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE;
 	}
 }
