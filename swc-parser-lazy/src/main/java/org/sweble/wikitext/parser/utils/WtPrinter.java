@@ -83,13 +83,13 @@ public class WtPrinter
 			else
 			{
 				p.indent(n.getClass().getSimpleName());
-				p.println('[');
+				p.println("([");
 				
 				p.incIndent();
 				printListOfNodes(n);
 				p.decIndent();
 				
-				p.indentln(']');
+				p.indentln("])");
 			}
 			p.memoizeStop(m);
 		}
