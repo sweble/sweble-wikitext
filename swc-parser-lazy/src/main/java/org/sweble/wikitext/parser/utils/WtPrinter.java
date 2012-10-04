@@ -50,18 +50,24 @@ public class WtPrinter
 						p.needNewlines(2);
 				}
 				
-				OutputBuffer b = p.outputBufferStart();
-				printListOfNodes(n);
-				b.stop();
-				
-				String output = b.getBuffer().trim();
-				if (isSingleLine(output))
+				boolean singleLine = false;
+				if (isCompact() && n.size() <= 1)
 				{
-					p.indent("[ ");
-					p.print(output);
-					p.println(" ]");
+					OutputBuffer b = p.outputBufferStart();
+					printListOfNodes(n);
+					b.stop();
+					
+					String output = b.getBuffer().trim();
+					if (isSingleLine(output))
+					{
+						p.indent("[ ");
+						p.print(output);
+						p.println(" ]");
+						singleLine = true;
+					}
 				}
-				else
+				
+				if (!singleLine)
 				{
 					p.indentln('[');
 					
@@ -82,14 +88,35 @@ public class WtPrinter
 			}
 			else
 			{
-				p.indent(n.getClass().getSimpleName());
-				p.println("([");
+				boolean singleLine = false;
+				if (isCompact() && n.size() <= 1)
+				{
+					OutputBuffer b = p.outputBufferStart();
+					printListOfNodes(n);
+					b.stop();
+					
+					String output = b.getBuffer().trim();
+					if (isSingleLine(output))
+					{
+						p.indent(n.getClass().getSimpleName());
+						p.print("([ ");
+						p.print(output);
+						p.println(" ])");
+						singleLine = true;
+					}
+				}
 				
-				p.incIndent();
-				printListOfNodes(n);
-				p.decIndent();
-				
-				p.indentln("])");
+				if (!singleLine)
+				{
+					p.indent(n.getClass().getSimpleName());
+					p.println("([");
+					
+					p.incIndent();
+					printListOfNodes(n);
+					p.decIndent();
+					
+					p.indentln("])");
+				}
 			}
 			p.memoizeStop(m);
 		}
