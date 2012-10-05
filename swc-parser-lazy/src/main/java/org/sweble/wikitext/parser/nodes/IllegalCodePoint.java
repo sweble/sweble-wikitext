@@ -1,7 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.encval.IllegalCodePointType;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
@@ -124,5 +122,15 @@ public class IllegalCodePoint
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	
+	public enum IllegalCodePointType
+	{
+		ISOLATED_SURROGATE,
+		NON_CHARACTER,
+		PRIVATE_USE_CHARACTER,
+		CONTROL_CHARACTER
 	}
 }

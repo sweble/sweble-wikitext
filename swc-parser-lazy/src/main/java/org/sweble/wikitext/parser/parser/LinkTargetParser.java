@@ -15,10 +15,12 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser;
+package org.sweble.wikitext.parser.parser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.sweble.wikitext.parser.ParserConfig;
 
 import de.fau.cs.osr.utils.XmlGrammar;
 
@@ -353,7 +355,7 @@ public class LinkTargetParser
 	}
 	
 	/* FIXME: Move to utility class! */
-	static String urlDecode(String result)
+	public static String urlDecode(String result)
 	{
 		// It's intentional that only '%' characters trigger the decoding.
 		// MediaWiki does not decode '+' characters if there's not at least
@@ -394,7 +396,7 @@ public class LinkTargetParser
 	}
 	
 	/* FIXME: Move to utility class! */
-	static String xmlDecode(ParserConfig config, String result)
+	public static String xmlDecode(ParserConfig config, String result)
 	{
 		if (result.indexOf('&') >= 0)
 		{

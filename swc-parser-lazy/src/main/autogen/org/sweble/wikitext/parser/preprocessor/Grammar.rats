@@ -107,9 +107,9 @@ import org.sweble.wikitext.parser.preprocessor.State;
 header
 {
   import org.sweble.wikitext.parser.*;
+  import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
   import org.sweble.wikitext.parser.nodes.*;
-  import org.sweble.wikitext.parser.parser.*;
-  import org.sweble.wikitext.parser.utils.*;
+  import org.sweble.wikitext.parser.nodes.WtOnlyInclude.XmlElementType;
 
   import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;

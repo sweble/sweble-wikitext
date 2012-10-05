@@ -21,8 +21,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 
-import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.parser.RatsWikitextParser;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 

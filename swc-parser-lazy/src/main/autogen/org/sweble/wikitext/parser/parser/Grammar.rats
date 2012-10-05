@@ -66,9 +66,11 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 header
 {
   import org.sweble.wikitext.parser.*;
+  import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
   import org.sweble.wikitext.parser.nodes.*;
-  import org.sweble.wikitext.parser.postprocessor.*;
-  import org.sweble.wikitext.parser.utils.*;
+  import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
+  import org.sweble.wikitext.parser.utils.ParserShouldNotBeHereException;
+  import org.sweble.wikitext.parser.utils.ParserStats;
 
   import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;

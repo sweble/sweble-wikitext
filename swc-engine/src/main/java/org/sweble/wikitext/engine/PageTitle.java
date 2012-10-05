@@ -27,8 +27,8 @@ import org.sweble.wikitext.engine.config.Interwiki;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.config.WikiConfigurationException;
-import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.LinkTargetParser;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
+import org.sweble.wikitext.parser.parser.LinkTargetParser;
 
 public class PageTitle
 		implements

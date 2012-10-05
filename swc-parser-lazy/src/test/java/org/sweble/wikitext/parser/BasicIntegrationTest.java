@@ -17,19 +17,16 @@
 package org.sweble.wikitext.parser;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.sweble.wikitext.parser.postprocessor.AstCompressor;
+import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
-import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 import org.sweble.wikitext.parser.utils.TypedRtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 
-import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;

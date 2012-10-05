@@ -19,6 +19,7 @@ package org.sweble.wikitext.parser;
 import junit.framework.Assert;
 
 import org.junit.Test;
+import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.utils.SimpleParserConfig;
 
 public class LinkTargetParserTest

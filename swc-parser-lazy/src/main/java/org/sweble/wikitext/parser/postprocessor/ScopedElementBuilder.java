@@ -26,7 +26,6 @@ import org.sweble.wikitext.parser.nodes.TableCaption;
 import org.sweble.wikitext.parser.nodes.TableCell;
 import org.sweble.wikitext.parser.nodes.TableHeader;
 import org.sweble.wikitext.parser.nodes.TableRow;
-import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -312,12 +311,12 @@ public class ScopedElementBuilder
 		}
 	}
 	
+	/*
 	private void processScope(WtContentNode n)
 	{
 		n.setContent(processScope(n.getContent()));
 	}
 	
-	/*
 	private void processScope(WtContentNodeMarkTwo n)
 	{
 		n.exchange(processScope(n));

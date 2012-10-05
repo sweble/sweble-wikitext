@@ -15,67 +15,53 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.parser;
+package org.sweble.wikitext.parser;
 
-import org.sweble.wikitext.parser.WarningSeverity;
 
-import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.Span;
 
-public abstract class WikitextWarning
+public class LooksLikeWarning
 		extends
-			Warning
+			WikitextWarning
 {
 	private static final long serialVersionUID = 1L;
 	
-	protected final WarningSeverity severity;
+	private final String looksLikeWhat;
 	
 	// =========================================================================
 	
-	public WikitextWarning(
+	public LooksLikeWarning(
 			Span span,
 			WarningSeverity severity,
 			String origin,
+			String looksLikeWhat,
 			String message)
 	{
-		super(span, origin, message);
-		this.severity = severity;
+		super(span, severity, origin, makeMessage(message, looksLikeWhat));
+		this.looksLikeWhat = looksLikeWhat;
 	}
 	
-	public WikitextWarning(
+	public LooksLikeWarning(
 			Span span,
 			WarningSeverity severity,
 			Class<?> origin,
+			String looksLikeWhat,
 			String message)
 	{
-		super(span, origin, message);
-		this.severity = severity;
+		super(span, severity, origin, makeMessage(message, looksLikeWhat));
+		this.looksLikeWhat = looksLikeWhat;
+	}
+	
+	private static String makeMessage(String message, String looksLikeWhat)
+	{
+		return "This looks like a " + looksLikeWhat + ", however " + message;
 	}
 	
 	// =========================================================================
 	
-	public WarningSeverity getSeverity()
+	public String getLooksLikeWhat()
 	{
-		return severity;
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public String toString()
-	{
-		String span = spanToString();
-		String message = messageToString();
-		String severity = severityToString();
-		return "Warning (" + severity + "): " + span + " : " + message;
-	}
-	
-	protected String severityToString()
-	{
-		String severity = "-";
-		if (getSeverity() != null)
-			severity = getSeverity().toString().toLowerCase();
-		return severity;
+		return looksLikeWhat;
 	}
 	
 	// =========================================================================
@@ -85,7 +71,7 @@ public abstract class WikitextWarning
 	{
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((severity == null) ? 0 : severity.hashCode());
+		result = prime * result + ((looksLikeWhat == null) ? 0 : looksLikeWhat.hashCode());
 		return result;
 	}
 	
@@ -98,10 +84,14 @@ public abstract class WikitextWarning
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		WikitextWarning other = (WikitextWarning) obj;
-		if (severity != other.severity)
+		LooksLikeWarning other = (LooksLikeWarning) obj;
+		if (looksLikeWhat == null)
+		{
+			if (other.looksLikeWhat != null)
+				return false;
+		}
+		else if (!looksLikeWhat.equals(other.looksLikeWhat))
 			return false;
 		return true;
 	}
-	
 }

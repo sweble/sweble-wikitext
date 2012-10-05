@@ -25,9 +25,9 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 

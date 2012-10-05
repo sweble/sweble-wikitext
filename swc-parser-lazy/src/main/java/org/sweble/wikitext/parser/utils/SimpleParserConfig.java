@@ -21,11 +21,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.LinkTargetParser;
-import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.ParserConfig;
-import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
+import org.sweble.wikitext.parser.parser.LinkBuilder.LinkTargetType;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
+import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
 /**

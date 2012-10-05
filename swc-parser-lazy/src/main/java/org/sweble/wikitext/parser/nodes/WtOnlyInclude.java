@@ -1,7 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.preprocessor.XmlElementType;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
@@ -112,5 +110,14 @@ public class WtOnlyInclude
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	
+	public static enum XmlElementType
+	{
+		FULL_ELEMENT,
+		EMPTY_ELEMENT,
+		UNCLOSED_ELEMENT,
 	}
 }

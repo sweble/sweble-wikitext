@@ -15,11 +15,35 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser;
+package org.sweble.wikitext.parser.parser;
 
-public enum LinkTargetType
+public final class LinkTargetException
+		extends
+			Exception
 {
-	INVALID,
-	PAGE,
-	IMAGE,
+	private static final long serialVersionUID = 1L;
+	
+	private final String title;
+	
+	public LinkTargetException(String title, String message, Throwable cause)
+	{
+		super(makeMessage(title, message), cause);
+		this.title = title;
+	}
+	
+	public LinkTargetException(String title, String message)
+	{
+		super(makeMessage(title, message));
+		this.title = title;
+	}
+	
+	public String getTitle()
+	{
+		return title;
+	}
+	
+	private static String makeMessage(String title, String message)
+	{
+		return message + ": `" + title + "'";
+	}
 }

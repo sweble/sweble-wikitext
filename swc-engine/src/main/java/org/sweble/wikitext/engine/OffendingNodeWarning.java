@@ -18,8 +18,8 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.WikitextWarning;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.parser.WikitextWarning;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.Span;

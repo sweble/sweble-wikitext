@@ -17,47 +17,32 @@
 
 package org.sweble.wikitext.parser;
 
-public enum WarningSeverity
+
+import de.fau.cs.osr.ptk.common.ast.Span;
+
+public class OddSyntaxWarning
+		extends
+			WikitextWarning
 {
-	/** Really not a problem. */
-	NONE
-	{
-		@Override
-		public int getLevel()
-		{
-			return 0;
-		}
-	},
+	private static final long serialVersionUID = 1L;
 	
-	/** Might be worth looking into. */
-	INFORMATIVE
-	{
-		@Override
-		public int getLevel()
-		{
-			return 5;
-		}
-	},
+	// =========================================================================
 	
-	/** Should be taken care of. */
-	NORMAL
+	public OddSyntaxWarning(
+			Span span,
+			WarningSeverity severity,
+			String origin,
+			String message)
 	{
-		@Override
-		public int getLevel()
-		{
-			return 10;
-		}
-	},
+		super(span, severity, origin, message);
+	}
 	
-	/** That's really bad. */
-	FATAL
+	public OddSyntaxWarning(
+			Span span,
+			WarningSeverity severity,
+			Class<?> origin,
+			String message)
 	{
-		@Override
-		public int getLevel()
-		{
-			return 100;
-		}
-	};
-	
-	public abstract int getLevel();
+		super(span, severity, origin, message);
+	}
 }

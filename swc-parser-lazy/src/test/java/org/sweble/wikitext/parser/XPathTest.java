@@ -27,8 +27,8 @@ import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.junit.Test;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.WtPrinter;
 import org.sweble.wikitext.parser.utils.FullParser;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;

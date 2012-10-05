@@ -1,9 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.ImageHorizAlign;
-import org.sweble.wikitext.parser.parser.ImageVertAlign;
-import org.sweble.wikitext.parser.parser.ImageViewFormat;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
@@ -365,5 +361,267 @@ public class WtImageLink
 	public final String[] getChildNames()
 	{
 		return CHILD_NAMES;
+	}
+	
+	// =========================================================================
+	
+	public static enum ImageHorizAlign
+	{
+		LEFT
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "left";
+			}
+		},
+		RIGHT
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "right";
+			}
+		},
+		CENTER
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "center";
+			}
+		},
+		NONE
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "";
+			}
+		};
+		
+		public abstract String asKeyword();
+		
+		public static ImageHorizAlign which(String s)
+		{
+			if (s == null)
+				throw new NullPointerException();
+			
+			s = s.trim().toLowerCase();
+			for (ImageHorizAlign h : ImageHorizAlign.values())
+			{
+				if (s.equals(h.asKeyword()))
+					return h;
+			}
+			
+			return null;
+		}
+	}
+	
+	// =========================================================================
+	
+	public static enum ImageVertAlign
+	{
+		BASELINE
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "baseline";
+			}
+		},
+		SUB
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "sub";
+			}
+		},
+		SUPER
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "super";
+			}
+		},
+		TOP
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "top";
+			}
+		},
+		TEXT_TOP
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "text-top";
+			}
+		},
+		MIDDLE
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "middle";
+			}
+		},
+		BOTTOM
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "bottom";
+			}
+		},
+		TEXT_BOTTOM
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "text-bottom";
+			}
+		};
+		
+		public abstract String asKeyword();
+		
+		public static ImageVertAlign which(String s)
+		{
+			if (s == null)
+				throw new NullPointerException();
+			
+			s = s.trim().toLowerCase();
+			for (ImageVertAlign v : ImageVertAlign.values())
+			{
+				if (v.asKeyword().equals(s))
+					return v;
+			}
+			
+			return null;
+		}
+	}
+	
+	// =========================================================================
+	
+	public static enum ImageViewFormat
+	{
+		UNRESTRAINED
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "";
+			}
+			
+			@Override
+			public int priority()
+			{
+				return 0;
+			}
+			
+			@Override
+			public boolean isFramed()
+			{
+				return false;
+			}
+		},
+		FRAMELESS
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "frameless";
+			}
+			
+			@Override
+			public int priority()
+			{
+				return 1;
+			}
+			
+			@Override
+			public boolean isFramed()
+			{
+				return false;
+			}
+		},
+		THUMBNAIL
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "thumb";
+			}
+			
+			@Override
+			public int priority()
+			{
+				return 2;
+			}
+			
+			@Override
+			public boolean isFramed()
+			{
+				return true;
+			}
+		},
+		FRAME
+		{
+			@Override
+			public String asKeyword()
+			{
+				return "frame";
+			}
+			
+			@Override
+			public int priority()
+			{
+				return 3;
+			}
+			
+			@Override
+			public boolean isFramed()
+			{
+				return true;
+			}
+		};
+		
+		private static final Object[] formatMap = new Object[] {
+				"frameless", FRAMELESS,
+				"thumb", THUMBNAIL,
+				"thumbnail", THUMBNAIL,
+				"frame", FRAME,
+		};
+		
+		public abstract String asKeyword();
+		
+		public abstract int priority();
+		
+		public abstract boolean isFramed();
+		
+		public static ImageViewFormat which(String s)
+		{
+			if (s == null)
+				throw new NullPointerException();
+			
+			s = s.trim().toLowerCase();
+			for (int i = 0; i < formatMap.length; i += 2)
+			{
+				String f = (String) formatMap[i];
+				if (f.equals(s))
+					return (ImageViewFormat) formatMap[i + 1];
+			}
+			
+			return null;
+		}
+		
+		public ImageViewFormat combine(ImageViewFormat other)
+		{
+			return priority() > other.priority() ? this : other;
+		}
 	}
 }

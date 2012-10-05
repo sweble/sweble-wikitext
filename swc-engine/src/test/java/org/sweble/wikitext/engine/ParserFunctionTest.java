@@ -24,7 +24,7 @@ import junit.framework.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
-import org.sweble.wikitext.parser.LinkTargetException;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
 

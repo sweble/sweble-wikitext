@@ -19,9 +19,11 @@ package org.sweble.wikitext.parser.parser;
 
 import java.util.ArrayList;
 
-import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget;
@@ -253,5 +255,14 @@ public class LinkBuilder
 	{
 		if (warnings != null && !warnings.isEmpty())
 			n.setAttribute("warnings", warnings);
+	}
+	
+	// =========================================================================
+	
+	public static enum LinkTargetType
+	{
+		INVALID,
+		PAGE,
+		IMAGE,
 	}
 }

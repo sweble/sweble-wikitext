@@ -17,14 +17,14 @@
 
 package org.sweble.wikitext.parser;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
 
 import java.io.IOException;
 
 import org.junit.Test;
-import org.sweble.wikitext.parser.encval.IllegalCodePointType;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
+import org.sweble.wikitext.parser.nodes.IllegalCodePoint.IllegalCodePointType;
 
 import de.fau.cs.osr.ptk.common.GenericEntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;

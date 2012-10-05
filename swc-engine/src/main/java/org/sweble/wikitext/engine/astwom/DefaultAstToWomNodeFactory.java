@@ -28,8 +28,6 @@ import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
@@ -43,6 +41,8 @@ import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
+import org.sweble.wikitext.parser.parser.LinkTargetParser;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 

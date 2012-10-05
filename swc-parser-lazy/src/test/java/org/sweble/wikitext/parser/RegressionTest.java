@@ -22,7 +22,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.sweble.wikitext.parser.postprocessor.AstCompressor;
+import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 

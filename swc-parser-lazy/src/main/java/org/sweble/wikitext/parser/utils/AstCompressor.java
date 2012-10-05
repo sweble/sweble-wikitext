@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.postprocessor;
+package org.sweble.wikitext.parser.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
