@@ -22,7 +22,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public abstract class CorePfnVariable
@@ -53,18 +53,18 @@ public abstract class CorePfnVariable
 			ExpansionFrame frame,
 			List<? extends WtNode> argsValues)
 	{
-		return invoke((Template) var, frame, argsValues);
+		return invoke((WtTemplate) var, frame, argsValues);
 	}
 	
 	public WtNode invoke(
-			Template var,
+			WtTemplate var,
 			ExpansionFrame frame,
 			List<? extends WtNode> argsValues)
 	{
 		return invoke(var, frame);
 	}
 	
-	protected WtNode invoke(Template var, ExpansionFrame frame)
+	protected WtNode invoke(WtTemplate var, ExpansionFrame frame)
 	{
 		return var;
 	}

@@ -31,7 +31,7 @@ WtParsedWikitextPage(
     ])
     WtNewline("\n")
     WtParagraph([
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""

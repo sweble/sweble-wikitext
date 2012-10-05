@@ -5,11 +5,11 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      ExternalLink(
+      WtExternalLink(
         Properties:
           {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-        Url(
+        WtUrl(
           Properties:
             {N} path = "//example.com"
             {N} protocol = "http"

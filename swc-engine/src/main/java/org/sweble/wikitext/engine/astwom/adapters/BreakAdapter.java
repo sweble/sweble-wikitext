@@ -32,7 +32,7 @@ import org.sweble.wikitext.engine.wom.WomBreak;
 import org.sweble.wikitext.engine.wom.WomClear;
 import org.sweble.wikitext.engine.wom.WomCoreAttributes;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -58,7 +58,7 @@ public class BreakAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public BreakAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public BreakAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(SHOULD_BE_EMPTY, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

@@ -20,7 +20,7 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -40,7 +40,7 @@ public class ParserFunctionSwitch
 	
 	@Override
 	protected WtNode evaluate(
-			Template pfn,
+			WtTemplate pfn,
 			ExpansionFrame frame,
 			List<? extends WtNode> args)
 	{

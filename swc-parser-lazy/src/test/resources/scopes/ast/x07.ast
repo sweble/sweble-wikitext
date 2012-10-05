@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -18,7 +18,7 @@ WtParsedWikitextPage(
 
           [
             WtText(" a ")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "i"
@@ -30,7 +30,7 @@ WtParsedWikitextPage(
           ]
         )
       )
-      XmlElement(
+      WtXmlElement(
         Properties:
           {N} empty = false
           {N} name = "i"

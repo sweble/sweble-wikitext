@@ -34,7 +34,7 @@ import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.wom.WomIns;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -60,7 +60,7 @@ public class InsAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public InsAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public InsAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(BLOCK_OR_MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

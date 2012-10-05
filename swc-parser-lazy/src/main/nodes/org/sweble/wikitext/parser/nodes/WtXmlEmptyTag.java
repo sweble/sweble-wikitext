@@ -1,58 +1,63 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
+import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>TemplateArgument</h1> <h2>Grammar</h2>
+ * <h1>Empty XML Element</h1>
  */
-public class TemplateArgument
+public class WtXmlEmptyTag
 		extends
-			WtInnerNode2
+			WtInnerNode1
+		implements
+			WtNamedXmlElement,
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public TemplateArgument()
+	public WtXmlEmptyTag()
 	{
-		super(new WtNodeList(), new WtNodeList());
-		
+		super(new WtNodeList());
 	}
 	
-	public TemplateArgument(WtNodeList value, boolean hasName)
+	public WtXmlEmptyTag(String name, WtNodeList xmlAttributes)
 	{
-		super(new WtNodeList(), value);
-		setHasName(hasName);
-		
-	}
-	
-	public TemplateArgument(WtNodeList name, WtNodeList value, boolean hasName)
-	{
-		super(name, value);
-		setHasName(hasName);
-		
+		super(xmlAttributes);
+		setName(name);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_ARGUMENT;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_EMPTY;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
+	{
+		return false;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private boolean hasName;
+	private String name;
 	
-	public final boolean getHasName()
+	public final String getName()
 	{
-		return this.hasName;
+		return this.name;
 	}
 	
-	public final boolean setHasName(boolean hasName)
+	public final String setName(String name)
 	{
-		boolean old = this.hasName;
-		this.hasName = hasName;
+		String old = this.name;
+		this.name = name;
 		return old;
 	}
 	
@@ -62,7 +67,7 @@ public class TemplateArgument
 		return 1 + getSuperPropertyCount();
 	}
 	
-	public int getSuperPropertyCount()
+	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -70,12 +75,12 @@ public class TemplateArgument
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode2PropertyIterator()
+		return new WtInnerNode1PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return TemplateArgument.this.getPropertyCount();
+				return WtXmlEmptyTag.this.getPropertyCount();
 			}
 			
 			@Override
@@ -84,7 +89,7 @@ public class TemplateArgument
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "hasName";
+						return "name";
 						
 					default:
 						return super.getName(index);
@@ -97,7 +102,7 @@ public class TemplateArgument
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return TemplateArgument.this.getHasName();
+						return WtXmlEmptyTag.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -110,7 +115,7 @@ public class TemplateArgument
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return TemplateArgument.this.setHasName((Boolean) value);
+						return WtXmlEmptyTag.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -122,27 +127,17 @@ public class TemplateArgument
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtNodeList name)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
-		set(0, name);
+		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getName()
+	public final WtNodeList getXmlAttributes()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	public final void setValue(WtNodeList value)
-	{
-		set(1, value);
-	}
-	
-	public final WtNodeList getValue()
-	{
-		return (WtNodeList) get(1);
-	}
-	
-	private static final String[] CHILD_NAMES = new String[] { "name", "value" };
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
 	
 	public final String[] getChildNames()
 	{

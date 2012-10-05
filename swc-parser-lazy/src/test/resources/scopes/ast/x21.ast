@@ -13,7 +13,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "::" <o> "" ]
 
             [
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "i"
@@ -22,7 +22,7 @@ WtParsedWikitextPage(
                 [ ]
                 [
                   WtText("X")
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "b"
@@ -31,7 +31,7 @@ WtParsedWikitextPage(
                     [ ]
                     [ WtText(" Y") ]
                   )
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "i"
@@ -48,7 +48,7 @@ WtParsedWikitextPage(
         ])
       ])
     ])
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "i"
@@ -66,7 +66,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ ":" <o> "" ]
 
         [
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "i"
@@ -78,7 +78,7 @@ WtParsedWikitextPage(
         ]
       )
     ])
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "i"

@@ -34,7 +34,7 @@ import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -75,7 +75,7 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 			FullElementContentType contentType,
 			String tagName,
 			AstToWomNodeFactory factory,
-			XmlElement astNode)
+			WtXmlElement astNode)
 	{
 		super(tagName, astNode);
 		addAttributes(astNode.getXmlAttributes());
@@ -100,9 +100,9 @@ public abstract class NativeOrXmlElementWithUniversalAttributes
 	}
 	
 	@Override
-	protected XmlElement convertToXmlElement()
+	protected WtXmlElement convertToXmlElement()
 	{
-		return Toolbox.addRtData(new XmlElement(
+		return Toolbox.addRtData(new WtXmlElement(
 				getNodeName(),
 				false,
 				new WtNodeList(),

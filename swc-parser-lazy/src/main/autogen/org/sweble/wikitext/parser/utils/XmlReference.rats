@@ -103,14 +103,14 @@ private inline WtNode XmlCharRefChoice =
       // TODO: check if valid char ref
       // TODO: add warnings for incomplete syntax
       // TODO: make sure only valid characters are "generated" (encval)
-      yyValue = setRtd(new XmlCharRef(Integer.parseInt(ch, 16)), "&#x", ch, ';');
+      yyValue = setRtd(new WtXmlCharRef(Integer.parseInt(ch, 16)), "&#x", ch, ';');
     }
   / ch:DigitPlus ';'
     {
       // TODO: check if valid char ref
       // TODO: add warnings for incomplete syntax
       // TODO: make sure only valid characters are "generated" (encval)
-      yyValue = setRtd(new XmlCharRef(Integer.parseInt(ch)), "&#", ch, ';');
+      yyValue = setRtd(new WtXmlCharRef(Integer.parseInt(ch)), "&#", ch, ';');
     }
 /// &{ isWarningsEnabled() } XmlCharRefAutoCorrect
 ;
@@ -122,7 +122,7 @@ private inline WtNode XmlEntityRefChoice =
       // TODO: add warnings for incomplete syntax
       // TODO: make sure only valid characters are "generated" (encval)
       String resolved = getState().getConfig().resolveXmlEntity(name);
-      yyValue = setRtd(new XmlEntityRef(name, resolved), '&', name, ';');
+      yyValue = setRtd(new WtXmlEntityRef(name, resolved), '&', name, ';');
     }
 /// &{ isWarningsEnabled() } XmlEntityRefAutoCorrect
 ;

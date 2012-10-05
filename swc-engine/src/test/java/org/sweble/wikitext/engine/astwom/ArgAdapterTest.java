@@ -30,7 +30,7 @@ import org.sweble.wikitext.engine.astwom.adapters.NameAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.ValueAdapter;
 import org.sweble.wikitext.engine.wom.WomName;
 import org.sweble.wikitext.engine.wom.WomValue;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.utils.AstBuilder;
 
 public class ArgAdapterTest
@@ -56,7 +56,7 @@ public class ArgAdapterTest
 		assertNull(arg.getName());
 		assertNotNull(arg.getArgValue());
 		
-		TemplateArgument astNode = arg.getAstNode();
+		WtTemplateArgument astNode = arg.getAstNode();
 		assertEquals(
 				astNode.get(0),
 				((ValueAdapter) arg.getArgValue()).getAstNode());
@@ -71,7 +71,7 @@ public class ArgAdapterTest
 		assertEquals(value, arg.getArgValue());
 		assertNull(arg.getName());
 		
-		TemplateArgument astNode = arg.getAstNode();
+		WtTemplateArgument astNode = arg.getAstNode();
 		assertEquals(
 				astNode.get(0),
 				((ValueAdapter) arg.getArgValue()).getAstNode());
@@ -87,7 +87,7 @@ public class ArgAdapterTest
 		assertEquals(name, arg.getName());
 		assertEquals(value, arg.getArgValue());
 		
-		TemplateArgument astNode = arg.getAstNode();
+		WtTemplateArgument astNode = arg.getAstNode();
 		assertEquals(
 				astNode.get(0),
 				((NameAdapter) arg.getName()).getAstNode());
@@ -99,7 +99,7 @@ public class ArgAdapterTest
 	@Test
 	public void canCreateArgFromAst() throws Exception
 	{
-		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+		WtTemplateArgument tmplArg = AstBuilder.astTmplArg()
 				.withName("arg")
 				.withValue("value")
 				.build();
@@ -116,7 +116,7 @@ public class ArgAdapterTest
 	@Test
 	public void canRemoveNameFromArg() throws Exception
 	{
-		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+		WtTemplateArgument tmplArg = AstBuilder.astTmplArg()
 				.withName("arg")
 				.withValue("value")
 				.build();
@@ -135,7 +135,7 @@ public class ArgAdapterTest
 	@Test
 	public void cannotRemoveValueFromArg() throws Exception
 	{
-		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+		WtTemplateArgument tmplArg = AstBuilder.astTmplArg()
 				.withName("arg")
 				.withValue("value")
 				.build();
@@ -150,7 +150,7 @@ public class ArgAdapterTest
 	@Test
 	public void canRelaceValue() throws Exception
 	{
-		TemplateArgument tmplArg = AstBuilder.astTmplArg()
+		WtTemplateArgument tmplArg = AstBuilder.astTmplArg()
 				.withName("arg")
 				.withValue("value")
 				.build();

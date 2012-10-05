@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [WtText("disambig")], [1] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText("disambig")], [1] = [])}
     {N} warnings = []
 
   [
@@ -28,7 +28,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -46,7 +46,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -64,7 +64,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -82,7 +82,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -100,7 +100,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" Average Squared Difference Function, a mapping used in ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = "s"
               {N} prefix = ""
@@ -117,7 +117,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" asdf, the first four letters in the ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -127,7 +127,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" on a ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -145,7 +145,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" asdf movie, a series of ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = "s"
               {N} prefix = ""
@@ -183,7 +183,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -200,7 +200,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -217,7 +217,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -232,7 +232,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -242,7 +242,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtNewline("\n")
-          Template(
+          WtTemplate(
             Properties:
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -254,7 +254,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -264,7 +264,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtNewline("\n")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""

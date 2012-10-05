@@ -29,9 +29,9 @@ import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
@@ -95,14 +95,14 @@ public class CorePfnFunctionsMiscellaneous
 		
 		@Override
 		public WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> argsValues)
 		{
 			if (argsValues.size() < 2)
 				return pfn;
 			
-			TemplateArgument nameNode = (TemplateArgument) argsValues.get(0);
+			WtTemplateArgument nameNode = (WtTemplateArgument) argsValues.get(0);
 			
 			String nameStr;
 			try
@@ -117,12 +117,12 @@ public class CorePfnFunctionsMiscellaneous
 			
 			// FIXME: Meld 'name=' part into value
 			// FIXME: Do something about the "remove comments" hack
-			TemplateArgument bodyNode = (TemplateArgument) argsValues.get(1);
+			WtTemplateArgument bodyNode = (WtTemplateArgument) argsValues.get(1);
 			WtNode expValueNode = frame.expand(bodyNode.getValue());
 			expValueNode = stripComments(expValueNode);
 			String bodyStr = RtWikitextPrinter.print(expValueNode);
 			
-			TagExtension tagExt = astTagExtension()
+			WtTagExtension tagExt = astTagExtension()
 					.withName(nameStr)
 					.withBody(bodyStr)
 					.build();
@@ -130,7 +130,7 @@ public class CorePfnFunctionsMiscellaneous
 			WtNodeList attribs = astList();
 			for (int i = 2; i < argsValues.size(); ++i)
 			{
-				TemplateArgument arg = (TemplateArgument) argsValues.get(i);
+				WtTemplateArgument arg = (WtTemplateArgument) argsValues.get(i);
 				WtNode argNameNode = frame.expand(arg.getName());
 				WtNode argValueNode = frame.expand(arg.getValue());
 				if (argNameNode == null || argValueNode == null)

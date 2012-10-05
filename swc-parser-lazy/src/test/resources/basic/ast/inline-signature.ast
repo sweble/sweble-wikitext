@@ -31,7 +31,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
-          Signature(
+          WtSignature(
             Properties:
               {N} rtd = RTD[ "~~~" ]
               {N} tildeCount = 3
@@ -43,7 +43,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
-          Signature(
+          WtSignature(
             Properties:
               {N} rtd = RTD[ "~~~~" ]
               {N} tildeCount = 4
@@ -55,7 +55,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
-          Signature(
+          WtSignature(
             Properties:
               {N} rtd = RTD[ "~~~~~" ]
               {N} tildeCount = 5
@@ -67,7 +67,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "*" <o> "\n" ]
 
         [
-          Signature(
+          WtSignature(
             Properties:
               {N} rtd = RTD[ "~~~~~" ]
               {N} tildeCount = 5
@@ -84,7 +84,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "*" <o> "" ]
 
         [
-          Signature(
+          WtSignature(
             Properties:
               {N} rtd = RTD[ "~~~~~" ]
               {N} tildeCount = 5

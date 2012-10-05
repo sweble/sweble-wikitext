@@ -24,10 +24,10 @@ import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
-import org.sweble.wikitext.parser.preprocessor.ProtectedText;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
+import org.sweble.wikitext.parser.preprocessor.WtProtectedText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.Tuple;
@@ -133,7 +133,7 @@ public class StringConverterPartial
 			}
 		}
 		
-		public void visit(XmlCharRef n)
+		public void visit(WtXmlCharRef n)
 		{
 			if (opt(StringConverter.RESOLVE_CHAR_REF))
 			{
@@ -154,7 +154,7 @@ public class StringConverterPartial
 			}
 		}
 		
-		public void visit(XmlEntityRef n)
+		public void visit(WtXmlEntityRef n)
 		{
 			String replacement = null;
 			if (opt(StringConverter.RESOLVE_ENTITY_REF))
@@ -184,7 +184,7 @@ public class StringConverterPartial
 			result.append(n.getContent());
 		}
 		
-		public void visit(ProtectedText n)
+		public void visit(WtProtectedText n)
 		{
 			if (!opt(StringConverter.FAIL_ON_PROTECTED_TEXT))
 				result.append(n.getContent());

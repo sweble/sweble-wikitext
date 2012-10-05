@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=TagExtension([0] = [])}
+    {N} entityMap = EntityMap {0=WtTagExtension([0] = [])}
     {N} warnings = []
 
   [
@@ -9,7 +9,7 @@ WtParsedWikitextPage(
         {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
       [
-        XmlAttribute(
+        WtXmlAttribute(
           Properties:
             {N} hasValue = true
             {N} name = "border"
@@ -26,7 +26,7 @@ WtParsedWikitextPage(
           [ ]
           [
             WtText("1")
-            TagExtension(
+            WtTagExtension(
               Properties:
                 {N} body = "T|a\n|b"
                 {N} name = "pre"
@@ -43,7 +43,7 @@ WtParsedWikitextPage(
           [ ]
           [
             WtText("2")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "span"

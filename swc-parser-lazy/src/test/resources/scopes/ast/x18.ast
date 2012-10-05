@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "li"
@@ -14,7 +14,7 @@ WtParsedWikitextPage(
       [ WtText("item1") ]
     )
     WtNewline("\n")
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "li"
@@ -23,7 +23,7 @@ WtParsedWikitextPage(
       [ ]
       [
         WtText("item2")
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "div"
@@ -32,7 +32,7 @@ WtParsedWikitextPage(
           [ ]
           [
             WtNewline("\n")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "li"

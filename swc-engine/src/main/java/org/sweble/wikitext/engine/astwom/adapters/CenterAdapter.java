@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomCenter;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class CenterAdapter
 		extends
@@ -39,7 +39,7 @@ public class CenterAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public CenterAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public CenterAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(BLOCK_ELEMENTS, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

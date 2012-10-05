@@ -3,26 +3,16 @@ package org.sweble.wikitext.parser.nodes;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Url</h1> <h2>Grammar</h2>
+ * <h1>Xml Entity Reference</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
- * Protocol ::= [A-Za-z] [A-Za-z0-9+\-.]*
- * </p>
- * </li>
- * <li>
- * <p>
- * Path ::= [^\u0000- \u007F\uE000\u2028\u2029\u0085\"\[\]<>|]+
- * </p>
- * </li>
- * <li>
- * <p>
- * Url ::= Scheme ':' Path
+ * '&' XmlName ';'
  * </p>
  * </li>
  * </ul>
  */
-public class Url
+public class WtXmlEntityRef
 		extends
 			WtLeafNode
 {
@@ -30,54 +20,46 @@ public class Url
 	
 	// =========================================================================
 	
-	public Url()
+	public WtXmlEntityRef(String name, String resolved)
 	{
-		super();
-		
-	}
-	
-	public Url(String protocol, String path)
-	{
-		super();
-		setProtocol(protocol);
-		setPath(path);
-		
+		setName(name);
+		setResolved(resolved);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_URL;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ENTITY_REF;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String protocol;
+	private String name;
 	
-	public final String getProtocol()
+	public final String getName()
 	{
-		return this.protocol;
+		return this.name;
 	}
 	
-	public final String setProtocol(String protocol)
+	public final String setName(String name)
 	{
-		String old = this.protocol;
-		this.protocol = protocol;
+		String old = this.name;
+		this.name = name;
 		return old;
 	}
 	
-	private String path;
+	private String resolved;
 	
-	public final String getPath()
+	public final String getResolved()
 	{
-		return this.path;
+		return this.resolved;
 	}
 	
-	public final String setPath(String path)
+	public final String setResolved(String resolved)
 	{
-		String old = this.path;
-		this.path = path;
+		String old = this.resolved;
+		this.resolved = resolved;
 		return old;
 	}
 	
@@ -100,7 +82,7 @@ public class Url
 			@Override
 			protected int getPropertyCount()
 			{
-				return Url.this.getPropertyCount();
+				return WtXmlEntityRef.this.getPropertyCount();
 			}
 			
 			@Override
@@ -109,9 +91,9 @@ public class Url
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "protocol";
+						return "name";
 					case 1:
-						return "path";
+						return "resolved";
 						
 					default:
 						return super.getName(index);
@@ -124,9 +106,9 @@ public class Url
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Url.this.getProtocol();
+						return WtXmlEntityRef.this.getName();
 					case 1:
-						return Url.this.getPath();
+						return WtXmlEntityRef.this.getResolved();
 						
 					default:
 						return super.getValue(index);
@@ -139,9 +121,9 @@ public class Url
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Url.this.setProtocol((String) value);
+						return WtXmlEntityRef.this.setName((String) value);
 					case 1:
-						return Url.this.setPath((String) value);
+						return WtXmlEntityRef.this.setResolved((String) value);
 						
 					default:
 						return super.setValue(index, value);

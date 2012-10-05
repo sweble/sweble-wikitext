@@ -33,7 +33,7 @@ import org.sweble.wikitext.engine.wom.WomCoreAttributes;
 import org.sweble.wikitext.engine.wom.WomFont;
 import org.sweble.wikitext.engine.wom.WomI18nAttributes;
 import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -59,7 +59,7 @@ public class FontAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public FontAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public FontAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

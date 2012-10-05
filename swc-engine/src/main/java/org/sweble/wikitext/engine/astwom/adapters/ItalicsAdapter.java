@@ -22,7 +22,7 @@ import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomItalics;
 import org.sweble.wikitext.parser.nodes.WtItalics;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class ItalicsAdapter
 		extends
@@ -46,7 +46,7 @@ public class ItalicsAdapter
 		super(MIXED_INLINE, womNodeFactory, astNode);
 	}
 	
-	public ItalicsAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public ItalicsAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

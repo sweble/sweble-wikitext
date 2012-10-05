@@ -1,5 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
@@ -8,6 +10,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 public class WtXmlComment
 		extends
 			WtStringContentNode
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	

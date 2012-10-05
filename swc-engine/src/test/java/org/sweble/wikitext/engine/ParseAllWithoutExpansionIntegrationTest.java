@@ -29,8 +29,8 @@ import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
-import org.sweble.wikitext.parser.nodes.TemplateParameter;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.utils.WtPrinter;
@@ -100,21 +100,21 @@ public class ParseAllWithoutExpansionIntegrationTest
 				+ "        [ WtText(\"italic default value\") ]\n"
 				+ "      )\n"
 				+ "      Newline(\"\\n\")\n"
-				+ "      Template(\n"
+				+ "      WtTemplate(\n"
 				+ "        Properties:\n"
 				+ "          {N} precededByNewline = true\n"
 				+ "          {N} rtd = RTD[ \"{{\" <o> \"\" <o> \"}}\" ]\n"
 				+ "\n"
 				+ "        [ WtText(\"some template\") ]\n"
 				+ "        [\n"
-				+ "          TemplateArgument(\n"
+				+ "          WtTemplateArgument(\n"
 				+ "            Properties:\n"
 				+ "              {N} hasName = false\n"
 				+ "              {N} rtd = RTD[ \"|\" <o> \"\" <o> \"\" ]\n"
 				+ "\n"
 				+ "            [ ]\n"
 				+ "            [\n"
-				+ "              InternalLink(\n"
+				+ "              WtInternalLink(\n"
 				+ "                Properties:\n"
 				+ "                  {N} postfix = \"\"\n"
 				+ "                  {N} prefix = \"\"\n"
@@ -169,9 +169,9 @@ public class ParseAllWithoutExpansionIntegrationTest
 			return n;
 		}
 		
-		public WtNode visit(TemplateParameter n) throws CompilerException
+		public WtNode visit(WtTemplateParameter n) throws CompilerException
 		{
-			TemplateArgument defValArg = n.getDefaultValue();
+			WtTemplateArgument defValArg = n.getDefaultValue();
 			if (defValArg == null)
 				return n;
 			

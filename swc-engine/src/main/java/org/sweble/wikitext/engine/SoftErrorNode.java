@@ -24,12 +24,12 @@ import static org.sweble.wikitext.parser.utils.AstBuilder.astXmlAttrib;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class SoftErrorNode
 		extends
-			XmlElement
+			WtXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -67,9 +67,9 @@ public class SoftErrorNode
 	{
 		for (WtNode attrib : this.getXmlAttributes())
 		{
-			if (attrib == null || !(attrib instanceof XmlAttribute))
+			if (attrib == null || !(attrib instanceof WtXmlAttribute))
 				continue;
-			XmlAttribute a = (XmlAttribute) attrib;
+			WtXmlAttribute a = (WtXmlAttribute) attrib;
 			if (!a.getName().equals("class"))
 				continue;
 			a.setValue(astList(a.getValue(), astText(" " + cssClass)));

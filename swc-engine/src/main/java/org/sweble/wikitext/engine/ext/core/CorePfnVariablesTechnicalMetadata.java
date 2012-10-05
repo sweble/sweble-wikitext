@@ -25,7 +25,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class CorePfnVariablesTechnicalMetadata
@@ -71,7 +71,7 @@ public class CorePfnVariablesTechnicalMetadata
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
@@ -109,7 +109,7 @@ public class CorePfnVariablesTechnicalMetadata
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
@@ -152,7 +152,7 @@ public class CorePfnVariablesTechnicalMetadata
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
@@ -190,7 +190,7 @@ public class CorePfnVariablesTechnicalMetadata
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{

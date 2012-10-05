@@ -17,14 +17,13 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlStartTag;
+import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 
-public class IntermediateStartTag
+public class WtImEndTag
 		extends
-			XmlStartTag
+			WtXmlEndTag
 		implements
-			IntermediateTag
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -34,17 +33,17 @@ public class IntermediateStartTag
 	
 	// =========================================================================
 	
-	public IntermediateStartTag(IntermediateTags type)
+	public WtImEndTag(IntermediateTags type)
 	{
-		super(type.getElementName(), new WtNodeList());
+		super(type.getElementName());
 		
 		this.type = type;
 		this.synthetic = false;
 	}
 	
-	public IntermediateStartTag(IntermediateTags type, boolean synthetic)
+	public WtImEndTag(IntermediateTags type, boolean synthetic)
 	{
-		super(type.getElementName(), new WtNodeList());
+		super(type.getElementName());
 		
 		this.type = type;
 		this.synthetic = synthetic;

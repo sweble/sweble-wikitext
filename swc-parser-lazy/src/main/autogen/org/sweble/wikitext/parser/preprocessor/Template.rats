@@ -115,10 +115,10 @@ stateful WtNode Template =
           WtNodeList list = (WtNodeList) yyValue;
           tmpl = list.get(list.size() - 1);
         }
-        if (yyValue instanceof Template)
-          ((Template) yyValue).setPrecededByNewline(true);
+        if (yyValue instanceof WtTemplate)
+          ((WtTemplate) yyValue).setPrecededByNewline(true);
         else
-          ((TemplateParameter) yyValue).setPrecededByNewline(true);
+          ((WtTemplateParameter) yyValue).setPrecededByNewline(true);
         yyValue = new WtNodeList(new WtText(eol), yyValue);
       }
     }
@@ -183,16 +183,16 @@ private transient WtNode TemplateTailPart =
       WtNodeList args = content.getForeign(1, WtNodeList.class);
 
       WtNodeList garbage = null;
-      TemplateArgument defaultValue = null;
+      WtTemplateArgument defaultValue = null;
       if (args.size() > 0)
       {
-        defaultValue = (TemplateArgument) args.get(0);
+        defaultValue = (WtTemplateArgument) args.get(0);
         if (args.size() > 1)
           garbage = new WtNodeList(args.subList(1, args.size()));
       }
 
       yyValue = setRtd(
-        new TemplateParameter(content.getForeign(0, WtNodeList.class), defaultValue, garbage),
+        new WtTemplateParameter(content.getForeign(0, WtNodeList.class), defaultValue, garbage),
         "{{{", SEP, SEP, SEP, "}}}");
 
       getState().eatTemplateBraces(3);
@@ -201,7 +201,7 @@ private transient WtNode TemplateTailPart =
     {
       // content = (name, args)
       yyValue = setRtd(
-        new Template(content.getForeign(0, WtNodeList.class), content.getForeign(1, WtNodeList.class)),
+        new WtTemplate(content.getForeign(0, WtNodeList.class), content.getForeign(1, WtNodeList.class)),
         "{{", SEP, SEP, "}}");
 
       getState().eatTemplateBraces(2);
@@ -242,13 +242,13 @@ private transient WtNode TemplateArgumentChoice =
     parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
     {
       yyValue = setRtd(
-        new TemplateArgument(parameter, value, true),
+        new WtTemplateArgument(parameter, value, true),
         '|', SEP, '=', SEP);
     }
   / value:TemplateArgumentValueStar
     {
       yyValue = setRtd(
-        new TemplateArgument(value, false),
+        new WtTemplateArgument(value, false),
         '|', SEP, SEP);
     }
 ;

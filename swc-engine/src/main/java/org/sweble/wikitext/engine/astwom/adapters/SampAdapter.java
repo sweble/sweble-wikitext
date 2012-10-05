@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomSamp;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class SampAdapter
 		extends
@@ -39,7 +39,7 @@ public class SampAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public SampAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public SampAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

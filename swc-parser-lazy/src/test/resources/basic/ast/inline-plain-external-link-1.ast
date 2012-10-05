@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      Url(
+      WtUrl(
         Properties:
           {N} path = "//example.com"
           {N} protocol = "http"

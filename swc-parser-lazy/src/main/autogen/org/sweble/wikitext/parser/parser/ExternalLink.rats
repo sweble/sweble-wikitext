@@ -114,13 +114,13 @@ ExternalLinkChoice =
     rt0:pTpStar target:Url rt1:pExtSpacePlus title:ExternalLinkTitleContentPlus ']'
     {
       yyValue = setRtd(
-        new ExternalLink(target, title),
+        new WtExternalLink(target, title),
         '[', rt0, SEP, rt1, SEP, ']');
     }
   / rt0:pTpStar target:Url rt1:pSpaceStar ']'
     {
       yyValue = setRtd(
-        new ExternalLink(target),
+        new WtExternalLink(target),
         '[', rt0, SEP, SEP, rt1, ']');
     }
   / &{ isWarningsEnabled() } ExternalLinkAutoCorrect
@@ -130,7 +130,7 @@ private inline WtNode ExternalLinkAutoCorrect =
     &{ isAutoCorrect(WS_INFO) } rt0:pTpStar target:Url
     {
       yyValue = setRtd(
-        new ExternalLink(target),
+        new WtExternalLink(target),
         '[', rt0, SEP, SEP, ']');
 
       fileLooksLikeWarning(

@@ -238,7 +238,7 @@ body
     }
   }
 
-  private WtNode addLinkPrefix(WtText text, InternalLink link)
+  private WtNode addLinkPrefix(WtText text, WtInternalLink link)
   {
     String t = text.getContent();
     if (!t.isEmpty())
@@ -256,7 +256,7 @@ body
           {
             String b = t.substring(0, t.length() - p.length());
 
-            InternalLink l = (InternalLink) link.cloneWrapException();
+            WtInternalLink l = (WtInternalLink) link.cloneWrapException();
             l.setPrefix(p);
             prependRtd(l, p);
 

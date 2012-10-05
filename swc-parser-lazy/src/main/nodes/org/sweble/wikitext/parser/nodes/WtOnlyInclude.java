@@ -1,5 +1,6 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 import org.sweble.wikitext.parser.preprocessor.XmlElementType;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
@@ -10,6 +11,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 public class WtOnlyInclude
 		extends
 			WtContentNodeMarkTwo
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	

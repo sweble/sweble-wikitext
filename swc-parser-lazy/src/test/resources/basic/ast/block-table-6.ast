@@ -15,7 +15,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
           [
-            XmlAttribute(
+            WtXmlAttribute(
               Properties:
                 {N} hasValue = true
                 {N} name = "S"
@@ -31,7 +31,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "||" <o> " |" <o> "" ]
 
           [
-            XmlAttribute(
+            WtXmlAttribute(
               Properties:
                 {N} hasValue = true
                 {N} name = "S"

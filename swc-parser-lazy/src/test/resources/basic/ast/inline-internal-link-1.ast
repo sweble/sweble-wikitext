@@ -29,7 +29,7 @@ WtParsedWikitextPage(
       WtNewline("\n")
     ])
     WtParagraph([
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -63,7 +63,7 @@ WtParsedWikitextPage(
       WtNewline("\n")
     ])
     WtParagraph([
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText(
@@ -78,7 +78,7 @@ WtParsedWikitextPage(
           {N} height = 15
           {N} linkPage = null
           {N} linkUrl = 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//example.com"
                 {N} protocol = "http"
@@ -118,7 +118,7 @@ WtParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "\n\t" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//example.com"
                 {N} protocol = "http"
@@ -154,7 +154,7 @@ WtParsedWikitextPage(
       WtNewline("\n")
     ])
     WtParagraph([
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -174,7 +174,7 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
       WtNewline("\n")
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -205,7 +205,7 @@ WtParsedWikitextPage(
         )
       )
       WtNewline("\n")
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -237,7 +237,7 @@ WtParsedWikitextPage(
         )
       )
       WtNewline("\n")
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -247,7 +247,7 @@ WtParsedWikitextPage(
           {N} height = -1
           {N} linkPage = null
           {N} linkUrl = 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//example.com"
                 {N} protocol = "http"
@@ -264,7 +264,7 @@ WtParsedWikitextPage(
             Properties:
               {N} rtd = RTD[ "|link=" <o> "" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//example.com"
                 {N} protocol = "http"
@@ -283,7 +283,7 @@ WtParsedWikitextPage(
       WtNewline("\n")
     ])
     WtParagraph([
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -298,7 +298,7 @@ WtParsedWikitextPage(
         )
       )
       WtNewline("\n")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -313,7 +313,7 @@ WtParsedWikitextPage(
         )
       )
       WtNewline("\n")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -329,7 +329,7 @@ WtParsedWikitextPage(
       )
       WtText("]")
       WtNewline("\n")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -348,7 +348,7 @@ WtParsedWikitextPage(
       WtNewline("\n")
     ])
     WtParagraph([
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -359,7 +359,7 @@ WtParsedWikitextPage(
       )
       WtNewline("\n")
       WtText("text ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = "a"
@@ -371,7 +371,7 @@ WtParsedWikitextPage(
       WtText(" text")
       WtNewline("\n")
       WtText("text ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = "z"
           {N} prefix = ""
@@ -383,7 +383,7 @@ WtParsedWikitextPage(
       WtText(" text")
       WtNewline("\n")
       WtText("text ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = "z"
           {N} prefix = "a"

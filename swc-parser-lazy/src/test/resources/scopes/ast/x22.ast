@@ -9,7 +9,7 @@ WtParsedWikitextPage(
       WtText("x")
       WtNewline("\n")
     ])
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = true
         {N} name = "hr"

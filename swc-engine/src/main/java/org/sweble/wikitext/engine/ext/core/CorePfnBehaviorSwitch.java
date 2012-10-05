@@ -22,7 +22,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.parser.nodes.PageSwitch;
+import org.sweble.wikitext.parser.nodes.WtPageSwitch;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public abstract class CorePfnBehaviorSwitch
@@ -48,8 +48,8 @@ public abstract class CorePfnBehaviorSwitch
 			ExpansionFrame frame,
 			List<? extends WtNode> argsValues)
 	{
-		return invoke((PageSwitch) pageSwitch, frame);
+		return invoke((WtPageSwitch) pageSwitch, frame);
 	}
 	
-	protected abstract WtNode invoke(PageSwitch var, ExpansionFrame frame);
+	protected abstract WtNode invoke(WtPageSwitch var, ExpansionFrame frame);
 }

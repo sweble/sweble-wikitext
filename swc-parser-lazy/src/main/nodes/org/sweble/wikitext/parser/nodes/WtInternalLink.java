@@ -5,7 +5,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 /**
  * <h1>Internal Link</h1>
  */
-public class InternalLink
+public class WtInternalLink
 		extends
 			WtInnerNode1
 {
@@ -13,13 +13,12 @@ public class InternalLink
 	
 	// =========================================================================
 	
-	public InternalLink()
+	public WtInternalLink()
 	{
 		super(new WtLinkTitle());
-		
 	}
 	
-	public InternalLink(
+	public WtInternalLink(
 			String prefix,
 			String target,
 			WtLinkTitle title,
@@ -29,7 +28,6 @@ public class InternalLink
 		setPrefix(prefix);
 		setTarget(target);
 		setPostfix(postfix);
-		
 	}
 	
 	@Override
@@ -102,7 +100,7 @@ public class InternalLink
 			@Override
 			protected int getPropertyCount()
 			{
-				return InternalLink.this.getPropertyCount();
+				return WtInternalLink.this.getPropertyCount();
 			}
 			
 			@Override
@@ -128,11 +126,11 @@ public class InternalLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return InternalLink.this.getTarget();
+						return WtInternalLink.this.getTarget();
 					case 1:
-						return InternalLink.this.getPrefix();
+						return WtInternalLink.this.getPrefix();
 					case 2:
-						return InternalLink.this.getPostfix();
+						return WtInternalLink.this.getPostfix();
 						
 					default:
 						return super.getValue(index);
@@ -145,11 +143,11 @@ public class InternalLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return InternalLink.this.setTarget((String) value);
+						return WtInternalLink.this.setTarget((String) value);
 					case 1:
-						return InternalLink.this.setPrefix((String) value);
+						return WtInternalLink.this.setPrefix((String) value);
 					case 2:
-						return InternalLink.this.setPostfix((String) value);
+						return WtInternalLink.this.setPostfix((String) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -177,21 +175,4 @@ public class InternalLink
 	{
 		return CHILD_NAMES;
 	}
-	
-	//	// =========================================================================
-	//	
-	//	@Override
-	//	public Object clone()
-	//	{
-	//		try
-	//		{
-	//			return super.clone();
-	//		}
-	//		catch (CloneNotSupportedException e)
-	//		{
-	//			assert false;
-	//			return null;
-	//		}
-	//	}
-	//	
 }

@@ -1,29 +1,29 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Redirect</h1> <h2>Grammar</h2>
+ * <h1>WtRedirect</h1> <h2>Grammar</h2>
  */
-public class Redirect
+public class WtRedirect
 		extends
 			WtLeafNode
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public Redirect()
+	public WtRedirect()
 	{
-		super();
-		
 	}
 	
-	public Redirect(String target)
+	public WtRedirect(String target)
 	{
-		super();
 		setTarget(target);
-		
 	}
 	
 	@Override
@@ -68,7 +68,7 @@ public class Redirect
 			@Override
 			protected int getPropertyCount()
 			{
-				return Redirect.this.getPropertyCount();
+				return WtRedirect.this.getPropertyCount();
 			}
 			
 			@Override
@@ -90,7 +90,7 @@ public class Redirect
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Redirect.this.getTarget();
+						return WtRedirect.this.getTarget();
 						
 					default:
 						return super.getValue(index);
@@ -103,7 +103,7 @@ public class Redirect
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Redirect.this.setTarget((String) value);
+						return WtRedirect.this.setTarget((String) value);
 						
 					default:
 						return super.setValue(index, value);

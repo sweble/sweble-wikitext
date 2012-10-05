@@ -1,24 +1,24 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Redirect(), 1=Template([0] = [WtText("name")], [1] = [TemplateArgument([0] = [], [1] = [WtText("arg0")]), TemplateArgument([0] = [WtText("arg1")], [1] = [WtText("value1")]), TemplateArgument([0] = [WtText("arg2")], [1] = [TemplateParameter([0] = [WtText("parameter2")], [1] = null, [2] = null)])])}
+    {N} entityMap = EntityMap {0=WtRedirect(), 1=WtTemplate([0] = [WtText("name")], [1] = [WtTemplateArgument([0] = [], [1] = [WtText("arg0")]), WtTemplateArgument([0] = [WtText("arg1")], [1] = [WtText("value1")]), WtTemplateArgument([0] = [WtText("arg2")], [1] = [WtTemplateParameter([0] = [WtText("parameter2")], [1] = null, [2] = null)])])}
     {N} warnings = []
 
   [
     WtParagraph([
-      Redirect(
+      WtRedirect(
         Properties:
           {N} rtd = RTD[ "#REDIRECT[[link]]" ]
           {N} target = "link"
       )
       WtNewline("\n")
-      Template(
+      WtTemplate(
         Properties:
           {N} precededByNewline = true
           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("name") ]
         [
-          TemplateArgument(
+          WtTemplateArgument(
             Properties:
               {N} hasName = false
               {N} rtd = RTD[ "|" <o> "" <o> "" ]
@@ -26,7 +26,7 @@ WtParsedWikitextPage(
             [ ]
             [ WtText("arg0") ]
           )
-          TemplateArgument(
+          WtTemplateArgument(
             Properties:
               {N} hasName = true
               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -34,14 +34,14 @@ WtParsedWikitextPage(
             [ WtText("arg1") ]
             [ WtText("value1") ]
           )
-          TemplateArgument(
+          WtTemplateArgument(
             Properties:
               {N} hasName = true
               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
             [ WtText("arg2") ]
             [
-              TemplateParameter(
+              WtTemplateParameter(
                 Properties:
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]

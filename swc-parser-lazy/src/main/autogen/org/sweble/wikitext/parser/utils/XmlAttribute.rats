@@ -127,22 +127,22 @@ private inline void GarbageStringStopper =
   / XmlAttrWs ValidXmlAttribute
 ;
 
-private XmlAttribute ValidXmlAttribute =
+private WtXmlAttribute ValidXmlAttribute =
     ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? ['] value:ValueSqStar ['] &AttrEnd
     {
-      yyValue = setRtd(new XmlAttribute(name, value, true), ws0, name, ws1, '=', ws2, '\'', SEP, '\'');
+      yyValue = setRtd(new WtXmlAttribute(name, value, true), ws0, name, ws1, '=', ws2, '\'', SEP, '\'');
     }
   / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' ws2:XmlAttrWs? '"' value:ValueDqStar '"' &AttrEnd
     {
-      yyValue = setRtd(new XmlAttribute(name, value, true), ws0, name, ws1, '=', ws2, '"', SEP, '"');
+      yyValue = setRtd(new WtXmlAttribute(name, value, true), ws0, name, ws1, '=', ws2, '"', SEP, '"');
     }
   / ws0:XmlAttrWs? name:XmlName ws1:XmlAttrWs? '=' value:ValueNqStar &AttrEnd
     {
-      yyValue = setRtd(new XmlAttribute(name, value, true), ws0, name, ws1, '=', SEP);
+      yyValue = setRtd(new WtXmlAttribute(name, value, true), ws0, name, ws1, '=', SEP);
     }
   / ws0:XmlAttrWs? name:XmlName &AttrEnd
     {
-      yyValue = setRtd(new XmlAttribute(name, false), ws0, name, SEP);
+      yyValue = setRtd(new WtXmlAttribute(name, false), ws0, name, SEP);
     }
 ;
 

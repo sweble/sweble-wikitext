@@ -25,12 +25,12 @@ import org.sweble.wikitext.engine.log.ResolveParserFunctionLog;
 import org.sweble.wikitext.engine.log.ResolveRedirectLog;
 import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
 import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
-import org.sweble.wikitext.parser.nodes.PageSwitch;
-import org.sweble.wikitext.parser.nodes.Redirect;
-import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
-import org.sweble.wikitext.parser.nodes.TemplateParameter;
+import org.sweble.wikitext.parser.nodes.WtPageSwitch;
+import org.sweble.wikitext.parser.nodes.WtRedirect;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -46,7 +46,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode beforeResolveRedirect(
 			ExpansionVisitor expansionVisitor,
-			Redirect n,
+			WtRedirect n,
 			String target)
 	{
 		return PROCEED;
@@ -54,7 +54,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode afterResolveRedirect(
 			ExpansionVisitor expansionVisitor,
-			Redirect n,
+			WtRedirect n,
 			String target,
 			WtNode result,
 			ResolveRedirectLog log)
@@ -64,7 +64,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode beforeResolveParserFunction(
 			ExpansionVisitor expansionVisitor,
-			Template n,
+			WtTemplate n,
 			ParserFunctionBase pfn,
 			List<? extends WtNode> argsValues)
 	{
@@ -73,7 +73,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode afterResolveParserFunction(
 			ExpansionVisitor expansionVisitor,
-			Template n,
+			WtTemplate n,
 			ParserFunctionBase pfn,
 			List<? extends WtNode> argsValues,
 			WtNode result,
@@ -84,18 +84,18 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode beforeResolveTransclusion(
 			ExpansionVisitor expansionVisitor,
-			Template n,
+			WtTemplate n,
 			String target,
-			List<TemplateArgument> args)
+			List<WtTemplateArgument> args)
 	{
 		return PROCEED;
 	}
 	
 	public WtNode afterResolveTransclusion(
 			ExpansionVisitor expansionVisitor,
-			Template n,
+			WtTemplate n,
 			String target,
-			List<TemplateArgument> args,
+			List<WtTemplateArgument> args,
 			WtNode result,
 			ResolveTransclusionLog log)
 	{
@@ -104,7 +104,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode beforeResolveParameter(
 			ExpansionVisitor expansionVisitor,
-			TemplateParameter n,
+			WtTemplateParameter n,
 			String name)
 	{
 		return PROCEED;
@@ -112,7 +112,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode afterResolveParameter(
 			ExpansionVisitor expansionVisitor,
-			TemplateParameter n,
+			WtTemplateParameter n,
 			String name,
 			WtNode result,
 			ResolveParameterLog log)
@@ -122,7 +122,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode beforeResolveTagExtension(
 			ExpansionVisitor expansionVisitor,
-			TagExtension n,
+			WtTagExtension n,
 			String name,
 			WtNodeList attrs,
 			String body)
@@ -132,7 +132,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode afterResolveTagExtension(
 			ExpansionVisitor expansionVisitor,
-			TagExtension n,
+			WtTagExtension n,
 			String name,
 			WtNodeList attributes,
 			String body,
@@ -144,7 +144,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode beforeResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
-			PageSwitch n,
+			WtPageSwitch n,
 			String word)
 	{
 		return PROCEED;
@@ -152,7 +152,7 @@ public abstract class ExpansionDebugHooks
 	
 	public WtNode afterResolvePageSwitch(
 			ExpansionVisitor expansionVisitor,
-			PageSwitch n,
+			WtPageSwitch n,
 			String word,
 			WtNode result,
 			ResolveMagicWordLog log)

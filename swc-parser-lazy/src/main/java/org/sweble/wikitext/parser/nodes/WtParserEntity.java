@@ -1,27 +1,31 @@
 package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
-import de.fau.cs.osr.ptk.common.ast.GenericText;
+import de.fau.cs.osr.ptk.common.ast.GenericParserEntity;
 
 public class WtParserEntity
 		extends
-			GenericText<WtNode>
+			GenericParserEntity<WtNode>
 		implements
-			WtNode
+			WtIntermediate
 {
-	
 	private static final long serialVersionUID = 7333107598118095040L;
 	
 	// =========================================================================
 	
-	public WtParserEntity()
+	public WtParserEntity(int id)
 	{
+		super(id);
 	}
 	
-	public WtParserEntity(String content)
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
 	{
-		super(content);
+		return false;
 	}
 	
 	// =========================================================================

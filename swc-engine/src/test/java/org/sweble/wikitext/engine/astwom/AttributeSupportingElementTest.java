@@ -29,8 +29,8 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -39,7 +39,7 @@ public class AttributeSupportingElementTest
 	@Test
 	public void supportedAstAttributeIsRetrievableThroughWomInterface() throws Exception
 	{
-		XmlAttribute a = astXmlAttrib()
+		WtXmlAttribute a = astXmlAttrib()
 				.withName("align")
 				.withValue("left")
 				.build();
@@ -53,7 +53,7 @@ public class AttributeSupportingElementTest
 	@Test
 	public void unsupportedAstAttributeIsHiddenInWomInterface() throws Exception
 	{
-		XmlAttribute a = astXmlAttrib()
+		WtXmlAttribute a = astXmlAttrib()
 				.withName("unsupported")
 				.build();
 		
@@ -66,7 +66,7 @@ public class AttributeSupportingElementTest
 	@Test
 	public void astAttributeWithUnsupportedValueIsHiddenInWomInterface() throws Exception
 	{
-		XmlAttribute a = astXmlAttrib()
+		WtXmlAttribute a = astXmlAttrib()
 				.withName("align")
 				.withValue("invalid")
 				.build();
@@ -80,12 +80,12 @@ public class AttributeSupportingElementTest
 	@Test
 	public void onlyLastValidAstAttributeIsAccessibleThroughWomInterface() throws Exception
 	{
-		XmlAttribute a0 = astXmlAttrib()
+		WtXmlAttribute a0 = astXmlAttrib()
 				.withName("align")
 				.withValue("right")
 				.build();
 		
-		XmlAttribute a1 = astXmlAttrib()
+		WtXmlAttribute a1 = astXmlAttrib()
 				.withName("align")
 				.withValue("left")
 				.build();
@@ -108,7 +108,7 @@ public class AttributeSupportingElementTest
 		@Setter(AccessLevel.PROTECTED)
 		private AttributeManagerBase attribManager = AttributeManagerBase.emptyManager();
 		
-		public ElementStub(XmlElement astNode)
+		public ElementStub(WtXmlElement astNode)
 		{
 			super(astNode);
 			addAttributes(astNode.getXmlAttributes());
@@ -133,7 +133,7 @@ public class AttributeSupportingElementTest
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public ElementStubForGenericAttributes(XmlElement astNode)
+		public ElementStubForGenericAttributes(WtXmlElement astNode)
 		{
 			super(astNode);
 		}
@@ -154,7 +154,7 @@ public class AttributeSupportingElementTest
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public ElementStubWithoutGenericAttributes(XmlElement astNode)
+		public ElementStubWithoutGenericAttributes(WtXmlElement astNode)
 		{
 			super(astNode);
 		}

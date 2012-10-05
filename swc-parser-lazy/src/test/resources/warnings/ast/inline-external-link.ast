@@ -10,7 +10,7 @@ WtParsedWikitextPage(
           {N} content = "\n["
           warnings = [Warning: This looks like a External Link, however the finishing `]' is missing: "[http://example.com"]
       )
-      Url(
+      WtUrl(
         Properties:
           {N} path = "//example.com"
           {N} protocol = "http"
@@ -24,7 +24,7 @@ WtParsedWikitextPage(
           {N} content = "["
           warnings = [Warning: This looks like a External Link, however the finishing `]' is missing: "[http://example.com"]
       )
-      Url(
+      WtUrl(
         Properties:
           {N} path = "//example.com"
           {N} protocol = "http"

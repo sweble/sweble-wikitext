@@ -33,7 +33,7 @@ import org.sweble.wikitext.engine.wom.WomValueWithUnit;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 
 public abstract class AttributeManagerBase
 		implements
@@ -806,7 +806,7 @@ public abstract class AttributeManagerBase
 				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
 					continue;
 				
-				XmlAttribute attr = (XmlAttribute) node;
+				WtXmlAttribute attr = (WtXmlAttribute) node;
 				if (attr.getName().equalsIgnoreCase(remove.getName()))
 				{
 					i.remove();
@@ -897,12 +897,12 @@ public abstract class AttributeManagerBase
 			// replace in AST
 			// the ast can contain an attribute with the same name multiple times!
 			
-			XmlAttribute oldAstNode = null;
+			WtXmlAttribute oldAstNode = null;
 			if (oldAttr != null)
 				oldAstNode = oldAttr.getAstNode();
 			
 			String name = newAttr.getName();
-			XmlAttribute newAstNode = newAttr.getAstNode();
+			WtXmlAttribute newAstNode = newAttr.getAstNode();
 			
 			boolean replaced = false;
 			
@@ -913,7 +913,7 @@ public abstract class AttributeManagerBase
 				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
 					continue;
 				
-				XmlAttribute attr = (XmlAttribute) node;
+				WtXmlAttribute attr = (WtXmlAttribute) node;
 				if (attr.getName().equalsIgnoreCase(name))
 				{
 					if (attr == oldAstNode)

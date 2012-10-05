@@ -35,7 +35,7 @@ import org.sweble.wikitext.engine.wom.WomBody;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 
 public class PageAdapterTest
 {
@@ -452,13 +452,13 @@ public class PageAdapterTest
 		page.addCategory("some category");
 		
 		WomBody oldBody = page.getBody();
-		assertTrue(((BodyAdapter) oldBody).getAstNode().get(0) instanceof InternalLink);
+		assertTrue(((BodyAdapter) oldBody).getAstNode().get(0) instanceof WtInternalLink);
 		
 		WomBody newBody = womBody().build();
 		page.setBody(newBody);
 		
 		assertTrue(page.hasCategory("some category"));
-		assertTrue(((BodyAdapter) newBody).getAstNode().get(0) instanceof InternalLink);
+		assertTrue(((BodyAdapter) newBody).getAstNode().get(0) instanceof WtInternalLink);
 		assertTrue(((BodyAdapter) oldBody).getAstNode().isEmpty());
 	}
 }

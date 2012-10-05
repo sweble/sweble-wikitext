@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomAbbr;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class AbbrAdapter
 		extends
@@ -39,7 +39,7 @@ public class AbbrAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public AbbrAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public AbbrAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

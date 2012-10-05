@@ -30,7 +30,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomRedirect;
 import org.sweble.wikitext.engine.wom.WomTitle;
-import org.sweble.wikitext.parser.nodes.Redirect;
+import org.sweble.wikitext.parser.nodes.WtRedirect;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -50,15 +50,15 @@ public class RedirectAdapter
 	
 	public RedirectAdapter(String target)
 	{
-		super(new Redirect(target));
+		super(new WtRedirect(target));
 		setTarget(target);
 	}
 	
-	public RedirectAdapter(Redirect redirect)
+	public RedirectAdapter(WtRedirect wtRedirect)
 	{
-		super(redirect);
+		super(wtRedirect);
 		setRedirectFromAst();
-		if (redirect == null)
+		if (wtRedirect == null)
 			throw new NullPointerException();
 	}
 	
@@ -71,9 +71,9 @@ public class RedirectAdapter
 	}
 	
 	@Override
-	public Redirect getAstNode()
+	public WtRedirect getAstNode()
 	{
-		return (Redirect) super.getAstNode();
+		return (WtRedirect) super.getAstNode();
 	}
 	
 	@Override
@@ -125,7 +125,7 @@ public class RedirectAdapter
 	
 	private void setTargetInAst(String target)
 	{
-		Redirect astNode = getAstNode();
+		WtRedirect astNode = getAstNode();
 		astNode.setTarget(target);
 		Toolbox.addRtData(astNode);
 	}

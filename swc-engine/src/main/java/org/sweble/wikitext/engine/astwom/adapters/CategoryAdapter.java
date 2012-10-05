@@ -33,7 +33,7 @@ import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomTitle;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -60,9 +60,9 @@ public class CategoryAdapter
 	{
 		public final WtNodeList container;
 		
-		public final InternalLink category;
+		public final WtInternalLink category;
 		
-		public AstAnalog(WtNodeList container, InternalLink category)
+		public AstAnalog(WtNodeList container, WtInternalLink category)
 		{
 			super();
 			this.container = container;
@@ -85,7 +85,7 @@ public class CategoryAdapter
 	protected CategoryAdapter(WtNodeList container, String name)
 	{
 		// Just a dummy node which will get corrected later:
-		super(new InternalLink("", null, new WtLinkTitle(), ""));
+		super(new WtInternalLink("", null, new WtLinkTitle(), ""));
 		
 		if (container == null)
 			throw new NullPointerException();
@@ -103,7 +103,7 @@ public class CategoryAdapter
 	 * @param category
 	 *            The category node in the AST.
 	 */
-	public CategoryAdapter(WtNodeList container, InternalLink category)
+	public CategoryAdapter(WtNodeList container, WtInternalLink category)
 	{
 		super(category);
 		
@@ -124,9 +124,9 @@ public class CategoryAdapter
 	}
 	
 	@Override
-	public InternalLink getAstNode()
+	public WtInternalLink getAstNode()
 	{
-		return (InternalLink) super.getAstNode();
+		return (WtInternalLink) super.getAstNode();
 	}
 	
 	@Override
@@ -206,7 +206,7 @@ public class CategoryAdapter
 	 * After a call to this method, the caller has to set the name if the name's
 	 * case of the added category link should differ from the current name.
 	 */
-	protected void addAstAnalog(WtNodeList container, InternalLink link)
+	protected void addAstAnalog(WtNodeList container, WtInternalLink link)
 	{
 		astNodes.add(new AstAnalog(container, link));
 		setAstNode(link);
@@ -248,7 +248,7 @@ public class CategoryAdapter
 	
 	private void renameInAst(String value)
 	{
-		InternalLink astNode = getAstNode();
+		WtInternalLink astNode = getAstNode();
 		astNode.setTarget(CATEGORY_NAMESPACE + value);
 		Toolbox.addRtData(astNode);
 	}
@@ -257,7 +257,7 @@ public class CategoryAdapter
 	{
 		if (astNodes.size() > 1)
 		{
-			InternalLink remaining = getAstNode();
+			WtInternalLink remaining = getAstNode();
 			
 			ListIterator<AstAnalog> i = astNodes.listIterator();
 			while (i.hasNext())
@@ -297,7 +297,7 @@ public class CategoryAdapter
 	
 	// =========================================================================
 	
-	public static String getNameFromAst(InternalLink astNode)
+	public static String getNameFromAst(WtInternalLink astNode)
 	{
 		String name = astNode.getTarget();
 		int i = name.lastIndexOf(':');
@@ -322,7 +322,7 @@ public class CategoryAdapter
 	{
 		removeCategoryAstNodes();
 		
-		InternalLink astNode = new InternalLink("", null, new WtLinkTitle(), "");
+		WtInternalLink astNode = new WtInternalLink("", null, new WtLinkTitle(), "");
 		
 		setAstNode(astNode);
 		renameInAst(getName());

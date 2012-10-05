@@ -22,12 +22,12 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.nodes.TagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlElement;
-import org.sweble.wikitext.parser.preprocessor.ProtectedText;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.preprocessor.WtProtectedText;
 
 public class BuiltInTagExtensions
 		extends
@@ -69,11 +69,11 @@ public class BuiltInTagExtensions
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
-				TagExtension tagExt,
+				WtTagExtension tagExt,
 				Map<String, WtNodeList> attrs,
 				String body)
 		{
-			return new XmlElement(
+			return new WtXmlElement(
 					"pre",
 					false,
 					tagExt.getXmlAttributes(),
@@ -101,19 +101,19 @@ public class BuiltInTagExtensions
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
-				TagExtension tagExt,
+				WtTagExtension tagExt,
 				Map<String, WtNodeList> attrs,
 				String body)
 		{
-			ProtectedText pt;
+			WtProtectedText pt;
 			if (tagExt.getBody() == null)
 			{
-				pt = new ProtectedText("");
+				pt = new WtProtectedText("");
 				pt.setRtd("<nowiki />");
 			}
 			else
 			{
-				pt = new ProtectedText(body);
+				pt = new WtProtectedText(body);
 				pt.setRtd("<nowiki>", tagExt.getBody(), "</nowiki>");
 			}
 			return pt;

@@ -16,7 +16,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 
 /**
- * <h1>Resolve Redirect Log</h1>
+ * <h1>Resolve WtRedirect Log</h1>
  */
 public class ResolveRedirectLog
         extends WtContentNode

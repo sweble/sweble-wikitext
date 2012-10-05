@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    HorizontalRule(
+    WtHorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )

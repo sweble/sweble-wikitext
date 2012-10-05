@@ -1,39 +1,47 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.NamedXmlElement;
+import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
+import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Closing XML tag</h1>
+ * <h1>Opening XML tag</h1>
  */
-public class XmlEndTag
+public class WtXmlStartTag
 		extends
-			WtLeafNode
+			WtInnerNode1
 		implements
-			NamedXmlElement
+			WtNamedXmlElement,
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public XmlEndTag()
+	public WtXmlStartTag()
 	{
-		super();
-		
+		super(new WtNodeList());
 	}
 	
-	public XmlEndTag(String name)
+	public WtXmlStartTag(String name, WtNodeList xmlAttributes)
 	{
-		super();
+		super(xmlAttributes);
 		setName(name);
-		
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_CLOSE;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_OPEN;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
+	{
+		return false;
 	}
 	
 	// =========================================================================
@@ -67,12 +75,12 @@ public class XmlEndTag
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtLeafNodePropertyIterator()
+		return new WtInnerNode1PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlEndTag.this.getPropertyCount();
+				return WtXmlStartTag.this.getPropertyCount();
 			}
 			
 			@Override
@@ -94,7 +102,7 @@ public class XmlEndTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlEndTag.this.getName();
+						return WtXmlStartTag.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -107,12 +115,32 @@ public class XmlEndTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlEndTag.this.setName((String) value);
+						return WtXmlStartTag.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	// Children
+	
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	{
+		set(0, xmlAttributes);
+	}
+	
+	public final WtNodeList getXmlAttributes()
+	{
+		return (WtNodeList) get(0);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	
+	public final String[] getChildNames()
+	{
+		return CHILD_NAMES;
 	}
 }

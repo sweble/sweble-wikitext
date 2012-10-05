@@ -27,11 +27,11 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
@@ -56,7 +56,7 @@ public class HorizontalRuleAdapterTest
 	@Test
 	public void theAstOfAHorizontalRuleIsCorrect()
 	{
-		HorizontalRule hr = (HorizontalRule) astPageContent.get(0);
+		WtHorizontalRule hr = (WtHorizontalRule) astPageContent.get(0);
 		
 		assertEquals(
 				new RtData(1, "----"),
@@ -68,11 +68,11 @@ public class HorizontalRuleAdapterTest
 	{
 		hRule.setAttribute("style", "foo");
 		
-		XmlElement e = (XmlElement) astPageContent.get(0);
+		WtXmlElement e = (WtXmlElement) astPageContent.get(0);
 		
 		assertEquals(1, e.getXmlAttributes().size());
 		
-		XmlAttribute a = (XmlAttribute) e.getXmlAttributes().get(0);
+		WtXmlAttribute a = (WtXmlAttribute) e.getXmlAttributes().get(0);
 		assertEquals("style", a.getName());
 		assertTrue(a.getHasValue());
 		assertEquals(1, a.getValue().size());
@@ -88,7 +88,7 @@ public class HorizontalRuleAdapterTest
 	{
 		hRule.appendChild(womText().withText("Invalid").build());
 		
-		XmlElement e = (XmlElement) astPageContent.get(0);
+		WtXmlElement e = (WtXmlElement) astPageContent.get(0);
 		
 		assertEquals(
 				new RtData(3, "<hr", RtData.SEP, ">", RtData.SEP, "</hr>"),
@@ -102,7 +102,7 @@ public class HorizontalRuleAdapterTest
 		
 		hRule.removeChild(hRule.getFirstChild());
 		
-		XmlElement e = (XmlElement) astPageContent.get(0);
+		WtXmlElement e = (WtXmlElement) astPageContent.get(0);
 		
 		assertTrue(e.getEmpty());
 		assertEquals(

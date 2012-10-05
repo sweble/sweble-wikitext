@@ -15,35 +15,12 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.utils;
+package org.sweble.wikitext.parser.postprocessor;
 
-import org.junit.Test;
+import org.sweble.wikitext.parser.nodes.WtNode;
 
-public class TestWikitextPrinter
+public interface WtPreproNode
+		extends
+			WtNode
 {
-	@Test
-	public void wikitextPrinterGeneratesCorrectOutputForHorizontalRule()
-	{
-		throw new InternalError();
-		/*
-		WtHorizontalRule node = astHr().build();
-		
-		assertEquals(
-				"\n\n----",
-				WikitextPrinter.print(node));
-		*/
-	}
-	
-	@Test
-	public void wikitextPrinterProducesNoOutputForComments()
-	{
-		throw new InternalError();
-		/*
-		XmlComment node = astComment("some comment");
-		
-		assertEquals(
-				"",
-				WikitextPrinter.print(node));
-		*/
-	}
 }

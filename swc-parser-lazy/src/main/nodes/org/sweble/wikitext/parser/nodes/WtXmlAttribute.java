@@ -1,39 +1,63 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.NamedXmlElement;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Opening XML tag</h1>
+ * <h1>XML Attribute</h1> <h2>Grammar</h2>
+ * <ul>
+ * <li>
+ * <p>
+ * Ws* XmlName Ws* '=' Ws* '\'' AttributeValueSq* '\''
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Ws* XmlName Ws* '=' Ws* '"' ValueDqStar '"'
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Ws* XmlName Ws* '=' ValueNqStar
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Ws* XmlName
+ * </p>
+ * </li>
+ * </ul>
  */
-public class XmlStartTag
+public class WtXmlAttribute
 		extends
 			WtInnerNode1
-		implements
-			NamedXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public XmlStartTag()
+	public WtXmlAttribute()
 	{
 		super(new WtNodeList());
-		
 	}
 	
-	public XmlStartTag(String name, WtNodeList xmlAttributes)
+	public WtXmlAttribute(String name, boolean hasValue)
 	{
-		super(xmlAttributes);
+		super(new WtNodeList());
 		setName(name);
-		
+		setHasValue(hasValue);
+	}
+	
+	public WtXmlAttribute(String name, WtNodeList value, boolean hasValue)
+	{
+		super(value);
+		setName(name);
+		setHasValue(hasValue);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_OPEN;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE;
 	}
 	
 	// =========================================================================
@@ -53,10 +77,24 @@ public class XmlStartTag
 		return old;
 	}
 	
+	private boolean hasValue;
+	
+	public final boolean getHasValue()
+	{
+		return this.hasValue;
+	}
+	
+	public final boolean setHasValue(boolean hasValue)
+	{
+		boolean old = this.hasValue;
+		this.hasValue = hasValue;
+		return old;
+	}
+	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1 + getSuperPropertyCount();
+		return 2 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -72,7 +110,7 @@ public class XmlStartTag
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlStartTag.this.getPropertyCount();
+				return WtXmlAttribute.this.getPropertyCount();
 			}
 			
 			@Override
@@ -82,6 +120,8 @@ public class XmlStartTag
 				{
 					case 0:
 						return "name";
+					case 1:
+						return "hasValue";
 						
 					default:
 						return super.getName(index);
@@ -94,7 +134,9 @@ public class XmlStartTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlStartTag.this.getName();
+						return WtXmlAttribute.this.getName();
+					case 1:
+						return WtXmlAttribute.this.getHasValue();
 						
 					default:
 						return super.getValue(index);
@@ -107,7 +149,9 @@ public class XmlStartTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlStartTag.this.setName((String) value);
+						return WtXmlAttribute.this.setName((String) value);
+					case 1:
+						return WtXmlAttribute.this.setHasValue((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -119,17 +163,17 @@ public class XmlStartTag
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setValue(WtNodeList value)
 	{
-		set(0, xmlAttributes);
+		set(0, value);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtNodeList getValue()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	private static final String[] CHILD_NAMES = new String[] { "value" };
 	
 	public final String[] getChildNames()
 	{

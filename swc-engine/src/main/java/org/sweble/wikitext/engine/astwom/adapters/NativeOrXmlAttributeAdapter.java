@@ -24,7 +24,7 @@ import org.sweble.wikitext.engine.wom.WomAttribute;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.utils.TextUtils;
 
 /**
@@ -34,7 +34,7 @@ import org.sweble.wikitext.parser.utils.TextUtils;
  * not have an AST node as counterpart. Instead the value will be set on the
  * link node directly.
  * 
- * HTML elements like &lt;b> (bold) on the other hand have the XmlAttribute AST
+ * HTML elements like &lt;b> (bold) on the other hand have the WtXmlAttribute AST
  * node as counterpart for the NativeOrXmlAttributeAdapter WOM node. In this
  * case the bold node (which "owns" the attribute) need not know about a value
  * or name change of one of its attributes. The NativeOrXmlAttributeAdapter
@@ -94,7 +94,7 @@ public class NativeOrXmlAttributeAdapter
 	 *             Thrown if any argument is <code>null</code>.
 	 */
 	public NativeOrXmlAttributeAdapter(
-			XmlAttribute astNode,
+			WtXmlAttribute astNode,
 			String normalizedName,
 			String normalizedValue) throws NullPointerException
 	{
@@ -146,9 +146,9 @@ public class NativeOrXmlAttributeAdapter
 		return WomNodeType.ATTRIBUTE;
 	}
 	
-	public XmlAttribute getAstNode()
+	public WtXmlAttribute getAstNode()
 	{
-		return (XmlAttribute) super.getAstNode();
+		return (WtXmlAttribute) super.getAstNode();
 	}
 	
 	// =========================================================================
@@ -236,7 +236,7 @@ public class NativeOrXmlAttributeAdapter
 		
 		super.setAstNode(
 				Toolbox.addRtData(
-						new XmlAttribute(
+						new WtXmlAttribute(
 								name,
 								convertValue(value),
 								true)));

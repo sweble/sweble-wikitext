@@ -85,7 +85,7 @@ public abstract class ParserFunctionBase
 	}
 	
 	/**
-	 * WtNode can either be a Template or a PageSwitch
+	 * WtNode can either be a WtTemplate or a WtPageSwitch
 	 */
 	public abstract WtNode invoke(
 			WtNode template,

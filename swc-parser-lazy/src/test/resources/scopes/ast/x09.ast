@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "div"
@@ -13,7 +13,7 @@ WtParsedWikitextPage(
       [ ]
       [
         WtText(" ")
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "i"
@@ -24,7 +24,7 @@ WtParsedWikitextPage(
         )
       ]
     )
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "i"

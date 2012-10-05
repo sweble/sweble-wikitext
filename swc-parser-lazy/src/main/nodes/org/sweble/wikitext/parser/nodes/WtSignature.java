@@ -1,55 +1,54 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.NamedXmlElement;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Empty XML Element</h1>
+ * <h1>WtSignature</h1> <h2>Grammar</h2>
+ * <ul>
+ * <li>
+ * <p>
+ * '~~~' '~'*
+ * </p>
+ * </li>
+ * </ul>
  */
-public class XmlEmptyTag
+public class WtSignature
 		extends
-			WtInnerNode1
-		implements
-			NamedXmlElement
+			WtLeafNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public XmlEmptyTag()
+	public WtSignature()
 	{
-		super(new WtNodeList());
-		
 	}
 	
-	public XmlEmptyTag(String name, WtNodeList xmlAttributes)
+	public WtSignature(int tildeCount)
 	{
-		super(xmlAttributes);
-		setName(name);
-		
+		setTildeCount(tildeCount);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_EMPTY;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_SIGNATURE;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String name;
+	private int tildeCount;
 	
-	public final String getName()
+	public final int getTildeCount()
 	{
-		return this.name;
+		return this.tildeCount;
 	}
 	
-	public final String setName(String name)
+	public final int setTildeCount(int tildeCount)
 	{
-		String old = this.name;
-		this.name = name;
+		int old = this.tildeCount;
+		this.tildeCount = tildeCount;
 		return old;
 	}
 	
@@ -67,12 +66,12 @@ public class XmlEmptyTag
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode1PropertyIterator()
+		return new WtLeafNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlEmptyTag.this.getPropertyCount();
+				return WtSignature.this.getPropertyCount();
 			}
 			
 			@Override
@@ -81,7 +80,7 @@ public class XmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "name";
+						return "tildeCount";
 						
 					default:
 						return super.getName(index);
@@ -94,7 +93,7 @@ public class XmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlEmptyTag.this.getName();
+						return WtSignature.this.getTildeCount();
 						
 					default:
 						return super.getValue(index);
@@ -107,32 +106,12 @@ public class XmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlEmptyTag.this.setName((String) value);
+						return WtSignature.this.setTildeCount((Integer) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
-	}
-	
-	// =========================================================================
-	// Children
-	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
-	{
-		set(0, xmlAttributes);
-	}
-	
-	public final WtNodeList getXmlAttributes()
-	{
-		return (WtNodeList) get(0);
-	}
-	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
-	
-	public final String[] getChildNames()
-	{
-		return CHILD_NAMES;
 	}
 }

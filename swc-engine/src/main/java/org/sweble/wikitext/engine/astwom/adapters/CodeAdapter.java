@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomCode;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class CodeAdapter
 		extends
@@ -39,7 +39,7 @@ public class CodeAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public CodeAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public CodeAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

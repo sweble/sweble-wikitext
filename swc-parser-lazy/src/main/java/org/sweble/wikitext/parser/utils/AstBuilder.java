@@ -20,18 +20,18 @@ package org.sweble.wikitext.parser.utils;
 import java.util.Arrays;
 import java.util.List;
 
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
 import org.sweble.wikitext.parser.nodes.WtIgnored;
-import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.nodes.XmlElement;
-import org.sweble.wikitext.parser.preprocessor.ProtectedText;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.preprocessor.WtProtectedText;
 
 public class AstBuilder
 {
@@ -84,7 +84,7 @@ public class AstBuilder
 	
 	public static WtNode astProtectedText(String text)
 	{
-		return new ProtectedText(text);
+		return new WtProtectedText(text);
 	}
 	
 	public static WtText astText(String text)
@@ -94,7 +94,7 @@ public class AstBuilder
 	
 	public static WtText astProtected(String text)
 	{
-		return new ProtectedText(text);
+		return new WtProtectedText(text);
 	}
 	
 	public static WtNodeList astList(WtNode... contents)
@@ -137,9 +137,9 @@ public class AstBuilder
 	
 	public static final class HorizontalRuleBuilder
 	{
-		public HorizontalRule build()
+		public WtHorizontalRule build()
 		{
-			return new HorizontalRule();
+			return new WtHorizontalRule();
 		}
 	}
 	
@@ -173,9 +173,9 @@ public class AstBuilder
 			return this;
 		}
 		
-		public XmlElement build()
+		public WtXmlElement build()
 		{
-			return new XmlElement(this.name, this.body == null, this.attribs, this.body);
+			return new WtXmlElement(this.name, this.body == null, this.attribs, this.body);
 		}
 	}
 	
@@ -227,9 +227,9 @@ public class AstBuilder
 			return this;
 		}
 		
-		public XmlAttribute build()
+		public WtXmlAttribute build()
 		{
-			return new XmlAttribute(name, value, value != null);
+			return new WtXmlAttribute(name, value, value != null);
 		}
 	}
 	
@@ -251,11 +251,11 @@ public class AstBuilder
 			return this;
 		}
 		
-		public TemplateArgument build()
+		public WtTemplateArgument build()
 		{
 			if (value == null)
 				value = new WtNodeList();
-			return new TemplateArgument(name, value, name != null);
+			return new WtTemplateArgument(name, value, name != null);
 		}
 	}
 	
@@ -271,24 +271,24 @@ public class AstBuilder
 			return this;
 		}
 		
-		public TemplateBuilder withArguments(TemplateArgument... args)
+		public TemplateBuilder withArguments(WtTemplateArgument... args)
 		{
 			this.args = astList(args);
 			return this;
 		}
 		
-		public TemplateBuilder withArguments(List<TemplateArgument> args)
+		public TemplateBuilder withArguments(List<WtTemplateArgument> args)
 		{
-			return withArguments(args.toArray(new TemplateArgument[args.size()]));
+			return withArguments(args.toArray(new WtTemplateArgument[args.size()]));
 		}
 		
-		public Template build()
+		public WtTemplate build()
 		{
 			if (name == null)
 				name = astList(astText("default template"));
 			if (args == null)
 				args = astList();
-			return new Template(name, args);
+			return new WtTemplate(name, args);
 		}
 	}
 	
@@ -318,9 +318,9 @@ public class AstBuilder
 			return this;
 		}
 		
-		public TagExtension build()
+		public WtTagExtension build()
 		{
-			return new TagExtension(name, xmlAttributes, body);
+			return new WtTagExtension(name, xmlAttributes, body);
 		}
 	}
 	
@@ -348,9 +348,9 @@ public class AstBuilder
 			return this;
 		}
 		
-		public TemplateArgument build()
+		public WtTemplateArgument build()
 		{
-			return new TemplateArgument(name, value, name != null);
+			return new WtTemplateArgument(name, value, name != null);
 		}
 	}
 }

@@ -23,8 +23,8 @@ import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -78,7 +78,7 @@ public final class TextUtils
 					// &apos; cannot safely be used, see wikipedia
 					if (j > i)
 						list.add(new WtText(text.substring(i, j)));
-					list.add(xmlCharRef(39));
+					list.add(wtXmlCharRef(39));
 					i = j + 1;
 					break;
 				case '"':
@@ -94,7 +94,7 @@ public final class TextUtils
 					{
 						if (j > i)
 							list.add(new WtText(text.substring(i, j)));
-						list.add(xmlCharRef(ch));
+						list.add(wtXmlCharRef(ch));
 						i = j + 1;
 						continue;
 					}
@@ -114,7 +114,7 @@ public final class TextUtils
 									case Character.UNASSIGNED:
 										if (j > i)
 											list.add(new WtText(text.substring(i, j)));
-										list.add(xmlCharRef(codePoint));
+										list.add(wtXmlCharRef(codePoint));
 										i = j + 1;
 										break;
 									
@@ -144,27 +144,27 @@ public final class TextUtils
 	
 	// =========================================================================
 	
-	public static XmlCharRef xmlCharRef(int codePoint)
+	public static WtXmlCharRef wtXmlCharRef(int codePoint)
 	{
-		XmlCharRef xmlCharRef = new XmlCharRef(codePoint);
-		setXmlCharRef(xmlCharRef, codePoint);
-		return xmlCharRef;
+		WtXmlCharRef wtXmlCharRef = new WtXmlCharRef(codePoint);
+		setXmlCharRef(wtXmlCharRef, codePoint);
+		return wtXmlCharRef;
 	}
 	
-	public static void setXmlCharRef(XmlCharRef xmlCharRef, int codePoint)
+	public static void setXmlCharRef(WtXmlCharRef wtXmlCharRef, int codePoint)
 	{
-		xmlCharRef.setCodePoint(codePoint);
-		xmlCharRef.setRtd(StringUtils.hexCharRef(codePoint));
+		wtXmlCharRef.setCodePoint(codePoint);
+		wtXmlCharRef.setRtd(StringUtils.hexCharRef(codePoint));
 	}
 	
-	public static XmlEntityRef xmlEntity(String name, String resolved)
+	public static WtXmlEntityRef xmlEntity(String name, String resolved)
 	{
-		XmlEntityRef xmlEntityRef = new XmlEntityRef(name, resolved);
+		WtXmlEntityRef xmlEntityRef = new WtXmlEntityRef(name, resolved);
 		setXmlEntityRef(xmlEntityRef, name);
 		return xmlEntityRef;
 	}
 	
-	private static void setXmlEntityRef(XmlEntityRef xmlEntityRef, String name)
+	private static void setXmlEntityRef(WtXmlEntityRef xmlEntityRef, String name)
 	{
 		xmlEntityRef.setName(name);
 		xmlEntityRef.setRtd(StringUtils.entityRef(name));

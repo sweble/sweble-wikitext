@@ -48,7 +48,7 @@ WtNode Redirect =
   ws0:pWsStar '#' keyword:RedirectKeyword ws1:pWsStar target:RedirectLink
   {
     yyValue = setRtd(
-      new Redirect(target.getForeign(1, String.class)),
+      new WtRedirect(target.getForeign(1, String.class)),
       ws0, '#', keyword, ws1, target.getForeign(0, String.class), target.getForeign(1, String.class), target.getForeign(2, String.class));
   }
 ;

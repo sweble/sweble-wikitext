@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -71,7 +71,7 @@ public class CorePfnVariablesNamespaces
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> argsValues)
 		{
@@ -129,7 +129,7 @@ public class CorePfnVariablesNamespaces
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
 			
@@ -164,7 +164,7 @@ public class CorePfnVariablesNamespaces
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			PageTitle title = frame.getRootFrame().getTitle();
 			

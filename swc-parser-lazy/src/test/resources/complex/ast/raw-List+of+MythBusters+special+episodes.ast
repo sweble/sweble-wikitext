@@ -1,18 +1,18 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [WtText("wikiquotepar")], [1] = [TemplateArgument([0] = [], [1] = [WtText("MythBusters")])]), 1=WtXmlComment(" This is the episode number within the entire series "), 2=WtXmlComment(" This is the episode number within the current season "), 3=Template([0] = [WtText("Episode list\n")], [1] = [TemplateArgument([0] = [WtText("EpisodeNumber   ")], [1] = [WtText(" SP11\n")]), TemplateArgument([0] = [WtText("EpisodeNumber2  ")], [1] = [WtText(" Special 1\n")]), TemplateArgument([0] = [WtText("Title           ")], [1] = [WtText(" Young Scientist Special\n")]), TemplateArgument([0] = [WtText("RTitle          ")], [1] = [WtText(" \n")]), TemplateArgument([0] = [WtText("OriginalAirDate ")], [1] = [WtText(" "), Template([0] = [WtText("Start date")], [1] = [TemplateArgument([0] = [], [1] = [WtText("2008")]), TemplateArgument([0] = [], [1] = [WtText("4")]), TemplateArgument([0] = [], [1] = [WtText("26")])]), WtText("\n")]), TemplateArgument([0] = [WtText("ShortSummary    ")], [1] = [WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), TemplateArgument([0] = [WtText("LineColor       ")], [1] = [WtText(" DBE9F4\n")])]), 4=TagExtension([0] = []), 5=TagExtension([0] = []), 6=TagExtension([0] = []), 7=TagExtension([0] = []), 8=TagExtension([0] = []), 9=Template([0] = [WtText("inc-video")], [1] = []), 10=Template([0] = [WtText("Reflist")], [1] = []), 11=Template([0] = [WtText("imdb title")], [1] = [TemplateArgument([0] = [WtText("id")], [1] = [WtText("0383126")]), TemplateArgument([0] = [WtText("title")], [1] = [WtText("MythBusters")])]), 12=Template([0] = [WtText("MythBusters")], [1] = []), 13=Template([0] = [WtText("DEFAULTSORT:Mythbusters")], [1] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText("wikiquotepar")], [1] = [WtTemplateArgument([0] = [], [1] = [WtText("MythBusters")])]), 1=WtXmlComment(" This is the episode number within the entire series "), 2=WtXmlComment(" This is the episode number within the current season "), 3=WtTemplate([0] = [WtText("Episode list\n")], [1] = [WtTemplateArgument([0] = [WtText("EpisodeNumber   ")], [1] = [WtText(" SP11\n")]), WtTemplateArgument([0] = [WtText("EpisodeNumber2  ")], [1] = [WtText(" Special 1\n")]), WtTemplateArgument([0] = [WtText("Title           ")], [1] = [WtText(" Young Scientist Special\n")]), WtTemplateArgument([0] = [WtText("RTitle          ")], [1] = [WtText(" \n")]), WtTemplateArgument([0] = [WtText("OriginalAirDate ")], [1] = [WtText(" "), WtTemplate([0] = [WtText("Start date")], [1] = [WtTemplateArgument([0] = [], [1] = [WtText("2008")]), WtTemplateArgument([0] = [], [1] = [WtText("4")]), WtTemplateArgument([0] = [], [1] = [WtText("26")])]), WtText("\n")]), WtTemplateArgument([0] = [WtText("ShortSummary    ")], [1] = [WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), WtTemplateArgument([0] = [WtText("LineColor       ")], [1] = [WtText(" DBE9F4\n")])]), 4=WtTagExtension([0] = []), 5=WtTagExtension([0] = []), 6=WtTagExtension([0] = []), 7=WtTagExtension([0] = []), 8=WtTagExtension([0] = []), 9=WtTemplate([0] = [WtText("inc-video")], [1] = []), 10=WtTemplate([0] = [WtText("Reflist")], [1] = []), 11=WtTemplate([0] = [WtText("imdb title")], [1] = [WtTemplateArgument([0] = [WtText("id")], [1] = [WtText("0383126")]), WtTemplateArgument([0] = [WtText("title")], [1] = [WtText("MythBusters")])]), 12=WtTemplate([0] = [WtText("MythBusters")], [1] = []), 13=WtTemplate([0] = [WtText("DEFAULTSORT:Mythbusters")], [1] = [])}
     {N} warnings = []
 
   [
     WtParagraph([
-      Template(
+      WtTemplate(
         Properties:
           {N} precededByNewline = false
           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
         [ WtText("wikiquotepar") ]
         [
-          TemplateArgument(
+          WtTemplateArgument(
             Properties:
               {N} hasName = false
               {N} rtd = RTD[ "|" <o> "" <o> "" ]
@@ -29,7 +29,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "''" <o> "''" ]
 
         [
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -41,7 +41,7 @@ WtParsedWikitextPage(
         ]
       )
       WtText(" perform experiments to verify or debunk ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = "s"
           {N} prefix = ""
@@ -51,7 +51,7 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
       WtText(", ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = "s"
           {N} prefix = ""
@@ -61,7 +61,7 @@ WtParsedWikitextPage(
         WtLinkTitle([ ])
       )
       WtText(", and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -81,7 +81,7 @@ WtParsedWikitextPage(
     WtNewline("\n")
     WtParagraph([
       WtText("Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are \"mini myths\", videos available from the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -112,7 +112,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
           [
-            XmlAttribute(
+            WtXmlAttribute(
               Properties:
                 {N} hasValue = true
                 {N} name = "class"
@@ -120,7 +120,7 @@ WtParsedWikitextPage(
 
               [ WtText("wikitable") ]
             )
-            XmlAttribute(
+            WtXmlAttribute(
               Properties:
                 {N} hasValue = true
                 {N} name = "style"
@@ -141,7 +141,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
                   [
-                    XmlAttribute(
+                    WtXmlAttribute(
                       Properties:
                         {N} hasValue = true
                         {N} name = "style"
@@ -169,7 +169,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "!!" <o> "|" <o> "" ]
 
                   [
-                    XmlAttribute(
+                    WtXmlAttribute(
                       Properties:
                         {N} hasValue = true
                         {N} name = "style"
@@ -197,7 +197,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "!!" <o> "|" <o> "" ]
 
                   [
-                    XmlAttribute(
+                    WtXmlAttribute(
                       Properties:
                         {N} hasValue = true
                         {N} name = "style"
@@ -216,7 +216,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "!!" <o> "|" <o> "" ]
 
                   [
-                    XmlAttribute(
+                    WtXmlAttribute(
                       Properties:
                         {N} hasValue = true
                         {N} name = "style"
@@ -229,14 +229,14 @@ WtParsedWikitextPage(
                     WtParagraph([
                       WtText("Original airdate")
                       WtNewline("\n")
-                      Template(
+                      WtTemplate(
                         Properties:
                           {N} precededByNewline = true
                           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                         [ WtText("Episode list\n") ]
                         [
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -244,7 +244,7 @@ WtParsedWikitextPage(
                             [ WtText("EpisodeNumber   ") ]
                             [ WtText(" SP11\n") ]
                           )
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -252,7 +252,7 @@ WtParsedWikitextPage(
                             [ WtText("EpisodeNumber2  ") ]
                             [ WtText(" Special 1\n") ]
                           )
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -260,7 +260,7 @@ WtParsedWikitextPage(
                             [ WtText("Title           ") ]
                             [ WtText(" Young Scientist Special\n") ]
                           )
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -268,7 +268,7 @@ WtParsedWikitextPage(
                             [ WtText("RTitle          ") ]
                             [ WtText(" \n") ]
                           )
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -276,14 +276,14 @@ WtParsedWikitextPage(
                             [ WtText("OriginalAirDate ") ]
                             [
                               WtText(" ")
-                              Template(
+                              WtTemplate(
                                 Properties:
                                   {N} precededByNewline = false
                                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                                 [ WtText("Start date") ]
                                 [
-                                  TemplateArgument(
+                                  WtTemplateArgument(
                                     Properties:
                                       {N} hasName = false
                                       {N} rtd = RTD[ "|" <o> "" <o> "" ]
@@ -291,7 +291,7 @@ WtParsedWikitextPage(
                                     [ ]
                                     [ WtText("2008") ]
                                   )
-                                  TemplateArgument(
+                                  WtTemplateArgument(
                                     Properties:
                                       {N} hasName = false
                                       {N} rtd = RTD[ "|" <o> "" <o> "" ]
@@ -299,7 +299,7 @@ WtParsedWikitextPage(
                                     [ ]
                                     [ WtText("4") ]
                                   )
-                                  TemplateArgument(
+                                  WtTemplateArgument(
                                     Properties:
                                       {N} hasName = false
                                       {N} rtd = RTD[ "|" <o> "" <o> "" ]
@@ -312,7 +312,7 @@ WtParsedWikitextPage(
                               WtText("\n")
                             ]
                           )
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -320,7 +320,7 @@ WtParsedWikitextPage(
                             [ WtText("ShortSummary    ") ]
                             [ WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ]
                           )
-                          TemplateArgument(
+                          WtTemplateArgument(
                             Properties:
                               {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -374,7 +374,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText(" Original airdate: April 26, 2008 on ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -390,7 +390,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("This episode aired first on ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -400,7 +400,7 @@ WtParsedWikitextPage(
                 WtLinkTitle([ ])
               )
               WtText(", as opposed to the show's regular home of ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -410,7 +410,7 @@ WtParsedWikitextPage(
                 WtLinkTitle([ ])
               )
               WtText(".  A team of winners in Discovery's \"Young Scientist Challenge\" competitions tested environmental myths with the team.  Former MythBuster ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -427,7 +427,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
               [
-                XmlAttribute(
+                WtXmlAttribute(
                   Properties:
                     {N} hasValue = true
                     {N} name = "class"
@@ -491,14 +491,14 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" ")
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
-                              XmlAttribute(
+                              WtXmlAttribute(
                                 Properties:
                                   {N} hasValue = true
                                   {N} name = "color"
@@ -539,7 +539,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
@@ -549,7 +549,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(" are more sluggish than ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -571,14 +571,14 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" ")
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
-                              XmlAttribute(
+                              WtXmlAttribute(
                                 Properties:
                                   {N} hasValue = true
                                   {N} name = "color"
@@ -629,14 +629,14 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" ")
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
-                              XmlAttribute(
+                              WtXmlAttribute(
                                 Properties:
                                   {N} hasValue = true
                                   {N} name = "color"
@@ -659,7 +659,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" Cows emit ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -668,14 +668,14 @@ WtParsedWikitextPage(
 
                             WtLinkTitle([ ])
                           )
-                          XmlEntityRef(
+                          WtXmlEntityRef(
                             Properties:
                               {N} name = "mdash"
                               {N} resolved = "\u2014"
                               {N} rtd = RTD[ "&mdash;" ]
                           )
                           WtText("though not mostly from flatulence, but from belching ")
-                          XmlEntityRef(
+                          WtXmlEntityRef(
                             Properties:
                               {N} name = "mdash"
                               {N} resolved = "\u2014"
@@ -712,14 +712,14 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" ")
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
-                              XmlAttribute(
+                              WtXmlAttribute(
                                 Properties:
                                   {N} hasValue = true
                                   {N} name = "color"
@@ -768,7 +768,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("The mini-myths are shown in video clips that are available from the ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -802,7 +802,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
-              TagExtension(
+              WtTagExtension(
                 Properties:
                   {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
                   {N} name = "ref"
@@ -817,7 +817,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
               [
-                XmlAttribute(
+                WtXmlAttribute(
                   Properties:
                     {N} hasValue = true
                     {N} name = "class"
@@ -871,7 +871,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" An egg can be balanced on its ends only during the spring and fall ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -890,7 +890,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -912,7 +912,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" This is a ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -927,7 +927,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" folk belief, sometimes called ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -942,7 +942,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" after the first day of spring in the Chinese calendar. There is nothing special about the spring and fall equinoxes that allows an egg to balance on end. A person with enough ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -978,7 +978,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("In a revisit of the ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -993,7 +993,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" myth, Adam and Jamie decide that the suspension bridge that Adam had built was too stable to accurately test, so they build a simple ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1003,7 +1003,7 @@ WtParsedWikitextPage(
                 WtLinkTitle([ ])
               )
               WtText(" and test it under Adam's weight.")
-              TagExtension(
+              WtTagExtension(
                 Properties:
                   {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
                   {N} name = "ref"
@@ -1017,7 +1017,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1042,7 +1042,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
               [
-                XmlAttribute(
+                WtXmlAttribute(
                   Properties:
                     {N} hasValue = true
                     {N} name = "class"
@@ -1103,7 +1103,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1156,7 +1156,7 @@ WtParsedWikitextPage(
                 [ WtText("Jaws") ]
               )
               WtText(" in particular.")
-              TagExtension(
+              WtTagExtension(
                 Properties:
                   {N} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
                   {N} name = "ref"
@@ -1172,7 +1172,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
               [
-                XmlAttribute(
+                WtXmlAttribute(
                   Properties:
                     {N} hasValue = true
                     {N} name = "class"
@@ -1233,7 +1233,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1280,7 +1280,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1302,7 +1302,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
@@ -1312,7 +1312,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(", and ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
@@ -1327,7 +1327,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" or ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
@@ -1357,7 +1357,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" A shark's skin is rough enough to be used as ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1376,7 +1376,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1416,7 +1416,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" There is a ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1435,7 +1435,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1503,7 +1503,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1528,7 +1528,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
               [
-                XmlAttribute(
+                WtXmlAttribute(
                   Properties:
                     {N} hasValue = true
                     {N} name = "class"
@@ -1589,7 +1589,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1611,7 +1611,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" Kari wore underwear equipped with a microphone connected to an amplifier and a ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1621,7 +1621,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(" meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.")
-                          TagExtension(
+                          WtTagExtension(
                             Properties:
                               {N} body = "{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
                               {N} name = "ref"
@@ -1649,7 +1649,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" A ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1659,7 +1659,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(" ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1683,7 +1683,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
                       [
-                        XmlAttribute(
+                        WtXmlAttribute(
                           Properties:
                             {N} hasValue = true
                             {N} name = "style"
@@ -1705,7 +1705,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.")
-                          TagExtension(
+                          WtTagExtension(
                             Properties:
                               {N} body = "{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
                               {N} name = "ref"
@@ -1743,7 +1743,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1766,7 +1766,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
               [
-                XmlAttribute(
+                WtXmlAttribute(
                   Properties:
                     {N} hasValue = true
                     {N} name = "class"
@@ -1830,14 +1830,14 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" ")
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
-                              XmlAttribute(
+                              WtXmlAttribute(
                                 Properties:
                                   {N} hasValue = true
                                   {N} name = "color"
@@ -1849,14 +1849,14 @@ WtParsedWikitextPage(
                             [ WtText("Busted") ]
                           )
                           WtText(", then ")
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                             [
-                              XmlAttribute(
+                              WtXmlAttribute(
                                 Properties:
                                   {N} hasValue = true
                                   {N} name = "color"
@@ -1879,7 +1879,7 @@ WtParsedWikitextPage(
                       [
                         WtParagraph([
                           WtText(" Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1917,7 +1917,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1932,7 +1932,7 @@ WtParsedWikitextPage(
       WtSectionBody([
         WtNewline("\n")
         WtParagraph([
-          Template(
+          WtTemplate(
             Properties:
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -1944,7 +1944,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1961,7 +1961,7 @@ WtParsedWikitextPage(
             [ WtText("MythBusters") ]
           )
           WtText(" are narrated by ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1979,7 +1979,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
           [
-            XmlAttribute(
+            WtXmlAttribute(
               Properties:
                 {N} hasValue = true
                 {N} name = "class"
@@ -2033,7 +2033,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2048,7 +2048,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2063,7 +2063,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2107,7 +2107,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2122,7 +2122,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2137,7 +2137,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2181,7 +2181,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2196,7 +2196,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2211,7 +2211,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2255,7 +2255,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2299,7 +2299,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2314,7 +2314,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2358,7 +2358,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2373,7 +2373,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2388,7 +2388,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2432,7 +2432,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2447,7 +2447,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2462,7 +2462,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2505,7 +2505,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2520,7 +2520,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2535,7 +2535,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2578,7 +2578,7 @@ WtParsedWikitextPage(
                   [ ]
                   [
                     WtParagraph([
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2593,7 +2593,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2608,7 +2608,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2652,7 +2652,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2667,7 +2667,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2682,7 +2682,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2726,7 +2726,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2741,7 +2741,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2761,7 +2761,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "''" <o> "''" ]
 
                         [
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -2807,7 +2807,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2822,7 +2822,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2866,7 +2866,7 @@ WtParsedWikitextPage(
                   [
                     WtParagraph([
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2881,7 +2881,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(", ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2926,7 +2926,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2955,7 +2955,7 @@ WtParsedWikitextPage(
       WtSectionBody([
         WtNewline("\n")
         WtParagraph([
-          Template(
+          WtTemplate(
             Properties:
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -2987,11 +2987,11 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              ExternalLink(
+              WtExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                Url(
+                WtUrl(
                   Properties:
                     {N} path = "//dsc.discovery.com/fansites/mythbusters/mythbusters.html"
                     {N} protocol = "http"
@@ -3007,11 +3007,11 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              ExternalLink(
+              WtExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                Url(
+                WtUrl(
                   Properties:
                     {N} path = "//drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/"
                     {N} protocol = "http"
@@ -3036,14 +3036,14 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              Template(
+              WtTemplate(
                 Properties:
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
                 [ WtText("imdb title") ]
                 [
-                  TemplateArgument(
+                  WtTemplateArgument(
                     Properties:
                       {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -3051,7 +3051,7 @@ WtParsedWikitextPage(
                     [ WtText("id") ]
                     [ WtText("0383126") ]
                   )
-                  TemplateArgument(
+                  WtTemplateArgument(
                     Properties:
                       {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
@@ -3067,7 +3067,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          Template(
+          WtTemplate(
             Properties:
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -3079,7 +3079,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          Template(
+          WtTemplate(
             Properties:
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -3088,7 +3088,7 @@ WtParsedWikitextPage(
             [ ]
           )
           WtNewline("\n")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3106,7 +3106,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3116,7 +3116,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtNewline("\n")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3126,7 +3126,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtNewline("\n")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""

@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      XmlEntityRef(
+      WtXmlEntityRef(
         Properties:
           {N} name = "amp"
           {N} resolved = "&"
@@ -21,7 +21,7 @@ WtParsedWikitextPage(
           ]
       )
       WtNewline("\n")
-      XmlEntityRef(
+      WtXmlEntityRef(
         Properties:
           {N} name = "myinvention"
           {N} resolved = null
@@ -37,13 +37,13 @@ WtParsedWikitextPage(
           ]
       )
       WtNewline("\n")
-      XmlCharRef(
+      WtXmlCharRef(
         Properties:
           {N} codePoint = 10
           {N} rtd = RTD[ "&#10;" ]
       )
       WtNewline("\n")
-      XmlCharRef(
+      WtXmlCharRef(
         Properties:
           {N} codePoint = 255
           {N} rtd = RTD[ "&#xFF;" ]

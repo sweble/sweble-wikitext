@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText(

@@ -22,7 +22,7 @@ import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.parser.nodes.WtBold;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class BoldAdapter
 		extends
@@ -46,7 +46,7 @@ public class BoldAdapter
 		super(MIXED_INLINE, womNodeFactory, astNode);
 	}
 	
-	public BoldAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public BoldAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

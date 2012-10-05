@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "li"
@@ -13,7 +13,7 @@ WtParsedWikitextPage(
       [ ]
       [
         WtText("item3")
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "table"
@@ -21,7 +21,7 @@ WtParsedWikitextPage(
 
           [ ]
           [
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "tr"
@@ -29,7 +29,7 @@ WtParsedWikitextPage(
 
               [ ]
               [
-                XmlElement(
+                WtXmlElement(
                   Properties:
                     {N} empty = false
                     {N} name = "td"
@@ -37,12 +37,12 @@ WtParsedWikitextPage(
 
                   [ ]
                   [
-                    XmlEndTag(
+                    WtXmlEndTag(
                       Properties:
                         {N} name = "li"
                         {N} rtd = RTD[ "</li>" ]
                     )
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "li"

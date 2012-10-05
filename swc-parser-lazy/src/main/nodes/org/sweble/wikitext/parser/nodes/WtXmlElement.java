@@ -1,66 +1,42 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>XML Attribute</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * Ws* XmlName Ws* '=' Ws* '\'' AttributeValueSq* '\''
- * </p>
- * </li>
- * <li>
- * <p>
- * Ws* XmlName Ws* '=' Ws* '"' ValueDqStar '"'
- * </p>
- * </li>
- * <li>
- * <p>
- * Ws* XmlName Ws* '=' ValueNqStar
- * </p>
- * </li>
- * <li>
- * <p>
- * Ws* XmlName
- * </p>
- * </li>
- * </ul>
+ * <h1>XML Element</h1>
  */
-public class XmlAttribute
+public class WtXmlElement
 		extends
-			WtInnerNode1
+			WtInnerNode2
+		implements
+			WtNamedXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public XmlAttribute()
+	public WtXmlElement()
 	{
-		super(new WtNodeList());
-		
+		super(new WtNodeList(), new WtNodeList());
 	}
 	
-	public XmlAttribute(String name, boolean hasValue)
+	public WtXmlElement(
+			String name,
+			Boolean empty,
+			WtNodeList xmlAttributes,
+			WtNodeList body)
 	{
-		super(new WtNodeList());
+		super(xmlAttributes, body);
 		setName(name);
-		setHasValue(hasValue);
-		
-	}
-	
-	public XmlAttribute(String name, WtNodeList value, boolean hasValue)
-	{
-		super(value);
-		setName(name);
-		setHasValue(hasValue);
-		
+		setEmpty(empty);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ELEMENT;
 	}
 	
 	// =========================================================================
@@ -80,17 +56,17 @@ public class XmlAttribute
 		return old;
 	}
 	
-	private boolean hasValue;
+	private Boolean empty;
 	
-	public final boolean getHasValue()
+	public final Boolean getEmpty()
 	{
-		return this.hasValue;
+		return this.empty;
 	}
 	
-	public final boolean setHasValue(boolean hasValue)
+	public final Boolean setEmpty(Boolean empty)
 	{
-		boolean old = this.hasValue;
-		this.hasValue = hasValue;
+		Boolean old = this.empty;
+		this.empty = empty;
 		return old;
 	}
 	
@@ -108,12 +84,12 @@ public class XmlAttribute
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode1PropertyIterator()
+		return new WtInnerNode2PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlAttribute.this.getPropertyCount();
+				return WtXmlElement.this.getPropertyCount();
 			}
 			
 			@Override
@@ -124,7 +100,7 @@ public class XmlAttribute
 					case 0:
 						return "name";
 					case 1:
-						return "hasValue";
+						return "empty";
 						
 					default:
 						return super.getName(index);
@@ -137,9 +113,9 @@ public class XmlAttribute
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlAttribute.this.getName();
+						return WtXmlElement.this.getName();
 					case 1:
-						return XmlAttribute.this.getHasValue();
+						return WtXmlElement.this.getEmpty();
 						
 					default:
 						return super.getValue(index);
@@ -152,9 +128,9 @@ public class XmlAttribute
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlAttribute.this.setName((String) value);
+						return WtXmlElement.this.setName((String) value);
 					case 1:
-						return XmlAttribute.this.setHasValue((Boolean) value);
+						return WtXmlElement.this.setEmpty((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -166,17 +142,27 @@ public class XmlAttribute
 	// =========================================================================
 	// Children
 	
-	public final void setValue(WtNodeList value)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
-		set(0, value);
+		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getValue()
+	public final WtNodeList getXmlAttributes()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "value" };
+	public final void setBody(WtNodeList body)
+	{
+		set(1, body);
+	}
+	
+	public final WtNodeList getBody()
+	{
+		return (WtNodeList) get(1);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
 	
 	public final String[] getChildNames()
 	{

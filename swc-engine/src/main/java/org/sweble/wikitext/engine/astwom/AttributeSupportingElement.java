@@ -27,9 +27,9 @@ import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 
 import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.XmlGrammar;
@@ -584,7 +584,7 @@ public abstract class AttributeSupportingElement
 			if (n.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
 				continue;
 			
-			XmlAttribute astAttr = (XmlAttribute) n;
+			WtXmlAttribute astAttr = (WtXmlAttribute) n;
 			
 			// MediaWiki cleans up HTML and normalizes attributes to be proper
 			// XHTML attributes (lowercase).
@@ -670,7 +670,7 @@ public abstract class AttributeSupportingElement
 					break;
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				{
-					int cp = ((XmlCharRef) n).getCodePoint();
+					int cp = ((WtXmlCharRef) n).getCodePoint();
 					if (!XmlGrammar.isChar(cp))
 						//throw new IllegalArgumentException();
 						StringUtils.hexCharRef(b, cp);
@@ -680,10 +680,10 @@ public abstract class AttributeSupportingElement
 				}
 				case AstNodeTypes.NT_XML_ENTITY_REF:
 				{
-					String resolved = ((XmlEntityRef) n).getResolved();
+					String resolved = ((WtXmlEntityRef) n).getResolved();
 					if (resolved == null)
 						//throw new IllegalArgumentException();
-						StringUtils.entityRef(b, ((XmlEntityRef) n).getName());
+						StringUtils.entityRef(b, ((WtXmlEntityRef) n).getName());
 					else
 						b.append(resolved);
 					break;
@@ -707,7 +707,7 @@ public abstract class AttributeSupportingElement
 					break;
 				case AstNodeTypes.NT_XML_CHAR_REF:
 				{
-					int cp = ((XmlCharRef) n).getCodePoint();
+					int cp = ((WtXmlCharRef) n).getCodePoint();
 					if (!XmlGrammar.isChar(cp))
 						//throw new IllegalArgumentException();
 						StringUtils.hexCharRef(b, cp);
@@ -717,10 +717,10 @@ public abstract class AttributeSupportingElement
 				}
 				case AstNodeTypes.NT_XML_ENTITY_REF:
 				{
-					String resolved = ((XmlEntityRef) n).getResolved();
+					String resolved = ((WtXmlEntityRef) n).getResolved();
 					if (resolved == null)
 						//throw new IllegalArgumentException();
-						StringUtils.entityRef(b, ((XmlEntityRef) n).getName());
+						StringUtils.entityRef(b, ((WtXmlEntityRef) n).getName());
 					else
 						b.append(resolved);
 					break;

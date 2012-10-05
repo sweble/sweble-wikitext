@@ -11,7 +11,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ " " <o> "" ]
 
         [
-          Signature(
+          WtSignature(
             Properties:
               {N} rtd = RTD[ "~~~" ]
               {N} tildeCount = 3
@@ -23,7 +23,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" ")
-              Signature(
+              WtSignature(
                 Properties:
                   {N} rtd = RTD[ "~~~~" ]
                   {N} tildeCount = 4
@@ -43,24 +43,24 @@ WtParsedWikitextPage(
                       {N} suffix = null
                   )
                   WtText(" ")
-                  Signature(
+                  WtSignature(
                     Properties:
                       {N} rtd = RTD[ "~~~~~" ]
                       {N} tildeCount = 5
                   )
                   WtText(" ")
-                  Url(
+                  WtUrl(
                     Properties:
                       {N} path = "//example.com"
                       {N} protocol = "http"
                       {N} rtd = RTD[ "http://example.com" ]
                   )
                   WtText(" ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//example.com"
                         {N} protocol = "http"
@@ -74,13 +74,13 @@ WtParsedWikitextPage(
             ]
           )
           WtText(" ")
-          PageSwitch(
+          WtPageSwitch(
             Properties:
               {N} name = "NOTOC"
               {N} rtd = RTD[ "__NOTOC__" ]
           )
           WtText(" ")
-          XmlEntityRef(
+          WtXmlEntityRef(
             Properties:
               {N} name = "amp"
               {N} resolved = "&"

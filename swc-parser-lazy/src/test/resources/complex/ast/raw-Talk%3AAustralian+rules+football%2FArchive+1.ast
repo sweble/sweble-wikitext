@@ -1,11 +1,11 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [WtText("talkarchive")], [1] = []), 1=TagExtension([0] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText("talkarchive")], [1] = []), 1=WtTagExtension([0] = [])}
     {N} warnings = []
 
   [
     WtParagraph([
-      Template(
+      WtTemplate(
         Properties:
           {N} precededByNewline = false
           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -47,7 +47,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" This sort of comment shows a lack of understanding of the history of all football codes.  No one says that Australian Football wasn't influenced by other codes, in fact, the reverse is true.  It was codified in 1859, which in the context of all the modern codes of football, is very early indeed.  It didn't just appear out of thin air, in fact, we know a lot about the people that first played it and who first formulated the rudimentary rules.  Almost without exception, they had had exposure to the English public school system - which is where we are to find the roots of almost all the modern football codes.  However, during the 1840s and 1850s, they all had their own separate and different rules.  So Australian Football is unique in that it was codified so early in the piece and that it was an amalgam of the experience of various wealthy Australians in the English public school system.  The biggest influence was clearly the Rugby school (and those who know both sports well will also be familiar with a lot of the shared terminology that is used that is not to be found in the other codes).  However, all these different school rules can be categorised roughly into two groups:  those that relied predominantly on kicking the ball (precursor to Association Football) and those that relied predominantly on running with the ball (Rugby).  Both Australian and Gaelic football share the characteristic that they are a combination of both groups - but that doesn't mean that one influenced the other - it's simply what they both got out of the various rules that were doing the rounds at the time.  It is worth mentioning that the modern version of Gaelic Football was codified a good 30 years after Australian Football.  All football historians have found no evidence of Gaelic football being an influence on Australian football.  This is unsurprising - remembering that the first ones to play the game all had an English public school background - how many of them were going to put their hand up and say let's play this Irish game I know!  This is not a partisan view, it is simply what we know of the history of the game.  Remember also that the first recorded game of Australian Football was between two wealthy protestant private schools - it is unlikely that any Catholics took the field that day!  --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -62,7 +62,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" - ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -74,7 +74,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "small"
@@ -94,7 +94,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText(" Some have suggested that the influence was more in the other direction, i.e. that Gaelic was based on Aussie rules! There is some evidence for this, e.g. the ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -104,7 +104,7 @@ WtParsedWikitextPage(
                       WtLinkTitle([ ])
                     )
                     WtText(" was not founded until the late 1880s and I know that Archbishop ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -114,7 +114,7 @@ WtParsedWikitextPage(
                       WtLinkTitle([ ])
                     )
                     WtText(", one of the founders, was in New Zealand in the 1870s, where he had the opportunity to see \"Australasian rules\" being played. So maybe it was a \"two way street\". I will have to get hold of a history of Gaelic football one of these days.   ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -129,18 +129,18 @@ WtParsedWikitextPage(
                       )
                     )
                     WtText(" ")
-                    XmlCharRef(
+                    WtXmlCharRef(
                       Properties:
                         {N} codePoint = 91
                         {N} rtd = RTD[ "&#91;" ]
                     )
-                    XmlCharRef(
+                    WtXmlCharRef(
                       Properties:
                         {N} codePoint = 91
                         {N} rtd = RTD[ "&#91;" ]
                     )
                     WtText("User talk: Grant65")
-                    XmlCharRef(
+                    WtXmlCharRef(
                       Properties:
                         {N} codePoint = 124
                         {N} rtd = RTD[ "&#124;" ]
@@ -163,7 +163,7 @@ WtParsedWikitextPage(
 
             [
               WtText("But...we can trace the influences of rock and roll directly to African music (or afro-american at least) - but the evidence for an Irish influence just isn't there.  Please note, I am not saying there were no influences from other codes, I have already stated that the Rugby School provided the greatest influence, but there is zero, I repeat, zero evidence of a Gaelic influence.  Lastly, the rules of both Aussie rules and Gaelic football are not similar at all.  The pig skin gets moved around the park in a similar manner, but that is where the similarity ends.  --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -178,7 +178,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" - ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -190,7 +190,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "small"
@@ -215,7 +215,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText(" Zero evidence except our eyes, Pippu ;-) I blame Geoff Blainey for perpetuating this idea that Tom Wills wasn't influenced by Irish  football (or Marn Grook). The fact is, no one knows what rules were used in the game that Blainey pushes as the \"first\" game (between Melbourne Grammar and Scotch College on August 7, 1858,) and they may had bugger all to do with the ones that the Melbourne FC devised the following year. I know those two schools have played ever since, but that doesn't mean they still use the same rules they did in 1858. ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -230,7 +230,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText(" | ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -271,7 +271,7 @@ WtParsedWikitextPage(
                       [ WtText("all") ]
                     )
                     WtText(" the codes have an element of each to varying degrees.  You might say that soccer doesn't (i.e. running with the ball) - but in fact the goalkeeper is allowed to run a short distance with the ball and kick it from his hand a la Gaelic/Australian style.  What is the significance of that?  Because the precursors of Soccer allowed that to happen to a far greater degree.  Read the ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -281,7 +281,7 @@ WtParsedWikitextPage(
                       WtLinkTitle([ ])
                     )
                     WtText(" and ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -291,7 +291,7 @@ WtParsedWikitextPage(
                       WtLinkTitle([ ])
                     )
                     WtText(".  These are basically the rules of Aussie rules as they were codified in 1859!  So don't just rely on the superficial similarity of Gaelic football and aussie rules - dig a little deeper and look at the prevailing environment of the 1840s and 1850s - aussie rules, indeed all the modern football codes, can only be truly understood in that context.  ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -306,7 +306,7 @@ WtParsedWikitextPage(
                       )
                     )
                     WtText(" - ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -318,7 +318,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "|" <o> "" ]
 
                         [
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "small"
@@ -404,14 +404,14 @@ WtParsedWikitextPage(
                         Warning (none): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:17:4 - 5: "[" : This looks like a External Link, however the actual URL is missing.
                       ]
                   )
-                  XmlEntityRef(
+                  WtXmlEntityRef(
                     Properties:
                       {N} name = "mdash"
                       {N} resolved = "\u2014"
                       {N} rtd = RTD[ "&mdash;" ]
                   )
                   WtText(" it was in ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -421,7 +421,7 @@ WtParsedWikitextPage(
                     WtLinkTitle([ ])
                   )
                   WtText(" before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ")
-                  ImageLink(
+                  WtImageLink(
                     Properties:
                       {N} alt = 
                         WtLinkOptionAltText([ ])
@@ -448,7 +448,7 @@ WtParsedWikitextPage(
                     WtLinkTitle([ ])
                   )
                   WtText("  ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -463,7 +463,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText(" | ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -503,7 +503,7 @@ WtParsedWikitextPage(
                         [ WtText("all") ]
                       )
                       WtText(" the modern football games can be traced back to the various english public school games of the 1840s and 1850s.  Funny you should mention composite rules of aussie rules/rugby - I believe that in 2008, to mark the 150th anniversary of the first recorded game of our national game (however it may have been played back then), we should try and recreate the rules of 1858, and it would basically be a composite aussie rules/rugby game, and the AFL should challenge the Wallabies (or anyone else for that matter) playing these composite rules.  You first read the idea here folks, don't forget it!  Re a hybrid soccer/rugby game - I am all for it, because the end result would undoubtedly look better than either of them!  ")
-                      ImageLink(
+                      WtImageLink(
                         Properties:
                           {N} alt = 
                             WtLinkOptionAltText([ ])
@@ -530,7 +530,7 @@ WtParsedWikitextPage(
                         WtLinkTitle([ ])
                       )
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -545,7 +545,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(" - ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -557,7 +557,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "|" <o> "" ]
 
                           [
-                            XmlElement(
+                            WtXmlElement(
                               Properties:
                                 {N} empty = false
                                 {N} name = "small"
@@ -601,7 +601,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("In fact, professionalism was not allowed by the VFL until its Rule 29 of 1911 (although under-the-table payments may well have occurred), and Melbourne FC was famous for being amateur for many years afterwards, so I don't think this can be justified. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -619,14 +619,14 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
         WtNewline("\n")
         WtParagraph([ WtText("I understand and appreciate the writer's enthusiasm for the sport, but the last sentence in partciular needs to be rephrased to be less partisan about its alleged superiority over other variants of football.") ])
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
@@ -647,7 +647,7 @@ WtParsedWikitextPage(
             [ WtText("West") ]
           )
           WtText(" Australian Football League. More people are interested in the AFL than regional leagues like WAFL, therefore AFL is more popular. I don't think the author's comment at the end is unjustified, or biased at all. -- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -664,14 +664,14 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "-----" ]
         )
         WtNewline("\n")
         WtParagraph([
           WtText("By the way, I wrote a bunch more stuff for this article months ago that seems to have been lost by somebody's errant revision.  I hope the new wikipedia software will support a complete revision history. . . ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -688,7 +688,7 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
@@ -707,7 +707,7 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "-----" ]
         )
@@ -715,7 +715,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I like the diagrams, but the font is much too small.  ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -732,7 +732,7 @@ WtParsedWikitextPage(
           WtText(" 08:31, Aug 2, 2003 (UTC)")
         ])
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
@@ -754,7 +754,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("What is the difference between summer and winter in Australia, that the same fields are used but for different sports? -- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -780,7 +780,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("um... the weather!  You are obviously from a small country like england where the climate is basically the same in every location within the country.  Australia is a big country.  In melbourne you may be able to get away with playing in summer, most of the time, but in Brisbane you'd be carried off the field in a coffin!  Summer is hot (avg 29 degrees C but it reaches 40) winter is cold (avg 20 degrees C).  That's the difference. ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -802,7 +802,7 @@ WtParsedWikitextPage(
 
                       [
                         WtText("No way in Melbourne - plenty of days over 30 and one or two up to 40.  That's why the players train in ice vests when they're training in summer, even in Melbourne.  Now, Hobart on the other hand...--")
-                        InternalLink(
+                        WtInternalLink(
                           Properties:
                             {N} postfix = ""
                             {N} prefix = ""
@@ -847,11 +847,11 @@ WtParsedWikitextPage(
 
                               [
                                 WtText("Indeed, even ")
-                                ExternalLink(
+                                WtExternalLink(
                                   Properties:
                                     {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                                  Url(
+                                  WtUrl(
                                     Properties:
                                       {N} path = "//www.bom.gov.au/climate/averages/tables/cw_070282.shtml"
                                       {N} protocol = "http"
@@ -860,11 +860,11 @@ WtParsedWikitextPage(
                                   [ WtText("Canberra") ]
                                 )
                                 WtText(" is has hotter summers than ")
-                                ExternalLink(
+                                WtExternalLink(
                                   Properties:
                                     {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                                  Url(
+                                  WtUrl(
                                     Properties:
                                       {N} path = "//www.bom.gov.au/climate/averages/tables/cw_086071.shtml"
                                       {N} protocol = "http"
@@ -873,11 +873,11 @@ WtParsedWikitextPage(
                                   [ WtText("Melbourne") ]
                                 )
                                 WtText(". Nearly as hot as ")
-                                ExternalLink(
+                                WtExternalLink(
                                   Properties:
                                     {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                                  Url(
+                                  WtUrl(
                                     Properties:
                                       {N} path = "//www.bom.gov.au/climate/averages/tables/cw_040214.shtml"
                                       {N} protocol = "http"
@@ -900,7 +900,7 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
@@ -915,7 +915,7 @@ WtParsedWikitextPage(
           WtText("Does \"exist\" mean the club no longer plays in the VFL/AFL, or no longer exists?")
           WtNewline("\n")
           WtText("Fitzroy still exists as an amateur club. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -948,14 +948,14 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("The history section on this page needs to be corrected to bring it into line with the information on this site ")
-          Url(
+          WtUrl(
             Properties:
               {N} path = "//www.fullpointsfooty.net/melbourne.htm,"
               {N} protocol = "http"
               {N} rtd = RTD[ "http://www.fullpointsfooty.net/melbourne.htm," ]
           )
           WtText(" but I'l leave that to the Aussies. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -970,7 +970,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -990,7 +990,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Mintguy has a point, although I've said to him elsewhere ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1000,7 +1000,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(", I think fullpointsfooty.net is wrong on the early history. In fact, a lot of the histories of Aussie rules available on the web seem to be terrible and contradictory. We have a great opportunity to do better :-) Anyway, I've expanded and updated the history section. In particular, I've addressed some inaccuracies, such as (1) the role of H.C.A. Harrison, which seems to be exaggerated by almost everyone except serious historians; (2) the previous omission of the experiments at the Richmond Paddock, and (3) the \"significance\" of the game between Melbourne Grammar and Scotch College in 1858. To name a few. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1017,7 +1017,7 @@ WtParsedWikitextPage(
           WtText(" 18:10, 12 Mar 2004 (UTC)")
         ])
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
@@ -1069,7 +1069,7 @@ WtParsedWikitextPage(
                 Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:73:48 - 49: "&" : This looks like a XML Reference, however the entity name or character code is missing.
               ]
           )
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1086,7 +1086,7 @@ WtParsedWikitextPage(
                 Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:73:343 - 344: "&" : This looks like a XML Reference, however the entity name or character code is missing.
               ]
           )
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1096,7 +1096,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" rules of 1863 had been by influenced by the Melbourne FC rules! ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1116,7 +1116,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Grant. You've just reminded me of something with that last sentence. Some time ago I tried to find out about early proponents of Association football in Australia but I found virtually no information about this. I did find out that early bodies subscribing to the FA rules included the Southern British Football Association in New South Wales, the Anglo-Australian Football Association in Victoria and the British Football Associations of Queensland, South Australia and Tasmania. But I couldn't find any dates relating to the establishment and/or demise of these organisations. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1131,7 +1131,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1151,7 +1151,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Mintguy, see the latest comments on my talk page. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1169,7 +1169,7 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        HorizontalRule(
+        WtHorizontalRule(
           Properties:
             {N} rtd = RTD[ "----" ]
         )
@@ -1180,7 +1180,7 @@ WtParsedWikitextPage(
         WtParagraph([
           WtText("There is also no mention of the earlier Victorian competition that preceded the VFA.")
           WtNewline("\n")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1213,7 +1213,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I think the section on the rules could be expanded. Basic information like the number of players is lacking, and can only be deduced from studying the images. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1233,11 +1233,11 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("It seems that I am far from the only one who has mixed up the various games played in 1858. ")
-          ExternalLink(
+          WtExternalLink(
             Properties:
               {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//www.statelibrary.vic.gov.au/slv/slvnews/aussierulesonline.pdf"
                 {N} protocol = "http"
@@ -1246,7 +1246,7 @@ WtParsedWikitextPage(
             [ ]
           )
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1261,7 +1261,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1294,7 +1294,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("Seems an obvious thing to have, yet it's currently missing. As far as I know it's four quarters of thirty minutes, but I don't know who keeps time and whether it can go over thirty, or what happens if the scores are level at full time. Aussie input welcome! ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1318,7 +1318,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("Good point - done! Revisions welcome.  --")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1333,7 +1333,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText(" - ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1345,7 +1345,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> "" ]
 
                       [
-                        XmlElement(
+                        WtXmlElement(
                           Properties:
                             {N} empty = false
                             {N} name = "small"
@@ -1365,7 +1365,7 @@ WtParsedWikitextPage(
 
                       [
                         WtText("Thanks - I now understand why when the clock showed 10 minutes the commentator said we were half-way through the final quarter of the GF highlights I saw. The quarter eventually ran to 32 minutes... ")
-                        InternalLink(
+                        WtInternalLink(
                           Properties:
                             {N} postfix = ""
                             {N} prefix = ""
@@ -1429,7 +1429,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("To explain my last edit: it's not accurate to say that Aussie Rules was \"developed as an alternative to Rugby\", with a link to ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1439,7 +1439,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(", because Aussie Rules was invented long before there was any such thing as \"Rugby League\" and before there was even much ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1449,7 +1449,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" outside ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1459,7 +1459,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(". Neither would it be accurate to describe Aussie Rules as an offshoot of Rugby. See ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1469,7 +1469,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(". ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1483,7 +1483,7 @@ WtParsedWikitextPage(
               [ WtText("Grant65") ]
             )
           )
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1513,7 +1513,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1523,7 +1523,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" <-> ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1540,7 +1540,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I added a section today, under the \"Future teams\" heading.  However on re-reading it seems that the entire \"teams\" section, as well as my additional section, should really go in the ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1550,7 +1550,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" article.  However I figured if this was right, someone would have done it already.  Ideas anyone?  -- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1574,7 +1574,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Yes, I think it should go on the AFL page.")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1588,7 +1588,7 @@ WtParsedWikitextPage(
                   [ WtText("Grant65") ]
                 )
               )
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1610,7 +1610,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("I moved both the future teams article, as well as the Hall of Fame section to ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -1627,7 +1627,7 @@ WtParsedWikitextPage(
                       [ WtText("AFL") ]
                     )
                     WtText(" Hall of Fame. The teams and leagues section needs serious editing and splitting up before it can be moved to other articles - a job for another day. ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -1649,7 +1649,7 @@ WtParsedWikitextPage(
 
                         [
                           WtText("Actually it's the \"Australian Football Hall of Fame\" (but it's already been moved back in the article). ")
-                          ImageLink(
+                          WtImageLink(
                             Properties:
                               {N} alt = 
                                 WtLinkOptionAltText([ ])
@@ -1676,7 +1676,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(" ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -1690,7 +1690,7 @@ WtParsedWikitextPage(
                               [ WtText("plattopus") ]
                             )
                           )
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "sup"
@@ -1698,7 +1698,7 @@ WtParsedWikitextPage(
 
                             [ ]
                             [
-                              XmlElement(
+                              WtXmlElement(
                                 Properties:
                                   {N} empty = false
                                   {N} name = "small"
@@ -1706,7 +1706,7 @@ WtParsedWikitextPage(
 
                                 [ ]
                                 [
-                                  InternalLink(
+                                  WtInternalLink(
                                     Properties:
                                       {N} postfix = ""
                                       {N} prefix = ""
@@ -1732,7 +1732,7 @@ WtParsedWikitextPage(
 
                               [
                                 WtText("Yes, I accept I was wrong in this assumption, however, it still may not belong in this article. Perhaps it should be removed from both this page and the AFL page, and moved to it's own, to remove the duplicate entries. ")
-                                InternalLink(
+                                WtInternalLink(
                                   Properties:
                                     {N} postfix = ""
                                     {N} prefix = ""
@@ -1754,7 +1754,7 @@ WtParsedWikitextPage(
 
                                     [
                                       WtText("Possibly a good idea, assuming there is enough to write about it. If there is a HOF article in its own right, then obviously both the AFL and ARF articles should link to it, but in the meantime it should reside under Australian Rules Football, not the AFL. ")
-                                      ImageLink(
+                                      WtImageLink(
                                         Properties:
                                           {N} alt = 
                                             WtLinkOptionAltText([ ])
@@ -1781,7 +1781,7 @@ WtParsedWikitextPage(
                                         WtLinkTitle([ ])
                                       )
                                       WtText(" ")
-                                      InternalLink(
+                                      WtInternalLink(
                                         Properties:
                                           {N} postfix = ""
                                           {N} prefix = ""
@@ -1795,7 +1795,7 @@ WtParsedWikitextPage(
                                           [ WtText("plattopus") ]
                                         )
                                       )
-                                      XmlElement(
+                                      WtXmlElement(
                                         Properties:
                                           {N} empty = false
                                           {N} name = "sup"
@@ -1803,7 +1803,7 @@ WtParsedWikitextPage(
 
                                         [ ]
                                         [
-                                          XmlElement(
+                                          WtXmlElement(
                                             Properties:
                                               {N} empty = false
                                               {N} name = "small"
@@ -1811,7 +1811,7 @@ WtParsedWikitextPage(
 
                                             [ ]
                                             [
-                                              InternalLink(
+                                              WtInternalLink(
                                                 Properties:
                                                   {N} postfix = ""
                                                   {N} prefix = ""
@@ -1848,7 +1848,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I would like to see the names of the 12 AHoF \"legends\" (at least) remain in this article, as there were very few mentions of players when I originally added the HoF section. A separate article on the HoF would still be a good idea, as it has a lot more members than just the 12 legends. By the way, almost none of the legends had article when I added that list and Wikipedia is still short of articles on Aussie rules players. (Except for the fan contributions on current players like ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1858,7 +1858,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" etc.) ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1872,7 +1872,7 @@ WtParsedWikitextPage(
               [ WtText("Grant65") ]
             )
           )
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1892,7 +1892,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("It seems silly to have the Hall of Fame information duplicated on both this page and the AFL page.  I agree that it needs its own page but perhaps there should be some consensus about where it really should go?  My vote, fwiw, is to leave it on this page in preparation for moving it to its own page later.--")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -1917,7 +1917,7 @@ WtParsedWikitextPage(
 
             [
               WtText("There is nothing wrong with having duplicate material on different pages, when appropriate. If anything I think the HoF material should be removed from the AFL page, since the HoF is about the whole history of the game and not just the AFL, but there may be opposition to that. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1931,7 +1931,7 @@ WtParsedWikitextPage(
                   [ WtText("Grant65") ]
                 )
               )
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1960,7 +1960,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("Yup the HoH should be in this article. On the other hand, the \"Notable VFL/AFL records\" section should be removed from this article if duplication is an issue between the two pages. - ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1998,7 +1998,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("The article indicates that the IAFC is the official administrative body for Australian rules football internationally but I think you would get a very different view on that from the AFL, who see themselves as the official international representative body for the sport.  If someone can come up with a statement from the AFL that it recognises the IAFC as the official international body though, I'd be happy to retain the reference.  --")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2022,7 +2022,7 @@ WtParsedWikitextPage(
 
             [
               WtText("The AFL certainly see themselves as the universal governing body, and I don't think I've seen any official AFL statements regarding the IAFC but I can guarantee they wouldn't be positive. ")
-              ImageLink(
+              WtImageLink(
                 Properties:
                   {N} alt = 
                     WtLinkOptionAltText([ ])
@@ -2054,7 +2054,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2068,7 +2068,7 @@ WtParsedWikitextPage(
                   [ WtText("plattopus") ]
                 )
               )
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "sup"
@@ -2076,7 +2076,7 @@ WtParsedWikitextPage(
 
                 [ ]
                 [
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "small"
@@ -2084,7 +2084,7 @@ WtParsedWikitextPage(
 
                     [ ]
                     [
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2110,7 +2110,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("The IAFC is not recognised by the AFL. No doubt the IAFC would say \"who is the AFL to recognise us or not?\" They would have a point since the AFL in recent years has shown itself as strangely reluctant to promote the game in countries such as Denmark where the game has grown of its own accord.")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -2124,7 +2124,7 @@ WtParsedWikitextPage(
                         [ WtText("Grant65") ]
                       )
                     )
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -2164,7 +2164,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Anyone want to have a go at adding the new centre circle into the diagrams? --")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2208,7 +2208,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Neither - it's vandalism, now reverted.--")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2250,7 +2250,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2284,7 +2284,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Not sure where exactly to put that in the article as yet, but I'm sure someone will think of a way! --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2313,7 +2313,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("I think that is a pretty good definition, but in modern day commentary I am pretty sure they have extended the term to mean a clearance from any stoppage.  In modern day footy, the team that can win the most clearances from all forms of stoppages will nearly always win the game and thus the frequency of the use of the term.  Also, it can mean a handball if it has effectively cleared the area of the stoppage to the team's advantage, so a handball that went nowhere and resulted in another ball up would not be counted as a stat.  --")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2328,7 +2328,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText(" - ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2340,7 +2340,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> "" ]
 
                       [
-                        XmlElement(
+                        WtXmlElement(
                           Properties:
                             {N} empty = false
                             {N} name = "small"
@@ -2376,7 +2376,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("The latest anonimous edit looks like a bit of POV mischief from a banana bender with taped back ears and no neck who doesn't mind sniffing the odd backside.  Anyone with sufficient powers out there agree on a roll back?  --")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2391,7 +2391,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" - ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2403,7 +2403,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "|" <o> "" ]
 
               [
-                XmlElement(
+                WtXmlElement(
                   Properties:
                     {N} empty = false
                     {N} name = "small"
@@ -2426,7 +2426,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Pippu, absolutely agree to that. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2441,7 +2441,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(". You don't need special powers to roll-back, just go to the edit history and select the previous edit (the good one) and press edit and save.  You will get a warning that you're going to overwrite the current version but just say OK to that. -- ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2456,14 +2456,14 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" ")
-              XmlEntityRef(
+              WtXmlEntityRef(
                 Properties:
                   {N} name = "equiv"
                   {N} resolved = "\u2261"
                   {N} rtd = RTD[ "&equiv;" ]
               )
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2499,7 +2499,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Re the Brain's most recent edit, that wasn't me that deleted that line that he has restored, but I always thought that it was inaccurate in relation to the ACT (i.e. Canberra).  In fact, Canberra was an aussie rules stronghold until at least 1982 because the first two generations of public servants came predominantly from Melbourne. With time this balance swung more to Sydney and then around 1982 the Canberra Raiders joined the then NSWRL.  Rugby league certainly has overtaken aussie rules in general popularity (if you are counting TV ratings) but in terms of participation I would think that it would be roughly on par with aussie rules and rugby union, and all three are likely to be behind soccer.  In terms spectators attending games, I imagine the ACT Brumbies currently outstrip all, the Canberra Raiders only get about half, and for some of the three or four games the Kangaroos play in Canberra, they will often get more than the average Raiders game.  All in all - I think it is not an accurate statement about Canberra (not to mention that in souther NSW, aussie rules is stronger than rugby league).  --")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2514,7 +2514,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" - ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2526,7 +2526,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "|" <o> "" ]
 
               [
-                XmlElement(
+                WtXmlElement(
                   Properties:
                     {N} empty = false
                     {N} name = "small"
@@ -2575,7 +2575,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("Australian rules which was invented in ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2585,7 +2585,7 @@ WtParsedWikitextPage(
                         WtLinkTitle([ ])
                       )
                       WtText(", is the predominant ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2595,7 +2595,7 @@ WtParsedWikitextPage(
                         WtLinkTitle([ ])
                       )
                       WtText(" in all states of ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2611,7 +2611,7 @@ WtParsedWikitextPage(
 
                         [
                           WtText(" with the exception of ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -2621,7 +2621,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(", ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -2631,7 +2631,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(" and the ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -2646,7 +2646,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(", where ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -2692,7 +2692,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Perhaps the par could be rewritten to note Aussie rules' predominance in southern NSW but I'm not convinced that's warranted; to all intents and purposes the par is fine for mine. --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2723,7 +2723,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("Brains - thanks for the reply - perhaps it's ok as it is but I wasn't suggesting that aussie rules was bigger than league or on par, but that even one of the other two codes may have been just as big (depending on the criterion you are using) - I'm just not sure that league is way out ahead of the other three in Canberra.  The interest in the raiders has really waned since the Brumbies came on the scene - but that needs to be tested over a long period because I am not sure the average Canberran would suffer say 5 or 6 years in the bottom 4.   Correct also in saying that it is too early to judge the  Kangaroos experiment.  --")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2738,7 +2738,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(" - ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2750,7 +2750,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "|" <o> "" ]
 
                           [
-                            XmlElement(
+                            WtXmlElement(
                               Properties:
                                 {N} empty = false
                                 {N} name = "small"
@@ -2763,7 +2763,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(" 09:58, 27 September 2005 (UTC)  p.s. check out our main page at ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -2783,11 +2783,11 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("The crowd at the last Raiders match (v Manly) was 10,366;")
-          ExternalLink(
+          WtExternalLink(
             Properties:
               {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//foxsports.news.com.au/story/0,8659,16485151-23214,00.html"
                 {N} protocol = "http"
@@ -2796,11 +2796,11 @@ WtParsedWikitextPage(
             [ ]
           )
           WtText(" the AFL Kangaroos biggest crowd this year was 13,481:")
-          ExternalLink(
+          WtExternalLink(
             Properties:
               {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//canberra.yourguide.com.au/detail.asp?class=sport&subclass=local&category=general%20sport&story_id=421562&y=2005&m=9"
                 {N} protocol = "http"
@@ -2865,7 +2865,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("On that basis you I think it have to be said that Aussies rules is at least equal to rugby league, and is growing at the moment. When the ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2875,11 +2875,11 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" smash the Brumbies, expect union to decline in the ACT as well ;-) Seriously, with a population of 300,000, it's not a bad effort to get 10,000+ to both league and AFL games. According to the Governor-General the Brumbies get an average crowd of 22,500.")
-          ExternalLink(
+          WtExternalLink(
             Properties:
               {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//www.gg.gov.au/speeches/html/speeches/2005/050202.html"
                 {N} protocol = "http"
@@ -2888,7 +2888,7 @@ WtParsedWikitextPage(
             [ ]
           )
           WtText(" A competitive AFL team based there would come close to that I think.")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2902,7 +2902,7 @@ WtParsedWikitextPage(
               [ WtText("Grant65") ]
             )
           )
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2937,7 +2937,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Perhaps we'd better take this discussion to BigFooty ;) --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2972,7 +2972,7 @@ WtParsedWikitextPage(
                     [ WtText("BigFooty") ]
                   )
                   WtText(" oh yeah, you'll get some bipartisan discourse there... In my experience, as a 1971-1982 Canberra schoolboy (neatly the pre-Raiders period) AR was non-existant. But that was just our school, I'm sure some schools played it. But I'd agree with Grant, an AFL team would outdraw than the Raiders, as league fans are notorious for their unwillingness to show up at games, and AR fans the exact opposite. Doesn't help the Raiders have played a crappy brand of football for about 8 years either. On the Brumbies, they're only playing a six game season, probably more people showed up at Raiders games this year, despite their pitiful form.--")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3004,7 +3004,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("I confirm what Brains says about the free game.  All in all, I think it is a reasonable rewrite - but re the ACT -  we might revisit it this time next year! --")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3019,7 +3019,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText(" - ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3031,7 +3031,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "|" <o> "" ]
 
                       [
-                        XmlElement(
+                        WtXmlElement(
                           Properties:
                             {N} empty = false
                             {N} name = "small"
@@ -3060,11 +3060,11 @@ WtParsedWikitextPage(
 
                 [
                   WtText("The average 2005 crowds for comparison.  Rugby Union 22,895; Rugby League 12,404; Aussie Rules 12,149.  Based on crowds alone, Union should rightly be most popular in ACT.  League gets good TV ratings but this may also be because the games are broadcast more regularly (Super 14 matches are not held as often).  Aussie Rules may be catching up, but by average crowds and ratings it is still 3rd overall.  Canberra memberships for both the Kangaroos and Sydney Swans may have nearly doubled in 2006, but still total less than 1,000 ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//kangaroos.com.au/default.asp?pg=canberra&spg=display&articleid=242973"
                         {N} protocol = "http"
@@ -3073,11 +3073,11 @@ WtParsedWikitextPage(
                     [ ]
                   )
                   WtText(" ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//sydneyswans.com.au/default.asp?pg=news&spg=display&articleid=237653"
                         {N} protocol = "http"
@@ -3086,7 +3086,7 @@ WtParsedWikitextPage(
                     [ ]
                   )
                   WtText(".  I think a lot of people confuse Aussie Rules long-time strong presence in southern NSW/Riverina as extending to Canberra.  It is more the case that Canberra's proximity to Sydney holds sway.  --")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3124,7 +3124,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("The ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3134,7 +3134,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" article is the current ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3144,7 +3144,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" - just wondering if anyone here would be interested in adding to the ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3159,7 +3159,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" section? (or any other section) thanks --- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3197,7 +3197,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("On an unrelated note, exactly how high is \"elbow height\"? ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3221,7 +3221,7 @@ WtParsedWikitextPage(
 
             [
               WtText("If you can get hold of an old video of Dipper playing, that will give you a pretty good idea - the range is from throat level to black eye level.  --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -3236,7 +3236,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" - ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -3248,7 +3248,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "small"
@@ -3275,7 +3275,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("Actually, I was refering to the thing about the goal umpire signalling with hands at elbow height, but you've illustrated my point anyway. Maybe Belly-button height is a better description? ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3308,7 +3308,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("As a formerly accredited goal umpire, I can tell you that the upper arms should be vertical and the lower arms horizontal, making it the height of the elbow when standing with arms by your sides. ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -3323,7 +3323,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -3354,7 +3354,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Laws of Australian Football sounds good to me, since that's what they're called. Law of Australian Rules Football if anyone really wants to kick up a stink. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -3369,7 +3369,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -3398,7 +3398,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("ok I moved it across to ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3408,7 +3408,7 @@ WtParsedWikitextPage(
                     WtLinkTitle([ ])
                   )
                   WtText(". Probably still needs a good short paragraph in this article ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3495,7 +3495,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Sorry to Burst your bubble AFL Fans! ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3515,11 +3515,11 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I'm not really sure what you're trying to say, since your arguments are as dodgy as the ones you are apparaently debunking, not to mention noone ever used a state count to prove anything. Aussie Rules is the most popular code of football in Australia, by any measure (eg ")
-          ExternalLink(
+          WtExternalLink(
             Properties:
               {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//www.smh.com.au/articles/2003/05/22/1053196670542.html"
                 {N} protocol = "http"
@@ -3528,7 +3528,7 @@ WtParsedWikitextPage(
             [ ]
           )
           WtText("). I tend to agree that stating it is the most popular sport is probably going a bit far, but the rest of the paragraph is fine. If anything, it understates the popularity of Aussie Rules in the NSW Riverina. Keep in mind also, that this article is about the sport, not about the AFL. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -3555,7 +3555,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("The standard measurement of popularity used by the ABS is game attendance and participation.  This doesn't accurately measure the popularity of a sport.  It's perfectly valid to refer to the AFL alone in this argument since QAFL, NSWAFL, WAFL etc are not telecasted nationally if at all.  The popularity section boasts the # of states where the game is the most popular sport and mentions attendance.  That's fine except it doesn't mention anything about television viewership nor the populations of those states and territories mentioned.  In this respect, the reader has no way to quantify the popularity accurately and the article implies that the sport is phenomenally more popular than it is.  I know AFL fans can become extremely obsessive so we can't really expect an truely NPOV article on the subject without outside help.  In a few weeks i'm going to be back in australia.  I intend to do some research and provide an NPOV article based on cited sources.  Wikipedia's NPOV policy is not negotiable in any article.  Furthermore, this article is loaded with original material and lacks the appropriate citations expected from a Wikipedia article.  These rules apply to AFL fans too! ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -3595,7 +3595,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("That's right it does and it stops short of actually providing any evidence of the sports popularity at a national level leaving the reader believing that an extremely large majority of people follow the sport in comparison to other sports.")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3640,7 +3640,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("It implies it!  Show me where the term 'Geographical spread' is used in the article!")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3685,7 +3685,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("I did read it as a description of the games popularity.  That's the problem!")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3730,7 +3730,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("My argument regarding other leagues validates my legitimate claim to use the term AFL and to limit my research to AFL whilst investigating the popularity of the sport of Australian Rules Football.  Unless you believe there are a significant number of followers who only follow the local state level games and bear no interest in the AFL then my argument is still valid.")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3775,7 +3775,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("I'm referring to the governing body that is usually considered to be the authority on statistics in Australia and dismissing their statistics as invalid.  Not everything I have to say is necessarily an argument debunking you.  Get over yourself.")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3820,7 +3820,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("Where is that mentioned?")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3865,7 +3865,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("Nice ")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3880,7 +3880,7 @@ WtParsedWikitextPage(
                               )
                             )
                             WtText("! ")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3913,7 +3913,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("Television viewership is far more valid than game attendance since viewership represents a much higher number of followers.  I think it would be a very valid statistic to add if you're going to make a comparison between the popularity of AFL in comparison to followers of other sporting bodies.")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -3951,7 +3951,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("The fact that the SANFL and WAFL are not telecast nationally doesn't mean that they don't show evidence of the popularity of the code. ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -3973,7 +3973,7 @@ WtParsedWikitextPage(
 
                           [
                             WtText("See my previous comment regarding that particular argument.")
-                            InternalLink(
+                            WtInternalLink(
                               Properties:
                                 {N} postfix = ""
                                 {N} prefix = ""
@@ -4002,7 +4002,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("By the way, I noticed you didn't comment on my suggestion that this article is loaded with Non-NPov original material with little or no source citation to back it up.")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4041,7 +4041,7 @@ WtParsedWikitextPage(
                 [ WtText("main") ]
               )
               WtText(" purpose of the section is *not* to make comparisons with other sports, but to describe what popularity the code has. This means stating where it is and isn't dominant and mentioning attendance rates, participation rates and television audiences without trying to draw conclusions about which figures are most relevant. The reader can do that for themselves. Lastly, please don't try to break up my comments, as how you did it last time obscured the points I was making. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4075,7 +4075,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I will, as you suggest, add some sources, citable statistics and non-npov wording to the article.")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4180,7 +4180,7 @@ WtParsedWikitextPage(
 
             [
               WtText("source: ")
-              Url(
+              WtUrl(
                 Properties:
                   {N} path = "//www.oztam.com.au/archives.aspx?Year=2005"
                   {N} protocol = "http"
@@ -4227,11 +4227,11 @@ WtParsedWikitextPage(
 
             [
               WtText("Oh, by the way, official attendance at the WAFL grand final was 22,570.")
-              ExternalLink(
+              WtExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-                Url(
+                WtUrl(
                   Properties:
                     {N} path = "//www.claremontfc.com/2005season/modules.php?name=News&file=article&sid=87"
                     {N} protocol = "http"
@@ -4240,7 +4240,7 @@ WtParsedWikitextPage(
                 [ ]
               )
               WtText(" ;-) ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4255,7 +4255,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" | ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4304,7 +4304,7 @@ WtParsedWikitextPage(
         WtParagraph([
           WtText("This link includes all forms of exercise as well as sports.  Aussie rules doesn't even rank in the top 10.  Soccer is number 10...")
           WtNewline("\n")
-          Url(
+          WtUrl(
             Properties:
               {N} path = "//www.abs.gov.au/Ausstats/abs@.nsf/0/DAAADA81176E2F89CA256F7200833023?Open"
               {N} protocol = "http"
@@ -4316,7 +4316,7 @@ WtParsedWikitextPage(
         WtParagraph([
           WtText("This article is limited to organised sports and shows stats for children alone.  Aussie Rules is ranked 6th after swimming, soccer, netball, tennis and basketball")
           WtNewline("\n")
-          Url(
+          WtUrl(
             Properties:
               {N} path = "//search.abs.gov.au/servlet/SearchDocuments?query=Australian+rules+football+soccer+rugby+league&docID=CA256FE8004F86D9&docURL=HTTP://www.abs.gov.au/Ausstats/abs%40.nsf/0/57E1C764BFA85942CA256F7200832FBC%3FOpen"
               {N} protocol = "http"
@@ -4347,7 +4347,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4367,14 +4367,14 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("You are being extremely inconsistent, one minute you say what the ABS says is crap, the next you're using their statistics to prove your point. The most recent version of the sweeney report, mentioned above, which uses participation as well as watching and attending, gives swimming as the most popular sport, with tennis, cricket and AF tied on second. Taking only TV (your favourite statistic) AF is the highest. Again, it contains many forms of exercise as well. If you want to read it - ")
-          Url(
+          WtUrl(
             Properties:
               {N} path = "//www.sweeneyresearch.com.au/PDF/Interest.pdf."
               {N} protocol = "http"
               {N} rtd = RTD[ "http://www.sweeneyresearch.com.au/PDF/Interest.pdf." ]
           )
           WtText(" ")
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "s"
@@ -4384,7 +4384,7 @@ WtParsedWikitextPage(
             [ WtText("And please stop editing other peoples comments, it's just confuses things.") ]
           )
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4399,7 +4399,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4411,7 +4411,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "|" <o> "" ]
 
               [
-                XmlElement(
+                WtXmlElement(
                   Properties:
                     {N} empty = false
                     {N} name = "sub"
@@ -4437,7 +4437,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("Posting bits of other peoples things to reply to is confusing too. ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -4452,7 +4452,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(" ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -4464,7 +4464,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "|" <o> "" ]
 
                           [
-                            XmlElement(
+                            WtXmlElement(
                               Properties:
                                 {N} empty = false
                                 {N} name = "sub"
@@ -4622,7 +4622,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "::" <o> "" ]
 
                 [
-                  Url(
+                  WtUrl(
                     Properties:
                       {N} path = "//www.abs.gov.au/Ausstats/abs@.nsf/0/e298cee24565c911ca256def007248ff?OpenDocument"
                       {N} protocol = "http"
@@ -4642,7 +4642,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" ...unless we accept the \"argument\" that league fans would rather watch it on TV. But I don't buy it. Logically the biggest problem for league in terms of its following is not Aussie rules but rugby union, which was established first and (I'm guessing) has been growing in popularity since professionalism was (officially) allowed. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4657,7 +4657,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" | ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4679,7 +4679,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("I think that the League people watching TV is a moot point, because I'm yet to see a statistic that shows the NRL TV viewing greater than the AFL TV viewing. ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -4694,7 +4694,7 @@ WtParsedWikitextPage(
                       )
                     )
                     WtText(" ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -4706,7 +4706,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "|" <o> "" ]
 
                         [
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "sub"
@@ -4830,7 +4830,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4872,7 +4872,7 @@ WtParsedWikitextPage(
                 [ WtText("spectator") ]
               )
               WtText(" sport (or if it doesn't, it did, and should). The Sweeney report includes participation. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4887,7 +4887,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -4899,7 +4899,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "sub"
@@ -4944,7 +4944,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I think we're forgetting what the CG part of MCG stands for!")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -4969,7 +4969,7 @@ WtParsedWikitextPage(
 
             [
               WtText("I think you're forgetting what the article is about. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5014,7 +5014,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("I did not see that you had deleted your comment, as it edit conflicted with my edit to the previous section and was quite confusing. At any rate, it is not normal to delete comments from the talk page. To avoid confusion, you might like admit on the talk page that you misread the sentence, rather than just deleting your comment. ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -5075,7 +5075,7 @@ WtParsedWikitextPage(
 
                             [
                               WtText("Could you please ")
-                              InternalLink(
+                              WtInternalLink(
                                 Properties:
                                   {N} postfix = ""
                                   {N} prefix = ""
@@ -5090,7 +5090,7 @@ WtParsedWikitextPage(
                                 )
                               )
                               WtText("? The edit conflict was quite confusing and I did not realise that you had deleted it. I did not imply that you did not admit it, I simply suggested that it would have been less confusing to admit on the talk page. I am perfectly happy to let it die now that I understand you retracted the comment. I am not perfectly happy to accept your accusation that I deliberately resurrected it. ")
-                              InternalLink(
+                              WtInternalLink(
                                 Properties:
                                   {N} postfix = ""
                                   {N} prefix = ""
@@ -5141,7 +5141,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "s"
@@ -5150,7 +5150,7 @@ WtParsedWikitextPage(
             [ ]
             [
               WtText(":::::It seem that you added this paragraph just before I clicked edit, so I hadn't read it when I wrote the above. The explanation for the 6 minutes, if you want it, is that I clicked submit when I had finished my edit to the earlier section, and then worked on something else. When I came back to the window, I saw that it had not been submitted due to an edit conflict. How much of the six minutes was between your edits and my original submission and how much was between my first submission and my second one, I don't know. You can see that my \"resurrection\" of your comment was part of the edit I made to the earlier section. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5168,7 +5168,7 @@ WtParsedWikitextPage(
             ]
           )
           WtText(" This was a response to your now deleted accusation - I am still having trouble keeping up with you, but I think we understand the original problem now, so let's leave it at that. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -5218,7 +5218,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("Spectators. That's why it says \"...as a spectator sport\". If this is \"POV\", then you presumably believe that some other attribute of the game is more important to spectators.  Which? ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -5286,7 +5286,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("--")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5301,7 +5301,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" 00:54, 25 November 2005 (UTC)Regards CS-----")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5321,7 +5321,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("Very true.  And i'm happy to admit I came to this page knowing it would be loaded with non-npov statments due to the incredible level of fanaticism with the sport.  The level of fanaticism can only be compared to sports such as soccer in europe and GAA sports in country areas of Ireland (GAA sports are not popular in dublin where everyone just follows british soccer).  When visiting Melbourne many a cab driver has become upset with me when my response to the question 'which team do you follow?' is the Brisbane Broncos ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5347,7 +5347,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("In doing so, you managed to find several \"non-npov statements\" that were perfectly npov when they were read sensibly. You might have understood what was being said better if you didn't start with the assumption that it would be inappropriate. I agree with you that there are several vague unsourced statements, but that is not the same as POV-pushing. ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -5376,7 +5376,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("That may be the case but either way, my presumption has allowed me to play devils advocate to the benefit of the article. ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -5435,7 +5435,7 @@ WtParsedWikitextPage(
 
                       [
                         WtText("Sorry not good enough.  I expect more than anecdotal  evidience to back a claim like this.  Where are the numbers?  Who are you quoting?")
-                        InternalLink(
+                        WtInternalLink(
                           Properties:
                             {N} postfix = ""
                             {N} prefix = ""
@@ -5457,7 +5457,7 @@ WtParsedWikitextPage(
 
                             [
                               WtText("It's probably true, it does need to be sourced, but more to the point, does it really need to be in the article? The point is that in most of NSW, Qld and ACT, AF is not the obviously dominant code as it is in other areas. For this context, it doesn't matter what the dominant code is. ")
-                              InternalLink(
+                              WtInternalLink(
                                 Properties:
                                   {N} postfix = ""
                                   {N} prefix = ""
@@ -5508,7 +5508,7 @@ WtParsedWikitextPage(
 
                       [
                         WtText("That would be a good start.  In addition, can we find out the rise in television ratings? Since the first premiership win?  Maybe the immigration stats.  I'm originally from Brisbane and recall a time when the only attendance the Brisbane Bears received consisted of southern immigrants who were there to see the opposition play.  It has been suggested that those AFL fans had children and their children follow the Brisbane Lions.  This largely accounts for the grown in support for the sport in Brisbane prior to the first premiership win.  I'll see if I can track down a quote or source for this.")
-                        InternalLink(
+                        WtInternalLink(
                           Properties:
                             {N} postfix = ""
                             {N} prefix = ""
@@ -5601,7 +5601,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText(" Does it really need to address popularity (surely general popularity was covered in a previous section that mentions the game is only popular in Nauru and PNG ?  In any case it is a simple statement of fact - no more, no less. --")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -5685,7 +5685,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtNewline("\n")
             WtParagraph([
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5700,7 +5700,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5712,7 +5712,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "sub"
@@ -5765,7 +5765,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtNewline("\n")
             WtParagraph([
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5785,7 +5785,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("I just took a look at the article for the first time since writing this and see that the issues i brought up have been addressed.  I'm impressed.  I think the article is better as a result.  Still needs more verifiable citations and quotations.")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5822,7 +5822,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("I still think that this is ok")
-                  XmlEntityRef(
+                  WtXmlEntityRef(
                     Properties:
                       {N} name = "mdash"
                       {N} resolved = "\u2014"
@@ -5837,7 +5837,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("And I still think you're taking this one too far")
-                  XmlEntityRef(
+                  WtXmlEntityRef(
                     Properties:
                       {N} name = "mdash"
                       {N} resolved = "\u2014"
@@ -5849,7 +5849,7 @@ WtParsedWikitextPage(
             ])
             WtNewline("\n")
             WtParagraph([
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5864,7 +5864,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5876,7 +5876,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "sub"
@@ -5913,7 +5913,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("I think the relevant definition of elite here is \u201CThe best or most skilled members of a group: the football team's elite.\u201D It would be POV to declare individual players elite, or possibly even to call the VFL the elite league in the past, but in modern days the structure of the game is such that saying the AFL is the elite league is as undisputable as calling the Premier League the elite competition in English soccer. We don't need to have sources for the word \"elite\", simply for the fact that it is the top-level competition. ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -5940,7 +5940,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("Re: the word elite.  OK I agree that the word elite can be used in a non-npov context.  However, in the sentence it's being used here, it is redundant.  It becomes POV at the point that the same point is repeated a multiple number of times in the same sentence.  I'm happy for them to be called either the most powerful organisation or the elite organisation, but not both.  What if instead of saying 'The NRL is the elite governing body for the sport of rugby leage in Australia' I decided to say this 'The NRL is the most powerful, vigorously supreme, almighty and elite governing body of the sport of rugby league in Australia'?")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -5962,7 +5962,7 @@ WtParsedWikitextPage(
             WtNewline("\n")
             WtParagraph([
               WtText("You have a good point. I guess I feel that the meaning of elite being used here is the one that refers to the skill level of the competition, rather than the power and money of the organisation (governing body). It would be good to rewrite/split the sentence to that it adequately reflects both aspects. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -5987,11 +5987,11 @@ WtParsedWikitextPage(
 
                 [
                   WtText("Re: the word elite. Geez, if you really want one, the NAB (sponsors) obviously think it is elite, because they drop the word about 5 times in this article ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> "" <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//www.national.com.au/Sponsorships/0,,66975,00.html"
                         {N} protocol = "http"
@@ -6000,7 +6000,7 @@ WtParsedWikitextPage(
                     [ ]
                   )
                   WtText(".  If guess if it wasn't elite, you could probably walk up and get a game, which is obviously not the case. --")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -6033,7 +6033,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Should this article be renamed from \"Australian rules football\" to \"Australian Rules Football\"?  It seems to be that the former sounds like a statement about a person in charge of football :) But in all seriousness, the latter is the correct title, is it not?  The history in the redirect appears to show the reverse was done on 11 November 2004, I but cannot think why. \"rules\" (uncapitalised) implies something other than a title. -- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6048,7 +6048,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" \u2261 ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6072,7 +6072,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Hi Ian - I agree it needs to be looked at, I don't understand either why it was changed to lower case.  It has to be either Australian Rules Football, or simply Australian Football (remembering that the league is called the ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6082,7 +6082,7 @@ WtParsedWikitextPage(
                 WtLinkTitle([ ])
               )
               WtText(").  ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6097,7 +6097,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" - ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6109,7 +6109,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "small"
@@ -6129,7 +6129,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("Hi Pippu - long time no speak!  Definitely not \"Australian Football\"!  I always played \"Aussie Rules\" or \"Australian Rules Football\".  Regards -- ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -6144,14 +6144,14 @@ WtParsedWikitextPage(
                       )
                     )
                     WtText(" ")
-                    XmlEntityRef(
+                    WtXmlEntityRef(
                       Properties:
                         {N} name = "equiv"
                         {N} resolved = "\u2261"
                         {N} rtd = RTD[ "&equiv;" ]
                     )
                     WtText(" ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -6180,7 +6180,7 @@ WtParsedWikitextPage(
                             [ WtText("Australian rules football") ]
                           )
                           WtText(" is not acceptable.  --")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6195,7 +6195,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" - ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6207,7 +6207,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "|" <o> "" ]
 
                               [
-                                XmlElement(
+                                WtXmlElement(
                                   Properties:
                                     {N} empty = false
                                     {N} name = "small"
@@ -6228,7 +6228,7 @@ WtParsedWikitextPage(
 
                         [
                           WtText("I don't understand why it's not acceptable.  The \"Australian\" part is the only part that refers to a proper noun, the rest should be uncapitalised in the same way we refer to \"American football\", \"Association football\", etc.  We don't play \"Netball and Basketball\", we play netball and basketball. There's nothing about the name of the sport that demands capitalisation except for the bit that is named after a country, even if only for consistency's sake. Whatever our own opinions surely we should follow WP convention at least.--")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6267,7 +6267,7 @@ WtParsedWikitextPage(
 
             [
               WtText("It doesn't matter how you want the capitalisation to work, it is a wikipedia standard to capitalise only the first letter of the first word.")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6294,7 +6294,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Not quite true - if the title as a whole is a proper noun (eg New South Wales), then obviously each word has a capital letter. However, the convention is (correctly) that names of sports are not proper nouns, hence rugby league and Australian rules football. It is true that the game is often called simply Australian football, but the version with \"rules\" is at least as common and less ambiguous. The name of the AFL is irrelevant, as I'm fairly sure that there the sport is simply refered to as \"football\", with \"Australian\" referring to the league. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6316,7 +6316,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("if it's a wikipedia convention - fair enough - but I still maintain there has been a big push over the last 10 to 15 years to call it simply Australian football, also, I can't help thinking that that is the normal encyclopaedic entry - but I'm definitely not going to die in a ditch over it! ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -6331,7 +6331,7 @@ WtParsedWikitextPage(
                       )
                     )
                     WtText(" - ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -6343,7 +6343,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "|" <o> "" ]
 
                         [
-                          XmlElement(
+                          WtXmlElement(
                             Properties:
                               {N} empty = false
                               {N} name = "small"
@@ -6371,7 +6371,7 @@ WtParsedWikitextPage(
 
                         [
                           WtText("I've done a bit of research and thought this through a bit more and have to backtrack and agree with ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6381,7 +6381,7 @@ WtParsedWikitextPage(
                             WtLinkTitle([ ])
                           )
                           WtText(". ie. leave as is.  I apologise for bringing this up. -- ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6396,14 +6396,14 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" ")
-                          XmlEntityRef(
+                          WtXmlEntityRef(
                             Properties:
                               {N} name = "equiv"
                               {N} resolved = "\u2261"
                               {N} rtd = RTD[ "&equiv;" ]
                           )
                           WtText(" ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6446,7 +6446,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I notice that some of the lists in the article have been columnised, drawing attention to something I was planning to raise earlier - should we really have that many external links listed? Most of them seem to be fairly good sites, but we aren't meant to be a link directory. The links at ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6456,7 +6456,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" have been deliberately kept at a much smaller number, so maybe someone should do a bit of a cull here? ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6476,7 +6476,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I don't think it's too bad. I agree it's as long as it should be, and maybe could be tightened slightly, but don't think a drastic cull is necessary.--")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6496,11 +6496,11 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Bah :p Many links, but none to ")
-          ExternalLink(
+          WtExternalLink(
             Properties:
               {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-            Url(
+            WtUrl(
               Properties:
                 {N} path = "//stats.rleague.com/afl/afl_index.html"
                 {N} protocol = "http"
@@ -6509,7 +6509,7 @@ WtParsedWikitextPage(
             [ WtText("me") ]
           )
           WtText(" --")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6534,7 +6534,7 @@ WtParsedWikitextPage(
 
             [
               WtText(" I recommend doing what they do at ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6544,7 +6544,7 @@ WtParsedWikitextPage(
                 WtLinkTitle([ ])
               )
               WtText(": have only high-level links in the main article, and place other links in more relevant articles (e.g. the articles on the actual organisations the refer to). --")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -6591,7 +6591,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText("The lengthy discussion regarding padding has been moved to ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -6601,11 +6601,11 @@ WtParsedWikitextPage(
                     WtLinkTitle([ ])
                   )
                   WtText("; to see it in its original context prior to the move ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//en.wikipedia.org/w/index.php?title=Talk:Australian_rules_football&oldid=32944830#padding"
                         {N} protocol = "http"
@@ -6636,7 +6636,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I ask again:   are these the very best photos we can get our hands on of the great Australian game?  The one photo we show, looks more like the old Sun \"Spot the Ball\"  competition.  C'mon, let's lift our game!  ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6651,7 +6651,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" - ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -6663,7 +6663,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "|" <o> "" ]
 
               [
-                XmlElement(
+                WtXmlElement(
                   Properties:
                     {N} empty = false
                     {N} name = "small"
@@ -6685,7 +6685,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Don't worry mate, footy season coming up soon, plenty of opportunities coming up. Cheers, ")
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "b"
@@ -6693,14 +6693,14 @@ WtParsedWikitextPage(
 
                 [ ]
                 [
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "font"
                       {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
-                      XmlAttribute(
+                      WtXmlAttribute(
                         Properties:
                           {N} hasValue = true
                           {N} name = "color"
@@ -6710,7 +6710,7 @@ WtParsedWikitextPage(
                       )
                     ]
                     [
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -6726,14 +6726,14 @@ WtParsedWikitextPage(
                       )
                     ]
                   )
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "font"
                       {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
-                      XmlAttribute(
+                      WtXmlAttribute(
                         Properties:
                           {N} hasValue = true
                           {N} name = "color"
@@ -6743,7 +6743,7 @@ WtParsedWikitextPage(
                       )
                     ]
                     [
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -6759,14 +6759,14 @@ WtParsedWikitextPage(
                       )
                     ]
                   )
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "font"
                       {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
-                      XmlAttribute(
+                      WtXmlAttribute(
                         Properties:
                           {N} hasValue = true
                           {N} name = "color"
@@ -6776,7 +6776,7 @@ WtParsedWikitextPage(
                       )
                     ]
                     [
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -6800,7 +6800,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "''" <o> "''" ]
 
                 [
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "sup"
@@ -6808,14 +6808,14 @@ WtParsedWikitextPage(
 
                     [ ]
                     [
-                      XmlElement(
+                      WtXmlElement(
                         Properties:
                           {N} empty = false
                           {N} name = "font"
                           {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                         [
-                          XmlAttribute(
+                          WtXmlAttribute(
                             Properties:
                               {N} hasValue = true
                               {N} name = "color"
@@ -6825,7 +6825,7 @@ WtParsedWikitextPage(
                           )
                         ]
                         [
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -6860,11 +6860,11 @@ WtParsedWikitextPage(
 
                 [
                   WtText("I've uploaded some pictures I took at a match between Essendon and the Lions in June last year. They're not great, but are better than what is there now. I haven't added them in yet, I'll leave that for someone else to do. They could also possibly be re-cropped and resized, I can do this if someone asks. Locations: ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//en.wikipedia.org/wiki/Image:Australian_rules_01.jpg"
                         {N} protocol = "http"
@@ -6873,11 +6873,11 @@ WtParsedWikitextPage(
                     [ WtText("Australian_rules_01.jpg") ]
                   )
                   WtText(", ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//en.wikipedia.org/wiki/Image:Australian_rules_02.jpg"
                         {N} protocol = "http"
@@ -6886,11 +6886,11 @@ WtParsedWikitextPage(
                     [ WtText("Australian_rules_02.jpg") ]
                   )
                   WtText(", ")
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//en.wikipedia.org/wiki/Image:Australian_rules_03.jpg"
                         {N} protocol = "http"
@@ -6899,7 +6899,7 @@ WtParsedWikitextPage(
                     [ WtText("Australian_rules_03.jpg") ]
                   )
                   WtText(" --")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -6932,7 +6932,7 @@ WtParsedWikitextPage(
 
                     [
                       WtText("I've cropped the one with the banner, uploaded it as ")
-                      ImageLink(
+                      WtImageLink(
                         Properties:
                           {N} alt = 
                             WtLinkOptionAltText([ ])
@@ -6952,7 +6952,7 @@ WtParsedWikitextPage(
                         WtLinkTitle([ ])
                       )
                       WtText(" and put it in the section of this article mentioning the banners. ")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -6967,7 +6967,7 @@ WtParsedWikitextPage(
                         )
                       )
                       WtText(" (")
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -7007,7 +7007,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("Well, this article is pretty good, so congrats to the people involved. I do feel however, that it glorifies the sport a bit much, I know it is popular, but this article is a tad misleading, reading through it, it reads as if AFL is the be all and end all of Australian sport. Im not here to bag AFL by any means, and I know that there are sources provided and so on, but I do feel the article is not really written in a NPOV. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7031,7 +7031,7 @@ WtParsedWikitextPage(
 
             [
               WtText("About once every few months, someone comes along questioning the stats about the TV audiences, participation, live crowds, membership, etc.  Rather than go through all of it a gain in tedious detail, could you please highight a few areas that are POV, especially via direct quotes from the article. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7046,7 +7046,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" - ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7058,7 +7058,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "|" <o> "" ]
 
                   [
-                    XmlElement(
+                    WtXmlElement(
                       Properties:
                         {N} empty = false
                         {N} name = "small"
@@ -7078,7 +7078,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("I wouldn't call it non-NPOV, but the Popularity section, particularly with it positioned as the lead item (in front of what the game actually is, and its history) and its length, reads more like a fan site than a encyclopaedia --")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -7100,7 +7100,7 @@ WtParsedWikitextPage(
 
                         [
                           WtText("that's a fair point - I am wondering whether it has always been there at the start, or whether it snuck in there during some of the many reorgs of the article...")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -7115,7 +7115,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" - ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -7127,7 +7127,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "|" <o> "" ]
 
                               [
-                                XmlElement(
+                                WtXmlElement(
                                   Properties:
                                     {N} empty = false
                                     {N} name = "small"
@@ -7148,7 +7148,7 @@ WtParsedWikitextPage(
 
                         [
                           WtText("in fact I just checked a version I edited on 25 September 2005 and noticed that there was no section on the popularity of the game - so clearly it has been added in since - nothing wrong with that, but as you correctly point out, it may be best appearing after the game is actually described - I have to agree with you on that one - anyone else? ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -7163,7 +7163,7 @@ WtParsedWikitextPage(
                             )
                           )
                           WtText(" - ")
-                          InternalLink(
+                          WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
@@ -7175,7 +7175,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "|" <o> "" ]
 
                               [
-                                XmlElement(
+                                WtXmlElement(
                                   Properties:
                                     {N} empty = false
                                     {N} name = "small"
@@ -7195,7 +7195,7 @@ WtParsedWikitextPage(
 
                               [
                                 WtText("I believe the intro understandably said something about where the game was played, which then became a lengthy explanation of it's popularity in Australia, etc, which became so long it was correctly made a separate section from the intro. I agree that it shouldn't really be at the beginning. ")
-                                InternalLink(
+                                WtInternalLink(
                                   Properties:
                                     {N} postfix = ""
                                     {N} prefix = ""
@@ -7210,7 +7210,7 @@ WtParsedWikitextPage(
                                   )
                                 )
                                 WtText(" (")
-                                InternalLink(
+                                WtInternalLink(
                                   Properties:
                                     {N} postfix = ""
                                     {N} prefix = ""
@@ -7254,7 +7254,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ")
-          TagExtension(
+          WtTagExtension(
             Properties:
               {N} body = "[[Category:Football_in_Australia]]"
               {N} name = "nowiki"
@@ -7263,7 +7263,7 @@ WtParsedWikitextPage(
             [ ]
           )
           WtText(". We need concerted action to stop this. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7278,7 +7278,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" | ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7302,7 +7302,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Put the category up for renaming. That name can't really be justified, so you should get support. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7317,7 +7317,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" (")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7353,7 +7353,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I propose a section in the article on some of the tactics and terminology used in the game, drawing from ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7363,7 +7363,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(" and ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7373,7 +7373,7 @@ WtParsedWikitextPage(
             WtLinkTitle([ ])
           )
           WtText(". Any thoughts or suggestions on this? ")
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "b"
@@ -7381,14 +7381,14 @@ WtParsedWikitextPage(
 
             [ ]
             [
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "font"
                   {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                 [
-                  XmlAttribute(
+                  WtXmlAttribute(
                     Properties:
                       {N} hasValue = true
                       {N} name = "color"
@@ -7398,7 +7398,7 @@ WtParsedWikitextPage(
                   )
                 ]
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -7414,14 +7414,14 @@ WtParsedWikitextPage(
                   )
                 ]
               )
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "font"
                   {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                 [
-                  XmlAttribute(
+                  WtXmlAttribute(
                     Properties:
                       {N} hasValue = true
                       {N} name = "color"
@@ -7431,7 +7431,7 @@ WtParsedWikitextPage(
                   )
                 ]
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -7447,14 +7447,14 @@ WtParsedWikitextPage(
                   )
                 ]
               )
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "font"
                   {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                 [
-                  XmlAttribute(
+                  WtXmlAttribute(
                     Properties:
                       {N} hasValue = true
                       {N} name = "color"
@@ -7464,7 +7464,7 @@ WtParsedWikitextPage(
                   )
                 ]
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -7488,7 +7488,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "''" <o> "''" ]
 
             [
-              XmlElement(
+              WtXmlElement(
                 Properties:
                   {N} empty = false
                   {N} name = "sup"
@@ -7496,14 +7496,14 @@ WtParsedWikitextPage(
 
                 [ ]
                 [
-                  XmlElement(
+                  WtXmlElement(
                     Properties:
                       {N} empty = false
                       {N} name = "font"
                       {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
                     [
-                      XmlAttribute(
+                      WtXmlAttribute(
                         Properties:
                           {N} hasValue = true
                           {N} name = "color"
@@ -7513,7 +7513,7 @@ WtParsedWikitextPage(
                       )
                     ]
                     [
-                      InternalLink(
+                      WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
@@ -7543,7 +7543,7 @@ WtParsedWikitextPage(
 
             [
               WtText("The article is already quite long. If we were to add anything like this, we'd have to prune the rest of it, I think. If things are covered in another article, they don't need to have too much detail here - the attendance records could be removed, for example. ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7558,7 +7558,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" (")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7594,7 +7594,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("...in a ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7617,7 +7617,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" article. ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7632,7 +7632,7 @@ WtParsedWikitextPage(
             )
           )
           WtText(" | ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7667,7 +7667,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtParagraph([
           WtText("I've just reverted the additional of a generic football forum a couple of times.  Could someone more knowledgeable go through and trim the external links? -- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -7691,7 +7691,7 @@ WtParsedWikitextPage(
 
             [
               WtText("All the links that you have removed were definitely aussie rules specific, so I don't understand your edit summary. However, there were way too many links. I have cut quite a few, but there are still more than there should be going by ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7701,7 +7701,7 @@ WtParsedWikitextPage(
                 WtLinkTitle([ ])
               )
               WtText(". ")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7716,7 +7716,7 @@ WtParsedWikitextPage(
                 )
               )
               WtText(" (")
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -7738,7 +7738,7 @@ WtParsedWikitextPage(
 
                   [
                     WtText("Well, one was SANFL, one was North Melbourne, one appeared to be a Coke promotional site.. and one other. -- ")
-                    InternalLink(
+                    WtInternalLink(
                       Properties:
                         {N} postfix = ""
                         {N} prefix = ""
@@ -7771,7 +7771,7 @@ WtParsedWikitextPage(
           )
           WtNewline("\n")
           WtText("-- ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""

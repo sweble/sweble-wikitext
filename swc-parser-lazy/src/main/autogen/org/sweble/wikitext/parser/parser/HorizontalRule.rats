@@ -76,7 +76,7 @@ private inline WtNode HorizontalRuleChoice =
       int dashes = 3 + more.size();
 
       yyValue = setRtd(
-        new HorizontalRule(),
+        new WtHorizontalRule(),
         StringUtils.strrep('-', dashes));
     }
   / &{ isWarningsEnabled() } HorizontalRuleAutoCorrect

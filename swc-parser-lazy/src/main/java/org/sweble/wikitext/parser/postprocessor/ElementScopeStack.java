@@ -23,8 +23,8 @@ import java.util.NoSuchElementException;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlStartTag;
-import org.sweble.wikitext.parser.parser.NamedXmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
+import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
 import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import de.fau.cs.osr.utils.StringUtils;
@@ -256,16 +256,16 @@ public final class ElementScopeStack
 		}
 		
 		public boolean match(
-				/*ScopeType otherType, */NamedXmlElement otherElement)
+				/*ScopeType otherType, */WtNamedXmlElement otherElement)
 		{
 			/*
 			if (type != otherType)
 				return false;
 			*/
 			
-			if (element instanceof NamedXmlElement)
+			if (element instanceof WtNamedXmlElement)
 			{
-				NamedXmlElement e = (NamedXmlElement) element;
+				WtNamedXmlElement e = (WtNamedXmlElement) element;
 				String en = e.getName();
 				String on = otherElement.getName();
 				/*
@@ -306,7 +306,7 @@ public final class ElementScopeStack
 				case AstNodeTypes.NT_XML_TAG_OPEN:
 				{
 					s.append(": <");
-					final XmlStartTag e = (XmlStartTag) element;
+					final WtXmlStartTag e = (WtXmlStartTag) element;
 					s.append(e.getName());
 					if (e.getXmlAttributes() != null && !e.getXmlAttributes().isEmpty())
 					{
@@ -319,7 +319,7 @@ public final class ElementScopeStack
 				case AstNodeTypes.NT_XML_TAG_CLOSE:
 				{
 					s.append(": </");
-					final XmlStartTag e = (XmlStartTag) element;
+					final WtXmlStartTag e = (WtXmlStartTag) element;
 					s.append(e.getName());
 					s.append('>');
 					break;

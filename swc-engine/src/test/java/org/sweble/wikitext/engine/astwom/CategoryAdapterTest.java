@@ -34,9 +34,9 @@ import org.sweble.wikitext.engine.wom.WomBold;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomParagraph;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class CategoryAdapterTest
 {
@@ -78,9 +78,9 @@ public class CategoryAdapterTest
 		
 		assertTrue(womPage.hasCategory("Test"));
 		
-		XmlElement astBold = (XmlElement) ((BoldAdapter) bold).getAstNode();
+		WtXmlElement astBold = (WtXmlElement) ((BoldAdapter) bold).getAstNode();
 		assertFalse(astBold.getBody().isEmpty());
-		assertTrue(astBold.getBody().get(0) instanceof InternalLink);
+		assertTrue(astBold.getBody().get(0) instanceof WtInternalLink);
 		
 		para.removeChild(bold);
 		
@@ -88,7 +88,7 @@ public class CategoryAdapterTest
 		assertTrue(astBold.getBody().isEmpty());
 		
 		WtNodeList body = ((BodyAdapter) womPage.getBody()).getAstNode();
-		assertTrue(body.get(body.size() - 1) instanceof InternalLink);
+		assertTrue(body.get(body.size() - 1) instanceof WtInternalLink);
 	}
 	
 	@Test

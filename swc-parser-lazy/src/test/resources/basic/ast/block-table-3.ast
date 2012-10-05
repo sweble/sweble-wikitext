@@ -15,7 +15,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
           [
-            XmlAttribute(
+            WtXmlAttribute(
               Properties:
                 {N} hasValue = true
                 {N} name = "border"

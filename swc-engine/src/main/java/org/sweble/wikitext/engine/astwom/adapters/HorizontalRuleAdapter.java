@@ -37,9 +37,9 @@ import org.sweble.wikitext.engine.wom.WomHorizontalRule;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomValueWithUnit;
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -66,15 +66,15 @@ public class HorizontalRuleAdapter
 	
 	public HorizontalRuleAdapter()
 	{
-		super(Toolbox.addRtData(new HorizontalRule()));
+		super(Toolbox.addRtData(new WtHorizontalRule()));
 	}
 	
-	public HorizontalRuleAdapter(HorizontalRule astNode)
+	public HorizontalRuleAdapter(WtHorizontalRule astNode)
 	{
 		super(astNode);
 	}
 	
-	public HorizontalRuleAdapter(AstToWomNodeFactory factory, XmlElement astNode)
+	public HorizontalRuleAdapter(AstToWomNodeFactory factory, WtXmlElement astNode)
 	{
 		super(TAG_AND_NODE_NAME, astNode);
 		addAttributes(astNode.getXmlAttributes());
@@ -91,9 +91,9 @@ public class HorizontalRuleAdapter
 	
 	// =========================================================================
 	
-	protected XmlElement convertToXmlElement()
+	protected WtXmlElement convertToXmlElement()
 	{
-		return Toolbox.addRtData(new XmlElement(
+		return Toolbox.addRtData(new WtXmlElement(
 				TAG_AND_NODE_NAME,
 				true,
 				new WtNodeList(),

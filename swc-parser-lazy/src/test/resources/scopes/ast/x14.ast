@@ -6,7 +6,7 @@ WtParsedWikitextPage(
   [
     WtParagraph([
       WtText("a ")
-      XmlElement(
+      WtXmlElement(
         Properties:
           {N} empty = false
           {N} name = "i"
@@ -16,7 +16,7 @@ WtParsedWikitextPage(
         [ WtText(" b ") ]
       )
     ])
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "table"
@@ -25,7 +25,7 @@ WtParsedWikitextPage(
       [ ]
       [
         WtText(" c ")
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "div"
@@ -34,7 +34,7 @@ WtParsedWikitextPage(
           [ ]
           [
             WtText(" ")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "b"
@@ -47,7 +47,7 @@ WtParsedWikitextPage(
         )
       ]
     )
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "i"

@@ -26,7 +26,7 @@ import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
-import org.sweble.wikitext.parser.preprocessor.ProtectedText;
+import org.sweble.wikitext.parser.preprocessor.WtProtectedText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 
@@ -115,7 +115,7 @@ public class PreprocessorToParserTransformer
 			makeParserEntity(n);
 		}
 		
-		public void visit(ProtectedText n)
+		public void visit(WtProtectedText n)
 		{
 			makeParserEntity(n);
 		}

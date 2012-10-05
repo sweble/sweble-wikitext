@@ -29,7 +29,7 @@ import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
 import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -78,7 +78,7 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			return new WtText(frame.getRootFrame().getTitle().getDenormalizedFullTitle());
 		}
@@ -102,7 +102,7 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			return astText(UrlEncoding.WIKI.encode(frame.getRootFrame().getTitle().getNormalizedFullTitle()));
 		}
@@ -126,7 +126,7 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			return new WtText(frame.getRootFrame().getTitle().getDenormalizedTitle());
 		}
@@ -152,7 +152,7 @@ public class CorePfnVariablesPageNames
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> argsValues)
 		{
@@ -199,7 +199,7 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			return new WtText(frame.getRootFrame().getTitle().getBaseTitle().getDenormalizedFullTitle());
 		}
@@ -231,7 +231,7 @@ public class CorePfnVariablesPageNames
 		}
 		
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			return invokeStatic(frame);
 		}
@@ -276,7 +276,7 @@ public class CorePfnVariablesPageNames
 		
 		/*
 		@Override
-		protected final WtNode invoke(Template var, ExpansionFrame frame)
+		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			WikiConfig config = frame.getWikiConfig();
 			
@@ -293,7 +293,7 @@ public class CorePfnVariablesPageNames
 		
 		@Override
 		public WtNode invoke(
-				Template var,
+				WtTemplate var,
 				ExpansionFrame frame,
 				List<? extends WtNode> argsValues)
 		{

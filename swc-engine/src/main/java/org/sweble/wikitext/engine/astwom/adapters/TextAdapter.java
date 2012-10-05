@@ -28,8 +28,8 @@ import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.utils.TextUtils;
 
 import de.fau.cs.osr.utils.StringUtils;
@@ -95,13 +95,13 @@ public class TextAdapter
 		text = "\n";
 	}
 	
-	public TextAdapter(XmlCharRef ref)
+	public TextAdapter(WtXmlCharRef ref)
 	{
 		super(ref);
 		text = Toolbox.toText(ref);
 	}
 	
-	public TextAdapter(XmlEntityRef ref)
+	public TextAdapter(WtXmlEntityRef ref)
 	{
 		super(ref);
 		text = Toolbox.toText(ref);
@@ -803,7 +803,7 @@ public class TextAdapter
 				default:
 					if ((ch >= 0 && ch < 0x20) || (ch == 0xFE))
 					{
-						nonTextNode = TextUtils.xmlCharRef(ch);
+						nonTextNode = TextUtils.wtXmlCharRef(ch);
 						break;
 					}
 					else if (Character.isHighSurrogate(ch))
@@ -820,7 +820,7 @@ public class TextAdapter
 									case Character.CONTROL:
 									case Character.PRIVATE_USE:
 									case Character.UNASSIGNED:
-										nonTextNode = TextUtils.xmlCharRef(codePoint);
+										nonTextNode = TextUtils.wtXmlCharRef(codePoint);
 										break;
 									
 									default:

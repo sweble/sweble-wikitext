@@ -141,7 +141,7 @@ public class ParserFunctionTest
 	@Test
 	public void testNs() throws CompilerException, LinkTargetException, IOException
 	{
-		String expected = "Media;Media\nSpecial;Special\n;\nUser;User\nWikipedia;Wikipedia\nFile;File;File\nMediaWiki;MediaWiki\nTemplate;Template\nHelp;Help\nCategory;Category\nTalk;Talk\nUser talk;User talk\nWikipedia talk;Wikipedia talk\nFile talk;File talk;File talk\nMediaWiki talk;MediaWiki talk\nTemplate talk;Template talk\nHelp talk;Help talk\nCategory talk;Category talk";
+		String expected = "Media;Media\nSpecial;Special\n;\nUser;User\nWikipedia;Wikipedia\nFile;File;File\nMediaWiki;MediaWiki\nTemplate;WtTemplate\nHelp;Help\nCategory;Category\nTalk;Talk\nUser talk;User talk\nWikipedia talk;Wikipedia talk\nFile talk;File talk;File talk\nMediaWiki talk;MediaWiki talk\nTemplate talk;WtTemplate talk\nHelp talk;Help talk\nCategory talk;Category talk";
 		String page = "pfn-ns";
 		doTest(expected, page);
 	}

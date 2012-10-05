@@ -37,7 +37,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.WomRedirect;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
@@ -326,7 +326,7 @@ public class PageAdapter
 	 * @param link
 	 *            The category link from the AST.
 	 */
-	public void setCategory(WtNodeList container, InternalLink link)
+	public void setCategory(WtNodeList container, WtInternalLink link)
 	{
 		String name = CategoryAdapter.getNameFromAst(link);
 		String lcName = name.toLowerCase();
@@ -358,7 +358,7 @@ public class PageAdapter
 	 *            The AST node to attach.
 	 * @return The container to which the ast node was attached.
 	 */
-	protected WtNodeList reAttachCategory(InternalLink astNode)
+	protected WtNodeList reAttachCategory(WtInternalLink astNode)
 	{
 		WtNodeList container = this.body.getAstNode();
 		

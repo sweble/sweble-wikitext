@@ -37,7 +37,7 @@ public class AppTest
 		
 		StringBuilder b = new StringBuilder();
 		
-		b.append(App.run(new File(url.getFile()), title, "//InternalLink"));
+		b.append(App.run(new File(url.getFile()), title, "//WtInternalLink"));
 		
 		b.append(App.run(new File(url.getFile()), title, "//TableCell"));
 		

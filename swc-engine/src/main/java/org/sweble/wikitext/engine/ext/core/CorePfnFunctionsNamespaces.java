@@ -22,7 +22,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -68,7 +68,7 @@ public class CorePfnFunctionsNamespaces
 		
 		@Override
 		public WtNode invoke(
-				Template template,
+				WtTemplate wtTemplate,
 				ExpansionFrame preprocessorFrame,
 				List<? extends WtNode> args)
 		{

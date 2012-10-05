@@ -56,7 +56,7 @@ private inline WtNode SignatureChoice =
     {
       int tildes = 2 + count.length();
 
-      yyValue = setRtd(new Signature(tildes), StringUtils.strrep('~', tildes));
+      yyValue = setRtd(new WtSignature(tildes), StringUtils.strrep('~', tildes));
 
       if (w != null)
       {

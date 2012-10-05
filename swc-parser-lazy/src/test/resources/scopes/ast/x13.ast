@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([ WtText("a ") ])
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "table"
@@ -14,7 +14,7 @@ WtParsedWikitextPage(
       [ ]
       [
         WtText(" b ")
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "div"

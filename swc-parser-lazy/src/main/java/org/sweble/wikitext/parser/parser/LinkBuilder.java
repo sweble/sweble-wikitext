@@ -22,12 +22,12 @@ import java.util.ArrayList;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.ParserConfig;
-import org.sweble.wikitext.parser.nodes.ImageLink;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtImageLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
-import org.sweble.wikitext.parser.nodes.Url;
+import org.sweble.wikitext.parser.nodes.WtUrl;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
@@ -39,7 +39,7 @@ public class LinkBuilder
 	
 	private String linkPage;
 	
-	private Url linkUrl;
+	private WtUrl linkUrl;
 	
 	private WtLinkOptionAltText alt;
 	
@@ -163,7 +163,7 @@ public class LinkBuilder
 			{
 				// second occurrence wins, url beats page
 				this.linkPage = null;
-				this.linkUrl = (Url) target;
+				this.linkUrl = (WtUrl) target;
 			}
 			else
 			{
@@ -212,7 +212,7 @@ public class LinkBuilder
 			if (alt == null)
 				alt = new WtLinkOptionAltText();
 			
-			ImageLink result = new ImageLink(
+			WtImageLink result = new WtImageLink(
 					target,
 					options,
 					title,
@@ -232,7 +232,7 @@ public class LinkBuilder
 		}
 		else
 		{
-			InternalLink result = new InternalLink(
+			WtInternalLink result = new WtInternalLink(
 					"",
 					target,
 					title,

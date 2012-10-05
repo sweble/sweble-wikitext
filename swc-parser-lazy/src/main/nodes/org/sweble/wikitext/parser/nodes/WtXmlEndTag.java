@@ -1,63 +1,57 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
+import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Xml Character Reference</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * '&#' Digit+ ';'
- * </p>
- * </li>
- * <li>
- * <p>
- * '&#x' HexDigit+ ';'
- * </p>
- * </li>
- * </ul>
+ * <h1>Closing XML tag</h1>
  */
-public class XmlCharRef
+public class WtXmlEndTag
 		extends
 			WtLeafNode
+		implements
+			WtNamedXmlElement,
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public XmlCharRef()
+	public WtXmlEndTag(String name)
 	{
-		super();
-		
-	}
-	
-	public XmlCharRef(int codePoint)
-	{
-		super();
-		setCodePoint(codePoint);
-		
+		setName(name);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_CHAR_REF;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_CLOSE;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
+	{
+		return false;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private int codePoint;
+	private String name;
 	
-	public final int getCodePoint()
+	public final String getName()
 	{
-		return this.codePoint;
+		return this.name;
 	}
 	
-	public final int setCodePoint(int codePoint)
+	public final String setName(String name)
 	{
-		int old = this.codePoint;
-		this.codePoint = codePoint;
+		String old = this.name;
+		this.name = name;
 		return old;
 	}
 	
@@ -80,7 +74,7 @@ public class XmlCharRef
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlCharRef.this.getPropertyCount();
+				return WtXmlEndTag.this.getPropertyCount();
 			}
 			
 			@Override
@@ -89,7 +83,7 @@ public class XmlCharRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "codePoint";
+						return "name";
 						
 					default:
 						return super.getName(index);
@@ -102,7 +96,7 @@ public class XmlCharRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlCharRef.this.getCodePoint();
+						return WtXmlEndTag.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -115,7 +109,7 @@ public class XmlCharRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlCharRef.this.setCodePoint((Integer) value);
+						return WtXmlEndTag.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);

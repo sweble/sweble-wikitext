@@ -13,7 +13,7 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/nesting-1.wikitext:1:1 - 10: "[[Target1" : This looks like a Internal Link, however the finishing `]]' is missing.
           ]
       )
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""

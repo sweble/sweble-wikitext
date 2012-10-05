@@ -27,8 +27,8 @@ import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.tools.AstWomBuilder;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class AttributeAdapterTest
 {
@@ -76,11 +76,11 @@ public class AttributeAdapterTest
 	{
 		womBold.setAttribute("class", "foo");
 		
-		XmlElement e = (XmlElement) ((BoldAdapter) womBold).getAstNode();
+		WtXmlElement e = (WtXmlElement) ((BoldAdapter) womBold).getAstNode();
 		
 		assertEquals(1, e.getXmlAttributes().size());
 		
-		XmlAttribute a = (XmlAttribute) e.getXmlAttributes().get(0);
+		WtXmlAttribute a = (WtXmlAttribute) e.getXmlAttributes().get(0);
 		assertEquals("class", a.getName());
 		assertTrue(a.getHasValue());
 		assertEquals(1, a.getValue().size());

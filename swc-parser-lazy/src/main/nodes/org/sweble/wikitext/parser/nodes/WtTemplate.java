@@ -1,76 +1,62 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>TagExtension</h1> <h2>Grammar</h2>
+ * <h1>WtTemplate</h1> <h2>Grammar</h2>
  */
-public class TagExtension
+public class WtTemplate
 		extends
-			WtInnerNode1
+			WtInnerNode2
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public TagExtension()
+	public WtTemplate()
 	{
-		super(new WtNodeList());
-		
+		super(new WtNodeList(), new WtNodeList());
 	}
 	
-	public TagExtension(String name, WtNodeList xmlAttributes, String body)
+	public WtTemplate(WtNodeList name, WtNodeList args)
 	{
-		super(xmlAttributes);
-		setName(name);
-		setBody(body);
-		
+		super(name, args);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TAG_EXTENSION;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String name;
+	private boolean precededByNewline;
 	
-	public final String getName()
+	public final boolean getPrecededByNewline()
 	{
-		return this.name;
+		return this.precededByNewline;
 	}
 	
-	public final String setName(String name)
+	public final boolean setPrecededByNewline(boolean precededByNewline)
 	{
-		String old = this.name;
-		this.name = name;
-		return old;
-	}
-	
-	private String body;
-	
-	public final String getBody()
-	{
-		return this.body;
-	}
-	
-	public final String setBody(String body)
-	{
-		String old = this.body;
-		this.body = body;
+		boolean old = this.precededByNewline;
+		this.precededByNewline = precededByNewline;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2 + getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
-	public final int getSuperPropertyCount()
+	public int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -78,12 +64,12 @@ public class TagExtension
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode1PropertyIterator()
+		return new WtInnerNode2PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return TagExtension.this.getPropertyCount();
+				return WtTemplate.this.getPropertyCount();
 			}
 			
 			@Override
@@ -92,9 +78,7 @@ public class TagExtension
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "name";
-					case 1:
-						return "body";
+						return "precededByNewline";
 						
 					default:
 						return super.getName(index);
@@ -107,9 +91,7 @@ public class TagExtension
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return TagExtension.this.getName();
-					case 1:
-						return TagExtension.this.getBody();
+						return WtTemplate.this.getPrecededByNewline();
 						
 					default:
 						return super.getValue(index);
@@ -122,9 +104,7 @@ public class TagExtension
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return TagExtension.this.setName((String) value);
-					case 1:
-						return TagExtension.this.setBody((String) value);
+						return WtTemplate.this.setPrecededByNewline((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -136,17 +116,27 @@ public class TagExtension
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setName(WtNodeList name)
 	{
-		set(0, xmlAttributes);
+		set(0, name);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtNodeList getName()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	public final void setArgs(WtNodeList args)
+	{
+		set(1, args);
+	}
+	
+	public final WtNodeList getArgs()
+	{
+		return (WtNodeList) get(1);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "name", "args" };
 	
 	public final String[] getChildNames()
 	{

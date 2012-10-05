@@ -1,9 +1,11 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>PageSwitch</h1> <h2>Grammar</h2>
+ * <h1>WtPageSwitch</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
@@ -12,25 +14,23 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  * </li>
  * </ul>
  */
-public class PageSwitch
+public class WtPageSwitch
 		extends
 			WtLeafNode
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public PageSwitch()
+	public WtPageSwitch()
 	{
-		super();
-		
 	}
 	
-	public PageSwitch(String name)
+	public WtPageSwitch(String name)
 	{
-		super();
 		setName(name);
-		
 	}
 	
 	@Override
@@ -75,7 +75,7 @@ public class PageSwitch
 			@Override
 			protected int getPropertyCount()
 			{
-				return PageSwitch.this.getPropertyCount();
+				return WtPageSwitch.this.getPropertyCount();
 			}
 			
 			@Override
@@ -97,7 +97,7 @@ public class PageSwitch
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return PageSwitch.this.getName();
+						return WtPageSwitch.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -110,7 +110,7 @@ public class PageSwitch
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return PageSwitch.this.setName((String) value);
+						return WtPageSwitch.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);

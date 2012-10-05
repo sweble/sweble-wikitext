@@ -9,7 +9,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 /**
  * <h1>Image Link</h1>
  */
-public class ImageLink
+public class WtImageLink
 		extends
 			WtInnerNode2
 {
@@ -17,13 +17,12 @@ public class ImageLink
 	
 	// =========================================================================
 	
-	public ImageLink()
+	public WtImageLink()
 	{
 		super(new WtNodeList(), new WtLinkTitle());
-		
 	}
 	
-	public ImageLink(
+	public WtImageLink(
 			String target,
 			WtNodeList options,
 			WtLinkTitle title,
@@ -35,7 +34,7 @@ public class ImageLink
 			int height,
 			boolean upright,
 			String linkPage,
-			Url linkUrl,
+			WtUrl linkUrl,
 			WtLinkOptionAltText alt)
 	{
 		super(options, title);
@@ -50,7 +49,6 @@ public class ImageLink
 		setLinkPage(linkPage);
 		setLinkUrl(linkUrl);
 		setAlt(alt);
-		
 	}
 	
 	@Override
@@ -188,16 +186,16 @@ public class ImageLink
 		return old;
 	}
 	
-	private Url linkUrl;
+	private WtUrl linkUrl;
 	
-	public final Url getLinkUrl()
+	public final WtUrl getLinkUrl()
 	{
 		return this.linkUrl;
 	}
 	
-	public final Url setLinkUrl(Url linkUrl)
+	public final WtUrl setLinkUrl(WtUrl linkUrl)
 	{
-		Url old = this.linkUrl;
+		WtUrl old = this.linkUrl;
 		this.linkUrl = linkUrl;
 		return old;
 	}
@@ -235,7 +233,7 @@ public class ImageLink
 			@Override
 			protected int getPropertyCount()
 			{
-				return ImageLink.this.getPropertyCount();
+				return WtImageLink.this.getPropertyCount();
 			}
 			
 			@Override
@@ -277,27 +275,27 @@ public class ImageLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return ImageLink.this.getTarget();
+						return WtImageLink.this.getTarget();
 					case 1:
-						return ImageLink.this.getWidth();
+						return WtImageLink.this.getWidth();
 					case 2:
-						return ImageLink.this.getHeight();
+						return WtImageLink.this.getHeight();
 					case 3:
-						return ImageLink.this.getUpright();
+						return WtImageLink.this.getUpright();
 					case 4:
-						return ImageLink.this.getHAlign();
+						return WtImageLink.this.getHAlign();
 					case 5:
-						return ImageLink.this.getVAlign();
+						return WtImageLink.this.getVAlign();
 					case 6:
-						return ImageLink.this.getFormat();
+						return WtImageLink.this.getFormat();
 					case 7:
-						return ImageLink.this.getBorder();
+						return WtImageLink.this.getBorder();
 					case 8:
-						return ImageLink.this.getLinkPage();
+						return WtImageLink.this.getLinkPage();
 					case 9:
-						return ImageLink.this.getLinkUrl();
+						return WtImageLink.this.getLinkUrl();
 					case 10:
-						return ImageLink.this.getAlt();
+						return WtImageLink.this.getAlt();
 						
 					default:
 						return super.getValue(index);
@@ -310,27 +308,27 @@ public class ImageLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return ImageLink.this.setTarget((String) value);
+						return WtImageLink.this.setTarget((String) value);
 					case 1:
-						return ImageLink.this.setWidth((Integer) value);
+						return WtImageLink.this.setWidth((Integer) value);
 					case 2:
-						return ImageLink.this.setHeight((Integer) value);
+						return WtImageLink.this.setHeight((Integer) value);
 					case 3:
-						return ImageLink.this.setUpright((Boolean) value);
+						return WtImageLink.this.setUpright((Boolean) value);
 					case 4:
-						return ImageLink.this.setHAlign((ImageHorizAlign) value);
+						return WtImageLink.this.setHAlign((ImageHorizAlign) value);
 					case 5:
-						return ImageLink.this.setVAlign((ImageVertAlign) value);
+						return WtImageLink.this.setVAlign((ImageVertAlign) value);
 					case 6:
-						return ImageLink.this.setFormat((ImageViewFormat) value);
+						return WtImageLink.this.setFormat((ImageViewFormat) value);
 					case 7:
-						return ImageLink.this.setBorder((Boolean) value);
+						return WtImageLink.this.setBorder((Boolean) value);
 					case 8:
-						return ImageLink.this.setLinkPage((String) value);
+						return WtImageLink.this.setLinkPage((String) value);
 					case 9:
-						return ImageLink.this.setLinkUrl((Url) value);
+						return WtImageLink.this.setLinkUrl((WtUrl) value);
 					case 10:
-						return ImageLink.this.setAlt((WtLinkOptionAltText) value);
+						return WtImageLink.this.setAlt((WtLinkOptionAltText) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -368,5 +366,4 @@ public class ImageLink
 	{
 		return CHILD_NAMES;
 	}
-	
 }

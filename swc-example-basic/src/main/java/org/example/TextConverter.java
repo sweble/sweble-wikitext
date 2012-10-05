@@ -24,17 +24,17 @@ import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.nodes.ExternalLink;
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtExternalLink;
+import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
 import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
-import org.sweble.wikitext.parser.nodes.ImageLink;
-import org.sweble.wikitext.parser.nodes.InternalLink;
-import org.sweble.wikitext.parser.nodes.PageSwitch;
-import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
-import org.sweble.wikitext.parser.nodes.TemplateParameter;
-import org.sweble.wikitext.parser.nodes.Url;
+import org.sweble.wikitext.parser.nodes.WtImageLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
+import org.sweble.wikitext.parser.nodes.WtPageSwitch;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
+import org.sweble.wikitext.parser.nodes.WtUrl;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtListItem;
@@ -46,10 +46,10 @@ import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtUnorderedList;
 import org.sweble.wikitext.parser.nodes.WtWhitespace;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.nodes.XmlElement;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.StringUtils;
@@ -196,12 +196,12 @@ public class TextConverter
 		write("//");
 	}
 	
-	public void visit(XmlCharRef cr)
+	public void visit(WtXmlCharRef cr)
 	{
 		write(Character.toChars(cr.getCodePoint()));
 	}
 	
-	public void visit(XmlEntityRef er)
+	public void visit(WtXmlEntityRef er)
 	{
 		String ch = er.getResolved();
 		if (ch == null)
@@ -216,21 +216,21 @@ public class TextConverter
 		}
 	}
 	
-	public void visit(Url url)
+	public void visit(WtUrl wtUrl)
 	{
-		write(url.getProtocol());
+		write(wtUrl.getProtocol());
 		write(':');
-		write(url.getPath());
+		write(wtUrl.getPath());
 	}
 	
-	public void visit(ExternalLink link)
+	public void visit(WtExternalLink link)
 	{
 		write('[');
 		write(extLinkNum++);
 		write(']');
 	}
 	
-	public void visit(InternalLink link)
+	public void visit(WtInternalLink link)
 	{
 		try
 		{
@@ -314,14 +314,14 @@ public class TextConverter
 		newline(2);
 	}
 	
-	public void visit(HorizontalRule hr)
+	public void visit(WtHorizontalRule hr)
 	{
 		newline(1);
 		write(StringUtils.strrep('-', wrapCol));
 		newline(2);
 	}
 	
-	public void visit(XmlElement e)
+	public void visit(WtXmlElement e)
 	{
 		if (e.getName().equalsIgnoreCase("br"))
 		{
@@ -336,7 +336,7 @@ public class TextConverter
 	// =========================================================================
 	// Stuff we want to hide
 	
-	public void visit(ImageLink n)
+	public void visit(WtImageLink n)
 	{
 	}
 	
@@ -348,23 +348,23 @@ public class TextConverter
 	{
 	}
 	
-	public void visit(Template n)
+	public void visit(WtTemplate n)
 	{
 	}
 	
-	public void visit(TemplateArgument n)
+	public void visit(WtTemplateArgument n)
 	{
 	}
 	
-	public void visit(TemplateParameter n)
+	public void visit(WtTemplateParameter n)
 	{
 	}
 	
-	public void visit(TagExtension n)
+	public void visit(WtTagExtension n)
 	{
 	}
 	
-	public void visit(PageSwitch n)
+	public void visit(WtPageSwitch n)
 	{
 	}
 	

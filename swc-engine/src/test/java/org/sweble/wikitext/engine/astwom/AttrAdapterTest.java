@@ -25,7 +25,7 @@ import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.utils.AstBuilder;
 
 public class AttrAdapterTest
@@ -44,7 +44,7 @@ public class AttrAdapterTest
 	@Test
 	public void canConstructAttrAdapterFromAst() throws Exception
 	{
-		XmlAttribute astAttr = AstBuilder.astXmlAttrib()
+		WtXmlAttribute astAttr = AstBuilder.astXmlAttrib()
 				.withName("test")
 				.withValue("value")
 				.build();
@@ -57,7 +57,7 @@ public class AttrAdapterTest
 	@Test
 	public void astAttribWithoutValueHasItsNameAsValueInWom() throws Exception
 	{
-		XmlAttribute astAttr = AstBuilder.astXmlAttrib()
+		WtXmlAttribute astAttr = AstBuilder.astXmlAttrib()
 				.withoutValue()
 				.build();
 		
@@ -65,7 +65,7 @@ public class AttrAdapterTest
 		assertEquals(attr.getName(), attr.getAttrValue());
 		
 		// This is only how the WOM sees it, the AST remains unchanged!
-		assertNull(((XmlAttribute) attr.getAstNode()).getValue());
+		assertNull(((WtXmlAttribute) attr.getAstNode()).getValue());
 	}
 	
 	/*
@@ -75,7 +75,7 @@ public class AttrAdapterTest
 	@Test
 	public void astAttribWithoutValueGetsValueAfterSetting() throws Exception
 	{
-		XmlAttribute astAttr = AstBuilder.astXmlAttrib()
+		WtXmlAttribute astAttr = AstBuilder.astXmlAttrib()
 				.withoutValue()
 				.build();
 		
@@ -84,7 +84,7 @@ public class AttrAdapterTest
 		
 		attr.setAttrValue("new value");
 		
-		assertNotNull(((XmlAttribute) attr.getAstNode()).getValue());
+		assertNotNull(((WtXmlAttribute) attr.getAstNode()).getValue());
 	}
 	
 	@Test

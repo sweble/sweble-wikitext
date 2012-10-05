@@ -26,7 +26,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.utils.ApplyToText;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -85,7 +85,7 @@ public class CorePfnFunctionsFormatting
 		
 		@Override
 		public WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame preprocessorFrame,
 				List<? extends WtNode> args)
 		{
@@ -124,7 +124,7 @@ public class CorePfnFunctionsFormatting
 		
 		@Override
 		public WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame preprocessorFrame,
 				List<? extends WtNode> args)
 		{
@@ -165,7 +165,7 @@ public class CorePfnFunctionsFormatting
 		
 		@Override
 		public WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame preprocessorFrame,
 				List<? extends WtNode> args)
 		{
@@ -204,7 +204,7 @@ public class CorePfnFunctionsFormatting
 		
 		@Override
 		public WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame preprocessorFrame,
 				List<? extends WtNode> args)
 		{
@@ -247,7 +247,7 @@ public class CorePfnFunctionsFormatting
 		
 		@Override
 		public WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{

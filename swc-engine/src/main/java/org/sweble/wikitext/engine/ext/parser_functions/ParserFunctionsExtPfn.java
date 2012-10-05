@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public abstract class ParserFunctionsExtPfn
@@ -54,11 +54,11 @@ public abstract class ParserFunctionsExtPfn
 			ExpansionFrame frame,
 			List<? extends WtNode> argsValues)
 	{
-		return invoke((Template) template, frame, argsValues);
+		return invoke((WtTemplate) template, frame, argsValues);
 	}
 	
 	public abstract WtNode invoke(
-			Template template,
+			WtTemplate wtTemplate,
 			ExpansionFrame frame,
 			List<? extends WtNode> argsValues);
 	
@@ -77,11 +77,11 @@ public abstract class ParserFunctionsExtPfn
 		
 		@Override
 		public final WtNode invoke(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
-			WtNode result = evaluate((Template) pfn, frame, args);
+			WtNode result = evaluate((WtTemplate) pfn, frame, args);
 			
 			// All control flow statements expand and trim their results.
 			
@@ -96,7 +96,7 @@ public abstract class ParserFunctionsExtPfn
 		}
 		
 		protected abstract WtNode evaluate(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> args);
 	}
@@ -134,7 +134,7 @@ public abstract class ParserFunctionsExtPfn
 		
 		@Override
 		protected WtNode evaluate(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
@@ -165,7 +165,7 @@ public abstract class ParserFunctionsExtPfn
 		}
 		
 		protected abstract boolean evaluateCondition(
-				Template pfn,
+				WtTemplate pfn,
 				ExpansionFrame frame,
 				List<? extends WtNode> args);
 	}

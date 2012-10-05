@@ -38,8 +38,8 @@ public enum IntermediateTags
 		@Override
 		public WtNode transform(
 				ParserConfig config,
-				IntermediateStartTag o,
-				IntermediateEndTag c,
+				WtImStartTag o,
+				WtImEndTag c,
 				WtNodeList body)
 		{
 			WtItalics e = new WtItalics(body);
@@ -64,8 +64,8 @@ public enum IntermediateTags
 		@Override
 		public WtNode transform(
 				ParserConfig config,
-				IntermediateStartTag o,
-				IntermediateEndTag c,
+				WtImStartTag o,
+				WtImEndTag c,
 				WtNodeList body)
 		{
 			WtBold e = new WtBold(body);
@@ -90,8 +90,8 @@ public enum IntermediateTags
 		@Override
 		public WtNode transform(
 				ParserConfig config,
-				IntermediateStartTag open,
-				IntermediateEndTag close,
+				WtImStartTag open,
+				WtImEndTag close,
 				WtNodeList body)
 		{
 			WtParagraph e = new WtParagraph(body);
@@ -103,17 +103,17 @@ public enum IntermediateTags
 	
 	public abstract WtNode transform(
 			ParserConfig config,
-			IntermediateStartTag open,
-			IntermediateEndTag close,
+			WtImStartTag open,
+			WtImEndTag close,
 			WtNodeList body);
 	
 	public WtNode createOpen(boolean synthetic)
 	{
-		return new IntermediateStartTag(this, synthetic);
+		return new WtImStartTag(this, synthetic);
 	}
 	
 	public WtNode createClose(boolean synthetic)
 	{
-		return new IntermediateEndTag(this, synthetic);
+		return new WtImEndTag(this, synthetic);
 	}
 }

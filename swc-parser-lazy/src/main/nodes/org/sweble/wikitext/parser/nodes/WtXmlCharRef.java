@@ -3,16 +3,21 @@ package org.sweble.wikitext.parser.nodes;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Xml Entity Reference</h1> <h2>Grammar</h2>
+ * <h1>Xml Character Reference</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
- * '&' XmlName ';'
+ * '&#' Digit+ ';'
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * '&#x' HexDigit+ ';'
  * </p>
  * </li>
  * </ul>
  */
-public class XmlEntityRef
+public class WtXmlCharRef
 		extends
 			WtLeafNode
 {
@@ -20,61 +25,38 @@ public class XmlEntityRef
 	
 	// =========================================================================
 	
-	public XmlEntityRef()
+	public WtXmlCharRef(int codePoint)
 	{
-		super();
-		
-	}
-	
-	public XmlEntityRef(String name, String resolved)
-	{
-		super();
-		setName(name);
-		setResolved(resolved);
-		
+		setCodePoint(codePoint);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ENTITY_REF;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_CHAR_REF;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String name;
+	private int codePoint;
 	
-	public final String getName()
+	public final int getCodePoint()
 	{
-		return this.name;
+		return this.codePoint;
 	}
 	
-	public final String setName(String name)
+	public final int setCodePoint(int codePoint)
 	{
-		String old = this.name;
-		this.name = name;
-		return old;
-	}
-	
-	private String resolved;
-	
-	public final String getResolved()
-	{
-		return this.resolved;
-	}
-	
-	public final String setResolved(String resolved)
-	{
-		String old = this.resolved;
-		this.resolved = resolved;
+		int old = this.codePoint;
+		this.codePoint = codePoint;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2 + getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -90,7 +72,7 @@ public class XmlEntityRef
 			@Override
 			protected int getPropertyCount()
 			{
-				return XmlEntityRef.this.getPropertyCount();
+				return WtXmlCharRef.this.getPropertyCount();
 			}
 			
 			@Override
@@ -99,9 +81,7 @@ public class XmlEntityRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "name";
-					case 1:
-						return "resolved";
+						return "codePoint";
 						
 					default:
 						return super.getName(index);
@@ -114,9 +94,7 @@ public class XmlEntityRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlEntityRef.this.getName();
-					case 1:
-						return XmlEntityRef.this.getResolved();
+						return WtXmlCharRef.this.getCodePoint();
 						
 					default:
 						return super.getValue(index);
@@ -129,9 +107,7 @@ public class XmlEntityRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return XmlEntityRef.this.setName((String) value);
-					case 1:
-						return XmlEntityRef.this.setResolved((String) value);
+						return WtXmlCharRef.this.setCodePoint((Integer) value);
 						
 					default:
 						return super.setValue(index, value);

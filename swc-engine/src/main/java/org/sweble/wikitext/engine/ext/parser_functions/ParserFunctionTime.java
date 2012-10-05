@@ -28,7 +28,7 @@ import java.util.Locale;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -48,7 +48,7 @@ public class ParserFunctionTime
 	
 	@Override
 	public WtNode invoke(
-			Template pfn,
+			WtTemplate pfn,
 			ExpansionFrame frame,
 			List<? extends WtNode> args)
 	{

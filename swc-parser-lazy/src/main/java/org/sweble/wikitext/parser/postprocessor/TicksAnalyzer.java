@@ -25,7 +25,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import org.sweble.wikitext.parser.nodes.WtNewline;
-import org.sweble.wikitext.parser.nodes.Ticks;
+import org.sweble.wikitext.parser.nodes.WtTicks;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -221,7 +221,7 @@ public class TicksAnalyzer
 			// Nothing to do here
 		}
 		
-		public void visit(Ticks n)
+		public void visit(WtTicks n)
 		{
 			if (ticks == null)
 				ticks = new ArrayList<TicksAnalyzer.LineEntry>();
@@ -406,7 +406,7 @@ public class TicksAnalyzer
 			return n;
 		}
 		
-		public WtNode visit(Ticks n)
+		public WtNode visit(WtTicks n)
 		{
 			LineEntry entry = nextEntry();
 			

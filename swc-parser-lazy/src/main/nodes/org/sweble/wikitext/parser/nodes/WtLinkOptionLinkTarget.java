@@ -10,7 +10,7 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * <li>
  * <p>
- * WtLinkOptionLinkTarget ::= Ws* 'link=' Url Ws*
+ * WtLinkOptionLinkTarget ::= Ws* 'link=' WtUrl Ws*
  * </p>
  * </li>
  * </ul>

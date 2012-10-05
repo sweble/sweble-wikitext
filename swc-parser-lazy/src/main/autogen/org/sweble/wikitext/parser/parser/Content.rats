@@ -478,7 +478,7 @@ private transient WtNode InlineContentChoice =
   / text:TextPlus &"[[" !InlineContentStopper link:InternalLink
     {
       yyValue = link.isNodeType(AstNodeTypes.NT_INTERNAL_LINK) ?
-          addLinkPrefix(text, (InternalLink) link) :
+          addLinkPrefix(text, (WtInternalLink) link) :
           new WtNodeList(text, link);
     }
   / TextPlus

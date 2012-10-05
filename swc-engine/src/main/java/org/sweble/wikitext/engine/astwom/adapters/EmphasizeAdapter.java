@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomEmphasize;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class EmphasizeAdapter
 		extends
@@ -41,7 +41,7 @@ public class EmphasizeAdapter
 	
 	public EmphasizeAdapter(
 			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
+			WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

@@ -208,16 +208,16 @@ public class DefaultConfigEn
 		
 		c.addNamespace(new NamespaceImpl(
 				10,
-				"Template",
-				"Template",
+				"WtTemplate",
+				"WtTemplate",
 				false,
 				false,
 				new ArrayList<String>()));
 		
 		c.addNamespace(new NamespaceImpl(
 				11,
-				"Template talk",
-				"Template talk",
+				"WtTemplate talk",
+				"WtTemplate talk",
 				false,
 				false,
 				new ArrayList<String>()));

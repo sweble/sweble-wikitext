@@ -1,31 +1,33 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
  * <h1>TemplateParameter</h1> <h2>Grammar</h2>
  */
-public class TemplateParameter
+public class WtTemplateParameter
 		extends
 			WtInnerNode3
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public TemplateParameter()
+	public WtTemplateParameter()
 	{
-		super(new WtNodeList(), new TemplateArgument(), new WtNodeList());
-		
+		super(new WtNodeList(), new WtTemplateArgument(), new WtNodeList());
 	}
 	
-	public TemplateParameter(
+	public WtTemplateParameter(
 			WtNodeList name,
-			TemplateArgument defaultValue,
+			WtTemplateArgument defaultValue,
 			WtNodeList garbage)
 	{
 		super(name, defaultValue, garbage);
-		
 	}
 	
 	@Override
@@ -70,7 +72,7 @@ public class TemplateParameter
 			@Override
 			protected int getPropertyCount()
 			{
-				return TemplateParameter.this.getPropertyCount();
+				return WtTemplateParameter.this.getPropertyCount();
 			}
 			
 			@Override
@@ -92,7 +94,7 @@ public class TemplateParameter
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return TemplateParameter.this.getPrecededByNewline();
+						return WtTemplateParameter.this.getPrecededByNewline();
 						
 					default:
 						return super.getValue(index);
@@ -105,7 +107,7 @@ public class TemplateParameter
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return TemplateParameter.this.setPrecededByNewline((Boolean) value);
+						return WtTemplateParameter.this.setPrecededByNewline((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -127,14 +129,14 @@ public class TemplateParameter
 		return (WtNodeList) get(0);
 	}
 	
-	public final void setDefaultValue(TemplateArgument defaultValue)
+	public final void setDefaultValue(WtTemplateArgument defaultValue)
 	{
 		set(1, defaultValue);
 	}
 	
-	public final TemplateArgument getDefaultValue()
+	public final WtTemplateArgument getDefaultValue()
 	{
-		return (TemplateArgument) get(1);
+		return (WtTemplateArgument) get(1);
 	}
 	
 	public final void setGarbage(WtNodeList garbage)

@@ -3,16 +3,26 @@ package org.sweble.wikitext.parser.nodes;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Signature</h1> <h2>Grammar</h2>
+ * <h1>WtUrl</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
- * '~~~' '~'*
+ * Protocol ::= [A-Za-z] [A-Za-z0-9+\-.]*
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Path ::= [^\u0000- \u007F\uE000\u2028\u2029\u0085\"\[\]<>|]+
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * WtUrl ::= Scheme ':' Path
  * </p>
  * </li>
  * </ul>
  */
-public class Signature
+public class WtUrl
 		extends
 			WtLeafNode
 {
@@ -20,46 +30,57 @@ public class Signature
 	
 	// =========================================================================
 	
-	public Signature()
+	public WtUrl()
 	{
-		super();
-		
 	}
 	
-	public Signature(int tildeCount)
+	public WtUrl(String protocol, String path)
 	{
-		super();
-		setTildeCount(tildeCount);
-		
+		setProtocol(protocol);
+		setPath(path);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_SIGNATURE;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_URL;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private int tildeCount;
+	private String protocol;
 	
-	public final int getTildeCount()
+	public final String getProtocol()
 	{
-		return this.tildeCount;
+		return this.protocol;
 	}
 	
-	public final int setTildeCount(int tildeCount)
+	public final String setProtocol(String protocol)
 	{
-		int old = this.tildeCount;
-		this.tildeCount = tildeCount;
+		String old = this.protocol;
+		this.protocol = protocol;
+		return old;
+	}
+	
+	private String path;
+	
+	public final String getPath()
+	{
+		return this.path;
+	}
+	
+	public final String setPath(String path)
+	{
+		String old = this.path;
+		this.path = path;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1 + getSuperPropertyCount();
+		return 2 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -75,7 +96,7 @@ public class Signature
 			@Override
 			protected int getPropertyCount()
 			{
-				return Signature.this.getPropertyCount();
+				return WtUrl.this.getPropertyCount();
 			}
 			
 			@Override
@@ -84,7 +105,9 @@ public class Signature
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "tildeCount";
+						return "protocol";
+					case 1:
+						return "path";
 						
 					default:
 						return super.getName(index);
@@ -97,7 +120,9 @@ public class Signature
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Signature.this.getTildeCount();
+						return WtUrl.this.getProtocol();
+					case 1:
+						return WtUrl.this.getPath();
 						
 					default:
 						return super.getValue(index);
@@ -110,7 +135,9 @@ public class Signature
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Signature.this.setTildeCount((Integer) value);
+						return WtUrl.this.setProtocol((String) value);
+					case 1:
+						return WtUrl.this.setPath((String) value);
 						
 					default:
 						return super.setValue(index, value);

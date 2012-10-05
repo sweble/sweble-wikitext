@@ -117,7 +117,7 @@ WtNode XmlElement =
 private inline WtNode XmlEndTag =
     name:XmlName ws:pWsStar '>'
     {
-      yyValue = setRtd(new XmlEndTag(name), "</", name, ws, '>');
+      yyValue = setRtd(new WtXmlEndTag(name), "</", name, ws, '>');
     }
     // FIXME: Add auto correction and/or warning generation
 ;
@@ -125,11 +125,11 @@ private inline WtNode XmlEndTag =
 private inline WtNode XmlStartTag =
     name:XmlName attributes:AttributeStar ws:pWsStar "/>"
     {
-      yyValue = setRtd(new XmlEmptyTag(name, attributes), "<", name, SEP, ws, "/>");
+      yyValue = setRtd(new WtXmlEmptyTag(name, attributes), "<", name, SEP, ws, "/>");
     }
   / name:XmlName attributes:AttributeStar ws:pWsStar '>'
     {
-      yyValue = setRtd(new XmlStartTag(name, attributes), '<', name, SEP, ws, '>');
+      yyValue = setRtd(new WtXmlStartTag(name, attributes), '<', name, SEP, ws, '>');
     }
     // FIXME: Add auto correction and/or warning generation
 ;

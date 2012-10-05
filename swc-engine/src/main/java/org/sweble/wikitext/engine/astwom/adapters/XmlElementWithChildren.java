@@ -28,7 +28,7 @@ import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public abstract class XmlElementWithChildren
 		extends
@@ -44,7 +44,7 @@ public abstract class XmlElementWithChildren
 	
 	public XmlElementWithChildren(String tagName)
 	{
-		super(Toolbox.addRtData(new XmlElement(
+		super(Toolbox.addRtData(new WtXmlElement(
 				tagName,
 				true,
 				new WtNodeList(),
@@ -55,7 +55,7 @@ public abstract class XmlElementWithChildren
 			FullElementContentType contentType,
 			String tagName,
 			AstToWomNodeFactory factory,
-			XmlElement astNode)
+			WtXmlElement astNode)
 	{
 		super(astNode);
 		
@@ -63,7 +63,7 @@ public abstract class XmlElementWithChildren
 			throw new NullPointerException();
 		
 		if (!astNode.getName().equalsIgnoreCase(tagName))
-			throw new IllegalArgumentException("Given XmlElement node is not a `" + tagName + "' element!");
+			throw new IllegalArgumentException("Given WtXmlElement node is not a `" + tagName + "' element!");
 		
 		addAttributes(astNode.getXmlAttributes());
 		addContent(contentType, factory, astNode.getBody());
@@ -78,9 +78,9 @@ public abstract class XmlElementWithChildren
 	}
 	
 	@Override
-	public XmlElement getAstNode()
+	public WtXmlElement getAstNode()
 	{
-		return (XmlElement) super.getAstNode();
+		return (WtXmlElement) super.getAstNode();
 	}
 	
 	// =========================================================================
@@ -90,7 +90,7 @@ public abstract class XmlElementWithChildren
 	{
 		if (container.isEmpty())
 		{
-			XmlElement e = getAstNode();
+			WtXmlElement e = getAstNode();
 			e.setEmpty(false);
 			Toolbox.addRtData(e);
 		}
@@ -105,7 +105,7 @@ public abstract class XmlElementWithChildren
 		
 		if (container.isEmpty())
 		{
-			XmlElement e = getAstNode();
+			WtXmlElement e = getAstNode();
 			e.setEmpty(true);
 			Toolbox.addRtData(e);
 		}

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.postprocessor;
+package org.sweble.wikitext.parser.parser;
 
-public interface IntermediateTag
+import org.sweble.wikitext.parser.nodes.WtNode;
+
+public interface WtNamedXmlElement
+		extends
+			WtNode
 {
-	/**
-	 * Returns <code>true</code> if this tag was not parsed from the Wikitext
-	 * but generated in a later processing phase.
-	 */
-	public boolean isSynthetic();
+	public String getName();
 }

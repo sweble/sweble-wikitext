@@ -53,7 +53,7 @@ public class CompilerTest
 				"Page([\n" +
 						"  WtParagraph([\n" +
 						"    WtText(\"Founded in \")\n" +
-						"    InternalLink(\n" +
+						"    WtInternalLink(\n" +
 						"      Properties:\n" +
 						"        {N} postfix = \"\"\n" +
 						"        {N} prefix = \"\"\n" +

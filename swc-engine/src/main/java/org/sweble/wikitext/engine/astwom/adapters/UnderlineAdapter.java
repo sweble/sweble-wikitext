@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomUnderline;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class UnderlineAdapter
 		extends
@@ -41,7 +41,7 @@ public class UnderlineAdapter
 	
 	public UnderlineAdapter(
 			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
+			WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-  //Template[contains(name//WtText[@content],"Infobox country")]//TemplateArgument[contains(name//WtText[@content],"capital")]/value
+  //WtTemplate[contains(name//WtText[@content],"Infobox country")]//WtTemplateArgument[contains(name//WtText[@content],"capital")]/value
 --------------------------------------------------------------------------------
 [
   WtText("[[")

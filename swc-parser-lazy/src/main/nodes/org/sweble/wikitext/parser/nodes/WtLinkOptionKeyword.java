@@ -20,10 +20,6 @@ public class WtLinkOptionKeyword
 	
 	// =========================================================================
 	
-	public WtLinkOptionKeyword()
-	{
-	}
-	
 	public WtLinkOptionKeyword(String keyword)
 	{
 		setKeyword(keyword);

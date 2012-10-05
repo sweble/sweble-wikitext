@@ -20,7 +20,7 @@ import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public abstract class NativeOrXmlElement
 		extends
@@ -38,7 +38,7 @@ public abstract class NativeOrXmlElement
 			throw new NullPointerException();
 	}
 	
-	public NativeOrXmlElement(String tagName, XmlElement astNode)
+	public NativeOrXmlElement(String tagName, WtXmlElement astNode)
 	{
 		super(astNode);
 		
@@ -46,7 +46,7 @@ public abstract class NativeOrXmlElement
 			throw new NullPointerException();
 		
 		if (!astNode.getName().equalsIgnoreCase(tagName))
-			throw new IllegalArgumentException("Given XmlElement node is not a `" + tagName + "' element!");
+			throw new IllegalArgumentException("Given WtXmlElement node is not a `" + tagName + "' element!");
 	}
 	
 	// =========================================================================
@@ -59,7 +59,7 @@ public abstract class NativeOrXmlElement
 	
 	// =========================================================================
 	
-	protected abstract XmlElement convertToXmlElement();
+	protected abstract WtXmlElement convertToXmlElement();
 	
 	// =========================================================================
 	
@@ -104,7 +104,7 @@ public abstract class NativeOrXmlElement
 		{
 			if (container.isEmpty())
 			{
-				XmlElement e = xml();
+				WtXmlElement e = xml();
 				e.setEmpty(false);
 				Toolbox.addRtData(e);
 			}
@@ -122,7 +122,7 @@ public abstract class NativeOrXmlElement
 		{
 			if (container.isEmpty())
 			{
-				XmlElement e = xml();
+				WtXmlElement e = xml();
 				e.setEmpty(true);
 				Toolbox.addRtData(e);
 			}
@@ -136,16 +136,16 @@ public abstract class NativeOrXmlElement
 		return getAstNode().getNodeType() == AstNodeTypes.NT_XML_ELEMENT;
 	}
 	
-	protected final XmlElement xml()
+	protected final WtXmlElement xml()
 	{
-		return (XmlElement) getAstNode();
+		return (WtXmlElement) getAstNode();
 	}
 	
 	protected final void convertToXml()
 	{
 		if (!isXml())
 		{
-			XmlElement converted = convertToXmlElement();
+			WtXmlElement converted = convertToXmlElement();
 			
 			WomBackbone parent = getParent();
 			if (parent != null)

@@ -1,60 +1,78 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Template</h1> <h2>Grammar</h2>
+ * <h1>WtTagExtension</h1> <h2>Grammar</h2>
  */
-public class Template
+public class WtTagExtension
 		extends
-			WtInnerNode2
+			WtInnerNode1
+		implements
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public Template()
+	public WtTagExtension()
 	{
-		super(new WtNodeList(), new WtNodeList());
-		
+		super(new WtNodeList());
 	}
 	
-	public Template(WtNodeList name, WtNodeList args)
+	public WtTagExtension(String name, WtNodeList xmlAttributes, String body)
 	{
-		super(name, args);
-		
+		super(xmlAttributes);
+		setName(name);
+		setBody(body);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE;
+		return org.sweble.wikitext.parser.AstNodeTypes.NT_TAG_EXTENSION;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private boolean precededByNewline;
+	private String name;
 	
-	public final boolean getPrecededByNewline()
+	public final String getName()
 	{
-		return this.precededByNewline;
+		return this.name;
 	}
 	
-	public final boolean setPrecededByNewline(boolean precededByNewline)
+	public final String setName(String name)
 	{
-		boolean old = this.precededByNewline;
-		this.precededByNewline = precededByNewline;
+		String old = this.name;
+		this.name = name;
+		return old;
+	}
+	
+	private String body;
+	
+	public final String getBody()
+	{
+		return this.body;
+	}
+	
+	public final String setBody(String body)
+	{
+		String old = this.body;
+		this.body = body;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1 + getSuperPropertyCount();
+		return 2 + getSuperPropertyCount();
 	}
 	
-	public int getSuperPropertyCount()
+	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -62,12 +80,12 @@ public class Template
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode2PropertyIterator()
+		return new WtInnerNode1PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return Template.this.getPropertyCount();
+				return WtTagExtension.this.getPropertyCount();
 			}
 			
 			@Override
@@ -76,7 +94,9 @@ public class Template
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "precededByNewline";
+						return "name";
+					case 1:
+						return "body";
 						
 					default:
 						return super.getName(index);
@@ -89,7 +109,9 @@ public class Template
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Template.this.getPrecededByNewline();
+						return WtTagExtension.this.getName();
+					case 1:
+						return WtTagExtension.this.getBody();
 						
 					default:
 						return super.getValue(index);
@@ -102,7 +124,9 @@ public class Template
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Template.this.setPrecededByNewline((Boolean) value);
+						return WtTagExtension.this.setName((String) value);
+					case 1:
+						return WtTagExtension.this.setBody((String) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -114,27 +138,17 @@ public class Template
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtNodeList name)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
-		set(0, name);
+		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getName()
+	public final WtNodeList getXmlAttributes()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	public final void setArgs(WtNodeList args)
-	{
-		set(1, args);
-	}
-	
-	public final WtNodeList getArgs()
-	{
-		return (WtNodeList) get(1);
-	}
-	
-	private static final String[] CHILD_NAMES = new String[] { "name", "args" };
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
 	
 	public final String[] getChildNames()
 	{

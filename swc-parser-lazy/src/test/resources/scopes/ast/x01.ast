@@ -15,7 +15,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" A ")
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "i"
@@ -27,7 +27,7 @@ WtParsedWikitextPage(
         ]
       )
       WtSectionBody([
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "i"
@@ -37,7 +37,7 @@ WtParsedWikitextPage(
           [ WtNewline("\n") ]
         )
         WtParagraph([
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "i"
@@ -47,7 +47,7 @@ WtParsedWikitextPage(
             [ WtText("C") ]
           )
         ])
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "i"

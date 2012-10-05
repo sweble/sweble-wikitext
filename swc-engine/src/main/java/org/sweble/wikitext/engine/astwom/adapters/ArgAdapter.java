@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.wom.WomArg;
 import org.sweble.wikitext.engine.wom.WomName;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomValue;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public class ArgAdapter
@@ -44,26 +44,26 @@ public class ArgAdapter
 	
 	public ArgAdapter()
 	{
-		super(new TemplateArgument());
+		super(new WtTemplateArgument());
 		setArgValue(new ValueAdapter());
 	}
 	
 	public ArgAdapter(WomValue value)
 	{
-		super(new TemplateArgument());
+		super(new WtTemplateArgument());
 		setArgValue(value);
 	}
 	
 	public ArgAdapter(WomName name, WomValue value)
 	{
-		super(new TemplateArgument());
+		super(new WtTemplateArgument());
 		setName(name);
 		setArgValue(value);
 	}
 	
 	public ArgAdapter(
 			AstToWomNodeFactory womNodeFactory,
-			TemplateArgument astNode/*, WomName name, WomValue value*/)
+			WtTemplateArgument astNode/*, WomName name, WomValue value*/)
 	{
 		super(astNode);
 		
@@ -86,9 +86,9 @@ public class ArgAdapter
 	}
 	
 	@Override
-	public TemplateArgument getAstNode()
+	public WtTemplateArgument getAstNode()
 	{
-		return (TemplateArgument) super.getAstNode();
+		return (WtTemplateArgument) super.getAstNode();
 	}
 	
 	@Override

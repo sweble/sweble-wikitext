@@ -45,17 +45,17 @@ import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WtNewline;
-import org.sweble.wikitext.parser.nodes.PageSwitch;
-import org.sweble.wikitext.parser.nodes.Redirect;
-import org.sweble.wikitext.parser.nodes.TagExtension;
-import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
-import org.sweble.wikitext.parser.nodes.TemplateParameter;
+import org.sweble.wikitext.parser.nodes.WtPageSwitch;
+import org.sweble.wikitext.parser.nodes.WtRedirect;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 import org.sweble.wikitext.parser.utils.StringConverterPartial;
@@ -147,15 +147,15 @@ public final class ExpansionVisitor
 				switch (type)
 				{
 					case AstNodeTypes.NT_REDIRECT:
-						return visit((Redirect) n);
+						return visit((WtRedirect) n);
 					case AstNodeTypes.NT_TEMPLATE_PARAMETER:
-						return visit((TemplateParameter) n);
+						return visit((WtTemplateParameter) n);
 					case AstNodeTypes.NT_TEMPLATE:
-						return visit((Template) n);
+						return visit((WtTemplate) n);
 					case AstNodeTypes.NT_TAG_EXTENSION:
-						return visit((TagExtension) n);
+						return visit((WtTagExtension) n);
 					case AstNodeTypes.NT_PAGE_SWITCH:
-						return visit((PageSwitch) n);
+						return visit((WtPageSwitch) n);
 					default:
 						return visitUnspecific(n);
 						
@@ -208,7 +208,7 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WtNode visit(Redirect n) throws ExpansionException
+	private WtNode visit(WtRedirect n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -231,7 +231,7 @@ public final class ExpansionVisitor
 	 *         process. Otherwise the expanded form of the redirect target page
 	 *         will be returned.
 	 */
-	private WtNode resolveRedirectWrapper(Redirect n, String target) throws ExpansionException
+	private WtNode resolveRedirectWrapper(WtRedirect n, String target) throws ExpansionException
 	{
 		if (hooks != null)
 		{
@@ -290,7 +290,7 @@ public final class ExpansionVisitor
 	 *         will be returned.
 	 */
 	private WtNode expandRedirectionTargetPage(
-			Redirect n,
+			WtRedirect n,
 			String target,
 			ResolveRedirectLog log) throws Exception
 	{
@@ -364,7 +364,7 @@ public final class ExpansionVisitor
 	 * the respective parser function can decide if it needs to expand
 	 * parameters.
 	 */
-	private WtNode visit(Template n) throws ExpansionException
+	private WtNode visit(WtTemplate n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -381,11 +381,11 @@ public final class ExpansionVisitor
 		WtNodeList tail = conv._2;
 		
 		// DO NOT expand parameters (yet)
-		ArrayList<TemplateArgument> args =
-				new ArrayList<TemplateArgument>(n.getArgs().size() + 1);
+		ArrayList<WtTemplateArgument> args =
+				new ArrayList<WtTemplateArgument>(n.getArgs().size() + 1);
 		
 		for (Object arg : n.getArgs())
-			args.add((TemplateArgument) arg);
+			args.add((WtTemplateArgument) arg);
 		
 		// First see if it is a parser function
 		WtNode result = resolveTemplateAsPfn(n, title, tail, args, hadNewline);
@@ -445,10 +445,10 @@ public final class ExpansionVisitor
 	 *         error occurs afterwards, the template node itself is returned.
 	 */
 	private WtNode resolveTemplateAsPfn(
-			Template n,
+			WtTemplate n,
 			String title,
 			WtNodeList tail,
-			ArrayList<TemplateArgument> args,
+			ArrayList<WtTemplateArgument> args,
 			boolean hadNewline) throws ExpansionException
 	{
 		int i = title.indexOf(':');
@@ -502,7 +502,7 @@ public final class ExpansionVisitor
 			PfnArgumentMode pfnArgumentMode,
 			String arg0Prefix,
 			WtNodeList tail,
-			List<TemplateArgument> args)
+			List<WtTemplateArgument> args)
 	{
 		/*
 
@@ -533,7 +533,7 @@ public final class ExpansionVisitor
 				
 				for (int j = 0; j < args.size(); ++j)
 				{
-					TemplateArgument tmplArg = args.get(j);
+					WtTemplateArgument tmplArg = args.get(j);
 					
 					WtNode arg = tmplArg.getHasName() ?
 							astList(tmplArg.getName(), astText("="), tmplArg.getValue()) :
@@ -547,15 +547,15 @@ public final class ExpansionVisitor
 			}
 			case TEMPLATE_ARGUMENTS:
 			{
-				ArrayList<TemplateArgument> argsWithArg0 =
-						new ArrayList<TemplateArgument>(args.size() + 1);
+				ArrayList<WtTemplateArgument> argsWithArg0 =
+						new ArrayList<WtTemplateArgument>(args.size() + 1);
 				
 				argsWithArg0.add(
-						new TemplateArgument(
+						new WtTemplateArgument(
 								new WtNodeList(new WtText(arg0Prefix), tail),
 								false));
 				
-				for (TemplateArgument arg : args)
+				for (WtTemplateArgument arg : args)
 					argsWithArg0.add(arg);
 				
 				return argsWithArg0;
@@ -568,7 +568,7 @@ public final class ExpansionVisitor
 				
 				for (int j = 0; j < args.size(); ++j)
 				{
-					TemplateArgument arg = args.get(j);
+					WtTemplateArgument arg = args.get(j);
 					argValues.add(arg.getHasName() ?
 							astList(arg.getName(), astText("="), arg.getValue()) :
 							arg.getValue());
@@ -596,7 +596,7 @@ public final class ExpansionVisitor
 	 *         error occurs afterwards, the template node itself is returned.
 	 */
 	private WtNode resolveTemplateAsMagicWord(
-			Template n,
+			WtTemplate n,
 			String title,
 			boolean hadNewline) throws ExpansionException
 	{
@@ -613,7 +613,7 @@ public final class ExpansionVisitor
 	 * Nothing left to do but call the actual parser function.
 	 */
 	private WtNode invokePfn(
-			Template n,
+			WtTemplate n,
 			ParserFunctionBase pfn,
 			List<? extends WtNode> argsValues,
 			boolean hadNewline) throws ExpansionException
@@ -681,9 +681,9 @@ public final class ExpansionVisitor
 	 *         the template node itself is returned.
 	 */
 	private WtNode resolveTemplateAsTransclusion(
-			Template n,
+			WtTemplate n,
 			String title,
-			ArrayList<TemplateArgument> args,
+			ArrayList<WtTemplateArgument> args,
 			boolean hadNewline) throws ExpansionException
 	{
 		if (hooks != null)
@@ -743,9 +743,9 @@ public final class ExpansionVisitor
 	 *         the template node itself is returned.
 	 */
 	private WtNode transcludePage(
-			Template n,
+			WtTemplate n,
 			String target,
-			List<TemplateArgument> args,
+			List<WtTemplateArgument> args,
 			ResolveTransclusionLog log) throws Exception
 	{
 		Namespace tmplNs = getWikiConfig().getTemplateNamespace();
@@ -830,13 +830,13 @@ public final class ExpansionVisitor
 	 * will additionally be put into the mapping with the resolved name as key.
 	 */
 	private Map<String, WtNode> prepareTransclusionArguments(
-			List<TemplateArgument> args,
+			List<WtTemplateArgument> args,
 			ResolveTransclusionLog log)
 	{
 		HashMap<String, WtNode> transclArgs = new HashMap<String, WtNode>();
 		
 		int index = 1;
-		for (TemplateArgument arg : args)
+		for (WtTemplateArgument arg : args)
 		{
 			// EXPAND VALUE!
 			WtNodeList value = (WtNodeList) dispatch(arg.getValue());
@@ -902,7 +902,7 @@ public final class ExpansionVisitor
 	 * This method WILL ONLY EXPAND the default value if no value could be found
 	 * among the frame arguments.
 	 */
-	private WtNode visit(TemplateParameter n) throws ExpansionException
+	private WtNode visit(WtTemplateParameter n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -942,9 +942,9 @@ public final class ExpansionVisitor
 	 *         parameter node itself is returned.
 	 */
 	private WtNode resolveParameterWrapper(
-			TemplateParameter n,
+			WtTemplateParameter n,
 			String name,
-			TemplateArgument defaultValue) throws ExpansionException
+			WtTemplateArgument defaultValue) throws ExpansionException
 	{
 		if (hooks != null)
 		{
@@ -999,9 +999,9 @@ public final class ExpansionVisitor
 	 * used, if present. Otherwise, null is returned.
 	 */
 	private WtNode resolveParameter(
-			TemplateParameter n,
+			WtTemplateParameter n,
 			String name,
-			TemplateArgument defaultValue,
+			WtTemplateArgument defaultValue,
 			ResolveParameterLog log)
 	{
 		WtNode value = getFrameArgument(name);
@@ -1043,7 +1043,7 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WtNode visit(TagExtension n) throws ExpansionException
+	private WtNode visit(WtTagExtension n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -1056,7 +1056,7 @@ public final class ExpansionVisitor
 	}
 	
 	private WtNode resolveTagExtensionWrapper(
-			TagExtension n,
+			WtTagExtension n,
 			String name,
 			WtNodeList attrs,
 			String body) throws ExpansionException
@@ -1109,7 +1109,7 @@ public final class ExpansionVisitor
 	}
 	
 	private WtNode resolveTagExtension(
-			TagExtension n,
+			WtTagExtension n,
 			String name,
 			WtNodeList attrs,
 			String body,
@@ -1149,7 +1149,7 @@ public final class ExpansionVisitor
 		{
 			if (attr.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
 			{
-				XmlAttribute a = (XmlAttribute) attr;
+				WtXmlAttribute a = (WtXmlAttribute) attr;
 				attrMap.put(a.getName(), a.getValue());
 			}
 		}
@@ -1163,7 +1163,7 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WtNode visit(PageSwitch n) throws ExpansionException
+	private WtNode visit(WtPageSwitch n) throws ExpansionException
 	{
 		if (skip(n))
 			return n;
@@ -1176,7 +1176,7 @@ public final class ExpansionVisitor
 	}
 	
 	private WtNode resolveMagicWordWrapper(
-			PageSwitch n,
+			WtPageSwitch n,
 			String name) throws ExpansionException
 	{
 		if (hooks != null)
@@ -1227,7 +1227,7 @@ public final class ExpansionVisitor
 	}
 	
 	private WtNode resolvePageSwitch(
-			PageSwitch n,
+			WtPageSwitch n,
 			String name,
 			ResolveMagicWordLog log)
 	{
@@ -1300,7 +1300,7 @@ public final class ExpansionVisitor
 	}
 	
 	private void fileInvalidTemplateNameWarning(
-			Template n,
+			WtTemplate n,
 			StringConversionException e)
 	{
 		expFrame.fileWarning(new InvalidNameWarning(
@@ -1310,7 +1310,7 @@ public final class ExpansionVisitor
 	}
 	
 	private void fileInvalidArgumentNameWarning(
-			TemplateArgument n,
+			WtTemplateArgument n,
 			StringConversionException e)
 	{
 		expFrame.fileWarning(new InvalidNameWarning(
@@ -1320,7 +1320,7 @@ public final class ExpansionVisitor
 	}
 	
 	private void fileInvalidParameterNameWarning(
-			TemplateParameter n,
+			WtTemplateParameter n,
 			StringConversionException e)
 	{
 		expFrame.fileWarning(new InvalidNameWarning(
@@ -1350,7 +1350,7 @@ public final class ExpansionVisitor
 		return compiledPage.getPage().getContent();
 	}
 	
-	private WtNode treatBlockElements(Template tmpl, WtNode result)
+	private WtNode treatBlockElements(WtTemplate tmpl, WtNode result)
 	{
 		if (result != null)
 			return treatBlockElements(tmpl, result, tmpl.getPrecededByNewline());

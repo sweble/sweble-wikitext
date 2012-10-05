@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "p"
@@ -20,7 +20,7 @@ WtParsedWikitextPage(
     WtNewline("\n")
     WtText("P2")
     WtNewline("\n")
-    XmlEndTag(
+    WtXmlEndTag(
       Properties:
         {N} name = "p"
         {N} rtd = RTD[ "</p>" ]
@@ -28,7 +28,7 @@ WtParsedWikitextPage(
     WtNewline("\n")
     WtText("P3")
     WtNewline("\n")
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "p"
@@ -41,7 +41,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
       ]
     )
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "div"

@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 WtParagraph([
   WtText("France is a ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -18,7 +18,7 @@ WtParagraph([
     )
   )
   WtText(" ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -33,7 +33,7 @@ WtParagraph([
     )
   )
   WtText(" ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -43,7 +43,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(" with its main ideals expressed in the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -53,7 +53,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(". France is one of the most ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -67,7 +67,7 @@ WtParagraph([
       [ WtText("developed countries") ]
     )
   )
-  TagExtension(
+  WtTagExtension(
     Properties:
       {N} body = "{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}"
       {N} name = "ref"
@@ -76,7 +76,7 @@ WtParagraph([
     [ ]
   )
   WtText(" and possesses the fifth largest economy by ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -90,7 +90,7 @@ WtParagraph([
       [ WtText("nominal GDP") ]
     )
   )
-  TagExtension(
+  WtTagExtension(
     Properties:
       {N} body = "[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook"
       {N} name = "ref"
@@ -99,7 +99,7 @@ WtParagraph([
     [ ]
   )
   WtText(" and seventh largest economy by ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -114,7 +114,7 @@ WtParagraph([
     )
   )
   WtText(".")
-  TagExtension(
+  WtTagExtension(
     Properties:
       {N} body = "{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}"
       {N} name = "ref"
@@ -123,7 +123,7 @@ WtParagraph([
     [ ]
   )
   WtText(" France enjoys a ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -138,7 +138,7 @@ WtParagraph([
     )
   )
   WtText(" as well as a ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -153,7 +153,7 @@ WtParagraph([
     )
   )
   WtText(", and has also one of the world's highest ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -168,7 +168,7 @@ WtParagraph([
     )
   )
   WtText(".")
-  TagExtension(
+  WtTagExtension(
     Properties:
       {N} body = "{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}"
       {N} name = "ref"
@@ -177,14 +177,14 @@ WtParagraph([
     [ ]
   )
   WtText(" It is the most visited country in the world, receiving 82 million foreign tourists annually.")
-  TagExtension(
+  WtTagExtension(
     Properties:
       {N} body = "{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}"
       {N} name = "ref"
       {N} rtd = RTD[ "<ref" <o> ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>" ]
 
     [
-      XmlAttribute(
+      WtXmlAttribute(
         Properties:
           {N} hasValue = true
           {N} name = "name"
@@ -195,7 +195,7 @@ WtParagraph([
     ]
   )
   WtText(" France is a founding member of the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -205,7 +205,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(", and a member of the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -215,7 +215,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(", the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -225,7 +225,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(", ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -240,7 +240,7 @@ WtParagraph([
     )
   )
   WtText(", ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -250,7 +250,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(", ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -260,7 +260,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(", ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -275,7 +275,7 @@ WtParagraph([
     )
   )
   WtText(", and the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -285,7 +285,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(". It is one of the five ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -300,7 +300,7 @@ WtParagraph([
     )
   )
   WtText(" and possesses the third largest ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -315,7 +315,7 @@ WtParagraph([
     )
   )
   WtText(" in the world ")
-  TagExtension(
+  WtTagExtension(
     Properties:
       {N} body = "{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}"
       {N} name = "ref"
@@ -324,7 +324,7 @@ WtParagraph([
     [ ]
   )
   WtText(" with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -334,7 +334,7 @@ WtParagraph([
     WtLinkTitle([ ])
   )
   WtText(" and 24th on the ")
-  InternalLink(
+  WtInternalLink(
     Properties:
       {N} postfix = ""
       {N} prefix = ""
@@ -364,7 +364,7 @@ WtSection(
     WtNewline("\n")
     WtParagraph([
       WtText("The borders of modern France are approximately the same as those of ancient ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -374,7 +374,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(", which was inhabited by ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = "ic"
           {N} prefix = ""
@@ -391,7 +391,7 @@ WtSection(
         [ WtText("Gauls") ]
       )
       WtText(". Gaul was conquered by ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -406,7 +406,7 @@ WtSection(
         )
       )
       WtText(" under ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -416,7 +416,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" in the 1st century BC,")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]]."
           {N} name = "ref"
@@ -425,7 +425,7 @@ WtSection(
         [ ]
       )
       WtText(" and the Gauls eventually adopted ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -440,7 +440,7 @@ WtSection(
         )
       )
       WtText(" speech (")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -450,7 +450,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(", from which the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -460,7 +460,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" evolved) and Roman culture. ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -475,7 +475,7 @@ WtSection(
         )
       )
       WtText(" first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -489,7 +489,7 @@ WtSection(
     WtNewline("\n")
     WtNewline("\n")
     WtParagraph([
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -523,7 +523,7 @@ WtSection(
 
           [
             WtText("France after the ")
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -535,7 +535,7 @@ WtSection(
             WtText(". Red line")
             WtText(":")
             WtText(" Boundary of the ")
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -552,7 +552,7 @@ WtSection(
       )
       WtNewline("\n")
       WtText("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -562,7 +562,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" was overrun by ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -577,7 +577,7 @@ WtSection(
         )
       )
       WtText(", principally the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -587,7 +587,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -602,7 +602,7 @@ WtSection(
         )
       )
       WtText(" Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -617,7 +617,7 @@ WtSection(
         )
       )
       WtText(" Christianity rather than ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -627,7 +627,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" (their King ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -649,7 +649,7 @@ WtSection(
         [ WtText("La fille a\u00EEn\u00E9e de l\u2019\u00C9glise") ]
       )
       WtText("),")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]"
           {N} name = "ref"
@@ -662,7 +662,7 @@ WtSection(
     WtNewline("\n")
     WtNewline("\n")
     WtParagraph([
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -696,7 +696,7 @@ WtSection(
 
           [
             WtText("The ")
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -706,7 +706,7 @@ WtSection(
               WtLinkTitle([ ])
             )
             WtText(" (1572) during the ")
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -720,7 +720,7 @@ WtSection(
         )
       )
       WtNewline("\n")
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -753,7 +753,7 @@ WtSection(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -770,7 +770,7 @@ WtSection(
               [ WtText("Empereur des Fran\u00E7ais") ]
             )
             WtText(", built a ")
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -789,7 +789,7 @@ WtSection(
         )
       )
       WtNewline("\n")
-      ImageLink(
+      WtImageLink(
         Properties:
           {N} alt = 
             WtLinkOptionAltText([ ])
@@ -827,7 +827,7 @@ WtSection(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -837,7 +837,7 @@ WtSection(
               WtLinkTitle([ ])
             )
             WtText(" by ")
-            InternalLink(
+            WtInternalLink(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
@@ -857,7 +857,7 @@ WtSection(
       )
       WtNewline("\n")
       WtText("Existence as a separate entity began with the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -867,7 +867,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" (843), with the division of ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -877,7 +877,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText("'s ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -887,7 +887,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" into ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -897,7 +897,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(", ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -907,7 +907,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" and ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -917,7 +917,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks"
           {N} name = "ref"
@@ -927,7 +927,7 @@ WtSection(
       )
       WtNewline("\n")
       WtText("The ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -937,7 +937,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" ruled France until 987, when ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -952,7 +952,7 @@ WtSection(
         )
       )
       WtText(", Duke of France and Count of Paris, was crowned ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -962,7 +962,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(".")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World"
           {N} name = "ref"
@@ -976,7 +976,7 @@ WtSection(
     WtNewline("\n")
     WtParagraph([
       WtText("His descendants, the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -991,7 +991,7 @@ WtSection(
         )
       )
       WtText(", the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1001,7 +1001,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" and the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1011,7 +1011,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(", progressively unified the country through a series of wars and dynastic inheritance into a ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1028,7 +1028,7 @@ WtSection(
       WtText(".")
       WtNewline("\n")
       WtText("The ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1038,7 +1038,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" was launched in 1209 to eliminate the heretical ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1048,7 +1048,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" of ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1058,7 +1058,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}"
           {N} name = "ref"
@@ -1068,7 +1068,7 @@ WtSection(
       )
       WtNewline("\n")
       WtText("In 1066, the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1088,7 +1088,7 @@ WtSection(
     WtNewline("\n")
     WtParagraph([
       WtText("The exact boundaries changed greatly with time, but French landholdings of the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1103,7 +1103,7 @@ WtSection(
         )
       )
       WtText(" remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1113,7 +1113,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(", won back mainland territory until only ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1123,7 +1123,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" remained. Under ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1133,7 +1133,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" this was lost to the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1148,14 +1148,14 @@ WtSection(
     WtNewline("\n")
     WtParagraph([
       WtText("Charles IV (The Fair) died without an heir in 1328.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101."
           {N} name = "ref"
           {N} rtd = RTD[ "<ref" <o> ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>" ]
 
         [
-          XmlAttribute(
+          WtXmlAttribute(
             Properties:
               {N} hasValue = true
               {N} name = "name"
@@ -1166,7 +1166,7 @@ WtSection(
         ]
       )
       WtText("  Under the rules of the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1176,14 +1176,14 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = null
           {N} name = "ref"
           {N} rtd = RTD[ "<ref" <o> "/>" ]
 
         [
-          XmlAttribute(
+          WtXmlAttribute(
             Properties:
               {N} hasValue = true
               {N} name = "name"
@@ -1194,7 +1194,7 @@ WtSection(
         ]
       )
       WtText(" Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1209,14 +1209,14 @@ WtSection(
         )
       )
       WtText(", the French monarchy reached the height of its medieval power.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = null
           {N} name = "ref"
           {N} rtd = RTD[ "<ref" <o> "/>" ]
 
         [
-          XmlAttribute(
+          WtXmlAttribute(
             Properties:
               {N} hasValue = true
               {N} name = "name"
@@ -1227,7 +1227,7 @@ WtSection(
         ]
       )
       WtText(" However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1237,14 +1237,14 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(",")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009."
           {N} name = "ref"
           {N} rtd = RTD[ "<ref" <o> ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>" ]
 
         [
-          XmlAttribute(
+          WtXmlAttribute(
             Properties:
               {N} hasValue = true
               {N} name = "name"
@@ -1252,7 +1252,7 @@ WtSection(
 
             [ ]
           )
-          XmlAttribute(
+          WtXmlAttribute(
             Properties:
               {N} hasValue = false
               {N} name = "Encarta"
@@ -1263,7 +1263,7 @@ WtSection(
         ]
       )
       WtText(" England and France went to war in what would become known as the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1273,7 +1273,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(".")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''."
           {N} name = "ref"
@@ -1286,7 +1286,7 @@ WtSection(
     WtNewline("\n")
     WtParagraph([
       WtText("In the most notorious incident during the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1296,7 +1296,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" (1562\u201398), thousands of ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1306,7 +1306,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" were murdered in the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1316,7 +1316,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(" of 1572.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]]."
           {N} name = "ref"
@@ -1329,7 +1329,7 @@ WtSection(
     WtNewline("\n")
     WtParagraph([
       WtText("The monarchy reached its height during the 17th century and the reign of ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1344,7 +1344,7 @@ WtSection(
         )
       )
       WtText(". At this time, France possessed the largest population in Europe (see ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1354,7 +1354,7 @@ WtSection(
         WtLinkTitle([ ])
       )
       WtText(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1369,7 +1369,7 @@ WtSection(
         )
       )
       WtText(" was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.")
-      TagExtension(
+      WtTagExtension(
         Properties:
           {N} body = "[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations"
           {N} name = "ref"
@@ -1378,7 +1378,7 @@ WtSection(
         [ ]
       )
       WtText(" Much of the ")
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -1401,7 +1401,7 @@ WtSection(
 
 ================================================================================
 --------------------------------------------------------------------------------
-  //Template[contains(name//WtText[@content],"Infobox Country")]//TemplateArgument[contains(name//WtText[@content],"capital")]/value
+  //WtTemplate[contains(name//WtText[@content],"Infobox Country")]//WtTemplateArgument[contains(name//WtText[@content],"capital")]/value
 --------------------------------------------------------------------------------
 [
   WtText(" ")

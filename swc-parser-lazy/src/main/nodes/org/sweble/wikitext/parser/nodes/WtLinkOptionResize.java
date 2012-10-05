@@ -58,10 +58,6 @@ public class WtLinkOptionResize
 	
 	// =========================================================================
 	
-	public WtLinkOptionResize()
-	{
-	}
-	
 	public WtLinkOptionResize(int width, int height)
 	{
 		setWidth(width);

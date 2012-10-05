@@ -19,7 +19,7 @@ package org.sweble.wikitext.engine.astwom;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 /**
  * Interface for factories that create WOM nodes from AST nodes.
@@ -32,14 +32,14 @@ public interface AstToWomNodeFactory
 	{
 		private static final long serialVersionUID = 1L;
 		
-		private final XmlElement element;
+		private final WtXmlElement element;
 		
-		public UnsupportedXmlElement(XmlElement element)
+		public UnsupportedXmlElement(WtXmlElement element)
 		{
 			this.element = element;
 		}
 		
-		public XmlElement getElement()
+		public WtXmlElement getElement()
 		{
 			return element;
 		}

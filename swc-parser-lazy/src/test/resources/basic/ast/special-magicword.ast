@@ -11,7 +11,7 @@ WtParsedWikitextPage(
 
         [
           WtText(" ")
-          PageSwitch(
+          WtPageSwitch(
             Properties:
               {N} name = "NOTOC"
               {N} rtd = RTD[ "__NOTOC__" ]

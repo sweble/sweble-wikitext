@@ -20,18 +20,17 @@ package org.sweble.wikitext.parser.preprocessor;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtText;
 
-public class ProtectedText
+public class WtProtectedText
 		extends
 			WtText
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ProtectedText()
+	public WtProtectedText()
 	{
-		super();
 	}
 	
-	public ProtectedText(String content)
+	public WtProtectedText(String content)
 	{
 		super(content);
 	}

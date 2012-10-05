@@ -13,7 +13,7 @@ WtParsedWikitextPage(
             Warning (informative): /basic/wikitext/inline-internal-link-4.wikitext:1:1 - 8: "[[Link1" : This looks like a Internal Link, however the finishing `]]' is missing.
           ]
       )
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""

@@ -6,7 +6,7 @@ WtParsedWikitextPage(
   [
     WtNewline("\n")
     WtParagraph([ ])
-    XmlElement(
+    WtXmlElement(
       Properties:
         {N} empty = false
         {N} name = "table"
@@ -22,7 +22,7 @@ WtParsedWikitextPage(
           WtNewline("\n")
         ])
         WtParagraph([ WtText("\t") ])
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "tr"
@@ -32,7 +32,7 @@ WtParsedWikitextPage(
           [
             WtNewline("\n")
             WtText("\t\t")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "td"
@@ -43,7 +43,7 @@ WtParsedWikitextPage(
             )
             WtNewline("\n")
             WtText("\t\t")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "td"
@@ -59,7 +59,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([ WtText("\t") ])
-        XmlElement(
+        WtXmlElement(
           Properties:
             {N} empty = false
             {N} name = "tr"
@@ -69,7 +69,7 @@ WtParsedWikitextPage(
           [
             WtNewline("\n")
             WtText("\t\t")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "td"
@@ -80,7 +80,7 @@ WtParsedWikitextPage(
             )
             WtNewline("\n")
             WtText("\t\t")
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "td"

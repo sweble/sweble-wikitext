@@ -11,12 +11,12 @@ WtParsedWikitextPage(
         warnings = [Warning: This looks like a Horizontal Rule, however a horizontal rule consists of at least 4 dashes: "---"]
     )
     WtParagraph([ WtText("\n\n") ])
-    HorizontalRule(
+    WtHorizontalRule(
       Properties:
         {N} rtd = RTD[ "----" ]
     )
     WtParagraph([ WtText("\n\n") ])
-    HorizontalRule(
+    WtHorizontalRule(
       Properties:
         {N} rtd = RTD[ "-----" ]
     )

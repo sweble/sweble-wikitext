@@ -1,9 +1,11 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Ticks</h1> <h2>Grammar</h2>
+ * <h1>WtTicks</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
@@ -12,31 +14,37 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  * </li>
  * </ul>
  */
-public class Ticks
+public class WtTicks
 		extends
 			WtLeafNode
+		implements
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public Ticks()
+	public WtTicks()
 	{
-		super();
-		
 	}
 	
-	public Ticks(int tickCount)
+	public WtTicks(int tickCount)
 	{
-		super();
 		setTickCount(tickCount);
-		
 	}
 	
 	@Override
 	public int getNodeType()
 	{
 		return org.sweble.wikitext.parser.AstNodeTypes.NT_TICKS;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
+	{
+		return false;
 	}
 	
 	// =========================================================================
@@ -75,7 +83,7 @@ public class Ticks
 			@Override
 			protected int getPropertyCount()
 			{
-				return Ticks.this.getPropertyCount();
+				return WtTicks.this.getPropertyCount();
 			}
 			
 			@Override
@@ -97,7 +105,7 @@ public class Ticks
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Ticks.this.getTickCount();
+						return WtTicks.this.getTickCount();
 						
 					default:
 						return super.getValue(index);
@@ -110,7 +118,7 @@ public class Ticks
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return Ticks.this.setTickCount((Integer) value);
+						return WtTicks.this.setTickCount((Integer) value);
 						
 					default:
 						return super.setValue(index, value);

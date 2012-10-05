@@ -10,7 +10,7 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * </ul>
  */
-public class HorizontalRule
+public class WtHorizontalRule
 		extends
 			WtLeafNode
 {
@@ -18,10 +18,8 @@ public class HorizontalRule
 	
 	// =========================================================================
 	
-	public HorizontalRule()
+	public WtHorizontalRule()
 	{
-		super();
-		
 	}
 	
 	@Override

@@ -20,7 +20,7 @@ import static org.sweble.wikitext.engine.astwom.adapters.FullElementContentType.
 
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.wom.WomKbd;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class KbdAdapter
 		extends
@@ -39,7 +39,7 @@ public class KbdAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public KbdAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public KbdAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_INLINE, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

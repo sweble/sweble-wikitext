@@ -32,17 +32,17 @@ import org.sweble.wikitext.parser.LinkTargetException;
 import org.sweble.wikitext.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtBold;
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.nodes.XmlElement;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 
@@ -56,9 +56,9 @@ public class DefaultAstToWomNodeFactory
 	{
 		private WtNodeList container;
 		
-		private InternalLink link;
+		private WtInternalLink link;
 		
-		public AstCategory(WtNodeList container, InternalLink link)
+		public AstCategory(WtNodeList container, WtInternalLink link)
 		{
 			this.container = container;
 			this.link = link;
@@ -133,12 +133,12 @@ public class DefaultAstToWomNodeFactory
 		return new BoldAdapter(this, wtBold);
 	}
 	
-	public WomNode visit(HorizontalRule hr)
+	public WomNode visit(WtHorizontalRule hr)
 	{
 		return new HorizontalRuleAdapter(hr);
 	}
 	
-	public WomNode visit(InternalLink link) throws LinkTargetException
+	public WomNode visit(WtInternalLink link) throws LinkTargetException
 	{
 		LinkTargetParser ltp = new LinkTargetParser();
 		
@@ -148,7 +148,7 @@ public class DefaultAstToWomNodeFactory
 		LinkTargetType type = config.getParserConfig().classifyTarget(link.getTarget());
 		if (type == LinkTargetType.IMAGE)
 		{
-			// TODO: Generate ImageLink
+			// TODO: Generate WtImageLink
 			return null;
 		}
 		else
@@ -177,7 +177,7 @@ public class DefaultAstToWomNodeFactory
 		}
 	}
 	
-	public WomNode visit(XmlElement elem)
+	public WomNode visit(WtXmlElement elem)
 	{
 		WomNode result = createFromXmlElement(elem);
 		if (result == null)
@@ -185,19 +185,19 @@ public class DefaultAstToWomNodeFactory
 		return result;
 	}
 	
-	public WomNode visit(XmlEntityRef ref)
+	public WomNode visit(WtXmlEntityRef ref)
 	{
 		return new TextAdapter(ref);
 	}
 	
-	public WomNode visit(XmlCharRef ref)
+	public WomNode visit(WtXmlCharRef ref)
 	{
 		return new TextAdapter(ref);
 	}
 	
 	// =========================================================================
 	
-	private WomNode createFromXmlElement(XmlElement e)
+	private WomNode createFromXmlElement(WtXmlElement e)
 	{
 		XmlElementFactoryEnum resolved =
 				XmlElementFactoryEnum.valueOf(e.getName().toUpperCase());
@@ -213,7 +213,7 @@ public class DefaultAstToWomNodeFactory
 		BLOCKQUOTE
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementBlockquoteAdapter(e);
 			}
@@ -222,7 +222,7 @@ public class DefaultAstToWomNodeFactory
 		DIV
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementDivAdapter(e);
 			}
@@ -231,7 +231,7 @@ public class DefaultAstToWomNodeFactory
 		PRE
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new PREAdapter(e);
 			}
@@ -240,7 +240,7 @@ public class DefaultAstToWomNodeFactory
 		CENTER
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new CENTERAdapter(e);
 			}
@@ -252,7 +252,7 @@ public class DefaultAstToWomNodeFactory
 			@Override
 			public WomNode create(
 					AstToWomNodeFactory womNodeFactory,
-					XmlElement e)
+					WtXmlElement e)
 			{
 				return new ParagraphAdapter(womNodeFactory, e);
 			}
@@ -263,7 +263,7 @@ public class DefaultAstToWomNodeFactory
 			@Override
 			public WomNode create(
 					AstToWomNodeFactory womNodeFactory,
-					XmlElement e)
+					WtXmlElement e)
 			{
 				return new HorizontalRuleAdapter(womNodeFactory, e);
 			}
@@ -275,7 +275,7 @@ public class DefaultAstToWomNodeFactory
 		OL
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementOrderedListAdapter(e);
 			}
@@ -284,7 +284,7 @@ public class DefaultAstToWomNodeFactory
 		UL
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementUnorderedListAdapter(e);
 			}
@@ -293,7 +293,7 @@ public class DefaultAstToWomNodeFactory
 		LI
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementListItemAdapter(e);
 			}
@@ -306,7 +306,7 @@ public class DefaultAstToWomNodeFactory
 		DL
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new DLAdapter(e);
 			}
@@ -315,7 +315,7 @@ public class DefaultAstToWomNodeFactory
 		DD
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new DDAdapter(e);
 			}
@@ -324,7 +324,7 @@ public class DefaultAstToWomNodeFactory
 		DT
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new DTAdapter(e);
 			}
@@ -337,7 +337,7 @@ public class DefaultAstToWomNodeFactory
 		TABLE
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new TABLEAdapter(e);
 			}
@@ -346,7 +346,7 @@ public class DefaultAstToWomNodeFactory
 		TD
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new TDAdapter(e);
 			}
@@ -355,7 +355,7 @@ public class DefaultAstToWomNodeFactory
 		TR
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new TRAdapter(e);
 			}
@@ -368,7 +368,7 @@ public class DefaultAstToWomNodeFactory
 		ABBR
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementAbbrAdapter(e);
 			}
@@ -377,7 +377,7 @@ public class DefaultAstToWomNodeFactory
 		BIG
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementBigAdapter(e);
 			}
@@ -389,7 +389,7 @@ public class DefaultAstToWomNodeFactory
 			@Override
 			public WomNode create(
 					AstToWomNodeFactory womNodeFactory,
-					XmlElement e)
+					WtXmlElement e)
 			{
 				return new BoldAdapter(womNodeFactory, e);
 			}
@@ -399,7 +399,7 @@ public class DefaultAstToWomNodeFactory
 		BR
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementBrAdapter(e);
 			}
@@ -408,7 +408,7 @@ public class DefaultAstToWomNodeFactory
 		CITE
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementCiteAdapter(e);
 			}
@@ -417,7 +417,7 @@ public class DefaultAstToWomNodeFactory
 		CODE
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementCodeAdapter(e);
 			}
@@ -426,7 +426,7 @@ public class DefaultAstToWomNodeFactory
 		DFN
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementDfnAdapter(e);
 			}
@@ -435,7 +435,7 @@ public class DefaultAstToWomNodeFactory
 		EM
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementEmAdapter(e);
 			}
@@ -444,7 +444,7 @@ public class DefaultAstToWomNodeFactory
 		FONT
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new FONTAdapter(e);
 			}
@@ -453,7 +453,7 @@ public class DefaultAstToWomNodeFactory
 		I
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementItalicsAdapter(e);
 			}
@@ -462,7 +462,7 @@ public class DefaultAstToWomNodeFactory
 		KBD
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementKbdAdapter(e);
 			}
@@ -471,7 +471,7 @@ public class DefaultAstToWomNodeFactory
 		S
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new SAdapter(e);
 			}
@@ -480,7 +480,7 @@ public class DefaultAstToWomNodeFactory
 		SAMP
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementSampAdapter(e);
 			}
@@ -489,7 +489,7 @@ public class DefaultAstToWomNodeFactory
 		SMALL
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementSmallAdapter(e);
 			}
@@ -498,7 +498,7 @@ public class DefaultAstToWomNodeFactory
 		SPAN
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementSpanAdapter(e);
 			}
@@ -507,7 +507,7 @@ public class DefaultAstToWomNodeFactory
 		STRIKE
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new STRIKEAdapter(e);
 			}
@@ -516,7 +516,7 @@ public class DefaultAstToWomNodeFactory
 		STRONG
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementStrongAdapter(e);
 			}
@@ -525,7 +525,7 @@ public class DefaultAstToWomNodeFactory
 		SUB
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementSubAdapter(e);
 			}
@@ -534,7 +534,7 @@ public class DefaultAstToWomNodeFactory
 		SUP
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementSupAdapter(e);
 			}
@@ -543,7 +543,7 @@ public class DefaultAstToWomNodeFactory
 		TT
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementTeletypeAdapter(e);
 			}
@@ -552,7 +552,7 @@ public class DefaultAstToWomNodeFactory
 		U
 		{
 			@Override
-			public DomNode create(XmlElement e)
+			public DomNode create(WtXmlElement e)
 			{
 				return new UAdapter(e);
 			}
@@ -561,7 +561,7 @@ public class DefaultAstToWomNodeFactory
 		VAR
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementVarAdapter(e);
 			}
@@ -574,7 +574,7 @@ public class DefaultAstToWomNodeFactory
 		DEL
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementDelAdapter(e);
 			}
@@ -583,7 +583,7 @@ public class DefaultAstToWomNodeFactory
 		INS
 		{
 			@Override
-			public WomNode create(XmlElement e)
+			public WomNode create(WtXmlElement e)
 			{
 				return new XmlElementInsAdapter(e);
 			}
@@ -593,6 +593,6 @@ public class DefaultAstToWomNodeFactory
 		
 		public abstract WomNode create(
 				AstToWomNodeFactory womNodeFactory,
-				XmlElement e);
+				WtXmlElement e);
 	}
 }

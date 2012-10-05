@@ -32,21 +32,21 @@ public class TextUtilsTest
 		final String expected =
 				"[\n" +
 						"  WtText(\"H\")\n" +
-						"  XmlEntityRef(\n" +
+						"  WtXmlEntityRef(\n" +
 						"    Properties:\n" +
 						"      {N} name = \"amp\"\n" +
 						"      {N} resolved = \"&\"\n" +
 						"      {N} rtd = RTD[ \"&amp;\" ]\n" +
 						"  )\n" +
 						"  WtText(\"llo \")\n" +
-						"  XmlEntityRef(\n" +
+						"  WtXmlEntityRef(\n" +
 						"    Properties:\n" +
 						"      {N} name = \"lt\"\n" +
 						"      {N} resolved = \"<\"\n" +
 						"      {N} rtd = RTD[ \"&lt;\" ]\n" +
 						"  )\n" +
 						"  WtText(\"Welt\")\n" +
-						"  XmlEntityRef(\n" +
+						"  WtXmlEntityRef(\n" +
 						"    Properties:\n" +
 						"      {N} name = \"gt\"\n" +
 						"      {N} resolved = \">\"\n" +

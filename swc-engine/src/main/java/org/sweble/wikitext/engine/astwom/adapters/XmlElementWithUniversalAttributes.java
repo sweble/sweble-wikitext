@@ -28,7 +28,7 @@ import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
 import org.sweble.wikitext.engine.astwom.GenericAttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -61,7 +61,7 @@ public abstract class XmlElementWithUniversalAttributes
 			FullElementContentType contentType,
 			String tagName,
 			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
+			WtXmlElement astNode)
 	{
 		super(contentType, tagName, womNodeFactory, astNode);
 	}

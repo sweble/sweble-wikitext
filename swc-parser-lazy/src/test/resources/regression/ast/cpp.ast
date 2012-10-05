@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      XmlElement(
+      WtXmlElement(
         Properties:
           {N} empty = false
           {N} name = "code"
@@ -15,7 +15,7 @@ WtParsedWikitextPage(
         [ WtText("<") ]
       )
       WtNewline("\n")
-      XmlStartTag(
+      WtXmlStartTag(
         Properties:
           {N} name = "blub"
           {N} rtd = RTD[ "<blub" <o> ">" ]
@@ -23,7 +23,7 @@ WtParsedWikitextPage(
         [ ]
       )
       WtText("<")
-      XmlEndTag(
+      WtXmlEndTag(
         Properties:
           {N} name = "blub"
           {N} rtd = RTD[ "</blub>" ]

@@ -32,7 +32,7 @@ import org.sweble.wikitext.engine.wom.WomDiv;
 import org.sweble.wikitext.engine.wom.WomHorizAlign;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -58,7 +58,7 @@ public class DivAdapter
 		super(TAG_AND_NODE_NAME);
 	}
 	
-	public DivAdapter(AstToWomNodeFactory womNodeFactory, XmlElement astNode)
+	public DivAdapter(AstToWomNodeFactory womNodeFactory, WtXmlElement astNode)
 	{
 		super(MIXED_FLOW, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

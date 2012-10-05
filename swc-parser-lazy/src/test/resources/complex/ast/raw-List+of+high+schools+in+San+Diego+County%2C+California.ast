@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=Template([0] = [WtText(":San Diego Unified School District")], [1] = []), 1=Template([0] = [WtText(":Roman Catholic Diocese of San Diego")], [1] = []), 2=TagExtension([0] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText(":San Diego Unified School District")], [1] = []), 1=WtTemplate([0] = [WtText(":Roman Catholic Diocese of San Diego")], [1] = []), 2=WtTagExtension([0] = [])}
     {N} warnings = []
 
   [
@@ -12,7 +12,7 @@ WtParsedWikitextPage(
 
         [
           WtText("list of high schools in ")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -58,7 +58,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -99,7 +99,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -136,7 +136,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -172,7 +172,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -189,7 +189,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -206,7 +206,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -229,7 +229,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -268,7 +268,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -306,7 +306,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -325,7 +325,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -347,7 +347,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -364,7 +364,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -381,7 +381,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -403,7 +403,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -420,7 +420,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -437,7 +437,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -454,7 +454,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -476,7 +476,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -493,7 +493,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -510,7 +510,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -527,7 +527,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -549,7 +549,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -584,7 +584,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -631,7 +631,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -666,7 +666,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -701,7 +701,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -723,7 +723,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -761,7 +761,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -780,7 +780,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -802,7 +802,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -824,7 +824,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -841,7 +841,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -858,7 +858,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -910,7 +910,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -941,7 +941,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -960,7 +960,7 @@ WtParsedWikitextPage(
           WtSectionBody([
             WtNewline("\n")
             WtParagraph([
-              Template(
+              WtTemplate(
                 Properties:
                   {N} precededByNewline = true
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -982,7 +982,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1001,7 +1001,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1018,7 +1018,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1041,7 +1041,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1064,7 +1064,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1111,7 +1111,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1128,7 +1128,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1165,7 +1165,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1184,7 +1184,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1201,7 +1201,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1218,7 +1218,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1235,7 +1235,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1257,7 +1257,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1280,7 +1280,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1297,7 +1297,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1313,7 +1313,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1330,7 +1330,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1347,7 +1347,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1370,7 +1370,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1387,7 +1387,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1404,7 +1404,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1421,7 +1421,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1456,7 +1456,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1540,7 +1540,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText(" ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1558,7 +1558,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText(" ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1576,7 +1576,7 @@ WtParsedWikitextPage(
 
                 [
                   WtText(" ")
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1622,7 +1622,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1683,7 +1683,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -1702,7 +1702,7 @@ WtParsedWikitextPage(
           WtSectionBody([
             WtNewline("\n")
             WtParagraph([
-              Template(
+              WtTemplate(
                 Properties:
                   {N} precededByNewline = true
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -1733,7 +1733,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1773,7 +1773,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1790,7 +1790,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1807,7 +1807,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1842,7 +1842,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1863,7 +1863,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1880,7 +1880,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1921,7 +1921,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -1955,11 +1955,11 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  ExternalLink(
+                  WtExternalLink(
                     Properties:
                       {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                    Url(
+                    WtUrl(
                       Properties:
                         {N} path = "//www.tcps.org"
                         {N} protocol = "http"
@@ -1987,7 +1987,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2009,7 +2009,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2031,7 +2031,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2048,7 +2048,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2065,7 +2065,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "*" <o> "\n" ]
 
                 [
-                  InternalLink(
+                  WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
@@ -2116,7 +2116,7 @@ WtParsedWikitextPage(
 
             [
               WtText("Sun Valley Charter High School, Ramona. Closed as of February 3, 2008 due to lack of funding.")
-              TagExtension(
+              WtTagExtension(
                 Properties:
                   {N} body = "[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]"
                   {N} name = "ref"
@@ -2150,7 +2150,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2166,7 +2166,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2182,7 +2182,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2198,7 +2198,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2214,7 +2214,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2230,7 +2230,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "" ]
 
             [
-              InternalLink(
+              WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
@@ -2260,7 +2260,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          XmlEmptyTag(
+          WtXmlEmptyTag(
             Properties:
               {N} name = "references"
               {N} rtd = RTD[ "<references" <o> "/>" ]
@@ -2290,11 +2290,11 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "\n" ]
 
             [
-              ExternalLink(
+              WtExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                Url(
+                WtUrl(
                   Properties:
                     {N} path = "//www.sdcoe.k12.ca.us/"
                     {N} protocol = "http"
@@ -2309,11 +2309,11 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "*" <o> "" ]
 
             [
-              ExternalLink(
+              WtExternalLink(
                 Properties:
                   {N} rtd = RTD[ "[" <o> " " <o> "]" ]
 
-                Url(
+                WtUrl(
                   Properties:
                     {N} path = "//california.schooltree.org/high/San-Diego-County-Schools.html"
                     {N} protocol = "http"
@@ -2328,7 +2328,7 @@ WtParsedWikitextPage(
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
@@ -2343,7 +2343,7 @@ WtParsedWikitextPage(
             )
           )
           WtNewline("\n")
-          InternalLink(
+          WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""

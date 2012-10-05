@@ -22,9 +22,6 @@ import java.util.LinkedList;
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.ExternalLink;
-import org.sweble.wikitext.parser.nodes.ImageLink;
-import org.sweble.wikitext.parser.nodes.InternalLink;
 import org.sweble.wikitext.parser.nodes.Table;
 import org.sweble.wikitext.parser.nodes.TableCaption;
 import org.sweble.wikitext.parser.nodes.TableCell;
@@ -34,6 +31,9 @@ import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
+import org.sweble.wikitext.parser.nodes.WtExternalLink;
+import org.sweble.wikitext.parser.nodes.WtImageLink;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -43,11 +43,11 @@ import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtSemiPre;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
 import org.sweble.wikitext.parser.nodes.WtUnorderedList;
-import org.sweble.wikitext.parser.nodes.XmlElement;
-import org.sweble.wikitext.parser.nodes.XmlEmptyTag;
-import org.sweble.wikitext.parser.nodes.XmlEndTag;
-import org.sweble.wikitext.parser.nodes.XmlStartTag;
-import org.sweble.wikitext.parser.parser.NamedXmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
+import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
+import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
+import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
 import org.sweble.wikitext.parser.postprocessor.ElementScopeStack.Scope;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -101,21 +101,21 @@ public class ScopedElementBuilder
 		closeScope(ScopeType.PAGE, n);
 	}
 	
-	public void visit(ExternalLink n)
+	public void visit(WtExternalLink n)
 	{
 		openScope(ScopeType.WT_INLINE, n);
 		n.getTitle().exchange(processScope(n.getTitle()));
 		closeScope(ScopeType.WT_INLINE, n);
 	}
 	
-	public void visit(InternalLink n)
+	public void visit(WtInternalLink n)
 	{
 		openScope(ScopeType.WT_INLINE, n);
 		n.getTitle().exchange(processScope(n.getTitle()));
 		closeScope(ScopeType.WT_INLINE, n);
 	}
 	
-	public void visit(ImageLink n)
+	public void visit(WtImageLink n)
 	{
 		openScope(ScopeType.WT_INLINE, n);
 		n.getTitle().exchange(processScope(n.getTitle()));
@@ -215,10 +215,9 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	public void visit(XmlEmptyTag n)
+	public void visit(WtXmlEmptyTag n)
 	{
-		if (n instanceof IntermediateTag ||
-				config.isXmlElementAllowed(n.getName()))
+		if (isXmlElementAllowed(n.getName()))
 		{
 			openAndCloseScope(determineElementType(n), n);
 		}
@@ -228,10 +227,10 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	public void visit(XmlStartTag n)
+	public void visit(WtXmlStartTag n)
 	{
 		String name = n.getName();
-		if (n instanceof IntermediateTag || config.isXmlElementAllowed(name))
+		if (isXmlElementAllowed(name))
 		{
 			if (config.isXmlElementEmptyOnly(name))
 			{
@@ -248,10 +247,10 @@ public class ScopedElementBuilder
 		}
 	}
 	
-	public void visit(XmlEndTag n)
+	public void visit(WtXmlEndTag n)
 	{
 		String name = n.getName();
-		if (n instanceof IntermediateTag || config.isXmlElementAllowed(name))
+		if (isXmlElementAllowed(name))
 		{
 			closeScope(determineElementType(n), n);
 		}
@@ -261,9 +260,16 @@ public class ScopedElementBuilder
 		}
 	}
 	
+	private boolean isXmlElementAllowed(String name)
+	{
+		if (name.isEmpty())
+			return false;
+		return name.charAt(0) == '@' || config.isXmlElementAllowed(name);
+	}
+	
 	// =========================================================================
 	
-	private ScopeType determineElementType(NamedXmlElement n)
+	private ScopeType determineElementType(WtNamedXmlElement n)
 	{
 		String name = n.getName().toLowerCase();
 		if (name.startsWith("@"))
@@ -273,7 +279,7 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	private void openAndCloseScope(ScopeType scopeType, XmlEmptyTag n)
+	private void openAndCloseScope(ScopeType scopeType, WtXmlEmptyTag n)
 	{
 		Scope current = null;
 		if (scopeType.isCloseInline())
@@ -374,13 +380,13 @@ public class ScopedElementBuilder
 			return;
 		}
 		
-		final NamedXmlElement closing = (NamedXmlElement) n;
+		final WtNamedXmlElement closing = (WtNamedXmlElement) n;
 		
 		// It's an XML element and it actually matches!
 		if (current.match(/*scopeType, */closing))
 		{
 			stack.pop();
-			stack.append(close(current, (XmlEndTag) n));
+			stack.append(close(current, (WtXmlEndTag) n));
 			
 			reopenClosedInlineScopes(current.getClosedInline());
 			return;
@@ -391,7 +397,7 @@ public class ScopedElementBuilder
 		Scope s = findMatchingOpeningTag(scopeType, current, closing);
 		if (s == null)
 		{
-			if (!(n instanceof IntermediateEndTag))
+			if (!(n instanceof WtImEndTag))
 				stack.append(n);
 			return;
 		}
@@ -408,7 +414,7 @@ public class ScopedElementBuilder
 			{
 				// This call also reopens closed scopes after the closing tag n
 				Scope toIncl = stack.top();
-				closeScopesBeforeClosingTag(from, toIncl, (XmlEndTag) n);
+				closeScopesBeforeClosingTag(from, toIncl, (WtXmlEndTag) n);
 				break;
 			}
 			else if (s.getType().isWikitextScope())
@@ -447,10 +453,10 @@ public class ScopedElementBuilder
 				continue;
 			}
 			else if (closeSamePrec &&
-					current.getElement() instanceof NamedXmlElement)
+					current.getElement() instanceof WtNamedXmlElement)
 			{
-				final NamedXmlElement e =
-						(NamedXmlElement) current.getElement();
+				final WtNamedXmlElement e =
+						(WtNamedXmlElement) current.getElement();
 				
 				if (s.match(/*current.getType(), */e))
 				{
@@ -498,7 +504,7 @@ public class ScopedElementBuilder
 	private void closeScopesBeforeClosingTag(
 			Scope from,
 			Scope toIncl,
-			XmlEndTag close_)
+			WtXmlEndTag close_)
 	{
 		LinkedList<Scope> reopen = null;
 		
@@ -575,7 +581,7 @@ public class ScopedElementBuilder
 	private Scope findMatchingOpeningTag(
 			ScopeType scopeType,
 			Scope current,
-			final NamedXmlElement closing)
+			final WtNamedXmlElement closing)
 	{
 		if (scopeType.isInlineScope())
 			return findMatchingInlineOpeningTag(scopeType, current, closing);
@@ -592,7 +598,7 @@ public class ScopedElementBuilder
 	private Scope findMatchingInlineOpeningTag(
 			ScopeType scopeType,
 			Scope s,
-			NamedXmlElement closing)
+			WtNamedXmlElement closing)
 	{
 		do
 		{
@@ -609,7 +615,7 @@ public class ScopedElementBuilder
 	private Scope findMatchingTableOpeningTag(
 			ScopeType scopeType,
 			Scope s,
-			NamedXmlElement closing)
+			WtNamedXmlElement closing)
 	{
 		do
 		{
@@ -623,7 +629,7 @@ public class ScopedElementBuilder
 	private Scope findMatchingBlockOpeningTag(
 			ScopeType scopeType,
 			Scope s,
-			NamedXmlElement closing)
+			WtNamedXmlElement closing)
 	{
 		do
 		{
@@ -640,7 +646,7 @@ public class ScopedElementBuilder
 	private Scope findMatchingSpecialOpeningTag(
 			ScopeType scopeType,
 			Scope s,
-			NamedXmlElement closing)
+			WtNamedXmlElement closing)
 	{
 		do
 		{
@@ -675,16 +681,16 @@ public class ScopedElementBuilder
 				return c0;
 		}
 		
-		if (s.getElement() instanceof IntermediateStartTag)
+		if (s.getElement() instanceof WtImStartTag)
 		{
-			final IntermediateStartTag open = (IntermediateStartTag) s.getElement();
-			final IntermediateEndTag close = (IntermediateEndTag) c;
+			final WtImStartTag open = (WtImStartTag) s.getElement();
+			final WtImEndTag close = (WtImEndTag) c;
 			return open.getType().transform(config, open, close, content);
 		}
 		else
 		{
-			final XmlStartTag open = (XmlStartTag) s.getElement();
-			final XmlEndTag close = (XmlEndTag) c;
+			final WtXmlStartTag open = (WtXmlStartTag) s.getElement();
+			final WtXmlEndTag close = (WtXmlEndTag) c;
 			return createElement(
 					open,
 					content,
@@ -695,22 +701,22 @@ public class ScopedElementBuilder
 	
 	// =========================================================================
 	
-	private XmlElement createEmptyElement(XmlEmptyTag empty)
+	private WtXmlElement createEmptyElement(WtXmlEmptyTag empty)
 	{
 		return createEmptyElement(empty, empty.getXmlAttributes(), true);
 	}
 	
-	private XmlElement createEmptyElement(XmlStartTag open)
+	private WtXmlElement createEmptyElement(WtXmlStartTag open)
 	{
 		return createEmptyElement(open, open.getXmlAttributes(), false);
 	}
 	
-	private XmlElement createEmptyElement(
-			NamedXmlElement e,
+	private WtXmlElement createEmptyElement(
+			WtNamedXmlElement e,
 			WtNodeList attrs,
 			boolean wasEmpty)
 	{
-		XmlElement element = new XmlElement(
+		WtXmlElement element = new WtXmlElement(
 				e.getName(),
 				true,
 				attrs,
@@ -736,13 +742,13 @@ public class ScopedElementBuilder
 		return element;
 	}
 	
-	private XmlElement createElement(
-			XmlStartTag open,
+	private WtXmlElement createElement(
+			WtXmlStartTag open,
 			WtNodeList body,
-			XmlEndTag close,
+			WtXmlEndTag close,
 			boolean hasOpen)
 	{
-		XmlElement e = new XmlElement(
+		WtXmlElement e = new WtXmlElement(
 				open.getName(),
 				false,
 				open.getXmlAttributes(),

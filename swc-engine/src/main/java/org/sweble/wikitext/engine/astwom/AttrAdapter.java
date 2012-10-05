@@ -27,7 +27,7 @@ import org.sweble.wikitext.engine.wom.WomAttr;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -47,12 +47,12 @@ public class AttrAdapter
 	
 	public AttrAdapter(String name)
 	{
-		super(new XmlAttribute(name, new WtNodeList(), false));
+		super(new WtXmlAttribute(name, new WtNodeList(), false));
 		setName(name);
 		setAttrValue("");
 	}
 	
-	public AttrAdapter(XmlAttribute attrib)
+	public AttrAdapter(WtXmlAttribute attrib)
 	{
 		super(attrib);
 		setNameUnchecked(attrib.getName());

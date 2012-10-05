@@ -27,7 +27,7 @@ import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.engine.wom.WomText;
 import org.sweble.wikitext.engine.wom.tools.WomPrinter;
 import org.sweble.wikitext.parser.LinkTargetException;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
 
 public class TextAdapterTest
@@ -482,7 +482,7 @@ public class TextAdapterTest
 			WomNode textNode)
 	{
 		WomNode womNode = textNode.getParent();
-		XmlElement ast = (XmlElement) ((BoldAdapter) womNode).getAstNode();
+		WtXmlElement ast = (WtXmlElement) ((BoldAdapter) womNode).getAstNode();
 		String actual = RtWikitextPrinter.print(ast.getBody());
 		Assert.assertEquals(expectedWt, actual);
 	}

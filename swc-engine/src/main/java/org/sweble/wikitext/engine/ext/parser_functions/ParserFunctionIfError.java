@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.SoftErrorNode;
-import org.sweble.wikitext.parser.nodes.Template;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class ParserFunctionIfError
@@ -48,7 +48,7 @@ public class ParserFunctionIfError
 	
 	@Override
 	protected boolean evaluateCondition(
-			Template pfn,
+			WtTemplate pfn,
 			ExpansionFrame frame,
 			List<? extends WtNode> args)
 	{

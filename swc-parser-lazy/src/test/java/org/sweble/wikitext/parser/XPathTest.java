@@ -69,7 +69,7 @@ public class XPathTest
 		
 		doQuery(context, b, "(//WtSection[@level=3])[1]");
 		
-		doQuery(context, b, "//Template[contains(name//WtText[@content],\"Infobox Country\")]//TemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
+		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox Country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
 		String actual = b.toString().replace("\r\n", "\n");
 		
@@ -96,7 +96,7 @@ public class XPathTest
 		
 		StringBuilder b = new StringBuilder();
 		
-		doQuery(context, b, "//Template[contains(name//WtText[@content],\"Infobox country\")]//TemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
+		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
 		String actual = b.toString().replace("\r\n", "\n");
 		

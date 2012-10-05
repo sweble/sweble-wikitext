@@ -1,6 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.encval.IllegalCodePointType;
+import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
@@ -10,7 +11,6 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 public class IllegalCodePoint
 		extends
 			WtLeafNode
-
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -18,16 +18,12 @@ public class IllegalCodePoint
 	
 	public IllegalCodePoint()
 	{
-		super();
-		
 	}
 	
 	public IllegalCodePoint(String codePoint, IllegalCodePointType type)
 	{
-		super();
 		setCodePoint(codePoint);
 		setType(type);
-		
 	}
 	
 	@Override

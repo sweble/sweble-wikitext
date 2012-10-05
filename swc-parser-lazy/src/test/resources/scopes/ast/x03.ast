@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      XmlElement(
+      WtXmlElement(
         Properties:
           {N} empty = false
           {N} name = "i"
@@ -14,7 +14,7 @@ WtParsedWikitextPage(
         [ ]
         [
           WtText(" a ")
-          XmlElement(
+          WtXmlElement(
             Properties:
               {N} empty = false
               {N} name = "b"
@@ -25,7 +25,7 @@ WtParsedWikitextPage(
           )
         ]
       )
-      InternalLink(
+      WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
@@ -37,7 +37,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "i"
@@ -45,7 +45,7 @@ WtParsedWikitextPage(
 
               [ ]
               [
-                XmlElement(
+                WtXmlElement(
                   Properties:
                     {N} empty = false
                     {N} name = "b"
@@ -56,7 +56,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            XmlElement(
+            WtXmlElement(
               Properties:
                 {N} empty = false
                 {N} name = "b"
@@ -68,7 +68,7 @@ WtParsedWikitextPage(
           ]
         )
       )
-      XmlElement(
+      WtXmlElement(
         Properties:
           {N} empty = false
           {N} name = "b"

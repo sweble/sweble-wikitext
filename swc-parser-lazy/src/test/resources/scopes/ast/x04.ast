@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtParagraph([
-      XmlElement(
+      WtXmlElement(
         Properties:
           {N} empty = false
           {N} name = "i"

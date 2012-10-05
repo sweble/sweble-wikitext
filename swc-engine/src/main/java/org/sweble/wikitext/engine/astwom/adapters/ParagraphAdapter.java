@@ -44,7 +44,7 @@ import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.Utils;
@@ -83,7 +83,7 @@ public class ParagraphAdapter
 		gapsFromAst(factory);
 	}
 	
-	public ParagraphAdapter(AstToWomNodeFactory factory, XmlElement astNode)
+	public ParagraphAdapter(AstToWomNodeFactory factory, WtXmlElement astNode)
 	{
 		super("p", astNode);
 		addContent(MIXED_INLINE, factory, astNode.getBody());
@@ -138,9 +138,9 @@ public class ParagraphAdapter
 	
 	// =========================================================================
 	
-	protected XmlElement convertToXmlElement()
+	protected WtXmlElement convertToXmlElement()
 	{
-		return Toolbox.addRtData(new XmlElement(
+		return Toolbox.addRtData(new WtXmlElement(
 				"p",
 				false,
 				new WtNodeList(),

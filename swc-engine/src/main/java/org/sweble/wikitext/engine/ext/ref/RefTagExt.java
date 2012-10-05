@@ -22,7 +22,7 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.nodes.TagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
@@ -65,7 +65,7 @@ public class RefTagExt
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
-				TagExtension tagExt,
+				WtTagExtension tagExt,
 				Map<String, WtNodeList> attrs,
 				String body)
 		{

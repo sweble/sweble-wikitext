@@ -40,17 +40,17 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * <li>
  * <p>
- * Signature
+ * WtSignature
  * </p>
  * </li>
  * <li>
  * <p>
- * InternalLink
+ * WtInternalLink
  * </p>
  * </li>
  * <li>
  * <p>
- * ExternalLink
+ * WtExternalLink
  * </p>
  * </li>
  * <li>
@@ -60,7 +60,7 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * <li>
  * <p>
- * Ticks
+ * WtTicks
  * </p>
  * </li>
  * <li>
@@ -70,7 +70,7 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * <li>
  * <p>
- * XmlElement
+ * WtXmlElement
  * </p>
  * </li>
  * <li>
@@ -83,7 +83,7 @@ package org.sweble.wikitext.parser.nodes;
  * <ul>
  * <li>
  * <p>
- * PageSwitch
+ * WtPageSwitch
  * </p>
  * </li>
  * </ul>

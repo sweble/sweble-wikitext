@@ -31,7 +31,7 @@ import org.sweble.wikitext.engine.astwom.UniversalAttributes;
 import org.sweble.wikitext.engine.wom.WomBlockquote;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomUniversalAttributes;
-import org.sweble.wikitext.parser.nodes.XmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.utils.Utils;
 
@@ -59,7 +59,7 @@ public class BlockquoteAdapter
 	
 	public BlockquoteAdapter(
 			AstToWomNodeFactory womNodeFactory,
-			XmlElement astNode)
+			WtXmlElement astNode)
 	{
 		super(BLOCK_ELEMENTS, TAG_AND_NODE_NAME, womNodeFactory, astNode);
 	}

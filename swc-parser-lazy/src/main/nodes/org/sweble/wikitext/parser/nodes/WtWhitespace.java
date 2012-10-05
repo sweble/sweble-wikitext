@@ -1,5 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
@@ -8,6 +10,8 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 public class WtWhitespace
 		extends
 			WtContentNodeMarkTwo
+		implements
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -23,6 +27,14 @@ public class WtWhitespace
 	public int getNodeType()
 	{
 		return org.sweble.wikitext.parser.AstNodeTypes.NT_WHITESPACE;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
+	{
+		return false;
 	}
 	
 	// =========================================================================

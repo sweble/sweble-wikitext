@@ -6,7 +6,7 @@ WtParsedWikitextPage(
   [
     WtParagraph([
       WtText("t")
-      Ticks(
+      WtTicks(
         Properties:
           RTD = RtData: [0] = "''"
           {N} tickCount = 2

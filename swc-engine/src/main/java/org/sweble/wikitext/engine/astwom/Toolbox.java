@@ -24,20 +24,20 @@ import lombok.Getter;
 
 import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtBold;
-import org.sweble.wikitext.parser.nodes.HorizontalRule;
-import org.sweble.wikitext.parser.nodes.InternalLink;
+import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtNewline;
-import org.sweble.wikitext.parser.nodes.Redirect;
-import org.sweble.wikitext.parser.nodes.TagExtension;
+import org.sweble.wikitext.parser.nodes.WtRedirect;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.XmlAttribute;
-import org.sweble.wikitext.parser.nodes.XmlCharRef;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.nodes.XmlElement;
-import org.sweble.wikitext.parser.nodes.XmlEntityRef;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
 import de.fau.cs.osr.utils.XmlGrammar;
@@ -201,7 +201,7 @@ public class Toolbox
 	
 	// =========================================================================
 	
-	public static XmlElement addRtData(XmlElement n)
+	public static WtXmlElement addRtData(WtXmlElement n)
 	{
 		if (n.getEmpty())
 		{
@@ -213,12 +213,12 @@ public class Toolbox
 		}
 		
 		for (WtNode attr : n.getXmlAttributes())
-			addRtData((XmlAttribute) attr);
+			addRtData((WtXmlAttribute) attr);
 		
 		return n;
 	}
 	
-	public static XmlAttribute addRtData(XmlAttribute n)
+	public static WtXmlAttribute addRtData(WtXmlAttribute n)
 	{
 		if (n.getHasValue())
 		{
@@ -244,7 +244,7 @@ public class Toolbox
 		return n;
 	}
 	
-	public static InternalLink addRtData(InternalLink n)
+	public static WtInternalLink addRtData(WtInternalLink n)
 	{
 		n.setRtd("[[", n.getTarget(), RtData.SEP, "]]");
 		return n;
@@ -256,25 +256,25 @@ public class Toolbox
 		return n;
 	}
 	
-	public static HorizontalRule addRtData(HorizontalRule n)
+	public static WtHorizontalRule addRtData(WtHorizontalRule n)
 	{
 		n.setRtd("----");
 		return n;
 	}
 	
-	public static Redirect addRtData(Redirect n)
+	public static WtRedirect addRtData(WtRedirect n)
 	{
 		n.setRtd("#REDIRECT[[", n.getTarget(), "]]");
 		return n;
 	}
 	
-	public static TagExtension addRtData(TagExtension n)
+	public static WtTagExtension addRtData(WtTagExtension n)
 	{
 		for (WtNode attr : n.getXmlAttributes())
 		{
 			if (attr.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
 				continue;
-			addRtData((XmlAttribute) attr);
+			addRtData((WtXmlAttribute) attr);
 		}
 		
 		n.setRtd("<", n.getName(), RtData.SEP, ">", n.getBody(), "</", n.getName(), ">");
@@ -403,10 +403,10 @@ public class Toolbox
 				return "";
 				
 			case AstNodeTypes.NT_XML_CHAR_REF:
-				return new String(Character.toChars(((XmlCharRef) n).getCodePoint()));
+				return new String(Character.toChars(((WtXmlCharRef) n).getCodePoint()));
 				
 			case AstNodeTypes.NT_XML_ENTITY_REF:
-				return ((XmlEntityRef) n).getResolved();
+				return ((WtXmlEntityRef) n).getResolved();
 				
 			default:
 				throw new IllegalArgumentException();

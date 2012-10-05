@@ -68,13 +68,13 @@ import de.fau.cs.osr.utils.StringUtils;
  * note "Comment, \n<i>EmptyTitle</i>, \n<b>NativeOrXmlAttribute</b>, \n<b>WtText</b>" as InheritFromWomBackbone
  * WomBackbone .. InheritFromWomBackbone
  * 
- * note "Category, Redirect" as InheritFromAttributeSupportingElement
+ * note "Category, WtRedirect" as InheritFromAttributeSupportingElement
  * AttributeSupportingElement .. InheritFromAttributeSupportingElement
  * 
  * note "Body, Default, \nElement, \nImageCaption, \nName, Title, \nValue" as InheritFromContainerElement
  * ContainerElement .. InheritFromContainerElement
  * 
- * note "HorizontalRule, \nParagraph" as InheritFromNativeOrXmlElement
+ * note "WtHorizontalRule, \nParagraph" as InheritFromNativeOrXmlElement
  * NativeOrXmlElement .. InheritFromNativeOrXmlElement
  * 
  * note "WtBold, WtItalics" as InheritFromNativeOrXmlElementWithUniversalAttributes

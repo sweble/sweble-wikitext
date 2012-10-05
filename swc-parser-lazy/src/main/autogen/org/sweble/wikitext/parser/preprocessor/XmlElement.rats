@@ -226,7 +226,7 @@ private inline String IgnoredElementName =
 
 // -- Tag extensions -----------------------------------------------------------
 
-private transient TagExtension TagExtension =
+private transient WtTagExtension TagExtension =
     header:TagHeader '>'
     {
       getState().setTagExtensionName(header.getForeign(0, String.class));
@@ -234,7 +234,7 @@ private transient TagExtension TagExtension =
     body:TagBody
     {
       yyValue = setRtd(
-        new TagExtension(
+        new WtTagExtension(
           header.getForeign(0, String.class),
           header.getForeign(1, WtNodeList.class),
           body.getForeign(0, String.class)),
@@ -244,7 +244,7 @@ private transient TagExtension TagExtension =
   / header:TagHeader "/>"
     {
       yyValue = setRtd(
-        new TagExtension(header.getForeign(0, String.class), header.getForeign(1, WtNodeList.class), null),
+        new WtTagExtension(header.getForeign(0, String.class), header.getForeign(1, WtNodeList.class), null),
         '<', header.getForeign(0, String.class), SEP,
         header.getForeign(2, WtNodeList.class), "/>");
     }

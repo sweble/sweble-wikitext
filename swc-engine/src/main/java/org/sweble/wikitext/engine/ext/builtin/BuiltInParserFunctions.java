@@ -23,8 +23,8 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.Template;
-import org.sweble.wikitext.parser.nodes.TemplateArgument;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.AstBuilder;
 
@@ -75,12 +75,12 @@ public class BuiltInParserFunctions
 			
 			// Assuming we are  NOT doing a pre save transformation
 			
-			WtNode name = ((TemplateArgument) args.get(0)).getValue();
+			WtNode name = ((WtTemplateArgument) args.get(0)).getValue();
 			
 			@SuppressWarnings({ "unchecked", "rawtypes" })
-			List<TemplateArgument> tmplArgs = (List) args.subList(1, args.size());
+			List<WtTemplateArgument> tmplArgs = (List) args.subList(1, args.size());
 			
-			Template tmpl = AstBuilder.astTemplate()
+			WtTemplate tmpl = AstBuilder.astTemplate()
 					.withName(name)
 					.withArguments(tmplArgs)
 					.build();
