@@ -4,6 +4,19 @@ import org.sweble.wikitext.parser.WtRtData;
 
 import de.fau.cs.osr.ptk.common.ast.GenericText;
 
+/* 
+ * @startuml img/WtNode.png
+ * 
+ * WtNode <|-- WtText 
+ * GenericText <|-- WtText : GenericText<WtNode>
+ *  
+ * class WtText {
+ * 	+ WtText()
+ * 	+ WtText(String content)
+ * }
+ * 
+ * @enduml
+ */
 public class WtText
 		extends
 			GenericText<WtNode>
