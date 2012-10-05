@@ -8,7 +8,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  */
 public class WtXmlComment
 		extends
-			WtStringContentNode
+			WtStringNodeImpl
 		implements
 			WtPreproNode
 {

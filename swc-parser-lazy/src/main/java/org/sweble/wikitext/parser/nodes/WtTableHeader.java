@@ -13,7 +13,7 @@ public class WtTableHeader
 	
 	public WtTableHeader()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtTableHeader(WtNodeList xmlAttributes, WtNodeList body)

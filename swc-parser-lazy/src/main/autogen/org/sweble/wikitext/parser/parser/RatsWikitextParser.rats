@@ -58,7 +58,7 @@ body
 {
   private WtNodeList fixNewlinesAtBoa(WtNodeList content)
   {
-    WtNodeList result = new WtNodeList();
+    WtNodeList result = new WtNodeListImpl();
 
     ArrayList<WtNode> tmp = new ArrayList<WtNode>();
 

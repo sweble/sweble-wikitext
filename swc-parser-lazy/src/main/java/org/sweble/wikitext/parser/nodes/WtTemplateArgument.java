@@ -18,12 +18,12 @@ public class WtTemplateArgument
 	
 	public WtTemplateArgument()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtTemplateArgument(WtNodeList value, boolean hasName)
 	{
-		super(new WtNodeList(), value);
+		super(new WtNodeListImpl(), value);
 		setHasName(hasName);
 	}
 	

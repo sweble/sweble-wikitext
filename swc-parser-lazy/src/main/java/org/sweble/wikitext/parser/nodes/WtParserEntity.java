@@ -2,11 +2,11 @@ package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.WtRtData;
 
-import de.fau.cs.osr.ptk.common.ast.GenericParserEntity;
+import de.fau.cs.osr.ptk.common.ast.AstParserEntity;
 
 public class WtParserEntity
 		extends
-			GenericParserEntity<WtNode>
+			AstParserEntity<WtNode>
 		implements
 			WtIntermediate
 {

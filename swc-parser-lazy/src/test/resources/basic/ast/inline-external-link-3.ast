@@ -15,7 +15,7 @@ WtParsedWikitextPage(
             {N} protocol = "http"
             {N} rtd = RTD[ "http://example.com" ]
         )
-        [ ]
+        -
       )
     ])
   ]

@@ -12,7 +12,7 @@ package org.sweble.wikitext.parser.nodes;
  */
 public class WtLinkTarget
 		extends
-			WtStringContentNode
+			WtStringNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	

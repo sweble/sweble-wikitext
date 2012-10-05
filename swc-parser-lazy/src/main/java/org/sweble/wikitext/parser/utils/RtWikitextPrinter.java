@@ -22,9 +22,9 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.WtContentNodeMarkTwo;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtStringContentNode;
+import org.sweble.wikitext.parser.nodes.WtStringNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 public class RtWikitextPrinter
@@ -74,13 +74,13 @@ public class RtWikitextPrinter
 			
 			default:
 				WtRtData rtd = node.getRtd();
-				if (node instanceof WtStringContentNode)
+				if (node instanceof WtStringNode)
 				{
-					printStringContentNode(rtd, (WtStringContentNode) node);
+					printStringContentNode(rtd, (WtStringNode) node);
 				}
-				else if (node instanceof WtContentNodeMarkTwo)
+				else if (node instanceof WtContentNode)
 				{
-					printContentNode(rtd, (WtContentNodeMarkTwo) node);
+					printContentNode(rtd, (WtContentNode) node);
 				}
 				else
 				{
@@ -104,7 +104,7 @@ public class RtWikitextPrinter
 	
 	protected void printContentNode(
 			WtRtData rtd,
-			WtContentNodeMarkTwo contentNode)
+			WtContentNode contentNode)
 	{
 		if (rtd != null)
 		{
@@ -120,7 +120,7 @@ public class RtWikitextPrinter
 	
 	protected void printStringContentNode(
 			WtRtData rtd,
-			WtStringContentNode contentNode)
+			WtStringNode contentNode)
 	{
 		if (rtd != null)
 		{

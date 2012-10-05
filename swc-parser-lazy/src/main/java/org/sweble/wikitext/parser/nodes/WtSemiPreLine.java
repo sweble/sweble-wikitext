@@ -13,7 +13,7 @@ package org.sweble.wikitext.parser.nodes;
  */
 public class WtSemiPreLine
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 		implements
 			WtIntermediate
 {

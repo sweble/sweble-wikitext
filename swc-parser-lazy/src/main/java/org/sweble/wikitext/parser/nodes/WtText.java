@@ -2,7 +2,7 @@ package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.WtRtData;
 
-import de.fau.cs.osr.ptk.common.ast.GenericText;
+import de.fau.cs.osr.ptk.common.ast.AstText;
 
 /* 
  * @startuml img/WtNode.png
@@ -19,7 +19,7 @@ import de.fau.cs.osr.ptk.common.ast.GenericText;
  */
 public class WtText
 		extends
-			GenericText<WtNode>
+			AstText<WtNode>
 		implements
 			WtNode
 {

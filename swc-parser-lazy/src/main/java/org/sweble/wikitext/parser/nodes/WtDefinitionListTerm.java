@@ -5,7 +5,7 @@ package org.sweble.wikitext.parser.nodes;
  */
 public class WtDefinitionListTerm
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -13,7 +13,6 @@ public class WtDefinitionListTerm
 	
 	public WtDefinitionListTerm()
 	{
-		super();
 	}
 	
 	public WtDefinitionListTerm(WtNodeList content)

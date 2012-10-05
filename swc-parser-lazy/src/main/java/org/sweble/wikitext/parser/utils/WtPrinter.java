@@ -20,7 +20,8 @@ package org.sweble.wikitext.parser.utils;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.nodes.WtContentNodeMarkTwo;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtNullNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
@@ -31,7 +32,12 @@ public class WtPrinter
 		extends
 			AstPrinter<WtNode>
 {
-	public void visit(WtContentNodeMarkTwo n)
+	public void visit(WtNullNode n)
+	{
+		p.indentln('-');
+	}
+	
+	public void visit(WtContentNode n)
 	{
 		Memoize m = p.memoizeStart(n);
 		if (m != null)

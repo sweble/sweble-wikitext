@@ -18,7 +18,7 @@ public class WtTemplate
 	
 	public WtTemplate()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtTemplate(WtNodeList name, WtNodeList args)

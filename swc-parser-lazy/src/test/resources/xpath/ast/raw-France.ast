@@ -10,7 +10,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[unitary state" <o> "]]" ]
       {N} target = "unitary state"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -25,7 +25,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[semi-presidential system" <o> "]]" ]
       {N} target = "semi-presidential system"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -40,7 +40,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[republic" <o> "]]" ]
       {N} target = "republic"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(" with its main ideals expressed in the ")
   WtInternalLink(
@@ -50,7 +50,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[Declaration of the Rights of Man and of the Citizen" <o> "]]" ]
       {N} target = "Declaration of the Rights of Man and of the Citizen"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(". France is one of the most ")
   WtInternalLink(
@@ -60,7 +60,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[developed country" <o> "]]" ]
       {N} target = "developed country"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -83,7 +83,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[List of countries by GDP (nominal)" <o> "]]" ]
       {N} target = "List of countries by GDP (nominal)"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -106,7 +106,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[List of countries by GDP (PPP)" <o> "]]" ]
       {N} target = "List of countries by GDP (PPP)"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -130,7 +130,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[standard of living" <o> "]]" ]
       {N} target = "standard of living"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -145,7 +145,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[Education Index" <o> "]]" ]
       {N} target = "Education Index"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -160,7 +160,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[List of countries by life expectancy" <o> "]]" ]
       {N} target = "List of countries by life expectancy"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -202,7 +202,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[United Nations" <o> "]]" ]
       {N} target = "United Nations"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(", and a member of the ")
   WtInternalLink(
@@ -212,7 +212,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[Francophonie" <o> "]]" ]
       {N} target = "Francophonie"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(", the ")
   WtInternalLink(
@@ -222,7 +222,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[G8" <o> "]]" ]
       {N} target = "G8"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(", ")
   WtInternalLink(
@@ -232,7 +232,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[G-20 major economies" <o> "]]" ]
       {N} target = "G-20 major economies"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -247,7 +247,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[NATO" <o> "]]" ]
       {N} target = "NATO"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(", ")
   WtInternalLink(
@@ -257,7 +257,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[OECD" <o> "]]" ]
       {N} target = "OECD"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(", ")
   WtInternalLink(
@@ -267,7 +267,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[World Trade Organisation" <o> "]]" ]
       {N} target = "World Trade Organisation"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -282,7 +282,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[Latin Union" <o> "]]" ]
       {N} target = "Latin Union"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(". It is one of the five ")
   WtInternalLink(
@@ -292,7 +292,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[United Nations Security Council#Permanent members" <o> "]]" ]
       {N} target = "United Nations Security Council#Permanent members"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -307,7 +307,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[List of countries with nuclear weapons" <o> "]]" ]
       {N} target = "List of countries with nuclear weapons"
 
-    WtLinkTitle(
+    WtLinkTitleImpl(
       Properties:
         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -331,7 +331,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[Human Development Index" <o> "]]" ]
       {N} target = "Human Development Index"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(" and 24th on the ")
   WtInternalLink(
@@ -341,7 +341,7 @@ WtParagraph([
       {N} rtd = RTD[ "[[Corruption Perception Index" <o> "]]" ]
       {N} target = "Corruption Perception Index"
 
-    WtLinkTitle([ ])
+    WtLinkTitleImpl([ ])
   )
   WtText(".")
 ])
@@ -371,7 +371,7 @@ WtSection(
           {N} rtd = RTD[ "[[Gaul" <o> "]]" ]
           {N} target = "Gaul"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(", which was inhabited by ")
       WtInternalLink(
@@ -381,7 +381,7 @@ WtSection(
           {N} rtd = RTD[ "[[Celt" <o> "]]ic" ]
           {N} target = "Celt"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" ")
       WtItalics(
@@ -398,7 +398,7 @@ WtSection(
           {N} rtd = RTD[ "[[Roman Empire" <o> "]]" ]
           {N} target = "Roman Empire"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -413,7 +413,7 @@ WtSection(
           {N} rtd = RTD[ "[[Julius Caesar" <o> "]]" ]
           {N} target = "Julius Caesar"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" in the 1st century BC,")
       WtTagExtension(
@@ -432,7 +432,7 @@ WtSection(
           {N} rtd = RTD[ "[[Romance languages" <o> "]]" ]
           {N} target = "Romance languages"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -447,7 +447,7 @@ WtSection(
           {N} rtd = RTD[ "[[Latin" <o> "]]" ]
           {N} target = "Latin"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(", from which the ")
       WtInternalLink(
@@ -457,7 +457,7 @@ WtSection(
           {N} rtd = RTD[ "[[French language" <o> "]]" ]
           {N} target = "French language"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" evolved) and Roman culture. ")
       WtInternalLink(
@@ -467,7 +467,7 @@ WtSection(
           {N} rtd = RTD[ "[[History of Christianity" <o> "]]" ]
           {N} target = "History of Christianity"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -482,7 +482,7 @@ WtSection(
           {N} rtd = RTD[ "[[St. Jerome" <o> "]]" ]
           {N} target = "St. Jerome"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
     ])
@@ -517,7 +517,7 @@ WtSection(
               {N} rtd = RTD[ "|left" ]
           )
         ]
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -530,7 +530,7 @@ WtSection(
                 {N} rtd = RTD[ "[[Hundred Years War" <o> "]]" ]
                 {N} target = "Hundred Years War"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
             WtText(". Red line")
             WtText(":")
@@ -542,7 +542,7 @@ WtSection(
                 {N} rtd = RTD[ "[[Kingdom of France" <o> "]]" ]
                 {N} target = "Kingdom of France"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
             WtText("; Light blue")
             WtText(":")
@@ -559,7 +559,7 @@ WtSection(
           {N} rtd = RTD[ "[[Rhine" <o> "]]" ]
           {N} target = "Rhine"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" was overrun by ")
       WtInternalLink(
@@ -569,7 +569,7 @@ WtSection(
           {N} rtd = RTD[ "[[Germanic peoples" <o> "]]" ]
           {N} target = "Germanic peoples"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -584,7 +584,7 @@ WtSection(
           {N} rtd = RTD[ "[[Franks" <o> "]]" ]
           {N} target = "Franks"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
       WtInternalLink(
@@ -594,7 +594,7 @@ WtSection(
           {N} rtd = RTD[ "[[House of Capet" <o> "]]" ]
           {N} target = "House of Capet"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -609,7 +609,7 @@ WtSection(
           {N} rtd = RTD[ "[[Catholic Church" <o> "]]" ]
           {N} target = "Catholic Church"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -624,7 +624,7 @@ WtSection(
           {N} rtd = RTD[ "[[Arianism" <o> "]]" ]
           {N} target = "Arianism"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" (their King ")
       WtInternalLink(
@@ -634,7 +634,7 @@ WtSection(
           {N} rtd = RTD[ "[[Clovis I" <o> "]]" ]
           {N} target = "Clovis I"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -690,7 +690,7 @@ WtSection(
               {N} rtd = RTD[ "|thumb" ]
           )
         ]
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -703,7 +703,7 @@ WtSection(
                 {N} rtd = RTD[ "[[St. Bartholomew's Day massacre" <o> "]]" ]
                 {N} target = "St. Bartholomew's Day massacre"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
             WtText(" (1572) during the ")
             WtInternalLink(
@@ -713,7 +713,7 @@ WtSection(
                 {N} rtd = RTD[ "[[French Wars of Religion" <o> "]]" ]
                 {N} target = "French Wars of Religion"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
             WtText(".")
           ]
@@ -748,7 +748,7 @@ WtSection(
               {N} rtd = RTD[ "|upright" ]
           )
         ]
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -760,7 +760,7 @@ WtSection(
                 {N} rtd = RTD[ "[[Napoleon I" <o> "]]" ]
                 {N} target = "Napoleon I"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
             WtText(", ")
             WtItalics(
@@ -777,7 +777,7 @@ WtSection(
                 {N} rtd = RTD[ "[[First French Empire" <o> "]]" ]
                 {N} target = "First French Empire"
 
-              WtLinkTitle(
+              WtLinkTitleImpl(
                 Properties:
                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -822,7 +822,7 @@ WtSection(
               {N} rtd = RTD[ "|upright" ]
           )
         ]
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -834,7 +834,7 @@ WtSection(
                 {N} rtd = RTD[ "[[Jeanne d'Arc" <o> "]]" ]
                 {N} target = "Jeanne d'Arc"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
             WtText(" by ")
             WtInternalLink(
@@ -844,7 +844,7 @@ WtSection(
                 {N} rtd = RTD[ "[[Philippe-Alexandre Le Brun de Charmettes" <o> "]]" ]
                 {N} target = "Philippe-Alexandre Le Brun de Charmettes"
 
-              WtLinkTitle(
+              WtLinkTitleImpl(
                 Properties:
                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -864,7 +864,7 @@ WtSection(
           {N} rtd = RTD[ "[[Treaty of Verdun" <o> "]]" ]
           {N} target = "Treaty of Verdun"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" (843), with the division of ")
       WtInternalLink(
@@ -874,7 +874,7 @@ WtSection(
           {N} rtd = RTD[ "[[Charlemagne" <o> "]]" ]
           {N} target = "Charlemagne"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText("'s ")
       WtInternalLink(
@@ -884,7 +884,7 @@ WtSection(
           {N} rtd = RTD[ "[[Carolingian Empire" <o> "]]" ]
           {N} target = "Carolingian Empire"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" into ")
       WtInternalLink(
@@ -894,7 +894,7 @@ WtSection(
           {N} rtd = RTD[ "[[East Francia" <o> "]]" ]
           {N} target = "East Francia"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(", ")
       WtInternalLink(
@@ -904,7 +904,7 @@ WtSection(
           {N} rtd = RTD[ "[[Middle Francia" <o> "]]" ]
           {N} target = "Middle Francia"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" and ")
       WtInternalLink(
@@ -914,7 +914,7 @@ WtSection(
           {N} rtd = RTD[ "[[West Francia" <o> "]]" ]
           {N} target = "West Francia"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
       WtTagExtension(
@@ -934,7 +934,7 @@ WtSection(
           {N} rtd = RTD[ "[[Carolingian dynasty" <o> "]]" ]
           {N} target = "Carolingian dynasty"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" ruled France until 987, when ")
       WtInternalLink(
@@ -944,7 +944,7 @@ WtSection(
           {N} rtd = RTD[ "[[Hugh Capet of France" <o> "]]" ]
           {N} target = "Hugh Capet of France"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -959,7 +959,7 @@ WtSection(
           {N} rtd = RTD[ "[[King of France" <o> "]]" ]
           {N} target = "King of France"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(".")
       WtTagExtension(
@@ -983,7 +983,7 @@ WtSection(
           {N} rtd = RTD[ "[[House of Capet" <o> "]]" ]
           {N} target = "House of Capet"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -998,7 +998,7 @@ WtSection(
           {N} rtd = RTD[ "[[House of Valois" <o> "]]" ]
           {N} target = "House of Valois"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" and the ")
       WtInternalLink(
@@ -1008,7 +1008,7 @@ WtSection(
           {N} rtd = RTD[ "[[House of Bourbon" <o> "]]" ]
           {N} target = "House of Bourbon"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(", progressively unified the country through a series of wars and dynastic inheritance into a ")
       WtInternalLink(
@@ -1018,7 +1018,7 @@ WtSection(
           {N} rtd = RTD[ "[[centralised kingdom" <o> "]]" ]
           {N} target = "centralised kingdom"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1035,7 +1035,7 @@ WtSection(
           {N} rtd = RTD[ "[[Albigensian Crusade" <o> "]]" ]
           {N} target = "Albigensian Crusade"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" was launched in 1209 to eliminate the heretical ")
       WtInternalLink(
@@ -1045,7 +1045,7 @@ WtSection(
           {N} rtd = RTD[ "[[Cathars" <o> "]]" ]
           {N} target = "Cathars"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" of ")
       WtInternalLink(
@@ -1055,7 +1055,7 @@ WtSection(
           {N} rtd = RTD[ "[[Occitania" <o> "]]" ]
           {N} target = "Occitania"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
       WtTagExtension(
@@ -1075,7 +1075,7 @@ WtSection(
           {N} rtd = RTD[ "[[William the Conqueror" <o> "]]" ]
           {N} target = "William the Conqueror"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1095,7 +1095,7 @@ WtSection(
           {N} rtd = RTD[ "[[List of English monarchs" <o> "]]" ]
           {N} target = "List of English monarchs"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1110,7 +1110,7 @@ WtSection(
           {N} rtd = RTD[ "[[Wars of the Roses" <o> "]]" ]
           {N} target = "Wars of the Roses"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(", won back mainland territory until only ")
       WtInternalLink(
@@ -1120,7 +1120,7 @@ WtSection(
           {N} rtd = RTD[ "[[Calais" <o> "]]" ]
           {N} target = "Calais"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" remained. Under ")
       WtInternalLink(
@@ -1130,7 +1130,7 @@ WtSection(
           {N} rtd = RTD[ "[[Mary I of England" <o> "]]" ]
           {N} target = "Mary I of England"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" this was lost to the ")
       WtInternalLink(
@@ -1140,7 +1140,7 @@ WtSection(
           {N} rtd = RTD[ "[[Spanish Netherlands" <o> "]]" ]
           {N} target = "Spanish Netherlands"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(".")
     ])
@@ -1173,7 +1173,7 @@ WtSection(
           {N} rtd = RTD[ "[[Salic Law" <o> "]]" ]
           {N} target = "Salic Law"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
       WtTagExtension(
@@ -1201,7 +1201,7 @@ WtSection(
           {N} rtd = RTD[ "[[Philip IV of France" <o> "]]" ]
           {N} target = "Philip IV of France"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1234,7 +1234,7 @@ WtSection(
           {N} rtd = RTD[ "[[Black Death" <o> "]]" ]
           {N} target = "Black Death"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(",")
       WtTagExtension(
@@ -1270,7 +1270,7 @@ WtSection(
           {N} rtd = RTD[ "[[Hundred Years' War" <o> "]]" ]
           {N} target = "Hundred Years' War"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(".")
       WtTagExtension(
@@ -1293,7 +1293,7 @@ WtSection(
           {N} rtd = RTD[ "[[French Wars of Religion" <o> "]]" ]
           {N} target = "French Wars of Religion"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" (1562\u201398), thousands of ")
       WtInternalLink(
@@ -1303,7 +1303,7 @@ WtSection(
           {N} rtd = RTD[ "[[Huguenots" <o> "]]" ]
           {N} target = "Huguenots"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" were murdered in the ")
       WtInternalLink(
@@ -1313,7 +1313,7 @@ WtSection(
           {N} rtd = RTD[ "[[St. Bartholomew's Day massacre" <o> "]]" ]
           {N} target = "St. Bartholomew's Day massacre"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(" of 1572.")
       WtTagExtension(
@@ -1336,7 +1336,7 @@ WtSection(
           {N} rtd = RTD[ "[[Louis XIV of France" <o> "]]" ]
           {N} target = "Louis XIV of France"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1351,7 +1351,7 @@ WtSection(
           {N} rtd = RTD[ "[[Demographics of France" <o> "]]" ]
           {N} target = "Demographics of France"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtText(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
       WtInternalLink(
@@ -1361,7 +1361,7 @@ WtSection(
           {N} rtd = RTD[ "[[French language" <o> "]]" ]
           {N} target = "French language"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1385,7 +1385,7 @@ WtSection(
           {N} rtd = RTD[ "[[Age of Enlightenment" <o> "]]" ]
           {N} target = "Age of Enlightenment"
 
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 

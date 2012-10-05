@@ -33,7 +33,7 @@ public class WtImStartTag
 	
 	public WtImStartTag(IntermediateTags type)
 	{
-		super(type.getElementName(), new WtNodeList());
+		super(type.getElementName(), new WtNodeListImpl());
 		
 		this.type = type;
 		this.synthetic = false;
@@ -41,7 +41,7 @@ public class WtImStartTag
 	
 	public WtImStartTag(IntermediateTags type, boolean synthetic)
 	{
-		super(type.getElementName(), new WtNodeList());
+		super(type.getElementName(), new WtNodeListImpl());
 		
 		this.type = type;
 		this.synthetic = synthetic;

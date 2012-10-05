@@ -37,12 +37,12 @@ public class WtXmlAttribute
 	
 	public WtXmlAttribute()
 	{
-		super(new WtNodeList());
+		super(new WtNodeListImpl());
 	}
 	
 	public WtXmlAttribute(String name, boolean hasValue)
 	{
-		super(new WtNodeList());
+		super(new WtNodeListImpl());
 		setName(name);
 		setHasValue(hasValue);
 	}

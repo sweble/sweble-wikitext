@@ -43,7 +43,7 @@ WtNodeList XmlAttributeStar =
   yyValue:tXmlAttributePlus?
   {
     if (yyValue == null)
-      yyValue = new WtNodeList();
+      yyValue = new WtNodeListImpl();
   }
 ;
 
@@ -73,7 +73,7 @@ inline String XmlAttrWs =
 private transient WtNodeList tXmlAttributePlus =
   head:XmlHeadAttributeChoice tail:XmlTailAttributeChoice*
   {
-    yyValue = new WtNodeList(head, tail);
+    yyValue = new WtNodeListImpl(head, tail);
   }
 ;
 
@@ -136,7 +136,7 @@ private inline void AttrEnd =
 private transient WtNodeList ValueSqStar =
   value:ValueSqChoice*
   {
-    yyValue = new WtNodeList(value);
+    yyValue = new WtNodeListImpl(value);
   }
 ;
 
@@ -160,7 +160,7 @@ private transient String ValueSqString =
 private transient WtNodeList ValueDqStar =
   value:ValueDqChoice*
   {
-    yyValue = new WtNodeList(value);
+    yyValue = new WtNodeListImpl(value);
   }
 ;
 
@@ -184,7 +184,7 @@ private transient String ValueDqString =
 private transient WtNodeList ValueNqStar =
   value:ValueNqChoice*
   {
-    yyValue = new WtNodeList(value);
+    yyValue = new WtNodeListImpl(value);
   }
 ;
 

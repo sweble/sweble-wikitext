@@ -18,7 +18,7 @@ public class WtTagExtension
 	
 	public WtTagExtension()
 	{
-		super(new WtNodeList());
+		super(new WtNodeListImpl());
 	}
 	
 	public WtTagExtension(String name, WtNodeList xmlAttributes, String body)

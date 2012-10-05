@@ -18,7 +18,7 @@ public class WtTemplateParameter
 	
 	public WtTemplateParameter()
 	{
-		super(new WtNodeList(), new WtTemplateArgument(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtTemplateArgument(), new WtNodeListImpl());
 	}
 	
 	public WtTemplateParameter(

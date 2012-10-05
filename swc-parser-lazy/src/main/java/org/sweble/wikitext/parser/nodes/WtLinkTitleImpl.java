@@ -1,63 +1,15 @@
 package org.sweble.wikitext.parser.nodes;
 
 /**
- * <h1>WtSection WtSectionHeading</h1> <h2>Grammar</h2>
+ * <h1>Link Title</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
- * '='+ Title '='+ Space* EolOrEof
+ * WtLinkTitle ::= LinkTitleContent{TITLE}*
  * </p>
  * </li>
  * </ul>
- * <h2>The title can contain</h2>
- * <ul>
- * <li>
- * <p>
- * WtExternalLink
- * </p>
- * </li>
- * <li>
- * <p>
- * WtInternalLink
- * </p>
- * </li>
- * <li>
- * <p>
- * WtPageSwitch
- * </p>
- * </li>
- * <li>
- * <p>
- * WtParserEntity
- * </p>
- * </li>
- * <li>
- * <p>
- * PlainExternalLink
- * </p>
- * </li>
- * <li>
- * <p>
- * WtSignature
- * </p>
- * </li>
- * <li>
- * <p>
- * WtTicks
- * </p>
- * </li>
- * <li>
- * <p>
- * WtXmlElement
- * </p>
- * </li>
- * <li>
- * <p>
- * XmlReference
- * </p>
- * </li>
- * </ul>
- * <h2>The title cannot contain</h2>
+ * <h2>LinkTitleContent can contain</h2>
  * <ul>
  * <li>
  * <p>
@@ -76,7 +28,7 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * <li>
  * <p>
- * Horizontal lines
+ * Horizontal rules
  * </p>
  * </li>
  * <li>
@@ -86,30 +38,71 @@ package org.sweble.wikitext.parser.nodes;
  * </li>
  * </ul>
  * </li>
+ * <li>
+ * <p>
+ * WtSignature
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * WtInternalLink
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * WtExternalLink
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * PlainExternalLink
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * WtTicks
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * XmlReference
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * WtXmlElement
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * WtParserEntity
+ * </p>
+ * </li>
  * </ul>
- * <h2>The title can not contain (syntactically)</h2>
+ * <h2>The LinkTitleContent cannot contain</h2>
  * <ul>
  * <li>
  * <p>
- * Newlines
+ * WtPageSwitch
  * </p>
  * </li>
  * </ul>
  */
-public class WtSectionHeading
+public class WtLinkTitleImpl
 		extends
 			WtContentNode
+		implements
+			WtLinkTitle
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtSectionHeading()
+	public WtLinkTitleImpl()
 	{
-		super();
 	}
 	
-	public WtSectionHeading(WtNodeList content)
+	public WtLinkTitleImpl(WtNodeList content)
 	{
 		super(content);
 	}
@@ -117,6 +110,6 @@ public class WtSectionHeading
 	@Override
 	public int getNodeType()
 	{
-		return NT_SECTION_HEADING;
+		return NT_LINK_TITLE;
 	}
 }

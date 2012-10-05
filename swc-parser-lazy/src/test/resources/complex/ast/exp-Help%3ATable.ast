@@ -29,7 +29,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[Help:Wikitable" <o> "]]" ]
             {N} target = "Help:Wikitable"
 
-          WtLinkTitle([ ])
+          WtLinkTitleImpl([ ])
         )
         WtText(". For style considerations, see ")
         WtInternalLink(
@@ -39,7 +39,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[Wikipedia:Manual of Style (tables)" <o> "]]" ]
             {N} target = "Wikipedia:Manual of Style (tables)"
 
-          WtLinkTitle([ ])
+          WtLinkTitleImpl([ ])
         )
         WtText(".")
       ]
@@ -105,7 +105,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Wikipedia:Cheatsheet" <o> "]]" ]
                     {N} target = "Wikipedia:Cheatsheet"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -128,7 +128,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Wiki markup" <o> "]]" ]
                     {N} target = "Help:Wiki markup"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -151,7 +151,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Visual file markup" <o> "]]" ]
                     {N} target = "Help:Visual file markup"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -174,7 +174,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Sound file markup" <o> "]]" ]
                     {N} target = "Help:Sound file markup"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -197,7 +197,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Table" <o> "]]" ]
                     {N} target = "Help:Table"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -220,7 +220,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:Template" <o> "]]" ]
                     {N} target = "Help:Template"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -243,7 +243,7 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "[[Help:HTML in wikitext" <o> "]]" ]
                     {N} target = "Help:HTML in wikitext"
 
-                  WtLinkTitle(
+                  WtLinkTitleImpl(
                     Properties:
                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -311,7 +311,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "|center" ]
               )
             ]
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -347,7 +347,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "|center" ]
               )
             ]
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -376,7 +376,7 @@ WtParsedWikitextPage(
               {N} width = -1
 
             [ ]
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" or ")
           WtImageLink(
@@ -396,7 +396,7 @@ WtParsedWikitextPage(
               {N} width = -1
 
             [ ]
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" (Insert a table) on the ")
           WtInternalLink(
@@ -406,7 +406,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Help:Edit toolbar" <o> "]]" ]
               {N} target = "Help:Edit toolbar"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -421,7 +421,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[mw:Customizing edit toolbar" <o> "]]" ]
               {N} target = "mw:Customizing edit toolbar"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -827,7 +827,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[wikicode" <o> "]]" ]
               {N} target = "wikicode"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" can be used as a shortcut to create a table.  The pipe (")
           WtInternalLink(
@@ -837,7 +837,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:vertical bar" <o> "]]" ]
               {N} target = "w:vertical bar"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -852,7 +852,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:HTML table" <o> "]]" ]
               {N} target = "w:HTML table"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1156,7 +1156,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[row" <o> "]]" ]
                       {N} target = "row"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                 ]
               )
@@ -1168,7 +1168,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:hyphen" <o> "]]" ]
                   {N} target = "w:hyphen"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1376,7 +1376,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[w:cell" <o> "]]" ]
                       {N} target = "w:cell"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3043,7 +3043,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[w:HTML" <o> "]]" ]
             {N} target = "w:HTML"
 
-          WtLinkTitle(
+          WtLinkTitleImpl(
             Properties:
               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3065,7 +3065,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[w:Table (HTML)" <o> "]]" ]
             {N} target = "w:Table (HTML)"
 
-          WtLinkTitle(
+          WtLinkTitleImpl(
             Properties:
               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3130,7 +3130,7 @@ WtParsedWikitextPage(
             {N} rtd = RTD[ "[[Help:HTML in wikitext#Permitted HTML" <o> "]]" ]
             {N} target = "Help:HTML in wikitext#Permitted HTML"
 
-          WtLinkTitle(
+          WtLinkTitleImpl(
             Properties:
               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3149,7 +3149,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[meta:Template talk:Square 8x8 pentomino example" <o> "]]" ]
               {N} target = "meta:Template talk:Square 8x8 pentomino example"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(".  An \"image\" in the form of a table is much more convenient to edit than an uploaded image.")
         ])
@@ -3230,7 +3230,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Help:Table#M\u00E9lange" <o> "]]" ]
               {N} target = "Help:Table#M\u00E9lange"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3245,7 +3245,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[help:sorting" <o> "]]" ]
               {N} target = "help:sorting"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3455,7 +3455,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Help:User style" <o> "]]" ]
                       {N} target = "Help:User style"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                 ]
               )
@@ -3884,7 +3884,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Colours" <o> "]]" ]
                   {N} target = "Wikipedia:Colours"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4267,7 +4267,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:User style" <o> "]]" ]
                   {N} target = "Help:User style"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4318,7 +4318,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:style" <o> "]]" ]
                   {N} target = "w:style"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4333,7 +4333,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:background" <o> "]]" ]
                   {N} target = "w:background"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4348,7 +4348,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:list of colors" <o> "]]" ]
                   {N} target = "w:list of colors"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4363,7 +4363,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:web colors" <o> "]]" ]
                   {N} target = "w:web colors"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4635,7 +4635,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[word wrap" <o> "]]" ]
                       {N} target = "word wrap"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5420,7 +5420,7 @@ WtParsedWikitextPage(
                                       {N} rtd = RTD[ "[[Lorem ipsum" <o> "]]" ]
                                       {N} target = "Lorem ipsum"
 
-                                    WtLinkTitle([ ])
+                                    WtLinkTitleImpl([ ])
                                   )
                                   WtText(" dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
                                 ])
@@ -5916,7 +5916,7 @@ WtParsedWikitextPage(
                                   {N} width = 120
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                         ])
                         WtNewline("\n")
@@ -5954,7 +5954,7 @@ WtParsedWikitextPage(
                                   {N} width = 120
                               )
                             ]
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5997,7 +5997,7 @@ WtParsedWikitextPage(
                                   {N} width = 120
                               )
                             ]
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6222,7 +6222,7 @@ WtParsedWikitextPage(
                                   {N} width = 120
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                         ])
                         WtNewline("\n")
@@ -6269,7 +6269,7 @@ WtParsedWikitextPage(
                                   {N} width = 120
                               )
                             ]
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6321,7 +6321,7 @@ WtParsedWikitextPage(
                                   {N} width = 120
                               )
                             ]
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6848,7 +6848,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Template talk:Table demo" <o> "]]" ]
                   {N} target = "m:Template talk:Table demo"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(". Prior to April 2009, using \"float\" to position a table was discouraged; however, it no longer always breaks page rendering at large font sizes. See a floated image, below, under \"")
               WtInternalLink(
@@ -6858,7 +6858,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[#Floating images in the center" <o> "]]" ]
                   {N} target = "#Floating images in the center"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6897,7 +6897,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Wikipedia:Manual of Style (accessibility)" <o> "]]" ]
                       {N} target = "Wikipedia:Manual of Style (accessibility)"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6919,7 +6919,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[help:sorting" <o> "]]" ]
                   {N} target = "help:sorting"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7302,7 +7302,7 @@ WtParsedWikitextPage(
                                               {N} width = -1
 
                                             [ ]
-                                            WtLinkTitle([ ])
+                                            WtLinkTitleImpl([ ])
                                           )
                                         ])
                                         WtNewline("\n")
@@ -7342,7 +7342,7 @@ WtParsedWikitextPage(
                                               {N} width = -1
 
                                             [ ]
-                                            WtLinkTitle([ ])
+                                            WtLinkTitleImpl([ ])
                                           )
                                         ])
                                         WtNewline("\n")
@@ -7785,7 +7785,7 @@ WtParsedWikitextPage(
                                   {N} width = 180
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtXmlElement(
                             Properties:
@@ -7810,7 +7810,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[Bel (mythology)" <o> "]]" ]
                               {N} target = "Bel (mythology)"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7892,7 +7892,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|right" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7999,7 +7999,7 @@ WtParsedWikitextPage(
                                   {N} width = 105
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtXmlElement(
                             Properties:
@@ -8090,7 +8090,7 @@ WtParsedWikitextPage(
                                   {N} width = 105
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtXmlElement(
                             Properties:
@@ -8181,7 +8181,7 @@ WtParsedWikitextPage(
                                   {N} width = 105
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtXmlElement(
                             Properties:
@@ -8234,7 +8234,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Wikipedia:Manual_of_Style_(accessibility)#Tables" <o> "]]" ]
                       {N} target = "Wikipedia:Manual_of_Style_(accessibility)#Tables"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -9953,7 +9953,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[HTML" <o> "]]" ]
                   {N} target = "HTML"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(", a table has always forced an implicit line-wrap (or ")
               WtItalics(
@@ -10841,7 +10841,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Help:User style" <o> "]]" ]
                       {N} target = "Help:User style"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                   WtText(".")
                 ]
@@ -10860,7 +10860,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:Cascading Style Sheets" <o> "]]" ]
               {N} target = "w:Cascading Style Sheets"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -10884,7 +10884,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[#Sorting" <o> "]]" ]
                   {N} target = "#Sorting"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -10907,7 +10907,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[MediaWiki:Common.css" <o> "]]" ]
                   {N} target = "MediaWiki:Common.css"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(" (for example, on this and some other projects there is or was the class wikitable, later moved to ")
               WtExternalLink(
@@ -10920,7 +10920,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://svn.wikimedia.org/viewvc/mediawiki/trunk/phase3/skins/common/shared.css?view=markup" ]
                 )
-                [ WtText("shared.css") ]
+                WtLinkTitleImpl([ WtText("shared.css") ])
               )
               WtText(")")
             ]
@@ -10938,7 +10938,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[MediaWiki:Monobook.css" <o> "]]" ]
                   {N} target = "MediaWiki:Monobook.css"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(" etc.")
             ]
@@ -12014,7 +12014,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[MediaWiki:Common.css" <o> "]]" ]
               {N} target = "MediaWiki:Common.css"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" contains a number of ")
           WtItalics(
@@ -12031,7 +12031,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:CSS" <o> "]]" ]
               {N} target = "w:CSS"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -12694,7 +12694,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[meta:Help:Sorting" <o> "]]" ]
                       {N} target = "meta:Help:Sorting"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -12732,7 +12732,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Sorting" <o> "]]" ]
                   {N} target = "Help:Sorting"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -13668,7 +13668,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Sorting" <o> "]]" ]
                   {N} target = "Help:Sorting"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -13699,7 +13699,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:help:table/example row template" <o> "]]" ]
               {N} target = "m:help:table/example row template"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" (")
           WtInternalLink(
@@ -13709,7 +13709,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:help talk:table/example row template" <o> "]]" ]
               {N} target = "m:help talk:table/example row template"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -13724,7 +13724,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:Special:Whatlinkshere/help:table/example row template" <o> "]]" ]
               {N} target = "m:Special:Whatlinkshere/help:table/example row template"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -13742,7 +13742,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://meta.wikimedia.org//w/index.php?title=Help:Table/example_row_template&action=edit" ]
             )
-            [ WtText("edit") ]
+            WtLinkTitleImpl([ WtText("edit") ])
           )
           WtText(")")
           WtNewline("\n")
@@ -14194,7 +14194,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[w:HTML element#Tables" <o> "]]" ]
               {N} target = "w:HTML element#Tables"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -14259,7 +14259,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Help:HTML in wikitext#Permitted HTML" <o> "]]" ]
               {N} target = "Help:HTML in wikitext#Permitted HTML"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -15173,7 +15173,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[Template:!" <o> "]]" ]
                                   {N} target = "Template:!"
 
-                                WtLinkTitle([ ])
+                                WtLinkTitleImpl([ ])
                               )
                               WtText(" to pass a \"|\" in a parameter.")
                             ]
@@ -15191,7 +15191,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[Help:Newlines and spaces" <o> "]]" ]
                                   {N} target = "Help:Newlines and spaces"
 
-                                WtLinkTitle([ ])
+                                WtLinkTitleImpl([ ])
                               )
                               WtText(".")
                             ]
@@ -15279,7 +15279,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Template talk:For#Tables" <o> "]]" ]
                   {N} target = "Template talk:For#Tables"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(".")
             ])
@@ -15310,7 +15310,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[m:User: Magnus Manske" <o> "]]" ]
               {N} target = "m:User: Magnus Manske"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -15337,7 +15337,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://www.uni-bonn.de/~manfear/html2wiki-tables.php" ]
             )
-            [ WtText("on-line script") ]
+            WtLinkTitleImpl([ WtText("on-line script") ])
           )
           WtText(" which converts html tables to pipe syntax tables.")
         ])
@@ -15379,7 +15379,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:Table (HTML)" <o> "]]" ]
                   {N} target = "w:Table (HTML)"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -15974,7 +15974,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Table Caption" <o> "]]" ]
                   {N} target = "Help:Table Caption"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16130,7 +16130,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[screen reader" <o> "]]s" ]
                   {N} target = "screen reader"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(" to give visually impaired readers the overall gist of the table, without having to listen to the entire table. For example:")
               WtNewline("\n")
@@ -16217,7 +16217,7 @@ WtParsedWikitextPage(
                             [ WtText("Robed woman, seated, with sword on her lap") ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16284,7 +16284,7 @@ WtParsedWikitextPage(
                             [ WtText("Robed woman, standing, holding a sword") ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16351,7 +16351,7 @@ WtParsedWikitextPage(
                             [ WtText("Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another") ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16483,7 +16483,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16536,7 +16536,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16589,7 +16589,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16669,7 +16669,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16722,7 +16722,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16802,7 +16802,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16864,7 +16864,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "|left" ]
                           )
                         ]
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -16976,7 +16976,7 @@ WtParsedWikitextPage(
 
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17027,7 +17027,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17078,7 +17078,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17129,7 +17129,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17180,7 +17180,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17231,7 +17231,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17282,7 +17282,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17333,7 +17333,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17384,7 +17384,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17435,7 +17435,7 @@ WtParsedWikitextPage(
                             )
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17803,7 +17803,7 @@ WtParsedWikitextPage(
                               {N} width = 265
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17840,7 +17840,7 @@ WtParsedWikitextPage(
                               {N} width = 235
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17879,7 +17879,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[Rhine" <o> "]]" ]
                           {N} target = "Rhine"
 
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -17992,7 +17992,7 @@ WtParsedWikitextPage(
                               {N} width = 130
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18029,7 +18029,7 @@ WtParsedWikitextPage(
                               {N} width = 125
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18066,7 +18066,7 @@ WtParsedWikitextPage(
                               {N} width = 125
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18103,7 +18103,7 @@ WtParsedWikitextPage(
                               {N} width = 115
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18247,7 +18247,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18284,7 +18284,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18321,7 +18321,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18358,7 +18358,7 @@ WtParsedWikitextPage(
                               {N} width = 100
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18501,7 +18501,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18538,7 +18538,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18575,7 +18575,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18612,7 +18612,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18649,7 +18649,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18686,7 +18686,7 @@ WtParsedWikitextPage(
                               {N} width = 199
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                     ])
                     WtNewline("\n")
@@ -18865,7 +18865,7 @@ WtParsedWikitextPage(
                                   {N} width = 299
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                         ])
                         WtNewline("\n")
@@ -18918,7 +18918,7 @@ WtParsedWikitextPage(
                                     {N} width = 299
                                 )
                               ]
-                              WtLinkTitle([ ])
+                              WtLinkTitleImpl([ ])
                             )
                           ]
                         )
@@ -18962,7 +18962,7 @@ WtParsedWikitextPage(
                                   {N} width = 299
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtXmlEntityRef(
                             Properties:
@@ -19133,7 +19133,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "[[meta:Visualizer for Wikimedia projects" <o> "]]" ]
                 {N} target = "meta:Visualizer for Wikimedia projects"
 
-              WtLinkTitle(
+              WtLinkTitleImpl(
                 Properties:
                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19190,7 +19190,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://excel2wiki.net/wikipedia.php" ]
             )
-            [
+            WtLinkTitleImpl([
               WtText(
                 Properties:
                   {N} content = "Copy & Paste Excel-to-Wiki"
@@ -19199,7 +19199,7 @@ WtParsedWikitextPage(
                     Warning (informative): /complex/wikitext/exp-Help%3ATable.wikitext:1295:139 - 140: "&" : This looks like a XML Reference, however the entity name or character code is missing.
                   ]
               )
-            ]
+            ])
           )
           WtText(" converter or you can save your spreadsheets as ")
           WtInternalLink(
@@ -19209,7 +19209,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[.csv" <o> "]]" ]
               {N} target = ".csv"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" and use the ")
           WtExternalLink(
@@ -19222,7 +19222,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://toolserver.org/~al/data2mwGenerators/csv2wikitable.php" ]
             )
-            [ WtText("csv2wikitable") ]
+            WtLinkTitleImpl([ WtText("csv2wikitable") ])
           )
           WtText(" converter.")
         ])
@@ -19256,7 +19256,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Help:Wikitable" <o> "]]" ]
                   {N} target = "Help:Wikitable"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19273,7 +19273,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Manual of Style (tables)" <o> "]]" ]
                   {N} target = "Wikipedia:Manual of Style (tables)"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19290,7 +19290,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:How to make a table in Wikipedia" <o> "]]" ]
                   {N} target = "Wikipedia:How to make a table in Wikipedia"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19307,7 +19307,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[mw:Table" <o> "]]" ]
                   {N} target = "mw:Table"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19324,7 +19324,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[mw:Simplified table syntax" <o> "]]" ]
                   {N} target = "mw:Simplified table syntax"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19341,7 +19341,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Wiki markup tables" <o> "]]" ]
                   {N} target = "m:Wiki markup tables"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19358,7 +19358,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Table background colors" <o> "]]" ]
                   {N} target = "m:Table background colors"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19375,7 +19375,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Dcljr/Tables" <o> "]]" ]
                   {N} target = "User:Dcljr/Tables"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19392,7 +19392,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:Table (HTML)" <o> "]]" ]
                   {N} target = "w:Table (HTML)"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19409,7 +19409,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[m:Help:Template#A parameter value containing a pipe character" <o> "]]" ]
                   {N} target = "m:Help:Template#A parameter value containing a pipe character"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19426,7 +19426,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:Category:Table and column templates" <o> "]]" ]
                   {N} target = "w:Category:Table and column templates"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19450,7 +19450,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Template:Chess diagram" <o> "]]" ]
                         {N} target = "Template:Chess diagram"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19472,7 +19472,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Template:Goban" <o> "]]" ]
                         {N} target = "Template:Goban"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19494,7 +19494,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Monopoly (game)#Board" <o> "]]" ]
                         {N} target = "Monopoly (game)#Board"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19516,7 +19516,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[m:Template talk:Square 8x8 pentomino example" <o> "]]" ]
                         {N} target = "m:Template talk:Square 8x8 pentomino example"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19541,7 +19541,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[commons:Commons:Convert tables and charts to wiki code" <o> "]]" ]
                   {N} target = "commons:Commons:Convert tables and charts to wiki code"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19563,7 +19563,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[commons:Commons:Chart and graph resources" <o> "]]" ]
                   {N} target = "commons:Commons:Chart and graph resources"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19594,7 +19594,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:Category:Articles requiring tables" <o> "]]" ]
                   {N} target = ":Category:Articles requiring tables"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
             ]
           )
@@ -19629,7 +19629,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:de:Wikipedia:Helferlein/VBA-Macro for EXCEL tableconversion" <o> "]]" ]
                   {N} target = ":de:Wikipedia:Helferlein/VBA-Macro for EXCEL tableconversion"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(" published in German-Wikipediaproject (English instructions included)")
             ]
@@ -19650,7 +19650,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://www.cnic.org/html2mediawiki.html" ]
                 )
-                [ WtText("HTML tables to wiki converter at cnic.org") ]
+                WtLinkTitleImpl([ WtText("HTML tables to wiki converter at cnic.org") ])
               )
             ]
           )
@@ -19670,7 +19670,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://area23.brightbyte.de/csv2wp.php" ]
                 )
-                [ WtText("csv2wp") ]
+                WtLinkTitleImpl([ WtText("csv2wp") ])
               )
               WtText(" - converts ")
               WtInternalLink(
@@ -19680,7 +19680,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[w:comma-separated values" <o> "]]" ]
                   {N} target = "w:comma-separated values"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19695,7 +19695,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:de:Benutzer:Duesentrieb/csv2wp (en)" <o> "]]" ]
                   {N} target = ":de:Benutzer:Duesentrieb/csv2wp (en)"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -19721,7 +19721,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://www.uni-bonn.de/~manfear/html2wiki-tables.php" ]
                 )
-                [ WtText("HTML tables to wiki converter at uni-bonn.de") ]
+                WtLinkTitleImpl([ WtText("HTML tables to wiki converter at uni-bonn.de") ])
               )
             ]
           )
@@ -19741,7 +19741,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://diberri.dyndns.org/html2wiki.html" ]
                 )
-                [ WtText("HTML tables to wiki converter at diberri.dyndns.org") ]
+                WtLinkTitleImpl([ WtText("HTML tables to wiki converter at diberri.dyndns.org") ])
               )
             ]
           )
@@ -19761,7 +19761,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://pywikipediabot.sourceforge.net/" ]
                 )
-                [ WtText("pywikipediabot") ]
+                WtLinkTitleImpl([ WtText("pywikipediabot") ])
               )
               WtText(" (can convert HTML tables to wiki)")
             ]
@@ -19782,7 +19782,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://search.cpan.org/~diberri/" ]
                 )
-                [ WtText("HTML-WikiConverter") ]
+                WtLinkTitleImpl([ WtText("HTML-WikiConverter") ])
               )
               WtText(" Various versions and languages")
             ]
@@ -19803,7 +19803,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://en.wikibooks.org/wiki/Editing_Wikitext/Tables" ]
                 )
-                [ WtText("Making Wiki Tables") ]
+                WtLinkTitleImpl([ WtText("Making Wiki Tables") ])
               )
               WtText(" with good examples")
             ]
@@ -19824,7 +19824,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://en.wikibooks.org/wiki/Editing_Wikitext/Tables_Ready_to_Use" ]
                 )
-                [ WtText("Wiki and HTML Tables Ready to Use") ]
+                WtLinkTitleImpl([ WtText("Wiki and HTML Tables Ready to Use") ])
               )
               WtText(": A selection of tables and their Wiki/HTML code")
             ]
@@ -19845,7 +19845,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://www.w3.org/TR/css3-color/" ]
                 )
-                [ WtText("Table of CSS color names and HEX codes") ]
+                WtLinkTitleImpl([ WtText("Table of CSS color names and HEX codes") ])
               )
             ]
           )
@@ -19860,7 +19860,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Category:Wikipedia how-to" <o> "]]" ]
               {N} target = "Category:Wikipedia how-to"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19870,7 +19870,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Category:Wikipedia text help" <o> "]]" ]
               {N} target = "Category:Wikipedia text help"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
         ])
         WtNewline("\n")
@@ -19883,7 +19883,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ar:\u0645\u0633\u0627\u0639\u062F\u0629:\u062C\u062F\u0648\u0644" <o> "]]" ]
               {N} target = "ar:\u0645\u0633\u0627\u0639\u062F\u0629:\u062C\u062F\u0648\u0644"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19893,7 +19893,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[bg:\u0423\u0438\u043A\u0438\u043F\u0435\u0434\u0438\u044F:\u0422\u0430\u0431\u043B\u0438\u0446\u0438" <o> "]]" ]
               {N} target = "bg:\u0423\u0438\u043A\u0438\u043F\u0435\u0434\u0438\u044F:\u0422\u0430\u0431\u043B\u0438\u0446\u0438"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19903,7 +19903,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ca:Ajuda:Taula" <o> "]]" ]
               {N} target = "ca:Ajuda:Taula"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19913,7 +19913,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[cs:N\u00E1pov\u011Bda:Tabulky" <o> "]]" ]
               {N} target = "cs:N\u00E1pov\u011Bda:Tabulky"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19923,7 +19923,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[de:Hilfe:Tabellen" <o> "]]" ]
               {N} target = "de:Hilfe:Tabellen"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19933,7 +19933,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[dsb:Pomoc:Tabela" <o> "]]" ]
               {N} target = "dsb:Pomoc:Tabela"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19943,7 +19943,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[es:Ayuda:Tablas" <o> "]]" ]
               {N} target = "es:Ayuda:Tablas"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19953,7 +19953,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[eo:Helpo:Vikitabeloj" <o> "]]" ]
               {N} target = "eo:Helpo:Vikitabeloj"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19963,7 +19963,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fa:\u0631\u0627\u0647\u0646\u0645\u0627:\u062C\u062F\u0648\u0644\u200C\u0647\u0627" <o> "]]" ]
               {N} target = "fa:\u0631\u0627\u0647\u0646\u0645\u0627:\u062C\u062F\u0648\u0644\u200C\u0647\u0627"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19973,7 +19973,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fr:Aide:Les tableaux pour les novices" <o> "]]" ]
               {N} target = "fr:Aide:Les tableaux pour les novices"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19983,7 +19983,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[hsb:Pomoc:Tabela" <o> "]]" ]
               {N} target = "hsb:Pomoc:Tabela"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -19993,7 +19993,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[hu:Wikip\u00E9dia:T\u00E1bl\u00E1zatok" <o> "]]" ]
               {N} target = "hu:Wikip\u00E9dia:T\u00E1bl\u00E1zatok"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20003,7 +20003,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[id:Bantuan:Tabel" <o> "]]" ]
               {N} target = "id:Bantuan:Tabel"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20013,7 +20013,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[it:Aiuto:Tabelle" <o> "]]" ]
               {N} target = "it:Aiuto:Tabelle"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20023,7 +20023,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ja:Help:\u8868\u306E\u4F5C\u308A\u65B9" <o> "]]" ]
               {N} target = "ja:Help:\u8868\u306E\u4F5C\u308A\u65B9"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20033,7 +20033,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ka:\u10D3\u10D0\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0:\u10EA\u10EE\u10E0\u10D8\u10DA\u10D8\u10E1 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D0" <o> "]]" ]
               {N} target = "ka:\u10D3\u10D0\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0:\u10EA\u10EE\u10E0\u10D8\u10DA\u10D8\u10E1 \u10E8\u10D4\u10E5\u10DB\u10DC\u10D0"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20043,7 +20043,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[km:\u1787\u17C6\u1793\u17BD\u1799:\u178F\u17B6\u179A\u17B6\u1784" <o> "]]" ]
               {N} target = "km:\u1787\u17C6\u1793\u17BD\u1799:\u178F\u17B6\u179A\u17B6\u1784"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20053,7 +20053,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ko:\uC704\uD0A4\uBC31\uACFC:\uD45C" <o> "]]" ]
               {N} target = "ko:\uC704\uD0A4\uBC31\uACFC:\uD45C"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20063,7 +20063,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[lb:H\u00EBllef:Tabellen" <o> "]]" ]
               {N} target = "lb:H\u00EBllef:Tabellen"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20073,7 +20073,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[lt:Pagalba:Lentel\u0117" <o> "]]" ]
               {N} target = "lt:Pagalba:Lentel\u0117"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20083,7 +20083,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ml:\u0D38\u0D39\u0D3E\u0D2F\u0D02:\u0D2A\u0D1F\u0D4D\u0D1F\u0D3F\u0D15" <o> "]]" ]
               {N} target = "ml:\u0D38\u0D39\u0D3E\u0D2F\u0D02:\u0D2A\u0D1F\u0D4D\u0D1F\u0D3F\u0D15"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20093,7 +20093,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[mn:\u0422\u0443\u0441\u043B\u0430\u043C\u0436:\u0425\u04AF\u0441\u043D\u044D\u0433\u0442 \u044F\u0430\u0436 \u0445\u0438\u0439\u0445 \u0432\u044D?" <o> "]]" ]
               {N} target = "mn:\u0422\u0443\u0441\u043B\u0430\u043C\u0436:\u0425\u04AF\u0441\u043D\u044D\u0433\u0442 \u044F\u0430\u0436 \u0445\u0438\u0439\u0445 \u0432\u044D?"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20103,7 +20103,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[nl:Help:Gebruik van tabellen" <o> "]]" ]
               {N} target = "nl:Help:Gebruik van tabellen"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20113,7 +20113,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[no:Hjelp:Tabeller" <o> "]]" ]
               {N} target = "no:Hjelp:Tabeller"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20123,7 +20123,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[pl:Pomoc:Tabele" <o> "]]" ]
               {N} target = "pl:Pomoc:Tabele"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20133,7 +20133,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[pt:Ajuda:Guia de edi\u00E7\u00E3o/Usar tabelas" <o> "]]" ]
               {N} target = "pt:Ajuda:Guia de edi\u00E7\u00E3o/Usar tabelas"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20143,7 +20143,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[ro:Ajutor:Tabele" <o> "]]" ]
               {N} target = "ro:Ajutor:Tabele"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20153,7 +20153,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[qu:Yanapa:Tawla" <o> "]]" ]
               {N} target = "qu:Yanapa:Tawla"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20163,7 +20163,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[sq:Ndihm\u00EB:Tabela" <o> "]]" ]
               {N} target = "sq:Ndihm\u00EB:Tabela"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20173,7 +20173,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[simple:Help:Tables" <o> "]]" ]
               {N} target = "simple:Help:Tables"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20183,7 +20183,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[sk:Pomoc:Tabu\u013Eky" <o> "]]" ]
               {N} target = "sk:Pomoc:Tabu\u013Eky"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20193,7 +20193,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[sr:\u041F\u043E\u043C\u043E\u045B:\u0422\u0430\u0431\u0435\u043B\u0430" <o> "]]" ]
               {N} target = "sr:\u041F\u043E\u043C\u043E\u045B:\u0422\u0430\u0431\u0435\u043B\u0430"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20203,7 +20203,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[fi:Ohje:Taulukot" <o> "]]" ]
               {N} target = "fi:Ohje:Taulukot"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20213,7 +20213,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[tt:\u042F\u0440\u0434\u04D9\u043C:T\u00FC\u015F\u00E4w" <o> "]]" ]
               {N} target = "tt:\u042F\u0440\u0434\u04D9\u043C:T\u00FC\u015F\u00E4w"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20223,7 +20223,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[th:\u0E27\u0E34\u0E18\u0E35\u0E43\u0E0A\u0E49:\u0E15\u0E32\u0E23\u0E32\u0E07" <o> "]]" ]
               {N} target = "th:\u0E27\u0E34\u0E18\u0E35\u0E43\u0E0A\u0E49:\u0E15\u0E32\u0E23\u0E32\u0E07"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20233,7 +20233,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[uk:\u0414\u043E\u0432\u0456\u0434\u043A\u0430:\u0422\u0430\u0431\u043B\u0438\u0446\u0456" <o> "]]" ]
               {N} target = "uk:\u0414\u043E\u0432\u0456\u0434\u043A\u0430:\u0422\u0430\u0431\u043B\u0438\u0446\u0456"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20243,7 +20243,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[vi:Tr\u1EE3 gi\u00FAp:T\u1EA1o b\u1EA3ng" <o> "]]" ]
               {N} target = "vi:Tr\u1EE3 gi\u00FAp:T\u1EA1o b\u1EA3ng"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtNewline("\n")
           WtInternalLink(
@@ -20253,7 +20253,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[zh:Help:\u8868\u683C" <o> "]]" ]
               {N} target = "zh:Help:\u8868\u683C"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
         ])
         WtNewline("\n")

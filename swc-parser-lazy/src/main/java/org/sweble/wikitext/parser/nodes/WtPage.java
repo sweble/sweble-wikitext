@@ -12,7 +12,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  */
 public class WtPage
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -89,7 +89,7 @@ public class WtPage
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtContentNodeMarkTwoPropertyIterator()
+		return new WtContentNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()

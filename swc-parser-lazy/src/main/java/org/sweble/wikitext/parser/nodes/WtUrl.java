@@ -3,7 +3,7 @@ package org.sweble.wikitext.parser.nodes;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtUrl</h1> <h2>Grammar</h2>
+ * <h1>WtUrlImpl</h1> <h2>Grammar</h2>
  * <ul>
  * <li>
  * <p>
@@ -17,7 +17,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  * </li>
  * <li>
  * <p>
- * WtUrl ::= Scheme ':' Path
+ * WtUrlImpl ::= Scheme ':' Path
  * </p>
  * </li>
  * </ul>

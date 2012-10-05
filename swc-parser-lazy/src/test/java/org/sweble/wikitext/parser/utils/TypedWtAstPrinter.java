@@ -21,11 +21,11 @@ import java.io.Writer;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
 
-import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
+import de.fau.cs.osr.ptk.common.PrinterInterface;
 
 public final class TypedWtAstPrinter
 		implements
-			GenericPrinterInterface
+			PrinterInterface
 {
 	@Override
 	public String getPrintoutType()

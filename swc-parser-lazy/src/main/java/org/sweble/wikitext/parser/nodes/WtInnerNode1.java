@@ -4,11 +4,11 @@ import org.sweble.wikitext.parser.WtRtData;
 
 import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.GenericInnerNode.GenericInnerNode1;
+import de.fau.cs.osr.ptk.common.ast.AstAbstractInnerNode.AstInnerNode1;
 
 public abstract class WtInnerNode1
 		extends
-			GenericInnerNode1<WtNode>
+			AstInnerNode1<WtNode>
 		implements
 			WtNode
 {

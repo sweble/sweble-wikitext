@@ -27,11 +27,10 @@ import java.util.TreeMap;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.GenericContentNode;
-import de.fau.cs.osr.ptk.common.ast.GenericNodeList;
-import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
-import de.fau.cs.osr.ptk.common.ast.GenericText;
+import de.fau.cs.osr.ptk.common.ast.AstStringNodeImpl;
+import de.fau.cs.osr.ptk.common.ast.AstText;
 import de.fau.cs.osr.utils.PrinterBase;
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -52,7 +51,7 @@ public class NewAstPrinter<T extends AstNode<T>>
 		}
 	}
 	
-	public void visit(GenericText<T> n)
+	public void visit(AstText<T> n)
 	{
 		if (!hasVisibleProperties(n))
 		{
@@ -66,7 +65,7 @@ public class NewAstPrinter<T extends AstNode<T>>
 		}
 	}
 	
-	public void visit(GenericStringContentNode<T> n)
+	public void visit(AstStringNodeImpl<T> n)
 	{
 		if (!hasVisibleProperties(n))
 		{
@@ -81,7 +80,7 @@ public class NewAstPrinter<T extends AstNode<T>>
 		}
 	}
 	
-	public void visit(GenericNodeList<T> n)
+	public void visit(AstNodeListImpl<T> n)
 	{
 		if (hasVisibleProperties(n))
 		{
@@ -103,7 +102,8 @@ public class NewAstPrinter<T extends AstNode<T>>
 		}
 	}
 	
-	public void visit(GenericContentNode<T, GenericNodeList<T>> n)
+	/* FIXME: Remove
+	public void visit(GenericContentNode<T, AstNodeListImpl<T>> n)
 	{
 		if (hasVisibleProperties(n))
 		{
@@ -126,6 +126,7 @@ public class NewAstPrinter<T extends AstNode<T>>
 			p.indentln(']');
 		}
 	}
+	*/
 	
 	// =========================================================================
 	
@@ -152,7 +153,7 @@ public class NewAstPrinter<T extends AstNode<T>>
 					if (i.getValue() != null)
 						return true;
 				}
-				else if (!i.getName().equals("content") || !(n instanceof GenericStringContentNode))
+				else if (!i.getName().equals("content") || !(n instanceof AstStringNodeImpl))
 				{
 					return true;
 				}

@@ -12,7 +12,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
           {N} target = "Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -25,7 +25,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo %0 Hallo" <o> "]]" ]
           {N} target = "Hallo %0 Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -74,7 +74,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo %20 Hallo" <o> "]]" ]
           {N} target = "Hallo %20 Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -87,7 +87,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo %7E Hallo" <o> "]]" ]
           {N} target = "Hallo %7E Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -100,7 +100,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo &amp; Hallo" <o> "]]" ]
           {N} target = "Hallo &amp; Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -151,7 +151,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo %61 Hallo" <o> "]]" ]
           {N} target = "Hallo %61 Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -164,7 +164,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo &%61mp; Hallo" <o> "]]" ]
           {N} target = "Hallo &%61mp; Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -190,7 +190,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo+Hallo" <o> "]]" ]
           {N} target = "Hallo+Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")
@@ -203,7 +203,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[Hallo%20Hallo+Hallo" <o> "]]" ]
           {N} target = "Hallo%20Hallo+Hallo"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
     WtNewline("\n")

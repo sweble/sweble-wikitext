@@ -21,11 +21,6 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.WtTable;
-import org.sweble.wikitext.parser.nodes.WtTableCaption;
-import org.sweble.wikitext.parser.nodes.WtTableCell;
-import org.sweble.wikitext.parser.nodes.WtTableHeader;
-import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -38,11 +33,17 @@ import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtOrderedList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtSection;
 import org.sweble.wikitext.parser.nodes.WtSemiPre;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
+import org.sweble.wikitext.parser.nodes.WtTable;
+import org.sweble.wikitext.parser.nodes.WtTableCaption;
+import org.sweble.wikitext.parser.nodes.WtTableCell;
+import org.sweble.wikitext.parser.nodes.WtTableHeader;
+import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtUnorderedList;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
 import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
@@ -103,9 +104,16 @@ public class ScopedElementBuilder
 	
 	public void visit(WtExternalLink n)
 	{
-		openScope(ScopeType.WT_INLINE, n);
-		n.getTitle().exchange(processScope(n.getTitle()));
-		closeScope(ScopeType.WT_INLINE, n);
+		if (!n.hasTitle())
+		{
+			stack.append(n);
+		}
+		else
+		{
+			openScope(ScopeType.WT_INLINE, n);
+			n.getTitle().exchange(processScope(n.getTitle()));
+			closeScope(ScopeType.WT_INLINE, n);
+		}
 	}
 	
 	public void visit(WtInternalLink n)
@@ -317,7 +325,7 @@ public class ScopedElementBuilder
 		n.setContent(processScope(n.getContent()));
 	}
 	
-	private void processScope(WtContentNodeMarkTwo n)
+	private void processScope(WtContentNode n)
 	{
 		n.exchange(processScope(n));
 	}
@@ -720,7 +728,7 @@ public class ScopedElementBuilder
 				e.getName(),
 				true,
 				attrs,
-				new WtNodeList());
+				new WtNodeListImpl());
 		
 		if (config.isGatherRtData())
 		{

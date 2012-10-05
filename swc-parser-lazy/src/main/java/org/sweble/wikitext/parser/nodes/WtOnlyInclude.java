@@ -7,7 +7,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  */
 public class WtOnlyInclude
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 		implements
 			WtPreproNode
 {
@@ -63,7 +63,7 @@ public class WtOnlyInclude
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtContentNodeMarkTwoPropertyIterator()
+		return new WtContentNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()

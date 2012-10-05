@@ -19,7 +19,7 @@ public class WtXmlStartTag
 	
 	public WtXmlStartTag()
 	{
-		super(new WtNodeList());
+		super(new WtNodeListImpl());
 	}
 	
 	public WtXmlStartTag(String name, WtNodeList xmlAttributes)

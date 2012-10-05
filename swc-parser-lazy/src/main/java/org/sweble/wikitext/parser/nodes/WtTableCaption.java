@@ -20,7 +20,7 @@ public class WtTableCaption
 	
 	public WtTableCaption()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtTableCaption(WtNodeList xmlAttributes, WtNodeList body)

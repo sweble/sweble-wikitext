@@ -79,14 +79,14 @@ WtNode pTpPlus = ptTpPlus ;
 private transient WtNodeList ptTpStar =
   tp:pTransparent*
   {
-    yyValue = new WtNodeList(tp);
+    yyValue = new WtNodeListImpl(tp);
   }
 ;
 
 private transient WtNodeList ptTpPlus =
   tp:pTransparent+
   {
-    yyValue = new WtNodeList(tp);
+    yyValue = new WtNodeListImpl(tp);
   }
 ;
 
@@ -106,14 +106,14 @@ WtNode pExtSpacePlus = ptExtSpacePlus ;
 private transient WtNodeList ptExtSpaceStar =
   s:pExtSpaceAtom*
   {
-    yyValue = new WtNodeList(s);
+    yyValue = new WtNodeListImpl(s);
   }
 ;
 
 private transient WtNodeList ptExtSpacePlus =
   s:pExtSpaceAtom+
   {
-    yyValue = new WtNodeList(s);
+    yyValue = new WtNodeListImpl(s);
   }
 ;
 
@@ -153,7 +153,7 @@ noinline memoized WtWhitespace pExtWsStarMemoized =
 noinline transient WtWhitespace pExtWsStarTransient =
   s:pExtSpaceStar ws:pExtWsAtom*
   {
-    yyValue = new WtWhitespace(new WtNodeList(s, ws), !ws.isEmpty());
+    yyValue = new WtWhitespace(new WtNodeListImpl(s, ws), !ws.isEmpty());
   }
 ;
 
@@ -180,11 +180,11 @@ noinline memoized WtWhitespace pExtWsPlusMemoized =
 noinline transient WtWhitespace pExtWsPlusTransient =
     s:pExtSpacePlus ws:pExtWsAtom*
     {
-      yyValue = new WtWhitespace(new WtNodeList(s, ws), !ws.isEmpty());
+      yyValue = new WtWhitespace(new WtNodeListImpl(s, ws), !ws.isEmpty());
     }
   / ws:pExtWsAtom+
     {
-      yyValue = new WtWhitespace(new WtNodeList(ws), true);
+      yyValue = new WtWhitespace(new WtNodeListImpl(ws), true);
     }
 ;
 

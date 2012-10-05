@@ -19,7 +19,7 @@ public class WtXmlEmptyTag
 	
 	public WtXmlEmptyTag()
 	{
-		super(new WtNodeList());
+		super(new WtNodeListImpl());
 	}
 	
 	public WtXmlEmptyTag(String name, WtNodeList xmlAttributes)

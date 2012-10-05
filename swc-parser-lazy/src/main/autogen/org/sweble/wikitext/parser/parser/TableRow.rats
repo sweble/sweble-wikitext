@@ -81,7 +81,7 @@ private inline WtForeignNode TableRowBody =
   / rt0:pExtSpaceStar Eof
     {
       // Warning will be issued by the surrounding table.
-      yyValue = WtForeignNode.from(rt0, "", new WtNodeList());
+      yyValue = WtForeignNode.from(rt0, "", new WtNodeListImpl());
     }
   / &ShouldNotBeHere SantiyCheckEnd
     {
@@ -95,7 +95,7 @@ private transient stateful WtNodeList TableRowContentStar =
   }
   garbage:InlineBlockContent content:TableRowElement*
   {
-    yyValue = new WtNodeList(garbage, new WtNodeList(content));
+    yyValue = new WtNodeListImpl(garbage, new WtNodeListImpl(content));
   }
 ;
 

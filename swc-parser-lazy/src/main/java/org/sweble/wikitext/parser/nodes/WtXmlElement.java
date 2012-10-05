@@ -18,7 +18,7 @@ public class WtXmlElement
 	
 	public WtXmlElement()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtXmlElement(

@@ -102,7 +102,7 @@ body
     if (createItem)
     {
       // FIXME: Issue warning!
-      pushNewListItem(listStack, ch, new WtNodeList());
+      pushNewListItem(listStack, ch, new WtNodeListImpl());
     }
   }
 
@@ -143,7 +143,7 @@ body
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
-    WtNodeList items = new WtNodeList();
+    WtNodeList items = new WtNodeListImpl();
 
     WtRtData lastItem = processListItem(listStack, items, first);
 
@@ -186,7 +186,7 @@ body
     WtNode item = pushNewListItem(
         listStack,
         prefix.charAt(last),
-        new WtNodeList(p.getForeign(0, WtNodeList.class)));
+        new WtNodeListImpl(p.getForeign(0, WtNodeList.class)));
 
     WtRtData rtd = null;
     if (isGatherRtData())

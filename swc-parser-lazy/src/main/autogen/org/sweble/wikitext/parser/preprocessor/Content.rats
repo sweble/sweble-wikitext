@@ -33,14 +33,14 @@ import org.sweble.wikitext.parser.preprocessor.OnlyInclude;
 transient WtNodeList ContentStar =
   content:ContentAtom*
   {
-    yyValue = new WtNodeList(content);
+    yyValue = new WtNodeListImpl(content);
   }
 ;
 
 transient WtNodeList ContentPlus =
   content:ContentAtom+
   {
-    yyValue = new WtNodeList(content);
+    yyValue = new WtNodeListImpl(content);
   }
 ;
 

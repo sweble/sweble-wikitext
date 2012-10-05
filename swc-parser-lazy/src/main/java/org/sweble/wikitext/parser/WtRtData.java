@@ -2,7 +2,7 @@ package org.sweble.wikitext.parser;
 
 import java.util.ArrayList;
 
-import org.sweble.wikitext.parser.nodes.WtContentNodeMarkTwo;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
@@ -56,9 +56,9 @@ public class WtRtData
 	@Override
 	protected void addNodeOrObject(ArrayList<Object> result, Object o)
 	{
-		if (o instanceof WtContentNodeMarkTwo)
+		if (o instanceof WtContentNode)
 		{
-			for (WtNode c : (WtContentNodeMarkTwo) o)
+			for (WtNode c : (WtContentNode) o)
 				addNodeOrObject(result, c);
 		}
 		else

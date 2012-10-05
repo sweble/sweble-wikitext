@@ -28,6 +28,7 @@ import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
+import org.sweble.wikitext.parser.nodes.WtLinkTitleImpl;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtUrl;
@@ -197,7 +198,7 @@ public class LinkBuilder
 	public WtNode build(WtNodeList options, String postfix)
 	{
 		if (this.title == null)
-			this.title = new WtLinkTitle();
+			this.title = new WtLinkTitleImpl();
 		
 		if (this.targetType == LinkTargetType.IMAGE)
 		{

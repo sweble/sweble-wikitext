@@ -15,7 +15,7 @@ WtParsedWikitextPage(
             {N} protocol = "http"
             {N} rtd = RTD[ "http://example.com" ]
         )
-        [
+        WtLinkTitleImpl([
           WtText("title1a ")
           WtInternalLink(
             Properties:
@@ -24,10 +24,10 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[target" <o> "]]" ]
               {N} target = "target"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" title1b")
-        ]
+        ])
       )
     ])
   ]

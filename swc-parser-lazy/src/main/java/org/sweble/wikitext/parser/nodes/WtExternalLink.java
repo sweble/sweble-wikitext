@@ -1,5 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtNullLinkTitle;
+
 /**
  * <h1>External Link</h1> <h2>Grammar</h2>
  * <ul>
@@ -107,19 +109,24 @@ public class WtExternalLink
 {
 	private static final long serialVersionUID = 1L;
 	
+	public static final WtLinkTitle HAS_NO_TITLE = new WtNullLinkTitle();
+	
 	// =========================================================================
 	
-	public WtExternalLink()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtExternalLink()
 	{
-		super(new WtUrl(), new WtNodeList());
+		super(null, null);
 	}
 	
 	public WtExternalLink(WtUrl target)
 	{
-		super(target, new WtNodeList());
+		super(target, HAS_NO_TITLE);
 	}
 	
-	public WtExternalLink(WtUrl target, WtNodeList title)
+	public WtExternalLink(WtUrl target, WtLinkTitle title)
 	{
 		super(target, title);
 	}
@@ -143,14 +150,19 @@ public class WtExternalLink
 		return (WtUrl) get(0);
 	}
 	
-	public final void setTitle(WtNodeList title)
+	public boolean hasTitle()
+	{
+		return getTitle() != HAS_NO_TITLE;
+	}
+	
+	public final void setTitle(WtLinkTitle title)
 	{
 		set(1, title);
 	}
 	
-	public final WtNodeList getTitle()
+	public final WtLinkTitle getTitle()
 	{
-		return (WtNodeList) get(1);
+		return (WtLinkTitle) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "target", "title" };

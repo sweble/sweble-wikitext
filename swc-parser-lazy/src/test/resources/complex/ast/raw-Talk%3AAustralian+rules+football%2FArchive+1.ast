@@ -54,7 +54,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -69,7 +69,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -101,7 +101,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[GAA" <o> "]]" ]
                         {N} target = "GAA"
 
-                      WtLinkTitle([ ])
+                      WtLinkTitleImpl([ ])
                     )
                     WtText(" was not founded until the late 1880s and I know that Archbishop ")
                     WtInternalLink(
@@ -111,7 +111,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Thomas Croke" <o> "]]" ]
                         {N} target = "Thomas Croke"
 
-                      WtLinkTitle([ ])
+                      WtLinkTitleImpl([ ])
                     )
                     WtText(", one of the founders, was in New Zealand in the 1870s, where he had the opportunity to see \"Australasian rules\" being played. So maybe it was a \"two way street\". I will have to get hold of a history of Gaelic football one of these days.   ")
                     WtInternalLink(
@@ -121,7 +121,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                         {N} target = "User:Grant65"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -170,7 +170,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -185,7 +185,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -222,7 +222,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                       {N} target = "User:Grant65"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -237,7 +237,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                       {N} target = "User talk:Grant65"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -278,7 +278,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Cambridge Rules" <o> "]]" ]
                         {N} target = "Cambridge Rules"
 
-                      WtLinkTitle([ ])
+                      WtLinkTitleImpl([ ])
                     )
                     WtText(" and ")
                     WtInternalLink(
@@ -288,7 +288,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Sheffield Rules" <o> "]]" ]
                         {N} target = "Sheffield Rules"
 
-                      WtLinkTitle([ ])
+                      WtLinkTitleImpl([ ])
                     )
                     WtText(".  These are basically the rules of Aussie rules as they were codified in 1859!  So don't just rely on the superficial similarity of Gaelic football and aussie rules - dig a little deeper and look at the prevailing environment of the 1840s and 1850s - aussie rules, indeed all the modern football codes, can only be truly understood in that context.  ")
                     WtInternalLink(
@@ -298,7 +298,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                         {N} target = "User:Pippu d'angelo"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -313,7 +313,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                         {N} target = ":scn:User talk:Pippu d'angelo"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -418,7 +418,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[hurling" <o> "]]" ]
                       {N} target = "hurling"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                   WtText(" before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ")
                   WtImageLink(
@@ -445,7 +445,7 @@ WtParsedWikitextPage(
                           {N} width = 30
                       )
                     ]
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                   WtText("  ")
                   WtInternalLink(
@@ -455,7 +455,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                       {N} target = "User:Grant65"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -470,7 +470,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                       {N} target = "User talk:Grant65"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -527,7 +527,7 @@ WtParsedWikitextPage(
                               {N} width = 40
                           )
                         ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                       WtText(" ")
                       WtInternalLink(
@@ -537,7 +537,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                           {N} target = "User:Pippu d'angelo"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -552,7 +552,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                           {N} target = ":scn:User talk:Pippu d'Angelo"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -608,7 +608,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -654,7 +654,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Mark Ryan" <o> "]]" ]
               {N} target = "User:Mark Ryan"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -678,7 +678,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Robert Merkel" <o> "]]" ]
               {N} target = "User:Robert Merkel"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -722,7 +722,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Daniel Quinlan" <o> "]]" ]
               {N} target = "User:Daniel Quinlan"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -761,7 +761,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Error" <o> "]]" ]
               {N} target = "User:Error"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -787,7 +787,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                       {N} target = "User:Factoid Killer"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -809,7 +809,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "[[User:Stevage" <o> "]]" ]
                             {N} target = "User:Stevage"
 
-                          WtLinkTitle(
+                          WtLinkTitleImpl(
                             Properties:
                               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -857,7 +857,7 @@ WtParsedWikitextPage(
                                       {N} protocol = "http"
                                       {N} rtd = RTD[ "http://www.bom.gov.au/climate/averages/tables/cw_070282.shtml" ]
                                   )
-                                  [ WtText("Canberra") ]
+                                  WtLinkTitleImpl([ WtText("Canberra") ])
                                 )
                                 WtText(" is has hotter summers than ")
                                 WtExternalLink(
@@ -870,7 +870,7 @@ WtParsedWikitextPage(
                                       {N} protocol = "http"
                                       {N} rtd = RTD[ "http://www.bom.gov.au/climate/averages/tables/cw_086071.shtml" ]
                                   )
-                                  [ WtText("Melbourne") ]
+                                  WtLinkTitleImpl([ WtText("Melbourne") ])
                                 )
                                 WtText(". Nearly as hot as ")
                                 WtExternalLink(
@@ -883,7 +883,7 @@ WtParsedWikitextPage(
                                       {N} protocol = "http"
                                       {N} rtd = RTD[ "http://www.bom.gov.au/climate/averages/tables/cw_040214.shtml" ]
                                   )
-                                  [ WtText("Brissie") ]
+                                  WtLinkTitleImpl([ WtText("Brissie") ])
                                 )
                                 WtText(".")
                               ]
@@ -922,7 +922,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:RoyalDave" <o> "]]" ]
               {N} target = "User:RoyalDave"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -962,7 +962,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Mintguy" <o> "]]" ]
               {N} target = "User:Mintguy"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -977,7 +977,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk: Mintguy" <o> "]]" ]
               {N} target = "User talk: Mintguy"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -997,7 +997,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Talk:Football" <o> "]]" ]
               {N} target = "Talk:Football"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(", I think fullpointsfooty.net is wrong on the early history. In fact, a lot of the histories of Aussie rules available on the web seem to be terrible and contradictory. We have a great opportunity to do better :-) Anyway, I've expanded and updated the history section. In particular, I've addressed some inaccuracies, such as (1) the role of H.C.A. Harrison, which seems to be exaggerated by almost everyone except serious historians; (2) the previous omission of the experiments at the Richmond Paddock, and (3) the \"significance\" of the game between Melbourne Grammar and Scotch College in 1858. To name a few. ")
           WtInternalLink(
@@ -1007,7 +1007,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1076,7 +1076,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Football#The Establishment of Modern Codes of Football" <o> "]]" ]
               {N} target = "Football#The Establishment of Modern Codes of Football"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(
             Properties:
@@ -1093,7 +1093,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Football Association" <o> "]]" ]
               {N} target = "Football Association"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" rules of 1863 had been by influenced by the Melbourne FC rules! ")
           WtInternalLink(
@@ -1103,7 +1103,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1123,7 +1123,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Mintguy" <o> "]]" ]
               {N} target = "User:Mintguy"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1138,7 +1138,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk: Mintguy" <o> "]]" ]
               {N} target = "User talk: Mintguy"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1158,7 +1158,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1187,7 +1187,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:B.d.mills" <o> "]]" ]
               {N} target = "User:B.d.mills"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1220,7 +1220,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Abigail-II" <o> "]]" ]
               {N} target = "User:Abigail-II"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1243,7 +1243,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://www.statelibrary.vic.gov.au/slv/slvnews/aussierulesonline.pdf" ]
             )
-            [ ]
+            -
           )
           WtText(" ")
           WtInternalLink(
@@ -1253,7 +1253,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Mintguy" <o> "]]" ]
               {N} target = "User:Mintguy"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1268,7 +1268,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk: Mintguy" <o> "]]" ]
               {N} target = "User talk: Mintguy"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1301,7 +1301,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Deadlock" <o> "]]" ]
                   {N} target = "User:Deadlock"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1325,7 +1325,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                       {N} target = "User:Pippu d'angelo"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1340,7 +1340,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                       {N} target = ":scn:User talk:Pippu d'angelo"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1372,7 +1372,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "[[User:Deadlock" <o> "]]" ]
                             {N} target = "User:Deadlock"
 
-                          WtLinkTitle(
+                          WtLinkTitleImpl(
                             Properties:
                               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1436,7 +1436,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Rugby League" <o> "]]" ]
               {N} target = "Rugby League"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(", because Aussie Rules was invented long before there was any such thing as \"Rugby League\" and before there was even much ")
           WtInternalLink(
@@ -1446,7 +1446,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Rugby Football" <o> "]]" ]
               {N} target = "Rugby Football"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" outside ")
           WtInternalLink(
@@ -1456,7 +1456,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Rugby School" <o> "]]" ]
               {N} target = "Rugby School"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(". Neither would it be accurate to describe Aussie Rules as an offshoot of Rugby. See ")
           WtInternalLink(
@@ -1466,7 +1466,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Football#The_Establishment_of_Modern_Codes_of_Football" <o> "]]" ]
               {N} target = "Football#The_Establishment_of_Modern_Codes_of_Football"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(". ")
           WtInternalLink(
@@ -1476,7 +1476,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1490,7 +1490,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
               {N} target = "User talk: Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1520,7 +1520,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Australian Rules Football" <o> "]]" ]
               {N} target = "Australian Rules Football"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" <-> ")
           WtInternalLink(
@@ -1530,7 +1530,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
               {N} target = "Australian Football League"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" ")
         ]
@@ -1547,7 +1547,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
               {N} target = "Australian Football League"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" article.  However I figured if this was right, someone would have done it already.  Ideas anyone?  -- ")
           WtInternalLink(
@@ -1557,7 +1557,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
               {N} target = "User:Chuq"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1581,7 +1581,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1595,7 +1595,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
                   {N} target = "User talk: Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1617,7 +1617,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
                         {N} target = "Australian Football League"
 
-                      WtLinkTitle([ ])
+                      WtLinkTitleImpl([ ])
                     )
                     WtText(". I beleive that the Hall of Fame does not belong because it is the ")
                     WtBold(
@@ -1634,7 +1634,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                         {N} target = "User:Bjmurph"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1673,7 +1673,7 @@ WtParsedWikitextPage(
                                   {N} width = 30
                               )
                             ]
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtText(" ")
                           WtInternalLink(
@@ -1683,7 +1683,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:Plattopus" <o> "]]" ]
                               {N} target = "User:Plattopus"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1713,7 +1713,7 @@ WtParsedWikitextPage(
                                       {N} rtd = RTD[ "[[User_talk:Plattopus" <o> "]]" ]
                                       {N} target = "User_talk:Plattopus"
 
-                                    WtLinkTitle(
+                                    WtLinkTitleImpl(
                                       Properties:
                                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1739,7 +1739,7 @@ WtParsedWikitextPage(
                                     {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                                     {N} target = "User:Bjmurph"
 
-                                  WtLinkTitle(
+                                  WtLinkTitleImpl(
                                     Properties:
                                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1778,7 +1778,7 @@ WtParsedWikitextPage(
                                               {N} width = 30
                                           )
                                         ]
-                                        WtLinkTitle([ ])
+                                        WtLinkTitleImpl([ ])
                                       )
                                       WtText(" ")
                                       WtInternalLink(
@@ -1788,7 +1788,7 @@ WtParsedWikitextPage(
                                           {N} rtd = RTD[ "[[User:Plattopus" <o> "]]" ]
                                           {N} target = "User:Plattopus"
 
-                                        WtLinkTitle(
+                                        WtLinkTitleImpl(
                                           Properties:
                                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1818,7 +1818,7 @@ WtParsedWikitextPage(
                                                   {N} rtd = RTD[ "[[User_talk:Plattopus" <o> "]]" ]
                                                   {N} target = "User_talk:Plattopus"
 
-                                                WtLinkTitle(
+                                                WtLinkTitleImpl(
                                                   Properties:
                                                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1855,7 +1855,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Chris Tarrant" <o> "]]" ]
               {N} target = "Chris Tarrant"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" etc.) ")
           WtInternalLink(
@@ -1865,7 +1865,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1879,7 +1879,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
               {N} target = "User talk: Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1899,7 +1899,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
               {N} target = "User:The Brain of Morbius"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1924,7 +1924,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1938,7 +1938,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
                   {N} target = "User talk: Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1967,7 +1967,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Squilibob" <o> "]]" ]
                       {N} target = "User:Squilibob"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2005,7 +2005,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Roisterer" <o> "]]" ]
               {N} target = "User:Roisterer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2046,7 +2046,7 @@ WtParsedWikitextPage(
                       {N} width = 30
                   )
                 ]
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2061,7 +2061,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Plattopus" <o> "]]" ]
                   {N} target = "User:Plattopus"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2091,7 +2091,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User_talk:Plattopus" <o> "]]" ]
                           {N} target = "User_talk:Plattopus"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2117,7 +2117,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                         {N} target = "User:Grant65"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2131,7 +2131,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
                         {N} target = "User talk: Grant65"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2171,7 +2171,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
               {N} target = "User:The Brain of Morbius"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2215,7 +2215,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2257,7 +2257,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:DrHow" <o> "]]" ]
               {N} target = "User:DrHow"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2291,7 +2291,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2320,7 +2320,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                       {N} target = "User:Pippu d'angelo"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2335,7 +2335,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                       {N} target = ":scn:User talk:Pippu d'angelo"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2383,7 +2383,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
               {N} target = "User:Pippu d'angelo"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2398,7 +2398,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
               {N} target = ":scn:User talk:Pippu d'angelo"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2433,7 +2433,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:Be bold in updating pages" <o> "]]" ]
                   {N} target = "Wikipedia:Be bold in updating pages"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2448,7 +2448,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
                   {N} target = "User:Ianbrown"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2470,7 +2470,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
                   {N} target = "User_talk:Ianbrown"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2506,7 +2506,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
               {N} target = "User:Pippu d'angelo"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2521,7 +2521,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
               {N} target = ":scn:User talk:Pippu d'angelo"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2582,7 +2582,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[Melbourne" <o> "]]" ]
                           {N} target = "Melbourne"
 
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                       WtText(", is the predominant ")
                       WtInternalLink(
@@ -2592,7 +2592,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[winter sport" <o> "]]" ]
                           {N} target = "winter sport"
 
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                       WtText(" in all states of ")
                       WtInternalLink(
@@ -2602,7 +2602,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[Australia" <o> "]]" ]
                           {N} target = "Australia"
 
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                       WtText(" in which it is played")
                       WtBold(
@@ -2618,7 +2618,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[Queensland" <o> "]]" ]
                               {N} target = "Queensland"
 
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtText(", ")
                           WtInternalLink(
@@ -2628,7 +2628,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[New South Wales" <o> "]]" ]
                               {N} target = "New South Wales"
 
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtText(" and the ")
                           WtInternalLink(
@@ -2638,7 +2638,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[Australian Capital Territory" <o> "]]" ]
                               {N} target = "Australian Capital Territory"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2653,7 +2653,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[Rugby league" <o> "]]" ]
                               {N} target = "Rugby league"
 
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtText(" is the predominant sport")
                         ]
@@ -2699,7 +2699,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2730,7 +2730,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                           {N} target = "User:Pippu d'angelo"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2745,7 +2745,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                           {N} target = ":scn:User talk:Pippu d'angelo"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2770,7 +2770,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[:scn:p\u00E0ggina principali" <o> "]]" ]
                           {N} target = ":scn:p\u00E0ggina principali"
 
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                       WtText("!  All invited!")
                     ]
@@ -2793,7 +2793,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://foxsports.news.com.au/story/0,8659,16485151-23214,00.html" ]
             )
-            [ ]
+            -
           )
           WtText(" the AFL Kangaroos biggest crowd this year was 13,481:")
           WtExternalLink(
@@ -2806,7 +2806,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://canberra.yourguide.com.au/detail.asp?class=sport&subclass=local&category=general%20sport&story_id=421562&y=2005&m=9" ]
             )
-            [ ]
+            -
           )
         ])
         WtNewline("\n")
@@ -2872,7 +2872,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Western Force" <o> "]]" ]
               {N} target = "Western Force"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" smash the Brumbies, expect union to decline in the ACT as well ;-) Seriously, with a population of 300,000, it's not a bad effort to get 10,000+ to both league and AFL games. According to the Governor-General the Brumbies get an average crowd of 22,500.")
           WtExternalLink(
@@ -2885,7 +2885,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://www.gg.gov.au/speeches/html/speeches/2005/050202.html" ]
             )
-            [ ]
+            -
           )
           WtText(" A competitive AFL team based there would come close to that I think.")
           WtInternalLink(
@@ -2895,7 +2895,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2909,7 +2909,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk: Grant65" <o> "]]" ]
               {N} target = "User talk: Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2944,7 +2944,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                   {N} target = "User:The Brain of Morbius"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2979,7 +2979,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:*Paul*" <o> "]]" ]
                       {N} target = "User:*Paul*"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3011,7 +3011,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                       {N} target = "User:Pippu d'angelo"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3026,7 +3026,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                       {N} target = ":scn:User talk:Pippu d'angelo"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3070,7 +3070,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://kangaroos.com.au/default.asp?pg=canberra&spg=display&articleid=242973" ]
                     )
-                    [ ]
+                    -
                   )
                   WtText(" ")
                   WtExternalLink(
@@ -3083,7 +3083,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://sydneyswans.com.au/default.asp?pg=news&spg=display&articleid=237653" ]
                     )
-                    [ ]
+                    -
                   )
                   WtText(".  I think a lot of people confuse Aussie Rules long-time strong presence in southern NSW/Riverina as extending to Canberra.  It is more the case that Canberra's proximity to Sydney holds sway.  --")
                   WtInternalLink(
@@ -3093,7 +3093,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Biatch" <o> "]]" ]
                       {N} target = "User:Biatch"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3131,7 +3131,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Sport in Australia" <o> "]]" ]
               {N} target = "Sport in Australia"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" article is the current ")
           WtInternalLink(
@@ -3141,7 +3141,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Wikipedia:Australian Collaboration of the Fortnight" <o> "]]" ]
               {N} target = "Wikipedia:Australian Collaboration of the Fortnight"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" - just wondering if anyone here would be interested in adding to the ")
           WtInternalLink(
@@ -3151,7 +3151,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Sport_in_Australia#Australian rules football" <o> "]]" ]
               {N} target = "Sport_in_Australia#Australian rules football"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3166,7 +3166,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Astrokey44" <o> "]]" ]
               {N} target = "User:Astrokey44"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3204,7 +3204,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
               {N} target = "User:Bjmurph"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3228,7 +3228,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3243,7 +3243,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3282,7 +3282,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                       {N} target = "User:Bjmurph"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3315,7 +3315,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3330,7 +3330,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                           {N} target = "User talk:JPD"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3361,7 +3361,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3376,7 +3376,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3405,7 +3405,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Laws of Australian Football" <o> "]]" ]
                       {N} target = "Laws of Australian Football"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                   WtText(". Probably still needs a good short paragraph in this article ")
                   WtInternalLink(
@@ -3415,7 +3415,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Astrokey44" <o> "]]" ]
                       {N} target = "User:Astrokey44"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3502,7 +3502,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3525,7 +3525,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://www.smh.com.au/articles/2003/05/22/1053196670542.html" ]
             )
-            [ ]
+            -
           )
           WtText("). I tend to agree that stating it is the most popular sport is probably going a bit far, but the rest of the paragraph is fine. If anything, it understates the popularity of Aussie Rules in the NSW Riverina. Keep in mind also, that this article is about the sport, not about the AFL. ")
           WtInternalLink(
@@ -3535,7 +3535,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
               {N} target = "User:JPD"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3562,7 +3562,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                       {N} target = "User:Factoid Killer"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3602,7 +3602,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3647,7 +3647,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3692,7 +3692,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3737,7 +3737,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3782,7 +3782,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3827,7 +3827,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3872,7 +3872,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[Straw Man Fallacy" <o> "]]" ]
                                 {N} target = "Straw Man Fallacy"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3887,7 +3887,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3920,7 +3920,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3958,7 +3958,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3980,7 +3980,7 @@ WtParsedWikitextPage(
                                 {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                                 {N} target = "User:Factoid Killer"
 
-                              WtLinkTitle(
+                              WtLinkTitleImpl(
                                 Properties:
                                   {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4009,7 +4009,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4048,7 +4048,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4082,7 +4082,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4237,7 +4237,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://www.claremontfc.com/2005season/modules.php?name=News&file=article&sid=87" ]
                 )
-                [ ]
+                -
               )
               WtText(" ;-) ")
               WtInternalLink(
@@ -4247,7 +4247,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4262,7 +4262,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                   {N} target = "User talk:Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4354,7 +4354,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4391,7 +4391,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
               {N} target = "User:Bjmurph"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4406,7 +4406,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
               {N} target = "User talk:Bjmurph"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4444,7 +4444,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                           {N} target = "User:Bjmurph"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4459,7 +4459,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                           {N} target = "User talk:Bjmurph"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4649,7 +4649,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
                   {N} target = "User:Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4664,7 +4664,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
                   {N} target = "User talk:Grant65"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4686,7 +4686,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                         {N} target = "User:Bjmurph"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4701,7 +4701,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                         {N} target = "User talk:Bjmurph"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4837,7 +4837,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4879,7 +4879,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                   {N} target = "User:Bjmurph"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4894,7 +4894,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                   {N} target = "User talk:Bjmurph"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4951,7 +4951,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
               {N} target = "User:Factoid Killer"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -4976,7 +4976,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5021,7 +5021,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5082,7 +5082,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[WP:FAITH" <o> "]]" ]
                                   {N} target = "WP:FAITH"
 
-                                WtLinkTitle(
+                                WtLinkTitleImpl(
                                   Properties:
                                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5097,7 +5097,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                                   {N} target = "User:JPD"
 
-                                WtLinkTitle(
+                                WtLinkTitleImpl(
                                   Properties:
                                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5157,7 +5157,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5175,7 +5175,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
               {N} target = "User:JPD"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5225,7 +5225,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User Talk:Stevage" <o> "]]" ]
                       {N} target = "User Talk:Stevage"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5293,7 +5293,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:220.245.178.140" <o> "]]" ]
                   {N} target = "User:220.245.178.140"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5308,7 +5308,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:220.245.178.140" <o> "]]" ]
                   {N} target = "User:220.245.178.140"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5328,7 +5328,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5354,7 +5354,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                       {N} target = "User:JPD"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5383,7 +5383,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                           {N} target = "User:Factoid Killer"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5442,7 +5442,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "[[User:62.254.168.102" <o> "]]" ]
                             {N} target = "User:62.254.168.102"
 
-                          WtLinkTitle(
+                          WtLinkTitleImpl(
                             Properties:
                               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5464,7 +5464,7 @@ WtParsedWikitextPage(
                                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                                   {N} target = "User:JPD"
 
-                                WtLinkTitle(
+                                WtLinkTitleImpl(
                                   Properties:
                                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5515,7 +5515,7 @@ WtParsedWikitextPage(
                             {N} rtd = RTD[ "[[User:62.254.168.102" <o> "]]" ]
                             {N} target = "User:62.254.168.102"
 
-                          WtLinkTitle(
+                          WtLinkTitleImpl(
                             Properties:
                               {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5608,7 +5608,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:Biatch" <o> "]]" ]
                           {N} target = "User:Biatch"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5692,7 +5692,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                   {N} target = "User:Bjmurph"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5707,7 +5707,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                   {N} target = "User talk:Bjmurph"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5772,7 +5772,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5792,7 +5792,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5856,7 +5856,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Bjmurph" <o> "]]" ]
                   {N} target = "User:Bjmurph"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5871,7 +5871,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:Bjmurph" <o> "]]" ]
                   {N} target = "User talk:Bjmurph"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5920,7 +5920,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                       {N} target = "User:JPD"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5947,7 +5947,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                       {N} target = "User:Factoid Killer"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5969,7 +5969,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -5997,7 +5997,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://www.national.com.au/Sponsorships/0,,66975,00.html" ]
                     )
-                    [ ]
+                    -
                   )
                   WtText(".  If guess if it wasn't elite, you could probably walk up and get a game, which is obviously not the case. --")
                   WtInternalLink(
@@ -6007,7 +6007,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Biatch" <o> "]]" ]
                       {N} target = "User:Biatch"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                 ]
               )
@@ -6040,7 +6040,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
               {N} target = "User:Ianbrown"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6055,7 +6055,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
               {N} target = "User_talk:Ianbrown"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6079,7 +6079,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Australian Football League" <o> "]]" ]
                   {N} target = "Australian Football League"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(").  ")
               WtInternalLink(
@@ -6089,7 +6089,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6104,7 +6104,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6136,7 +6136,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
                         {N} target = "User:Ianbrown"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6158,7 +6158,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
                         {N} target = "User_talk:Ianbrown"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6187,7 +6187,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                               {N} target = "User:Pippu d'angelo"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6202,7 +6202,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                               {N} target = ":scn:User talk:Pippu d'angelo"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6235,7 +6235,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:The Brain of Morbius" <o> "]]" ]
                               {N} target = "User:The Brain of Morbius"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6274,7 +6274,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Factoid Killer" <o> "]]" ]
                   {N} target = "User:Factoid Killer"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6301,7 +6301,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6323,7 +6323,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                         {N} target = "User:Pippu d'angelo"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6338,7 +6338,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[:scn:User talk:Pippu d'angelo" <o> "]]" ]
                         {N} target = ":scn:User talk:Pippu d'angelo"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6378,7 +6378,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                               {N} target = "User:JPD"
 
-                            WtLinkTitle([ ])
+                            WtLinkTitleImpl([ ])
                           )
                           WtText(". ie. leave as is.  I apologise for bringing this up. -- ")
                           WtInternalLink(
@@ -6388,7 +6388,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:Ianbrown" <o> "]]" ]
                               {N} target = "User:Ianbrown"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6410,7 +6410,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User_talk:Ianbrown" <o> "]]" ]
                               {N} target = "User_talk:Ianbrown"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6453,7 +6453,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[cricket" <o> "]]" ]
               {N} target = "cricket"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" have been deliberately kept at a much smaller number, so maybe someone should do a bit of a cull here? ")
           WtInternalLink(
@@ -6463,7 +6463,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
               {N} target = "User:JPD"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6483,7 +6483,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Cinephobia" <o> "]]" ]
               {N} target = "User:Cinephobia"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6506,7 +6506,7 @@ WtParsedWikitextPage(
                 {N} protocol = "http"
                 {N} rtd = RTD[ "http://stats.rleague.com/afl/afl_index.html" ]
             )
-            [ WtText("me") ]
+            WtLinkTitleImpl([ WtText("me") ])
           )
           WtText(" --")
           WtInternalLink(
@@ -6516,7 +6516,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:*Paul*" <o> "]]" ]
               {N} target = "User:*Paul*"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6541,7 +6541,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Association football" <o> "]]" ]
                   {N} target = "Association football"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(": have only high-level links in the main article, and place other links in more relevant articles (e.g. the articles on the actual organisations the refer to). --")
               WtInternalLink(
@@ -6551,7 +6551,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Daveb" <o> "]]" ]
                   {N} target = "User:Daveb"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6598,7 +6598,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Talk:Australian rules football/padding" <o> "]]" ]
                       {N} target = "Talk:Australian rules football/padding"
 
-                    WtLinkTitle([ ])
+                    WtLinkTitleImpl([ ])
                   )
                   WtText("; to see it in its original context prior to the move ")
                   WtExternalLink(
@@ -6611,7 +6611,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://en.wikipedia.org/w/index.php?title=Talk:Australian_rules_football&oldid=32944830#padding" ]
                     )
-                    [ WtText("click here") ]
+                    WtLinkTitleImpl([ WtText("click here") ])
                   )
                 ]
               )
@@ -6643,7 +6643,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
               {N} target = "User:Pippu d'angelo"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6658,7 +6658,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
               {N} target = ":scn:User talk:Pippu d'Angelo"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6717,7 +6717,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[WP:AFL" <o> "]]" ]
                           {N} target = "WP:AFL"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6750,7 +6750,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[Special:Contributions/Rogerthat" <o> "]]" ]
                           {N} target = "Special:Contributions/Rogerthat"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6783,7 +6783,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:Rogerthat" <o> "]]" ]
                           {N} target = "User:Rogerthat"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6832,7 +6832,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User_talk:Rogerthat" <o> "]]" ]
                               {N} target = "User_talk:Rogerthat"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6870,7 +6870,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://en.wikipedia.org/wiki/Image:Australian_rules_01.jpg" ]
                     )
-                    [ WtText("Australian_rules_01.jpg") ]
+                    WtLinkTitleImpl([ WtText("Australian_rules_01.jpg") ])
                   )
                   WtText(", ")
                   WtExternalLink(
@@ -6883,7 +6883,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://en.wikipedia.org/wiki/Image:Australian_rules_02.jpg" ]
                     )
-                    [ WtText("Australian_rules_02.jpg") ]
+                    WtLinkTitleImpl([ WtText("Australian_rules_02.jpg") ])
                   )
                   WtText(", ")
                   WtExternalLink(
@@ -6896,7 +6896,7 @@ WtParsedWikitextPage(
                         {N} protocol = "http"
                         {N} rtd = RTD[ "http://en.wikipedia.org/wiki/Image:Australian_rules_03.jpg" ]
                     )
-                    [ WtText("Australian_rules_03.jpg") ]
+                    WtLinkTitleImpl([ WtText("Australian_rules_03.jpg") ])
                   )
                   WtText(" --")
                   WtInternalLink(
@@ -6906,7 +6906,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Joshd" <o> "]]" ]
                       {N} target = "User:Joshd"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6949,7 +6949,7 @@ WtParsedWikitextPage(
                           {N} width = -1
 
                         [ ]
-                        WtLinkTitle([ ])
+                        WtLinkTitleImpl([ ])
                       )
                       WtText(" and put it in the section of this article mentioning the banners. ")
                       WtInternalLink(
@@ -6959,7 +6959,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                           {N} target = "User:JPD"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -6974,7 +6974,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                           {N} target = "User talk:JPD"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7014,7 +7014,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Forever young" <o> "]]" ]
               {N} target = "User:Forever young"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7038,7 +7038,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                   {N} target = "User:Pippu d'angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7053,7 +7053,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                   {N} target = ":scn:User talk:Pippu d'Angelo"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7085,7 +7085,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:*Paul*" <o> "]]" ]
                         {N} target = "User:*Paul*"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7107,7 +7107,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                               {N} target = "User:Pippu d'angelo"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7122,7 +7122,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                               {N} target = ":scn:User talk:Pippu d'Angelo"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7155,7 +7155,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[User:Pippu d'angelo" <o> "]]" ]
                               {N} target = "User:Pippu d'angelo"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7170,7 +7170,7 @@ WtParsedWikitextPage(
                               {N} rtd = RTD[ "[[:scn:User talk:Pippu d'Angelo" <o> "]]" ]
                               {N} target = ":scn:User talk:Pippu d'Angelo"
 
-                            WtLinkTitle(
+                            WtLinkTitleImpl(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7202,7 +7202,7 @@ WtParsedWikitextPage(
                                     {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                                     {N} target = "User:JPD"
 
-                                  WtLinkTitle(
+                                  WtLinkTitleImpl(
                                     Properties:
                                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7217,7 +7217,7 @@ WtParsedWikitextPage(
                                     {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                                     {N} target = "User talk:JPD"
 
-                                  WtLinkTitle(
+                                  WtLinkTitleImpl(
                                     Properties:
                                       {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7270,7 +7270,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7285,7 +7285,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
               {N} target = "User talk:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7309,7 +7309,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7324,7 +7324,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7360,7 +7360,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Australian Rules slang" <o> "]]" ]
               {N} target = "Australian Rules slang"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(" and ")
           WtInternalLink(
@@ -7370,7 +7370,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[:Category:Australian rules football terminology" <o> "]]" ]
               {N} target = ":Category:Australian rules football terminology"
 
-            WtLinkTitle([ ])
+            WtLinkTitleImpl([ ])
           )
           WtText(". Any thoughts or suggestions on this? ")
           WtXmlElement(
@@ -7405,7 +7405,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[WP:AFL" <o> "]]" ]
                       {N} target = "WP:AFL"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7438,7 +7438,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[Special:Contributions/Rogerthat" <o> "]]" ]
                       {N} target = "Special:Contributions/Rogerthat"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7471,7 +7471,7 @@ WtParsedWikitextPage(
                       {N} rtd = RTD[ "[[User:Rogerthat" <o> "]]" ]
                       {N} target = "User:Rogerthat"
 
-                    WtLinkTitle(
+                    WtLinkTitleImpl(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7520,7 +7520,7 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "[[User_talk:Rogerthat" <o> "]]" ]
                           {N} target = "User_talk:Rogerthat"
 
-                        WtLinkTitle(
+                        WtLinkTitleImpl(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7550,7 +7550,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7565,7 +7565,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7601,7 +7601,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby" <o> "]]" ]
               {N} target = "Talk:Football#Poll_on_content_relating_to_Australian_rules_football.2Frugby"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7624,7 +7624,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Grant65" <o> "]]" ]
               {N} target = "User:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7639,7 +7639,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User talk:Grant65" <o> "]]" ]
               {N} target = "User talk:Grant65"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7674,7 +7674,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
               {N} target = "User:Chuq"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7698,7 +7698,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[Wikipedia:External links" <o> "]]" ]
                   {N} target = "Wikipedia:External links"
 
-                WtLinkTitle([ ])
+                WtLinkTitleImpl([ ])
               )
               WtText(". ")
               WtInternalLink(
@@ -7708,7 +7708,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User:JPD" <o> "]]" ]
                   {N} target = "User:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7723,7 +7723,7 @@ WtParsedWikitextPage(
                   {N} rtd = RTD[ "[[User talk:JPD" <o> "]]" ]
                   {N} target = "User talk:JPD"
 
-                WtLinkTitle(
+                WtLinkTitleImpl(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7745,7 +7745,7 @@ WtParsedWikitextPage(
                         {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
                         {N} target = "User:Chuq"
 
-                      WtLinkTitle(
+                      WtLinkTitleImpl(
                         Properties:
                           {N} rtd = RTD[ "|" <o> "" ]
 
@@ -7778,7 +7778,7 @@ WtParsedWikitextPage(
               {N} rtd = RTD[ "[[User:Chuq" <o> "]]" ]
               {N} target = "User:Chuq"
 
-            WtLinkTitle(
+            WtLinkTitleImpl(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 

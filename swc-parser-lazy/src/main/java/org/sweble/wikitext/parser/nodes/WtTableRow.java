@@ -20,7 +20,7 @@ public class WtTableRow
 	
 	public WtTableRow()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtTableRow(WtNodeList xmlAttributes, WtNodeList body)

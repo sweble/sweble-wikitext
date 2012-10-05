@@ -38,7 +38,7 @@ WtParsedWikitextPage(
           {N} rtd = RTD[ "[[target" <o> "]]" ]
           {N} target = "target"
 
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
       WtNewline("\n")
       WtText("]]")

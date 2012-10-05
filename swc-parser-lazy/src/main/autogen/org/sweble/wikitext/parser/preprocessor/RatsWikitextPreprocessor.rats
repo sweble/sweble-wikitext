@@ -109,7 +109,7 @@ public transient WtPreproWikitextPage Article =
   redirect:Redirect? content:Content &Eof
   {
     yyValue = new WtPreproWikitextPage(
-        new WtNodeList(redirect, content),
+        new WtNodeListImpl(redirect, content),
         new ArrayList<Warning>(),
         getState().getEntityMap());
   }

@@ -56,7 +56,7 @@ noinline memoized WtNode TableHeaderMemoized =
 noinline transient WtNode TableHeaderTransient =
     &( pExtSpaceStar '!' ) inline:TableInlineHeaderPlus last:TableBlockHeader?
     {
-      yyValue = new WtNodeList(inline, last);
+      yyValue = new WtNodeListImpl(inline, last);
     }
   / &( pExtSpaceStar '!' ) header:TableBlockHeader
     {
@@ -76,7 +76,7 @@ inline void InlineContentStopperTableHeader =
 private transient WtNodeList TableInlineHeaderPlus =
   headers:( TableInlineHeader &( "||" / "!!" ) )+
   {
-    yyValue = new WtNodeList(headers);
+    yyValue = new WtNodeListImpl(headers);
   }
 ;
 
@@ -122,7 +122,7 @@ private WtForeignNode Attributes =
       yyValue = WtForeignNode.from(attrs, new Object[] {ws, '|'});
     }
   / {
-      yyValue = WtForeignNode.from(new WtNodeList(), null);
+      yyValue = WtForeignNode.from(new WtNodeListImpl(), null);
     }
 ;
 

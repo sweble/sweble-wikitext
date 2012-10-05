@@ -2,7 +2,7 @@ package org.sweble.wikitext.parser.nodes;
 
 public class WtSectionBody
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 {
 	private static final long serialVersionUID = 1L;
 	

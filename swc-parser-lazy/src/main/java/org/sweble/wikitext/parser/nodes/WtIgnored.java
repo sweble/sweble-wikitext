@@ -1,12 +1,11 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 /**
  * <h1>Ignored</h1>
  */
 public class WtIgnored
 		extends
-			WtStringContentNode
+			WtStringNodeImpl
 		implements
 			WtPreproNode
 {

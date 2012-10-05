@@ -17,25 +17,25 @@
 
 package org.sweble.wikitext.parser.postprocessor;
 
-import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.BOLD;
-import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.ITALICS;
+import static org.sweble.wikitext.parser.postprocessor.IntermediateTags.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.nodes.WtNewline;
-import org.sweble.wikitext.parser.nodes.WtTicks;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
 import org.sweble.wikitext.parser.nodes.WtListItem;
+import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
-import org.sweble.wikitext.parser.nodes.WtStringContentNode;
+import org.sweble.wikitext.parser.nodes.WtStringNode;
 import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtTicks;
 import org.sweble.wikitext.parser.nodes.WtWhitespace;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -307,9 +307,9 @@ public class TicksAnalyzer
 					
 					char tMinus1 = '\0';
 					char tMinus2 = '\0';
-					if (p instanceof WtStringContentNode)
+					if (p instanceof WtStringNode)
 					{
-						String t = ((WtStringContentNode) p).getContent();
+						String t = ((WtStringNode) p).getContent();
 						
 						if (t.length() >= 1)
 							tMinus1 = t.charAt(t.length() - 1);
@@ -410,7 +410,7 @@ public class TicksAnalyzer
 		{
 			LineEntry entry = nextEntry();
 			
-			WtNodeList result = new WtNodeList(entry.prefix);
+			WtNodeList result = new WtNodeListImpl(entry.prefix);
 			
 			toTag(entry, result);
 			
@@ -588,20 +588,20 @@ public class TicksAnalyzer
 			switch (state)
 			{
 				case Italics:
-					result = new WtNodeList();
+					result = new WtNodeListImpl();
 					result.add(ITALICS.createClose(true));
 					break;
 				case Bold:
-					result = new WtNodeList();
+					result = new WtNodeListImpl();
 					result.add(BOLD.createClose(true));
 					break;
 				case BoldItalics:
-					result = new WtNodeList();
+					result = new WtNodeListImpl();
 					result.add(ITALICS.createClose(true));
 					result.add(BOLD.createClose(true));
 					break;
 				case ItalicsBold:
-					result = new WtNodeList();
+					result = new WtNodeListImpl();
 					result.add(BOLD.createClose(true));
 					result.add(ITALICS.createClose(true));
 					break;

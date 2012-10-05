@@ -5,7 +5,7 @@ package org.sweble.wikitext.parser.nodes;
  */
 public class WtBold
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -13,7 +13,6 @@ public class WtBold
 	
 	public WtBold()
 	{
-		super();
 	}
 	
 	public WtBold(WtNodeList content)

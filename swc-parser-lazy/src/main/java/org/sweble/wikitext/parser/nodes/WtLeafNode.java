@@ -3,11 +3,11 @@ package org.sweble.wikitext.parser.nodes;
 import org.sweble.wikitext.parser.WtRtData;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.GenericLeafNode;
+import de.fau.cs.osr.ptk.common.ast.AstLeafNodeImpl;
 
 public abstract class WtLeafNode
 		extends
-			GenericLeafNode<WtNode>
+			AstLeafNodeImpl<WtNode>
 		implements
 			WtNode
 {

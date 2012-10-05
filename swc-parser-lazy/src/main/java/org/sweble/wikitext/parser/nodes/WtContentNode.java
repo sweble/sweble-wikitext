@@ -1,18 +1,17 @@
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.IOException;
+import java.util.Iterator;
+
 import org.sweble.wikitext.parser.WtRtData;
 
-import xtc.tree.Location;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.GenericContentNode;
 
 public abstract class WtContentNode
 		extends
-			GenericContentNode<WtNode, WtNodeList>
-		implements
-			WtNode
+			WtNodeListImpl
 {
-	private static final long serialVersionUID = -4825960747538151723L;
+	private static final long serialVersionUID = 3407356901471138122L;
 	
 	private WtRtData rtd = null;
 	
@@ -20,22 +19,11 @@ public abstract class WtContentNode
 	
 	public WtContentNode()
 	{
-		super(new WtNodeList());
 	}
 	
-	public WtContentNode(Location arg0, WtNode n0)
+	public WtContentNode(WtNodeList content)
 	{
-		super(arg0, n0);
-	}
-	
-	public WtContentNode(Location arg0)
-	{
-		super(arg0, new WtNodeList());
-	}
-	
-	public WtContentNode(WtNode n0)
-	{
-		super(n0);
+		super(content);
 	}
 	
 	// =========================================================================
@@ -43,7 +31,7 @@ public abstract class WtContentNode
 	@Override
 	public WtRtData setRtd(WtRtData rtd)
 	{
-		if (rtd != null && rtd.size() != this.size() + 1)
+		if (rtd != null && rtd.size() != 2)
 			throw new IllegalArgumentException();
 		WtRtData old = this.rtd;
 		this.rtd = rtd;
@@ -53,14 +41,14 @@ public abstract class WtContentNode
 	@Override
 	public WtRtData setRtd(Object... glue)
 	{
-		rtd = new WtRtData(this, glue);
+		rtd = new WtRtData(2, glue);
 		return rtd;
 	}
 	
 	@Override
 	public WtRtData setRtd(String... glue)
 	{
-		rtd = new WtRtData(this, glue);
+		rtd = new WtRtData(2, glue);
 		return rtd;
 	}
 	
@@ -90,7 +78,7 @@ public abstract class WtContentNode
 		return new WtContentNodePropertyIterator();
 	}
 	
-	private class WtContentNodePropertyIterator
+	public class WtContentNodePropertyIterator
 			extends
 				AstNodePropertyIterator
 	{
@@ -143,10 +131,28 @@ public abstract class WtContentNode
 	// =========================================================================
 	
 	@Override
-	public Object clone() throws CloneNotSupportedException
+	public void toString(Appendable out) throws IOException
 	{
-		WtContentNode n = (WtContentNode) super.clone();
-		n.rtd = (WtRtData) n.rtd.clone();
-		return n;
+		out.append(getNodeName());
+		out.append('[');
+		
+		for (Iterator<WtNode> i = this.iterator(); i.hasNext();)
+		{
+			WtNode node = i.next();
+			if (node == null)
+			{
+				// TODO: Remove this case!
+				out.append("null");
+			}
+			else
+			{
+				node.toString(out);
+			}
+			
+			if (i.hasNext())
+				out.append(", ");
+		}
+		
+		out.append(']');
 	}
 }

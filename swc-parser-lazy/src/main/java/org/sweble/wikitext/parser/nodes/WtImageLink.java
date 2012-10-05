@@ -15,7 +15,7 @@ public class WtImageLink
 	
 	public WtImageLink()
 	{
-		super(new WtNodeList(), new WtLinkTitle());
+		super(new WtNodeListImpl(), new WtLinkTitleImpl());
 	}
 	
 	public WtImageLink(

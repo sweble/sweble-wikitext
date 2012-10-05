@@ -3,13 +3,13 @@ package org.sweble.wikitext.parser.nodes;
 import org.sweble.wikitext.parser.WtRtData;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
-import de.fau.cs.osr.ptk.common.ast.GenericStringContentNode;
+import de.fau.cs.osr.ptk.common.ast.AstStringNodeImpl;
 
-public abstract class WtStringContentNode
+public abstract class WtStringNodeImpl
 		extends
-			GenericStringContentNode<WtNode>
+			AstStringNodeImpl<WtNode>
 		implements
-			WtNode
+			WtStringNode
 {
 	private static final long serialVersionUID = -2087712873453224402L;
 	
@@ -17,12 +17,12 @@ public abstract class WtStringContentNode
 	
 	// =========================================================================
 	
-	public WtStringContentNode()
+	public WtStringNodeImpl()
 	{
 		super();
 	}
 	
-	public WtStringContentNode(String content)
+	public WtStringNodeImpl(String content)
 	{
 		super(content);
 	}
@@ -91,7 +91,7 @@ public abstract class WtStringContentNode
 		@Override
 		protected int getPropertyCount()
 		{
-			return WtStringContentNode.this.getPropertyCount();
+			return WtStringNodeImpl.this.getPropertyCount();
 		}
 		
 		@Override
@@ -113,7 +113,7 @@ public abstract class WtStringContentNode
 			switch (index - getSuperPropertyCount())
 			{
 				case 0:
-					return WtStringContentNode.this.getRtd();
+					return WtStringNodeImpl.this.getRtd();
 					
 				default:
 					return super.getValue(index);
@@ -126,7 +126,7 @@ public abstract class WtStringContentNode
 			switch (index - getSuperPropertyCount())
 			{
 				case 0:
-					return WtStringContentNode.this.setRtd((WtRtData) value);
+					return WtStringNodeImpl.this.setRtd((WtRtData) value);
 					
 				default:
 					return super.setValue(index, value);
@@ -139,7 +139,7 @@ public abstract class WtStringContentNode
 	@Override
 	public Object clone() throws CloneNotSupportedException
 	{
-		WtStringContentNode n = (WtStringContentNode) super.clone();
+		WtStringNodeImpl n = (WtStringNodeImpl) super.clone();
 		n.rtd = (WtRtData) n.rtd.clone();
 		return n;
 	}

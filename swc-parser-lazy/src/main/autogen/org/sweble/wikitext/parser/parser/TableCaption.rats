@@ -108,7 +108,7 @@ private WtForeignNode Attributes =
       yyValue = WtForeignNode.from(attrs, new Object[] {ws, '|'});
     }
   / {
-      yyValue = WtForeignNode.from(new WtNodeList(), null);
+      yyValue = WtForeignNode.from(new WtNodeListImpl(), null);
     }
 ;
 

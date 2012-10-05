@@ -13,7 +13,7 @@ public class WtTableCell
 	
 	public WtTableCell()
 	{
-		super(new WtNodeList(), new WtNodeList());
+		super(new WtNodeListImpl(), new WtNodeListImpl());
 	}
 	
 	public WtTableCell(WtNodeList xmlAttributes, WtNodeList body)

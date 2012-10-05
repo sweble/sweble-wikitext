@@ -19,11 +19,11 @@ package org.sweble.wikitext.parser.utils;
 import java.io.IOException;
 import java.io.Writer;
 
-import de.fau.cs.osr.ptk.common.GenericPrinterInterface;
+import de.fau.cs.osr.ptk.common.PrinterInterface;
 
 public final class TypedWikitextPrinter
 		implements
-			GenericPrinterInterface
+			PrinterInterface
 
 {
 	@Override

@@ -15,7 +15,7 @@ public class WtInternalLink
 	
 	public WtInternalLink()
 	{
-		super(new WtLinkTitle());
+		super(new WtLinkTitleImpl());
 	}
 	
 	public WtInternalLink(

@@ -6,7 +6,7 @@ package org.sweble.wikitext.parser.nodes;
  */
 public class WtNewline
 		extends
-			WtStringContentNode
+			WtStringNodeImpl
 		implements
 			WtIntermediate
 {

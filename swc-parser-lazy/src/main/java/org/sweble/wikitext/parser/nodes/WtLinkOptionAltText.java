@@ -12,7 +12,7 @@ package org.sweble.wikitext.parser.nodes;
  */
 public class WtLinkOptionAltText
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 {
 	private static final long serialVersionUID = 1L;
 	

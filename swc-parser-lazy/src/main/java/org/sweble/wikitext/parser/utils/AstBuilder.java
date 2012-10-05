@@ -99,7 +99,7 @@ public class AstBuilder
 	
 	public static WtNodeList astList(WtNode... contents)
 	{
-		return new WtNodeList(Arrays.asList(contents));
+		return new WtNodeListImpl(Arrays.asList(contents));
 	}
 	
 	public static TmplArgBuilder astTmplArg()
@@ -159,7 +159,7 @@ public class AstBuilder
 		
 		public XmlElementBuilder withBody(WtNode... content)
 		{
-			this.body = new WtNodeList();
+			this.body = new WtNodeListImpl();
 			for (WtNode n : content)
 				this.body.add(n);
 			return this;
@@ -167,7 +167,7 @@ public class AstBuilder
 		
 		public XmlElementBuilder withAttribs(WtNode... attribs)
 		{
-			this.attribs = new WtNodeList();
+			this.attribs = new WtNodeListImpl();
 			for (WtNode n : attribs)
 				this.attribs.add(n);
 			return this;
@@ -209,13 +209,13 @@ public class AstBuilder
 		
 		public XmlAttribBuilder withValue(String value)
 		{
-			this.value = new WtNodeList(new WtText(value));
+			this.value = new WtNodeListImpl(new WtText(value));
 			return this;
 		}
 		
 		public XmlAttribBuilder withValue(WtNode... content)
 		{
-			this.value = new WtNodeList();
+			this.value = new WtNodeListImpl();
 			for (WtNode n : content)
 				this.value.add(n);
 			return this;
@@ -241,20 +241,20 @@ public class AstBuilder
 		
 		public TmplArgBuilder withName(String name)
 		{
-			this.name = new WtNodeList(new WtText(name));
+			this.name = new WtNodeListImpl(new WtText(name));
 			return this;
 		}
 		
 		public TmplArgBuilder withValue(String value)
 		{
-			this.value = new WtNodeList(new WtText(value));
+			this.value = new WtNodeListImpl(new WtText(value));
 			return this;
 		}
 		
 		public WtTemplateArgument build()
 		{
 			if (value == null)
-				value = new WtNodeList();
+				value = new WtNodeListImpl();
 			return new WtTemplateArgument(name, value, name != null);
 		}
 	}

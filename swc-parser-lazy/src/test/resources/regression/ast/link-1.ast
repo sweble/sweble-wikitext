@@ -40,7 +40,7 @@ WtParsedWikitextPage(
             [ ]
           )
         ]
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 

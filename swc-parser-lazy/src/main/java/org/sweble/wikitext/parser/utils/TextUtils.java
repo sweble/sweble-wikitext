@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
@@ -36,7 +37,7 @@ public final class TextUtils
 	
 	public static WtNodeList stringToAst(String text, boolean forAttribute)
 	{
-		WtNodeList list = new WtNodeList();
+		WtNodeList list = new WtNodeListImpl();
 		
 		if (text == null)
 			return list;
@@ -178,7 +179,7 @@ public final class TextUtils
 		trimLeft(result);
 		trimRight(result);
 		
-		return new WtNodeList(result);
+		return new WtNodeListImpl(result);
 	}
 	
 	public static WtNodeList trimLeft(WtNodeList nodes)
@@ -187,7 +188,7 @@ public final class TextUtils
 		
 		trimLeft(result);
 		
-		return new WtNodeList(result);
+		return new WtNodeListImpl(result);
 	}
 	
 	public static WtNodeList trimRight(WtNodeList nodes)
@@ -196,7 +197,7 @@ public final class TextUtils
 		
 		trimRight(result);
 		
-		return new WtNodeList(result);
+		return new WtNodeListImpl(result);
 	}
 	
 	public static WtNodeList trimAndPad(WtNodeList nodes, int spaces)
@@ -207,7 +208,7 @@ public final class TextUtils
 		trimRight(result);
 		
 		if (spaces <= 0)
-			return new WtNodeList(result);
+			return new WtNodeListImpl(result);
 		
 		return pad(result, spaces);
 	}
@@ -301,7 +302,7 @@ public final class TextUtils
 	public static WtNodeList pad(ArrayList<WtNode> result, int spaces)
 	{
 		if (spaces <= 0)
-			return new WtNodeList(result);
+			return new WtNodeListImpl(result);
 		
 		if (result.isEmpty())
 		{
@@ -338,7 +339,7 @@ public final class TextUtils
 			result.add(new WtText(spaced));
 		}
 		
-		return new WtNodeList(result);
+		return new WtNodeListImpl(result);
 	}
 	
 	// =========================================================================

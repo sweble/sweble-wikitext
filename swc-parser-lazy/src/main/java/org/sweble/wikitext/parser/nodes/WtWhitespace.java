@@ -8,7 +8,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
  */
 public class WtWhitespace
 		extends
-			WtContentNodeMarkTwo
+			WtContentNode
 		implements
 			WtIntermediate
 {
@@ -67,7 +67,7 @@ public class WtWhitespace
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtContentNodeMarkTwoPropertyIterator()
+		return new WtContentNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()

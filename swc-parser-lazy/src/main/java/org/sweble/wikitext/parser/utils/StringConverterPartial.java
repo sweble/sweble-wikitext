@@ -23,6 +23,7 @@ import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
@@ -96,7 +97,7 @@ public class StringConverterPartial
 				}
 				else
 				{
-					tail = new WtNodeList(failedOnNode);
+					tail = new WtNodeListImpl(failedOnNode);
 				}
 			}
 			
@@ -122,7 +123,7 @@ public class StringConverterPartial
 				
 				if (failedOnNode != null)
 				{
-					failedOnNode = new WtNodeList();
+					failedOnNode = new WtNodeListImpl();
 					
 					failedOnNode.add(c);
 					while (i.hasNext())

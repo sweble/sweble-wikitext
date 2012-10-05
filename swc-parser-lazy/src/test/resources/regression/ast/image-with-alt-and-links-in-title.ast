@@ -39,7 +39,7 @@ WtParsedWikitextPage(
             [ WtText("Y") ]
           )
         ]
-        WtLinkTitle(
+        WtLinkTitleImpl(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -51,7 +51,7 @@ WtParsedWikitextPage(
                 {N} rtd = RTD[ "[[Z" <o> "]]" ]
                 {N} target = "Z"
 
-              WtLinkTitle([ ])
+              WtLinkTitleImpl([ ])
             )
           ]
         )

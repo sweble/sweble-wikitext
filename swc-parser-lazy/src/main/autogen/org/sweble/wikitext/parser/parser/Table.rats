@@ -110,7 +110,7 @@ private inline WtTable TableBody =
     }
   / head:TableHead Eof
     {
-      yyValue = setRtd(new WtTable(head.getForeign(1, WtNodeList.class), new WtNodeList()),
+      yyValue = setRtd(new WtTable(head.getForeign(1, WtNodeList.class), new WtNodeListImpl()),
           head.getForeign(0, WtNode.class), "{|", SEP,
           head.getForeign(2, WtNode.class), SEP);
     }
@@ -130,7 +130,7 @@ private transient stateful WtNodeList TableContentStar =
   }
   garbage:InlineBlockContent content:TableElement*
   {
-    yyValue = new WtNodeList(garbage, content);
+    yyValue = new WtNodeListImpl(garbage, content);
   }
 ;
 

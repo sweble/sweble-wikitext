@@ -153,13 +153,13 @@ body
             l.setPrefix(p);
             prependRtd(l, p);
 
-            return new WtNodeList(new WtText(b), l);
+            return new WtNodeListImpl(new WtText(b), l);
           }
         }
       }
     }
 
-    return new WtNodeList(text, link);
+    return new WtNodeListImpl(text, link);
   }
 
   private int toInt(String num)
@@ -259,7 +259,7 @@ private inline WtNode InternalLinkAutoCorrect =
     }
     &{ getLinkBuilder().isValidTarget() }
     {
-      yyValue = getState().getLinkBuilder().build(new WtNodeList(), null);
+      yyValue = getState().getLinkBuilder().build(new WtNodeListImpl(), null);
 
       if (getLinkBuilder().isImageTarget())
       {
@@ -323,7 +323,7 @@ private inline WtNodeList OptionsAndTitle =
 private transient WtNodeList LinkOptionStar =
   options:( void:'|' LinkOptionChoice )*
   {
-    yyValue = new WtNodeList(options);
+    yyValue = new WtNodeListImpl(options);
   }
 ;
 

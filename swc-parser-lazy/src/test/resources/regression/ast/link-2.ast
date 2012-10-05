@@ -34,7 +34,7 @@ WtParsedWikitextPage(
             [ WtText("\n ") ]
           )
         ]
-        WtLinkTitle([ ])
+        WtLinkTitleImpl([ ])
       )
     ])
   ]
