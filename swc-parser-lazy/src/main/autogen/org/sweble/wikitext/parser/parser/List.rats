@@ -15,85 +15,13 @@
  * limitations under the License.
  */
 
-/*!
+/*
  *
  * Lists
  * -----
  *
  *   Grammar:
  *     - ( [*#:]+ ';'? | ';' ) ListItemContentStar
- *
- *   AST node:
- *     Name        : RawListItem
- *     Extends     : WtContentNode
- *     Constructor : "content, rt0, rt1, prefix"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_RAW_LIST_ITEM
- *
- *     Properties:
- *       rt0     : String
- *       rt1     : WtNode
- *       prefix  : String
- *
- * WtOrderedList
- * -----------
- *
- *   AST node:
- *     Name        : WtOrderedList
- *     Extends     : WtContentNode
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ENUMERATION
- *
- * WtListItem
- * ---------------
- *
- *   AST node:
- *     Name        : WtListItem
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ENUMERATION_ITEM
- *
- * WtUnorderedList
- * -----------
- *
- *   AST node:
- *     Name        : WtUnorderedList
- *     Extends     : WtContentNode
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ITEMIZATION
- *
- * WtListItem
- * ---------------
- *
- *   AST node:
- *     Name        : WtListItem
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ITEMIZATION_ITEM
- *
- * WtDefinitionList
- * --------------
- *
- *   AST node:
- *     Name        : WtDefinitionList
- *     Extends     : WtContentNode
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_DEFINITION_LIST
- *
- * WtDefinitionListTerm
- * --------------
- *
- *   AST node:
- *     Name        : WtDefinitionListTerm
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_DEFINITION_TERM
- *
- * WtDefinitionListDef
- * --------------------
- *
- *   AST node:
- *     Name        : WtDefinitionListDef
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_DEFINITION_DEFINITION
- *
  */
 
 module org.sweble.wikitext.parser.parser.List;
@@ -114,14 +42,14 @@ header
 
 body
 {
-  public enum ListType
+  public static enum ListType
   {
     DEFINITION,
     ITEMIZATION,
     ENUMERATION,
   }
 
-  public class ListNode
+  public static class ListNode
   {
     public ListType type;
 
@@ -211,7 +139,7 @@ body
     return (WtContentNodeMarkTwo) items.get(items.size() - 1);
   }
 
-  private WtNodeList makeList(RawListItem first, Pair<RawListItem> tail)
+  private WtNodeList makeList(WtForeignNode first, Pair<WtForeignNode> tail)
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
@@ -219,29 +147,22 @@ body
 
     WtRtData lastItem = processListItem(listStack, items, first);
 
-    Pair<RawListItem> i = tail;
-    while (!i.isEmpty())
+    for (Pair<WtForeignNode> i = tail; !i.isEmpty(); i = i.tail())
     {
-      RawListItem item = i.head();
+      WtForeignNode item = i.head();
 
       if (lastItem != null)
-        lastItem.setField(1, item.getRt0());
-        /*
-      if (isGatherRtData())
-        lastItem.getRts()[1] = joinRt(item.getRt0());
-*/
+        lastItem.setField(1, item.getForeign(1, String.class));
 
       lastItem = processListItem(listStack, items, item);
-
-      i = i.tail();
     }
 
     return items;
   }
 
-  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, RawListItem p)
+  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, WtForeignNode p)
   {
-    String prefix = p.getPrefix();
+    String prefix = p.getForeign(3, String.class);
 
     int j;
     for (j = 0; j < prefix.length() && j < listStack.size(); ++j)
@@ -265,20 +186,18 @@ body
     WtNode item = pushNewListItem(
         listStack,
         prefix.charAt(last),
-        new WtNodeList(p.getContent()));
+        new WtNodeList(p.getForeign(0, WtNodeList.class)));
 
-    //WtRtData rtData = null;
     WtRtData rtd = null;
-    if (isGatherRtData()){
-      rtd = new WtRtData(2, p.getRt1(), p.getPrefix(), SEP);
+    if (isGatherRtData())
+    {
+      rtd = new WtRtData(2, p.getForeign(2, WtNode.class), prefix, SEP);
       item.setRtd(rtd);
-      //rtData = addRtData(item, joinRt(p.getRt1(), p.getPrefix()), null);
     }
 
     if (addRoot)
       items.add(listStack.firstElement().node);
 
-    //return rtData;
     return rtd;
   }
 }
@@ -320,11 +239,11 @@ noinline transient WtNode ListTransient =
   }
 ;
 
-private noinline transient RawListItem ListItem =
+private noinline transient WtForeignNode ListItem =
   rt0:pEol? rt1:pTpStar prefix:ListPrefix content:ListItemContentStar
   {
     // TODO: Support "; term : def" on a single line
-    yyValue = new RawListItem(content, rt0, rt1, prefix);
+    yyValue = WtForeignNode.from(content, rt0, rt1, prefix);
   }
 ;
 
