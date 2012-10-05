@@ -34,7 +34,7 @@ import de.fau.cs.osr.ptk.common.ParserCommon;
 
 public class WikitextParser
 		extends
-			ParserCommon
+			ParserCommon<WtNode>
 {
 	private final ParserConfig config;
 	

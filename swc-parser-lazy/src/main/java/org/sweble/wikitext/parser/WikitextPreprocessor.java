@@ -22,8 +22,8 @@ import java.io.Reader;
 import java.io.StringReader;
 
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
-import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
 import xtc.parser.ParseError;
@@ -34,7 +34,7 @@ import de.fau.cs.osr.ptk.common.ParserCommon;
 
 public class WikitextPreprocessor
 		extends
-			ParserCommon
+			ParserCommon<WtNode>
 {
 	private RatsWikitextPreprocessor preprocessor = null;
 	
