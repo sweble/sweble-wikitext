@@ -99,10 +99,10 @@ private transient WtNodeList TableInlineCellPlus =
   }
 ;
 
-private inline TableCell TableInlineCell =
+private inline WtTableCell TableInlineCell =
   rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = setRtd(new TableCell(attributes.getForeign(0, WtNodeList.class), body),
+    yyValue = setRtd(new WtTableCell(attributes.getForeign(0, WtNodeList.class), body),
         rt0, prefix, SEP,
         attributes.getForeign(1, Object.class), SEP);
   }
@@ -113,10 +113,10 @@ private inline TableCell TableInlineCell =
 
 // -- Table Block Cell ---------------------------------------------------------
 
-private inline TableCell TableBlockCell =
+private inline WtTableCell TableBlockCell =
   rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = setRtd(new TableCell(attributes.getForeign(0, WtNodeList.class), body),
+    yyValue = setRtd(new WtTableCell(attributes.getForeign(0, WtNodeList.class), body),
         rt0, prefix, SEP,
         attributes.getForeign(1, Object.class), SEP);
   }

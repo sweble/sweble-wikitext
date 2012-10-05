@@ -5,7 +5,7 @@ WtParsedWikitextPage(
 
   [
     WtNewline("\n")
-    Table(
+    WtTable(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
@@ -28,7 +28,7 @@ WtParsedWikitextPage(
         )
       ]
       [
-        TableCell(
+        WtTableCell(
           Properties:
             {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -82,13 +82,13 @@ WtParsedWikitextPage(
             WtNewline("\n")
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "  |" <o> "" ]
 
@@ -170,14 +170,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n")
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -271,14 +271,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n")
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -325,13 +325,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -424,14 +424,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -450,7 +450,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -473,28 +473,28 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n")
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -629,13 +629,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -709,14 +709,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -735,7 +735,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -758,13 +758,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -783,7 +783,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -823,14 +823,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -902,14 +902,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n")
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -983,14 +983,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1009,7 +1009,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1032,13 +1032,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1057,7 +1057,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1080,97 +1080,97 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [ WtText("\n") ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -1199,13 +1199,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1215,7 +1215,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1328,14 +1328,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1354,7 +1354,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1382,14 +1382,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1399,7 +1399,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1411,14 +1411,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1428,7 +1428,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -1460,13 +1460,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1501,7 +1501,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1539,13 +1539,13 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1555,7 +1555,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1567,14 +1567,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1584,7 +1584,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1612,14 +1612,14 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
             WtText("\n\n\n\n\n\n")
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
@@ -1629,7 +1629,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -1655,7 +1655,7 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -3854,7 +3854,7 @@ WtParsedWikitextPage(
           ]
         )
         WtNewline("\n")
-        Table(
+        WtTable(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
@@ -3877,7 +3877,7 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableCaption(
+            WtTableCaption(
               Properties:
                 {N} rtd = RTD[ "|+" <o> "" <o> "" ]
 
@@ -3916,7 +3916,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -3926,14 +3926,14 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -3943,7 +3943,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -3953,7 +3953,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -3963,14 +3963,14 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -3980,7 +3980,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -3990,7 +3990,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4000,20 +4000,20 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4038,14 +4038,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4064,7 +4064,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4091,7 +4091,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4110,14 +4110,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4143,7 +4143,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4170,7 +4170,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4189,7 +4189,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4198,13 +4198,13 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4229,14 +4229,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4255,7 +4255,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4282,7 +4282,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4301,14 +4301,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4334,7 +4334,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4361,7 +4361,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4380,7 +4380,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4389,13 +4389,13 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4420,14 +4420,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4446,7 +4446,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4473,7 +4473,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4492,14 +4492,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4525,7 +4525,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4552,7 +4552,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4571,7 +4571,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4580,13 +4580,13 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4611,14 +4611,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4652,7 +4652,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4679,7 +4679,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4698,14 +4698,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4731,7 +4731,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4758,7 +4758,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -4777,7 +4777,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -4790,7 +4790,7 @@ WtParsedWikitextPage(
         )
         WtNewline("\n")
         WtNewline("\n")
-        Table(
+        WtTable(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
@@ -4813,7 +4813,7 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableCaption(
+            WtTableCaption(
               Properties:
                 {N} rtd = RTD[ "|+" <o> "" <o> "" ]
 
@@ -4857,7 +4857,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4867,14 +4867,14 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4884,7 +4884,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4894,7 +4894,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4904,14 +4904,14 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4921,7 +4921,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4931,7 +4931,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4941,14 +4941,14 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4958,7 +4958,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4968,7 +4968,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4978,7 +4978,7 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -4988,20 +4988,20 @@ WtParsedWikitextPage(
                 WtNewline("\n")
               ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
               [ ]
               [ WtNewline("\n") ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -5026,14 +5026,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5062,7 +5062,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5089,7 +5089,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5108,14 +5108,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5160,7 +5160,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5187,7 +5187,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5206,14 +5206,14 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
                   [ ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5232,7 +5232,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5266,7 +5266,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5293,7 +5293,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5320,7 +5320,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
@@ -5332,7 +5332,7 @@ WtParsedWikitextPage(
           ]
         )
         WtNewline("\n")
-        Table(
+        WtTable(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
@@ -5371,7 +5371,7 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -5386,7 +5386,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -5427,7 +5427,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -5442,7 +5442,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -5469,7 +5469,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -5488,7 +5488,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -5507,7 +5507,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -5526,7 +5526,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
@@ -5547,14 +5547,14 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n") ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -5569,7 +5569,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -5585,7 +5585,7 @@ WtParsedWikitextPage(
                   ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5628,7 +5628,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5659,7 +5659,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5678,7 +5678,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5697,7 +5697,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5718,14 +5718,14 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n") ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -5740,7 +5740,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -5756,7 +5756,7 @@ WtParsedWikitextPage(
                   ]
                   [ WtNewline("\n") ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5799,7 +5799,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5834,7 +5834,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5853,7 +5853,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5872,7 +5872,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5893,14 +5893,14 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n\n") ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -5915,7 +5915,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5950,7 +5950,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5969,7 +5969,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -5988,7 +5988,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -6009,14 +6009,14 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ WtText("\n\n") ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -6031,7 +6031,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -6081,7 +6081,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -6100,7 +6100,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -6119,7 +6119,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
@@ -6140,7 +6140,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -6840,7 +6840,7 @@ WtParsedWikitextPage(
         ])
         WtNewline("\n")
         WtNewline("\n")
-        Table(
+        WtTable(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
@@ -6863,13 +6863,13 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -6909,7 +6909,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
@@ -6924,7 +6924,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7005,7 +7005,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7144,7 +7144,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7244,20 +7244,20 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -7297,7 +7297,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
@@ -7313,7 +7313,7 @@ WtParsedWikitextPage(
               ]
               [ ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
@@ -7328,7 +7328,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7409,7 +7409,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7537,7 +7537,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7581,20 +7581,20 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -7624,7 +7624,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
@@ -7639,7 +7639,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7757,7 +7757,7 @@ WtParsedWikitextPage(
                     )
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7833,7 +7833,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -7953,20 +7953,20 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [ ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
               [ ]
               [
-                TableHeader(
+                WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -8006,7 +8006,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
@@ -8021,7 +8021,7 @@ WtParsedWikitextPage(
                 )
               ]
               [
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -8139,7 +8139,7 @@ WtParsedWikitextPage(
                     )
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -8228,7 +8228,7 @@ WtParsedWikitextPage(
                     WtNewline("\n")
                   ]
                 )
-                TableCell(
+                WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "|" <o> "" ]
 
@@ -8340,7 +8340,7 @@ WtParsedWikitextPage(
                 )
               ]
             )
-            TableRow(
+            WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 

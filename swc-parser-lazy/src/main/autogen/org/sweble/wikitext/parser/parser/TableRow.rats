@@ -78,7 +78,7 @@ noinline memoized WtNode TableRowMemoized =
 noinline transient WtNode TableRowTransient =
   rt0:pExtSpaceStar "|-" attributes:TableAttributeStar body:TableRowBody
   {
-    yyValue = setRtd(new TableRow(attributes, body.getForeign(2, WtNodeList.class)),
+    yyValue = setRtd(new WtTableRow(attributes, body.getForeign(2, WtNodeList.class)),
         rt0, "|-", SEP,
         body.getForeign(0, WtNode.class), body.getForeign(1, String.class), SEP);
   }

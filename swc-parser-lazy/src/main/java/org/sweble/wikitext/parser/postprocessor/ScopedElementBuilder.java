@@ -21,11 +21,11 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.nodes.Table;
-import org.sweble.wikitext.parser.nodes.TableCaption;
-import org.sweble.wikitext.parser.nodes.TableCell;
-import org.sweble.wikitext.parser.nodes.TableHeader;
-import org.sweble.wikitext.parser.nodes.TableRow;
+import org.sweble.wikitext.parser.nodes.WtTable;
+import org.sweble.wikitext.parser.nodes.WtTableCaption;
+import org.sweble.wikitext.parser.nodes.WtTableCell;
+import org.sweble.wikitext.parser.nodes.WtTableHeader;
+import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -130,35 +130,35 @@ public class ScopedElementBuilder
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
-	public void visit(Table n)
+	public void visit(WtTable n)
 	{
 		openScope(ScopeType.WT_TABLE, n);
 		n.setBody(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE, n);
 	}
 	
-	public void visit(TableCaption n)
+	public void visit(WtTableCaption n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
 		n.setBody(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
-	public void visit(TableRow n)
+	public void visit(WtTableRow n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
 		n.setBody(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
-	public void visit(TableHeader n)
+	public void visit(WtTableHeader n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
 		n.setBody(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
-	public void visit(TableCell n)
+	public void visit(WtTableCell n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
 		n.setBody(processScope(n.getBody()));
@@ -349,7 +349,7 @@ public class ScopedElementBuilder
 			{
 				container.clearClosedInline();
 			}
-			// Table and Special scopes are just closed and won't be continued
+			// WtTable and Special scopes are just closed and won't be continued
 			
 			stack.top().previous().append(close(s));
 			stack.pop();

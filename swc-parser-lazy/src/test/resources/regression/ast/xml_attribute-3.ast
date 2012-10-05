@@ -6,7 +6,7 @@ WtParsedWikitextPage(
   [
     WtParagraph([ WtText("Whitespace before Eol!") ])
     WtNewline("\n")
-    Table(
+    WtTable(
       Properties:
         {N} rtd = RTD[ "{|" <o> "     \n" <o> " |}" ]
 
@@ -21,7 +21,7 @@ WtParsedWikitextPage(
         )
       ]
       [
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "    \n" <o> "" ]
 

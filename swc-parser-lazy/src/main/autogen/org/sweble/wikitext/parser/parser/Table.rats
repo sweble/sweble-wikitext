@@ -137,12 +137,12 @@ body
       numCols = size;
 
     if (caption == null)
-      caption = new TableCaption();
+      caption = new WtTableCaption();
 
     if (header == null)
-      header = new TableRow();
+      header = new WtTableRow();
 
-    Table table = new Table(
+    Table table = new WtTable(
             attributes,
             body,
             caption,
@@ -164,7 +164,7 @@ body
     else if (cols != null)
     {
       size = cols.size();
-      rows.add(new TableRow(new WtNodeList(), new WtNodeList(cols)));
+      rows.add(new WtTableRow(new WtNodeList(), new WtNodeList(cols)));
     }
     return size;
   }
@@ -201,7 +201,7 @@ noinline memoized WtNode TableMemoized =
 
 // -- Table --------------------------------------------------------------------
 
-noinline transient Table TableTransient =
+noinline transient WtTable TableTransient =
   &{ accept(ParserAtoms.TABLE) } TableBody
 ;
 
@@ -216,17 +216,17 @@ inline void BlockStopperNextTableElement =
 
 // -- Table Body ---------------------------------------------------------------
 
-private inline Table TableBody =
+private inline WtTable TableBody =
     head:TableHead rt2:pEol body:TableContentStar rt3:pExtSpaceStar close:"|}"?
     {
-      yyValue = setRtd(new Table(head.getForeign(1, WtNodeList.class), body),
+      yyValue = setRtd(new WtTable(head.getForeign(1, WtNodeList.class), body),
           head.getForeign(0, WtNode.class), "{|", SEP,
           head.getForeign(2, WtNode.class), rt2, SEP,
           rt3, close);
     }
   / head:TableHead Eof
     {
-      yyValue = setRtd(new Table(head.getForeign(1, WtNodeList.class), new WtNodeList()),
+      yyValue = setRtd(new WtTable(head.getForeign(1, WtNodeList.class), new WtNodeList()),
           head.getForeign(0, WtNode.class), "{|", SEP,
           head.getForeign(2, WtNode.class), SEP);
     }

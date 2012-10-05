@@ -4,13 +4,13 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Table(
+    WtTable(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
       [ ]
       [
-        TableHeader(
+        WtTableHeader(
           Properties:
             {N} rtd = RTD[ "!" <o> " |" <o> "" ]
 
@@ -26,7 +26,7 @@ WtParsedWikitextPage(
           ]
           [ WtText(" A ") ]
         )
-        TableHeader(
+        WtTableHeader(
           Properties:
             {N} rtd = RTD[ "||" <o> " |" <o> "" ]
 
@@ -45,20 +45,20 @@ WtParsedWikitextPage(
             WtNewline("\n")
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
               [ ]
               [ WtText(" X ") ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "||" <o> "" <o> "" ]
 

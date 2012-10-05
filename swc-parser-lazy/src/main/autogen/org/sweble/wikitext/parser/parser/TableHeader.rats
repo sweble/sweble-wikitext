@@ -99,10 +99,10 @@ private transient WtNodeList TableInlineHeaderPlus =
   }
 ;
 
-private inline TableHeader TableInlineHeader =
+private inline WtTableHeader TableInlineHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = setRtd(new TableHeader(attributes.getForeign(0, WtNodeList.class), body),
+    yyValue = setRtd(new WtTableHeader(attributes.getForeign(0, WtNodeList.class), body),
         rt0, prefix, SEP,
         attributes.getForeign(1, Object.class), SEP);
   }
@@ -113,10 +113,10 @@ private inline TableHeader TableInlineHeader =
 
 // -- Table Block Header -------------------------------------------------------
 
-private inline TableHeader TableBlockHeader =
+private inline WtTableHeader TableBlockHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = setRtd(new TableHeader(attributes.getForeign(0, WtNodeList.class), body),
+    yyValue = setRtd(new WtTableHeader(attributes.getForeign(0, WtNodeList.class), body),
         rt0, prefix, SEP,
         attributes.getForeign(1, Object.class), SEP);
   }

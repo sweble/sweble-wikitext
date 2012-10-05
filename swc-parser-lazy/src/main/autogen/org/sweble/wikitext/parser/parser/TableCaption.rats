@@ -76,14 +76,14 @@ noinline memoized WtNode TableCaptionMemoized =
 noinline transient WtNode TableCaptionTransient =
     rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &FollowUpSanityCheck
     {
-      yyValue = setRtd(new TableCaption(attributes.getForeign(0, WtNodeList.class), body),
+      yyValue = setRtd(new WtTableCaption(attributes.getForeign(0, WtNodeList.class), body),
           rt0, "|+", SEP,
           attributes.getForeign(1, Object.class), SEP,
           garbage);
     }
   / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
     {
-      yyValue = setRtd(new TableCaption(attributes.getForeign(0, WtNodeList.class), body),
+      yyValue = setRtd(new WtTableCaption(attributes.getForeign(0, WtNodeList.class), body),
           rt0, "|+", SEP,
           attributes.getForeign(1, Object.class), SEP);
     }

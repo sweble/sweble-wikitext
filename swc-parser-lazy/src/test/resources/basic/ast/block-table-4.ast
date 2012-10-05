@@ -4,26 +4,26 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Table(
+    WtTable(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
       [ ]
       [
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
           [ ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ " !" <o> "" <o> "" ]
 
               [ ]
               [ WtText(" Header 1 ") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!!" <o> "" <o> "" ]
 

@@ -4,7 +4,7 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Table(
+    WtTable(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
@@ -19,7 +19,7 @@ WtParsedWikitextPage(
         )
       ]
       [
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
@@ -34,7 +34,7 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ " !" <o> " |" <o> "" ]
 
@@ -50,7 +50,7 @@ WtParsedWikitextPage(
               ]
               [ WtText(" Header 1 ") ]
             )
-            TableHeader(
+            WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!!" <o> " |" <o> "" ]
 
@@ -71,7 +71,7 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
@@ -86,7 +86,7 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ " |" <o> " |" <o> "" ]
 
@@ -102,7 +102,7 @@ WtParsedWikitextPage(
               ]
               [ WtText(" Cell 1.1 ") ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "||" <o> " |" <o> "" ]
 
@@ -123,7 +123,7 @@ WtParsedWikitextPage(
             )
           ]
         )
-        TableRow(
+        WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
@@ -138,7 +138,7 @@ WtParsedWikitextPage(
             )
           ]
           [
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ " |" <o> " |" <o> "" ]
 
@@ -154,7 +154,7 @@ WtParsedWikitextPage(
               ]
               [ WtText(" Cell 2.1 ") ]
             )
-            TableCell(
+            WtTableCell(
               Properties:
                 {N} rtd = RTD[ "||" <o> " |" <o> "" ]
 

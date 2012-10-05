@@ -4,13 +4,13 @@ WtParsedWikitextPage(
     {N} warnings = []
 
   [
-    Table(
+    WtTable(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
       [ ]
       [
-        TableCell(
+        WtTableCell(
           Properties:
             {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
