@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-/*!
+/*
  *
  * Internal Link or Image
  * ----------------------
@@ -26,67 +26,6 @@
  *   - PageTitle can contain spaces but no newlines.
  *     - If a newline occurs before the closing brackets or the first pipe
  *       character, the internal link is not recognized as such!
- *
- * Internal Link
- * -------------
- *
- *   AST node:
- *     Name        : InternalLink
- *     Extends     : WtInnerNode1
- *     Implements  : Cloneable
- *     Constructor : "prefix, target, title, postfix"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_INTERNAL_LINK
- *
- *     Children:
- *       title : WtLinkTitle
- *
- *     Properties:
- *       target    : String
- *       prefix    : String
- *       postfix   : String
- *
- *     Body:
- *     {
- *       @Override
- *       protected Object clone()
- *       {
- *         try
- *         {
- *           return super.clone();
- *         }
- *         catch (CloneNotSupportedException e)
- *         {
- *           assert false;
- *           return null;
- *         }
- *       }
- *     }
- *
- * Image Link
- * ----------
- *
- *   AST node:
- *     Name        : ImageLink
- *     Extends     : WtInnerNode2
- *     Constructor : "target, options, title, format, border, hAlign, vAlign, width, height, upright, linkPage, linkUrl, alt"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_IMAGE_LINK
- *
- *     Children:
- *       options : WtNodeList
- *       title   : WtLinkTitle
- *
- *     Properties:
- *       target   : String
- *       width    : int
- *       height   : int
- *       upright  : boolean
- *       hAlign   : ImageHorizAlign
- *       vAlign   : ImageVertAlign
- *       format   : ImageViewFormat
- *       border   : boolean
- *       linkPage : String
- *       linkUrl  : Url
- *       alt      : WtLinkOptionAltText
  *
  * Link Option: Resize
  * -------------------
@@ -103,30 +42,11 @@
  *   - If one of the dimensions is missing the value of the width/height is set
  *     to -1.
  *
- *   AST node:
- *     Name        : WtLinkOptionResize
- *     Extends     : WtLeafNode
- *     Constructor : "width, height"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_RESIZE
- *
- *     Properties:
- *       width        : int
- *       height       : int
- *
  * Link Option: Keyword
  * --------------------
  *
  *   Grammar:
  *     - LinkOptionKeyword ::= Ws* LinkOptionKeyword Ws*
- *
- *   AST node:
- *     Name        : WtLinkOptionKeyword
- *     Extends     : WtLeafNode
- *     Constructor : "keyword"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_KEYWORD
- *
- *     Properties:
- *       keyword : String
  *
  * Link Option: LinkTarget
  * -----------------------
@@ -135,38 +55,17 @@
  *     - LinkOptionLinkTarget ::= Ws* 'link=' LinkTarget Ws*
  *     - LinkOptionLinkTarget ::= Ws* 'link=' Url Ws*
  *
- *   AST node:
- *     Name        : WtLinkOptionLinkTarget
- *     Extends     : WtInnerNode1
- *     Constructor : target
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_LINK_TARGET
- *
- *     Children:
- *       target : WtNode
- *
  * Link Option: AltText
  * --------------------
  *
  *   Grammar:
  *     - LinkOptionAltText ::= Ws* 'alt=' LinkTitleContent{ALT}*
  *
- *   AST node:
- *     Name        : WtLinkOptionAltText
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_ALT_TEXT
- *
  * Link Option: Garbage
  * --------------------
  *
  *   Grammar:
  *     - LinkOptionGarbage ::= LinkTitleContent{ALT}* &'|'
- *
- *   AST node:
- *     Name        : WtLinkOptionGarbage
- *     Extends     : WtStringContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_GARBAGE
  *
  * Link Title
  * ----------
@@ -191,12 +90,6 @@
  *
  *   The LinkTitleContent cannot contain:
  *     - PageSwitch
- *
- *   AST node:
- *     Name        : WtLinkTitle
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_TITLE
  *
  */
 

@@ -22,8 +22,6 @@ import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 public class WtImEndTag
 		extends
 			WtXmlEndTag
-		implements
-			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	

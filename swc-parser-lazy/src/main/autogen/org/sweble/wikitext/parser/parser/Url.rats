@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Url
  * ---
  *
@@ -24,16 +23,6 @@
  *     - Protocol ::= [A-Za-z] [A-Za-z0-9+\-.]*
  *     - Path     ::= [^\u0000-\u0020\u007F\uE000\u2028\u2029\u0085\"\[\]<>|]+
  *     - Url      ::= Scheme ':' Path
- *
- *   AST node:
- *     Name        : Url
- *     Extends     : LeafNode
- *     Constructor : "protocol, path"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_URL
- *
- *     Properties:
- *       protocol : String
- *       path     : String
  *
  */
 

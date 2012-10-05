@@ -15,22 +15,12 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Signature
  * ---------
  *
  *   Grammar:
  *     - '~~~' '~'*
- *
- *   AST node:
- *     Name        : Signature
- *     Extends     : LeafNode
- *     Constructor : tildeCount
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SIGNATURE
- *
- *     Properties:
- *       tildeCount : int
  *
  */
 

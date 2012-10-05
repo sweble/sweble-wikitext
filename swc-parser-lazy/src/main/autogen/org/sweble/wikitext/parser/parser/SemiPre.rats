@@ -15,31 +15,18 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Semi Pre Block Level Element
  * ----------------------------
  *
  *   Grammar:
  *     - SemiPreLine (Eol SemiPreLine)*
  *
- *   AST node:
- *     Name        : WtSemiPre
- *     Extends     : ContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SEMI_PRE
- *
  * Semi Pre Line
  * -------------
  *
  *   Grammar:
  *     - Eol? ' ' SemiPreContentStar
- *
- *   AST node:
- *     Name        : WtSemiPreLine
- *     Extends     : ContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SEMI_PRE_LINE
  *
  */
 

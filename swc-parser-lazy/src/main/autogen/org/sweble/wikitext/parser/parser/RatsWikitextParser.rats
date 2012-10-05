@@ -15,30 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
- * Grammar for MediaWiki Wikitext
- * -----------------------------------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : WtParsedWikitextPage
- *     Extends     : WtContentNode
- *     Constructor : "content, warnings"
- *     Constructor : "content, warnings, entityMap"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PARSED_WIKITEXT_PAGE
- *     Import      : java.util.List
- *     Import      : de.fau.cs.osr.ptk.common.Warning
- *     Import      : de.fau.cs.osr.ptk.common.EntityMap
- *
- *     Properties:
- *       warnings  : List<Warning>
- *       entityMap : EntityMap
- *
- */
-
-module org.sweble.wikitext.parser.parser.Grammar;
+module org.sweble.wikitext.parser.parser.RatsWikitextParser;
 
 import org.sweble.wikitext.parser.parser.Content;
 import org.sweble.wikitext.parser.parser.State;

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-/*!
+/*
  * Templates
  * ---------
  *   - Arguments are parsed in the same way for transclusions and template
@@ -23,62 +23,6 @@
  *     That's ok since MediaWiki too treats arguments for both the same way and
  *     only takes the value after the first pipe as default value for the
  *     template parameter.
- *
- * Template
- * --------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : Template
- *     Extends     : WtInnerNode2
- *     Constructor : "name, args"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TEMPLATE
- *
- *     Properties:
- *       precededByNewline : boolean
- *
- *     Children:
- *       name       : WtNodeList
- *       args       : WtNodeList
- *
- * TemplateParameter
- * -----------------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : TemplateParameter
- *     Extends     : WtInnerNode3
- *     Constructor : "name, defaultValue, garbage"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TEMPLATE_PARAMETER
- *
- *     Properties:
- *       precededByNewline : boolean
- *
- *     Children:
- *       name         : WtNodeList
- *       defaultValue : TemplateArgument
- *       garbage      : WtNodeList
- *
- * TemplateArgument
- * ----------------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : TemplateArgument
- *     Extends     : WtInnerNode2
- *     Constructor : "value, hasName"
- *     Constructor : "name, value, hasName"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TEMPLATE_ARGUMENT
- *
- *     Properties:
- *       hasName : boolean
- *
- *     Children:
- *       name  : WtNodeList
- *       value : WtNodeList
  *
  */
 

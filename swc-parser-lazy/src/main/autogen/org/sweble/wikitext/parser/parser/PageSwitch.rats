@@ -15,22 +15,12 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * PageSwitch
  * ----------
  *
  *   Grammar:
  *     - '__' Name '__'
- *
- *   AST node:
- *     Name        : PageSwitch
- *     Extends     : LeafNode
- *     Constructor : name
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PAGE_SWITCH
- *
- *     Properties:
- *       name : String
  *
  */
 

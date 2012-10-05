@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Inclusion control
  * -----------------
  *
@@ -31,20 +30,6 @@
  *     the page is included by another page, only the content inside
  *     onlyinclude tags will be processed while all other text surroudning
  *     the tags will be ignored.
- *
- * OnlyInclude
- * -----------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : WtOnlyInclude
- *     Extends     : ContentNode
- *     Constructor : "content, elementType"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ONLY_INCLUDE
- *
- *     Properties:
- *       elementType : XmlElementType
  *
  */
 

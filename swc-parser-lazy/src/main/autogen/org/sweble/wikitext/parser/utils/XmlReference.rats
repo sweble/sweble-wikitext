@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Xml Character Reference
  * -----------------------
  *
@@ -24,30 +23,11 @@
  *     - '&#'  Digit+    ';'
  *     - '&#x' HexDigit+ ';'
  *
- *   AST node:
- *     Name        : XmlCharRef
- *     Extends     : LeafNode
- *     Constructor : codePoint
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_CHAR_REF
- *
- *     Properties:
- *       codePoint : int
- *
  * Xml Entity Reference
  * --------------------
  *
  *   Grammar:
  *     - '&' XmlName ';'
- *
- *   AST node:
- *     Name        : XmlEntityRef
- *     Extends     : LeafNode
- *     Constructor : "name, resolved"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ENTITY_REF
- *
- *     Properties:
- *       name     : String
- *       resolved : String
  *
  */
 
@@ -56,12 +36,6 @@ module org.sweble.wikitext.parser.utils.XmlReference;
 import org.sweble.wikitext.parser.utils.Numbers;
 import org.sweble.wikitext.parser.utils.Warnings;
 import org.sweble.wikitext.parser.utils.XmlName;
-
-
-
-
-// -- Header -------------------------------------------------------------------
-
 
 
 

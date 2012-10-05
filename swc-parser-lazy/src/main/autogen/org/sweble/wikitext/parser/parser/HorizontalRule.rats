@@ -15,18 +15,12 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Horizontal Rule
  * ---------------
  *
  *   Grammar:
  *     - '----' '-'*
- *
- *   AST node:
- *     Name        : HorizontalRule
- *     Extends     : WtLeafNode
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_HORIZONTAL_RULE
  *
  */
 

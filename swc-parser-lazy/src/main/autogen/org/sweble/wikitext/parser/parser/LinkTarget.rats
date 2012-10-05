@@ -15,19 +15,12 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Link Target
  * -----------
  *
  *   Grammar:
  *     - LinkOptionTarget ::= [^\u0000-\u001F\u007F\uFFFD<>{}|[\]]+
- *
- *   AST node:
- *     Name        : WtLinkTarget
- *     Extends     : StringContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_TARGET
  *
  */
 

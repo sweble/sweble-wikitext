@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * External Link
  * -------------
  *
@@ -27,7 +26,7 @@
  *   The title can contain:
  *     - InternalLink
  *     - PageSwitch
- *     - WtParserEntity
+ *     - ParserEntity
  *     - Signature
  *     - Ticks
  *     - XmlReference
@@ -44,17 +43,6 @@
  *
  *   The title can syntactically not contain:
  *     - Newlines
- *
- *   AST node:
- *     Name        : ExternalLink
- *     Extends     : WtInnerNode2
- *     Constructor : "target"
- *     Constructor : "target, title"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_EXTERNAL_LINK
- *
- *     Children:
- *       target : Url
- *       title  : WtNodeList
  *
  */
 

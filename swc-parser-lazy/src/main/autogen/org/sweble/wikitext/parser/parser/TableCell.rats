@@ -15,25 +15,6 @@
  * limitations under the License.
  */
 
-/*!
- *
- * TableCell
- * ---------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : TableCell
- *     Extends     : WtInnerNode2
- *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE_CELL
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *       body          : WtNodeList
- *
- */
-
 module org.sweble.wikitext.parser.parser.TableCell;
 
 import org.sweble.wikitext.parser.utils.Assert;

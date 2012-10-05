@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Grammar for MediaWiki Wikitext Preprocessor
  * ------------------------------------------------
  *
@@ -68,28 +67,9 @@
  *     - this preprocessor does recognize #REDIRECT [[...]] statements
  *     - this preprocessor tries to extract attributes for tag extensions
  *
- * WtPreproWikitextPage
- * --------------------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : WtPreproWikitextPage
- *     Extends     : ContentNode
- *     Constructor : "content, warnings"
- *     Constructor : "content, warnings, entityMap"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PREPROCESSED_WIKITEXT_PAGE
- *     Import      : java.util.List
- *     Import      : de.fau.cs.osr.ptk.common.Warning
- *     Import      : de.fau.cs.osr.ptk.common.EntityMap
- *
- *     Properties:
- *       warnings  : List<Warning>
- *       entityMap : EntityMap
- *
  */
 
-module org.sweble.wikitext.parser.preprocessor.Grammar;
+module org.sweble.wikitext.parser.preprocessor.RatsWikitextPreprocessor;
 
 import org.sweble.wikitext.parser.utils.Whitespace;
 import org.sweble.wikitext.parser.utils.Warnings;

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-/*!
+/*
  * Tables
  * ------
  *
@@ -40,26 +40,6 @@
  *   Grammar:
  *     - S* '{|' TableAttribute* Eol TableContent* S* '|}'
  *
- *   AST node:
- *     Name        : Table
- *     Extends     : WtInnerNode2
- *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE
- *     Import      : java.util.List
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *       body          : WtNodeList
- *
- */
-/*
- *     Constructor : "xmlAttributes, immediateBody, caption, cols, header, body"
- *
- *     Properties:
- *       caption       : TableCaption
- *       header        : TableRow
- *       body          : WtNodeList
- *       cols          : int
  */
 
 module org.sweble.wikitext.parser.parser.Table;
@@ -74,102 +54,6 @@ import org.sweble.wikitext.parser.parser.TableCell;
 import org.sweble.wikitext.parser.parser.TableHeader;
 import org.sweble.wikitext.parser.parser.TableRow;
 import org.sweble.wikitext.parser.parser.Whitespace;
-
-
-
-
-// -- Header/Body --------------------------------------------------------------
-
-body
-{
-  /*
-  private Table makeTable(WtNodeList attributes, WtNodeList body)
-  {
-    int numCols = 0;
-
-    TableCaption caption = null;
-
-    ArrayList<WtNode> cols = null;
-
-    TableRow header = null;
-
-    TableRow curRow = null;
-    ArrayList<TableRow> rows = new ArrayList<TableRow>();
-
-    boolean first = true;
-
-    for (WtNode node : body)
-    {
-      switch (node.getNodeType())
-      {
-        case WtNode.NT_TABLE_CAPTION:
-          if (caption == null)
-            caption = (TableCaption) node;
-          if (!first)
-            ; // TODO: issue warning
-          break;
-
-        case WtNode.NT_TABLE_ROW:
-          int size = processRow(curRow, rows, cols);
-          if (size > numCols)
-            numCols = size;
-
-          cols = null;
-          curRow = (TableRow) node;
-          break;
-
-        case WtNode.NT_TABLE_CELL:
-        case WtNode.NT_TABLE_HEADER:
-          if (curRow == null)
-          {
-            if (cols == null)
-              cols = new ArrayList<WtNode>();
-            cols.add(node);
-          }
-          break;
-      }
-
-      first = false;
-    }
-
-    int size = processRow(curRow, rows, cols);
-    if (size > numCols)
-      numCols = size;
-
-    if (caption == null)
-      caption = new WtTableCaption();
-
-    if (header == null)
-      header = new WtTableRow();
-
-    Table table = new WtTable(
-            attributes,
-            body,
-            caption,
-            numCols,
-            header,
-            new WtNodeList(rows));
-
-    return table;
-  }
-
-  private int processRow(TableRow curRow, ArrayList<TableRow> rows, ArrayList<WtNode> cols)
-  {
-    int size = 0;
-    if (curRow != null)
-    {
-      size = curRow.getBody().size();
-      rows.add(curRow);
-    }
-    else if (cols != null)
-    {
-      size = cols.size();
-      rows.add(new WtTableRow(new WtNodeList(), new WtNodeList(cols)));
-    }
-    return size;
-  }
-  */
-}
 
 
 

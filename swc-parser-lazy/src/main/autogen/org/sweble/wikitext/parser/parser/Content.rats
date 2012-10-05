@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Content
  * -------
  *
@@ -35,18 +34,6 @@
  *     - This "must match" requirement helps us escape the content if a prefix
  *       of a closing element is encountered in the text and this prefix is also
  *       the prefix of a one of these special things.
- *
- * WtParagraph
- * ---------
- *
- *   Grammar:
- *     - ( '\n' Space* &'\n' )+
- *
- *   AST node:
- *     Name        : WtParagraph
- *     Extends     : WtContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PARAGRAPH
  *
  */
 
@@ -267,15 +254,6 @@ noinline transient WtNode ParagraphTransient =
     pre:PreParaWs !ParagraphStopper p:ParagraphText post:PostParaWs?
     {
       yyValue = makeP(pre, (WtNodeList) p, post);
-      /*
-      WtNodeList l = new WtNodeList();
-      l.add(IntermediateTags.PARAGRAPH.createOpen(false));
-      l.add(pre);
-      l.add(p);
-      l.add(post);
-      l.add(IntermediateTags.PARAGRAPH.createClose(false));
-      yyValue = l;
-      */
     }
   / PreParaWs
     {
@@ -284,14 +262,6 @@ noinline transient WtNode ParagraphTransient =
   / p:ParagraphText post:PostParaWs?
     {
       yyValue = makeP(null, (WtNodeList) p, post);
-      /*
-      WtNodeList l = new WtNodeList();
-      l.add(IntermediateTags.PARAGRAPH.createOpen(false));
-      l.add(p);
-      l.add(post);
-      l.add(IntermediateTags.PARAGRAPH.createClose(false));
-      yyValue = l;
-      */
     }
 ;
 
@@ -307,11 +277,6 @@ private noinline transient WtNodeList PreParaWs =
   s:pExtSpaceStar lt:pEolNode tail:PreParaWsMore*
   {
     yyValue = new WtNodeList(s, lt, new WtNodeList(tail));
-    /*
-    yyValue = new WtWhitespace(
-        new WtNodeList(s, new WtText(lt), new WtNodeList(tail)),
-        true);
-    */
   }
 ;
 
@@ -336,14 +301,6 @@ private inline WtNode ParagraphTextMore =
   lt:pEolNode !ParagraphStopper s:pExtSpaceStar c:InlineContentPlus
   {
     yyValue = new WtNodeList(lt, s, c);
-    /*
-    yyValue = new WtNodeList(
-        new WtWhitespace(
-          new WtNodeList(new WtText(lt)),
-          true),
-        s,
-        c);
-    */
   }
 ;
 
@@ -354,11 +311,6 @@ private noinline transient WtNodeList PostParaWs =
   lt:pEolNode tail:PostParaWsMore* ( &ParagraphStopper / !ParagraphText )
   {
     yyValue = new WtNodeList(lt, tail);
-    /*
-    yyValue = new WtNodeList(
-        new WtWhitespace(new WtNodeList(new WtText(lt)), true),
-        tail);
-    */
   }
 ;
 
@@ -366,31 +318,8 @@ private inline WtNodeList PostParaWsMore =
   !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
     yyValue = new WtNodeList(s, lt);
-    /*
-    yyValue = new WtNodeList(
-        s,
-        new WtWhitespace(new WtNodeList(new WtText(lt)), true));
-    */
   }
 ;
-
-/*
-private noinline transient Whitespace PostParaWs =
-  lt:pEol tail:PostParaWsMore*
-  {
-    yyValue = new WtWhitespace(
-        new WtNodeList(new WtText(lt), new WtNodeList(tail)),
-        true);
-  }
-;
-
-private inline WtNodeList PostParaWsMore =
-  !ParagraphStopper s:pExtSpaceStar lt:pEol
-  {
-    yyValue = new WtNodeList(s, new WtText(lt));
-  }
-;
-*/
 
 
 

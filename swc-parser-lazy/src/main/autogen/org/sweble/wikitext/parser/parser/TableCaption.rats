@@ -15,23 +15,12 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * TableCaption
  * ------------
  *
  *   Grammar:
  *     - S* '|+' TableAttributeInline* S* '|' TableCaptionContent* Garbage* Eol
- *
- *   AST node:
- *     Name        : TableCaption
- *     Extends     : WtInnerNode2
- *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE_CAPTION
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *       body          : WtNodeList
  *
  */
 

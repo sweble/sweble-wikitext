@@ -15,25 +15,6 @@
  * limitations under the License.
  */
 
-/*!
- *
- * TableHeader
- * -----------
- *
- *   Grammar:
- *
- *   AST node:
- *     Name        : TableHeader
- *     Extends     : WtInnerNode2
- *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE_HEADER
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *       body          : WtNodeList
- *
- */
-
 module org.sweble.wikitext.parser.parser.TableHeader;
 
 import org.sweble.wikitext.parser.utils.Assert;

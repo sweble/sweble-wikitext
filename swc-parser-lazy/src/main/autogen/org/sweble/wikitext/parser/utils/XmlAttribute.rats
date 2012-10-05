@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * XML Attribute
  * -------------
  *
@@ -25,29 +24,6 @@
  *     - Ws* XmlName Ws* '=' Ws* '"' ValueDqStar '"'
  *     - Ws* XmlName Ws* '=' ValueNqStar
  *     - Ws* XmlName
- *
- *   AST node:
- *     Name        : XmlAttribute
- *     Extends     : WtInnerNode1
- *     Constructor : "name, hasValue"
- *     Constructor : "name, value, hasValue"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ATTRIBUTE
- *
- *     Properties:
- *       name     : String
- *       hasValue : boolean
- *
- *     Children:
- *       value : WtNodeList
- *
- * XML Attribute Garbage
- * ---------------------
- *
- *   AST node:
- *     Name        : WtXmlAttributeGarbage
- *     Extends     : StringContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ATTRIBUTE_GARBAGE
  *
  */
 

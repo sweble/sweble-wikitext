@@ -15,40 +15,12 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * Ticks
  * -----
  *
  *   Grammar:
  *     - "''" "'"*
- *
- *   AST node:
- *     Name        : Ticks
- *     Extends     : LeafNode
- *     Constructor : tickCount
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TICKS
- *
- *     Properties:
- *       tickCount : int
- *
- * Bold
- * ----
- *
- *   AST node:
- *     Name        : Bold
- *     Extends     : ContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_BOLD
- *
- * Italics
- * -------
- *
- *   AST node:
- *     Name        : Italics
- *     Extends     : ContentNode
- *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ITALICS
  *
  */
 

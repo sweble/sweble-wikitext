@@ -15,10 +15,9 @@
  * limitations under the License.
  */
 
-/*!
- *
- * WtSection SectionHeading
- * ---------------
+/*
+ * Section
+ * -------
  *
  *   Grammar:
  *     - '='+ Title '='+ Space* EolOrEof
@@ -27,7 +26,7 @@
  *     - ExternalLink
  *     - InternalLink
  *     - PageSwitch
- *     - WtParserEntity
+ *     - ParserEntity
  *     - PlainExternalLink
  *     - Signature
  *     - Ticks
@@ -43,31 +42,6 @@
  *
  *   The title can not contain (syntactically):
  *     - Newlines
- *
- *   AST node:
- *     Name        : SectionHeading
- *     Extends     : ContentNode
- *     Constructor : "content, level"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_HEADING
- *
- *     Properties:
- *       level : int
- *
- * WtSection
- * -------
- *
- *   AST node:
- *     Name        : WtSection
- *     Extends     : WtInnerNode2
- *     Constructor : "level, title, body"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SECTION
- *
- *     Properties:
- *       level   : int
- *
- *     Children:
- *       title : WtNodeList
- *       body  : WtNodeList
  *
  */
 

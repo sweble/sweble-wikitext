@@ -15,31 +15,6 @@
  * limitations under the License.
  */
 
-/*!
- *
- * WtWhitespace
- * ------------
- *
- *   AST node:
- *     Name        : WtWhitespace
- *     Extends     : ContentNode
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_WHITESPACE
- *     Constructor : "content, hasNewline"
- *
- *     Properties:
- *       hasNewline : boolean
- *
- * Newline
- * -------
- *
- *   AST node:
- *     Name        : WtNewline
- *     Extends     : StringContentNode
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_NEWLINE
- *     Constructor : "content"
- *
- */
-
 module org.sweble.wikitext.parser.parser.Whitespace;
 
 import org.sweble.wikitext.parser.parser.ParserEntity;

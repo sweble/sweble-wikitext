@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-/*!
- *
+/*
  * XmlElement
  * ----------
  *
@@ -27,69 +26,6 @@
  *     - '</' XmlName Ws* '>'
  *     - '<' XmlName XmlAttribute* Ws* "/>"
  *     - '<' XmlName XmlAttribute* Ws* ">"
- *
- * Closing XML tag
- * ---------------
- *
- *   AST node:
- *     Name        : XmlEndTag
- *     Extends     : LeafNode
- *     Implements  : NamedXmlElement
- *     Constructor : "name"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_TAG_CLOSE
- *
- *     Properties:
- *       name : String
- *
- * Opening XML tag
- * ---------------
- *
- *   AST node:
- *     Name        : XmlStartTag
- *     Extends     : WtInnerNode1
- *     Implements  : NamedXmlElement
- *     Constructor : "name, xmlAttributes"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_START_TAG
- *
- *     Properties:
- *       name : String
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *
- * Empty XML Element
- * -----------------
- *
- *   AST node:
- *     Name        : XmlEmptyTag
- *     Extends     : WtInnerNode1
- *     Implements  : NamedXmlElement
- *     Constructor : "name, xmlAttributes"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_TAG_EMPTY
- *
- *     Properties:
- *       name : String
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *
- * XML Element
- * -----------
- *
- *   AST node:
- *     Name        : XmlElement
- *     Extends     : WtInnerNode2
- *     Implements  : NamedXmlElement
- *     Constructor : "name, empty, xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ELEMENT
- *
- *     Properties:
- *       name  : String
- *       empty : Boolean
- *
- *     Children:
- *       xmlAttributes : WtNodeList
- *       body          : WtNodeList
  *
  */
 

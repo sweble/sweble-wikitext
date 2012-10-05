@@ -108,26 +108,11 @@
           <baseDir>${project.basedir}/src/main/autogen</baseDir>
           <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
           <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/parser/parser/Grammar.rats</ratsInputFile>
-            <ratsInputFile>org/sweble/wikitext/parser/preprocessor/Grammar.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/parser/RatsWikitextParser.rats</ratsInputFile>
+            <ratsInputFile>org/sweble/wikitext/parser/preprocessor/RatsWikitextPreprocessor.rats</ratsInputFile>
           </ratsInputFiles>
         </configuration>
       </plugin>
-
-      <!-- Generate Ast Nodes -->
-      <!--
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-nodegen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/parser</ratsInputFile>
-          </ratsInputFiles>
-        </configuration>
-      </plugin>
-      -->
 
       <!-- Generate Ast Printers -->
       <plugin>
