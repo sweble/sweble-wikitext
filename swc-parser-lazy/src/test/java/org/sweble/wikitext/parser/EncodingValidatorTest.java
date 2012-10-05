@@ -23,8 +23,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
-import org.sweble.wikitext.parser.nodes.IllegalCodePoint;
-import org.sweble.wikitext.parser.nodes.IllegalCodePoint.IllegalCodePointType;
+import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
+import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 
 import de.fau.cs.osr.ptk.common.GenericEntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;
@@ -67,27 +67,27 @@ public class EncodingValidatorTest
 		String validatedWikitext = result.getWikitext();
 		GenericEntityMap entityMap = result.getEntityMap();
 		
-		IllegalCodePoint x0 = (IllegalCodePoint) entityMap.getEntity(0);
+		WtIllegalCodePoint x0 = (WtIllegalCodePoint) entityMap.getEntity(0);
 		assertEquals("\uE800", x0.getCodePoint());
 		assertEquals(IllegalCodePointType.PRIVATE_USE_CHARACTER, x0.getType());
 		assertEquals(new Location(title, 1, 13), x0.getNativeLocation());
 		
-		IllegalCodePoint x1 = (IllegalCodePoint) entityMap.getEntity(1);
+		WtIllegalCodePoint x1 = (WtIllegalCodePoint) entityMap.getEntity(1);
 		assertEquals("\uFDEE", x1.getCodePoint());
 		assertEquals(IllegalCodePointType.NON_CHARACTER, x1.getType());
 		assertEquals(new Location(title, 2, 19), x1.getNativeLocation());
 		
-		IllegalCodePoint x2 = (IllegalCodePoint) entityMap.getEntity(2);
+		WtIllegalCodePoint x2 = (WtIllegalCodePoint) entityMap.getEntity(2);
 		assertEquals("\uDBEF", x2.getCodePoint());
 		assertEquals(IllegalCodePointType.ISOLATED_SURROGATE, x2.getType());
 		assertEquals(new Location(title, 3, 10), x2.getNativeLocation());
 		
-		IllegalCodePoint x3 = (IllegalCodePoint) entityMap.getEntity(3);
+		WtIllegalCodePoint x3 = (WtIllegalCodePoint) entityMap.getEntity(3);
 		assertEquals("\uDC80", x3.getCodePoint());
 		assertEquals(IllegalCodePointType.ISOLATED_SURROGATE, x3.getType());
 		assertEquals(new Location(title, 3, 16), x3.getNativeLocation());
 		
-		IllegalCodePoint x4 = (IllegalCodePoint) entityMap.getEntity(4);
+		WtIllegalCodePoint x4 = (WtIllegalCodePoint) entityMap.getEntity(4);
 		assertEquals("\u0007", x4.getCodePoint());
 		assertEquals(IllegalCodePointType.CONTROL_CHARACTER, x4.getType());
 		assertEquals(new Location(title, 5, 25), x4.getNativeLocation());

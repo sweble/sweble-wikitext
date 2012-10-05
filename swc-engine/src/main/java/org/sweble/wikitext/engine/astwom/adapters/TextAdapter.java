@@ -38,7 +38,7 @@ import de.fau.cs.osr.utils.StringUtils;
  * FIXME: We are not defragmenting the AST after insert/append/delete
  * operations.
  * 
- * FIXME: We don't handle IllegalCodePoint nodes yet
+ * FIXME: We don't handle WtIllegalCodePoint nodes yet
  */
 public class TextAdapter
 		extends

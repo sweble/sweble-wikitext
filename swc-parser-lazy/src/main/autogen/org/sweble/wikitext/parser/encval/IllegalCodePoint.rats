@@ -21,7 +21,7 @@
  * ------------------
  *
  *   AST node:
- *     Name        : IllegalCodePoint
+ *     Name        : WtIllegalCodePoint
  *     Extends     : WtLeafNode
  *     Constructor : "codePoint, type"
  *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ILLEGAL_CODE_POINT

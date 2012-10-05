@@ -123,7 +123,7 @@ Some important nodes:
 ==[ Encoding Validation ]=======================================================
 
  *   AST node:
-       Name        : IllegalCodePoint
+       Name        : WtIllegalCodePoint
        Extends     : LeafNode
        Constructor : "codePoint, type"
        NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ILLEGAL_CODE_POINT

@@ -35,7 +35,7 @@ import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.postprocessor.AstCompressor;
+import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
 
 import com.google.gson.Gson;

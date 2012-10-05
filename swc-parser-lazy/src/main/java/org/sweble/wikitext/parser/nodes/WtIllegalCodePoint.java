@@ -5,7 +5,7 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 /**
  * <h1>Encoding Validator</h1>
  */
-public class IllegalCodePoint
+public class WtIllegalCodePoint
 		extends
 			WtLeafNode
 {
@@ -13,11 +13,11 @@ public class IllegalCodePoint
 	
 	// =========================================================================
 	
-	public IllegalCodePoint()
+	public WtIllegalCodePoint()
 	{
 	}
 	
-	public IllegalCodePoint(String codePoint, IllegalCodePointType type)
+	public WtIllegalCodePoint(String codePoint, IllegalCodePointType type)
 	{
 		setCodePoint(codePoint);
 		setType(type);
@@ -63,24 +63,29 @@ public class IllegalCodePoint
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2;
+		return 2 + getSuperPropertyCount();
+	}
+	
+	public int getSuperPropertyCount()
+	{
+		return super.getPropertyCount();
 	}
 	
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
+		return new WtLeafNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return 2;
+				return WtIllegalCodePoint.this.getPropertyCount();
 			}
 			
 			@Override
 			protected String getName(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
 						return "codePoint";
@@ -88,37 +93,37 @@ public class IllegalCodePoint
 						return "type";
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getName(index);
 				}
 			}
 			
 			@Override
 			protected Object getValue(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return IllegalCodePoint.this.getCodePoint();
+						return WtIllegalCodePoint.this.getCodePoint();
 					case 1:
-						return IllegalCodePoint.this.getType();
+						return WtIllegalCodePoint.this.getType();
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getValue(index);
 				}
 			}
 			
 			@Override
 			protected Object setValue(int index, Object value)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return IllegalCodePoint.this.setCodePoint((String) value);
+						return WtIllegalCodePoint.this.setCodePoint((String) value);
 					case 1:
-						return IllegalCodePoint.this.setType((IllegalCodePointType) value);
+						return WtIllegalCodePoint.this.setType((IllegalCodePointType) value);
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.setValue(index, value);
 				}
 			}
 		};
