@@ -1,7 +1,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.WtRtData;
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 import de.fau.cs.osr.ptk.common.ast.GenericParserEntity;
 

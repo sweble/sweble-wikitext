@@ -1,6 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 /**
  * <h1>Semi Pre Line</h1> <h2>Grammar</h2>

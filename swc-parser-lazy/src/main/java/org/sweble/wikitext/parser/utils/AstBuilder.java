@@ -22,6 +22,7 @@ import java.util.List;
 
 import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
 import org.sweble.wikitext.parser.nodes.WtIgnored;
+import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
@@ -31,7 +32,6 @@ import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
-import org.sweble.wikitext.parser.preprocessor.WtProtectedText;
 
 public class AstBuilder
 {

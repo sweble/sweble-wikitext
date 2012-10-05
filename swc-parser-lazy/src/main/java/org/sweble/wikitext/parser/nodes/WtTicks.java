@@ -1,79 +1,72 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>XmlComment</h1> <h2>Grammar</h2>
+ * <h1>WtTicks</h1> <h2>Grammar</h2>
+ * <ul>
+ * <li>
+ * <p>
+ * "''" "'"*
+ * </p>
+ * </li>
+ * </ul>
  */
-public class WtXmlComment
+public class WtTicks
 		extends
-			WtStringContentNode
+			WtLeafNode
 		implements
-			WtPreproNode
+			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtXmlComment()
+	public WtTicks()
 	{
 	}
 	
-	public WtXmlComment(String content)
+	public WtTicks(int tickCount)
 	{
-		super(content);
-	}
-	
-	public WtXmlComment(String content, String prefix, String suffix)
-	{
-		super(content);
-		setPrefix(prefix);
-		setSuffix(suffix);
+		setTickCount(tickCount);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_XML_COMMENT;
+		return NT_TICKS;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public boolean isSynthetic()
+	{
+		return false;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String prefix;
+	private int tickCount;
 	
-	public final String getPrefix()
+	public final int getTickCount()
 	{
-		return this.prefix;
+		return this.tickCount;
 	}
 	
-	public final String setPrefix(String prefix)
+	public final int setTickCount(int tickCount)
 	{
-		String old = this.prefix;
-		this.prefix = prefix;
-		return old;
-	}
-	
-	private String suffix;
-	
-	public final String getSuffix()
-	{
-		return this.suffix;
-	}
-	
-	public final String setSuffix(String suffix)
-	{
-		String old = this.suffix;
-		this.suffix = suffix;
+		int old = this.tickCount;
+		this.tickCount = tickCount;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2 + getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -84,12 +77,12 @@ public class WtXmlComment
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtStringContentNodePropertyIterator()
+		return new WtLeafNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtXmlComment.this.getPropertyCount();
+				return WtTicks.this.getPropertyCount();
 			}
 			
 			@Override
@@ -98,9 +91,7 @@ public class WtXmlComment
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "prefix";
-					case 1:
-						return "suffix";
+						return "tickCount";
 						
 					default:
 						return super.getName(index);
@@ -113,9 +104,7 @@ public class WtXmlComment
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlComment.this.getPrefix();
-					case 1:
-						return WtXmlComment.this.getSuffix();
+						return WtTicks.this.getTickCount();
 						
 					default:
 						return super.getValue(index);
@@ -128,9 +117,7 @@ public class WtXmlComment
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlComment.this.setPrefix((String) value);
-					case 1:
-						return WtXmlComment.this.setSuffix((String) value);
+						return WtTicks.this.setTickCount((Integer) value);
 						
 					default:
 						return super.setValue(index, value);

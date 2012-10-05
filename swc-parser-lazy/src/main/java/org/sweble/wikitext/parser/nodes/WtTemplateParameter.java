@@ -1,63 +1,54 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Empty XML Element</h1>
+ * <h1>TemplateParameter</h1> <h2>Grammar</h2>
  */
-public class WtXmlEmptyTag
+public class WtTemplateParameter
 		extends
-			WtInnerNode1
+			WtInnerNode3
 		implements
-			WtNamedXmlElement,
-			WtIntermediate
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtXmlEmptyTag()
+	public WtTemplateParameter()
 	{
-		super(new WtNodeList());
+		super(new WtNodeList(), new WtTemplateArgument(), new WtNodeList());
 	}
 	
-	public WtXmlEmptyTag(String name, WtNodeList xmlAttributes)
+	public WtTemplateParameter(
+			WtNodeList name,
+			WtTemplateArgument defaultValue,
+			WtNodeList garbage)
 	{
-		super(xmlAttributes);
-		setName(name);
+		super(name, defaultValue, garbage);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_XML_EMPTY_TAG;
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
+		return NT_TEMPLATE_PARAMETER;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String name;
+	private boolean precededByNewline;
 	
-	public final String getName()
+	public final boolean getPrecededByNewline()
 	{
-		return this.name;
+		return this.precededByNewline;
 	}
 	
-	public final String setName(String name)
+	public final boolean setPrecededByNewline(boolean precededByNewline)
 	{
-		String old = this.name;
-		this.name = name;
+		boolean old = this.precededByNewline;
+		this.precededByNewline = precededByNewline;
 		return old;
 	}
 	
@@ -67,7 +58,7 @@ public class WtXmlEmptyTag
 		return 1 + getSuperPropertyCount();
 	}
 	
-	public final int getSuperPropertyCount()
+	public int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -75,12 +66,12 @@ public class WtXmlEmptyTag
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode1PropertyIterator()
+		return new WtInnerNode3PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtXmlEmptyTag.this.getPropertyCount();
+				return WtTemplateParameter.this.getPropertyCount();
 			}
 			
 			@Override
@@ -89,7 +80,7 @@ public class WtXmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "name";
+						return "precededByNewline";
 						
 					default:
 						return super.getName(index);
@@ -102,7 +93,7 @@ public class WtXmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlEmptyTag.this.getName();
+						return WtTemplateParameter.this.getPrecededByNewline();
 						
 					default:
 						return super.getValue(index);
@@ -115,7 +106,7 @@ public class WtXmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlEmptyTag.this.setName((String) value);
+						return WtTemplateParameter.this.setPrecededByNewline((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -127,17 +118,37 @@ public class WtXmlEmptyTag
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setName(WtNodeList name)
 	{
-		set(0, xmlAttributes);
+		set(0, name);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtNodeList getName()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	public final void setDefaultValue(WtTemplateArgument defaultValue)
+	{
+		set(1, defaultValue);
+	}
+	
+	public final WtTemplateArgument getDefaultValue()
+	{
+		return (WtTemplateArgument) get(1);
+	}
+	
+	public final void setGarbage(WtNodeList garbage)
+	{
+		set(2, garbage);
+	}
+	
+	public final WtNodeList getGarbage()
+	{
+		return (WtNodeList) get(2);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "name", "defaultValue", "garbage" };
 	
 	public final String[] getChildNames()
 	{

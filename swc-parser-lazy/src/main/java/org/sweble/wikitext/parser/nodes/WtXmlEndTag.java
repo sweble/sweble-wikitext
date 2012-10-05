@@ -1,16 +1,14 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>Opening XML tag</h1>
+ * <h1>Closing XML tag</h1>
  */
-public class WtXmlStartTag
+public class WtXmlEndTag
 		extends
-			WtInnerNode1
+			WtLeafNode
 		implements
 			WtNamedXmlElement,
 			WtIntermediate
@@ -19,21 +17,15 @@ public class WtXmlStartTag
 	
 	// =========================================================================
 	
-	public WtXmlStartTag()
+	public WtXmlEndTag(String name)
 	{
-		super(new WtNodeList());
-	}
-	
-	public WtXmlStartTag(String name, WtNodeList xmlAttributes)
-	{
-		super(xmlAttributes);
 		setName(name);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_XML_START_TAG;
+		return NT_XML_END_TAG;
 	}
 	
 	// =========================================================================
@@ -75,12 +67,12 @@ public class WtXmlStartTag
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode1PropertyIterator()
+		return new WtLeafNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtXmlStartTag.this.getPropertyCount();
+				return WtXmlEndTag.this.getPropertyCount();
 			}
 			
 			@Override
@@ -102,7 +94,7 @@ public class WtXmlStartTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlStartTag.this.getName();
+						return WtXmlEndTag.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -115,32 +107,12 @@ public class WtXmlStartTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlStartTag.this.setName((String) value);
+						return WtXmlEndTag.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
-	}
-	
-	// =========================================================================
-	// Children
-	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
-	{
-		set(0, xmlAttributes);
-	}
-	
-	public final WtNodeList getXmlAttributes()
-	{
-		return (WtNodeList) get(0);
-	}
-	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
-	
-	public final String[] getChildNames()
-	{
-		return CHILD_NAMES;
 	}
 }

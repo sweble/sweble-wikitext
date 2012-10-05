@@ -1,82 +1,68 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>XML Element</h1>
+ * <h1>WtTemplateArgument</h1> <h2>Grammar</h2>
  */
-public class WtXmlElement
+public class WtTemplateArgument
 		extends
 			WtInnerNode2
 		implements
-			WtNamedXmlElement
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtXmlElement()
+	public WtTemplateArgument()
 	{
 		super(new WtNodeList(), new WtNodeList());
 	}
 	
-	public WtXmlElement(
-			String name,
-			Boolean empty,
-			WtNodeList xmlAttributes,
-			WtNodeList body)
+	public WtTemplateArgument(WtNodeList value, boolean hasName)
 	{
-		super(xmlAttributes, body);
-		setName(name);
-		setEmpty(empty);
+		super(new WtNodeList(), value);
+		setHasName(hasName);
+	}
+	
+	public WtTemplateArgument(WtNodeList name, WtNodeList value, boolean hasName)
+	{
+		super(name, value);
+		setHasName(hasName);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_XML_ELEMENT;
+		return NT_TEMPLATE_ARGUMENT;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String name;
+	private boolean hasName;
 	
-	public final String getName()
+	public final boolean getHasName()
 	{
-		return this.name;
+		return this.hasName;
 	}
 	
-	public final String setName(String name)
+	public final boolean setHasName(boolean hasName)
 	{
-		String old = this.name;
-		this.name = name;
-		return old;
-	}
-	
-	private Boolean empty;
-	
-	public final Boolean getEmpty()
-	{
-		return this.empty;
-	}
-	
-	public final Boolean setEmpty(Boolean empty)
-	{
-		Boolean old = this.empty;
-		this.empty = empty;
+		boolean old = this.hasName;
+		this.hasName = hasName;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2 + getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
-	public final int getSuperPropertyCount()
+	public int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -89,7 +75,7 @@ public class WtXmlElement
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtXmlElement.this.getPropertyCount();
+				return WtTemplateArgument.this.getPropertyCount();
 			}
 			
 			@Override
@@ -98,9 +84,7 @@ public class WtXmlElement
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "name";
-					case 1:
-						return "empty";
+						return "hasName";
 						
 					default:
 						return super.getName(index);
@@ -113,9 +97,7 @@ public class WtXmlElement
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlElement.this.getName();
-					case 1:
-						return WtXmlElement.this.getEmpty();
+						return WtTemplateArgument.this.getHasName();
 						
 					default:
 						return super.getValue(index);
@@ -128,9 +110,7 @@ public class WtXmlElement
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlElement.this.setName((String) value);
-					case 1:
-						return WtXmlElement.this.setEmpty((Boolean) value);
+						return WtTemplateArgument.this.setHasName((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -142,27 +122,27 @@ public class WtXmlElement
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setName(WtNodeList name)
 	{
-		set(0, xmlAttributes);
+		set(0, name);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtNodeList getName()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	public final void setBody(WtNodeList body)
+	public final void setValue(WtNodeList value)
 	{
-		set(1, body);
+		set(1, value);
 	}
 	
-	public final WtNodeList getBody()
+	public final WtNodeList getValue()
 	{
 		return (WtNodeList) get(1);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
+	private static final String[] CHILD_NAMES = new String[] { "name", "value" };
 	
 	public final String[] getChildNames()
 	{

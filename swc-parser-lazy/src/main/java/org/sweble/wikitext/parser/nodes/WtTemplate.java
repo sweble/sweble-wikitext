@@ -1,16 +1,14 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
-import org.sweble.wikitext.parser.preprocessor.XmlElementType;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtOnlyInclude</h1> <h2>Grammar</h2>
+ * <h1>WtTemplate</h1> <h2>Grammar</h2>
  */
-public class WtOnlyInclude
+public class WtTemplate
 		extends
-			WtContentNodeMarkTwo
+			WtInnerNode2
 		implements
 			WtPreproNode
 {
@@ -18,37 +16,36 @@ public class WtOnlyInclude
 	
 	// =========================================================================
 	
-	public WtOnlyInclude()
+	public WtTemplate()
 	{
-		super();
+		super(new WtNodeList(), new WtNodeList());
 	}
 	
-	public WtOnlyInclude(WtNodeList content, XmlElementType elementType)
+	public WtTemplate(WtNodeList name, WtNodeList args)
 	{
-		super(content);
-		setElementType(elementType);
+		super(name, args);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_ONLY_INCLUDE;
+		return NT_TEMPLATE;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private XmlElementType elementType;
+	private boolean precededByNewline;
 	
-	public final XmlElementType getElementType()
+	public final boolean getPrecededByNewline()
 	{
-		return this.elementType;
+		return this.precededByNewline;
 	}
 	
-	public final XmlElementType setElementType(XmlElementType elementType)
+	public final boolean setPrecededByNewline(boolean precededByNewline)
 	{
-		XmlElementType old = this.elementType;
-		this.elementType = elementType;
+		boolean old = this.precededByNewline;
+		this.precededByNewline = precededByNewline;
 		return old;
 	}
 	
@@ -66,12 +63,12 @@ public class WtOnlyInclude
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtContentNodeMarkTwoPropertyIterator()
+		return new WtInnerNode2PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtOnlyInclude.this.getPropertyCount();
+				return WtTemplate.this.getPropertyCount();
 			}
 			
 			@Override
@@ -80,7 +77,7 @@ public class WtOnlyInclude
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "elementType";
+						return "precededByNewline";
 						
 					default:
 						return super.getName(index);
@@ -93,7 +90,7 @@ public class WtOnlyInclude
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtOnlyInclude.this.getElementType();
+						return WtTemplate.this.getPrecededByNewline();
 						
 					default:
 						return super.getValue(index);
@@ -106,12 +103,42 @@ public class WtOnlyInclude
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtOnlyInclude.this.setElementType((XmlElementType) value);
+						return WtTemplate.this.setPrecededByNewline((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	// Children
+	
+	public final void setName(WtNodeList name)
+	{
+		set(0, name);
+	}
+	
+	public final WtNodeList getName()
+	{
+		return (WtNodeList) get(0);
+	}
+	
+	public final void setArgs(WtNodeList args)
+	{
+		set(1, args);
+	}
+	
+	public final WtNodeList getArgs()
+	{
+		return (WtNodeList) get(1);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "name", "args" };
+	
+	public final String[] getChildNames()
+	{
+		return CHILD_NAMES;
 	}
 }

@@ -15,13 +15,11 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.parser;
+package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtNode;
 
-public interface WtNamedXmlElement
+public interface WtPreproNode
 		extends
 			WtNode
 {
-	public String getName();
 }

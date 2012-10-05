@@ -15,10 +15,9 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.postprocessor;
+package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
+import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 public class WtImStartTag
 		extends

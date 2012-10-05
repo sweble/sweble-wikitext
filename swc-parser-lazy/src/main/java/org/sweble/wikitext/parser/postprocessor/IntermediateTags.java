@@ -19,6 +19,8 @@ package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WtImEndTag;
+import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtItalics;

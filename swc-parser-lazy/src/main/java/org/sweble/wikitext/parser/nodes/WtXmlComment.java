@@ -1,66 +1,81 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtWhitespace</h1>
+ * <h1>XmlComment</h1> <h2>Grammar</h2>
  */
-public class WtWhitespace
+public class WtXmlComment
 		extends
-			WtContentNodeMarkTwo
+			WtStringContentNode
 		implements
-			WtIntermediate
+			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtWhitespace(WtNodeList content, boolean hasNewline)
+	public WtXmlComment()
+	{
+	}
+	
+	public WtXmlComment(String content)
 	{
 		super(content);
-		setHasNewline(hasNewline);
+	}
+	
+	public WtXmlComment(String content, String prefix, String suffix)
+	{
+		super(content);
+		setPrefix(prefix);
+		setSuffix(suffix);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_WHITESPACE;
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public boolean isSynthetic()
-	{
-		return false;
+		return NT_XML_COMMENT;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private boolean hasNewline;
+	private String prefix;
 	
-	public final boolean getHasNewline()
+	public final String getPrefix()
 	{
-		return this.hasNewline;
+		return this.prefix;
 	}
 	
-	public final boolean setHasNewline(boolean hasNewline)
+	public final String setPrefix(String prefix)
 	{
-		boolean old = this.hasNewline;
-		this.hasNewline = hasNewline;
+		String old = this.prefix;
+		this.prefix = prefix;
+		return old;
+	}
+	
+	private String suffix;
+	
+	public final String getSuffix()
+	{
+		return this.suffix;
+	}
+	
+	public final String setSuffix(String suffix)
+	{
+		String old = this.suffix;
+		this.suffix = suffix;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1 + getSuperPropertyCount();
+		return 2 + getSuperPropertyCount();
 	}
 	
-	public int getSuperPropertyCount()
+	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -68,12 +83,12 @@ public class WtWhitespace
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtContentNodeMarkTwoPropertyIterator()
+		return new WtStringContentNodePropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtWhitespace.this.getPropertyCount();
+				return WtXmlComment.this.getPropertyCount();
 			}
 			
 			@Override
@@ -82,7 +97,9 @@ public class WtWhitespace
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "hasNewline";
+						return "prefix";
+					case 1:
+						return "suffix";
 						
 					default:
 						return super.getName(index);
@@ -95,7 +112,9 @@ public class WtWhitespace
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtWhitespace.this.getHasNewline();
+						return WtXmlComment.this.getPrefix();
+					case 1:
+						return WtXmlComment.this.getSuffix();
 						
 					default:
 						return super.getValue(index);
@@ -108,7 +127,9 @@ public class WtWhitespace
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtWhitespace.this.setHasNewline((Boolean) value);
+						return WtXmlComment.this.setPrefix((String) value);
+					case 1:
+						return WtXmlComment.this.setSuffix((String) value);
 						
 					default:
 						return super.setValue(index, value);

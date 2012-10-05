@@ -1,13 +1,19 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtRedirect</h1> <h2>Grammar</h2>
+ * <h1>WtPageSwitch</h1> <h2>Grammar</h2>
+ * <ul>
+ * <li>
+ * <p>
+ * '__' Name '__'
+ * </p>
+ * </li>
+ * </ul>
  */
-public class WtRedirect
+public class WtPageSwitch
 		extends
 			WtLeafNode
 		implements
@@ -17,45 +23,45 @@ public class WtRedirect
 	
 	// =========================================================================
 	
-	public WtRedirect()
+	public WtPageSwitch()
 	{
 	}
 	
-	public WtRedirect(String target)
+	public WtPageSwitch(String name)
 	{
-		setTarget(target);
+		setName(name);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_REDIRECT;
+		return NT_PAGE_SWITCH;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String target;
+	private String name;
 	
-	public final String getTarget()
+	public final String getName()
 	{
-		return this.target;
+		return this.name;
 	}
 	
-	public final String setTarget(String target)
+	public final String setName(String name)
 	{
-		String old = this.target;
-		this.target = target;
+		String old = this.name;
+		this.name = name;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1 + getSuperPropertyCount();
+		return getSuperPropertyCount() + 1;
 	}
 	
-	private int getSuperPropertyCount()
+	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -68,7 +74,7 @@ public class WtRedirect
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtRedirect.this.getPropertyCount();
+				return WtPageSwitch.this.getPropertyCount();
 			}
 			
 			@Override
@@ -77,7 +83,7 @@ public class WtRedirect
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "target";
+						return "name";
 						
 					default:
 						return super.getName(index);
@@ -90,7 +96,7 @@ public class WtRedirect
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtRedirect.this.getTarget();
+						return WtPageSwitch.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -103,7 +109,7 @@ public class WtRedirect
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtRedirect.this.setTarget((String) value);
+						return WtPageSwitch.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);

@@ -15,30 +15,16 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.preprocessor;
+package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtText;
 
-public class WtProtectedText
+public interface WtIntermediate
 		extends
-			WtText
+			WtNode
 {
-	private static final long serialVersionUID = 1L;
-	
-	public WtProtectedText()
-	{
-	}
-	
-	public WtProtectedText(String content)
-	{
-		super(content);
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public int getNodeType()
-	{
-		return NT_PROTECTED_TEXT;
-	}
+	/**
+	 * Returns <code>true</code> if this tag was not parsed from the Wikitext
+	 * but generated in a later processing phase.
+	 */
+	public boolean isSynthetic();
 }

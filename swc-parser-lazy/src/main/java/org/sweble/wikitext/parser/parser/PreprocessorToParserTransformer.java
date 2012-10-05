@@ -23,10 +23,10 @@ import org.sweble.wikitext.parser.nodes.WtOnlyInclude;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
-import org.sweble.wikitext.parser.preprocessor.WtProtectedText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 

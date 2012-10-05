@@ -80,7 +80,6 @@
             </goals>
             <configuration>
               <sources>
-                <source>src/main/nodes</source>
                 <source>src/main/autogen</source>
                 <source>target/generated-sources/jflex</source>
               </sources>

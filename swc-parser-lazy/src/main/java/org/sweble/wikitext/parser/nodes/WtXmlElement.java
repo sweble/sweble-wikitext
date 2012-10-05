@@ -1,62 +1,81 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtTemplate</h1> <h2>Grammar</h2>
+ * <h1>XML Element</h1>
  */
-public class WtTemplate
+public class WtXmlElement
 		extends
 			WtInnerNode2
 		implements
-			WtPreproNode
+			WtNamedXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtTemplate()
+	public WtXmlElement()
 	{
 		super(new WtNodeList(), new WtNodeList());
 	}
 	
-	public WtTemplate(WtNodeList name, WtNodeList args)
+	public WtXmlElement(
+			String name,
+			Boolean empty,
+			WtNodeList xmlAttributes,
+			WtNodeList body)
 	{
-		super(name, args);
+		super(xmlAttributes, body);
+		setName(name);
+		setEmpty(empty);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_TEMPLATE;
+		return NT_XML_ELEMENT;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private boolean precededByNewline;
+	private String name;
 	
-	public final boolean getPrecededByNewline()
+	public final String getName()
 	{
-		return this.precededByNewline;
+		return this.name;
 	}
 	
-	public final boolean setPrecededByNewline(boolean precededByNewline)
+	public final String setName(String name)
 	{
-		boolean old = this.precededByNewline;
-		this.precededByNewline = precededByNewline;
+		String old = this.name;
+		this.name = name;
+		return old;
+	}
+	
+	private Boolean empty;
+	
+	public final Boolean getEmpty()
+	{
+		return this.empty;
+	}
+	
+	public final Boolean setEmpty(Boolean empty)
+	{
+		Boolean old = this.empty;
+		this.empty = empty;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1 + getSuperPropertyCount();
+		return 2 + getSuperPropertyCount();
 	}
 	
-	public int getSuperPropertyCount()
+	public final int getSuperPropertyCount()
 	{
 		return super.getPropertyCount();
 	}
@@ -69,7 +88,7 @@ public class WtTemplate
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtTemplate.this.getPropertyCount();
+				return WtXmlElement.this.getPropertyCount();
 			}
 			
 			@Override
@@ -78,7 +97,9 @@ public class WtTemplate
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "precededByNewline";
+						return "name";
+					case 1:
+						return "empty";
 						
 					default:
 						return super.getName(index);
@@ -91,7 +112,9 @@ public class WtTemplate
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTemplate.this.getPrecededByNewline();
+						return WtXmlElement.this.getName();
+					case 1:
+						return WtXmlElement.this.getEmpty();
 						
 					default:
 						return super.getValue(index);
@@ -104,7 +127,9 @@ public class WtTemplate
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTemplate.this.setPrecededByNewline((Boolean) value);
+						return WtXmlElement.this.setName((String) value);
+					case 1:
+						return WtXmlElement.this.setEmpty((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -116,27 +141,27 @@ public class WtTemplate
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtNodeList name)
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
 	{
-		set(0, name);
+		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getName()
+	public final WtNodeList getXmlAttributes()
 	{
 		return (WtNodeList) get(0);
 	}
 	
-	public final void setArgs(WtNodeList args)
+	public final void setBody(WtNodeList body)
 	{
-		set(1, args);
+		set(1, body);
 	}
 	
-	public final WtNodeList getArgs()
+	public final WtNodeList getBody()
 	{
 		return (WtNodeList) get(1);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "name", "args" };
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
 	
 	public final String[] getChildNames()
 	{

@@ -15,12 +15,29 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.postprocessor;
+package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtNode;
 
-public interface WtPreproNode
+public class WtProtectedText
 		extends
-			WtNode
+			WtText
 {
+	private static final long serialVersionUID = 1L;
+	
+	public WtProtectedText()
+	{
+	}
+	
+	public WtProtectedText(String content)
+	{
+		super(content);
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public int getNodeType()
+	{
+		return NT_PROTECTED_TEXT;
+	}
 }

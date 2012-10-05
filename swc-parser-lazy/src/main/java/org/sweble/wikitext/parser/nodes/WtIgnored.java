@@ -1,6 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 /**
  * <h1>Ignored</h1>

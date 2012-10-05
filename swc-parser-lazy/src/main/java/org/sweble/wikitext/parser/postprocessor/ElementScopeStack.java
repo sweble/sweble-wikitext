@@ -20,10 +20,10 @@ package org.sweble.wikitext.parser.postprocessor;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
+import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
-import org.sweble.wikitext.parser.parser.WtNamedXmlElement;
 import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import de.fau.cs.osr.utils.StringUtils;

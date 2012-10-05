@@ -1,22 +1,14 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtPageSwitch</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * '__' Name '__'
- * </p>
- * </li>
- * </ul>
+ * <h1>WtTagExtension</h1> <h2>Grammar</h2>
  */
-public class WtPageSwitch
+public class WtTagExtension
 		extends
-			WtLeafNode
+			WtInnerNode1
 		implements
 			WtPreproNode
 {
@@ -24,19 +16,22 @@ public class WtPageSwitch
 	
 	// =========================================================================
 	
-	public WtPageSwitch()
+	public WtTagExtension()
 	{
+		super(new WtNodeList());
 	}
 	
-	public WtPageSwitch(String name)
+	public WtTagExtension(String name, WtNodeList xmlAttributes, String body)
 	{
+		super(xmlAttributes);
 		setName(name);
+		setBody(body);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_PAGE_SWITCH;
+		return NT_TAG_EXTENSION;
 	}
 	
 	// =========================================================================
@@ -56,10 +51,24 @@ public class WtPageSwitch
 		return old;
 	}
 	
+	private String body;
+	
+	public final String getBody()
+	{
+		return this.body;
+	}
+	
+	public final String setBody(String body)
+	{
+		String old = this.body;
+		this.body = body;
+		return old;
+	}
+	
 	@Override
 	public final int getPropertyCount()
 	{
-		return getSuperPropertyCount() + 1;
+		return 2 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -70,12 +79,12 @@ public class WtPageSwitch
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtLeafNodePropertyIterator()
+		return new WtInnerNode1PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtPageSwitch.this.getPropertyCount();
+				return WtTagExtension.this.getPropertyCount();
 			}
 			
 			@Override
@@ -85,6 +94,8 @@ public class WtPageSwitch
 				{
 					case 0:
 						return "name";
+					case 1:
+						return "body";
 						
 					default:
 						return super.getName(index);
@@ -97,7 +108,9 @@ public class WtPageSwitch
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtPageSwitch.this.getName();
+						return WtTagExtension.this.getName();
+					case 1:
+						return WtTagExtension.this.getBody();
 						
 					default:
 						return super.getValue(index);
@@ -110,12 +123,34 @@ public class WtPageSwitch
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtPageSwitch.this.setName((String) value);
+						return WtTagExtension.this.setName((String) value);
+					case 1:
+						return WtTagExtension.this.setBody((String) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	// Children
+	
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	{
+		set(0, xmlAttributes);
+	}
+	
+	public final WtNodeList getXmlAttributes()
+	{
+		return (WtNodeList) get(0);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	
+	public final String[] getChildNames()
+	{
+		return CHILD_NAMES;
 	}
 }

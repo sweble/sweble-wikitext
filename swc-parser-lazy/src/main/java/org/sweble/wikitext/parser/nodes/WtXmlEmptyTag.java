@@ -1,42 +1,37 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 /**
- * <h1>WtTicks</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * "''" "'"*
- * </p>
- * </li>
- * </ul>
+ * <h1>Empty XML Element</h1>
  */
-public class WtTicks
+public class WtXmlEmptyTag
 		extends
-			WtLeafNode
+			WtInnerNode1
 		implements
+			WtNamedXmlElement,
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtTicks()
+	public WtXmlEmptyTag()
 	{
+		super(new WtNodeList());
 	}
 	
-	public WtTicks(int tickCount)
+	public WtXmlEmptyTag(String name, WtNodeList xmlAttributes)
 	{
-		setTickCount(tickCount);
+		super(xmlAttributes);
+		setName(name);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_TICKS;
+		return NT_XML_EMPTY_TAG;
 	}
 	
 	// =========================================================================
@@ -50,17 +45,17 @@ public class WtTicks
 	// =========================================================================
 	// Properties
 	
-	private int tickCount;
+	private String name;
 	
-	public final int getTickCount()
+	public final String getName()
 	{
-		return this.tickCount;
+		return this.name;
 	}
 	
-	public final int setTickCount(int tickCount)
+	public final String setName(String name)
 	{
-		int old = this.tickCount;
-		this.tickCount = tickCount;
+		String old = this.name;
+		this.name = name;
 		return old;
 	}
 	
@@ -78,12 +73,12 @@ public class WtTicks
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtLeafNodePropertyIterator()
+		return new WtInnerNode1PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return WtTicks.this.getPropertyCount();
+				return WtXmlEmptyTag.this.getPropertyCount();
 			}
 			
 			@Override
@@ -92,7 +87,7 @@ public class WtTicks
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "tickCount";
+						return "name";
 						
 					default:
 						return super.getName(index);
@@ -105,7 +100,7 @@ public class WtTicks
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTicks.this.getTickCount();
+						return WtXmlEmptyTag.this.getName();
 						
 					default:
 						return super.getValue(index);
@@ -118,12 +113,32 @@ public class WtTicks
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTicks.this.setTickCount((Integer) value);
+						return WtXmlEmptyTag.this.setName((String) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	// Children
+	
+	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	{
+		set(0, xmlAttributes);
+	}
+	
+	public final WtNodeList getXmlAttributes()
+	{
+		return (WtNodeList) get(0);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	
+	public final String[] getChildNames()
+	{
+		return CHILD_NAMES;
 	}
 }

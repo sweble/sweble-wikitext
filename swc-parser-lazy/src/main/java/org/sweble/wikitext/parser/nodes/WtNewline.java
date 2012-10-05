@@ -1,6 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.postprocessor.WtIntermediate;
 
 /**
  * <h1>Newline</h1>

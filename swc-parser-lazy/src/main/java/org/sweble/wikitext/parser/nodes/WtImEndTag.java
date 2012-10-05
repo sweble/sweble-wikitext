@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.postprocessor;
+package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
+import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 public class WtImEndTag
 		extends
