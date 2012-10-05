@@ -28,6 +28,6 @@ public class WtIgnored
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_IGNORED;
+		return NT_IGNORED;
 	}
 }

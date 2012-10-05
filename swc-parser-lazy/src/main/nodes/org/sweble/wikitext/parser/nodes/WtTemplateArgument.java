@@ -37,7 +37,7 @@ public class WtTemplateArgument
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_ARGUMENT;
+		return NT_TEMPLATE_ARGUMENT;
 	}
 	
 	// =========================================================================

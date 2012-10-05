@@ -27,7 +27,7 @@
  *     Name        : TableRow
  *     Extends     : WtInnerNode2
  *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_ROW
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE_ROW
  *
  *     Children:
  *       xmlAttributes : WtNodeList

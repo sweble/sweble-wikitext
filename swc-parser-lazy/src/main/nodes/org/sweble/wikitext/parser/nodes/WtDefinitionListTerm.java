@@ -24,6 +24,6 @@ public class WtDefinitionListTerm
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST_TERM;
+		return NT_DEFINITION_LIST_TERM;
 	}
 }

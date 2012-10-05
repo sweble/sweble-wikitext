@@ -40,7 +40,7 @@ public class RawListItem
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_RAW_LIST_ITEM;
+		return NT_RAW_LIST_ITEM;
 	}
 	
 	// =========================================================================

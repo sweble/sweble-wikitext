@@ -27,7 +27,7 @@
  *     Extends     : WtContentNode
  *     Constructor : "content, warnings"
  *     Constructor : "content, warnings, entityMap"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PARSED_WIKITEXT_PAGE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PARSED_WIKITEXT_PAGE
  *     Import      : java.util.List
  *     Import      : de.fau.cs.osr.ptk.common.Warning
  *     Import      : de.fau.cs.osr.ptk.common.EntityMap
@@ -91,7 +91,7 @@ body
       WtNode n = i.next();
       switch (n.getNodeType())
       {
-        case AstNodeTypes.NT_NEWLINE:
+        case WtNode.NT_NEWLINE:
           ++count;
           // FALL THROUGH
         case WtNode.NT_TEXT:
@@ -101,7 +101,7 @@ body
             result.add(n);
           break;
 
-        case AstNodeTypes.NT_XML_TAG_OPEN:
+        case WtNode.NT_XML_START_TAG:
           if (count >= 2)
           {
             result.add(n);

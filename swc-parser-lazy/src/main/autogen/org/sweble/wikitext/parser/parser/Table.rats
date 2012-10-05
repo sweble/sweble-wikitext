@@ -44,7 +44,7 @@
  *     Name        : Table
  *     Extends     : WtInnerNode2
  *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE
  *     Import      : java.util.List
  *
  *     Children:
@@ -102,14 +102,14 @@ body
     {
       switch (node.getNodeType())
       {
-        case AstNodeTypes.NT_TABLE_CAPTION:
+        case WtNode.NT_TABLE_CAPTION:
           if (caption == null)
             caption = (TableCaption) node;
           if (!first)
             ; // TODO: issue warning
           break;
 
-        case AstNodeTypes.NT_TABLE_ROW:
+        case WtNode.NT_TABLE_ROW:
           int size = processRow(curRow, rows, cols);
           if (size > numCols)
             numCols = size;
@@ -118,8 +118,8 @@ body
           curRow = (TableRow) node;
           break;
 
-        case AstNodeTypes.NT_TABLE_CELL:
-        case AstNodeTypes.NT_TABLE_HEADER:
+        case WtNode.NT_TABLE_CELL:
+        case WtNode.NT_TABLE_HEADER:
           if (curRow == null)
           {
             if (cols == null)

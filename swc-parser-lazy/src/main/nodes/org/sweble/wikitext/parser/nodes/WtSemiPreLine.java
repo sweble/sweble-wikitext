@@ -34,7 +34,7 @@ public class WtSemiPreLine
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE_LINE;
+		return NT_SEMI_PRE_LINE;
 	}
 	
 	// =========================================================================

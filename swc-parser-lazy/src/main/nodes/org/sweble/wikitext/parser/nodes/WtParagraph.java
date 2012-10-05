@@ -30,6 +30,6 @@ public class WtParagraph
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_PARAGRAPH;
+		return NT_PARAGRAPH;
 	}
 }

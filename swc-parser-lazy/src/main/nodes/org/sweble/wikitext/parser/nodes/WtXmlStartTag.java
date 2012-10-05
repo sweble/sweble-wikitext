@@ -33,7 +33,7 @@ public class WtXmlStartTag
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_OPEN;
+		return NT_XML_START_TAG;
 	}
 	
 	// =========================================================================

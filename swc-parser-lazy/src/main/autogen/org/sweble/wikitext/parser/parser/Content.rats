@@ -46,7 +46,7 @@
  *     Name        : WtParagraph
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PARAGRAPH
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PARAGRAPH
  *
  */
 
@@ -93,7 +93,7 @@ body
       int i = 0;
       for (WtNode n : pre)
       {
-        if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+        if (n.getNodeType() == WtNode.NT_NEWLINE)
         {
           ++i;
           if (i > 2)
@@ -108,7 +108,7 @@ body
         i = 0;
         for (WtNode n : pre)
         {
-          if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+          if (n.getNodeType() == WtNode.NT_NEWLINE)
           {
             ++i;
             if (i == 2)
@@ -153,7 +153,7 @@ body
     {
       for (WtNode n : post)
       {
-        if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+        if (n.getNodeType() == WtNode.NT_NEWLINE)
           ++i;
       }
     }
@@ -162,7 +162,7 @@ body
     {
       for (WtNode n : post)
       {
-        if (n.getNodeType() == AstNodeTypes.NT_NEWLINE)
+        if (n.getNodeType() == WtNode.NT_NEWLINE)
         {
           --i;
           if  (i == 2)
@@ -477,7 +477,7 @@ private transient WtNode InlineContentChoice =
     }
   / text:TextPlus &"[[" !InlineContentStopper link:InternalLink
     {
-      yyValue = link.isNodeType(AstNodeTypes.NT_INTERNAL_LINK) ?
+      yyValue = link.isNodeType(WtNode.NT_INTERNAL_LINK) ?
           addLinkPrefix(text, (WtInternalLink) link) :
           new WtNodeList(text, link);
     }

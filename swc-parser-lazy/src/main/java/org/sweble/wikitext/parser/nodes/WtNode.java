@@ -120,9 +120,9 @@ public interface WtNode
 	
 	public static final int NT_DEFINITION_LIST_TERM /* ......... */= NT_PARSER_BITS + 26;
 	
-	public static final int NT_ENUMERATION /* .................. */= NT_PARSER_BITS + 27;
+	public static final int NT_ORDERED_LIST /* ................. */= NT_PARSER_BITS + 27;
 	
-	public static final int NT_ITEMIZATION /* .................. */= NT_PARSER_BITS + 29;
+	public static final int NT_UNORDERED_LIST /* ............... */= NT_PARSER_BITS + 29;
 	
 	public static final int NT_LIST_ITEM /* .................... */= NT_PARSER_BITS + 30;
 	
@@ -153,4 +153,6 @@ public interface WtNode
 	public static final int NT_PAGE_SWITCH /* .................. */= NT_PARSER_BITS + 43;
 	
 	public static final int NT_SIGNATURE /* .................... */= NT_PARSER_BITS + 44;
+	
+	public static final int NT_SECTION_BODY /* ................. */= NT_PARSER_BITS + 45;
 }

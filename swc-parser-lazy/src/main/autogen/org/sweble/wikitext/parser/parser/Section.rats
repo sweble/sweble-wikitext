@@ -48,7 +48,7 @@
  *     Name        : SectionHeading
  *     Extends     : ContentNode
  *     Constructor : "content, level"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_HEADING
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_HEADING
  *
  *     Properties:
  *       level : int
@@ -60,7 +60,7 @@
  *     Name        : WtSection
  *     Extends     : WtInnerNode2
  *     Constructor : "level, title, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SECTION
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SECTION
  *
  *     Properties:
  *       level   : int

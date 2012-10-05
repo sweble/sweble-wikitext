@@ -36,7 +36,7 @@ public class WtXmlComment
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_COMMENT;
+		return NT_XML_COMMENT;
 	}
 	
 	// =========================================================================

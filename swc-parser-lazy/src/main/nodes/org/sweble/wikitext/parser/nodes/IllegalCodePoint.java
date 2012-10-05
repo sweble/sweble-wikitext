@@ -1,7 +1,6 @@
 package org.sweble.wikitext.parser.nodes;
 
 import org.sweble.wikitext.parser.encval.IllegalCodePointType;
-import org.sweble.wikitext.parser.postprocessor.WtPreproNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
@@ -29,7 +28,7 @@ public class IllegalCodePoint
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_ILLEGAL_CODE_POINT;
+		return NT_ILLEGAL_CODE_POINT;
 	}
 	
 	// =========================================================================

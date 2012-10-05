@@ -30,7 +30,7 @@ public class WtTemplate
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE;
+		return NT_TEMPLATE;
 	}
 	
 	// =========================================================================

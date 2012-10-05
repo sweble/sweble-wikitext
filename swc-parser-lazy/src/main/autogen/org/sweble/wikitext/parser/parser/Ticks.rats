@@ -27,7 +27,7 @@
  *     Name        : Ticks
  *     Extends     : LeafNode
  *     Constructor : tickCount
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TICKS
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TICKS
  *
  *     Properties:
  *       tickCount : int
@@ -39,7 +39,7 @@
  *     Name        : Bold
  *     Extends     : ContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_BOLD
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_BOLD
  *
  * Italics
  * -------
@@ -48,7 +48,7 @@
  *     Name        : Italics
  *     Extends     : ContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITALICS
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ITALICS
  *
  */
 

@@ -33,7 +33,7 @@ public class WtTemplateParameter
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TEMPLATE_PARAMETER;
+		return NT_TEMPLATE_PARAMETER;
 	}
 	
 	// =========================================================================

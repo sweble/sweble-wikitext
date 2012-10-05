@@ -24,6 +24,6 @@ public class WtBold
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_BOLD;
+		return NT_BOLD;
 	}
 }

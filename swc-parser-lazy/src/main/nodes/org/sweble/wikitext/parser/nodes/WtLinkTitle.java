@@ -109,6 +109,6 @@ public class WtLinkTitle
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TITLE;
+		return NT_LINK_TITLE;
 	}
 }

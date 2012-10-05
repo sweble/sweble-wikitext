@@ -24,7 +24,7 @@
  *     Name        : IllegalCodePoint
  *     Extends     : WtLeafNode
  *     Constructor : "codePoint, type"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ILLEGAL_CODE_POINT
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ILLEGAL_CODE_POINT
  *
  *     Properties:
  *       codePoint : String

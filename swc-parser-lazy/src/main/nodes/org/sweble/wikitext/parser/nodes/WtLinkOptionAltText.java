@@ -30,6 +30,6 @@ public class WtLinkOptionAltText
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_ALT_TEXT;
+		return NT_LINK_OPTION_ALT_TEXT;
 	}
 }

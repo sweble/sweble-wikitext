@@ -25,6 +25,6 @@ public class WtHorizontalRule
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_HORIZONTAL_RULE;
+		return NT_HORIZONTAL_RULE;
 	}
 }

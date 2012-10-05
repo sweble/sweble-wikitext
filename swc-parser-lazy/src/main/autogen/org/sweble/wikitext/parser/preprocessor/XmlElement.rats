@@ -45,7 +45,7 @@
  *     Name        : TagExtension
  *     Extends     : WtInnerNode1
  *     Constructor : "name, xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TAG_EXTENSION
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TAG_EXTENSION
  *
  *     Properties:
  *       name : String
@@ -64,7 +64,7 @@
  *     Extends     : StringContentNode
  *     Constructor : content
  *     Constructor : "content, prefix, suffix"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_COMMENT
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_COMMENT
  *
  *     Properties:
  *       prefix : String

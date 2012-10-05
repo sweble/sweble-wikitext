@@ -78,7 +78,7 @@
  *     Extends     : ContentNode
  *     Constructor : "content, warnings"
  *     Constructor : "content, warnings, entityMap"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PREPROCESSED_WIKITEXT_PAGE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PREPROCESSED_WIKITEXT_PAGE
  *     Import      : java.util.List
  *     Import      : de.fau.cs.osr.ptk.common.Warning
  *     Import      : de.fau.cs.osr.ptk.common.EntityMap

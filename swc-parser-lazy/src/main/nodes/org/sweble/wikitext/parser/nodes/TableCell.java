@@ -35,7 +35,7 @@ public class TableCell
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CELL;
+		return NT_TABLE_CELL;
 	}
 	
 	// =========================================================================

@@ -41,7 +41,7 @@
  *     Name        : WtOnlyInclude
  *     Extends     : ContentNode
  *     Constructor : "content, elementType"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ONLY_INCLUDE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ONLY_INCLUDE
  *
  *     Properties:
  *       elementType : XmlElementType

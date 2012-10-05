@@ -26,7 +26,7 @@
  *     Name        : TableHeader
  *     Extends     : WtInnerNode2
  *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_HEADER
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE_HEADER
  *
  *     Children:
  *       xmlAttributes : WtNodeList

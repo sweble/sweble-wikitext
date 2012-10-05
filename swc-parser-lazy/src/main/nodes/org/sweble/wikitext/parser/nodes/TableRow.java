@@ -42,7 +42,7 @@ public class TableRow
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_ROW;
+		return NT_TABLE_ROW;
 	}
 	
 	// =========================================================================

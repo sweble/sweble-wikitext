@@ -32,7 +32,7 @@ public class WtSignature
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_SIGNATURE;
+		return NT_SIGNATURE;
 	}
 	
 	// =========================================================================

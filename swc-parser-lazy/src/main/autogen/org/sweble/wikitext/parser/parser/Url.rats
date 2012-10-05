@@ -29,7 +29,7 @@
  *     Name        : Url
  *     Extends     : LeafNode
  *     Constructor : "protocol, path"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_URL
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_URL
  *
  *     Properties:
  *       protocol : String

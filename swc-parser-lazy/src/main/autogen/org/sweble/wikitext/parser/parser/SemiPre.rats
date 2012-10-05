@@ -27,7 +27,7 @@
  *     Name        : WtSemiPre
  *     Extends     : ContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SEMI_PRE
  *
  * Semi Pre Line
  * -------------
@@ -39,7 +39,7 @@
  *     Name        : WtSemiPreLine
  *     Extends     : ContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE_LINE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_SEMI_PRE_LINE
  *
  */
 

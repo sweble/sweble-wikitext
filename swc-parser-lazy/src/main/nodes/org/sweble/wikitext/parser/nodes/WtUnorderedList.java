@@ -19,6 +19,6 @@ public class WtUnorderedList
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_UNORDERED_LIST;
+		return NT_UNORDERED_LIST;
 	}
 }

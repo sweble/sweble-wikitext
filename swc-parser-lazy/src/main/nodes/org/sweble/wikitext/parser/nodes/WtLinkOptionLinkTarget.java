@@ -36,7 +36,7 @@ public class WtLinkOptionLinkTarget
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET;
+		return NT_LINK_OPTION_LINK_TARGET;
 	}
 	
 	// =========================================================================

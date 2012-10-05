@@ -36,7 +36,7 @@ public class WtPageSwitch
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_PAGE_SWITCH;
+		return NT_PAGE_SWITCH;
 	}
 	
 	// =========================================================================

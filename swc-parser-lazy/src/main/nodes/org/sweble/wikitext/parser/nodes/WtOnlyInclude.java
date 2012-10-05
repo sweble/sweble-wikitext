@@ -32,7 +32,7 @@ public class WtOnlyInclude
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_ONLY_INCLUDE;
+		return NT_ONLY_INCLUDE;
 	}
 	
 	// =========================================================================

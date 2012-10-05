@@ -23,7 +23,7 @@
  *   AST node:
  *     Name        : WtWhitespace
  *     Extends     : ContentNode
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_WHITESPACE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_WHITESPACE
  *     Constructor : "content, hasNewline"
  *
  *     Properties:
@@ -35,7 +35,7 @@
  *   AST node:
  *     Name        : WtNewline
  *     Extends     : StringContentNode
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_NEWLINE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_NEWLINE
  *     Constructor : "content"
  *
  */

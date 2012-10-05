@@ -30,6 +30,6 @@ public class WtSemiPre
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_SEMI_PRE;
+		return NT_SEMI_PRE;
 	}
 }

@@ -27,7 +27,7 @@
  *     Name        : TableCaption
  *     Extends     : WtInnerNode2
  *     Constructor : "xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CAPTION
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_TABLE_CAPTION
  *
  *     Children:
  *       xmlAttributes : WtNodeList

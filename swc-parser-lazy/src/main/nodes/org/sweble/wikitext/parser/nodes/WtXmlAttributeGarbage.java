@@ -23,6 +23,6 @@ public class WtXmlAttributeGarbage
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE;
+		return NT_XML_ATTRIBUTE_GARBAGE;
 	}
 }

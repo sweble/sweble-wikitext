@@ -30,6 +30,6 @@ public class WtLinkTarget
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TARGET;
+		return NT_LINK_TARGET;
 	}
 }

@@ -42,7 +42,7 @@ public class TableCaption
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_CAPTION;
+		return NT_TABLE_CAPTION;
 	}
 	
 	// =========================================================================

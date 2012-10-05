@@ -20,7 +20,6 @@ package org.sweble.wikitext.parser.postprocessor;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
@@ -303,7 +302,7 @@ public final class ElementScopeStack
 			s.append(element.getClass().getSimpleName());
 			switch (element.getNodeType())
 			{
-				case AstNodeTypes.NT_XML_TAG_OPEN:
+				case WtNode.NT_XML_START_TAG:
 				{
 					s.append(": <");
 					final WtXmlStartTag e = (WtXmlStartTag) element;
@@ -316,7 +315,7 @@ public final class ElementScopeStack
 					s.append('>');
 					break;
 				}
-				case AstNodeTypes.NT_XML_TAG_CLOSE:
+				case WtNode.NT_XML_END_TAG:
 				{
 					s.append(": </");
 					final WtXmlStartTag e = (WtXmlStartTag) element;

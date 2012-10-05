@@ -19,6 +19,6 @@ public class WtOrderedList
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_ORDERED_LIST;
+		return NT_ORDERED_LIST;
 	}
 }

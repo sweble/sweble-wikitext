@@ -28,7 +28,7 @@ public class WtLinkOptionKeyword
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_KEYWORD;
+		return NT_LINK_OPTION_KEYWORD;
 	}
 	
 	// =========================================================================

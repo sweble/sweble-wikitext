@@ -27,7 +27,7 @@
  *     Name        : WtLinkTarget
  *     Extends     : StringContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TARGET
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_TARGET
  *
  */
 

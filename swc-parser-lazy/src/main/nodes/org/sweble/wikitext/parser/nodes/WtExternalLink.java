@@ -127,7 +127,7 @@ public class WtExternalLink
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_EXTERNAL_LINK;
+		return NT_EXTERNAL_LINK;
 	}
 	
 	// =========================================================================

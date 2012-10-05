@@ -33,7 +33,7 @@ public class WtXmlEmptyTag
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_EMPTY;
+		return NT_XML_EMPTY_TAG;
 	}
 	
 	// =========================================================================

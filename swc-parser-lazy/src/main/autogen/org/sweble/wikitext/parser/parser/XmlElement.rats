@@ -36,7 +36,7 @@
  *     Extends     : LeafNode
  *     Implements  : NamedXmlElement
  *     Constructor : "name"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_CLOSE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_TAG_CLOSE
  *
  *     Properties:
  *       name : String
@@ -49,7 +49,7 @@
  *     Extends     : WtInnerNode1
  *     Implements  : NamedXmlElement
  *     Constructor : "name, xmlAttributes"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_OPEN
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_START_TAG
  *
  *     Properties:
  *       name : String
@@ -65,7 +65,7 @@
  *     Extends     : WtInnerNode1
  *     Implements  : NamedXmlElement
  *     Constructor : "name, xmlAttributes"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_EMPTY
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_TAG_EMPTY
  *
  *     Properties:
  *       name : String
@@ -81,7 +81,7 @@
  *     Extends     : WtInnerNode2
  *     Implements  : NamedXmlElement
  *     Constructor : "name, empty, xmlAttributes, body"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ELEMENT
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ELEMENT
  *
  *     Properties:
  *       name  : String

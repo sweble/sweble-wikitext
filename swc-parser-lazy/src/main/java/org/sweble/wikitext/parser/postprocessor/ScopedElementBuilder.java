@@ -19,7 +19,6 @@ package org.sweble.wikitext.parser.postprocessor;
 
 import java.util.LinkedList;
 
-import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.Table;
@@ -675,7 +674,7 @@ public class ScopedElementBuilder
 		{
 			final WtNode c0 = content.get(0);
 			if (s.getType().dropIfOnlyWhitespace() &&
-					c0.isNodeType(AstNodeTypes.NT_WHITESPACE) &&
+					c0.isNodeType(WtNode.NT_WHITESPACE) &&
 					s.isOpen() == false &&
 					c == null)
 				return c0;

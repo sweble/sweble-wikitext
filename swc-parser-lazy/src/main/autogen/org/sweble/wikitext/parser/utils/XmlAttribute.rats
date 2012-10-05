@@ -31,7 +31,7 @@
  *     Extends     : WtInnerNode1
  *     Constructor : "name, hasValue"
  *     Constructor : "name, value, hasValue"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ATTRIBUTE
  *
  *     Properties:
  *       name     : String
@@ -47,7 +47,7 @@
  *     Name        : WtXmlAttributeGarbage
  *     Extends     : StringContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE_GARBAGE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_XML_ATTRIBUTE_GARBAGE
  *
  */
 

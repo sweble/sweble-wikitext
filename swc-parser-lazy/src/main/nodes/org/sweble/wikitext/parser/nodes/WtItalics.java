@@ -24,6 +24,6 @@ public class WtItalics
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_ITALICS;
+		return NT_ITALICS;
 	}
 }

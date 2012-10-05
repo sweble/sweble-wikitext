@@ -35,7 +35,7 @@ public class TableHeader
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TABLE_HEADER;
+		return NT_TABLE_HEADER;
 	}
 	
 	// =========================================================================

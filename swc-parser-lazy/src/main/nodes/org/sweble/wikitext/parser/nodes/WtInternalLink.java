@@ -33,7 +33,7 @@ public class WtInternalLink
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_INTERNAL_LINK;
+		return NT_INTERNAL_LINK;
 	}
 	
 	// =========================================================================

@@ -117,6 +117,6 @@ public class WtSectionHeading
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_SECTION_HEADING;
+		return NT_SECTION_HEADING;
 	}
 }

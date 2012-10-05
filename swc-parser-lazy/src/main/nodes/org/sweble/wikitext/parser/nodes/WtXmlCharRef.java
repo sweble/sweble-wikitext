@@ -33,7 +33,7 @@ public class WtXmlCharRef
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_CHAR_REF;
+		return NT_XML_CHAR_REF;
 	}
 	
 	// =========================================================================

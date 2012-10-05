@@ -27,7 +27,7 @@ public class WtNewline
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_NEWLINE;
+		return NT_NEWLINE;
 	}
 	
 	// =========================================================================

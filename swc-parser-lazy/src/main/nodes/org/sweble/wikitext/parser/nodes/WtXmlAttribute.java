@@ -57,7 +57,7 @@ public class WtXmlAttribute
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ATTRIBUTE;
+		return NT_XML_ATTRIBUTE;
 	}
 	
 	// =========================================================================

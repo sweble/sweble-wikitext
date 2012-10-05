@@ -27,7 +27,7 @@ public class WtXmlEndTag
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_TAG_CLOSE;
+		return NT_XML_END_TAG;
 	}
 	
 	// =========================================================================

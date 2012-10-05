@@ -27,7 +27,7 @@
  *     Name        : PageSwitch
  *     Extends     : LeafNode
  *     Constructor : name
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_PAGE_SWITCH
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_PAGE_SWITCH
  *
  *     Properties:
  *       name : String

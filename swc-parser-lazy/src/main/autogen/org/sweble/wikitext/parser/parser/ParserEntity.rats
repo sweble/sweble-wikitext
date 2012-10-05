@@ -40,8 +40,8 @@ body
   {
     switch (n.getNodeType())
     {
-      case AstNodeTypes.NT_IGNORED:
-      case AstNodeTypes.NT_XML_COMMENT:
+      case WtNode.NT_IGNORED:
+      case WtNode.NT_XML_COMMENT:
         return true;
       default:
         return false;

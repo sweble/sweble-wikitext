@@ -17,7 +17,6 @@
 
 package org.sweble.wikitext.parser.preprocessor;
 
-import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtText;
 
 public class WtProtectedText
@@ -40,6 +39,6 @@ public class WtProtectedText
 	@Override
 	public int getNodeType()
 	{
-		return AstNodeTypes.NT_PROTECTED_TEXT;
+		return NT_PROTECTED_TEXT;
 	}
 }

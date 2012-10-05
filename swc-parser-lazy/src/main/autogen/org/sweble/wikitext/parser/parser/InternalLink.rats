@@ -35,7 +35,7 @@
  *     Extends     : WtInnerNode1
  *     Implements  : Cloneable
  *     Constructor : "prefix, target, title, postfix"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_INTERNAL_LINK
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_INTERNAL_LINK
  *
  *     Children:
  *       title : WtLinkTitle
@@ -69,7 +69,7 @@
  *     Name        : ImageLink
  *     Extends     : WtInnerNode2
  *     Constructor : "target, options, title, format, border, hAlign, vAlign, width, height, upright, linkPage, linkUrl, alt"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_IMAGE_LINK
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_IMAGE_LINK
  *
  *     Children:
  *       options : WtNodeList
@@ -107,7 +107,7 @@
  *     Name        : WtLinkOptionResize
  *     Extends     : WtLeafNode
  *     Constructor : "width, height"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_RESIZE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_RESIZE
  *
  *     Properties:
  *       width        : int
@@ -123,7 +123,7 @@
  *     Name        : WtLinkOptionKeyword
  *     Extends     : WtLeafNode
  *     Constructor : "keyword"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_KEYWORD
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_KEYWORD
  *
  *     Properties:
  *       keyword : String
@@ -139,7 +139,7 @@
  *     Name        : WtLinkOptionLinkTarget
  *     Extends     : WtInnerNode1
  *     Constructor : target
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_LINK_TARGET
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_LINK_TARGET
  *
  *     Children:
  *       target : WtNode
@@ -154,7 +154,7 @@
  *     Name        : WtLinkOptionAltText
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_ALT_TEXT
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_ALT_TEXT
  *
  * Link Option: Garbage
  * --------------------
@@ -166,7 +166,7 @@
  *     Name        : WtLinkOptionGarbage
  *     Extends     : WtStringContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_GARBAGE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_OPTION_GARBAGE
  *
  * Link Title
  * ----------
@@ -196,7 +196,7 @@
  *     Name        : WtLinkTitle
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_TITLE
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_LINK_TITLE
  *
  */
 

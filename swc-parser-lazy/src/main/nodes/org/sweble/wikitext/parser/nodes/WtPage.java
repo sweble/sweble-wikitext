@@ -41,7 +41,7 @@ public class WtPage
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_PARSED_WIKITEXT_PAGE;
+		return NT_PARSED_WIKITEXT_PAGE;
 	}
 	
 	// =========================================================================

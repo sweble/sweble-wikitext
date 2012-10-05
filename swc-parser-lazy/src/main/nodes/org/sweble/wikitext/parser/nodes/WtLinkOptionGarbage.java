@@ -30,6 +30,6 @@ public class WtLinkOptionGarbage
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_LINK_OPTION_GARBAGE;
+		return NT_LINK_OPTION_GARBAGE;
 	}
 }

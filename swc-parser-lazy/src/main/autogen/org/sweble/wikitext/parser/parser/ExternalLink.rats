@@ -50,7 +50,7 @@
  *     Extends     : WtInnerNode2
  *     Constructor : "target"
  *     Constructor : "target, title"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_EXTERNAL_LINK
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_EXTERNAL_LINK
  *
  *     Children:
  *       target : Url

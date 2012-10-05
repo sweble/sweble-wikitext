@@ -43,7 +43,7 @@ public class WtUrl
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_URL;
+		return NT_URL;
 	}
 	
 	// =========================================================================

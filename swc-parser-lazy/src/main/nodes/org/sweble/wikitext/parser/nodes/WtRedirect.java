@@ -29,7 +29,7 @@ public class WtRedirect
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_REDIRECT;
+		return NT_REDIRECT;
 	}
 	
 	// =========================================================================

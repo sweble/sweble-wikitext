@@ -19,7 +19,6 @@ package org.sweble.wikitext.parser.parser;
 
 import java.util.ArrayList;
 
-import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
@@ -27,9 +26,9 @@ import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
-import org.sweble.wikitext.parser.nodes.WtUrl;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtUrl;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
@@ -159,7 +158,7 @@ public class LinkBuilder
 	{
 		if (target != null)
 		{
-			if (target.isNodeType(AstNodeTypes.NT_URL))
+			if (target.isNodeType(WtNode.NT_URL))
 			{
 				// second occurrence wins, url beats page
 				this.linkPage = null;

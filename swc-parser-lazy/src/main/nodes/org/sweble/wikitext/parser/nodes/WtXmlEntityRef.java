@@ -29,7 +29,7 @@ public class WtXmlEntityRef
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_XML_ENTITY_REF;
+		return NT_XML_ENTITY_REF;
 	}
 	
 	// =========================================================================

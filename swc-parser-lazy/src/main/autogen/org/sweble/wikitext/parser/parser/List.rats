@@ -27,7 +27,7 @@
  *     Name        : RawListItem
  *     Extends     : WtContentNode
  *     Constructor : "content, rt0, rt1, prefix"
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_RAW_LIST_ITEM
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_RAW_LIST_ITEM
  *
  *     Properties:
  *       rt0     : String
@@ -40,7 +40,7 @@
  *   AST node:
  *     Name        : WtOrderedList
  *     Extends     : WtContentNode
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ENUMERATION
  *
  * WtListItem
  * ---------------
@@ -49,7 +49,7 @@
  *     Name        : WtListItem
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ENUMERATION_ITEM
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ENUMERATION_ITEM
  *
  * WtUnorderedList
  * -----------
@@ -57,7 +57,7 @@
  *   AST node:
  *     Name        : WtUnorderedList
  *     Extends     : WtContentNode
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ITEMIZATION
  *
  * WtListItem
  * ---------------
@@ -66,7 +66,7 @@
  *     Name        : WtListItem
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_ITEMIZATION_ITEM
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_ITEMIZATION_ITEM
  *
  * WtDefinitionList
  * --------------
@@ -74,7 +74,7 @@
  *   AST node:
  *     Name        : WtDefinitionList
  *     Extends     : WtContentNode
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_DEFINITION_LIST
  *
  * WtDefinitionListTerm
  * --------------
@@ -83,7 +83,7 @@
  *     Name        : WtDefinitionListTerm
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_TERM
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_DEFINITION_TERM
  *
  * WtDefinitionListDef
  * --------------------
@@ -92,7 +92,7 @@
  *     Name        : WtDefinitionListDef
  *     Extends     : WtContentNode
  *     Constructor : content
- *     NodeType    : org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_DEFINITION
+ *     NodeType    : org.sweble.wikitext.parser.WtNode.NT_DEFINITION_DEFINITION
  *
  */
 

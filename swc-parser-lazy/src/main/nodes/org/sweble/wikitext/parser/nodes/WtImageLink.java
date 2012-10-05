@@ -54,7 +54,7 @@ public class WtImageLink
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_IMAGE_LINK;
+		return NT_IMAGE_LINK;
 	}
 	
 	// =========================================================================

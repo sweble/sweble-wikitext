@@ -36,7 +36,7 @@ public class WtTicks
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_TICKS;
+		return NT_TICKS;
 	}
 	
 	// =========================================================================

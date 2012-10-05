@@ -23,6 +23,6 @@ public class WtDefinitionListDef
 	@Override
 	public int getNodeType()
 	{
-		return org.sweble.wikitext.parser.AstNodeTypes.NT_DEFINITION_LIST_DEF;
+		return NT_DEFINITION_LIST_DEF;
 	}
 }
