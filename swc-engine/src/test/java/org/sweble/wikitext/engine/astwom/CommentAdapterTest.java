@@ -27,7 +27,7 @@ import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
@@ -58,7 +58,7 @@ public class CommentAdapterTest
 	{
 		assertEquals(
 				"<!-- Default Comment WtText -->",
-				RtWikitextPrinter.print(astPage));
+				RtDataPrinter.print(astPage));
 	}
 	
 	@Test

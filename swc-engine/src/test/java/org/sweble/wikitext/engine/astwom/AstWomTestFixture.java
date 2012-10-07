@@ -34,7 +34,7 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.engine.wom.tools.WomPrinter;
 import org.sweble.wikitext.parser.utils.WtPrinter;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.test.FileCompare;
 import de.fau.cs.osr.ptk.common.test.FileContent;
@@ -261,7 +261,7 @@ public class AstWomTestFixture
 				"rtwt",
 				true /* don't throw if file doesn't exist */);
 		
-		String actual = RtWikitextPrinter.print(page);
+		String actual = RtDataPrinter.print(page);
 		
 		compare.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
 	}

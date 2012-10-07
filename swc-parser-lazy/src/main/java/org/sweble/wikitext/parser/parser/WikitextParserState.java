@@ -47,11 +47,6 @@ public class WikitextParserState
 	
 	// =========================================================================
 	
-	public WikitextParserState()
-	{
-		super();
-	}
-	
 	@Override
 	protected WikitextParserContext instantiateContext()
 	{

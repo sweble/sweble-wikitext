@@ -35,7 +35,7 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
 public class ParserFunctionIntegrationTest
 {
@@ -66,7 +66,7 @@ public class ParserFunctionIntegrationTest
 		
 		CompiledPage result = compiler.expand(pageId, wikitext, new ExpansionCallbackDummy());
 		
-		String expandedWt = RtWikitextPrinter.print(result.getPage());
+		String expandedWt = RtDataPrinter.print(result.getPage());
 		
 		assertEquals("8", expandedWt.trim());
 	}
@@ -98,7 +98,7 @@ public class ParserFunctionIntegrationTest
 		
 		CompiledPage result = compiler.expand(pageId, wikitext, new ExpansionCallbackDummy());
 		
-		String expandedWt = RtWikitextPrinter.print(result.getPage());
+		String expandedWt = RtDataPrinter.print(result.getPage());
 		
 		assertEquals("8", expandedWt.trim());
 	}

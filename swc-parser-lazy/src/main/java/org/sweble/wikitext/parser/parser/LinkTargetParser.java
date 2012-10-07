@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import org.sweble.wikitext.parser.ParserConfig;
 
+import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.XmlGrammar;
 
 /**
@@ -117,10 +118,6 @@ public class LinkTargetParser
 	public void parse(ParserConfig config, final String target) throws LinkTargetException
 	{
 		String result = target;
-		String resultNs = null;
-		String resultIw = null;
-		String resultFragment = null;
-		boolean resultInitialColon = false;
 		
 		// Decode URL encoded characters
 		{
@@ -140,7 +137,7 @@ public class LinkTargetParser
 		
 		// Trim whitespace
 		{
-			result = trim(result);
+			result = StringUtils.trim(result);
 		}
 		
 		// Strip whitespace characters
@@ -150,185 +147,26 @@ public class LinkTargetParser
 		}
 		
 		// Remove trailing whitespace characters
-		result = trimUnderscore(result);
+		result = StringUtils.trimUnderscores(result);
 		
 		if (result.isEmpty())
 			throw new LinkTargetException(target, "Target has empty title");
 		
+		// Has the link an initial colon? Can be reset by identifyNamespaces!
 		if (result.charAt(0) == ':')
 		{
-			resultInitialColon = true;
+			this.initialColon = true;
 			result = result.substring(1);
-			result = trimUnderscore(result);
+			result = StringUtils.trimUnderscores(result);
 		}
 		
-		boolean gotIl = false;
-		boolean gotNsOrIl = false;
+		// Identify namespaces and interwiki names
+		result = identifyNamespaces(config, target, result);
 		
-		// ---
+		// Get the part after the '#'
+		result = extractFragment(result);
 		
-		{
-			Matcher matcher = namespaceSeparatorPattern.matcher(result);
-			if (matcher.matches())
-			{
-				String nsName = matcher.group(1);
-				
-				if (config.isNamespace(nsName))
-				{
-					result = matcher.group(2);
-					resultNs = nsName;
-					
-					if (config.isTalkNamespace(resultNs))
-					{
-						matcher = namespaceSeparatorPattern.matcher(result);
-						nsName = matcher.group(1);
-						if (matcher.matches() && (config.isNamespace(nsName) || config.isInterwikiName(nsName)))
-							throw new LinkTargetException(
-									target,
-									"The Talk namespace in a link target may not be followed by another namespace or interwiki name");
-					}
-				}
-				else if (config.isInterwikiName(nsName))
-				{
-					result = matcher.group(2);
-					
-					if (config.isIwPrefixOfThisWiki(nsName))
-					{
-						if (result.isEmpty())
-						{
-							throw new LinkTargetException(
-									target,
-									"Empty article title!");
-						}
-						else
-						{
-							matcher = namespaceSeparatorPattern.matcher(result);
-							if (matcher.matches())
-							{
-								nsName = matcher.group(1);
-								
-								if (config.isNamespace(nsName))
-								{
-									result = matcher.group(2);
-									resultNs = nsName;
-									
-									if (config.isTalkNamespace(resultNs))
-									{
-										matcher = namespaceSeparatorPattern.matcher(result);
-										nsName = matcher.group(1);
-										if (matcher.matches() && (config.isNamespace(nsName) || config.isInterwikiName(nsName)))
-											throw new LinkTargetException(
-													target,
-													"The Talk namespace in a link target may not be followed by another namespace or interwiki name");
-									}
-								}
-								else if (config.isInterwikiName(nsName))
-								{
-									throw new LinkTargetException(
-											target,
-											"The namespace in a link target may not be followed by another namespace or interwiki name");
-								}
-							}
-						}
-					}
-					else
-					{
-						resultIw = nsName;
-						
-						if (!result.isEmpty() && result.charAt(0) == ':')
-						{
-							resultInitialColon = true;
-							result = result.substring(1);
-							result = trimUnderscore(result);
-						}
-					}
-				}
-			}
-		}
-		
-		// ---
-		
-		/*
-		while (true)
-		{
-			Matcher matcher = namespaceSeparatorPattern.matcher(result);
-			if (matcher.matches())
-			{
-				String nsName = matcher.group(1);
-				
-				if (config.isNamespace(nsName))
-				{
-					// if part was already a namespace, this is wrong ...
-					if (gotNsOrIl)
-					{
-						if (config.isTalkNamespace(resultNs))
-							throw new LinkTargetException(
-									target,
-									"The Talk namespace in a link target may not be followed by another namespace or interwiki name");
-						
-						break;
-					}
-					
-					result = matcher.group(2);
-					resultNs = nsName;
-					
-					gotNsOrIl = true;
-				}
-				else
-				{
-					if (config.isInterwikiName(nsName))
-					{
-						if (gotNsOrIl || gotIl)
-							throw new LinkTargetException(
-									target,
-									"The namespace in a link target may not be followed by another namespace or interwiki name");
-						
-						result = matcher.group(2);
-						
-						if (config.isIwPrefixOfThisWiki(nsName))
-						{
-							if (result.isEmpty())
-								throw new LinkTargetException(
-										target,
-										"Empty article title!");
-							
-							gotIl = true;
-						}
-						else
-						{
-							resultIw = nsName;
-							
-							if (!result.isEmpty() && result.charAt(0) == ':')
-							{
-								resultInitialColon = true;
-								result = result.substring(1);
-								result = trimUnderscore(result);
-							}
-							
-							gotNsOrIl = true;
-						}
-					}
-					else
-						break;
-				}
-			}
-			else
-				break;
-		}
-		*/
-		
-		{
-			int i = result.indexOf('#');
-			if (i != -1)
-			{
-				resultFragment = result.substring(i + 1);
-				resultFragment = trimUnderscore(resultFragment);
-				
-				result = result.substring(0, i);
-				result = trimUnderscore(result);
-			}
-		}
-		
+		// Perform sanity checks on remaining title
 		{
 			Matcher matcher = invalidTitle.matcher(result);
 			if (matcher.find())
@@ -339,8 +177,8 @@ public class LinkTargetParser
 		
 		// Empty links to a namespace alone are not allowed
 		if (result.isEmpty() &&
-				resultIw == null &&
-				resultNs != null)
+				this.interwiki == null &&
+				this.namespace != null)
 		{
 			throw new LinkTargetException(
 					target,
@@ -348,140 +186,131 @@ public class LinkTargetParser
 		}
 		
 		this.title = result;
-		this.fragment = resultFragment;
-		this.namespace = resultNs;
-		this.interwiki = resultIw;
-		this.initialColon = resultInitialColon;
 	}
 	
-	/* FIXME: Move to utility class! */
-	public static String urlDecode(String result)
+	private String identifyNamespaces(
+			ParserConfig config,
+			final String target,
+			String result) throws LinkTargetException
+	{
+		Matcher matcher = namespaceSeparatorPattern.matcher(result);
+		if (matcher.matches())
+		{
+			// We have at least ONE namespace
+			String nsName = matcher.group(1);
+			
+			if (config.isNamespace(nsName))
+			{
+				// It is a KNOWN namespace
+				result = matcher.group(2);
+				this.namespace = nsName;
+				
+				checkNonsAfterTalkNs(config, target, result, nsName);
+			}
+			else if (config.isInterwikiName(nsName))
+			{
+				// It is a KNOWN interwiki name
+				result = matcher.group(2);
+				
+				if (config.isIwPrefixOfThisWiki(nsName))
+				{
+					// It points to THIS wiki
+					if (result.isEmpty())
+					{
+						throw new LinkTargetException(
+								target,
+								"Empty article title!");
+					}
+					else
+					{
+						matcher = namespaceSeparatorPattern.matcher(result);
+						if (matcher.matches())
+						{
+							// There are more namespace parts
+							nsName = matcher.group(1);
+							
+							if (config.isNamespace(nsName))
+							{
+								result = matcher.group(2);
+								this.namespace = nsName;
+								
+								checkNonsAfterTalkNs(config, target, result, nsName);
+							}
+							else if (config.isInterwikiName(nsName))
+							{
+								throw new LinkTargetException(
+										target,
+										"An interwiki name cannot be followed by another interwiki name!");
+							}
+						}
+					}
+				}
+				else
+				{
+					this.interwiki = nsName;
+					
+					if (!result.isEmpty() && result.charAt(0) == ':')
+					{
+						this.initialColon = true;
+						result = result.substring(1);
+						result = StringUtils.trimUnderscores(result);
+					}
+				}
+			}
+		}
+		return result;
+	}
+	
+	private void checkNonsAfterTalkNs(
+			ParserConfig config,
+			final String target,
+			String result,
+			String nsName) throws LinkTargetException
+	{
+		Matcher matcher;
+		if (config.isTalkNamespace(nsName))
+		{
+			matcher = namespaceSeparatorPattern.matcher(result);
+			if (matcher.matches())
+			{
+				nsName = matcher.group(1);
+				if ((config.isNamespace(nsName) || config.isInterwikiName(nsName)))
+					throw new LinkTargetException(
+							target,
+							"The Talk namespace in a link target may not be followed by another namespace or interwiki name");
+			}
+		}
+	}
+	
+	private String extractFragment(String result)
+	{
+		int i = result.indexOf('#');
+		if (i != -1)
+		{
+			String fragment = result.substring(i + 1);
+			this.fragment = StringUtils.trimUnderscores(fragment);
+			
+			result = result.substring(0, i);
+			result = StringUtils.trimUnderscores(result);
+		}
+		return result;
+	}
+	
+	private static String urlDecode(String text)
 	{
 		// It's intentional that only '%' characters trigger the decoding.
 		// MediaWiki does not decode '+' characters if there's not at least
 		// one '%' character :D
-		if (result.indexOf('%') >= 0)
-		{
-			StringBuilder b = new StringBuilder();
-			for (int i = 0; i < result.length(); ++i)
-			{
-				char ch = result.charAt(i);
-				if (ch == '%' && i + 2 < result.length())
-				{
-					String num = result.substring(i + 1, i + 3);
-					try
-					{
-						int val = Integer.valueOf(num, 16);
-						if (val >= 0x20 && val < 0x7F)
-						{
-							ch = (char) val;
-							i += 2;
-						}
-					}
-					catch (NumberFormatException e)
-					{
-					}
-				}
-				else if (ch == '+')
-				{
-					ch = ' ';
-				}
-				
-				b.append(ch);
-			}
-			result = b.toString();
-		}
-		
-		return result;
+		if (text.indexOf('%') >= 0)
+			return StringUtils.urlDecode(text);
+		return text;
 	}
 	
-	/* FIXME: Move to utility class! */
-	public static String xmlDecode(ParserConfig config, String result)
+	private static String xmlDecode(ParserConfig config, String text)
 	{
-		if (result.indexOf('&') >= 0)
-		{
-			Pattern rx = XmlGrammar.xmlReference();
-			
-			int start = 0;
-			StringBuilder b = new StringBuilder();
-			while (true)
-			{
-				Matcher m = rx.matcher(result);
-				if (m.find(start))
-				{
-					b.append(result.substring(start, m.start()));
-					
-					String resolved = null;
-					if (m.group(1) != null)
-					{
-						resolved = config.resolveXmlEntity(m.group(1));
-					}
-					else
-					{
-						try
-						{
-							boolean decimal = m.group(2) != null;
-							
-							String num = decimal ? m.group(2) : m.group(3);
-							
-							int val = Integer.valueOf(num, decimal ? 10 : 16);
-							if (val >= 0x20 && val != 0x7F)
-								resolved = String.valueOf((char) val);
-						}
-						catch (NumberFormatException e)
-						{
-						}
-					}
-					
-					if (resolved != null)
-						b.append(resolved);
-					else
-						b.append(result.substring(m.start(), m.end()));
-					
-					start = m.end();
-				}
-				else
-				{
-					if (start < result.length())
-						b.append(result.substring(start));
-					
-					break;
-				}
-			}
-			
-			result = b.toString();
-		}
-		
-		return result;
-	}
-	
-	/* FIXME: Move to utility class! */
-	static String trimUnderscore(String result)
-	{
-		int i;
-		for (i = 0; i < result.length() && result.charAt(i) == '_'; ++i)
-			;
-		
-		int j;
-		for (j = result.length() - 1; j >= 0 && result.charAt(j) == '_'; --j)
-			;
-		
-		return result.substring(i, j + 1);
-	}
-	
-	/* FIXME: Move to utility class! */
-	static String trim(String input)
-	{
-		int i = 0;
-		int j = input.length();
-		
-		while ((i < j) && Character.isWhitespace(input.charAt(i)))
-			++i;
-		
-		while ((i < j) && Character.isWhitespace(input.charAt(j - 1)))
-			--j;
-		
-		return ((i > 0) || (j < input.length())) ? input.substring(i, j) : input;
+		if (text.indexOf('&') >= 0)
+			return StringUtils.xmlDecode(text, config);
+		return text;
 	}
 	
 	// =========================================================================

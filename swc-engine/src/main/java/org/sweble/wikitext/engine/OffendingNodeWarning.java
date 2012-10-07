@@ -20,7 +20,7 @@ package org.sweble.wikitext.engine;
 import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.WikitextWarning;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.Span;
 
@@ -58,7 +58,7 @@ public abstract class OffendingNodeWarning
 	{
 		return new Span(
 				node.getNativeLocation(),
-				RtWikitextPrinter.print(node));
+				RtDataPrinter.print(node));
 	}
 	
 	// =========================================================================

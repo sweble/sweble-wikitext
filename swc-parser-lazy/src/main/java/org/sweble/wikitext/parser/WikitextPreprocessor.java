@@ -55,60 +55,6 @@ public class WikitextPreprocessor
 		return parseArticle(new ValidatedWikitext(src, new WtEntityMapImpl()), title, false);
 	}
 	
-	/*
-	/**
-	 * @deprecated Use other parseArticle() method instead
-	 *
-	public WtNode parseArticle(String src, String title, boolean forInclusion) throws IOException, ParseException
-	{
-		Reader in = new StringReader(src);
-		
-		int inputSize = src.getBytes().length;
-		
-		preprocessor = new RatsWikitextPreprocessor(in, title, inputSize);
-		
-		// FIXME: If we want the preprocessor to be able to resolve parser 
-		//        entities from encoding validation, we should offer the entity
-		//        map here...
-		preprocessor.getState().init(config, new WtEntityMap(), forInclusion);
-		
-		Result r = this.preprocessor.pArticle(0);
-		
-		if (r.hasValue())
-		{
-			SemanticValue v = (SemanticValue) r;
-			
-			if (v.value instanceof WtPreproWikitextPage)
-			{
-				return process((WtPreproWikitextPage) v.value);
-			}
-			else
-			{
-				throw new ParseException(
-						"Internal preprocessor error: " +
-								"Unexpected preprocessor result type!");
-			}
-		}
-		else
-		{
-			ParseError err = (ParseError) r;
-			
-			if (err.index == -1)
-			{
-				throw new ParseException(
-						"Parse error: No information available");
-			}
-			else
-			{
-				throw new ParseException(String.format(
-						"%s: %s",
-						preprocessor.location(err.index),
-						err.msg));
-			}
-		}
-	}
-	*/
-	
 	public WtNode parseArticle(
 			ValidatedWikitext wikitext,
 			String title,

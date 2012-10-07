@@ -14,47 +14,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.sweble.wikitext.parser;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+
 import org.junit.Test;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.utils.TextUtils;
-import org.sweble.wikitext.parser.utils.WtPrinter;
 
 public class TextUtilsTest
 {
 	@Test
 	public void testStringToAst()
 	{
-		final String actual =
-				WtPrinter.print(TextUtils.stringToAst("H&llo <Welt>!"));
+		WtNode ast = TextUtils.stringToAst("H&llo <Welt>!");
 		
-		final String expected =
-				"[\n" +
-						"  WtText(\"H\")\n" +
-						"  WtXmlEntityRef(\n" +
-						"    Properties:\n" +
-						"      {N} name = \"amp\"\n" +
-						"      {N} resolved = \"&\"\n" +
-						"      {N} rtd = RTD[ \"&amp;\" ]\n" +
-						"  )\n" +
-						"  WtText(\"llo \")\n" +
-						"  WtXmlEntityRef(\n" +
-						"    Properties:\n" +
-						"      {N} name = \"lt\"\n" +
-						"      {N} resolved = \"<\"\n" +
-						"      {N} rtd = RTD[ \"&lt;\" ]\n" +
-						"  )\n" +
-						"  WtText(\"Welt\")\n" +
-						"  WtXmlEntityRef(\n" +
-						"    Properties:\n" +
-						"      {N} name = \"gt\"\n" +
-						"      {N} resolved = \">\"\n" +
-						"      {N} rtd = RTD[ \"&gt;\" ]\n" +
-						"  )\n" +
-						"  WtText(\"!\")\n" +
-						"]\n";
+		assertEquals(7, ast.size());
+		int i = 0;
 		
-		Assert.assertEquals(expected, actual);
+		assertTrue(ast.get(i) instanceof WtText);
+		assertEquals("H", ast.get(i, WtText.class).getContent());
+		++i;
+		
+		assertTrue(ast.get(i) instanceof WtXmlEntityRef);
+		assertEquals("&", ast.get(i, WtXmlEntityRef.class).getResolved());
+		assertEquals("amp", ast.get(i, WtXmlEntityRef.class).getName());
+		++i;
+		
+		assertTrue(ast.get(i) instanceof WtText);
+		assertEquals("llo ", ast.get(i, WtText.class).getContent());
+		++i;
+		
+		assertTrue(ast.get(i) instanceof WtXmlEntityRef);
+		assertEquals("<", ast.get(i, WtXmlEntityRef.class).getResolved());
+		assertEquals("lt", ast.get(i, WtXmlEntityRef.class).getName());
+		++i;
+		
+		assertTrue(ast.get(i) instanceof WtText);
+		assertEquals("Welt", ast.get(i, WtText.class).getContent());
+		++i;
+		
+		assertTrue(ast.get(i) instanceof WtXmlEntityRef);
+		assertEquals(">", ast.get(i, WtXmlEntityRef.class).getResolved());
+		assertEquals("gt", ast.get(i, WtXmlEntityRef.class).getName());
+		++i;
+		
+		assertTrue(ast.get(i) instanceof WtText);
+		assertEquals("!", ast.get(i, WtText.class).getContent());
+		++i;
 	}
 }

@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.sweble.wikitext.parser;
 
 import java.io.File;
@@ -22,6 +23,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
@@ -34,7 +36,7 @@ import de.fau.cs.osr.utils.NamedParametrized;
 @RunWith(value = NamedParametrized.class)
 public class ComplexIntegrationTest
 		extends
-			IntegrationTestBase
+			IntegrationTestBase<WtNode>
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
@@ -62,7 +64,7 @@ public class ComplexIntegrationTest
 	}
 	
 	@Override
-	protected ParserInterface instantiateParser()
+	protected ParserInterface<WtNode> instantiateParser()
 	{
 		return new FullParser();
 	}
@@ -72,7 +74,8 @@ public class ComplexIntegrationTest
 	@Test
 	public void testAstAfterPostprocessingMatchesReferenceAst() throws Exception
 	{
-		AstVisitor[] visitors = { new AstCompressor() };
+		@SuppressWarnings("unchecked")
+		AstVisitor<WtNode>[] visitors = new AstVisitor[] { new AstCompressor() };
 		
 		parsePrintAndCompare(
 				inputFile,

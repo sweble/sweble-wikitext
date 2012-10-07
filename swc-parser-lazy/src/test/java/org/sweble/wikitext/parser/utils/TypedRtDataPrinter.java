@@ -14,19 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.sweble.wikitext.parser.utils;
 
-public interface XmlEntityResolver
+import java.io.IOException;
+import java.io.Writer;
+
+import org.sweble.wikitext.parser.nodes.WtNode;
+
+import de.fau.cs.osr.ptk.common.PrinterInterface;
+
+public final class TypedRtDataPrinter
+		implements
+			PrinterInterface
 {
-	/**
-	 * Resolve an XML entity reference like <code>&amp;amp;</code>. The
-	 * implementation must recursivly fully resolve the given entity.
-	 * 
-	 * @param name
-	 *            The name of the XML entity reference to resolve. For
-	 *            <code>&amp;amp;</code> this would be <code>amp</code>.
-	 * @return A string containing the resolved text of the entity or
-	 *         <code>null</code> if the entity name is unknown.
-	 */
-	String resolveXmlEntity(String name);
+	@Override
+	public String getPrintoutType()
+	{
+		return "wikitext";
+	}
+	
+	@Override
+	public void print(Object ast, Writer out) throws IOException
+	{
+		RtDataPrinter.print(out, (WtNode) ast);
+	}
 }

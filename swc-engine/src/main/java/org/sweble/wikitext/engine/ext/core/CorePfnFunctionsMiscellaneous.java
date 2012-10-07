@@ -34,7 +34,7 @@ import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -120,7 +120,7 @@ public class CorePfnFunctionsMiscellaneous
 			WtTemplateArgument bodyNode = (WtTemplateArgument) argsValues.get(1);
 			WtNode expValueNode = frame.expand(bodyNode.getValue());
 			expValueNode = stripComments(expValueNode);
-			String bodyStr = RtWikitextPrinter.print(expValueNode);
+			String bodyStr = RtDataPrinter.print(expValueNode);
 			
 			WtTagExtension tagExt = astTagExtension()
 					.withName(nameStr)

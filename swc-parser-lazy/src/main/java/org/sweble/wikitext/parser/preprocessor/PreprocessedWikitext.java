@@ -18,6 +18,7 @@
 /**
  * 
  */
+
 package org.sweble.wikitext.parser.preprocessor;
 
 import org.sweble.wikitext.parser.WtEntityMap;

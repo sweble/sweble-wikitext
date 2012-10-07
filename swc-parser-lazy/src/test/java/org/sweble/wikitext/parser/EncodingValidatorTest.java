@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.parser;
 
-import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.*;
 
 import java.io.IOException;
 
@@ -26,7 +26,6 @@ import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 
-import de.fau.cs.osr.ptk.common.AstEntityMap;
 import de.fau.cs.osr.ptk.common.ast.Location;
 
 public class EncodingValidatorTest
@@ -65,7 +64,7 @@ public class EncodingValidatorTest
 		WikitextEncodingValidator v = new WikitextEncodingValidator();
 		ValidatedWikitext result = v.validate(source.toString(), title);
 		String validatedWikitext = result.getWikitext();
-		AstEntityMap entityMap = result.getEntityMap();
+		WtEntityMap entityMap = result.getEntityMap();
 		
 		WtIllegalCodePoint x0 = (WtIllegalCodePoint) entityMap.getEntity(0);
 		assertEquals("\uE800", x0.getCodePoint());

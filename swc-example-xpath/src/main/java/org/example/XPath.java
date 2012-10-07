@@ -25,7 +25,7 @@ import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;
 
@@ -81,7 +81,7 @@ public class XPath
 					b.append(")[");
 					b.append(i);
 					b.append("]:\n\"\"\"");
-					b.append(RtWikitextPrinter.print(n));
+					b.append(RtDataPrinter.print(n));
 					b.append("\"\"\"\n\n");
 					++i;
 				}

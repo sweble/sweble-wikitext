@@ -144,6 +144,9 @@ public final class TextUtils
 	
 	// =========================================================================
 	
+	/**
+	 * @deprecated
+	 */
 	public static WtXmlCharRef wtXmlCharRef(int codePoint)
 	{
 		WtXmlCharRef wtXmlCharRef = new WtXmlCharRef(codePoint);
@@ -151,12 +154,18 @@ public final class TextUtils
 		return wtXmlCharRef;
 	}
 	
+	/**
+	 * @deprecated
+	 */
 	public static void setXmlCharRef(WtXmlCharRef wtXmlCharRef, int codePoint)
 	{
 		wtXmlCharRef.setCodePoint(codePoint);
 		wtXmlCharRef.setRtd(StringUtils.hexCharRef(codePoint));
 	}
 	
+	/**
+	 * @deprecated
+	 */
 	public static WtXmlEntityRef xmlEntity(String name, String resolved)
 	{
 		WtXmlEntityRef xmlEntityRef = new WtXmlEntityRef(name, resolved);
@@ -164,6 +173,9 @@ public final class TextUtils
 		return xmlEntityRef;
 	}
 	
+	/**
+	 * @deprecated
+	 */
 	private static void setXmlEntityRef(WtXmlEntityRef xmlEntityRef, String name)
 	{
 		xmlEntityRef.setName(name);
@@ -341,113 +353,4 @@ public final class TextUtils
 		
 		return new WtNodeListImpl(result);
 	}
-	
-	// =========================================================================
-	
-	/*
-	public static WtRtData addRtData(WtNode yyValue, Object[]... rts)
-	{
-		if (rts.length != yyValue.size() + 1)
-			rts = Arrays.copyOf(rts, yyValue.size() + 1);
-		WtRtData data = new WtRtData(rts);
-		yyValue.setAttribute("RTD", data);
-		return data;
-	}
-	
-	public static Object[] joinRt(Object... objects)
-	{
-		ArrayList<Object> result = new ArrayList<Object>();
-		for (Object o : objects)
-		{
-			if (o instanceof WtNode)
-			{
-				WtNode a = (WtNode) o;
-				switch (a.getNodeType())
-				{
-					case WtNode.NT_NODE_LIST:
-						for (WtNode c : (WtNodeList) a)
-						{
-							if (c.getNodeType() == WtNode.NT_TEXT)
-							{
-								rtAddString(result, ((WtText) c).getContent());
-							}
-							else
-							{
-								result.add(c);
-							}
-						}
-						break;
-					
-					case WtNode.NT_TEXT:
-						rtAddString(result, ((WtText) a).getContent());
-						break;
-					
-					default:
-						result.add(a);
-						break;
-				}
-			}
-			else
-			{
-				if (o == null)
-				{
-				}
-				else if (o instanceof Character)
-				{
-					rtAddString(result, String.valueOf((Character) o));
-				}
-				else
-				{
-					rtAddString(result, (String) o);
-				}
-			}
-		}
-		return result.toArray();
-	}
-	
-	public static void rtAddString(ArrayList<Object> result, String so)
-	{
-		int last = result.size() - 1;
-		if (last >= 0 && result.get(last) instanceof String)
-		{
-			result.set(last, result.get(last) + so);
-		}
-		else
-		{
-			result.add(so);
-		}
-	}
-	
-	public static void prependRtData(WtNode n, String data)
-	{
-		WtRtData rtd = (WtRtData) n.getAttribute("RTD");
-		if (rtd == null || rtd.getRts().length == 0)
-		{
-			addRtData(n, joinRt(data));
-		}
-		else
-		{
-			Object[] rtd0 = rtd.getRts()[0];
-			if (rtd0 == null || rtd0.length == 0)
-			{
-				rtd0 = new Object[] { data };
-			}
-			else if (rtd0[0] instanceof String)
-			{
-				rtd0 = rtd0.clone();
-				rtd0[0] = data + rtd0[0];
-			}
-			else
-			{
-				Object[] rtd0_ = new Object[rtd0.length + 1];
-				rtd0_[0] = data;
-				System.arraycopy(rtd0, 0, rtd0_, 1, rtd0.length);
-			}
-			
-			Object[][] rts = rtd.getRts().clone();
-			rts[0] = rtd0;
-			n.setAttribute("RTD", new WtRtData(rts));
-		}
-	}
-	*/
 }

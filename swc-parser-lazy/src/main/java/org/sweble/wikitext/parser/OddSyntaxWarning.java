@@ -17,7 +17,6 @@
 
 package org.sweble.wikitext.parser;
 
-
 import de.fau.cs.osr.ptk.common.ast.Span;
 
 public class OddSyntaxWarning

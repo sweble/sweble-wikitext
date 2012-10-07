@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.sweble.wikitext.parser;
 
 import java.io.IOException;
@@ -44,15 +45,7 @@ public class XPathTest
 	
 	private static final boolean AUTO_CORRECT = false;
 	
-	private final FullParser parser;
-	
-	public XPathTest()
-	{
-		JXPathContextReferenceImpl.addNodePointerFactory(
-				new AstNodePointerFactory());
-		
-		parser = new FullParser(WARNINGS_ENABLED, GATHER_RTD, AUTO_CORRECT);
-	}
+	// =========================================================================
 	
 	@Test
 	public void testFrance() throws IOException, ParseException
@@ -85,6 +78,8 @@ public class XPathTest
 		Assert.assertEquals(expected, actual);
 	}
 	
+	// =========================================================================
+	
 	@Test
 	public void testGermany() throws IOException, ParseException
 	{
@@ -111,6 +106,20 @@ public class XPathTest
 		
 		Assert.assertEquals(expected, actual);
 	}
+	
+	// =========================================================================
+	
+	private final FullParser parser;
+	
+	public XPathTest()
+	{
+		JXPathContextReferenceImpl.addNodePointerFactory(
+				new AstNodePointerFactory());
+		
+		parser = new FullParser(WARNINGS_ENABLED, GATHER_RTD, AUTO_CORRECT);
+	}
+	
+	// =========================================================================
 	
 	private WtNode parse(String title) throws IOException, ParseException
 	{

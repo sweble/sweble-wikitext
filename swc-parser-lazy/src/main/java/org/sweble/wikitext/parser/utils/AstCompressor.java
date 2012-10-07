@@ -35,6 +35,8 @@ import de.fau.cs.osr.ptk.common.ast.Location;
 
 /**
  * Collapses adjacent WtText nodes into a single WtText node.
+ * 
+ * @deprecated
  */
 public class AstCompressor
 		extends

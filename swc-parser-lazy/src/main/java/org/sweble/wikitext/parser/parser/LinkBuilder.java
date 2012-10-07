@@ -206,7 +206,6 @@ public class LinkBuilder
 			if (alt == null)
 				alt = WtLinkOptionAltText.NULL;
 			
-			// TODO: Use predefined node here?
 			if (link == null)
 				link = new ImageLinkTarget(LinkTargetType.DEFAULT);
 			

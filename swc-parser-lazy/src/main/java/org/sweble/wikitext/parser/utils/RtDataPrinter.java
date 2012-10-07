@@ -17,50 +17,27 @@
 
 package org.sweble.wikitext.parser.utils;
 
-import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtStringNode;
 import org.sweble.wikitext.parser.nodes.WtText;
 
-public class RtWikitextPrinter
+import de.fau.cs.osr.utils.PrinterBase;
+
+public class RtDataPrinter
 {
-	protected PrintWriter w;
-	
-	// =========================================================================
-	
-	public RtWikitextPrinter(Writer writer)
+	protected void iterate(WtNode node)
 	{
-		this.w = new PrintWriter(writer);
+		for (WtNode c : node)
+			dispatch(c);
 	}
 	
-	// =========================================================================
-	
-	public static String print(WtNode node)
-	{
-		StringWriter writer = new StringWriter();
-		new RtWikitextPrinter(writer).go(node);
-		return writer.toString();
-	}
-	
-	public static Writer print(Writer writer, WtNode node)
-	{
-		new RtWikitextPrinter(writer).go(node);
-		return writer;
-	}
-	
-	// =========================================================================
-	
-	public void go(WtNode node)
-	{
-		visit(node);
-	}
-	
-	protected void visit(WtNode node)
+	protected void dispatch(WtNode node)
 	{
 		switch (node.getNodeType())
 		{
@@ -69,14 +46,14 @@ public class RtWikitextPrinter
 				break;
 			
 			case WtNode.NT_NODE_LIST:
-				printNodeList(node);
+				printNodeList((WtNodeList) node);
 				break;
 			
 			default:
 				WtRtData rtd = node.getRtd();
 				if (node instanceof WtStringNode)
 				{
-					printStringContentNode(rtd, (WtStringNode) node);
+					printStringNode(rtd, (WtStringNode) node);
 				}
 				else if (node instanceof WtContentNode)
 				{
@@ -94,33 +71,29 @@ public class RtWikitextPrinter
 	
 	protected void printText(WtText text)
 	{
-		w.print(text.getContent());
+		p.print(text.getContent());
 	}
 	
-	protected void printNodeList(WtNode node)
+	protected void printNodeList(WtNodeList node)
 	{
 		iterate(node);
 	}
 	
-	protected void printContentNode(
-			WtRtData rtd,
-			WtContentNode contentNode)
+	protected void printContentNode(WtRtData rtd, WtContentNode contentNode)
 	{
 		if (rtd != null)
 		{
 			printRtd(rtd.getField(0));
-			printNodeList(contentNode);
+			iterate(contentNode);
 			printRtd(rtd.getField(1));
 		}
 		else
 		{
-			printNodeList(contentNode);
+			iterate(contentNode);
 		}
 	}
 	
-	protected void printStringContentNode(
-			WtRtData rtd,
-			WtStringNode contentNode)
+	protected void printStringNode(WtRtData rtd, WtStringNode contentNode)
 	{
 		if (rtd != null)
 		{
@@ -128,7 +101,7 @@ public class RtWikitextPrinter
 		}
 		else
 		{
-			w.print(contentNode.getContent());
+			p.print(contentNode.getContent());
 		}
 	}
 	
@@ -140,19 +113,15 @@ public class RtWikitextPrinter
 			for (WtNode n : node)
 			{
 				printRtd(rtd.getField(i++));
-				// FIXME: Remove this check!
-				if (n != null)
-					go(n);
+				dispatch(n);
 			}
 			printRtd(rtd.getField(i));
 		}
 		else
 		{
-			printNodeList(node);
+			iterate(node);
 		}
 	}
-	
-	// =========================================================================
 	
 	protected void printRtd(Object[] fields)
 	{
@@ -160,18 +129,41 @@ public class RtWikitextPrinter
 		{
 			if (o instanceof WtNode)
 			{
-				go((WtNode) o);
+				dispatch((WtNode) o);
 			}
 			else
 			{
-				w.print(o);
+				p.print(String.valueOf(o));
 			}
 		}
 	}
 	
-	protected void iterate(WtNode node)
+	// =========================================================================
+	
+	public static String print(WtNode node)
 	{
-		for (WtNode c : node)
-			go(c);
+		return RtDataPrinter.print(new StringWriter(), node).toString();
+	}
+	
+	public static Writer print(Writer writer, WtNode node)
+	{
+		new RtDataPrinter(writer).go(node);
+		return writer;
+	}
+	
+	// =========================================================================
+	
+	protected final PrinterBase p;
+	
+	protected RtDataPrinter(Writer writer)
+	{
+		this.p = new PrinterBase(writer);
+		this.p.setMemoize(false);
+	}
+	
+	protected void go(WtNode node)
+	{
+		dispatch(node);
+		p.flush();
 	}
 }

@@ -32,7 +32,7 @@ import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
-import org.sweble.wikitext.parser.utils.RtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
 import de.fau.cs.osr.ptk.common.ast.RtData;
 
@@ -115,7 +115,7 @@ public class HorizontalRuleAdapterTest
 	{
 		assertEquals(
 				"----",
-				RtWikitextPrinter.print(astPageContent));
+				RtDataPrinter.print(astPageContent));
 	}
 	
 	@Test
@@ -125,7 +125,7 @@ public class HorizontalRuleAdapterTest
 		
 		assertEquals(
 				"<hr style=\"foo\" />",
-				RtWikitextPrinter.print(astPageContent));
+				RtDataPrinter.print(astPageContent));
 	}
 	
 	@Test
@@ -135,6 +135,6 @@ public class HorizontalRuleAdapterTest
 		
 		assertEquals(
 				"<hr>Invalid</hr>",
-				RtWikitextPrinter.print(astPageContent));
+				RtDataPrinter.print(astPageContent));
 	}
 }

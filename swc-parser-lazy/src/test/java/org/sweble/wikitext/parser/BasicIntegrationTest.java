@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.sweble.wikitext.parser;
 
 import java.io.File;
@@ -22,9 +23,10 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
+import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.FullParser;
-import org.sweble.wikitext.parser.utils.TypedRtWikitextPrinter;
+import org.sweble.wikitext.parser.utils.TypedRtDataPrinter;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -35,15 +37,13 @@ import de.fau.cs.osr.utils.NamedParametrized;
 @RunWith(value = NamedParametrized.class)
 public class BasicIntegrationTest
 		extends
-			IntegrationTestBase
+			IntegrationTestBase<WtNode>
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
 	private static final String INPUT_SUB_DIR = "basic/wikitext";
 	
 	private static final String EXPECTED_AST_SUB_DIR = "basic/ast";
-	
-	private static final String EXPECTED_WT_SUB_DIR = "basic/wikitextprinter";
 	
 	// =========================================================================
 	
@@ -65,7 +65,7 @@ public class BasicIntegrationTest
 	}
 	
 	@Override
-	protected ParserInterface instantiateParser()
+	protected ParserInterface<WtNode> instantiateParser()
 	{
 		return new FullParser();
 	}
@@ -75,7 +75,8 @@ public class BasicIntegrationTest
 	@Test
 	public void testAstAfterPostprocessingMatchesReference() throws Exception
 	{
-		AstVisitor[] visitors = { new AstCompressor() };
+		@SuppressWarnings("unchecked")
+		AstVisitor<WtNode>[] visitors = new AstVisitor[] { new AstCompressor() };
 		
 		parsePrintAndCompare(
 				inputFile,
@@ -88,29 +89,14 @@ public class BasicIntegrationTest
 	@Test
 	public void testRestoredWikitextAfterPostprocessingMatchesOriginal() throws Exception
 	{
-		AstVisitor[] visitors = { new AstCompressor() };
+		@SuppressWarnings("unchecked")
+		AstVisitor<WtNode>[] visitors = new AstVisitor[] { new AstCompressor() };
 		
 		parsePrintAndCompare(
 				inputFile,
 				visitors,
 				INPUT_SUB_DIR,
 				INPUT_SUB_DIR,
-				new TypedRtWikitextPrinter());
+				new TypedRtDataPrinter());
 	}
-	
-	/*
-	@Test
-	@Ignore
-	public void testGeneratedWikitextAfterPostprocessingMatchesReference() throws IOException, ParseException
-	{
-		AstVisitor[] visitors = { new AstCompressor() };
-		
-		parsePrintAndCompare(
-				inputFile,
-				visitors,
-				INPUT_SUB_DIR,
-				EXPECTED_WT_SUB_DIR,
-				new TypedWikitextPrinter());
-	}
-	*/
 }

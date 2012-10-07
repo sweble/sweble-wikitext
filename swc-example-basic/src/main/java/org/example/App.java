@@ -106,7 +106,7 @@ public class App
 		else
 		{
 			TextConverter p = new TextConverter(config, wrapCol);
-			return (String) p.go(cp.getPage());
+			return (String) p.dispatch(cp.getPage());
 		}
 	}
 }

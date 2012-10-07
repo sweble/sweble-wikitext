@@ -27,6 +27,7 @@ import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
+import de.fau.cs.osr.utils.XmlEntityResolver;
 import de.fau.cs.osr.utils.visitor.VisitingException;
 
 public class StringConverter
