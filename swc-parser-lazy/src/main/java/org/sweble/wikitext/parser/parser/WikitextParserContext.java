@@ -18,6 +18,7 @@
 package org.sweble.wikitext.parser.parser;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.nodes.WtPageName;
 
 import de.fau.cs.osr.ptk.common.ParserContext;
 
@@ -77,7 +78,9 @@ public class WikitextParserContext
 		return linkBuilder;
 	}
 	
-	public final void initLinkBuilder(ParserConfig parserConfig, String target)
+	public final void initLinkBuilder(
+			ParserConfig parserConfig,
+			WtPageName target)
 	{
 		this.linkBuilder = new LinkBuilder(parserConfig, target);
 	}

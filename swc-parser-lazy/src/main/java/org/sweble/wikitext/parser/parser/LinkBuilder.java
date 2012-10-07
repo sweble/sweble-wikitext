@@ -26,22 +26,20 @@ import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.WtLinkOptions;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget;
+import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
-import org.sweble.wikitext.parser.nodes.WtLinkTitleImpl;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtUrl;
+import org.sweble.wikitext.parser.nodes.WtPageName;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
 public class LinkBuilder
 {
-	private String target;
+	private WtPageName target;
 	
-	private String linkPage;
-	
-	private WtUrl linkUrl;
+	private WtLinkTarget link;
 	
 	private WtLinkOptionAltText alt;
 	
@@ -69,14 +67,14 @@ public class LinkBuilder
 	
 	// -- internal state
 	
-	private LinkTargetType targetType;
+	private LinkType targetType;
 	
 	// =========================================================================
 	
-	public LinkBuilder(ParserConfig parserConfig, String target)
+	public LinkBuilder(ParserConfig parserConfig, WtPageName target)
 	{
 		this.target = target;
-		this.targetType = parserConfig.classifyTarget(target);
+		this.targetType = parserConfig.classifyTarget(target.getContent());
 		
 		this.title = null;
 		this.width = -1;
@@ -86,8 +84,7 @@ public class LinkBuilder
 		this.vAlign = null;
 		this.format = null;
 		this.border = false;
-		this.linkUrl = null;
-		this.linkPage = null;
+		this.link = null;
 		this.alt = null;
 	}
 	
@@ -95,12 +92,12 @@ public class LinkBuilder
 	
 	public boolean isImageTarget()
 	{
-		return targetType == LinkTargetType.IMAGE;
+		return targetType == LinkType.IMAGE;
 	}
 	
 	public boolean isValidTarget()
 	{
-		return targetType != LinkTargetType.INVALID;
+		return targetType != LinkType.INVALID;
 	}
 	
 	// =========================================================================
@@ -157,27 +154,25 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public void setLink(WtNode target)
+	public void setLink(WtLinkTarget target)
 	{
 		if (target != null)
 		{
-			if (target.isNodeType(WtNode.NT_URL))
+			if (target.getTargetType() == LinkTargetType.URL)
 			{
 				// second occurrence wins, url beats page
-				this.linkPage = null;
-				this.linkUrl = (WtUrl) target;
+				this.link = target;
 			}
 			else
 			{
 				// second occurrence wins, url beats page
-				if (this.linkUrl != null)
-					return;
-				this.linkPage = ((WtLinkTarget) target).getContent();
+				if (this.link == null || this.link.getTargetType() != LinkTargetType.URL)
+					this.link = target;
 			}
 		}
 		else
 		{
-			this.linkPage = "";
+			this.link = WtLinkTarget.DONT_LINK;
 		}
 	}
 	
@@ -195,12 +190,15 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public WtNode build(WtNodeList options, String postfix)
+	public WtNode build(WtLinkOptions options, String postfix)
 	{
+		// TODO: Tidy up
+		/*
 		if (this.title == null)
 			this.title = new WtLinkTitleImpl();
+		*/
 		
-		if (this.targetType == LinkTargetType.IMAGE)
+		if (this.targetType == LinkType.IMAGE)
 		{
 			if (hAlign == null)
 				hAlign = ImageHorizAlign.NONE;
@@ -211,13 +209,16 @@ public class LinkBuilder
 			if (format == null)
 				format = ImageViewFormat.UNRESTRAINED;
 			
+			// TODO: Nullable node here?
 			if (alt == null)
 				alt = new WtLinkOptionAltText();
+			
+			if (link == null)
+				link = WtLinkTarget.DONT_LINK;
 			
 			WtImageLink result = new WtImageLink(
 					target,
 					options,
-					title,
 					format,
 					border,
 					hAlign,
@@ -225,20 +226,27 @@ public class LinkBuilder
 					width,
 					height,
 					upright,
-					linkPage,
-					linkUrl,
+					link,
 					alt);
+			
+			if (this.title != null)
+				result.setTitle(title);
 			
 			finish(result);
 			return result;
 		}
 		else
 		{
+			if (postfix == null)
+				postfix = "";
+			
 			WtInternalLink result = new WtInternalLink(
 					"",
 					target,
-					title,
 					postfix);
+			
+			if (this.title != null)
+				result.setTitle(title);
 			
 			finish(result);
 			return result;
@@ -260,7 +268,7 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public static enum LinkTargetType
+	public static enum LinkType
 	{
 		INVALID,
 		PAGE,

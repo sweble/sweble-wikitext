@@ -37,6 +37,24 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 
 
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TableRowBody
+      extends
+          WtTempNode
+  {
+    WtNode rt0;
+    String rt1;
+    WtNodeList body;
+  }
+}
+
+
+
+
 // -- Table Row --[ State Aware Memoization ]-----------------------------------
 
 noinline transient WtNode TableRow =
@@ -67,21 +85,26 @@ noinline memoized WtNode TableRowMemoized =
 noinline transient WtNode TableRowTransient =
   rt0:pExtSpaceStar "|-" attributes:TableAttributeStar body:TableRowBody
   {
-    yyValue = setRtd(new WtTableRow(attributes, body.getForeign(2, WtNodeList.class)),
-        rt0, "|-", SEP,
-        body.getForeign(0, WtNode.class), body.getForeign(1, String.class), SEP);
+    yyValue = setRtd(new WtTableRow(attributes, new WtBodyImpl(body.body)),
+        rt0, "|-", SEP, body.rt0, body.rt1, SEP);
   }
 ;
 
-private inline WtForeignNode TableRowBody =
+private inline TableRowBody TableRowBody =
     rt0:pExtSpaceStar rt1:pEol body:TableRowContentStar
     {
-      yyValue = WtForeignNode.from(rt0, rt1, body);
+      yyValue = new TableRowBody();
+      yyValue.rt0 = rt0;
+      yyValue.rt1 = rt1;
+      yyValue.body = body;
     }
   / rt0:pExtSpaceStar Eof
     {
       // Warning will be issued by the surrounding table.
-      yyValue = WtForeignNode.from(rt0, "", new WtNodeListImpl());
+      yyValue = new TableRowBody();
+      yyValue.rt0 = rt0;
+      yyValue.rt1 = "";
+      yyValue.body = WtNodeList.EMPTY_NODE_LIST;
     }
   / &ShouldNotBeHere SantiyCheckEnd
     {

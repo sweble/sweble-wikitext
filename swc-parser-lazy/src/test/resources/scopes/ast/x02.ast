@@ -7,33 +7,31 @@ WtParsedWikitextPage(
     WtParagraph([
       WtXmlElement(
         Properties:
-          {N} empty = false
           {N} name = "i"
           {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-        [ ]
-        [ WtText(" a ") ]
+        -
+        WtBody([ WtText(" a ") ])
       )
       WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[target" <o> "]]" ]
-          {N} target = "target"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("target")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "i"
                 {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
 
-              [ ]
-              [ WtText(" b ") ]
+              -
+              WtBody([ WtText(" b ") ])
             )
             WtText(" c ")
           ]

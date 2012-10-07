@@ -2,13 +2,13 @@ package org.sweble.wikitext.parser.nodes;
 
 public interface WtLinkTitle
 		extends
-			WtNodeList
+			WtContentNode
 {
 	public static final WtNullLinkTitle NULL_TITLE = new WtNullLinkTitle();
 	
 	public static final class WtNullLinkTitle
 			extends
-				WtNullNodeList
+				WtNullContentNode
 			implements
 				WtLinkTitle
 	{

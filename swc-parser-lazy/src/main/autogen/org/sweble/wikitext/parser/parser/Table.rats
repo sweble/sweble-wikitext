@@ -58,6 +58,33 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 
 
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TableHead
+      extends
+          WtTempNode
+  {
+    WtNode rt0;
+    WtNode rt1;
+    WtXmlAttributes attrs;
+  }
+
+  @SuppressWarnings("serial")
+  private static final class TableMemberAttributes
+      extends
+          WtTempNode
+  {
+    WtXmlAttributes attrs;
+    Object[] rt1;
+  }
+}
+
+
+
+
 // -- Table --[ State Aware Memoization ]---------------------------------------
 
 noinline transient WtNode Table =
@@ -103,24 +130,24 @@ inline void BlockStopperNextTableElement =
 private inline WtTable TableBody =
     head:TableHead rt2:pEol body:TableContentStar rt3:pExtSpaceStar close:"|}"?
     {
-      yyValue = setRtd(new WtTable(head.getForeign(1, WtNodeList.class), body),
-          head.getForeign(0, WtNode.class), "{|", SEP,
-          head.getForeign(2, WtNode.class), rt2, SEP,
-          rt3, close);
+      yyValue = setRtd(new WtTable(head.attrs, new WtBodyImpl(body)),
+          head.rt0, "{|", SEP, head.rt1, rt2, SEP, rt3, close);
     }
   / head:TableHead Eof
     {
-      yyValue = setRtd(new WtTable(head.getForeign(1, WtNodeList.class), new WtNodeListImpl()),
-          head.getForeign(0, WtNode.class), "{|", SEP,
-          head.getForeign(2, WtNode.class), SEP);
+      yyValue = setRtd(new WtTable(head.attrs),
+          head.rt0, "{|", SEP, head.rt1, SEP);
     }
   / &ShouldNotBeHere SantiyCheckEnd { yyValue = null; }
 ;
 
-private inline WtForeignNode TableHead =
+private inline TableHead TableHead =
   rt0:pExtSpaceStar "{|" attrs:TableAttributeStar rt1:pExtSpaceStar
   {
-    yyValue = WtForeignNode.from(rt0, attrs, rt1);
+    yyValue = new TableHead();
+    yyValue.rt0 = rt0;
+    yyValue.attrs = attrs;
+    yyValue.rt1 = rt1;
   }
 ;
 

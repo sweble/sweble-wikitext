@@ -8,17 +8,16 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [
+      WtXmlAttributes([
         WtXmlAttribute(
           Properties:
-            {N} hasValue = true
             {N} name = "x"
             {N} rtd = RTD[ " x=" <o> "" ]
 
-          [ ]
+          WtValue([ ])
         )
-      ]
-      [ WtText("\"hallo\"\n") ]
+      ])
+      WtBody([ WtText("\"hallo\"\n") ])
     )
   ]
 )

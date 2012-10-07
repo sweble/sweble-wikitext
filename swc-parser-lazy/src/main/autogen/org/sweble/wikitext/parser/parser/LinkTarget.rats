@@ -31,10 +31,10 @@ module org.sweble.wikitext.parser.parser.LinkTarget;
 
 // -- Target -------------------------------------------------------------------
 
-WtLinkTarget LinkTarget =
+WtPageName LinkTarget =
   target:LinkTargetString
   {
-    yyValue = setRtd(new WtLinkTarget(target), target);
+    yyValue = setRtd(new WtPageName(target), target);
   }
 ;
 

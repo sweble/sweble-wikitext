@@ -1,11 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtTagExtension</h1> <h2>Grammar</h2>
- */
 public class WtTagExtension
 		extends
 			WtInnerNode1
@@ -16,12 +12,28 @@ public class WtTagExtension
 	
 	// =========================================================================
 	
-	public WtTagExtension()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtTagExtension()
 	{
-		super(new WtNodeListImpl());
+		super((WtNode) null);
 	}
-	
-	public WtTagExtension(String name, WtNodeList xmlAttributes, String body)
+
+	public WtTagExtension(
+			String name,
+			WtXmlAttributes xmlAttributes)
+	{
+		super(xmlAttributes);
+		setName(name);
+		// FIXME: !!
+		setBody(null);
+	}
+
+	public WtTagExtension(
+			String name,
+			WtXmlAttributes xmlAttributes,
+			String body)
 	{
 		super(xmlAttributes);
 		setName(name);
@@ -46,6 +58,8 @@ public class WtTagExtension
 	
 	public final String setName(String name)
 	{
+		if (name == null)
+			throw new NullPointerException();
 		String old = this.name;
 		this.name = name;
 		return old;
@@ -60,6 +74,7 @@ public class WtTagExtension
 	
 	public final String setBody(String body)
 	{
+		// !!!
 		String old = this.body;
 		this.body = body;
 		return old;
@@ -137,14 +152,14 @@ public class WtTagExtension
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtXmlAttributes getXmlAttributes()
 	{
-		return (WtNodeList) get(0);
+		return (WtXmlAttributes) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };

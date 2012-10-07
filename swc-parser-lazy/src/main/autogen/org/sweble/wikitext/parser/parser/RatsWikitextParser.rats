@@ -52,6 +52,7 @@ header
   import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;
   import de.fau.cs.osr.utils.StringUtils;
+  import de.fau.cs.osr.utils.WrappedException;
 }
 
 body

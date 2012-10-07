@@ -6,9 +6,6 @@ import org.sweble.wikitext.parser.WtEntityMap;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
-/**
- * <h1>WtPreproWikitextPage</h1> <h2>Grammar</h2>
- */
 public class WtPreproWikitextPage
 		extends
 			WtPage
@@ -23,16 +20,16 @@ public class WtPreproWikitextPage
 	{
 	}
 	
+	public WtPreproWikitextPage(WtNodeList content, List<Warning> warnings)
+	{
+		super(content, warnings);
+	}
+	
 	public WtPreproWikitextPage(
 			WtNodeList content,
 			List<Warning> warnings,
 			WtEntityMap entityMap)
 	{
 		super(content, warnings, entityMap);
-	}
-	
-	public WtPreproWikitextPage(WtNodeList content, List<Warning> warnings)
-	{
-		super(content, warnings);
 	}
 }

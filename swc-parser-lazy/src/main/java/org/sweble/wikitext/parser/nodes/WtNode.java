@@ -53,9 +53,11 @@ public interface WtNode
 	
 	public static final int NT_IGNORED /* ...................... */= NT_MW_NODE_BITS + 5;
 	
-	public static final int NT_PROTECTED_TEXT /* ................*/= NT_MW_NODE_BITS + 6;
+	public static final int NT_PROTECTED_TEXT /* ............... */= NT_MW_NODE_BITS + 6;
 	
-	public static final int NT_ERROR /* .........................*/= NT_MW_NODE_BITS + 7;
+	public static final int NT_ERROR /* ........................ */= NT_MW_NODE_BITS + 7;
+	
+	public static final int NT_NULL_NODE /* .................... */= NT_MW_NODE_BITS + 8;
 	
 	// -- Preprocessor nodes ---------------------------------------------------
 	
@@ -78,6 +80,12 @@ public interface WtNode
 	public static final int NT_ONLY_INCLUDE /* ................. */= NT_PREPROC_BITS + 7;
 	
 	public static final int NT_REDIRECT /* ..................... */= NT_PREPROC_BITS + 8;
+	
+	public static final int NT_TEMPLATE_NAME/* ................. */= NT_PREPROC_BITS + 9;
+	
+	public static final int NT_TEMPLATE_ARGUMENTS/* ............ */= NT_PREPROC_BITS + 10;
+	
+	public static final int NT_TEMPLATE_VALUE/* ................ */= NT_PREPROC_BITS + 11;
 	
 	// -- Parser nodes ---------------------------------------------------------
 	
@@ -159,7 +167,7 @@ public interface WtNode
 	
 	public static final int NT_XML_START_TAG /* ................ */= NT_PARSER_BITS + 40;
 	
-	public static final int NT_SECTION_HEADING /* .............. */= NT_PARSER_BITS + 41;
+	public static final int NT_HEADING /* .............. */= NT_PARSER_BITS + 41;
 	
 	public static final int NT_SECTION /* ...................... */= NT_PARSER_BITS + 42;
 	
@@ -167,5 +175,9 @@ public interface WtNode
 	
 	public static final int NT_SIGNATURE /* .................... */= NT_PARSER_BITS + 44;
 	
-	public static final int NT_SECTION_BODY /* ................. */= NT_PARSER_BITS + 45;
+	public static final int NT_BODY /* ................. */= NT_PARSER_BITS + 45;
+	
+	public static final int NT_LINK_OPTIONS /* ................. */= NT_PARSER_BITS + 46;
+	
+	public static final int NT_XML_ATTRIBUTES /* ............... */= NT_PARSER_BITS + 47;
 }

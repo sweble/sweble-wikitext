@@ -9,10 +9,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[target" <o> "]]" ]
-          {N} target = "target"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("target")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -20,35 +20,32 @@ WtParsedWikitextPage(
             WtText(" a ")
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "i"
                 {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-              [ ]
-              [ WtText(" b ") ]
+              -
+              WtBody([ WtText(" b ") ])
             )
           ]
         )
       )
       WtXmlElement(
         Properties:
-          {N} empty = false
           {N} name = "i"
           {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
 
-        [ ]
-        [
+        -
+        WtBody([
           WtText(" c ")
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "b"
               {N} rtd = RTD[ "<b" <o> ">" <o> "" ]
 
-            [ ]
-            [ WtText(" d ") ]
+            -
+            WtBody([ WtText(" d ") ])
           )
-        ]
+        ])
       )
     ])
   ]

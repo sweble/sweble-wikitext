@@ -14,16 +14,16 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtTableCell(
           Properties:
             {N} rtd = RTD[ " |" <o> "" <o> "" ]
 
-          [ ]
-          [ WtNewline("\n") ]
+          -
+          WtBody([ WtNewline("\n") ])
         )
-      ]
+      ])
     )
   ]
 )

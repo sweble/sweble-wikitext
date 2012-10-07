@@ -70,11 +70,11 @@ private inline WtNode XmlStartTag =
     // FIXME: Add auto correction and/or warning generation
 ;
 
-private inline WtNodeList AttributeStar =
+private inline WtXmlAttributes AttributeStar =
   yyValue:(&pWsPlus XmlAttributePlus)?
   {
     if (yyValue == null)
-      yyValue = new WtNodeListImpl();
+      yyValue = WtXmlAttributesImpl.EMPTY;
   }
 ;
 

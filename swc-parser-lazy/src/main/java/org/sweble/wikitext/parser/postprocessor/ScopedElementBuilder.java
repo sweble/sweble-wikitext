@@ -21,6 +21,8 @@ import java.util.LinkedList;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WtBody;
+import org.sweble.wikitext.parser.nodes.WtBodyImpl;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -33,7 +35,6 @@ import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtOrderedList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtSection;
@@ -45,6 +46,7 @@ import org.sweble.wikitext.parser.nodes.WtTableCell;
 import org.sweble.wikitext.parser.nodes.WtTableHeader;
 import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtUnorderedList;
+import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
 import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
@@ -118,16 +120,30 @@ public class ScopedElementBuilder
 	
 	public void visit(WtInternalLink n)
 	{
-		openScope(ScopeType.WT_INLINE, n);
-		n.getTitle().exchange(processScope(n.getTitle()));
-		closeScope(ScopeType.WT_INLINE, n);
+		if (!n.hasTitle())
+		{
+			stack.append(n);
+		}
+		else
+		{
+			openScope(ScopeType.WT_INLINE, n);
+			n.getTitle().exchange(processScope(n.getTitle()));
+			closeScope(ScopeType.WT_INLINE, n);
+		}
 	}
 	
 	public void visit(WtImageLink n)
 	{
-		openScope(ScopeType.WT_INLINE, n);
-		n.getTitle().exchange(processScope(n.getTitle()));
-		closeScope(ScopeType.WT_INLINE, n);
+		if (!n.hasTitle())
+		{
+			stack.append(n);
+		}
+		else
+		{
+			openScope(ScopeType.WT_INLINE, n);
+			n.getTitle().exchange(processScope(n.getTitle()));
+			closeScope(ScopeType.WT_INLINE, n);
+		}
 	}
 	
 	public void visit(WtSection n)
@@ -140,36 +156,43 @@ public class ScopedElementBuilder
 	
 	public void visit(WtTable n)
 	{
-		openScope(ScopeType.WT_TABLE, n);
-		n.setBody(processScope(n.getBody()));
-		closeScope(ScopeType.WT_TABLE, n);
+		if (!n.hasBody())
+		{
+			stack.append(n);
+		}
+		else
+		{
+			openScope(ScopeType.WT_TABLE, n);
+			n.getBody().exchange(processScope(n.getBody()));
+			closeScope(ScopeType.WT_TABLE, n);
+		}
 	}
 	
 	public void visit(WtTableCaption n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
-		n.setBody(processScope(n.getBody()));
+		n.getBody().exchange(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
 	public void visit(WtTableRow n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
-		n.setBody(processScope(n.getBody()));
+		n.getBody().exchange(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
 	public void visit(WtTableHeader n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
-		n.setBody(processScope(n.getBody()));
+		n.getBody().exchange(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
 	public void visit(WtTableCell n)
 	{
 		openScope(ScopeType.WT_TABLE_ITEM, n);
-		n.setBody(processScope(n.getBody()));
+		n.getBody().exchange(processScope(n.getBody()));
 		closeScope(ScopeType.WT_TABLE_ITEM, n);
 	}
 	
@@ -701,7 +724,7 @@ public class ScopedElementBuilder
 			final WtXmlEndTag close = (WtXmlEndTag) c;
 			return createElement(
 					open,
-					content,
+					new WtBodyImpl(content),
 					close,
 					s.isOpen());
 		}
@@ -721,14 +744,10 @@ public class ScopedElementBuilder
 	
 	private WtXmlElement createEmptyElement(
 			WtNamedXmlElement e,
-			WtNodeList attrs,
+			WtXmlAttributes attrs,
 			boolean wasEmpty)
 	{
-		WtXmlElement element = new WtXmlElement(
-				e.getName(),
-				true,
-				attrs,
-				new WtNodeListImpl());
+		WtXmlElement element = new WtXmlElement(e.getName(), attrs);
 		
 		if (config.isGatherRtData())
 		{
@@ -752,13 +771,12 @@ public class ScopedElementBuilder
 	
 	private WtXmlElement createElement(
 			WtXmlStartTag open,
-			WtNodeList body,
+			WtBody body,
 			WtXmlEndTag close,
 			boolean hasOpen)
 	{
 		WtXmlElement e = new WtXmlElement(
 				open.getName(),
-				false,
 				open.getXmlAttributes(),
 				body);
 		

@@ -6,16 +6,15 @@ WtParsedWikitextPage(
   [
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "p"
         {N} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtNewline("\n")
         WtText("P1")
         WtNewline("\n")
-      ]
+      ])
     )
     WtNewline("\n")
     WtText("P2")
@@ -30,29 +29,27 @@ WtParsedWikitextPage(
     WtNewline("\n")
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "p"
         {N} rtd = RTD[ "<p" <o> ">" <o> "" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtNewline("\n")
         WtText("P4")
         WtNewline("\n")
-      ]
+      ])
     )
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "div"
         {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtNewline("\n")
         WtText("asdf")
         WtNewline("\n")
-      ]
+      ])
     )
   ]
 )

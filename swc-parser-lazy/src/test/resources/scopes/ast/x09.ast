@@ -6,32 +6,29 @@ WtParsedWikitextPage(
   [
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "div"
         {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtText(" ")
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "i"
             {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-          [ ]
-          [ WtText(" italic ") ]
+          -
+          WtBody([ WtText(" italic ") ])
         )
-      ]
+      ])
     )
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "i"
         {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
 
-      [ ]
-      [ WtText(" still italic ") ]
+      -
+      WtBody([ WtText(" still italic ") ])
     )
     WtText(" not italic any more")
   ]

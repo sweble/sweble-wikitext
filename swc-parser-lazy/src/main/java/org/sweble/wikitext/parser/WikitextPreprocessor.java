@@ -52,7 +52,7 @@ public class WikitextPreprocessor
 	@Override
 	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
-		return parseArticle(new ValidatedWikitext(src, new WtEntityMap()), title, false);
+		return parseArticle(new ValidatedWikitext(src, new WtEntityMapImpl()), title, false);
 	}
 	
 	/*

@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=WtTagExtension([0] = [])}
+    {N} entityMap = EntityMap {0=WtTagExtension([0] = WtEmptyXmlAttributes())}
     {N} warnings = []
 
   [
@@ -11,7 +11,7 @@ WtParsedWikitextPage(
           {N} name = "pre"
           {N} rtd = RTD[ "<pre" <o> ">\n\tBlock\n</pre>" ]
 
-        [ ]
+        -
       )
     ])
   ]

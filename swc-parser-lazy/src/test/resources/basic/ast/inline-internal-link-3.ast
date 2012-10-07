@@ -19,13 +19,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText(" SectionHeading ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([ WtText("]]") ])
       ])

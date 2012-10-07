@@ -2,9 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtSection</h1>
- */
 public class WtSection
 		extends
 			WtInnerNode2
@@ -13,13 +10,16 @@ public class WtSection
 	
 	// =========================================================================
 	
-	public WtSection()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtSection()
 	{
-		super(new WtSectionHeading(), new WtSectionBody());
+		super(null, null);
 		
 	}
 	
-	public WtSection(int level, WtSectionHeading heading, WtSectionBody body)
+	public WtSection(int level, WtHeading heading, WtBody body)
 	{
 		super(heading, body);
 		setLevel(level);
@@ -115,24 +115,24 @@ public class WtSection
 	// =========================================================================
 	// Children
 	
-	public final void setHeading(WtSectionHeading title)
+	public final void setHeading(WtHeading title)
 	{
 		set(0, title);
 	}
 	
-	public final WtSectionHeading getHeading()
+	public final WtHeading getHeading()
 	{
-		return (WtSectionHeading) get(0);
+		return (WtHeading) get(0);
 	}
 	
-	public final void setBody(WtSectionBody body)
+	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
 	
-	public final WtSectionBody getBody()
+	public final WtBody getBody()
 	{
-		return (WtSectionBody) get(1);
+		return (WtBody) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "heading", "body" };

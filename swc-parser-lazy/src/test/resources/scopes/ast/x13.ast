@@ -7,23 +7,21 @@ WtParsedWikitextPage(
     WtParagraph([ WtText("a ") ])
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "table"
         {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtText(" b ")
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "div"
             {N} rtd = RTD[ "<div" <o> ">" <o> "" ]
 
-          [ ]
-          [ WtText(" c ") ]
+          -
+          WtBody([ WtText(" c ") ])
         )
-      ]
+      ])
     )
     WtText(" d")
   ]

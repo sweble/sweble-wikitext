@@ -2,56 +2,34 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>XML Attribute</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * Ws* XmlName Ws* '=' Ws* '\'' AttributeValueSq* '\''
- * </p>
- * </li>
- * <li>
- * <p>
- * Ws* XmlName Ws* '=' Ws* '"' ValueDqStar '"'
- * </p>
- * </li>
- * <li>
- * <p>
- * Ws* XmlName Ws* '=' ValueNqStar
- * </p>
- * </li>
- * <li>
- * <p>
- * Ws* XmlName
- * </p>
- * </li>
- * </ul>
- */
 public class WtXmlAttribute
 		extends
 			WtInnerNode1
 {
 	private static final long serialVersionUID = 1L;
 	
+	private static final WtValue NO_VALUE = WtValue.NULL_VALUE;
+	
 	// =========================================================================
 	
-	public WtXmlAttribute()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlAttribute()
 	{
-		super(new WtNodeListImpl());
+		super((WtNode) null);
 	}
 	
-	public WtXmlAttribute(String name, boolean hasValue)
+	public WtXmlAttribute(String name)
 	{
-		super(new WtNodeListImpl());
+		super(NO_VALUE);
 		setName(name);
-		setHasValue(hasValue);
 	}
 	
-	public WtXmlAttribute(String name, WtNodeList value, boolean hasValue)
+	public WtXmlAttribute(String name, WtValue value)
 	{
 		super(value);
 		setName(name);
-		setHasValue(hasValue);
 	}
 	
 	@Override
@@ -77,24 +55,10 @@ public class WtXmlAttribute
 		return old;
 	}
 	
-	private boolean hasValue;
-	
-	public final boolean getHasValue()
-	{
-		return this.hasValue;
-	}
-	
-	public final boolean setHasValue(boolean hasValue)
-	{
-		boolean old = this.hasValue;
-		this.hasValue = hasValue;
-		return old;
-	}
-	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2 + getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -120,8 +84,6 @@ public class WtXmlAttribute
 				{
 					case 0:
 						return "name";
-					case 1:
-						return "hasValue";
 						
 					default:
 						return super.getName(index);
@@ -135,8 +97,6 @@ public class WtXmlAttribute
 				{
 					case 0:
 						return WtXmlAttribute.this.getName();
-					case 1:
-						return WtXmlAttribute.this.getHasValue();
 						
 					default:
 						return super.getValue(index);
@@ -150,8 +110,6 @@ public class WtXmlAttribute
 				{
 					case 0:
 						return WtXmlAttribute.this.setName((String) value);
-					case 1:
-						return WtXmlAttribute.this.setHasValue((Boolean) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -163,14 +121,19 @@ public class WtXmlAttribute
 	// =========================================================================
 	// Children
 	
-	public final void setValue(WtNodeList value)
+	public final boolean hasValue()
+	{
+		return getValue() != NO_VALUE;
+	}
+	
+	public final void setValue(WtValue value)
 	{
 		set(0, value);
 	}
 	
-	public final WtNodeList getValue()
+	public final WtValue getValue()
 	{
-		return (WtNodeList) get(0);
+		return (WtValue) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "value" };

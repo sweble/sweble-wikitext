@@ -17,13 +17,17 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+/**
+ * FIXME: Do we need the "synthetic" attribute? And if we do, should it not be a
+ * real property?
+ */
 public interface WtIntermediate
 		extends
 			WtNode
 {
 	/**
-	 * Returns <code>true</code> if this tag was not parsed from the Wikitext
-	 * but generated in a later processing phase.
+	 * Returns <code>true</code> if this tag was not parsed from Wikitext but
+	 * generated in a later processing phase.
 	 */
 	public boolean isSynthetic();
 }

@@ -9,10 +9,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[target" <o> "]]" ]
-          {N} target = "target"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("target")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -22,14 +22,14 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ " |" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtNewline("\n")
                     WtParagraph([
                       WtText("* item 1")
@@ -37,9 +37,9 @@ WtParsedWikitextPage(
                       WtText("* item 2")
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtText("\n")
           ]

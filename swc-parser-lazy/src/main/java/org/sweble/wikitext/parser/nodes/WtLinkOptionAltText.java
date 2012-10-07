@@ -1,18 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>Link Option: AltText</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * WtLinkOptionAltText ::= Ws* 'alt=' LinkTitleContent{ALT}*
- * </p>
- * </li>
- * </ul>
- */
 public class WtLinkOptionAltText
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	

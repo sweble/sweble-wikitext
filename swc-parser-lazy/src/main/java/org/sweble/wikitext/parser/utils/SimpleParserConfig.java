@@ -23,7 +23,7 @@ import java.util.HashSet;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.parser.parser.LinkBuilder.LinkTargetType;
+import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
@@ -160,7 +160,7 @@ public class SimpleParserConfig
 	}
 	
 	@Override
-	public LinkTargetType classifyTarget(String target)
+	public LinkType classifyTarget(String target)
 	{
 		LinkTargetParser ltp = new LinkTargetParser();
 		try
@@ -169,14 +169,14 @@ public class SimpleParserConfig
 		}
 		catch (LinkTargetException e)
 		{
-			return LinkTargetType.INVALID;
+			return LinkType.INVALID;
 		}
 		
 		String ns = ltp.getNamespace();
 		if ("file".equalsIgnoreCase(ns) || "image".equalsIgnoreCase(ns))
-			return LinkTargetType.IMAGE;
+			return LinkType.IMAGE;
 		
-		return LinkTargetType.PAGE;
+		return LinkType.PAGE;
 	}
 	
 	@Override

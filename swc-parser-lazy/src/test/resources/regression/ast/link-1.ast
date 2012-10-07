@@ -18,15 +18,15 @@ WtParsedWikitextPage(
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
           {N} height = -1
-          {N} linkPage = null
-          {N} linkUrl = null
-          {N} rtd = RTD[ "[[file:SC.jpg" <o> "" <o> "]]" ]
-          {N} target = "file:SC.jpg"
+          {N} link = 
+            -
+          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
           {N} upright = false
           {N} vAlign = MIDDLE
           {N} width = 225
 
-        [
+        WtPageName("file:SC.jpg")
+        WtLinkOptions([
           WtLinkOptionResize(
             Properties:
               {N} height = -1
@@ -39,8 +39,8 @@ WtParsedWikitextPage(
 
             [ ]
           )
-        ]
-        WtLinkTitleImpl(
+        ])
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 

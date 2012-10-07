@@ -2,16 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtSignature</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * '~~~' '~'*
- * </p>
- * </li>
- * </ul>
- */
 public class WtSignature
 		extends
 			WtLeafNode
@@ -20,7 +10,10 @@ public class WtSignature
 	
 	// =========================================================================
 	
-	public WtSignature()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtSignature()
 	{
 	}
 	

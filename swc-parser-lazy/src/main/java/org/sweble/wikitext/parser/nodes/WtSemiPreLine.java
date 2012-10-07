@@ -1,19 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-
-/**
- * <h1>Semi Pre Line</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * Eol? ' ' SemiPreContentStar
- * </p>
- * </li>
- * </ul>
- */
 public class WtSemiPreLine
 		extends
-			WtContentNode
+			WtContentNodeImpl
 		implements
 			WtIntermediate
 {

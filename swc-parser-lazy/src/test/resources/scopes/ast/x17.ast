@@ -6,37 +6,33 @@ WtParsedWikitextPage(
   [
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "li"
         {N} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtText("item3")
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "table"
             {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "tr"
                 {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtXmlElement(
                   Properties:
-                    {N} empty = false
                     {N} name = "td"
                     {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtXmlEndTag(
                       Properties:
                         {N} name = "li"
@@ -44,20 +40,19 @@ WtParsedWikitextPage(
                     )
                     WtXmlElement(
                       Properties:
-                        {N} empty = false
                         {N} name = "li"
                         {N} rtd = RTD[ "<li" <o> ">" <o> "" ]
 
-                      [ ]
-                      [ WtText("item4") ]
+                      -
+                      WtBody([ WtText("item4") ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

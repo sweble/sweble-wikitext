@@ -4,32 +4,22 @@ import org.sweble.wikitext.parser.WtRtData;
 
 import de.fau.cs.osr.ptk.common.ast.AstText;
 
-/* 
- * @startuml img/WtNode.png
- * 
- * WtNode <|-- WtText 
- * GenericText <|-- WtText : GenericText<WtNode>
- *  
- * class WtText {
- * 	+ WtText()
- * 	+ WtText(String content)
- * }
- * 
- * @enduml
- */
 public class WtText
 		extends
 			AstText<WtNode>
 		implements
-			WtNode
+			WtStringNode
 {
-	
 	private static final long serialVersionUID = 7333107598118095040L;
 	
 	// =========================================================================
 	
-	public WtText()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtText()
 	{
+		super(null);
 	}
 	
 	public WtText(String content)

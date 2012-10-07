@@ -53,7 +53,7 @@ public class WikitextParser
 	public WtNode parseArticle(String src, String title) throws IOException, ParseException
 	{
 		PreprocessedWikitext ppWt =
-				new PreprocessedWikitext(src, new WtEntityMap());
+				new PreprocessedWikitext(src, new WtEntityMapImpl());
 		
 		return parseArticle(ppWt, title);
 	}

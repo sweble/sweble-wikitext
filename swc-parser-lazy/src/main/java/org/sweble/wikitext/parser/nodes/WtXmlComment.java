@@ -1,11 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>XmlComment</h1> <h2>Grammar</h2>
- */
 public class WtXmlComment
 		extends
 			WtStringNodeImpl
@@ -16,13 +12,19 @@ public class WtXmlComment
 	
 	// =========================================================================
 	
-	public WtXmlComment()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlComment()
 	{
+		super(null);
 	}
 	
 	public WtXmlComment(String content)
 	{
 		super(content);
+		setPrefix("");
+		setSuffix("");
 	}
 	
 	public WtXmlComment(String content, String prefix, String suffix)
@@ -50,6 +52,8 @@ public class WtXmlComment
 	
 	public final String setPrefix(String prefix)
 	{
+		if (prefix == null)
+			throw new NullPointerException();
 		String old = this.prefix;
 		this.prefix = prefix;
 		return old;
@@ -64,6 +68,8 @@ public class WtXmlComment
 	
 	public final String setSuffix(String suffix)
 	{
+		if (suffix == null)
+			throw new NullPointerException();
 		String old = this.suffix;
 		this.suffix = suffix;
 		return old;

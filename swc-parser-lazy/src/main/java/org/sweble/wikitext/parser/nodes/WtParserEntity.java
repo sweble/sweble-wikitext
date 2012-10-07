@@ -14,6 +14,13 @@ public class WtParserEntity
 	
 	// =========================================================================
 	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtParserEntity()
+	{
+	}
+	
 	public WtParserEntity(int id)
 	{
 		super(id);
@@ -57,5 +64,4 @@ public class WtParserEntity
 	public void clearRtd()
 	{
 	}
-	
 }

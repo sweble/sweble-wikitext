@@ -1,8 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>Ignored</h1>
- */
 public class WtIgnored
 		extends
 			WtStringNodeImpl
@@ -13,9 +10,12 @@ public class WtIgnored
 	
 	// =========================================================================
 	
-	public WtIgnored()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtIgnored()
 	{
-		super();
+		super(null);
 	}
 	
 	public WtIgnored(String content)

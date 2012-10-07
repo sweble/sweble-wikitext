@@ -17,10 +17,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Link2" <o> "]]" ]
-          {N} target = "Link2"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("Link2")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 

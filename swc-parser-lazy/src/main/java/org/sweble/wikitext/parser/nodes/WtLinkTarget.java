@@ -1,35 +1,38 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>Link Target</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * LinkOptionTarget ::= [^\u0000-\u001F\u007F\uFFFD<>{}|[\]]+
- * </p>
- * </li>
- * </ul>
- */
-public class WtLinkTarget
+public interface WtLinkTarget
 		extends
-			WtStringNodeImpl
+			WtNode
 {
-	private static final long serialVersionUID = 1L;
+	public static final WtLinkTarget DONT_LINK = new WtDontLink();
 	
 	// =========================================================================
 	
-	public WtLinkTarget()
+	public LinkTargetType getTargetType();
+	
+	// =========================================================================
+	
+	public static enum LinkTargetType
 	{
+		PAGE,
+		URL,
+		DONT_LINK
 	}
 	
-	public WtLinkTarget(String content)
-	{
-		super(content);
-	}
+	// =========================================================================
 	
-	@Override
-	public int getNodeType()
+	public static final class WtDontLink
+			extends
+				WtNullNode
+			implements
+				WtLinkTarget
 	{
-		return NT_LINK_TARGET;
+		private static final long serialVersionUID = 4433767404703646519L;
+		
+		@Override
+		public LinkTargetType getTargetType()
+		{
+			return LinkTargetType.DONT_LINK;
+		}
 	}
 }

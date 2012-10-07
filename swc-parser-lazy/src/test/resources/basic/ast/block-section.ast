@@ -8,13 +8,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 3
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "===" <o> "===" ]
 
         [ WtText(" Hallo 1 ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([ WtText("Welt 1") ])
         WtNewline("\n")
@@ -25,13 +25,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 1
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "=" <o> "=" ]
 
         [ WtText(" Hallo 2 ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtUnorderedList([
           WtListItem(
@@ -54,13 +54,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 1
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "=" <o> "=" ]
 
         [ WtText(" Hallo 3 ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([ WtText("Welt 3") ])
         WtNewline("\n")
@@ -69,13 +69,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 2
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "==" <o> "==" ]
 
             [ WtText(" Hallo 4 ") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([ WtText("Welt 4") ])
             WtNewline("\n")
@@ -83,13 +83,13 @@ WtParsedWikitextPage(
               Properties:
                 {N} level = 3
 
-              WtSectionHeading(
+              WtHeading(
                 Properties:
                   {N} rtd = RTD[ "===" <o> "===" ]
 
                 [ WtText(" Hallo 5 ") ]
               )
-              WtSectionBody([
+              WtBody([
                 WtNewline("\n")
                 WtParagraph([ WtText("Welt 5") ])
                 WtNewline("\n")
@@ -99,13 +99,13 @@ WtParsedWikitextPage(
               Properties:
                 {N} level = 3
 
-              WtSectionHeading(
+              WtHeading(
                 Properties:
                   {N} rtd = RTD[ "===" <o> "===" ]
 
                 [ WtText(" Hallo 6 ") ]
               )
-              WtSectionBody([
+              WtBody([
                 WtNewline("\n")
                 WtParagraph([
                   WtText("Welt 6")
@@ -121,13 +121,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 2
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "==" <o> "==" ]
 
             [ WtText(" Hallo 7 ") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([ WtText("Welt 7") ])
             WtNewline("\n")
@@ -135,13 +135,13 @@ WtParsedWikitextPage(
               Properties:
                 {N} level = 4
 
-              WtSectionHeading(
+              WtHeading(
                 Properties:
                   {N} rtd = RTD[ "====" <o> "====" ]
 
                 [ WtText(" Hallo 8 ") ]
               )
-              WtSectionBody([
+              WtBody([
                 WtNewline("\n")
                 WtParagraph([ WtText("Welt 8") ])
                 WtNewline("\n")
@@ -155,13 +155,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 1
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "=" <o> "=" ]
 
         [ WtText(" Hallo 9 ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([
           WtText("Welt 9")
@@ -175,7 +175,7 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 1
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "=" <o> "=" ]
           warnings = 
@@ -185,13 +185,13 @@ WtParsedWikitextPage(
 
         [ WtText(" Hallo 10 =") ]
       )
-      WtSectionBody([ WtNewline("\n") ])
+      WtBody([ WtNewline("\n") ])
     )
     WtSection(
       Properties:
         {N} level = 1
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "=" <o> "=" ]
           warnings = 
@@ -201,7 +201,7 @@ WtParsedWikitextPage(
 
         [ WtText("= Hallo 11 ") ]
       )
-      WtSectionBody([ ])
+      WtBody([ ])
     )
   ]
 )

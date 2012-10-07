@@ -1,11 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Empty XML Element</h1>
- */
 public class WtXmlEmptyTag
 		extends
 			WtInnerNode1
@@ -17,12 +13,15 @@ public class WtXmlEmptyTag
 	
 	// =========================================================================
 	
-	public WtXmlEmptyTag()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlEmptyTag()
 	{
-		super(new WtNodeListImpl());
+		super((WtNode) null);
 	}
 	
-	public WtXmlEmptyTag(String name, WtNodeList xmlAttributes)
+	public WtXmlEmptyTag(String name, WtXmlAttributes xmlAttributes)
 	{
 		super(xmlAttributes);
 		setName(name);
@@ -54,6 +53,8 @@ public class WtXmlEmptyTag
 	
 	public final String setName(String name)
 	{
+		if (name == null)
+			throw new NullPointerException();
 		String old = this.name;
 		this.name = name;
 		return old;
@@ -125,14 +126,14 @@ public class WtXmlEmptyTag
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtXmlAttributes getXmlAttributes()
 	{
-		return (WtNodeList) get(0);
+		return (WtXmlAttributes) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };

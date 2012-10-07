@@ -1,11 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Opening XML tag</h1>
- */
 public class WtXmlStartTag
 		extends
 			WtInnerNode1
@@ -17,12 +13,15 @@ public class WtXmlStartTag
 	
 	// =========================================================================
 	
+	/**
+	 * Only for use by de-serialization code.
+	 */
 	public WtXmlStartTag()
 	{
-		super(new WtNodeListImpl());
+		super((WtNode) null);
 	}
 	
-	public WtXmlStartTag(String name, WtNodeList xmlAttributes)
+	public WtXmlStartTag(String name, WtXmlAttributes xmlAttributes)
 	{
 		super(xmlAttributes);
 		setName(name);
@@ -54,6 +53,8 @@ public class WtXmlStartTag
 	
 	public final String setName(String name)
 	{
+		if (name == null)
+			throw new NullPointerException();
 		String old = this.name;
 		this.name = name;
 		return old;
@@ -125,14 +126,14 @@ public class WtXmlStartTag
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtXmlAttributes getXmlAttributes()
 	{
-		return (WtNodeList) get(0);
+		return (WtXmlAttributes) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };

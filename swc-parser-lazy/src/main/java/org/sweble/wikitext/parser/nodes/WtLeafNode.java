@@ -116,14 +116,4 @@ public abstract class WtLeafNode
 			}
 		}
 	}
-	
-	// =========================================================================
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException
-	{
-		WtLeafNode n = (WtLeafNode) super.clone();
-		n.rtd = (WtRtData) n.rtd.clone();
-		return n;
-	}
 }

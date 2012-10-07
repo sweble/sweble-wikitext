@@ -1,11 +1,9 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.nodes.WtValue.WtNullValue;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>TemplateParameter</h1> <h2>Grammar</h2>
- */
 public class WtTemplateParameter
 		extends
 			WtInnerNode3
@@ -14,17 +12,32 @@ public class WtTemplateParameter
 {
 	private static final long serialVersionUID = 1L;
 	
+	public static final WtNullValue NO_DEFAULT_VALUE = WtValue.NULL_VALUE;
+	
 	// =========================================================================
 	
+	/**
+	 * Only for use by de-serialization code.
+	 */
 	public WtTemplateParameter()
 	{
-		super(new WtNodeListImpl(), new WtTemplateArgument(), new WtNodeListImpl());
+		super(null, null, null);
+	}
+	
+	public WtTemplateParameter(WtName name)
+	{
+		super(name, NO_DEFAULT_VALUE, WtNodeList.EMPTY_NODE_LIST);
+	}
+	
+	public WtTemplateParameter(WtName name, WtValue defaultValue)
+	{
+		super(name, defaultValue, WtNodeList.EMPTY_NODE_LIST);
 	}
 	
 	public WtTemplateParameter(
-			WtNodeList name,
-			WtTemplateArgument defaultValue,
-			WtNodeList garbage)
+			WtName name,
+			WtValue defaultValue,
+			WtTemplateArguments garbage)
 	{
 		super(name, defaultValue, garbage);
 	}
@@ -118,34 +131,39 @@ public class WtTemplateParameter
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtNodeList name)
+	public final void setName(WtName name)
 	{
 		set(0, name);
 	}
 	
-	public final WtNodeList getName()
+	public final WtName getName()
 	{
-		return (WtNodeList) get(0);
+		return (WtName) get(0);
 	}
 	
-	public final void setDefaultValue(WtTemplateArgument defaultValue)
+	public final boolean hasDefaultValue()
+	{
+		return getDefaultValue() != NO_DEFAULT_VALUE;
+	}
+	
+	public final void setDefaultValue(WtValue defaultValue)
 	{
 		set(1, defaultValue);
 	}
 	
-	public final WtTemplateArgument getDefaultValue()
+	public final WtValue getDefaultValue()
 	{
-		return (WtTemplateArgument) get(1);
+		return (WtValue) get(1);
 	}
 	
-	public final void setGarbage(WtNodeList garbage)
+	public final void setGarbage(WtTemplateArguments garbage)
 	{
 		set(2, garbage);
 	}
 	
-	public final WtNodeList getGarbage()
+	public final WtTemplateArguments getGarbage()
 	{
-		return (WtNodeList) get(2);
+		return (WtTemplateArguments) get(2);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "defaultValue", "garbage" };

@@ -38,9 +38,9 @@ WtParsedWikitextPage(
                   WtXmlComment(
                     Properties:
                       {N} content = " comment "
-                      {N} prefix = null
+                      {N} prefix = ""
                       {N} rtd = RTD[ "<!-- comment -->" ]
-                      {N} suffix = null
+                      {N} suffix = ""
                   )
                   WtText(" ")
                   WtSignature(

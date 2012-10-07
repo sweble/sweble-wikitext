@@ -1,9 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-
-/**
- * <h1>Newline</h1>
- */
 public class WtNewline
 		extends
 			WtStringNodeImpl
@@ -14,8 +10,12 @@ public class WtNewline
 	
 	// =========================================================================
 	
-	public WtNewline()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtNewline()
 	{
+		super(null);
 	}
 	
 	public WtNewline(String content)

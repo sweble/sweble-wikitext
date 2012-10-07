@@ -8,34 +8,34 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ " !" <o> "" <o> "" ]
 
-              [ ]
-              [ WtText(" Header 1 ") ]
+              -
+              WtBody([ WtText(" Header 1 ") ])
             )
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!!" <o> "" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtParagraph([ WtText(" Header 2 ") ])
                 WtNewline("\n")
-              ]
+              ])
             )
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

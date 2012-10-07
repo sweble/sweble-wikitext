@@ -2,16 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Link Option: Keyword</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * WtLinkOptionKeyword ::= Ws* WtLinkOptionKeyword Ws*
- * </p>
- * </li>
- * </ul>
- */
 public class WtLinkOptionKeyword
 		extends
 			WtLeafNode
@@ -19,6 +9,13 @@ public class WtLinkOptionKeyword
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
+	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtLinkOptionKeyword()
+	{
+	}
 	
 	public WtLinkOptionKeyword(String keyword)
 	{
@@ -43,6 +40,8 @@ public class WtLinkOptionKeyword
 	
 	public final String setKeyword(String keyword)
 	{
+		if (keyword == null)
+			throw new NullPointerException();
 		String old = this.keyword;
 		this.keyword = keyword;
 		return old;

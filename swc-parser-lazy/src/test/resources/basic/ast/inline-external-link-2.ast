@@ -15,7 +15,7 @@ WtParsedWikitextPage(
             {N} protocol = "http"
             {N} rtd = RTD[ "http://example.com" ]
         )
-        WtLinkTitleImpl([ WtText("[http://example2.com") ])
+        WtLinkTitle([ WtText("[http://example2.com") ])
       )
       WtText("]")
     ])

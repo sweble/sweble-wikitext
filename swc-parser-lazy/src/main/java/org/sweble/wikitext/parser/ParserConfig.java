@@ -18,7 +18,7 @@
 package org.sweble.wikitext.parser;
 
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.parser.parser.LinkBuilder.LinkTargetType;
+import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
 import org.sweble.wikitext.parser.utils.XmlEntityResolver;
 
@@ -44,7 +44,7 @@ public interface ParserConfig
 	
 	String getInternalLinkPostfixPattern();
 	
-	LinkTargetType classifyTarget(String target);
+	LinkType classifyTarget(String target);
 	
 	boolean isNamespace(String nsName);
 	

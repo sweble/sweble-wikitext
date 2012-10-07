@@ -1,11 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtListItem</h1>
- */
 public class WtListItem
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -13,7 +10,6 @@ public class WtListItem
 	
 	public WtListItem()
 	{
-		super();
 	}
 	
 	public WtListItem(WtNodeList content)

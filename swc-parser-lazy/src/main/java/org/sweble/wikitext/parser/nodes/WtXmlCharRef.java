@@ -2,21 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Xml Character Reference</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * '&#' Digit+ ';'
- * </p>
- * </li>
- * <li>
- * <p>
- * '&#x' HexDigit+ ';'
- * </p>
- * </li>
- * </ul>
- */
 public class WtXmlCharRef
 		extends
 			WtLeafNode
@@ -24,6 +9,13 @@ public class WtXmlCharRef
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
+	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlCharRef()
+	{
+	}
 	
 	public WtXmlCharRef(int codePoint)
 	{

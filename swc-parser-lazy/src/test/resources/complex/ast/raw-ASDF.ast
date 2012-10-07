@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText("disambig")], [1] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = WtName[WtText("disambig")], [1] = WtTemplateArguments[])}
     {N} warnings = []
 
   [
@@ -32,10 +32,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Alabama State Defense Force" <o> "]]" ]
-              {N} target = "Alabama State Defense Force"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Alabama State Defense Force")
+            -
           )
           WtText(", a military entity")
         ]
@@ -50,10 +50,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Alaska State Defense Force" <o> "]]" ]
-              {N} target = "Alaska State Defense Force"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Alaska State Defense Force")
+            -
           )
           WtText(", a military entity")
         ]
@@ -68,10 +68,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Another System Definition Facility" <o> "]]" ]
-              {N} target = "Another System Definition Facility"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Another System Definition Facility")
+            -
           )
           WtText(", the most commonly used build system for Common Lisp")
         ]
@@ -86,10 +86,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Association of Synchronous Data Formats" <o> "]]" ]
-              {N} target = "Association of Synchronous Data Formats"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Association of Synchronous Data Formats")
+            -
           )
           WtText(", an organization that advances the use of synchronous data transmission technology")
         ]
@@ -104,10 +104,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = "s"
               {N} prefix = ""
-              {N} rtd = RTD[ "[[pitch detection algorithm" <o> "]]s" ]
-              {N} target = "pitch detection algorithm"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("pitch detection algorithm")
+            -
           )
         ]
       )
@@ -121,20 +121,20 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[home row" <o> "]]" ]
-              {N} target = "home row"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("home row")
+            -
           )
           WtText(" on a ")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[QWERTY" <o> "]]" ]
-              {N} target = "QWERTY"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("QWERTY")
+            -
           )
           WtText(" keyboard")
         ]
@@ -149,10 +149,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = "s"
               {N} prefix = ""
-              {N} rtd = RTD[ "[[viral video" <o> "]]s" ]
-              {N} target = "viral video"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("viral video")
+            -
           )
         ]
       )
@@ -168,13 +168,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText(" See also ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtUnorderedList([
           WtListItem(
@@ -187,10 +187,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Hoverboard ASDF" <o> "]]" ]
-                  {N} target = "Hoverboard ASDF"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Hoverboard ASDF")
+                -
               )
             ]
           )
@@ -204,10 +204,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Japan Air Self-Defense Force" <o> "]]" ]
-                  {N} target = "Japan Air Self-Defense Force"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Japan Air Self-Defense Force")
+                -
               )
             ]
           )
@@ -221,10 +221,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[QWERTY" <o> "]]" ]
-                  {N} target = "QWERTY"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("QWERTY")
+                -
               )
             ]
           )
@@ -236,10 +236,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Category:Initialisms" <o> "]]" ]
-              {N} target = "Category:Initialisms"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Category:Initialisms")
+            -
           )
           WtNewline("\n")
           WtTemplate(
@@ -247,8 +247,8 @@ WtParsedWikitextPage(
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-            [ WtText("disambig") ]
-            [ ]
+            WtName([ WtText("disambig") ])
+            WtTemplateArguments([ ])
           )
         ])
         WtNewline("\n")
@@ -258,20 +258,20 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[de:ASDF" <o> "]]" ]
-              {N} target = "de:ASDF"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("de:ASDF")
+            -
           )
           WtNewline("\n")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[fr:ASDF" <o> "]]" ]
-              {N} target = "fr:ASDF"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("fr:ASDF")
+            -
           )
         ])
         WtNewline("\n")

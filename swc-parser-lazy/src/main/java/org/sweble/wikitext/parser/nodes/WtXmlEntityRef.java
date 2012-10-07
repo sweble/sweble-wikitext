@@ -2,16 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Xml Entity Reference</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * '&' XmlName ';'
- * </p>
- * </li>
- * </ul>
- */
 public class WtXmlEntityRef
 		extends
 			WtLeafNode
@@ -20,6 +10,17 @@ public class WtXmlEntityRef
 	
 	// =========================================================================
 	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlEntityRef()
+	{
+	}
+	
+	/**
+	 * @param resolved
+	 *            <code>null</code> allowed to indicate failed resolution.
+	 */
 	public WtXmlEntityRef(String name, String resolved)
 	{
 		setName(name);
@@ -44,6 +45,8 @@ public class WtXmlEntityRef
 	
 	public final String setName(String name)
 	{
+		if (name == null)
+			throw new NullPointerException();
 		String old = this.name;
 		this.name = name;
 		return old;

@@ -21,10 +21,11 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtNullNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNullNode;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
+import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
 import de.fau.cs.osr.utils.PrinterBase.Memoize;
 import de.fau.cs.osr.utils.PrinterBase.OutputBuffer;
 
@@ -37,7 +38,10 @@ public class WtPrinter
 		p.indentln('-');
 	}
 	
+	/*
 	public void visit(WtContentNode n)
+	*/
+	public void visit2(WtContentNode n)
 	{
 		Memoize m = p.memoizeStart(n);
 		if (m != null)
@@ -95,7 +99,7 @@ public class WtPrinter
 			}
 			else if (n.isEmpty())
 			{
-				p.indent(n.getClass().getSimpleName());
+				p.indent(n.getNodeName());
 				p.println("([ ])");
 			}
 			else
@@ -110,7 +114,7 @@ public class WtPrinter
 					String output = b.getBuffer().trim();
 					if (isSingleLine(output))
 					{
-						p.indent(n.getClass().getSimpleName());
+						p.indent(n.getNodeName());
 						p.print("([ ");
 						p.print(output);
 						p.println(" ])");
@@ -120,7 +124,7 @@ public class WtPrinter
 				
 				if (!singleLine)
 				{
-					p.indent(n.getClass().getSimpleName());
+					p.indent(n.getNodeName());
 					p.println("([");
 					
 					p.incIndent();
@@ -131,6 +135,18 @@ public class WtPrinter
 				}
 			}
 			p.memoizeStop(m);
+		}
+	}
+	
+	public void visit(AstNodeListImpl<WtNode> n)
+	{
+		if (n instanceof WtContentNode)
+		{
+			visit2((WtContentNode) n);
+		}
+		else
+		{
+			super.visit(n);
 		}
 	}
 	

@@ -143,14 +143,4 @@ public abstract class WtInnerNode3
 			}
 		}
 	}
-	
-	// =========================================================================
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException
-	{
-		WtInnerNode3 n = (WtInnerNode3) super.clone();
-		n.rtd = (WtRtData) n.rtd.clone();
-		return n;
-	}
 }

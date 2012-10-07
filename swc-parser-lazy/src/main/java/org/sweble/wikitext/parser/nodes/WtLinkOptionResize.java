@@ -2,54 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Link Option: Resize</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * WtLinkOptionResize ::= Ws* Digit+ Space* 'px' Ws*
- * </p>
- * </li>
- * <li>
- * <p>
- * WtLinkOptionResize ::= Ws* Digit+ 'x' Digit* Space* 'px' Ws*
- * </p>
- * </li>
- * <li>
- * <p>
- * WtLinkOptionResize ::= Ws* 'x' Digit+ Space* 'px' Ws*
- * </p>
- * </li>
- * </ul>
- * <ul>
- * <li>
- * <p>
- * If heightString is null the first production matched.
- * </p>
- * </li>
- * <li>
- * <p>
- * If widthString is null the third production matched.
- * </p>
- * </li>
- * <li>
- * <p>
- * If both are null there is no information which production matched.
- * </p>
- * </li>
- * <li>
- * <p>
- * Otherwise the second production matched.
- * </p>
- * </li>
- * <li>
- * <p>
- * If one of the dimensions is missing the value of the width/height is set to
- * -1.
- * </p>
- * </li>
- * </ul>
- */
 public class WtLinkOptionResize
 		extends
 			WtLeafNode
@@ -57,6 +9,13 @@ public class WtLinkOptionResize
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
+	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtLinkOptionResize()
+	{
+	}
 	
 	public WtLinkOptionResize(int width, int height)
 	{

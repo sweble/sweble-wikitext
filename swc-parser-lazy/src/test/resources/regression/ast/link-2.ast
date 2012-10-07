@@ -18,23 +18,23 @@ WtParsedWikitextPage(
           {N} format = UNRESTRAINED
           {N} hAlign = NONE
           {N} height = -1
-          {N} linkPage = null
-          {N} linkUrl = null
-          {N} rtd = RTD[ "[[File:x" <o> "" <o> "]]" ]
-          {N} target = "File:x"
+          {N} link = 
+            -
+          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
           {N} upright = false
           {N} vAlign = MIDDLE
           {N} width = -1
 
-        [
+        WtPageName("File:x")
+        WtLinkOptions([
           WtLinkOptionAltText(
             Properties:
               {N} rtd = RTD[ "|alt=" <o> "" ]
 
             [ WtText("\n ") ]
           )
-        ]
-        WtLinkTitleImpl([ ])
+        ])
+        -
       )
     ])
   ]

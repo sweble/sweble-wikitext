@@ -1,11 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Closing XML tag</h1>
- */
 public class WtXmlEndTag
 		extends
 			WtLeafNode
@@ -16,6 +12,13 @@ public class WtXmlEndTag
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
+	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlEndTag()
+	{
+	}
 	
 	public WtXmlEndTag(String name)
 	{
@@ -48,6 +51,8 @@ public class WtXmlEndTag
 	
 	public final String setName(String name)
 	{
+		if (name == null)
+			throw new NullPointerException();
 		String old = this.name;
 		this.name = name;
 		return old;

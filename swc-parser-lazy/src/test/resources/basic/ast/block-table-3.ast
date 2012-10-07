@@ -8,36 +8,35 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = true
                 {N} name = "border"
                 {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
-              [ WtText("2") ]
+              WtValue([ WtText("2") ])
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ " !" <o> "" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtParagraph([ WtText(" class=\"foo\"") ])
                 WtNewline("\n")
-              ]
+              ])
             )
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

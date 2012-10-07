@@ -2,35 +2,20 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtUrlImpl</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * Protocol ::= [A-Za-z] [A-Za-z0-9+\-.]*
- * </p>
- * </li>
- * <li>
- * <p>
- * Path ::= [^\u0000- \u007F\uE000\u2028\u2029\u0085\"\[\]<>|]+
- * </p>
- * </li>
- * <li>
- * <p>
- * WtUrlImpl ::= Scheme ':' Path
- * </p>
- * </li>
- * </ul>
- */
 public class WtUrl
 		extends
 			WtLeafNode
+		implements
+			WtLinkTarget
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtUrl()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtUrl()
 	{
 	}
 	
@@ -46,6 +31,12 @@ public class WtUrl
 		return NT_URL;
 	}
 	
+	@Override
+	public LinkTargetType getTargetType()
+	{
+		return LinkTargetType.URL;
+	}
+	
 	// =========================================================================
 	// Properties
 	
@@ -58,6 +49,8 @@ public class WtUrl
 	
 	public final String setProtocol(String protocol)
 	{
+		if (protocol == null)
+			throw new NullPointerException();
 		String old = this.protocol;
 		this.protocol = protocol;
 		return old;
@@ -72,6 +65,8 @@ public class WtUrl
 	
 	public final String setPath(String path)
 	{
+		if (path == null)
+			throw new NullPointerException();
 		String old = this.path;
 		this.path = path;
 		return old;

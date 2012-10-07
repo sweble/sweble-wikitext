@@ -1,11 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtBold</h1>
- */
 public class WtBold
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	

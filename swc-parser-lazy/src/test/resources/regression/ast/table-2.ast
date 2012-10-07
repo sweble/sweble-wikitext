@@ -6,30 +6,27 @@ WtParsedWikitextPage(
   [
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "table"
         {N} rtd = RTD[ "<table" <o> ">" <o> "" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "tr"
             {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "td"
                 {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
 
-              [ ]
-              [ WtNewline("\n") ]
+              -
+              WtBody([ WtNewline("\n") ])
             )
-          ]
+          ])
         )
         WtSemiPre([
           WtSemiPreLine(
@@ -69,7 +66,7 @@ WtParsedWikitextPage(
             ]
           )
         ])
-      ]
+      ])
     )
   ]
 )

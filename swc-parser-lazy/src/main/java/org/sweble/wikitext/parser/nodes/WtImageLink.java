@@ -1,27 +1,32 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtNullLinkTitle;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Image Link</h1>
- */
 public class WtImageLink
 		extends
-			WtInnerNode2
+			WtInnerNode3
 {
 	private static final long serialVersionUID = 1L;
 	
+	public static final WtLinkTitle HAS_NO_TITLE = new WtNullLinkTitle();
+	
 	// =========================================================================
 	
-	public WtImageLink()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtImageLink()
 	{
-		super(new WtNodeListImpl(), new WtLinkTitleImpl());
+		super(null, null, null);
 	}
 	
 	public WtImageLink(
-			String target,
-			WtNodeList options,
-			WtLinkTitle title,
+			WtPageName target,
+			WtLinkOptions options,
+			/* The following are extracted from options. 
+			 * They are added as properties for convenience. */
 			ImageViewFormat format,
 			boolean border,
 			ImageHorizAlign hAlign,
@@ -29,12 +34,10 @@ public class WtImageLink
 			int width,
 			int height,
 			boolean upright,
-			String linkPage,
-			WtUrl linkUrl,
+			WtLinkTarget link,
 			WtLinkOptionAltText alt)
 	{
-		super(options, title);
-		setTarget(target);
+		super(target, options, HAS_NO_TITLE);
 		setFormat(format);
 		setBorder(border);
 		setHAlign(hAlign);
@@ -42,8 +45,7 @@ public class WtImageLink
 		setWidth(width);
 		setHeight(height);
 		setUpright(upright);
-		setLinkPage(linkPage);
-		setLinkUrl(linkUrl);
+		setLink(link);
 		setAlt(alt);
 	}
 	
@@ -55,20 +57,6 @@ public class WtImageLink
 	
 	// =========================================================================
 	// Properties
-	
-	private String target;
-	
-	public final String getTarget()
-	{
-		return this.target;
-	}
-	
-	public final String setTarget(String target)
-	{
-		String old = this.target;
-		this.target = target;
-		return old;
-	}
 	
 	private int width;
 	
@@ -121,6 +109,8 @@ public class WtImageLink
 	
 	public final ImageHorizAlign setHAlign(ImageHorizAlign hAlign)
 	{
+		if (hAlign == null)
+			throw new NullPointerException();
 		ImageHorizAlign old = this.hAlign;
 		this.hAlign = hAlign;
 		return old;
@@ -135,6 +125,8 @@ public class WtImageLink
 	
 	public final ImageVertAlign setVAlign(ImageVertAlign vAlign)
 	{
+		if (vAlign == null)
+			throw new NullPointerException();
 		ImageVertAlign old = this.vAlign;
 		this.vAlign = vAlign;
 		return old;
@@ -149,6 +141,8 @@ public class WtImageLink
 	
 	public final ImageViewFormat setFormat(ImageViewFormat format)
 	{
+		if (format == null)
+			throw new NullPointerException();
 		ImageViewFormat old = this.format;
 		this.format = format;
 		return old;
@@ -168,31 +162,19 @@ public class WtImageLink
 		return old;
 	}
 	
-	private String linkPage;
+	private WtLinkTarget link;
 	
-	public final String getLinkPage()
+	public final WtLinkTarget getLink()
 	{
-		return this.linkPage;
+		return this.link;
 	}
 	
-	public final String setLinkPage(String linkPage)
+	public final WtLinkTarget setLink(WtLinkTarget link)
 	{
-		String old = this.linkPage;
-		this.linkPage = linkPage;
-		return old;
-	}
-	
-	private WtUrl linkUrl;
-	
-	public final WtUrl getLinkUrl()
-	{
-		return this.linkUrl;
-	}
-	
-	public final WtUrl setLinkUrl(WtUrl linkUrl)
-	{
-		WtUrl old = this.linkUrl;
-		this.linkUrl = linkUrl;
+		if (link == null)
+			throw new NullPointerException();
+		WtLinkTarget old = this.link;
+		this.link = link;
 		return old;
 	}
 	
@@ -205,6 +187,8 @@ public class WtImageLink
 	
 	public final WtLinkOptionAltText setAlt(WtLinkOptionAltText alt)
 	{
+		if (alt == null)
+			throw new NullPointerException();
 		WtLinkOptionAltText old = this.alt;
 		this.alt = alt;
 		return old;
@@ -213,7 +197,7 @@ public class WtImageLink
 	@Override
 	public final int getPropertyCount()
 	{
-		return 11 + getSuperPropertyCount();
+		return 9 + getSuperPropertyCount();
 	}
 	
 	private final int getSuperPropertyCount()
@@ -224,7 +208,7 @@ public class WtImageLink
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode2PropertyIterator()
+		return new WtInnerNode3PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
@@ -238,26 +222,22 @@ public class WtImageLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "target";
-					case 1:
 						return "width";
-					case 2:
+					case 1:
 						return "height";
-					case 3:
+					case 2:
 						return "upright";
-					case 4:
+					case 3:
 						return "hAlign";
-					case 5:
+					case 4:
 						return "vAlign";
-					case 6:
+					case 5:
 						return "format";
-					case 7:
+					case 6:
 						return "border";
+					case 7:
+						return "link";
 					case 8:
-						return "linkPage";
-					case 9:
-						return "linkUrl";
-					case 10:
 						return "alt";
 						
 					default:
@@ -271,26 +251,22 @@ public class WtImageLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtImageLink.this.getTarget();
-					case 1:
 						return WtImageLink.this.getWidth();
-					case 2:
+					case 1:
 						return WtImageLink.this.getHeight();
-					case 3:
+					case 2:
 						return WtImageLink.this.getUpright();
-					case 4:
+					case 3:
 						return WtImageLink.this.getHAlign();
-					case 5:
+					case 4:
 						return WtImageLink.this.getVAlign();
-					case 6:
+					case 5:
 						return WtImageLink.this.getFormat();
-					case 7:
+					case 6:
 						return WtImageLink.this.getBorder();
+					case 7:
+						return WtImageLink.this.getLink();
 					case 8:
-						return WtImageLink.this.getLinkPage();
-					case 9:
-						return WtImageLink.this.getLinkUrl();
-					case 10:
 						return WtImageLink.this.getAlt();
 						
 					default:
@@ -304,26 +280,22 @@ public class WtImageLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtImageLink.this.setTarget((String) value);
-					case 1:
 						return WtImageLink.this.setWidth((Integer) value);
-					case 2:
+					case 1:
 						return WtImageLink.this.setHeight((Integer) value);
-					case 3:
+					case 2:
 						return WtImageLink.this.setUpright((Boolean) value);
-					case 4:
+					case 3:
 						return WtImageLink.this.setHAlign((ImageHorizAlign) value);
-					case 5:
+					case 4:
 						return WtImageLink.this.setVAlign((ImageVertAlign) value);
-					case 6:
+					case 5:
 						return WtImageLink.this.setFormat((ImageViewFormat) value);
-					case 7:
+					case 6:
 						return WtImageLink.this.setBorder((Boolean) value);
+					case 7:
+						return WtImageLink.this.setLink((WtLinkTarget) value);
 					case 8:
-						return WtImageLink.this.setLinkPage((String) value);
-					case 9:
-						return WtImageLink.this.setLinkUrl((WtUrl) value);
-					case 10:
 						return WtImageLink.this.setAlt((WtLinkOptionAltText) value);
 						
 					default:
@@ -336,27 +308,42 @@ public class WtImageLink
 	// =========================================================================
 	// Children
 	
-	public final void setOptions(WtNodeList options)
+	public final void setTarget(WtPageName target)
 	{
-		set(0, options);
+		set(0, target);
 	}
 	
-	public final WtNodeList getOptions()
+	public final WtPageName getTarget()
 	{
-		return (WtNodeList) get(0);
+		return (WtPageName) get(0);
+	}
+	
+	public final void setOptions(WtLinkOptions options)
+	{
+		set(1, options);
+	}
+	
+	public final WtLinkOptions getOptions()
+	{
+		return (WtLinkOptions) get(1);
+	}
+	
+	public boolean hasTitle()
+	{
+		return getTitle() != HAS_NO_TITLE;
 	}
 	
 	public final void setTitle(WtLinkTitle title)
 	{
-		set(1, title);
+		set(2, title);
 	}
 	
 	public final WtLinkTitle getTitle()
 	{
-		return (WtLinkTitle) get(1);
+		return (WtLinkTitle) get(2);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "options", "title" };
+	private static final String[] CHILD_NAMES = new String[] { "target", "options", "title" };
 	
 	public final String[] getChildNames()
 	{

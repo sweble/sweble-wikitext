@@ -102,7 +102,7 @@ ExternalLinkChoice =
     rt0:pTpStar target:Url rt1:pExtSpacePlus title:ExternalLinkTitleContentPlus ']'
     {
       yyValue = setRtd(
-        new WtExternalLink(target, title),
+        new WtExternalLink(target, new WtLinkTitleImpl(title)),
         '[', rt0, SEP, rt1, SEP, ']');
     }
   / rt0:pTpStar target:Url rt1:pSpaceStar ']'

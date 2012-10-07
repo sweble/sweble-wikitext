@@ -1,18 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>Semi Pre Block Level Element</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * WtSemiPreLine (Eol WtSemiPreLine)*
- * </p>
- * </li>
- * </ul>
- */
 public class WtSemiPre
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	

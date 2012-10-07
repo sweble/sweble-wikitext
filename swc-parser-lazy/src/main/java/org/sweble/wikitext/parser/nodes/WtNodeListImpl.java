@@ -65,6 +65,16 @@ public class WtNodeListImpl
 	// =========================================================================
 	
 	@Override
+	public String getNodeName()
+	{
+		return (getClass() == WtNodeListImpl.class) ?
+				WtNodeList.class.getSimpleName() :
+				super.getNodeName();
+	}
+	
+	// =========================================================================
+	
+	@Override
 	public WtRtData setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException();

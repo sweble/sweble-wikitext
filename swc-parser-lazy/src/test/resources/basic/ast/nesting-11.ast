@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=WtTagExtension([0] = [])}
+    {N} entityMap = EntityMap {0=WtTagExtension([0] = WtEmptyXmlAttributes())}
     {N} warnings = []
 
   [
@@ -8,23 +8,22 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-      [
+      WtXmlAttributes([
         WtXmlAttribute(
           Properties:
-            {N} hasValue = true
             {N} name = "border"
             {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
-          [ WtText("1") ]
+          WtValue([ WtText("1") ])
         )
-      ]
-      [
+      ])
+      WtBody([
         WtTableCell(
           Properties:
             {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtText("1")
             WtTagExtension(
               Properties:
@@ -32,40 +31,39 @@ WtParsedWikitextPage(
                 {N} name = "pre"
                 {N} rtd = RTD[ "<pre" <o> ">T|a\n|b</pre>" ]
 
-              [ ]
+              -
             )
-          ]
+          ])
         )
         WtTableCell(
           Properties:
             {N} rtd = RTD[ "||" <o> "" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtText("2")
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "span"
                 {N} rtd = RTD[ "<span" <o> "\n>" <o> "</span>" ]
 
-              [ ]
-              [ WtText("X") ]
+              -
+              WtBody([ WtText("X") ])
             )
             WtText("Y")
-          ]
+          ])
         )
         WtTableCell(
           Properties:
             {N} rtd = RTD[ "||" <o> "" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtParagraph([ WtText("3") ])
             WtNewline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

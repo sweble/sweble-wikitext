@@ -1,11 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtDefinitionListTerm</h1>
- */
 public class WtDefinitionListTerm
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	

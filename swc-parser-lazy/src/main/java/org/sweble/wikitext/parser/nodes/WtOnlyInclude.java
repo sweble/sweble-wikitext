@@ -2,12 +2,9 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtOnlyInclude</h1> <h2>Grammar</h2>
- */
 public class WtOnlyInclude
 		extends
-			WtContentNode
+			WtContentNodeImpl
 		implements
 			WtPreproNode
 {
@@ -15,9 +12,11 @@ public class WtOnlyInclude
 	
 	// =========================================================================
 	
-	public WtOnlyInclude()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtOnlyInclude()
 	{
-		super();
 	}
 	
 	public WtOnlyInclude(WtNodeList content, XmlElementType elementType)

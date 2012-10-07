@@ -8,14 +8,13 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "" <o> "" ]
 
-      [
+      WtXmlAttributes([
         WtXmlAttribute(
           Properties:
-            {N} hasValue = true
             {N} name = "x"
             {N} rtd = RTD[ " x=" <o> "" ]
 
-          [
+          WtValue([
             WtText(
               Properties:
                 {N} content = "&x"
@@ -24,11 +23,11 @@ WtParsedWikitextPage(
                   Warning (informative): /regression/wikitext/xml_attribute-1.wikitext:1:6 - 7: "&" : This looks like a XML Reference, however the entity name or character code is missing.
                 ]
             )
-          ]
+          ])
         )
         WtXmlAttributeGarbage(" x&x")
-      ]
-      [ ]
+      ])
+      -
     )
   ]
 )

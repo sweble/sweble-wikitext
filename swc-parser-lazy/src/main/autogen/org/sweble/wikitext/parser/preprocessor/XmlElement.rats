@@ -48,6 +48,40 @@ import org.sweble.wikitext.parser.utils.XmlAttribute(Whitespace);
 
 
 
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TagExtHeader
+      extends
+          WtTempNode
+  {
+    String name;
+    WtXmlAttributes attrs;
+    String ws;
+  }
+  @SuppressWarnings("serial")
+  private static final class TagExtBody
+      extends
+          WtTempNode
+  {
+    String content;
+    String endTag;
+  }
+  @SuppressWarnings("serial")
+  private static final class IgnoredElementHeader
+      extends
+          WtTempNode
+  {
+    String name;
+    String garbage;
+  }
+}
+
+
+
+
 // -- XML Element --------------------------------------------------------------
 
 WtNode XmlElement =
@@ -160,26 +194,28 @@ private transient String IgnoredTagGarbage =
 private transient WtNode IgnoredElements =
     header:IgnoredElementHeader
     {
-      getState().setTagExtensionName(header.getForeign(0, String.class));
+      getState().setTagExtensionName(header.name);
     }
     '>' body:TagBody
     {
-      String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + ">" + body.getForeign(0, String.class) + body.getForeign(1, String.class);
+      String content = "<" + header.name + header.garbage + ">" + body.content + body.endTag;
 
       yyValue = setRtd(new WtIgnored(content), content);
     }
   / header:IgnoredElementHeader "/>"
     {
-      String content = "<" + header.getForeign(0, String.class) + header.getForeign(1, String.class) + "/>";
+      String content = "<" + header.name + header.garbage + "/>";
 
       yyValue = setRtd(new WtIgnored(content), content);
     }
 ;
 
-private transient WtForeignNode IgnoredElementHeader =
+private transient IgnoredElementHeader IgnoredElementHeader =
   name:IgnoredElementName garbage:IgnoredTagGarbage
   {
-    yyValue = WtForeignNode.from(name, garbage);
+    yyValue = new IgnoredElementHeader();
+    yyValue.name = name;
+    yyValue.garbage = garbage;
   }
 ;
 
@@ -195,39 +231,38 @@ private inline String IgnoredElementName =
 private transient WtTagExtension TagExtension =
     header:TagHeader '>'
     {
-      getState().setTagExtensionName(header.getForeign(0, String.class));
+      getState().setTagExtensionName(header.name);
     }
     body:TagBody
     {
-      yyValue = setRtd(
-        new WtTagExtension(
-          header.getForeign(0, String.class),
-          header.getForeign(1, WtNodeList.class),
-          body.getForeign(0, String.class)),
-        '<', header.getForeign(0, String.class), SEP,
-        header.getForeign(2, String.class), '>', body.getForeign(0, String.class), body.getForeign(1, String.class));
+      yyValue = setRtd(new WtTagExtension(header.name, header.attrs, body.content),
+        '<', header.name, SEP, header.ws, '>', body.content, body.endTag);
     }
   / header:TagHeader "/>"
     {
-      yyValue = setRtd(
-        new WtTagExtension(header.getForeign(0, String.class), header.getForeign(1, WtNodeList.class), null),
-        '<', header.getForeign(0, String.class), SEP,
-        header.getForeign(2, WtNodeList.class), "/>");
+      yyValue = setRtd(new WtTagExtension(header.name, header.attrs),
+        '<', header.name, SEP, header.ws, "/>");
     }
 ;
 
-private transient WtForeignNode TagHeader =
+private transient TagExtHeader TagHeader =
     name:ValidTagName &pWsPlus attributes:XmlAttributePlus ws:pWsStar
     {
-      yyValue = WtForeignNode.from(name, attributes, ws);
+      yyValue = new TagExtHeader();
+      yyValue.name = name;
+      yyValue.attrs = attributes;
+      yyValue.ws = ws;
     }
   / name:ValidTagName ws:pWsStar
     {
-      yyValue = WtForeignNode.from(name, new WtNodeListImpl(), ws);
+      yyValue = new TagExtHeader();
+      yyValue.name = name;
+      yyValue.attrs = WtXmlAttributes.EMPTY;
+      yyValue.ws = ws;
     }
 ;
 
-private transient WtForeignNode TagBody =
+private transient TagExtBody TagBody =
   content:TagContentStar
   endTag:(
     ValidClosingTag
@@ -237,7 +272,9 @@ private transient WtForeignNode TagBody =
     }
   )
   {
-    yyValue = WtForeignNode.from(content, (String) endTag);
+    yyValue = new TagExtBody();
+    yyValue.content = content;
+    yyValue.endTag = (String) endTag;
   }
 ;
 

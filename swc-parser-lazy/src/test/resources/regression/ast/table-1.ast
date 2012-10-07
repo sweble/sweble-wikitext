@@ -8,19 +8,19 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtTableHeader(
           Properties:
             {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtParagraph([ WtText("H") ])
             WtNewline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

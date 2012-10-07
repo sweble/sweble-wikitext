@@ -1,20 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>Link Option: LinkTarget</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * WtLinkOptionLinkTarget ::= Ws* 'link=' LinkTarget Ws*
- * </p>
- * </li>
- * <li>
- * <p>
- * WtLinkOptionLinkTarget ::= Ws* 'link=' WtUrl Ws*
- * </p>
- * </li>
- * </ul>
- */
 public class WtLinkOptionLinkTarget
 		extends
 			WtInnerNode1
@@ -23,12 +8,15 @@ public class WtLinkOptionLinkTarget
 	
 	// =========================================================================
 	
-	public WtLinkOptionLinkTarget()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtLinkOptionLinkTarget()
 	{
 		super((WtNode) null);
 	}
 	
-	public WtLinkOptionLinkTarget(WtNode target)
+	public WtLinkOptionLinkTarget(WtLinkTarget target)
 	{
 		super(target);
 	}
@@ -42,14 +30,14 @@ public class WtLinkOptionLinkTarget
 	// =========================================================================
 	// Children
 	
-	public final void setTarget(WtNode target)
+	public final void setTarget(WtLinkTarget target)
 	{
 		set(0, target);
 	}
 	
-	public final WtNode getTarget()
+	public final WtLinkTarget getTarget()
 	{
-		return (WtNode) get(0);
+		return (WtLinkTarget) get(0);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "target" };

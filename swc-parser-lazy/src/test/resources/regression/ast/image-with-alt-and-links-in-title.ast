@@ -18,15 +18,15 @@ WtParsedWikitextPage(
           {N} format = THUMBNAIL
           {N} hAlign = NONE
           {N} height = -1
-          {N} linkPage = null
-          {N} linkUrl = null
-          {N} rtd = RTD[ "[[File:X" <o> "" <o> "]]" ]
-          {N} target = "File:X"
+          {N} link = 
+            -
+          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
           {N} upright = false
           {N} vAlign = MIDDLE
           {N} width = -1
 
-        [
+        WtPageName("File:X")
+        WtLinkOptions([
           WtLinkOptionKeyword(
             Properties:
               {N} keyword = "thumb"
@@ -38,8 +38,8 @@ WtParsedWikitextPage(
 
             [ WtText("Y") ]
           )
-        ]
-        WtLinkTitleImpl(
+        ])
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -48,10 +48,10 @@ WtParsedWikitextPage(
               Properties:
                 {N} postfix = ""
                 {N} prefix = ""
-                {N} rtd = RTD[ "[[Z" <o> "]]" ]
-                {N} target = "Z"
+                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-              WtLinkTitleImpl([ ])
+              WtPageName("Z")
+              -
             )
           ]
         )

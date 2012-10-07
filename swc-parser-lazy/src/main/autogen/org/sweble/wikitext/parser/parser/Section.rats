@@ -55,7 +55,7 @@ import org.sweble.wikitext.parser.parser.Whitespace;
 
 
 
-// -- SectionHeading ------------------------------------------------------------------
+// -- Header / Body / Footer ---------------------------------------------------
 
 header
 {
@@ -64,7 +64,16 @@ header
 
 body
 {
-  private WtForeignNode createHeading(
+  @SuppressWarnings("serial")
+  private static final class SectionHeading
+      extends
+          WtTempNode
+  {
+    int level;
+    WtHeading heading;
+  }
+
+  private SectionHeading createHeading(
       int spanFrom,
       Result spanTo,
       WtNode rt0,
@@ -102,7 +111,7 @@ body
       oCount -= oCount - cCount;
     }
 
-    WtSectionHeading heading = new WtSectionHeading(title);
+    WtHeading heading = new WtHeading(title);
 
     WtText oOddText = null;
     if (oOdd > 0)
@@ -133,20 +142,11 @@ body
     String equals = StringUtils.strrep('=', level);
     setRtd(heading, rt0, equals, SEP, equals, rt1);
 
-    return WtForeignNode.from(level, heading);
+    SectionHeading tmp = new SectionHeading();
+    tmp.level = level;
+    tmp.heading = heading;
+    return tmp;
   }
-
-  /*
-  private void fixSectionMetadata(WtSectionHeading heading, WtSection section)
-  {
-    if (heading.getRtd() != null)
-      section.setRtd(heading.getRtd().getField(0), SEP, heading.getRtd().getField(1), SEP);
-
-    Object warnings = heading.getAttribute("warnings");
-    if (warnings != null)
-      section.setAttribute("warnings", warnings);
-  }
-  */
 
   private WtNode makeSections(WtSection first, Pair<WtSection> tail)
   {
@@ -235,13 +235,11 @@ inline void BlockStopperNextSection =
 private noinline transient WtSection WtSection =
     h:SectionHeading Eof
     {
-      yyValue = new WtSection(h.getForeign(0, int.class), h.getForeign(1, WtSectionHeading.class), new WtSectionBody());
-      //fixSectionMetadata(h, yyValue);
+      yyValue = new WtSection(h.level, h.heading, new WtBodyImpl());
     }
   / h:SectionHeading body:SectionContentStar
     {
-      yyValue = new WtSection(h.getForeign(0, int.class), h.getForeign(1, WtSectionHeading.class), body);
-      //fixSectionMetadata(h, yyValue);
+      yyValue = new WtSection(h.level, h.heading, body);
     }
 ;
 
@@ -250,7 +248,7 @@ private noinline transient WtSection WtSection =
 
 // -- SectionHeading --[ State Aware Memoization ]-------------------------------------
 
-noinline transient WtForeignNode SectionHeading =
+noinline transient SectionHeading SectionHeading =
  ^{
     StateAwareResult r = (StateAwareResult) pHeadingMemoized(yyBase);
     final WikitextParserContext context = getContext();
@@ -262,7 +260,7 @@ noinline transient WtForeignNode SectionHeading =
   }
 ;
 
-noinline memoized WtForeignNode HeadingMemoized =
+noinline memoized SectionHeading HeadingMemoized =
  ^{
     Result yyResult = new StateAwareResult("SectionHeading", getContext(), pHeadingTransient(yyBase));
     if (returnTrue(yyResult))
@@ -275,7 +273,7 @@ noinline memoized WtForeignNode HeadingMemoized =
 
 // -- SectionHeading ------------------------------------------------------------------
 
-noinline transient WtForeignNode HeadingTransient =
+noinline transient SectionHeading HeadingTransient =
   rt0:pTpStar open:EqualsStr heading:HeadingContentStar close:EqualsStr rt1:pExtSpaceStar &slEolOrEof
   {
     // TODO: add warning productions
@@ -297,13 +295,13 @@ private inline stateful WtNodeList HeadingContentStar =
   InlineContentPlus
 ;
 
-private inline stateful WtSectionBody SectionContentStar =
+private inline stateful WtBody SectionContentStar =
   {
     enter(ParserScopes.SECTION_BODY);
   }
   content:BlockContent
   {
-    yyValue = new WtSectionBody(content);
+    yyValue = new WtBodyImpl(content);
   }
 ;
 

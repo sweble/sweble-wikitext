@@ -1,29 +1,31 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtTable</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * S* '{|' TableAttribute* Eol TableContent* S* '|}'
- * </p>
- * </li>
- * </ul>
- */
+import org.sweble.wikitext.parser.nodes.WtBody.WtNullBody;
+
 public class WtTable
 		extends
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
 	
+	private static final WtBody NO_BODY = WtBody.NULL_BODY;
+	
 	// =========================================================================
 	
-	public WtTable()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtTable()
 	{
-		super(new WtNodeListImpl(), new WtNodeListImpl());
+		super(null, null);
 	}
 	
-	public WtTable(WtNodeList xmlAttributes, WtNodeList body)
+	public WtTable(WtXmlAttributes xmlAttributes)
+	{
+		super(xmlAttributes, WtBody.NULL_BODY);
+	}
+	
+	public WtTable(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}
@@ -37,24 +39,29 @@ public class WtTable
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtXmlAttributes getXmlAttributes()
 	{
-		return (WtNodeList) get(0);
+		return (WtXmlAttributes) get(0);
 	}
 	
-	public final void setBody(WtNodeList body)
+	public final boolean hasBody()
+	{
+		return getBody() != NO_BODY;
+	}
+	
+	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
 	
-	public final WtNodeList getBody()
+	public final WtBody getBody()
 	{
-		return (WtNodeList) get(1);
+		return (WtBody) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };

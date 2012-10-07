@@ -8,19 +8,19 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtTableCaption(
           Properties:
             {N} rtd = RTD[ " |+" <o> "" <o> "" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtParagraph([ WtText("x") ])
             WtNewline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

@@ -11,12 +11,11 @@ WtParsedWikitextPage(
     ])
     WtXmlElement(
       Properties:
-        {N} empty = true
         {N} name = "hr"
         {N} rtd = RTD[ "<hr" <o> " />" <o> "" ]
 
-      [ ]
-      [ ]
+      -
+      -
     )
     WtNewline("\n")
     WtText("y")

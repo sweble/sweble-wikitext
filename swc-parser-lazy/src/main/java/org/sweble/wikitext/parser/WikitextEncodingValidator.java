@@ -50,7 +50,7 @@ public class WikitextEncodingValidator
 		StringReader in = new StringReader(source);
 		EncodingValidatorLexer lexer = new EncodingValidatorLexer(in);
 		
-		WtEntityMap entityMap = new WtEntityMap();
+		WtEntityMap entityMap = new WtEntityMapImpl();
 		
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);

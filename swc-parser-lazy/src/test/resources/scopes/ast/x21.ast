@@ -15,33 +15,30 @@ WtParsedWikitextPage(
             [
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "i"
                   {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtText("X")
                   WtXmlElement(
                     Properties:
-                      {N} empty = false
                       {N} name = "b"
                       {N} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
 
-                    [ ]
-                    [ WtText(" Y") ]
+                    -
+                    WtBody([ WtText(" Y") ])
                   )
                   WtXmlElement(
                     Properties:
-                      {N} empty = false
                       {N} name = "i"
                       {N} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
 
-                    [ ]
-                    [ WtText("Z") ]
+                    -
+                    WtBody([ WtText("Z") ])
                   )
                   WtText(" ")
-                ]
+                ])
               )
             ]
           )
@@ -50,15 +47,14 @@ WtParsedWikitextPage(
     ])
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "i"
         {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtNewline("\n")
         WtNewline("\n")
-      ]
+      ])
     )
     WtDefinitionList([
       WtDefinitionListDef(
@@ -68,24 +64,22 @@ WtParsedWikitextPage(
         [
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "i"
               {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-            [ ]
-            [ WtText("B ") ]
+            -
+            WtBody([ WtText("B ") ])
           )
         ]
       )
     ])
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "i"
         {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-      [ ]
-      [ WtNewline("\n") ]
+      -
+      WtBody([ WtNewline("\n") ])
     )
   ]
 )

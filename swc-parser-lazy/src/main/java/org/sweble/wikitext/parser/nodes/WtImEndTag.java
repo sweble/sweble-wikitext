@@ -31,10 +31,12 @@ public class WtImEndTag
 	
 	// =========================================================================
 	
+	/* No default ctor. This node should not get de-/serialized
+	 */
+	
 	public WtImEndTag(IntermediateTags type)
 	{
 		super(type.getElementName());
-		
 		this.type = type;
 		this.synthetic = false;
 	}
@@ -42,7 +44,6 @@ public class WtImEndTag
 	public WtImEndTag(IntermediateTags type, boolean synthetic)
 	{
 		super(type.getElementName());
-		
 		this.type = type;
 		this.synthetic = synthetic;
 	}

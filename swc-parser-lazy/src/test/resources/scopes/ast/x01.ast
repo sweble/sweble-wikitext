@@ -9,7 +9,7 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
@@ -17,44 +17,40 @@ WtParsedWikitextPage(
           WtText(" A ")
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "i"
               {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-            [ ]
-            [ WtText(" B ") ]
+            -
+            WtBody([ WtText(" B ") ])
           )
         ]
       )
-      WtSectionBody([
+      WtBody([
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "i"
             {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-          [ ]
-          [ WtNewline("\n") ]
+          -
+          WtBody([ WtNewline("\n") ])
         )
         WtParagraph([
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "i"
               {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-            [ ]
-            [ WtText("C") ]
+            -
+            WtBody([ WtText("C") ])
           )
         ])
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "i"
             {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-          [ ]
-          [ WtNewline("\n") ]
+          -
+          WtBody([ WtNewline("\n") ])
         )
       ])
     )

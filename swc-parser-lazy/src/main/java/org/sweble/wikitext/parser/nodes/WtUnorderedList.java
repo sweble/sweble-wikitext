@@ -1,11 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtUnorderedList</h1>
- */
 public class WtUnorderedList
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -13,7 +10,11 @@ public class WtUnorderedList
 	
 	public WtUnorderedList()
 	{
-		super();
+	}
+	
+	public WtUnorderedList(WtNodeList content)
+	{
+		super(content);
 	}
 	
 	@Override

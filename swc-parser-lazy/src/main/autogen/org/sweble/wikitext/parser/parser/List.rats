@@ -53,9 +53,9 @@ body
   {
     public ListType type;
 
-    public WtContentNodeMarkTwo node;
+    public WtContentNode node;
 
-    public ListNode(ListType type, WtContentNodeMarkTwo node)
+    public ListNode(ListType type, WtContentNode node)
     {
       this.type = type;
       this.node = node;
@@ -136,7 +136,7 @@ body
   private WtNodeList getLastItemContent(Vector<ListNode> listStack)
   {
     WtNodeList items = getCurrentListContent(listStack);
-    return (WtContentNodeMarkTwo) items.get(items.size() - 1);
+    return (WtContentNode) items.get(items.size() - 1);
   }
 
   private WtNodeList makeList(WtForeignNode first, Pair<WtForeignNode> tail)

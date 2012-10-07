@@ -1,11 +1,8 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtItalics</h1>
- */
 public class WtItalics
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -13,7 +10,6 @@ public class WtItalics
 	
 	public WtItalics()
 	{
-		super();
 	}
 	
 	public WtItalics(WtNodeList content)

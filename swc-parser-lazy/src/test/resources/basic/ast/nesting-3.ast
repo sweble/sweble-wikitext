@@ -15,16 +15,16 @@ WtParsedWikitextPage(
             {N} protocol = "http"
             {N} rtd = RTD[ "http://example.com" ]
         )
-        WtLinkTitleImpl([
+        WtLinkTitle([
           WtText("title1a ")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[target" <o> "]]" ]
-              {N} target = "target"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("target")
+            -
           )
           WtText(" title1b")
         ])

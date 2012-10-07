@@ -8,13 +8,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 1
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "=" <o> "=" ]
 
         [ WtText("C") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtUnorderedList([
           WtListItem(

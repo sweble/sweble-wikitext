@@ -1,11 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtTemplate</h1> <h2>Grammar</h2>
- */
 public class WtTemplate
 		extends
 			WtInnerNode2
@@ -16,12 +12,15 @@ public class WtTemplate
 	
 	// =========================================================================
 	
-	public WtTemplate()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtTemplate()
 	{
-		super(new WtNodeListImpl(), new WtNodeListImpl());
+		super(null, null);
 	}
 	
-	public WtTemplate(WtNodeList name, WtNodeList args)
+	public WtTemplate(WtName name, WtTemplateArguments args)
 	{
 		super(name, args);
 	}
@@ -115,24 +114,24 @@ public class WtTemplate
 	// =========================================================================
 	// Children
 	
-	public final void setName(WtNodeList name)
+	public final void setName(WtName name)
 	{
 		set(0, name);
 	}
 	
-	public final WtNodeList getName()
+	public final WtName getName()
 	{
-		return (WtNodeList) get(0);
+		return (WtName) get(0);
 	}
 	
-	public final void setArgs(WtNodeList args)
+	public final void setArgs(WtTemplateArguments args)
 	{
 		set(1, args);
 	}
 	
-	public final WtNodeList getArgs()
+	public final WtTemplateArguments getArgs()
 	{
-		return (WtNodeList) get(1);
+		return (WtTemplateArguments) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "name", "args" };

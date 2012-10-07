@@ -38,6 +38,23 @@ import org.sweble.wikitext.parser.preprocessor.ContentTemplateName;
 
 
 
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TemplateTailPart2
+      extends
+          WtTempNode
+  {
+    WtName name;
+    WtTemplateArguments args;
+  }
+}
+
+
+
+
 // -- Article ------------------------------------------------------------------
 
 stateful WtNode Template =
@@ -123,20 +140,26 @@ private transient WtNode TemplateTail =
 private transient WtNode TemplateTailPart =
     content:TemplateTailPart2 TemplateTailPart3
     {
-      // content = (name, args)
-      WtNodeList args = content.getForeign(1, WtNodeList.class);
+      WtTemplateArguments args = content.args;
 
-      WtNodeList garbage = null;
-      WtTemplateArgument defaultValue = null;
+      WtTemplateArguments garbage = null;
+      WtValue defaultValue = null;
       if (args.size() > 0)
       {
-        defaultValue = (WtTemplateArgument) args.get(0);
+        WtTemplateArgument arg0 = (WtTemplateArgument) args.get(0);
+        WtNodeList arg0Value = new WtNodeListImpl();
+        if (arg0.hasName()) {
+          arg0Value.addAll(arg0.getName());
+          arg0Value.add(new WtText("="));
+        }
+        arg0Value.add(arg0.getValue());
+        defaultValue = new WtValueImpl(arg0Value);
         if (args.size() > 1)
-          garbage = new WtNodeListImpl(args.subList(1, args.size()));
+          garbage = new WtTemplateArguments(new WtNodeListImpl(args.subList(1, args.size())));
       }
 
       yyValue = setRtd(
-        new WtTemplateParameter(content.getForeign(0, WtNodeList.class), defaultValue, garbage),
+        new WtTemplateParameter(content.name, defaultValue, garbage),
         "{{{", SEP, SEP, SEP, "}}}");
 
       getState().eatTemplateBraces(3);
@@ -145,7 +168,7 @@ private transient WtNode TemplateTailPart =
     {
       // content = (name, args)
       yyValue = setRtd(
-        new WtTemplate(content.getForeign(0, WtNodeList.class), content.getForeign(1, WtNodeList.class)),
+	new WtTemplate(content.name, content.args),
         "{{", SEP, SEP, "}}");
 
       getState().eatTemplateBraces(2);
@@ -161,10 +184,12 @@ private transient WtNode TemplateTailPart =
  *   {{{{{param}}<no content here for example>}}}
  */
 
-private transient WtForeignNode TemplateTailPart2 =
+private transient TemplateTailPart2 TemplateTailPart2 =
   &{ hasAtLeastTemplateBraces(2) } name:TemplateNameStar args:TemplateArgumentStar "}}"
   {
-    yyValue = WtForeignNode.from(name, args);
+    yyValue = new TemplateTailPart2();
+    yyValue.name = new WtNameImpl(name);
+    yyValue.args = new WtTemplateArguments(args);
   }
 ;
 
@@ -186,13 +211,13 @@ private transient WtNode TemplateArgumentChoice =
     parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
     {
       yyValue = setRtd(
-        new WtTemplateArgument(parameter, value, true),
+        new WtTemplateArgument(new WtNameImpl(parameter), new WtValueImpl(value)),
         '|', SEP, '=', SEP);
     }
   / value:TemplateArgumentValueStar
     {
       yyValue = setRtd(
-        new WtTemplateArgument(value, false),
+        new WtTemplateArgument(new WtValueImpl(value)),
         '|', SEP, SEP);
     }
 ;

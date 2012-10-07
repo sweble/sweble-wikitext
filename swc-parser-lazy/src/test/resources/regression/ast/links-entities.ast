@@ -9,10 +9,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo" <o> "]]" ]
-          {N} target = "Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -22,10 +22,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo %0 Hallo" <o> "]]" ]
-          {N} target = "Hallo %0 Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo %0 Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -71,10 +71,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo %20 Hallo" <o> "]]" ]
-          {N} target = "Hallo %20 Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo %20 Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -84,10 +84,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo %7E Hallo" <o> "]]" ]
-          {N} target = "Hallo %7E Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo %7E Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -97,10 +97,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo &amp; Hallo" <o> "]]" ]
-          {N} target = "Hallo &amp; Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo &amp; Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -148,10 +148,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo %61 Hallo" <o> "]]" ]
-          {N} target = "Hallo %61 Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo %61 Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -161,10 +161,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo &%61mp; Hallo" <o> "]]" ]
-          {N} target = "Hallo &%61mp; Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo &%61mp; Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -187,10 +187,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo+Hallo" <o> "]]" ]
-          {N} target = "Hallo+Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo+Hallo")
+        -
       )
     ])
     WtNewline("\n")
@@ -200,10 +200,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Hallo%20Hallo+Hallo" <o> "]]" ]
-          {N} target = "Hallo%20Hallo+Hallo"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Hallo%20Hallo+Hallo")
+        -
       )
     ])
     WtNewline("\n")

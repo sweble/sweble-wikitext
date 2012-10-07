@@ -8,47 +8,42 @@ WtParsedWikitextPage(
       WtText("a ")
       WtXmlElement(
         Properties:
-          {N} empty = false
           {N} name = "i"
           {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-        [ ]
-        [ WtText(" b ") ]
+        -
+        WtBody([ WtText(" b ") ])
       )
     ])
     WtXmlElement(
       Properties:
-        {N} empty = false
         {N} name = "div"
         {N} rtd = RTD[ "<div" <o> ">" <o> "" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "i"
             {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-          [ ]
-          [ WtText(" c ") ]
+          -
+          WtBody([ WtText(" c ") ])
         )
         WtXmlElement(
           Properties:
-            {N} empty = false
             {N} name = "blockquote"
             {N} rtd = RTD[ "<blockquote" <o> ">" <o> "</blockquote>" ]
 
-          [ ]
-          [
+          -
+          WtBody([
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "i"
                 {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtText(" d ")
                 WtXmlEndTag(
                   Properties:
@@ -56,13 +51,13 @@ WtParsedWikitextPage(
                     {N} rtd = RTD[ "</div>" ]
                 )
                 WtText(" e ")
-              ]
+              ])
             )
             WtText(" f ")
-          ]
+          ])
         )
         WtText(" g")
-      ]
+      ])
     )
   ]
 )

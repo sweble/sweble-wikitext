@@ -1,15 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtTableCaption</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * S* '|+' TableAttributeInline* S* '|' TableCaptionContent* Garbage* Eol
- * </p>
- * </li>
- * </ul>
- */
 public class WtTableCaption
 		extends
 			WtInnerNode2
@@ -18,12 +8,15 @@ public class WtTableCaption
 	
 	// =========================================================================
 	
+	/**
+	 * Only for use by de-serialization code.
+	 */
 	public WtTableCaption()
 	{
-		super(new WtNodeListImpl(), new WtNodeListImpl());
+		super(null, null);
 	}
 	
-	public WtTableCaption(WtNodeList xmlAttributes, WtNodeList body)
+	public WtTableCaption(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}
@@ -37,24 +30,24 @@ public class WtTableCaption
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtXmlAttributes getXmlAttributes()
 	{
-		return (WtNodeList) get(0);
+		return (WtXmlAttributes) get(0);
 	}
 	
-	public final void setBody(WtNodeList body)
+	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
 	
-	public final WtNodeList getBody()
+	public final WtBody getBody()
 	{
-		return (WtNodeList) get(1);
+		return (WtBody) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };

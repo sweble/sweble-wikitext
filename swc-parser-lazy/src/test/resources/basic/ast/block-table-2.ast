@@ -8,37 +8,35 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [
+      WtXmlAttributes([
         WtXmlAttribute(
           Properties:
-            {N} hasValue = true
             {N} name = "border"
             {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
-          [ WtText("1") ]
+          WtValue([ WtText("1") ])
         )
-      ]
-      [
+      ])
+      WtBody([
         WtTableHeader(
           Properties:
             {N} rtd = RTD[ " !" <o> " |" <o> "" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = true
                 {N} name = "class"
                 {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-              [ WtText("bar") ]
+              WtValue([ WtText("bar") ])
             )
-          ]
-          [
+          ])
+          WtBody([
             WtParagraph([ WtText(" Header") ])
             WtNewline("\n")
-          ]
+          ])
         )
-      ]
+      ])
     )
     WtNewline("\n")
     WtNewline("\n")
@@ -46,36 +44,35 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [ ]
-      [
+      -
+      WtBody([
         WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = true
                 {N} name = "border"
                 {N} rtd = RTD[ " border=\"" <o> "\"" ]
 
-              [ WtText("2") ]
+              WtValue([ WtText("2") ])
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ " !" <o> "" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtParagraph([ WtText(" class=\"foo\"") ])
                 WtNewline("\n")
-              ]
+              ])
             )
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

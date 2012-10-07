@@ -1,8 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>XML Attribute Garbage</h1>
- */
 public class WtXmlAttributeGarbage
 		extends
 			WtStringNodeImpl
@@ -11,8 +8,12 @@ public class WtXmlAttributeGarbage
 	
 	// =========================================================================
 	
-	public WtXmlAttributeGarbage()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtXmlAttributeGarbage()
 	{
+		super(null);
 	}
 	
 	public WtXmlAttributeGarbage(String content)

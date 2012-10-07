@@ -8,174 +8,164 @@ WtParsedWikitextPage(
       Properties:
         {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
 
-      [
+      WtXmlAttributes([
         WtXmlAttribute(
           Properties:
-            {N} hasValue = false
             {N} name = "x"
             {N} rtd = RTD[ " x" <o> "" ]
 
-          [ ]
+          -
         )
-      ]
-      [
+      ])
+      WtBody([
         WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = false
                 {N} name = "x"
                 {N} rtd = RTD[ " x" <o> "" ]
 
-              [ ]
+              -
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ " !" <o> " |" <o> "" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = false
                     {N} name = "x"
                     {N} rtd = RTD[ " x" <o> "" ]
 
-                  [ ]
+                  -
                 )
-              ]
-              [ WtText(" Header 1 ") ]
+              ])
+              WtBody([ WtText(" Header 1 ") ])
             )
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!!" <o> " |" <o> "" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = false
                     {N} name = "x"
                     {N} rtd = RTD[ " x" <o> "" ]
 
-                  [ ]
+                  -
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtParagraph([ WtText(" Header 2") ])
                 WtNewline("\n")
-              ]
+              ])
             )
-          ]
+          ])
         )
         WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = false
                 {N} name = "x"
                 {N} rtd = RTD[ " x" <o> "" ]
 
-              [ ]
+              -
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableCell(
               Properties:
                 {N} rtd = RTD[ " |" <o> " |" <o> "" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = false
                     {N} name = "x"
                     {N} rtd = RTD[ " x" <o> "" ]
 
-                  [ ]
+                  -
                 )
-              ]
-              [ WtText(" Cell 1.1 ") ]
+              ])
+              WtBody([ WtText(" Cell 1.1 ") ])
             )
             WtTableCell(
               Properties:
                 {N} rtd = RTD[ "||" <o> " |" <o> "" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = false
                     {N} name = "x"
                     {N} rtd = RTD[ " x" <o> "" ]
 
-                  [ ]
+                  -
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtParagraph([ WtText(" Cell 1.2") ])
                 WtNewline("\n")
-              ]
+              ])
             )
-          ]
+          ])
         )
         WtTableRow(
           Properties:
             {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = false
                 {N} name = "x"
                 {N} rtd = RTD[ " x" <o> "" ]
 
-              [ ]
+              -
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableCell(
               Properties:
                 {N} rtd = RTD[ " |" <o> " |" <o> "" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = false
                     {N} name = "x"
                     {N} rtd = RTD[ " x" <o> "" ]
 
-                  [ ]
+                  -
                 )
-              ]
-              [ WtText(" Cell 2.1 ") ]
+              ])
+              WtBody([ WtText(" Cell 2.1 ") ])
             )
             WtTableCell(
               Properties:
                 {N} rtd = RTD[ "||" <o> " |" <o> "" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = false
                     {N} name = "x"
                     {N} rtd = RTD[ " x" <o> "" ]
 
-                  [ ]
+                  -
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtParagraph([ WtText(" Cell 2.2") ])
                 WtNewline("\n")
-              ]
+              ])
             )
-          ]
+          ])
         )
-      ]
+      ])
     )
   ]
 )

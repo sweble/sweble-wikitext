@@ -1,18 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtPageSwitch</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * '__' Name '__'
- * </p>
- * </li>
- * </ul>
- */
 public class WtPageSwitch
 		extends
 			WtLeafNode
@@ -23,7 +12,10 @@ public class WtPageSwitch
 	
 	// =========================================================================
 	
-	public WtPageSwitch()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtPageSwitch()
 	{
 	}
 	
@@ -50,6 +42,8 @@ public class WtPageSwitch
 	
 	public final String setName(String name)
 	{
+		if (name == null)
+			throw new NullPointerException();
 		String old = this.name;
 		this.name = name;
 		return old;

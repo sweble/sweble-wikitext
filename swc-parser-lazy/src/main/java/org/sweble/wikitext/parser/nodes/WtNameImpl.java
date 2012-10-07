@@ -1,19 +1,20 @@
 package org.sweble.wikitext.parser.nodes;
 
-public class WtSectionBody
+public class WtNameImpl
 		extends
-			WtContentNode
+			WtContentNodeImpl
+		implements
+			WtName
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public WtSectionBody()
+	public WtNameImpl()
 	{
-		super();
 	}
 	
-	public WtSectionBody(WtNodeList content)
+	public WtNameImpl(WtNodeList content)
 	{
 		super(content);
 	}
@@ -21,6 +22,12 @@ public class WtSectionBody
 	@Override
 	public int getNodeType()
 	{
-		return NT_SECTION_BODY;
+		return NT_TEMPLATE_NAME;
+	}
+	
+	@Override
+	public String getNodeName()
+	{
+		return WtName.class.getSimpleName();
 	}
 }

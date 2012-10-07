@@ -17,11 +17,6 @@ public abstract class WtStringNodeImpl
 	
 	// =========================================================================
 	
-	public WtStringNodeImpl()
-	{
-		super();
-	}
-	
 	public WtStringNodeImpl(String content)
 	{
 		super(content);
@@ -132,15 +127,5 @@ public abstract class WtStringNodeImpl
 					return super.setValue(index, value);
 			}
 		}
-	}
-	
-	// =========================================================================
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException
-	{
-		WtStringNodeImpl n = (WtStringNodeImpl) super.clone();
-		n.rtd = (WtRtData) n.rtd.clone();
-		return n;
 	}
 }

@@ -65,16 +65,13 @@ noinline memoized WtNode TableCaptionMemoized =
 noinline transient WtNode TableCaptionTransient =
     rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &FollowUpSanityCheck
     {
-      yyValue = setRtd(new WtTableCaption(attributes.getForeign(0, WtNodeList.class), body),
-          rt0, "|+", SEP,
-          attributes.getForeign(1, Object.class), SEP,
-          garbage);
+      yyValue = setRtd(new WtTableCaption(attributes.attrs, new WtBodyImpl(body)),
+          rt0, "|+", SEP, attributes.rt1, SEP, garbage);
     }
   / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
     {
-      yyValue = setRtd(new WtTableCaption(attributes.getForeign(0, WtNodeList.class), body),
-          rt0, "|+", SEP,
-          attributes.getForeign(1, Object.class), SEP);
+      yyValue = setRtd(new WtTableCaption(attributes.attrs, new WtBodyImpl(body)),
+          rt0, "|+", SEP, attributes.rt1, SEP);
     }
 ;
 
@@ -102,13 +99,17 @@ private inline void ExpectedFollowUp =
 
 // -- Table Caption Attributes -------------------------------------------------
 
-private WtForeignNode Attributes =
+private TableMemberAttributes Attributes =
     &AttrPossible attrs:TableAttributeInlineStar ws:pExtSpaceStar '|' !'|'
     {
-      yyValue = WtForeignNode.from(attrs, new Object[] {ws, '|'});
+      yyValue = new TableMemberAttributes();
+      yyValue.attrs = attrs;
+      yyValue.rt1 = new Object[] {ws, '|'};
     }
   / {
-      yyValue = WtForeignNode.from(new WtNodeListImpl(), null);
+      yyValue = new TableMemberAttributes();
+      yyValue.attrs = WtXmlAttributes.EMPTY;
+      yyValue.rt1 = null;
     }
 ;
 

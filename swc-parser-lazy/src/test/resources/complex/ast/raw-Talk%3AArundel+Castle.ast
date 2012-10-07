@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText("WikiProjectBannerShell")], [1] = [WtTemplateArgument([0] = [WtText("1")], [1] = [WtText("\n"), WtTemplate([0] = [WtText("WikiProject Sussex")], [1] = [WtTemplateArgument([0] = [WtText("class")], [1] = [WtText("start")]), WtTemplateArgument([0] = [WtText("importance")], [1] = [WtText("Mid")]), WtTemplateArgument([0] = [WtText("unref")], [1] = [])]), WtText("\n"), WtTemplate([0] = [WtText("WikiProject Architecture")], [1] = [WtTemplateArgument([0] = [WtText("class")], [1] = [WtText("start")]), WtTemplateArgument([0] = [WtText("importance")], [1] = [WtText("mid")])]), WtText("\n"), WtTemplate([0] = [WtText("WPMILHIST\n")], [1] = [WtTemplateArgument([0] = [WtText("class")], [1] = [WtText("start\n"), WtXmlComment(" B-Class checklist "), WtXmlComment(" 1. It is suitably referenced, and all \nmajor points are appropriately cited. "), WtText("\n")]), WtTemplateArgument([0] = [WtText("B-Class-1")], [1] = [WtText("no\n"), WtXmlComment(" 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. ")]), WtTemplateArgument([0] = [WtText("B-Class-2")], [1] = [WtText("\n"), WtXmlComment(" 3. It has a defined structure, including \na lead section and one or more sections of content. ")]), WtTemplateArgument([0] = [WtText("B-Class-3")], [1] = [WtText("\n"), WtXmlComment(" 4. It is free from major grammatical errors. ")]), WtTemplateArgument([0] = [WtText("B-Class-4")], [1] = [WtText("\n"), WtXmlComment(" 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. ")]), WtTemplateArgument([0] = [WtText("B-Class-5")], [1] = [WtText("no infobox, no plan or map\n"), WtXmlComment(" Task force tags ")]), WtTemplateArgument([0] = [WtText("British-task-force")], [1] = [WtText("yes\n")]), WtTemplateArgument([0] = [WtText("Fortifications-task-force")], [1] = [WtText("yes\n")]), WtTemplateArgument([0] = [WtText("Medieval-task-force")], [1] = [WtText("yes\n")]), WtTemplateArgument([0] = [WtText("Technology-task-force")], [1] = [WtText("yes")]), WtTemplateArgument([0] = [WtText("Early-Modern-task-force")], [1] = [WtText("yes")])]), WtText("\n")])]), 1=WtTagExtension([0] = []), 2=WtXmlComment(" Template:UnsignedIP "), 3=WtXmlComment("Autosigned by SineBot"), 4=WtTemplate([0] = [WtText("#ifeq:"), WtTemplateParameter([0] = [WtText("name")], [1] = null, [2] = null)], [1] = [WtTemplateArgument([0] = [], [1] = [WtText("Arundel Castle")]), WtTemplateArgument([0] = [], [1] = [WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)")])]), 5=WtTemplate([0] = [WtText("Done")], [1] = []), 6=WtTemplate([0] = [WtText("Not done")], [1] = []), 7=WtTemplate([0] = [WtText("Done")], [1] = []), 8=WtTemplate([0] = [WtText("Done")], [1] = []), 9=WtTagExtension([0] = []), 10=WtTagExtension([0] = []), 11=WtTemplate([0] = [WtText("Not done")], [1] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = WtName[WtText("WikiProjectBannerShell")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtName[WtText("1")], [1] = WtValue[WtText("\n"), WtTemplate([0] = WtName[WtText("WikiProject Sussex")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtName[WtText("class")], [1] = WtValue[WtText("start")]), WtTemplateArgument([0] = WtName[WtText("importance")], [1] = WtValue[WtText("Mid")]), WtTemplateArgument([0] = WtName[WtText("unref")], [1] = WtValue[])]), WtText("\n"), WtTemplate([0] = WtName[WtText("WikiProject Architecture")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtName[WtText("class")], [1] = WtValue[WtText("start")]), WtTemplateArgument([0] = WtName[WtText("importance")], [1] = WtValue[WtText("mid")])]), WtText("\n"), WtTemplate([0] = WtName[WtText("WPMILHIST\n")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtName[WtText("class")], [1] = WtValue[WtText("start\n"), WtXmlComment(" B-Class checklist "), WtXmlComment(" 1. It is suitably referenced, and all \nmajor points are appropriately cited. "), WtText("\n")]), WtTemplateArgument([0] = WtName[WtText("B-Class-1")], [1] = WtValue[WtText("no\n"), WtXmlComment(" 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. ")]), WtTemplateArgument([0] = WtName[WtText("B-Class-2")], [1] = WtValue[WtText("\n"), WtXmlComment(" 3. It has a defined structure, including \na lead section and one or more sections of content. ")]), WtTemplateArgument([0] = WtName[WtText("B-Class-3")], [1] = WtValue[WtText("\n"), WtXmlComment(" 4. It is free from major grammatical errors. ")]), WtTemplateArgument([0] = WtName[WtText("B-Class-4")], [1] = WtValue[WtText("\n"), WtXmlComment(" 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. ")]), WtTemplateArgument([0] = WtName[WtText("B-Class-5")], [1] = WtValue[WtText("no infobox, no plan or map\n"), WtXmlComment(" Task force tags ")]), WtTemplateArgument([0] = WtName[WtText("British-task-force")], [1] = WtValue[WtText("yes\n")]), WtTemplateArgument([0] = WtName[WtText("Fortifications-task-force")], [1] = WtValue[WtText("yes\n")]), WtTemplateArgument([0] = WtName[WtText("Medieval-task-force")], [1] = WtValue[WtText("yes\n")]), WtTemplateArgument([0] = WtName[WtText("Technology-task-force")], [1] = WtValue[WtText("yes")]), WtTemplateArgument([0] = WtName[WtText("Early-Modern-task-force")], [1] = WtValue[WtText("yes")])]), WtText("\n")])]), 1=WtTagExtension([0] = WtEmptyXmlAttributes()), 2=WtXmlComment(" Template:UnsignedIP "), 3=WtXmlComment("Autosigned by SineBot"), 4=WtTemplate([0] = WtName[WtText("#ifeq:"), WtTemplateParameter([0] = WtName[WtText("name")], [1] = null, [2] = null)], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("Arundel Castle")]), WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)")])]), 5=WtTemplate([0] = WtName[WtText("Done")], [1] = WtTemplateArguments[]), 6=WtTemplate([0] = WtName[WtText("Not done")], [1] = WtTemplateArguments[]), 7=WtTemplate([0] = WtName[WtText("Done")], [1] = WtTemplateArguments[]), 8=WtTemplate([0] = WtName[WtText("Done")], [1] = WtTemplateArguments[]), 9=WtTagExtension([0] = WtEmptyXmlAttributes()), 10=WtTagExtension([0] = WtEmptyXmlAttributes()), 11=WtTemplate([0] = WtName[WtText("Not done")], [1] = WtTemplateArguments[])}
     {N} warnings = []
 
   [
@@ -10,48 +10,44 @@ WtParsedWikitextPage(
           {N} precededByNewline = false
           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-        [ WtText("WikiProjectBannerShell") ]
-        [
+        WtName([ WtText("WikiProjectBannerShell") ])
+        WtTemplateArguments([
           WtTemplateArgument(
             Properties:
-              {N} hasName = true
               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-            [ WtText("1") ]
-            [
+            WtName([ WtText("1") ])
+            WtValue([
               WtText("\n")
               WtTemplate(
                 Properties:
                   {N} precededByNewline = true
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("WikiProject Sussex") ]
-                [
+                WtName([ WtText("WikiProject Sussex") ])
+                WtTemplateArguments([
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("class") ]
-                    [ WtText("start") ]
+                    WtName([ WtText("class") ])
+                    WtValue([ WtText("start") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("importance") ]
-                    [ WtText("Mid") ]
+                    WtName([ WtText("importance") ])
+                    WtValue([ WtText("Mid") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("unref") ]
-                    [ ]
+                    WtName([ WtText("unref") ])
+                    WtValue([ ])
                   )
-                ]
+                ])
               )
               WtText("\n")
               WtTemplate(
@@ -59,25 +55,23 @@ WtParsedWikitextPage(
                   {N} precededByNewline = true
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("WikiProject Architecture") ]
-                [
+                WtName([ WtText("WikiProject Architecture") ])
+                WtTemplateArguments([
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("class") ]
-                    [ WtText("start") ]
+                    WtName([ WtText("class") ])
+                    WtValue([ WtText("start") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("importance") ]
-                    [ WtText("mid") ]
+                    WtName([ WtText("importance") ])
+                    WtValue([ WtText("mid") ])
                   )
-                ]
+                ])
               )
               WtText("\n")
               WtTemplate(
@@ -85,15 +79,14 @@ WtParsedWikitextPage(
                   {N} precededByNewline = true
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("WPMILHIST\n") ]
-                [
+                WtName([ WtText("WPMILHIST\n") ])
+                WtTemplateArguments([
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("class") ]
-                    [
+                    WtName([ WtText("class") ])
+                    WtValue([
                       WtText("start\n")
                       WtXmlComment(
                         Properties:
@@ -105,20 +98,19 @@ WtParsedWikitextPage(
                       WtXmlComment(
                         Properties:
                           {N} content = " 1. It is suitably referenced, and all \nmajor points are appropriately cited. "
-                          {N} prefix = null
+                          {N} prefix = ""
                           {N} rtd = RTD[ "<!-- 1. It is suitably referenced, and all \nmajor points are appropriately cited. -->" ]
-                          {N} suffix = null
+                          {N} suffix = ""
                       )
                       WtText("\n")
-                    ]
+                    ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("B-Class-1") ]
-                    [
+                    WtName([ WtText("B-Class-1") ])
+                    WtValue([
                       WtText("no\n")
                       WtXmlComment(
                         Properties:
@@ -127,15 +119,14 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "<!-- 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. -->\n" ]
                           {N} suffix = "\n"
                       )
-                    ]
+                    ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("B-Class-2") ]
-                    [
+                    WtName([ WtText("B-Class-2") ])
+                    WtValue([
                       WtText("\n")
                       WtXmlComment(
                         Properties:
@@ -144,15 +135,14 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "<!-- 3. It has a defined structure, including \na lead section and one or more sections of content. -->\n" ]
                           {N} suffix = "\n"
                       )
-                    ]
+                    ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("B-Class-3") ]
-                    [
+                    WtName([ WtText("B-Class-3") ])
+                    WtValue([
                       WtText("\n")
                       WtXmlComment(
                         Properties:
@@ -161,15 +151,14 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "<!-- 4. It is free from major grammatical errors. -->\n" ]
                           {N} suffix = "\n"
                       )
-                    ]
+                    ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("B-Class-4") ]
-                    [
+                    WtName([ WtText("B-Class-4") ])
+                    WtValue([
                       WtText("\n")
                       WtXmlComment(
                         Properties:
@@ -178,15 +167,14 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "<!-- 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. -->\n" ]
                           {N} suffix = "\n"
                       )
-                    ]
+                    ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("B-Class-5") ]
-                    [
+                    WtName([ WtText("B-Class-5") ])
+                    WtValue([
                       WtText("no infobox, no plan or map\n")
                       WtXmlComment(
                         Properties:
@@ -195,54 +183,49 @@ WtParsedWikitextPage(
                           {N} rtd = RTD[ "<!-- Task force tags -->\n" ]
                           {N} suffix = "\n"
                       )
-                    ]
+                    ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("British-task-force") ]
-                    [ WtText("yes\n") ]
+                    WtName([ WtText("British-task-force") ])
+                    WtValue([ WtText("yes\n") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("Fortifications-task-force") ]
-                    [ WtText("yes\n") ]
+                    WtName([ WtText("Fortifications-task-force") ])
+                    WtValue([ WtText("yes\n") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("Medieval-task-force") ]
-                    [ WtText("yes\n") ]
+                    WtName([ WtText("Medieval-task-force") ])
+                    WtValue([ WtText("yes\n") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("Technology-task-force") ]
-                    [ WtText("yes") ]
+                    WtName([ WtText("Technology-task-force") ])
+                    WtValue([ WtText("yes") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("Early-Modern-task-force") ]
-                    [ WtText("yes") ]
+                    WtName([ WtText("Early-Modern-task-force") ])
+                    WtValue([ WtText("yes") ])
                   )
-                ]
+                ])
               )
               WtText("\n")
-            ]
+            ])
           )
-        ]
+        ])
       )
     ])
     WtNewline("\n")
@@ -260,7 +243,7 @@ WtParsedWikitextPage(
           {N} name = "nowiki"
           {N} rtd = RTD[ "<nowiki" <o> ">{{cleanup}}</nowiki>" ]
 
-        [ ]
+        -
       )
       WtText(" tag on the article, but I've read the thing through several times and don't see a problem warranting the tag. Moreover, this is the very first entry in the talk page which strikes me as meaning we have a ways to go before we start throwing tags around. I removed the tag and made a couple of other edits. If anyone has any thoughts on what needs to be ")
       WtItalics(
@@ -274,10 +257,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[User:Duckecho" <o> "]]" ]
-          {N} target = "User:Duckecho"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("User:Duckecho")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -289,10 +272,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[User talk:Duckecho" <o> "]]" ]
-          {N} target = "User talk:Duckecho"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("User talk:Duckecho")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -310,50 +293,47 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText(" Ghosts ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([
           WtText("What about the 4 ghosts living in the castle? there should be some reference  ")
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "span"
               {N} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
 
-            [
+            WtXmlAttributes([
               WtXmlAttribute(
                 Properties:
-                  {N} hasValue = true
                   {N} name = "style"
                   {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                [ WtText("font-size: smaller;") ]
+                WtValue([ WtText("font-size: smaller;") ])
               )
               WtXmlAttribute(
                 Properties:
-                  {N} hasValue = true
                   {N} name = "class"
                   {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                [ WtText("autosigned") ]
+                WtValue([ WtText("autosigned") ])
               )
-            ]
-            [
+            ])
+            WtBody([
               WtText("\u2014Preceding ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Wikipedia:Signatures" <o> "]]" ]
-                  {N} target = "Wikipedia:Signatures"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("Wikipedia:Signatures")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -365,10 +345,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Special:Contributions/88.17.252.156" <o> "]]" ]
-                  {N} target = "Special:Contributions/88.17.252.156"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("Special:Contributions/88.17.252.156")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -380,10 +360,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[User talk:88.17.252.156" <o> "]]" ]
-                  {N} target = "User talk:88.17.252.156"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("User talk:88.17.252.156")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -391,22 +371,22 @@ WtParsedWikitextPage(
                 )
               )
               WtText(") 00:33, 8 March 2010 (UTC)")
-            ]
+            ])
           )
           WtXmlComment(
             Properties:
               {N} content = " Template:UnsignedIP "
-              {N} prefix = null
+              {N} prefix = ""
               {N} rtd = RTD[ "<!-- Template:UnsignedIP -->" ]
-              {N} suffix = null
+              {N} suffix = ""
           )
           WtText(" ")
           WtXmlComment(
             Properties:
               {N} content = "Autosigned by SineBot"
-              {N} prefix = null
+              {N} prefix = ""
               {N} rtd = RTD[ "<!--Autosigned by SineBot-->" ]
-              {N} suffix = null
+              {N} suffix = ""
           )
         ])
         WtNewline("\n")
@@ -417,13 +397,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText(" Automated peer review ") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtNewline("\n")
         WtParagraph([
@@ -432,44 +412,42 @@ WtParsedWikitextPage(
               {N} precededByNewline = false
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-            [
+            WtName([
               WtText("#ifeq:")
               WtTemplateParameter(
                 Properties:
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 
-                [ WtText("name") ]
+                WtName([ WtText("name") ])
               )
-            ]
-            [
+            ])
+            WtTemplateArguments([
               WtTemplateArgument(
                 Properties:
-                  {N} hasName = false
                   {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                [ ]
-                [ WtText("Arundel Castle") ]
+                -
+                WtValue([ WtText("Arundel Castle") ])
               )
               WtTemplateArgument(
                 Properties:
-                  {N} hasName = false
                   {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                [ ]
-                [ WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)") ]
+                -
+                WtValue([ WtText("[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)") ])
               )
-            ]
+            ])
           )
           WtText("The following suggestions were generated by a semi-automatic ")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[User:AndyZ/peerreviewer" <o> "]]" ]
-              {N} target = "User:AndyZ/peerreviewer"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl(
+            WtPageName("User:AndyZ/peerreviewer")
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -490,18 +468,18 @@ WtParsedWikitextPage(
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("Done") ]
-                [ ]
+                WtName([ WtText("Done") ])
+                WtTemplateArguments([ ])
               )
               WtText("  Per ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Wikipedia:Only make links that are relevant to the context" <o> "]]" ]
-                  {N} target = "Wikipedia:Only make links that are relevant to the context"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("Wikipedia:Only make links that are relevant to the context")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -513,10 +491,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Wikipedia:Manual of Style (dates and numbers)" <o> "]]" ]
-                  {N} target = "Wikipedia:Manual of Style (dates and numbers)"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("Wikipedia:Manual of Style (dates and numbers)")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -528,10 +506,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[WP:CONTEXT" <o> "]]" ]
-                  {N} target = "WP:CONTEXT"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("WP:CONTEXT")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -541,20 +519,19 @@ WtParsedWikitextPage(
               WtText(" for the article.")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[User:AndyZ/G#contxt" <o> "]]" ]
-                      {N} target = "User:AndyZ/G#contxt"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("User:AndyZ/G#contxt")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -562,7 +539,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText("]")
-                ]
+                ])
               )
             ]
           )
@@ -576,28 +553,28 @@ WtParsedWikitextPage(
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("Not done") ]
-                [ ]
+                WtName([ WtText("Not done") ])
+                WtTemplateArguments([ ])
               )
               WtText("  Per ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Wikipedia:What is a featured article?" <o> "]]" ]
-                  {N} target = "Wikipedia:What is a featured article?"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Wikipedia:What is a featured article?")
+                -
               )
               WtText(", ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[WP:IMAGE" <o> "]]" ]
-                  {N} target = "WP:IMAGE"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("WP:IMAGE")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -607,20 +584,19 @@ WtParsedWikitextPage(
               WtText(" should have concise captions.")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[User:AndyZ/G#caption" <o> "]]" ]
-                      {N} target = "User:AndyZ/G#caption"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("User:AndyZ/G#caption")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -628,7 +604,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText("]")
-                ]
+                ])
               )
             ]
           )
@@ -648,10 +624,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[WP:INFOBOX" <o> "]]" ]
-                  {N} target = "WP:INFOBOX"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("WP:INFOBOX")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -661,20 +637,19 @@ WtParsedWikitextPage(
               WtText(" for this article, if one exists relating to the topic of the article. ")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[User:AndyZ/G#infobox" <o> "]]" ]
-                      {N} target = "User:AndyZ/G#infobox"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("User:AndyZ/G#infobox")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -682,7 +657,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText("]")
-                ]
+                ])
               )
               WtText(" (Note that there might not be an applicable infobox; remember that these suggestions are not generated manually)")
             ]
@@ -697,18 +672,18 @@ WtParsedWikitextPage(
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("Done") ]
-                [ ]
+                WtName([ WtText("Done") ])
+                WtTemplateArguments([ ])
               )
               WtText("  As per ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Wikipedia:Manual of Style (dates and numbers)" <o> "]]" ]
-                  {N} target = "Wikipedia:Manual of Style (dates and numbers)"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("Wikipedia:Manual of Style (dates and numbers)")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -718,12 +693,11 @@ WtParsedWikitextPage(
               WtText(", dates shouldn't use ")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [ WtText("th") ]
+                -
+                WtBody([ WtText("th") ])
               )
               WtText("; for example, instead of (if such appeared in the article) using ")
               WtItalics(
@@ -735,10 +709,10 @@ WtParsedWikitextPage(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[January 30" <o> "]]" ]
-                      {N} target = "January 30"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("January 30")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -746,12 +720,11 @@ WtParsedWikitextPage(
                         WtText("January 30")
                         WtXmlElement(
                           Properties:
-                            {N} empty = false
                             {N} name = "sup"
                             {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                          [ ]
-                          [ WtText("th") ]
+                          -
+                          WtBody([ WtText("th") ])
                         )
                       ]
                     )
@@ -769,10 +742,10 @@ WtParsedWikitextPage(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[January 30" <o> "]]" ]
-                      {N} target = "January 30"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl([ ])
+                    WtPageName("January 30")
+                    -
                   )
                   WtText(" was a great day")
                 ]
@@ -780,20 +753,19 @@ WtParsedWikitextPage(
               WtText(".")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[User:AndyZ/G#dateth" <o> "]]" ]
-                      {N} target = "User:AndyZ/G#dateth"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("User:AndyZ/G#dateth")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -801,7 +773,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText("]")
-                ]
+                ])
               )
             ]
           )
@@ -815,18 +787,18 @@ WtParsedWikitextPage(
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("Done") ]
-                [ ]
+                WtName([ WtText("Done") ])
+                WtTemplateArguments([ ])
               )
               WtText("  Per ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Wikipedia:Manual of Style (headings)" <o> "]]" ]
-                  {N} target = "Wikipedia:Manual of Style (headings)"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Wikipedia:Manual of Style (headings)")
+                -
               )
               WtText(", headings generally do not start with articles ('the', 'a(n)'). For example, if there was a section called ")
               WtItalics(
@@ -840,7 +812,7 @@ WtParsedWikitextPage(
                       {N} name = "nowiki"
                       {N} rtd = RTD[ "<nowiki" <o> ">==The Biography==</nowiki>" ]
 
-                    [ ]
+                    -
                   )
                 ]
               )
@@ -856,27 +828,26 @@ WtParsedWikitextPage(
                       {N} name = "nowiki"
                       {N} rtd = RTD[ "<nowiki" <o> ">==Biography==</nowiki>" ]
 
-                    [ ]
+                    -
                   )
                 ]
               )
               WtText(".")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[User:AndyZ/G#headingthe" <o> "]]" ]
-                      {N} target = "User:AndyZ/G#headingthe"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("User:AndyZ/G#headingthe")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -884,7 +855,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText("]")
-                ]
+                ])
               )
             ]
           )
@@ -898,18 +869,18 @@ WtParsedWikitextPage(
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("Not done") ]
-                [ ]
+                WtName([ WtText("Not done") ])
+                WtTemplateArguments([ ])
               )
               WtText("  Watch for ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[User:Tony1/How_to_satisfy_Criterion_2a#Redundancy" <o> "]]" ]
-                  {N} target = "User:Tony1/How_to_satisfy_Criterion_2a#Redundancy"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("User:Tony1/How_to_satisfy_Criterion_2a#Redundancy")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -921,10 +892,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[User:Tony1/How to satisfy Criterion 1a: redundancy exercises" <o> "]]" ]
-                  {N} target = "User:Tony1/How to satisfy Criterion 1a: redundancy exercises"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("User:Tony1/How to satisfy Criterion 1a: redundancy exercises")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -941,60 +912,54 @@ WtParsedWikitextPage(
                     WtText("Vague terms of size often are unnecessary and redundant -  \u201Csome\u201D, \u201Ca variety/number/majority of\u201D, \u201Cseveral\u201D, \u201Ca few\u201D, \u201Cmany\u201D, \u201Cany\u201D, and \u201Call\u201D. For example, \u201C")
                     WtXmlElement(
                       Properties:
-                        {N} empty = false
                         {N} name = "font"
                         {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "color"
                             {N} rtd = RTD[ " color='" <o> "'" ]
 
-                          [ WtText("red") ]
+                          WtValue([ WtText("red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtXmlElement(
                           Properties:
-                            {N} empty = false
                             {N} name = "s"
                             {N} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
 
-                          [ ]
-                          [ WtText("All") ]
+                          -
+                          WtBody([ WtText("All") ])
                         )
-                      ]
+                      ])
                     )
                     WtText(" pigs are pink, so we thought of ")
                     WtXmlElement(
                       Properties:
-                        {N} empty = false
                         {N} name = "font"
                         {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "color"
                             {N} rtd = RTD[ " color='" <o> "'" ]
 
-                          [ WtText("red") ]
+                          WtValue([ WtText("red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtXmlElement(
                           Properties:
-                            {N} empty = false
                             {N} name = "s"
                             {N} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
 
-                          [ ]
-                          [ WtText("a number of") ]
+                          -
+                          WtBody([ WtText("a number of") ])
                         )
-                      ]
+                      ])
                     )
                     WtText(" ways to turn them green.\u201D")
                   ]
@@ -1007,29 +972,26 @@ WtParsedWikitextPage(
                     WtText("\u201CIn ")
                     WtXmlElement(
                       Properties:
-                        {N} empty = false
                         {N} name = "font"
                         {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "color"
                             {N} rtd = RTD[ " color='" <o> "'" ]
 
-                          [ WtText("red") ]
+                          WtValue([ WtText("red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtXmlElement(
                           Properties:
-                            {N} empty = false
                             {N} name = "s"
                             {N} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
 
-                          [ ]
-                          [
+                          -
+                          WtBody([
                             WtText(
                               Properties:
                                 {N} content = "the year [of]"
@@ -1038,9 +1000,9 @@ WtParsedWikitextPage(
                                   Warning (none): /complex/wikitext/raw-Talk%3AArundel+Castle.wikitext:21:37 - 38: "[" : This looks like a External Link, however the actual URL is missing.
                                 ]
                             )
-                          ]
+                          ])
                         )
-                      ]
+                      ])
                     )
                     WtText(" 1138\u201D")
                   ]
@@ -1058,10 +1020,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[WP:WIAFA" <o> "]]" ]
-                  {N} target = "WP:WIAFA"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("WP:WIAFA")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1073,28 +1035,27 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[User:Tony1/How to satisfy Criterion 1a" <o> "]]" ]
-                  {N} target = "User:Tony1/How to satisfy Criterion 1a"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("User:Tony1/How to satisfy Criterion 1a")
+                -
               )
               WtText(".")
               WtXmlElement(
                 Properties:
-                  {N} empty = false
                   {N} name = "sup"
                   {N} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
 
-                [ ]
-                [
+                -
+                WtBody([
                   WtInternalLink(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[User:AndyZ/G#copyedit" <o> "]]" ]
-                      {N} target = "User:AndyZ/G#copyedit"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("User:AndyZ/G#copyedit")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1102,7 +1063,7 @@ WtParsedWikitextPage(
                     )
                   )
                   WtText("]")
-                ]
+                ])
               )
             ]
           )
@@ -1114,20 +1075,20 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[User:AndyZ/Suggestions" <o> "]]" ]
-              {N} target = "User:AndyZ/Suggestions"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("User:AndyZ/Suggestions")
+            -
           )
           WtText(" for further ideas. Thanks, ")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[User:MortimerCat" <o> "]]" ]
-              {N} target = "User:MortimerCat"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl(
+            WtPageName("User:MortimerCat")
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1139,10 +1100,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[User talk:MortimerCat" <o> "]]" ]
-              {N} target = "User talk:MortimerCat"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl(
+            WtPageName("User talk:MortimerCat")
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 

@@ -7,75 +7,69 @@ WtParsedWikitextPage(
     WtParagraph([
       WtXmlElement(
         Properties:
-          {N} empty = false
           {N} name = "i"
           {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
 
-        [ ]
-        [
+        -
+        WtBody([
           WtText(" a ")
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "b"
               {N} rtd = RTD[ "<b" <o> ">" <o> "" ]
 
-            [ ]
-            [ WtText(" b ") ]
+            -
+            WtBody([ WtText(" b ") ])
           )
-        ]
+        ])
       )
       WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[target" <o> "]]" ]
-          {N} target = "target"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("target")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
           [
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "i"
                 {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtXmlElement(
                   Properties:
-                    {N} empty = false
                     {N} name = "b"
                     {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-                  [ ]
-                  [ WtText(" c ") ]
+                  -
+                  WtBody([ WtText(" c ") ])
                 )
-              ]
+              ])
             )
             WtXmlElement(
               Properties:
-                {N} empty = false
                 {N} name = "b"
                 {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-              [ ]
-              [ WtText(" d ") ]
+              -
+              WtBody([ WtText(" d ") ])
             )
           ]
         )
       )
       WtXmlElement(
         Properties:
-          {N} empty = false
           {N} name = "b"
           {N} rtd = RTD[ "" <o> "" <o> "" ]
 
-        [ ]
-        [ WtText(" e") ]
+        -
+        WtBody([ WtText(" e") ])
       )
     ])
   ]

@@ -39,7 +39,7 @@ public class AppTest
 		
 		b.append(App.run(new File(url.getFile()), title, "//WtInternalLink"));
 		
-		b.append(App.run(new File(url.getFile()), title, "//TableCell"));
+		b.append(App.run(new File(url.getFile()), title, "//WtTableCell"));
 		
 		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".result");
 		String expected = IOUtils.toString(expectedIs);

@@ -17,7 +17,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-
 public interface WtPreproNode
 		extends
 			WtNode

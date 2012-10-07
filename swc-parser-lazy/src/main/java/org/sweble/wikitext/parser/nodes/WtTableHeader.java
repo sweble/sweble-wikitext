@@ -1,8 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>WtTableHeader</h1> <h2>Grammar</h2>
- */
 public class WtTableHeader
 		extends
 			WtInnerNode2
@@ -11,12 +8,15 @@ public class WtTableHeader
 	
 	// =========================================================================
 	
+	/**
+	 * Only for use by de-serialization code.
+	 */
 	public WtTableHeader()
 	{
-		super(new WtNodeListImpl(), new WtNodeListImpl());
+		super(null, null);
 	}
 	
-	public WtTableHeader(WtNodeList xmlAttributes, WtNodeList body)
+	public WtTableHeader(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}
@@ -30,24 +30,24 @@ public class WtTableHeader
 	// =========================================================================
 	// Children
 	
-	public final void setXmlAttributes(WtNodeList xmlAttributes)
+	public final void setXmlAttributes(WtXmlAttributes xmlAttributes)
 	{
 		set(0, xmlAttributes);
 	}
 	
-	public final WtNodeList getXmlAttributes()
+	public final WtXmlAttributes getXmlAttributes()
 	{
-		return (WtNodeList) get(0);
+		return (WtXmlAttributes) get(0);
 	}
 	
-	public final void setBody(WtNodeList body)
+	public final void setBody(WtBody body)
 	{
 		set(1, body);
 	}
 	
-	public final WtNodeList getBody()
+	public final WtBody getBody()
 	{
-		return (WtNodeList) get(1);
+		return (WtBody) get(1);
 	}
 	
 	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };

@@ -8,24 +8,22 @@ WtParsedWikitextPage(
       WtText("a ")
       WtXmlElement(
         Properties:
-          {N} empty = false
           {N} name = "i"
           {N} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
 
-        [ ]
-        [
+        -
+        WtBody([
           WtText(" b ")
           WtXmlElement(
             Properties:
-              {N} empty = false
               {N} name = "b"
               {N} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
 
-            [ ]
-            [ WtText(" c ") ]
+            -
+            WtBody([ WtText(" c ") ])
           )
           WtText(" d ")
-        ]
+        ])
       )
       WtText(" e")
     ])

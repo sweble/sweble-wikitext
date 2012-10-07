@@ -39,7 +39,7 @@ public class CorePfnBehaviorSwitches
 	
 	// =========================================================================
 	// ==
-	// == Table of contents
+	// == WtTable of contents
 	// == -----------------
 	// == TODO: __NOTOC__
 	// == TODO: __FORCETOC__

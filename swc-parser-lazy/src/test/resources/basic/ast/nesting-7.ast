@@ -9,7 +9,7 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
@@ -24,7 +24,7 @@ WtParsedWikitextPage(
           )
         ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([ WtText("text]]") ])
         WtNewline("\n")
@@ -35,10 +35,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = "text"
-              {N} rtd = RTD[ "text[[target" <o> "]]" ]
-              {N} target = "target"
+              {N} rtd = RTD[ "text[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl(
+            WtPageName("target")
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 

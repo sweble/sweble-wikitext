@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
   Properties:
-    {N} entityMap = EntityMap {0=WtTemplate([0] = [WtText("wikiquotepar")], [1] = [WtTemplateArgument([0] = [], [1] = [WtText("MythBusters")])]), 1=WtXmlComment(" This is the episode number within the entire series "), 2=WtXmlComment(" This is the episode number within the current season "), 3=WtTemplate([0] = [WtText("Episode list\n")], [1] = [WtTemplateArgument([0] = [WtText("EpisodeNumber   ")], [1] = [WtText(" SP11\n")]), WtTemplateArgument([0] = [WtText("EpisodeNumber2  ")], [1] = [WtText(" Special 1\n")]), WtTemplateArgument([0] = [WtText("Title           ")], [1] = [WtText(" Young Scientist Special\n")]), WtTemplateArgument([0] = [WtText("RTitle          ")], [1] = [WtText(" \n")]), WtTemplateArgument([0] = [WtText("OriginalAirDate ")], [1] = [WtText(" "), WtTemplate([0] = [WtText("Start date")], [1] = [WtTemplateArgument([0] = [], [1] = [WtText("2008")]), WtTemplateArgument([0] = [], [1] = [WtText("4")]), WtTemplateArgument([0] = [], [1] = [WtText("26")])]), WtText("\n")]), WtTemplateArgument([0] = [WtText("ShortSummary    ")], [1] = [WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), WtTemplateArgument([0] = [WtText("LineColor       ")], [1] = [WtText(" DBE9F4\n")])]), 4=WtTagExtension([0] = []), 5=WtTagExtension([0] = []), 6=WtTagExtension([0] = []), 7=WtTagExtension([0] = []), 8=WtTagExtension([0] = []), 9=WtTemplate([0] = [WtText("inc-video")], [1] = []), 10=WtTemplate([0] = [WtText("Reflist")], [1] = []), 11=WtTemplate([0] = [WtText("imdb title")], [1] = [WtTemplateArgument([0] = [WtText("id")], [1] = [WtText("0383126")]), WtTemplateArgument([0] = [WtText("title")], [1] = [WtText("MythBusters")])]), 12=WtTemplate([0] = [WtText("MythBusters")], [1] = []), 13=WtTemplate([0] = [WtText("DEFAULTSORT:Mythbusters")], [1] = [])}
+    {N} entityMap = EntityMap {0=WtTemplate([0] = WtName[WtText("wikiquotepar")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("MythBusters")])]), 1=WtXmlComment(" This is the episode number within the entire series "), 2=WtXmlComment(" This is the episode number within the current season "), 3=WtTemplate([0] = WtName[WtText("Episode list\n")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtName[WtText("EpisodeNumber   ")], [1] = WtValue[WtText(" SP11\n")]), WtTemplateArgument([0] = WtName[WtText("EpisodeNumber2  ")], [1] = WtValue[WtText(" Special 1\n")]), WtTemplateArgument([0] = WtName[WtText("Title           ")], [1] = WtValue[WtText(" Young Scientist Special\n")]), WtTemplateArgument([0] = WtName[WtText("RTitle          ")], [1] = WtValue[WtText(" \n")]), WtTemplateArgument([0] = WtName[WtText("OriginalAirDate ")], [1] = WtValue[WtText(" "), WtTemplate([0] = WtName[WtText("Start date")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("2008")]), WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("4")]), WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("26")])]), WtText("\n")]), WtTemplateArgument([0] = WtName[WtText("ShortSummary    ")], [1] = WtValue[WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n")]), WtTemplateArgument([0] = WtName[WtText("LineColor       ")], [1] = WtValue[WtText(" DBE9F4\n")])]), 4=WtTagExtension([0] = WtEmptyXmlAttributes()), 5=WtTagExtension([0] = WtEmptyXmlAttributes()), 6=WtTagExtension([0] = WtEmptyXmlAttributes()), 7=WtTagExtension([0] = WtEmptyXmlAttributes()), 8=WtTagExtension([0] = WtEmptyXmlAttributes()), 9=WtTemplate([0] = WtName[WtText("inc-video")], [1] = WtTemplateArguments[]), 10=WtTemplate([0] = WtName[WtText("Reflist")], [1] = WtTemplateArguments[]), 11=WtTemplate([0] = WtName[WtText("imdb title")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtName[WtText("id")], [1] = WtValue[WtText("0383126")]), WtTemplateArgument([0] = WtName[WtText("title")], [1] = WtValue[WtText("MythBusters")])]), 12=WtTemplate([0] = WtName[WtText("MythBusters")], [1] = WtTemplateArguments[]), 13=WtTemplate([0] = WtName[WtText("DEFAULTSORT:Mythbusters")], [1] = WtTemplateArguments[])}
     {N} warnings = []
 
   [
@@ -10,17 +10,16 @@ WtParsedWikitextPage(
           {N} precededByNewline = false
           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-        [ WtText("wikiquotepar") ]
-        [
+        WtName([ WtText("wikiquotepar") ])
+        WtTemplateArguments([
           WtTemplateArgument(
             Properties:
-              {N} hasName = false
               {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-            [ ]
-            [ WtText("MythBusters") ]
+            -
+            WtValue([ WtText("MythBusters") ])
           )
-        ]
+        ])
       )
       WtNewline("\n")
       WtText("The cast of the television series ")
@@ -33,10 +32,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[MythBusters" <o> "]]" ]
-              {N} target = "MythBusters"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("MythBusters")
+            -
           )
         ]
       )
@@ -45,30 +44,30 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = "s"
           {N} prefix = ""
-          {N} rtd = RTD[ "[[urban legend" <o> "]]s" ]
-          {N} target = "urban legend"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("urban legend")
+        -
       )
       WtText(", ")
       WtInternalLink(
         Properties:
           {N} postfix = "s"
           {N} prefix = ""
-          {N} rtd = RTD[ "[[old wives' tale" <o> "]]s" ]
-          {N} target = "old wives' tale"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("old wives' tale")
+        -
       )
       WtText(", and the like. This is a list of the various myths tested on the show as well as the results of the experiments (the myth is ")
       WtInternalLink(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[MythBusters#Conclusions of the experiments" <o> "]]" ]
-          {N} target = "MythBusters#Conclusions of the experiments"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl(
+        WtPageName("MythBusters#Conclusions of the experiments")
+        WtLinkTitle(
           Properties:
             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -85,10 +84,10 @@ WtParsedWikitextPage(
         Properties:
           {N} postfix = ""
           {N} prefix = ""
-          {N} rtd = RTD[ "[[Discovery Channel" <o> "]]" ]
-          {N} target = "Discovery Channel"
+          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-        WtLinkTitleImpl([ ])
+        WtPageName("Discovery Channel")
+        -
       )
       WtText(" website.")
     ])
@@ -98,134 +97,128 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("Episode overview") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtNewline("\n")
         WtTable(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = true
                 {N} name = "class"
                 {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-              [ WtText("wikitable") ]
+              WtValue([ WtText("wikitable") ])
             )
             WtXmlAttribute(
               Properties:
-                {N} hasValue = true
                 {N} name = "style"
                 {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-              [ WtText("width:100%; margin:auto; background:#FFFFFF;") ]
+              WtValue([ WtText("width:100%; margin:auto; background:#FFFFFF;") ])
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "|" <o> "" ]
 
-                  [
+                  WtXmlAttributes([
                     WtXmlAttribute(
                       Properties:
-                        {N} hasValue = true
                         {N} name = "style"
                         {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      WtValue([ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ])
                     )
-                  ]
-                  [
+                  ])
+                  WtBody([
                     WtParagraph([
                       WtText("Series # ")
                       WtXmlComment(
                         Properties:
                           {N} content = " This is the episode number within the entire series "
-                          {N} prefix = null
+                          {N} prefix = ""
                           {N} rtd = RTD[ "<!-- This is the episode number within the entire series -->" ]
-                          {N} suffix = null
+                          {N} suffix = ""
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!!" <o> "|" <o> "" ]
 
-                  [
+                  WtXmlAttributes([
                     WtXmlAttribute(
                       Properties:
-                        {N} hasValue = true
                         {N} name = "style"
                         {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      WtValue([ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ])
                     )
-                  ]
-                  [
+                  ])
+                  WtBody([
                     WtParagraph([
                       WtText("Season # ")
                       WtXmlComment(
                         Properties:
                           {N} content = " This is the episode number within the current season "
-                          {N} prefix = null
+                          {N} prefix = ""
                           {N} rtd = RTD[ "<!-- This is the episode number within the current season -->" ]
-                          {N} suffix = null
+                          {N} suffix = ""
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!!" <o> "|" <o> "" ]
 
-                  [
+                  WtXmlAttributes([
                     WtXmlAttribute(
                       Properties:
-                        {N} hasValue = true
                         {N} name = "style"
                         {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      WtValue([ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ])
                     )
-                  ]
-                  [
+                  ])
+                  WtBody([
                     WtParagraph([ WtText("Title") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!!" <o> "|" <o> "" ]
 
-                  [
+                  WtXmlAttributes([
                     WtXmlAttribute(
                       Properties:
-                        {N} hasValue = true
                         {N} name = "style"
                         {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                      [ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ]
+                      WtValue([ WtText("background-color: #DBE9F4; color:#000; text-align: center;") ])
                     )
-                  ]
-                  [
+                  ])
+                  WtBody([
                     WtParagraph([
                       WtText("Original airdate")
                       WtNewline("\n")
@@ -234,109 +227,99 @@ WtParsedWikitextPage(
                           {N} precededByNewline = true
                           {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                        [ WtText("Episode list\n") ]
-                        [
+                        WtName([ WtText("Episode list\n") ])
+                        WtTemplateArguments([
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("EpisodeNumber   ") ]
-                            [ WtText(" SP11\n") ]
+                            WtName([ WtText("EpisodeNumber   ") ])
+                            WtValue([ WtText(" SP11\n") ])
                           )
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("EpisodeNumber2  ") ]
-                            [ WtText(" Special 1\n") ]
+                            WtName([ WtText("EpisodeNumber2  ") ])
+                            WtValue([ WtText(" Special 1\n") ])
                           )
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("Title           ") ]
-                            [ WtText(" Young Scientist Special\n") ]
+                            WtName([ WtText("Title           ") ])
+                            WtValue([ WtText(" Young Scientist Special\n") ])
                           )
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("RTitle          ") ]
-                            [ WtText(" \n") ]
+                            WtName([ WtText("RTitle          ") ])
+                            WtValue([ WtText(" \n") ])
                           )
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("OriginalAirDate ") ]
-                            [
+                            WtName([ WtText("OriginalAirDate ") ])
+                            WtValue([
                               WtText(" ")
                               WtTemplate(
                                 Properties:
                                   {N} precededByNewline = false
                                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                                [ WtText("Start date") ]
-                                [
+                                WtName([ WtText("Start date") ])
+                                WtTemplateArguments([
                                   WtTemplateArgument(
                                     Properties:
-                                      {N} hasName = false
                                       {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                                    [ ]
-                                    [ WtText("2008") ]
+                                    -
+                                    WtValue([ WtText("2008") ])
                                   )
                                   WtTemplateArgument(
                                     Properties:
-                                      {N} hasName = false
                                       {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                                    [ ]
-                                    [ WtText("4") ]
+                                    -
+                                    WtValue([ WtText("4") ])
                                   )
                                   WtTemplateArgument(
                                     Properties:
-                                      {N} hasName = false
                                       {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                                    [ ]
-                                    [ WtText("26") ]
+                                    -
+                                    WtValue([ WtText("26") ])
                                   )
-                                ]
+                                ])
                               )
                               WtText("\n")
-                            ]
+                            ])
                           )
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("ShortSummary    ") ]
-                            [ WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ]
+                            WtName([ WtText("ShortSummary    ") ])
+                            WtValue([ WtText(" '''Myths tested''':<br>[[Discovery Channel]]'s young scientist contenders help the Mythbusters tackle environmental myths:<br>Are electric cars truly slow?<br>Do increased CO<sub>2</sub> levels cause accelerated ice melting? (Former Mythbuster [[Scottie Chapman]] returns to assist the testing)<br>Are cows truly the single greatest air polluter?\n") ])
                           )
                           WtTemplateArgument(
                             Properties:
-                              {N} hasName = true
                               {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                            [ WtText("LineColor       ") ]
-                            [ WtText(" DBE9F4\n") ]
+                            WtName([ WtText("LineColor       ") ])
+                            WtValue([ WtText(" DBE9F4\n") ])
                           )
-                        ]
+                        ])
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
-          ]
+          ])
         )
         WtNewline("\n")
         WtNewline("\n")
@@ -347,25 +330,25 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("Specials") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtSection(
           Properties:
             {N} level = 3
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [ WtText(" Episode SP11 \u2013 \"Young Scientists Special\"") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtUnorderedList([
               WtListItem(
@@ -378,10 +361,10 @@ WtParsedWikitextPage(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[Science Channel" <o> "]]" ]
-                      {N} target = "Science Channel"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl([ ])
+                    WtPageName("Science Channel")
+                    -
                   )
                 ]
               )
@@ -394,30 +377,30 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Science Channel" <o> "]]" ]
-                  {N} target = "Science Channel"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Science Channel")
+                -
               )
               WtText(", as opposed to the show's regular home of ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Discovery Channel" <o> "]]" ]
-                  {N} target = "Discovery Channel"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Discovery Channel")
+                -
               )
               WtText(".  A team of winners in Discovery's \"Young Scientist Challenge\" competitions tested environmental myths with the team.  Former MythBuster ")
               WtInternalLink(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[Scottie Chapman" <o> "]]" ]
-                  {N} target = "Scottie Chapman"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("Scottie Chapman")
+                -
               )
               WtText(" returned to assist with a myth.")
             ])
@@ -426,247 +409,240 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = true
                     {N} name = "class"
                     {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                  [ WtText("wikitable") ]
+                  WtValue([ WtText("wikitable") ])
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Myth statement") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Status") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Notes") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Greenhouse gases increase the amount of heat absorbed by air.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" ")
                           WtXmlElement(
                             Properties:
-                              {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                            [
+                            WtXmlAttributes([
                               WtXmlAttribute(
                                 Properties:
-                                  {N} hasValue = true
                                   {N} name = "color"
                                   {N} rtd = RTD[ " color=" <o> "" ]
 
-                                [ WtText("green") ]
+                                WtValue([ WtText("green") ])
                               )
-                            ]
-                            [ WtText(" Confirmed ") ]
+                            ])
+                            WtBody([ WtText(" Confirmed ") ])
                           )
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[Electric car" <o> "]]s" ]
-                              {N} target = "Electric car"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("Electric car")
+                            -
                           )
                           WtText(" are more sluggish than ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[gasoline" <o> "]]" ]
-                              {N} target = "gasoline"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("gasoline")
+                            -
                           )
                           WtText("-powered cars.")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" ")
                           WtXmlElement(
                             Properties:
-                              {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                            [
+                            WtXmlAttributes([
                               WtXmlAttribute(
                                 Properties:
-                                  {N} hasValue = true
                                   {N} name = "color"
                                   {N} rtd = RTD[ " color=" <o> "" ]
 
-                                [ WtText("red") ]
+                                WtValue([ WtText("red") ])
                               )
-                            ]
-                            [ WtText(" Busted ") ]
+                            ])
+                            WtBody([ WtText(" Busted ") ])
                           )
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Cows hurt the environment.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" ")
                           WtXmlElement(
                             Properties:
-                              {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                            [
+                            WtXmlAttributes([
                               WtXmlAttribute(
                                 Properties:
-                                  {N} hasValue = true
                                   {N} name = "color"
                                   {N} rtd = RTD[ " color=" <o> "" ]
 
-                                [ WtText("green") ]
+                                WtValue([ WtText("green") ])
                               )
-                            ]
-                            [ WtText(" Confirmed ") ]
+                            ])
+                            WtBody([ WtText(" Confirmed ") ])
                           )
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" Cows emit ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[methane" <o> "]]" ]
-                              {N} target = "methane"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("methane")
+                            -
                           )
                           WtXmlEntityRef(
                             Properties:
@@ -684,69 +660,67 @@ WtParsedWikitextPage(
                           WtText(" and their feces emit even more methane once they begin rotting. Since there are so many cows, the methane contributes significantly to global warming.")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Cow manure can be used to help the environment.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" ")
                           WtXmlElement(
                             Properties:
-                              {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                            [
+                            WtXmlAttributes([
                               WtXmlAttribute(
                                 Properties:
-                                  {N} hasValue = true
                                   {N} name = "color"
                                   {N} rtd = RTD[ " color=" <o> "" ]
 
-                                [ WtText("green") ]
+                                WtValue([ WtText("green") ])
                               )
-                            ]
-                            [ WtText(" Confirmed ") ]
+                            ])
+                            WtBody([ WtText(" Confirmed ") ])
                           )
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtNewline("\n")
             WtNewline("\n")
@@ -758,13 +732,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("Mini Myths") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([
           WtText("The mini-myths are shown in video clips that are available from the ")
@@ -772,10 +746,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Discovery Channel" <o> "]]" ]
-              {N} target = "Discovery Channel"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Discovery Channel")
+            -
           )
           WtText(" website, as well as during the commercials in between ")
           WtItalics(
@@ -792,13 +766,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 3
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [ WtText("\"Egg-uinox\"") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([
               WtText("The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.")
@@ -808,7 +782,7 @@ WtParsedWikitextPage(
                   {N} name = "ref"
                   {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
 
-                [ ]
+                -
               )
             ])
             WtNewline("\n")
@@ -816,110 +790,108 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = true
                     {N} name = "class"
                     {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                  [ WtText("wikitable") ]
+                  WtValue([ WtText("wikitable") ])
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Myth statement") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Status") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Notes") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" An egg can be balanced on its ends only during the spring and fall ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[equinox" <o> "]]" ]
-                              {N} target = "equinox"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("equinox")
+                            -
                           )
                           WtText(".")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:red") ]
+                          WtValue([ WtText("color:red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Busted") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" This is a ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[China" <o> "]]" ]
-                              {N} target = "China"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl(
+                            WtPageName("China")
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -931,10 +903,10 @@ WtParsedWikitextPage(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[Egg of Li Chun" <o> "]]" ]
-                              {N} target = "Egg of Li Chun"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl(
+                            WtPageName("Egg of Li Chun")
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -946,19 +918,19 @@ WtParsedWikitextPage(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[dexterity" <o> "]]" ]
-                              {N} target = "dexterity"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("dexterity")
+                            -
                           )
                           WtText(" can do it on any day of the year. Hard boiled eggs balance better than raw eggs, however.")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtNewline("\n")
             WtNewline("\n")
@@ -968,13 +940,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 3
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [ WtText("\"Breakstep Bridge\"") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([
               WtText("In a revisit of the ")
@@ -982,10 +954,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[MythBusters (2004 season)#Breakstep Bridge" <o> "]]" ]
-                  {N} target = "MythBusters (2004 season)#Breakstep Bridge"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("MythBusters (2004 season)#Breakstep Bridge")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -997,10 +969,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[beam bridge" <o> "]]" ]
-                  {N} target = "beam bridge"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("beam bridge")
+                -
               )
               WtText(" and test it under Adam's weight.")
               WtTagExtension(
@@ -1009,7 +981,7 @@ WtParsedWikitextPage(
                   {N} name = "ref"
                   {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
 
-                [ ]
+                -
               )
               WtText(" This test was also aired in ")
               WtItalics(
@@ -1021,10 +993,10 @@ WtParsedWikitextPage(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[#Outtakes" <o> "]]" ]
-                      {N} target = "#Outtakes"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("#Outtakes")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1041,95 +1013,93 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = true
                     {N} name = "class"
                     {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                  [ WtText("wikitable") ]
+                  WtValue([ WtText("wikitable") ])
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Myth statement") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Status") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Notes") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:orange") ]
+                          WtValue([ WtText("color:orange") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Plausible") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" The bridge was able to hold Adam's weight until he started bouncing on it.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtNewline("\n")
             WtNewline("\n")
@@ -1139,13 +1109,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 3
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [ WtText("\"Mini Shark Myths\"") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([
               WtText("The mini shark myths, while related to Discovery Channel's Shark Week, are not related to the movie ")
@@ -1162,7 +1132,7 @@ WtParsedWikitextPage(
                   {N} name = "ref"
                   {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
 
-                [ ]
+                -
               )
             ])
             WtNewline("\n")
@@ -1171,155 +1141,152 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = true
                     {N} name = "class"
                     {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                  [ WtText("wikitable") ]
+                  WtValue([ WtText("wikitable") ])
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Myth statement") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Status") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Notes") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Sharks tend to be attracted to brighter colors like yellow.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:orange") ]
+                          WtValue([ WtText("color:orange") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Plausible") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Sharks can detect a single drop of blood dropped into a pool of water.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:red") ]
+                          WtValue([ WtText("color:red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Busted") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[lemon shark" <o> "]]s" ]
-                              {N} target = "lemon shark"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("lemon shark")
+                            -
                           )
                           WtText(", and ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[great white shark" <o> "]]s" ]
-                              {N} target = "great white shark"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-                            WtLinkTitleImpl(
+                            WtPageName("great white shark")
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1331,137 +1298,135 @@ WtParsedWikitextPage(
                             Properties:
                               {N} postfix = "s"
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[bull shark" <o> "]]s" ]
-                              {N} target = "bull shark"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("bull shark")
+                            -
                           )
                           WtText(" might have gotten different results.")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" A shark's skin is rough enough to be used as ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[sandpaper" <o> "]]" ]
-                              {N} target = "sandpaper"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("sandpaper")
+                            -
                           )
                           WtText(".")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:green") ]
+                          WtValue([ WtText("color:green") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Confirmed") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" There is a ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[rule of thumb" <o> "]]" ]
-                              {N} target = "rule of thumb"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("rule of thumb")
+                            -
                           )
                           WtText(" a casual observer can use to adequately estimate the size of a shark.")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:red") ]
+                          WtValue([ WtText("color:red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Busted") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtNewline("\n")
             WtNewline("\n")
@@ -1473,13 +1438,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("Outtakes") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([ WtText("During live appearances by the MythBusters, they have screened additional segments that were not aired.") ])
         WtNewline("\n")
@@ -1488,13 +1453,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 3
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [ WtText("\"Facts About Flatulence\"") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([
               WtText("There were two additional myths addressed in addition to those in the ")
@@ -1507,10 +1472,10 @@ WtParsedWikitextPage(
                     Properties:
                       {N} postfix = ""
                       {N} prefix = ""
-                      {N} rtd = RTD[ "[[MythBusters (2006 season)#Franklin's Kite" <o> "]]" ]
-                      {N} target = "MythBusters (2006 season)#Franklin's Kite"
+                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                    WtLinkTitleImpl(
+                    WtPageName("MythBusters (2006 season)#Franklin's Kite")
+                    WtLinkTitle(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1527,98 +1492,96 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = true
                     {N} name = "class"
                     {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                  [ WtText("wikitable") ]
+                  WtValue([ WtText("wikitable") ])
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Myth statement") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Status") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Notes") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Attractive women do not pass gas.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:red") ]
+                          WtValue([ WtText("color:red") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Busted") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" Kari wore underwear equipped with a microphone connected to an amplifier and a ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[hydrogen sulfide" <o> "]]" ]
-                              {N} target = "hydrogen sulfide"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("hydrogen sulfide")
+                            -
                           )
                           WtText(" meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.")
                           WtTagExtension(
@@ -1627,46 +1590,46 @@ WtParsedWikitextPage(
                               {N} name = "ref"
                               {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
 
-                            [ ]
+                            -
                           )
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" A ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[flatus" <o> "]]" ]
-                              {N} target = "flatus"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl([ ])
+                            WtPageName("flatus")
+                            -
                           )
                           WtText(" ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[Fart lighting" <o> "]]" ]
-                              {N} target = "Fart lighting"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl(
+                            WtPageName("Fart lighting")
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1676,33 +1639,32 @@ WtParsedWikitextPage(
                           WtText(".")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> " |" <o> "" ]
 
-                      [
+                      WtXmlAttributes([
                         WtXmlAttribute(
                           Properties:
-                            {N} hasValue = true
                             {N} name = "style"
                             {N} rtd = RTD[ " style=\"" <o> "\"" ]
 
-                          [ WtText("color:green") ]
+                          WtValue([ WtText("color:green") ])
                         )
-                      ]
-                      [
+                      ])
+                      WtBody([
                         WtParagraph([ WtText(" Confirmed") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.")
                           WtTagExtension(
@@ -1711,7 +1673,7 @@ WtParsedWikitextPage(
                               {N} name = "ref"
                               {N} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
 
-                            [ ]
+                            -
                           )
                           WtText(" The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether).")
                         ])
@@ -1719,11 +1681,11 @@ WtParsedWikitextPage(
                         WtNewline("\n")
                         WtParagraph([ WtText("This segment was later aired as part of the \"Top 25 Moments\" special on June 16, 2010.") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtNewline("\n")
             WtNewline("\n")
@@ -1733,13 +1695,13 @@ WtParsedWikitextPage(
           Properties:
             {N} level = 3
 
-          WtSectionHeading(
+          WtHeading(
             Properties:
               {N} rtd = RTD[ "===" <o> "===" ]
 
             [ WtText("\"MythBusters Teeth Challenge\"") ]
           )
-          WtSectionBody([
+          WtBody([
             WtNewline("\n")
             WtParagraph([
               WtText("Less a challenge than an inside joke. The MythBusters received many e-mails from fans complaining about Adam's brown teeth. This was originally planned for the \"")
@@ -1747,10 +1709,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\"" <o> "]]" ]
-                  {N} target = "MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\""
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl(
+                WtPageName("MythBusters (2006 season)#Episode 55 \u2013 \"Steam Cannon\"")
+                WtLinkTitle(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1765,128 +1727,123 @@ WtParsedWikitextPage(
               Properties:
                 {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-              [
+              WtXmlAttributes([
                 WtXmlAttribute(
                   Properties:
-                    {N} hasValue = true
                     {N} name = "class"
                     {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-                  [ WtText("wikitable") ]
+                  WtValue([ WtText("wikitable") ])
                 )
-              ]
-              [
+              ])
+              WtBody([
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Myth statement") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Status") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableHeader(
                   Properties:
                     {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" Notes") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableRow(
                   Properties:
                     {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([ WtText(" Of all the MythBusters, Adam is the one with the brownest teeth. ") ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" ")
                           WtXmlElement(
                             Properties:
-                              {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                            [
+                            WtXmlAttributes([
                               WtXmlAttribute(
                                 Properties:
-                                  {N} hasValue = true
                                   {N} name = "color"
                                   {N} rtd = RTD[ " color=" <o> "" ]
 
-                                [ WtText("red") ]
+                                WtValue([ WtText("red") ])
                               )
-                            ]
-                            [ WtText("Busted") ]
+                            ])
+                            WtBody([ WtText("Busted") ])
                           )
                           WtText(", then ")
                           WtXmlElement(
                             Properties:
-                              {N} empty = false
                               {N} name = "font"
                               {N} rtd = RTD[ "<font" <o> ">" <o> "</font>" ]
 
-                            [
+                            WtXmlAttributes([
                               WtXmlAttribute(
                                 Properties:
-                                  {N} hasValue = true
                                   {N} name = "color"
                                   {N} rtd = RTD[ " color=" <o> "" ]
 
-                                [ WtText("green") ]
+                                WtValue([ WtText("green") ])
                               )
-                            ]
-                            [ WtText("Confirmed") ]
+                            ])
+                            WtBody([ WtText("Confirmed") ])
                           )
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
                     WtTableCell(
                       Properties:
                         {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                      [ ]
-                      [
+                      -
+                      WtBody([
                         WtParagraph([
                           WtText(" Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ")
                           WtInternalLink(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[Tooth bleaching" <o> "]]" ]
-                              {N} target = "Tooth bleaching"
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl(
+                            WtPageName("Tooth bleaching")
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -1896,11 +1853,11 @@ WtParsedWikitextPage(
                           WtText(" to make them white again. After this, Adam did have the brownest teeth.  The overall result, from best to worst: Grant, Tory, Adam, and finally Jamie (before his bleaching).")
                         ])
                         WtNewline("\n")
-                      ]
+                      ])
                     )
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtNewline("\n")
             WtNewline("\n")
@@ -1912,7 +1869,7 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
@@ -1921,15 +1878,15 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[BBC Two" <o> "]]" ]
-              {N} target = "BBC Two"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("BBC Two")
+            -
           )
           WtText(" re-edited half hour shows")
         ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([
           WtTemplate(
@@ -1937,8 +1894,8 @@ WtParsedWikitextPage(
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-            [ WtText("inc-video") ]
-            [ ]
+            WtName([ WtText("inc-video") ])
+            WtTemplateArguments([ ])
           )
         ])
         WtNewline("\n")
@@ -1948,10 +1905,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[BBC Two" <o> "]]" ]
-              {N} target = "BBC Two"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("BBC Two")
+            -
           )
           WtText("'s editions of ")
           WtItalics(
@@ -1965,10 +1922,10 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Rufus Hound" <o> "]]" ]
-              {N} target = "Rufus Hound"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("Rufus Hound")
+            -
           )
           WtText(" in an energetic and irreverent style.")
         ])
@@ -1978,69 +1935,68 @@ WtParsedWikitextPage(
           Properties:
             {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 
-          [
+          WtXmlAttributes([
             WtXmlAttribute(
               Properties:
-                {N} hasValue = true
                 {N} name = "class"
                 {N} rtd = RTD[ " class=\"" <o> "\"" ]
 
-              [ WtText("wikitable") ]
+              WtValue([ WtText("wikitable") ])
             )
-          ]
-          [
+          ])
+          WtBody([
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtParagraph([ WtText(" Date broadcast") ])
                 WtNewline("\n")
-              ]
+              ])
             )
             WtTableHeader(
               Properties:
                 {N} rtd = RTD[ "!" <o> "" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtParagraph([ WtText(" Myths") ])
                 WtNewline("\n")
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" July 27, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Penny Drop" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Penny Drop"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Penny Drop")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2052,10 +2008,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Who Gets Wetter?" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Who Gets Wetter?"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Who Gets Wetter?")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2067,10 +2023,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Exploding Toilet" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Exploding Toilet"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Exploding Toilet")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2079,42 +2035,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" August 3, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#CD-ROM Shattering" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#CD-ROM Shattering"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#CD-ROM Shattering")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2126,10 +2082,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Silicone Breasts" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Silicone Breasts"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Silicone Breasts")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2141,10 +2097,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Cell Phone Destruction" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Cell Phone Destruction"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Cell Phone Destruction")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2153,42 +2109,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" September 7, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Lightning Strikes Tongue Piercing" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Lightning Strikes Tongue Piercing"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Lightning Strikes Tongue Piercing")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2200,10 +2156,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#101 Uses For Cola" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#101 Uses For Cola"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#101 Uses For Cola")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2215,10 +2171,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (season 1)#Hammer Bridge Drop" <o> "]]" ]
-                          {N} target = "MythBusters (season 1)#Hammer Bridge Drop"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (season 1)#Hammer Bridge Drop")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2227,42 +2183,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" September 14, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\"" <o> "]]" ]
-                          {N} target = "List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\""
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("List of MythBusters pilot episodes#Pilot 1 \u2013 \"Jet Assisted Chevy, Pop Rocks and Soda\"")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2271,42 +2227,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" September 21, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Buried Alive" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Buried Alive"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Buried Alive")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2318,10 +2274,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Beat the Breath Test" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Beat the Breath Test"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Beat the Breath Test")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2330,42 +2286,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" September 28, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Explosive Decompression" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Explosive Decompression"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Explosive Decompression")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2377,10 +2333,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Rear Axle" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Rear Axle"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Rear Axle")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2392,10 +2348,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Frog Giggin'" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Frog Giggin'"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Frog Giggin'")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2404,42 +2360,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" October 5, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#The Mad Trombonist" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#The Mad Trombonist"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#The Mad Trombonist")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2451,10 +2407,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Goldfish Memory" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Goldfish Memory"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Goldfish Memory")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2466,10 +2422,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Sinking Titanic" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Sinking Titanic"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Sinking Titanic")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2478,41 +2434,41 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" October 12, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Escape From Alcatraz" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Escape From Alcatraz"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Escape From Alcatraz")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2524,10 +2480,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Stud Finders & Mind Control Chips" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Stud Finders & Mind Control Chips"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Stud Finders & Mind Control Chips")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2539,10 +2495,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2003 season)#Does a Duck's Quack Echo?" <o> "]]" ]
-                          {N} target = "MythBusters (2003 season)#Does a Duck's Quack Echo?"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2003 season)#Does a Duck's Quack Echo?")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2551,41 +2507,41 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" October 19, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Rowing Water Skier" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Rowing Water Skier"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Rowing Water Skier")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2597,10 +2553,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Toothbrush Surprise" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Toothbrush Surprise"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Toothbrush Surprise")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2612,10 +2568,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Breakstep Bridge" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Breakstep Bridge"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Breakstep Bridge")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2624,42 +2580,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" October 31, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Buried in Concrete" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Buried in Concrete"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Buried in Concrete")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2671,10 +2627,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Daddy Long-Legs" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Daddy Long-Legs"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Daddy Long-Legs")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2686,10 +2642,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Jet Taxi" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Jet Taxi"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Jet Taxi")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2698,42 +2654,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" November 7, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"" <o> "]]" ]
-                          {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2745,10 +2701,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"" <o> "]]" ]
-                          {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2765,10 +2721,10 @@ WtParsedWikitextPage(
                             Properties:
                               {N} postfix = ""
                               {N} prefix = ""
-                              {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"" <o> "]]" ]
-                              {N} target = "List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\""
+                              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                            WtLinkTitleImpl(
+                            WtPageName("List of MythBusters pilot episodes#Pilot 3 \u2013 \"Larry's Lawn Chair Balloon, Poppy Seed Drug Test, Goldfinger\"")
+                            WtLinkTitle(
                               Properties:
                                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2779,42 +2735,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" November 14, 2006") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Chicken Gun" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Chicken Gun"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Chicken Gun")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2826,10 +2782,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[MythBusters (2004 season)#Killer Washing Machine" <o> "]]" ]
-                          {N} target = "MythBusters (2004 season)#Killer Washing Machine"
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("MythBusters (2004 season)#Killer Washing Machine")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2838,42 +2794,42 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
             WtTableRow(
               Properties:
                 {N} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 
-              [ ]
-              [
+              -
+              WtBody([
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([ WtText(" February 19, 2007") ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
                 WtTableCell(
                   Properties:
                     {N} rtd = RTD[ "|" <o> "" <o> "" ]
 
-                  [ ]
-                  [
+                  -
+                  WtBody([
                     WtParagraph([
                       WtText(" ")
                       WtInternalLink(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"" <o> "]]" ]
-                          {N} target = "List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\""
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2885,10 +2841,10 @@ WtParsedWikitextPage(
                         Properties:
                           {N} postfix = ""
                           {N} prefix = ""
-                          {N} rtd = RTD[ "[[List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"" <o> "]]" ]
-                          {N} target = "List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\""
+                          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                        WtLinkTitleImpl(
+                        WtPageName("List of MythBusters pilot episodes#Pilot 2 \u2013 \"Vacuum Toilet, Biscuit Bazooka, Leaping Lawyer\"")
+                        WtLinkTitle(
                           Properties:
                             {N} rtd = RTD[ "|" <o> "" ]
 
@@ -2897,11 +2853,11 @@ WtParsedWikitextPage(
                       )
                     ])
                     WtNewline("\n")
-                  ]
+                  ])
                 )
-              ]
+              ])
             )
-          ]
+          ])
         )
         WtNewline("\n")
         WtNewline("\n")
@@ -2911,13 +2867,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("See also") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtUnorderedList([
           WtListItem(
@@ -2930,10 +2886,10 @@ WtParsedWikitextPage(
                 Properties:
                   {N} postfix = ""
                   {N} prefix = ""
-                  {N} rtd = RTD[ "[[List of MythBusters episodes" <o> "]]" ]
-                  {N} target = "List of MythBusters episodes"
+                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-                WtLinkTitleImpl([ ])
+                WtPageName("List of MythBusters episodes")
+                -
               )
             ]
           )
@@ -2946,13 +2902,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("References") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtParagraph([
           WtTemplate(
@@ -2960,8 +2916,8 @@ WtParsedWikitextPage(
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-            [ WtText("Reflist") ]
-            [ ]
+            WtName([ WtText("Reflist") ])
+            WtTemplateArguments([ ])
           )
         ])
         WtNewline("\n")
@@ -2972,13 +2928,13 @@ WtParsedWikitextPage(
       Properties:
         {N} level = 2
 
-      WtSectionHeading(
+      WtHeading(
         Properties:
           {N} rtd = RTD[ "==" <o> "==" ]
 
         [ WtText("External links") ]
       )
-      WtSectionBody([
+      WtBody([
         WtNewline("\n")
         WtUnorderedList([
           WtListItem(
@@ -2997,7 +2953,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://dsc.discovery.com/fansites/mythbusters/mythbusters.html" ]
                 )
-                WtLinkTitleImpl([ WtText("MythBusters Official site") ])
+                WtLinkTitle([ WtText("MythBusters Official site") ])
               )
             ]
           )
@@ -3017,7 +2973,7 @@ WtParsedWikitextPage(
                     {N} protocol = "http"
                     {N} rtd = RTD[ "http://drmikessteakdinner.com/2007/03/15/so-do-pretty-girls-fart/" ]
                 )
-                WtLinkTitleImpl([
+                WtLinkTitle([
                   WtText("View the ")
                   WtItalics(
                     Properties:
@@ -3041,25 +2997,23 @@ WtParsedWikitextPage(
                   {N} precededByNewline = false
                   {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-                [ WtText("imdb title") ]
-                [
+                WtName([ WtText("imdb title") ])
+                WtTemplateArguments([
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("id") ]
-                    [ WtText("0383126") ]
+                    WtName([ WtText("id") ])
+                    WtValue([ WtText("0383126") ])
                   )
                   WtTemplateArgument(
                     Properties:
-                      {N} hasName = true
                       {N} rtd = RTD[ "|" <o> "=" <o> "" ]
 
-                    [ WtText("title") ]
-                    [ WtText("MythBusters") ]
+                    WtName([ WtText("title") ])
+                    WtValue([ WtText("MythBusters") ])
                   )
-                ]
+                ])
               )
             ]
           )
@@ -3072,8 +3026,8 @@ WtParsedWikitextPage(
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-            [ WtText("MythBusters") ]
-            [ ]
+            WtName([ WtText("MythBusters") ])
+            WtTemplateArguments([ ])
           )
         ])
         WtNewline("\n")
@@ -3084,18 +3038,18 @@ WtParsedWikitextPage(
               {N} precededByNewline = true
               {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
 
-            [ WtText("DEFAULTSORT:Mythbusters") ]
-            [ ]
+            WtName([ WtText("DEFAULTSORT:Mythbusters") ])
+            WtTemplateArguments([ ])
           )
           WtNewline("\n")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[Category:Lists of MythBusters episodes" <o> "]]" ]
-              {N} target = "Category:Lists of MythBusters episodes"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl(
+            WtPageName("Category:Lists of MythBusters episodes")
+            WtLinkTitle(
               Properties:
                 {N} rtd = RTD[ "|" <o> "" ]
 
@@ -3110,30 +3064,30 @@ WtParsedWikitextPage(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[nl:MythBusters afleveringen: Specials" <o> "]]" ]
-              {N} target = "nl:MythBusters afleveringen: Specials"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("nl:MythBusters afleveringen: Specials")
+            -
           )
           WtNewline("\n")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438" <o> "]]" ]
-              {N} target = "ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("ru:\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u0435\u043B\u0438 \u043B\u0435\u0433\u0435\u043D\u0434: \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u0432\u044B\u043F\u0443\u0441\u043A\u0438")
+            -
           )
           WtNewline("\n")
           WtInternalLink(
             Properties:
               {N} postfix = ""
               {N} prefix = ""
-              {N} rtd = RTD[ "[[fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista" <o> "]]" ]
-              {N} target = "fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista"
+              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 
-            WtLinkTitleImpl([ ])
+            WtPageName("fi:Luettelo televisiosarjan Myytinmurtajat erikoisjaksoista")
+            -
           )
         ])
         WtNewline("\n")

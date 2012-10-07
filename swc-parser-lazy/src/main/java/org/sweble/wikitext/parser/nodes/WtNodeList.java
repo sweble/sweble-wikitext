@@ -7,4 +7,5 @@ public interface WtNodeList
 			WtNode,
 			AstNodeList<WtNode>
 {
+	public static final WtNullNodeList EMPTY_NODE_LIST = new WtNullNodeList();
 }

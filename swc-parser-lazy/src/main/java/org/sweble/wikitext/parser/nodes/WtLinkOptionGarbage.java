@@ -1,15 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-/**
- * <h1>Link Option: Garbage</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * WtLinkOptionGarbage ::= LinkTitleContent{ALT}* &'|'
- * </p>
- * </li>
- * </ul>
- */
 public class WtLinkOptionGarbage
 		extends
 			WtStringNodeImpl
@@ -18,8 +8,12 @@ public class WtLinkOptionGarbage
 	
 	// =========================================================================
 	
-	public WtLinkOptionGarbage()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtLinkOptionGarbage()
 	{
+		super(null);
 	}
 	
 	public WtLinkOptionGarbage(String content)

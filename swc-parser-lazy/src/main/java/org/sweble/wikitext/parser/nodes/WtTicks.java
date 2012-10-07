@@ -1,18 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtTicks</h1> <h2>Grammar</h2>
- * <ul>
- * <li>
- * <p>
- * "''" "'"*
- * </p>
- * </li>
- * </ul>
- */
 public class WtTicks
 		extends
 			WtLeafNode
@@ -23,7 +12,10 @@ public class WtTicks
 	
 	// =========================================================================
 	
-	public WtTicks()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtTicks()
 	{
 	}
 	

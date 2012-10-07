@@ -17,14 +17,16 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-
 public class WtProtectedText
 		extends
 			WtText
 {
 	private static final long serialVersionUID = 1L;
 	
-	public WtProtectedText()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtProtectedText()
 	{
 	}
 	

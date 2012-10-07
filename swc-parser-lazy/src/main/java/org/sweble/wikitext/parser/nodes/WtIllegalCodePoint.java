@@ -2,9 +2,6 @@ package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>Encoding Validator</h1>
- */
 public class WtIllegalCodePoint
 		extends
 			WtLeafNode
@@ -13,7 +10,10 @@ public class WtIllegalCodePoint
 	
 	// =========================================================================
 	
-	public WtIllegalCodePoint()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtIllegalCodePoint()
 	{
 	}
 	
@@ -41,6 +41,8 @@ public class WtIllegalCodePoint
 	
 	public final String setCodePoint(String codePoint)
 	{
+		if (codePoint == null)
+			throw new NullPointerException();
 		String old = this.codePoint;
 		this.codePoint = codePoint;
 		return old;
@@ -55,6 +57,8 @@ public class WtIllegalCodePoint
 	
 	public final IllegalCodePointType setType(IllegalCodePointType type)
 	{
+		if (type == null)
+			throw new NullPointerException();
 		IllegalCodePointType old = this.type;
 		this.type = type;
 		return old;

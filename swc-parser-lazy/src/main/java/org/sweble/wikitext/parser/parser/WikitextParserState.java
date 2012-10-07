@@ -21,7 +21,9 @@ import java.util.regex.Pattern;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.WtEntityMapImpl;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtPageName;
 
 import de.fau.cs.osr.ptk.common.ParserState;
 
@@ -29,7 +31,7 @@ public class WikitextParserState
 		extends
 			ParserState<WikitextParserContext>
 {
-	private WtEntityMap entityMap = new WtEntityMap();
+	private WtEntityMap entityMap = new WtEntityMapImpl();
 	
 	private ParserConfig config;
 	
@@ -130,7 +132,7 @@ public class WikitextParserState
 		return getTop().getLinkBuilder();
 	}
 	
-	public void initLinkBuilder(String target)
+	public void initLinkBuilder(WtPageName target)
 	{
 		getTop().initLinkBuilder(config, target);
 	}

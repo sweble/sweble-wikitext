@@ -1,20 +1,23 @@
 package org.sweble.wikitext.parser.nodes;
 
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-/**
- * <h1>WtWhitespace</h1>
- */
 public class WtWhitespace
 		extends
-			WtContentNode
+			WtContentNodeImpl
 		implements
 			WtIntermediate
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
+	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtWhitespace()
+	{
+	}
 	
 	public WtWhitespace(WtNodeList content, boolean hasNewline)
 	{
