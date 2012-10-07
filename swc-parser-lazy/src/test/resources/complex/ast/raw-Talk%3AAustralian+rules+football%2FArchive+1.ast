@@ -7,10 +7,10 @@ WtParsedWikitextPage(
 				args = WtTemplateArguments[]
 			),
 		[1] = WtTagExtension(
-				{P} body = "[[Category:Football_in_Australia]]"
 				{P} name = "nowiki"
-				{P} rtd = RTD[ "<nowiki" <o> ">[[Category:Football_in_Australia]]</nowiki>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("[[Category:Football_in_Australia]]")
 			)
 	}
 	{P} warnings = C[]
@@ -5380,10 +5380,10 @@ WtParsedWikitextPage(
 			[1] = WtParagraph[
 				[0] = "A few soccer fundamentalists are hijacking the term football in Australian articles. See, for example, ",
 				[1] = WtTagExtension(
-					{P} body = "[[Category:Football_in_Australia]]"
 					{P} name = "nowiki"
-					{P} rtd = RTD[ "<nowiki" <o> ">[[Category:Football_in_Australia]]</nowiki>" ]
-					xmlAttributes = -
+					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+					xmlAttributes = -,
+					body = WtTagExtensionBodyImpl("[[Category:Football_in_Australia]]")
 				),
 				[2] = ". We need concerted action to stop this. ",
 				[3] = WtInternalLink(

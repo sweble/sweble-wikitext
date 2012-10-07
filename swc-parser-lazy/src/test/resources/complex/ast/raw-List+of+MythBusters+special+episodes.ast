@@ -92,34 +92,34 @@ WtParsedWikitextPage(
 				]
 			),
 		[4] = WtTagExtension(
-				{P} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
 				{P} name = "ref"
-				{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 			),
 		[5] = WtTagExtension(
-				{P} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
 				{P} name = "ref"
-				{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 			),
 		[6] = WtTagExtension(
-				{P} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
 				{P} name = "ref"
-				{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 			),
 		[7] = WtTagExtension(
-				{P} body = "{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
 				{P} name = "ref"
-				{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 			),
 		[8] = WtTagExtension(
-				{P} body = "{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
 				{P} name = "ref"
-				{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 			),
 		[9] = WtTemplate(
 				{P} precededByNewline = true
@@ -765,10 +765,10 @@ WtParsedWikitextPage(
 					[1] = WtParagraph[
 						[0] = "The Egg-uinox myth was perhaps too short to air in any episode, as it was easily and conclusively busted.",
 						[1] = WtTagExtension(
-							{P} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
 							{P} name = "ref"
-							{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
-							xmlAttributes = -
+							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+							xmlAttributes = -,
+							body = WtTagExtensionBodyImpl("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 						)
 					],
 					[2] = WtNewline("\n"),
@@ -920,10 +920,10 @@ WtParsedWikitextPage(
 						),
 						[4] = " and test it under Adam's weight.",
 						[5] = WtTagExtension(
-							{P} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
 							{P} name = "ref"
-							{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
-							xmlAttributes = -
+							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+							xmlAttributes = -,
+							body = WtTagExtensionBodyImpl("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 						),
 						[6] = " This test was also aired in ",
 						[7] = WtItalics(
@@ -1035,10 +1035,10 @@ WtParsedWikitextPage(
 						),
 						[2] = " in particular.",
 						[3] = WtTagExtension(
-							{P} body = "{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}"
 							{P} name = "ref"
-							{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}</ref>" ]
-							xmlAttributes = -
+							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+							xmlAttributes = -,
+							body = WtTagExtensionBodyImpl("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 						)
 					],
 					[2] = WtNewline("\n"),
@@ -1391,10 +1391,10 @@ WtParsedWikitextPage(
 												),
 												[2] = " meter. The meter malfunctioned, giving false positive readings. However, the microphone did record the sound of a released flatus.",
 												[3] = WtTagExtension(
-													{P} body = "{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
 													{P} name = "ref"
-													{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
-													xmlAttributes = -
+													{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+													xmlAttributes = -,
+													body = WtTagExtensionBodyImpl("{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -1456,10 +1456,10 @@ WtParsedWikitextPage(
 											[0] = WtParagraph[
 												[0] = " Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.",
 												[1] = WtTagExtension(
-													{P} body = "{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}"
 													{P} name = "ref"
-													{P} rtd = RTD[ "<ref" <o> ">{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}</ref>" ]
-													xmlAttributes = -
+													{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
+													xmlAttributes = -,
+													body = WtTagExtensionBodyImpl("{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 												),
 												[2] = " The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether)."
 											],

@@ -66,7 +66,7 @@ body
       extends
           WtTempNode
   {
-    String content;
+    WtTagExtensionBody content;
     String endTag;
   }
   @SuppressWarnings("serial")
@@ -244,7 +244,7 @@ private transient WtTagExtension TagExtension =
     body:TagBody
     {
       yyValue = setRtd(new WtTagExtension(header.name, header.attrs, body.content),
-        '<', header.name, SEP, header.ws, '>', body.content, body.endTag);
+        '<', header.name, SEP, header.ws, '>', SEP, body.endTag);
     }
   / header:TagHeader "/>"
     {
@@ -281,7 +281,7 @@ private transient TagExtBody TagBody =
   )
   {
     yyValue = new TagExtBody();
-    yyValue.content = content;
+    yyValue.content = new WtTagExtensionBodyImpl(content);
     yyValue.endTag = (String) endTag;
   }
 ;

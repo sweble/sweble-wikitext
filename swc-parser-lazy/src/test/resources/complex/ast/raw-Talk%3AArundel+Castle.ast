@@ -174,10 +174,10 @@ WtParsedWikitextPage(
 				]
 			),
 		[1] = WtTagExtension(
-				{P} body = "{{cleanup}}"
 				{P} name = "nowiki"
-				{P} rtd = RTD[ "<nowiki" <o> ">{{cleanup}}</nowiki>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("{{cleanup}}")
 			),
 		[2] = WtXmlComment(
 				{P} content = " Template:UnsignedIP "
@@ -242,16 +242,16 @@ WtParsedWikitextPage(
 				args = WtTemplateArguments[]
 			),
 		[9] = WtTagExtension(
-				{P} body = "==The Biography=="
 				{P} name = "nowiki"
-				{P} rtd = RTD[ "<nowiki" <o> ">==The Biography==</nowiki>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("==The Biography==")
 			),
 		[10] = WtTagExtension(
-				{P} body = "==Biography=="
 				{P} name = "nowiki"
-				{P} rtd = RTD[ "<nowiki" <o> ">==Biography==</nowiki>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("==Biography==")
 			),
 		[11] = WtTemplate(
 				{P} precededByNewline = false
@@ -445,10 +445,10 @@ WtParsedWikitextPage(
 	[5] = WtParagraph[
 		[0] = "Okay, what's the problem? Zvesoulis put a ",
 		[1] = WtTagExtension(
-			{P} body = "{{cleanup}}"
 			{P} name = "nowiki"
-			{P} rtd = RTD[ "<nowiki" <o> ">{{cleanup}}</nowiki>" ]
-			xmlAttributes = -
+			{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+			xmlAttributes = -,
+			body = WtTagExtensionBodyImpl("{{cleanup}}")
 		),
 		[2] = " tag on the article, but I've read the thing through several times and don't see a problem warranting the tag. Moreover, this is the very first entry in the talk page which strikes me as meaning we have a ways to go before we start throwing tags around. I removed the tag and made a couple of other edits. If anyone has any thoughts on what needs to be ",
 		[3] = WtItalics(
@@ -860,20 +860,20 @@ WtParsedWikitextPage(
 					[4] = WtItalics(
 						{P} rtd = RTD[ "''" <o> "''" ]
 						[0] = WtTagExtension(
-							{P} body = "==The Biography=="
 							{P} name = "nowiki"
-							{P} rtd = RTD[ "<nowiki" <o> ">==The Biography==</nowiki>" ]
-							xmlAttributes = -
+							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+							xmlAttributes = -,
+							body = WtTagExtensionBodyImpl("==The Biography==")
 						)
 					),
 					[5] = ", it should be changed to ",
 					[6] = WtItalics(
 						{P} rtd = RTD[ "''" <o> "''" ]
 						[0] = WtTagExtension(
-							{P} body = "==Biography=="
 							{P} name = "nowiki"
-							{P} rtd = RTD[ "<nowiki" <o> ">==Biography==</nowiki>" ]
-							xmlAttributes = -
+							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+							xmlAttributes = -,
+							body = WtTagExtensionBodyImpl("==Biography==")
 						)
 					),
 					[7] = ".",

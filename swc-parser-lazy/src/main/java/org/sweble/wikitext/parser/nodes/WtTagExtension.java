@@ -4,11 +4,13 @@ import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 public class WtTagExtension
 		extends
-			WtInnerNode1
+			WtInnerNode2
 		implements
 			WtPreproNode
 {
 	private static final long serialVersionUID = 1L;
+	
+	public static final WtTagExtensionBody NO_BODY = WtTagExtensionBody.NULL_BODY;
 	
 	// =========================================================================
 	
@@ -17,27 +19,24 @@ public class WtTagExtension
 	 */
 	protected WtTagExtension()
 	{
-		super((WtNode) null);
+		super(null, null);
 	}
-
+	
 	public WtTagExtension(
 			String name,
 			WtXmlAttributes xmlAttributes)
 	{
-		super(xmlAttributes);
+		super(xmlAttributes, NO_BODY);
 		setName(name);
-		// FIXME: !!
-		setBody(null);
 	}
-
+	
 	public WtTagExtension(
 			String name,
 			WtXmlAttributes xmlAttributes,
-			String body)
+			WtTagExtensionBody body)
 	{
-		super(xmlAttributes);
+		super(xmlAttributes, body);
 		setName(name);
-		setBody(body);
 	}
 	
 	@Override
@@ -65,25 +64,10 @@ public class WtTagExtension
 		return old;
 	}
 	
-	private String body;
-	
-	public final String getBody()
-	{
-		return this.body;
-	}
-	
-	public final String setBody(String body)
-	{
-		// !!!
-		String old = this.body;
-		this.body = body;
-		return old;
-	}
-	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2 + getSuperPropertyCount();
+		return 1 + getSuperPropertyCount();
 	}
 	
 	public final int getSuperPropertyCount()
@@ -94,7 +78,7 @@ public class WtTagExtension
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtInnerNode1PropertyIterator()
+		return new WtInnerNode2PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
@@ -109,8 +93,6 @@ public class WtTagExtension
 				{
 					case 0:
 						return "name";
-					case 1:
-						return "body";
 						
 					default:
 						return super.getName(index);
@@ -124,8 +106,6 @@ public class WtTagExtension
 				{
 					case 0:
 						return WtTagExtension.this.getName();
-					case 1:
-						return WtTagExtension.this.getBody();
 						
 					default:
 						return super.getValue(index);
@@ -139,8 +119,6 @@ public class WtTagExtension
 				{
 					case 0:
 						return WtTagExtension.this.setName((String) value);
-					case 1:
-						return WtTagExtension.this.setBody((String) value);
 						
 					default:
 						return super.setValue(index, value);
@@ -162,7 +140,22 @@ public class WtTagExtension
 		return (WtXmlAttributes) get(0);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes" };
+	public final boolean hasBody()
+	{
+		return getBody() != NO_BODY;
+	}
+	
+	public final void setBody(WtTagExtensionBody body)
+	{
+		set(1, body);
+	}
+	
+	public final WtTagExtensionBody getBody()
+	{
+		return (WtTagExtensionBody) get(1);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "xmlAttributes", "body" };
 	
 	public final String[] getChildNames()
 	{

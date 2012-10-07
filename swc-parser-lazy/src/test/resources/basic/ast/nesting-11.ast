@@ -1,10 +1,10 @@
 WtParsedWikitextPage(
 	{P} entityMap = {
 		[0] = WtTagExtension(
-				{P} body = "T|a\n|b"
 				{P} name = "pre"
-				{P} rtd = RTD[ "<pre" <o> ">T|a\n|b</pre>" ]
-				xmlAttributes = -
+				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
+				xmlAttributes = -,
+				body = WtTagExtensionBodyImpl("T|a\n|b")
 			)
 	}
 	{P} warnings = C[]
@@ -24,10 +24,10 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = "1",
 					[1] = WtTagExtension(
-						{P} body = "T|a\n|b"
 						{P} name = "pre"
-						{P} rtd = RTD[ "<pre" <o> ">T|a\n|b</pre>" ]
-						xmlAttributes = -
+						{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
+						xmlAttributes = -,
+						body = WtTagExtensionBodyImpl("T|a\n|b")
 					)
 				]
 			),
