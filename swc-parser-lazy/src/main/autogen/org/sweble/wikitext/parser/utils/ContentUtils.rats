@@ -36,11 +36,11 @@ body
 
   protected Span makeSpan(int from, int to)
   {
-    Location lFrom = columnToLocation(from);
+    AstLocation lFrom = columnToLocation(from);
     if (lFrom == null)
       return new Span();
 
-    Location lTo = columnToLocation(to);
+    AstLocation lTo = columnToLocation(to);
     if (lTo == null)
       return new Span(lFrom, difference(from, from));
 
@@ -52,10 +52,10 @@ body
     return makeSpan(from, to.index);
   }
 
-  protected Location columnToLocation(int index)
+  protected AstLocation columnToLocation(int index)
   {
     Column col = column(index);
-    return new Location(col.file, col.line, col.column);
+    return new AstLocation(col.file, col.line, col.column);
   }
   
   protected WtNodeList list(Object... content)

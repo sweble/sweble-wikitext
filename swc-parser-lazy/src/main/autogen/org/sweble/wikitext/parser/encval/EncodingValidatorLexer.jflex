@@ -21,7 +21,7 @@ import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 
-import de.fau.cs.osr.ptk.common.ast.Location;
+import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
 
 %% /**************************************************************** Options **/
@@ -69,7 +69,7 @@ import de.fau.cs.osr.ptk.common.ast.Location;
 	private void wrapIllegalCodePoint(int line, int column, String codePoint, IllegalCodePointType type)
 	{
 		WtIllegalCodePoint p = new WtIllegalCodePoint(codePoint, type);
-		p.setNativeLocation(new Location(
+		p.setNativeLocation(new AstLocation(
 				file,
 				line,
 				column));

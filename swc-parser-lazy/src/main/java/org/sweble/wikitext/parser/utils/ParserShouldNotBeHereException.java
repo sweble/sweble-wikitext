@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.parser.utils;
 
-import de.fau.cs.osr.ptk.common.ast.Location;
+import de.fau.cs.osr.ptk.common.ast.AstLocation;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class ParserShouldNotBeHereException
@@ -26,7 +26,7 @@ public class ParserShouldNotBeHereException
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final Location location;
+	private final AstLocation location;
 	
 	private final String context;
 	
@@ -35,7 +35,7 @@ public class ParserShouldNotBeHereException
 	// =========================================================================
 	
 	public ParserShouldNotBeHereException(
-			Location location,
+			AstLocation location,
 			String context,
 			int pos)
 	{
@@ -49,12 +49,12 @@ public class ParserShouldNotBeHereException
 			String context,
 			int pos)
 	{
-		this(new Location(location), context, pos);
+		this(new AstLocation(location), context, pos);
 	}
 	
 	// =========================================================================
 	
-	public Location getLocation()
+	public AstLocation getLocation()
 	{
 		return location;
 	}

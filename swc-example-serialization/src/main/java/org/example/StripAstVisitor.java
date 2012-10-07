@@ -3,7 +3,7 @@ package org.example;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.ast.Location;
+import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
 public final class StripAstVisitor
 		extends
@@ -41,7 +41,7 @@ public final class StripAstVisitor
 		}
 		
 		if (stripLocations)
-			n.setNativeLocation((Location) null);
+			n.setNativeLocation((AstLocation) null);
 		
 		iterate(n);
 	}

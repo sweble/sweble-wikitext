@@ -26,7 +26,7 @@ import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 
-import de.fau.cs.osr.ptk.common.ast.Location;
+import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
 public class EncodingValidatorTest
 {
@@ -69,27 +69,27 @@ public class EncodingValidatorTest
 		WtIllegalCodePoint x0 = (WtIllegalCodePoint) entityMap.getEntity(0);
 		assertEquals("\uE800", x0.getCodePoint());
 		assertEquals(IllegalCodePointType.PRIVATE_USE_CHARACTER, x0.getType());
-		assertEquals(new Location(title, 1, 13), x0.getNativeLocation());
+		assertEquals(new AstLocation(title, 1, 13), x0.getNativeLocation());
 		
 		WtIllegalCodePoint x1 = (WtIllegalCodePoint) entityMap.getEntity(1);
 		assertEquals("\uFDEE", x1.getCodePoint());
 		assertEquals(IllegalCodePointType.NON_CHARACTER, x1.getType());
-		assertEquals(new Location(title, 2, 19), x1.getNativeLocation());
+		assertEquals(new AstLocation(title, 2, 19), x1.getNativeLocation());
 		
 		WtIllegalCodePoint x2 = (WtIllegalCodePoint) entityMap.getEntity(2);
 		assertEquals("\uDBEF", x2.getCodePoint());
 		assertEquals(IllegalCodePointType.ISOLATED_SURROGATE, x2.getType());
-		assertEquals(new Location(title, 3, 10), x2.getNativeLocation());
+		assertEquals(new AstLocation(title, 3, 10), x2.getNativeLocation());
 		
 		WtIllegalCodePoint x3 = (WtIllegalCodePoint) entityMap.getEntity(3);
 		assertEquals("\uDC80", x3.getCodePoint());
 		assertEquals(IllegalCodePointType.ISOLATED_SURROGATE, x3.getType());
-		assertEquals(new Location(title, 3, 16), x3.getNativeLocation());
+		assertEquals(new AstLocation(title, 3, 16), x3.getNativeLocation());
 		
 		WtIllegalCodePoint x4 = (WtIllegalCodePoint) entityMap.getEntity(4);
 		assertEquals("\u0007", x4.getCodePoint());
 		assertEquals(IllegalCodePointType.CONTROL_CHARACTER, x4.getType());
-		assertEquals(new Location(title, 5, 25), x4.getNativeLocation());
+		assertEquals(new AstLocation(title, 5, 25), x4.getNativeLocation());
 		
 		StringBuilder ref = new StringBuilder();
 		ref.append("Ein einfacher Test-String\n");

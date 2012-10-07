@@ -31,7 +31,7 @@ import org.sweble.wikitext.parser.nodes.WtText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.Warning;
-import de.fau.cs.osr.ptk.common.ast.Location;
+import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
 /**
  * Collapses adjacent WtText nodes into a single WtText node.
@@ -101,7 +101,7 @@ public class AstCompressor
 		}
 	}
 	
-	private void compress(ListIterator<WtNode> i, Location location)
+	private void compress(ListIterator<WtNode> i, AstLocation location)
 	{
 		String ct = "";
 		HashMap<String, Object> ca = null;

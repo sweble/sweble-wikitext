@@ -288,13 +288,13 @@ public class WtNullNode
 	}
 	
 	@Override
-	public de.fau.cs.osr.ptk.common.ast.Location getNativeLocation()
+	public de.fau.cs.osr.ptk.common.ast.AstLocation getNativeLocation()
 	{
 		return null;
 	}
 	
 	@Override
-	public void setNativeLocation(de.fau.cs.osr.ptk.common.ast.Location location)
+	public void setNativeLocation(de.fau.cs.osr.ptk.common.ast.AstLocation location)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
