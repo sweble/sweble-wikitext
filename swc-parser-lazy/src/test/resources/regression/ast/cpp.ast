@@ -1,32 +1,23 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtXmlElement(
-        Properties:
-          {N} name = "code"
-          {N} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
-
-        -
-        WtBody([ WtText("<") ])
-      )
-      WtNewline("\n")
-      WtXmlStartTag(
-        Properties:
-          {N} name = "blub"
-          {N} rtd = RTD[ "<blub" <o> ">" ]
-
-        -
-      )
-      WtText("<")
-      WtXmlEndTag(
-        Properties:
-          {N} name = "blub"
-          {N} rtd = RTD[ "</blub>" ]
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "code"
+			{P} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
+			xmlAttributes = -,
+			body = WtBody[ [0] = "<" ]
+		),
+		[1] = WtNewline("\n"),
+		[2] = WtXmlStartTag(
+			{P} name = "blub"
+			{P} rtd = RTD[ "<blub" <o> ">" ]
+			xmlAttributes = -
+		),
+		[3] = "<",
+		[4] = WtXmlEndTag(
+			{P} name = "blub"
+			{P} rtd = RTD[ "</blub>" ]
+		)
+	]
 )

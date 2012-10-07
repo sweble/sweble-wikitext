@@ -1,108 +1,59 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtUnorderedList([
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [ WtText("~") ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = "~~"
-              warnings = 
-              [
-                Warning (none): /basic/wikitext/inline-signature.wikitext:2:2 - 4: "~~" : This looks like a Signature, however a signature consists of at least 3 tildes.
-              ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtSignature(
-            Properties:
-              {N} rtd = RTD[ "~~~" ]
-              {N} tildeCount = 3
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtSignature(
-            Properties:
-              {N} rtd = RTD[ "~~~~" ]
-              {N} tildeCount = 4
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtSignature(
-            Properties:
-              {N} rtd = RTD[ "~~~~~" ]
-              {N} tildeCount = 5
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtSignature(
-            Properties:
-              {N} rtd = RTD[ "~~~~~" ]
-              {N} tildeCount = 5
-              warnings = 
-              [
-                Warning (informative): /basic/wikitext/inline-signature.wikitext:6:2 - 8: "~~~~~~" : Signatures consist only of 3 to 5 tildes.
-              ]
-          )
-          WtText("~")
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "" ]
-
-        [
-          WtSignature(
-            Properties:
-              {N} rtd = RTD[ "~~~~~" ]
-              {N} tildeCount = 5
-              warnings = 
-              [
-                Warning (informative): /basic/wikitext/inline-signature.wikitext:7:2 - 9: "~~~~~~~" : Signatures consist only of 3 to 5 tildes.
-              ]
-          )
-          WtText(
-            Properties:
-              {N} content = "~~"
-              warnings = 
-              [
-                Warning (none): /basic/wikitext/inline-signature.wikitext:7:7 - 9: "~~" : This looks like a Signature, however a signature consists of at least 3 tildes.
-              ]
-          )
-        ]
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = "~"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (none): /basic/wikitext/inline-signature.wikitext:2:2 - 4: "~~" : This looks like a Signature, however a signature consists of at least 3 tildes. ]
+				{P} content = "~~"
+			)
+		),
+		[2] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~" ]
+				{P} tildeCount = 3
+			)
+		),
+		[3] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~~" ]
+				{P} tildeCount = 4
+			)
+		),
+		[4] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~~~" ]
+				{P} tildeCount = 5
+			)
+		),
+		[5] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtSignature(
+				{A} warnings = C[ Warning (informative): /basic/wikitext/inline-signature.wikitext:6:2 - 8: "~~~~~~" : Signatures consist only of 3 to 5 tildes. ]
+				{P} rtd = RTD[ "~~~~~" ]
+				{P} tildeCount = 5
+			),
+			[1] = "~"
+		),
+		[6] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = WtSignature(
+				{A} warnings = C[ Warning (informative): /basic/wikitext/inline-signature.wikitext:7:2 - 9: "~~~~~~~" : Signatures consist only of 3 to 5 tildes. ]
+				{P} rtd = RTD[ "~~~~~" ]
+				{P} tildeCount = 5
+			),
+			[1] = WtText(
+				{A} warnings = C[ Warning (none): /basic/wikitext/inline-signature.wikitext:7:7 - 9: "~~" : This looks like a Signature, however a signature consists of at least 3 tildes. ]
+				{P} content = "~~"
+			)
+		)
+	]
 )

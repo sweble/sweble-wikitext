@@ -1,40 +1,26 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtSection(
-      Properties:
-        {N} level = 1
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "=" <o> "=" ]
-
-        [ WtText("C") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtUnorderedList([
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtText("1")
-              WtUnorderedList([
-                WtListItem(
-                  Properties:
-                    {N} rtd = RTD[ "**" <o> "" ]
-
-                  [ WtText("3") ]
-                )
-              ])
-            ]
-          )
-        ])
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtSection(
+		{P} level = 1
+		heading = WtHeading(
+			{P} rtd = RTD[ "=" <o> "=" ]
+			[0] = "C"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtUnorderedList[
+				[0] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = "1",
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "**" <o> "" ]
+							[0] = "3"
+						)
+					]
+				)
+			]
+		]
+	)
 )

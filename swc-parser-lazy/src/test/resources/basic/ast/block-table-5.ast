@@ -1,171 +1,127 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtTable(
-      Properties:
-        {N} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
-
-      WtXmlAttributes([
-        WtXmlAttribute(
-          Properties:
-            {N} name = "x"
-            {N} rtd = RTD[ " x" <o> "" ]
-
-          -
-        )
-      ])
-      WtBody([
-        WtTableRow(
-          Properties:
-            {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
-
-          WtXmlAttributes([
-            WtXmlAttribute(
-              Properties:
-                {N} name = "x"
-                {N} rtd = RTD[ " x" <o> "" ]
-
-              -
-            )
-          ])
-          WtBody([
-            WtTableHeader(
-              Properties:
-                {N} rtd = RTD[ " !" <o> " |" <o> "" ]
-
-              WtXmlAttributes([
-                WtXmlAttribute(
-                  Properties:
-                    {N} name = "x"
-                    {N} rtd = RTD[ " x" <o> "" ]
-
-                  -
-                )
-              ])
-              WtBody([ WtText(" Header 1 ") ])
-            )
-            WtTableHeader(
-              Properties:
-                {N} rtd = RTD[ "!!" <o> " |" <o> "" ]
-
-              WtXmlAttributes([
-                WtXmlAttribute(
-                  Properties:
-                    {N} name = "x"
-                    {N} rtd = RTD[ " x" <o> "" ]
-
-                  -
-                )
-              ])
-              WtBody([
-                WtParagraph([ WtText(" Header 2") ])
-                WtNewline("\n")
-              ])
-            )
-          ])
-        )
-        WtTableRow(
-          Properties:
-            {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
-
-          WtXmlAttributes([
-            WtXmlAttribute(
-              Properties:
-                {N} name = "x"
-                {N} rtd = RTD[ " x" <o> "" ]
-
-              -
-            )
-          ])
-          WtBody([
-            WtTableCell(
-              Properties:
-                {N} rtd = RTD[ " |" <o> " |" <o> "" ]
-
-              WtXmlAttributes([
-                WtXmlAttribute(
-                  Properties:
-                    {N} name = "x"
-                    {N} rtd = RTD[ " x" <o> "" ]
-
-                  -
-                )
-              ])
-              WtBody([ WtText(" Cell 1.1 ") ])
-            )
-            WtTableCell(
-              Properties:
-                {N} rtd = RTD[ "||" <o> " |" <o> "" ]
-
-              WtXmlAttributes([
-                WtXmlAttribute(
-                  Properties:
-                    {N} name = "x"
-                    {N} rtd = RTD[ " x" <o> "" ]
-
-                  -
-                )
-              ])
-              WtBody([
-                WtParagraph([ WtText(" Cell 1.2") ])
-                WtNewline("\n")
-              ])
-            )
-          ])
-        )
-        WtTableRow(
-          Properties:
-            {N} rtd = RTD[ " |-" <o> "\n" <o> "" ]
-
-          WtXmlAttributes([
-            WtXmlAttribute(
-              Properties:
-                {N} name = "x"
-                {N} rtd = RTD[ " x" <o> "" ]
-
-              -
-            )
-          ])
-          WtBody([
-            WtTableCell(
-              Properties:
-                {N} rtd = RTD[ " |" <o> " |" <o> "" ]
-
-              WtXmlAttributes([
-                WtXmlAttribute(
-                  Properties:
-                    {N} name = "x"
-                    {N} rtd = RTD[ " x" <o> "" ]
-
-                  -
-                )
-              ])
-              WtBody([ WtText(" Cell 2.1 ") ])
-            )
-            WtTableCell(
-              Properties:
-                {N} rtd = RTD[ "||" <o> " |" <o> "" ]
-
-              WtXmlAttributes([
-                WtXmlAttribute(
-                  Properties:
-                    {N} name = "x"
-                    {N} rtd = RTD[ " x" <o> "" ]
-
-                  -
-                )
-              ])
-              WtBody([
-                WtParagraph([ WtText(" Cell 2.2") ])
-                WtNewline("\n")
-              ])
-            )
-          ])
-        )
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} name = "x"
+				{P} rtd = RTD[ " x" <o> "" ]
+				value = -
+			)
+		],
+		body = WtBody[
+			[0] = WtTableRow(
+				{P} rtd = RTD[ " |-" <o> "\n" <o> "" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "x"
+						{P} rtd = RTD[ " x" <o> "" ]
+						value = -
+					)
+				],
+				body = WtBody[
+					[0] = WtTableHeader(
+						{P} rtd = RTD[ " !" <o> " |" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ " x" <o> "" ]
+								value = -
+							)
+						],
+						body = WtBody[ [0] = " Header 1 " ]
+					),
+					[1] = WtTableHeader(
+						{P} rtd = RTD[ "!!" <o> " |" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ " x" <o> "" ]
+								value = -
+							)
+						],
+						body = WtBody[
+							[0] = WtParagraph[ [0] = " Header 2" ],
+							[1] = WtNewline("\n")
+						]
+					)
+				]
+			),
+			[1] = WtTableRow(
+				{P} rtd = RTD[ " |-" <o> "\n" <o> "" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "x"
+						{P} rtd = RTD[ " x" <o> "" ]
+						value = -
+					)
+				],
+				body = WtBody[
+					[0] = WtTableCell(
+						{P} rtd = RTD[ " |" <o> " |" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ " x" <o> "" ]
+								value = -
+							)
+						],
+						body = WtBody[ [0] = " Cell 1.1 " ]
+					),
+					[1] = WtTableCell(
+						{P} rtd = RTD[ "||" <o> " |" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ " x" <o> "" ]
+								value = -
+							)
+						],
+						body = WtBody[
+							[0] = WtParagraph[ [0] = " Cell 1.2" ],
+							[1] = WtNewline("\n")
+						]
+					)
+				]
+			),
+			[2] = WtTableRow(
+				{P} rtd = RTD[ " |-" <o> "\n" <o> "" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "x"
+						{P} rtd = RTD[ " x" <o> "" ]
+						value = -
+					)
+				],
+				body = WtBody[
+					[0] = WtTableCell(
+						{P} rtd = RTD[ " |" <o> " |" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ " x" <o> "" ]
+								value = -
+							)
+						],
+						body = WtBody[ [0] = " Cell 2.1 " ]
+					),
+					[1] = WtTableCell(
+						{P} rtd = RTD[ "||" <o> " |" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ " x" <o> "" ]
+								value = -
+							)
+						],
+						body = WtBody[
+							[0] = WtParagraph[ [0] = " Cell 2.2" ],
+							[1] = WtNewline("\n")
+						]
+					)
+				]
+			)
+		]
+	)
 )

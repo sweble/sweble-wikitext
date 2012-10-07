@@ -1,281 +1,204 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {0=WtTemplate([0] = WtName[WtText("disambig")], [1] = WtTemplateArguments[])}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtBold(
-        Properties:
-          {N} rtd = RTD[ "'''" <o> "'''" ]
-
-        [ WtText("asdf") ]
-      )
-      WtText(" or ")
-      WtBold(
-        Properties:
-          {N} rtd = RTD[ "'''" <o> "'''" ]
-
-        [ WtText("ASDF") ]
-      )
-      WtText(" may refer to ")
-    ])
-    WtNewline("\n")
-    WtUnorderedList([
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Alabama State Defense Force")
-            -
-          )
-          WtText(", a military entity")
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Alaska State Defense Force")
-            -
-          )
-          WtText(", a military entity")
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Another System Definition Facility")
-            -
-          )
-          WtText(", the most commonly used build system for Common Lisp")
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Association of Synchronous Data Formats")
-            -
-          )
-          WtText(", an organization that advances the use of synchronous data transmission technology")
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" Average Squared Difference Function, a mapping used in ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = "s"
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
-
-            WtPageName("pitch detection algorithm")
-            -
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" asdf, the first four letters in the ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("home row")
-            -
-          )
-          WtText(" on a ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("QWERTY")
-            -
-          )
-          WtText(" keyboard")
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" asdf movie, a series of ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = "s"
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
-
-            WtPageName("viral video")
-            -
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "" ]
-
-        [ WtText(" Asdf.com is a random chat board where the point is to not always stay on topic.") ]
-      )
-    ])
-    WtNewline("\n")
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText(" See also ") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtUnorderedList([
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtText(" ")
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Hoverboard ASDF")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtText(" ")
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Japan Air Self-Defense Force")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "" ]
-
-            [
-              WtText(" ")
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("QWERTY")
-                -
-              )
-            ]
-          )
-        ])
-        WtNewline("\n")
-        WtNewline("\n")
-        WtParagraph([
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Category:Initialisms")
-            -
-          )
-          WtNewline("\n")
-          WtTemplate(
-            Properties:
-              {N} precededByNewline = true
-              {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
-
-            WtName([ WtText("disambig") ])
-            WtTemplateArguments([ ])
-          )
-        ])
-        WtNewline("\n")
-        WtNewline("\n")
-        WtParagraph([
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("de:ASDF")
-            -
-          )
-          WtNewline("\n")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("fr:ASDF")
-            -
-          )
-        ])
-        WtNewline("\n")
-      ])
-    )
-  ]
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "disambig" ],
+				args = WtTemplateArguments[]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = "asdf"
+		),
+		[1] = " or ",
+		[2] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = "ASDF"
+		),
+		[3] = " may refer to "
+	],
+	[1] = WtNewline("\n"),
+	[2] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Alabama State Defense Force"),
+				title = -
+			),
+			[2] = ", a military entity"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Alaska State Defense Force"),
+				title = -
+			),
+			[2] = ", a military entity"
+		),
+		[2] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Another System Definition Facility"),
+				title = -
+			),
+			[2] = ", the most commonly used build system for Common Lisp"
+		),
+		[3] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Association of Synchronous Data Formats"),
+				title = -
+			),
+			[2] = ", an organization that advances the use of synchronous data transmission technology"
+		),
+		[4] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " Average Squared Difference Function, a mapping used in ",
+			[1] = WtInternalLink(
+				{P} postfix = "s"
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
+				target = WtPageName("pitch detection algorithm"),
+				title = -
+			)
+		),
+		[5] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " asdf, the first four letters in the ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("home row"),
+				title = -
+			),
+			[2] = " on a ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("QWERTY"),
+				title = -
+			),
+			[4] = " keyboard"
+		),
+		[6] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " asdf movie, a series of ",
+			[1] = WtInternalLink(
+				{P} postfix = "s"
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]s" ]
+				target = WtPageName("viral video"),
+				title = -
+			)
+		),
+		[7] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " Asdf.com is a random chat board where the point is to not always stay on topic."
+		)
+	],
+	[3] = WtNewline("\n"),
+	[4] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = " See also "
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtUnorderedList[
+				[0] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = " ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Hoverboard ASDF"),
+						title = -
+					)
+				),
+				[1] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = " ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Japan Air Self-Defense Force"),
+						title = -
+					)
+				),
+				[2] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "" ]
+					[0] = " ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("QWERTY"),
+						title = -
+					)
+				)
+			],
+			[2] = WtNewline("\n"),
+			[3] = WtNewline("\n"),
+			[4] = WtParagraph[
+				[0] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName("Category:Initialisms"),
+					title = -
+				),
+				[1] = WtNewline("\n"),
+				[2] = WtTemplate(
+					{P} precededByNewline = true
+					{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+					name = WtName[ [0] = "disambig" ],
+					args = WtTemplateArguments[]
+				)
+			],
+			[5] = WtNewline("\n"),
+			[6] = WtNewline("\n"),
+			[7] = WtParagraph[
+				[0] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName("de:ASDF"),
+					title = -
+				),
+				[1] = WtNewline("\n"),
+				[2] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName("fr:ASDF"),
+					title = -
+				)
+			],
+			[8] = WtNewline("\n")
+		]
+	)
 )

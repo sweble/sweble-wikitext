@@ -20,14 +20,10 @@ package org.sweble.wikitext.parser.utils;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNullNode;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
-import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
-import de.fau.cs.osr.utils.PrinterBase.Memoize;
-import de.fau.cs.osr.utils.PrinterBase.OutputBuffer;
 
 public class WtPrinter
 		extends
@@ -36,118 +32,6 @@ public class WtPrinter
 	public void visit(WtNullNode n)
 	{
 		p.indentln('-');
-	}
-	
-	/*
-	public void visit(WtContentNode n)
-	*/
-	public void visit2(WtContentNode n)
-	{
-		Memoize m = p.memoizeStart(n);
-		if (m != null)
-		{
-			if (hasVisibleProperties(n))
-			{
-				// FIXME: Temporary!
-				p.indent(n.getNodeName());
-				p.println('(');
-				
-				p.incIndent();
-				if (hasVisibleProperties(n))
-				{
-					printProperties(n);
-					p.needNewlines(2);
-				}
-				
-				if (n.isEmpty())
-				{
-					p.indentln("[ ]");
-				}
-				else
-				{
-					boolean singleLine = false;
-					if (isCompact() && n.size() <= 1)
-					{
-						OutputBuffer b = p.outputBufferStart();
-						printListOfNodes(n);
-						b.stop();
-						
-						String output = b.getBuffer().trim();
-						if (isSingleLine(output))
-						{
-							p.indent("[ ");
-							p.print(output);
-							p.println(" ]");
-							singleLine = true;
-						}
-					}
-					
-					if (!singleLine)
-					{
-						p.indentln('[');
-						
-						p.incIndent();
-						printListOfNodes(n);
-						p.decIndent();
-						
-						p.indentln(']');
-					}
-				}
-				p.decIndent();
-				
-				p.indentln(')');
-			}
-			else if (n.isEmpty())
-			{
-				p.indent(n.getNodeName());
-				p.println("([ ])");
-			}
-			else
-			{
-				boolean singleLine = false;
-				if (isCompact() && n.size() <= 1)
-				{
-					OutputBuffer b = p.outputBufferStart();
-					printListOfNodes(n);
-					b.stop();
-					
-					String output = b.getBuffer().trim();
-					if (isSingleLine(output))
-					{
-						p.indent(n.getNodeName());
-						p.print("([ ");
-						p.print(output);
-						p.println(" ])");
-						singleLine = true;
-					}
-				}
-				
-				if (!singleLine)
-				{
-					p.indent(n.getNodeName());
-					p.println("([");
-					
-					p.incIndent();
-					printListOfNodes(n);
-					p.decIndent();
-					
-					p.indentln("])");
-				}
-			}
-			p.memoizeStop(m);
-		}
-	}
-	
-	public void visit(AstNodeListImpl<WtNode> n)
-	{
-		if (n instanceof WtContentNode)
-		{
-			visit2((WtContentNode) n);
-		}
-		else
-		{
-			super.visit(n);
-		}
 	}
 	
 	// =========================================================================

@@ -1,38 +1,28 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtText("a ")
-      WtXmlElement(
-        Properties:
-          {N} name = "i"
-          {N} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
-
-        -
-        WtBody([
-          WtText(" b ")
-          WtXmlElement(
-            Properties:
-              {N} name = "b"
-              {N} rtd = RTD[ "<b" <o> ">" <o> "" ]
-
-            -
-            WtBody([ WtText(" c ") ])
-          )
-        ])
-      )
-      WtXmlElement(
-        Properties:
-          {N} name = "b"
-          {N} rtd = RTD[ "" <o> "" <o> "</b>" ]
-
-        -
-        WtBody([ WtText(" d ") ])
-      )
-      WtText(" e")
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "a ",
+		[1] = WtXmlElement(
+			{P} name = "i"
+			{P} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
+			xmlAttributes = -,
+			body = WtBody[
+				[0] = " b ",
+				[1] = WtXmlElement(
+					{P} name = "b"
+					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+					xmlAttributes = -,
+					body = WtBody[ [0] = " c " ]
+				)
+			]
+		),
+		[2] = WtXmlElement(
+			{P} name = "b"
+			{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
+			xmlAttributes = -,
+			body = WtBody[ [0] = " d " ]
+		),
+		[3] = " e"
+	]
 )

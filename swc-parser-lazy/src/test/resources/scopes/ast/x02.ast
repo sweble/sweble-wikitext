@@ -1,43 +1,29 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtXmlElement(
-        Properties:
-          {N} name = "i"
-          {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
-
-        -
-        WtBody([ WtText(" a ") ])
-      )
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("target")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [
-            WtXmlElement(
-              Properties:
-                {N} name = "i"
-                {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
-
-              -
-              WtBody([ WtText(" b ") ])
-            )
-            WtText(" c ")
-          ]
-        )
-      )
-      WtText(" d")
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "i"
+			{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+			xmlAttributes = -,
+			body = WtBody[ [0] = " a " ]
+		),
+		[1] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName("target"),
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = WtXmlElement(
+					{P} name = "i"
+					{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+					xmlAttributes = -,
+					body = WtBody[ [0] = " b " ]
+				),
+				[1] = " c "
+			)
+		),
+		[2] = " d"
+	]
 )

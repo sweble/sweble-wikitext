@@ -1,28 +1,18 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtSemiPre([
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ " " <o> "" ]
-
-        [ WtText(" text") ]
-      )
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ "\n " <o> "" ]
-
-        [ WtText("text  ") ]
-      )
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ "\n " <o> "" ]
-
-        [ WtText(" text") ]
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtSemiPre[
+		[0] = WtSemiPreLine(
+			{P} rtd = RTD[ " " <o> "" ]
+			[0] = " text"
+		),
+		[1] = WtSemiPreLine(
+			{P} rtd = RTD[ "\n " <o> "" ]
+			[0] = "text  "
+		),
+		[2] = WtSemiPreLine(
+			{P} rtd = RTD[ "\n " <o> "" ]
+			[0] = " text"
+		)
+	]
 )

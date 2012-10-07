@@ -1,33 +1,21 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtTable(
-      Properties:
-        {N} rtd = RTD[ "{|" <o> "" <o> "" ]
-
-      WtXmlAttributes([
-        WtXmlAttribute(
-          Properties:
-            {N} name = "x"
-            {N} rtd = RTD[ " x=" <o> "" ]
-
-          WtValue([
-            WtText(
-              Properties:
-                {N} content = "&x"
-                warnings = 
-                [
-                  Warning (informative): /regression/wikitext/xml_attribute-1.wikitext:1:6 - 7: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-                ]
-            )
-          ])
-        )
-        WtXmlAttributeGarbage(" x&x")
-      ])
-      -
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "" <o> "" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} name = "x"
+				{P} rtd = RTD[ " x=" <o> "" ]
+				value = WtValue[
+					[0] = WtText(
+						{A} warnings = C[ Warning (informative): /regression/wikitext/xml_attribute-1.wikitext:1:6 - 7: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+						{P} content = "&x"
+					)
+				]
+			),
+			[1] = WtXmlAttributeGarbage(" x&x")
+		],
+		body = -
+	)
 )

@@ -1,34 +1,22 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtText(
-        Properties:
-          {N} content = "[[Link!"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-internal-link-3.wikitext:1:1 - 8: "[[Link!" : This looks like a Internal Link, however the finishing `]]' is missing.
-          ]
-      )
-    ])
-    WtNewline("\n")
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText(" SectionHeading ") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtParagraph([ WtText("]]") ])
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-internal-link-3.wikitext:1:1 - 8: "[[Link!" : This looks like a Internal Link, however the finishing `]]' is missing. ]
+			{P} content = "[[Link!"
+		)
+	],
+	[1] = WtNewline("\n"),
+	[2] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = " SectionHeading "
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtParagraph[ [0] = "]]" ]
+		]
+	)
 )

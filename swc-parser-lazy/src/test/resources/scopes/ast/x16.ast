@@ -1,61 +1,43 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtText("a ")
-      WtXmlElement(
-        Properties:
-          {N} name = "i"
-          {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
-
-        -
-        WtBody([ WtText(" b ") ])
-      )
-    ])
-    WtXmlElement(
-      Properties:
-        {N} name = "div"
-        {N} rtd = RTD[ "<div" <o> ">" <o> "" ]
-
-      -
-      WtBody([
-        WtXmlElement(
-          Properties:
-            {N} name = "i"
-            {N} rtd = RTD[ "" <o> "" <o> "" ]
-
-          -
-          WtBody([ WtText(" c ") ])
-        )
-        WtInternalLink(
-          Properties:
-            {N} postfix = ""
-            {N} prefix = ""
-            {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-          WtPageName("target")
-          WtLinkTitle(
-            Properties:
-              {N} rtd = RTD[ "|" <o> "" ]
-
-            [
-              WtXmlElement(
-                Properties:
-                  {N} name = "i"
-                  {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
-
-                -
-                WtBody([ WtText(" d ") ])
-              )
-              WtText(" e ")
-            ]
-          )
-        )
-        WtText(" f ")
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "a ",
+		[1] = WtXmlElement(
+			{P} name = "i"
+			{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+			xmlAttributes = -,
+			body = WtBody[ [0] = " b " ]
+		)
+	],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "i"
+				{P} rtd = RTD[ "" <o> "" <o> "" ]
+				xmlAttributes = -,
+				body = WtBody[ [0] = " c " ]
+			),
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("target"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = WtXmlElement(
+						{P} name = "i"
+						{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+						xmlAttributes = -,
+						body = WtBody[ [0] = " d " ]
+					),
+					[1] = " e "
+				)
+			),
+			[2] = " f "
+		]
+	)
 )

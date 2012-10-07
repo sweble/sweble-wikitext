@@ -1,7 +1,5 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [ WtParagraph([ WtText("don't touch me!") ]) ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "don't touch me!" ]
 )

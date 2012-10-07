@@ -1,41 +1,29 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([ WtText("Whitespace before Eol!") ])
-    WtNewline("\n")
-    WtTable(
-      Properties:
-        {N} rtd = RTD[ "{|" <o> "     \n" <o> " |}" ]
-
-      WtXmlAttributes([
-        WtXmlAttribute(
-          Properties:
-            {N} name = "x"
-            {N} rtd = RTD[ " x=\"" <o> "\"" ]
-
-          WtValue([ WtText("hallo") ])
-        )
-      ])
-      WtBody([
-        WtTableRow(
-          Properties:
-            {N} rtd = RTD[ " |-" <o> "    \n" <o> "" ]
-
-          WtXmlAttributes([
-            WtXmlAttribute(
-              Properties:
-                {N} name = "x"
-                {N} rtd = RTD[ "  x=\"" <o> "\"" ]
-
-              WtValue([ WtText("hallo") ])
-            )
-          ])
-          WtBody([ ])
-        )
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "Whitespace before Eol!" ],
+	[1] = WtNewline("\n"),
+	[2] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "     \n" <o> " |}" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} name = "x"
+				{P} rtd = RTD[ " x=\"" <o> "\"" ]
+				value = WtValue[ [0] = "hallo" ]
+			)
+		],
+		body = WtBody[
+			[0] = WtTableRow(
+				{P} rtd = RTD[ " |-" <o> "    \n" <o> "" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "x"
+						{P} rtd = RTD[ "  x=\"" <o> "\"" ]
+						value = WtValue[ [0] = "hallo" ]
+					)
+				],
+				body = WtBody[]
+			)
+		]
+	)
 )

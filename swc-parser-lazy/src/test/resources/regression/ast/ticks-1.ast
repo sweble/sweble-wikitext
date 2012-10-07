@@ -1,25 +1,15 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [
-          WtText(" A ")
-          WtBold(
-            Properties:
-              {N} rtd = RTD[ "'''" <o> "'''" ]
-
-            [ WtText(" B ") ]
-          )
-          WtText(" C ")
-        ]
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = " A ",
+			[1] = WtBold(
+				{P} rtd = RTD[ "'''" <o> "'''" ]
+				[0] = " B "
+			),
+			[2] = " C "
+		)
+	]
 )

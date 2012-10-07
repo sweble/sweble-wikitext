@@ -1,1408 +1,1091 @@
 --------------------------------------------------------------------------------
   /WtParagraph[3]
 --------------------------------------------------------------------------------
-WtParagraph([
-  WtText("France is a ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("unitary state")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("unitary") ]
-    )
-  )
-  WtText(" ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("semi-presidential system")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("semi-presidential") ]
-    )
-  )
-  WtText(" ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("republic")
-    -
-  )
-  WtText(" with its main ideals expressed in the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("Declaration of the Rights of Man and of the Citizen")
-    -
-  )
-  WtText(". France is one of the most ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("developed country")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("developed countries") ]
-    )
-  )
-  WtTagExtension(
-    Properties:
-      {N} body = "{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}"
-      {N} name = "ref"
-      {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}</ref>" ]
-
-    -
-  )
-  WtText(" and possesses the fifth largest economy by ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("List of countries by GDP (nominal)")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("nominal GDP") ]
-    )
-  )
-  WtTagExtension(
-    Properties:
-      {N} body = "[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook"
-      {N} name = "ref"
-      {N} rtd = RTD[ "<ref" <o> ">[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook</ref>" ]
-
-    -
-  )
-  WtText(" and seventh largest economy by ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("List of countries by GDP (PPP)")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("purchasing power parity") ]
-    )
-  )
-  WtText(".")
-  WtTagExtension(
-    Properties:
-      {N} body = "{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}"
-      {N} name = "ref"
-      {N} rtd = RTD[ "<ref" <o> ">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}</ref>" ]
-
-    -
-  )
-  WtText(" France enjoys a ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("standard of living")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("high standard of living") ]
-    )
-  )
-  WtText(" as well as a ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("Education Index")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("high public education level") ]
-    )
-  )
-  WtText(", and has also one of the world's highest ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("List of countries by life expectancy")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("life expectancies") ]
-    )
-  )
-  WtText(".")
-  WtTagExtension(
-    Properties:
-      {N} body = "{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}"
-      {N} name = "ref"
-      {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}</ref>" ]
-
-    -
-  )
-  WtText(" It is the most visited country in the world, receiving 82 million foreign tourists annually.")
-  WtTagExtension(
-    Properties:
-      {N} body = "{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}"
-      {N} name = "ref"
-      {N} rtd = RTD[ "<ref" <o> ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>" ]
-
-    WtXmlAttributes([
-      WtXmlAttribute(
-        Properties:
-          {N} name = "name"
-          {N} rtd = RTD[ " name=\"" <o> "\"" ]
-
-        WtValue([ WtText("tourism.stat") ])
-      )
-    ])
-  )
-  WtText(" France is a founding member of the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("United Nations")
-    -
-  )
-  WtText(", and a member of the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("Francophonie")
-    -
-  )
-  WtText(", the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("G8")
-    -
-  )
-  WtText(", ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("G-20 major economies")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("G20") ]
-    )
-  )
-  WtText(", ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("NATO")
-    -
-  )
-  WtText(", ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("OECD")
-    -
-  )
-  WtText(", ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("World Trade Organisation")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("WTO") ]
-    )
-  )
-  WtText(", and the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("Latin Union")
-    -
-  )
-  WtText(". It is one of the five ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("United Nations Security Council#Permanent members")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("permanent members of the UN Security Council") ]
-    )
-  )
-  WtText(" and possesses the third largest ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("List of countries with nuclear weapons")
-    WtLinkTitle(
-      Properties:
-        {N} rtd = RTD[ "|" <o> "" ]
-
-      [ WtText("nuclear weapons stockpile") ]
-    )
-  )
-  WtText(" in the world ")
-  WtTagExtension(
-    Properties:
-      {N} body = "{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}"
-      {N} name = "ref"
-      {N} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}</ref>" ]
-
-    -
-  )
-  WtText(" with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("Human Development Index")
-    -
-  )
-  WtText(" and 24th on the ")
-  WtInternalLink(
-    Properties:
-      {N} postfix = ""
-      {N} prefix = ""
-      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-    WtPageName("Corruption Perception Index")
-    -
-  )
-  WtText(".")
-])
+WtParagraph[
+	[0] = "France is a ",
+	[1] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("unitary state"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "unitary"
+		)
+	),
+	[2] = " ",
+	[3] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("semi-presidential system"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "semi-presidential"
+		)
+	),
+	[4] = " ",
+	[5] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("republic"),
+		title = -
+	),
+	[6] = " with its main ideals expressed in the ",
+	[7] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Declaration of the Rights of Man and of the Citizen"),
+		title = -
+	),
+	[8] = ". France is one of the most ",
+	[9] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("developed country"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "developed countries"
+		)
+	),
+	[10] = WtTagExtension(
+		{P} body = "{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}"
+		{P} name = "ref"
+		{P} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}</ref>" ]
+		xmlAttributes = -
+	),
+	[11] = " and possesses the fifth largest economy by ",
+	[12] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("List of countries by GDP (nominal)"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "nominal GDP"
+		)
+	),
+	[13] = WtTagExtension(
+		{P} body = "[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook"
+		{P} name = "ref"
+		{P} rtd = RTD[ "<ref" <o> ">[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook</ref>" ]
+		xmlAttributes = -
+	),
+	[14] = " and seventh largest economy by ",
+	[15] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("List of countries by GDP (PPP)"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "purchasing power parity"
+		)
+	),
+	[16] = ".",
+	[17] = WtTagExtension(
+		{P} body = "{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}"
+		{P} name = "ref"
+		{P} rtd = RTD[ "<ref" <o> ">{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}</ref>" ]
+		xmlAttributes = -
+	),
+	[18] = " France enjoys a ",
+	[19] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("standard of living"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "high standard of living"
+		)
+	),
+	[20] = " as well as a ",
+	[21] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Education Index"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "high public education level"
+		)
+	),
+	[22] = ", and has also one of the world's highest ",
+	[23] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("List of countries by life expectancy"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "life expectancies"
+		)
+	),
+	[24] = ".",
+	[25] = WtTagExtension(
+		{P} body = "{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}"
+		{P} name = "ref"
+		{P} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}</ref>" ]
+		xmlAttributes = -
+	),
+	[26] = " It is the most visited country in the world, receiving 82 million foreign tourists annually.",
+	[27] = WtTagExtension(
+		{P} body = "{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}"
+		{P} name = "ref"
+		{P} rtd = RTD[ "<ref" <o> ">{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}</ref>" ]
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} name = "name"
+				{P} rtd = RTD[ " name=\"" <o> "\"" ]
+				value = WtValue[ [0] = "tourism.stat" ]
+			)
+		]
+	),
+	[28] = " France is a founding member of the ",
+	[29] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("United Nations"),
+		title = -
+	),
+	[30] = ", and a member of the ",
+	[31] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Francophonie"),
+		title = -
+	),
+	[32] = ", the ",
+	[33] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("G8"),
+		title = -
+	),
+	[34] = ", ",
+	[35] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("G-20 major economies"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "G20"
+		)
+	),
+	[36] = ", ",
+	[37] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("NATO"),
+		title = -
+	),
+	[38] = ", ",
+	[39] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("OECD"),
+		title = -
+	),
+	[40] = ", ",
+	[41] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("World Trade Organisation"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "WTO"
+		)
+	),
+	[42] = ", and the ",
+	[43] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Latin Union"),
+		title = -
+	),
+	[44] = ". It is one of the five ",
+	[45] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("United Nations Security Council#Permanent members"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "permanent members of the UN Security Council"
+		)
+	),
+	[46] = " and possesses the third largest ",
+	[47] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("List of countries with nuclear weapons"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "nuclear weapons stockpile"
+		)
+	),
+	[48] = " in the world ",
+	[49] = WtTagExtension(
+		{P} body = "{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}"
+		{P} name = "ref"
+		{P} rtd = RTD[ "<ref" <o> ">{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}</ref>" ]
+		xmlAttributes = -
+	),
+	[50] = " with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ",
+	[51] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Human Development Index"),
+		title = -
+	),
+	[52] = " and 24th on the ",
+	[53] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Corruption Perception Index"),
+		title = -
+	),
+	[54] = "."
+]
 
 ================================================================================
 --------------------------------------------------------------------------------
   (//WtSection[@level=3])[1]
 --------------------------------------------------------------------------------
 WtSection(
-  Properties:
-    {N} level = 3
-
-  WtHeading(
-    Properties:
-      {N} rtd = RTD[ "===" <o> "===" ]
-
-    [ WtText(" Rome to Revolution ") ]
-  )
-  WtBody([
-    WtNewline("\n")
-    WtParagraph([
-      WtText("The borders of modern France are approximately the same as those of ancient ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Gaul")
-        -
-      )
-      WtText(", which was inhabited by ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = "ic"
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]ic" ]
-
-        WtPageName("Celt")
-        -
-      )
-      WtText(" ")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("Gauls") ]
-      )
-      WtText(". Gaul was conquered by ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Roman Empire")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Rome") ]
-        )
-      )
-      WtText(" under ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Julius Caesar")
-        -
-      )
-      WtText(" in the 1st century BC,")
-      WtTagExtension(
-        Properties:
-          {N} body = "[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]]."
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].</ref>" ]
-
-        -
-      )
-      WtText(" and the Gauls eventually adopted ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Romance languages")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Roman") ]
-        )
-      )
-      WtText(" speech (")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Latin")
-        -
-      )
-      WtText(", from which the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("French language")
-        -
-      )
-      WtText(" evolved) and Roman culture. ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("History of Christianity")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Christianity") ]
-        )
-      )
-      WtText(" first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("St. Jerome")
-        -
-      )
-      WtText(" wrote that Gaul was the only region \u201Cfree from heresy\u201D. ")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtImageLink(
-        Properties:
-          {N} alt = 
-            WtLinkOptionAltText([ ])
-          {N} border = false
-          {N} format = THUMBNAIL
-          {N} hAlign = LEFT
-          {N} height = -1
-          {N} link = 
-            -
-          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-          {N} upright = false
-          {N} vAlign = MIDDLE
-          {N} width = -1
-
-        WtPageName("File:Map France 1477-fr.svg")
-        WtLinkOptions([
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "thumb"
-              {N} rtd = RTD[ "|thumb" ]
-          )
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "left"
-              {N} rtd = RTD[ "|left" ]
-          )
-        ])
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [
-            WtText("France after the ")
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("Hundred Years War")
-              -
-            )
-            WtText(". Red line")
-            WtText(":")
-            WtText(" Boundary of the ")
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("Kingdom of France")
-              -
-            )
-            WtText("; Light blue")
-            WtText(":")
-            WtText(" the directly held royal domain")
-          ]
-        )
-      )
-      WtNewline("\n")
-      WtText("In the 4th century AD, Gaul\u2019s eastern frontier along the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Rhine")
-        -
-      )
-      WtText(" was overrun by ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Germanic peoples")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Germanic tribes") ]
-        )
-      )
-      WtText(", principally the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Franks")
-        -
-      )
-      WtText(", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("House of Capet")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Capetian") ]
-        )
-      )
-      WtText(" Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Catholic Church")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Catholic") ]
-        )
-      )
-      WtText(" Christianity rather than ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Arianism")
-        -
-      )
-      WtText(" (their King ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Clovis I")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Clovis") ]
-        )
-      )
-      WtText(" did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (")
-      WtItalics(
-        Properties:
-          {N} rtd = RTD[ "''" <o> "''" ]
-
-        [ WtText("La fille a\u00EEn\u00E9e de l\u2019\u00C9glise") ]
-      )
-      WtText("),")
-      WtTagExtension(
-        Properties:
-          {N} body = "[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]"
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]</ref>" ]
-
-        -
-      )
-      WtText(" and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D.")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtImageLink(
-        Properties:
-          {N} alt = 
-            WtLinkOptionAltText([ ])
-          {N} border = false
-          {N} format = THUMBNAIL
-          {N} hAlign = RIGHT
-          {N} height = -1
-          {N} link = 
-            -
-          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-          {N} upright = false
-          {N} vAlign = MIDDLE
-          {N} width = -1
-
-        WtPageName("File:Francois Dubois 001.jpg")
-        WtLinkOptions([
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "right"
-              {N} rtd = RTD[ "|right" ]
-          )
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "thumb"
-              {N} rtd = RTD[ "|thumb" ]
-          )
-        ])
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [
-            WtText("The ")
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("St. Bartholomew's Day massacre")
-              -
-            )
-            WtText(" (1572) during the ")
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("French Wars of Religion")
-              -
-            )
-            WtText(".")
-          ]
-        )
-      )
-      WtNewline("\n")
-      WtImageLink(
-        Properties:
-          {N} alt = 
-            WtLinkOptionAltText([ ])
-          {N} border = false
-          {N} format = THUMBNAIL
-          {N} hAlign = NONE
-          {N} height = -1
-          {N} link = 
-            -
-          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-          {N} upright = true
-          {N} vAlign = MIDDLE
-          {N} width = -1
-
-        WtPageName("File:Ingres, Napoleon on his Imperial throne.jpg")
-        WtLinkOptions([
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "thumb"
-              {N} rtd = RTD[ "|thumb" ]
-          )
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "upright"
-              {N} rtd = RTD[ "|upright" ]
-          )
-        ])
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("Napoleon I")
-              -
-            )
-            WtText(", ")
-            WtItalics(
-              Properties:
-                {N} rtd = RTD[ "''" <o> "''" ]
-
-              [ WtText("Empereur des Fran\u00E7ais") ]
-            )
-            WtText(", built a ")
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("First French Empire")
-              WtLinkTitle(
-                Properties:
-                  {N} rtd = RTD[ "|" <o> "" ]
-
-                [ WtText("Great Empire") ]
-              )
-            )
-            WtText(" across Europe.")
-          ]
-        )
-      )
-      WtNewline("\n")
-      WtImageLink(
-        Properties:
-          {N} alt = 
-            WtLinkOptionAltText([ ])
-          {N} border = false
-          {N} format = THUMBNAIL
-          {N} hAlign = LEFT
-          {N} height = -1
-          {N} link = 
-            -
-          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-          {N} upright = true
-          {N} vAlign = MIDDLE
-          {N} width = -1
-
-        WtPageName("File:Jeanne d Arc Orleanide.jpg")
-        WtLinkOptions([
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "thumb"
-              {N} rtd = RTD[ "|thumb" ]
-          )
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "left"
-              {N} rtd = RTD[ "|left" ]
-          )
-          WtLinkOptionKeyword(
-            Properties:
-              {N} keyword = "upright"
-              {N} rtd = RTD[ "|upright" ]
-          )
-        ])
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("Jeanne d'Arc")
-              -
-            )
-            WtText(" by ")
-            WtInternalLink(
-              Properties:
-                {N} postfix = ""
-                {N} prefix = ""
-                {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-              WtPageName("Philippe-Alexandre Le Brun de Charmettes")
-              WtLinkTitle(
-                Properties:
-                  {N} rtd = RTD[ "|" <o> "" ]
-
-                [ WtText("Le Brun de Charmettes") ]
-              )
-            )
-            WtText(".")
-          ]
-        )
-      )
-      WtNewline("\n")
-      WtText("Existence as a separate entity began with the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Treaty of Verdun")
-        -
-      )
-      WtText(" (843), with the division of ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Charlemagne")
-        -
-      )
-      WtText("'s ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Carolingian Empire")
-        -
-      )
-      WtText(" into ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("East Francia")
-        -
-      )
-      WtText(", ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Middle Francia")
-        -
-      )
-      WtText(" and ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("West Francia")
-        -
-      )
-      WtText(". Western Francia approximated the area occupied by modern France and was the precursor to modern France.")
-      WtTagExtension(
-        Properties:
-          {N} body = "[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks"
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks</ref>" ]
-
-        -
-      )
-      WtNewline("\n")
-      WtText("The ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Carolingian dynasty")
-        -
-      )
-      WtText(" ruled France until 987, when ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Hugh Capet of France")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Hugh Capet") ]
-        )
-      )
-      WtText(", Duke of France and Count of Paris, was crowned ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("King of France")
-        -
-      )
-      WtText(".")
-      WtTagExtension(
-        Properties:
-          {N} body = "[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World"
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World</ref>" ]
-
-        -
-      )
-      WtText(" ")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtText("His descendants, the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("House of Capet")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Direct Capetians") ]
-        )
-      )
-      WtText(", the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("House of Valois")
-        -
-      )
-      WtText(" and the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("House of Bourbon")
-        -
-      )
-      WtText(", progressively unified the country through a series of wars and dynastic inheritance into a ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("centralised kingdom")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Kingdom of France") ]
-        )
-      )
-      WtText(".")
-      WtNewline("\n")
-      WtText("The ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Albigensian Crusade")
-        -
-      )
-      WtText(" was launched in 1209 to eliminate the heretical ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Cathars")
-        -
-      )
-      WtText(" of ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Occitania")
-        -
-      )
-      WtText(" (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.")
-      WtTagExtension(
-        Properties:
-          {N} body = "{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}"
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}</ref>" ]
-
-        -
-      )
-      WtNewline("\n")
-      WtText("In 1066, the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("William the Conqueror")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Duke of Normandy") ]
-        )
-      )
-      WtText(" added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France.")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtText("The exact boundaries changed greatly with time, but French landholdings of the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("List of English monarchs")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("English Kings") ]
-        )
-      )
-      WtText(" remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Wars of the Roses")
-        -
-      )
-      WtText(", won back mainland territory until only ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Calais")
-        -
-      )
-      WtText(" remained. Under ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Mary I of England")
-        -
-      )
-      WtText(" this was lost to the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Spanish Netherlands")
-        -
-      )
-      WtText(".")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtText("Charles IV (The Fair) died without an heir in 1328.")
-      WtTagExtension(
-        Properties:
-          {N} body = "Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101."
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>" ]
-
-        WtXmlAttributes([
-          WtXmlAttribute(
-            Properties:
-              {N} name = "name"
-              {N} rtd = RTD[ " name=\"" <o> "\"" ]
-
-            WtValue([ WtText("guerard") ])
-          )
-        ])
-      )
-      WtText("  Under the rules of the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Salic Law")
-        -
-      )
-      WtText(" adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.")
-      WtTagExtension(
-        Properties:
-          {N} body = null
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> "/>" ]
-
-        WtXmlAttributes([
-          WtXmlAttribute(
-            Properties:
-              {N} name = "name"
-              {N} rtd = RTD[ " name=\"" <o> "\"" ]
-
-            WtValue([ WtText("guerard") ])
-          )
-        ])
-      )
-      WtText(" Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Philip IV of France")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Philip of Valois") ]
-        )
-      )
-      WtText(", the French monarchy reached the height of its medieval power.")
-      WtTagExtension(
-        Properties:
-          {N} body = null
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> "/>" ]
-
-        WtXmlAttributes([
-          WtXmlAttribute(
-            Properties:
-              {N} name = "name"
-              {N} rtd = RTD[ " name=\"" <o> "\"" ]
-
-            WtValue([ WtText("guerard") ])
-          )
-        ])
-      )
-      WtText(" However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Black Death")
-        -
-      )
-      WtText(",")
-      WtTagExtension(
-        Properties:
-          {N} body = "[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009."
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>" ]
-
-        WtXmlAttributes([
-          WtXmlAttribute(
-            Properties:
-              {N} name = "name"
-              {N} rtd = RTD[ " name =" <o> "" ]
-
-            WtValue([ ])
-          )
-          WtXmlAttribute(
-            Properties:
-              {N} name = "Encarta"
-              {N} rtd = RTD[ " Encarta" <o> "" ]
-
-            -
-          )
-        ])
-      )
-      WtText(" England and France went to war in what would become known as the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Hundred Years' War")
-        -
-      )
-      WtText(".")
-      WtTagExtension(
-        Properties:
-          {N} body = "Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''."
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.</ref>" ]
-
-        -
-      )
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtText("In the most notorious incident during the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("French Wars of Religion")
-        -
-      )
-      WtText(" (1562\u201398), thousands of ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Huguenots")
-        -
-      )
-      WtText(" were murdered in the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("St. Bartholomew's Day massacre")
-        -
-      )
-      WtText(" of 1572.")
-      WtTagExtension(
-        Properties:
-          {N} body = "[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]]."
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].</ref>" ]
-
-        -
-      )
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtParagraph([
-      WtText("The monarchy reached its height during the 17th century and the reign of ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Louis XIV of France")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Louis XIV") ]
-        )
-      )
-      WtText(". At this time, France possessed the largest population in Europe (see ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Demographics of France")
-        -
-      )
-      WtText(") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("French language")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("French") ]
-        )
-      )
-      WtText(" was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.")
-      WtTagExtension(
-        Properties:
-          {N} body = "[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations"
-          {N} name = "ref"
-          {N} rtd = RTD[ "<ref" <o> ">[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations</ref>" ]
-
-        -
-      )
-      WtText(" Much of the ")
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Age of Enlightenment")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Enlightenment") ]
-        )
-      )
-      WtText(" occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia.")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-  ])
+	{P} level = 3
+	heading = WtHeading(
+		{P} rtd = RTD[ "===" <o> "===" ]
+		[0] = " Rome to Revolution "
+	),
+	body = WtBody[
+		[0] = WtNewline("\n"),
+		[1] = WtParagraph[
+			[0] = "The borders of modern France are approximately the same as those of ancient ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Gaul"),
+				title = -
+			),
+			[2] = ", which was inhabited by ",
+			[3] = WtInternalLink(
+				{P} postfix = "ic"
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]ic" ]
+				target = WtPageName("Celt"),
+				title = -
+			),
+			[4] = " ",
+			[5] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "''" ]
+				[0] = "Gauls"
+			),
+			[6] = ". Gaul was conquered by ",
+			[7] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Roman Empire"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Rome"
+				)
+			),
+			[8] = " under ",
+			[9] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Julius Caesar"),
+				title = -
+			),
+			[10] = " in the 1st century BC,",
+			[11] = WtTagExtension(
+				{P} body = "[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]]."
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].</ref>" ]
+				xmlAttributes = -
+			),
+			[12] = " and the Gauls eventually adopted ",
+			[13] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Romance languages"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Roman"
+				)
+			),
+			[14] = " speech (",
+			[15] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Latin"),
+				title = -
+			),
+			[16] = ", from which the ",
+			[17] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("French language"),
+				title = -
+			),
+			[18] = " evolved) and Roman culture. ",
+			[19] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("History of Christianity"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Christianity"
+				)
+			),
+			[20] = " first appeared in the 2nd and 3rd centuries AD, and became so firmly established by the fourth and 5th centuries that ",
+			[21] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("St. Jerome"),
+				title = -
+			),
+			[22] = " wrote that Gaul was the only region \u201Cfree from heresy\u201D. "
+		],
+		[2] = WtNewline("\n"),
+		[3] = WtNewline("\n"),
+		[4] = WtParagraph[
+			[0] = WtImageLink(
+				{P} alt = WtLinkOptionAltText[]
+				{P} border = false
+				{P} format = THUMBNAIL
+				{P} hAlign = LEFT
+				{P} height = -1
+				{P} link = -
+				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} upright = false
+				{P} vAlign = MIDDLE
+				{P} width = -1
+				target = WtPageName("File:Map France 1477-fr.svg"),
+				options = WtLinkOptions[
+					[0] = WtLinkOptionKeyword(
+						{P} keyword = "thumb"
+						{P} rtd = RTD[ "|thumb" ]
+					),
+					[1] = WtLinkOptionKeyword(
+						{P} keyword = "left"
+						{P} rtd = RTD[ "|left" ]
+					)
+				],
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "France after the ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Hundred Years War"),
+						title = -
+					),
+					[2] = ". Red line",
+					[3] = ":",
+					[4] = " Boundary of the ",
+					[5] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Kingdom of France"),
+						title = -
+					),
+					[6] = "; Light blue",
+					[7] = ":",
+					[8] = " the directly held royal domain"
+				)
+			),
+			[1] = WtNewline("\n"),
+			[2] = "In the 4th century AD, Gaul\u2019s eastern frontier along the ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Rhine"),
+				title = -
+			),
+			[4] = " was overrun by ",
+			[5] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Germanic peoples"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Germanic tribes"
+				)
+			),
+			[6] = ", principally the ",
+			[7] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Franks"),
+				title = -
+			),
+			[8] = ", from whom the ancient name of \u201CFrancie\u201D was derived. The modern name \u201CFrance\u201D derives from the name of the feudal domain of the ",
+			[9] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("House of Capet"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Capetian"
+				)
+			),
+			[10] = " Kings of France around Paris. The Franks were the first tribe among the Germanic conquerors of Europe after the fall of the Roman Empire to convert to ",
+			[11] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Catholic Church"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Catholic"
+				)
+			),
+			[12] = " Christianity rather than ",
+			[13] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Arianism"),
+				title = -
+			),
+			[14] = " (their King ",
+			[15] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Clovis I"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Clovis"
+				)
+			),
+			[16] = " did so in 498); thus France obtained the title \u201CEldest daughter of the Church\u201D (",
+			[17] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "''" ]
+				[0] = "La fille a\u00EEn\u00E9e de l\u2019\u00C9glise"
+			),
+			[18] = "),",
+			[19] = WtTagExtension(
+				{P} body = "[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]"
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]</ref>" ]
+				xmlAttributes = -
+			),
+			[20] = " and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D."
+		],
+		[5] = WtNewline("\n"),
+		[6] = WtNewline("\n"),
+		[7] = WtParagraph[
+			[0] = WtImageLink(
+				{P} alt = WtLinkOptionAltText[]
+				{P} border = false
+				{P} format = THUMBNAIL
+				{P} hAlign = RIGHT
+				{P} height = -1
+				{P} link = -
+				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} upright = false
+				{P} vAlign = MIDDLE
+				{P} width = -1
+				target = WtPageName("File:Francois Dubois 001.jpg"),
+				options = WtLinkOptions[
+					[0] = WtLinkOptionKeyword(
+						{P} keyword = "right"
+						{P} rtd = RTD[ "|right" ]
+					),
+					[1] = WtLinkOptionKeyword(
+						{P} keyword = "thumb"
+						{P} rtd = RTD[ "|thumb" ]
+					)
+				],
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "The ",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("St. Bartholomew's Day massacre"),
+						title = -
+					),
+					[2] = " (1572) during the ",
+					[3] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("French Wars of Religion"),
+						title = -
+					),
+					[4] = "."
+				)
+			),
+			[1] = WtNewline("\n"),
+			[2] = WtImageLink(
+				{P} alt = WtLinkOptionAltText[]
+				{P} border = false
+				{P} format = THUMBNAIL
+				{P} hAlign = NONE
+				{P} height = -1
+				{P} link = -
+				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} upright = true
+				{P} vAlign = MIDDLE
+				{P} width = -1
+				target = WtPageName("File:Ingres, Napoleon on his Imperial throne.jpg"),
+				options = WtLinkOptions[
+					[0] = WtLinkOptionKeyword(
+						{P} keyword = "thumb"
+						{P} rtd = RTD[ "|thumb" ]
+					),
+					[1] = WtLinkOptionKeyword(
+						{P} keyword = "upright"
+						{P} rtd = RTD[ "|upright" ]
+					)
+				],
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Napoleon I"),
+						title = -
+					),
+					[1] = ", ",
+					[2] = WtItalics(
+						{P} rtd = RTD[ "''" <o> "''" ]
+						[0] = "Empereur des Fran\u00E7ais"
+					),
+					[3] = ", built a ",
+					[4] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("First French Empire"),
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "Great Empire"
+						)
+					),
+					[5] = " across Europe."
+				)
+			),
+			[3] = WtNewline("\n"),
+			[4] = WtImageLink(
+				{P} alt = WtLinkOptionAltText[]
+				{P} border = false
+				{P} format = THUMBNAIL
+				{P} hAlign = LEFT
+				{P} height = -1
+				{P} link = -
+				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+				{P} upright = true
+				{P} vAlign = MIDDLE
+				{P} width = -1
+				target = WtPageName("File:Jeanne d Arc Orleanide.jpg"),
+				options = WtLinkOptions[
+					[0] = WtLinkOptionKeyword(
+						{P} keyword = "thumb"
+						{P} rtd = RTD[ "|thumb" ]
+					),
+					[1] = WtLinkOptionKeyword(
+						{P} keyword = "left"
+						{P} rtd = RTD[ "|left" ]
+					),
+					[2] = WtLinkOptionKeyword(
+						{P} keyword = "upright"
+						{P} rtd = RTD[ "|upright" ]
+					)
+				],
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Jeanne d'Arc"),
+						title = -
+					),
+					[1] = " by ",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Philippe-Alexandre Le Brun de Charmettes"),
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "Le Brun de Charmettes"
+						)
+					),
+					[3] = "."
+				)
+			),
+			[5] = WtNewline("\n"),
+			[6] = "Existence as a separate entity began with the ",
+			[7] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Treaty of Verdun"),
+				title = -
+			),
+			[8] = " (843), with the division of ",
+			[9] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Charlemagne"),
+				title = -
+			),
+			[10] = "'s ",
+			[11] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Carolingian Empire"),
+				title = -
+			),
+			[12] = " into ",
+			[13] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("East Francia"),
+				title = -
+			),
+			[14] = ", ",
+			[15] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Middle Francia"),
+				title = -
+			),
+			[16] = " and ",
+			[17] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("West Francia"),
+				title = -
+			),
+			[18] = ". Western Francia approximated the area occupied by modern France and was the precursor to modern France.",
+			[19] = WtTagExtension(
+				{P} body = "[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks"
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks</ref>" ]
+				xmlAttributes = -
+			),
+			[20] = WtNewline("\n"),
+			[21] = "The ",
+			[22] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Carolingian dynasty"),
+				title = -
+			),
+			[23] = " ruled France until 987, when ",
+			[24] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Hugh Capet of France"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Hugh Capet"
+				)
+			),
+			[25] = ", Duke of France and Count of Paris, was crowned ",
+			[26] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("King of France"),
+				title = -
+			),
+			[27] = ".",
+			[28] = WtTagExtension(
+				{P} body = "[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World"
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World</ref>" ]
+				xmlAttributes = -
+			),
+			[29] = " "
+		],
+		[8] = WtNewline("\n"),
+		[9] = WtNewline("\n"),
+		[10] = WtParagraph[
+			[0] = "His descendants, the ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("House of Capet"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Direct Capetians"
+				)
+			),
+			[2] = ", the ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("House of Valois"),
+				title = -
+			),
+			[4] = " and the ",
+			[5] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("House of Bourbon"),
+				title = -
+			),
+			[6] = ", progressively unified the country through a series of wars and dynastic inheritance into a ",
+			[7] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("centralised kingdom"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Kingdom of France"
+				)
+			),
+			[8] = ".",
+			[9] = WtNewline("\n"),
+			[10] = "The ",
+			[11] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Albigensian Crusade"),
+				title = -
+			),
+			[12] = " was launched in 1209 to eliminate the heretical ",
+			[13] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Cathars"),
+				title = -
+			),
+			[14] = " of ",
+			[15] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Occitania"),
+				title = -
+			),
+			[16] = " (the southern area of modern-day France). In the end, both the Cathars and the independence of southern France were exterminated.",
+			[17] = WtTagExtension(
+				{P} body = "{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}"
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}</ref>" ]
+				xmlAttributes = -
+			),
+			[18] = WtNewline("\n"),
+			[19] = "In 1066, the ",
+			[20] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("William the Conqueror"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Duke of Normandy"
+				)
+			),
+			[21] = " added King of England to his titles. Later Kings expanded their territory to cover over half of modern continental France, including most of the North, Centre and West of France."
+		],
+		[11] = WtNewline("\n"),
+		[12] = WtNewline("\n"),
+		[13] = WtParagraph[
+			[0] = "The exact boundaries changed greatly with time, but French landholdings of the ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("List of English monarchs"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "English Kings"
+				)
+			),
+			[2] = " remained extensive for centuries. Strong French counterattacks, helped by English weakness during the ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Wars of the Roses"),
+				title = -
+			),
+			[4] = ", won back mainland territory until only ",
+			[5] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Calais"),
+				title = -
+			),
+			[6] = " remained. Under ",
+			[7] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Mary I of England"),
+				title = -
+			),
+			[8] = " this was lost to the ",
+			[9] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Spanish Netherlands"),
+				title = -
+			),
+			[10] = "."
+		],
+		[14] = WtNewline("\n"),
+		[15] = WtNewline("\n"),
+		[16] = WtParagraph[
+			[0] = "Charles IV (The Fair) died without an heir in 1328.",
+			[1] = WtTagExtension(
+				{P} body = "Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101."
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.</ref>" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "name"
+						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						value = WtValue[ [0] = "guerard" ]
+					)
+				]
+			),
+			[2] = "  Under the rules of the ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Salic Law"),
+				title = -
+			),
+			[4] = " adopted in 1316, the crown of France could not pass to a woman, nor could the line of kinship pass through the female line.",
+			[5] = WtTagExtension(
+				{P} body = null
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> "/>" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "name"
+						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						value = WtValue[ [0] = "guerard" ]
+					)
+				]
+			),
+			[6] = " Accordingly, the crown passed to the cousin of Charles, Philip of Valois, rather than through the female line to Charles' nephew, Edward, who would soon become Edward III of England. In the reign of ",
+			[7] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Philip IV of France"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Philip of Valois"
+				)
+			),
+			[8] = ", the French monarchy reached the height of its medieval power.",
+			[9] = WtTagExtension(
+				{P} body = null
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> "/>" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "name"
+						{P} rtd = RTD[ " name=\"" <o> "\"" ]
+						value = WtValue[ [0] = "guerard" ]
+					)
+				]
+			),
+			[10] = " However, Philip's seat on the throne was contested by Edward III of England and in 1337, on the eve of the first wave of the ",
+			[11] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Black Death"),
+				title = -
+			),
+			[12] = ",",
+			[13] = WtTagExtension(
+				{P} body = "[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009."
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.</ref>" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "name"
+						{P} rtd = RTD[ " name =" <o> "" ]
+						value = WtValue[]
+					),
+					[1] = WtXmlAttribute(
+						{P} name = "Encarta"
+						{P} rtd = RTD[ " Encarta" <o> "" ]
+						value = -
+					)
+				]
+			),
+			[14] = " England and France went to war in what would become known as the ",
+			[15] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Hundred Years' War"),
+				title = -
+			),
+			[16] = ".",
+			[17] = WtTagExtension(
+				{P} body = "Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''."
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.</ref>" ]
+				xmlAttributes = -
+			)
+		],
+		[17] = WtNewline("\n"),
+		[18] = WtNewline("\n"),
+		[19] = WtParagraph[
+			[0] = "In the most notorious incident during the ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("French Wars of Religion"),
+				title = -
+			),
+			[2] = " (1562\u201398), thousands of ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Huguenots"),
+				title = -
+			),
+			[4] = " were murdered in the ",
+			[5] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("St. Bartholomew's Day massacre"),
+				title = -
+			),
+			[6] = " of 1572.",
+			[7] = WtTagExtension(
+				{P} body = "[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]]."
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].</ref>" ]
+				xmlAttributes = -
+			)
+		],
+		[20] = WtNewline("\n"),
+		[21] = WtNewline("\n"),
+		[22] = WtParagraph[
+			[0] = "The monarchy reached its height during the 17th century and the reign of ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Louis XIV of France"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Louis XIV"
+				)
+			),
+			[2] = ". At this time, France possessed the largest population in Europe (see ",
+			[3] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Demographics of France"),
+				title = -
+			),
+			[4] = ") and had tremendous influence over European politics, economy, and culture. Since the 18th century, ",
+			[5] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("French language"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "French"
+				)
+			),
+			[6] = " was the most used language in diplomacy, science, literature and international affairs, before English took the lead in the 20th century.",
+			[7] = WtTagExtension(
+				{P} body = "[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations"
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations</ref>" ]
+				xmlAttributes = -
+			),
+			[8] = " Much of the ",
+			[9] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Age of Enlightenment"),
+				title = WtLinkTitle(
+					{P} rtd = RTD[ "|" <o> "" ]
+					[0] = "Enlightenment"
+				)
+			),
+			[10] = " occurred in French intellectual circles, and major scientific breakthroughs were achieved by French scientists in the 18th century. In addition, France obtained many overseas possessions in the Americas, Africa and Asia."
+		],
+		[23] = WtNewline("\n"),
+		[24] = WtNewline("\n")
+	]
 )
 
 ================================================================================
 --------------------------------------------------------------------------------
   //WtTemplate[contains(name//WtText[@content],"Infobox Country")]//WtTemplateArgument[contains(name//WtText[@content],"capital")]/value
 --------------------------------------------------------------------------------
-WtValue([
-  WtText(" ")
-  WtText("[[")
-  WtText("Paris")
-  WtText("]]")
-  WtText("\n")
-])
+WtValue[
+	[0] = " ",
+	[1] = "[[",
+	[2] = "Paris",
+	[3] = "]]",
+	[4] = "\n"
+]
 
 ================================================================================

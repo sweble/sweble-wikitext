@@ -1,36 +1,27 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([ WtText("a ") ])
-    WtXmlElement(
-      Properties:
-        {N} name = "div"
-        {N} rtd = RTD[ "<div" <o> ">" <o> "" ]
-
-      -
-      WtBody([
-        WtText(" b ")
-        WtXmlElement(
-          Properties:
-            {N} name = "blockquote"
-            {N} rtd = RTD[ "<blockquote" <o> ">" <o> "</blockquote>" ]
-
-          -
-          WtBody([
-            WtText(" c ")
-            WtXmlEndTag(
-              Properties:
-                {N} name = "div"
-                {N} rtd = RTD[ "</div>" ]
-            )
-            WtText(" d ")
-          ])
-        )
-        WtText(" e")
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[ [0] = "a " ],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = " b ",
+			[1] = WtXmlElement(
+				{P} name = "blockquote"
+				{P} rtd = RTD[ "<blockquote" <o> ">" <o> "</blockquote>" ]
+				xmlAttributes = -,
+				body = WtBody[
+					[0] = " c ",
+					[1] = WtXmlEndTag(
+						{P} name = "div"
+						{P} rtd = RTD[ "</div>" ]
+					),
+					[2] = " d "
+				]
+			),
+			[2] = " e"
+		]
+	)
 )

@@ -1,34 +1,25 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtExternalLink(
-        Properties:
-          {N} rtd = RTD[ "[" <o> " " <o> "]" ]
-
-        WtUrl(
-          Properties:
-            {N} path = "//example.com"
-            {N} protocol = "http"
-            {N} rtd = RTD[ "http://example.com" ]
-        )
-        WtLinkTitle([
-          WtText("title1a ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("target")
-            -
-          )
-          WtText(" title1b")
-        ])
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtExternalLink(
+			{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+			target = WtUrl(
+				{P} path = "//example.com"
+				{P} protocol = "http"
+				{P} rtd = RTD[ "http://example.com" ]
+			),
+			title = WtLinkTitle[
+				[0] = "title1a ",
+				[1] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName("target"),
+					title = -
+				),
+				[2] = " title1b"
+			]
+		)
+	]
 )

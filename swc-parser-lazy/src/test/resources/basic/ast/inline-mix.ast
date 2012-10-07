@@ -1,95 +1,76 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {0=WtXmlComment(" comment ")}
-    {N} warnings = []
-
-  [
-    WtNewline("\n")
-    WtSemiPre([
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ " " <o> "" ]
-
-        [
-          WtSignature(
-            Properties:
-              {N} rtd = RTD[ "~~~" ]
-              {N} tildeCount = 3
-          )
-          WtText(" ")
-          WtItalics(
-            Properties:
-              {N} rtd = RTD[ "''" <o> "''" ]
-
-            [
-              WtText(" ")
-              WtSignature(
-                Properties:
-                  {N} rtd = RTD[ "~~~~" ]
-                  {N} tildeCount = 4
-              )
-              WtText(" ")
-              WtBold(
-                Properties:
-                  {N} rtd = RTD[ "'''" <o> "'''" ]
-
-                [
-                  WtText(" ")
-                  WtXmlComment(
-                    Properties:
-                      {N} content = " comment "
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "<!-- comment -->" ]
-                      {N} suffix = ""
-                  )
-                  WtText(" ")
-                  WtSignature(
-                    Properties:
-                      {N} rtd = RTD[ "~~~~~" ]
-                      {N} tildeCount = 5
-                  )
-                  WtText(" ")
-                  WtUrl(
-                    Properties:
-                      {N} path = "//example.com"
-                      {N} protocol = "http"
-                      {N} rtd = RTD[ "http://example.com" ]
-                  )
-                  WtText(" ")
-                  WtExternalLink(
-                    Properties:
-                      {N} rtd = RTD[ "[" <o> "" <o> "]" ]
-
-                    WtUrl(
-                      Properties:
-                        {N} path = "//example.com"
-                        {N} protocol = "http"
-                        {N} rtd = RTD[ "http://example.com" ]
-                    )
-                    -
-                  )
-                  WtText(" ")
-                ]
-              )
-            ]
-          )
-          WtText(" ")
-          WtPageSwitch(
-            Properties:
-              {N} name = "NOTOC"
-              {N} rtd = RTD[ "__NOTOC__" ]
-          )
-          WtText(" ")
-          WtXmlEntityRef(
-            Properties:
-              {N} name = "amp"
-              {N} resolved = "&"
-              {N} rtd = RTD[ "&amp;" ]
-          )
-          WtText(" ignored ")
-        ]
-      )
-    ])
-    WtNewline("\n")
-  ]
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- comment -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtSemiPre[
+		[0] = WtSemiPreLine(
+			{P} rtd = RTD[ " " <o> "" ]
+			[0] = WtSignature(
+				{P} rtd = RTD[ "~~~" ]
+				{P} tildeCount = 3
+			),
+			[1] = " ",
+			[2] = WtItalics(
+				{P} rtd = RTD[ "''" <o> "''" ]
+				[0] = " ",
+				[1] = WtSignature(
+					{P} rtd = RTD[ "~~~~" ]
+					{P} tildeCount = 4
+				),
+				[2] = " ",
+				[3] = WtBold(
+					{P} rtd = RTD[ "'''" <o> "'''" ]
+					[0] = " ",
+					[1] = WtXmlComment(
+						{P} content = " comment "
+						{P} prefix = ""
+						{P} rtd = RTD[ "<!-- comment -->" ]
+						{P} suffix = ""
+					),
+					[2] = " ",
+					[3] = WtSignature(
+						{P} rtd = RTD[ "~~~~~" ]
+						{P} tildeCount = 5
+					),
+					[4] = " ",
+					[5] = WtUrl(
+						{P} path = "//example.com"
+						{P} protocol = "http"
+						{P} rtd = RTD[ "http://example.com" ]
+					),
+					[6] = " ",
+					[7] = WtExternalLink(
+						{P} rtd = RTD[ "[" <o> "" <o> "]" ]
+						target = WtUrl(
+							{P} path = "//example.com"
+							{P} protocol = "http"
+							{P} rtd = RTD[ "http://example.com" ]
+						),
+						title = -
+					),
+					[8] = " "
+				)
+			),
+			[3] = " ",
+			[4] = WtPageSwitch(
+				{P} name = "NOTOC"
+				{P} rtd = RTD[ "__NOTOC__" ]
+			),
+			[5] = " ",
+			[6] = WtXmlEntityRef(
+				{P} name = "amp"
+				{P} resolved = "&"
+				{P} rtd = RTD[ "&amp;" ]
+			),
+			[7] = " ignored "
+		)
+	],
+	[2] = WtNewline("\n")
 )

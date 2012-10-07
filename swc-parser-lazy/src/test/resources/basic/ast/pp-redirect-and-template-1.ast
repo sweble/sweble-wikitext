@@ -1,55 +1,76 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {0=WtRedirect([0] = WtPageName("link")), 1=WtTemplate([0] = WtName[WtText("name")], [1] = WtTemplateArguments[WtTemplateArgument([0] = WtNullName(), [1] = WtValue[WtText("arg0")]), WtTemplateArgument([0] = WtName[WtText("arg1")], [1] = WtValue[WtText("value1")]), WtTemplateArgument([0] = WtName[WtText("arg2")], [1] = WtValue[WtTemplateParameter([0] = WtName[WtText("parameter2")], [1] = null, [2] = null)])])}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtRedirect(
-        Properties:
-          {N} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
-
-        WtPageName("link")
-      )
-      WtNewline("\n")
-      WtTemplate(
-        Properties:
-          {N} precededByNewline = true
-          {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
-
-        WtName([ WtText("name") ])
-        WtTemplateArguments([
-          WtTemplateArgument(
-            Properties:
-              {N} rtd = RTD[ "|" <o> "" <o> "" ]
-
-            -
-            WtValue([ WtText("arg0") ])
-          )
-          WtTemplateArgument(
-            Properties:
-              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
-
-            WtName([ WtText("arg1") ])
-            WtValue([ WtText("value1") ])
-          )
-          WtTemplateArgument(
-            Properties:
-              {N} rtd = RTD[ "|" <o> "=" <o> "" ]
-
-            WtName([ WtText("arg2") ])
-            WtValue([
-              WtTemplateParameter(
-                Properties:
-                  {N} precededByNewline = false
-                  {N} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
-
-                WtName([ WtText("parameter2") ])
-              )
-            ])
-          )
-        ])
-      )
-    ])
-  ]
+	{P} entityMap = {
+		[0] = WtRedirect(
+				{P} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
+				target = WtPageName("link")
+			),
+		[1] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = "name" ],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "" <o> "" ]
+						name = -,
+						value = WtValue[ [0] = "arg0" ]
+					),
+					[1] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+						name = WtName[ [0] = "arg1" ],
+						value = WtValue[ [0] = "value1" ]
+					),
+					[2] = WtTemplateArgument(
+						{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+						name = WtName[ [0] = "arg2" ],
+						value = WtValue[
+							[0] = WtTemplateParameter(
+								{P} precededByNewline = false
+								{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+								name = WtName[ [0] = "parameter2" ],
+								defaultValue = ,
+								garbage = 
+							)
+						]
+					)
+				]
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtRedirect(
+			{P} rtd = RTD[ "#ReDiReCt[[" <o> "|garbage]]" ]
+			target = WtPageName("link")
+		),
+		[1] = WtNewline("\n"),
+		[2] = WtTemplate(
+			{P} precededByNewline = true
+			{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+			name = WtName[ [0] = "name" ],
+			args = WtTemplateArguments[
+				[0] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "" <o> "" ]
+					name = -,
+					value = WtValue[ [0] = "arg0" ]
+				),
+				[1] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+					name = WtName[ [0] = "arg1" ],
+					value = WtValue[ [0] = "value1" ]
+				),
+				[2] = WtTemplateArgument(
+					{P} rtd = RTD[ "|" <o> "=" <o> "" ]
+					name = WtName[ [0] = "arg2" ],
+					value = WtValue[
+						[0] = WtTemplateParameter(
+							{P} precededByNewline = false
+							{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+							name = WtName[ [0] = "parameter2" ],
+							defaultValue = ,
+							garbage = 
+						)
+					]
+				)
+			]
+		)
+	]
 )

@@ -1,24 +1,18 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtNewline("\n")
-    WtParagraph([
-      WtText("x")
-      WtNewline("\n")
-    ])
-    WtXmlElement(
-      Properties:
-        {N} name = "hr"
-        {N} rtd = RTD[ "<hr" <o> " />" <o> "" ]
-
-      -
-      -
-    )
-    WtNewline("\n")
-    WtText("y")
-    WtNewline("\n")
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtParagraph[
+		[0] = "x",
+		[1] = WtNewline("\n")
+	],
+	[2] = WtXmlElement(
+		{P} name = "hr"
+		{P} rtd = RTD[ "<hr" <o> " />" <o> "" ]
+		xmlAttributes = -,
+		body = -
+	),
+	[3] = WtNewline("\n"),
+	[4] = "y",
+	[5] = WtNewline("\n")
 )

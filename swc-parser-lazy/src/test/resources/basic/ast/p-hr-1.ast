@@ -1,48 +1,37 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-    WtNewline("\n")
-    WtNewline("\n")
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-    WtParagraph([ WtText("text") ])
-    WtNewline("\n")
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-    WtNewline("\n")
-    WtParagraph([ WtText("t") ])
-    WtNewline("\n")
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-    WtNewline("\n")
-    WtNewline("\n")
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-    WtNewline("\n")
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-    WtNewline("\n")
-    WtNewline("\n")
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[1] = WtNewline("\n"),
+	[2] = WtNewline("\n"),
+	[3] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[4] = WtParagraph[ [0] = "text" ],
+	[5] = WtNewline("\n"),
+	[6] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[7] = WtNewline("\n"),
+	[8] = WtParagraph[ [0] = "t" ],
+	[9] = WtNewline("\n"),
+	[10] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[11] = WtNewline("\n"),
+	[12] = WtNewline("\n"),
+	[13] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[14] = WtNewline("\n"),
+	[15] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[16] = WtNewline("\n"),
+	[17] = WtNewline("\n"),
+	[18] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	)
 )

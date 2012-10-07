@@ -1,41 +1,29 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtImageLink(
-        Properties:
-          {N} alt = 
-            WtLinkOptionAltText(
-              Properties:
-                {N} rtd = RTD[ "|alt=" <o> "" ]
-
-              [ WtText("\n ") ]
-            )
-          {N} border = false
-          {N} format = UNRESTRAINED
-          {N} hAlign = NONE
-          {N} height = -1
-          {N} link = 
-            -
-          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-          {N} upright = false
-          {N} vAlign = MIDDLE
-          {N} width = -1
-
-        WtPageName("File:x")
-        WtLinkOptions([
-          WtLinkOptionAltText(
-            Properties:
-              {N} rtd = RTD[ "|alt=" <o> "" ]
-
-            [ WtText("\n ") ]
-          )
-        ])
-        -
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtImageLink(
+			{P} alt = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "\n "
+				)
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = NONE
+			{P} height = -1
+			{P} link = -
+			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = -1
+			target = WtPageName("File:x"),
+			options = WtLinkOptions[
+				[0] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+					[0] = "\n "
+				)
+			],
+			title = -
+		)
+	]
 )

@@ -1,72 +1,47 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtXmlElement(
-      Properties:
-        {N} name = "table"
-        {N} rtd = RTD[ "<table" <o> ">" <o> "" ]
-
-      -
-      WtBody([
-        WtXmlElement(
-          Properties:
-            {N} name = "tr"
-            {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
-
-          -
-          WtBody([
-            WtXmlElement(
-              Properties:
-                {N} name = "td"
-                {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
-
-              -
-              WtBody([ WtNewline("\n") ])
-            )
-          ])
-        )
-        WtSemiPre([
-          WtSemiPreLine(
-            Properties:
-              {N} rtd = RTD[ " " <o> "" ]
-
-            [
-              WtXmlEndTag(
-                Properties:
-                  {N} name = "td"
-                  {N} rtd = RTD[ "</td>" ]
-              )
-            ]
-          )
-          WtSemiPreLine(
-            Properties:
-              {N} rtd = RTD[ "\n " <o> "" ]
-
-            [
-              WtBold(
-                Properties:
-                  {N} rtd = RTD[ "'''" <o> "" ]
-
-                [
-                  WtXmlEndTag(
-                    Properties:
-                      {N} name = "td"
-                      {N} rtd = RTD[ "</td>" ]
-                  )
-                ]
-              )
-              WtXmlEndTag(
-                Properties:
-                  {N} name = "tr"
-                  {N} rtd = RTD[ "</tr>" ]
-              )
-            ]
-          )
-        ])
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtXmlElement(
+		{P} name = "table"
+		{P} rtd = RTD[ "<table" <o> ">" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "tr"
+				{P} rtd = RTD[ "<tr" <o> ">" <o> "" ]
+				xmlAttributes = -,
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "td"
+						{P} rtd = RTD[ "<td" <o> ">" <o> "" ]
+						xmlAttributes = -,
+						body = WtBody[ [0] = WtNewline("\n") ]
+					)
+				]
+			),
+			[1] = WtSemiPre[
+				[0] = WtSemiPreLine(
+					{P} rtd = RTD[ " " <o> "" ]
+					[0] = WtXmlEndTag(
+						{P} name = "td"
+						{P} rtd = RTD[ "</td>" ]
+					)
+				),
+				[1] = WtSemiPreLine(
+					{P} rtd = RTD[ "\n " <o> "" ]
+					[0] = WtBold(
+						{P} rtd = RTD[ "'''" <o> "" ]
+						[0] = WtXmlEndTag(
+							{P} name = "td"
+							{P} rtd = RTD[ "</td>" ]
+						)
+					),
+					[1] = WtXmlEndTag(
+						{P} name = "tr"
+						{P} rtd = RTD[ "</tr>" ]
+					)
+				)
+			]
+		]
+	)
 )

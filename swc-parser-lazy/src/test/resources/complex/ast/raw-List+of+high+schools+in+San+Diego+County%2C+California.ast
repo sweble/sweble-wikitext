@@ -1,2365 +1,1621 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {0=WtTemplate([0] = WtName[WtText(":San Diego Unified School District")], [1] = WtTemplateArguments[]), 1=WtTemplate([0] = WtName[WtText(":Roman Catholic Diocese of San Diego")], [1] = WtTemplateArguments[]), 2=WtTagExtension([0] = WtEmptyXmlAttributes())}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtText("This is a ")
-      WtBold(
-        Properties:
-          {N} rtd = RTD[ "'''" <o> "'''" ]
-
-        [
-          WtText("list of high schools in ")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("San Diego County, California")
-            -
-          )
-        ]
-      )
-      WtText(". It includes public and private schools and is arranged by school district (public schools) or affiliation (private schools).  These schools offer grades 9 through 12.  Junior High schools are not listed here.")
-      WtNewline("\n")
-    ])
-    WtNewline("\n")
-    WtNewline("\n")
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText("Public schools") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Borrego Springs Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Borrego Springs High School")
-                    -
-                  )
-                  WtText(", Borrego Springs")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Palm Canyon High School (continuation), Borrego Springs") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Coronado Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Coronado High School (Coronado, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Coronado High School") ]
-                    )
-                  )
-                  WtText(", Coronado")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Palm Academy for Learning, Coronado") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Escondido Union School District")
-                WtLinkTitle(
-                  Properties:
-                    {N} rtd = RTD[ "|" <o> "" ]
-
-                  [ WtText("Escondido Union High School District") ]
-                )
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Center City High School, Escondido\t") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Escondido Charter High School, Escondido") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Escondido High School")
-                    -
-                  )
-                  WtText(", Escondido")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Orange Glen High School")
-                    -
-                  )
-                  WtText(", Escondido")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("San Pasqual High School")
-                    -
-                  )
-                  WtText(", Escondido")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Valley High School (continuation), Escondido") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("The Classical Academy High School (California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Classical Academy High School") ]
-                    )
-                  )
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Fallbrook Union High School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Fallbrook Union High School")
-                    -
-                  )
-                  WtText(", Fallbrook\t")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Ivy High School (continuation), Fallbrook") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Oasis High School (alternative), Fallbrook") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Grossmont Union High School District")
-                -
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Chaparral High School (El Cajon)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Chaparral High School") ]
-                    )
-                  )
-                  WtText(" (continuation), El Cajon")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("El Cajon Valley High School")
-                    -
-                  )
-                  WtText(", El Cajon")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("El Capitan High School")
-                    -
-                  )
-                  WtText(", Lakeside")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Granite Hills High School (El Cajon, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Granite Hills High School") ]
-                    )
-                  )
-                  WtText(", El Cajon")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Grossmont High School")
-                    -
-                  )
-                  WtText(", La Mesa/El Cajon")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Grossmont Middle College High School")
-                    -
-                  )
-                  WtText(", El Cajon")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Helix High School")
-                    -
-                  )
-                  WtText(", La Mesa")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Monte Vista High School (Spring Valley, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Monte Vista High School") ]
-                    )
-                  )
-                  WtText(", Spring Valley")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Mount Miguel High School")
-                    -
-                  )
-                  WtText(", Spring Valley")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Santana High School")
-                    -
-                  )
-                  WtText(", Santee")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Steele Canyon High School")
-                    -
-                  )
-                  WtText(", Spring Valley")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Valhalla High School (El Cajon, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Valhalla High School") ]
-                    )
-                  )
-                  WtText(", El Cajon")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("West Hills High School")
-                    -
-                  )
-                  WtText(", Santee")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Julian Union High School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Julian High School")
-                    -
-                  )
-                  WtText(", Julian")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Redding (Ray) High (continuation), Julian") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Summit High Community Day, Julian") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Lakeside Union School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("River Valley Charter School")
-                    -
-                  )
-                  WtText(", Lakeside")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Mountain Empire Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Mountain Empire High School")
-                    -
-                  )
-                  WtText(", Pine Valley")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Oceanside Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("El Camino High School (Oceanside)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("El Camino High School") ]
-                    )
-                  )
-                  WtText(", Oceanside")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Oceanside High School")
-                    -
-                  )
-                  WtText(", Oceanside")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Oceanside School of Business and Technology, Oceanside") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Pacific View Charter School, Oceanside") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Poway Unified School District")
-                -
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Del Norte High School (San Diego, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Del Norte High School") ]
-                    )
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Mount Carmel High School (San Diego, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Mount Carmel High School") ]
-                    )
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Poway High School")
-                    -
-                  )
-                  WtText(", Poway")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Rancho Bernardo High School")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Westview High School (San Diego)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Westview High School") ]
-                    )
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Ramona Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Montecito High School (alternative), Ramona") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Mountain Valley Academy High School, Ramona") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Ramona High School (Ramona, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Ramona High School") ]
-                    )
-                  )
-                  WtText(", Ramona")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("San Diego City Schools")
-                WtLinkTitle(
-                  Properties:
-                    {N} rtd = RTD[ "|" <o> "" ]
-
-                  [ WtText("San Diego Unified School District") ]
-                )
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtParagraph([
-              WtTemplate(
-                Properties:
-                  {N} precededByNewline = true
-                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
-
-                WtName([ WtText(":San Diego Unified School District") ])
-                WtTemplateArguments([ ])
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("San Dieguito Union High School District")
-                -
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Canyon Crest Academy")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("La Costa Canyon High School")
-                    -
-                  )
-                  WtText(", Carlsbad")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("North Coast High School (alternative)") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("San Dieguito Academy")
-                    -
-                  )
-                  WtText(", Encinitas")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Sunset High School (alternative)") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Torrey Pines High School")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("San Marcos Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Bayshore Prep Charter School, San Marcos\t") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Foothills High (alternative), San Marcos\t") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Mission Hills High School")
-                    -
-                  )
-                  WtText(", San Marcos")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("San Marcos High School (San Marcos, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("San Marcos High School") ]
-                    )
-                  )
-                  WtText(", San Marcos")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Twin Oaks High School (alternative), San Marcos") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Sweetwater Union High School District")
-                -
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Bonita Vista High School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Castle Park High School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Chula Vista High School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Eastlake High School (Chula Vista, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Eastlake High School") ]
-                    )
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Hilltop High School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("MAAC Community Charter School, Chula Vista") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Mar Vista High School")
-                    -
-                  )
-                  WtText(", Imperial Beach")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Montgomery High School, San Diego")
-                    -
-                  )
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Olympian High School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Options Secondary School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Otay Ranch High School")
-                    -
-                  )
-                  WtText(", Chula Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Palomar High School, Chula Vista") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("San Ysidro High School")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Southwest Senior High School")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Sweetwater High School")
-                    -
-                  )
-                  WtText(", National City")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("High School of Roque")
-                    -
-                  )
-                  WtText(",San Diego")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Valley Center-Pauma Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Valley Center High School")
-                    -
-                  )
-                  WtText(", Valley Center")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Valley Center Middle School, Valley Center") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Valley Center Elementary, Valley Center") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Valley Center Primary, Valley Center") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Valley Center Lilac Elementary, Valley Center") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Pauma Valley School K-8, Pauma Valley") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Oak Glen High School (Continuation), Valley Center") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Valley Center Independent Study, Valley Center") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Valley Center Adult Education, Valley Center") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Vista Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtText(" ")
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Guajome Park Academy")
-                    -
-                  )
-                  WtText(" (charter), Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtText(" ")
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Rancho Buena Vista High School")
-                    -
-                  )
-                  WtText(", Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtText(" ")
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Vista High School (Vista, California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Vista High School") ]
-                    )
-                  )
-                  WtText(", Vista")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText(" North County Trade Tech High School (charter), Vista") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Warner Unified School District") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Warner Middle / High School")
-                    -
-                  )
-                  WtText(", Warner Springs")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("San Jose Valley Continuation High School, Warner Springs") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-      ])
-    )
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText("Private schools") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Baptist") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Roman Catholic Diocese of San Diego")
-                WtLinkTitle(
-                  Properties:
-                    {N} rtd = RTD[ "|" <o> "" ]
-
-                  [ WtText("Catholic") ]
-                )
-              )
-            ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtParagraph([
-              WtTemplate(
-                Properties:
-                  {N} precededByNewline = true
-                  {N} rtd = RTD[ "{{" <o> "" <o> "}}" ]
-
-                WtName([ WtText(":Roman Catholic Diocese of San Diego") ])
-                WtTemplateArguments([ ])
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Episcopal") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("The Bishop's School (California)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("The Bishop's School") ]
-                    )
-                  )
-                  WtText(", La Jolla")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Jewish") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("San Diego Jewish Academy")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Southern California Yeshiva High School")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Torah High Schools of San Diego")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Lutheran") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Lutheran High School of San Diego")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Escondido Adventist Academy")
-                    -
-                  )
-                  WtText(", Escondido")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("San Diego Academy")
-                    -
-                  )
-                  WtText(", National City")
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Non-Denominational") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Maranatha Christian Schools, San Diego") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Calvin Christian School (Escondido, California)")
-                    -
-                  )
-                ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-          ])
-        )
-        WtSection(
-          Properties:
-            {N} level = 3
-
-          WtHeading(
-            Properties:
-              {N} rtd = RTD[ "===" <o> "===" ]
-
-            [ WtText("Nonsectarian") ]
-          )
-          WtBody([
-            WtNewline("\n")
-            WtUnorderedList([
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtExternalLink(
-                    Properties:
-                      {N} rtd = RTD[ "[" <o> " " <o> "]" ]
-
-                    WtUrl(
-                      Properties:
-                        {N} path = "//www.tcps.org"
-                        {N} protocol = "http"
-                        {N} rtd = RTD[ "http://www.tcps.org" ]
-                    )
-                    WtLinkTitle([ WtText("The Child's Primary School") ])
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Carlsbad Seaside Academy, Carlsbad\t") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Carlsbad Village Academy, Carlsbad") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Francis W. Parker School (San Diego)")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("Francis W. Parker School") ]
-                    )
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Grauer School")
-                    WtLinkTitle(
-                      Properties:
-                        {N} rtd = RTD[ "|" <o> "" ]
-
-                      [ WtText("The Grauer School") ]
-                    )
-                  )
-                  WtText(", Encinitas")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Halstrom High School")
-                    -
-                  )
-                  WtText(", Oceanside")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("Halstrom High School")
-                    -
-                  )
-                  WtText(", San Diego")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [
-                  WtInternalLink(
-                    Properties:
-                      {N} postfix = ""
-                      {N} prefix = ""
-                      {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                    WtPageName("La Jolla Country Day School")
-                    -
-                  )
-                  WtText(", La Jolla")
-                ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "\n" ]
-
-                [ WtText("Pacific Academy International, Encinitas") ]
-              )
-              WtListItem(
-                Properties:
-                  {N} rtd = RTD[ "*" <o> "" ]
-
-                [ WtText("Pacific Ridge School, Carlsbad") ]
-              )
-            ])
-            WtNewline("\n")
-            WtNewline("\n")
-            WtParagraph([ WtNewline("\n") ])
-          ])
-        )
-      ])
-    )
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText("Closed schools") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtUnorderedList([
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "" ]
-
-            [
-              WtText("Sun Valley Charter High School, Ramona. Closed as of February 3, 2008 due to lack of funding.")
-              WtTagExtension(
-                Properties:
-                  {N} body = "[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]"
-                  {N} name = "ref"
-                  {N} rtd = RTD[ "<ref" <o> ">[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]</ref>" ]
-
-                -
-              )
-              WtText(")")
-            ]
-          )
-        ])
-        WtNewline("\n")
-        WtNewline("\n")
-      ])
-    )
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText("See also") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtUnorderedList([
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("List of high schools in California")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("List of school districts in California")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Lists of school districts in California by county")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("List of school districts in San Diego County, California")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("Primary and secondary schools in San Diego, California")
-                -
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "" ]
-
-            [
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("List of closed secondary schools in California")
-                -
-              )
-            ]
-          )
-        ])
-        WtNewline("\n")
-        WtNewline("\n")
-      ])
-    )
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText(" References ") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtNewline("\n")
-        WtParagraph([
-          WtXmlEmptyTag(
-            Properties:
-              {N} name = "references"
-              {N} rtd = RTD[ "<references" <o> "/>" ]
-
-            -
-          )
-        ])
-        WtNewline("\n")
-        WtNewline("\n")
-      ])
-    )
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [ WtText("External links") ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtUnorderedList([
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "\n" ]
-
-            [
-              WtExternalLink(
-                Properties:
-                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
-
-                WtUrl(
-                  Properties:
-                    {N} path = "//www.sdcoe.k12.ca.us/"
-                    {N} protocol = "http"
-                    {N} rtd = RTD[ "http://www.sdcoe.k12.ca.us/" ]
-                )
-                WtLinkTitle([ WtText("San Diego County Office of Education") ])
-              )
-            ]
-          )
-          WtListItem(
-            Properties:
-              {N} rtd = RTD[ "*" <o> "" ]
-
-            [
-              WtExternalLink(
-                Properties:
-                  {N} rtd = RTD[ "[" <o> " " <o> "]" ]
-
-                WtUrl(
-                  Properties:
-                    {N} path = "//california.schooltree.org/high/San-Diego-County-Schools.html"
-                    {N} protocol = "http"
-                    {N} rtd = RTD[ "http://california.schooltree.org/high/San-Diego-County-Schools.html" ]
-                )
-                WtLinkTitle([ WtText("San Diego County Schools") ])
-              )
-              WtText(", list of schools from SchoolTree.org")
-            ]
-          )
-        ])
-        WtNewline("\n")
-        WtNewline("\n")
-        WtParagraph([
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Category:High schools in San Diego County, California")
-            WtLinkTitle(
-              Properties:
-                {N} rtd = RTD[ "|" <o> "" ]
-
-              [ WtText("*") ]
-            )
-          )
-          WtNewline("\n")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = ""
-              {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-            WtPageName("Category:Lists of schools in California")
-            WtLinkTitle(
-              Properties:
-                {N} rtd = RTD[ "|" <o> "" ]
-
-              [ WtText("California, San Diego County") ]
-            )
-          )
-        ])
-        WtNewline("\n")
-      ])
-    )
-  ]
+	{P} entityMap = {
+		[0] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = ":San Diego Unified School District" ],
+				args = WtTemplateArguments[]
+			),
+		[1] = WtTemplate(
+				{P} precededByNewline = true
+				{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+				name = WtName[ [0] = ":Roman Catholic Diocese of San Diego" ],
+				args = WtTemplateArguments[]
+			),
+		[2] = WtTagExtension(
+				{P} body = "[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]"
+				{P} name = "ref"
+				{P} rtd = RTD[ "<ref" <o> ">[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]</ref>" ]
+				xmlAttributes = -
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = "This is a ",
+		[1] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = "list of high schools in ",
+			[1] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("San Diego County, California"),
+				title = -
+			)
+		),
+		[2] = ". It includes public and private schools and is arranged by school district (public schools) or affiliation (private schools).  These schools offer grades 9 through 12.  Junior High schools are not listed here.",
+		[3] = WtNewline("\n")
+	],
+	[1] = WtNewline("\n"),
+	[2] = WtNewline("\n"),
+	[3] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "Public schools"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Borrego Springs Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Borrego Springs High School"),
+								title = -
+							),
+							[1] = ", Borrego Springs"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Palm Canyon High School (continuation), Borrego Springs"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[2] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Coronado Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Coronado High School (Coronado, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Coronado High School"
+								)
+							),
+							[1] = ", Coronado"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Palm Academy for Learning, Coronado"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[3] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Escondido Union School District"),
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "Escondido Union High School District"
+						)
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Center City High School, Escondido\t"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Escondido Charter High School, Escondido"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Escondido High School"),
+								title = -
+							),
+							[1] = ", Escondido"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Orange Glen High School"),
+								title = -
+							),
+							[1] = ", Escondido"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("San Pasqual High School"),
+								title = -
+							),
+							[1] = ", Escondido"
+						),
+						[5] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Valley High School (continuation), Escondido"
+						),
+						[6] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("The Classical Academy High School (California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Classical Academy High School"
+								)
+							)
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[4] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Fallbrook Union High School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Fallbrook Union High School"),
+								title = -
+							),
+							[1] = ", Fallbrook\t"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Ivy High School (continuation), Fallbrook"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Oasis High School (alternative), Fallbrook"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[5] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Grossmont Union High School District"),
+						title = -
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Chaparral High School (El Cajon)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Chaparral High School"
+								)
+							),
+							[1] = " (continuation), El Cajon"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("El Cajon Valley High School"),
+								title = -
+							),
+							[1] = ", El Cajon"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("El Capitan High School"),
+								title = -
+							),
+							[1] = ", Lakeside"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Granite Hills High School (El Cajon, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Granite Hills High School"
+								)
+							),
+							[1] = ", El Cajon"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Grossmont High School"),
+								title = -
+							),
+							[1] = ", La Mesa/El Cajon"
+						),
+						[5] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Grossmont Middle College High School"),
+								title = -
+							),
+							[1] = ", El Cajon"
+						),
+						[6] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Helix High School"),
+								title = -
+							),
+							[1] = ", La Mesa"
+						),
+						[7] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Monte Vista High School (Spring Valley, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Monte Vista High School"
+								)
+							),
+							[1] = ", Spring Valley"
+						),
+						[8] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Mount Miguel High School"),
+								title = -
+							),
+							[1] = ", Spring Valley"
+						),
+						[9] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Santana High School"),
+								title = -
+							),
+							[1] = ", Santee"
+						),
+						[10] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Steele Canyon High School"),
+								title = -
+							),
+							[1] = ", Spring Valley"
+						),
+						[11] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Valhalla High School (El Cajon, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Valhalla High School"
+								)
+							),
+							[1] = ", El Cajon"
+						),
+						[12] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("West Hills High School"),
+								title = -
+							),
+							[1] = ", Santee"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[6] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Julian Union High School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Julian High School"),
+								title = -
+							),
+							[1] = ", Julian"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Redding (Ray) High (continuation), Julian"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Summit High Community Day, Julian"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[7] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Lakeside Union School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("River Valley Charter School"),
+								title = -
+							),
+							[1] = ", Lakeside"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[8] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Mountain Empire Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Mountain Empire High School"),
+								title = -
+							),
+							[1] = ", Pine Valley"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[9] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Oceanside Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("El Camino High School (Oceanside)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "El Camino High School"
+								)
+							),
+							[1] = ", Oceanside"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Oceanside High School"),
+								title = -
+							),
+							[1] = ", Oceanside"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Oceanside School of Business and Technology, Oceanside"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Pacific View Charter School, Oceanside"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[10] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Poway Unified School District"),
+						title = -
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Del Norte High School (San Diego, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Del Norte High School"
+								)
+							),
+							[1] = ", San Diego"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Mount Carmel High School (San Diego, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Mount Carmel High School"
+								)
+							),
+							[1] = ", San Diego"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Poway High School"),
+								title = -
+							),
+							[1] = ", Poway"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Rancho Bernardo High School"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Westview High School (San Diego)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Westview High School"
+								)
+							),
+							[1] = ", San Diego"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[11] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Ramona Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Montecito High School (alternative), Ramona"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Mountain Valley Academy High School, Ramona"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Ramona High School (Ramona, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Ramona High School"
+								)
+							),
+							[1] = ", Ramona"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[12] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("San Diego City Schools"),
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "San Diego Unified School District"
+						)
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtParagraph[
+						[0] = WtTemplate(
+							{P} precededByNewline = true
+							{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+							name = WtName[ [0] = ":San Diego Unified School District" ],
+							args = WtTemplateArguments[]
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[13] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("San Dieguito Union High School District"),
+						title = -
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Canyon Crest Academy"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("La Costa Canyon High School"),
+								title = -
+							),
+							[1] = ", Carlsbad"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "North Coast High School (alternative)"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("San Dieguito Academy"),
+								title = -
+							),
+							[1] = ", Encinitas"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Sunset High School (alternative)"
+						),
+						[5] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Torrey Pines High School"),
+								title = -
+							),
+							[1] = ", San Diego"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[14] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "San Marcos Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Bayshore Prep Charter School, San Marcos\t"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Foothills High (alternative), San Marcos\t"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Mission Hills High School"),
+								title = -
+							),
+							[1] = ", San Marcos"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("San Marcos High School (San Marcos, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "San Marcos High School"
+								)
+							),
+							[1] = ", San Marcos"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Twin Oaks High School (alternative), San Marcos"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[15] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Sweetwater Union High School District"),
+						title = -
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Bonita Vista High School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Castle Park High School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Chula Vista High School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Eastlake High School (Chula Vista, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Eastlake High School"
+								)
+							),
+							[1] = ", Chula Vista"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Hilltop High School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[5] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "MAAC Community Charter School, Chula Vista"
+						),
+						[6] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Mar Vista High School"),
+								title = -
+							),
+							[1] = ", Imperial Beach"
+						),
+						[7] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Montgomery High School, San Diego"),
+								title = -
+							)
+						),
+						[8] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Olympian High School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[9] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Options Secondary School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[10] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Otay Ranch High School"),
+								title = -
+							),
+							[1] = ", Chula Vista"
+						),
+						[11] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Palomar High School, Chula Vista"
+						),
+						[12] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("San Ysidro High School"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[13] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Southwest Senior High School"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[14] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Sweetwater High School"),
+								title = -
+							),
+							[1] = ", National City"
+						),
+						[15] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("High School of Roque"),
+								title = -
+							),
+							[1] = ",San Diego"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[16] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Valley Center-Pauma Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Valley Center High School"),
+								title = -
+							),
+							[1] = ", Valley Center"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Valley Center Middle School, Valley Center"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Valley Center Elementary, Valley Center"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Valley Center Primary, Valley Center"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Valley Center Lilac Elementary, Valley Center"
+						),
+						[5] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Pauma Valley School K-8, Pauma Valley"
+						),
+						[6] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Oak Glen High School (Continuation), Valley Center"
+						),
+						[7] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Valley Center Independent Study, Valley Center"
+						),
+						[8] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Valley Center Adult Education, Valley Center"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[17] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Vista Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = " ",
+							[1] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Guajome Park Academy"),
+								title = -
+							),
+							[2] = " (charter), Vista"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = " ",
+							[1] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Rancho Buena Vista High School"),
+								title = -
+							),
+							[2] = ", Vista"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = " ",
+							[1] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Vista High School (Vista, California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Vista High School"
+								)
+							),
+							[2] = ", Vista"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = " North County Trade Tech High School (charter), Vista"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[18] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Warner Unified School District"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Warner Middle / High School"),
+								title = -
+							),
+							[1] = ", Warner Springs"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "San Jose Valley Continuation High School, Warner Springs"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			)
+		]
+	),
+	[4] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "Private schools"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Baptist"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtNewline("\n")
+				]
+			),
+			[2] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Roman Catholic Diocese of San Diego"),
+						title = WtLinkTitle(
+							{P} rtd = RTD[ "|" <o> "" ]
+							[0] = "Catholic"
+						)
+					)
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtParagraph[
+						[0] = WtTemplate(
+							{P} precededByNewline = true
+							{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
+							name = WtName[ [0] = ":Roman Catholic Diocese of San Diego" ],
+							args = WtTemplateArguments[]
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[3] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Episcopal"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("The Bishop's School (California)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "The Bishop's School"
+								)
+							),
+							[1] = ", La Jolla"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[4] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Jewish"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("San Diego Jewish Academy"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Southern California Yeshiva High School"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Torah High Schools of San Diego"),
+								title = -
+							),
+							[1] = ", San Diego"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[5] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Lutheran"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Lutheran High School of San Diego"),
+								title = -
+							),
+							[1] = ", San Diego"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n"),
+					[4] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Escondido Adventist Academy"),
+								title = -
+							),
+							[1] = ", Escondido"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("San Diego Academy"),
+								title = -
+							),
+							[1] = ", National City"
+						)
+					],
+					[5] = WtNewline("\n"),
+					[6] = WtNewline("\n")
+				]
+			),
+			[6] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Non-Denominational"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Maranatha Christian Schools, San Diego"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Calvin Christian School (Escondido, California)"),
+								title = -
+							)
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n")
+				]
+			),
+			[7] = WtSection(
+				{P} level = 3
+				heading = WtHeading(
+					{P} rtd = RTD[ "===" <o> "===" ]
+					[0] = "Nonsectarian"
+				),
+				body = WtBody[
+					[0] = WtNewline("\n"),
+					[1] = WtUnorderedList[
+						[0] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtExternalLink(
+								{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+								target = WtUrl(
+									{P} path = "//www.tcps.org"
+									{P} protocol = "http"
+									{P} rtd = RTD[ "http://www.tcps.org" ]
+								),
+								title = WtLinkTitle[ [0] = "The Child's Primary School" ]
+							),
+							[1] = ", San Diego"
+						),
+						[1] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Carlsbad Seaside Academy, Carlsbad\t"
+						),
+						[2] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Carlsbad Village Academy, Carlsbad"
+						),
+						[3] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Francis W. Parker School (San Diego)"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "Francis W. Parker School"
+								)
+							),
+							[1] = ", San Diego"
+						),
+						[4] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Grauer School"),
+								title = WtLinkTitle(
+									{P} rtd = RTD[ "|" <o> "" ]
+									[0] = "The Grauer School"
+								)
+							),
+							[1] = ", Encinitas"
+						),
+						[5] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Halstrom High School"),
+								title = -
+							),
+							[1] = ", Oceanside"
+						),
+						[6] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("Halstrom High School"),
+								title = -
+							),
+							[1] = ", San Diego"
+						),
+						[7] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+								target = WtPageName("La Jolla Country Day School"),
+								title = -
+							),
+							[1] = ", La Jolla"
+						),
+						[8] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "\n" ]
+							[0] = "Pacific Academy International, Encinitas"
+						),
+						[9] = WtListItem(
+							{P} rtd = RTD[ "*" <o> "" ]
+							[0] = "Pacific Ridge School, Carlsbad"
+						)
+					],
+					[2] = WtNewline("\n"),
+					[3] = WtNewline("\n"),
+					[4] = WtParagraph[ [0] = WtNewline("\n") ]
+				]
+			)
+		]
+	),
+	[5] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "Closed schools"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtUnorderedList[
+				[0] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "" ]
+					[0] = "Sun Valley Charter High School, Ramona. Closed as of February 3, 2008 due to lack of funding.",
+					[1] = WtTagExtension(
+						{P} body = "[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]"
+						{P} name = "ref"
+						{P} rtd = RTD[ "<ref" <o> ">[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]</ref>" ]
+						xmlAttributes = -
+					),
+					[2] = ")"
+				)
+			],
+			[2] = WtNewline("\n"),
+			[3] = WtNewline("\n")
+		]
+	),
+	[6] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "See also"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtUnorderedList[
+				[0] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("List of high schools in California"),
+						title = -
+					)
+				),
+				[1] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("List of school districts in California"),
+						title = -
+					)
+				),
+				[2] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Lists of school districts in California by county"),
+						title = -
+					)
+				),
+				[3] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("List of school districts in San Diego County, California"),
+						title = -
+					)
+				),
+				[4] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("Primary and secondary schools in San Diego, California"),
+						title = -
+					)
+				),
+				[5] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "" ]
+					[0] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+						target = WtPageName("List of closed secondary schools in California"),
+						title = -
+					)
+				)
+			],
+			[2] = WtNewline("\n"),
+			[3] = WtNewline("\n")
+		]
+	),
+	[7] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = " References "
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtNewline("\n"),
+			[2] = WtParagraph[
+				[0] = WtXmlEmptyTag(
+					{P} name = "references"
+					{P} rtd = RTD[ "<references" <o> "/>" ]
+					xmlAttributes = -
+				)
+			],
+			[3] = WtNewline("\n"),
+			[4] = WtNewline("\n")
+		]
+	),
+	[8] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "External links"
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtUnorderedList[
+				[0] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "\n" ]
+					[0] = WtExternalLink(
+						{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+						target = WtUrl(
+							{P} path = "//www.sdcoe.k12.ca.us/"
+							{P} protocol = "http"
+							{P} rtd = RTD[ "http://www.sdcoe.k12.ca.us/" ]
+						),
+						title = WtLinkTitle[ [0] = "San Diego County Office of Education" ]
+					)
+				),
+				[1] = WtListItem(
+					{P} rtd = RTD[ "*" <o> "" ]
+					[0] = WtExternalLink(
+						{P} rtd = RTD[ "[" <o> " " <o> "]" ]
+						target = WtUrl(
+							{P} path = "//california.schooltree.org/high/San-Diego-County-Schools.html"
+							{P} protocol = "http"
+							{P} rtd = RTD[ "http://california.schooltree.org/high/San-Diego-County-Schools.html" ]
+						),
+						title = WtLinkTitle[ [0] = "San Diego County Schools" ]
+					),
+					[1] = ", list of schools from SchoolTree.org"
+				)
+			],
+			[2] = WtNewline("\n"),
+			[3] = WtNewline("\n"),
+			[4] = WtParagraph[
+				[0] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName("Category:High schools in San Diego County, California"),
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "*"
+					)
+				),
+				[1] = WtNewline("\n"),
+				[2] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName("Category:Lists of schools in California"),
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "California, San Diego County"
+					)
+				)
+			],
+			[5] = WtNewline("\n")
+		]
+	)
 )

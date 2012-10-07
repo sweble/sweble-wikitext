@@ -1,45 +1,38 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {0=WtXmlComment(" Comment ")}
-    {N} warnings = []
-
-  [
-    WtSemiPre([
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ " " <o> "" ]
-
-        [ WtText("Line 1") ]
-      )
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ "\n" + WtXmlComment(" Comment ") + " " <o> "" ]
-
-        [ WtText("Line 2") ]
-      )
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ "\n " <o> "" ]
-
-        [ WtText("Line 3") ]
-      )
-    ])
-    WtNewline("\n")
-    WtParagraph([ WtText("\tdiscontinued") ])
-    WtNewline("\n")
-    WtSemiPre([
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ " " <o> "" ]
-
-        [ WtText("Line 5") ]
-      )
-      WtSemiPreLine(
-        Properties:
-          {N} rtd = RTD[ "\n " <o> "" ]
-
-        [ WtText("Line 6") ]
-      )
-    ])
-  ]
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " Comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- Comment -->" ]
+				{P} suffix = ""
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtSemiPre[
+		[0] = WtSemiPreLine(
+			{P} rtd = RTD[ " " <o> "" ]
+			[0] = "Line 1"
+		),
+		[1] = WtSemiPreLine(
+			{P} rtd = RTD[ "\n" + WtXmlComment(" Comment ") + " " <o> "" ]
+			[0] = "Line 2"
+		),
+		[2] = WtSemiPreLine(
+			{P} rtd = RTD[ "\n " <o> "" ]
+			[0] = "Line 3"
+		)
+	],
+	[1] = WtNewline("\n"),
+	[2] = WtParagraph[ [0] = "\tdiscontinued" ],
+	[3] = WtNewline("\n"),
+	[4] = WtSemiPre[
+		[0] = WtSemiPreLine(
+			{P} rtd = RTD[ " " <o> "" ]
+			[0] = "Line 5"
+		),
+		[1] = WtSemiPreLine(
+			{P} rtd = RTD[ "\n " <o> "" ]
+			[0] = "Line 6"
+		)
+	]
 )

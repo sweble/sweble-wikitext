@@ -1,33 +1,21 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtText(
-        Properties:
-          {N} content = "[[Link1|Title1 "
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-internal-link-4.wikitext:1:1 - 8: "[[Link1" : This looks like a Internal Link, however the finishing `]]' is missing.
-          ]
-      )
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("Link2")
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("Title2") ]
-        )
-      )
-      WtText(" ]]")
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-internal-link-4.wikitext:1:1 - 8: "[[Link1" : This looks like a Internal Link, however the finishing `]]' is missing. ]
+			{P} content = "[[Link1|Title1 "
+		),
+		[1] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName("Link2"),
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Title2"
+			)
+		),
+		[2] = " ]]"
+	]
 )

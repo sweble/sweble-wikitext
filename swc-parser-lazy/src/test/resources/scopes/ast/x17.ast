@@ -1,58 +1,43 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtXmlElement(
-      Properties:
-        {N} name = "li"
-        {N} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
-
-      -
-      WtBody([
-        WtText("item3")
-        WtXmlElement(
-          Properties:
-            {N} name = "table"
-            {N} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
-
-          -
-          WtBody([
-            WtXmlElement(
-              Properties:
-                {N} name = "tr"
-                {N} rtd = RTD[ "<tr" <o> ">" <o> "" ]
-
-              -
-              WtBody([
-                WtXmlElement(
-                  Properties:
-                    {N} name = "td"
-                    {N} rtd = RTD[ "<td" <o> ">" <o> "" ]
-
-                  -
-                  WtBody([
-                    WtXmlEndTag(
-                      Properties:
-                        {N} name = "li"
-                        {N} rtd = RTD[ "</li>" ]
-                    )
-                    WtXmlElement(
-                      Properties:
-                        {N} name = "li"
-                        {N} rtd = RTD[ "<li" <o> ">" <o> "" ]
-
-                      -
-                      WtBody([ WtText("item4") ])
-                    )
-                  ])
-                )
-              ])
-            )
-          ])
-        )
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtXmlElement(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = "item3",
+			[1] = WtXmlElement(
+				{P} name = "table"
+				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
+				xmlAttributes = -,
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "tr"
+						{P} rtd = RTD[ "<tr" <o> ">" <o> "" ]
+						xmlAttributes = -,
+						body = WtBody[
+							[0] = WtXmlElement(
+								{P} name = "td"
+								{P} rtd = RTD[ "<td" <o> ">" <o> "" ]
+								xmlAttributes = -,
+								body = WtBody[
+									[0] = WtXmlEndTag(
+										{P} name = "li"
+										{P} rtd = RTD[ "</li>" ]
+									),
+									[1] = WtXmlElement(
+										{P} name = "li"
+										{P} rtd = RTD[ "<li" <o> ">" <o> "" ]
+										xmlAttributes = -,
+										body = WtBody[ [0] = "item4" ]
+									)
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	)
 )

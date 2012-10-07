@@ -1,12 +1,7 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtHorizontalRule(
-      Properties:
-        {N} rtd = RTD[ "----" ]
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	)
 )

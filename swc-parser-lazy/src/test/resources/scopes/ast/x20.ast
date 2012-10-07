@@ -1,55 +1,44 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtXmlElement(
-      Properties:
-        {N} name = "p"
-        {N} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
-
-      -
-      WtBody([
-        WtNewline("\n")
-        WtText("P1")
-        WtNewline("\n")
-      ])
-    )
-    WtNewline("\n")
-    WtText("P2")
-    WtNewline("\n")
-    WtXmlEndTag(
-      Properties:
-        {N} name = "p"
-        {N} rtd = RTD[ "</p>" ]
-    )
-    WtNewline("\n")
-    WtText("P3")
-    WtNewline("\n")
-    WtXmlElement(
-      Properties:
-        {N} name = "p"
-        {N} rtd = RTD[ "<p" <o> ">" <o> "" ]
-
-      -
-      WtBody([
-        WtNewline("\n")
-        WtText("P4")
-        WtNewline("\n")
-      ])
-    )
-    WtXmlElement(
-      Properties:
-        {N} name = "div"
-        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
-
-      -
-      WtBody([
-        WtNewline("\n")
-        WtText("asdf")
-        WtNewline("\n")
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtXmlElement(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = "P1",
+			[2] = WtNewline("\n")
+		]
+	),
+	[1] = WtNewline("\n"),
+	[2] = "P2",
+	[3] = WtNewline("\n"),
+	[4] = WtXmlEndTag(
+		{P} name = "p"
+		{P} rtd = RTD[ "</p>" ]
+	),
+	[5] = WtNewline("\n"),
+	[6] = "P3",
+	[7] = WtNewline("\n"),
+	[8] = WtXmlElement(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = "P4",
+			[2] = WtNewline("\n")
+		]
+	),
+	[9] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = "asdf",
+			[2] = WtNewline("\n")
+		]
+	)
 )

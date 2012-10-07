@@ -1,43 +1,31 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtTable(
-      Properties:
-        {N} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
-
-      -
-      WtBody([
-        WtTableCell(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" <o> "" ]
-
-          -
-          WtBody([
-            WtParagraph([
-              WtText("1")
-              WtInternalLink(
-                Properties:
-                  {N} postfix = ""
-                  {N} prefix = ""
-                  {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-                WtPageName("T")
-                WtLinkTitle(
-                  Properties:
-                    {N} rtd = RTD[ "|" <o> "" ]
-
-                  [ WtText("a\nb") ]
-                )
-              )
-              WtText("||2")
-            ])
-            WtNewline("\n")
-          ])
-        )
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtTable(
+		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtTableCell(
+				{P} rtd = RTD[ "|" <o> "" <o> "" ]
+				xmlAttributes = -,
+				body = WtBody[
+					[0] = WtParagraph[
+						[0] = "1",
+						[1] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+							target = WtPageName("T"),
+							title = WtLinkTitle(
+								{P} rtd = RTD[ "|" <o> "" ]
+								[0] = "a\nb"
+							)
+						),
+						[2] = "||2"
+					],
+					[1] = WtNewline("\n")
+				]
+			)
+		]
+	)
 )

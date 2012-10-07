@@ -1,80 +1,52 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtXmlEntityRef(
-        Properties:
-          {N} name = "amp"
-          {N} resolved = "&"
-          {N} rtd = RTD[ "&amp;" ]
-      )
-      WtNewline("\n")
-      WtText(
-        Properties:
-          {N} content = "&amp"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:2:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-          ]
-      )
-      WtNewline("\n")
-      WtXmlEntityRef(
-        Properties:
-          {N} name = "myinvention"
-          {N} resolved = null
-          {N} rtd = RTD[ "&myinvention;" ]
-      )
-      WtNewline("\n")
-      WtText(
-        Properties:
-          {N} content = "&myinvention"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:4:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-          ]
-      )
-      WtNewline("\n")
-      WtXmlCharRef(
-        Properties:
-          {N} codePoint = 10
-          {N} rtd = RTD[ "&#10;" ]
-      )
-      WtNewline("\n")
-      WtXmlCharRef(
-        Properties:
-          {N} codePoint = 255
-          {N} rtd = RTD[ "&#xFF;" ]
-      )
-      WtNewline("\n")
-      WtText(
-        Properties:
-          {N} content = "&#;"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:7:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-          ]
-      )
-      WtNewline("\n")
-      WtText(
-        Properties:
-          {N} content = "&#"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:8:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-          ]
-      )
-      WtNewline("\n")
-      WtText(
-        Properties:
-          {N} content = "&"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/inline-xmlref.wikitext:9:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-          ]
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtXmlEntityRef(
+			{P} name = "amp"
+			{P} resolved = "&"
+			{P} rtd = RTD[ "&amp;" ]
+		),
+		[1] = WtNewline("\n"),
+		[2] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-xmlref.wikitext:2:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+			{P} content = "&amp"
+		),
+		[3] = WtNewline("\n"),
+		[4] = WtXmlEntityRef(
+			{P} name = "myinvention"
+			{P} resolved = null
+			{P} rtd = RTD[ "&myinvention;" ]
+		),
+		[5] = WtNewline("\n"),
+		[6] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-xmlref.wikitext:4:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+			{P} content = "&myinvention"
+		),
+		[7] = WtNewline("\n"),
+		[8] = WtXmlCharRef(
+			{P} codePoint = 10
+			{P} rtd = RTD[ "&#10;" ]
+		),
+		[9] = WtNewline("\n"),
+		[10] = WtXmlCharRef(
+			{P} codePoint = 255
+			{P} rtd = RTD[ "&#xFF;" ]
+		),
+		[11] = WtNewline("\n"),
+		[12] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-xmlref.wikitext:7:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+			{P} content = "&#;"
+		),
+		[13] = WtNewline("\n"),
+		[14] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-xmlref.wikitext:8:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+			{P} content = "&#"
+		),
+		[15] = WtNewline("\n"),
+		[16] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-xmlref.wikitext:9:1 - 2: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+			{P} content = "&"
+		)
+	]
 )

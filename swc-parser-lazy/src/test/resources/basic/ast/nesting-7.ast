@@ -1,53 +1,35 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtNewline("\n")
-    WtSection(
-      Properties:
-        {N} level = 2
-
-      WtHeading(
-        Properties:
-          {N} rtd = RTD[ "==" <o> "==" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = "text[[target|text"
-              warnings = 
-              [
-                Warning (informative): /basic/wikitext/nesting-7.wikitext:2:7 - 15: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing.
-              ]
-          )
-        ]
-      )
-      WtBody([
-        WtNewline("\n")
-        WtParagraph([ WtText("text]]") ])
-        WtNewline("\n")
-        WtNewline("\n")
-        WtParagraph([
-          WtText("==")
-          WtInternalLink(
-            Properties:
-              {N} postfix = ""
-              {N} prefix = "text"
-              {N} rtd = RTD[ "text[[" <o> "" <o> "]]" ]
-
-            WtPageName("target")
-            WtLinkTitle(
-              Properties:
-                {N} rtd = RTD[ "|" <o> "" ]
-
-              [ WtText("text\n") ]
-            )
-          )
-          WtText("==")
-        ])
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (informative): /basic/wikitext/nesting-7.wikitext:2:7 - 15: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing. ]
+				{P} content = "text[[target|text"
+			)
+		),
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtParagraph[ [0] = "text]]" ],
+			[2] = WtNewline("\n"),
+			[3] = WtNewline("\n"),
+			[4] = WtParagraph[
+				[0] = "==",
+				[1] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = "text"
+					{P} rtd = RTD[ "text[[" <o> "" <o> "]]" ]
+					target = WtPageName("target"),
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = "text\n"
+					)
+				),
+				[2] = "=="
+			]
+		]
+	)
 )

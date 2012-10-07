@@ -1,43 +1,31 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtXmlElement(
-      Properties:
-        {N} name = "li"
-        {N} rtd = RTD[ "<li" <o> ">" <o> "" ]
-
-      -
-      WtBody([
-        WtText("item1")
-        WtXmlElement(
-          Properties:
-            {N} name = "b"
-            {N} rtd = RTD[ "<b" <o> ">" <o> "" ]
-
-          -
-          WtBody([ WtNewline("\n") ])
-        )
-      ])
-    )
-    WtXmlElement(
-      Properties:
-        {N} name = "li"
-        {N} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
-
-      -
-      WtBody([
-        WtXmlElement(
-          Properties:
-            {N} name = "b"
-            {N} rtd = RTD[ "" <o> "" <o> "</b>" ]
-
-          -
-          WtBody([ WtText("item2") ])
-        )
-      ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtXmlElement(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = "item1",
+			[1] = WtXmlElement(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+				xmlAttributes = -,
+				body = WtBody[ [0] = WtNewline("\n") ]
+			)
+		]
+	),
+	[1] = WtXmlElement(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
+				xmlAttributes = -,
+				body = WtBody[ [0] = "item2" ]
+			)
+		]
+	)
 )

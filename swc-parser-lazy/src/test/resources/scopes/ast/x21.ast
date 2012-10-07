@@ -1,85 +1,61 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtNewline("\n")
-    WtDefinitionList([
-      WtDefinitionListDef([
-        WtDefinitionList([
-          WtDefinitionListDef(
-            Properties:
-              {N} rtd = RTD[ "::" <o> "" ]
-
-            [
-              WtXmlElement(
-                Properties:
-                  {N} name = "i"
-                  {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
-
-                -
-                WtBody([
-                  WtText("X")
-                  WtXmlElement(
-                    Properties:
-                      {N} name = "b"
-                      {N} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
-
-                    -
-                    WtBody([ WtText(" Y") ])
-                  )
-                  WtXmlElement(
-                    Properties:
-                      {N} name = "i"
-                      {N} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
-
-                    -
-                    WtBody([ WtText("Z") ])
-                  )
-                  WtText(" ")
-                ])
-              )
-            ]
-          )
-        ])
-      ])
-    ])
-    WtXmlElement(
-      Properties:
-        {N} name = "i"
-        {N} rtd = RTD[ "" <o> "" <o> "" ]
-
-      -
-      WtBody([
-        WtNewline("\n")
-        WtNewline("\n")
-      ])
-    )
-    WtDefinitionList([
-      WtDefinitionListDef(
-        Properties:
-          {N} rtd = RTD[ ":" <o> "" ]
-
-        [
-          WtXmlElement(
-            Properties:
-              {N} name = "i"
-              {N} rtd = RTD[ "" <o> "" <o> "" ]
-
-            -
-            WtBody([ WtText("B ") ])
-          )
-        ]
-      )
-    ])
-    WtXmlElement(
-      Properties:
-        {N} name = "i"
-        {N} rtd = RTD[ "" <o> "" <o> "" ]
-
-      -
-      WtBody([ WtNewline("\n") ])
-    )
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtDefinitionList[
+		[0] = WtDefinitionListDef[
+			[0] = WtDefinitionList[
+				[0] = WtDefinitionListDef(
+					{P} rtd = RTD[ "::" <o> "" ]
+					[0] = WtXmlElement(
+						{P} name = "i"
+						{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+						xmlAttributes = -,
+						body = WtBody[
+							[0] = "X",
+							[1] = WtXmlElement(
+								{P} name = "b"
+								{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
+								xmlAttributes = -,
+								body = WtBody[ [0] = " Y" ]
+							),
+							[2] = WtXmlElement(
+								{P} name = "i"
+								{P} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
+								xmlAttributes = -,
+								body = WtBody[ [0] = "Z" ]
+							),
+							[3] = " "
+						]
+					)
+				)
+			]
+		]
+	],
+	[2] = WtXmlElement(
+		{P} name = "i"
+		{P} rtd = RTD[ "" <o> "" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = WtNewline("\n"),
+			[1] = WtNewline("\n")
+		]
+	),
+	[3] = WtDefinitionList[
+		[0] = WtDefinitionListDef(
+			{P} rtd = RTD[ ":" <o> "" ]
+			[0] = WtXmlElement(
+				{P} name = "i"
+				{P} rtd = RTD[ "" <o> "" <o> "" ]
+				xmlAttributes = -,
+				body = WtBody[ [0] = "B " ]
+			)
+		)
+	],
+	[4] = WtXmlElement(
+		{P} name = "i"
+		{P} rtd = RTD[ "" <o> "" <o> "" ]
+		xmlAttributes = -,
+		body = WtBody[ [0] = WtNewline("\n") ]
+	)
 )

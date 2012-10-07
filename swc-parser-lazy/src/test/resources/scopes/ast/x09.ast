@@ -1,35 +1,25 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtXmlElement(
-      Properties:
-        {N} name = "div"
-        {N} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
-
-      -
-      WtBody([
-        WtText(" ")
-        WtXmlElement(
-          Properties:
-            {N} name = "i"
-            {N} rtd = RTD[ "<i" <o> ">" <o> "" ]
-
-          -
-          WtBody([ WtText(" italic ") ])
-        )
-      ])
-    )
-    WtXmlElement(
-      Properties:
-        {N} name = "i"
-        {N} rtd = RTD[ "" <o> "" <o> "</i>" ]
-
-      -
-      WtBody([ WtText(" still italic ") ])
-    )
-    WtText(" not italic any more")
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = -,
+		body = WtBody[
+			[0] = " ",
+			[1] = WtXmlElement(
+				{P} name = "i"
+				{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
+				xmlAttributes = -,
+				body = WtBody[ [0] = " italic " ]
+			)
+		]
+	),
+	[1] = WtXmlElement(
+		{P} name = "i"
+		{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+		xmlAttributes = -,
+		body = WtBody[ [0] = " still italic " ]
+	),
+	[2] = " not italic any more"
 )

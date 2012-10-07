@@ -1,104 +1,53 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtUnorderedList([
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(" ")
-          WtPageSwitch(
-            Properties:
-              {N} name = "NOTOC"
-              {N} rtd = RTD[ "__NOTOC__" ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = " __NOTOC_"
-              warnings = 
-              [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:2:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
-              ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = " __NOTOC"
-              warnings = 
-              [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:3:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
-              ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = " __MAGIC__"
-              warnings = 
-              [
-                Warning (normal): /basic/wikitext/special-magicword.wikitext:4:3 - 12: "__MAGIC__" : This looks like a Page Switch, however the specified page switch name is unknown.
-              ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = " __MAGIC_"
-              warnings = 
-              [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:5:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
-              ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [
-          WtText(
-            Properties:
-              {N} content = " __MAGIC"
-              warnings = 
-              [
-                Warning (none): /basic/wikitext/special-magicword.wikitext:6:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name.
-              ]
-          )
-        ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "" ]
-
-        [ WtText(" __") ]
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " ",
+			[1] = WtPageSwitch(
+				{P} name = "NOTOC"
+				{P} rtd = RTD[ "__NOTOC__" ]
+			)
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:2:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
+				{P} content = " __NOTOC_"
+			)
+		),
+		[2] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:3:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
+				{P} content = " __NOTOC"
+			)
+		),
+		[3] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (normal): /basic/wikitext/special-magicword.wikitext:4:3 - 12: "__MAGIC__" : This looks like a Page Switch, however the specified page switch name is unknown. ]
+				{P} content = " __MAGIC__"
+			)
+		),
+		[4] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:5:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
+				{P} content = " __MAGIC_"
+			)
+		),
+		[5] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = WtText(
+				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:6:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
+				{P} content = " __MAGIC"
+			)
+		),
+		[6] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " __"
+		)
+	]
 )

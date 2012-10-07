@@ -1,48 +1,34 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtText(
-        Properties:
-          {N} content = "[[target|"
-          warnings = 
-          [
-            Warning (informative): /basic/wikitext/nesting-5.wikitext:1:1 - 9: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing.
-          ]
-      )
-    ])
-    WtNewline("\n")
-    WtUnorderedList([
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "\n" ]
-
-        [ WtText(" item 1") ]
-      )
-      WtListItem(
-        Properties:
-          {N} rtd = RTD[ "*" <o> "" ]
-
-        [ WtText(" item 2") ]
-      )
-    ])
-    WtNewline("\n")
-    WtParagraph([
-      WtInternalLink(
-        Properties:
-          {N} postfix = ""
-          {N} prefix = ""
-          {N} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-
-        WtPageName("target")
-        -
-      )
-      WtNewline("\n")
-      WtText("]]")
-    ])
-    WtNewline("\n")
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtText(
+			{A} warnings = C[ Warning (informative): /basic/wikitext/nesting-5.wikitext:1:1 - 9: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing. ]
+			{P} content = "[[target|"
+		)
+	],
+	[1] = WtNewline("\n"),
+	[2] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " item 1"
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " item 2"
+		)
+	],
+	[3] = WtNewline("\n"),
+	[4] = WtParagraph[
+		[0] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName("target"),
+			title = -
+		),
+		[1] = WtNewline("\n"),
+		[2] = "]]"
+	],
+	[5] = WtNewline("\n")
 )

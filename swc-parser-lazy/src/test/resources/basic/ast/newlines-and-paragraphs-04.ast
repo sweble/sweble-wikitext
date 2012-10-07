@@ -1,14 +1,10 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtNewline("\n")
-    WtParagraph([
-      WtNewline("\n")
-      WtNewline("\n")
-      WtText("Hallo")
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtParagraph[
+		[0] = WtNewline("\n"),
+		[1] = WtNewline("\n"),
+		[2] = "Hallo"
+	]
 )

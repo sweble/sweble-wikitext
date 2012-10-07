@@ -1,52 +1,35 @@
 WtParsedWikitextPage(
-  Properties:
-    {N} entityMap = EntityMap {}
-    {N} warnings = []
-
-  [
-    WtParagraph([
-      WtImageLink(
-        Properties:
-          {N} alt = 
-            WtLinkOptionAltText(
-              Properties:
-                {N} rtd = RTD[ "|alt=" <o> "" ]
-
-              [ ]
-            )
-          {N} border = false
-          {N} format = UNRESTRAINED
-          {N} hAlign = NONE
-          {N} height = -1
-          {N} link = 
-            -
-          {N} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-          {N} upright = false
-          {N} vAlign = MIDDLE
-          {N} width = 225
-
-        WtPageName("file:SC.jpg")
-        WtLinkOptions([
-          WtLinkOptionResize(
-            Properties:
-              {N} height = -1
-              {N} rtd = RTD[ "|225px" ]
-              {N} width = 225
-          )
-          WtLinkOptionAltText(
-            Properties:
-              {N} rtd = RTD[ "|alt=" <o> "" ]
-
-            [ ]
-          )
-        ])
-        WtLinkTitle(
-          Properties:
-            {N} rtd = RTD[ "|" <o> "" ]
-
-          [ WtText("SC") ]
-        )
-      )
-    ])
-  ]
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtImageLink(
+			{P} alt = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+				)
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = NONE
+			{P} height = -1
+			{P} link = -
+			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = 225
+			target = WtPageName("file:SC.jpg"),
+			options = WtLinkOptions[
+				[0] = WtLinkOptionResize(
+					{P} height = -1
+					{P} rtd = RTD[ "|225px" ]
+					{P} width = 225
+				),
+				[1] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+				)
+			],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "SC"
+			)
+		)
+	]
 )
