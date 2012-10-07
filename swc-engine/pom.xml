@@ -98,6 +98,7 @@
               <sources>
                 <source>src/main/autogen</source>
                 <source>src/main/generated</source>
+                <source>src/main/nodes</source>
               </sources>
             </configuration>
           </execution>
@@ -138,36 +139,6 @@
           <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
           <strict>false</strict>
           <forceRegenerate>true</forceRegenerate>
-        </configuration>
-      </plugin>
-      -->
-
-      <!-- Generate Ast Nodes -->
-      <!-- 
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-nodegen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <ratsInputFiles>
-            <ratsInputFile>org/sweble/wikitext/engine</ratsInputFile>
-          </ratsInputFiles>
-        </configuration>
-      </plugin>
-      -->
-
-      <!-- Generate Ast Printers -->
-      <!--
-      <plugin>
-        <groupId>de.fau.cs.osr.ptk</groupId>
-        <artifactId>ptk-printergen-maven-plugin</artifactId>
-        <configuration>
-          <baseDir>${project.basedir}/src/main/autogen</baseDir>
-          <outputDir>${project.build.directory}/generated-sources</outputDir>
-          <aptInputFiles>
-            <aptInputFile>org/sweble/wikitext/engine/utils</aptInputFile>
-          </aptInputFiles>
         </configuration>
       </plugin>
       -->

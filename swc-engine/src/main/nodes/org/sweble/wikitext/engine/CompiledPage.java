@@ -8,23 +8,22 @@ import org.sweble.wikitext.parser.nodes.WtInnerNode1;
 
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
+import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
-/**
- * <h1>CompiledPage Node</h1>
- */
 public class CompiledPage
 		extends
 			WtInnerNode1
-
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public CompiledPage()
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected CompiledPage()
 	{
-		super(new Page());
-		
+		super(Uninitialized.X);
 	}
 	
 	public CompiledPage(Page page, List<Warning> warnings, CompilerLog log)
@@ -32,7 +31,6 @@ public class CompiledPage
 		super(page);
 		setWarnings(warnings);
 		setLog(log);
-		
 	}
 	
 	public CompiledPage(
@@ -45,7 +43,6 @@ public class CompiledPage
 		setWarnings(warnings);
 		setEntityMap(entityMap);
 		setLog(log);
-		
 	}
 	
 	// =========================================================================
@@ -152,7 +149,11 @@ public class CompiledPage
 					case 0:
 						return CompiledPage.this.setLog((CompilerLog) value);
 					case 1:
-						return CompiledPage.this.setWarnings((List<Warning>) value);
+					{
+						@SuppressWarnings("unchecked")
+						List<Warning> warnings = (List<Warning>) value;
+						return CompiledPage.this.setWarnings(warnings);
+					}
 					case 2:
 						return CompiledPage.this.setEntityMap((WtEntityMap) value);
 						
@@ -182,7 +183,4 @@ public class CompiledPage
 	{
 		return CHILD_NAMES;
 	}
-	
-	// =========================================================================
-	
 }
