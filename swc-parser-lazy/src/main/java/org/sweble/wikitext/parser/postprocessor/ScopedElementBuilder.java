@@ -22,7 +22,7 @@ import java.util.LinkedList;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WtBody;
-import org.sweble.wikitext.parser.nodes.WtBodyImpl;
+import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;

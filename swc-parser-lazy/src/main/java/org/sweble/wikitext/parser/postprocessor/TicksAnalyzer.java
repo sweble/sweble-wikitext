@@ -31,7 +31,7 @@ import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
+import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
 import org.sweble.wikitext.parser.nodes.WtStringNode;
 import org.sweble.wikitext.parser.nodes.WtText;

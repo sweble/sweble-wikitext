@@ -10,7 +10,7 @@ public class WtXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtBody NO_BODY = WtBody.NULL_BODY;
+	private static final WtBody NO_BODY = WtBody.NULL;
 	
 	// =========================================================================
 	
@@ -136,6 +136,11 @@ public class WtXmlElement
 	public final WtXmlAttributes getXmlAttributes()
 	{
 		return (WtXmlAttributes) get(0);
+	}
+	
+	public final boolean hasBody()
+	{
+		return getBody() != NO_BODY;
 	}
 	
 	public final void setBody(WtBody body)

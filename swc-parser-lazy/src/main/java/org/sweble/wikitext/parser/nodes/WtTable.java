@@ -1,14 +1,12 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtBody.WtNullBody;
-
 public class WtTable
 		extends
 			WtInnerNode2
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtBody NO_BODY = WtBody.NULL_BODY;
+	private static final WtBody NO_BODY = WtBody.NULL;
 	
 	// =========================================================================
 	
@@ -22,7 +20,7 @@ public class WtTable
 	
 	public WtTable(WtXmlAttributes xmlAttributes)
 	{
-		super(xmlAttributes, WtBody.NULL_BODY);
+		super(xmlAttributes, WtBody.NULL);
 	}
 	
 	public WtTable(WtXmlAttributes xmlAttributes, WtBody body)

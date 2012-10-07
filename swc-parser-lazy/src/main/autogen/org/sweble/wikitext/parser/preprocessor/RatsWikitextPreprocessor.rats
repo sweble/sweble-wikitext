@@ -91,6 +91,12 @@ header
   import org.sweble.wikitext.parser.nodes.*;
   import org.sweble.wikitext.parser.nodes.WtOnlyInclude.XmlElementType;
 
+  import org.sweble.wikitext.parser.nodes.WtName.WtNameImpl;
+  import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
+  import org.sweble.wikitext.parser.nodes.WtTagExtensionBody.WtTagExtensionBodyImpl;
+  import org.sweble.wikitext.parser.nodes.WtValue.WtValueImpl;
+  import org.sweble.wikitext.parser.nodes.WtXmlAttributes.WtXmlAttributesImpl;
+
   import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;
   import de.fau.cs.osr.utils.StringUtils;
@@ -109,7 +115,7 @@ public transient WtPreproWikitextPage Article =
   redirect:Redirect? content:Content &Eof
   {
     yyValue = new WtPreproWikitextPage(
-        new WtNodeListImpl(redirect, content),
+        list(redirect, content),
         new ArrayList<Warning>(),
         getState().getEntityMap());
   }

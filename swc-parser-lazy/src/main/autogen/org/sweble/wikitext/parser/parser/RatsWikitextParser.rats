@@ -49,6 +49,13 @@ header
   import org.sweble.wikitext.parser.utils.ParserShouldNotBeHereException;
   import org.sweble.wikitext.parser.utils.ParserStats;
 
+  import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
+  import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
+  import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtLinkTitleImpl;
+  import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
+  import org.sweble.wikitext.parser.nodes.WtValue.WtValueImpl;
+  import org.sweble.wikitext.parser.nodes.WtXmlAttributes.WtXmlAttributesImpl;
+
   import de.fau.cs.osr.ptk.common.*;
   import de.fau.cs.osr.ptk.common.ast.*;
   import de.fau.cs.osr.utils.StringUtils;
@@ -59,7 +66,7 @@ body
 {
   private WtNodeList fixNewlinesAtBoa(WtNodeList content)
   {
-    WtNodeList result = new WtNodeListImpl();
+    WtNodeList result = list();
 
     ArrayList<WtNode> tmp = new ArrayList<WtNode>();
 

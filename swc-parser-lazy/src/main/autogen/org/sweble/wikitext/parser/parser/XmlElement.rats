@@ -74,7 +74,7 @@ private inline WtXmlAttributes AttributeStar =
   yyValue:(&pWsPlus XmlAttributePlus)?
   {
     if (yyValue == null)
-      yyValue = WtXmlAttributesImpl.EMPTY;
+      yyValue = WtXmlAttributes.EMPTY;
   }
 ;
 

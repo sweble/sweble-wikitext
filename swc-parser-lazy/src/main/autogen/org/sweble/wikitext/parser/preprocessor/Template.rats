@@ -80,7 +80,7 @@ stateful WtNode Template =
           ((WtTemplate) yyValue).setPrecededByNewline(true);
         else
           ((WtTemplateParameter) yyValue).setPrecededByNewline(true);
-        yyValue = new WtNodeListImpl(new WtText(eol), yyValue);
+        yyValue = list(new WtText(eol), yyValue);
       }
     }
   / eol:pEol? braces:Braces1Plus
@@ -124,7 +124,7 @@ private transient WtNode TemplateTail =
     int stillOpen = getState().getTemplateBraces();
     if (stillOpen > 0)
     {
-      yyValue = new WtNodeListImpl(
+      yyValue = list(
         new WtText(StringUtils.strrep('{', stillOpen)),
         yyValue);
 
@@ -147,7 +147,7 @@ private transient WtNode TemplateTailPart =
       if (args.size() > 0)
       {
         WtTemplateArgument arg0 = (WtTemplateArgument) args.get(0);
-        WtNodeList arg0Value = new WtNodeListImpl();
+        WtNodeList arg0Value = list();
         if (arg0.hasName()) {
           arg0Value.addAll(arg0.getName());
           arg0Value.add(new WtText("="));
@@ -155,7 +155,7 @@ private transient WtNode TemplateTailPart =
         arg0Value.add(arg0.getValue());
         defaultValue = new WtValueImpl(arg0Value);
         if (args.size() > 1)
-          garbage = new WtTemplateArguments(new WtNodeListImpl(args.subList(1, args.size())));
+          garbage = new WtTemplateArguments(list(args.subList(1, args.size())));
       }
 
       yyValue = setRtd(
@@ -225,7 +225,7 @@ private transient WtNode TemplateArgumentChoice =
 private transient WtNodeList TemplateArgumentStar =
   args:( void:'|' TemplateArgumentChoice )*
   {
-    yyValue = new WtNodeListImpl(args);
+    yyValue = list(args);
   }
 ;
 

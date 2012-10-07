@@ -73,7 +73,7 @@ inline String XmlAttrWs =
 private transient WtXmlAttributes tXmlAttributePlus =
   head:XmlHeadAttributeChoice tail:XmlTailAttributeChoice*
   {
-    yyValue = new WtXmlAttributesImpl(new WtNodeListImpl(head, tail));
+    yyValue = new WtXmlAttributesImpl(list(head, tail));
   }
 ;
 
@@ -136,7 +136,7 @@ private inline void AttrEnd =
 private transient WtValue ValueSqStar =
   value:ValueSqChoice*
   {
-    yyValue = new WtValueImpl(new WtNodeListImpl(value));
+    yyValue = new WtValueImpl(list(value));
   }
 ;
 
@@ -160,7 +160,7 @@ private transient String ValueSqString =
 private transient WtValue ValueDqStar =
   value:ValueDqChoice*
   {
-    yyValue = new WtValueImpl(new WtNodeListImpl(value));
+    yyValue = new WtValueImpl(list(value));
   }
 ;
 
@@ -184,7 +184,7 @@ private transient String ValueDqString =
 private transient WtValue ValueNqStar =
   value:ValueNqChoice*
   {
-    yyValue = new WtValueImpl(new WtNodeListImpl(value));
+    yyValue = new WtValueImpl(list(value));
   }
 ;
 

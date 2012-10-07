@@ -1,5 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
+
 public class WtBold
 		extends
 			WtContentNodeImpl

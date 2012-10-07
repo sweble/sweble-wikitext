@@ -165,13 +165,13 @@ body
             }
             l.setPrefix(p);
 
-            return new WtNodeListImpl(new WtText(b), l);
+            return list(new WtText(b), l);
           }
         }
       }
     }
 
-    return new WtNodeListImpl(text, link);
+    return list(text, link);
   }
 
   private int toInt(String num)
@@ -335,7 +335,7 @@ private inline WtLinkOptions OptionsAndTitle =
 private transient WtLinkOptions LinkOptionStar =
   options:( void:'|' LinkOptionChoice )*
   {
-    yyValue = new WtLinkOptionsImpl(new WtNodeListImpl(options));
+    yyValue = new WtLinkOptionsImpl(list(options));
   }
 ;
 

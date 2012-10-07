@@ -157,7 +157,7 @@ private transient stateful WtNodeList TableContentStar =
   }
   garbage:InlineBlockContent content:TableElement*
   {
-    yyValue = new WtNodeListImpl(garbage, content);
+    yyValue = list(garbage, content);
   }
 ;
 

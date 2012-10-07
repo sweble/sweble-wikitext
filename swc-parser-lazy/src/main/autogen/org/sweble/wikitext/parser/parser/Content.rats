@@ -90,7 +90,7 @@ body
 
       if (i > 2)
       {
-        l = new WtNodeListImpl();
+        l = list();
 
         i = 0;
         for (WtNode n : pre)
@@ -119,14 +119,14 @@ body
       }
       else
       {
-        l = new WtNodeListImpl();
+        l = list();
         l.add(pre);
         l.add(IntermediateTags.PARAGRAPH.createOpen(false));
       }
     }
     else
     {
-      l = new WtNodeListImpl();
+      l = list();
       l.add(IntermediateTags.PARAGRAPH.createOpen(false));
     }
 
@@ -184,7 +184,7 @@ body
 noinline transient WtNodeList BolBlockContent =
   content:Block*
   {
-    yyValue = new WtNodeListImpl(content);
+    yyValue = list(content);
   }
 ;
 
@@ -194,7 +194,7 @@ noinline transient WtNodeList BolBlockContent =
 noinline transient WtNodeList BlockContent =
   head:Paragraph tail:Block*
   {
-    yyValue = new WtNodeListImpl(head, tail);
+    yyValue = list(head, tail);
   }
 ;
 
@@ -276,14 +276,14 @@ private inline void ParagraphStopper =
 private noinline transient WtNodeList PreParaWs =
   s:pExtSpaceStar lt:pEolNode tail:PreParaWsMore*
   {
-    yyValue = new WtNodeListImpl(s, lt, new WtNodeListImpl(tail));
+    yyValue = list(s, lt, list(tail));
   }
 ;
 
 private inline WtNodeList PreParaWsMore =
   !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
-    yyValue = new WtNodeListImpl(s, lt);
+    yyValue = list(s, lt);
   }
 ;
 
@@ -293,14 +293,14 @@ private inline WtNodeList PreParaWsMore =
 private noinline transient WtNode ParagraphText =
   head:InlineContentPlus tail:ParagraphTextMore*
   {
-    yyValue = new WtNodeListImpl(head, tail);
+    yyValue = list(head, tail);
   }
 ;
 
 private inline WtNode ParagraphTextMore =
   lt:pEolNode !ParagraphStopper s:pExtSpaceStar c:InlineContentPlus
   {
-    yyValue = new WtNodeListImpl(lt, s, c);
+    yyValue = list(lt, s, c);
   }
 ;
 
@@ -310,14 +310,14 @@ private inline WtNode ParagraphTextMore =
 private noinline transient WtNodeList PostParaWs =
   lt:pEolNode tail:PostParaWsMore* ( &ParagraphStopper / !ParagraphText )
   {
-    yyValue = new WtNodeListImpl(lt, tail);
+    yyValue = list(lt, tail);
   }
 ;
 
 private inline WtNodeList PostParaWsMore =
   !ParagraphStopper s:pExtSpaceStar lt:pEolNode
   {
-    yyValue = new WtNodeListImpl(s, lt);
+    yyValue = list(s, lt);
   }
 ;
 
@@ -332,7 +332,7 @@ private inline WtNodeList PostParaWsMore =
 noinline transient WtNodeList InlineBlockContent =
   head:( !BlockStopper InlineTextBlock )? tail:InlineBlock*
   {
-    yyValue = new WtNodeListImpl(head, new WtNodeListImpl(tail));
+    yyValue = list(head, list(tail));
   }
 ;
 
@@ -347,18 +347,18 @@ private inline WtNode InlineBlock =
 private transient WtNode InlineTextBlock =
     head:InlineContentPlus tail:InlineTextBlockMore*
     {
-      yyValue = new WtNodeListImpl(head, tail);
+      yyValue = list(head, tail);
     }
   / tail:InlineTextBlockMore+
     {
-      yyValue = new WtNodeListImpl(tail);
+      yyValue = list(tail);
     }
 ;
 
 private inline WtNode InlineTextBlockMore =
   lt:pEol more:( !ParagraphStopper InlineContentPlus )?
   {
-    yyValue = new WtNodeListImpl(new WtText(lt), more);
+    yyValue = list(new WtText(lt), more);
   }
 ;
 
@@ -370,14 +370,14 @@ private inline WtNode InlineTextBlockMore =
 transient WtNodeList InlineContentStar =
   content:InlineContentChoice*
   {
-    yyValue = new WtNodeListImpl(content);
+    yyValue = list(content);
   }
 ;
 
 transient WtNodeList InlineContentPlus =
   content:InlineContentChoice+
   {
-    yyValue = new WtNodeListImpl(content);
+    yyValue = list(content);
   }
 ;
 
@@ -408,7 +408,7 @@ private transient WtNode InlineContentChoice =
     {
       yyValue = link.isNodeType(WtNode.NT_INTERNAL_LINK) ?
           addLinkPrefix(text, (WtInternalLink) link) :
-          new WtNodeListImpl(text, link);
+          list(text, link);
     }
   / TextPlus
   / !InlineContentStopper InlineContentAtom

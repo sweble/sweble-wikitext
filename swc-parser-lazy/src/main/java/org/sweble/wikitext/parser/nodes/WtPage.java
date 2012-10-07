@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
 
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;

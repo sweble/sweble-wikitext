@@ -104,7 +104,7 @@ private inline TableRowBody TableRowBody =
       yyValue = new TableRowBody();
       yyValue.rt0 = rt0;
       yyValue.rt1 = "";
-      yyValue.body = WtNodeList.EMPTY_NODE_LIST;
+      yyValue.body = WtNodeList.EMPTY;
     }
   / &ShouldNotBeHere SantiyCheckEnd
     {
@@ -118,7 +118,7 @@ private transient stateful WtNodeList TableRowContentStar =
   }
   garbage:InlineBlockContent content:TableRowElement*
   {
-    yyValue = new WtNodeListImpl(garbage, new WtNodeListImpl(content));
+    yyValue = list(garbage, list(content));
   }
 ;
 

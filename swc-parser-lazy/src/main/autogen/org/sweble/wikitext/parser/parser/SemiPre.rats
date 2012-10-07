@@ -69,7 +69,7 @@ noinline memoized WtNode SemiPreMemoized =
 noinline transient WtNode SemiPreTransient =
   &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
   {
-    yyValue = new WtSemiPre(new WtNodeListImpl(first, tail));
+    yyValue = new WtSemiPre(list(first, tail));
   }
 ;
 

@@ -12,7 +12,7 @@ public class WtTemplateParameter
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtNullValue NO_DEFAULT_VALUE = WtValue.NULL_VALUE;
+	public static final WtNullValue NO_DEFAULT_VALUE = WtValue.NULL;
 	
 	// =========================================================================
 	
@@ -26,12 +26,12 @@ public class WtTemplateParameter
 	
 	public WtTemplateParameter(WtName name)
 	{
-		super(name, NO_DEFAULT_VALUE, WtNodeList.EMPTY_NODE_LIST);
+		super(name, NO_DEFAULT_VALUE, WtNodeList.EMPTY);
 	}
 	
 	public WtTemplateParameter(WtName name, WtValue defaultValue)
 	{
-		super(name, defaultValue, WtNodeList.EMPTY_NODE_LIST);
+		super(name, defaultValue, WtNodeList.EMPTY);
 	}
 	
 	public WtTemplateParameter(

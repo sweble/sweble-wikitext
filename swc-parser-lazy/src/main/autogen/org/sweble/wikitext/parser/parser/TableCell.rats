@@ -56,7 +56,7 @@ noinline memoized WtNode TableCellMemoized =
 noinline transient WtNode TableCellTransient =
     &( pExtSpaceStar '|' ) inline:TableInlineCellPlus last:TableBlockCell?
     {
-      yyValue = new WtNodeListImpl(inline, last);
+      yyValue = list(inline, last);
     }
   / &( pExtSpaceStar '|' ) header:TableBlockCell
     {
@@ -76,7 +76,7 @@ inline void InlineContentStopperTableCell =
 private transient WtNodeList TableInlineCellPlus =
   cells:( TableInlineCell &"||" )+
   {
-    yyValue = new WtNodeListImpl(cells);
+    yyValue = list(cells);
   }
 ;
 

@@ -68,7 +68,7 @@ body
     if (b.isEmpty())
       return url;
 
-    return new WtNodeListImpl(new WtText(b), url);
+    return list(new WtText(b), url);
   }
 
   private String extractProtocol(WtText text)

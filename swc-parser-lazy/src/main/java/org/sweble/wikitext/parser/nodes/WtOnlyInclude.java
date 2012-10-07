@@ -1,5 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 public class WtOnlyInclude

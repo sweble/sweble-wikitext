@@ -113,7 +113,7 @@ body
     if (createItem)
     {
       // FIXME: Issue warning!
-      pushNewListItem(listStack, ch, new WtNodeListImpl());
+      pushNewListItem(listStack, ch, list());
     }
   }
 
@@ -154,7 +154,7 @@ body
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
-    WtNodeList items = new WtNodeListImpl();
+    WtNodeList items = list();
 
     WtRtData lastItem = processListItem(listStack, items, first);
 
@@ -197,7 +197,7 @@ body
     WtNode item = pushNewListItem(
         listStack,
         prefix.charAt(last),
-        new WtNodeListImpl(p.content));
+        list(p.content));
 
     WtRtData rtd = null;
     if (isGatherRtData())

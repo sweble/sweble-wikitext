@@ -1,7 +1,5 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtNullLinkTitle;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 public class WtImageLink
@@ -10,7 +8,7 @@ public class WtImageLink
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtLinkTitle HAS_NO_TITLE = new WtNullLinkTitle();
+	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NULL;
 	
 	// =========================================================================
 	

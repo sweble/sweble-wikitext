@@ -153,7 +153,7 @@ body
     Stack<WtSection> stack = new Stack<WtSection>();
     stack.push(first);
 
-    WtNodeList result = new WtNodeListImpl(first);
+    WtNodeList result = list(first);
 
     Pair<WtSection> i = tail;
     while (!i.isEmpty())
@@ -170,7 +170,7 @@ body
       {
         // TODO: Dangerous! We must clone the section instead!
         stack.peek().getBody().add(s);
-        //stack.peek().setBody(new WtNodeListImpl(stack.peek().getBody(), s));
+        //stack.peek().setBody(list(stack.peek().getBody(), s));
       }
 
       stack.push(s);

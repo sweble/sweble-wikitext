@@ -23,7 +23,7 @@ import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
+import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;

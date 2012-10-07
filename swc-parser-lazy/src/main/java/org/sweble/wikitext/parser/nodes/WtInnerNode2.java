@@ -3,8 +3,8 @@ package org.sweble.wikitext.parser.nodes;
 import org.sweble.wikitext.parser.WtRtData;
 
 import xtc.tree.Location;
-import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.AstAbstractInnerNode.AstInnerNode2;
+import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 public abstract class WtInnerNode2
 		extends

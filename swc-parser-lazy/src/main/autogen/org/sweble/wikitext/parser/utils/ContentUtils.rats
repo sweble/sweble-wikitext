@@ -22,6 +22,11 @@ module org.sweble.wikitext.parser.utils.ContentUtils;
 
 // -- Header / Body / Footer ---------------------------------------------------
 
+header
+{
+  import java.util.Collection;
+}
+
 body
 {
   protected String difference(int start, Result result)
@@ -51,6 +56,23 @@ body
   {
     Column col = column(index);
     return new Location(col.file, col.line, col.column);
+  }
+  
+  protected WtNodeList list(Object... content)
+  {
+    return new WtNodeList.WtNodeListImpl(content);
+  }
+  protected WtNodeList list(Pair<? extends WtNode> list)
+  {
+    return new WtNodeList.WtNodeListImpl(list);
+  }
+  protected WtNodeList list(WtNode child)
+  {
+    return new WtNodeList.WtNodeListImpl(child);
+  }
+  protected WtNodeList list(Collection<? extends WtNode> list)
+  {
+    return new WtNodeList.WtNodeListImpl(list);
   }
 }
 

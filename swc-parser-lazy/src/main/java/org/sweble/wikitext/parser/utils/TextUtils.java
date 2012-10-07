@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtNodeListImpl;
+import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;

@@ -128,19 +128,19 @@ transient WtNode XmlCommentTrimmed =
     {
       WtXmlComment c = setRtd(new WtXmlComment(content, prefix, suffix + eol2), prefix, "<!--", content, "-->", suffix, eol2);
 
-      yyValue = new WtNodeListImpl(new WtText(eol1), c);
+      yyValue = list(new WtText(eol1), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
     {
       WtXmlComment c = setRtd(new WtXmlComment(content), "<!--", content, "-->");
 
-      yyValue = new WtNodeListImpl(new WtText(eol1 + prefix), c);
+      yyValue = list(new WtText(eol1 + prefix), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
     {
       WtXmlComment c = setRtd(new WtXmlComment(content), "<!--", content);
 
-      yyValue = new WtNodeListImpl(new WtText(eol1 + prefix), c);
+      yyValue = list(new WtText(eol1 + prefix), c);
     }
 ;
 
