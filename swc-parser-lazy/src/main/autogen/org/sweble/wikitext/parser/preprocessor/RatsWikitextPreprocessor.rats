@@ -94,6 +94,7 @@ header
   import org.sweble.wikitext.parser.nodes.WtName.WtNameImpl;
   import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
   import org.sweble.wikitext.parser.nodes.WtTagExtensionBody.WtTagExtensionBodyImpl;
+  import org.sweble.wikitext.parser.nodes.WtTemplateArguments.WtTemplateArgumentsImpl;
   import org.sweble.wikitext.parser.nodes.WtValue.WtValueImpl;
   import org.sweble.wikitext.parser.nodes.WtXmlAttributes.WtXmlAttributesImpl;
 

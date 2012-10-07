@@ -200,8 +200,8 @@ WtParsedWikitextPage(
 						{P} precededByNewline = false
 						{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 						name = WtName[ [0] = "name" ],
-						defaultValue = ,
-						garbage = 
+						defaultValue = -,
+						garbage = -
 					)
 				],
 				args = WtTemplateArguments[
@@ -583,8 +583,8 @@ WtParsedWikitextPage(
 							{P} precededByNewline = false
 							{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 							name = WtName[ [0] = "name" ],
-							defaultValue = ,
-							garbage = 
+							defaultValue = -,
+							garbage = -
 						)
 					],
 					args = WtTemplateArguments[

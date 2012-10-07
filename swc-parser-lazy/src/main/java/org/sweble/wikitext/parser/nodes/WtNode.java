@@ -33,13 +33,13 @@ public interface WtNode
 	
 	// =========================================================================
 	
-	public static final int NT_MW_NODE_BITS /* ................ */= NT_CUSTOM_BIT | 0x20000;
+	public static final int NT_MW_NODE_BITS /* ................. */= NT_CUSTOM_BIT | 0x20000;
 	
-	public static final int NT_ENCVAL_BITS /* ................. */= NT_MW_NODE_BITS | 0x40000;
+	public static final int NT_ENCVAL_BITS /* .................. */= NT_MW_NODE_BITS | 0x40000;
 	
-	public static final int NT_PREPROC_BITS /* ................ */= NT_MW_NODE_BITS | 0x60000;
+	public static final int NT_PREPROC_BITS /* ................. */= NT_MW_NODE_BITS | 0x60000;
 	
-	public static final int NT_PARSER_BITS /* ................. */= NT_MW_NODE_BITS | 0x80000;
+	public static final int NT_PARSER_BITS /* .................. */= NT_MW_NODE_BITS | 0x80000;
 	
 	// -- General nodes --------------------------------------------------------
 	
@@ -113,7 +113,7 @@ public interface WtNode
 	
 	public static final int NT_LINK_OPTION_RESIZE /* ........... */= NT_PARSER_BITS + 12;
 	
-	public static final int NT_LINK_TARGET /* .................. */= NT_PARSER_BITS + 13;
+	public static final int NT_PAGE_NAME /* .................... */= NT_PARSER_BITS + 13;
 	
 	public static final int NT_LINK_TITLE /* ................... */= NT_PARSER_BITS + 14;
 	
@@ -167,7 +167,7 @@ public interface WtNode
 	
 	public static final int NT_XML_START_TAG /* ................ */= NT_PARSER_BITS + 40;
 	
-	public static final int NT_HEADING /* .............. */= NT_PARSER_BITS + 41;
+	public static final int NT_HEADING /* ...................... */= NT_PARSER_BITS + 41;
 	
 	public static final int NT_SECTION /* ...................... */= NT_PARSER_BITS + 42;
 	
@@ -175,7 +175,7 @@ public interface WtNode
 	
 	public static final int NT_SIGNATURE /* .................... */= NT_PARSER_BITS + 44;
 	
-	public static final int NT_BODY /* ................. */= NT_PARSER_BITS + 45;
+	public static final int NT_BODY /* ......................... */= NT_PARSER_BITS + 45;
 	
 	public static final int NT_LINK_OPTIONS /* ................. */= NT_PARSER_BITS + 46;
 	

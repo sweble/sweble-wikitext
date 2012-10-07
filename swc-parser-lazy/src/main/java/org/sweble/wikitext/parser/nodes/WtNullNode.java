@@ -20,66 +20,9 @@ public class WtNullNode
 		implements
 			WtNode
 {
-	private final class NullNodeListIterator
-			implements
-				ListIterator<WtNode>
-	{
-		@Override
-		public void set(WtNode arg0)
-		{
-			throw new UnsupportedOperationException(genMsg());
-		}
-		
-		@Override
-		public void remove()
-		{
-			throw new UnsupportedOperationException(genMsg());
-		}
-		
-		@Override
-		public int previousIndex()
-		{
-			return -1;
-		}
-		
-		@Override
-		public WtNode previous()
-		{
-			throw new UnsupportedOperationException(genMsg());
-		}
-		
-		@Override
-		public int nextIndex()
-		{
-			return 0;
-		}
-		
-		@Override
-		public WtNode next()
-		{
-			throw new UnsupportedOperationException(genMsg());
-		}
-		
-		@Override
-		public boolean hasPrevious()
-		{
-			return false;
-		}
-		
-		@Override
-		public boolean hasNext()
-		{
-			return false;
-		}
-		
-		@Override
-		public void add(WtNode arg0)
-		{
-			throw new UnsupportedOperationException(genMsg());
-		}
-	}
-	
 	private static final long serialVersionUID = -8143436141986490761L;
+	
+	public static final WtNullNode NULL = new WtNullNode();
 	
 	// =========================================================================
 	
@@ -549,5 +492,74 @@ public class WtNullNode
 		if (a.length > 0)
 			a[0] = null;
 		return a;
+	}
+	
+	// =========================================================================
+	
+	private final class NullNodeListIterator
+			implements
+				ListIterator<WtNode>
+	{
+		@Override
+		public void set(WtNode arg0)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public void remove()
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public int previousIndex()
+		{
+			return -1;
+		}
+		
+		@Override
+		public WtNode previous()
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public int nextIndex()
+		{
+			return 0;
+		}
+		
+		@Override
+		public WtNode next()
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public boolean hasPrevious()
+		{
+			return false;
+		}
+		
+		@Override
+		public boolean hasNext()
+		{
+			return false;
+		}
+		
+		@Override
+		public void add(WtNode arg0)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public String toString()
+	{
+		return "---";
 	}
 }

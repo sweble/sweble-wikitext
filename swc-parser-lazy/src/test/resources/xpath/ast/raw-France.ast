@@ -375,12 +375,12 @@ WtSection(
 		[3] = WtNewline("\n"),
 		[4] = WtParagraph[
 			[0] = WtImageLink(
-				{P} alt = WtLinkOptionAltText[]
+				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = LEFT
 				{P} height = -1
-				{P} link = -
+				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
@@ -508,12 +508,12 @@ WtSection(
 		[6] = WtNewline("\n"),
 		[7] = WtParagraph[
 			[0] = WtImageLink(
-				{P} alt = WtLinkOptionAltText[]
+				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = RIGHT
 				{P} height = -1
-				{P} link = -
+				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 				{P} upright = false
 				{P} vAlign = MIDDLE
@@ -552,12 +552,12 @@ WtSection(
 			),
 			[1] = WtNewline("\n"),
 			[2] = WtImageLink(
-				{P} alt = WtLinkOptionAltText[]
+				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = NONE
 				{P} height = -1
-				{P} link = -
+				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 				{P} upright = true
 				{P} vAlign = MIDDLE
@@ -603,12 +603,12 @@ WtSection(
 			),
 			[3] = WtNewline("\n"),
 			[4] = WtImageLink(
-				{P} alt = WtLinkOptionAltText[]
+				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
 				{P} hAlign = LEFT
 				{P} height = -1
-				{P} link = -
+				{P} link = ImageLinkTarget[ DEFAULT: --- ]
 				{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 				{P} upright = true
 				{P} vAlign = MIDDLE

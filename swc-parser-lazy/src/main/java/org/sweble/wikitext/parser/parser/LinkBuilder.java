@@ -22,12 +22,12 @@ import java.util.ArrayList;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions;
-import org.sweble.wikitext.parser.nodes.WtLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -38,10 +38,6 @@ import de.fau.cs.osr.ptk.common.Warning;
 public class LinkBuilder
 {
 	private WtPageName target;
-	
-	private WtLinkTarget link;
-	
-	private WtLinkOptionAltText alt;
 	
 	private WtLinkTitle title;
 	
@@ -58,6 +54,10 @@ public class LinkBuilder
 	private ImageVertAlign vAlign;
 	
 	private ImageViewFormat format;
+	
+	private ImageLinkTarget link;
+	
+	private WtLinkOptionAltText alt;
 	
 	private boolean border;
 	
@@ -154,7 +154,7 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
-	public void setLink(WtLinkTarget target)
+	public void setLink(ImageLinkTarget target)
 	{
 		if (target != null)
 		{
@@ -172,7 +172,7 @@ public class LinkBuilder
 		}
 		else
 		{
-			this.link = WtLinkTarget.DONT_LINK;
+			this.link = new ImageLinkTarget(LinkTargetType.NO_LINK);
 		}
 	}
 	
@@ -192,12 +192,6 @@ public class LinkBuilder
 	
 	public WtNode build(WtLinkOptions options, String postfix)
 	{
-		// TODO: Tidy up
-		/*
-		if (this.title == null)
-			this.title = new WtLinkTitleImpl();
-		*/
-		
 		if (this.targetType == LinkType.IMAGE)
 		{
 			if (hAlign == null)
@@ -209,12 +203,12 @@ public class LinkBuilder
 			if (format == null)
 				format = ImageViewFormat.UNRESTRAINED;
 			
-			// TODO: Nullable node here?
 			if (alt == null)
-				alt = new WtLinkOptionAltText();
+				alt = WtLinkOptionAltText.NULL;
 			
+			// TODO: Use predefined node here?
 			if (link == null)
-				link = WtLinkTarget.DONT_LINK;
+				link = new ImageLinkTarget(LinkTargetType.DEFAULT);
 			
 			WtImageLink result = new WtImageLink(
 					target,

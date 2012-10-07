@@ -50,7 +50,10 @@ header
   import org.sweble.wikitext.parser.utils.ParserStats;
 
   import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
+  import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
+  import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
   import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
+  import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
   import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtLinkTitleImpl;
   import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
   import org.sweble.wikitext.parser.nodes.WtValue.WtValueImpl;

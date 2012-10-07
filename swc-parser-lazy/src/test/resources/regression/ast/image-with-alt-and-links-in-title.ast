@@ -3,7 +3,7 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtParagraph[
 		[0] = WtImageLink(
-			{P} alt = WtLinkOptionAltText(
+			{P} alt = WtLinkOptionAltTextImpl(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
 					[0] = "Y"
 				)
@@ -11,7 +11,7 @@ WtParsedWikitextPage(
 			{P} format = THUMBNAIL
 			{P} hAlign = NONE
 			{P} height = -1
-			{P} link = -
+			{P} link = ImageLinkTarget[ DEFAULT: --- ]
 			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 			{P} upright = false
 			{P} vAlign = MIDDLE
@@ -22,7 +22,7 @@ WtParsedWikitextPage(
 					{P} keyword = "thumb"
 					{P} rtd = RTD[ "|thumb" ]
 				),
-				[1] = WtLinkOptionAltText(
+				[1] = WtLinkOptionAltTextImpl(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
 					[0] = "Y"
 				)

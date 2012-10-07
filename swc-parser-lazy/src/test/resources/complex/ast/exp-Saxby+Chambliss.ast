@@ -467,14 +467,14 @@ WtParsedWikitextPage(
 							[0] = WtParagraph[
 								[0] = " ",
 								[1] = WtImageLink(
-									{P} alt = WtLinkOptionAltText(
+									{P} alt = WtLinkOptionAltTextImpl(
 											{P} rtd = RTD[ "|alt=" <o> "" ]
 										)
 									{P} border = false
 									{P} format = UNRESTRAINED
 									{P} hAlign = NONE
 									{P} height = -1
-									{P} link = -
+									{P} link = ImageLinkTarget[ DEFAULT: --- ]
 									{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 									{P} upright = false
 									{P} vAlign = MIDDLE
@@ -486,7 +486,7 @@ WtParsedWikitextPage(
 											{P} rtd = RTD[ "|225px" ]
 											{P} width = 225
 										),
-										[1] = WtLinkOptionAltText(
+										[1] = WtLinkOptionAltTextImpl(
 											{P} rtd = RTD[ "|alt=" <o> "" ]
 										)
 									],
@@ -2612,7 +2612,7 @@ WtParsedWikitextPage(
 												],
 												body = WtBody[
 													[0] = WtImageLink(
-														{P} alt = WtLinkOptionAltText(
+														{P} alt = WtLinkOptionAltTextImpl(
 																{P} rtd = RTD[ "|alt=" <o> "" ]
 																[0] = "\n    "
 															)
@@ -2620,7 +2620,7 @@ WtParsedWikitextPage(
 														{P} format = UNRESTRAINED
 														{P} hAlign = NONE
 														{P} height = 40
-														{P} link = -
+														{P} link = ImageLinkTarget[ NO_LINK: --- ]
 														{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 														{P} upright = false
 														{P} vAlign = MIDDLE
@@ -2634,9 +2634,10 @@ WtParsedWikitextPage(
 															),
 															[1] = WtLinkOptionLinkTarget(
 																{P} rtd = RTD[ "|link=" <o> "" ]
-																target = 
+																{P} targetType = NO_LINK
+																target = -
 															),
-															[2] = WtLinkOptionAltText(
+															[2] = WtLinkOptionAltTextImpl(
 																{P} rtd = RTD[ "|alt=" <o> "" ]
 																[0] = "\n    "
 															)
@@ -4985,7 +4986,7 @@ WtParsedWikitextPage(
 								],
 								body = WtBody[
 									[0] = WtImageLink(
-										{P} alt = WtLinkOptionAltText(
+										{P} alt = WtLinkOptionAltTextImpl(
 												{P} rtd = RTD[ "|alt=" <o> "" ]
 												[0] = "\n    "
 											)
@@ -4993,7 +4994,7 @@ WtParsedWikitextPage(
 										{P} format = UNRESTRAINED
 										{P} hAlign = NONE
 										{P} height = 40
-										{P} link = -
+										{P} link = ImageLinkTarget[ NO_LINK: --- ]
 										{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 										{P} upright = false
 										{P} vAlign = MIDDLE
@@ -5007,9 +5008,10 @@ WtParsedWikitextPage(
 											),
 											[1] = WtLinkOptionLinkTarget(
 												{P} rtd = RTD[ "|link=" <o> "" ]
-												target = 
+												{P} targetType = NO_LINK
+												target = -
 											),
-											[2] = WtLinkOptionAltText(
+											[2] = WtLinkOptionAltTextImpl(
 												{P} rtd = RTD[ "|alt=" <o> "" ]
 												[0] = "\n    "
 											)
@@ -5145,7 +5147,7 @@ WtParsedWikitextPage(
 								],
 								body = WtBody[
 									[0] = WtImageLink(
-										{P} alt = WtLinkOptionAltText(
+										{P} alt = WtLinkOptionAltTextImpl(
 												{P} rtd = RTD[ "|alt=" <o> "" ]
 												[0] = "\n    "
 											)
@@ -5153,7 +5155,7 @@ WtParsedWikitextPage(
 										{P} format = UNRESTRAINED
 										{P} hAlign = NONE
 										{P} height = 40
-										{P} link = -
+										{P} link = ImageLinkTarget[ NO_LINK: --- ]
 										{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 										{P} upright = false
 										{P} vAlign = MIDDLE
@@ -5167,9 +5169,10 @@ WtParsedWikitextPage(
 											),
 											[1] = WtLinkOptionLinkTarget(
 												{P} rtd = RTD[ "|link=" <o> "" ]
-												target = 
+												{P} targetType = NO_LINK
+												target = -
 											),
-											[2] = WtLinkOptionAltText(
+											[2] = WtLinkOptionAltTextImpl(
 												{P} rtd = RTD[ "|alt=" <o> "" ]
 												[0] = "\n    "
 											)
@@ -7271,12 +7274,12 @@ WtParsedWikitextPage(
 														],
 														body = WtBody[
 															[0] = WtImageLink(
-																{P} alt = WtLinkOptionAltText[]
+																{P} alt = -
 																{P} border = false
 																{P} format = UNRESTRAINED
 																{P} hAlign = NONE
 																{P} height = -1
-																{P} link = -
+																{P} link = ImageLinkTarget[ DEFAULT: --- ]
 																{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
 																{P} upright = false
 																{P} vAlign = MIDDLE

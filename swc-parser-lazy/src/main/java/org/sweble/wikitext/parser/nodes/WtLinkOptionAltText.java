@@ -1,27 +1,47 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
-
-public class WtLinkOptionAltText
+public interface WtLinkOptionAltText
 		extends
-			WtContentNodeImpl
+			WtContentNode
 {
-	private static final long serialVersionUID = 1L;
+	public static final WtNullLinkOptionAltText NULL = new WtNullLinkOptionAltText();
 	
 	// =========================================================================
 	
-	public WtLinkOptionAltText()
+	public static final class WtNullLinkOptionAltText
+			extends
+				WtNullContentNode
+			implements
+				WtLinkOptionAltText
 	{
+		private static final long serialVersionUID = -1064749733891892633L;
 	}
 	
-	public WtLinkOptionAltText(WtNodeList content)
-	{
-		super(content);
-	}
+	// =========================================================================
 	
-	@Override
-	public int getNodeType()
+	public static final class WtLinkOptionAltTextImpl
+			extends
+				WtContentNodeImpl
+			implements
+				WtLinkOptionAltText
 	{
-		return NT_LINK_OPTION_ALT_TEXT;
+		private static final long serialVersionUID = 1L;
+		
+		// =====================================================================
+		
+		public WtLinkOptionAltTextImpl()
+		{
+		}
+		
+		public WtLinkOptionAltTextImpl(WtNodeList content)
+		{
+			super(content);
+		}
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_LINK_OPTION_ALT_TEXT;
+		}
 	}
 }

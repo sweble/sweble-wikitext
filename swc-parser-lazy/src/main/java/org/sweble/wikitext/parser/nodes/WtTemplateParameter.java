@@ -26,12 +26,12 @@ public class WtTemplateParameter
 	
 	public WtTemplateParameter(WtName name)
 	{
-		super(name, NO_DEFAULT_VALUE, WtNodeList.EMPTY);
+		super(name, NO_DEFAULT_VALUE, WtTemplateArguments.EMPTY);
 	}
 	
 	public WtTemplateParameter(WtName name, WtValue defaultValue)
 	{
-		super(name, defaultValue, WtNodeList.EMPTY);
+		super(name, defaultValue, WtTemplateArguments.EMPTY);
 	}
 	
 	public WtTemplateParameter(

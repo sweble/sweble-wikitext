@@ -1,27 +1,53 @@
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
-
-public class WtTemplateArguments
+public interface WtTemplateArguments
 		extends
-			WtContentNodeImpl
+			WtContentNode
 {
-	private static final long serialVersionUID = 1L;
+	public static final WtNullTemplateArguments EMPTY = new WtNullTemplateArguments();
 	
 	// =========================================================================
 	
-	public WtTemplateArguments()
+	public static final class WtNullTemplateArguments
+			extends
+				WtNullContentNode
+			implements
+				WtTemplateArguments
 	{
+		private static final long serialVersionUID = -1064749733891892633L;
 	}
 	
-	public WtTemplateArguments(WtNodeList content)
-	{
-		super(content);
-	}
+	// =========================================================================
 	
-	@Override
-	public int getNodeType()
+	public static final class WtTemplateArgumentsImpl
+			extends
+				WtContentNodeImpl
+			implements
+				WtTemplateArguments
 	{
-		return NT_TEMPLATE_ARGUMENTS;
+		private static final long serialVersionUID = 1L;
+		
+		// =====================================================================
+		
+		public WtTemplateArgumentsImpl()
+		{
+		}
+		
+		public WtTemplateArgumentsImpl(WtNodeList content)
+		{
+			super(content);
+		}
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_TEMPLATE_ARGUMENTS;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtTemplateArguments.class.getSimpleName();
+		}
 	}
 }

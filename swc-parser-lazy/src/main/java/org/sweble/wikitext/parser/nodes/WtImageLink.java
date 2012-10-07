@@ -1,5 +1,7 @@
 package org.sweble.wikitext.parser.nodes;
 
+import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
+
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 public class WtImageLink
@@ -32,7 +34,7 @@ public class WtImageLink
 			int width,
 			int height,
 			boolean upright,
-			WtLinkTarget link,
+			ImageLinkTarget link,
 			WtLinkOptionAltText alt)
 	{
 		super(target, options, HAS_NO_TITLE);
@@ -160,18 +162,18 @@ public class WtImageLink
 		return old;
 	}
 	
-	private WtLinkTarget link;
+	private ImageLinkTarget link;
 	
-	public final WtLinkTarget getLink()
+	public final ImageLinkTarget getLink()
 	{
 		return this.link;
 	}
 	
-	public final WtLinkTarget setLink(WtLinkTarget link)
+	public final ImageLinkTarget setLink(ImageLinkTarget link)
 	{
 		if (link == null)
 			throw new NullPointerException();
-		WtLinkTarget old = this.link;
+		ImageLinkTarget old = this.link;
 		this.link = link;
 		return old;
 	}
@@ -292,7 +294,7 @@ public class WtImageLink
 					case 6:
 						return WtImageLink.this.setBorder((Boolean) value);
 					case 7:
-						return WtImageLink.this.setLink((WtLinkTarget) value);
+						return WtImageLink.this.setLink((ImageLinkTarget) value);
 					case 8:
 						return WtImageLink.this.setAlt((WtLinkOptionAltText) value);
 						
@@ -607,6 +609,43 @@ public class WtImageLink
 		public ImageViewFormat combine(ImageViewFormat other)
 		{
 			return priority() > other.priority() ? this : other;
+		}
+	}
+	
+	// =========================================================================
+	
+	public static final class ImageLinkTarget
+	{
+		private final LinkTargetType targetType;
+		
+		private final WtLinkTarget target;
+		
+		public ImageLinkTarget(LinkTargetType targetType)
+		{
+			this.targetType = targetType;
+			this.target = WtLinkTarget.NULL;
+		}
+		
+		public ImageLinkTarget(LinkTargetType targetType, WtLinkTarget target)
+		{
+			this.targetType = targetType;
+			this.target = target;
+		}
+		
+		public LinkTargetType getTargetType()
+		{
+			return targetType;
+		}
+		
+		public WtLinkTarget getTarget()
+		{
+			return target;
+		}
+		
+		@Override
+		public String toString()
+		{
+			return "ImageLinkTarget[ " + targetType + ": " + target + " ]";
 		}
 	}
 }

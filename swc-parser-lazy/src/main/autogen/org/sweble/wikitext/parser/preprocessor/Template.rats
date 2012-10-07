@@ -142,8 +142,8 @@ private transient WtNode TemplateTailPart =
     {
       WtTemplateArguments args = content.args;
 
-      WtTemplateArguments garbage = null;
-      WtValue defaultValue = null;
+      WtTemplateArguments garbage = WtTemplateArguments.EMPTY;
+      WtValue defaultValue = WtTemplateParameter.NO_DEFAULT_VALUE;
       if (args.size() > 0)
       {
         WtTemplateArgument arg0 = (WtTemplateArgument) args.get(0);
@@ -155,7 +155,7 @@ private transient WtNode TemplateTailPart =
         arg0Value.add(arg0.getValue());
         defaultValue = new WtValueImpl(arg0Value);
         if (args.size() > 1)
-          garbage = new WtTemplateArguments(list(args.subList(1, args.size())));
+          garbage = new WtTemplateArgumentsImpl(list(args.subList(1, args.size())));
       }
 
       yyValue = setRtd(
@@ -189,7 +189,7 @@ private transient TemplateTailPart2 TemplateTailPart2 =
   {
     yyValue = new TemplateTailPart2();
     yyValue.name = new WtNameImpl(name);
-    yyValue.args = new WtTemplateArguments(args);
+    yyValue.args = new WtTemplateArgumentsImpl(args);
   }
 ;
 

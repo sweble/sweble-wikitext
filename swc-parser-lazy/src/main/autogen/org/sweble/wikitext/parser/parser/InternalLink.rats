@@ -425,9 +425,21 @@ private transient String LinkOptionKeywordString =
 private transient stateful WtNode LinkOptionNameValue =
     rt0:pExtWsStar "link=" target:LinkTargetOverride? rt1:pExtWsStar
     {
-      getLinkBuilder().setLink(target);
+      ImageLinkTarget linkTarget = null;
+      if (target == null)
+      {
+        linkTarget = new ImageLinkTarget(LinkTargetType.NO_LINK);
+      }
+      else
+      {
+        linkTarget = new ImageLinkTarget(
+            target.getTargetType(), 
+            target);
+      }
 
-      yyValue = setRtd(new WtLinkOptionLinkTarget(target), '|', rt0, "link=", SEP, rt1);
+      getLinkBuilder().setLink(linkTarget);
+
+      yyValue = setRtd(new WtLinkOptionLinkTarget(linkTarget), '|', rt0, "link=", SEP, rt1);
     }
   / rt0:pExtWsStar "alt="
     {
@@ -435,7 +447,7 @@ private transient stateful WtNode LinkOptionNameValue =
     }
     alt:LinkTitleContentStar
     {
-      yyValue = setRtd(new WtLinkOptionAltText(alt), '|', rt0, "alt=", SEP);
+      yyValue = setRtd(new WtLinkOptionAltTextImpl(alt), '|', rt0, "alt=", SEP);
       getLinkBuilder().setAlt((WtLinkOptionAltText) yyValue);
     }
   // TODO: Support page=...

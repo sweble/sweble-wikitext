@@ -26,7 +26,7 @@ public class WtPageName
 	@Override
 	public int getNodeType()
 	{
-		return NT_LINK_TARGET;
+		return NT_PAGE_NAME;
 	}
 	
 	@Override

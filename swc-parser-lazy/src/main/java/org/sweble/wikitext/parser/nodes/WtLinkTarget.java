@@ -4,7 +4,7 @@ public interface WtLinkTarget
 		extends
 			WtNode
 {
-	public static final WtLinkTarget DONT_LINK = new WtDontLink();
+	public static final WtLinkTarget NULL = new WtNullLink();
 	
 	// =========================================================================
 	
@@ -14,14 +14,17 @@ public interface WtLinkTarget
 	
 	public static enum LinkTargetType
 	{
+		/** The "link=X" argument was not present */
+		DEFAULT,
 		PAGE,
 		URL,
-		DONT_LINK
+		/** The "link=" argument was empty */
+		NO_LINK
 	}
 	
 	// =========================================================================
 	
-	public static final class WtDontLink
+	public static final class WtNullLink
 			extends
 				WtNullNode
 			implements
@@ -32,7 +35,7 @@ public interface WtLinkTarget
 		@Override
 		public LinkTargetType getTargetType()
 		{
-			return LinkTargetType.DONT_LINK;
+			throw new UnsupportedOperationException("NullLink does not have a type!");
 		}
 	}
 }
