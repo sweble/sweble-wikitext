@@ -24,14 +24,31 @@ import org.sweble.wikitext.parser.parser.LinkTarget;
 
 
 
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class RedirectLink
+      extends
+          WtTempNode
+  {
+  	String rt0;
+  	WtPageName target;
+  	String rt1;
+  }
+}
+
+
+
+
 // -- Redirect -----------------------------------------------------------------
 
 WtNode Redirect =
   ws0:pWsStar '#' keyword:RedirectKeyword ws1:pWsStar target:RedirectLink
   {
-    yyValue = setRtd(
-      new WtRedirect(new WtPageName(target.getForeign(1, String.class))),
-      ws0, '#', keyword, ws1, target.getForeign(0, String.class), SEP, target.getForeign(2, String.class));
+    yyValue = setRtd(new WtRedirect(target.target),
+      ws0, '#', keyword, ws1, target.rt0, SEP, target.rt1);
   }
 ;
 
@@ -39,12 +56,15 @@ private inline String RedirectKeyword =
   [Rr][Ee][Dd][Ii][Rr][Ee][Cc][Tt]
 ;
 
-private inline WtForeignNode RedirectLink =
+private inline RedirectLink RedirectLink =
   "[[" target:LinkTargetString garbage:RedirectLinkGarbageString? "]]"
   {
     if (garbage == null)
       garbage = "";
-    yyValue = WtForeignNode.from("[[", target, garbage + "]]");
+    yyValue = new RedirectLink();
+    yyValue.rt0 = "[[";
+    yyValue.target = new WtPageName(target);
+    yyValue.rt1 = garbage + "]]";
   }
 ;
 

@@ -31,6 +31,22 @@ import org.sweble.wikitext.parser.utils.Warnings;
 
 
 
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  @SuppressWarnings("serial")
+  private static final class TooManyTildesWarning
+      extends
+          WtTempNode
+  {
+  	int count;
+  }
+}
+
+
+
+
 // -- Signature ----------------------------------------------------------------
 
 WtNode Signature =
@@ -52,7 +68,7 @@ private inline WtNode SignatureChoice =
       {
         fileOddSyntaxWarning(
             yyValue,
-            makeSpan(yyStart - 2, w.getForeign(0, int.class)),
+            makeSpan(yyStart - 2, w.count),
             WS_INFO,
             "Signatures consist only of 3 to 5 tildes.");
       }
@@ -74,10 +90,11 @@ private inline WtNode SignatureAutoCorrect =
   }
 ;
 
-private transient WtForeignNode TooManyTildesWarning =
+private transient TooManyTildesWarning TooManyTildesWarning =
   &{ isWarningLevelEnabled(WS_NONE) } &'~'+
   {
-    yyValue = WtForeignNode.from(yyRepetition1);
+    yyValue = new TooManyTildesWarning();
+    yyValue.count = yyRepetition1;
   }
 ;
 

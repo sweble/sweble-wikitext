@@ -42,6 +42,17 @@ header
 
 body
 {
+  @SuppressWarnings("serial")
+  private static final class ListItem2
+      extends
+          WtTempNode
+  {
+  	WtNodeList content;
+  	String rt0;
+  	WtNode rt1;
+  	String prefix;
+  }
+
   public static enum ListType
   {
     DEFINITION,
@@ -139,7 +150,7 @@ body
     return (WtContentNode) items.get(items.size() - 1);
   }
 
-  private WtNodeList makeList(WtForeignNode first, Pair<WtForeignNode> tail)
+  private WtNodeList makeList(ListItem2 first, Pair<ListItem2> tail)
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
@@ -147,12 +158,12 @@ body
 
     WtRtData lastItem = processListItem(listStack, items, first);
 
-    for (Pair<WtForeignNode> i = tail; !i.isEmpty(); i = i.tail())
+    for (Pair<ListItem2> i = tail; !i.isEmpty(); i = i.tail())
     {
-      WtForeignNode item = i.head();
+      ListItem2 item = i.head();
 
       if (lastItem != null)
-        lastItem.setField(1, item.getForeign(1, String.class));
+        lastItem.setField(1, item.rt0);
 
       lastItem = processListItem(listStack, items, item);
     }
@@ -160,9 +171,9 @@ body
     return items;
   }
 
-  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, WtForeignNode p)
+  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, ListItem2 p)
   {
-    String prefix = p.getForeign(3, String.class);
+    String prefix = p.prefix;
 
     int j;
     for (j = 0; j < prefix.length() && j < listStack.size(); ++j)
@@ -186,12 +197,12 @@ body
     WtNode item = pushNewListItem(
         listStack,
         prefix.charAt(last),
-        new WtNodeListImpl(p.getForeign(0, WtNodeList.class)));
+        new WtNodeListImpl(p.content));
 
     WtRtData rtd = null;
     if (isGatherRtData())
     {
-      rtd = new WtRtData(2, p.getForeign(2, WtNode.class), prefix, SEP);
+      rtd = new WtRtData(2, p.rt1, prefix, SEP);
       item.setRtd(rtd);
     }
 
@@ -239,11 +250,15 @@ noinline transient WtNode ListTransient =
   }
 ;
 
-private noinline transient WtForeignNode ListItem =
+private noinline transient ListItem2 ListItem =
   rt0:pEol? rt1:pTpStar prefix:ListPrefix content:ListItemContentStar
   {
     // TODO: Support "; term : def" on a single line
-    yyValue = WtForeignNode.from(content, rt0, rt1, prefix);
+    yyValue = new ListItem2();
+    yyValue.content = content;
+    yyValue.rt0 = rt0;
+    yyValue.rt1 = rt1;
+    yyValue.prefix = prefix;
   }
 ;
 

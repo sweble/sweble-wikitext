@@ -77,6 +77,14 @@ body
     String name;
     String garbage;
   }
+  @SuppressWarnings("serial")
+  private static final class ClosingTagHeader
+      extends
+          WtTempNode
+  {
+    String name;
+    String ws;
+  }
 }
 
 
@@ -288,16 +296,18 @@ private transient String TagContentStar =
 // -- Opening and closing names/tags -------------------------------------------
 
 private transient String ValidClosingTag =
-  "</" endTag:ClosingTagHeader &{ isValidClosingTag(endTag.getForeign(0, String.class)) }
+  "</" endTag:ClosingTagHeader &{ isValidClosingTag(endTag.name) }
   {
-    yyValue = "</" + endTag.getForeign(0, String.class) + endTag.getForeign(1, String.class) + ">";
+    yyValue = "</" + endTag.name + endTag.ws + ">";
   }
 ;
 
-private transient WtForeignNode ClosingTagHeader =
+private transient ClosingTagHeader ClosingTagHeader =
   name:TagName ws:pWsStar '>'
   {
-    yyValue = WtForeignNode.from(name, ws);
+  	yyValue = new ClosingTagHeader();
+  	yyValue.name = name;
+  	yyValue.ws = ws;
   }
 ;
 
