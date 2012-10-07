@@ -1,25 +1,17 @@
 package org.sweble.wikitext.parser.nodes;
 
-public class WtLinkOptions
+public interface WtLinkOptions
 		extends
-			WtContentNodeImpl
+			WtContentNode
 {
-	private static final long serialVersionUID = 1L;
+	public static final WtLinkOptions EMPTY = new WtEmptyLinkOptions();
 	
-	// =========================================================================
-	
-	public WtLinkOptions()
+	public static final class WtEmptyLinkOptions
+			extends
+				WtNullContentNode
+			implements
+				WtLinkOptions
 	{
-	}
-	
-	public WtLinkOptions(WtNodeList content)
-	{
-		super(content);
-	}
-	
-	@Override
-	public int getNodeType()
-	{
-		return NT_LINK_OPTIONS;
+		private static final long serialVersionUID = -1064749733891892633L;
 	}
 }

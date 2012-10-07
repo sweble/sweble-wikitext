@@ -271,7 +271,7 @@ private inline WtNode InternalLinkAutoCorrect =
     }
     &{ getLinkBuilder().isValidTarget() }
     {
-      yyValue = getState().getLinkBuilder().build(new WtLinkOptions(), null);
+      yyValue = getState().getLinkBuilder().build(WtLinkOptions.EMPTY, null);
 
       if (getLinkBuilder().isImageTarget())
       {
@@ -327,7 +327,7 @@ private inline WtNode InternalLinkAutoCorrect =
 private inline WtLinkOptions OptionsAndTitle =
     &{ !getLinkBuilder().isImageTarget() } LinkTitle?
     {
-      yyValue = new WtLinkOptions();
+      yyValue = WtLinkOptions.EMPTY;
     }
   / yyValue:LinkOptionStar LinkTitle?
 ;
@@ -335,7 +335,7 @@ private inline WtLinkOptions OptionsAndTitle =
 private transient WtLinkOptions LinkOptionStar =
   options:( void:'|' LinkOptionChoice )*
   {
-    yyValue = new WtLinkOptions(new WtNodeListImpl(options));
+    yyValue = new WtLinkOptionsImpl(new WtNodeListImpl(options));
   }
 ;
 
