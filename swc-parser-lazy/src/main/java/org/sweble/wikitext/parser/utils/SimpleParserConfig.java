@@ -23,8 +23,8 @@ import java.util.HashSet;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.parser.nodes.WtNodeFactory;
-import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
@@ -51,7 +51,7 @@ public class SimpleParserConfig
 	
 	private final boolean autoCorrect;
 	
-	private final WtNodeFactory nodeFactory;
+	private final WikitextNodeFactory nodeFactory;
 	
 	// =========================================================================
 	
@@ -110,7 +110,7 @@ public class SimpleParserConfig
 		this.warningsEnabled = warningsEnabled;
 		this.gatherRtd = gatherRtd;
 		this.autoCorrect = autoCorrect;
-		this.nodeFactory = new WtNodeFactoryImpl(this);
+		this.nodeFactory = new WikitextNodeFactoryImpl(this);
 	}
 	
 	// ==[ Parser features ]====================================================
@@ -142,7 +142,7 @@ public class SimpleParserConfig
 	// ==[ AST creation ]=======================================================
 	
 	@Override
-	public WtNodeFactory getNodeFactory()
+	public WikitextNodeFactory getNodeFactory()
 	{
 		return nodeFactory;
 	}

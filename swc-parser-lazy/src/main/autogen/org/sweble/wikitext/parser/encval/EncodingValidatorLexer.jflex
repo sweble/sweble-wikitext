@@ -20,7 +20,7 @@ package org.sweble.wikitext.parser.encval;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
-import org.sweble.wikitext.parser.nodes.WtNodeFactory;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 
 import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
@@ -47,7 +47,7 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
   private String file;
 
-  private WtNodeFactory nf;
+  private WikitextNodeFactory nf;
 
   // ===========================================================================
 
@@ -61,7 +61,7 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
     this.file = file;
   }
 
-  public void setNodeFactory(WtNodeFactory nodeFactory)
+  public void setWikitextNodeFactory(WikitextNodeFactory nodeFactory)
   {
     this.nf = nodeFactory;
   }

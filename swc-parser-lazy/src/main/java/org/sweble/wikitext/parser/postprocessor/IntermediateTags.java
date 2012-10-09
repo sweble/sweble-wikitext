@@ -24,7 +24,7 @@ import org.sweble.wikitext.parser.nodes.WtImEndTag;
 import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 
@@ -45,7 +45,7 @@ public enum IntermediateTags
 				WtImEndTag c,
 				WtNodeList body)
 		{
-			WtItalics e = WtNodeFactoryImpl.i_(body);
+			WtItalics e = WikitextNodeFactoryImpl.i_(body);
 			if (config.isGatherRtData())
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "''";
@@ -71,7 +71,7 @@ public enum IntermediateTags
 				WtImEndTag c,
 				WtNodeList body)
 		{
-			WtBold e = WtNodeFactoryImpl.b_(body);
+			WtBold e = WikitextNodeFactoryImpl.b_(body);
 			if (config.isGatherRtData())
 			{
 				String r0 = (o == null || o.isSynthetic()) ? null : "'''";
@@ -97,7 +97,7 @@ public enum IntermediateTags
 				WtImEndTag close,
 				WtNodeList body)
 		{
-			WtParagraph e = WtNodeFactoryImpl.p_(body);
+			WtParagraph e = WikitextNodeFactoryImpl.p_(body);
 			return e;
 		}
 	};
@@ -112,11 +112,11 @@ public enum IntermediateTags
 	
 	public WtNode createOpen(boolean synthetic)
 	{
-		return WtNodeFactoryImpl.imStartTag_(this, synthetic);
+		return WikitextNodeFactoryImpl.imStartTag_(this, synthetic);
 	}
 	
 	public WtNode createClose(boolean synthetic)
 	{
-		return WtNodeFactoryImpl.imEndTag_(this, synthetic);
+		return WikitextNodeFactoryImpl.imEndTag_(this, synthetic);
 	}
 }

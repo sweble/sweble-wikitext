@@ -20,7 +20,7 @@ package org.sweble.wikitext.parser.utils;
 import java.util.ArrayList;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
@@ -37,7 +37,7 @@ public final class TextUtils
 	
 	public static WtNodeList stringToAst(String text, boolean forAttribute)
 	{
-		WtNodeList list = WtNodeFactoryImpl.list_();
+		WtNodeList list = WikitextNodeFactoryImpl.list_();
 		
 		if (text == null)
 			return list;
@@ -56,7 +56,7 @@ public final class TextUtils
 					break;
 				case '<':
 					if (j > i)
-						list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+						list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 					list.add(xmlEntity("lt", "<"));
 					i = j + 1;
 					break;
@@ -64,20 +64,20 @@ public final class TextUtils
 					if (!forAttribute)
 						break;
 					if (j > i)
-						list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+						list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 					list.add(xmlEntity("gt", ">"));
 					i = j + 1;
 					break;
 				case '&':
 					if (j > i)
-						list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+						list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 					list.add(xmlEntity("amp", "&"));
 					i = j + 1;
 					break;
 				case '\'':
 					// &apos; cannot safely be used, see wikipedia
 					if (j > i)
-						list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+						list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 					list.add(wtXmlCharRef(39));
 					i = j + 1;
 					break;
@@ -85,7 +85,7 @@ public final class TextUtils
 					if (!forAttribute)
 						break;
 					if (j > i)
-						list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+						list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 					list.add(xmlEntity("quot", "\""));
 					i = j + 1;
 					break;
@@ -93,7 +93,7 @@ public final class TextUtils
 					if ((ch >= 0 && ch < 0x20) || (ch == 0xFE))
 					{
 						if (j > i)
-							list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+							list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 						list.add(wtXmlCharRef(ch));
 						i = j + 1;
 						continue;
@@ -113,7 +113,7 @@ public final class TextUtils
 									case Character.PRIVATE_USE:
 									case Character.UNASSIGNED:
 										if (j > i)
-											list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+											list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 										list.add(wtXmlCharRef(codePoint));
 										i = j + 1;
 										break;
@@ -137,7 +137,7 @@ public final class TextUtils
 		}
 		
 		if (i != j)
-			list.add(WtNodeFactoryImpl.text_(text.substring(i, j)));
+			list.add(WikitextNodeFactoryImpl.text_(text.substring(i, j)));
 		
 		return list;
 	}
@@ -149,7 +149,7 @@ public final class TextUtils
 	 */
 	public static WtXmlCharRef wtXmlCharRef(int codePoint)
 	{
-		WtXmlCharRef wtXmlCharRef = WtNodeFactoryImpl.charRef_(codePoint);
+		WtXmlCharRef wtXmlCharRef = WikitextNodeFactoryImpl.charRef_(codePoint);
 		setXmlCharRef(wtXmlCharRef, codePoint);
 		return wtXmlCharRef;
 	}
@@ -168,7 +168,7 @@ public final class TextUtils
 	 */
 	public static WtXmlEntityRef xmlEntity(String name, String resolved)
 	{
-		WtXmlEntityRef xmlEntityRef = WtNodeFactoryImpl.entityRef_(name, resolved);
+		WtXmlEntityRef xmlEntityRef = WikitextNodeFactoryImpl.entityRef_(name, resolved);
 		setXmlEntityRef(xmlEntityRef, name);
 		return xmlEntityRef;
 	}
@@ -191,7 +191,7 @@ public final class TextUtils
 		trimLeft(result);
 		trimRight(result);
 		
-		return WtNodeFactoryImpl.list_(result);
+		return WikitextNodeFactoryImpl.list_(result);
 	}
 	
 	public static WtNodeList trimLeft(WtNodeList nodes)
@@ -200,7 +200,7 @@ public final class TextUtils
 		
 		trimLeft(result);
 		
-		return WtNodeFactoryImpl.list_(result);
+		return WikitextNodeFactoryImpl.list_(result);
 	}
 	
 	public static WtNodeList trimRight(WtNodeList nodes)
@@ -209,7 +209,7 @@ public final class TextUtils
 		
 		trimRight(result);
 		
-		return WtNodeFactoryImpl.list_(result);
+		return WikitextNodeFactoryImpl.list_(result);
 	}
 	
 	public static WtNodeList trimAndPad(WtNodeList nodes, int spaces)
@@ -220,7 +220,7 @@ public final class TextUtils
 		trimRight(result);
 		
 		if (spaces <= 0)
-			return WtNodeFactoryImpl.list_(result);
+			return WikitextNodeFactoryImpl.list_(result);
 		
 		return pad(result, spaces);
 	}
@@ -245,7 +245,7 @@ public final class TextUtils
 						}
 						else
 						{
-							result.set(i, WtNodeFactoryImpl.text_(trimmed));
+							result.set(i, WikitextNodeFactoryImpl.text_(trimmed));
 							break;
 						}
 					}
@@ -287,7 +287,7 @@ public final class TextUtils
 						}
 						else
 						{
-							result.set(i, WtNodeFactoryImpl.text_(trimmed));
+							result.set(i, WikitextNodeFactoryImpl.text_(trimmed));
 							break;
 						}
 					}
@@ -314,11 +314,11 @@ public final class TextUtils
 	public static WtNodeList pad(ArrayList<WtNode> result, int spaces)
 	{
 		if (spaces <= 0)
-			return WtNodeFactoryImpl.list_(result);
+			return WikitextNodeFactoryImpl.list_(result);
 		
 		if (result.isEmpty())
 		{
-			result.add(WtNodeFactoryImpl.text_(StringUtils.strrep(' ', spaces * 2)));
+			result.add(WikitextNodeFactoryImpl.text_(StringUtils.strrep(' ', spaces * 2)));
 		}
 		else
 		{
@@ -335,7 +335,7 @@ public final class TextUtils
 				spaced = before.getContent();
 			
 			spaced = spacesString + spaced;
-			result.add(0, WtNodeFactoryImpl.text_(spaced));
+			result.add(0, WikitextNodeFactoryImpl.text_(spaced));
 			
 			// -- after
 			
@@ -348,9 +348,9 @@ public final class TextUtils
 				spaced = after.getContent();
 			
 			spaced = spaced + spacesString;
-			result.add(WtNodeFactoryImpl.text_(spaced));
+			result.add(WikitextNodeFactoryImpl.text_(spaced));
 		}
 		
-		return WtNodeFactoryImpl.list_(result);
+		return WikitextNodeFactoryImpl.list_(result);
 	}
 }

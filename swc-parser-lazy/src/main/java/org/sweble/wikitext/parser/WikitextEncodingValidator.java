@@ -22,15 +22,14 @@ import java.io.StringReader;
 
 import org.sweble.wikitext.parser.encval.EncodingValidatorLexer;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
-import org.sweble.wikitext.parser.nodes.WtNodeFactory;
 
 public class WikitextEncodingValidator
 {
 	public ValidatedWikitext validate(
-			String source,
-			String title,
+			ParserConfig parserConfig,
 			WtEntityMap entityMap,
-			WtNodeFactory nodeFactory)
+			String source,
+			String title)
 			throws IOException
 	{
 		StringReader in = new StringReader(source);
@@ -38,7 +37,7 @@ public class WikitextEncodingValidator
 		
 		lexer.setFile(title);
 		lexer.setEntityMap(entityMap);
-		lexer.setNodeFactory(nodeFactory);
+		lexer.setWikitextNodeFactory(parserConfig.getNodeFactory());
 		
 		while (lexer.yylex() != null)
 			;
@@ -53,6 +52,6 @@ public class WikitextEncodingValidator
 			String source,
 			String title) throws IOException
 	{
-		return validate(source, title, new WtEntityMapImpl(), parserConfig.getNodeFactory());
+		return validate(parserConfig, new WtEntityMapImpl(), source, title);
 	}
 }

@@ -60,9 +60,9 @@ body
 
   // ===========================================================================
 
-  private WtNodeFactory nf;
+  private WikitextNodeFactory nf;
 
-  public void setNodeFactory(WtNodeFactory nodeFactory)
+  public void setNodeFactory(WikitextNodeFactory nodeFactory)
   {
     this.nf = nodeFactory;
   }

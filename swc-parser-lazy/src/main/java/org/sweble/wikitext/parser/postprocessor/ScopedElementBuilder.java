@@ -33,7 +33,7 @@ import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeFactory;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtOrderedList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
@@ -64,7 +64,7 @@ public class ScopedElementBuilder
 	
 	private final ElementScopeStack stack = new ElementScopeStack();
 	
-	private final WtNodeFactory nf;
+	private final WikitextNodeFactory nf;
 	
 	// =========================================================================
 	

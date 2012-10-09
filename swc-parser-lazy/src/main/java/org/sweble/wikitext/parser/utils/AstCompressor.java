@@ -25,8 +25,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeFactory;
-import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -137,7 +137,7 @@ public class AstCompressor
 			i.remove();
 		}
 		
-		WtText text = WtNodeFactoryImpl.text_(ct);
+		WtText text = WikitextNodeFactoryImpl.text_(ct);
 		if (ca != null)
 			text.setAttributes(ca);
 		if (location != null)

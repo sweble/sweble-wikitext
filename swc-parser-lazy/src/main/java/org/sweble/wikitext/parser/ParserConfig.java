@@ -18,7 +18,7 @@
 package org.sweble.wikitext.parser;
 
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.parser.nodes.WtNodeFactory;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
@@ -40,7 +40,7 @@ public interface ParserConfig
 	
 	// ==[ AST creation ]=======================================================
 	
-	WtNodeFactory getNodeFactory();
+	WikitextNodeFactory getNodeFactory();
 	
 	// ==[ Link classification and parsing ]====================================
 	

@@ -26,15 +26,15 @@ import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
 
-public class WtNodeFactoryImpl
+public class WikitextNodeFactoryImpl
 		implements
-			WtNodeFactory
+			WikitextNodeFactory
 {
 	private ParserConfig parserConfig;
 	
 	// =========================================================================
 	
-	public WtNodeFactoryImpl(ParserConfig parserConfig)
+	public WikitextNodeFactoryImpl(ParserConfig parserConfig)
 	{
 		super();
 		this.parserConfig = parserConfig;

@@ -30,7 +30,7 @@ import org.sweble.wikitext.parser.nodes.WtLeafNode;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
 import org.sweble.wikitext.parser.nodes.WtStringNode;
@@ -144,7 +144,7 @@ public class TicksAnalyzer
 		}
 		else
 		{
-			entry.prefix = WtNodeFactoryImpl.text_("'");
+			entry.prefix = WikitextNodeFactoryImpl.text_("'");
 		}
 	}
 	
@@ -256,7 +256,7 @@ public class TicksAnalyzer
 					break;
 				
 				case 4:
-					ticks.add(new LineEntry(previous, WtNodeFactoryImpl.text_("'"), 3));
+					ticks.add(new LineEntry(previous, WikitextNodeFactoryImpl.text_("'"), 3));
 					++numBold;
 					break;
 				
@@ -272,7 +272,7 @@ public class TicksAnalyzer
 					
 					String excessTicks = StringUtils.strrep('\'', tickCount - 5);
 					
-					ticks.add(new LineEntry(null, WtNodeFactoryImpl.text_(excessTicks), 5));
+					ticks.add(new LineEntry(null, WikitextNodeFactoryImpl.text_(excessTicks), 5));
 					++numBold;
 					++numItalics;
 					break;
@@ -336,7 +336,7 @@ public class TicksAnalyzer
 		{
 			LineEntry entry = nextEntry();
 			
-			WtNodeList result = WtNodeFactoryImpl.list_(entry.prefix);
+			WtNodeList result = WikitextNodeFactoryImpl.list_(entry.prefix);
 			
 			toTag(entry, result);
 			
@@ -514,20 +514,20 @@ public class TicksAnalyzer
 			switch (state)
 			{
 				case Italics:
-					result = WtNodeFactoryImpl.list_();
+					result = WikitextNodeFactoryImpl.list_();
 					result.add(ITALICS.createClose(true));
 					break;
 				case Bold:
-					result = WtNodeFactoryImpl.list_();
+					result = WikitextNodeFactoryImpl.list_();
 					result.add(BOLD.createClose(true));
 					break;
 				case BoldItalics:
-					result = WtNodeFactoryImpl.list_();
+					result = WikitextNodeFactoryImpl.list_();
 					result.add(ITALICS.createClose(true));
 					result.add(BOLD.createClose(true));
 					break;
 				case ItalicsBold:
-					result = WtNodeFactoryImpl.list_();
+					result = WikitextNodeFactoryImpl.list_();
 					result.add(BOLD.createClose(true));
 					result.add(ITALICS.createClose(true));
 					break;

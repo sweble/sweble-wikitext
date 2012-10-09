@@ -22,7 +22,7 @@ import java.util.NoSuchElementException;
 
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 import org.sweble.wikitext.parser.utils.WtPrinter;
@@ -172,7 +172,7 @@ public final class ElementScopeStack
 		
 		private final boolean open;
 		
-		private WtNodeList content = WtNodeFactoryImpl.list_();
+		private WtNodeList content = WikitextNodeFactoryImpl.list_();
 		
 		private LinkedList<Scope> closedInline;
 		
@@ -284,7 +284,7 @@ public final class ElementScopeStack
 		public WtNodeList clearContent()
 		{
 			WtNodeList c = content;
-			content = WtNodeFactoryImpl.list_();
+			content = WikitextNodeFactoryImpl.list_();
 			return c;
 		}
 		

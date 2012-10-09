@@ -13,7 +13,7 @@ import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
 
-public interface WtNodeFactory
+public interface WikitextNodeFactory
 {
 	// -- Inner Node 1 ---------------------------------------------------------
 	
