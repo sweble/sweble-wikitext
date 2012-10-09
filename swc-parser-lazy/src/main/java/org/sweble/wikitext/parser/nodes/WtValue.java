@@ -21,19 +21,29 @@ public interface WtValue
 		extends
 			WtContentNode
 {
-	public static final WtNullValue EMPTY = new WtNullValue();
-	
-	public static final WtNullValue NO_VALUE = new WtNullValue();
+	public static final WtNoValue NO_VALUE = new WtNoValue();
 	
 	// =========================================================================
 	
-	public static final class WtNullValue
+	public static final class WtNoValue
 			extends
 				WtNullContentNode
 			implements
 				WtValue
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_TEMPLATE_VALUE;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtValue.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -48,11 +58,11 @@ public interface WtValue
 		
 		// =====================================================================
 		
-		public WtValueImpl()
+		protected WtValueImpl()
 		{
 		}
 		
-		public WtValueImpl(WtNodeList content)
+		protected WtValueImpl(WtNodeList content)
 		{
 			super(content);
 		}

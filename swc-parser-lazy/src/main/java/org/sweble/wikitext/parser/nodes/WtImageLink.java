@@ -28,8 +28,6 @@ public class WtImageLink
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NO_TITLE;
-	
 	// =========================================================================
 	
 	/**
@@ -40,11 +38,9 @@ public class WtImageLink
 		super(Uninitialized.X);
 	}
 	
-	public WtImageLink(
+	protected WtImageLink(
 			WtPageName target,
 			WtLinkOptions options,
-			/* The following are extracted from options. 
-			 * They are added as properties for convenience. */
 			ImageViewFormat format,
 			boolean border,
 			ImageHorizAlign hAlign,
@@ -55,7 +51,7 @@ public class WtImageLink
 			ImageLinkTarget link,
 			WtLinkOptionAltText alt)
 	{
-		super(target, options, HAS_NO_TITLE);
+		super(target, options, WtLinkTitle.NO_TITLE);
 		setFormat(format);
 		setBorder(border);
 		setHAlign(hAlign);
@@ -348,7 +344,7 @@ public class WtImageLink
 	
 	public boolean hasTitle()
 	{
-		return getTitle() != HAS_NO_TITLE;
+		return getTitle() != WtLinkTitle.NO_TITLE;
 	}
 	
 	public final void setTitle(WtLinkTitle title)

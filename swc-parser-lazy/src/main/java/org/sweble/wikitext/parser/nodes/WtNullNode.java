@@ -33,13 +33,15 @@ import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class WtNullNode
+public abstract class WtNullNode
 		implements
 			WtNode
 {
 	private static final long serialVersionUID = -8143436141986490761L;
 	
-	public static final WtNullNode NULL = new WtNullNode();
+	// =========================================================================
+	
+	public abstract boolean isNullNode();
 	
 	// =========================================================================
 	
@@ -264,10 +266,7 @@ public class WtNullNode
 	// =========================================================================
 	
 	@Override
-	public int getNodeType()
-	{
-		return NT_NULL_NODE;
-	}
+	public abstract int getNodeType();
 	
 	@Override
 	public boolean isNodeType(int testType)
@@ -282,10 +281,7 @@ public class WtNullNode
 	}
 	
 	@Override
-	public final String getNodeName()
-	{
-		return getClass().getSimpleName();
-	}
+	public abstract String getNodeName();
 	
 	@Override
 	public de.fau.cs.osr.ptk.common.ast.AstLocation getNativeLocation()
@@ -294,7 +290,8 @@ public class WtNullNode
 	}
 	
 	@Override
-	public void setNativeLocation(de.fau.cs.osr.ptk.common.ast.AstLocation location)
+	public void setNativeLocation(
+			de.fau.cs.osr.ptk.common.ast.AstLocation location)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}

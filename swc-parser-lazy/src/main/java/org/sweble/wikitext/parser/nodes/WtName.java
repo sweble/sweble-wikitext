@@ -21,17 +21,29 @@ public interface WtName
 		extends
 			WtContentNode
 {
-	public static final WtNullName NO_NAME = new WtNullName();
+	public static final WtNoName NO_NAME = new WtNoName();
 	
 	// =========================================================================
 	
-	public static final class WtNullName
+	public static final class WtNoName
 			extends
 				WtNullContentNode
 			implements
 				WtName
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_TEMPLATE_NAME;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtName.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -46,11 +58,11 @@ public interface WtName
 		
 		// =====================================================================
 		
-		public WtNameImpl()
+		protected WtNameImpl()
 		{
 		}
 		
-		public WtNameImpl(WtNodeList content)
+		protected WtNameImpl(WtNodeList content)
 		{
 			super(content);
 		}

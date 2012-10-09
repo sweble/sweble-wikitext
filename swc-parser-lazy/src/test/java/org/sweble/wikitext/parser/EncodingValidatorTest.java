@@ -25,6 +25,7 @@ import org.junit.Test;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
+import org.sweble.wikitext.parser.utils.SimpleParserConfig;
 
 import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
@@ -61,8 +62,10 @@ public class EncodingValidatorTest
 		in.close();
 		*/
 		
+		SimpleParserConfig parserConfig = new SimpleParserConfig();
+		
 		WikitextEncodingValidator v = new WikitextEncodingValidator();
-		ValidatedWikitext result = v.validate(source.toString(), title);
+		ValidatedWikitext result = v.validate(parserConfig, source.toString(), title);
 		String validatedWikitext = result.getWikitext();
 		WtEntityMap entityMap = result.getEntityMap();
 		

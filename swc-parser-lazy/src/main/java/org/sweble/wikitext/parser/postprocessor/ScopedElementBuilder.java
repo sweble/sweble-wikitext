@@ -22,7 +22,6 @@ import java.util.LinkedList;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WtBody;
-import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -34,6 +33,7 @@ import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtOrderedList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
@@ -64,6 +64,8 @@ public class ScopedElementBuilder
 	
 	private final ElementScopeStack stack = new ElementScopeStack();
 	
+	private final WtNodeFactory nf;
+	
 	// =========================================================================
 	
 	public static WtParsedWikitextPage process(
@@ -78,6 +80,7 @@ public class ScopedElementBuilder
 	public ScopedElementBuilder(ParserConfig config)
 	{
 		this.config = config;
+		this.nf = config.getNodeFactory();
 	}
 	
 	// =========================================================================
@@ -150,7 +153,8 @@ public class ScopedElementBuilder
 	{
 		openScope(ScopeType.WT_BLOCK, n);
 		n.getHeading().exchange(processScope(n.getHeading()));
-		n.getBody().exchange(processScope(n.getBody()));
+		if (n.hasBody())
+			n.getBody().exchange(processScope(n.getBody()));
 		closeScope(ScopeType.WT_BLOCK, n);
 	}
 	
@@ -724,7 +728,7 @@ public class ScopedElementBuilder
 			final WtXmlEndTag close = (WtXmlEndTag) c;
 			return createElement(
 					open,
-					new WtBodyImpl(content),
+					nf.body(content),
 					close,
 					s.isOpen());
 		}
@@ -747,7 +751,7 @@ public class ScopedElementBuilder
 			WtXmlAttributes attrs,
 			boolean wasEmpty)
 	{
-		WtXmlElement element = new WtXmlElement(e.getName(), attrs);
+		WtXmlElement element = nf.elem(e.getName(), attrs);
 		
 		if (config.isGatherRtData())
 		{
@@ -775,7 +779,7 @@ public class ScopedElementBuilder
 			WtXmlEndTag close,
 			boolean hasOpen)
 	{
-		WtXmlElement e = new WtXmlElement(
+		WtXmlElement e = nf.elem(
 				open.getName(),
 				open.getXmlAttributes(),
 				body);

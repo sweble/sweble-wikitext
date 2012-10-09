@@ -43,5 +43,17 @@ public interface WtStringNode
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
+		
+		@Override
+		public abstract int getNodeType();
+		
+		@Override
+		public abstract String getNodeName();
+		
+		@Override
+		public boolean isNullNode()
+		{
+			return true;
+		}
 	}
 }

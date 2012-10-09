@@ -36,7 +36,7 @@ public class WtUrl
 	{
 	}
 	
-	public WtUrl(String protocol, String path)
+	protected WtUrl(String protocol, String path)
 	{
 		setProtocol(protocol);
 		setPath(path);

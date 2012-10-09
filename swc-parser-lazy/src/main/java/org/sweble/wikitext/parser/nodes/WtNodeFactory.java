@@ -1,16 +1,17 @@
 package org.sweble.wikitext.parser.nodes;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtOnlyInclude.XmlElementType;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
-import de.fau.cs.osr.ptk.common.Warning;
 
 public interface WtNodeFactory
 {
@@ -78,6 +79,19 @@ public interface WtNodeFactory
 	WtImageLink img(WtPageName target, WtLinkOptions options);
 	
 	WtImageLink img(WtPageName target, WtLinkOptions options, WtLinkTitle title);
+	
+	WtImageLink img(
+			WtPageName target,
+			WtLinkOptions options,
+			ImageViewFormat format,
+			boolean border,
+			ImageHorizAlign hAlign,
+			ImageVertAlign vAlign,
+			int width,
+			int height,
+			boolean upright,
+			ImageLinkTarget link,
+			WtLinkOptionAltText alt);
 	
 	WtTemplateParameter tmplParam(WtName name);
 	
@@ -150,7 +164,11 @@ public interface WtNodeFactory
 	
 	WtLinkOptionAltText loAlt(WtNodeList content);
 	
+	WtLinkOptionAltText noLoAlt();
+	
 	WtLinkOptions linkOpts(WtNodeList content);
+	
+	WtLinkOptions emptyLinkOpts();
 	
 	WtLinkTitle linkTitle(WtNodeList content);
 	
@@ -170,14 +188,12 @@ public interface WtNodeFactory
 	
 	WtParsedWikitextPage parsedPage(
 			WtNodeList content,
-			List<Warning> warnings,
 			WtEntityMap entityMap);
 	
 	WtPreproWikitextPage preproPage(WtNodeList content);
 	
 	WtPreproWikitextPage preproPage(
 			WtNodeList content,
-			List<Warning> warnings,
 			WtEntityMap entityMap);
 	
 	WtParagraph p(WtNodeList content);
@@ -193,8 +209,6 @@ public interface WtNodeFactory
 	WtUnorderedList ul(WtNodeList content);
 	
 	WtValue value(WtNodeList content);
-	
-	WtValue emptyValue();
 	
 	WtValue noValue();
 	
@@ -216,7 +230,7 @@ public interface WtNodeFactory
 	
 	WtTagExtensionBody tagExtBody(String content);
 	
-	WtTagExtensionBody emptyTagExtBody();
+	WtTagExtensionBody noTagExtBody();
 	
 	WtXmlAttributeGarbage attrGarbage(String content);
 	

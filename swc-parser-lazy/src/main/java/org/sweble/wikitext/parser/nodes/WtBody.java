@@ -21,19 +21,54 @@ public interface WtBody
 		extends
 			WtContentNode
 {
-	public static final WtNullBody NO_BODY = new WtNullBody();
+	public static final WtNoBody NO_BODY = new WtNoBody();
 	
-	public static final WtNullBody EMPTY = new WtNullBody();
+	public static final WtEmptyBody EMPTY = new WtEmptyBody();
 	
 	// =========================================================================
 	
-	public static final class WtNullBody
+	public static final class WtNoBody
 			extends
 				WtNullContentNode
 			implements
 				WtBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_BODY;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtBody.class.getSimpleName();
+		}
+	}
+	
+	// =========================================================================
+	
+	public static final class WtEmptyBody
+			extends
+				WtEmptyContentNode
+			implements
+				WtBody
+	{
+		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_BODY;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtBody.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -48,11 +83,11 @@ public interface WtBody
 		
 		// =====================================================================
 		
-		public WtBodyImpl()
+		protected WtBodyImpl()
 		{
 		}
 		
-		public WtBodyImpl(WtNodeList content)
+		protected WtBodyImpl(WtNodeList content)
 		{
 			super(content);
 		}

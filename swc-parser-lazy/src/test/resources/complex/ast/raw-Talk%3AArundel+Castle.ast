@@ -177,7 +177,7 @@ WtParsedWikitextPage(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{{cleanup}}")
+				body = WtTagExtensionBody("{{cleanup}}")
 			),
 		[2] = WtXmlComment(
 				{P} content = " Template:UnsignedIP "
@@ -245,13 +245,13 @@ WtParsedWikitextPage(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("==The Biography==")
+				body = WtTagExtensionBody("==The Biography==")
 			),
 		[10] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("==Biography==")
+				body = WtTagExtensionBody("==Biography==")
 			),
 		[11] = WtTemplate(
 				{P} precededByNewline = false
@@ -448,7 +448,7 @@ WtParsedWikitextPage(
 			{P} name = "nowiki"
 			{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 			xmlAttributes = -,
-			body = WtTagExtensionBodyImpl("{{cleanup}}")
+			body = WtTagExtensionBody("{{cleanup}}")
 		),
 		[2] = " tag on the article, but I've read the thing through several times and don't see a problem warranting the tag. Moreover, this is the very first entry in the talk page which strikes me as meaning we have a ways to go before we start throwing tags around. I removed the tag and made a couple of other edits. If anyone has any thoughts on what needs to be ",
 		[3] = WtItalics(
@@ -863,7 +863,7 @@ WtParsedWikitextPage(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("==The Biography==")
+							body = WtTagExtensionBody("==The Biography==")
 						)
 					),
 					[5] = ", it should be changed to ",
@@ -873,7 +873,7 @@ WtParsedWikitextPage(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("==Biography==")
+							body = WtTagExtensionBody("==Biography==")
 						)
 					),
 					[7] = ".",

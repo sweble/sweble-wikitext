@@ -40,7 +40,7 @@ public abstract class WtStringNodeImpl
 		super(u);
 	}
 	
-	public WtStringNodeImpl(String content)
+	protected WtStringNodeImpl(String content)
 	{
 		super(content);
 	}

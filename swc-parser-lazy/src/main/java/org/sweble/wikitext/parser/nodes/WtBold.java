@@ -27,11 +27,11 @@ public class WtBold
 	
 	// =========================================================================
 	
-	public WtBold()
+	protected WtBold()
 	{
 	}
 	
-	public WtBold(WtNodeList content)
+	protected WtBold(WtNodeList content)
 	{
 		super(content);
 	}

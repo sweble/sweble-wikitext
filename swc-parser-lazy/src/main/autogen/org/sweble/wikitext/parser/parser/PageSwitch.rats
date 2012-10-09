@@ -37,14 +37,16 @@ WtNode PageSwitch =
     "__" yyValue:PageSwitchChoice
   / "__"
     {
-      yyValue = new WtText("__");
+      yyValue = nf.text("__");
     }
 ;
 
 private inline WtNode PageSwitchChoice =
     name:SwitchName "__"
     {
-      yyValue = setRtd(new WtPageSwitch(name), "__", name, "__");
+      yyValue = setRtd(
+        nf.pageSwitch(name),
+        "__", name, "__");
     }
   / &{ isWarningsEnabled() } PageSwitchAutoCorrect
 ;
@@ -52,7 +54,9 @@ private inline WtNode PageSwitchChoice =
 private inline WtNode PageSwitchAutoCorrect =
     &{ isAutoCorrect(WS_NORMAL) } name:SwitchName '_'
     {
-      yyValue = setRtd(new WtPageSwitch(name), "__", name, "__");
+      yyValue = setRtd(
+        nf.pageSwitch(name),
+        "__", name, "__");
 
       fileLooksLikeWarning(
           yyValue,
@@ -63,7 +67,7 @@ private inline WtNode PageSwitchAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NORMAL) } name:SwitchNameString "__"
     {
-      yyValue = new WtText("__" + name + "__");
+      yyValue = nf.text("__" + name + "__");
 
       fileLooksLikeWarning(
           yyValue,
@@ -74,7 +78,9 @@ private inline WtNode PageSwitchAutoCorrect =
     }
   / &{ isAutoCorrect(WS_INFO) } name:SwitchName
     {
-      yyValue = setRtd(new WtPageSwitch(name), "__", name);
+      yyValue = setRtd(
+        nf.pageSwitch(name),
+        "__", name);
 
       fileLooksLikeWarning(
           yyValue,
@@ -85,7 +91,7 @@ private inline WtNode PageSwitchAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NONE) } &SwitchNameString
     {
-      yyValue = new WtText("__");
+      yyValue = nf.text("__");
 
       fileLooksLikeWarning(
           yyValue,

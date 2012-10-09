@@ -153,25 +153,18 @@ body
             if (isGatherRtData())
             {
               if (l.getRtd() != null)
-                try
-                {
-                  l.setRtd((WtRtData) l.getRtd().clone());
-                }
-                catch (CloneNotSupportedException e)
-                {
-                  throw new WrappedException(e);
-                }
+                  l.setRtd((WtRtData) l.getRtd().cloneWrapException());
               prependRtd(l, p);
             }
             l.setPrefix(p);
 
-            return list(new WtText(b), l);
+            return nf.list(nf.text(b), l);
           }
         }
       }
     }
 
-    return list(text, link);
+    return nf.list(text, link);
   }
 
   private int toInt(String num)
@@ -187,11 +180,6 @@ body
     {
       return -2;
     }
-  }
-
-  private LinkBuilder getLinkBuilder()
-  {
-    return getState().getLinkBuilder();
   }
 }
 
@@ -229,7 +217,7 @@ noinline transient WtNode InternalLinkTransient =
     "[[" &{ accept(ParserAtoms.INTERNAL_LINK) } yyValue:InternalLinkChoice
   / "["
     {
-      yyValue = new WtText("[");
+      yyValue = nf.text("[");
     }
 ;
 
@@ -241,9 +229,9 @@ inline void InlineContentStopperInternalLink =
 ;
 
 private transient stateful WtNode InternalLinkChoice =
-    rt0:pTpStar target:LinkTargetString rt1:pExtSpaceStar
+    rt0:pTpStar target:LinkTarget rt1:pExtSpaceStar
     {
-      getState().initLinkBuilder(new WtPageName(target));
+      getState().initLinkBuilder(target);
     }
     &{ getLinkBuilder().isValidTarget() } options:OptionsAndTitle "]]" postfix:LinkPostfix?
     {
@@ -253,11 +241,15 @@ private transient stateful WtNode InternalLinkChoice =
       yyValue = getState().getLinkBuilder().build(options, postfix);
       if (getLinkBuilder().isImageTarget())
       {
-        setRtd((WtNode) yyValue, "[[", rt0, SEP, rt1, SEP, SEP, "]]", postfix);
+        setRtd(
+          yyValue,
+          "[[", rt0, SEP, rt1, SEP, SEP, "]]", postfix);
       }
       else
       {
-        setRtd((WtNode) yyValue, "[[", rt0, SEP, rt1, SEP, "]]", postfix);
+        setRtd(
+          yyValue,
+          "[[", rt0, SEP, rt1, SEP, "]]", postfix);
       }
     }
   / &{ isWarningsEnabled() } InternalLinkAutoCorrect
@@ -265,21 +257,25 @@ private transient stateful WtNode InternalLinkChoice =
 
 private inline WtNode InternalLinkAutoCorrect =
     &{ isAutoCorrect(WS_INFO) }
-    rt0:pTpStar target:LinkTargetString
+    rt0:pTpStar target:LinkTarget
     {
-      getState().initLinkBuilder(new WtPageName(target));
+      getState().initLinkBuilder(target);
     }
     &{ getLinkBuilder().isValidTarget() }
     {
-      yyValue = getState().getLinkBuilder().build(WtLinkOptions.EMPTY, null);
+      yyValue = getState().getLinkBuilder().build(nf.emptyLinkOpts(), null);
 
       if (getLinkBuilder().isImageTarget())
       {
-        setRtd((WtNode) yyValue, "[[", rt0, target, SEP, SEP);
+        setRtd(
+          yyValue,
+          "[[", rt0, target.getContent(), SEP, SEP);
       }
       else
       {
-        setRtd((WtNode) yyValue, "[[", rt0, target, SEP);
+        setRtd(
+          yyValue,
+          "[[", rt0, target.getContent(), SEP);
       }
 
       fileLooksLikeWarning(
@@ -290,14 +286,14 @@ private inline WtNode InternalLinkAutoCorrect =
           "the finishing `]]' is missing");
     }
   / &{ isWarningLevelEnabled(WS_INFO) }
-    &( pTpStar target:LinkTargetString
+    &( pTpStar target:LinkTarget
        {
-        getState().initLinkBuilder(new WtPageName(target));
+        getState().initLinkBuilder(target);
        }
        &{ getLinkBuilder().isValidTarget() }
      )
     {
-      yyValue = new WtText("[[");
+      yyValue = nf.text("[[");
 
       fileLooksLikeWarning(
           yyValue,
@@ -308,7 +304,7 @@ private inline WtNode InternalLinkAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NONE) }
     {
-      yyValue = new WtText("[[");
+      yyValue = nf.text("[[");
 
       fileLooksLikeWarning(
           yyValue,
@@ -327,7 +323,7 @@ private inline WtNode InternalLinkAutoCorrect =
 private inline WtLinkOptions OptionsAndTitle =
     &{ !getLinkBuilder().isImageTarget() } LinkTitle?
     {
-      yyValue = WtLinkOptions.EMPTY;
+      yyValue = nf.emptyLinkOpts();
     }
   / yyValue:LinkOptionStar LinkTitle?
 ;
@@ -335,7 +331,7 @@ private inline WtLinkOptions OptionsAndTitle =
 private transient WtLinkOptions LinkOptionStar =
   options:( void:'|' LinkOptionChoice )*
   {
-    yyValue = new WtLinkOptionsImpl(list(options));
+    yyValue = nf.linkOpts(nf.list(options));
   }
 ;
 
@@ -363,9 +359,11 @@ private WtLinkOptionResize LinkOptionResize =
                 WS_INFO,
                 "Invalid size format"));
 
-      getLinkBuilder().setWidth(w);
+      yyValue = setRtd(
+        nf.loResize(w, -1),
+        '|', rt0, width, rt1, "px", rt2);
 
-      yyValue = setRtd(new WtLinkOptionResize(w, -1), '|', rt0, width, rt1, "px", rt2);
+      getLinkBuilder().addOption(yyValue);
     }
   / rt0:pExtWsStar width:DigitPlus 'x' height:DigitPlus? rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -379,10 +377,11 @@ private WtLinkOptionResize LinkOptionResize =
                 WS_INFO,
                 "Invalid size format"));
 
-      getLinkBuilder().setWidth(w);
-      getLinkBuilder().setHeight(h);
+      yyValue = setRtd(
+        nf.loResize(w, h),
+        '|', rt0, width, 'x', height, rt1, "px", rt2);
 
-      yyValue = setRtd(new WtLinkOptionResize(w, h), '|', rt0, width, 'x', height, rt1, "px", rt2);
+      getLinkBuilder().addOption(yyValue);
     }
   / rt0:pExtWsStar 'x' height:DigitPlus rt1:pSpaceStar "px" rt2:pExtWsStar
     {
@@ -395,9 +394,11 @@ private WtLinkOptionResize LinkOptionResize =
                 WS_INFO,
                 "Invalid size format"));
 
-      getLinkBuilder().setHeight(h);
+      yyValue = setRtd(
+        nf.loResize(-1, h),
+        '|', rt0, 'x', height, rt1, "px", rt2);
 
-      yyValue = setRtd(new WtLinkOptionResize(-1, h), '|', rt0, 'x', height, rt1, "px", rt2);
+      getLinkBuilder().addOption(yyValue);
     }
 ;
 
@@ -407,9 +408,13 @@ private WtLinkOptionResize LinkOptionResize =
 // -- Link Option Keyword ------------------------------------------------------
 
 private WtLinkOptionKeyword LinkOptionKeyword =
-  rt0:pExtWsStar keyword:LinkOptionKeywordString &{ getLinkBuilder().addKeyword(keyword) } rt1:pExtWsStar
+  rt0:pExtWsStar keyword:LinkOptionKeywordString &{ getLinkBuilder().isKeyword(keyword) } rt1:pExtWsStar
   {
-    yyValue = setRtd(new WtLinkOptionKeyword(keyword), '|', rt0, keyword, rt1);
+    yyValue = setRtd(
+      nf.loKeyword(keyword),
+      '|', rt0, keyword, rt1);
+
+    getLinkBuilder().addOption(yyValue);
   }
 ;
 
@@ -425,21 +430,15 @@ private transient String LinkOptionKeywordString =
 private transient stateful WtNode LinkOptionNameValue =
     rt0:pExtWsStar "link=" target:LinkTargetOverride? rt1:pExtWsStar
     {
-      ImageLinkTarget linkTarget = null;
-      if (target == null)
-      {
-        linkTarget = new ImageLinkTarget(LinkTargetType.NO_LINK);
-      }
-      else
-      {
-        linkTarget = new ImageLinkTarget(
-            target.getTargetType(), 
-            target);
-      }
+      ImageLinkTarget linkTarget = (target == null) ?
+          new ImageLinkTarget(LinkTargetType.NO_LINK) :
+          new ImageLinkTarget(target.getTargetType(), target);
 
-      getLinkBuilder().setLink(linkTarget);
+      yyValue = setRtd(
+        nf.loLinkTarget(linkTarget),
+        '|', rt0, "link=", SEP, rt1);
 
-      yyValue = setRtd(new WtLinkOptionLinkTarget(linkTarget), '|', rt0, "link=", SEP, rt1);
+      getLinkBuilder().addOption((WtLinkOptionLinkTarget) yyValue);
     }
   / rt0:pExtWsStar "alt="
     {
@@ -447,10 +446,12 @@ private transient stateful WtNode LinkOptionNameValue =
     }
     alt:LinkTitleContentStar
     {
-      yyValue = setRtd(new WtLinkOptionAltTextImpl(alt), '|', rt0, "alt=", SEP);
-      getLinkBuilder().setAlt((WtLinkOptionAltText) yyValue);
+      yyValue = setRtd(
+        nf.loAlt(alt),
+        '|', rt0, "alt=", SEP);
+
+      getLinkBuilder().addOption((WtLinkOptionAltText) yyValue);
     }
-  // TODO: Support page=...
 ;
 
 private inline WtLinkTarget LinkTargetOverride =
@@ -472,7 +473,9 @@ private inline stateful WtLinkOptionGarbage LinkOptionGarbage =
   LinkTitleContentStar
   {
     String content = difference(yyStart, yyResult);
-    yyValue = setRtd(new WtLinkOptionGarbage(content), '|', content);
+    yyValue = setRtd(
+      nf.loGarbage(content),
+      '|', content);
   }
 ;
 
@@ -489,7 +492,10 @@ private inline stateful WtLinkTitle LinkTitle =
   }
   '|' title:LinkTitleContentStar
   {
-    yyValue = setRtd(new WtLinkTitleImpl(title), '|');
+    yyValue = setRtd(
+      nf.linkTitle(title),
+      '|', SEP);
+
     getLinkBuilder().setTitle(yyValue);
   }
 ;

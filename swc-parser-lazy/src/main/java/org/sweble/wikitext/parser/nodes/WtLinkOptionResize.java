@@ -34,7 +34,7 @@ public class WtLinkOptionResize
 	{
 	}
 	
-	public WtLinkOptionResize(int width, int height)
+	protected WtLinkOptionResize(int width, int height)
 	{
 		setWidth(width);
 		setHeight(height);

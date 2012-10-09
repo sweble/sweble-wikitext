@@ -39,7 +39,7 @@ public class WtLinkOptionLinkTarget
 		super(Uninitialized.X);
 	}
 	
-	public WtLinkOptionLinkTarget(ImageLinkTarget type)
+	protected WtLinkOptionLinkTarget(ImageLinkTarget type)
 	{
 		super(type.getTarget());
 		setTargetType(type.getTargetType());

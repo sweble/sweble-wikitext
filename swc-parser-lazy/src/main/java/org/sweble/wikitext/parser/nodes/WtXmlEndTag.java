@@ -37,7 +37,7 @@ public class WtXmlEndTag
 	{
 	}
 	
-	public WtXmlEndTag(String name)
+	protected WtXmlEndTag(String name)
 	{
 		setName(name);
 	}

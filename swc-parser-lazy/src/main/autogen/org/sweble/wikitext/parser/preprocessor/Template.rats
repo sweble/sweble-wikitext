@@ -76,16 +76,21 @@ stateful WtNode Template =
           WtNodeList list = (WtNodeList) yyValue;
           tmpl = list.get(list.size() - 1);
         }
-        if (yyValue instanceof WtTemplate)
+        else if (yyValue instanceof WtTemplate)
+        {
           ((WtTemplate) yyValue).setPrecededByNewline(true);
+        }
         else
+        {
           ((WtTemplateParameter) yyValue).setPrecededByNewline(true);
-        yyValue = list(new WtText(eol), yyValue);
+        }
+
+        yyValue = nf.list(nf.text(eol), yyValue);
       }
     }
   / eol:pEol? braces:Braces1Plus
     {
-      yyValue = new WtText((eol != null) ? eol + braces : braces);
+      yyValue = nf.text((eol != null) ? eol + braces : braces);
     }
 ;
 
@@ -103,6 +108,8 @@ private transient String Braces1Plus = "{" "{"+ ;
  * If the Rats! parser generator does not collapse the common prefix, the
  * second choice will try to parse the TemplateTailPart again, but this time
  * with the wrong brace count!
+ *
+ * This production returns a parameter, a template or a list
  */
 private transient WtNode TemplateTail =
   inner:TemplateTailPart outer:TemplateTailPart?
@@ -110,7 +117,7 @@ private transient WtNode TemplateTail =
     if (outer != null)
     {
       // insert inner template in front of the name of the outer template
-      ((WtNodeList) ((WtNode) outer).get(0)).add(0, inner);
+      outer.get(0).add(0, inner);
       yyValue = outer;
     }
     else
@@ -124,9 +131,8 @@ private transient WtNode TemplateTail =
     int stillOpen = getState().getTemplateBraces();
     if (stillOpen > 0)
     {
-      yyValue = list(
-        new WtText(StringUtils.strrep('{', stillOpen)),
-        yyValue);
+      String braces = StringUtils.strrep('{', stillOpen);
+      yyValue = nf.list(nf.text(braces), yyValue);
 
       getState().setTemplateBraces(0);
     }
@@ -140,35 +146,35 @@ private transient WtNode TemplateTail =
 private transient WtNode TemplateTailPart =
     content:TemplateTailPart2 TemplateTailPart3
     {
-      WtTemplateArguments args = content.args;
+      WtValue defaultValue = nf.noValue();
+      WtTemplateArguments garbage = nf.emptyTmplArgs();
 
-      WtTemplateArguments garbage = WtTemplateArguments.EMPTY;
-      WtValue defaultValue = WtTemplateParameter.NO_DEFAULT_VALUE;
+      WtTemplateArguments args = content.args;
       if (args.size() > 0)
       {
         WtTemplateArgument arg0 = (WtTemplateArgument) args.get(0);
-        WtNodeList arg0Value = list();
-        if (arg0.hasName()) {
+        WtNodeList arg0Value = nf.list();
+        if (arg0.hasName())
+        {
           arg0Value.addAll(arg0.getName());
-          arg0Value.add(new WtText("="));
+          arg0Value.add(nf.text("="));
         }
         arg0Value.add(arg0.getValue());
-        defaultValue = new WtValueImpl(arg0Value);
+        defaultValue = nf.value(arg0Value);
         if (args.size() > 1)
-          garbage = new WtTemplateArgumentsImpl(list(args.subList(1, args.size())));
+          garbage = nf.tmplArgs(nf.list(args.subList(1, args.size())));
       }
 
       yyValue = setRtd(
-        new WtTemplateParameter(content.name, defaultValue, garbage),
+        nf.tmplParam(content.name, defaultValue, garbage),
         "{{{", SEP, SEP, SEP, "}}}");
 
       getState().eatTemplateBraces(3);
     }
   / content:TemplateTailPart2
     {
-      // content = (name, args)
       yyValue = setRtd(
-	new WtTemplate(content.name, content.args),
+        nf.tmpl(content.name, content.args),
         "{{", SEP, SEP, "}}");
 
       getState().eatTemplateBraces(2);
@@ -188,8 +194,8 @@ private transient TemplateTailPart2 TemplateTailPart2 =
   &{ hasAtLeastTemplateBraces(2) } name:TemplateNameStar args:TemplateArgumentStar "}}"
   {
     yyValue = new TemplateTailPart2();
-    yyValue.name = new WtNameImpl(name);
-    yyValue.args = new WtTemplateArgumentsImpl(args);
+    yyValue.name = nf.name(name);
+    yyValue.args = nf.tmplArgs(args);
   }
 ;
 
@@ -207,17 +213,17 @@ private transient void TemplateTailPart3 =
 
 // -- Template/Parameter arguments ---------------------------------------------
 
-private transient WtNode TemplateArgumentChoice =
+private transient WtTemplateArgument TemplateArgumentChoice =
     parameter:TemplateArgumentNamePlus '=' value:TemplateArgumentValueStar
     {
       yyValue = setRtd(
-        new WtTemplateArgument(new WtNameImpl(parameter), new WtValueImpl(value)),
+        nf.tmplArg(nf.name(parameter), nf.value(value)),
         '|', SEP, '=', SEP);
     }
   / value:TemplateArgumentValueStar
     {
       yyValue = setRtd(
-        new WtTemplateArgument(new WtValueImpl(value)),
+        nf.tmplArg(nf.value(value)),
         '|', SEP, SEP);
     }
 ;
@@ -225,7 +231,7 @@ private transient WtNode TemplateArgumentChoice =
 private transient WtNodeList TemplateArgumentStar =
   args:( void:'|' TemplateArgumentChoice )*
   {
-    yyValue = list(args);
+    yyValue = nf.list(args);
   }
 ;
 

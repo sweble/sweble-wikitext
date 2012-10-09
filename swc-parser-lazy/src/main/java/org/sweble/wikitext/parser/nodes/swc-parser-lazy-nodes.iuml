@@ -1,0 +1,302 @@
+@startuml
+
+hide members
+
+' !include ptk-common-nodes-incl.iuml
+
+package de.fau.cs.osr.ptk.common
+
+	interface AstNode<T> {
+	}
+	
+	interface AstNodeList<T> {
+	}
+
+	interface AstStringNode<T> {
+	}
+	
+	abstract class AstInnerNode1<T> {
+	}
+	
+	abstract class AstInnerNode2<T> {
+	}
+	
+	abstract class AstInnerNode3<T> {
+	}
+
+	abstract class AstLeafNodeImpl<T> {
+	}
+	
+	abstract class AstStringNodeImpl<T> {
+	}
+
+	class AstNodeListImpl<T> {
+	}
+	
+	class AstText<T> {
+	}
+
+end package
+
+interface WtNode {
+	int NT_MW_NODE_BITS
+	int NT_ENCVAL_BITS
+	int NT_PREPROC_BITS
+	int NT_PARSER_BITS
+	int NT_SPACES
+	int NT_NEWLINE
+	int NT_WHITESPACE
+	int NT_GARBAGE
+	int NT_IGNORED
+	int NT_PROTECTED_TEXT
+	int NT_ERROR
+	int NT_NULL_NODE
+	int NT_ILLEGAL_CODE_POINT
+	int NT_PREPRO_WIKITEXT_PAGE
+	int NT_XML_COMMENT
+	int NT_TAG_EXTENSION
+	int NT_TEMPLATE
+	int NT_TEMPLATE_ARGUMENT
+	int NT_TEMPLATE_PARAMETER
+	int NT_ONLY_INCLUDE
+	int NT_REDIRECT
+	int NT_TEMPLATE_NAME
+	int NT_TEMPLATE_ARGUMENTS
+	int NT_TEMPLATE_VALUE
+	int NT_PARSED_WIKITEXT_PAGE
+	int NT_PARAGRAPH
+	int NT_HORIZONTAL_RULE
+	int NT_URL
+	int NT_EXTERNAL_LINK
+	int NT_INTERNAL_LINK
+	int NT_IMAGE_LINK
+	int NT_LINK_OPTION_ALT_TEXT
+	int NT_LINK_OPTION_GARBAGE
+	int NT_LINK_OPTION_KEYWORD
+	int NT_LINK_OPTION_LINK_TARGET
+	int NT_LINK_OPTION_RESIZE
+	int NT_PAGE_NAME
+	int NT_LINK_TITLE
+	int NT_TABLE
+	int NT_TABLE_CAPTION
+	int NT_TABLE_ROW
+	int NT_TABLE_CELL
+	int NT_TABLE_HEADER
+	int NT_TICKS
+	int NT_BOLD
+	int NT_ITALICS
+	int NT_RAW_LIST_ITEM
+	int NT_DEFINITION_LIST_DEF
+	int NT_DEFINITION_LIST
+	int NT_DEFINITION_LIST_TERM
+	int NT_ORDERED_LIST
+	int NT_UNORDERED_LIST
+	int NT_LIST_ITEM
+	int NT_SEMI_PRE
+	int NT_SEMI_PRE_LINE
+	int NT_XML_ATTRIBUTE
+	int NT_XML_ATTRIBUTE_GARBAGE
+	int NT_XML_CHAR_REF
+	int NT_XML_ELEMENT
+	int NT_XML_ENTITY_REF
+	int NT_XML_END_TAG
+	int NT_XML_EMPTY_TAG
+	int NT_XML_START_TAG
+	int NT_HEADING
+	int NT_SECTION
+	int NT_PAGE_SWITCH
+	int NT_SIGNATURE
+	int NT_BODY
+	int NT_LINK_OPTIONS
+	int NT_XML_ATTRIBUTES
+	WtRtData setRtd(WtRtData rtd)
+	WtRtData setRtd(Object[] glue)
+	WtRtData setRtd(String[] glue)
+	WtRtData getRtd()
+	void clearRtd()
+}
+
+abstract class WtInnerNode1 {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtInnerNode1(Uninitialized u)
+	+WtInnerNode1(WtNode n0)
+	+WtInnerNode1(Location arg0, WtNode n0)
+	+WtInnerNode1(Location arg0)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+
+abstract class WtInnerNode2 {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtInnerNode2(Uninitialized u)
+	+WtInnerNode2(WtNode n0, WtNode n1)
+	+WtInnerNode2(Location arg0, WtNode n0, WtNode n1)
+	+WtInnerNode2(Location arg0)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+
+abstract class WtInnerNode3 {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtInnerNode3(Uninitialized u)
+	+WtInnerNode3(WtNode n0, WtNode n1, WtNode n2)
+	+WtInnerNode3(Location arg0, WtNode n0, WtNode n1, WtNode n2)
+	+WtInnerNode3(Location arg0)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+
+abstract class WtLeafNodeImpl {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+
+interface WtLeafNode {
+}
+
+interface WtNodeList {
+	WtNullNodeList EMPTY
+}
+
+interface WtStringNode {
+}
+
+interface WtContentNode {
+}
+
+class WtNodeListImpl {
+	-long serialVersionUID
+	+WtNodeListImpl()
+	+WtNodeListImpl(Collection<? extends WtNode> list)
+	+WtNodeListImpl(Pair<? extends WtNode> list)
+	+WtNodeListImpl(WtNode child)
+	+WtNodeListImpl(Object[] content)
+	+String getNodeName()
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+}
+
+abstract class WtContentNodeImpl {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtContentNodeImpl()
+	+WtContentNodeImpl(WtNodeList content)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void toString(Appendable out)
+}
+
+abstract class WtStringNodeImpl {
+	-long serialVersionUID
+	-WtRtData rtd
+	#WtStringNodeImpl(Uninitialized u)
+	+WtStringNodeImpl(String content)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	-int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+
+class WtText {
+	-long serialVersionUID
+	#WtText()
+	+WtText(String content)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+}
+
+interface WtInnerNode {
+}
+
+WtInnerNode <|-- WtInnerNode1
+WtInnerNode <|-- WtInnerNode2
+WtInnerNode <|-- WtInnerNode3
+WtInnerNode <|-- WtNodeList
+
+AstText <|-- WtText
+
+WtStringNode <|.. WtText
+
+AstStringNodeImpl <|-- WtStringNodeImpl
+
+WtStringNode <|.. WtStringNodeImpl
+
+WtNodeListImpl <|-- WtContentNodeImpl
+
+WtContentNode <|.. WtContentNodeImpl
+
+AstNodeListImpl <|-- WtNodeListImpl
+
+WtNodeList <|.. WtNodeListImpl
+
+WtNodeList <|.. WtContentNode
+
+WtLeafNode <|.. WtStringNode
+
+AstStringNode <|.. WtStringNode
+
+WtNode <|.. WtNodeList
+
+AstNodeList <|.. WtNodeList
+
+AstLeafNodeImpl <|-- WtLeafNodeImpl
+
+WtLeafNode <|-- WtLeafNodeImpl
+
+WtNode <|.. WtLeafNode
+
+AstInnerNode3 <|-- WtInnerNode3
+
+WtNode <|.. WtInnerNode3
+
+AstInnerNode2 <|-- WtInnerNode2
+
+WtNode <|.. WtInnerNode2
+
+AstInnerNode1 <|-- WtInnerNode1
+
+WtNode <|.. WtInnerNode1
+
+AstNode <|.. WtNode
+
+@enduml

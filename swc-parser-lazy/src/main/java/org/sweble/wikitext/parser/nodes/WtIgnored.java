@@ -37,7 +37,7 @@ public class WtIgnored
 		super(Uninitialized.X);
 	}
 	
-	public WtIgnored(String content)
+	protected WtIgnored(String content)
 	{
 		super(content);
 	}

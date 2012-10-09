@@ -46,14 +46,16 @@ WtNode XmlElement =
   / '<'  yyValue:XmlStartTag
   / '<'
     {
-      yyValue = new WtText("<");
+      yyValue = nf.text("<");
     }
 ;
 
 private inline WtNode XmlEndTag =
     name:XmlName ws:pWsStar '>'
     {
-      yyValue = setRtd(new WtXmlEndTag(name), "</", name, ws, '>');
+      yyValue = setRtd(
+        nf.endTag(name),
+        "</", name, ws, '>');
     }
     // FIXME: Add auto correction and/or warning generation
 ;
@@ -61,11 +63,15 @@ private inline WtNode XmlEndTag =
 private inline WtNode XmlStartTag =
     name:XmlName attributes:AttributeStar ws:pWsStar "/>"
     {
-      yyValue = setRtd(new WtXmlEmptyTag(name, attributes), "<", name, SEP, ws, "/>");
+      yyValue = setRtd(
+        nf.emptyTag(name, attributes),
+        "<", name, SEP, ws, "/>");
     }
   / name:XmlName attributes:AttributeStar ws:pWsStar '>'
     {
-      yyValue = setRtd(new WtXmlStartTag(name, attributes), '<', name, SEP, ws, '>');
+      yyValue = setRtd(
+        nf.startTag(name, attributes),
+        '<', name, SEP, ws, '>');
     }
     // FIXME: Add auto correction and/or warning generation
 ;
@@ -74,7 +80,7 @@ private inline WtXmlAttributes AttributeStar =
   yyValue:(&pWsPlus XmlAttributePlus)?
   {
     if (yyValue == null)
-      yyValue = WtXmlAttributes.EMPTY;
+      yyValue = nf.emptyAttrs();
   }
 ;
 

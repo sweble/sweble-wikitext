@@ -33,9 +33,9 @@ body
       extends
           WtTempNode
   {
-  	String rt0;
-  	WtPageName target;
-  	String rt1;
+    String rt0;
+    WtPageName target;
+    String rt1;
   }
 }
 
@@ -47,7 +47,8 @@ body
 WtNode Redirect =
   ws0:pWsStar '#' keyword:RedirectKeyword ws1:pWsStar target:RedirectLink
   {
-    yyValue = setRtd(new WtRedirect(target.target),
+    yyValue = setRtd(
+      nf.redirect(target.target),
       ws0, '#', keyword, ws1, target.rt0, SEP, target.rt1);
   }
 ;
@@ -61,9 +62,10 @@ private inline RedirectLink RedirectLink =
   {
     if (garbage == null)
       garbage = "";
+
     yyValue = new RedirectLink();
     yyValue.rt0 = "[[";
-    yyValue.target = new WtPageName(target);
+    yyValue.target = nf.pageName(target);
     yyValue.rt1 = garbage + "]]";
   }
 ;

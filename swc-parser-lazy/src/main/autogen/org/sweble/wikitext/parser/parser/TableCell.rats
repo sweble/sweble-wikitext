@@ -56,7 +56,7 @@ noinline memoized WtNode TableCellMemoized =
 noinline transient WtNode TableCellTransient =
     &( pExtSpaceStar '|' ) inline:TableInlineCellPlus last:TableBlockCell?
     {
-      yyValue = list(inline, last);
+      yyValue = nf.list(inline, last);
     }
   / &( pExtSpaceStar '|' ) header:TableBlockCell
     {
@@ -76,15 +76,16 @@ inline void InlineContentStopperTableCell =
 private transient WtNodeList TableInlineCellPlus =
   cells:( TableInlineCell &"||" )+
   {
-    yyValue = list(cells);
+    yyValue = nf.list(cells);
   }
 ;
 
 private inline WtTableCell TableInlineCell =
   rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = setRtd(new WtTableCell(attributes.attrs, new WtBodyImpl(body)),
-        rt0, prefix, SEP, attributes.rt1, SEP);
+    yyValue = setRtd(
+      nf.td(attributes.attrs, body),
+      rt0, prefix, SEP, attributes.rt1, SEP);
   }
 ;
 
@@ -96,8 +97,9 @@ private inline WtTableCell TableInlineCell =
 private inline WtTableCell TableBlockCell =
   rt0:pExtSpaceStar prefix:( "||" / "|" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = setRtd(new WtTableCell(attributes.attrs, new WtBodyImpl(body)),
-        rt0, prefix, SEP, attributes.rt1, SEP);
+    yyValue = setRtd(
+      nf.td(attributes.attrs, body),
+      rt0, prefix, SEP, attributes.rt1, SEP);
   }
 ;
 
@@ -123,7 +125,7 @@ private TableMemberAttributes Attributes =
     }
   / {
       yyValue = new TableMemberAttributes();
-      yyValue.attrs = WtXmlAttributes.EMPTY;
+      yyValue.attrs = nf.emptyAttrs();
       yyValue.rt1 = null;
     }
 ;
@@ -137,18 +139,24 @@ private transient void AttrPossible =
 
 // -- Table Cell Inline Content ------------------------------------------------
 
-private inline stateful WtNodeList InlineContentStar =
+private inline stateful WtBody InlineContentStar =
   {
     enter(ParserScopes.TABLE_INLINE_CELL);
   }
-  InlineContentPlus
+  content:InlineContentPlus
+  {
+    yyValue = nf.body(content);
+  }
 ;
 
-private inline stateful WtNodeList BlockContentStar =
+private inline stateful WtBody BlockContentStar =
   {
     enter(ParserScopes.TABLE_CELL);
   }
-  BlockContent
+  content:BlockContent
+  {
+    yyValue = nf.body(content);
+  }
 ;
 
 

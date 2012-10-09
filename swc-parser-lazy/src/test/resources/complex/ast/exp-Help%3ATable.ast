@@ -10,313 +10,313 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n")
+				body = WtTagExtensionBody("\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n")
 			),
 		[1] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[2] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[3] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[4] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[5] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[6] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[7] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[8] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[9] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[10] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[11] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[12] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[13] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[14] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[15] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[16] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[17] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[18] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[19] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[20] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[21] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{| border=\"1\"")
+				body = WtTagExtensionBody("{| border=\"1\"")
 			),
 		[22] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[23] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|format modifier (not displayed)")
+				body = WtTagExtensionBody("|format modifier (not displayed)")
 			),
 		[24] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("These all ")
+				body = WtTagExtensionBody("These all ")
 			),
 		[25] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("(including the pipes)")
+				body = WtTagExtensionBody("(including the pipes)")
 			),
 		[26] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("go into ")
+				body = WtTagExtensionBody("go into ")
 			),
 		[27] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("the first cell")
+				body = WtTagExtensionBody("the first cell")
 			),
 		[28] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[29] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{| border=\"1\"")
+				body = WtTagExtensionBody("{| border=\"1\"")
 			),
 		[30] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[31] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("| Cell 1 (no modifier&nbsp;\u2014 not aligned)")
+				body = WtTagExtensionBody("| Cell 1 (no modifier&nbsp;\u2014 not aligned)")
 			),
 		[32] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[33] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("| align=\"right\" | Cell 2 (right aligned)")
+				body = WtTagExtensionBody("| align=\"right\" | Cell 2 (right aligned)")
 			),
 		[34] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[35] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[36] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[37] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[38] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[39] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[40] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[41] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[42] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[43] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[44] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[45] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[46] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+")
+				body = WtTagExtensionBody("|+")
 			),
 		[47] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[48] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[49] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[50] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n")
+				body = WtTagExtensionBody("\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n")
 			),
 		[51] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n{|\n| A || B\n|-\n| C || D\n|}\n")
+				body = WtTagExtensionBody("\n{|\n| A || B\n|-\n| C || D\n|}\n")
 			),
 		[52] = WtTagExtension(
 				{P} name = "pre"
@@ -328,7 +328,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "overflow: auto;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n")
+				body = WtTagExtensionBody("\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n")
 			),
 		[53] = WtTagExtension(
 				{P} name = "pre"
@@ -340,7 +340,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n")
+				body = WtTagExtensionBody("\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n")
 			),
 		[54] = WtTagExtension(
 				{P} name = "pre"
@@ -352,7 +352,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n")
+				body = WtTagExtensionBody("\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n")
 			),
 		[55] = WtTagExtension(
 				{P} name = "pre"
@@ -364,7 +364,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n")
+				body = WtTagExtensionBody("\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n")
 			),
 		[56] = WtTagExtension(
 				{P} name = "pre"
@@ -376,7 +376,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n")
+				body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n")
 			),
 		[57] = WtTagExtension(
 				{P} name = "pre"
@@ -388,7 +388,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n")
+				body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n")
 			),
 		[58] = WtTagExtension(
 				{P} name = "pre"
@@ -400,7 +400,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n")
+				body = WtTagExtensionBody("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n")
 			),
 		[59] = WtTagExtension(
 				{P} name = "pre"
@@ -412,7 +412,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n")
+				body = WtTagExtensionBody("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n")
 			),
 		[60] = WtTagExtension(
 				{P} name = "pre"
@@ -424,7 +424,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n")
+				body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n")
 			),
 		[61] = WtTagExtension(
 				{P} name = "pre"
@@ -436,7 +436,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n")
+				body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n")
 			),
 		[62] = WtTagExtension(
 				{P} name = "pre"
@@ -448,7 +448,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n")
+				body = WtTagExtensionBody("\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n")
 			),
 		[63] = WtTagExtension(
 				{P} name = "pre"
@@ -460,91 +460,91 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n")
+				body = WtTagExtensionBody("\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n")
 			),
 		[64] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[65] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[66] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<!--")
+				body = WtTagExtensionBody("<!--")
 			),
 		[67] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("-->")
+				body = WtTagExtensionBody("-->")
 			),
 		[68] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[69] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[70] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[71] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[72] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[73] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[74] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[75] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|")
+				body = WtTagExtensionBody("{|")
 			),
 		[76] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[77] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|}")
+				body = WtTagExtensionBody("|}")
 			),
 		[78] = WtTagExtension(
 				{P} name = "pre"
@@ -556,13 +556,13 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n")
+				body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n")
 			),
 		[79] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{| style=\"margin: 1em auto 1em auto;\"")
+				body = WtTagExtensionBody("{| style=\"margin: 1em auto 1em auto;\"")
 			),
 		[80] = WtTagExtension(
 				{P} name = "pre"
@@ -574,7 +574,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n")
+				body = WtTagExtensionBody("\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n")
 			),
 		[81] = WtTagExtension(
 				{P} name = "pre"
@@ -586,19 +586,19 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n")
+				body = WtTagExtensionBody("\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n")
 			),
 		[82] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.")
+				body = WtTagExtensionBody("* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.")
 			),
 		[83] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.")
+				body = WtTagExtensionBody("* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.")
 			),
 		[84] = WtTagExtension(
 				{P} name = "pre"
@@ -610,7 +610,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n")
+				body = WtTagExtensionBody("\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n")
 			),
 		[85] = WtTagExtension(
 				{P} name = "pre"
@@ -622,31 +622,31 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n")
+				body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n")
 			),
 		[86] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
+				body = WtTagExtensionBody("<nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
 			),
 		[87] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
+				body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
 			),
 		[88] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
+				body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
 			),
 		[89] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("''text''")
+				body = WtTagExtensionBody("''text''")
 			),
 		[90] = WtTagExtension(
 				{P} name = "pre"
@@ -658,19 +658,19 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n")
+				body = WtTagExtensionBody("\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n")
 			),
 		[91] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
+				body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
 			),
 		[92] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
+				body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
 			),
 		[93] = WtTagExtension(
 				{P} name = "pre"
@@ -682,7 +682,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n")
+				body = WtTagExtensionBody("\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n")
 			),
 		[94] = WtTagExtension(
 				{P} name = "pre"
@@ -694,133 +694,133 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n")
+				body = WtTagExtensionBody("\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n")
 			),
 		[95] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<td>")
+				body = WtTagExtensionBody("<td>")
 			),
 		[96] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<td>")
+				body = WtTagExtensionBody("<td>")
 			),
 		[97] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<td>")
+				body = WtTagExtensionBody("<td>")
 			),
 		[98] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<tr>")
+				body = WtTagExtensionBody("<tr>")
 			),
 		[99] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<table></table>")
+				body = WtTagExtensionBody("<table></table>")
 			),
 		[100] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|\n|}")
+				body = WtTagExtensionBody("{|\n|}")
 			),
 		[101] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<caption>caption</caption>")
+				body = WtTagExtensionBody("<caption>caption</caption>")
 			),
 		[102] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|+ caption")
+				body = WtTagExtensionBody("|+ caption")
 			),
 		[103] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<tr></tr>")
+				body = WtTagExtensionBody("<tr></tr>")
 			),
 		[104] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|-")
+				body = WtTagExtensionBody("|-")
 			),
 		[105] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<td>cell1</td><td>cell2</td>\n<td>cell3</td>")
+				body = WtTagExtensionBody("<td>cell1</td><td>cell2</td>\n<td>cell3</td>")
 			),
 		[106] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("| cell1 || cell2\n| cell3")
+				body = WtTagExtensionBody("| cell1 || cell2\n| cell3")
 			),
 		[107] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<th scope=\"col\">column heading</th>")
+				body = WtTagExtensionBody("<th scope=\"col\">column heading</th>")
 			),
 		[108] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<th scope=\"row\">row heading</th>")
+				body = WtTagExtensionBody("<th scope=\"row\">row heading</th>")
 			),
 		[109] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("! scope=\"col\" | column heading")
+				body = WtTagExtensionBody("! scope=\"col\" | column heading")
 			),
 		[110] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("! scope=\"row\" | row heading")
+				body = WtTagExtensionBody("! scope=\"row\" | row heading")
 			),
 		[111] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("<table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table>")
+				body = WtTagExtensionBody("<table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table>")
 			),
 		[112] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{|\n| 1 || 2\n|-\n| 3 || 4\n|}")
+				body = WtTagExtensionBody("{|\n| 1 || 2\n|-\n| 3 || 4\n|}")
 			),
 		[113] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("|")
+				body = WtTagExtensionBody("|")
 			),
 		[114] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n {| ''params''\n |}\n")
+				body = WtTagExtensionBody("\n {| ''params''\n |}\n")
 			),
 		[115] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("!")
+				body = WtTagExtensionBody("!")
 			),
 		[116] = WtTagExtension(
 				{P} name = "pre"
@@ -832,7 +832,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "overflow:auto;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n")
+				body = WtTagExtensionBody("\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n")
 			),
 		[117] = WtTagExtension(
 				{P} name = "pre"
@@ -844,7 +844,7 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n")
+				body = WtTagExtensionBody("\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n")
 			),
 		[118] = WtTagExtension(
 				{P} name = "pre"
@@ -856,67 +856,67 @@ WtParsedWikitextPage(
 						value = WtValue[ [0] = "display: inline-block;" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n")
+				body = WtTagExtensionBody("\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n")
 			),
 		[119] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[[File:wpvg_hd_date_page.svg|link=]]")
+				body = WtTagExtensionBody("[[File:wpvg_hd_date_page.svg|link=]]")
 			),
 		[120] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable-->")
+				body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable-->")
 			),
 		[121] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\"[[")
+				body = WtTagExtensionBody("\"[[")
 			),
 		[122] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable-->")
+				body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable-->")
 			),
 		[123] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable-->")
+				body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable-->")
 			),
 		[124] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}")
+				body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}")
 			),
 		[125] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("(\"<center>[[File:..]]</center>\")")
+				body = WtTagExtensionBody("(\"<center>[[File:..]]</center>\")")
 			),
 		[126] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}")
+				body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}")
 			),
 		[127] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("\n | style=\"font-size: 87%;\" | View from bell tower\n")
+				body = WtTagExtensionBody("\n | style=\"font-size: 87%;\" | View from bell tower\n")
 			),
 		[128] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl(" ")
+				body = WtTagExtensionBody(" ")
 			),
 		[129] = WtTemplate(
 				{P} precededByNewline = false
@@ -1272,7 +1272,7 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "display: inline-block;" ]
 						)
 					],
-					body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n")
+					body = WtTagExtensionBody("\n{| class=\"wikitable\"\n|-\n! Header 1\n! Header 2\n! Header 3\n|-\n| row 1, cell 1\n| row 1, cell 2\n| row 1, cell 3\n|-\n| row 2, cell 1\n| row 2, cell 2\n| row 2, cell 3\n|-\n| row 3, cell 1\n| row 3, cell 2\n| row 3, cell 3\n|}\n")
 				)
 			],
 			[8] = WtNewline("\n"),
@@ -1629,7 +1629,7 @@ WtParsedWikitextPage(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = -,
-									body = WtTagExtensionBodyImpl("{|")
+									body = WtTagExtensionBody("{|")
 								)
 							)
 						]
@@ -1662,7 +1662,7 @@ WtParsedWikitextPage(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = -,
-									body = WtTagExtensionBodyImpl("|}")
+									body = WtTagExtensionBody("|}")
 								)
 							)
 						]
@@ -1701,7 +1701,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -1723,7 +1723,7 @@ WtParsedWikitextPage(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = -,
-									body = WtTagExtensionBodyImpl("|+")
+									body = WtTagExtensionBody("|+")
 								),
 								[1] = " ",
 								[2] = WtItalics(
@@ -1748,7 +1748,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -1802,7 +1802,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -1811,7 +1811,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|+")
+						body = WtTagExtensionBody("|+")
 					),
 					[1] = " The table's caption"
 				),
@@ -1834,7 +1834,7 @@ WtParsedWikitextPage(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = -,
-									body = WtTagExtensionBodyImpl("|-")
+									body = WtTagExtensionBody("|-")
 								)
 							)
 						]
@@ -1867,7 +1867,7 @@ WtParsedWikitextPage(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = -,
-									body = WtTagExtensionBodyImpl("|-")
+									body = WtTagExtensionBody("|-")
 								)
 							)
 						]
@@ -1887,7 +1887,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -1921,7 +1921,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -1930,7 +1930,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|+")
+						body = WtTagExtensionBody("|+")
 					),
 					[1] = " The table's caption"
 				),
@@ -1940,7 +1940,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[3] = WtSemiPreLine(
@@ -1974,7 +1974,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[5] = WtSemiPreLine(
@@ -2033,7 +2033,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -2057,7 +2057,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -2066,7 +2066,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|+")
+						body = WtTagExtensionBody("|+")
 					),
 					[1] = " The table's caption"
 				),
@@ -2076,7 +2076,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[3] = WtSemiPreLine(
@@ -2105,7 +2105,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[5] = WtSemiPreLine(
@@ -2174,7 +2174,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -2193,7 +2193,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{| border=\"1\"")
+						body = WtTagExtensionBody("{| border=\"1\"")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -2202,7 +2202,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[2] = WtSemiPreLine(
@@ -2211,7 +2211,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|format modifier (not displayed)")
+						body = WtTagExtensionBody("|format modifier (not displayed)")
 					),
 					[1] = " ",
 					[2] = WtXmlElement(
@@ -2235,7 +2235,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("These all ")
+						body = WtTagExtensionBody("These all ")
 					),
 					[4] = " ",
 					[5] = WtXmlElement(
@@ -2259,7 +2259,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("(including the pipes)")
+						body = WtTagExtensionBody("(including the pipes)")
 					),
 					[7] = " ",
 					[8] = WtXmlElement(
@@ -2283,7 +2283,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("go into ")
+						body = WtTagExtensionBody("go into ")
 					),
 					[10] = " ",
 					[11] = WtXmlElement(
@@ -2307,7 +2307,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("the first cell")
+						body = WtTagExtensionBody("the first cell")
 					)
 				),
 				[3] = WtSemiPreLine(
@@ -2316,7 +2316,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -2371,7 +2371,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{| border=\"1\"")
+						body = WtTagExtensionBody("{| border=\"1\"")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -2380,7 +2380,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[2] = WtSemiPreLine(
@@ -2389,7 +2389,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("| Cell 1 (no modifier&nbsp;\u2014 not aligned)")
+						body = WtTagExtensionBody("| Cell 1 (no modifier&nbsp;\u2014 not aligned)")
 					)
 				),
 				[3] = WtSemiPreLine(
@@ -2398,7 +2398,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[4] = WtSemiPreLine(
@@ -2407,7 +2407,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("| align=\"right\" | Cell 2 (right aligned)")
+						body = WtTagExtensionBody("| align=\"right\" | Cell 2 (right aligned)")
 					)
 				),
 				[5] = WtSemiPreLine(
@@ -2416,7 +2416,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -2500,7 +2500,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -2509,7 +2509,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|+")
+						body = WtTagExtensionBody("|+")
 					),
 					[1] = " The table's caption"
 				),
@@ -2581,7 +2581,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[6] = WtSemiPreLine(
@@ -2594,7 +2594,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[8] = WtSemiPreLine(
@@ -2615,7 +2615,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -2639,7 +2639,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					)
 				),
 				[1] = WtSemiPreLine(
@@ -2648,7 +2648,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|+")
+						body = WtTagExtensionBody("|+")
 					),
 					[1] = " The table's caption"
 				),
@@ -2670,7 +2670,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[6] = WtSemiPreLine(
@@ -2703,7 +2703,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[9] = WtSemiPreLine(
@@ -2740,7 +2740,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -2764,7 +2764,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("{|")
+						body = WtTagExtensionBody("{|")
 					),
 					[1] = " ",
 					[2] = WtXmlElement(
@@ -2791,7 +2791,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|+")
+						body = WtTagExtensionBody("|+")
 					),
 					[1] = " The table's caption"
 				),
@@ -2813,7 +2813,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[6] = WtSemiPreLine(
@@ -2830,7 +2830,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|-")
+						body = WtTagExtensionBody("|-")
 					)
 				),
 				[9] = WtSemiPreLine(
@@ -2851,7 +2851,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("|}")
+						body = WtTagExtensionBody("|}")
 					)
 				)
 			],
@@ -3206,7 +3206,7 @@ WtParsedWikitextPage(
 							{P} name = "pre"
 							{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n")
+							body = WtTagExtensionBody("\n{|\n| A\n| B\n|-\n| C\n| D\n|}\n")
 						)
 					],
 					[5] = WtNewline("\n"),
@@ -3216,7 +3216,7 @@ WtParsedWikitextPage(
 							{P} name = "pre"
 							{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("\n{|\n| A || B\n|-\n| C || D\n|}\n")
+							body = WtTagExtensionBody("\n{|\n| A || B\n|-\n| C || D\n|}\n")
 						)
 					],
 					[8] = WtNewline("\n"),
@@ -3316,7 +3316,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "overflow: auto;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n")
+							body = WtTagExtensionBody("\n{| class=\"wikitable\" style=\"text-align: center; width: 200px; height: 200px;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | \u00D7 \n! scope=\"col\" | 1 \n! scope=\"col\" | 2 \n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n")
 						)
 					],
 					[3] = WtNewline("\n"),
@@ -3671,7 +3671,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n")
+							body = WtTagExtensionBody("\n{|\n| style=\"background: red; color: white\" | abc\n| def\n| bgcolor=\"red\" | <font color=\"white\"> ghi </font>\n| jkl\n|}\n")
 						)
 					],
 					[6] = WtNewline("\n"),
@@ -3783,7 +3783,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n")
+							body = WtTagExtensionBody("\n{| style=\"background: yellow; color: green\"\n|-\n| abc || def || ghi\n|- style=\"background: red; color: white\"\n| jkl || mno || pqr\n|-\n| stu || style=\"background: silver\" | vwx || yz\n|}\n")
 						)
 					],
 					[16] = WtNewline("\n"),
@@ -4041,7 +4041,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n")
+							body = WtTagExtensionBody("\n{| style=\"width: 75%; height: 200px\" border=\"1\"\n|-\n| abc || def || ghi\n|- style=\"height: 100px;\"\n| jkl || style=\"width: 200px;\" | mno || pqr\n|-\n| stu || vwx || yz\n|}\n")
 						)
 					],
 					[5] = WtNewline("\n"),
@@ -4231,7 +4231,7 @@ WtParsedWikitextPage(
 											value = WtValue[ [0] = "display: inline-block;" ]
 										)
 									],
-									body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n")
+									body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"2\"\n! scope=\"col\" width=\"50\" | Name\n! scope=\"col\" width=\"225\" | Effect\n! scope=\"col\" width=\"225\" | Games Found In\n|-\n| Pok\u00E9 Ball || Regular Pok\u00E9 Ball || All Versions\n|-\n| Great Ball || Better than a Pok\u00E9 Ball || All Versions\n|}\n")
 								)
 							],
 							[5] = WtNewline("\n"),
@@ -4395,7 +4395,7 @@ WtParsedWikitextPage(
 											value = WtValue[ [0] = "display: inline-block;" ]
 										)
 									],
-									body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n")
+									body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"2\"\n|-\n| width=\"100pt\" | This column is 100 points wide\n| width=\"200pt\" | This column is 200 points wide\n| width=\"300pt\" | This column is 300 points wide\n|-\n| blah || blih || bluh\n|}\n")
 								)
 							],
 							[14] = WtNewline("\n"),
@@ -5059,7 +5059,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n")
+							body = WtTagExtensionBody("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- border=\"0\"\n| [[File:StarIconBronze.png|120px]]\n| [[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| [[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n| Bronze star || Gold star || Green star\n|}\n")
 						),
 						[1] = WtNewline("\n"),
 						[2] = "Note the bottom-row texts are centered by 'align=\"center\"' while star-images were not centered."
@@ -5291,7 +5291,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n")
+							body = WtTagExtensionBody("\n{| cellpadding=\"2\" style=\"border: 1px solid darkgray;\"\n! width=\"140\" | Left\n! width=\"150\" | Middle\n! width=\"130\" | Right\n|- align=\"center\"\n| style=\"border: 1px solid blue;\"|\n[[File:StarIconBronze.png|120px]]\n| style=\"border: 1px solid #777777;\"|\n[[File:StarIconGold.png|120px|Caption when mouse-over image]]\n| style=\"border: 1px solid #22AA55;\"|<!--greenish border-->\n[[File:StarIconGreen.png|120px|Green stellar icon]]\n|- align=\"center\"\n|Bronze star || Gold star || Green star\n|}\n")
 						)
 					],
 					[17] = WtNewline("\n"),
@@ -5686,7 +5686,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n")
+							body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"2\" width=\"400\"\n|- valign=\"top\"\n! scope=\"row\" width=\"10%\" | Row heading\n| width=\"70%\" | A longer piece of text. Lorem ipsum...\n| width=\"20%\" | short text\n|- valign=\"top\"\n! scope=\"row\" | Row heading\n| Excepteur sint occaecat...\n| short text\n|}\n")
 						)
 					],
 					[8] = WtNewline("\n"),
@@ -5938,7 +5938,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n")
+							body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\" align=\"center\"\n|+ '''An example table'''\n|-\n! style=\"background: #efefef;\" | First header\n! colspan=\"2\" style=\"background: #ffdead;\" | Second header\n|-\n| upper left\n| &amp;nbsp;\n| rowspan=\"2\" style=\"border-bottom: 3px solid grey;\" valign=\"top\" |\nright side\n|-\n| style=\"border-bottom: 3px solid grey;\" | lower left\n| style=\"border-bottom: 3px solid grey;\" | lower middle\n|-\n| colspan=\"3\" align=\"center\" |\n{| border=\"0\"\n|+ ''A table in a table''\n|-\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n| align=\"center\" width=\"150\" | [[File:Wiki.png]]\n|-\n| align=\"center\" colspan=\"2\" style=\"border-top: 1px solid red;<!--\n  --> border-right: 1px solid red; border-bottom: 2px solid red;<!--\n  --> border-left: 1px solid red;\" |\nTwo Wikipedia logos\n|}\n|}\n")
 						)
 					],
 					[11] = WtNewline("\n"),
@@ -6295,7 +6295,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n")
+							body = WtTagExtensionBody("\nThis paragraph is before the table.  Lorem ipsum dolor sit\namet, consectetur adipisicing elit, sed do eiusmod...\n\n{| style=\"float: right;\" border=\"1\"\n| Col 1, row 1\n| rowspan=\"2\" | Col 2, row 1 (and 2)\n| Col 3, row 1\n|-\n| Col 1, row 2\n| Col 3, row 2\n|}\n\nNote the floating-table to the right.\n\nThis paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n")
 						)
 					],
 					[2] = WtNewline("\n"),
@@ -6443,7 +6443,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n")
+							body = WtTagExtensionBody("\n{| style=\"float: right; border: 1px solid #BBB; margin: .46em 0 0 .2em;\"\n|- style=\"font-size: 86%;\"\n| valign=\"top\" |[[File:DuraEuropos-TempleOfBel.jpg|180px]]<!--\n  --><br /> Temple of [[Bel (mythology)|Bel]] (floating).\n|}\n")
 						)
 					],
 					[2] = WtNewline("\n"),
@@ -6948,7 +6948,7 @@ WtParsedWikitextPage(
 										{P} name = "nowiki"
 										{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 										xmlAttributes = -,
-										body = WtTagExtensionBodyImpl("{|")
+										body = WtTagExtensionBody("{|")
 									),
 									[2] = " border=\"1\"",
 									[3] = WtXmlElement(
@@ -6998,7 +6998,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|")
+													body = WtTagExtensionBody("{|")
 												),
 												[1] = " border=\"2\" style=\"background: #ABCDEF;\""
 											),
@@ -7007,7 +7007,7 @@ WtParsedWikitextPage(
 												{P} name = "nowiki"
 												{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 												xmlAttributes = -,
-												body = WtTagExtensionBodyImpl("<!--")
+												body = WtTagExtensionBody("<!--")
 											),
 											[4] = " ",
 											[5] = WtBold(
@@ -7019,7 +7019,7 @@ WtParsedWikitextPage(
 												{P} name = "nowiki"
 												{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 												xmlAttributes = -,
-												body = WtTagExtensionBodyImpl("-->")
+												body = WtTagExtensionBody("-->")
 											),
 											[8] = WtXmlElement(
 												{P} name = "br"
@@ -7067,7 +7067,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|}")
+													body = WtTagExtensionBody("|}")
 												)
 											),
 											[20] = WtXmlElement(
@@ -7114,7 +7114,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|")
+													body = WtTagExtensionBody("{|")
 												),
 												[1] = " border=\"2\" style=\"background: #ABCDEF;\""
 											),
@@ -7142,7 +7142,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|}")
+													body = WtTagExtensionBody("|}")
 												)
 											),
 											[8] = WtXmlElement(
@@ -7158,7 +7158,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|")
+													body = WtTagExtensionBody("{|")
 												),
 												[1] = " border=\"2\" style=\"background: #ABCDEF;\""
 											),
@@ -7186,7 +7186,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|}")
+													body = WtTagExtensionBody("|}")
 												)
 											),
 											[17] = WtXmlElement(
@@ -7225,7 +7225,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|")
+													body = WtTagExtensionBody("{|")
 												),
 												[1] = " border=\"2\" style=\"background: #ABCDEF; float:left;\""
 											),
@@ -7253,7 +7253,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|}")
+													body = WtTagExtensionBody("|}")
 												)
 											),
 											[8] = WtXmlElement(
@@ -7269,7 +7269,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|")
+													body = WtTagExtensionBody("{|")
 												),
 												[1] = " border=\"2\" style=\"background: #ABCDEF; float: right;\""
 											),
@@ -7297,7 +7297,7 @@ WtParsedWikitextPage(
 													{P} name = "nowiki"
 													{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|}")
+													body = WtTagExtensionBody("|}")
 												)
 											),
 											[17] = WtXmlElement(
@@ -7314,7 +7314,7 @@ WtParsedWikitextPage(
 										{P} name = "nowiki"
 										{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 										xmlAttributes = -,
-										body = WtTagExtensionBodyImpl("|}")
+										body = WtTagExtensionBody("|}")
 									),
 									[29] = WtNewline("\n")
 								]
@@ -7619,7 +7619,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n")
+							body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"5\" cellspacing=\"0\"\n|-\n| Column 1 || Column 2 || Column 3\n|-\n| rowspan=\"2\" | A\n| colspan=\"2\" style=\"text-align: center;\" | B\n|-\n| C <!-- column 1 occupied by cell A -->\n| D\n|-\n| E\n| rowspan=\"2\" colspan=\"2\" style=\"text-align: center;\" | F\n|-\n| G <!-- column 2+3 occupied by cell F -->\n|-\n| colspan=\"3\" style=\"text-align: center;\" | H\n|}\n")
 						)
 					],
 					[3] = WtNewline("\n"),
@@ -7894,7 +7894,7 @@ WtParsedWikitextPage(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = -,
-									body = WtTagExtensionBodyImpl("{| style=\"margin: 1em auto 1em auto;\"")
+									body = WtTagExtensionBody("{| style=\"margin: 1em auto 1em auto;\"")
 								)
 							]
 						)
@@ -7917,7 +7917,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n")
+							body = WtTagExtensionBody("\n{| class=\"wikitable\" style=\"margin: 1em auto 1em auto;\"\n|+ '''Cells left-aligned, table centered'''\n! scope=\"col\" | Duis \n! scope=\"col\" | aute \n! scope=\"col\" | irure\n|-\n| dolor  || in reprehenderit || in voluptate velit\n|-\n| esse cillum dolore || eu fugiat nulla || pariatur.\n|}\n")
 						)
 					],
 					[5] = WtNewline("\n"),
@@ -8062,7 +8062,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n")
+							body = WtTagExtensionBody("\n{| style=\"color:white\"\n|-\n| bgcolor=\"red\"|cell1 || width=\"300\" bgcolor=\"blue\"|cell2\n| bgcolor=\"green\"|cell3\n|}\n")
 						)
 					],
 					[5] = WtNewline("\n"),
@@ -8170,7 +8170,7 @@ WtParsedWikitextPage(
 										{P} name = "nowiki"
 										{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 										xmlAttributes = -,
-										body = WtTagExtensionBodyImpl("* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.")
+										body = WtTagExtensionBody("* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.")
 									)
 								)
 							]
@@ -8232,7 +8232,7 @@ WtParsedWikitextPage(
 										{P} name = "nowiki"
 										{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 										xmlAttributes = -,
-										body = WtTagExtensionBodyImpl("* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.")
+										body = WtTagExtensionBody("* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.")
 									)
 								)
 							]
@@ -8351,7 +8351,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n")
+							body = WtTagExtensionBody("\n{| cellpadding=\"0\" cellspacing=\"0\"\n| align=\"right\" | 432 || .1\n|-\n| align=\"right\" | 43 || .21\n|-\n| align=\"right\" | 4 || .321\n|}\n")
 						)
 					],
 					[2] = WtNewline("\n"),
@@ -8484,7 +8484,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n")
+							body = WtTagExtensionBody("\n{| border=\"1\" cellpadding=\"4\" cellspacing=\"2\"\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 432 || width=\"50%\" | .1\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\"| 43 || width=\"50%\" | .21\n|}\n|-\n|\n{| cellpadding=\"0\" cellspacing=\"0\" width=\"100\"\n| align=\"right\" width=\"50%\" | 4 || width=\"50%\" | .321\n|}\n|}\n")
 						)
 					],
 					[9] = WtNewline("\n"),
@@ -8918,7 +8918,7 @@ WtParsedWikitextPage(
 												{P} name = "pre"
 												{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 												xmlAttributes = -,
-												body = WtTagExtensionBodyImpl("<nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
+												body = WtTagExtensionBody("<nowiki>\n{| cellpadding=\"2\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
 											)
 										]
 									),
@@ -9292,7 +9292,7 @@ WtParsedWikitextPage(
 												{P} name = "pre"
 												{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 												xmlAttributes = -,
-												body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
+												body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
 											)
 										]
 									),
@@ -9675,7 +9675,7 @@ WtParsedWikitextPage(
 						{P} name = "pre"
 						{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
+						body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable\" style=\"font-style:italic; font-size:120%; border: 3px dashed red;\"\n|+ Multiplication table\n|-\n! scope=\"col\" | &amp;times;\n! scope=\"col\" | 1\n! scope=\"col\" | 2\n! scope=\"col\" | 3\n|-\n! scope=\"row\" | 1\n| 1 || 2 || 3\n|-\n! scope=\"row\" | 2\n| 2 || 4 || 6\n|-\n! scope=\"row\" | 3\n| 3 || 6 || 9\n|-\n! scope=\"row\" | 4\n| 4 || 8 || 12\n|-\n! scope=\"row\" | 5\n| 5 || 10 || 15\n|}\n</nowiki>")
 					)
 				]
 			),
@@ -10023,7 +10023,7 @@ WtParsedWikitextPage(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("''text''")
+							body = WtTagExtensionBody("''text''")
 						)
 					]
 				),
@@ -10053,7 +10053,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "display: inline-block;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n")
+							body = WtTagExtensionBody("\n{| class=\"wikitable collapsible collapsed\"\n! Header\n|-\n| Content which starts hidden\n|-\n| more hidden content\n|}\n")
 						)
 					],
 					[5] = WtNewline("\n"),
@@ -10214,7 +10214,7 @@ WtParsedWikitextPage(
 						{P} name = "pre"
 						{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
+						body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable sortable\" border=\"1\"\n|+ Sortable table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
 					)
 				]
 			),
@@ -10521,7 +10521,7 @@ WtParsedWikitextPage(
 								{P} name = "pre"
 								{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 								xmlAttributes = -,
-								body = WtTagExtensionBodyImpl("<nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
+								body = WtTagExtensionBody("<nowiki>\n{| class=\"wikitable sortable collapsible\" border=\"1\"\n|+ Sortable and collapsible table\n|-\n! scope=\"col\" | Alphabetic\n! scope=\"col\" | Numeric\n! scope=\"col\" | Date\n! scope=\"col\" class=\"unsortable\" | Unsortable\n|-\n| d || 20 || 2008-11-24 || This\n|-\n| b || 8 || 2004-03-01 || column\n|-\n| a || 6 || 1979-07-23 || cannot\n|-\n| c || 4 || 1492-12-08 || be\n|-\n| e || 0 || 1601-08-13 || sorted.\n|}\n</nowiki>")
 							)
 						]
 					),
@@ -10929,7 +10929,7 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "display: inline-block;" ]
 						)
 					],
-					body = WtTagExtensionBodyImpl("\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n")
+					body = WtTagExtensionBody("\n{| class=\"wikitable sortable\" border=\"1\"\n|-\n! scope=\"col\" | a\n! scope=\"col\" | b\n! scope=\"col\" | a/b\n{{help:table/example row template|  50|200}}\n{{help:table/example row template|   8| 11}}\n{{help:table/example row template|1000| 81}}\n|}\n")
 				),
 				[11] = WtNewline("\n"),
 				[12] = "gives:"
@@ -11092,7 +11092,7 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "display: inline-block;" ]
 						)
 					],
-					body = WtTagExtensionBodyImpl("\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n")
+					body = WtTagExtensionBody("\n{| class=\"wikitable\" border=\"1\"\n\t<!--\n\t\tRow one will be shown because the '1' evaluates\n\t\tto TRUE.\n\t-->\n\t{{ #if:1|{{!}}-\n\t\t! scope=\"row\" {{!}} row one, column one\n\t\t<!--\n\t\t\tAny {{!}}'s will get evaluated to the pipe\n\t\t\tcharacter '|' since the template '!' just\n\t\t\tcontains '|'.\n\t\t-->\n\t\t{{!}}row one, column two}}\n\t<!--\n\t\tRow two will not be NOT shown because the space\n\t\tbetween the ':' and the '|' evaluates to FALSE.\n\t-->\n\t{{ #if: |{{!}}-\n\t\t! scope=\"row\" {{!}}  row two, column one\n\t\t{{!}}row two, column two}}\n\t<!--\n\t\tRow three will be shown.\n\t-->\n\t|-\n\t\t! scope=\"row\" {{!}} row three, column one\n\t\t| row three, column two\n|}\n")
 				),
 				[3] = WtNewline("\n"),
 				[4] = "Which gives the following table: (note how the second row is missing)"
@@ -11204,7 +11204,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("<td>")
+						body = WtTagExtensionBody("<td>")
 					),
 					[2] = " syntax (",
 					[3] = WtBold(
@@ -11225,21 +11225,21 @@ WtParsedWikitextPage(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = -,
-					body = WtTagExtensionBodyImpl("<td>")
+					body = WtTagExtensionBody("<td>")
 				),
 				[2] = " syntax (i.e., unclosed ",
 				[3] = WtTagExtension(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = -,
-					body = WtTagExtensionBodyImpl("<td>")
+					body = WtTagExtensionBody("<td>")
 				),
 				[4] = " and ",
 				[5] = WtTagExtension(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = -,
-					body = WtTagExtensionBodyImpl("<tr>")
+					body = WtTagExtensionBody("<tr>")
 				),
 				[6] = " tags) will not necessarily remain browser-supported in the future, especially on handheld internet-accessible devices."
 			],
@@ -11389,7 +11389,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<table></table>")
+													body = WtTagExtensionBody("<table></table>")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11405,7 +11405,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|\n|}")
+													body = WtTagExtensionBody("{|\n|}")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11441,7 +11441,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<caption>caption</caption>")
+													body = WtTagExtensionBody("<caption>caption</caption>")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11457,7 +11457,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|+ caption")
+													body = WtTagExtensionBody("|+ caption")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11493,7 +11493,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<tr></tr>")
+													body = WtTagExtensionBody("<tr></tr>")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11509,7 +11509,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("|-")
+													body = WtTagExtensionBody("|-")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11545,7 +11545,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<td>cell1</td><td>cell2</td>\n<td>cell3</td>")
+													body = WtTagExtensionBody("<td>cell1</td><td>cell2</td>\n<td>cell3</td>")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11561,7 +11561,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("| cell1 || cell2\n| cell3")
+													body = WtTagExtensionBody("| cell1 || cell2\n| cell3")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11597,7 +11597,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<th scope=\"col\">column heading</th>")
+													body = WtTagExtensionBody("<th scope=\"col\">column heading</th>")
 												),
 												[2] = WtXmlElement(
 													{P} name = "br"
@@ -11609,7 +11609,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<th scope=\"row\">row heading</th>")
+													body = WtTagExtensionBody("<th scope=\"row\">row heading</th>")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11625,7 +11625,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("! scope=\"col\" | column heading")
+													body = WtTagExtensionBody("! scope=\"col\" | column heading")
 												),
 												[2] = WtXmlElement(
 													{P} name = "br"
@@ -11637,7 +11637,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("! scope=\"row\" | row heading")
+													body = WtTagExtensionBody("! scope=\"row\" | row heading")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11781,7 +11781,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("<table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table>")
+													body = WtTagExtensionBody("<table>\n <tr>\n <td>1</td>\n <td>2</td>\n </tr>\n <tr>\n <td>3</td>\n <td>4</td>\n </tr>\n</table>")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -11797,7 +11797,7 @@ WtParsedWikitextPage(
 													{P} name = "pre"
 													{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 													xmlAttributes = -,
-													body = WtTagExtensionBodyImpl("{|\n| 1 || 2\n|-\n| 3 || 4\n|}")
+													body = WtTagExtensionBody("{|\n| 1 || 2\n|-\n| 3 || 4\n|}")
 												)
 											],
 											[1] = WtNewline("\n")
@@ -12090,7 +12090,7 @@ WtParsedWikitextPage(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = -,
-					body = WtTagExtensionBodyImpl("|")
+					body = WtTagExtensionBody("|")
 				),
 				[4] = ") for HTML. There is an ",
 				[5] = WtExternalLink(
@@ -12144,7 +12144,7 @@ WtParsedWikitextPage(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("\n {| ''params''\n |}\n")
+							body = WtTagExtensionBody("\n {| ''params''\n |}\n")
 						),
 						[5] = WtNewline("\n"),
 						[6] = "which generates \"",
@@ -12576,7 +12576,7 @@ WtParsedWikitextPage(
 								{P} name = "nowiki"
 								{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 								xmlAttributes = -,
-								body = WtTagExtensionBodyImpl("!")
+								body = WtTagExtensionBody("!")
 							),
 							[1] = WtItalics(
 								{P} rtd = RTD[ "''" <o> "''" ]
@@ -12740,7 +12740,7 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "overflow:auto;" ]
 								)
 							],
-							body = WtTagExtensionBodyImpl("\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n")
+							body = WtTagExtensionBody("\n{| summary=\"Artistic renderings of Germania became more triumphant and monumental.\"\n| [[File:Philipp Veit 008.jpg|thumb|upright|alt=Robed woman, seated, with sword on her lap|Philipp Veit, ''Germania'', 1834\u201336]]\n| [[File:Image Germania (painting).jpg|thumb|upright|alt=Robed woman, standing, holding a sword|Philipp Veit, ''Germania'', 1848]]\n| [[File:Niederwald memorial 2.JPG|thumb|upright|alt=Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another|Johannes Schilling, ''Germania'', 1871\u201383]]\n|}\n")
 						),
 						[5] = WtNewline("\n"),
 						[6] = "produces:"
@@ -12763,7 +12763,7 @@ WtParsedWikitextPage(
 									[0] = WtParagraph[
 										[0] = " ",
 										[1] = WtImageLink(
-											{P} alt = WtLinkOptionAltTextImpl(
+											{P} alt = WtLinkOptionAltText(
 													{P} rtd = RTD[ "|alt=" <o> "" ]
 													[0] = "Robed woman, seated, with sword on her lap"
 												)
@@ -12786,7 +12786,7 @@ WtParsedWikitextPage(
 													{P} keyword = "upright"
 													{P} rtd = RTD[ "|upright" ]
 												),
-												[2] = WtLinkOptionAltTextImpl(
+												[2] = WtLinkOptionAltText(
 													{P} rtd = RTD[ "|alt=" <o> "" ]
 													[0] = "Robed woman, seated, with sword on her lap"
 												)
@@ -12812,7 +12812,7 @@ WtParsedWikitextPage(
 									[0] = WtParagraph[
 										[0] = " ",
 										[1] = WtImageLink(
-											{P} alt = WtLinkOptionAltTextImpl(
+											{P} alt = WtLinkOptionAltText(
 													{P} rtd = RTD[ "|alt=" <o> "" ]
 													[0] = "Robed woman, standing, holding a sword"
 												)
@@ -12835,7 +12835,7 @@ WtParsedWikitextPage(
 													{P} keyword = "upright"
 													{P} rtd = RTD[ "|upright" ]
 												),
-												[2] = WtLinkOptionAltTextImpl(
+												[2] = WtLinkOptionAltText(
 													{P} rtd = RTD[ "|alt=" <o> "" ]
 													[0] = "Robed woman, standing, holding a sword"
 												)
@@ -12861,7 +12861,7 @@ WtParsedWikitextPage(
 									[0] = WtParagraph[
 										[0] = " ",
 										[1] = WtImageLink(
-											{P} alt = WtLinkOptionAltTextImpl(
+											{P} alt = WtLinkOptionAltText(
 													{P} rtd = RTD[ "|alt=" <o> "" ]
 													[0] = "Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another"
 												)
@@ -12884,7 +12884,7 @@ WtParsedWikitextPage(
 													{P} keyword = "upright"
 													{P} rtd = RTD[ "|upright" ]
 												),
-												[2] = WtLinkOptionAltTextImpl(
+												[2] = WtLinkOptionAltText(
 													{P} rtd = RTD[ "|alt=" <o> "" ]
 													[0] = "Monument of robed woman, standing, holding a crown in one hand and a partly sheathed sword in another"
 												)
@@ -12936,7 +12936,7 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "display: inline-block;" ]
 						)
 					],
-					body = WtTagExtensionBodyImpl("\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n")
+					body = WtTagExtensionBody("\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some window blinds.JPG|192x155px|thumb|left|Various window shades]]\n| [[File:Vert-blinds-2145-rs.jpg|192x170px|thumb|left|Vertical blinds]]\n| [[File:Gardine.jpg|192x155px|thumb|left|This is not a blind]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Vorhang.jpg|192x155px|thumb|left|Solid shade]]\n| [[File:Jalousie-1.jpg|328x55px|thumb|left|Horizonal blinds]]\n|}\n\n{| style=\"background: transparent; margin: auto;\"\n| [[File:Some_window_blinds.JPG|205px|thumb|left|Shade, shutters; vertical & horizontal blinds.]]\n| [[File:Miniblinds detail of mechanism.jpg|388px|thumb|left|<!--\n -->Detail of turning rod (blind stick) attachment on miniblinds]]\n|}\n")
 				)
 			],
 			[8] = WtNewline("\n"),
@@ -13403,10 +13403,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games")
 												)
 											],
 											title = -
@@ -13443,10 +13440,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia talk:WikiProject Video games"
-														{P} rtd = RTD[ "Wikipedia talk:WikiProject Video games" ]
-													)
+													target = WtPageName("Wikipedia talk:WikiProject Video games")
 												)
 											],
 											title = -
@@ -13483,10 +13477,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Portal:Video games"
-														{P} rtd = RTD[ "Portal:Video games" ]
-													)
+													target = WtPageName("Portal:Video games")
 												)
 											],
 											title = -
@@ -13523,10 +13514,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games/Article guidelines"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games/Article guidelines" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games/Article guidelines")
 												)
 											],
 											title = -
@@ -13563,10 +13551,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games/Templates"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games/Templates" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games/Templates")
 												)
 											],
 											title = -
@@ -13603,10 +13588,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games/Sources"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games/Sources" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games/Sources")
 												)
 											],
 											title = -
@@ -13643,10 +13625,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games/Assessment"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games/Assessment" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games/Assessment")
 												)
 											],
 											title = -
@@ -13683,10 +13662,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games/Cleanup"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games/Cleanup" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games/Cleanup")
 												)
 											],
 											title = -
@@ -13723,10 +13699,7 @@ WtParsedWikitextPage(
 												[0] = WtLinkOptionLinkTarget(
 													{P} rtd = RTD[ "|link=" <o> "" ]
 													{P} targetType = PAGE
-													target = WtPageName(
-														{P} content = "Wikipedia:WikiProject Video games/Requests"
-														{P} rtd = RTD[ "Wikipedia:WikiProject Video games/Requests" ]
-													)
+													target = WtPageName("Wikipedia:WikiProject Video games/Requests")
 												)
 											],
 											title = -
@@ -13893,7 +13866,7 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "display: inline-block;" ]
 						)
 					],
-					body = WtTagExtensionBodyImpl("\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n")
+					body = WtTagExtensionBody("\n<nowiki>\n! style=\"width:3em;\" | [[File:wpvg_vg_project.svg|link=xxxx]]\n</nowiki>\n")
 				),
 				[1] = WtNewline("\n"),
 				[2] = "The image will wikilink to article \"xxxx\"."
@@ -13911,7 +13884,7 @@ WtParsedWikitextPage(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("[[File:wpvg_hd_date_page.svg|link=]]")
+							body = WtTagExtensionBody("[[File:wpvg_hd_date_page.svg|link=]]")
 						)
 					]
 				),
@@ -13961,7 +13934,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable-->")
+						body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--column1-->[[File:Worms 01.jpg|265px]]\n |<!--column2-->[[File:Worms Wappen 2005-05-27.jpg|235px]]\n |-\n |<!--column1-->Nibelungen Bridge to Worms<br/>across the [[Rhine]]\n |<!--column2-->Worms and its sister cities\n |}<!--end wikitable-->")
 					)
 				)
 			],
@@ -14098,7 +14071,7 @@ WtParsedWikitextPage(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = -,
-					body = WtTagExtensionBodyImpl("\"[[")
+					body = WtTagExtensionBody("\"[[")
 				),
 				[4] = "Image:XXX.jpg|130px]]\" so 4 images could be displayed on a wikitable line within a 600px width (for 800x600 resolution screens)."
 			],
@@ -14111,7 +14084,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable-->")
+						body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Worms 01.jpg|130px]]\n |<!--col2-->[[File:Worms Wappen 2005-05-27.jpg|125px]]\n |<!--col3-->[[File:Liberty-statue-with-manhattan.jpg|125px]]\n |<!--col4-->[[File:New-York-Jan2005.jpg|125px]]\n |-\n |<!--col1-->Nibelungen Bridge to Worms\n |<!--col2-->Worms and its sister cities\n |<!--col3-->Statue of Liberty\n |<!--col4-->New York City\n |}<!--end wikitable-->")
 					)
 				)
 			],
@@ -14312,7 +14285,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable-->")
+						body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x95px]]\n |<!--col2-->[[File:New-York-Jan2005.jpg|199x95px]]\n |<!--col3-->[[File:Gold star on blue.gif|199x95px]]\n |<!--col4-->[[File:Worms 01.jpg|100x95px]]<!--smaller-->\n |-\n |<!--col1-->Statue of Liberty\n |<!--col2-->New York City\n |<!--col3-->Star on blue\n |<!--col4-->Bridge to Worms\n |}<!--end wikitable-->")
 					)
 				)
 			],
@@ -14515,7 +14488,7 @@ WtParsedWikitextPage(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}")
+						body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--col1-->[[File:Liberty-statue-with-manhattan.jpg|199x70px]]\n |<!--col2-->[[File:Gold star on blue.gif|199x70px]]\n |<!--col3-->[[File:New-York-Jan2005.jpg|199x70px]]\n |<!--col4-->[[File:Gold star on deep red.gif|199x70px]]\n |<!--col5-->[[File:Worms 01.jpg|199x70px]]<!--same height-->\n |<!--col6-->[[File:Gold star on blue.gif|199x70px]]\n |}")
 					)
 				)
 			],
@@ -14765,7 +14738,7 @@ WtParsedWikitextPage(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("(\"<center>[[File:..]]</center>\")")
+							body = WtTagExtensionBody("(\"<center>[[File:..]]</center>\")")
 						),
 						[8] = "."
 					],
@@ -14794,7 +14767,7 @@ WtParsedWikitextPage(
 								{P} name = "nowiki"
 								{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 								xmlAttributes = -,
-								body = WtTagExtensionBodyImpl("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}")
+								body = WtTagExtensionBody("\n {| class=\"wikitable\" border=\"1\"\n |-\n |<!--Col1-->[[File:Domtoren_vanaf_Brigittenstraat.jpg|299x125px]]\n |<!--Col2--><center>[[File:Utrecht 003.jpg|299x125px]]</center>\n |<!--Col3-->&amp;nbsp;[[File:Uitzicht--Domtoren.jpg|299x125px]]&amp;nbsp;\n |-\n |<!--Col1-->Dom tower from Brigittenstraat\n |<!--Col2-->Cloister garth of the Utrecht Dom Church\n |<!--Col3-->&amp;nbsp;&amp;nbsp;<small>View from bell tower</small>\n |}")
 							)
 						)
 					],
@@ -14999,7 +14972,7 @@ WtParsedWikitextPage(
 							{P} name = "pre"
 							{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 							xmlAttributes = -,
-							body = WtTagExtensionBodyImpl("\n | style=\"font-size: 87%;\" | View from bell tower\n")
+							body = WtTagExtensionBody("\n | style=\"font-size: 87%;\" | View from bell tower\n")
 						),
 						[5] = WtNewline("\n"),
 						[6] = "The column attribute, above, uses \"style=\" to set the font-size for the caption, following the 2nd vertical-bar \"|\"."

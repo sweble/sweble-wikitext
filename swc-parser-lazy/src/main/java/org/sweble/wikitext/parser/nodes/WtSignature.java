@@ -34,7 +34,7 @@ public class WtSignature
 	{
 	}
 	
-	public WtSignature(int tildeCount)
+	protected WtSignature(int tildeCount)
 	{
 		setTildeCount(tildeCount);
 	}

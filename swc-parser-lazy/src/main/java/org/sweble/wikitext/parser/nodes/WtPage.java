@@ -26,7 +26,7 @@ import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class WtPage
+public abstract class WtPage
 		extends
 			WtContentNodeImpl
 {
@@ -39,26 +39,25 @@ public class WtPage
 	
 	// =========================================================================
 	
-	public WtPage()
+	protected WtPage()
 	{
 		setWarnings(NO_WARNINGS);
 		setEntityMap(NO_ENTITIES);
 	}
 	
-	public WtPage(WtNodeList content)
+	protected WtPage(WtNodeList content)
 	{
 		super(content);
 		setWarnings(NO_WARNINGS);
 		setEntityMap(NO_ENTITIES);
 	}
 	
-	public WtPage(
+	protected WtPage(
 			WtNodeList content,
-			List<Warning> warnings,
 			WtEntityMap entityMap)
 	{
 		super(content);
-		setWarnings(warnings);
+		setWarnings(NO_WARNINGS);
 		setEntityMap(entityMap);
 	}
 	

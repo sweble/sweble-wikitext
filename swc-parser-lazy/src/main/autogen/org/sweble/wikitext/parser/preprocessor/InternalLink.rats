@@ -27,11 +27,11 @@ modify org.sweble.wikitext.parser.preprocessor.Content;
 WtNode InternalLink =
     "[[" content:InternalLinkContentStar "]]"
     {
-      yyValue = list(new WtText("[["), content, new WtText("]]"));
+      yyValue = nf.list(nf.text("[["), content, nf.text("]]"));
     }
   / '['
     {
-      yyValue = new WtText("[");
+      yyValue = nf.text("[");
     }
 ;
 

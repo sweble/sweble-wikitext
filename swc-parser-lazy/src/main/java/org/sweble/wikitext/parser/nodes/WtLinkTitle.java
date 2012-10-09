@@ -21,17 +21,29 @@ public interface WtLinkTitle
 		extends
 			WtContentNode
 {
-	public static final WtNullLinkTitle NO_TITLE = new WtNullLinkTitle();
+	public static final WtNoLinkTitle NO_TITLE = new WtNoLinkTitle();
 	
 	// =========================================================================
 	
-	public static final class WtNullLinkTitle
+	public static final class WtNoLinkTitle
 			extends
 				WtNullContentNode
 			implements
 				WtLinkTitle
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_LINK_TITLE;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLinkTitle.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -46,11 +58,11 @@ public interface WtLinkTitle
 		
 		// =====================================================================
 		
-		public WtLinkTitleImpl()
+		protected WtLinkTitleImpl()
 		{
 		}
 		
-		public WtLinkTitleImpl(WtNodeList content)
+		protected WtLinkTitleImpl(WtNodeList content)
 		{
 			super(content);
 		}

@@ -38,14 +38,9 @@ import org.sweble.wikitext.parser.nodes.WtPageName;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
-/**
- * TODO: Überarbeiten!
- * 
- * @deprecated
- */
 public class LinkBuilder
 {
-	private WtPageName target;
+	private final WtPageName target;
 	
 	private WtLinkTitle title;
 	
@@ -75,7 +70,9 @@ public class LinkBuilder
 	
 	// -- internal state
 	
-	private LinkType targetType;
+	private final ParserConfig parserConfig;
+	
+	private final LinkType targetType;
 	
 	// =========================================================================
 	
@@ -83,6 +80,7 @@ public class LinkBuilder
 	{
 		this.target = target;
 		this.targetType = parserConfig.classifyTarget(target.getContent());
+		this.parserConfig = parserConfig;
 		
 		this.title = null;
 		this.width = -1;
@@ -108,75 +106,65 @@ public class LinkBuilder
 		return targetType != LinkType.INVALID;
 	}
 	
+	public boolean isKeyword(String keyword)
+	{
+		return (ImageViewFormat.which(keyword) != null) ||
+				(ImageHorizAlign.which(keyword) != null) ||
+				(ImageVertAlign.which(keyword) != null) ||
+				(keyword.equals("border")) ||
+				(keyword.equals("upright"));
+	}
+	
 	// =========================================================================
 	
 	public void addOption(WtLinkOptionKeyword option)
 	{
-		addKeyword(option.getKeyword());
-	}
-	
-	public boolean addKeyword(String keyword)
-	{
 		ImageViewFormat f;
+		ImageHorizAlign h;
+		ImageVertAlign v;
+		
+		String keyword = option.getKeyword();
 		if ((f = ImageViewFormat.which(keyword)) != null)
 		{
 			format = (format == null) ? f : format.combine(f);
-			return true;
 		}
-		
-		ImageHorizAlign h;
-		if ((h = ImageHorizAlign.which(keyword)) != null)
+		else if ((h = ImageHorizAlign.which(keyword)) != null)
 		{
 			hAlign = h;
-			return true;
 		}
-		
-		ImageVertAlign v;
-		if ((v = ImageVertAlign.which(keyword)) != null)
+		else if ((v = ImageVertAlign.which(keyword)) != null)
 		{
 			vAlign = v;
-			return true;
 		}
-		
-		if (keyword.equals("border"))
+		else if (keyword.equals("border"))
 		{
 			border = true;
-			return true;
 		}
-		
-		if (keyword.equals("upright"))
+		else if (keyword.equals("upright"))
 		{
 			upright = true;
-			return true;
 		}
-		
-		return false;
-	}
-	
-	public void setHeight(int height)
-	{
-		if (height >= 0)
-			this.height = height;
-	}
-	
-	public void setWidth(int width)
-	{
-		if (width >= 0)
-			this.width = width;
 	}
 	
 	public void addOption(WtLinkOptionResize option)
 	{
-		setWidth(option.getWidth());
-		setHeight(option.getHeight());
+		int width = option.getWidth();
+		if (width >= 0)
+			this.width = width;
+		
+		int height = option.getHeight();
+		if (height >= 0)
+			this.height = height;
 	}
 	
-	// =========================================================================
-	
-	public void setLink(ImageLinkTarget target)
+	public void addOption(WtLinkOptionLinkTarget option)
 	{
-		if (target != null)
+		if (option != null)
 		{
+			ImageLinkTarget target = new ImageLinkTarget(
+					option.getTargetType(),
+					option.getTarget());
+			
 			if (target.getTargetType() == LinkTargetType.URL)
 			{
 				// second occurrence wins, url beats page
@@ -195,44 +183,21 @@ public class LinkBuilder
 		}
 	}
 	
-	public void addOption(WtLinkOptionLinkTarget option)
-	{
-		setLink(new ImageLinkTarget(option.getTargetType(), option.getTarget()));
-	}
-	
-	/*
-	public void setLink(WtLinkTarget target)
-	{
-		ImageLinkTarget linkTarget = null;
-		if (target.getTargetType() == LinkTargetType.NO_LINK)
-		{
-			linkTarget = new ImageLinkTarget(LinkTargetType.NO_LINK);
-		}
-		else
-		{
-			linkTarget = new ImageLinkTarget(
-					target.getTargetType(),
-					target);
-		}
-		setLink(linkTarget);
-	}
-	*/
-	
-	// =========================================================================
-	
-	public void setAlt(WtLinkOptionAltText alt)
-	{
-		this.alt = alt;
-	}
-	
 	public void addOption(WtLinkOptionAltText option)
 	{
-		setAlt(option);
+		this.alt = option;
 	}
 	
 	public void setTitle(WtLinkTitle title)
 	{
 		this.title = title;
+	}
+	
+	public void addWarning(Warning warning)
+	{
+		if (warnings == null)
+			warnings = new ArrayList<Warning>();
+		warnings.add(warning);
 	}
 	
 	// =========================================================================
@@ -251,12 +216,12 @@ public class LinkBuilder
 				format = ImageViewFormat.UNRESTRAINED;
 			
 			if (alt == null)
-				alt = WtLinkOptionAltText.NULL;
+				alt = parserConfig.getNodeFactory().noLoAlt();
 			
 			if (link == null)
 				link = new ImageLinkTarget(LinkTargetType.DEFAULT);
 			
-			WtImageLink result = new WtImageLink(
+			WtImageLink result = parserConfig.getNodeFactory().img(
 					target,
 					options,
 					format,
@@ -280,7 +245,7 @@ public class LinkBuilder
 			if (postfix == null)
 				postfix = "";
 			
-			WtInternalLink result = new WtInternalLink(
+			WtInternalLink result = parserConfig.getNodeFactory().intLink(
 					"",
 					target,
 					postfix);
@@ -291,13 +256,6 @@ public class LinkBuilder
 			finish(result);
 			return result;
 		}
-	}
-	
-	public void addWarning(Warning warning)
-	{
-		if (warnings == null)
-			warnings = new ArrayList<Warning>();
-		warnings.add(warning);
 	}
 	
 	public void finish(WtNode n)

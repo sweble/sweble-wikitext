@@ -60,18 +60,18 @@ noinline transient WtNode HorizontalRuleTransient =
     "---" &{ accept(ParserAtoms.HORIZONTAL_RULE) } yyValue:HorizontalRuleChoice
   / "---"
     {
-      yyValue = new WtText("---");
+      yyValue = nf.text("---");
     }
 ;
 
 private inline WtNode HorizontalRuleChoice =
     more:'-'+
     {
-      int dashes = 3 + more.size();
+      String dashes = StringUtils.strrep('-', 3 + more.size());
 
       yyValue = setRtd(
-        new WtHorizontalRule(),
-        StringUtils.strrep('-', dashes));
+        nf.hr(),
+        dashes);
     }
   / &{ isWarningsEnabled() } HorizontalRuleAutoCorrect
 ;
@@ -79,7 +79,7 @@ private inline WtNode HorizontalRuleChoice =
 private inline WtNode HorizontalRuleAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
-    yyValue = new WtText("---");
+    yyValue = nf.text("---");
 
     fileLooksLikeWarning(
         yyValue,

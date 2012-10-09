@@ -36,7 +36,7 @@ public class WtPageSwitch
 	{
 	}
 	
-	public WtPageSwitch(String name)
+	protected WtPageSwitch(String name)
 	{
 		setName(name);
 	}

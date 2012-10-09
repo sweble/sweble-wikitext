@@ -51,14 +51,14 @@ public class WtImStartTag
 	/* No default ctor. This node should not get de-/serialized
 	 */
 	
-	public WtImStartTag(IntermediateTags type)
+	protected WtImStartTag(IntermediateTags type)
 	{
 		super(type.getElementName(), WtXmlAttributes.EMPTY);
 		this.type = type;
 		this.synthetic = false;
 	}
 	
-	public WtImStartTag(IntermediateTags type, boolean synthetic)
+	protected WtImStartTag(IntermediateTags type, boolean synthetic)
 	{
 		super(type.getElementName(), WtXmlAttributes.EMPTY);
 		this.type = type;

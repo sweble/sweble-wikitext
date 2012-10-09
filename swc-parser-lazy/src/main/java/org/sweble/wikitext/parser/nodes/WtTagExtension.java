@@ -28,7 +28,7 @@ public class WtTagExtension
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtTagExtensionBody NO_BODY = WtTagExtensionBody.NO_BODY;
+	
 	
 	// =========================================================================
 	
@@ -40,15 +40,15 @@ public class WtTagExtension
 		super(Uninitialized.X);
 	}
 	
-	public WtTagExtension(
+	protected WtTagExtension(
 			String name,
 			WtXmlAttributes xmlAttributes)
 	{
-		super(xmlAttributes, NO_BODY);
+		super(xmlAttributes, WtTagExtensionBody.NO_BODY);
 		setName(name);
 	}
 	
-	public WtTagExtension(
+	protected WtTagExtension(
 			String name,
 			WtXmlAttributes xmlAttributes,
 			WtTagExtensionBody body)
@@ -160,7 +160,7 @@ public class WtTagExtension
 	
 	public final boolean hasBody()
 	{
-		return getBody() != NO_BODY;
+		return getBody() != WtTagExtensionBody.NO_BODY;
 	}
 	
 	public final void setBody(WtTagExtensionBody body)

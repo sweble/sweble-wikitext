@@ -27,11 +27,23 @@ public interface WtXmlAttributes
 	
 	public static final class WtEmptyXmlAttributes
 			extends
-				WtNullContentNode
+				WtEmptyContentNode
 			implements
 				WtXmlAttributes
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_XML_ATTRIBUTES;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtXmlAttributes.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -46,11 +58,11 @@ public interface WtXmlAttributes
 		
 		// =====================================================================
 		
-		public WtXmlAttributesImpl()
+		protected WtXmlAttributesImpl()
 		{
 		}
 		
-		public WtXmlAttributesImpl(WtNodeList content)
+		protected WtXmlAttributesImpl(WtNodeList content)
 		{
 			super(content);
 		}

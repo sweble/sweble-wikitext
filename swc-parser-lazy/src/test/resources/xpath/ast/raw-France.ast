@@ -55,7 +55,7 @@ WtParagraph[
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 		xmlAttributes = -,
-		body = WtTagExtensionBodyImpl("{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}")
+		body = WtTagExtensionBody("{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}")
 	),
 	[11] = " and possesses the fifth largest economy by ",
 	[12] = WtInternalLink(
@@ -72,7 +72,7 @@ WtParagraph[
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 		xmlAttributes = -,
-		body = WtTagExtensionBodyImpl("[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook")
+		body = WtTagExtensionBody("[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook")
 	),
 	[14] = " and seventh largest economy by ",
 	[15] = WtInternalLink(
@@ -90,7 +90,7 @@ WtParagraph[
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 		xmlAttributes = -,
-		body = WtTagExtensionBodyImpl("{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}")
+		body = WtTagExtensionBody("{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}")
 	),
 	[18] = " France enjoys a ",
 	[19] = WtInternalLink(
@@ -130,7 +130,7 @@ WtParagraph[
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 		xmlAttributes = -,
-		body = WtTagExtensionBodyImpl("{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}")
+		body = WtTagExtensionBody("{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}")
 	),
 	[26] = " It is the most visited country in the world, receiving 82 million foreign tourists annually.",
 	[27] = WtTagExtension(
@@ -143,7 +143,7 @@ WtParagraph[
 				value = WtValue[ [0] = "tourism.stat" ]
 			)
 		],
-		body = WtTagExtensionBodyImpl("{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}")
+		body = WtTagExtensionBody("{{fr}} {{cite web |publisher=Direction du Tourisme (French government's tourism agency) |url=http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archiveurl=http://web.archive.org/web/20080624195206/http://www.tourisme.gouv.fr/fr/z2/stat/tis/att00018288/TIS_EVE2007_2008-5.pdf |archivedate=2008-06-24 |title=Tourisme international en France en 2007 |accessdate=5 June 2008|format=PDF}}")
 	),
 	[28] = " France is a founding member of the ",
 	[29] = WtInternalLink(
@@ -242,7 +242,7 @@ WtParagraph[
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 		xmlAttributes = -,
-		body = WtTagExtensionBodyImpl("{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}")
+		body = WtTagExtensionBody("{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}")
 	),
 	[50] = " with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ",
 	[51] = WtInternalLink(
@@ -321,7 +321,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].")
+				body = WtTagExtensionBody("[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].")
 			),
 			[12] = " and the Gauls eventually adopted ",
 			[13] = WtInternalLink(
@@ -500,7 +500,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]")
+				body = WtTagExtensionBody("[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]")
 			),
 			[20] = " and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D."
 		],
@@ -705,7 +705,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks")
+				body = WtTagExtensionBody("[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks")
 			),
 			[20] = WtNewline("\n"),
 			[21] = "The ",
@@ -740,7 +740,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World")
+				body = WtTagExtensionBody("[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World")
 			),
 			[29] = " "
 		],
@@ -816,7 +816,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}")
+				body = WtTagExtensionBody("{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}")
 			),
 			[18] = WtNewline("\n"),
 			[19] = "In 1066, the ",
@@ -894,7 +894,7 @@ WtSection(
 						value = WtValue[ [0] = "guerard" ]
 					)
 				],
-				body = WtTagExtensionBodyImpl("Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.")
+				body = WtTagExtensionBody("Albert Guerard, ''France: A Modern History'' ([[University of Michigan Press]]: Ann Arbor, 1959) pp. 100, 101.")
 			),
 			[2] = "  Under the rules of the ",
 			[3] = WtInternalLink(
@@ -965,7 +965,7 @@ WtSection(
 						value = -
 					)
 				],
-				body = WtTagExtensionBodyImpl("[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.")
+				body = WtTagExtensionBody("[http://encarta.msn.com/text_761568934___117/France.html France VII. \u2014 History] Microsoft Encarta Online Encyclopedia 2009. [http://www.webcitation.org/5kwcLOXgw Archived] 31 October 2009.")
 			),
 			[14] = " England and France went to war in what would become known as the ",
 			[15] = WtInternalLink(
@@ -980,7 +980,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.")
+				body = WtTagExtensionBody("Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.")
 			)
 		],
 		[17] = WtNewline("\n"),
@@ -1015,7 +1015,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].")
+				body = WtTagExtensionBody("[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].")
 			)
 		],
 		[20] = WtNewline("\n"),
@@ -1056,7 +1056,7 @@ WtSection(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations")
+				body = WtTagExtensionBody("[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations")
 			),
 			[8] = " Much of the ",
 			[9] = WtInternalLink(

@@ -26,8 +26,6 @@ public class WtInternalLink
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NO_TITLE;
-	
 	// =========================================================================
 	
 	/**
@@ -38,12 +36,12 @@ public class WtInternalLink
 		super(Uninitialized.X);
 	}
 	
-	public WtInternalLink(
+	protected WtInternalLink(
 			String prefix,
 			WtPageName target,
 			String postfix)
 	{
-		super(target, HAS_NO_TITLE);
+		super(target, WtLinkTitle.NO_TITLE);
 		setPrefix(prefix);
 		setPostfix(postfix);
 	}
@@ -173,7 +171,7 @@ public class WtInternalLink
 	
 	public boolean hasTitle()
 	{
-		return getTitle() != HAS_NO_TITLE;
+		return getTitle() != WtLinkTitle.NO_TITLE;
 	}
 	
 	public final void setTitle(WtLinkTitle title)

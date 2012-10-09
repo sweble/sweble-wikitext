@@ -37,7 +37,7 @@ public class WtNewline
 		super(Uninitialized.X);
 	}
 	
-	public WtNewline(String content)
+	protected WtNewline(String content)
 	{
 		super(content);
 	}

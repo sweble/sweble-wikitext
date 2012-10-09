@@ -30,12 +30,12 @@ public class WtTableCell
 	/**
 	 * Only for use by de-serialization code.
 	 */
-	public WtTableCell()
+	protected WtTableCell()
 	{
 		super(Uninitialized.X);
 	}
 	
-	public WtTableCell(WtXmlAttributes xmlAttributes, WtBody body)
+	protected WtTableCell(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}

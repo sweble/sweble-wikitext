@@ -68,6 +68,8 @@ public class WikitextParser
 		
 		parser.getState().init(config, wikitext.getEntityMap());
 		
+		parser.setNodeFactory(config.getNodeFactory());
+		
 		Result r = null;
 		
 		//RatsWikitextParser.enableStats();

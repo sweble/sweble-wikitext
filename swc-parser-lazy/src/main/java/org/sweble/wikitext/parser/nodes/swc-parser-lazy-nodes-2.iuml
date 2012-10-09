@@ -1,0 +1,2288 @@
+
+@startuml
+
+
+
+
+hide members
+
+
+
+
+
+
+class WtBodyImpl {
+	-long serialVersionUID
+	+WtBodyImpl()
+	+WtBodyImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtBodyImpl
+interface WtBody {
+}
+WtBody <|.. WtBodyImpl
+
+class WtNullBody {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullBody
+interface WtBody {
+}
+WtBody <|.. WtNullBody
+
+interface WtBody {
+	WtNullBody NULL
+	WtNullBody EMPTY
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtBody
+
+
+
+
+
+
+
+
+
+class WtBold {
+	-long serialVersionUID
+	+WtBold()
+	+WtBold(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtBold
+
+
+
+
+
+
+
+
+interface WtContentNode {
+}
+interface WtNodeList {
+}
+WtNodeList <|.. WtContentNode
+
+abstract class WtNullContentNode {
+	-long serialVersionUID
+}
+class WtNullNodeList {
+}
+WtNullNodeList <|-- WtNullContentNode
+interface WtContentNode {
+}
+WtContentNode <|.. WtNullContentNode
+abstract class WtContentNodeImpl {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtContentNodeImpl()
+	+WtContentNodeImpl(WtNodeList content)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void toString(Appendable out)
+}
+class WtNodeListImpl {
+}
+WtNodeListImpl <|-- WtContentNodeImpl
+interface WtContentNode {
+}
+WtContentNode <|.. WtContentNodeImpl
+
+
+
+
+
+
+
+
+
+class WtDefinitionList {
+	-long serialVersionUID
+	+WtDefinitionList()
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtDefinitionList
+
+
+
+
+
+
+class WtDefinitionListDef {
+	-long serialVersionUID
+	+WtDefinitionListDef()
+	+WtDefinitionListDef(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtDefinitionListDef
+
+
+
+
+
+
+
+class WtDefinitionListTerm {
+	-long serialVersionUID
+	+WtDefinitionListTerm()
+	+WtDefinitionListTerm(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtDefinitionListTerm
+
+
+
+
+
+
+
+class WtExternalLink {
+	-long serialVersionUID
+	+WtLinkTitle HAS_NO_TITLE
+	-String[] CHILD_NAMES
+	#WtExternalLink()
+	+WtExternalLink(WtUrl target)
+	+WtExternalLink(WtUrl target, WtLinkTitle title)
+	+int getNodeType()
+	+void setTarget(WtUrl target)
+	+WtUrl getTarget()
+	+boolean hasTitle()
+	+void setTitle(WtLinkTitle title)
+	+WtLinkTitle getTitle()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtExternalLink
+
+
+
+
+
+
+
+class WtHeading {
+	-long serialVersionUID
+	+WtHeading()
+	+WtHeading(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtHeading
+
+
+
+
+
+
+class WtHorizontalRule {
+	-long serialVersionUID
+	+WtHorizontalRule()
+	+int getNodeType()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtHorizontalRule
+
+
+
+
+
+
+class WtIgnored {
+	-long serialVersionUID
+	#WtIgnored()
+	+WtIgnored(String content)
+	+int getNodeType()
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtIgnored
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtIgnored
+
+
+
+
+
+
+
+
+class WtIllegalCodePoint {
+	-long serialVersionUID
+	-String codePoint
+	-IllegalCodePointType type
+	#WtIllegalCodePoint()
+	+WtIllegalCodePoint(String codePoint, IllegalCodePointType type)
+	+int getNodeType()
+	+String getCodePoint()
+	+String setCodePoint(String codePoint)
+	+IllegalCodePointType getType()
+	+IllegalCodePointType setType(IllegalCodePointType type)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtIllegalCodePoint
+
+
+
+
+
+
+
+
+class WtImageLink {
+	-long serialVersionUID
+	+WtLinkTitle HAS_NO_TITLE
+	-int width
+	-int height
+	-boolean upright
+	-ImageHorizAlign hAlign
+	-ImageVertAlign vAlign
+	-ImageViewFormat format
+	-boolean border
+	-ImageLinkTarget link
+	-WtLinkOptionAltText alt
+	-String[] CHILD_NAMES
+	#WtImageLink()
+	+WtImageLink(WtPageName target, WtLinkOptions options, ImageViewFormat format, boolean border, ImageHorizAlign hAlign, ImageVertAlign vAlign, int width, int height, boolean upright, ImageLinkTarget link, WtLinkOptionAltText alt)
+	+int getNodeType()
+	+int getWidth()
+	+int setWidth(int width)
+	+int getHeight()
+	+int setHeight(int height)
+	+boolean getUpright()
+	+boolean setUpright(boolean upright)
+	+ImageHorizAlign getHAlign()
+	+ImageHorizAlign setHAlign(ImageHorizAlign hAlign)
+	+ImageVertAlign getVAlign()
+	+ImageVertAlign setVAlign(ImageVertAlign vAlign)
+	+ImageViewFormat getFormat()
+	+ImageViewFormat setFormat(ImageViewFormat format)
+	+boolean getBorder()
+	+boolean setBorder(boolean border)
+	+ImageLinkTarget getLink()
+	+ImageLinkTarget setLink(ImageLinkTarget link)
+	+WtLinkOptionAltText getAlt()
+	+WtLinkOptionAltText setAlt(WtLinkOptionAltText alt)
+	+int getPropertyCount()
+	-int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setTarget(WtPageName target)
+	+WtPageName getTarget()
+	+void setOptions(WtLinkOptions options)
+	+WtLinkOptions getOptions()
+	+boolean hasTitle()
+	+void setTitle(WtLinkTitle title)
+	+WtLinkTitle getTitle()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode3 {
+}
+WtInnerNode3 <|-- WtImageLink
+enum ImageHorizAlign {
+	LEFT
+	RIGHT
+	CENTER
+	NONE
+	+String asKeyword()
+	+ImageHorizAlign which(String s)
+}
+enum ImageVertAlign {
+	BASELINE
+	SUB
+	SUPER
+	TOP
+	TEXT_TOP
+	MIDDLE
+	BOTTOM
+	TEXT_BOTTOM
+	+String asKeyword()
+	+ImageVertAlign which(String s)
+}
+enum ImageViewFormat {
+	UNRESTRAINED
+	FRAMELESS
+	THUMBNAIL
+	FRAME
+	formatMap
+	+String asKeyword()
+	+int priority()
+	+boolean isFramed()
+	+ImageViewFormat which(String s)
+	+ImageViewFormat combine(ImageViewFormat other)
+}
+class ImageLinkTarget {
+	-LinkTargetType targetType
+	-WtLinkTarget target
+	+ImageLinkTarget(LinkTargetType targetType)
+	+ImageLinkTarget(LinkTargetType targetType, WtLinkTarget target)
+	+LinkTargetType getTargetType()
+	+WtLinkTarget getTarget()
+	+String toString()
+}
+
+
+
+
+
+
+class WtImEndTag {
+	-long serialVersionUID
+	-IntermediateTags type
+	-boolean synthetic
+	+WtImEndTag(IntermediateTags type)
+	+WtImEndTag(IntermediateTags type, boolean synthetic)
+	+boolean isSynthetic()
+	+IntermediateTags getType()
+}
+class WtXmlEndTag {
+}
+WtXmlEndTag <|-- WtImEndTag
+
+
+
+
+
+
+
+
+
+
+
+class WtImStartTag {
+	-long serialVersionUID
+	-IntermediateTags type
+	-boolean synthetic
+	+WtImStartTag(IntermediateTags type)
+	+WtImStartTag(IntermediateTags type, boolean synthetic)
+	+boolean isSynthetic()
+	+IntermediateTags getType()
+}
+class WtXmlStartTag {
+}
+WtXmlStartTag <|-- WtImStartTag
+
+
+
+
+
+
+
+abstract class WtInnerNode1 {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtInnerNode1(Uninitialized u)
+	+WtInnerNode1(WtNode n0)
+	+WtInnerNode1(Location arg0, WtNode n0)
+	+WtInnerNode1(Location arg0)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class "AstInnerNode1<WtNode>" as AstInnerNode1_WtNode_ {
+}
+AstInnerNode1_WtNode_ <|-- WtInnerNode1
+interface WtNode {
+}
+WtNode <|.. WtInnerNode1
+
+
+
+
+
+
+
+abstract class WtInnerNode2 {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtInnerNode2(Uninitialized u)
+	+WtInnerNode2(WtNode n0, WtNode n1)
+	+WtInnerNode2(Location arg0, WtNode n0, WtNode n1)
+	+WtInnerNode2(Location arg0)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class "AstInnerNode2<WtNode>" as AstInnerNode2_WtNode_ {
+}
+AstInnerNode2_WtNode_ <|-- WtInnerNode2
+interface WtNode {
+}
+WtNode <|.. WtInnerNode2
+
+
+
+
+
+
+
+
+
+
+
+
+abstract class WtInnerNode3 {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtInnerNode3(Uninitialized u)
+	+WtInnerNode3(WtNode n0, WtNode n1, WtNode n2)
+	+WtInnerNode3(Location arg0, WtNode n0, WtNode n1, WtNode n2)
+	+WtInnerNode3(Location arg0)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class "AstInnerNode3<WtNode>" as AstInnerNode3_WtNode_ {
+}
+AstInnerNode3_WtNode_ <|-- WtInnerNode3
+interface WtNode {
+}
+WtNode <|.. WtInnerNode3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+interface WtIntermediate {
+	boolean isSynthetic()
+}
+interface WtNode {
+}
+WtNode <|.. WtIntermediate
+
+
+
+
+
+
+
+
+
+class WtInternalLink {
+	-long serialVersionUID
+	+WtLinkTitle HAS_NO_TITLE
+	-String prefix
+	-String postfix
+	-String[] CHILD_NAMES
+	#WtInternalLink()
+	+WtInternalLink(String prefix, WtPageName target, String postfix)
+	+int getNodeType()
+	+String getPrefix()
+	+String setPrefix(String prefix)
+	+String getPostfix()
+	+String setPostfix(String postfix)
+	+int getPropertyCount()
+	-int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setTarget(WtPageName target)
+	+WtPageName getTarget()
+	+boolean hasTitle()
+	+void setTitle(WtLinkTitle title)
+	+WtLinkTitle getTitle()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtInternalLink
+
+
+
+
+
+
+
+class WtItalics {
+	-long serialVersionUID
+	+WtItalics()
+	+WtItalics(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtItalics
+
+
+
+
+
+
+
+
+abstract class WtLeafNode {
+	-long serialVersionUID
+	-WtRtData rtd
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class "AstLeafNodeImpl<WtNode>" as AstLeafNodeImpl_WtNode_ {
+}
+AstLeafNodeImpl_WtNode_ <|-- WtLeafNode
+interface WtNode {
+}
+WtNode <|.. WtLeafNode
+
+
+
+
+
+interface WtLinkOptionAltText {
+	WtNullLinkOptionAltText NULL
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtLinkOptionAltText
+
+
+
+
+
+
+
+class WtNullLinkOptionAltText {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullLinkOptionAltText
+interface WtLinkOptionAltText {
+}
+WtLinkOptionAltText <|.. WtNullLinkOptionAltText
+class WtLinkOptionAltTextImpl {
+	-long serialVersionUID
+	+WtLinkOptionAltTextImpl()
+	+WtLinkOptionAltTextImpl(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtLinkOptionAltTextImpl
+interface WtLinkOptionAltText {
+}
+WtLinkOptionAltText <|.. WtLinkOptionAltTextImpl
+
+
+
+
+
+
+class WtLinkOptionGarbage {
+	-long serialVersionUID
+	#WtLinkOptionGarbage()
+	+WtLinkOptionGarbage(String content)
+	+int getNodeType()
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtLinkOptionGarbage
+
+
+
+
+
+
+
+
+
+class WtLinkOptionKeyword {
+	-long serialVersionUID
+	-String keyword
+	#WtLinkOptionKeyword()
+	+WtLinkOptionKeyword(String keyword)
+	+int getNodeType()
+	+String getKeyword()
+	+String setKeyword(String keyword)
+	+int getPropertyCount()
+	-int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtLinkOptionKeyword
+
+
+
+
+
+
+
+
+
+class WtLinkOptionLinkTarget {
+	-long serialVersionUID
+	-LinkTargetType targetType
+	-String[] CHILD_NAMES
+	#WtLinkOptionLinkTarget()
+	+WtLinkOptionLinkTarget(ImageLinkTarget type)
+	+int getNodeType()
+	+LinkTargetType getTargetType()
+	+LinkTargetType setTargetType(LinkTargetType targetType)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setTarget(WtLinkTarget target)
+	+WtLinkTarget getTarget()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode1 {
+}
+WtInnerNode1 <|-- WtLinkOptionLinkTarget
+
+
+
+
+
+
+
+
+
+
+
+
+class WtLinkOptionResize {
+	-long serialVersionUID
+	-int width
+	-int height
+	#WtLinkOptionResize()
+	+WtLinkOptionResize(int width, int height)
+	+int getNodeType()
+	+int getWidth()
+	+int setWidth(int width)
+	+int getHeight()
+	+int setHeight(int height)
+	+int getPropertyCount()
+	-int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtLinkOptionResize
+
+
+
+
+
+
+
+
+
+interface WtLinkOptions {
+	WtLinkOptions EMPTY
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtLinkOptions
+
+class WtNullLinkOptionAltText {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullLinkOptionAltText
+interface WtLinkOptionAltText {
+}
+WtLinkOptionAltText <|.. WtNullLinkOptionAltText
+class WtLinkOptionAltTextImpl {
+	-long serialVersionUID
+	+WtLinkOptionAltTextImpl()
+	+WtLinkOptionAltTextImpl(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtLinkOptionAltTextImpl
+interface WtLinkOptionAltText {
+}
+WtLinkOptionAltText <|.. WtLinkOptionAltTextImpl
+
+
+
+
+
+
+
+
+interface WtLinkTarget {
+	WtLinkTarget NULL
+	LinkTargetType getTargetType()
+}
+interface WtNode {
+}
+WtNode <|.. WtLinkTarget
+
+enum LinkTargetType {
+	DEFAULT
+	PAGE
+	URL
+	NO_LINK
+}
+class WtNullLink {
+	-long serialVersionUID
+	+LinkTargetType getTargetType()
+}
+class WtNullNode {
+}
+WtNullNode <|-- WtNullLink
+interface WtLinkTarget {
+}
+WtLinkTarget <|.. WtNullLink
+
+
+
+
+
+
+
+
+
+
+interface WtLinkTitle {
+	WtNullLinkTitle NULL
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtLinkTitle
+
+class WtNullLinkTitle {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullLinkTitle
+interface WtLinkTitle {
+}
+WtLinkTitle <|.. WtNullLinkTitle
+class WtLinkTitleImpl {
+	-long serialVersionUID
+	+WtLinkTitleImpl()
+	+WtLinkTitleImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtLinkTitleImpl
+interface WtLinkTitle {
+}
+WtLinkTitle <|.. WtLinkTitleImpl
+
+
+
+
+
+
+
+
+
+class WtListItem {
+	-long serialVersionUID
+	+WtListItem()
+	+WtListItem(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtListItem
+
+
+
+
+
+
+interface WtName {
+	WtNullName NULL
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtName
+
+class WtNullLinkTitle {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullLinkTitle
+interface WtLinkTitle {
+}
+WtLinkTitle <|.. WtNullLinkTitle
+class WtLinkTitleImpl {
+	-long serialVersionUID
+	+WtLinkTitleImpl()
+	+WtLinkTitleImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtLinkTitleImpl
+interface WtLinkTitle {
+}
+WtLinkTitle <|.. WtLinkTitleImpl
+
+
+
+
+
+
+
+
+
+interface WtNamedXmlElement {
+	String getName()
+}
+interface WtNode {
+}
+WtNode <|.. WtNamedXmlElement
+
+
+
+
+
+
+
+
+
+class WtNewline {
+	-long serialVersionUID
+	#WtNewline()
+	+WtNewline(String content)
+	+int getNodeType()
+	+boolean isSynthetic()
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtNewline
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtNewline
+
+
+
+
+
+
+interface WtNode {
+	WtRtData setRtd(WtRtData rtd);
+	WtRtData setRtd(Object... glue);
+	WtRtData setRtd(String... glue);
+	WtRtData getRtd();
+	void clearRtd();
+}
+
+
+
+
+
+
+interface WtNodeList {
+	WtNullNodeList EMPTY
+}
+interface WtNode {
+}
+WtNode <|.. WtNodeList
+interface "AstNodeList<WtNode>" as AstNodeList_WtNode_ {
+}
+AstNodeList_WtNode_ <|.. WtNodeList
+
+class WtNullName {
+	-long serialVersionUID
+}
+class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullName
+interface WtName {
+}
+WtName <|.. WtNullName
+class WtNameImpl {
+	-long serialVersionUID
+	+WtNameImpl()
+	+WtNameImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtNameImpl
+interface WtName {
+}
+WtName <|.. WtNameImpl
+
+
+
+
+
+
+
+
+
+
+
+
+class WtNullNode {
+	-long serialVersionUID
+	+WtNullNode NULL
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	#String genMsg()
+	+boolean hasLocation()
+	+Location getLocation()
+	+void setLocation(Location location)
+	+void setLocation(Locatable locatable)
+	+boolean hasAttributes()
+	+Map<String,Object> getAttributes()
+	+void setAttributes(Map<String,Object> attrs)
+	+void clearAttributes()
+	+boolean hasAttribute(String name)
+	+Object getAttribute(String name)
+	+Object setAttribute(String name, Object value)
+	+Object removeAttribute(String name)
+	+int getIntAttribute(String name)
+	+Integer setIntAttribute(String name, Integer value)
+	+boolean getBooleanAttribute(String name)
+	+boolean setBooleanAttribute(String name, boolean value)
+	+String getStringAttribute(String name)
+	+String setStringAttribute(String name, String value)
+	+boolean hasProperties()
+	+int getPropertyCount()
+	+Object getProperty(String name)
+	+Object getProperty(String name, Object default_)
+	+boolean hasProperty(String name)
+	+Object setProperty(String name, Object value)
+	+AstNodePropertyIterator propertyIterator()
+	+int getNodeType()
+	+boolean isNodeType(int testType)
+	+String getNodeTypeName()
+	+String getNodeName()
+	+de.fau.cs.osr.ptk.common.ast.AstLocation getNativeLocation()
+	+void setNativeLocation(de.fau.cs.osr.ptk.common.ast.AstLocation location)
+	+boolean addAll(Pair<? extends WtNode> p)
+	+boolean isList()
+	+String[] getChildNames()
+	+void toString(Appendable out)
+	+Object clone()
+	+AstNode<WtNode> cloneWrapException()
+	+AstNode<WtNode> deepClone()
+	+AstNode<WtNode> deepCloneWrapException()
+	+void add(int index, WtNode element)
+	+boolean add(WtNode e)
+	+boolean addAll(Collection<? extends WtNode> c)
+	+boolean addAll(int index, Collection<? extends WtNode> c)
+	+void clear()
+	+boolean contains(Object o)
+	+boolean containsAll(Collection<?> c)
+	+WtNode get(int index)
+	+S get(int index, Class<S> clazz)
+	+int indexOf(Object o)
+	+boolean isEmpty()
+	+Iterator<WtNode> iterator()
+	+int lastIndexOf(Object o)
+	+ListIterator<WtNode> listIterator()
+	+ListIterator<WtNode> listIterator(int index)
+	+WtNode remove(int index)
+	+boolean remove(Object o)
+	+boolean removeAll(Collection<?> c)
+	+boolean retainAll(Collection<?> c)
+	+WtNode set(int index, WtNode element)
+	+int size()
+	+List<WtNode> subList(int fromIndex, int toIndex)
+	+Object[] toArray()
+	+T[] toArray(T[] a)
+	+String toString()
+}
+interface WtNode {
+}
+WtNode <|.. WtNullNode
+
+
+
+
+
+
+
+
+
+
+class WtOnlyInclude {
+	-long serialVersionUID
+	-XmlElementType elementType
+	#WtOnlyInclude()
+	+WtOnlyInclude(WtNodeList content, XmlElementType elementType)
+	+int getNodeType()
+	+XmlElementType getElementType()
+	+XmlElementType setElementType(XmlElementType elementType)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtOnlyInclude
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtOnlyInclude
+
+
+
+
+
+
+class WtOrderedList {
+	-long serialVersionUID
+	+WtOrderedList()
+	+WtOrderedList(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtOrderedList
+
+
+
+
+
+
+
+
+class WtPage {
+	-long serialVersionUID
+	+List<Warning> NO_WARNINGS
+	+WtEntityMap NO_ENTITIES
+	-List<Warning> warnings
+	-WtEntityMap entityMap
+	+WtPage()
+	+WtPage(WtNodeList content, List<Warning> warnings)
+	+WtPage(WtNodeList content, List<Warning> warnings, WtEntityMap entityMap)
+	+int getNodeType()
+	+boolean hasWarnings()
+	+List<Warning> getWarnings()
+	+List<Warning> setWarnings(List<Warning> warnings)
+	+boolean hasEntities()
+	+WtEntityMap getEntityMap()
+	+WtEntityMap setEntityMap(WtEntityMap entityMap)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtPage
+
+
+
+
+
+
+
+class WtPageName {
+	-long serialVersionUID
+	#WtPageName()
+	+WtPageName(String content)
+	+int getNodeType()
+	+LinkTargetType getTargetType()
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtPageName
+interface WtLinkTarget {
+}
+WtLinkTarget <|.. WtPageName
+
+
+
+
+
+
+
+class WtPageSwitch {
+	-long serialVersionUID
+	-String name
+	#WtPageSwitch()
+	+WtPageSwitch(String name)
+	+int getNodeType()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtPageSwitch
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtPageSwitch
+
+
+
+
+
+
+
+
+class WtParagraph {
+	-long serialVersionUID
+	+WtParagraph()
+	+WtParagraph(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtParagraph
+
+
+
+
+
+
+class WtParsedWikitextPage {
+	-long serialVersionUID
+	+WtParsedWikitextPage()
+	+WtParsedWikitextPage(WtNodeList content, List<Warning> warnings)
+	+WtParsedWikitextPage(WtNodeList content, List<Warning> warnings, WtEntityMap entityMap)
+}
+class WtPage {
+}
+WtPage <|-- WtParsedWikitextPage
+
+
+
+
+
+
+
+
+
+
+class WtParserEntity {
+	-long serialVersionUID
+	#WtParserEntity()
+	+WtParserEntity(int id)
+	+boolean isSynthetic()
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+}
+class "AstParserEntity<WtNode>" as AstParserEntity_WtNode_ {
+}
+AstParserEntity_WtNode_ <|-- WtParserEntity
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtParserEntity
+
+
+
+
+
+
+
+interface WtPreproNode {
+}
+interface WtNode {
+}
+WtNode <|.. WtPreproNode
+
+
+
+
+
+
+
+class WtPreproWikitextPage {
+	-long serialVersionUID
+	+WtPreproWikitextPage()
+	+WtPreproWikitextPage(WtNodeList content, List<Warning> warnings)
+	+WtPreproWikitextPage(WtNodeList content, List<Warning> warnings, WtEntityMap entityMap)
+}
+class WtPage {
+}
+WtPage <|-- WtPreproWikitextPage
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtPreproWikitextPage
+
+
+
+
+
+
+
+class WtProtectedText {
+	-long serialVersionUID
+	#WtProtectedText()
+	+WtProtectedText(String content)
+	+int getNodeType()
+}
+class WtText {
+}
+WtText <|-- WtProtectedText
+
+
+
+
+
+
+
+class WtRedirect {
+	-long serialVersionUID
+	-String[] CHILD_NAMES
+	#WtRedirect()
+	+WtRedirect(WtPageName target)
+	+int getNodeType()
+	+void setTarget(WtPageName target)
+	+WtPageName getTarget()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode1 {
+}
+WtInnerNode1 <|-- WtRedirect
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtRedirect
+
+
+
+
+
+
+class WtSection {
+	-long serialVersionUID
+	-int level
+	-String[] CHILD_NAMES
+	#WtSection()
+	+WtSection(int level, WtHeading heading, WtBody body)
+	+int getNodeType()
+	+int getLevel()
+	+int setLevel(int level)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setHeading(WtHeading title)
+	+WtHeading getHeading()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtSection
+
+
+
+
+
+
+
+
+
+
+
+
+class WtSemiPre {
+	-long serialVersionUID
+	+WtSemiPre()
+	+WtSemiPre(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtSemiPre
+
+
+
+
+
+
+
+
+class WtSemiPreLine {
+	-long serialVersionUID
+	+WtSemiPreLine()
+	+WtSemiPreLine(WtNodeList content)
+	+int getNodeType()
+	+boolean isSynthetic()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtSemiPreLine
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtSemiPreLine
+
+
+
+
+
+
+
+
+
+
+
+class WtSignature {
+	-long serialVersionUID
+	-int tildeCount
+	#WtSignature()
+	+WtSignature(int tildeCount)
+	+int getNodeType()
+	+int getTildeCount()
+	+int setTildeCount(int tildeCount)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtSignature
+
+
+
+
+
+
+
+
+
+
+interface WtStringNode {
+}
+interface WtNode {
+}
+WtNode <|.. WtStringNode
+interface "AstStringNode<WtNode>" as AstStringNode_WtNode_ {
+}
+AstStringNode_WtNode_ <|.. WtStringNode
+
+abstract class WtNullStringNode {
+	-long serialVersionUID
+	+String getContent()
+	+String setContent(String content)
+}
+class WtNullNode {
+}
+WtNullNode <|-- WtNullStringNode
+interface WtStringNode {
+}
+WtStringNode <|.. WtNullStringNode
+
+
+
+
+
+
+
+abstract class WtStringNodeImpl {
+	-long serialVersionUID
+	-WtRtData rtd
+	#WtStringNodeImpl(Uninitialized u)
+	+WtStringNodeImpl(String content)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+	+int getPropertyCount()
+	-int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class "AstStringNodeImpl<WtNode>" as AstStringNodeImpl_WtNode_ {
+}
+AstStringNodeImpl_WtNode_ <|-- WtStringNodeImpl
+interface WtStringNode {
+}
+WtStringNode <|.. WtStringNodeImpl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class WtTable {
+	-long serialVersionUID
+	-WtBody NO_BODY
+	-String[] CHILD_NAMES
+	#WtTable()
+	+WtTable(WtXmlAttributes xmlAttributes)
+	+WtTable(WtXmlAttributes xmlAttributes, WtBody body)
+	+int getNodeType()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+boolean hasBody()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTable
+
+
+
+
+
+
+
+
+
+
+class WtTableCaption {
+	-long serialVersionUID
+	-String[] CHILD_NAMES
+	+WtTableCaption()
+	+WtTableCaption(WtXmlAttributes xmlAttributes, WtBody body)
+	+int getNodeType()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTableCaption
+
+
+
+
+
+
+
+
+
+
+
+class WtTableCell {
+	-long serialVersionUID
+	-String[] CHILD_NAMES
+	+WtTableCell()
+	+WtTableCell(WtXmlAttributes xmlAttributes, WtBody body)
+	+int getNodeType()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTableCell
+
+
+
+
+
+
+
+
+
+
+class WtTableHeader {
+	-long serialVersionUID
+	-String[] CHILD_NAMES
+	+WtTableHeader()
+	+WtTableHeader(WtXmlAttributes xmlAttributes, WtBody body)
+	+int getNodeType()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTableHeader
+
+
+
+
+
+
+
+
+
+
+class WtTableRow {
+	-long serialVersionUID
+	-String[] CHILD_NAMES
+	#WtTableRow()
+	+WtTableRow(WtXmlAttributes xmlAttributes, WtBody body)
+	+int getNodeType()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTableRow
+
+
+
+
+
+
+
+
+
+class WtTagExtension {
+	-long serialVersionUID
+	+WtTagExtensionBody NO_BODY
+	-String name
+	-String[] CHILD_NAMES
+	#WtTagExtension()
+	+WtTagExtension(String name, WtXmlAttributes xmlAttributes)
+	+WtTagExtension(String name, WtXmlAttributes xmlAttributes, WtTagExtensionBody body)
+	+int getNodeType()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+boolean hasBody()
+	+void setBody(WtTagExtensionBody body)
+	+WtTagExtensionBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTagExtension
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtTagExtension
+
+
+
+
+
+
+interface WtTagExtensionBody {
+	WtTagExtensionNullBody NULL_BODY
+}
+interface WtStringNode {
+}
+WtStringNode <|.. WtTagExtensionBody
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtTagExtensionBody
+
+class WtTagExtensionNullBody {
+	-long serialVersionUID
+}
+abstract class WtNullStringNode {
+}
+WtNullStringNode <|-- WtTagExtensionNullBody
+interface WtTagExtensionBody {
+}
+WtTagExtensionBody <|.. WtTagExtensionNullBody
+class WtTagExtensionBodyImpl {
+	-long serialVersionUID
+	#WtTagExtensionBodyImpl()
+	+WtTagExtensionBodyImpl(String content)
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtTagExtensionBodyImpl
+interface WtTagExtensionBody {
+}
+WtTagExtensionBody <|.. WtTagExtensionBodyImpl
+
+
+
+
+
+
+
+class WtTemplate {
+	-long serialVersionUID
+	-boolean precededByNewline
+	-String[] CHILD_NAMES
+	#WtTemplate()
+	+WtTemplate(WtName name, WtTemplateArguments args)
+	+int getNodeType()
+	+boolean getPrecededByNewline()
+	+boolean setPrecededByNewline(boolean precededByNewline)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setName(WtName name)
+	+WtName getName()
+	+void setArgs(WtTemplateArguments args)
+	+WtTemplateArguments getArgs()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTemplate
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtTemplate
+
+
+
+
+
+
+
+
+
+
+
+
+class WtTemplateArgument {
+	-long serialVersionUID
+	-WtName NO_NAME
+	-String[] CHILD_NAMES
+	#WtTemplateArgument()
+	+WtTemplateArgument(WtValue value)
+	+WtTemplateArgument(WtName name, WtValue value)
+	+int getNodeType()
+	+boolean hasName()
+	+void setName(WtName name)
+	+WtName getName()
+	+void setValue(WtValue value)
+	+WtValue getValue()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtTemplateArgument
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtTemplateArgument
+
+
+
+
+
+
+
+
+
+
+
+interface WtTemplateArguments {
+	WtNullTemplateArguments EMPTY
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtTemplateArguments
+
+class WtNullTemplateArguments {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullTemplateArguments
+interface WtTemplateArguments {
+}
+WtTemplateArguments <|.. WtNullTemplateArguments
+class WtTemplateArgumentsImpl {
+	-long serialVersionUID
+	+WtTemplateArgumentsImpl()
+	+WtTemplateArgumentsImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtTemplateArgumentsImpl
+interface WtTemplateArguments {
+}
+WtTemplateArguments <|.. WtTemplateArgumentsImpl
+
+
+
+
+
+
+
+
+
+
+class WtTemplateParameter {
+	-long serialVersionUID
+	+WtNullValue NO_DEFAULT_VALUE
+	-boolean precededByNewline
+	-String[] CHILD_NAMES
+	#WtTemplateParameter()
+	+WtTemplateParameter(WtName name)
+	+WtTemplateParameter(WtName name, WtValue defaultValue)
+	+WtTemplateParameter(WtName name, WtValue defaultValue, WtTemplateArguments garbage)
+	+int getNodeType()
+	+boolean getPrecededByNewline()
+	+boolean setPrecededByNewline(boolean precededByNewline)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setName(WtName name)
+	+WtName getName()
+	+boolean hasDefaultValue()
+	+void setDefaultValue(WtValue defaultValue)
+	+WtValue getDefaultValue()
+	+void setGarbage(WtTemplateArguments garbage)
+	+WtTemplateArguments getGarbage()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode3 {
+}
+WtInnerNode3 <|-- WtTemplateParameter
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtTemplateParameter
+
+
+
+
+
+
+
+
+class WtTempNode {
+	-long serialVersionUID
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtTempNode
+
+
+
+
+
+
+
+
+class WtText {
+	-long serialVersionUID
+	#WtText()
+	+WtText(String content)
+	+WtRtData setRtd(WtRtData rtd)
+	+WtRtData setRtd(Object[] glue)
+	+WtRtData setRtd(String[] glue)
+	+WtRtData getRtd()
+	+void clearRtd()
+}
+class "AstText<WtNode>" as AstText_WtNode_ {
+}
+AstText_WtNode_ <|-- WtText
+interface WtStringNode {
+}
+WtStringNode <|.. WtText
+
+
+
+
+
+
+
+
+class WtTicks {
+	-long serialVersionUID
+	-int tickCount
+	#WtTicks()
+	+WtTicks(int tickCount)
+	+int getNodeType()
+	+boolean isSynthetic()
+	+int getTickCount()
+	+int setTickCount(int tickCount)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtTicks
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtTicks
+
+
+
+
+
+
+
+
+
+
+
+class WtUnorderedList {
+	-long serialVersionUID
+	+WtUnorderedList()
+	+WtUnorderedList(WtNodeList content)
+	+int getNodeType()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtUnorderedList
+
+
+
+
+
+
+
+
+class WtUrl {
+	-long serialVersionUID
+	-String protocol
+	-String path
+	#WtUrl()
+	+WtUrl(String protocol, String path)
+	+int getNodeType()
+	+LinkTargetType getTargetType()
+	+String getProtocol()
+	+String setProtocol(String protocol)
+	+String getPath()
+	+String setPath(String path)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtUrl
+interface WtLinkTarget {
+}
+WtLinkTarget <|.. WtUrl
+
+
+
+
+
+
+
+interface WtValue {
+	WtNullValue NULL
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtValue
+
+class WtNullValue {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtNullValue
+interface WtValue {
+}
+WtValue <|.. WtNullValue
+class WtValueImpl {
+	-long serialVersionUID
+	+WtValueImpl()
+	+WtValueImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtValueImpl
+interface WtValue {
+}
+WtValue <|.. WtValueImpl
+
+
+
+
+
+
+
+
+class WtWhitespace {
+	-long serialVersionUID
+	-boolean hasNewline
+	#WtWhitespace()
+	+WtWhitespace(WtNodeList content, boolean hasNewline)
+	+int getNodeType()
+	+boolean isSynthetic()
+	+boolean getHasNewline()
+	+boolean setHasNewline(boolean hasNewline)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtWhitespace
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtWhitespace
+
+
+
+
+
+
+class WtXmlAttribute {
+	-long serialVersionUID
+	-WtValue NO_VALUE
+	-String name
+	-String[] CHILD_NAMES
+	#WtXmlAttribute()
+	+WtXmlAttribute(String name)
+	+WtXmlAttribute(String name, WtValue value)
+	+int getNodeType()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+boolean hasValue()
+	+void setValue(WtValue value)
+	+WtValue getValue()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode1 {
+}
+WtInnerNode1 <|-- WtXmlAttribute
+
+
+
+
+
+
+class WtXmlAttributeGarbage {
+	-long serialVersionUID
+	#WtXmlAttributeGarbage()
+	+WtXmlAttributeGarbage(String content)
+	+int getNodeType()
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtXmlAttributeGarbage
+
+
+
+
+
+
+
+
+interface WtXmlAttributes {
+	WtXmlAttributes EMPTY
+}
+interface WtContentNode {
+}
+WtContentNode <|.. WtXmlAttributes
+
+class WtEmptyXmlAttributes {
+	-long serialVersionUID
+}
+abstract class WtNullContentNode {
+}
+WtNullContentNode <|-- WtEmptyXmlAttributes
+interface WtXmlAttributes {
+}
+WtXmlAttributes <|.. WtEmptyXmlAttributes
+class WtXmlAttributesImpl {
+	-long serialVersionUID
+	+WtXmlAttributesImpl()
+	+WtXmlAttributesImpl(WtNodeList content)
+	+int getNodeType()
+	+String getNodeName()
+}
+abstract class WtContentNodeImpl {
+}
+WtContentNodeImpl <|-- WtXmlAttributesImpl
+interface WtXmlAttributes {
+}
+WtXmlAttributes <|.. WtXmlAttributesImpl
+
+
+
+
+
+
+class WtXmlCharRef {
+	-long serialVersionUID
+	-int codePoint
+	#WtXmlCharRef()
+	+WtXmlCharRef(int codePoint)
+	+int getNodeType()
+	+int getCodePoint()
+	+int setCodePoint(int codePoint)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtXmlCharRef
+
+
+
+
+
+
+
+class WtXmlComment {
+	-long serialVersionUID
+	-String prefix
+	-String suffix
+	#WtXmlComment()
+	+WtXmlComment(String content)
+	+WtXmlComment(String content, String prefix, String suffix)
+	+int getNodeType()
+	+String getPrefix()
+	+String setPrefix(String prefix)
+	+String getSuffix()
+	+String setSuffix(String suffix)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtStringNodeImpl {
+}
+WtStringNodeImpl <|-- WtXmlComment
+interface WtPreproNode {
+}
+WtPreproNode <|.. WtXmlComment
+
+
+
+
+
+
+
+
+class WtXmlElement {
+	-long serialVersionUID
+	-WtBody NO_BODY
+	-String name
+	-String[] CHILD_NAMES
+	#WtXmlElement()
+	+WtXmlElement(String name, WtXmlAttributes xmlAttributes)
+	+WtXmlElement(String name, WtXmlAttributes xmlAttributes, WtBody body)
+	+int getNodeType()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+boolean hasBody()
+	+void setBody(WtBody body)
+	+WtBody getBody()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode2 {
+}
+WtInnerNode2 <|-- WtXmlElement
+interface WtNamedXmlElement {
+}
+WtNamedXmlElement <|.. WtXmlElement
+
+
+
+
+
+
+
+
+class WtXmlEmptyTag {
+	-long serialVersionUID
+	-String name
+	-String[] CHILD_NAMES
+	#WtXmlEmptyTag()
+	+WtXmlEmptyTag(String name, WtXmlAttributes xmlAttributes)
+	+int getNodeType()
+	+boolean isSynthetic()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode1 {
+}
+WtInnerNode1 <|-- WtXmlEmptyTag
+interface WtNamedXmlElement {
+}
+WtNamedXmlElement <|.. WtXmlEmptyTag
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtXmlEmptyTag
+
+
+
+
+
+
+
+
+
+
+class WtXmlEndTag {
+	-long serialVersionUID
+	-String name
+	#WtXmlEndTag()
+	+WtXmlEndTag(String name)
+	+int getNodeType()
+	+boolean isSynthetic()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtXmlEndTag
+interface WtNamedXmlElement {
+}
+WtNamedXmlElement <|.. WtXmlEndTag
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtXmlEndTag
+
+
+
+
+
+
+class WtXmlEntityRef {
+	-long serialVersionUID
+	-String name
+	-String resolved
+	#WtXmlEntityRef()
+	+WtXmlEntityRef(String name, String resolved)
+	+int getNodeType()
+	+String getName()
+	+String setName(String name)
+	+String getResolved()
+	+String setResolved(String resolved)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+}
+abstract class WtLeafNode {
+}
+WtLeafNode <|-- WtXmlEntityRef
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class WtXmlStartTag {
+	-long serialVersionUID
+	-String name
+	-String[] CHILD_NAMES
+	+WtXmlStartTag()
+	+WtXmlStartTag(String name, WtXmlAttributes xmlAttributes)
+	+int getNodeType()
+	+boolean isSynthetic()
+	+String getName()
+	+String setName(String name)
+	+int getPropertyCount()
+	+int getSuperPropertyCount()
+	+AstNodePropertyIterator propertyIterator()
+	+void setXmlAttributes(WtXmlAttributes xmlAttributes)
+	+WtXmlAttributes getXmlAttributes()
+	+String[] getChildNames()
+}
+abstract class WtInnerNode1 {
+}
+WtInnerNode1 <|-- WtXmlStartTag
+interface WtNamedXmlElement {
+}
+WtNamedXmlElement <|.. WtXmlStartTag
+interface WtIntermediate {
+}
+WtIntermediate <|.. WtXmlStartTag
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

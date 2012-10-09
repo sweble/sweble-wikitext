@@ -39,7 +39,7 @@ public class WtXmlEmptyTag
 		super(Uninitialized.X);
 	}
 	
-	public WtXmlEmptyTag(String name, WtXmlAttributes xmlAttributes)
+	protected WtXmlEmptyTag(String name, WtXmlAttributes xmlAttributes)
 	{
 		super(xmlAttributes);
 		setName(name);

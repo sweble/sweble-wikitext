@@ -34,7 +34,7 @@ public class WtIllegalCodePoint
 	{
 	}
 	
-	public WtIllegalCodePoint(String codePoint, IllegalCodePointType type)
+	protected WtIllegalCodePoint(String codePoint, IllegalCodePointType type)
 	{
 		setCodePoint(codePoint);
 		setType(type);

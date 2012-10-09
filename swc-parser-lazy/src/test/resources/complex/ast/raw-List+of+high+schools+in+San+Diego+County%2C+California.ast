@@ -16,7 +16,7 @@ WtParsedWikitextPage(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
+				body = WtTagExtensionBody("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
 			)
 	}
 	{P} warnings = C[]
@@ -1452,7 +1452,7 @@ WtParsedWikitextPage(
 						{P} name = "ref"
 						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
+						body = WtTagExtensionBody("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
 					),
 					[2] = ")"
 				)

@@ -63,12 +63,14 @@ body
     String t = text.getContent();
     String b = t.substring(0, t.length() - p.length());
 
-    WtUrl url = setRtd(new WtUrl(p, path), p, ':', path);
+    WtUrl url = setRtd(
+      nf.url(p, path),
+      p, ':', path);
 
     if (b.isEmpty())
       return url;
 
-    return list(new WtText(b), url);
+    return nf.list(nf.text(b), url);
   }
 
   private String extractProtocol(WtText text)
@@ -154,11 +156,15 @@ body
 WtUrl Url =
     protocol:UrlProtocolString ':' path:UrlPathString &{ isProtocol(protocol, path) }
     {
-      yyValue = setRtd(new WtUrl(protocol, path), protocol, ':', path);
+      yyValue = setRtd(
+        nf.url(protocol, path),
+        protocol, ':', path);
     }
   / &"//" path:UrlPathString
     {
-      yyValue = setRtd(new WtUrl(null, path), path);
+      yyValue = setRtd(
+        nf.url("", path),
+        path);
     }
 ;
 

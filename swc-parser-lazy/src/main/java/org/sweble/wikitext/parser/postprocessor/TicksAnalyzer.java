@@ -30,8 +30,8 @@ import org.sweble.wikitext.parser.nodes.WtLeafNode;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtSemiPreLine;
 import org.sweble.wikitext.parser.nodes.WtStringNode;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -44,80 +44,6 @@ import de.fau.cs.osr.utils.StringUtils;
 
 public class TicksAnalyzer
 {
-	protected final static class LineEntry
-	{
-		public final WtNode previous;
-		
-		public WtText prefix;
-		
-		public int tickCount;
-		
-		public LineEntry(WtNode previous, WtText prefix, int tickCount)
-		{
-			this.previous = previous;
-			this.prefix = prefix;
-			this.tickCount = tickCount;
-		}
-		
-		@Override
-		public String toString()
-		{
-			String pv = "null";
-			if (previous != null)
-			{
-				pv = previous.getNodeName();
-				if (previous.isNodeType(WtNode.NT_TEXT))
-				{
-					pv = ((WtText) previous).getContent();
-					if (pv.length() > 16)
-					{
-						pv = pv.substring(pv.length() - (16 - 4));
-						pv = "... " + pv;
-					}
-				}
-				pv = '"' + pv + '"';
-			}
-			
-			String pf = "-";
-			if (prefix != null)
-				pf = '"' + prefix.getContent() + '"';
-			
-			return String.format(
-					"LineEntry(%s, %s, %d)",
-					pv,
-					pf,
-					tickCount);
-		}
-	}
-	
-	protected final static class Line
-	{
-		public final int numItalics;
-		
-		public final int numBold;
-		
-		public final ArrayList<LineEntry> ticks;
-		
-		public Line(int numItalics, int numBold, ArrayList<LineEntry> ticks)
-		{
-			this.numItalics = numItalics;
-			this.numBold = numBold;
-			this.ticks = ticks;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return String.format(
-					"Line(#i = %d, #b = %d): %s",
-					numItalics,
-					numBold,
-					(ticks != null ? ticks.toString() : "-"));
-		}
-	}
-	
-	// =========================================================================
-	
 	public static WtNode process(WtNode a)
 	{
 		LinkedList<Line> lines = new LinkedList<Line>();
@@ -130,6 +56,96 @@ public class TicksAnalyzer
 		analyzeOddTicksCombos(lines);
 		
 		return (WtNode) new TicksConverter(lines).go(a);
+	}
+	
+	// =========================================================================
+	
+	private static void analyzeOddTicksCombos(LinkedList<Line> lines)
+	{
+		for (Line line : lines)
+		{
+			if ((line.numBold % 2 == 1) && (line.numItalics % 2 == 1))
+			{
+				int firstSpace = -1;
+				int firstSlWord = -1;
+				int firstMlWord = -1;
+				
+				for (int i = 0; i < line.ticks.size(); ++i)
+				{
+					LineEntry entry = line.ticks.get(i);
+					
+					WtNode p = entry.previous;
+					if (p == null || entry.tickCount != 3)
+						continue;
+					
+					if (p instanceof WtContentNode)
+					{
+						WtContentNode c = (WtContentNode) p;
+						
+						p = null;
+						if (!c.isEmpty())
+							p = c.get(c.size() - 1);
+					}
+					
+					char tMinus1 = '\0';
+					char tMinus2 = '\0';
+					if (p instanceof WtStringNode)
+					{
+						String t = ((WtStringNode) p).getContent();
+						
+						if (t.length() >= 1)
+							tMinus1 = t.charAt(t.length() - 1);
+						
+						if (t.length() >= 2)
+							tMinus2 = t.charAt(t.length() - 2);
+					}
+					
+					if (tMinus1 == ' ')
+					{
+						if (firstSpace == -1)
+							firstSpace = i;
+					}
+					else if (tMinus2 == ' ')
+					{
+						if (firstSlWord == -1)
+							firstSlWord = i;
+					}
+					else
+					{
+						if (firstMlWord == -1)
+							firstMlWord = i;
+					}
+				}
+				
+				if (firstSlWord != -1)
+				{
+					apostrophize(line.ticks.get(firstSlWord));
+				}
+				else if (firstMlWord != -1)
+				{
+					apostrophize(line.ticks.get(firstMlWord));
+				}
+				else if (firstSpace != -1)
+				{
+					apostrophize(line.ticks.get(firstSpace));
+				}
+			}
+		}
+	}
+	
+	private static void apostrophize(LineEntry entry)
+	{
+		--entry.tickCount;
+		
+		if (entry.prefix != null)
+		{
+			String t = entry.prefix.getContent() + "'";
+			entry.prefix.setContent(t);
+		}
+		else
+		{
+			entry.prefix = WtNodeFactoryImpl.text_("'");
+		}
 	}
 	
 	// =========================================================================
@@ -240,7 +256,7 @@ public class TicksAnalyzer
 					break;
 				
 				case 4:
-					ticks.add(new LineEntry(previous, new WtText("'"), 3));
+					ticks.add(new LineEntry(previous, WtNodeFactoryImpl.text_("'"), 3));
 					++numBold;
 					break;
 				
@@ -256,7 +272,7 @@ public class TicksAnalyzer
 					
 					String excessTicks = StringUtils.strrep('\'', tickCount - 5);
 					
-					ticks.add(new LineEntry(null, new WtText(excessTicks), 5));
+					ticks.add(new LineEntry(null, WtNodeFactoryImpl.text_(excessTicks), 5));
 					++numBold;
 					++numItalics;
 					break;
@@ -273,96 +289,6 @@ public class TicksAnalyzer
 			numItalics = 0;
 			numBold = 0;
 			ticks = null;
-		}
-	}
-	
-	// =========================================================================
-	
-	private static void analyzeOddTicksCombos(LinkedList<Line> lines)
-	{
-		for (Line line : lines)
-		{
-			if ((line.numBold % 2 == 1) && (line.numItalics % 2 == 1))
-			{
-				int firstSpace = -1;
-				int firstSlWord = -1;
-				int firstMlWord = -1;
-				
-				for (int i = 0; i < line.ticks.size(); ++i)
-				{
-					LineEntry entry = line.ticks.get(i);
-					
-					WtNode p = entry.previous;
-					if (p == null || entry.tickCount != 3)
-						continue;
-					
-					if (p instanceof WtContentNode)
-					{
-						WtContentNode c = (WtContentNode) p;
-						
-						p = null;
-						if (!c.isEmpty())
-							p = c.get(c.size() - 1);
-					}
-					
-					char tMinus1 = '\0';
-					char tMinus2 = '\0';
-					if (p instanceof WtStringNode)
-					{
-						String t = ((WtStringNode) p).getContent();
-						
-						if (t.length() >= 1)
-							tMinus1 = t.charAt(t.length() - 1);
-						
-						if (t.length() >= 2)
-							tMinus2 = t.charAt(t.length() - 2);
-					}
-					
-					if (tMinus1 == ' ')
-					{
-						if (firstSpace == -1)
-							firstSpace = i;
-					}
-					else if (tMinus2 == ' ')
-					{
-						if (firstSlWord == -1)
-							firstSlWord = i;
-					}
-					else
-					{
-						if (firstMlWord == -1)
-							firstMlWord = i;
-					}
-				}
-				
-				if (firstSlWord != -1)
-				{
-					apostrophize(line.ticks.get(firstSlWord));
-				}
-				else if (firstMlWord != -1)
-				{
-					apostrophize(line.ticks.get(firstMlWord));
-				}
-				else if (firstSpace != -1)
-				{
-					apostrophize(line.ticks.get(firstSpace));
-				}
-			}
-		}
-	}
-	
-	private static void apostrophize(LineEntry entry)
-	{
-		--entry.tickCount;
-		
-		if (entry.prefix != null)
-		{
-			String t = entry.prefix.getContent() + "'";
-			entry.prefix.setContent(t);
-		}
-		else
-		{
-			entry.prefix = new WtText("'");
 		}
 	}
 	
@@ -410,7 +336,7 @@ public class TicksAnalyzer
 		{
 			LineEntry entry = nextEntry();
 			
-			WtNodeList result = new WtNodeListImpl(entry.prefix);
+			WtNodeList result = WtNodeFactoryImpl.list_(entry.prefix);
 			
 			toTag(entry, result);
 			
@@ -588,25 +514,101 @@ public class TicksAnalyzer
 			switch (state)
 			{
 				case Italics:
-					result = new WtNodeListImpl();
+					result = WtNodeFactoryImpl.list_();
 					result.add(ITALICS.createClose(true));
 					break;
 				case Bold:
-					result = new WtNodeListImpl();
+					result = WtNodeFactoryImpl.list_();
 					result.add(BOLD.createClose(true));
 					break;
 				case BoldItalics:
-					result = new WtNodeListImpl();
+					result = WtNodeFactoryImpl.list_();
 					result.add(ITALICS.createClose(true));
 					result.add(BOLD.createClose(true));
 					break;
 				case ItalicsBold:
-					result = new WtNodeListImpl();
+					result = WtNodeFactoryImpl.list_();
 					result.add(BOLD.createClose(true));
 					result.add(ITALICS.createClose(true));
 					break;
 			}
 			return result;
+		}
+	}
+	
+	// =========================================================================
+	
+	protected final static class Line
+	{
+		public final int numItalics;
+		
+		public final int numBold;
+		
+		public final ArrayList<LineEntry> ticks;
+		
+		public Line(int numItalics, int numBold, ArrayList<LineEntry> ticks)
+		{
+			this.numItalics = numItalics;
+			this.numBold = numBold;
+			this.ticks = ticks;
+		}
+		
+		@Override
+		public String toString()
+		{
+			return String.format(
+					"Line(#i = %d, #b = %d): %s",
+					numItalics,
+					numBold,
+					(ticks != null ? ticks.toString() : "-"));
+		}
+	}
+	
+	// =========================================================================
+	
+	protected final static class LineEntry
+	{
+		public final WtNode previous;
+		
+		public WtText prefix;
+		
+		public int tickCount;
+		
+		public LineEntry(WtNode previous, WtText prefix, int tickCount)
+		{
+			this.previous = previous;
+			this.prefix = prefix;
+			this.tickCount = tickCount;
+		}
+		
+		@Override
+		public String toString()
+		{
+			String pv = "null";
+			if (previous != null)
+			{
+				pv = previous.getNodeName();
+				if (previous.isNodeType(WtNode.NT_TEXT))
+				{
+					pv = ((WtText) previous).getContent();
+					if (pv.length() > 16)
+					{
+						pv = pv.substring(pv.length() - (16 - 4));
+						pv = "... " + pv;
+					}
+				}
+				pv = '"' + pv + '"';
+			}
+			
+			String pf = "-";
+			if (prefix != null)
+				pf = '"' + prefix.getContent() + '"';
+			
+			return String.format(
+					"LineEntry(%s, %s, %d)",
+					pv,
+					pf,
+					tickCount);
 		}
 	}
 }

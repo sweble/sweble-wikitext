@@ -39,7 +39,7 @@ public class WtXmlStartTag
 		super(Uninitialized.X);
 	}
 	
-	public WtXmlStartTag(String name, WtXmlAttributes xmlAttributes)
+	protected WtXmlStartTag(String name, WtXmlAttributes xmlAttributes)
 	{
 		super(xmlAttributes);
 		setName(name);

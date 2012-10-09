@@ -25,7 +25,7 @@ public class WtHorizontalRule
 	
 	// =========================================================================
 	
-	public WtHorizontalRule()
+	protected WtHorizontalRule()
 	{
 	}
 	

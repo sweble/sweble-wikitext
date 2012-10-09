@@ -144,6 +144,6 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "=" <o> "=" ]
 			[0] = "= Hallo 11 "
 		),
-		body = WtBody[]
+		body = -
 	)
 )

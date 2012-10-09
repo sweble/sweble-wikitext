@@ -1,13 +1,15 @@
 package org.sweble.wikitext.parser.nodes;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
@@ -23,7 +25,6 @@ import org.sweble.wikitext.parser.parser.LinkBuilder;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
-import de.fau.cs.osr.ptk.common.Warning;
 
 public class WtNodeFactoryImpl
 		implements
@@ -204,7 +205,7 @@ public class WtNodeFactoryImpl
 	@Override
 	public WtImageLink img(WtPageName target)
 	{
-		return img(target, WtLinkOptions.EMPTY, null);
+		return img(target, emptyLinkOpts(), null);
 	}
 	
 	@Override
@@ -250,6 +251,34 @@ public class WtNodeFactoryImpl
 			throw new IllegalArgumentException("Given target does not point to an image!");
 		
 		return (WtImageLink) link;
+	}
+	
+	@Override
+	public WtImageLink img(
+			WtPageName target,
+			WtLinkOptions options,
+			ImageViewFormat format,
+			boolean border,
+			ImageHorizAlign hAlign,
+			ImageVertAlign vAlign,
+			int width,
+			int height,
+			boolean upright,
+			ImageLinkTarget link,
+			WtLinkOptionAltText alt)
+	{
+		return new WtImageLink(
+				target,
+				options,
+				format,
+				border,
+				hAlign,
+				vAlign,
+				width,
+				height,
+				upright,
+				link,
+				alt);
 	}
 	
 	@Override
@@ -444,9 +473,21 @@ public class WtNodeFactoryImpl
 	}
 	
 	@Override
+	public WtLinkOptionAltText noLoAlt()
+	{
+		return WtLinkOptionAltText.NO_ALT;
+	}
+	
+	@Override
 	public WtLinkOptions linkOpts(WtNodeList content)
 	{
 		return new WtLinkOptionsImpl(content);
+	}
+	
+	@Override
+	public WtLinkOptions emptyLinkOpts()
+	{
+		return WtLinkOptions.EMPTY;
 	}
 	
 	@Override
@@ -500,10 +541,9 @@ public class WtNodeFactoryImpl
 	@Override
 	public WtParsedWikitextPage parsedPage(
 			WtNodeList content,
-			List<Warning> warnings,
 			WtEntityMap entityMap)
 	{
-		return new WtParsedWikitextPage(content, warnings, entityMap);
+		return new WtParsedWikitextPage(content, entityMap);
 	}
 	
 	@Override
@@ -515,10 +555,9 @@ public class WtNodeFactoryImpl
 	@Override
 	public WtPreproWikitextPage preproPage(
 			WtNodeList content,
-			List<Warning> warnings,
 			WtEntityMap entityMap)
 	{
-		return new WtPreproWikitextPage(content, warnings, entityMap);
+		return new WtPreproWikitextPage(content, entityMap);
 	}
 	
 	@Override
@@ -561,12 +600,6 @@ public class WtNodeFactoryImpl
 	public WtValue value(WtNodeList content)
 	{
 		return new WtValueImpl(content);
-	}
-	
-	@Override
-	public WtValue emptyValue()
-	{
-		return WtValue.EMPTY;
 	}
 	
 	@Override
@@ -624,7 +657,7 @@ public class WtNodeFactoryImpl
 	}
 	
 	@Override
-	public WtTagExtensionBody emptyTagExtBody()
+	public WtTagExtensionBody noTagExtBody()
 	{
 		return WtTagExtensionBody.NO_BODY;
 	}
@@ -651,5 +684,99 @@ public class WtNodeFactoryImpl
 	public WtText text(String content)
 	{
 		return new WtText(content);
+	}
+	
+	// =========================================================================
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtItalics i_(WtNodeList body)
+	{
+		return new WtItalics(body);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtBold b_(WtNodeList body)
+	{
+		return new WtBold(body);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtParagraph p_(WtNodeList body)
+	{
+		return new WtParagraph(body);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtImStartTag imStartTag_(
+			IntermediateTags type,
+			boolean synthetic)
+	{
+		return new WtImStartTag(type, synthetic);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtImEndTag imEndTag_(
+			IntermediateTags type,
+			boolean synthetic)
+	{
+		return new WtImEndTag(type, synthetic);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtNodeList list_()
+	{
+		return new WtNodeListImpl();
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtNodeList list_(WtNode child)
+	{
+		return new WtNodeListImpl(child);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtNodeList list_(Collection<WtNode> content)
+	{
+		return new WtNodeListImpl(content);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtText text_(String text)
+	{
+		return new WtText(text);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtXmlCharRef charRef_(int codePoint)
+	{
+		return new WtXmlCharRef(codePoint);
+	}
+	
+	/**
+	 * @deprecated
+	 */
+	public static WtXmlEntityRef entityRef_(String name, String resolved)
+	{
+		return new WtXmlEntityRef(name, resolved);
 	}
 }

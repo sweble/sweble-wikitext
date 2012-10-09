@@ -37,7 +37,14 @@ public class WtSection
 		
 	}
 	
-	public WtSection(int level, WtHeading heading, WtBody body)
+	protected WtSection(int level, WtHeading heading)
+	{
+		super(heading, WtBody.NO_BODY);
+		setLevel(level);
+		
+	}
+	
+	protected WtSection(int level, WtHeading heading, WtBody body)
 	{
 		super(heading, body);
 		setLevel(level);
@@ -141,6 +148,11 @@ public class WtSection
 	public final WtHeading getHeading()
 	{
 		return (WtHeading) get(0);
+	}
+	
+	public final boolean hasBody()
+	{
+		return getBody() != WtBody.NO_BODY;
 	}
 	
 	public final void setBody(WtBody body)

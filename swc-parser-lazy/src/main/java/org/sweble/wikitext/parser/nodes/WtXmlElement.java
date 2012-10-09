@@ -28,8 +28,6 @@ public class WtXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtBody NO_BODY = WtBody.NO_BODY;
-	
 	// =========================================================================
 	
 	/**
@@ -40,15 +38,15 @@ public class WtXmlElement
 		super(Uninitialized.X);
 	}
 	
-	public WtXmlElement(
+	protected WtXmlElement(
 			String name,
 			WtXmlAttributes xmlAttributes)
 	{
-		super(xmlAttributes, NO_BODY);
+		super(xmlAttributes, WtBody.NO_BODY);
 		setName(name);
 	}
 	
-	public WtXmlElement(
+	protected WtXmlElement(
 			String name,
 			WtXmlAttributes xmlAttributes,
 			WtBody body)
@@ -158,7 +156,7 @@ public class WtXmlElement
 	
 	public final boolean hasBody()
 	{
-		return getBody() != NO_BODY;
+		return getBody() != WtBody.NO_BODY;
 	}
 	
 	public final void setBody(WtBody body)

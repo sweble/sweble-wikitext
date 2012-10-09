@@ -27,11 +27,11 @@ public class WtDefinitionListTerm
 	
 	// =========================================================================
 	
-	public WtDefinitionListTerm()
+	protected WtDefinitionListTerm()
 	{
 	}
 	
-	public WtDefinitionListTerm(WtNodeList content)
+	protected WtDefinitionListTerm(WtNodeList content)
 	{
 		super(content);
 	}

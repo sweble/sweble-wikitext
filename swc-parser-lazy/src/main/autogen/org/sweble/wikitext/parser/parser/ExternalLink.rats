@@ -89,7 +89,7 @@ noinline transient WtNode ExternalLinkTransient =
     '[' &{ accept(ParserAtoms.EXTERNAL_LINK) } yyValue:ExternalLinkChoice
   / '['
     {
-      yyValue = new WtText("[");
+      yyValue = nf.text("[");
     }
 ;
 
@@ -102,13 +102,13 @@ ExternalLinkChoice =
     rt0:pTpStar target:Url rt1:pExtSpacePlus title:ExternalLinkTitleContentPlus ']'
     {
       yyValue = setRtd(
-        new WtExternalLink(target, new WtLinkTitleImpl(title)),
+        nf.extLink(target, nf.linkTitle(title)),
         '[', rt0, SEP, rt1, SEP, ']');
     }
   / rt0:pTpStar target:Url rt1:pSpaceStar ']'
     {
       yyValue = setRtd(
-        new WtExternalLink(target),
+        nf.extLink(target),
         '[', rt0, SEP, SEP, rt1, ']');
     }
   / &{ isWarningsEnabled() } ExternalLinkAutoCorrect
@@ -118,7 +118,7 @@ private inline WtNode ExternalLinkAutoCorrect =
     &{ isAutoCorrect(WS_INFO) } rt0:pTpStar target:Url
     {
       yyValue = setRtd(
-        new WtExternalLink(target),
+        nf.extLink(target),
         '[', rt0, SEP, SEP, ']');
 
       fileLooksLikeWarning(
@@ -130,7 +130,7 @@ private inline WtNode ExternalLinkAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_INFO) } &( pTpStar Url )
     {
-      yyValue = new WtText("[");
+      yyValue = nf.text("[");
 
       fileLooksLikeWarning(
           yyValue,
@@ -141,7 +141,7 @@ private inline WtNode ExternalLinkAutoCorrect =
     }
   / &{ isWarningLevelEnabled(WS_NONE) }
     {
-      yyValue = new WtText("[");
+      yyValue = nf.text("[");
 
       fileLooksLikeWarning(
           yyValue,

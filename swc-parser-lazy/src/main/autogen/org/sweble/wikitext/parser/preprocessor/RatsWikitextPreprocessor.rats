@@ -115,9 +115,8 @@ option
 public transient WtPreproWikitextPage Article =
   redirect:Redirect? content:Content &Eof
   {
-    yyValue = new WtPreproWikitextPage(
-        list(redirect, content),
-        new ArrayList<Warning>(),
+    yyValue = nf.preproPage(
+        nf.list(redirect, content),
         getState().getEntityMap());
   }
 ;

@@ -130,13 +130,15 @@ inline void BlockStopperNextTableElement =
 private inline WtTable TableBody =
     head:TableHead rt2:pEol body:TableContentStar rt3:pExtSpaceStar close:"|}"?
     {
-      yyValue = setRtd(new WtTable(head.attrs, new WtBodyImpl(body)),
-          head.rt0, "{|", SEP, head.rt1, rt2, SEP, rt3, close);
+      yyValue = setRtd(
+        nf.table(head.attrs, body),
+        head.rt0, "{|", SEP, head.rt1, rt2, SEP, rt3, close);
     }
   / head:TableHead Eof
     {
-      yyValue = setRtd(new WtTable(head.attrs),
-          head.rt0, "{|", SEP, head.rt1, SEP);
+      yyValue = setRtd(
+        nf.table(head.attrs),
+        head.rt0, "{|", SEP, head.rt1, SEP);
     }
   / &ShouldNotBeHere SantiyCheckEnd { yyValue = null; }
 ;
@@ -151,13 +153,13 @@ private inline TableHead TableHead =
   }
 ;
 
-private transient stateful WtNodeList TableContentStar =
+private transient stateful WtBody TableContentStar =
   {
     enter(ParserScopes.TABLE_ELEMENTS);
   }
   garbage:InlineBlockContent content:TableElement*
   {
-    yyValue = list(garbage, content);
+    yyValue = nf.body(nf.list(garbage, content));
   }
 ;
 

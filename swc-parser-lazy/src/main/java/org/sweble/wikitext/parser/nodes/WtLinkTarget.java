@@ -54,5 +54,23 @@ public interface WtLinkTarget
 		{
 			return LinkTargetType.NO_LINK;
 		}
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_UNTYPED;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLinkTarget.class.getSimpleName();
+		}
+
+		@Override
+		public boolean isNullNode()
+		{
+			return true;
+		}
 	}
 }

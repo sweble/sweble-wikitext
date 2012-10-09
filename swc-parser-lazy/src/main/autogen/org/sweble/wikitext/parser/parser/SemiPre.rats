@@ -69,21 +69,25 @@ noinline memoized WtNode SemiPreMemoized =
 noinline transient WtNode SemiPreTransient =
   &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
   {
-    yyValue = new WtSemiPre(list(first, tail));
+    yyValue = nf.semiPre(nf.list(first, tail));
   }
 ;
 
 private inline WtSemiPreLine FirstSemiPreLine =
   !EmptyLine rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
-    yyValue = setRtd(new WtSemiPreLine(content), rt1, ' ', SEP);
+    yyValue = setRtd(
+      nf.semiPreLine(content),
+      rt1, ' ', SEP);
   }
 ;
 
 private inline WtSemiPreLine SemiPreLine =
   rt0:pEol rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
   {
-    yyValue = setRtd(new WtSemiPreLine(content), rt0, rt1, ' ', SEP);
+    yyValue = setRtd(
+      nf.semiPreLine(content),
+      rt0, rt1, ' ', SEP);
   }
 ;
 

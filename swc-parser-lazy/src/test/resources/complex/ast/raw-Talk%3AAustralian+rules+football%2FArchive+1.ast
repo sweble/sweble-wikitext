@@ -10,7 +10,7 @@ WtParsedWikitextPage(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("[[Category:Football_in_Australia]]")
+				body = WtTagExtensionBody("[[Category:Football_in_Australia]]")
 			)
 	}
 	{P} warnings = C[]
@@ -5383,7 +5383,7 @@ WtParsedWikitextPage(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = -,
-					body = WtTagExtensionBodyImpl("[[Category:Football_in_Australia]]")
+					body = WtTagExtensionBody("[[Category:Football_in_Australia]]")
 				),
 				[2] = ". We need concerted action to stop this. ",
 				[3] = WtInternalLink(

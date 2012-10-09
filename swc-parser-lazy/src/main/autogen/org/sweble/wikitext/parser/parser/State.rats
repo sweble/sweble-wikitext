@@ -64,6 +64,11 @@ body
     return getState().getEntity(id);
   }
 
+  private LinkBuilder getLinkBuilder()
+  {
+    return getState().getLinkBuilder();
+  }
+
   // ===========================================================================
 
   private boolean acceptEol()

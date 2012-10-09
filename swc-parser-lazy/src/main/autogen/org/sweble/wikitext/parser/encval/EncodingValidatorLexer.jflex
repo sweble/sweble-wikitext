@@ -20,6 +20,7 @@ package org.sweble.wikitext.parser.encval;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
+import org.sweble.wikitext.parser.nodes.WtNodeFactory;
 
 import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
@@ -40,51 +41,50 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
 
 %{
-	private WtEntityMap entityMap = null;
-	
-	private StringBuilder text = new StringBuilder();
-	
-	private String file;
-	
-	public void setFile(String file)
-	{
-		this.file = file;
-	}
-	
-	public String getFile()
-	{
-		return file;
-	}
-	
-	public void setEntityMap(WtEntityMap entityMap)
-	{
-		this.entityMap = entityMap;
-	}
-	
-	public WtEntityMap getEntityMap()
-	{
-		return entityMap;
-	}
-	
-	private void wrapIllegalCodePoint(int line, int column, String codePoint, IllegalCodePointType type)
-	{
-		WtIllegalCodePoint p = new WtIllegalCodePoint(codePoint, type);
-		p.setNativeLocation(new AstLocation(
-				file,
-				line,
-				column));
-		
-		int id = entityMap.registerEntity(p);
-		
-		text.append('\uE000');
-		text.append(id);
-		text.append('\uE001');
-	}
-	
-	public String getWikitext()
-	{
-		return text.toString();
-	}
+  private StringBuilder text = new StringBuilder();
+
+  private WtEntityMap entityMap;
+
+  private String file;
+
+  private WtNodeFactory nf;
+
+  // ===========================================================================
+
+  public void setEntityMap(WtEntityMap entityMap)
+  {
+    this.entityMap = entityMap;
+  }
+
+  public void setFile(String file)
+  {
+    this.file = file;
+  }
+
+  public void setNodeFactory(WtNodeFactory nodeFactory)
+  {
+    this.nf = nodeFactory;
+  }
+
+  private void wrapIllegalCodePoint(int line, int column, String codePoint, IllegalCodePointType type)
+  {
+    WtIllegalCodePoint p = nf.illegalCp(codePoint, type);
+    p.setNativeLocation(new AstLocation(
+        file,
+        line,
+        column));
+
+    int id = entityMap.registerEntity(p);
+
+    text.append('\uE000');
+    text.append(id);
+    text.append('\uE001');
+  }
+
+  public String getWikitext()
+  {
+    return text.toString();
+  }
 %}
 
 

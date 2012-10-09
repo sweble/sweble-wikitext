@@ -27,11 +27,11 @@ public class WtParagraph
 	
 	// =========================================================================
 	
-	public WtParagraph()
+	protected WtParagraph()
 	{
 	}
 	
-	public WtParagraph(WtNodeList content)
+	protected WtParagraph(WtNodeList content)
 	{
 		super(content);
 	}

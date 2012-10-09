@@ -56,7 +56,7 @@ noinline memoized WtNode TableHeaderMemoized =
 noinline transient WtNode TableHeaderTransient =
     &( pExtSpaceStar '!' ) inline:TableInlineHeaderPlus last:TableBlockHeader?
     {
-      yyValue = list(inline, last);
+      yyValue = nf.list(inline, last);
     }
   / &( pExtSpaceStar '!' ) header:TableBlockHeader
     {
@@ -76,15 +76,16 @@ inline void InlineContentStopperTableHeader =
 private transient WtNodeList TableInlineHeaderPlus =
   headers:( TableInlineHeader &( "||" / "!!" ) )+
   {
-    yyValue = list(headers);
+    yyValue = nf.list(headers);
   }
 ;
 
 private inline WtTableHeader TableInlineHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:InlineContentStar
   {
-    yyValue = setRtd(new WtTableHeader(attributes.attrs, new WtBodyImpl(body)),
-        rt0, prefix, SEP, attributes.rt1, SEP);
+    yyValue = setRtd(
+      nf.th(attributes.attrs, body),
+      rt0, prefix, SEP, attributes.rt1, SEP);
   }
 ;
 
@@ -96,8 +97,9 @@ private inline WtTableHeader TableInlineHeader =
 private inline WtTableHeader TableBlockHeader =
   rt0:pExtSpaceStar prefix:( "!!" / "||" / "!" ) attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
   {
-    yyValue = setRtd(new WtTableHeader(attributes.attrs, new WtBodyImpl(body)),
-        rt0, prefix, SEP, attributes.rt1, SEP);
+    yyValue = setRtd(
+      nf.th(attributes.attrs, body),
+      rt0, prefix, SEP, attributes.rt1, SEP);
   }
 ;
 
@@ -123,7 +125,7 @@ private TableMemberAttributes Attributes =
     }
   / {
       yyValue = new TableMemberAttributes();
-      yyValue.attrs = WtXmlAttributes.EMPTY;
+      yyValue.attrs = nf.emptyAttrs();
       yyValue.rt1 = null;
     }
 ;
@@ -137,18 +139,24 @@ private transient void AttrPossible =
 
 // -- Table Header Inline Content ----------------------------------------------
 
-private inline stateful WtNodeList InlineContentStar =
+private inline stateful WtBody InlineContentStar =
   {
     enter(ParserScopes.TABLE_INLINE_HEADER);
   }
-  InlineContentPlus
+  content:InlineContentPlus
+  {
+    yyValue = nf.body(content);
+  }
 ;
 
-private inline stateful WtNodeList BlockContentStar =
+private inline stateful WtBody BlockContentStar =
   {
     enter(ParserScopes.TABLE_CELL);
   }
-  BlockContent
+  content:BlockContent
+  {
+    yyValue = nf.body(content);
+  }
 ;
 
 

@@ -38,7 +38,7 @@ public class WtXmlEntityRef
 	 * @param resolved
 	 *            <code>null</code> allowed to indicate failed resolution.
 	 */
-	public WtXmlEntityRef(String name, String resolved)
+	protected WtXmlEntityRef(String name, String resolved)
 	{
 		setName(name);
 		setResolved(resolved);

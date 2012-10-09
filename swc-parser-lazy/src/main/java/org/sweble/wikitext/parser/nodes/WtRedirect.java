@@ -37,7 +37,7 @@ public class WtRedirect
 		super(Uninitialized.X);
 	}
 	
-	public WtRedirect(WtPageName target)
+	protected WtRedirect(WtPageName target)
 	{
 		super(target);
 	}

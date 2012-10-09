@@ -36,7 +36,7 @@ public class WtTicks
 	{
 	}
 	
-	public WtTicks(int tickCount)
+	protected WtTicks(int tickCount)
 	{
 		setTickCount(tickCount);
 	}

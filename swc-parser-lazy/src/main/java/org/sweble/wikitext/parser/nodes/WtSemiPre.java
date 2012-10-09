@@ -27,11 +27,11 @@ public class WtSemiPre
 	
 	// =========================================================================
 	
-	public WtSemiPre()
+	protected WtSemiPre()
 	{
 	}
 	
-	public WtSemiPre(WtNodeList content)
+	protected WtSemiPre(WtNodeList content)
 	{
 		super(content);
 	}

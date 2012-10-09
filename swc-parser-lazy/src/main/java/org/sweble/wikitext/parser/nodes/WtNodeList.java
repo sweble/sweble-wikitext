@@ -30,11 +30,11 @@ public interface WtNodeList
 			WtNode,
 			AstNodeList<WtNode>
 {
-	public static final WtNullNodeList EMPTY = new WtNullNodeList();
+	public static final WtEmptyNodeList EMPTY = new WtEmptyNodeList();
 	
 	// =========================================================================
 	
-	public class WtNullNodeList
+	public class WtEmptyNodeList
 			extends
 				WtNullNode
 			implements
@@ -46,6 +46,24 @@ public interface WtNodeList
 		public void exchange(AstNodeList<WtNode> other)
 		{
 			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_NODE_LIST;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtNodeList.class.getSimpleName();
+		}
+
+		@Override
+		public boolean isNullNode()
+		{
+			return false;
 		}
 	}
 	
@@ -61,26 +79,26 @@ public interface WtNodeList
 		
 		// =====================================================================
 		
-		public WtNodeListImpl()
+		protected WtNodeListImpl()
 		{
 		}
 		
-		public WtNodeListImpl(Collection<? extends WtNode> list)
-		{
-			super(list);
-		}
-		
-		public WtNodeListImpl(Pair<? extends WtNode> list)
+		protected WtNodeListImpl(Collection<? extends WtNode> list)
 		{
 			super(list);
 		}
 		
-		public WtNodeListImpl(WtNode child)
+		protected WtNodeListImpl(Pair<? extends WtNode> list)
+		{
+			super(list);
+		}
+		
+		protected WtNodeListImpl(WtNode child)
 		{
 			super(child);
 		}
 		
-		public WtNodeListImpl(Object... content)
+		protected WtNodeListImpl(Object... content)
 		{
 			for (Object o : content)
 			{

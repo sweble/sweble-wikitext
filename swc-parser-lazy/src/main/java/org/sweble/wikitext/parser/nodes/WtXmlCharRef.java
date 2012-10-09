@@ -34,7 +34,7 @@ public class WtXmlCharRef
 	{
 	}
 	
-	public WtXmlCharRef(int codePoint)
+	protected WtXmlCharRef(int codePoint)
 	{
 		setCodePoint(codePoint);
 	}

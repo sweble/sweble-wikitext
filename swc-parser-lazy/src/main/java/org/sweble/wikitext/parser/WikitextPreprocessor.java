@@ -68,6 +68,8 @@ public class WikitextPreprocessor
 		
 		preprocessor.getState().init(config, wikitext.getEntityMap(), forInclusion);
 		
+		preprocessor.setNodeFactory(config.getNodeFactory());
+		
 		Result r = this.preprocessor.pArticle(0);
 		
 		if (r.hasValue())

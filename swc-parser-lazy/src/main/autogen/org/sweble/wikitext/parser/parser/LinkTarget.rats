@@ -34,7 +34,7 @@ module org.sweble.wikitext.parser.parser.LinkTarget;
 WtPageName LinkTarget =
   target:LinkTargetString
   {
-    yyValue = setRtd(new WtPageName(target), target);
+    yyValue = nf.pageName(target);
   }
 ;
 

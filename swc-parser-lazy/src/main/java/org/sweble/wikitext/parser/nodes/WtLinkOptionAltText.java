@@ -21,17 +21,29 @@ public interface WtLinkOptionAltText
 		extends
 			WtContentNode
 {
-	public static final WtNullLinkOptionAltText NULL = new WtNullLinkOptionAltText();
+	public static final WtNoLinkOptionAltText NO_ALT = new WtNoLinkOptionAltText();
 	
 	// =========================================================================
 	
-	public static final class WtNullLinkOptionAltText
+	public static final class WtNoLinkOptionAltText
 			extends
 				WtNullContentNode
 			implements
 				WtLinkOptionAltText
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_LINK_OPTION_ALT_TEXT;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLinkOptionAltText.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -46,11 +58,11 @@ public interface WtLinkOptionAltText
 		
 		// =====================================================================
 		
-		public WtLinkOptionAltTextImpl()
+		protected WtLinkOptionAltTextImpl()
 		{
 		}
 		
-		public WtLinkOptionAltTextImpl(WtNodeList content)
+		protected WtLinkOptionAltTextImpl(WtNodeList content)
 		{
 			super(content);
 		}
@@ -59,6 +71,12 @@ public interface WtLinkOptionAltText
 		public int getNodeType()
 		{
 			return NT_LINK_OPTION_ALT_TEXT;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLinkOptionAltText.class.getSimpleName();
 		}
 	}
 }

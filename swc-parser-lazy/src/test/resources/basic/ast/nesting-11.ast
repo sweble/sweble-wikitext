@@ -4,7 +4,7 @@ WtParsedWikitextPage(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 				xmlAttributes = -,
-				body = WtTagExtensionBodyImpl("T|a\n|b")
+				body = WtTagExtensionBody("T|a\n|b")
 			)
 	}
 	{P} warnings = C[]
@@ -27,7 +27,7 @@ WtParsedWikitextPage(
 						{P} name = "pre"
 						{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 						xmlAttributes = -,
-						body = WtTagExtensionBodyImpl("T|a\n|b")
+						body = WtTagExtensionBody("T|a\n|b")
 					)
 				]
 			),

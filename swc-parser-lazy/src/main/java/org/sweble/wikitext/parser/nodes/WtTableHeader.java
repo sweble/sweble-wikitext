@@ -30,12 +30,12 @@ public class WtTableHeader
 	/**
 	 * Only for use by de-serialization code.
 	 */
-	public WtTableHeader()
+	protected WtTableHeader()
 	{
 		super(Uninitialized.X);
 	}
 	
-	public WtTableHeader(WtXmlAttributes xmlAttributes, WtBody body)
+	protected WtTableHeader(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}

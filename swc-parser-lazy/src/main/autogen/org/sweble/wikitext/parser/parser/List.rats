@@ -43,21 +43,14 @@ header
 body
 {
   @SuppressWarnings("serial")
-  private static final class ListItem2
+  private static final class TempListItem
       extends
           WtTempNode
   {
-  	WtNodeList content;
-  	String rt0;
-  	WtNode rt1;
-  	String prefix;
-  }
-
-  public static enum ListType
-  {
-    DEFINITION,
-    ITEMIZATION,
-    ENUMERATION,
+    WtNodeList content;
+    String rt0;
+    WtNode rt1;
+    String prefix;
   }
 
   public static class ListNode
@@ -86,57 +79,13 @@ body
           return false;
       }
     }
-  }
 
-  private void pushNewList(Vector<ListNode> listStack, char ch, boolean createItem)
-  {
-    ListNode node = null;
-    switch (ch)
+    public static enum ListType
     {
-      case '*':
-        node = new ListNode(ListType.ITEMIZATION, new WtUnorderedList());
-        break;
-      case '#':
-        node = new ListNode(ListType.ENUMERATION, new WtOrderedList());
-        break;
-      case ':':
-      case ';':
-        node = new ListNode(ListType.DEFINITION, new WtDefinitionList());
-        break;
+      DEFINITION,
+      ITEMIZATION,
+      ENUMERATION,
     }
-
-    if (!listStack.isEmpty())
-      getLastItemContent(listStack).add(node.node);
-
-    listStack.add(node);
-
-    if (createItem)
-    {
-      // FIXME: Issue warning!
-      pushNewListItem(listStack, ch, list());
-    }
-  }
-
-  private WtNode pushNewListItem(Vector<ListNode> listStack, char ch, WtNodeList content)
-  {
-    WtNode n = null;
-    switch (ch)
-    {
-      case '*':
-        n = new WtListItem(content);
-        break;
-      case '#':
-        n = new WtListItem(content);
-        break;
-      case ':':
-        n = new WtDefinitionListDef(content);
-        break;
-      case ';':
-        n = new WtDefinitionListTerm(content);
-        break;
-    }
-    getCurrentListContent(listStack).add(n);
-    return n;
   }
 
   private WtNodeList getCurrentListContent(Vector<ListNode> listStack)
@@ -150,17 +99,101 @@ body
     return (WtContentNode) items.get(items.size() - 1);
   }
 
-  private WtNodeList makeList(ListItem2 first, Pair<ListItem2> tail)
+  private WtNode pushNewListItem(Vector<ListNode> listStack, char ch, WtNodeList content)
+  {
+    WtNode n = null;
+    switch (ch)
+    {
+      case '*':
+      case '#':
+        n = nf.li(content);
+        break;
+      case ':':
+        n = nf.dd(content);
+        break;
+      case ';':
+        n = nf.dt(content);
+        break;
+    }
+    getCurrentListContent(listStack).add(n);
+    return n;
+  }
+
+  private void pushNewList(Vector<ListNode> listStack, char ch, boolean createItem)
+  {
+    ListNode node = null;
+    switch (ch)
+    {
+      case '*':
+        node = new ListNode(ListNode.ListType.ITEMIZATION, nf.ul(null));
+        break;
+      case '#':
+        node = new ListNode(ListNode.ListType.ENUMERATION, nf.ol(null));
+        break;
+      case ':':
+      case ';':
+        node = new ListNode(ListNode.ListType.DEFINITION, nf.dl(null));
+        break;
+    }
+
+    if (!listStack.isEmpty())
+      getLastItemContent(listStack).add(node.node);
+
+    listStack.add(node);
+
+    if (createItem)
+    {
+      // TODO: Issue warning!
+      pushNewListItem(listStack, ch, null);
+    }
+  }
+
+  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, TempListItem p)
+  {
+    int j;
+    for (j = 0; j < p.prefix.length() && j < listStack.size(); ++j)
+    {
+      if (!listStack.get(j).comparePrefix(p.prefix.charAt(j)))
+        break;
+    }
+
+    // pop closed list levels
+    listStack.setSize(j);
+
+    boolean addRoot = (j == 0);
+
+    int last = p.prefix.length() - 1;
+
+    // open new list levels
+    for (; j < p.prefix.length(); ++j)
+      pushNewList(listStack, p.prefix.charAt(j), j < last);
+
+    // push the actual list item
+    WtNode item = pushNewListItem(
+        listStack,
+        p.prefix.charAt(last),
+        p.content);
+
+    if (isGatherRtData())
+      item.setRtd(p.rt1, p.prefix, SEP);
+
+    if (addRoot)
+      items.add(listStack.firstElement().node);
+
+    return item.getRtd();
+  }
+
+  private WtNodeList makeList(TempListItem first, Pair<TempListItem> tail)
   {
     Vector<ListNode> listStack = new Vector<ListNode>();
 
-    WtNodeList items = list();
+    WtNodeList items = nf.list();
 
     WtRtData lastItem = processListItem(listStack, items, first);
 
-    for (Pair<ListItem2> i = tail; !i.isEmpty(); i = i.tail())
+    for (Pair<TempListItem> i = tail; !i.isEmpty(); i = i.tail())
     {
-      ListItem2 item = i.head();
+      TempListItem item = i.head();
 
       if (lastItem != null)
         lastItem.setField(1, item.rt0);
@@ -171,46 +204,6 @@ body
     return items;
   }
 
-  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, ListItem2 p)
-  {
-    String prefix = p.prefix;
-
-    int j;
-    for (j = 0; j < prefix.length() && j < listStack.size(); ++j)
-    {
-      if (!listStack.get(j).comparePrefix(prefix.charAt(j)))
-        break;
-    }
-
-    // pop closed list levels
-    listStack.setSize(j);
-
-    boolean addRoot = (j == 0);
-
-    int last = prefix.length() - 1;
-
-    // open new list levels
-    for (; j < prefix.length(); ++j)
-      pushNewList(listStack, prefix.charAt(j), j < last);
-
-    // push the actual list item
-    WtNode item = pushNewListItem(
-        listStack,
-        prefix.charAt(last),
-        list(p.content));
-
-    WtRtData rtd = null;
-    if (isGatherRtData())
-    {
-      rtd = new WtRtData(2, p.rt1, prefix, SEP);
-      item.setRtd(rtd);
-    }
-
-    if (addRoot)
-      items.add(listStack.firstElement().node);
-
-    return rtd;
-  }
 }
 
 
@@ -250,11 +243,11 @@ noinline transient WtNode ListTransient =
   }
 ;
 
-private noinline transient ListItem2 ListItem =
+private noinline transient TempListItem ListItem =
   rt0:pEol? rt1:pTpStar prefix:ListPrefix content:ListItemContentStar
   {
     // TODO: Support "; term : def" on a single line
-    yyValue = new ListItem2();
+    yyValue = new TempListItem();
     yyValue.content = content;
     yyValue.rt0 = rt0;
     yyValue.rt1 = rt1;

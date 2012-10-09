@@ -51,17 +51,17 @@ WtNodeList OnlyIncludeContent = tOnlyIncludeContent ;
 private transient WtNodeList tOnlyIncludeContent =
   ignored:Ignored repeat:OnlyIncludeRepeat* last:( KwOnlyIncludeOpen ContentStar )?
   {
-    yyValue = list(ignored, repeat);
+    yyValue = nf.list(ignored, repeat);
     if (last != null)
-        yyValue.add(new WtOnlyInclude(last, XmlElementType.UNCLOSED_ELEMENT));
+        yyValue.add(nf.onlyInc(last, XmlElementType.UNCLOSED_ELEMENT));
   }
 ;
 
 private inline WtNodeList OnlyIncludeRepeat =
   KwOnlyIncludeOpen content:ContentStar KwOnlyIncludeClose ignored:Ignored
   {
-    yyValue = list(
-        new WtOnlyInclude(content, XmlElementType.UNCLOSED_ELEMENT),
+    yyValue = nf.list(
+        nf.onlyInc(content, XmlElementType.UNCLOSED_ELEMENT),
         ignored);
   }
 ;
@@ -69,7 +69,7 @@ private inline WtNodeList OnlyIncludeRepeat =
 private inline WtIgnored Ignored =
   content:IgnoredString
   {
-    yyValue = new WtIgnored(content);
+    yyValue = nf.ignored(content);
   }
 ;
 

@@ -29,11 +29,11 @@ public class WtSemiPreLine
 	
 	// =========================================================================
 	
-	public WtSemiPreLine()
+	protected WtSemiPreLine()
 	{
 	}
 	
-	public WtSemiPreLine(WtNodeList content)
+	protected WtSemiPreLine(WtNodeList content)
 	{
 		super(content);
 	}

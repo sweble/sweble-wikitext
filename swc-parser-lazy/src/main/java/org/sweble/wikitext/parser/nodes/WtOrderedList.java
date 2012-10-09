@@ -27,11 +27,11 @@ public class WtOrderedList
 	
 	// =========================================================================
 	
-	public WtOrderedList()
+	protected WtOrderedList()
 	{
 	}
 	
-	public WtOrderedList(WtNodeList content)
+	protected WtOrderedList(WtNodeList content)
 	{
 		super(content);
 	}

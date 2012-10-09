@@ -34,7 +34,7 @@ public class WtLinkOptionKeyword
 	{
 	}
 	
-	public WtLinkOptionKeyword(String keyword)
+	protected WtLinkOptionKeyword(String keyword)
 	{
 		setKeyword(keyword);
 	}

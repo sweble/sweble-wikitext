@@ -40,7 +40,7 @@ body
       extends
           WtTempNode
   {
-  	int count;
+    int count;
   }
 }
 
@@ -53,7 +53,7 @@ WtNode Signature =
     "~~" yyValue:SignatureChoice
   / "~~"
     {
-      yyValue = new WtText("~~");
+      yyValue = nf.text("~~");
     }
 ;
 
@@ -61,8 +61,11 @@ private inline WtNode SignatureChoice =
     count:( "~~~" / "~~" / "~" ) w:TooManyTildesWarning?
     {
       int tildes = 2 + count.length();
-
-      yyValue = setRtd(new WtSignature(tildes), StringUtils.strrep('~', tildes));
+      String rtd = StringUtils.strrep('~', tildes);
+      
+      yyValue = setRtd(
+        nf.sig(tildes),
+        rtd);
 
       if (w != null)
       {
@@ -79,7 +82,7 @@ private inline WtNode SignatureChoice =
 private inline WtNode SignatureAutoCorrect =
   &{ isWarningLevelEnabled(WS_NONE) }
   {
-    yyValue = new WtText("~~");
+    yyValue = nf.text("~~");
 
     fileLooksLikeWarning(
         yyValue,

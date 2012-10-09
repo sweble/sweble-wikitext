@@ -25,8 +25,6 @@ public class WtExternalLink
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NO_TITLE;
-	
 	// =========================================================================
 	
 	/**
@@ -37,12 +35,12 @@ public class WtExternalLink
 		super(Uninitialized.X);
 	}
 	
-	public WtExternalLink(WtUrl target)
+	protected WtExternalLink(WtUrl target)
 	{
-		super(target, HAS_NO_TITLE);
+		super(target, WtLinkTitle.NO_TITLE);
 	}
 	
-	public WtExternalLink(WtUrl target, WtLinkTitle title)
+	protected WtExternalLink(WtUrl target, WtLinkTitle title)
 	{
 		super(target, title);
 	}
@@ -68,7 +66,7 @@ public class WtExternalLink
 	
 	public boolean hasTitle()
 	{
-		return getTitle() != HAS_NO_TITLE;
+		return getTitle() != WtLinkTitle.NO_TITLE;
 	}
 	
 	public final void setTitle(WtLinkTitle title)

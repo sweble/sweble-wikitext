@@ -38,7 +38,7 @@ public class WtOnlyInclude
 	{
 	}
 	
-	public WtOnlyInclude(WtNodeList content, XmlElementType elementType)
+	protected WtOnlyInclude(WtNodeList content, XmlElementType elementType)
 	{
 		super(content);
 		setElementType(elementType);

@@ -30,12 +30,12 @@ public class WtTableCaption
 	/**
 	 * Only for use by de-serialization code.
 	 */
-	public WtTableCaption()
+	protected WtTableCaption()
 	{
 		super(Uninitialized.X);
 	}
 	
-	public WtTableCaption(WtXmlAttributes xmlAttributes, WtBody body)
+	protected WtTableCaption(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}

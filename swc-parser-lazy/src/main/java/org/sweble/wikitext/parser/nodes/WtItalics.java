@@ -27,11 +27,11 @@ public class WtItalics
 	
 	// =========================================================================
 	
-	public WtItalics()
+	protected WtItalics()
 	{
 	}
 	
-	public WtItalics(WtNodeList content)
+	protected WtItalics(WtNodeList content)
 	{
 		super(content);
 	}

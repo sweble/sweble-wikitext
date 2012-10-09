@@ -65,13 +65,15 @@ noinline memoized WtNode TableCaptionMemoized =
 noinline transient WtNode TableCaptionTransient =
     rt0:pExtSpaceStar "|+" attributes:Attributes body:InlineContentStar garbage:Garbage &FollowUpSanityCheck
     {
-      yyValue = setRtd(new WtTableCaption(attributes.attrs, new WtBodyImpl(body)),
-          rt0, "|+", SEP, attributes.rt1, SEP, garbage);
+      yyValue = setRtd(
+        nf.caption(attributes.attrs, body),
+        rt0, "|+", SEP, attributes.rt1, SEP, garbage);
     }
   / rt0:pExtSpaceStar "|+" attributes:Attributes body:BlockContentStar &FollowUpSanityCheck
     {
-      yyValue = setRtd(new WtTableCaption(attributes.attrs, new WtBodyImpl(body)),
-          rt0, "|+", SEP, attributes.rt1, SEP);
+      yyValue = setRtd(
+        nf.caption(attributes.attrs, body),
+        rt0, "|+", SEP, attributes.rt1, SEP);
     }
 ;
 
@@ -108,7 +110,7 @@ private TableMemberAttributes Attributes =
     }
   / {
       yyValue = new TableMemberAttributes();
-      yyValue.attrs = WtXmlAttributes.EMPTY;
+      yyValue.attrs = nf.emptyAttrs();
       yyValue.rt1 = null;
     }
 ;
@@ -122,18 +124,24 @@ private transient void AttrPossible =
 
 // -- Table Caption Content ----------------------------------------------------
 
-private inline stateful WtNodeList InlineContentStar =
+private inline stateful WtBody InlineContentStar =
   {
     enter(ParserScopes.TABLE_INLINE_CELL);
   }
-  InlineContentPlus
+  content:InlineContentPlus
+  {
+    yyValue = nf.body(content);
+  }
 ;
 
-private inline stateful WtNodeList BlockContentStar =
+private inline stateful WtBody BlockContentStar =
   {
     enter(ParserScopes.TABLE_CELL);
   }
-  BlockContent
+  content:BlockContent
+  {
+    yyValue = nf.body(content);
+  }
 ;
 
 

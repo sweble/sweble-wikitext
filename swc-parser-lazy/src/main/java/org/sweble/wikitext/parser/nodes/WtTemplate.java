@@ -38,7 +38,7 @@ public class WtTemplate
 		super(Uninitialized.X);
 	}
 	
-	public WtTemplate(WtName name, WtTemplateArguments args)
+	protected WtTemplate(WtName name, WtTemplateArguments args)
 	{
 		super(name, args);
 	}

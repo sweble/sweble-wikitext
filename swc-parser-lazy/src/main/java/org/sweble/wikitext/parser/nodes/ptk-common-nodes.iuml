@@ -1,0 +1,7 @@
+@startuml
+
+hide members
+
+!include ptk-common-nodes-incl.iuml
+
+@enduml

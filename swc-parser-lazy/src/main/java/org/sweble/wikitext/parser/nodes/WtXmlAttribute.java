@@ -26,8 +26,6 @@ public class WtXmlAttribute
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtValue NO_VALUE = WtValue.NO_VALUE;
-	
 	// =========================================================================
 	
 	/**
@@ -38,13 +36,13 @@ public class WtXmlAttribute
 		super(Uninitialized.X);
 	}
 	
-	public WtXmlAttribute(String name)
+	protected WtXmlAttribute(String name)
 	{
-		super(NO_VALUE);
+		super(WtValue.NO_VALUE);
 		setName(name);
 	}
 	
-	public WtXmlAttribute(String name, WtValue value)
+	protected WtXmlAttribute(String name, WtValue value)
 	{
 		super(value);
 		setName(name);
@@ -141,7 +139,7 @@ public class WtXmlAttribute
 	
 	public final boolean hasValue()
 	{
-		return getValue() != NO_VALUE;
+		return getValue() != WtValue.NO_VALUE;
 	}
 	
 	public final void setValue(WtValue value)

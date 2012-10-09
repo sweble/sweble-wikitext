@@ -27,8 +27,6 @@ public class WtTemplateArgument
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtName NO_NAME = WtName.NO_NAME;
-	
 	// =========================================================================
 	
 	/**
@@ -39,12 +37,12 @@ public class WtTemplateArgument
 		super(Uninitialized.X);
 	}
 	
-	public WtTemplateArgument(WtValue value)
+	protected WtTemplateArgument(WtValue value)
 	{
-		super(NO_NAME, value);
+		super(WtName.NO_NAME, value);
 	}
 	
-	public WtTemplateArgument(WtName name, WtValue value)
+	protected WtTemplateArgument(WtName name, WtValue value)
 	{
 		super(name, value);
 	}
@@ -60,7 +58,7 @@ public class WtTemplateArgument
 	
 	public final boolean hasName()
 	{
-		return getName() != NO_NAME;
+		return getName() != WtName.NO_NAME;
 	}
 	
 	public final void setName(WtName name)

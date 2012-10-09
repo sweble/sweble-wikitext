@@ -25,8 +25,6 @@ public class WtTable
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtBody NO_BODY = WtBody.NO_BODY;
-	
 	// =========================================================================
 	
 	/**
@@ -37,12 +35,12 @@ public class WtTable
 		super(Uninitialized.X);
 	}
 	
-	public WtTable(WtXmlAttributes xmlAttributes)
+	protected WtTable(WtXmlAttributes xmlAttributes)
 	{
 		super(xmlAttributes, WtBody.NO_BODY);
 	}
 	
-	public WtTable(WtXmlAttributes xmlAttributes, WtBody body)
+	protected WtTable(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}
@@ -68,7 +66,7 @@ public class WtTable
 	
 	public final boolean hasBody()
 	{
-		return getBody() != NO_BODY;
+		return getBody() != WtBody.NO_BODY;
 	}
 	
 	public final void setBody(WtBody body)

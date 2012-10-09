@@ -3,7 +3,7 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtParagraph[
 		[0] = WtImageLink(
-			{P} alt = WtLinkOptionAltTextImpl(
+			{P} alt = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
 					[0] = "\n "
 				)
@@ -18,7 +18,7 @@ WtParsedWikitextPage(
 			{P} width = -1
 			target = WtPageName("File:x"),
 			options = WtLinkOptions[
-				[0] = WtLinkOptionAltTextImpl(
+				[0] = WtLinkOptionAltText(
 					{P} rtd = RTD[ "|alt=" <o> "" ]
 					[0] = "\n "
 				)

@@ -27,11 +27,23 @@ public interface WtLinkOptions
 	
 	public static final class WtEmptyLinkOptions
 			extends
-				WtNullContentNode
+				WtEmptyContentNode
 			implements
 				WtLinkOptions
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_LINK_OPTIONS;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLinkOptions.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -46,11 +58,11 @@ public interface WtLinkOptions
 		
 		// =====================================================================
 		
-		public WtLinkOptionsImpl()
+		protected WtLinkOptionsImpl()
 		{
 		}
 		
-		public WtLinkOptionsImpl(WtNodeList content)
+		protected WtLinkOptionsImpl(WtNodeList content)
 		{
 			super(content);
 		}

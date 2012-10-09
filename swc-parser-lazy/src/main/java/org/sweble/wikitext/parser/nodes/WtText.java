@@ -40,7 +40,7 @@ public class WtText
 		super(Uninitialized.X);
 	}
 	
-	public WtText(String content)
+	protected WtText(String content)
 	{
 		super(content);
 	}

@@ -38,14 +38,14 @@ public class WtXmlComment
 		super(Uninitialized.X);
 	}
 	
-	public WtXmlComment(String content)
+	protected WtXmlComment(String content)
 	{
 		super(content);
 		setPrefix("");
 		setSuffix("");
 	}
 	
-	public WtXmlComment(String content, String prefix, String suffix)
+	protected WtXmlComment(String content, String prefix, String suffix)
 	{
 		super(content);
 		setPrefix(prefix);

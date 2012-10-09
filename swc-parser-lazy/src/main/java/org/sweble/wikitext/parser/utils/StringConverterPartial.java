@@ -22,8 +22,8 @@ import java.util.Iterator;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
@@ -35,6 +35,7 @@ import de.fau.cs.osr.utils.Tuple2;
 
 /**
  * TODO: Überarbeiten!
+ * 
  * @deprecated
  */
 public class StringConverterPartial
@@ -100,7 +101,7 @@ public class StringConverterPartial
 				}
 				else
 				{
-					tail = new WtNodeListImpl(failedOnNode);
+					tail = WtNodeFactoryImpl.list_(failedOnNode);
 				}
 			}
 			
@@ -126,7 +127,7 @@ public class StringConverterPartial
 				
 				if (failedOnNode != null)
 				{
-					failedOnNode = new WtNodeListImpl();
+					failedOnNode = WtNodeFactoryImpl.list_();
 					
 					failedOnNode.add(c);
 					while (i.hasNext())

@@ -35,7 +35,7 @@ public class WtLinkOptionGarbage
 		super(Uninitialized.X);
 	}
 	
-	public WtLinkOptionGarbage(String content)
+	protected WtLinkOptionGarbage(String content)
 	{
 		super(content);
 	}

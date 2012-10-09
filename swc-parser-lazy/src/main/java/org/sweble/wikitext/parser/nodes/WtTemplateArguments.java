@@ -21,17 +21,29 @@ public interface WtTemplateArguments
 		extends
 			WtContentNode
 {
-	public static final WtNullTemplateArguments EMPTY = new WtNullTemplateArguments();
+	public static final WtEmptyTemplateArguments EMPTY = new WtEmptyTemplateArguments();
 	
 	// =========================================================================
 	
-	public static final class WtNullTemplateArguments
+	public static final class WtEmptyTemplateArguments
 			extends
-				WtNullContentNode
+				WtEmptyContentNode
 			implements
 				WtTemplateArguments
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_TEMPLATE_ARGUMENTS;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtTemplateArguments.class.getSimpleName();
+		}
 	}
 	
 	// =========================================================================
@@ -46,11 +58,11 @@ public interface WtTemplateArguments
 		
 		// =====================================================================
 		
-		public WtTemplateArgumentsImpl()
+		protected WtTemplateArgumentsImpl()
 		{
 		}
 		
-		public WtTemplateArgumentsImpl(WtNodeList content)
+		protected WtTemplateArgumentsImpl(WtNodeList content)
 		{
 			super(content);
 		}

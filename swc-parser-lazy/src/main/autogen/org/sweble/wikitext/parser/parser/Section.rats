@@ -111,7 +111,7 @@ body
       oCount -= oCount - cCount;
     }
 
-    WtHeading heading = new WtHeading(title);
+    WtHeading heading = nf.heading(title);
 
     WtText oOddText = null;
     if (oOdd > 0)
@@ -122,7 +122,7 @@ body
             makeSpan(spanFrom, spanTo),
             WS_NORMAL,
             "Odd number of opening equals");
-      oOddText = new WtText(StringUtils.strrep('=', oOdd));
+      oOddText = nf.text(StringUtils.strrep('=', oOdd));
       heading.add(0, oOddText);
     }
 
@@ -135,12 +135,14 @@ body
             makeSpan(spanFrom, spanTo),
             WS_NORMAL,
             "Odd number of closing equals");
-      cOddText = new WtText(StringUtils.strrep('=', cOdd));
+      cOddText = nf.text(StringUtils.strrep('=', cOdd));
       heading.add(cOddText);
     }
 
     String equals = StringUtils.strrep('=', level);
-    setRtd(heading, rt0, equals, SEP, equals, rt1);
+    setRtd(
+      heading,
+      rt0, equals, SEP, equals, rt1);
 
     SectionHeading tmp = new SectionHeading();
     tmp.level = level;
@@ -153,7 +155,7 @@ body
     Stack<WtSection> stack = new Stack<WtSection>();
     stack.push(first);
 
-    WtNodeList result = list(first);
+    WtNodeList result = nf.list(first);
 
     Pair<WtSection> i = tail;
     while (!i.isEmpty())
@@ -170,7 +172,7 @@ body
       {
         // TODO: Dangerous! We must clone the section instead!
         stack.peek().getBody().add(s);
-        //stack.peek().setBody(list(stack.peek().getBody(), s));
+        //stack.peek().setBody(nf.list(stack.peek().getBody(), s));
       }
 
       stack.push(s);
@@ -235,11 +237,11 @@ inline void BlockStopperNextSection =
 private noinline transient WtSection WtSection =
     h:SectionHeading Eof
     {
-      yyValue = new WtSection(h.level, h.heading, new WtBodyImpl());
+      yyValue = nf.section(h.level, h.heading, nf.noBody());
     }
   / h:SectionHeading body:SectionContentStar
     {
-      yyValue = new WtSection(h.level, h.heading, body);
+      yyValue = nf.section(h.level, h.heading, body);
     }
 ;
 
@@ -301,7 +303,7 @@ private inline stateful WtBody SectionContentStar =
   }
   content:BlockContent
   {
-    yyValue = new WtBodyImpl(content);
+    yyValue = nf.body(content);
   }
 ;
 

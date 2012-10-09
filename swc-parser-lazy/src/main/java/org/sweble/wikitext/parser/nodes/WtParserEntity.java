@@ -40,7 +40,7 @@ public class WtParserEntity
 		super(Uninitialized.X);
 	}
 	
-	public WtParserEntity(int id)
+	protected WtParserEntity(int id)
 	{
 		super(id);
 	}

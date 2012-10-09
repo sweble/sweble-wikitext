@@ -27,11 +27,11 @@ public class WtHeading
 	
 	// =========================================================================
 	
-	public WtHeading()
+	protected WtHeading()
 	{
 	}
 	
-	public WtHeading(WtNodeList content)
+	protected WtHeading(WtNodeList content)
 	{
 		super(content);
 	}

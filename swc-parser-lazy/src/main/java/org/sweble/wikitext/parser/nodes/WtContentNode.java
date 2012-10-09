@@ -22,6 +22,7 @@ import java.util.Iterator;
 
 import org.sweble.wikitext.parser.WtRtData;
 
+import de.fau.cs.osr.ptk.common.ast.AstNodeList;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
 public interface WtContentNode
@@ -30,11 +31,58 @@ public interface WtContentNode
 {
 	public abstract class WtNullContentNode
 			extends
-				WtNullNodeList
+				WtNullNode
 			implements
 				WtContentNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
+		
+		@Override
+		public abstract int getNodeType();
+		
+		@Override
+		public abstract String getNodeName();
+		
+		@Override
+		public void exchange(AstNodeList<WtNode> other)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public boolean isNullNode()
+		{
+			return true;
+		}
+	}
+	
+	// =====================================================================
+	
+	public abstract class WtEmptyContentNode
+			extends
+				WtNullNode
+			implements
+				WtContentNode
+	{
+		private static final long serialVersionUID = 2465445739660029292L;
+		
+		@Override
+		public abstract int getNodeType();
+		
+		@Override
+		public abstract String getNodeName();
+		
+		@Override
+		public void exchange(AstNodeList<WtNode> other)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public boolean isNullNode()
+		{
+			return false;
+		}
 	}
 	
 	// =====================================================================
@@ -51,11 +99,11 @@ public interface WtContentNode
 		
 		// =====================================================================
 		
-		public WtContentNodeImpl()
+		protected WtContentNodeImpl()
 		{
 		}
 		
-		public WtContentNodeImpl(WtNodeList content)
+		protected WtContentNodeImpl(WtNodeList content)
 		{
 			super(content);
 		}

@@ -68,7 +68,7 @@ public final class FullParser
 		
 		WikitextEncodingValidator v = new WikitextEncodingValidator();
 		
-		ValidatedWikitext validated = v.validate(source, title);
+		ValidatedWikitext validated = v.validate(parserConfig, source, title);
 		
 		// Pre-processing
 		

@@ -27,11 +27,11 @@ public class WtListItem
 	
 	// =========================================================================
 	
-	public WtListItem()
+	protected WtListItem()
 	{
 	}
 	
-	public WtListItem(WtNodeList content)
+	protected WtListItem(WtNodeList content)
 	{
 		super(content);
 	}

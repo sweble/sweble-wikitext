@@ -35,7 +35,7 @@ public class WtXmlAttributeGarbage
 		super(Uninitialized.X);
 	}
 	
-	public WtXmlAttributeGarbage(String content)
+	protected WtXmlAttributeGarbage(String content)
 	{
 		super(content);
 	}

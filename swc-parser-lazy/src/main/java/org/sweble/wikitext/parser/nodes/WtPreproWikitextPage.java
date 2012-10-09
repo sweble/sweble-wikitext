@@ -17,11 +17,7 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import java.util.List;
-
 import org.sweble.wikitext.parser.WtEntityMap;
-
-import de.fau.cs.osr.ptk.common.Warning;
 
 public class WtPreproWikitextPage
 		extends
@@ -33,20 +29,17 @@ public class WtPreproWikitextPage
 	
 	// =========================================================================
 	
-	public WtPreproWikitextPage()
+	protected WtPreproWikitextPage()
 	{
 	}
 	
-	public WtPreproWikitextPage(WtNodeList content)
+	protected WtPreproWikitextPage(WtNodeList content)
 	{
 		super(content);
 	}
 	
-	public WtPreproWikitextPage(
-			WtNodeList content,
-			List<Warning> warnings,
-			WtEntityMap entityMap)
+	protected WtPreproWikitextPage(WtNodeList content, WtEntityMap entityMap)
 	{
-		super(content, warnings, entityMap);
+		super(content, entityMap);
 	}
 }

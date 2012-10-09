@@ -35,7 +35,7 @@ public class WtTableRow
 		super(Uninitialized.X);
 	}
 	
-	public WtTableRow(WtXmlAttributes xmlAttributes, WtBody body)
+	protected WtTableRow(WtXmlAttributes xmlAttributes, WtBody body)
 	{
 		super(xmlAttributes, body);
 	}

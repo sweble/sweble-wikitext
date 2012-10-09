@@ -106,7 +106,7 @@ WtNode XmlElement =
 private inline WtText Greater =
   !ValidClosingTag
   {
-    yyValue = new WtText("<");
+    yyValue = nf.text("<");
   }
 ;
 
@@ -126,21 +126,27 @@ private inline WtText Greater =
 transient WtNode XmlCommentTrimmed =
     eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->" suffix:PureSpaceStar eol2:pEol
     {
-      WtXmlComment c = setRtd(new WtXmlComment(content, prefix, suffix + eol2), prefix, "<!--", content, "-->", suffix, eol2);
+      WtXmlComment c = setRtd(
+        nf.comment(prefix, content, suffix + eol2),
+        prefix, "<!--", content, "-->", suffix, eol2);
 
-      yyValue = list(new WtText(eol1), c);
+      yyValue = nf.list(nf.text(eol1), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent "-->"
     {
-      WtXmlComment c = setRtd(new WtXmlComment(content), "<!--", content, "-->");
+      WtXmlComment c = setRtd(
+        nf.comment(content),
+        "<!--", content, "-->");
 
-      yyValue = list(new WtText(eol1 + prefix), c);
+      yyValue = nf.list(nf.text(eol1 + prefix), c);
     }
   / eol1:pEol prefix:PureSpaceStar "<!--" content:XmlCommentContent
     {
-      WtXmlComment c = setRtd(new WtXmlComment(content), "<!--", content);
+      WtXmlComment c = setRtd(
+        nf.comment(content),
+        "<!--", content);
 
-      yyValue = list(new WtText(eol1 + prefix), c);
+      yyValue = nf.list(nf.text(eol1 + prefix), c);
     }
 ;
 
@@ -151,11 +157,15 @@ private transient String PureSpaceStar =
 private transient WtXmlComment XmlComment =
     content:XmlCommentContent "-->"
     {
-      yyValue = setRtd(new WtXmlComment(content), "<!--" + content + "-->");
+      yyValue = setRtd(
+        nf.comment(content),
+        "<!--" + content + "-->");
     }
   / content:XmlCommentContent Eof
     {
-      yyValue = setRtd(new WtXmlComment(content), "<!--" + content);
+      yyValue = setRtd(
+        nf.comment(content),
+        "<!--" + content);
     }
 ;
 
@@ -171,18 +181,14 @@ private transient String XmlCommentContent =
 private transient WtNode IgnoredClosingTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
   {
-    String content = "</" + name + garbage + ">";
-
-    yyValue = setRtd(new WtIgnored(content), content);
+    yyValue = nf.ignored("</" + name + garbage + ">");
   }
 ;
 
 private transient WtNode IgnoredOpeningTag =
   name:IgnoredTagName garbage:IgnoredTagGarbage '>'
   {
-    String content = "<" + name + garbage + ">";
-
-    yyValue = setRtd(new WtIgnored(content), content);
+    yyValue = nf.ignored("<" + name + garbage + ">");
   }
 ;
 
@@ -206,15 +212,11 @@ private transient WtNode IgnoredElements =
     }
     '>' body:TagBody
     {
-      String content = "<" + header.name + header.garbage + ">" + body.content + body.endTag;
-
-      yyValue = setRtd(new WtIgnored(content), content);
+      yyValue = nf.ignored("<" + header.name + header.garbage + ">" + body.content + body.endTag);
     }
   / header:IgnoredElementHeader "/>"
     {
-      String content = "<" + header.name + header.garbage + "/>";
-
-      yyValue = setRtd(new WtIgnored(content), content);
+      yyValue = nf.ignored("<" + header.name + header.garbage + "/>");
     }
 ;
 
@@ -243,12 +245,14 @@ private transient WtTagExtension TagExtension =
     }
     body:TagBody
     {
-      yyValue = setRtd(new WtTagExtension(header.name, header.attrs, body.content),
+      yyValue = setRtd(
+        nf.tagExt(header.name, header.attrs, body.content),
         '<', header.name, SEP, header.ws, '>', SEP, body.endTag);
     }
   / header:TagHeader "/>"
     {
-      yyValue = setRtd(new WtTagExtension(header.name, header.attrs),
+      yyValue = setRtd(
+        nf.tagExt(header.name, header.attrs),
         '<', header.name, SEP, header.ws, "/>");
     }
 ;
@@ -265,7 +269,7 @@ private transient TagExtHeader TagHeader =
     {
       yyValue = new TagExtHeader();
       yyValue.name = name;
-      yyValue.attrs = WtXmlAttributes.EMPTY;
+      yyValue.attrs = nf.emptyAttrs();
       yyValue.ws = ws;
     }
 ;
@@ -281,7 +285,7 @@ private transient TagExtBody TagBody =
   )
   {
     yyValue = new TagExtBody();
-    yyValue.content = new WtTagExtensionBodyImpl(content);
+    yyValue.content = nf.tagExtBody(content);
     yyValue.endTag = (String) endTag;
   }
 ;

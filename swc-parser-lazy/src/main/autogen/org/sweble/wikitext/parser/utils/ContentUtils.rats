@@ -57,22 +57,14 @@ body
     Column col = column(index);
     return new AstLocation(col.file, col.line, col.column);
   }
-  
-  protected WtNodeList list(Object... content)
+
+  // ===========================================================================
+
+  private WtNodeFactory nf;
+
+  public void setNodeFactory(WtNodeFactory nodeFactory)
   {
-    return new WtNodeList.WtNodeListImpl(content);
-  }
-  protected WtNodeList list(Pair<? extends WtNode> list)
-  {
-    return new WtNodeList.WtNodeListImpl(list);
-  }
-  protected WtNodeList list(WtNode child)
-  {
-    return new WtNodeList.WtNodeListImpl(child);
-  }
-  protected WtNodeList list(Collection<? extends WtNode> list)
-  {
-    return new WtNodeList.WtNodeListImpl(list);
+    this.nf = nodeFactory;
   }
 }
 

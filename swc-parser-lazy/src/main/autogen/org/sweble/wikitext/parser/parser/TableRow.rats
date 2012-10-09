@@ -48,7 +48,7 @@ body
   {
     WtNode rt0;
     String rt1;
-    WtNodeList body;
+    WtBody body;
   }
 }
 
@@ -85,8 +85,9 @@ noinline memoized WtNode TableRowMemoized =
 noinline transient WtNode TableRowTransient =
   rt0:pExtSpaceStar "|-" attributes:TableAttributeStar body:TableRowBody
   {
-    yyValue = setRtd(new WtTableRow(attributes, new WtBodyImpl(body.body)),
-        rt0, "|-", SEP, body.rt0, body.rt1, SEP);
+    yyValue = setRtd(
+      nf.tr(attributes, body.body),
+      rt0, "|-", SEP, body.rt0, body.rt1, SEP);
   }
 ;
 
@@ -104,7 +105,7 @@ private inline TableRowBody TableRowBody =
       yyValue = new TableRowBody();
       yyValue.rt0 = rt0;
       yyValue.rt1 = "";
-      yyValue.body = WtNodeList.EMPTY;
+      yyValue.body = nf.emptyBody();
     }
   / &ShouldNotBeHere SantiyCheckEnd
     {
@@ -112,13 +113,13 @@ private inline TableRowBody TableRowBody =
     }
 ;
 
-private transient stateful WtNodeList TableRowContentStar =
+private transient stateful WtBody TableRowContentStar =
   {
     enter(ParserScopes.TABLE_ELEMENTS);
   }
   garbage:InlineBlockContent content:TableRowElement*
   {
-    yyValue = list(garbage, list(content));
+    yyValue = nf.body(nf.list(garbage, nf.list(content)));
   }
 ;
 

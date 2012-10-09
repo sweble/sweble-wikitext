@@ -37,7 +37,7 @@ public class WtPageName
 		super(Uninitialized.X);
 	}
 	
-	public WtPageName(String content)
+	protected WtPageName(String content)
 	{
 		super(content);
 	}

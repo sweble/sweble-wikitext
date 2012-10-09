@@ -17,8 +17,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import org.sweble.wikitext.parser.nodes.WtValue.WtNullValue;
-
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
@@ -30,8 +28,6 @@ public class WtTemplateParameter
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtNullValue NO_DEFAULT_VALUE = WtValue.NO_VALUE;
-	
 	// =========================================================================
 	
 	/**
@@ -42,17 +38,17 @@ public class WtTemplateParameter
 		super(Uninitialized.X);
 	}
 	
-	public WtTemplateParameter(WtName name)
+	protected WtTemplateParameter(WtName name)
 	{
-		super(name, NO_DEFAULT_VALUE, WtTemplateArguments.EMPTY);
+		super(name, WtValue.NO_VALUE, WtTemplateArguments.EMPTY);
 	}
 	
-	public WtTemplateParameter(WtName name, WtValue defaultValue)
+	protected WtTemplateParameter(WtName name, WtValue defaultValue)
 	{
 		super(name, defaultValue, WtTemplateArguments.EMPTY);
 	}
 	
-	public WtTemplateParameter(
+	protected WtTemplateParameter(
 			WtName name,
 			WtValue defaultValue,
 			WtTemplateArguments garbage)
@@ -161,7 +157,7 @@ public class WtTemplateParameter
 	
 	public final boolean hasDefaultValue()
 	{
-		return getDefaultValue() != NO_DEFAULT_VALUE;
+		return getDefaultValue() != WtValue.NO_VALUE;
 	}
 	
 	public final void setDefaultValue(WtValue defaultValue)
