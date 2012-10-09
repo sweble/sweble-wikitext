@@ -20,7 +20,6 @@ package org.sweble.wikitext.parser.utils;
 import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
@@ -30,6 +29,11 @@ import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.XmlEntityResolver;
 import de.fau.cs.osr.utils.visitor.VisitingException;
 
+/**
+ * TODO: Überarbeiten!
+ * 
+ * @deprecated
+ */
 public class StringConverter
 {
 	public static final int RESOLVE_CHAR_REF = 0x0001;
@@ -175,6 +179,7 @@ public class StringConverter
 			result.append(n.getContent());
 		}
 		
+		/*
 		public void visit(WtProtectedText n) throws StringConversionException
 		{
 			if (opt(FAIL_ON_PROTECTED_TEXT))
@@ -182,6 +187,7 @@ public class StringConverter
 			
 			result.append(n.getContent());
 		}
+		*/
 		
 		public void visit(WtXmlComment n) throws StringConversionException
 		{

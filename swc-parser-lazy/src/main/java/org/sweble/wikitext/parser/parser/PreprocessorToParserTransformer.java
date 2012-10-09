@@ -23,13 +23,17 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtOnlyInclude;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 
+/**
+ * TODO: Überarbeiten
+ * 
+ * @deprecated
+ */
 public class PreprocessorToParserTransformer
 {
 	public static PreprocessedWikitext transform(
@@ -115,10 +119,12 @@ public class PreprocessorToParserTransformer
 			makeParserEntity(n);
 		}
 		
+		/*
 		public void visit(WtProtectedText n)
 		{
 			makeParserEntity(n);
 		}
+		*/
 		
 		private void makeParserEntity(WtNode n)
 		{

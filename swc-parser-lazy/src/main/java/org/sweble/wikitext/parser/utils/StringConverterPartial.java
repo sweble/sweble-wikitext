@@ -24,7 +24,6 @@ import org.sweble.wikitext.parser.nodes.WtIgnored;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
-import org.sweble.wikitext.parser.nodes.WtProtectedText;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlCharRef;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
@@ -34,6 +33,10 @@ import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.utils.Tuple;
 import de.fau.cs.osr.utils.Tuple2;
 
+/**
+ * TODO: Überarbeiten!
+ * @deprecated
+ */
 public class StringConverterPartial
 {
 	public static Tuple2<String, WtNodeList> convert(WtNode astNode)
@@ -185,11 +188,13 @@ public class StringConverterPartial
 			result.append(n.getContent());
 		}
 		
+		/*
 		public void visit(WtProtectedText n)
 		{
 			if (!opt(StringConverter.FAIL_ON_PROTECTED_TEXT))
 				result.append(n.getContent());
 		}
+		*/
 		
 		public void visit(WtXmlComment n)
 		{
