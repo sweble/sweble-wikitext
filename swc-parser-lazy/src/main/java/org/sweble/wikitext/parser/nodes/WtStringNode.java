@@ -26,7 +26,7 @@ public interface WtStringNode
 {
 	public abstract class WtNullStringNode
 			extends
-				WtNullNode
+				WtEmptyImmutableNode
 			implements
 				WtStringNode
 	{
@@ -51,7 +51,7 @@ public interface WtStringNode
 		public abstract String getNodeName();
 		
 		@Override
-		public boolean isNullNode()
+		public boolean indicatesAbsence()
 		{
 			return true;
 		}

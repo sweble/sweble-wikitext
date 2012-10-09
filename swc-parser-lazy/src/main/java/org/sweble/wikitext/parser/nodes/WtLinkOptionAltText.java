@@ -27,7 +27,7 @@ public interface WtLinkOptionAltText
 	
 	public static final class WtNoLinkOptionAltText
 			extends
-				WtNullContentNode
+				WtAbsentContentNode
 			implements
 				WtLinkOptionAltText
 	{

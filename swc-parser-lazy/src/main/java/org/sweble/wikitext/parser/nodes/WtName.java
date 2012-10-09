@@ -27,7 +27,7 @@ public interface WtName
 	
 	public static final class WtNoName
 			extends
-				WtNullContentNode
+				WtAbsentContentNode
 			implements
 				WtName
 	{

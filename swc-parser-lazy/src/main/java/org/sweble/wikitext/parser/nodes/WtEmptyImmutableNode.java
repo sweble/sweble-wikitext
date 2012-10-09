@@ -33,7 +33,7 @@ import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public abstract class WtNullNode
+public abstract class WtEmptyImmutableNode
 		implements
 			WtNode
 {
@@ -41,7 +41,7 @@ public abstract class WtNullNode
 	
 	// =========================================================================
 	
-	public abstract boolean isNullNode();
+	public abstract boolean indicatesAbsence();
 	
 	// =========================================================================
 	

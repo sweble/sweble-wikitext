@@ -20,18 +20,72 @@ package org.sweble.wikitext.parser.utils;
 import java.io.StringWriter;
 import java.io.Writer;
 
+import org.sweble.wikitext.parser.nodes.WtEmptyImmutableNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNullNode;
 
 import de.fau.cs.osr.ptk.common.AstPrinter;
+import de.fau.cs.osr.ptk.common.ast.AstLeafNode;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.AstNodeList;
+import de.fau.cs.osr.ptk.common.ast.AstStringNode;
+import de.fau.cs.osr.ptk.common.ast.AstText;
 
 public class WtPrinter
 		extends
 			AstPrinter<WtNode>
 {
-	public void visit(WtNullNode n)
+	public void visit(AstNode<WtNode> n)
 	{
+		if (printAbsent((WtNode) n))
+			return;
+		super.visit(n);
+	}
+	
+	@Override
+	public void visit(AstLeafNode<WtNode> n)
+	{
+		if (printAbsent((WtNode) n))
+			return;
+		super.visit(n);
+	}
+	
+	@Override
+	public void visit(AstNodeList<WtNode> n)
+	{
+		if (printAbsent((WtNode) n))
+			return;
+		super.visit(n);
+	}
+	
+	@Override
+	public void visit(AstStringNode<WtNode> n)
+	{
+		if (printAbsent((WtNode) n))
+			return;
+		super.visit(n);
+	}
+	
+	@Override
+	public void visit(AstText<WtNode> n)
+	{
+		if (printAbsent((WtNode) n))
+			return;
+		super.visit(n);
+	}
+	
+	// =========================================================================
+	
+	private boolean printAbsent(WtNode n)
+	{
+		if (!(n instanceof WtEmptyImmutableNode))
+			return false;
+		
+		WtEmptyImmutableNode ein = (WtEmptyImmutableNode) n;
+		if (!ein.indicatesAbsence())
+			return false;
+		
 		p.indentln('-');
+		return true;
 	}
 	
 	// =========================================================================

@@ -29,7 +29,7 @@ public interface WtBody
 	
 	public static final class WtNoBody
 			extends
-				WtNullContentNode
+				WtAbsentContentNode
 			implements
 				WtBody
 	{

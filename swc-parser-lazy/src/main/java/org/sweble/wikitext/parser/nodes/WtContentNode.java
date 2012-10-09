@@ -29,9 +29,9 @@ public interface WtContentNode
 		extends
 			WtNodeList
 {
-	public abstract class WtNullContentNode
+	public abstract class WtAbsentContentNode
 			extends
-				WtNullNode
+				WtEmptyImmutableNode
 			implements
 				WtContentNode
 	{
@@ -50,7 +50,7 @@ public interface WtContentNode
 		}
 		
 		@Override
-		public boolean isNullNode()
+		public boolean indicatesAbsence()
 		{
 			return true;
 		}
@@ -60,7 +60,7 @@ public interface WtContentNode
 	
 	public abstract class WtEmptyContentNode
 			extends
-				WtNullNode
+				WtEmptyImmutableNode
 			implements
 				WtContentNode
 	{
@@ -79,7 +79,7 @@ public interface WtContentNode
 		}
 		
 		@Override
-		public boolean isNullNode()
+		public boolean indicatesAbsence()
 		{
 			return false;
 		}

@@ -27,7 +27,7 @@ public interface WtValue
 	
 	public static final class WtNoValue
 			extends
-				WtNullContentNode
+				WtAbsentContentNode
 			implements
 				WtValue
 	{

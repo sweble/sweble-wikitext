@@ -36,7 +36,7 @@ public interface WtNodeList
 	
 	public class WtEmptyNodeList
 			extends
-				WtNullNode
+				WtEmptyImmutableNode
 			implements
 				WtNodeList
 	{
@@ -61,7 +61,7 @@ public interface WtNodeList
 		}
 
 		@Override
-		public boolean isNullNode()
+		public boolean indicatesAbsence()
 		{
 			return false;
 		}

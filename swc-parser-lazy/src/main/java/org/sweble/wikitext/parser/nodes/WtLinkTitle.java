@@ -27,7 +27,7 @@ public interface WtLinkTitle
 	
 	public static final class WtNoLinkTitle
 			extends
-				WtNullContentNode
+				WtAbsentContentNode
 			implements
 				WtLinkTitle
 	{

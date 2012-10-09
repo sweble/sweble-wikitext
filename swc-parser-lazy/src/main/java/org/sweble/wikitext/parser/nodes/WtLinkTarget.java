@@ -43,7 +43,7 @@ public interface WtLinkTarget
 	
 	public static final class WtNoLink
 			extends
-				WtNullNode
+				WtEmptyImmutableNode
 			implements
 				WtLinkTarget
 	{
@@ -68,7 +68,7 @@ public interface WtLinkTarget
 		}
 
 		@Override
-		public boolean isNullNode()
+		public boolean indicatesAbsence()
 		{
 			return true;
 		}
