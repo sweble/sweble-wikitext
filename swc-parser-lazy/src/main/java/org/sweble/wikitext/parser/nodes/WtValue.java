@@ -21,7 +21,9 @@ public interface WtValue
 		extends
 			WtContentNode
 {
-	public static final WtNullValue NULL = new WtNullValue();
+	public static final WtNullValue EMPTY = new WtNullValue();
+	
+	public static final WtNullValue NO_VALUE = new WtNullValue();
 	
 	// =========================================================================
 	

@@ -45,10 +45,10 @@ public class WtPage
 		setEntityMap(NO_ENTITIES);
 	}
 	
-	public WtPage(WtNodeList content, List<Warning> warnings)
+	public WtPage(WtNodeList content)
 	{
 		super(content);
-		setWarnings(warnings);
+		setWarnings(NO_WARNINGS);
 		setEntityMap(NO_ENTITIES);
 	}
 	

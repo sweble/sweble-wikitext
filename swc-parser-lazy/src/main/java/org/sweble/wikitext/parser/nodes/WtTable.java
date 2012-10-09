@@ -25,7 +25,7 @@ public class WtTable
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtBody NO_BODY = WtBody.NULL;
+	private static final WtBody NO_BODY = WtBody.NO_BODY;
 	
 	// =========================================================================
 	
@@ -39,7 +39,7 @@ public class WtTable
 	
 	public WtTable(WtXmlAttributes xmlAttributes)
 	{
-		super(xmlAttributes, WtBody.NULL);
+		super(xmlAttributes, WtBody.NO_BODY);
 	}
 	
 	public WtTable(WtXmlAttributes xmlAttributes, WtBody body)

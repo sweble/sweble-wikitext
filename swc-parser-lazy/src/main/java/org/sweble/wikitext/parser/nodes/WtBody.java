@@ -21,7 +21,7 @@ public interface WtBody
 		extends
 			WtContentNode
 {
-	public static final WtNullBody NULL = new WtNullBody();
+	public static final WtNullBody NO_BODY = new WtNullBody();
 	
 	public static final WtNullBody EMPTY = new WtNullBody();
 	

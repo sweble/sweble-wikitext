@@ -28,7 +28,7 @@ public class WtXmlElement
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtBody NO_BODY = WtBody.NULL;
+	private static final WtBody NO_BODY = WtBody.NO_BODY;
 	
 	// =========================================================================
 	

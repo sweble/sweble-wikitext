@@ -31,6 +31,11 @@ public class WtDefinitionList
 	{
 	}
 	
+	public WtDefinitionList(WtNodeList content)
+	{
+		super(content);
+	}
+	
 	@Override
 	public int getNodeType()
 	{

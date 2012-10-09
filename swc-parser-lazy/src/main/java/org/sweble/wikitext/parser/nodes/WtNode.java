@@ -21,19 +21,6 @@ import org.sweble.wikitext.parser.WtRtData;
 
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 
-/* 
- * @startuml img/WtNode.png
- * 
- * interface WtNode {
- * 	WtRtData setRtd(WtRtData rtd);
- * 	WtRtData setRtd(Object... glue);
- * 	WtRtData setRtd(String... glue);
- * 	WtRtData getRtd();
- * 	void clearRtd();
- * }
- * 
- * @enduml
- */
 public interface WtNode
 		extends
 			AstNode<WtNode>

@@ -26,7 +26,7 @@ public class WtXmlAttribute
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtValue NO_VALUE = WtValue.NULL;
+	private static final WtValue NO_VALUE = WtValue.NO_VALUE;
 	
 	// =========================================================================
 	

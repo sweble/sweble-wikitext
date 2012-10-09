@@ -34,7 +34,7 @@ public class WtXmlStartTag
 	/**
 	 * Only for use by de-serialization code.
 	 */
-	public WtXmlStartTag()
+	protected WtXmlStartTag()
 	{
 		super(Uninitialized.X);
 	}

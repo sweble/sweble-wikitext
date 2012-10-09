@@ -35,9 +35,9 @@ public class WtParsedWikitextPage
 	{
 	}
 	
-	public WtParsedWikitextPage(WtNodeList content, List<Warning> warnings)
+	public WtParsedWikitextPage(WtNodeList content)
 	{
-		super(content, warnings);
+		super(content);
 	}
 	
 	public WtParsedWikitextPage(

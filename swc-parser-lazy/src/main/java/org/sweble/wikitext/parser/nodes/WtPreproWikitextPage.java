@@ -37,9 +37,9 @@ public class WtPreproWikitextPage
 	{
 	}
 	
-	public WtPreproWikitextPage(WtNodeList content, List<Warning> warnings)
+	public WtPreproWikitextPage(WtNodeList content)
 	{
-		super(content, warnings);
+		super(content);
 	}
 	
 	public WtPreproWikitextPage(

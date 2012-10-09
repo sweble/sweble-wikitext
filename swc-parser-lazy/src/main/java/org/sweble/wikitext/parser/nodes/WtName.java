@@ -21,7 +21,7 @@ public interface WtName
 		extends
 			WtContentNode
 {
-	public static final WtNullName NULL = new WtNullName();
+	public static final WtNullName NO_NAME = new WtNullName();
 	
 	// =========================================================================
 	

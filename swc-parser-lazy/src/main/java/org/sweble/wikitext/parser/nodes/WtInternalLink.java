@@ -26,7 +26,7 @@ public class WtInternalLink
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NULL;
+	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NO_TITLE;
 	
 	// =========================================================================
 	

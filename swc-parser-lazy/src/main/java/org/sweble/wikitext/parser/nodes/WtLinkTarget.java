@@ -21,7 +21,7 @@ public interface WtLinkTarget
 		extends
 			WtNode
 {
-	public static final WtLinkTarget NULL = new WtNullLink();
+	public static final WtLinkTarget NO_LINK = new WtNoLink();
 	
 	// =========================================================================
 	
@@ -41,7 +41,7 @@ public interface WtLinkTarget
 	
 	// =========================================================================
 	
-	public static final class WtNullLink
+	public static final class WtNoLink
 			extends
 				WtNullNode
 			implements
@@ -52,7 +52,7 @@ public interface WtLinkTarget
 		@Override
 		public LinkTargetType getTargetType()
 		{
-			throw new UnsupportedOperationException("NullLink does not have a type!");
+			return LinkTargetType.NO_LINK;
 		}
 	}
 }

@@ -24,7 +24,7 @@ public interface WtTagExtensionBody
 			WtStringNode,
 			WtPreproNode
 {
-	public static final WtTagExtensionNullBody NULL_BODY = new WtTagExtensionNullBody();
+	public static final WtTagExtensionNullBody NO_BODY = new WtTagExtensionNullBody();
 	
 	// =========================================================================
 	

@@ -30,7 +30,7 @@ public class WtTemplateParameter
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtNullValue NO_DEFAULT_VALUE = WtValue.NULL;
+	public static final WtNullValue NO_DEFAULT_VALUE = WtValue.NO_VALUE;
 	
 	// =========================================================================
 	

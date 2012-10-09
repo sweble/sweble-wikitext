@@ -27,6 +27,9 @@ import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionKeyword;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionLinkTarget;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionResize;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
@@ -35,6 +38,11 @@ import org.sweble.wikitext.parser.nodes.WtPageName;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
+/**
+ * TODO: Überarbeiten!
+ * 
+ * @deprecated
+ */
 public class LinkBuilder
 {
 	private WtPageName target;
@@ -102,6 +110,11 @@ public class LinkBuilder
 	
 	// =========================================================================
 	
+	public void addOption(WtLinkOptionKeyword option)
+	{
+		addKeyword(option.getKeyword());
+	}
+	
 	public boolean addKeyword(String keyword)
 	{
 		ImageViewFormat f;
@@ -152,6 +165,12 @@ public class LinkBuilder
 			this.width = width;
 	}
 	
+	public void addOption(WtLinkOptionResize option)
+	{
+		setWidth(option.getWidth());
+		setHeight(option.getHeight());
+	}
+	
 	// =========================================================================
 	
 	public void setLink(ImageLinkTarget target)
@@ -176,11 +195,39 @@ public class LinkBuilder
 		}
 	}
 	
+	public void addOption(WtLinkOptionLinkTarget option)
+	{
+		setLink(new ImageLinkTarget(option.getTargetType(), option.getTarget()));
+	}
+	
+	/*
+	public void setLink(WtLinkTarget target)
+	{
+		ImageLinkTarget linkTarget = null;
+		if (target.getTargetType() == LinkTargetType.NO_LINK)
+		{
+			linkTarget = new ImageLinkTarget(LinkTargetType.NO_LINK);
+		}
+		else
+		{
+			linkTarget = new ImageLinkTarget(
+					target.getTargetType(),
+					target);
+		}
+		setLink(linkTarget);
+	}
+	*/
+	
 	// =========================================================================
 	
 	public void setAlt(WtLinkOptionAltText alt)
 	{
 		this.alt = alt;
+	}
+	
+	public void addOption(WtLinkOptionAltText option)
+	{
+		setAlt(option);
 	}
 	
 	public void setTitle(WtLinkTitle title)

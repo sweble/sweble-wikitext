@@ -21,7 +21,7 @@ public interface WtLinkTitle
 		extends
 			WtContentNode
 {
-	public static final WtNullLinkTitle NULL = new WtNullLinkTitle();
+	public static final WtNullLinkTitle NO_TITLE = new WtNullLinkTitle();
 	
 	// =========================================================================
 	

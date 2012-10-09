@@ -28,7 +28,7 @@ public class WtImageLink
 {
 	private static final long serialVersionUID = 1L;
 	
-	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NULL;
+	public static final WtLinkTitle HAS_NO_TITLE = WtLinkTitle.NO_TITLE;
 	
 	// =========================================================================
 	
@@ -641,7 +641,7 @@ public class WtImageLink
 		public ImageLinkTarget(LinkTargetType targetType)
 		{
 			this.targetType = targetType;
-			this.target = WtLinkTarget.NULL;
+			this.target = WtLinkTarget.NO_LINK;
 		}
 		
 		public ImageLinkTarget(LinkTargetType targetType, WtLinkTarget target)

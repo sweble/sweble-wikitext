@@ -27,7 +27,7 @@ public class WtTemplateArgument
 {
 	private static final long serialVersionUID = 1L;
 	
-	private static final WtName NO_NAME = WtName.NULL;
+	private static final WtName NO_NAME = WtName.NO_NAME;
 	
 	// =========================================================================
 	
