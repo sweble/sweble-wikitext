@@ -54,7 +54,7 @@ WtParagraph[
 	[10] = WtTagExtension(
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtTagExtensionBody("{{cite web|url=http://hdr.undp.org/en/media/HDR_2009_EN_Complete.pdf |title=UNDP.org |format=PDF |date= |accessdate=27 April 2010}}")
 	),
 	[11] = " and possesses the fifth largest economy by ",
@@ -71,7 +71,7 @@ WtParagraph[
 	[13] = WtTagExtension(
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtTagExtensionBody("[https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html Field listing \u2013 GDP (official exchange rate)], CIA World Factbook")
 	),
 	[14] = " and seventh largest economy by ",
@@ -89,7 +89,7 @@ WtParagraph[
 	[17] = WtTagExtension(
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtTagExtensionBody("{{cite web |url=https://www.cia.gov/library/publications/the-world-factbook/rankorder/2001rank.html |title=CIA \u2013 The World Factbook \u2013 Country Comparisons \u2013 GDP (purchasing power parity) |publisher=Cia.gov |date= |accessdate=26 April 2009}}")
 	),
 	[18] = " France enjoys a ",
@@ -129,7 +129,7 @@ WtParagraph[
 	[25] = WtTagExtension(
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtTagExtensionBody("{{cite web|url=http://www.un.org/esa/population/publications/wpp2006/WPP2006_Highlights_rev.pdf |title=Microsoft Word - WPP2006_Highlights_0823.doc |format=PDF |date= |accessdate=27 April 2010}}")
 	),
 	[26] = " It is the most visited country in the world, receiving 82 million foreign tourists annually.",
@@ -241,7 +241,7 @@ WtParagraph[
 	[49] = WtTagExtension(
 		{P} name = "ref"
 		{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtTagExtensionBody("{{cite web|url=http://www.fas.org/programs/ssp/nukes/nuclearweapons/nukestatus.html |title=Federation of American Scientists : Status of World Nuclear Forces |publisher=Fas.org |date=2010-05-26 |accessdate=2010-08-09}}")
 	),
 	[50] = " with ~300 active warheads as of May 25 2010. In 2009, France was listed 8th on the ",
@@ -320,7 +320,7 @@ WtSection(
 			[11] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[[Plutarch]] claimed that one million people (probably 1 in 4 of the [[Gauls]]) died, another million were enslaved, 300 tribes were subjugated and 800 cities were destroyed during the [[Gallic Wars]].")
 			),
 			[12] = " and the Gauls eventually adopted ",
@@ -499,7 +499,7 @@ WtSection(
 			[19] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.wf-f.org/03-1-France.html Faith of the Eldest Daughter - Can France retain her Catholic heritage?] - [http://www.wf-f.org/ Women for Faith and Family]")
 			),
 			[20] = " and the French would adopt this as justification for calling themselves \u201Cthe Most Christian Kingdom of France\u201D."
@@ -704,7 +704,7 @@ WtSection(
 			[19] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://history.howstuffworks.com/european-history/treaty-of-verdun.htm Treaty of Verdun] - Howstuffworks")
 			),
 			[20] = WtNewline("\n"),
@@ -739,7 +739,7 @@ WtSection(
 			[28] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.historyworld.net/wrldhis/PlainTextHistories.asp?groupid=1008&HistoryID=ab03&gtrack=pthc History of France : The Capetian kings of France: AD 987-1328] - History World")
 			),
 			[29] = " "
@@ -815,7 +815,7 @@ WtSection(
 			[17] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news\n | title = Massacre of the Pure\n | url = http://www.time.com/time/magazine/article/0,9171,897752-2,00.html\n | newspaper = Time\n | location = New York\n | date = 28 April 1961\n }}")
 			),
 			[18] = WtNewline("\n"),
@@ -979,7 +979,7 @@ WtSection(
 			[17] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Don O'Reilly. \"[http://www.historynet.com/magazines/military_history/3031536.html Hundred Years' War: Joan of Arc and the Siege of Orl\u00E9ans]\". ''TheHistoryNet.com''.")
 			)
 		],
@@ -1014,7 +1014,7 @@ WtSection(
 			[7] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.britannica.com/EBchecked/topic/516821/Massacre-of-Saint-Bartholomews-Day Massacre of Saint Bartholomew\u2019s Day]. [[Encyclopaedia Britannica]].")
 			)
 		],
@@ -1055,7 +1055,7 @@ WtSection(
 			[7] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.nakedtranslations.com/en/2004/language-and-diplomacy/ Language and Diplomacy] - Naked Translations")
 			),
 			[8] = " Much of the ",
