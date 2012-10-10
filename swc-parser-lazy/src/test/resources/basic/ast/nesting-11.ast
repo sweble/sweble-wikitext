@@ -3,7 +3,7 @@ WtParsedWikitextPage(
 		[0] = WtTagExtension(
 				{P} name = "pre"
 				{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("T|a\n|b")
 			)
 	}
@@ -20,26 +20,26 @@ WtParsedWikitextPage(
 		body = WtBody[
 			[0] = WtTableCell(
 				{P} rtd = RTD[ "|" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = "1",
 					[1] = WtTagExtension(
 						{P} name = "pre"
 						{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtTagExtensionBody("T|a\n|b")
 					)
 				]
 			),
 			[1] = WtTableCell(
 				{P} rtd = RTD[ "||" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = "2",
 					[1] = WtXmlElement(
 						{P} name = "span"
 						{P} rtd = RTD[ "<span" <o> "\n>" <o> "</span>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[ [0] = "X" ]
 					),
 					[2] = "Y"
@@ -47,7 +47,7 @@ WtParsedWikitextPage(
 			),
 			[2] = WtTableCell(
 				{P} rtd = RTD[ "||" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtParagraph[ [0] = "3" ],
 					[1] = WtNewline("\n")

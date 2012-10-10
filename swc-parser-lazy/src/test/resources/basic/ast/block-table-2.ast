@@ -31,7 +31,7 @@ WtParsedWikitextPage(
 	[2] = WtNewline("\n"),
 	[3] = WtTable(
 		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = WtTableRow(
 				{P} rtd = RTD[ " |-" <o> "\n" <o> "" ]
@@ -45,7 +45,7 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = WtTableHeader(
 						{P} rtd = RTD[ " !" <o> "" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtParagraph[ [0] = " class=\"foo\"" ],
 							[1] = WtNewline("\n")

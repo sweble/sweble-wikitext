@@ -10,19 +10,19 @@ WtParsedWikitextPage(
 					[0] = WtXmlElement(
 						{P} name = "i"
 						{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = "X",
 							[1] = WtXmlElement(
 								{P} name = "b"
 								{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = " Y" ]
 							),
 							[2] = WtXmlElement(
 								{P} name = "i"
 								{P} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "Z" ]
 							),
 							[3] = " "
@@ -35,7 +35,7 @@ WtParsedWikitextPage(
 	[2] = WtXmlElement(
 		{P} name = "i"
 		{P} rtd = RTD[ "" <o> "" <o> "" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = WtNewline("\n"),
 			[1] = WtNewline("\n")
@@ -47,7 +47,7 @@ WtParsedWikitextPage(
 			[0] = WtXmlElement(
 				{P} name = "i"
 				{P} rtd = RTD[ "" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[ [0] = "B " ]
 			)
 		)
@@ -55,7 +55,7 @@ WtParsedWikitextPage(
 	[4] = WtXmlElement(
 		{P} name = "i"
 		{P} rtd = RTD[ "" <o> "" <o> "" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[ [0] = WtNewline("\n") ]
 	)
 )

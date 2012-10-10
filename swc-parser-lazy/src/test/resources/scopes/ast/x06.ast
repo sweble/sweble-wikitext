@@ -6,13 +6,13 @@ WtParsedWikitextPage(
 		[1] = WtXmlElement(
 			{P} name = "i"
 			{P} rtd = RTD[ "<i" <o> ">" <o> "</i>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[
 				[0] = " b ",
 				[1] = WtXmlElement(
 					{P} name = "b"
 					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtBody[ [0] = " c " ]
 				)
 			]
@@ -20,7 +20,7 @@ WtParsedWikitextPage(
 		[2] = WtXmlElement(
 			{P} name = "b"
 			{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = " d " ]
 		),
 		[3] = " e"

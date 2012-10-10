@@ -5,14 +5,14 @@ WtParsedWikitextPage(
 		[0] = WtXmlElement(
 			{P} name = "code"
 			{P} rtd = RTD[ "<code" <o> ">" <o> "</code>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = "<" ]
 		),
 		[1] = WtNewline("\n"),
 		[2] = WtXmlStartTag(
 			{P} name = "blub"
 			{P} rtd = RTD[ "<blub" <o> ">" ]
-			xmlAttributes = -
+			xmlAttributes = WtXmlAttributes[]
 		),
 		[3] = "<",
 		[4] = WtXmlEndTag(

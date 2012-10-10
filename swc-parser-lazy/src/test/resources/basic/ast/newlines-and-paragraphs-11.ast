@@ -9,11 +9,11 @@ WtParsedWikitextPage(
 	[2] = WtNewline("\n"),
 	[3] = WtTable(
 		{P} rtd = RTD[ "{|" <o> "\n" <o> " |}" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = WtTableCell(
 				{P} rtd = RTD[ " |" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[ [0] = WtNewline("\n") ]
 			)
 		]

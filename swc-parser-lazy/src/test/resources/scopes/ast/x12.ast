@@ -6,13 +6,13 @@ WtParsedWikitextPage(
 		[1] = WtXmlElement(
 			{P} name = "i"
 			{P} rtd = RTD[ "<i" <o> ">" <o> "" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[
 				[0] = " a ",
 				[1] = WtXmlElement(
 					{P} name = "b"
 					{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtBody[ [0] = " b " ]
 				)
 			]
@@ -21,17 +21,17 @@ WtParsedWikitextPage(
 	[1] = WtXmlElement(
 		{P} name = "div"
 		{P} rtd = RTD[ "<div" <o> ">" <o> "" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = WtXmlElement(
 				{P} name = "i"
 				{P} rtd = RTD[ "" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtXmlElement(
 						{P} name = "b"
 						{P} rtd = RTD[ "" <o> "" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[ [0] = " c " ]
 					)
 				]
@@ -39,17 +39,17 @@ WtParsedWikitextPage(
 			[1] = WtXmlElement(
 				{P} name = "blockquote"
 				{P} rtd = RTD[ "<blockquote" <o> ">" <o> "</blockquote>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtXmlElement(
 						{P} name = "i"
 						{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtXmlElement(
 								{P} name = "b"
 								{P} rtd = RTD[ "" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = " d ",
 									[1] = WtXmlEndTag(
@@ -64,7 +64,7 @@ WtParsedWikitextPage(
 					[1] = WtXmlElement(
 						{P} name = "b"
 						{P} rtd = RTD[ "" <o> "" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[ [0] = " f " ]
 					)
 				]
@@ -72,7 +72,7 @@ WtParsedWikitextPage(
 			[2] = WtXmlElement(
 				{P} name = "b"
 				{P} rtd = RTD[ "" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[ [0] = " g" ]
 			)
 		]

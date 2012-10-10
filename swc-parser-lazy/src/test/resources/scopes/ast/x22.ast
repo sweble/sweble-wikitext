@@ -9,7 +9,7 @@ WtParsedWikitextPage(
 	[2] = WtXmlElement(
 		{P} name = "hr"
 		{P} rtd = RTD[ "<hr" <o> " />" <o> "" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = -
 	),
 	[3] = WtNewline("\n"),

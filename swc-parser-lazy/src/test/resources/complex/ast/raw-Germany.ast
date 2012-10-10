@@ -906,13 +906,13 @@ WtParsedWikitextPage(
 		[12] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite web |url=http://www.migrationinformation.org/datahub/countrydata/country.cfm |title=Germany: Inflow of foreign population by country of nationality, 1994 to 2003 | publisher = Migrationinformation.org |accessdate=4 January 2010}}")
 			),
 		[13] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news |title=On Jan.&nbsp;1, out of many arises one Euro |newspaper=St. Petersburg Times |location= Florida, USA |first= Susan | last = Taylor Martin |date=28 December 1998 |page=National, 1.A }}")
 			),
 		[14] = WtTagExtension(
@@ -930,31 +930,31 @@ WtParsedWikitextPage(
 		[15] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news |title = Euro notes and coins to flood continent |first=David | last = Smith |date=15 June 2001 |newspaper=New Straits Times| location = Kuala Lumpur | accessdate = 26 April 2010| url = http://news.google.co.uk/newspapers?id=liwhAAAAIBAJ&sjid=j3gFAAAAIBAJ&pg=1283,3813941&dq=germany+euro+currency+introduced+1999&hl=en }}")
 			),
 		[16] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news | url = http://www.topnews.in/germany-worlds-second-biggest-aid-donor-after-us-229970 | title = Germany world's second biggest aid donor after US | work = TopNews India | accessdate = 10 April 2008 | agency = DPA | date = 4 April 2008 }}")
 			),
 		[17] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite web |url=http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archiveurl=http://web.archive.org/web/20070814224502/http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archivedate=14 August 2007 |title=The fifteen major spenders in 2006 |accessdate=23 August 2007 |year=2007 |format=PDF |work=Recent trends in military expenditure| publisher=Stockholm International Peace Research Institute}}")
 			),
 		[18] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news | url=http://www.iht.com/articles/2008/04/04/europe/poll.php | title = The leader of Europe? Answers an ocean apart | newspaper = International Herald Tribune | date = 4 April 2008 | accessdate =4 April 2008 | location = Paris }}")
 			),
 		[19] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.innovations-report.de/html/berichte/informationstechnologie/bericht-109339.html Confidently into the Future with Reliable Technology] www.innovations-report.de. 7 May 2008. Retrieved 4 April 2008.")
 			),
 		[20] = WtTemplate(
@@ -989,25 +989,25 @@ WtParsedWikitextPage(
 		[22] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite book|last = St\u00FCmpel|first = Gustav|title = Name und Nationalit\u00E4t der Germanen. Eine neue Untersuchung zu Poseidonios, Caesar und Tacitus|origyear = 1932|publisher = Dieterich|location = Leipzig|language = German|pages = 60}}")
 			),
 		[23] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite book |last= Schulze |first=Hagen |authorlink=Hagen Schulze |title=Germany: A New History |publisher= [[Harvard University Press]]|page=4 |year=1998 |isbn= 0-674-80688-3}}")
 			),
 		[24] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite book | url=http://www.oxfordreference.com/views/ENTRY.html?subview=Main&entry=t27.e6407 | section = German | title = The Concise Oxford Dictionary of English Etymology | editor = Hoad, T.F. | publisher = Oxford University Press | year = 1996 | accessdate = 4 March 2008 }}")
 			),
 		[25] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite web|url=http://www.zeno.org/Meyers-1905/A/G%C4%93r |title=Meyers Encyclopedia:Ger |publisher=Zeno.org |accessdate=26 September 2010}}")
 			),
 		[26] = WtTemplate(
@@ -1100,19 +1100,19 @@ WtParsedWikitextPage(
 		[32] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315\u20131317) and the Black Death (1346\u20131351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}")
 			),
 		[33] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Rempel, Gerhard. [http://mars.wnec.edu/~grempel/courses/wc2/lectures/30yearswar.html The Thirty-Years-War]. Western [[New England College]].")
 			),
 		[34] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite book | url=http://books.google.com/?id=eGsCGAdH4YQC&pg=PA51&dq#v=onepage&q=&f=false | title = The savage wars of peace: England, Japan and the Malthusian trap | first = Alan | last = Macfarlane | year = 1997 | page=51 |isbn = 0-631-18117-2 }}")
 			),
 		[35] = WtTagExtension(
@@ -1142,7 +1142,7 @@ WtParsedWikitextPage(
 		[37] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815\u20131866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006.")
 			),
 		[38] = WtTemplate(
@@ -1199,7 +1199,7 @@ WtParsedWikitextPage(
 		[41] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news | url = http://www.spiegel.de/international/germany/0,1518,530319,00.html | title = Last German World War I Veteran Believed to Have Died | newspaper = Spiegel Online | date = 22 January 2008 | first = David | last = Crossland }}")
 			),
 		[42] = WtTagExtension(
@@ -1275,37 +1275,37 @@ WtParsedWikitextPage(
 		[47] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite web |url=http://www.dhm.de/lemo/html/nazi/innenpolitik/ermaechtigungsgesetz/index.html |title=Das Erm\u00E4chtigungsgesetz 1933 |accessdate=12 September 2008 |publisher=[[Deutsches Historisches Museum]]| language=German |quote=An der Abstimmung nicht teilnehmen konnten die 81 Abgeordneten der Kommunistischen Partei Deutschlands (KPD). Ihre Mandate waren auf Basis der Reichstagsbrandverordnung bereits am 8. M\u00E4rz 1933 annulliert worden. }}<br />Stackelberg, Roderick (1999). ''Hitler's Germany: origins, interpretations, legacies''. Routledge. p. 103. ISBN 0-415-20114-4. <br />Scheck, Raffael. [http://www.colby.edu/personal/r/rmscheck/GermanyE1.html Establishing a Dictatorship: The Stabilization of Nazi Power] Colby College. Retrieved 12 July 2006.")
 			),
 		[48] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite web |url=http://www.dhm.de/lemo/html/nazi/wirtschaft/index.html|title=Industrie und Wirtschaft |accessdate=12 September 2008 |publisher=Deutsches Historisches Museum |language=German |quote=Der Vierjahresplan sollte ab 1936 die wirtschaftliche Kriegsf\u00E4higkeit Deutschlands herbeif\u00FChren. . . .Bereits im Februar 1933 erkl\u00E4rte Hitler, dass alle \u00F6ffentlichen Ma\u00DFnahmen zur Arbeitsbeschaffung zugleich der \"Wehrhaftmachung\" zu dienen h\u00E4tten und den Interessen des Staates untergeordnet seien. . . .}}")
 			),
 		[49] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Steinberg, Heinz G\u00FCnter. ''Die Bev\u00F6lkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem \u00DCberblick \u00FCber die Entwicklung von 1945 bis 1990.'' Bonn 1991.")
 			),
 		[50] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Niewyk, Donald L.; Nicosia, Francis R. [http://books.google.ca/books?id=lpDTIUklB2MC&pg=PP1&dq=Niewyk,+Donald+L.+The+Columbia+Guide+to+the+Holocaust&sig=4igufxQHRCNrkjwRuMt1if_mf5M#PPA45,M1 ''The Columbia Guide to the Holocaust''], [[Columbia University Press]], 2000, pp. 45\u201352.")
 			),
 		[51] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news | url = http://news.bbc.co.uk/2/hi/europe/4530565.stm | title = Leaders mourn Soviet wartime dead | work = BBC News Online |location = London | date = 9 May 2005 }}")
 			),
 		[52] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("\"[http://www.bbc.co.uk/history/worldwars/wwtwo/nuremberg_article_01.shtml Nuremberg: Nazis On Trial]\". Professor Richard Overy. BBC History.")
 			),
 		[53] = WtTemplate(
@@ -1329,7 +1329,7 @@ WtParsedWikitextPage(
 		[55] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 409\u2013412 | quote = Altogether at least 2&nbsp;million German women are thought to have been raped . . . }}<br />{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 31\u201332 | quote =He [the Komsomol leader, Maltsev] went on to boast that '2&nbsp;million of our children were born in Germany.' }}")
 			),
 		[56] = WtTagExtension(
@@ -1381,7 +1381,7 @@ WtParsedWikitextPage(
 		[59] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cite news | last = Colchester | first = Nico | url = http://www.ft.com/cms/s/504285c4-68b6-11da-bd30-0000779e2340,dwp_uuid=6f876a3c-e19f-11da-bf4c-0000779e2340.html | title = D-mark day dawns | newspaper = [[Financial Times]] | location = London | date = 1 January 2001 | accessdate = 7 December 2006 }}")
 			),
 		[60] = WtTemplate(
@@ -1428,13 +1428,13 @@ WtParsedWikitextPage(
 		[63] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [http://www.wdr.de/themen/politik/nrw03/bonn_berlin/060914.jhtml?rubrikenstyle=politik Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 14 September 2006.")
 			),
 		[64] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [http://www.wdr.de/themen/politik/deutschland/bonn_berlin/060619.jhtml?rubrikenstyle=politik Deutschlands heimliche Hauptstadt Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 20 June 2006.")
 			),
 		[65] = WtTagExtension(
@@ -1744,7 +1744,7 @@ WtParsedWikitextPage(
 		[77] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.germanculture.com.ua/library/facts/bl_climate.htm Climate In Germany] GermanCulture. Retrieved 2010-26-08.")
 			),
 		[78] = WtTemplate(
@@ -1802,25 +1802,25 @@ WtParsedWikitextPage(
 		[79] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.panda.org/about_our_earth/ecoregions/ecoregion_list/ List of Ecoregions: Terrestrial Ecoregions] WWF. Retrieved 21 November 2000.")
 			),
 		[80] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.eupedia.com/europe/zoological_gardens_europe.shtml List of famous Zoological gardens in European countries] www.eupedia.com. Retrieved 17 October 2008.")
 			),
 		[81] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.americanzoos.info/Zoofacts.html Some interesting zoo facts] www.americanzoos.info/. Retrieved 17 October 2008.")
 			),
 		[82] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}}[http://www.zoo-berlin.de/en/understand/zahlen-fakten.html Tierstatistik 2008]{{dead link|date=September 2010}}, Zoo Berlin. Retrieved 19 November 2009.")
 			),
 		[83] = WtTemplate(
@@ -1878,25 +1878,25 @@ WtParsedWikitextPage(
 		[84] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://docs.google.com/viewer?a=v&q=cache:ULS2JqlpDgEJ:dzforum.de/downloads/020101311.pdf+Starting+points+and+focus+of+environmental+communication+site:dzforum.de&hl=en&pid=bl&srcid=ADGEESiPmGynU-6SalJJqHpsYQsnf6um5_nPW6Wz6R3HgEOQZEV2kxltI0OWaCuWNrWugnjPki98ww1R0r_-VfGBYjxnfLY2Zg8tzzwsagtvTi-w1-FgqsPK-iEYJgRjRyvzIsVQJgrF&sig=AHIEtbTTWzlVX6stOR-oJP4FxK20wmyGmA Starting points and focus of environmental communication], German Federal Environmental Foundation, 16 October 2004.")
 			),
 		[85] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web| url = http://www.worldpublicopinion.org/pipa/pdf/sep07/BBCClimate_Sep07_rpt.pdf| title = All Countries Need to Take Major Steps on Climate Change: Global Poll| accessdate = 11 February 2008 | author=PIPA| date =24 September 2007| format = PDF|publisher=BBC World service Poll, carried out by Globescan| publisher=[[Program on International Policy Attitudes]] at the [[University of Maryland, College Park]]|quote=Eighty-seven percent of German respondents agree that human activity is a significant cause of climate change and 95 percent think it is necessary to take measures to deal with the problem.}}")
 			),
 		[86] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.umweltbundesamt.de/uba-info-presse-e/2004/pe04-056.htm Reinforcing Germany's environmental protection industry]{{dead link|date=September 2010}} Umweltbundesamt. Retrieved 25 November 2007.")
 			),
 		[87] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://timesofindia.indiatimes.com/Earth/Germany_greenest_country_in_the_world/articleshow/3151766.cms Germany greenest country in the world] ''Times of India''. Retrieved 25 November 2008.")
 			),
 		[88] = WtTemplate(
@@ -1926,7 +1926,7 @@ WtParsedWikitextPage(
 		[90] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://countrystudies.us/germany/159.htm Christian Democratic Union/Christian Social Union] U.S. Library of Congress. Retrieved 7 December 2006.")
 			),
 		[91] = WtTemplate(
@@ -1949,13 +1949,13 @@ WtParsedWikitextPage(
 		[92] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.bundesverfassungsgericht.de/en/index.html Federal Constitutional Court], Bundesverfassungsgericht.de. Retrieved 13 April 2007.")
 			),
 		[93] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [http://www.gesetze-im-internet.de/stvollzg/__2.html \u00A7 2 Strafvollzugsgesetz] Bundesministerium der Justiz. Retrieved 19 November 2009.")
 			),
 		[94] = WtTemplate(
@@ -1973,43 +1973,43 @@ WtParsedWikitextPage(
 		[95] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.auswaertiges-amt.de/EN/AAmt/Auslandsvertretungen/Uebersicht_node.html German Missions Abroad] German Federal Foreign Office. Retrieved 31 December 2010.")
 			),
 		[96] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.elysee.fr/elysee/anglais/speeches_and_documents/2004/declaration_by_the_franco-german_defence_and_security_council.1096.html Declaration by the Franco-German Defence and Security Council] Elysee.fr 13 May 3004. Retrieved 3 December 2006.")
 			),
 		[97] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007.")
 			),
 		[98] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Harrison, Hope. {{PDFlink|[http://www.ghi-dc.org/files/publications/bu_supp/supp1/supp-01_005.pdf ''The Berlin Wall, Ostpolitik and D\u00E9tente]|91.1&nbsp;KB}} German historical institute, Washington, DC, Bulletin supplement 1, 2004, ''American d\u00E9tente and German ostpolitik, 1969\u20131972\".")
 			),
 		[99] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006.")
 			),
 		[100] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.state.gov/r/pa/ei/bgn/3997.htm Background Note: Germany] U.S. Department of State. 6 July 2006. Retrieved 3 December 2006.")
 			),
 		[101] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.economist.com/world/europe/displaystory.cfm?story_id=7141311 ''Ready for a Bush hug?''], [[The Economist]], 6 July 2006. Retrieved 31 December 2006.")
 			),
 		[102] = WtTagExtension(
@@ -2027,25 +2027,25 @@ WtParsedWikitextPage(
 		[103] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.census.gov/Press-Release/www/releases/archives/census_2000/001870.html German Still Most Frequently Reported Ancestry] [[U.S. Census Bureau]] 30 June 2004. Retrieved 3 December 2006. {{Dead link|date=June 2010| bot=DASHBot}}")
 			),
 		[104] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006.")
 			),
 		[105] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.bmz.de/en/index.html Aims of German development policy] Federal Ministry for Economic Cooperation and Development 10 April 2008. Retrieved 7 December 2008.")
 			),
 		[106] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.oecd.org/dataoecd/17/9/44981892.pdf Table: Net Official Development Assistance 2009] OECD")
 			),
 		[107] = WtTemplate(
@@ -2075,7 +2075,7 @@ WtParsedWikitextPage(
 		[109] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz f\u00FCr die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}")
 			),
 		[110] = WtTemplate(
@@ -2128,31 +2128,31 @@ WtParsedWikitextPage(
 		[114] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}")
 			),
 		[115] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web |url=http://www.transparency.org/policy_research/surveys_indices/cpi/2009/cpi_2009_table |title=CPI 2009 table |publisher=Transparency International |accessdate=18 November 2009}}")
 			),
 		[116] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://www.nam.org/innovationreport.pdf |title=The Innovation Imperative in Manufacturing: How the United States Can Restore Its Edge |format=PDF |date= |accessdate=26 September 2010}}")
 			),
 		[117] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("\"German Economy Experiences Record Growth in 2010\" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]")
 			),
 		[118] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010.")
 			),
 		[119] = WtTagExtension(
@@ -2170,7 +2170,7 @@ WtParsedWikitextPage(
 		[120] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006.")
 			),
 		[121] = WtTagExtension(
@@ -2188,37 +2188,37 @@ WtParsedWikitextPage(
 		[122] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}")
 			),
 		[123] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news| url= http://www.guardian.co.uk/world/2008/nov/14/oecd-recession-germany-inflation-deflation | title= Germany officially in recession as OECD expects US to lead recovery|work=The Guardian |location=UK |date=14 November 2008 | first=Kathryn | last=Hopkins | accessdate=31 March 2010}}")
 			),
 		[124] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}")
 			),
 		[125] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://web.archive.org/web/20080106165521/http://bwnt.businessweek.com/brand/2006/ The 100 Top Brands 2006], Businessweek. Retrieved 26 November 2007.")
 			),
 		[126] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.businessweek.com/news/2010-09-23/germany-has-1-000-market-leading-companies-manager-magazin-says.html Germany Has 1,000 Market-Leading Companies, Manager-Magazin Says], Businessweek. Retrieved 23 September 2010.")
 			),
 		[127] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://money.cnn.com/magazines/fortune/global500/2010/countries/Germany.html], CNN Money. Retrieved 7 August 2010.")
 			),
 		[128] = WtTemplate(
@@ -2253,7 +2253,7 @@ WtParsedWikitextPage(
 		[130] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Gesch\u00E4ftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009.")
 			),
 		[131] = WtTemplate(
@@ -2271,7 +2271,7 @@ WtParsedWikitextPage(
 		[132] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://news.bbc.co.uk/2/hi/europe/4295389.stm Germany split over green energy], BBC. Retrieved 13 April 2007.")
 			),
 		[133] = WtTemplate(
@@ -2289,37 +2289,37 @@ WtParsedWikitextPage(
 		[134] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.")
 			),
 		[135] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Horst, Zuse. [http://www.epemag.com/zuse/ The Life and Work of Konrad Zuse]{{dead link|date=September 2010}} Everyday Practical Electronics (EPE) Online. Retrieved 2 January 2007. {{Wayback|url=http://www.epemag.com/zuse/|date =20070220074134|bot=DASHBot}}{{dead link|date=September 2010}}")
 			),
 		[136] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|title=Automobile|publisher=Microsoft Encarta Online Encyclopedia 2006|accessdate=2 January 2007|archiveurl=http://web.archive.org/web/20080420212258/http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|archivedate=20 April 2008}}")
 			),
 		[137] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007.")
 			),
 		[138] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007.")
 			),
 		[139] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08.")
 			),
 		[140] = WtTemplate(
@@ -2337,43 +2337,43 @@ WtParsedWikitextPage(
 		[141] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany \u2013 A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006.")
 			),
 		[142] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://nobelprize.org/ Nobel Prize], Nobelprize.org. Retrieved 19 November 2009.")
 			),
 		[143] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.sciencenews.org/view/generic/id/63944/title/Swedish_academy_awards Swedish academy awards] ScienceNews web edition, 1 October 2010.")
 			),
 		[144] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("National Science Nobel Prize shares 1901\u20132009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[J\u00FCrgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]")
 			),
 		[145] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Roberts, J. M. ''The New Penguin History of the World'', Penguin History, 2002. Pg. 1014. ISBN 0-14-100723-0.")
 			),
 		[146] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://web.archive.org/web/20080402061044/http://www.history.com/encyclopedia.do?articleId=226611 The Alfred B. Nobel Prize Winners, 1901\u20132003] History Channel from ''The World Almanac and Book of Facts'' 2006. Retrieved 2 January 2007.")
 			),
 		[147] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007.")
 			),
 		[148] = WtTemplate(
@@ -2413,37 +2413,37 @@ WtParsedWikitextPage(
 		[150] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web |url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2010/01/PD10__034__12641,templateId=renderPrint.psml|title=Durchschnittliche Kinderzahl 2008 in den neuen L\u00E4ndern angestiegen|author=[[Federal Statistical Office of Germany|Destatis]] |language=German|accessdate=31 January 2010}}")
 			),
 		[151] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web | title = Demographic Transition Model | publisher=Barcelona Field Studies Centre | date = 27 September 2009 | url = http://geographyfieldwork.com/DemographicTransition.htm | accessdate = 23 May 2010}}")
 			),
 		[152] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder \u00E4lter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>\nMore details on the methodology, detailed tables broken down by age and sex, etc. are provided at \n{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bev\u00F6lkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}")
 			),
 		[153] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.unfpa.org/publications/detail.cfm?ID=294&filterListType= State of World Population 2006] United Nations Population Fund. 2006. Retrieved 1 January 2007.")
 			),
 		[154] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("\"[http://www.focus-migration.de/Germany.1509.0.html?&L=1 Focus-Migration: Germany]\".")
 			),
 		[155] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news | title=20% of Germans have immigrant roots | newspaper=Burlington Free Press | location=Burlington, Vermont, USA | pages= 4A | date=15 July 2010 }}")
 			),
 		[156] = WtTemplate(
@@ -2461,31 +2461,31 @@ WtParsedWikitextPage(
 		[157] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Content/Statistiken/Bevoelkerung/MigrationIntegration/Migrationshintergrund/Tabellen/Content100/MigrationshintergrundStaatsangehoerigkeit,templateId=renderPrint.psml|title=Bev\u00F6lkerung nach Migrationshintergrund|accessdate=26 March 2010|publisher=German Federal Statistical Office|language=German}}")
 			),
 		[158] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web |url=http://factfinder.census.gov/servlet/IPTable?_bm=y&-reg=ACS_2005_EST_G00_S0201:535;ACS_2005_EST_G00_S0201PR:535;ACS_2005_EST_G00_S0201T:535;ACS_2005_EST_G00_S0201TPR:535&-qr_name=ACS_2005_EST_G00_S0201&-qr_name=ACS_2005_EST_G00_S0201PR&-qr_name=ACS_2005_EST_G00_S0201T&-qr_name=ACS_2005_EST_G00_S0201TPR&-ds_name=ACS_2005_EST_G00_&-TABLE_NAMEX=&-ci_type=A&-redoLog=false&-charIterations=047&-geo_id=01000US&-format=&-_lang=en|coauthors=United States Census Bureau|title=U.S. Census Bureau, 2005 American Community Survey|accessdate=15 April 2007}} The 1990 census gives 57.9&nbsp;million, or 23.3% of the U.S. population.")
 			),
 		[159] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{pt icon}} [http://www.passeiweb.com/na_ponta_lingua/sala_de_aula/geografia/geografia_do_brasil/demografia_imigracoes/brasil_imigracoes_alemanha A Imigra\u00E7\u00E3o Alem\u00E3 no Brasil] Deutsche Welle. Retrieved 19 November 2009.")
 			),
 		[160] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www12.statcan.ca/english/census01/products/highlight/ETO/Table1.cfm?Lang=E&T=501&GV=1&GID=0 2001 Canadian Census] gives 2,742,765 total respondents stating their ''ethnic origin'' as partly German, with 705,600 stating \"single-ancestry\".")
 			),
 		[161] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.migrationinformation.org/Feature/display.cfm?ID=201 \"Fewer Ethnic Germans Immigrating to Ancestral Homeland\"]. ''Migration Information Source.'' February 2004")
 			),
 		[162] = WtTemplate(
@@ -2674,7 +2674,7 @@ WtParsedWikitextPage(
 		[171] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}")
 			),
 		[172] = WtTagExtension(
@@ -2692,7 +2692,7 @@ WtParsedWikitextPage(
 		[173] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://fowid.de/fileadmin/datenarchiv/Religionszugehoerigkeit_Bevoelkerung__1950-2008.pdf Konfessionen in Deutschland](German), fowid. Retrieved 2010, 9 September-09.")
 			),
 		[174] = WtTagExtension(
@@ -2900,7 +2900,7 @@ WtParsedWikitextPage(
 		[176] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009.")
 			),
 		[177] = WtTagExtension(
@@ -2942,19 +2942,19 @@ WtParsedWikitextPage(
 		[180] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Blake, Mariah. [http://www.csmonitor.com/2006/1110/p25s02-woeu.html In Nazi cradle, Germany marks Jewish renaissance] [[Christian Science Monitor]]. 10 November 2006. Retrieved 30 November 2006.")
 			),
 		[181] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.eurojewcong.org/ejc/news.php?id_article=81 The Jewish Community of Germany] European Jewish Congress. Retrieved 30 November 2006.")
 			),
 		[182] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{de icon}} [[Die Zeit]] 12/07, page 13")
 			),
 		[183] = WtTagExtension(
@@ -3002,7 +3002,7 @@ WtParsedWikitextPage(
 		[187] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("In PISA 2000, Germany was the country with the highest correlation between test score and social background index. In the following test periods, this result could not be replicated.")
 			),
 		[188] = WtTagExtension(
@@ -3032,7 +3032,7 @@ WtParsedWikitextPage(
 		[190] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006.")
 			),
 		[191] = WtTemplate(
@@ -3098,37 +3098,37 @@ WtParsedWikitextPage(
 		[196] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|title=Federal Republic of Germany: Culture|publisher=Encarta Online Encyclopedia 2006|accessdate=5 November 2010|archiveurl=http://web.archive.org/web/20080328162029/http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|archivedate=28 March 2008}}")
 			),
 		[197] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.scribd.com/doc/30887674/Modern-German-Culture The Cambridge Companion to Modern German Culture]. Retrieved 9 November 2010.")
 			),
 		[198] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Sp\u00E4tzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006.")
 			),
 		[199] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008.")
 			),
 		[200] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010.")
 			),
 		[201] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8")
 			),
 		[202] = WtTemplate(
@@ -3170,7 +3170,7 @@ WtParsedWikitextPage(
 		[205] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("Searle, John. (1987). ''The Blackwell Companion to Philosophy'', \"Introduction\". Wiley-Blackwell.")
 			),
 		[206] = WtTemplate(
@@ -3188,31 +3188,31 @@ WtParsedWikitextPage(
 		[207] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite book |last= Bordwell |first= David |authorlink= David Bordwell |coauthors= Kristin Thompson|title= Film History: An Introduction|origdate= |origyear= 1994 |edition= 2nd |year= 2003 |publisher=McGraw-Hill |location= New York City |isbn= 978-0-07-115141-2 |page= 204 |chapter= The Introduction of Sound}}")
 			),
 		[208] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007.")
 			),
 		[209] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.fassbinderfoundation.de/node.php/en/home Rainer Werner Fassbinder], Fassbinder Foundation. Retrieved 13 April 2007.")
 			),
 		[210] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.imdb.com/title/tt0405094/awards Awards:Das Leben der Anderen], IMDb. Retrieved 13 April 2007.")
 			),
 		[211] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("''[http://www.fiapf.org/pdf/2006accreditedFestivalsDirectory.pdf 2006 FIAPF accredited Festivals Directory], International Federation of Film Producers Associations, retrieved on 11 December 2006.''")
 			),
 		[212] = WtTemplate(
@@ -3230,19 +3230,19 @@ WtParsedWikitextPage(
 		[213] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://web.archive.org/web/20070205193206/http://news.warez.com/p2pnet/music-market-worth-us32-billion.html Music market worth US$ 32&nbsp;billion] P2pnet.net 7 April 2004. Retrieved 7 December 2006.")
 			),
 		[214] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://news.bbc.co.uk/2/hi/europe/country_profiles/1047864.stm Country profile: Germany], BBC News. Retrieved 7 December 2007.")
 			),
 		[215] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.land-der-ideen.de/CDA/facts_printing,4563,0,,en.html Germany \u2013 Land of ideas], www.land-der-ideen.de Retrieved 12 December 2010.")
 			),
 		[216] = WtTemplate(
@@ -3296,19 +3296,19 @@ WtParsedWikitextPage(
 		[220] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news | url = http://sport.guardian.co.uk/formulaone/story/0,,1929091,00.html | title = What we will miss about Michael Schumacher | newspaper=The Guardian | date = 23 October 2006 | accessdate = 19 October 2007 | location=London | first=David | last=Ornstein }}")
 			),
 		[221] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web | url = http://results.beijing2008.cn/WRM/ENG/INF/GL/95A/GL0000000.shtml | title = Beijing 2008 Medal Table | publisher=The Official Website of the Beijing 2008 Olympic Games | accessdate = 8 September 2008}}")
 			),
 		[222] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web | url = http://www.olympic.org/uk/games/past/table_uk.asp?OLGT=2&OLGY=2006 | title = Turin 2006 Medal Table | publisher=International Olympic Committee | accessdate = 28 December 2006}}")
 			),
 		[223] = WtTemplate(
@@ -3326,61 +3326,61 @@ WtParsedWikitextPage(
 		[224] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web | url = http://www.nationmaster.com/country/gm-germany/foo-food | title = German food stats | publisher=www.nationmaster.com | accessdate = 26 November 2007}}")
 			),
 		[225] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}")
 			),
 		[226] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.cp-pc.ca/english/germany/eating.html Eating the German way], Cultural Profiles Project. Retrieved 2007, 26 November.")
 			),
 		[227] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November.")
 			),
 		[228] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.dw-world.de/dw/article/0,2144,2914502,00.html Schnitzel Outcooks Spaghetti in Michelin Guide], Deutsche Welle. Retrieved 2007, 26 November.")
 			),
 		[229] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November.")
 			),
 		[230] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.royalunibrew.com/Default.aspx?ID=266 Europe's largest beer market], royalunibrew.com. Retrieved 2007, 26 November.")
 			),
 		[231] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.nationmaster.com/graph/foo_sof_dri_con-food-soft-drink-consumption Soft drink consumption], www.nationmaster.com. Retrieved 2007, 26 November.")
 			),
 		[232] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.germany.info/Vertretung/usa/en/07__Culture__Lifestyle__Travel/01/__Society.html Society] The German Mission to the United states. Retrieved 16 October 2010.")
 			),
 		[233] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.news24.com/News24/World/News/0,,2-10-1462_1613010,00.html Germany extends gay rights]{{dead link|date=September 2010}} News24.com. Retrieved 25 November 2007.")
 			),
 		[234] = WtTagExtension(
@@ -3420,37 +3420,37 @@ WtParsedWikitextPage(
 		[236] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite book | first = Friedrich | last = Heckmann | url = http://books.google.com/?id=l9yTtCAnQWwC&pg=PA53&lpg=PA53&dq=cdu+immigrant+einwanderungsland#PPA53,M1 | title = The Integration of Immigrants in European Societies: national differences and trends of convergence| publisher=Lucius & Lucius | location = Stuttgart | pages = 51 ff. | year = 2003 | isbn = 978-3-8282-0181-1 | accessdate = 28 October 2010 }}")
 			),
 		[237] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.brandovation.net/ How Germany won the World Cup of Nation Branding] BrandOvation. Retrieved 25 November 2007.")
 			),
 		[238] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite press release | title = 2010 Anholt-GfK Roper Nation Brands Index | publisher=[[GfK]] | date = 12 October 2010 | url = http://www.gfk.com/group/press_information/press_releases/006688/index.en.html | accessdate = 15 October 2010 }}")
 			),
 		[239] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news | url = http://news.bbc.co.uk/2/hi/8626041.stm | title = World warming to US under Obama, BBC poll suggests |publisher=BBC News Online | location = London | date = 19 April 2010 |accessdate = 28 October 2010 }}")
 			),
 		[240] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://news.bbc.co.uk/2/shared/bsp/hi/pdfs/160410bbcwspoll.pdf BBC World Service Poll], BBC News. Retrieved 19 April 2010.")
 			),
 		[241] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite news | url = http://economictimes.indiatimes.com/ET-Cetera/Germans-spend-most-on-foreign-trips-Industry-group/articleshow/4250332.cms | title = Germans spend most on foreign trips: Industry group] | date = 10 March 2009 | location = New Delhi | newspaper=The Economic Times |accessdate = 15 March 2009 }}")
 			),
 		[242] = WtTemplate(
@@ -5192,7 +5192,7 @@ WtParsedWikitextPage(
 		[41] = WtXmlElement(
 			{P} name = "sup"
 			{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = "2" ]
 		),
 		[42] = " and is influenced by a ",
@@ -5248,7 +5248,7 @@ WtParsedWikitextPage(
 		[53] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{cite web |url=http://www.migrationinformation.org/datahub/countrydata/country.cfm |title=Germany: Inflow of foreign population by country of nationality, 1994 to 2003 | publisher = Migrationinformation.org |accessdate=4 January 2010}}")
 		)
 	],
@@ -5432,7 +5432,7 @@ WtParsedWikitextPage(
 		[41] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{cite news |title=On Jan.&nbsp;1, out of many arises one Euro |newspaper=St. Petersburg Times |location= Florida, USA |first= Susan | last = Taylor Martin |date=28 December 1998 |page=National, 1.A }}")
 		),
 		[42] = WtTagExtension(
@@ -5450,7 +5450,7 @@ WtParsedWikitextPage(
 		[43] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{Cite news |title = Euro notes and coins to flood continent |first=David | last = Smith |date=15 June 2001 |newspaper=New Straits Times| location = Kuala Lumpur | accessdate = 26 April 2010| url = http://news.google.co.uk/newspapers?id=liwhAAAAIBAJ&sjid=j3gFAAAAIBAJ&pg=1283,3813941&dq=germany+euro+currency+introduced+1999&hl=en }}")
 		)
 	],
@@ -5629,7 +5629,7 @@ WtParsedWikitextPage(
 		[37] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{cite news | url = http://www.topnews.in/germany-worlds-second-biggest-aid-donor-after-us-229970 | title = Germany world's second biggest aid donor after US | work = TopNews India | accessdate = 10 April 2008 | agency = DPA | date = 4 April 2008 }}")
 		),
 		[38] = " while its ",
@@ -5647,7 +5647,7 @@ WtParsedWikitextPage(
 		[41] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{cite web |url=http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archiveurl=http://web.archive.org/web/20070814224502/http://www.sipri.org/contents/milap/milex/mex_major_spenders.pdf/download |archivedate=14 August 2007 |title=The fifteen major spenders in 2006 |accessdate=23 August 2007 |year=2007 |format=PDF |work=Recent trends in military expenditure| publisher=Stockholm International Peace Research Institute}}")
 		),
 		[42] = " The country has developed a ",
@@ -5673,14 +5673,14 @@ WtParsedWikitextPage(
 		[47] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{cite news | url=http://www.iht.com/articles/2008/04/04/europe/poll.php | title = The leader of Europe? Answers an ocean apart | newspaper = International Herald Tribune | date = 4 April 2008 | accessdate =4 April 2008 | location = Paris }}")
 		),
 		[48] = " Germany is recognised as a scientific and technological leader in several fields.",
 		[49] = WtTagExtension(
 			{P} name = "ref"
 			{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("[http://www.innovations-report.de/html/berichte/informationstechnologie/bericht-109339.html Confidently into the Future with Reliable Technology] www.innovations-report.de. 7 May 2008. Retrieved 4 April 2008.")
 		)
 	],
@@ -5755,7 +5755,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite book|last = St\u00FCmpel|first = Gustav|title = Name und Nationalit\u00E4t der Germanen. Eine neue Untersuchung zu Poseidonios, Caesar und Tacitus|origyear = 1932|publisher = Dieterich|location = Leipzig|language = German|pages = 60}}")
 						),
 						[4] = " term ",
@@ -5797,19 +5797,19 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite book |last= Schulze |first=Hagen |authorlink=Hagen Schulze |title=Germany: A New History |publisher= [[Harvard University Press]]|page=4 |year=1998 |isbn= 0-674-80688-3}}")
 						),
 						[14] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite book | url=http://www.oxfordreference.com/views/ENTRY.html?subview=Main&entry=t27.e6407 | section = German | title = The Concise Oxford Dictionary of English Etymology | editor = Hoad, T.F. | publisher = Oxford University Press | year = 1996 | accessdate = 4 March 2008 }}")
 						),
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite web|url=http://www.zeno.org/Meyers-1905/A/G%C4%93r |title=Meyers Encyclopedia:Ger |publisher=Zeno.org |accessdate=26 September 2010}}")
 						)
 					],
@@ -6765,7 +6765,7 @@ WtParsedWikitextPage(
 						[39] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315\u20131317) and the Black Death (1346\u20131351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}")
 						)
 					],
@@ -6873,14 +6873,14 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Rempel, Gerhard. [http://mars.wnec.edu/~grempel/courses/wc2/lectures/30yearswar.html The Thirty-Years-War]. Western [[New England College]].")
 						),
 						[14] = " The population of the German states was reduced by about 30%.",
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite book | url=http://books.google.com/?id=eGsCGAdH4YQC&pg=PA51&dq#v=onepage&q=&f=false | title = The savage wars of peace: England, Japan and the Malthusian trap | first = Alan | last = Macfarlane | year = 1997 | page=51 |isbn = 0-631-18117-2 }}")
 						),
 						[16] = " The ",
@@ -7131,7 +7131,7 @@ WtParsedWikitextPage(
 						[25] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815\u20131866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006.")
 						)
 					],
@@ -7726,7 +7726,7 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite news | url = http://www.spiegel.de/international/germany/0,1518,530319,00.html | title = Last German World War I Veteran Believed to Have Died | newspaper = Spiegel Online | date = 22 January 2008 | first = David | last = Crossland }}")
 						),
 						[14] = " The ",
@@ -8235,7 +8235,7 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite web |url=http://www.dhm.de/lemo/html/nazi/innenpolitik/ermaechtigungsgesetz/index.html |title=Das Erm\u00E4chtigungsgesetz 1933 |accessdate=12 September 2008 |publisher=[[Deutsches Historisches Museum]]| language=German |quote=An der Abstimmung nicht teilnehmen konnten die 81 Abgeordneten der Kommunistischen Partei Deutschlands (KPD). Ihre Mandate waren auf Basis der Reichstagsbrandverordnung bereits am 8. M\u00E4rz 1933 annulliert worden. }}<br />Stackelberg, Roderick (1999). ''Hitler's Germany: origins, interpretations, legacies''. Routledge. p. 103. ISBN 0-415-20114-4. <br />Scheck, Raffael. [http://www.colby.edu/personal/r/rmscheck/GermanyE1.html Establishing a Dictatorship: The Stabilization of Nazi Power] Colby College. Retrieved 12 July 2006.")
 						),
 						[14] = " Using his powers to crush any actual or potential resistance, Hitler established a centralised ",
@@ -8250,7 +8250,7 @@ WtParsedWikitextPage(
 						[17] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite web |url=http://www.dhm.de/lemo/html/nazi/wirtschaft/index.html|title=Industrie und Wirtschaft |accessdate=12 September 2008 |publisher=Deutsches Historisches Museum |language=German |quote=Der Vierjahresplan sollte ab 1936 die wirtschaftliche Kriegsf\u00E4higkeit Deutschlands herbeif\u00FChren. . . .Bereits im Februar 1933 erkl\u00E4rte Hitler, dass alle \u00F6ffentlichen Ma\u00DFnahmen zur Arbeitsbeschaffung zugleich der \"Wehrhaftmachung\" zu dienen h\u00E4tten und den Interessen des Staates untergeordnet seien. . . .}}")
 						),
 						[18] = " In 1935, Germany reacquired control of the ",
@@ -8587,7 +8587,7 @@ WtParsedWikitextPage(
 						[26] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Steinberg, Heinz G\u00FCnter. ''Die Bev\u00F6lkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem \u00DCberblick \u00FCber die Entwicklung von 1945 bis 1990.'' Bonn 1991.")
 						)
 					],
@@ -8666,7 +8666,7 @@ WtParsedWikitextPage(
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Niewyk, Donald L.; Nicosia, Francis R. [http://books.google.ca/books?id=lpDTIUklB2MC&pg=PP1&dq=Niewyk,+Donald+L.+The+Columbia+Guide+to+the+Holocaust&sig=4igufxQHRCNrkjwRuMt1if_mf5M#PPA45,M1 ''The Columbia Guide to the Holocaust''], [[Columbia University Press]], 2000, pp. 45\u201352.")
 						),
 						[16] = " World War II and the Nazi genocide were responsible for more than 40",
@@ -8679,7 +8679,7 @@ WtParsedWikitextPage(
 						[19] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite news | url = http://news.bbc.co.uk/2/hi/europe/4530565.stm | title = Leaders mourn Soviet wartime dead | work = BBC News Online |location = London | date = 9 May 2005 }}")
 						),
 						[20] = " The ",
@@ -8702,7 +8702,7 @@ WtParsedWikitextPage(
 						[25] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("\"[http://www.bbc.co.uk/history/worldwars/wwtwo/nuremberg_article_01.shtml Nuremberg: Nazis On Trial]\". Professor Richard Overy. BBC History.")
 						),
 						[26] = WtNewline("\n"),
@@ -8869,7 +8869,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 409\u2013412 | quote = Altogether at least 2&nbsp;million German women are thought to have been raped . . . }}<br />{{cite book | last = Beevor | first = Antony | authorlink = Antony Beevor | title = Berlin: The downfall 1945 | origyear = 2002 | year = 2003 | publisher = Penguin | location = London | isbn =0-14-028696-9 | pages = 31\u201332 | quote =He [the Komsomol leader, Maltsev] went on to boast that '2&nbsp;million of our children were born in Germany.' }}")
 						),
 						[12] = " and the destruction of multiple major cities. The remaining national territory and Berlin were partitioned by the ",
@@ -9182,7 +9182,7 @@ WtParsedWikitextPage(
 						[19] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{cite news | last = Colchester | first = Nico | url = http://www.ft.com/cms/s/504285c4-68b6-11da-bd30-0000779e2340,dwp_uuid=6f876a3c-e19f-11da-bf4c-0000779e2340.html | title = D-mark day dawns | newspaper = [[Financial Times]] | location = London | date = 1 January 2001 | accessdate = 7 December 2006 }}")
 						),
 						[20] = " The ",
@@ -9419,13 +9419,13 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [http://www.wdr.de/themen/politik/nrw03/bonn_berlin/060914.jhtml?rubrikenstyle=politik Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 14 September 2006.")
 						),
 						[4] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [http://www.wdr.de/themen/politik/deutschland/bonn_berlin/060619.jhtml?rubrikenstyle=politik Deutschlands heimliche Hauptstadt Landtag einstimmig gegen Komplettumzug]{{dead link|date=September 2010}} WDR; 20 June 2006.")
 						),
 						[5] = " The relocation of the government was completed in 1999."
@@ -10099,7 +10099,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtNewline("\n"),
 									[1] = WtTable(
@@ -10191,11 +10191,11 @@ WtParsedWikitextPage(
 											),
 											[1] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10210,7 +10210,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10252,11 +10252,11 @@ WtParsedWikitextPage(
 											),
 											[2] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10271,7 +10271,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10313,16 +10313,16 @@ WtParsedWikitextPage(
 											),
 											[3] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[ [0] = " Berlin " ]
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[ [0] = " Berlin " ]
 													),
 													[2] = WtTableCell(
@@ -10354,11 +10354,11 @@ WtParsedWikitextPage(
 											),
 											[4] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10373,7 +10373,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10415,11 +10415,11 @@ WtParsedWikitextPage(
 											),
 											[5] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10437,7 +10437,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10479,11 +10479,11 @@ WtParsedWikitextPage(
 											),
 											[6] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10498,7 +10498,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10540,11 +10540,11 @@ WtParsedWikitextPage(
 											),
 											[7] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10559,7 +10559,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10601,11 +10601,11 @@ WtParsedWikitextPage(
 											),
 											[8] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10620,7 +10620,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10662,11 +10662,11 @@ WtParsedWikitextPage(
 											),
 											[9] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10681,7 +10681,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10723,11 +10723,11 @@ WtParsedWikitextPage(
 											),
 											[10] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10742,7 +10742,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10784,11 +10784,11 @@ WtParsedWikitextPage(
 											),
 											[11] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10803,7 +10803,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10845,11 +10845,11 @@ WtParsedWikitextPage(
 											),
 											[12] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10864,7 +10864,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10906,11 +10906,11 @@ WtParsedWikitextPage(
 											),
 											[13] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10925,7 +10925,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10967,11 +10967,11 @@ WtParsedWikitextPage(
 											),
 											[14] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -10986,7 +10986,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -11028,11 +11028,11 @@ WtParsedWikitextPage(
 											),
 											[15] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -11047,7 +11047,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -11089,11 +11089,11 @@ WtParsedWikitextPage(
 											),
 											[16] = WtTableRow(
 												{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtTableCell(
 														{P} rtd = RTD[ "|" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -11108,7 +11108,7 @@ WtParsedWikitextPage(
 													),
 													[1] = WtTableCell(
 														{P} rtd = RTD[ "||" <o> "" <o> "" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = " ",
 															[1] = WtInternalLink(
@@ -11329,7 +11329,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.germanculture.com.ua/library/facts/bl_climate.htm Climate In Germany] GermanCulture. Retrieved 2010-26-08.")
 						)
 					],
@@ -11440,7 +11440,7 @@ WtParsedWikitextPage(
 						[8] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.panda.org/about_our_earth/ecoregions/ecoregion_list/ List of Ecoregions: Terrestrial Ecoregions] WWF. Retrieved 21 November 2000.")
 						),
 						[9] = " The majority of Germany is covered by either ",
@@ -11567,14 +11567,14 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.eupedia.com/europe/zoological_gardens_europe.shtml List of famous Zoological gardens in European countries] www.eupedia.com. Retrieved 17 October 2008.")
 						),
 						[4] = " More than 400 registered zoos and animal parks operate in Germany, which is believed to be the largest number in any single country of the world.",
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.americanzoos.info/Zoofacts.html Some interesting zoo facts] www.americanzoos.info/. Retrieved 17 October 2008.")
 						),
 						[6] = " The ",
@@ -11592,7 +11592,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}}[http://www.zoo-berlin.de/en/understand/zahlen-fakten.html Tierstatistik 2008]{{dead link|date=September 2010}}, Zoo Berlin. Retrieved 19 November 2009.")
 						)
 					],
@@ -11669,7 +11669,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://docs.google.com/viewer?a=v&q=cache:ULS2JqlpDgEJ:dzforum.de/downloads/020101311.pdf+Starting+points+and+focus+of+environmental+communication+site:dzforum.de&hl=en&pid=bl&srcid=ADGEESiPmGynU-6SalJJqHpsYQsnf6um5_nPW6Wz6R3HgEOQZEV2kxltI0OWaCuWNrWugnjPki98ww1R0r_-VfGBYjxnfLY2Zg8tzzwsagtvTi-w1-FgqsPK-iEYJgRjRyvzIsVQJgrF&sig=AHIEtbTTWzlVX6stOR-oJP4FxK20wmyGmA Starting points and focus of environmental communication], German Federal Environmental Foundation, 16 October 2004.")
 						),
 						[2] = " Most Germans consider ",
@@ -11692,7 +11692,7 @@ WtParsedWikitextPage(
 						[7] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web| url = http://www.worldpublicopinion.org/pipa/pdf/sep07/BBCClimate_Sep07_rpt.pdf| title = All Countries Need to Take Major Steps on Climate Change: Global Poll| accessdate = 11 February 2008 | author=PIPA| date =24 September 2007| format = PDF|publisher=BBC World service Poll, carried out by Globescan| publisher=[[Program on International Policy Attitudes]] at the [[University of Maryland, College Park]]|quote=Eighty-seven percent of German respondents agree that human activity is a significant cause of climate change and 95 percent think it is necessary to take measures to deal with the problem.}}")
 						),
 						[8] = " The state is committed to the ",
@@ -11707,7 +11707,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.umweltbundesamt.de/uba-info-presse-e/2004/pe04-056.htm Reinforcing Germany's environmental protection industry]{{dead link|date=September 2010}} Umweltbundesamt. Retrieved 25 November 2007.")
 						)
 					],
@@ -11718,7 +11718,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://timesofindia.indiatimes.com/Earth/Germany_greenest_country_in_the_world/articleshow/3151766.cms Germany greenest country in the world] ''Times of India''. Retrieved 25 November 2008.")
 						),
 						[2] = " For example, since 1964, air pollution in Germany has been regulated by strict \"",
@@ -12312,7 +12312,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://countrystudies.us/germany/159.htm Christian Democratic Union/Christian Social Union] U.S. Library of Congress. Retrieved 7 December 2006.")
 						),
 						[12] = " as they are regularly the smaller partner of a ",
@@ -12466,7 +12466,7 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.bundesverfassungsgericht.de/en/index.html Federal Constitutional Court], Bundesverfassungsgericht.de. Retrieved 13 April 2007.")
 						),
 						[14] = " It acts as the highest legal authority and ensures that legislative and judicial practice conforms to the ",
@@ -12693,7 +12693,7 @@ WtParsedWikitextPage(
 						[8] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [http://www.gesetze-im-internet.de/stvollzg/__2.html \u00A7 2 Strafvollzugsgesetz] Bundesministerium der Justiz. Retrieved 19 November 2009.")
 						),
 						[9] = " To achieve the latter, a convicted criminal can be put in preventive detention (",
@@ -12901,7 +12901,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.auswaertiges-amt.de/EN/AAmt/Auslandsvertretungen/Uebersicht_node.html German Missions Abroad] German Federal Foreign Office. Retrieved 31 December 2010.")
 						),
 						[2] = " As member it is the largest contributor to the budget of the European Union (providing 20%) and third largest contributor to the United Nations (providing 8%). Germany is a member of the NATO defence alliance, the Organisation of Economic Co-operation and Development (OECD), the G8, the G20, the World Bank and the International Monetary Fund (IMF)."
@@ -12962,14 +12962,14 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.elysee.fr/elysee/anglais/speeches_and_documents/2004/declaration_by_the_franco-german_defence_and_security_council.1096.html Declaration by the Franco-German Defence and Security Council] Elysee.fr 13 May 3004. Retrieved 3 December 2006.")
 						),
 						[12] = " For a number of decades after WWII, the Federal Republic of Germany kept a notably low profile in international relations, because of both its recent history and its occupation by foreign powers.",
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007.")
 						)
 					],
@@ -13041,7 +13041,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Harrison, Hope. {{PDFlink|[http://www.ghi-dc.org/files/publications/bu_supp/supp1/supp-01_005.pdf ''The Berlin Wall, Ostpolitik and D\u00E9tente]|91.1&nbsp;KB}} German historical institute, Washington, DC, Bulletin supplement 1, 2004, ''American d\u00E9tente and German ostpolitik, 1969\u20131972\".")
 						),
 						[6] = " In 1999, Chancellor ",
@@ -13067,7 +13067,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006.")
 						)
 					],
@@ -13117,7 +13117,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.state.gov/r/pa/ei/bgn/3997.htm Background Note: Germany] U.S. Department of State. 6 July 2006. Retrieved 3 December 2006.")
 						),
 						[2] = " The 1948 ",
@@ -13148,7 +13148,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.economist.com/world/europe/displaystory.cfm?story_id=7141311 ''Ready for a Bush hug?''], [[The Economist]], 6 July 2006. Retrieved 31 December 2006.")
 						),
 						[10] = " The two countries are also economically interdependent: 8.8% of German exports are U.S.-bound and 6.6% of German imports originate from the U.S.",
@@ -13168,7 +13168,7 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.census.gov/Press-Release/www/releases/archives/census_2000/001870.html German Still Most Frequently Reported Ancestry] [[U.S. Census Bureau]] 30 June 2004. Retrieved 3 December 2006. {{Dead link|date=June 2010| bot=DASHBot}}")
 						),
 						[14] = " and the status of ",
@@ -13191,7 +13191,7 @@ WtParsedWikitextPage(
 						[19] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006.")
 						)
 					],
@@ -13202,14 +13202,14 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.bmz.de/en/index.html Aims of German development policy] Federal Ministry for Economic Cooperation and Development 10 April 2008. Retrieved 7 December 2008.")
 						),
 						[2] = " It is the world's third biggest aid donor after the United States and France.",
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.oecd.org/dataoecd/17/9/44981892.pdf Table: Net Official Development Assistance 2009] OECD")
 						),
 						[4] = " Germany spent 0.37 per cent of its gross domestic product (GDP) on development, which is below the government's target of increasing aid to 0.51 per cent of GDP by 2010. The international target of 0.7% of GNP would have not been reached either."
@@ -13436,7 +13436,7 @@ WtParsedWikitextPage(
 						[25] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz f\u00FCr die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}")
 						)
 					],
@@ -13644,7 +13644,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2010/02/20/business/economy/20charts.html | work=The New York Times | title=A Shift in the Export Powerhouses | first=Floyd | last=Norris | date=20 February 2010 | accessdate=31 March 2010}}")
 						)
 					)
@@ -13689,7 +13689,7 @@ WtParsedWikitextPage(
 				[9] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite web |url=http://www.transparency.org/policy_research/surveys_indices/cpi/2009/cpi_2009_table |title=CPI 2009 table |publisher=Transparency International |accessdate=18 November 2009}}")
 				),
 				[10] = " and a high level of ",
@@ -13704,7 +13704,7 @@ WtParsedWikitextPage(
 				[13] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite web|url=http://www.nam.org/innovationreport.pdf |title=The Innovation Imperative in Manufacturing: How the United States Can Restore Its Edge |format=PDF |date= |accessdate=26 September 2010}}")
 				),
 				[14] = " It has the largest national economy in Europe, the ",
@@ -13744,7 +13744,7 @@ WtParsedWikitextPage(
 				[21] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("\"German Economy Experiences Record Growth in 2010\" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]")
 				)
 			],
@@ -13842,7 +13842,7 @@ WtParsedWikitextPage(
 				[9] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010.")
 				)
 			],
@@ -13866,7 +13866,7 @@ WtParsedWikitextPage(
 				[3] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006.")
 				)
 			],
@@ -13936,7 +13936,7 @@ WtParsedWikitextPage(
 				[9] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}")
 				)
 			],
@@ -13958,7 +13958,7 @@ WtParsedWikitextPage(
 				[3] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite news| url= http://www.guardian.co.uk/world/2008/nov/14/oecd-recession-germany-inflation-deflation | title= Germany officially in recession as OECD expects US to lead recovery|work=The Guardian |location=UK |date=14 November 2008 | first=Kathryn | last=Hopkins | accessdate=31 March 2010}}")
 				),
 				[4] = " In January 2009 the German government under Angela Merkel approved a \u20AC50",
@@ -13977,7 +13977,7 @@ WtParsedWikitextPage(
 				[9] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}")
 				)
 			],
@@ -14223,7 +14223,7 @@ WtParsedWikitextPage(
 						[23] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://web.archive.org/web/20080106165521/http://bwnt.businessweek.com/brand/2006/ The 100 Top Brands 2006], Businessweek. Retrieved 26 November 2007.")
 						)
 					],
@@ -14253,7 +14253,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.businessweek.com/news/2010-09-23/germany-has-1-000-market-leading-companies-manager-magazin-says.html Germany Has 1,000 Market-Leading Companies, Manager-Magazin Says], Businessweek. Retrieved 23 September 2010.")
 						)
 					],
@@ -14300,7 +14300,7 @@ WtParsedWikitextPage(
 											[1] = WtTagExtension(
 												{P} name = "ref"
 												{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtTagExtensionBody("[http://money.cnn.com/magazines/fortune/global500/2010/countries/Germany.html], CNN Money. Retrieved 7 August 2010.")
 											)
 										]
@@ -14341,7 +14341,7 @@ WtParsedWikitextPage(
 											[1] = WtXmlElement(
 												{P} name = "br"
 												{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = -
 											),
 											[2] = "(Mil.",
@@ -14367,7 +14367,7 @@ WtParsedWikitextPage(
 											[1] = WtXmlElement(
 												{P} name = "br"
 												{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = -
 											),
 											[2] = "(Mil.",
@@ -14394,7 +14394,7 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = "(World)"
@@ -14406,11 +14406,11 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 1. " ]
 									),
 									[1] = WtTableCell(
@@ -14457,17 +14457,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 108,897 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 4,120 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 329,305" ],
 											[1] = WtNewline("\n")
@@ -14477,11 +14477,11 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 2. " ]
 									),
 									[1] = WtTableCell(
@@ -14528,17 +14528,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 99,399 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 3,985 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 272,382" ],
 											[1] = WtNewline("\n")
@@ -14548,11 +14548,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 3. " ]
 									),
 									[1] = WtTableCell(
@@ -14599,17 +14599,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 72,488 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 3,806 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 398,200" ],
 											[1] = WtNewline("\n")
@@ -14619,11 +14619,11 @@ WtParsedWikitextPage(
 							),
 							[4] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 4. " ]
 									),
 									[1] = WtTableCell(
@@ -14673,17 +14673,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 68,731 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 7,204 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 87,815" ],
 											[1] = WtNewline("\n")
@@ -14693,11 +14693,11 @@ WtParsedWikitextPage(
 							),
 							[5] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 5. " ]
 									),
 									[1] = WtTableCell(
@@ -14744,17 +14744,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 64,337 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 825 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 242,378" ],
 											[1] = WtNewline("\n")
@@ -14764,11 +14764,11 @@ WtParsedWikitextPage(
 							),
 							[6] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 6. " ]
 									),
 									[1] = WtTableCell(
@@ -14815,17 +14815,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 63,512 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 1,389 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 475,100" ],
 											[1] = WtNewline("\n")
@@ -14835,11 +14835,11 @@ WtParsedWikitextPage(
 							),
 							[7] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 7. " ]
 									),
 									[1] = WtTableCell(
@@ -14886,17 +14886,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 62,516 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 569 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 241,426" ],
 											[1] = WtNewline("\n")
@@ -14906,11 +14906,11 @@ WtParsedWikitextPage(
 							),
 							[8] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 8. " ]
 									),
 									[1] = WtTableCell(
@@ -14963,17 +14963,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 57,951 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 4,065 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 95,175" ],
 											[1] = WtNewline("\n")
@@ -14983,11 +14983,11 @@ WtParsedWikitextPage(
 							),
 							[9] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 9. " ]
 									),
 									[1] = WtTableCell(
@@ -15034,17 +15034,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 56,018 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 3,126 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 107,539" ],
 											[1] = WtNewline("\n")
@@ -15054,11 +15054,11 @@ WtParsedWikitextPage(
 							),
 							[10] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 10. " ]
 									),
 									[1] = WtTableCell(
@@ -15113,17 +15113,17 @@ WtParsedWikitextPage(
 									),
 									[3] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 51,723 " ]
 									),
 									[4] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = " 2,102 " ]
 									),
 									[5] = WtTableCell(
 										{P} rtd = RTD[ "||" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " 191,350" ],
 											[1] = WtNewline("\n")
@@ -15272,7 +15272,7 @@ WtParsedWikitextPage(
 						[13] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Gesch\u00E4ftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009.")
 						)
 					],
@@ -15528,7 +15528,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://news.bbc.co.uk/2/hi/europe/4295389.stm Germany split over green energy], BBC. Retrieved 13 April 2007.")
 						),
 						[6] = " Renewable energy still plays a more modest role in energy consumption. In 2006, energy consumption was met by the following sources: oil (36%); coal, including lignite (24%); natural gas (23%); nuclear (13%); hydro-electric and wind power (1%); and other (4%). However, the share of renewable energy in electricity supply has been rapidly increasing, reaching 14% in 2007. The German government has set a new target to increase this share to 27% by 2020."
@@ -15610,7 +15610,7 @@ WtParsedWikitextPage(
 								[6] = WtTagExtension(
 									{P} name = "ref"
 									{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-									xmlAttributes = -,
+									xmlAttributes = WtXmlAttributes[],
 									body = WtTagExtensionBody("[http://www.new-delhi.diplo.de/Vertretung/newdelhi/en/06/__HB__Science__Technology.html Research in Germany] German Embassy, New Delhi. Retrieved 2010-28-08.")
 								)
 							)
@@ -15679,7 +15679,7 @@ WtParsedWikitextPage(
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Horst, Zuse. [http://www.epemag.com/zuse/ The Life and Work of Konrad Zuse]{{dead link|date=September 2010}} Everyday Practical Electronics (EPE) Online. Retrieved 2 January 2007. {{Wayback|url=http://www.epemag.com/zuse/|date =20070220074134|bot=DASHBot}}{{dead link|date=September 2010}}")
 						),
 						[16] = " German inventors, engineers and industrialists such as ",
@@ -15742,13 +15742,13 @@ WtParsedWikitextPage(
 						[31] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|title=Automobile|publisher=Microsoft Encarta Online Encyclopedia 2006|accessdate=2 January 2007|archiveurl=http://web.archive.org/web/20080420212258/http://encarta.msn.com/encyclopedia_761576902_5/Automobile.html|archivedate=20 April 2008}}")
 						),
 						[32] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007.")
 						)
 					],
@@ -15828,7 +15828,7 @@ WtParsedWikitextPage(
 						[16] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007.")
 						)
 					],
@@ -15866,7 +15866,7 @@ WtParsedWikitextPage(
 						[7] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08.")
 						)
 					],
@@ -15953,7 +15953,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany \u2013 A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006.")
 						)
 					],
@@ -15983,7 +15983,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://nobelprize.org/ Nobel Prize], Nobelprize.org. Retrieved 19 November 2009.")
 						),
 						[6] = " For most of the 20th century, ",
@@ -16034,13 +16034,13 @@ WtParsedWikitextPage(
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.sciencenews.org/view/generic/id/63944/title/Swedish_academy_awards Swedish academy awards] ScienceNews web edition, 1 October 2010.")
 						),
 						[16] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("National Science Nobel Prize shares 1901\u20132009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[J\u00FCrgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]")
 						)
 					],
@@ -16091,7 +16091,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Roberts, J. M. ''The New Penguin History of the World'', Penguin History, 2002. Pg. 1014. ISBN 0-14-100723-0.")
 						),
 						[12] = " They were preceded by physicists such as ",
@@ -16151,7 +16151,7 @@ WtParsedWikitextPage(
 						[27] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://web.archive.org/web/20080402061044/http://www.history.com/encyclopedia.do?articleId=226611 The Alfred B. Nobel Prize Winners, 1901\u20132003] History Channel from ''The World Almanac and Book of Facts'' 2006. Retrieved 2 January 2007.")
 						),
 						[28] = " Numerous significant ",
@@ -16260,7 +16260,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007.")
 						)
 					],
@@ -16412,7 +16412,7 @@ WtParsedWikitextPage(
 				[7] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite web |url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2010/01/PD10__034__12641,templateId=renderPrint.psml|title=Durchschnittliche Kinderzahl 2008 in den neuen L\u00E4ndern angestiegen|author=[[Federal Statistical Office of Germany|Destatis]] |language=German|accessdate=31 January 2010}}")
 				),
 				[8] = " ",
@@ -16435,7 +16435,7 @@ WtParsedWikitextPage(
 				[13] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite web | title = Demographic Transition Model | publisher=Barcelona Field Studies Centre | date = 27 September 2009 | url = http://geographyfieldwork.com/DemographicTransition.htm | accessdate = 23 May 2010}}")
 				)
 			],
@@ -16454,7 +16454,7 @@ WtParsedWikitextPage(
 				[3] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder \u00E4lter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>\nMore details on the methodology, detailed tables broken down by age and sex, etc. are provided at \n{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bev\u00F6lkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}")
 				),
 				[4] = WtNewline("\n"),
@@ -16606,7 +16606,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.unfpa.org/publications/detail.cfm?ID=294&filterListType= State of World Population 2006] United Nations Population Fund. 2006. Retrieved 1 January 2007.")
 						),
 						[10] = " As a consequence of ",
@@ -16635,7 +16635,7 @@ WtParsedWikitextPage(
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("\"[http://www.focus-migration.de/Germany.1509.0.html?&L=1 Focus-Migration: Germany]\".")
 						)
 					],
@@ -16646,7 +16646,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite news | title=20% of Germans have immigrant roots | newspaper=Burlington Free Press | location=Burlington, Vermont, USA | pages= 4A | date=15 July 2010 }}")
 						),
 						[2] = " ",
@@ -16672,7 +16672,7 @@ WtParsedWikitextPage(
 						[7] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web|url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Content/Statistiken/Bevoelkerung/MigrationIntegration/Migrationshintergrund/Tabellen/Content100/MigrationshintergrundStaatsangehoerigkeit,templateId=renderPrint.psml|title=Bev\u00F6lkerung nach Migrationshintergrund|accessdate=26 March 2010|publisher=German Federal Statistical Office|language=German}}")
 						)
 					],
@@ -16691,7 +16691,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web |url=http://factfinder.census.gov/servlet/IPTable?_bm=y&-reg=ACS_2005_EST_G00_S0201:535;ACS_2005_EST_G00_S0201PR:535;ACS_2005_EST_G00_S0201T:535;ACS_2005_EST_G00_S0201TPR:535&-qr_name=ACS_2005_EST_G00_S0201&-qr_name=ACS_2005_EST_G00_S0201PR&-qr_name=ACS_2005_EST_G00_S0201T&-qr_name=ACS_2005_EST_G00_S0201TPR&-ds_name=ACS_2005_EST_G00_&-TABLE_NAMEX=&-ci_type=A&-redoLog=false&-charIterations=047&-geo_id=01000US&-format=&-_lang=en|coauthors=United States Census Bureau|title=U.S. Census Bureau, 2005 American Community Survey|accessdate=15 April 2007}} The 1990 census gives 57.9&nbsp;million, or 23.3% of the U.S. population.")
 						),
 						[6] = " ",
@@ -16712,7 +16712,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{pt icon}} [http://www.passeiweb.com/na_ponta_lingua/sala_de_aula/geografia/geografia_do_brasil/demografia_imigracoes/brasil_imigracoes_alemanha A Imigra\u00E7\u00E3o Alem\u00E3 no Brasil] Deutsche Welle. Retrieved 19 November 2009.")
 						),
 						[12] = " and Canada (3",
@@ -16725,7 +16725,7 @@ WtParsedWikitextPage(
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www12.statcan.ca/english/census01/products/highlight/ETO/Table1.cfm?Lang=E&T=501&GV=1&GID=0 2001 Canadian Census] gives 2,742,765 total respondents stating their ''ethnic origin'' as partly German, with 705,600 stating \"single-ancestry\".")
 						),
 						[16] = " About 3",
@@ -16738,7 +16738,7 @@ WtParsedWikitextPage(
 						[19] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.migrationinformation.org/Feature/display.cfm?ID=201 \"Fewer Ethnic Germans Immigrating to Ancestral Homeland\"]. ''Migration Information Source.'' February 2004")
 						)
 					],
@@ -16952,7 +16952,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -17007,7 +17007,7 @@ WtParsedWikitextPage(
 												[2] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[3] = WtInternalLink(
@@ -17020,7 +17020,7 @@ WtParsedWikitextPage(
 												[4] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[5] = WtImageLink(
@@ -17054,7 +17054,7 @@ WtParsedWikitextPage(
 												[6] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[7] = WtInternalLink(
@@ -17067,7 +17067,7 @@ WtParsedWikitextPage(
 												[8] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[9] = WtImageLink(
@@ -17101,7 +17101,7 @@ WtParsedWikitextPage(
 												[10] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[11] = WtInternalLink(
@@ -17281,7 +17281,7 @@ WtParsedWikitextPage(
 												[2] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[3] = WtInternalLink(
@@ -17297,7 +17297,7 @@ WtParsedWikitextPage(
 												[4] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[5] = WtNewline("\n"),
@@ -17332,7 +17332,7 @@ WtParsedWikitextPage(
 												[7] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[8] = WtInternalLink(
@@ -17348,7 +17348,7 @@ WtParsedWikitextPage(
 												[9] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[10] = WtImageLink(
@@ -17382,7 +17382,7 @@ WtParsedWikitextPage(
 												[11] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> ">" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[12] = WtInternalLink(
@@ -17400,7 +17400,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -17508,7 +17508,7 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -17616,7 +17616,7 @@ WtParsedWikitextPage(
 							),
 							[4] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -17724,7 +17724,7 @@ WtParsedWikitextPage(
 							),
 							[5] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -17832,7 +17832,7 @@ WtParsedWikitextPage(
 							),
 							[6] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -17943,7 +17943,7 @@ WtParsedWikitextPage(
 							),
 							[7] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -18051,7 +18051,7 @@ WtParsedWikitextPage(
 							),
 							[8] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -18159,7 +18159,7 @@ WtParsedWikitextPage(
 							),
 							[9] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -18267,7 +18267,7 @@ WtParsedWikitextPage(
 							),
 							[10] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -18375,7 +18375,7 @@ WtParsedWikitextPage(
 							),
 							[11] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -18483,7 +18483,7 @@ WtParsedWikitextPage(
 							),
 							[12] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -18505,7 +18505,7 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = "Source: ",
 														[1] = WtTemplate(
@@ -19087,7 +19087,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}")
 						)
 					],
@@ -19140,7 +19140,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://fowid.de/fileadmin/datenarchiv/Religionszugehoerigkeit_Bevoelkerung__1950-2008.pdf Konfessionen in Deutschland](German), fowid. Retrieved 2010, 9 September-09.")
 						),
 						[12] = " The second largest religion is ",
@@ -19446,7 +19446,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009.")
 						)
 					],
@@ -19574,7 +19574,7 @@ WtParsedWikitextPage(
 						[24] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Blake, Mariah. [http://www.csmonitor.com/2006/1110/p25s02-woeu.html In Nazi cradle, Germany marks Jewish renaissance] [[Christian Science Monitor]]. 10 November 2006. Retrieved 30 November 2006.")
 						),
 						[25] = " In 2004, twice as many Jews from former ",
@@ -19624,7 +19624,7 @@ WtParsedWikitextPage(
 						[36] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.eurojewcong.org/ejc/news.php?id_article=81 The Jewish Community of Germany] European Jewish Congress. Retrieved 30 November 2006.")
 						),
 						[37] = " Around 250,000 active ",
@@ -19642,7 +19642,7 @@ WtParsedWikitextPage(
 						[40] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{de icon}} [[Die Zeit]] 12/07, page 13")
 						)
 					],
@@ -19886,7 +19886,7 @@ WtParsedWikitextPage(
 						[7] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("In PISA 2000, Germany was the country with the highest correlation between test score and social background index. In the following test periods, this result could not be replicated.")
 						),
 						[8] = " having low standards of achievement, inner-city Hauptschulen were increasingly considered dysfunctional by some people; outside the main metropolitan areas, the population is shrinking, so that according to some people it becomes increasingly impractical to maintain a three- or four-tier school system."
@@ -20001,7 +20001,7 @@ WtParsedWikitextPage(
 						[15] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006.")
 						)
 					],
@@ -20355,13 +20355,13 @@ WtParsedWikitextPage(
 				[11] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("{{Cite encyclopedia|url=http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|title=Federal Republic of Germany: Culture|publisher=Encarta Online Encyclopedia 2006|accessdate=5 November 2010|archiveurl=http://web.archive.org/web/20080328162029/http://encarta.msn.com/encyclopedia_761576917_4/Germany.html|archivedate=28 March 2008}}")
 				),
 				[12] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("[http://www.scribd.com/doc/30887674/Modern-German-Culture The Cambridge Companion to Modern German Culture]. Retrieved 9 November 2010.")
 				),
 				[13] = " Historically Germany has been called ",
@@ -20373,7 +20373,7 @@ WtParsedWikitextPage(
 				[16] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Sp\u00E4tzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006.")
 				)
 			],
@@ -20402,7 +20402,7 @@ WtParsedWikitextPage(
 				[7] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008.")
 				)
 			],
@@ -20451,7 +20451,7 @@ WtParsedWikitextPage(
 				[3] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010.")
 				)
 			],
@@ -20627,7 +20627,7 @@ WtParsedWikitextPage(
 				[37] = WtTagExtension(
 					{P} name = "ref"
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8")
 				)
 			],
@@ -20781,7 +20781,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableHeader(
 										{P} rtd = RTD[ "!" <o> " |" <o> "" ]
@@ -20807,13 +20807,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[ [0] = "(1749\u20131832)" ]
 												)
 											],
@@ -20841,13 +20841,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[ [0] = "(1759\u20131805)" ]
 												)
 											],
@@ -20875,13 +20875,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[ [0] = "(1785\u20131863)" ]
 												)
 											],
@@ -20909,13 +20909,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[ [0] = "(1875\u20131955)" ]
 												)
 											],
@@ -20943,13 +20943,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[ [0] = "(1877\u20131962)" ]
 												)
 											],
@@ -20960,7 +20960,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> " |" <o> "" ]
@@ -21394,7 +21394,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("Searle, John. (1987). ''The Blackwell Companion to Philosophy'', \"Introduction\". Wiley-Blackwell.")
 						)
 					],
@@ -21571,7 +21571,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite book |last= Bordwell |first= David |authorlink= David Bordwell |coauthors= Kristin Thompson|title= Film History: An Introduction|origdate= |origyear= 1994 |edition= 2nd |year= 2003 |publisher=McGraw-Hill |location= New York City |isbn= 978-0-07-115141-2 |page= 204 |chapter= The Introduction of Sound}}")
 						),
 						[10] = " Impressionist documentary ",
@@ -21602,7 +21602,7 @@ WtParsedWikitextPage(
 						[17] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007.")
 						)
 					],
@@ -21692,7 +21692,7 @@ WtParsedWikitextPage(
 						[11] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.fassbinderfoundation.de/node.php/en/home Rainer Werner Fassbinder], Fassbinder Foundation. Retrieved 13 April 2007.")
 						),
 						[12] = WtNewline("\n"),
@@ -21802,7 +21802,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.imdb.com/title/tt0405094/awards Awards:Das Leben der Anderen], IMDb. Retrieved 13 April 2007.")
 						),
 						[10] = " Among the most famous German actors are Marlene Dietrich, ",
@@ -21862,7 +21862,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("''[http://www.fiapf.org/pdf/2006accreditedFestivalsDirectory.pdf 2006 FIAPF accredited Festivals Directory], International Federation of Film Producers Associations, retrieved on 11 December 2006.''")
 						),
 						[4] = " The annual ",
@@ -22031,7 +22031,7 @@ WtParsedWikitextPage(
 						[27] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://web.archive.org/web/20070205193206/http://news.warez.com/p2pnet/music-market-worth-us32-billion.html Music market worth US$ 32&nbsp;billion] P2pnet.net 7 April 2004. Retrieved 7 December 2006.")
 						)
 					],
@@ -22054,7 +22054,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableHeader(
 										{P} rtd = RTD[ "!" <o> " |" <o> "" ]
@@ -22077,13 +22077,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = WtInternalLink(
 															{P} postfix = ""
@@ -22125,13 +22125,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = WtInternalLink(
 															{P} postfix = ""
@@ -22173,13 +22173,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = WtInternalLink(
 															{P} postfix = ""
@@ -22215,13 +22215,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = WtInternalLink(
 															{P} postfix = ""
@@ -22260,13 +22260,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = WtInternalLink(
 															{P} postfix = ""
@@ -22305,13 +22305,13 @@ WtParsedWikitextPage(
 												[1] = WtXmlElement(
 													{P} name = "br"
 													{P} rtd = RTD[ "<br" <o> " />" <o> "" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = -
 												),
 												[2] = WtXmlElement(
 													{P} name = "small"
 													{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtBody[
 														[0] = WtInternalLink(
 															{P} postfix = ""
@@ -22330,7 +22330,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "|" <o> "" ]
@@ -22624,7 +22624,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://news.bbc.co.uk/2/hi/europe/country_profiles/1047864.stm Country profile: Germany], BBC News. Retrieved 7 December 2007.")
 						)
 					],
@@ -22670,7 +22670,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.land-der-ideen.de/CDA/facts_printing,4563,0,,en.html Germany \u2013 Land of ideas], www.land-der-ideen.de Retrieved 12 December 2010.")
 						),
 						[4] = " The ",
@@ -23087,7 +23087,7 @@ WtParsedWikitextPage(
 						[7] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite news | url = http://sport.guardian.co.uk/formulaone/story/0,,1929091,00.html | title = What we will miss about Michael Schumacher | newspaper=The Guardian | date = 23 October 2006 | accessdate = 19 October 2007 | location=London | first=David | last=Ornstein }}")
 						),
 						[8] = " Constructors like ",
@@ -23166,7 +23166,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web | url = http://results.beijing2008.cn/WRM/ENG/INF/GL/95A/GL0000000.shtml | title = Beijing 2008 Medal Table | publisher=The Official Website of the Beijing 2008 Olympic Games | accessdate = 8 September 2008}}")
 						),
 						[6] = " while in the ",
@@ -23181,7 +23181,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web | url = http://www.olympic.org/uk/games/past/table_uk.asp?OLGT=2&OLGY=2006 | title = Turin 2006 Medal Table | publisher=International Olympic Committee | accessdate = 28 December 2006}}")
 						),
 						[10] = WtNewline("\n"),
@@ -23331,7 +23331,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web | url = http://www.nationmaster.com/country/gm-germany/foo-food | title = German food stats | publisher=www.nationmaster.com | accessdate = 26 November 2007}}")
 						),
 						[4] = " Throughout all regions, meat is often eaten in sausage form. More than 1500 different types of ",
@@ -23354,7 +23354,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}")
 						)
 					],
@@ -23373,14 +23373,14 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.cp-pc.ca/english/germany/eating.html Eating the German way], Cultural Profiles Project. Retrieved 2007, 26 November.")
 						),
 						[4] = " More than 300 types of bread are sold in bakery shops across the country.",
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November.")
 						)
 					],
@@ -23555,14 +23555,14 @@ WtParsedWikitextPage(
 						[27] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.dw-world.de/dw/article/0,2144,2914502,00.html Schnitzel Outcooks Spaghetti in Michelin Guide], Deutsche Welle. Retrieved 2007, 26 November.")
 						),
 						[28] = " German restaurants have become the world's second most decorated eateries after France.",
 						[29] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November.")
 						)
 					],
@@ -23573,7 +23573,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.royalunibrew.com/Default.aspx?ID=266 Europe's largest beer market], royalunibrew.com. Retrieved 2007, 26 November.")
 						),
 						[2] = " Beer varieties include ",
@@ -23653,7 +23653,7 @@ WtParsedWikitextPage(
 						[19] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.nationmaster.com/graph/foo_sof_dri_con-food-soft-drink-consumption Soft drink consumption], www.nationmaster.com. Retrieved 2007, 26 November.")
 						),
 						[20] = " Furthermore, carbonated mineral water and ",
@@ -23728,7 +23728,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.germany.info/Vertretung/usa/en/07__Culture__Lifestyle__Travel/01/__Society.html Society] The German Mission to the United states. Retrieved 16 October 2010.")
 						),
 						[2] = " The country has established a high level of ",
@@ -23762,7 +23762,7 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.news24.com/News24/World/News/0,,2-10-1462_1613010,00.html Germany extends gay rights]{{dead link|date=September 2010}} News24.com. Retrieved 25 November 2007.")
 						),
 						[10] = " The Vice-Chancellor ",
@@ -23824,7 +23824,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite book | first = Friedrich | last = Heckmann | url = http://books.google.com/?id=l9yTtCAnQWwC&pg=PA53&lpg=PA53&dq=cdu+immigrant+einwanderungsland#PPA53,M1 | title = The Integration of Immigrants in European Societies: national differences and trends of convergence| publisher=Lucius & Lucius | location = Stuttgart | pages = 51 ff. | year = 2003 | isbn = 978-3-8282-0181-1 | accessdate = 28 October 2010 }}")
 						)
 					],
@@ -23835,7 +23835,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://www.brandovation.net/ How Germany won the World Cup of Nation Branding] BrandOvation. Retrieved 25 November 2007.")
 						),
 						[2] = " In annually conducted global surveys known as ",
@@ -23850,7 +23850,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite press release | title = 2010 Anholt-GfK Roper Nation Brands Index | publisher=[[GfK]] | date = 12 October 2010 | url = http://www.gfk.com/group/press_information/press_releases/006688/index.en.html | accessdate = 15 October 2010 }}")
 						),
 						[6] = " Another global opinion poll, for the ",
@@ -23865,13 +23865,13 @@ WtParsedWikitextPage(
 						[9] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite news | url = http://news.bbc.co.uk/2/hi/8626041.stm | title = World warming to US under Obama, BBC poll suggests |publisher=BBC News Online | location = London | date = 19 April 2010 |accessdate = 28 October 2010 }}")
 						),
 						[10] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("[http://news.bbc.co.uk/2/shared/bsp/hi/pdfs/160410bbcwspoll.pdf BBC World Service Poll], BBC News. Retrieved 19 April 2010.")
 						)
 					],
@@ -23888,7 +23888,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite news | url = http://economictimes.indiatimes.com/ET-Cetera/Germans-spend-most-on-foreign-trips-Industry-group/articleshow/4250332.cms | title = Germans spend most on foreign trips: Industry group] | date = 10 March 2009 | location = New Delhi | newspaper=The Economic Times |accessdate = 15 March 2009 }}")
 						),
 						[4] = WtNewline("\n"),

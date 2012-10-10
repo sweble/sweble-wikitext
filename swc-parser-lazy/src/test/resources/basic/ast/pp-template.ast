@@ -24,7 +24,7 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 								name = WtName[ [0] = "parameter2" ],
 								defaultValue = -,
-								garbage = -
+								garbage = WtTemplateArguments[]
 							)
 						]
 					)
@@ -57,7 +57,7 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 							name = WtName[ [0] = "parameter2" ],
 							defaultValue = -,
-							garbage = -
+							garbage = WtTemplateArguments[]
 						)
 					]
 				)

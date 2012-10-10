@@ -94,31 +94,31 @@ WtParsedWikitextPage(
 		[4] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 			),
 		[5] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 			),
 		[6] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 			),
 		[7] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 			),
 		[8] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 			),
 		[9] = WtTemplate(
@@ -259,7 +259,7 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "|" <o> "" ]
@@ -483,7 +483,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Myth statement" ],
 									[1] = WtNewline("\n")
@@ -491,7 +491,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Status" ],
 									[1] = WtNewline("\n")
@@ -499,7 +499,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Notes" ],
 									[1] = WtNewline("\n")
@@ -507,11 +507,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Greenhouse gases increase the amount of heat absorbed by air." ],
 											[1] = WtNewline("\n")
@@ -519,7 +519,7 @@ WtParsedWikitextPage(
 									),
 									[1] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " ",
@@ -541,7 +541,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Airtight containers with carbon dioxide or methane added got one degree Celsius (2 \u00B0F) hotter than regular when heated by a hot lamp." ],
 											[1] = WtNewline("\n")
@@ -551,11 +551,11 @@ WtParsedWikitextPage(
 							),
 							[4] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " ",
@@ -581,7 +581,7 @@ WtParsedWikitextPage(
 									),
 									[1] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " ",
@@ -603,7 +603,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " They first had Jamie drive Brandon (a Young Scientist Challenge winner) in both a gas and electric consumer grade car, and blindfolded Brandon and covered Jamie's ears to see if they could tell the difference. Brandon couldn't tell, but being an experienced driver, Jamie was able to immediately tell based on the electric car's acceleration. Then Adam, Jamie, and Brandon built an electric go-kart using lithium iron phosphate batteries and tested it against a gas go-kart. Despite weighing twice as much as the gas go-kart, the electric go-kart performed about the same. Then they went to a professional track and watched the KillaCycle, an electric drag motorcycle race against a stock gas motorcycle. The gas motorcycle won by a slight margin. Then they had the X1 electric sports car race against an F430 Ferrari, and while the Ferrari's top speed was faster, the electric car accelerated faster and beat it in a drag race. Finally, they had the electric car race against a FJR50 Formula 3 race car. While the Formula 3 car easily beat the electric car, the electric car is considered a \"street car,\" not a race car, and it did well enough that they proclaimed electric cars to be anything but slow." ],
 											[1] = WtNewline("\n")
@@ -613,11 +613,11 @@ WtParsedWikitextPage(
 							),
 							[5] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Cows hurt the environment." ],
 											[1] = WtNewline("\n")
@@ -625,7 +625,7 @@ WtParsedWikitextPage(
 									),
 									[1] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " ",
@@ -647,7 +647,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " Cows emit ",
@@ -678,11 +678,11 @@ WtParsedWikitextPage(
 							),
 							[6] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Cow manure can be used to help the environment." ],
 											[1] = WtNewline("\n")
@@ -690,7 +690,7 @@ WtParsedWikitextPage(
 									),
 									[1] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " ",
@@ -712,7 +712,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Cow manure can be used to power things. The Young Scientists helped collect cow manure and extracted methane gas from it. Grant hooked up the methane gas and used it to power a hand lawnmower. They then saw that the farm where they had collected cow manure from received 90% of its electricity from its own manure-powered generator." ],
 											[1] = WtNewline("\n")
@@ -767,7 +767,7 @@ WtParsedWikitextPage(
 						[1] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/egguinox.html|title=The Egg-uinox|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 						)
 					],
@@ -784,7 +784,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Myth statement" ],
 									[1] = WtNewline("\n")
@@ -792,7 +792,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Status" ],
 									[1] = WtNewline("\n")
@@ -800,7 +800,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Notes" ],
 									[1] = WtNewline("\n")
@@ -808,11 +808,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " An egg can be balanced on its ends only during the spring and fall ",
@@ -844,7 +844,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " This is a ",
@@ -922,7 +922,7 @@ WtParsedWikitextPage(
 						[5] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/onlineexclusive/breakstep.html|title=Breakstep Bridge|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 						),
 						[6] = " This test was also aired in ",
@@ -955,7 +955,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Myth statement" ],
 									[1] = WtNewline("\n")
@@ -963,7 +963,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Status" ],
 									[1] = WtNewline("\n")
@@ -971,7 +971,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Notes" ],
 									[1] = WtNewline("\n")
@@ -979,11 +979,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " A bridge can be collapsed by the vibration caused by pedestrian traffic. The theory was soldiers break step on bridge, because if their march gets a resonant frequency of the bridge, it will snap the bridge." ],
 											[1] = WtNewline("\n")
@@ -1005,7 +1005,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " The bridge was able to hold Adam's weight until he started bouncing on it." ],
 											[1] = WtNewline("\n")
@@ -1037,7 +1037,7 @@ WtParsedWikitextPage(
 						[3] = WtTagExtension(
 							{P} name = "ref"
 							{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("{{Cite web|url=http://dsc.discovery.com/fansites/mythbusters/videogalleries/sharkmyths/sharkmyths.html|title=Shark Mini-Myths|work=Mythbusters: Web Exclusive Video|publisher=[[Discovery Channel]]|accessdate=October 25, 2009}}")
 						)
 					],
@@ -1055,7 +1055,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Myth statement" ],
 									[1] = WtNewline("\n")
@@ -1063,7 +1063,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Status" ],
 									[1] = WtNewline("\n")
@@ -1071,7 +1071,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Notes" ],
 									[1] = WtNewline("\n")
@@ -1079,11 +1079,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Sharks tend to be attracted to brighter colors like yellow." ],
 											[1] = WtNewline("\n")
@@ -1105,7 +1105,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " When all the results were calculated, the sharks tested preferred to go for the \"yum-yum yellow\" bait bag before the other ones (red, blue, black, white, silver). Though they did also go for the silver and black ones." ],
 											[1] = WtNewline("\n")
@@ -1115,11 +1115,11 @@ WtParsedWikitextPage(
 							),
 							[4] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Sharks can detect a single drop of blood dropped into a pool of water." ],
 											[1] = WtNewline("\n")
@@ -1141,7 +1141,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " The sharks detected fish blood, however they either did not detect human blood or did not care about it. Also, like any scent, the sharks weren't able to detect the blood until their noses came into contact with the blood particles, and the smell grew weaker as the blood got diluted by the water, meaning that a single drop of blood in a particular area of the pool would not be detectable by any shark that was not in that area, and was not swimming right into the blood. However, the Mythbusters only used ",
@@ -1180,11 +1180,11 @@ WtParsedWikitextPage(
 							),
 							[5] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " A shark's skin is rough enough to be used as ",
@@ -1216,7 +1216,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " When compared to various grains of sandpaper, the sharkskin that Adam and Jamie acquired was comparable to a very high-grain (400 to 600) of sandpaper, and can be used as such, even on a rotary sander." ],
 											[1] = WtNewline("\n")
@@ -1226,11 +1226,11 @@ WtParsedWikitextPage(
 							),
 							[6] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " There is a ",
@@ -1262,7 +1262,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Out of all the measurements taken of sharks of various species, only one (from nosetip to dorsal fin tip) could consistently be used to estimate the shark's size, and that requires knowledge of the specific shark species and an up-close measurement that might be too difficult and dangerous to be done by a casual observer." ],
 											[1] = WtNewline("\n")
@@ -1328,7 +1328,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Myth statement" ],
 									[1] = WtNewline("\n")
@@ -1336,7 +1336,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Status" ],
 									[1] = WtNewline("\n")
@@ -1344,7 +1344,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Notes" ],
 									[1] = WtNewline("\n")
@@ -1352,11 +1352,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Attractive women do not pass gas." ],
 											[1] = WtNewline("\n")
@@ -1378,7 +1378,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " Kari wore underwear equipped with a microphone connected to an amplifier and a ",
@@ -1393,7 +1393,7 @@ WtParsedWikitextPage(
 												[3] = WtTagExtension(
 													{P} name = "ref"
 													{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtTagExtensionBody("{{Cite web|url=http://www.youtube.com/watch?v=JisgLhWghRQ|title=Un-Air-able Banned Mythbuster Fart Episode part 1 Keri Byron|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 												)
 											],
@@ -1404,11 +1404,11 @@ WtParsedWikitextPage(
 							),
 							[4] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " A ",
@@ -1451,14 +1451,14 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " Adam had some initial performance anxiety, but finally did release a flatus that could be ignited by a butane lighter.",
 												[1] = WtTagExtension(
 													{P} name = "ref"
 													{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-													xmlAttributes = -,
+													xmlAttributes = WtXmlAttributes[],
 													body = WtTagExtensionBody("{{Cite web|url=http://www.youtube.com/watch?v=BqFRBHPIE-w|title=Un-Air-able Banned Mythbuster Fart episode part 2|publisher=[[YouTube]]|accessdate=October 25, 2009}}")
 												),
 												[2] = " The flammable methane within a regular flatus, despite only making up about 7% of the flatus' gasses, is still enough to set it alight upon release (when it first contacts and mixes with the air, but before it can diffuse altogether)."
@@ -1513,7 +1513,7 @@ WtParsedWikitextPage(
 						body = WtBody[
 							[0] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Myth statement" ],
 									[1] = WtNewline("\n")
@@ -1521,7 +1521,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Status" ],
 									[1] = WtNewline("\n")
@@ -1529,7 +1529,7 @@ WtParsedWikitextPage(
 							),
 							[2] = WtTableHeader(
 								{P} rtd = RTD[ "!" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " Notes" ],
 									[1] = WtNewline("\n")
@@ -1537,11 +1537,11 @@ WtParsedWikitextPage(
 							),
 							[3] = WtTableRow(
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[ [0] = " Of all the MythBusters, Adam is the one with the brownest teeth. " ],
 											[1] = WtNewline("\n")
@@ -1549,7 +1549,7 @@ WtParsedWikitextPage(
 									),
 									[1] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " ",
@@ -1584,7 +1584,7 @@ WtParsedWikitextPage(
 									),
 									[2] = WtTableCell(
 										{P} rtd = RTD[ "|" <o> "" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtParagraph[
 												[0] = " Jamie, Adam, Tory, and Grant all had their teeth checked by Kari. At first Jamie was the one with the brownest teeth, not Adam. However, after hearing the news, he had his ",
@@ -1675,7 +1675,7 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = WtTableHeader(
 						{P} rtd = RTD[ "!" <o> "" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtParagraph[ [0] = " Date broadcast" ],
 							[1] = WtNewline("\n")
@@ -1683,7 +1683,7 @@ WtParsedWikitextPage(
 					),
 					[1] = WtTableHeader(
 						{P} rtd = RTD[ "!" <o> "" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtParagraph[ [0] = " Myths" ],
 							[1] = WtNewline("\n")
@@ -1691,11 +1691,11 @@ WtParsedWikitextPage(
 					),
 					[2] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " July 27, 2006" ],
 									[1] = WtNewline("\n")
@@ -1703,7 +1703,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -1747,11 +1747,11 @@ WtParsedWikitextPage(
 					),
 					[3] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " August 3, 2006" ],
 									[1] = WtNewline("\n")
@@ -1759,7 +1759,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -1803,11 +1803,11 @@ WtParsedWikitextPage(
 					),
 					[4] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " September 7, 2006" ],
 									[1] = WtNewline("\n")
@@ -1815,7 +1815,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -1859,11 +1859,11 @@ WtParsedWikitextPage(
 					),
 					[5] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " September 14, 2006" ],
 									[1] = WtNewline("\n")
@@ -1871,7 +1871,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -1893,11 +1893,11 @@ WtParsedWikitextPage(
 					),
 					[6] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " September 21, 2006" ],
 									[1] = WtNewline("\n")
@@ -1905,7 +1905,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -1938,11 +1938,11 @@ WtParsedWikitextPage(
 					),
 					[7] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " September 28, 2006" ],
 									[1] = WtNewline("\n")
@@ -1950,7 +1950,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -1994,11 +1994,11 @@ WtParsedWikitextPage(
 					),
 					[8] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " October 5, 2006" ],
 									[1] = WtNewline("\n")
@@ -2006,7 +2006,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -2050,11 +2050,11 @@ WtParsedWikitextPage(
 					),
 					[9] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " October 12, 2006" ],
 									[1] = WtNewline("\n")
@@ -2062,7 +2062,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = WtInternalLink(
@@ -2105,11 +2105,11 @@ WtParsedWikitextPage(
 					),
 					[10] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " October 19, 2006" ],
 									[1] = WtNewline("\n")
@@ -2117,7 +2117,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = WtInternalLink(
@@ -2160,11 +2160,11 @@ WtParsedWikitextPage(
 					),
 					[11] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> " \n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " October 31, 2006" ],
 									[1] = WtNewline("\n")
@@ -2172,7 +2172,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -2216,11 +2216,11 @@ WtParsedWikitextPage(
 					),
 					[12] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " November 7, 2006" ],
 									[1] = WtNewline("\n")
@@ -2228,7 +2228,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -2275,11 +2275,11 @@ WtParsedWikitextPage(
 					),
 					[13] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " November 14, 2006" ],
 									[1] = WtNewline("\n")
@@ -2287,7 +2287,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",
@@ -2320,11 +2320,11 @@ WtParsedWikitextPage(
 					),
 					[14] = WtTableRow(
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[ [0] = " February 19, 2007" ],
 									[1] = WtNewline("\n")
@@ -2332,7 +2332,7 @@ WtParsedWikitextPage(
 							),
 							[1] = WtTableCell(
 								{P} rtd = RTD[ "|" <o> "" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtParagraph[
 										[0] = " ",

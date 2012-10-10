@@ -3,11 +3,11 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtTable(
 		{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = WtTableCell(
 				{P} rtd = RTD[ "|" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtParagraph[
 						[0] = WtText(
@@ -20,12 +20,12 @@ WtParsedWikitextPage(
 			),
 			[1] = WtTableCell(
 				{P} rtd = RTD[ "|" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[ [0] = "b]]" ]
 			),
 			[2] = WtTableCell(
 				{P} rtd = RTD[ "||" <o> "" <o> "" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtParagraph[ [0] = "2" ],
 					[1] = WtNewline("\n")

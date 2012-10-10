@@ -9,7 +9,7 @@ WtParsedWikitextPage(
 		[1] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[[Category:Football_in_Australia]]")
 			)
 	}
@@ -67,7 +67,7 @@ WtParsedWikitextPage(
 							[0] = WtXmlElement(
 								{P} name = "small"
 								{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 							)
 						)
@@ -151,7 +151,7 @@ WtParsedWikitextPage(
 							[0] = WtXmlElement(
 								{P} name = "small"
 								{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 							)
 						)
@@ -241,7 +241,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "small"
 										{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 									)
 								)
@@ -415,7 +415,7 @@ WtParsedWikitextPage(
 											[0] = WtXmlElement(
 												{P} name = "small"
 												{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 											)
 										)
@@ -1016,7 +1016,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "small"
 										{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 									)
 								)
@@ -1276,12 +1276,12 @@ WtParsedWikitextPage(
 									[4] = WtXmlElement(
 										{P} name = "sup"
 										{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtXmlElement(
 												{P} name = "small"
 												{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[
 													[0] = WtInternalLink(
 														{P} postfix = ""
@@ -1352,12 +1352,12 @@ WtParsedWikitextPage(
 													[4] = WtXmlElement(
 														{P} name = "sup"
 														{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-														xmlAttributes = -,
+														xmlAttributes = WtXmlAttributes[],
 														body = WtBody[
 															[0] = WtXmlElement(
 																{P} name = "small"
 																{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-																xmlAttributes = -,
+																xmlAttributes = WtXmlAttributes[],
 																body = WtBody[
 																	[0] = WtInternalLink(
 																		{P} postfix = ""
@@ -1553,12 +1553,12 @@ WtParsedWikitextPage(
 					[4] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtXmlElement(
 								{P} name = "small"
 								{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtInternalLink(
 										{P} postfix = ""
@@ -1752,7 +1752,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "small"
 										{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "(waarom? jus'coz!)" ]
 									)
 								)
@@ -1797,7 +1797,7 @@ WtParsedWikitextPage(
 						[0] = WtXmlElement(
 							{P} name = "small"
 							{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtBody[ [0] = "(waarom? jus'coz!)" ]
 						)
 					)
@@ -1886,7 +1886,7 @@ WtParsedWikitextPage(
 						[0] = WtXmlElement(
 							{P} name = "small"
 							{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 						)
 					)
@@ -2048,7 +2048,7 @@ WtParsedWikitextPage(
 											[0] = WtXmlElement(
 												{P} name = "small"
 												{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 											)
 										)
@@ -2253,7 +2253,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "small"
 										{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 									)
 								)
@@ -2415,7 +2415,7 @@ WtParsedWikitextPage(
 							[0] = WtXmlElement(
 								{P} name = "small"
 								{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 							)
 						)
@@ -3270,7 +3270,7 @@ WtParsedWikitextPage(
 				[3] = WtXmlElement(
 					{P} name = "s"
 					{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtBody[ [0] = "And please stop editing other peoples comments, it's just confuses things." ]
 				),
 				[4] = " ",
@@ -3295,7 +3295,7 @@ WtParsedWikitextPage(
 						[0] = WtXmlElement(
 							{P} name = "sub"
 							{P} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtBody[ [0] = "talk\u203D" ]
 						)
 					)
@@ -3332,7 +3332,7 @@ WtParsedWikitextPage(
 											[0] = WtXmlElement(
 												{P} name = "sub"
 												{P} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[ [0] = "talk\u203D" ]
 											)
 										)
@@ -3509,7 +3509,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "sub"
 										{P} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "talk\u203D" ]
 									)
 								)
@@ -3660,7 +3660,7 @@ WtParsedWikitextPage(
 							[0] = WtXmlElement(
 								{P} name = "sub"
 								{P} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "talk\u203D" ]
 							)
 						)
@@ -3853,7 +3853,7 @@ WtParsedWikitextPage(
 				[0] = WtXmlElement(
 					{P} name = "s"
 					{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtBody[
 						[0] = ":::::It seem that you added this paragraph just before I clicked edit, so I hadn't read it when I wrote the above. The explanation for the 6 minutes, if you want it, is that I clicked submit when I had finished my edit to the earlier section, and then worked on something else. When I came back to the window, I saw that it had not been submitted due to an edit conflict. How much of the six minutes was between your edits and my original submission and how much was between my first submission and my second one, I don't know. You can see that my \"resurrection\" of your comment was part of the edit I made to the earlier section. ",
 						[1] = WtInternalLink(
@@ -4276,7 +4276,7 @@ WtParsedWikitextPage(
 								[0] = WtXmlElement(
 									{P} name = "sub"
 									{P} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
-									xmlAttributes = -,
+									xmlAttributes = WtXmlAttributes[],
 									body = WtBody[ [0] = "talk\u203D" ]
 								)
 							)
@@ -4399,7 +4399,7 @@ WtParsedWikitextPage(
 								[0] = WtXmlElement(
 									{P} name = "sub"
 									{P} rtd = RTD[ "<sub" <o> ">" <o> "</sub>" ]
-									xmlAttributes = -,
+									xmlAttributes = WtXmlAttributes[],
 									body = WtBody[ [0] = "talk\u203D" ]
 								)
 							)
@@ -4569,7 +4569,7 @@ WtParsedWikitextPage(
 							[0] = WtXmlElement(
 								{P} name = "small"
 								{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 							)
 						)
@@ -4637,7 +4637,7 @@ WtParsedWikitextPage(
 											[0] = WtXmlElement(
 												{P} name = "small"
 												{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 											)
 										)
@@ -4729,7 +4729,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "small"
 										{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 									)
 								)
@@ -4965,7 +4965,7 @@ WtParsedWikitextPage(
 						[0] = WtXmlElement(
 							{P} name = "small"
 							{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 						)
 					)
@@ -4980,7 +4980,7 @@ WtParsedWikitextPage(
 					[1] = WtXmlElement(
 						{P} name = "b"
 						{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtXmlElement(
 								{P} name = "font"
@@ -5059,7 +5059,7 @@ WtParsedWikitextPage(
 						[0] = WtXmlElement(
 							{P} name = "sup"
 							{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtBody[
 								[0] = WtXmlElement(
 									{P} name = "font"
@@ -5249,7 +5249,7 @@ WtParsedWikitextPage(
 							[0] = WtXmlElement(
 								{P} name = "small"
 								{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 							)
 						)
@@ -5295,7 +5295,7 @@ WtParsedWikitextPage(
 											[0] = WtXmlElement(
 												{P} name = "small"
 												{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 											)
 										)
@@ -5326,7 +5326,7 @@ WtParsedWikitextPage(
 											[0] = WtXmlElement(
 												{P} name = "small"
 												{P} rtd = RTD[ "<small" <o> ">" <o> "</small>" ]
-												xmlAttributes = -,
+												xmlAttributes = WtXmlAttributes[],
 												body = WtBody[ [0] = "(waarom? jus'b'coz!)" ]
 											)
 										)
@@ -5382,7 +5382,7 @@ WtParsedWikitextPage(
 				[1] = WtTagExtension(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("[[Category:Football_in_Australia]]")
 				),
 				[2] = ". We need concerted action to stop this. ",
@@ -5471,7 +5471,7 @@ WtParsedWikitextPage(
 				[5] = WtXmlElement(
 					{P} name = "b"
 					{P} rtd = RTD[ "<b" <o> ">" <o> "</b>" ]
-					xmlAttributes = -,
+					xmlAttributes = WtXmlAttributes[],
 					body = WtBody[
 						[0] = WtXmlElement(
 							{P} name = "font"
@@ -5550,7 +5550,7 @@ WtParsedWikitextPage(
 					[0] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtXmlElement(
 								{P} name = "font"

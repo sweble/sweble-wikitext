@@ -176,7 +176,7 @@ WtParsedWikitextPage(
 		[1] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("{{cleanup}}")
 			),
 		[2] = WtXmlComment(
@@ -201,7 +201,7 @@ WtParsedWikitextPage(
 						{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 						name = WtName[ [0] = "name" ],
 						defaultValue = -,
-						garbage = -
+						garbage = WtTemplateArguments[]
 					)
 				],
 				args = WtTemplateArguments[
@@ -244,13 +244,13 @@ WtParsedWikitextPage(
 		[9] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("==The Biography==")
 			),
 		[10] = WtTagExtension(
 				{P} name = "nowiki"
 				{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("==Biography==")
 			),
 		[11] = WtTemplate(
@@ -447,7 +447,7 @@ WtParsedWikitextPage(
 		[1] = WtTagExtension(
 			{P} name = "nowiki"
 			{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-			xmlAttributes = -,
+			xmlAttributes = WtXmlAttributes[],
 			body = WtTagExtensionBody("{{cleanup}}")
 		),
 		[2] = " tag on the article, but I've read the thing through several times and don't see a problem warranting the tag. Moreover, this is the very first entry in the talk page which strikes me as meaning we have a ways to go before we start throwing tags around. I removed the tag and made a couple of other edits. If anyone has any thoughts on what needs to be ",
@@ -584,7 +584,7 @@ WtParsedWikitextPage(
 							{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
 							name = WtName[ [0] = "name" ],
 							defaultValue = -,
-							garbage = -
+							garbage = WtTemplateArguments[]
 						)
 					],
 					args = WtTemplateArguments[
@@ -660,7 +660,7 @@ WtParsedWikitextPage(
 					[8] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtInternalLink(
 								{P} postfix = ""
@@ -707,7 +707,7 @@ WtParsedWikitextPage(
 					[6] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtInternalLink(
 								{P} postfix = ""
@@ -744,7 +744,7 @@ WtParsedWikitextPage(
 					[4] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtInternalLink(
 								{P} postfix = ""
@@ -784,7 +784,7 @@ WtParsedWikitextPage(
 					[4] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[ [0] = "th" ]
 					),
 					[5] = "; for example, instead of (if such appeared in the article) using ",
@@ -801,7 +801,7 @@ WtParsedWikitextPage(
 								[1] = WtXmlElement(
 									{P} name = "sup"
 									{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-									xmlAttributes = -,
+									xmlAttributes = WtXmlAttributes[],
 									body = WtBody[ [0] = "th" ]
 								)
 							)
@@ -824,7 +824,7 @@ WtParsedWikitextPage(
 					[10] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtInternalLink(
 								{P} postfix = ""
@@ -862,7 +862,7 @@ WtParsedWikitextPage(
 						[0] = WtTagExtension(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("==The Biography==")
 						)
 					),
@@ -872,7 +872,7 @@ WtParsedWikitextPage(
 						[0] = WtTagExtension(
 							{P} name = "nowiki"
 							{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-							xmlAttributes = -,
+							xmlAttributes = WtXmlAttributes[],
 							body = WtTagExtensionBody("==Biography==")
 						)
 					),
@@ -880,7 +880,7 @@ WtParsedWikitextPage(
 					[8] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtInternalLink(
 								{P} postfix = ""
@@ -945,7 +945,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "s"
 										{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "All" ]
 									)
 								]
@@ -965,7 +965,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "s"
 										{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "a number of" ]
 									)
 								]
@@ -989,7 +989,7 @@ WtParsedWikitextPage(
 									[0] = WtXmlElement(
 										{P} name = "s"
 										{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
 											[0] = WtText(
 												{A} warnings = C[ Warning (none): /complex/wikitext/raw-Talk%3AArundel+Castle.wikitext:21:37 - 38: "[" : This looks like a External Link, however the actual URL is missing. ]
@@ -1028,7 +1028,7 @@ WtParsedWikitextPage(
 					[5] = WtXmlElement(
 						{P} name = "sup"
 						{P} rtd = RTD[ "<sup" <o> ">" <o> "</sup>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtInternalLink(
 								{P} postfix = ""

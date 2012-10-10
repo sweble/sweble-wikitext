@@ -15,7 +15,7 @@ WtParsedWikitextPage(
 		[2] = WtTagExtension(
 				{P} name = "ref"
 				{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtTagExtensionBody("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
 			)
 	}
@@ -1451,7 +1451,7 @@ WtParsedWikitextPage(
 					[1] = WtTagExtension(
 						{P} name = "ref"
 						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtTagExtensionBody("[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]")
 					),
 					[2] = ")"
@@ -1548,7 +1548,7 @@ WtParsedWikitextPage(
 				[0] = WtXmlEmptyTag(
 					{P} name = "references"
 					{P} rtd = RTD[ "<references" <o> "/>" ]
-					xmlAttributes = -
+					xmlAttributes = WtXmlAttributes[]
 				)
 			],
 			[3] = WtNewline("\n"),

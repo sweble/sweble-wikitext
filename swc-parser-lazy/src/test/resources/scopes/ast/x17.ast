@@ -4,23 +4,23 @@ WtParsedWikitextPage(
 	[0] = WtXmlElement(
 		{P} name = "li"
 		{P} rtd = RTD[ "<li" <o> ">" <o> "</li>" ]
-		xmlAttributes = -,
+		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = "item3",
 			[1] = WtXmlElement(
 				{P} name = "table"
 				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
-				xmlAttributes = -,
+				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtXmlElement(
 						{P} name = "tr"
 						{P} rtd = RTD[ "<tr" <o> ">" <o> "" ]
-						xmlAttributes = -,
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtXmlElement(
 								{P} name = "td"
 								{P} rtd = RTD[ "<td" <o> ">" <o> "" ]
-								xmlAttributes = -,
+								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
 									[0] = WtXmlEndTag(
 										{P} name = "li"
@@ -29,7 +29,7 @@ WtParsedWikitextPage(
 									[1] = WtXmlElement(
 										{P} name = "li"
 										{P} rtd = RTD[ "<li" <o> ">" <o> "" ]
-										xmlAttributes = -,
+										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[ [0] = "item4" ]
 									)
 								]
