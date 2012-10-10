@@ -28,8 +28,8 @@ public class WikitextEncodingValidator
 	public ValidatedWikitext validate(
 			ParserConfig parserConfig,
 			WtEntityMap entityMap,
-			String source,
-			String title)
+			String title,
+			String source)
 			throws IOException
 	{
 		StringReader in = new StringReader(source);
@@ -52,6 +52,6 @@ public class WikitextEncodingValidator
 			String source,
 			String title) throws IOException
 	{
-		return validate(parserConfig, new WtEntityMapImpl(), source, title);
+		return validate(parserConfig, new WtEntityMapImpl(), title, source);
 	}
 }
