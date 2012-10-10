@@ -1,40 +1,58 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
+
+import org.sweble.wikitext.parser.nodes.WtNode;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class PpResolverLog
+public class IllegalNameException
 		extends
-			LogContainer
+			LogLeafNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public PpResolverLog()
+	public IllegalNameException(WtNode name, String message)
 	{
+		setName(name);
+		setMessage(message);
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private Long timeNeeded;
+	private WtNode name;
 	
-	public final Long getTimeNeeded()
+	public final WtNode getName()
 	{
-		return this.timeNeeded;
+		return this.name;
 	}
 	
-	public final Long setTimeNeeded(Long timeNeeded)
+	public final WtNode setName(WtNode name)
 	{
-		Long old = this.timeNeeded;
-		this.timeNeeded = timeNeeded;
+		WtNode old = this.name;
+		this.name = name;
+		return old;
+	}
+	
+	private String message;
+	
+	public final String getMessage()
+	{
+		return this.message;
+	}
+	
+	public final String setMessage(String message)
+	{
+		String old = this.message;
+		this.message = message;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1;
+		return 2;
 	}
 	
 	@Override
@@ -45,7 +63,7 @@ public class PpResolverLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 1;
+				return 2;
 			}
 			
 			@Override
@@ -54,7 +72,9 @@ public class PpResolverLog
 				switch (index)
 				{
 					case 0:
-						return "timeNeeded";
+						return "name";
+					case 1:
+						return "message";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -67,7 +87,9 @@ public class PpResolverLog
 				switch (index)
 				{
 					case 0:
-						return PpResolverLog.this.getTimeNeeded();
+						return IllegalNameException.this.getName();
+					case 1:
+						return IllegalNameException.this.getMessage();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -80,7 +102,9 @@ public class PpResolverLog
 				switch (index)
 				{
 					case 0:
-						return PpResolverLog.this.setTimeNeeded((Long) value);
+						return IllegalNameException.this.setName((WtNode) value);
+					case 1:
+						return IllegalNameException.this.setMessage((String) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> title?
  */
 public interface WomIntLink
-        extends
-            WomInlineElement,
-            WomLink
+		extends
+			WomInlineElement,
+			WomLink
 {
 	/**
 	 * Get the title of the internal link.

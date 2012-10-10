@@ -106,8 +106,8 @@ public enum FullElementContentType
 			/*
 			switch (node.getNodeType())
 			{
-				case AstNodeTypes.NT_IGNORED:
-				case AstNodeTypes.NT_NEWLINE:
+				case WtNode.NT_IGNORED:
+				case WtNode.NT_NEWLINE:
 				{
 					break;
 				}
@@ -118,8 +118,8 @@ public enum FullElementContentType
 					
 					break;
 				}
-				case AstNodeTypes.NT_XML_CHAR_REF:
-				case AstNodeTypes.NT_XML_ENTITY_REF:
+				case WtNode.NT_XML_CHAR_REF:
+				case WtNode.NT_XML_ENTITY_REF:
 				{
 					throw new AssertionError("Non-whitespace text in non-inline scope");
 				}
@@ -179,13 +179,13 @@ public enum FullElementContentType
 				
 				switch (n.getNodeType())
 				{
-					case AstNodeTypes.NT_IGNORED:
+					case WtNode.NT_IGNORED:
 						break;
 					
 					case WtNode.NT_TEXT:
-					case AstNodeTypes.NT_NEWLINE:
-					case AstNodeTypes.NT_XML_CHAR_REF:
-					case AstNodeTypes.NT_XML_ENTITY_REF:
+					case WtNode.NT_NEWLINE:
+					case WtNode.NT_XML_CHAR_REF:
+					case WtNode.NT_XML_ENTITY_REF:
 					{
 						n = buildInlineText(factory, childManager, parent, container, n, i, to);
 						if (n != null)
@@ -342,11 +342,11 @@ public enum FullElementContentType
 			
 			switch (n.getNodeType())
 			{
-				case AstNodeTypes.NT_IGNORED:
-				case AstNodeTypes.NT_NEWLINE:
+				case WtNode.NT_IGNORED:
+				case WtNode.NT_NEWLINE:
 				case WtNode.NT_TEXT:
-				case AstNodeTypes.NT_XML_CHAR_REF:
-				case AstNodeTypes.NT_XML_ENTITY_REF:
+				case WtNode.NT_XML_CHAR_REF:
+				case WtNode.NT_XML_ENTITY_REF:
 				{
 					complexText.append(n);
 					break;

@@ -22,12 +22,11 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.nodes.WtProtectedText;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtText;
-import org.sweble.wikitext.parser.nodes.WtXmlElement;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
+import org.sweble.wikitext.parser.nodes.WtValue;
 
 public class BuiltInTagExtensions
 		extends
@@ -37,16 +36,16 @@ public class BuiltInTagExtensions
 	
 	// =========================================================================
 	
-	protected BuiltInTagExtensions()
+	protected BuiltInTagExtensions(WikiConfig wikiConfig)
 	{
 		super("Built-in Tag Extensions");
-		addTagExtension(new TagExtensionPre());
-		addTagExtension(new TagExtensionNoWiki());
+		addTagExtension(new TagExtensionPre(wikiConfig));
+		addTagExtension(new TagExtensionNowiki(wikiConfig));
 	}
 	
-	public static BuiltInTagExtensions group()
+	public static BuiltInTagExtensions group(WikiConfig wikiConfig)
 	{
-		return new BuiltInTagExtensions();
+		return new BuiltInTagExtensions(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -61,23 +60,22 @@ public class BuiltInTagExtensions
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public TagExtensionPre()
+		public TagExtensionPre(WikiConfig wikiConfig)
 		{
-			super("pre");
+			super(wikiConfig, "pre");
 		}
 		
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
 				WtTagExtension tagExt,
-				Map<String, WtNodeList> attrs,
-				String body)
+				Map<String, WtValue> attrs,
+				WtTagExtensionBody body)
 		{
-			return new WtXmlElement(
+			return nf().elem(
 					"pre",
-					false,
 					tagExt.getXmlAttributes(),
-					new WtNodeList(new WtText(body)));
+					nf().body(nf().list(nf().text(body.getContent()))));
 		}
 	}
 	
@@ -87,37 +85,27 @@ public class BuiltInTagExtensions
 	// ==
 	// =========================================================================
 	
-	public static final class TagExtensionNoWiki
+	public static final class TagExtensionNowiki
 			extends
 				TagExtensionBase
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public TagExtensionNoWiki()
+		public TagExtensionNowiki(WikiConfig wikiConfig)
 		{
-			super("nowiki");
+			super(wikiConfig, "nowiki");
 		}
 		
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
 				WtTagExtension tagExt,
-				Map<String, WtNodeList> attrs,
-				String body)
+				Map<String, WtValue> attrs,
+				WtTagExtensionBody body)
 		{
-			WtProtectedText pt;
-			if (tagExt.getBody() == null)
-			{
-				pt = new WtProtectedText("");
-				pt.setRtd("<nowiki />");
-			}
-			else
-			{
-				pt = new WtProtectedText(body);
-				pt.setRtd("<nowiki>", tagExt.getBody(), "</nowiki>");
-			}
-			return pt;
+			return (tagExt.getBody() == null) ?
+					nf().nowiki("") :
+					nf().nowiki(body.getContent());
 		}
 	}
-	
 }

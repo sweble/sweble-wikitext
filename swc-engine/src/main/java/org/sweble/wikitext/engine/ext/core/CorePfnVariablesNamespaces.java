@@ -24,9 +24,9 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -39,17 +39,17 @@ public class CorePfnVariablesNamespaces
 	
 	// =========================================================================
 	
-	protected CorePfnVariablesNamespaces()
+	protected CorePfnVariablesNamespaces(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Namespaces");
-		addParserFunction(new NamespacePfn());
-		addParserFunction(new TalkspacePfn());
-		addParserFunction(new SubjectspacePfn());
+		addParserFunction(new NamespacePfn(wikiConfig));
+		addParserFunction(new TalkspacePfn(wikiConfig));
+		addParserFunction(new SubjectspacePfn(wikiConfig));
 	}
 	
-	public static CorePfnVariablesNamespaces group()
+	public static CorePfnVariablesNamespaces group(WikiConfig wikiConfig)
 	{
-		return new CorePfnVariablesNamespaces();
+		return new CorePfnVariablesNamespaces(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -64,9 +64,9 @@ public class CorePfnVariablesNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public NamespacePfn()
+		public NamespacePfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "namespace");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "namespace");
 		}
 		
 		@Override
@@ -100,7 +100,7 @@ public class CorePfnVariablesNamespaces
 				title = frame.getRootFrame().getTitle();
 			}
 			
-			return new WtText(title.getNamespace().getName());
+			return nf().text(title.getNamespace().getName());
 		}
 	}
 	
@@ -123,9 +123,9 @@ public class CorePfnVariablesNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public SubjectspacePfn()
+		public SubjectspacePfn(WikiConfig wikiConfig)
 		{
-			super("subjectspace");
+			super(wikiConfig, "subjectspace");
 		}
 		
 		@Override
@@ -136,7 +136,7 @@ public class CorePfnVariablesNamespaces
 			Namespace talkNs =
 					frame.getWikiConfig().getSubjectNamespaceFor(title.getNamespace());
 			
-			return new WtText(talkNs.getName());
+			return nf().text(talkNs.getName());
 		}
 	}
 	
@@ -158,9 +158,9 @@ public class CorePfnVariablesNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public TalkspacePfn()
+		public TalkspacePfn(WikiConfig wikiConfig)
 		{
-			super("talkspace");
+			super(wikiConfig, "talkspace");
 		}
 		
 		@Override
@@ -171,7 +171,7 @@ public class CorePfnVariablesNamespaces
 			Namespace talkNs =
 					frame.getWikiConfig().getTalkNamespaceFor(title.getNamespace());
 			
-			return new WtText(talkNs.getName());
+			return nf().text(talkNs.getName());
 		}
 	}
 	

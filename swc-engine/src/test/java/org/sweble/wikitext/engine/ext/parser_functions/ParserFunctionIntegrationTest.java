@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
 
@@ -25,7 +25,6 @@ import javax.xml.bind.JAXBException;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.Compiler;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.ExpansionFrame;
@@ -33,6 +32,7 @@ import org.sweble.wikitext.engine.FullPage;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.RtDataPrinter;
@@ -64,7 +64,7 @@ public class ParserFunctionIntegrationTest
 				+ " }}"
 				+ "|8}}";
 		
-		CompiledPage result = compiler.expand(pageId, wikitext, new ExpansionCallbackDummy());
+		EngCompiledPage result = compiler.expand(pageId, wikitext, new ExpansionCallbackDummy());
 		
 		String expandedWt = RtDataPrinter.print(result.getPage());
 		
@@ -96,7 +96,7 @@ public class ParserFunctionIntegrationTest
 				+ "  |8}}"
 				+ " }}";
 		
-		CompiledPage result = compiler.expand(pageId, wikitext, new ExpansionCallbackDummy());
+		EngCompiledPage result = compiler.expand(pageId, wikitext, new ExpansionCallbackDummy());
 		
 		String expandedWt = RtDataPrinter.print(result.getPage());
 		

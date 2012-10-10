@@ -27,7 +27,6 @@ import java.util.List;
 import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.IOUtils;
-import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.Compiler;
 import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.ExpansionCallback;
@@ -37,6 +36,7 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 
 public class CompilerTestBase
@@ -81,12 +81,12 @@ public class CompilerTestBase
 	
 	// =========================================================================
 	
-	public CompiledPage preprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public EngCompiledPage preprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		return preprocess(null, page, forInclusion);
 	}
 	
-	public CompiledPage preprocess(
+	public EngCompiledPage preprocess(
 			String namespace,
 			String page,
 			boolean forInclusion) throws LinkTargetException, IOException, CompilerException
@@ -106,7 +106,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	public CompiledPage expand(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public EngCompiledPage expand(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);
 		FullPage fullPage = retrieve(title);
@@ -118,7 +118,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	public CompiledPage parse(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public EngCompiledPage parse(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);
 		FullPage fullPage = retrieve(title);
@@ -130,7 +130,7 @@ public class CompilerTestBase
 				expansionCallback);
 	}
 	
-	public CompiledPage postprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
+	public EngCompiledPage postprocess(String page, boolean forInclusion) throws LinkTargetException, IOException, CompilerException
 	{
 		PageTitle title = PageTitle.make(config, page);
 		FullPage fullPage = retrieve(title);

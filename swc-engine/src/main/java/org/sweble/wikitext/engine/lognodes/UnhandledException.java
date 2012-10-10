@@ -1,49 +1,53 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class CompilerLog
+public class UnhandledException
 		extends
-			LogContainer
+			LogLeafNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public CompilerLog()
+	public UnhandledException()
 	{
-		super();
-		
+	}
+	
+	public UnhandledException(Throwable exception, String dump)
+	{
+		setException(exception);
+		setDump(dump);
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String title;
+	private Throwable exception;
 	
-	public final String getTitle()
+	public final Throwable getException()
 	{
-		return this.title;
+		return this.exception;
 	}
 	
-	public final String setTitle(String title)
+	public final Throwable setException(Throwable exception)
 	{
-		String old = this.title;
-		this.title = title;
+		Throwable old = this.exception;
+		this.exception = exception;
 		return old;
 	}
 	
-	private Long revision;
+	private String dump;
 	
-	public final Long getRevision()
+	public final String getDump()
 	{
-		return this.revision;
+		return this.dump;
 	}
 	
-	public final Long setRevision(Long revision)
+	public final String setDump(String dump)
 	{
-		Long old = this.revision;
-		this.revision = revision;
+		String old = this.dump;
+		this.dump = dump;
 		return old;
 	}
 	
@@ -70,9 +74,9 @@ public class CompilerLog
 				switch (index)
 				{
 					case 0:
-						return "title";
+						return "exception";
 					case 1:
-						return "revision";
+						return "dump";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -85,9 +89,9 @@ public class CompilerLog
 				switch (index)
 				{
 					case 0:
-						return CompilerLog.this.getTitle();
+						return UnhandledException.this.getException();
 					case 1:
-						return CompilerLog.this.getRevision();
+						return UnhandledException.this.getDump();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -100,9 +104,9 @@ public class CompilerLog
 				switch (index)
 				{
 					case 0:
-						return CompilerLog.this.setTitle((String) value);
+						return UnhandledException.this.setException((Throwable) value);
 					case 1:
-						return CompilerLog.this.setRevision((Long) value);
+						return UnhandledException.this.setDump((String) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

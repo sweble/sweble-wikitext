@@ -17,21 +17,13 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.engine.astwom.adapters.ArgAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.NameAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.ValueAdapter;
-import org.sweble.wikitext.engine.wom.WomName;
-import org.sweble.wikitext.engine.wom.WomValue;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.utils.AstBuilder;
 
 public class ArgAdapterTest
 {

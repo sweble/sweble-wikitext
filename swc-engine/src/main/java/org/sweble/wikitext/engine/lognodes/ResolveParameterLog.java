@@ -1,8 +1,8 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ParserLog
+public class ResolveParameterLog
 		extends
 			LogContainer
 {
@@ -10,12 +10,46 @@ public class ParserLog
 	
 	// =========================================================================
 	
-	public ParserLog()
+	public ResolveParameterLog()
 	{
+	}
+	
+	public ResolveParameterLog(String name, boolean success)
+	{
+		setName(name);
+		setSuccess(success);
 	}
 	
 	// =========================================================================
 	// Properties
+	
+	private boolean success;
+	
+	public final boolean getSuccess()
+	{
+		return this.success;
+	}
+	
+	public final boolean setSuccess(boolean success)
+	{
+		boolean old = this.success;
+		this.success = success;
+		return old;
+	}
+	
+	private String name;
+	
+	public final String getName()
+	{
+		return this.name;
+	}
+	
+	public final String setName(String name)
+	{
+		String old = this.name;
+		this.name = name;
+		return old;
+	}
 	
 	private Long timeNeeded;
 	
@@ -34,7 +68,7 @@ public class ParserLog
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1;
+		return 3;
 	}
 	
 	@Override
@@ -45,7 +79,7 @@ public class ParserLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 1;
+				return 3;
 			}
 			
 			@Override
@@ -54,6 +88,10 @@ public class ParserLog
 				switch (index)
 				{
 					case 0:
+						return "success";
+					case 1:
+						return "name";
+					case 2:
 						return "timeNeeded";
 						
 					default:
@@ -67,7 +105,11 @@ public class ParserLog
 				switch (index)
 				{
 					case 0:
-						return ParserLog.this.getTimeNeeded();
+						return ResolveParameterLog.this.getSuccess();
+					case 1:
+						return ResolveParameterLog.this.getName();
+					case 2:
+						return ResolveParameterLog.this.getTimeNeeded();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -80,7 +122,11 @@ public class ParserLog
 				switch (index)
 				{
 					case 0:
-						return ParserLog.this.setTimeNeeded((Long) value);
+						return ResolveParameterLog.this.setSuccess((Boolean) value);
+					case 1:
+						return ResolveParameterLog.this.setName((String) value);
+					case 2:
+						return ResolveParameterLog.this.setTimeNeeded((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

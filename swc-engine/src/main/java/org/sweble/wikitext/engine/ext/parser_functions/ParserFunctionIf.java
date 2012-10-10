@@ -20,8 +20,9 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -40,9 +41,9 @@ public class ParserFunctionIf
 	 * }}
 	 * </pre>
 	 */
-	public ParserFunctionIf()
+	public ParserFunctionIf(WikiConfig wikiConfig)
 	{
-		super("if", 1 /* thenArgIndex */);
+		super(wikiConfig, "if", 1 /* thenArgIndex */);
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
 

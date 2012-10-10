@@ -17,13 +17,10 @@
 
 package org.sweble.wikitext.engine.wom.tools;
 
-import static org.junit.Assert.assertEquals;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womComment;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womHr;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
 import org.junit.Test;
-import org.sweble.wikitext.engine.wom.WomPage;
 
 public class WomPrinterTest
 {

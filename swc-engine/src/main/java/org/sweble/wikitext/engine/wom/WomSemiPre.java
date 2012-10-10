@@ -26,7 +26,7 @@ package org.sweble.wikitext.engine.wom;
  * sup, font})*
  */
 public interface WomSemiPre
-        extends
-            WomBlockElement
+		extends
+			WomBlockElement
 {
 }

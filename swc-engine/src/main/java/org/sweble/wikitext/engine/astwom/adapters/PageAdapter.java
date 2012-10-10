@@ -24,13 +24,13 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.astwom.AstToWomNodeFactory;
 import org.sweble.wikitext.engine.astwom.AttributeDescriptor;
 import org.sweble.wikitext.engine.astwom.AttributeManagerBase;
 import org.sweble.wikitext.engine.astwom.CustomChildrenElement;
 import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.astwom.WomBackbone;
+import org.sweble.wikitext.engine.nodes.Page;
 import org.sweble.wikitext.engine.wom.WomBody;
 import org.sweble.wikitext.engine.wom.WomCategory;
 import org.sweble.wikitext.engine.wom.WomNode;

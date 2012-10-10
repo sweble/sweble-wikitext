@@ -17,16 +17,14 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 
 public class CorePfnVariablesTechnicalMetadata
 		extends
@@ -36,18 +34,18 @@ public class CorePfnVariablesTechnicalMetadata
 	
 	// =========================================================================
 	
-	protected CorePfnVariablesTechnicalMetadata()
+	protected CorePfnVariablesTechnicalMetadata(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Technical Metadata");
-		addParserFunction(new SitenamePfn());
-		addParserFunction(new ContentLanguagePfn());
-		addParserFunction(new ProtectionLevelPfn());
-		addParserFunction(new DefaultsortPfn());
+		addParserFunction(new SitenamePfn(wikiConfig));
+		addParserFunction(new ContentLanguagePfn(wikiConfig));
+		addParserFunction(new ProtectionLevelPfn(wikiConfig));
+		addParserFunction(new DefaultsortPfn(wikiConfig));
 	}
 	
-	public static CorePfnVariablesTechnicalMetadata group()
+	public static CorePfnVariablesTechnicalMetadata group(WikiConfig wikiConfig)
 	{
-		return new CorePfnVariablesTechnicalMetadata();
+		return new CorePfnVariablesTechnicalMetadata(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -64,9 +62,9 @@ public class CorePfnVariablesTechnicalMetadata
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public SitenamePfn()
+		public SitenamePfn(WikiConfig wikiConfig)
 		{
-			super("sitename");
+			super(wikiConfig, "sitename");
 		}
 		
 		@Override
@@ -75,7 +73,7 @@ public class CorePfnVariablesTechnicalMetadata
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
-			return astText(frame.getWikiConfig().getSiteName());
+			return nf().text(frame.getWikiConfig().getSiteName());
 		}
 	}
 	
@@ -102,9 +100,9 @@ public class CorePfnVariablesTechnicalMetadata
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public ContentLanguagePfn()
+		public ContentLanguagePfn(WikiConfig wikiConfig)
 		{
-			super("contentlanguage");
+			super(wikiConfig, "contentlanguage");
 		}
 		
 		@Override
@@ -113,7 +111,7 @@ public class CorePfnVariablesTechnicalMetadata
 				ExpansionFrame frame,
 				List<? extends WtNode> args)
 		{
-			return astText(frame.getWikiConfig().getContentLanguage());
+			return nf().text(frame.getWikiConfig().getContentLanguage());
 		}
 	}
 	
@@ -145,9 +143,9 @@ public class CorePfnVariablesTechnicalMetadata
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public ProtectionLevelPfn()
+		public ProtectionLevelPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "protectionlevel");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "protectionlevel");
 		}
 		
 		@Override
@@ -157,7 +155,7 @@ public class CorePfnVariablesTechnicalMetadata
 				List<? extends WtNode> args)
 		{
 			// FIXME: Proper implementation:
-			return astList();
+			return nf().list();
 		}
 	}
 	
@@ -183,9 +181,9 @@ public class CorePfnVariablesTechnicalMetadata
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public DefaultsortPfn()
+		public DefaultsortPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "defaultsort");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "defaultsort");
 		}
 		
 		@Override
@@ -195,7 +193,7 @@ public class CorePfnVariablesTechnicalMetadata
 				List<? extends WtNode> args)
 		{
 			// FIXME: Proper implementation:
-			return astList();
+			return nf().list();
 		}
 	}
 }

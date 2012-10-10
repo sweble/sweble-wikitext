@@ -17,23 +17,18 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astTagExtension;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astXmlAttrib;
-
 import java.util.List;
 import java.util.ListIterator;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.engine.astwom.Toolbox;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.AstNodeTypes;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.utils.RtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -48,15 +43,15 @@ public class CorePfnFunctionsMiscellaneous
 	
 	// =========================================================================
 	
-	protected CorePfnFunctionsMiscellaneous()
+	protected CorePfnFunctionsMiscellaneous(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Miscellaneous");
-		addParserFunction(new TagPfn());
+		addParserFunction(new TagPfn(wikiConfig));
 	}
 	
-	public static CorePfnFunctionsMiscellaneous group()
+	public static CorePfnFunctionsMiscellaneous group(WikiConfig wikiConfig)
 	{
-		return new CorePfnFunctionsMiscellaneous();
+		return new CorePfnFunctionsMiscellaneous(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -88,9 +83,9 @@ public class CorePfnFunctionsMiscellaneous
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public TagPfn()
+		public TagPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "tag");
+			super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, "tag");
 		}
 		
 		@Override
@@ -122,12 +117,7 @@ public class CorePfnFunctionsMiscellaneous
 			expValueNode = stripComments(expValueNode);
 			String bodyStr = RtDataPrinter.print(expValueNode);
 			
-			WtTagExtension tagExt = astTagExtension()
-					.withName(nameStr)
-					.withBody(bodyStr)
-					.build();
-			
-			WtNodeList attribs = astList();
+			WtNodeList attrs = nf().list();
 			for (int i = 2; i < argsValues.size(); ++i)
 			{
 				WtTemplateArgument arg = (WtTemplateArgument) argsValues.get(i);
@@ -151,12 +141,17 @@ public class CorePfnFunctionsMiscellaneous
 				if (!XmlGrammar.xmlName().matcher(argName).matches())
 					continue;
 				
-				attribs.add(astXmlAttrib().withName(argName).withValue(argValue).build());
+				WtNodeList argValueList = nf().list(nf().text(argValue));
+				
+				attrs.add(nf().attr(
+						argName,
+						nf().value(argValueList)));
 			}
 			
-			tagExt.setXmlAttributes(attribs);
-			
-			Toolbox.addRtData(tagExt);
+			WtTagExtension tagExt = nf().tagExt(
+					nameStr,
+					nf().attrs(attrs),
+					nf().tagExtBody(bodyStr));
 			
 			return frame.expand(tagExt);
 		}
@@ -169,8 +164,8 @@ public class CorePfnFunctionsMiscellaneous
 				WtNode child = i.next();
 				switch (child.getNodeType())
 				{
-					case AstNodeTypes.NT_XML_COMMENT:
-					case AstNodeTypes.NT_IGNORED:
+					case WtNode.NT_XML_COMMENT:
+					case WtNode.NT_IGNORED:
 						i.remove();
 						break;
 					default:

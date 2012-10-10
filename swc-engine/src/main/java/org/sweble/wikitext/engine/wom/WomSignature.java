@@ -26,8 +26,8 @@ import java.util.Date;
  * <b>Child elements:</b> -
  */
 public interface WomSignature
-        extends
-            WomInlineElement
+		extends
+			WomInlineElement
 {
 	/**
 	 * Get the signature format that describes how the signature should be

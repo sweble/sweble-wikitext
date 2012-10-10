@@ -24,7 +24,7 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, [Inline elements]*
  */
 public interface WomImageCaption
-        extends
-            WomNode
+		extends
+			WomNode
 {
 }

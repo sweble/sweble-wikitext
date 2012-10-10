@@ -272,7 +272,7 @@ public class Toolbox
 	{
 		for (WtNode attr : n.getXmlAttributes())
 		{
-			if (attr.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
+			if (attr.getNodeType() != WtNode.NT_XML_ATTRIBUTE)
 				continue;
 			addRtData((WtXmlAttribute) attr);
 		}
@@ -395,17 +395,17 @@ public class Toolbox
 			case WtNode.NT_TEXT:
 				return ((WtText) n).getContent();
 				
-			case AstNodeTypes.NT_NEWLINE:
+			case WtNode.NT_NEWLINE:
 				return ((WtNewline) n).getContent();
 				
-			case AstNodeTypes.NT_XML_COMMENT:
-			case AstNodeTypes.NT_IGNORED:
+			case WtNode.NT_XML_COMMENT:
+			case WtNode.NT_IGNORED:
 				return "";
 				
-			case AstNodeTypes.NT_XML_CHAR_REF:
+			case WtNode.NT_XML_CHAR_REF:
 				return new String(Character.toChars(((WtXmlCharRef) n).getCodePoint()));
 				
-			case AstNodeTypes.NT_XML_ENTITY_REF:
+			case WtNode.NT_XML_ENTITY_REF:
 				return ((WtXmlEntityRef) n).getResolved();
 				
 			default:

@@ -17,19 +17,6 @@
 
 package org.sweble.wikitext.engine.wom.tools;
 
-import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.CommentAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.HorizontalRuleAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
-import org.sweble.wikitext.engine.wom.WomBody;
-import org.sweble.wikitext.engine.wom.WomBold;
-import org.sweble.wikitext.engine.wom.WomComment;
-import org.sweble.wikitext.engine.wom.WomHorizontalRule;
-import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomPage;
-
 /**
  * Builder for a WOM tree using fluent interfaces.
  */

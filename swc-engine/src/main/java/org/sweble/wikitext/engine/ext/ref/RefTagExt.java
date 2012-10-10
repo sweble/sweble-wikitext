@@ -22,9 +22,11 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
+import org.sweble.wikitext.parser.nodes.WtValue;
 
 public class RefTagExt
 		extends
@@ -34,15 +36,15 @@ public class RefTagExt
 	
 	// =========================================================================
 	
-	protected RefTagExt()
+	protected RefTagExt(WikiConfig wikiConfig)
 	{
 		super("Extension - Ref");
-		addTagExtension(new RefTagExtImpl());
+		addTagExtension(new RefTagExtImpl(wikiConfig));
 	}
 	
-	public static RefTagExt group()
+	public static RefTagExt group(WikiConfig wikiConfig)
 	{
-		return new RefTagExt();
+		return new RefTagExt(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -57,17 +59,17 @@ public class RefTagExt
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public RefTagExtImpl()
+		public RefTagExtImpl(WikiConfig wikiConfig)
 		{
-			super("ref");
+			super(wikiConfig, "ref");
 		}
 		
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
 				WtTagExtension tagExt,
-				Map<String, WtNodeList> attrs,
-				String body)
+				Map<String, WtValue> attrs,
+				WtTagExtensionBody body)
 		{
 			return null;
 		}

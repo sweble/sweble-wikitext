@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.ext.core;
 
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 
 public class CorePfnFunctionsLocalization
 		extends
@@ -27,14 +28,14 @@ public class CorePfnFunctionsLocalization
 	
 	// =========================================================================
 	
-	protected CorePfnFunctionsLocalization()
+	protected CorePfnFunctionsLocalization(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Localization");
 	}
 	
-	public static CorePfnFunctionsLocalization group()
+	public static CorePfnFunctionsLocalization group(WikiConfig wikiConfig)
 	{
-		return new CorePfnFunctionsLocalization();
+		return new CorePfnFunctionsLocalization(wikiConfig);
 	}
 	
 	// =========================================================================

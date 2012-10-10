@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> WtText
  */
 public interface WomComment
-        extends
-            WomProcessingInstruction
+		extends
+			WomProcessingInstruction
 {
 	/**
 	 * Return the text of the comment.

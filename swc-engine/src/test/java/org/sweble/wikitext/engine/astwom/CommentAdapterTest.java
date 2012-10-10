@@ -16,15 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womComment;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
-import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtXmlComment;
 import org.sweble.wikitext.parser.utils.RtDataPrinter;

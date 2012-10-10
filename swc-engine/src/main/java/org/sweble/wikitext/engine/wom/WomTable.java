@@ -25,9 +25,9 @@ package org.sweble.wikitext.engine.wom;
  * elements]|tbody)?
  */
 public interface WomTable
-        extends
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomBlockElement,
+			WomUniversalAttributes
 {
 	/**
 	 * Get the caption of the table.

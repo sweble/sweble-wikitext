@@ -21,7 +21,7 @@ package org.sweble.wikitext.engine.wom;
  * from this interface.
  */
 public interface WomProcessingInstruction
-        extends
-            WomNode
+		extends
+			WomNode
 {
 }

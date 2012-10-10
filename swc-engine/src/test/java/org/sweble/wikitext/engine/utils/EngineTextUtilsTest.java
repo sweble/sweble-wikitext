@@ -17,46 +17,48 @@
 
 package org.sweble.wikitext.engine.utils;
 
-import static org.junit.Assert.assertEquals;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astComment;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astIgnored;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 
 public class EngineTextUtilsTest
 {
+	WikiConfig config = DefaultConfigEn.generate();
+	
+	EngineNodeFactory nf = config.getNodeFactory();
+	
 	@Test
 	public void testTrimLeftLeavesUntrimmableTextUnaltered() throws Exception
 	{
 		assertEquals(
-				astText("Hello World"),
-				EngineTextUtils.trimLeft(astText("Hello World")));
+				nf.text("Hello World"),
+				EngineTextUtils.trimLeft(nf.text("Hello World")));
 	}
 	
 	@Test
 	public void testTrimLeftTrimsLeftWhitespace() throws Exception
 	{
 		assertEquals(
-				astText("Hello World"),
-				EngineTextUtils.trimLeft(astText("  Hello World")));
+				nf.text("Hello World"),
+				EngineTextUtils.trimLeft(nf.text("  Hello World")));
 	}
 	
 	@Test
 	public void testTrimLeftCullsWhitespaceOnlyNodes() throws Exception
 	{
 		assertEquals(
-				astList(astText("Hello World")),
-				EngineTextUtils.trimLeft(astList(astText("  "), astText("  Hello World"))));
+				nf.list(nf.text("Hello World")),
+				EngineTextUtils.trimLeft(nf.list(nf.text("  "), nf.text("  Hello World"))));
 	}
 	
 	@Test
 	public void testTrimLeftIgnoresCommentsAndIgnoredItems() throws Exception
 	{
 		assertEquals(
-				astList(astComment("Comment"), astIgnored(), astText("Hello World")),
-				EngineTextUtils.trimLeft(astList(astText("  "), astComment("Comment"), astIgnored(), astText("  Hello World"))));
+				nf.list(nf.comment("Comment"), nf.ignored(""), nf.text("Hello World")),
+				EngineTextUtils.trimLeft(nf.list(nf.text("  "), nf.comment("Comment"), nf.ignored(""), nf.text("  Hello World"))));
 	}
 	
 	// -------
@@ -65,31 +67,31 @@ public class EngineTextUtilsTest
 	public void testTrimRightLeavesUntrimmableTextUnaltered() throws Exception
 	{
 		assertEquals(
-				astText("Hello World"),
-				EngineTextUtils.trimRight(astText("Hello World")));
+				nf.text("Hello World"),
+				EngineTextUtils.trimRight(nf.text("Hello World")));
 	}
 	
 	@Test
 	public void testTrimRightTrimsRightWhitespace() throws Exception
 	{
 		assertEquals(
-				astText("Hello World"),
-				EngineTextUtils.trimRight(astText("Hello World  ")));
+				nf.text("Hello World"),
+				EngineTextUtils.trimRight(nf.text("Hello World  ")));
 	}
 	
 	@Test
 	public void testTrimRightCullsWhitespaceOnlyNodes() throws Exception
 	{
 		assertEquals(
-				astList(astText("Hello World")),
-				EngineTextUtils.trimRight(astList(astText("Hello World  "), astText("  "))));
+				nf.list(nf.text("Hello World")),
+				EngineTextUtils.trimRight(nf.list(nf.text("Hello World  "), nf.text("  "))));
 	}
 	
 	@Test
 	public void testTrimRightIgnoresCommentsAndIgnoredItems() throws Exception
 	{
 		assertEquals(
-				astList(astText("Hello World"), astComment("Comment"), astIgnored()),
-				EngineTextUtils.trimRight(astList(astText("Hello World  "), astComment("Comment"), astIgnored(), astText("  "))));
+				nf.list(nf.text("Hello World"), nf.comment("Comment"), nf.ignored("")),
+				EngineTextUtils.trimRight(nf.list(nf.text("Hello World  "), nf.comment("Comment"), nf.ignored(""), nf.text("  "))));
 	}
 }

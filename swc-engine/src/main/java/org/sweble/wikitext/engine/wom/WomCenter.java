@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> [Block elements]*
  */
 public interface WomCenter
-        extends
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomBlockElement,
+			WomUniversalAttributes
 {
 }

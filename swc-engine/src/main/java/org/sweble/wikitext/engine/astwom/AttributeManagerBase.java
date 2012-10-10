@@ -803,7 +803,7 @@ public abstract class AttributeManagerBase
 			{
 				WtNode node = i.next();
 				// there could also be garbage nodes ...
-				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+				if (!node.isNodeType(WtNode.NT_XML_ATTRIBUTE))
 					continue;
 				
 				WtXmlAttribute attr = (WtXmlAttribute) node;
@@ -910,7 +910,7 @@ public abstract class AttributeManagerBase
 			while (i.hasNext())
 			{
 				WtNode node = i.next();
-				if (!node.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+				if (!node.isNodeType(WtNode.NT_XML_ATTRIBUTE))
 					continue;
 				
 				WtXmlAttribute attr = (WtXmlAttribute) node;

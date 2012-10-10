@@ -17,32 +17,31 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class InvalidNameWarning
-        extends
-            OffendingNodeWarning
+		extends
+			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String message =
-	        "The wikitext cannot be converted into a plain name";
+			"The wikitext cannot be converted into a plain name";
 	
 	// =========================================================================
 	
 	public InvalidNameWarning(
-	        WarningSeverity severity,
-	        String origin,
-	        WtNode name)
+			WarningSeverity severity,
+			String origin,
+			WtNode name)
 	{
 		super(name, severity, origin, message);
 	}
 	
 	public InvalidNameWarning(
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        WtNode name)
+			WarningSeverity severity,
+			Class<?> origin,
+			WtNode name)
 	{
 		super(name, severity, origin, message);
 	}

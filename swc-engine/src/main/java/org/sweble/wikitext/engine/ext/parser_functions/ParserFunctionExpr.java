@@ -17,15 +17,13 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.engine.SoftErrorNode;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.ext.parser_functions.ExprParser.ExprError;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -35,9 +33,9 @@ public class ParserFunctionExpr
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionExpr()
+	public ParserFunctionExpr(WikiConfig wikiConfig)
 	{
-		super("expr");
+		super(wikiConfig, "expr");
 	}
 	
 	@Override
@@ -47,7 +45,7 @@ public class ParserFunctionExpr
 			List<? extends WtNode> args)
 	{
 		if (args.size() < 1)
-			return astText("");
+			return nf().text("");
 		
 		WtNode arg0 = frame.expand(args.get(0));
 		
@@ -58,17 +56,17 @@ public class ParserFunctionExpr
 		}
 		catch (StringConversionException e)
 		{
-			return new SoftErrorNode(pfn);
+			return nf().softError(pfn);
 		}
 		
 		ExprParser p = new ExprParser();
 		try
 		{
-			return astText(p.parse(expr));
+			return nf().text(p.parse(expr));
 		}
 		catch (ExprError e)
 		{
-			return new SoftErrorNode(e.getMessage());
+			return nf().softError(e.getMessage());
 		}
 	}
 }

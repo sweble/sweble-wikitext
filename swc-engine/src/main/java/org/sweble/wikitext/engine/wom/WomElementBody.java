@@ -24,7 +24,7 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, &lt;any>*
  */
 public interface WomElementBody
-        extends
-            WomNode
+		extends
+			WomNode
 {
 }

@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
-import org.sweble.wikitext.engine.CompiledPage;
+import org.sweble.wikitext.engine.EngCompiledPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.RtDataPrinter;
 
@@ -41,7 +41,7 @@ public class XPath
 		        new AstNodePointerFactory());
 	}
 	
-	static String query(CompiledPage cp, String query)
+	static String query(EngCompiledPage cp, String query)
 	{
 		Iterator<?> results = null;
 		try

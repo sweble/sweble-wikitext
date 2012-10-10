@@ -20,7 +20,7 @@ package org.example;
 import java.util.LinkedList;
 import java.util.regex.Pattern;
 
-import org.sweble.wikitext.engine.Page;
+import org.sweble.wikitext.engine.EngPage;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
@@ -167,7 +167,7 @@ public class TextConverter
 		iterate(item);
 	}
 	
-	public void visit(Page p)
+	public void visit(EngPage p)
 	{
 		iterate(p.getContent());
 	}

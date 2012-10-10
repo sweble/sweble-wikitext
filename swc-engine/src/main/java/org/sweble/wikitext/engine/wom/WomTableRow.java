@@ -31,9 +31,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> ([Preprocessor elements]|th|td)*
  */
 public interface WomTableRow
-        extends
-            WomNode,
-            WomUniversalAttributes
+		extends
+			WomNode,
+			WomUniversalAttributes
 {
 	/**
 	 * Get the zero-based index of this row.

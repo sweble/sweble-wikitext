@@ -16,24 +16,14 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womComment;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
-import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
-import org.sweble.wikitext.engine.wom.WomAttribute;
-import org.sweble.wikitext.engine.wom.WomBold;
-import org.sweble.wikitext.engine.wom.WomCategory;
-import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.WomParagraph;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;

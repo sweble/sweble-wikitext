@@ -23,7 +23,7 @@ package org.sweble.wikitext.engine.wom;
  * elements.
  */
 public interface WomInlineElement
-        extends
-            WomNode
+		extends
+			WomNode
 {
 }

@@ -17,14 +17,13 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
-
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.engine.SoftErrorNode;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 
 public class ParserFunctionIfError
 		extends
@@ -41,9 +40,9 @@ public class ParserFunctionIfError
 	 * }}
 	 * </pre>
 	 */
-	public ParserFunctionIfError()
+	public ParserFunctionIfError(WikiConfig wikiConfig)
 	{
-		super("iferror", 1, true);
+		super(wikiConfig, "iferror", 1, true);
 	}
 	
 	@Override
@@ -57,7 +56,7 @@ public class ParserFunctionIfError
 		boolean eval = searchErrorNode(arg0);
 		
 		// If NO error occurred the test statement becomes the default result
-		setDefault(eval ? astList() : arg0);
+		setDefault(eval ? nf().list() : arg0);
 		//		if (!eval)
 		//			setDefault(arg0);
 		
@@ -66,7 +65,7 @@ public class ParserFunctionIfError
 	
 	private static boolean searchErrorNode(WtNode arg0)
 	{
-		if (arg0 instanceof SoftErrorNode)
+		if (arg0 instanceof EngSoftErrorNode)
 		{
 			return true;
 		}

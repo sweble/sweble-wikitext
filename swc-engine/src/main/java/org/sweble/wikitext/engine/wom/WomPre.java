@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> WtText
  */
 public interface WomPre
-        extends
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomBlockElement,
+			WomUniversalAttributes
 {
 	/**
 	 * Return the text inside the pre element.

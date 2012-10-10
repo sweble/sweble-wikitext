@@ -1,8 +1,8 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ResolveParameterLog
+public class PpResolverLog
 		extends
 			LogContainer
 {
@@ -10,46 +10,12 @@ public class ResolveParameterLog
 	
 	// =========================================================================
 	
-	public ResolveParameterLog()
+	public PpResolverLog()
 	{
-	}
-	
-	public ResolveParameterLog(String name, boolean success)
-	{
-		setName(name);
-		setSuccess(success);
 	}
 	
 	// =========================================================================
 	// Properties
-	
-	private boolean success;
-	
-	public final boolean getSuccess()
-	{
-		return this.success;
-	}
-	
-	public final boolean setSuccess(boolean success)
-	{
-		boolean old = this.success;
-		this.success = success;
-		return old;
-	}
-	
-	private String name;
-	
-	public final String getName()
-	{
-		return this.name;
-	}
-	
-	public final String setName(String name)
-	{
-		String old = this.name;
-		this.name = name;
-		return old;
-	}
 	
 	private Long timeNeeded;
 	
@@ -68,7 +34,7 @@ public class ResolveParameterLog
 	@Override
 	public final int getPropertyCount()
 	{
-		return 3;
+		return 1;
 	}
 	
 	@Override
@@ -79,7 +45,7 @@ public class ResolveParameterLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 3;
+				return 1;
 			}
 			
 			@Override
@@ -88,10 +54,6 @@ public class ResolveParameterLog
 				switch (index)
 				{
 					case 0:
-						return "success";
-					case 1:
-						return "name";
-					case 2:
 						return "timeNeeded";
 						
 					default:
@@ -105,11 +67,7 @@ public class ResolveParameterLog
 				switch (index)
 				{
 					case 0:
-						return ResolveParameterLog.this.getSuccess();
-					case 1:
-						return ResolveParameterLog.this.getName();
-					case 2:
-						return ResolveParameterLog.this.getTimeNeeded();
+						return PpResolverLog.this.getTimeNeeded();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -122,11 +80,7 @@ public class ResolveParameterLog
 				switch (index)
 				{
 					case 0:
-						return ResolveParameterLog.this.setSuccess((Boolean) value);
-					case 1:
-						return ResolveParameterLog.this.setName((String) value);
-					case 2:
-						return ResolveParameterLog.this.setTimeNeeded((Long) value);
+						return PpResolverLog.this.setTimeNeeded((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

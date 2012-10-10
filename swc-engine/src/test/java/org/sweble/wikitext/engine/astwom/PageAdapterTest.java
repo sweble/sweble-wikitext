@@ -16,25 +16,12 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womBody;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.engine.astwom.adapters.BodyAdapter;
-import org.sweble.wikitext.engine.wom.WomAttribute;
-import org.sweble.wikitext.engine.wom.WomBody;
-import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomNodeType;
-import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 
 public class PageAdapterTest

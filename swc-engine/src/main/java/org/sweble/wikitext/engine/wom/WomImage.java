@@ -26,9 +26,9 @@ import java.net.URL;
  * <b>Child elements:</b> imgcaption?
  */
 public interface WomImage
-        extends
-            WomInlineElement,
-            WomLink
+		extends
+			WomInlineElement,
+			WomLink
 {
 	/**
 	 * Get the source of the image.

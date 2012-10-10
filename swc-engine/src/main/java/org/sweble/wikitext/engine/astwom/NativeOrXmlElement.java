@@ -133,7 +133,7 @@ public abstract class NativeOrXmlElement
 	
 	protected final boolean isXml()
 	{
-		return getAstNode().getNodeType() == AstNodeTypes.NT_XML_ELEMENT;
+		return getAstNode().getNodeType() == WtNode.NT_XML_ELEMENT;
 	}
 	
 	protected final WtXmlElement xml()

@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> WtText
  */
 public interface WomNowiki
-        extends
-            WomInlineElement
+		extends
+			WomInlineElement
 {
 	/**
 	 * Return the text inside the nowiki element.

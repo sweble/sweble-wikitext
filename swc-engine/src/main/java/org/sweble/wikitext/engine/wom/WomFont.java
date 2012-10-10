@@ -24,10 +24,10 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, [Inline elements]*
  */
 public interface WomFont
-        extends
-            WomInlineElement,
-            WomCoreAttributes,
-            WomI18nAttributes
+		extends
+			WomInlineElement,
+			WomCoreAttributes,
+			WomI18nAttributes
 {
 	/**
 	 * Get the color of the text content.

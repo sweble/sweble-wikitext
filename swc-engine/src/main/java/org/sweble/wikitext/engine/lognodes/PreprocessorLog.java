@@ -1,53 +1,49 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class UnhandledException
+public class PreprocessorLog
 		extends
-			LogLeafNode
+			LogContainer
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public UnhandledException()
+	public PreprocessorLog()
 	{
-	}
-	
-	public UnhandledException(Throwable exception, String dump)
-	{
-		setException(exception);
-		setDump(dump);
+		super();
+		
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private Throwable exception;
+	private boolean forInclusion;
 	
-	public final Throwable getException()
+	public final boolean getForInclusion()
 	{
-		return this.exception;
+		return this.forInclusion;
 	}
 	
-	public final Throwable setException(Throwable exception)
+	public final boolean setForInclusion(boolean forInclusion)
 	{
-		Throwable old = this.exception;
-		this.exception = exception;
+		boolean old = this.forInclusion;
+		this.forInclusion = forInclusion;
 		return old;
 	}
 	
-	private String dump;
+	private Long timeNeeded;
 	
-	public final String getDump()
+	public final Long getTimeNeeded()
 	{
-		return this.dump;
+		return this.timeNeeded;
 	}
 	
-	public final String setDump(String dump)
+	public final Long setTimeNeeded(Long timeNeeded)
 	{
-		String old = this.dump;
-		this.dump = dump;
+		Long old = this.timeNeeded;
+		this.timeNeeded = timeNeeded;
 		return old;
 	}
 	
@@ -74,9 +70,9 @@ public class UnhandledException
 				switch (index)
 				{
 					case 0:
-						return "exception";
+						return "forInclusion";
 					case 1:
-						return "dump";
+						return "timeNeeded";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -89,9 +85,9 @@ public class UnhandledException
 				switch (index)
 				{
 					case 0:
-						return UnhandledException.this.getException();
+						return PreprocessorLog.this.getForInclusion();
 					case 1:
-						return UnhandledException.this.getDump();
+						return PreprocessorLog.this.getTimeNeeded();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -104,9 +100,9 @@ public class UnhandledException
 				switch (index)
 				{
 					case 0:
-						return UnhandledException.this.setException((Throwable) value);
+						return PreprocessorLog.this.setForInclusion((Boolean) value);
 					case 1:
-						return UnhandledException.this.setDump((String) value);
+						return PreprocessorLog.this.setTimeNeeded((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

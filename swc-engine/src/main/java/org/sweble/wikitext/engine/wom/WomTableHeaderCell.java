@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * See WomTableCellBase for details.
  */
 public interface WomTableHeaderCell
-        extends
-            WomTableCellBase,
-            WomUniversalAttributes
+		extends
+			WomTableCellBase,
+			WomUniversalAttributes
 {
 }

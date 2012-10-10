@@ -26,9 +26,9 @@ import java.net.URL;
  * <b>Child elements:</b> -
  */
 public interface WomUrl
-        extends
-            WomInlineElement,
-            WomLink
+		extends
+			WomInlineElement,
+			WomLink
 {
 	/**
 	 * Get the target for this external link.

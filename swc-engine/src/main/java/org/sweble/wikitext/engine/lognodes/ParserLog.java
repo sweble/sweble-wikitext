@@ -1,8 +1,8 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class PostprocessorLog
+public class ParserLog
 		extends
 			LogContainer
 {
@@ -10,7 +10,7 @@ public class PostprocessorLog
 	
 	// =========================================================================
 	
-	public PostprocessorLog()
+	public ParserLog()
 	{
 	}
 	
@@ -67,7 +67,7 @@ public class PostprocessorLog
 				switch (index)
 				{
 					case 0:
-						return PostprocessorLog.this.getTimeNeeded();
+						return ParserLog.this.getTimeNeeded();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -80,7 +80,7 @@ public class PostprocessorLog
 				switch (index)
 				{
 					case 0:
-						return PostprocessorLog.this.setTimeNeeded((Long) value);
+						return ParserLog.this.setTimeNeeded((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

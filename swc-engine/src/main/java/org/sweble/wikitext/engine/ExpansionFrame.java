@@ -23,9 +23,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.lognodes.LogContainer;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtValue;
 
 import de.fau.cs.osr.ptk.common.Warning;
 
@@ -39,11 +40,11 @@ public class ExpansionFrame
 	
 	private final PageTitle title;
 	
-	private final Map<String, WtNode> arguments;
+	private final Map<String, WtValue> arguments;
 	
 	private final boolean forInclusion;
 	
-	private final WtContentNode frameLog;
+	private final LogContainer frameLog;
 	
 	private final ExpansionCallback callback;
 	
@@ -69,7 +70,7 @@ public class ExpansionFrame
 			WtEntityMap entityMap,
 			boolean noRedirect,
 			List<Warning> warnings,
-			WtContentNode frameLog,
+			LogContainer frameLog,
 			boolean timingEnabled,
 			boolean catchAll)
 	{
@@ -77,7 +78,7 @@ public class ExpansionFrame
 		this.callback = callback;
 		this.title = title;
 		this.entityMap = entityMap;
-		this.arguments = new HashMap<String, WtNode>();
+		this.arguments = new HashMap<String, WtValue>();
 		this.forInclusion = false;
 		this.noRedirect = noRedirect;
 		this.warnings = warnings;
@@ -99,13 +100,13 @@ public class ExpansionFrame
 			ExpansionDebugHooks hooks,
 			PageTitle title,
 			WtEntityMap entityMap,
-			Map<String, WtNode> arguments,
+			Map<String, WtValue> arguments,
 			boolean forInclusion,
 			boolean noRedirect,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
 			List<Warning> warnings,
-			WtContentNode frameLog,
+			LogContainer frameLog,
 			boolean timingEnabled,
 			boolean catchAll)
 	{
@@ -151,7 +152,7 @@ public class ExpansionFrame
 		return title;
 	}
 	
-	public Map<String, WtNode> getArguments()
+	public Map<String, WtValue> getArguments()
 	{
 		return arguments;
 	}
@@ -161,7 +162,7 @@ public class ExpansionFrame
 		return forInclusion;
 	}
 	
-	public WtContentNode getFrameLog()
+	public LogContainer getFrameLog()
 	{
 		return frameLog;
 	}

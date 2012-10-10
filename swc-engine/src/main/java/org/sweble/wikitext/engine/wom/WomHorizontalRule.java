@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomHorizontalRule
-        extends
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomBlockElement,
+			WomUniversalAttributes
 {
 	/**
 	 * Get the alignment of the horizontal rule.

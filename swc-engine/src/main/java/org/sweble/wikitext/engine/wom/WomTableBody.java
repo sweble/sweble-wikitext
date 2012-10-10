@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * See WomTablePartition for details.
  */
 public interface WomTableBody
-        extends
-            WomTablePartition,
-            WomUniversalAttributes
+		extends
+			WomTablePartition,
+			WomUniversalAttributes
 {
 }

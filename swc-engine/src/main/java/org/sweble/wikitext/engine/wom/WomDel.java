@@ -26,10 +26,10 @@ import java.util.Date;
  * <b>Child elements:</b> Mixed, [Flow elements]*
  */
 public interface WomDel
-        extends
-            WomInlineElement,
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomInlineElement,
+			WomBlockElement,
+			WomUniversalAttributes
 {
 	/**
 	 * Get the url of a document that specifies the reasons for the change.

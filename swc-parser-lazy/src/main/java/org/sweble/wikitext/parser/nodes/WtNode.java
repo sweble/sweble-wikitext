@@ -57,10 +57,6 @@ public interface WtNode
 	
 	public static final int NT_IGNORED /* ...................... */= NT_MW_NODE_BITS + 5;
 	
-	public static final int NT_PROTECTED_TEXT /* ............... */= NT_MW_NODE_BITS + 6;
-	
-	public static final int NT_ERROR /* ........................ */= NT_MW_NODE_BITS + 7;
-	
 	// -- Preprocessor nodes ---------------------------------------------------
 	
 	public static final int NT_ILLEGAL_CODE_POINT /* ........... */= NT_ENCVAL_BITS + 1;

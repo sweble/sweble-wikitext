@@ -22,8 +22,9 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.parser.nodes.WtPageSwitch;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtPageSwitch;
 
 public abstract class CorePfnBehaviorSwitch
 		extends
@@ -33,11 +34,11 @@ public abstract class CorePfnBehaviorSwitch
 	
 	// =========================================================================
 	
-	public CorePfnBehaviorSwitch(String name)
+	public CorePfnBehaviorSwitch(WikiConfig wikiConfig, String name)
 	{
 		// Page Switches don't take arguments so don't waste time with funny 
 		// conversions.
-		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
+		super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
 	}
 	
 	// =========================================================================

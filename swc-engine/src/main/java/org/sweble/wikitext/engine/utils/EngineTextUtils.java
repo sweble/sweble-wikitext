@@ -19,7 +19,6 @@ package org.sweble.wikitext.engine.utils;
 
 import java.util.ListIterator;
 
-import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
@@ -71,8 +70,8 @@ public class EngineTextUtils
 								break outer;
 							}
 							
-						case AstNodeTypes.NT_IGNORED:
-						case AstNodeTypes.NT_XML_COMMENT:
+						case WtNode.NT_IGNORED:
+						case WtNode.NT_XML_COMMENT:
 							continue;
 							
 						default:
@@ -129,8 +128,8 @@ public class EngineTextUtils
 								break outer;
 							}
 							
-						case AstNodeTypes.NT_IGNORED:
-						case AstNodeTypes.NT_XML_COMMENT:
+						case WtNode.NT_IGNORED:
+						case WtNode.NT_XML_COMMENT:
 							continue;
 							
 						default:

@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.ext.core;
 
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 
 public class CorePfnBehaviorSwitches
 		extends
@@ -27,14 +28,14 @@ public class CorePfnBehaviorSwitches
 	
 	// =========================================================================
 	
-	protected CorePfnBehaviorSwitches()
+	protected CorePfnBehaviorSwitches(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Behavior Switches");
 	}
 	
-	public static CorePfnBehaviorSwitches group()
+	public static CorePfnBehaviorSwitches group(WikiConfig wikiConfig)
 	{
-		return new CorePfnBehaviorSwitches();
+		return new CorePfnBehaviorSwitches(wikiConfig);
 	}
 	
 	// =========================================================================

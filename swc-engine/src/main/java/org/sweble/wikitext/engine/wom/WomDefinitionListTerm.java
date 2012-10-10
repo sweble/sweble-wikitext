@@ -49,8 +49,8 @@ import java.util.Collection;
  * <b>Child elements:</b> Mixed, [Inline elements]*
  */
 public interface WomDefinitionListTerm
-        extends
-            WomDefinitionListItem
+		extends
+			WomDefinitionListItem
 {
 	/**
 	 * Get the number of definitions of this term.

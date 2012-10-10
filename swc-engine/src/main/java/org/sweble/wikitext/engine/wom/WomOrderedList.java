@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * See WomList for details.
  */
 public interface WomOrderedList
-        extends
-            WomList
+		extends
+			WomList
 {
 	/**
 	 * Get the type of bullet point the list items use.

@@ -42,7 +42,7 @@ import org.sweble.wikitext.engine.ext.core.CorePfnVariablesTechnicalMetadata;
 import org.sweble.wikitext.engine.ext.math.MathTagExt;
 import org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionsPfnExt;
 import org.sweble.wikitext.engine.ext.ref.RefTagExt;
-import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
 /**
@@ -81,31 +81,31 @@ public class DefaultConfigEn
 		
 		// --[ Parser functions ]--
 		
-		c.addParserFunctionGroup(BuiltInParserFunctions.group());
+		c.addParserFunctionGroup(BuiltInParserFunctions.group(c));
 		
-		c.addParserFunctionGroup(CorePfnBehaviorSwitches.group());
+		c.addParserFunctionGroup(CorePfnBehaviorSwitches.group(c));
 		
-		c.addParserFunctionGroup(CorePfnFunctionsFormatting.group());
-		c.addParserFunctionGroup(CorePfnFunctionsLocalization.group());
-		c.addParserFunctionGroup(CorePfnFunctionsMiscellaneous.group());
-		c.addParserFunctionGroup(CorePfnFunctionsNamespaces.group());
-		c.addParserFunctionGroup(CorePfnFunctionsUrlData.group());
+		c.addParserFunctionGroup(CorePfnFunctionsFormatting.group(c));
+		c.addParserFunctionGroup(CorePfnFunctionsLocalization.group(c));
+		c.addParserFunctionGroup(CorePfnFunctionsMiscellaneous.group(c));
+		c.addParserFunctionGroup(CorePfnFunctionsNamespaces.group(c));
+		c.addParserFunctionGroup(CorePfnFunctionsUrlData.group(c));
 		
-		c.addParserFunctionGroup(CorePfnVariablesDateAndTime.group());
-		c.addParserFunctionGroup(CorePfnVariablesNamespaces.group());
-		c.addParserFunctionGroup(CorePfnVariablesPageNames.group());
-		c.addParserFunctionGroup(CorePfnVariablesStatistics.group());
-		c.addParserFunctionGroup(CorePfnVariablesTechnicalMetadata.group());
+		c.addParserFunctionGroup(CorePfnVariablesDateAndTime.group(c));
+		c.addParserFunctionGroup(CorePfnVariablesNamespaces.group(c));
+		c.addParserFunctionGroup(CorePfnVariablesPageNames.group(c));
+		c.addParserFunctionGroup(CorePfnVariablesStatistics.group(c));
+		c.addParserFunctionGroup(CorePfnVariablesTechnicalMetadata.group(c));
 		
-		c.addParserFunctionGroup(ParserFunctionsPfnExt.group());
+		c.addParserFunctionGroup(ParserFunctionsPfnExt.group(c));
 		
 		// --[ Tag extensions ]--
 		
-		c.addTagExtensionGroup(BuiltInTagExtensions.group());
+		c.addTagExtensionGroup(BuiltInTagExtensions.group(c));
 		
-		c.addTagExtensionGroup(MathTagExt.group());
+		c.addTagExtensionGroup(MathTagExt.group(c));
 		
-		c.addTagExtensionGroup(RefTagExt.group());
+		c.addTagExtensionGroup(RefTagExt.group(c));
 	}
 	
 	private static void addNamespaces(WikiConfigImpl c)
@@ -179,7 +179,7 @@ public class DefaultConfigEn
 				"File",
 				"File",
 				false,
-				true, 
+				true,
 				Arrays.asList("Image")));
 		
 		c.addNamespace(new NamespaceImpl(

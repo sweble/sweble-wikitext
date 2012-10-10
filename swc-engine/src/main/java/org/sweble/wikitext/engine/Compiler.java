@@ -26,25 +26,28 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.engine.config.CompilerConfig;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.log.CompilerLog;
-import org.sweble.wikitext.engine.log.ParseException;
-import org.sweble.wikitext.engine.log.ParserLog;
-import org.sweble.wikitext.engine.log.PostprocessorLog;
-import org.sweble.wikitext.engine.log.PpResolverLog;
-import org.sweble.wikitext.engine.log.PreprocessorLog;
-import org.sweble.wikitext.engine.log.UnhandledException;
-import org.sweble.wikitext.engine.log.ValidatorLog;
+import org.sweble.wikitext.engine.lognodes.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.LogContainer;
+import org.sweble.wikitext.engine.lognodes.ParseException;
+import org.sweble.wikitext.engine.lognodes.ParserLog;
+import org.sweble.wikitext.engine.lognodes.PostprocessorLog;
+import org.sweble.wikitext.engine.lognodes.PpResolverLog;
+import org.sweble.wikitext.engine.lognodes.PreprocessorLog;
+import org.sweble.wikitext.engine.lognodes.UnhandledException;
+import org.sweble.wikitext.engine.lognodes.ValidatorLog;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextEncodingValidator;
 import org.sweble.wikitext.parser.WikitextParser;
 import org.sweble.wikitext.parser.WikitextPostprocessor;
 import org.sweble.wikitext.parser.WikitextPreprocessor;
 import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.WtEntityMapImpl;
 import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
@@ -127,6 +130,11 @@ public class Compiler
 		return catchAll;
 	}
 	
+	public EngineNodeFactory nf()
+	{
+		return wikiConfig.getNodeFactory();
+	}
+	
 	// =========================================================================
 	
 	/**
@@ -139,7 +147,7 @@ public class Compiler
 	 * <li>Optional: Expansion</li>
 	 * </ul>
 	 */
-	public CompiledPage preprocess(
+	public EngCompiledPage preprocess(
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
@@ -178,8 +186,8 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pprAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pprAst),
 				pprAst.getWarnings(),
 				log);
 	}
@@ -194,7 +202,7 @@ public class Compiler
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	public CompiledPage expand(
+	public EngCompiledPage expand(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -213,7 +221,7 @@ public class Compiler
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	public CompiledPage expand(
+	public EngCompiledPage expand(
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
@@ -253,8 +261,8 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pAst),
 				pAst.getWarnings(),
 				pAst.getEntityMap(),
 				log);
@@ -272,7 +280,7 @@ public class Compiler
 	 * <li>Entity substitution</li>
 	 * </ul>
 	 */
-	public CompiledPage parse(
+	public EngCompiledPage parse(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -312,8 +320,8 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pAst),
 				pAst.getWarnings(),
 				log);
 	}
@@ -331,7 +339,7 @@ public class Compiler
 	 * <li>Postprocessing</li>
 	 * </ul>
 	 */
-	public CompiledPage postprocess(
+	public EngCompiledPage postprocess(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -373,8 +381,8 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pAst),
 				pAst.getWarnings(),
 				log);
 	}
@@ -388,7 +396,7 @@ public class Compiler
 	 * <li>Postprocessing</li>
 	 * </ul>
 	 */
-	public CompiledPage postprocessPpOrExpAst(
+	public EngCompiledPage postprocessPpOrExpAst(
 			PageId pageId,
 			WtPreproWikitextPage pprAst)
 			throws CompilerException
@@ -419,8 +427,8 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pAst),
 				pAst.getWarnings(),
 				log);
 	}
@@ -438,13 +446,13 @@ public class Compiler
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	protected CompiledPage preprocessAndExpand(
+	protected EngCompiledPage preprocessAndExpand(
 			ExpansionCallback callback,
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
 			WtEntityMap entityMap,
-			Map<String, WtNode> arguments,
+			Map<String, WtValue> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
 			throws CompilerException
@@ -490,19 +498,19 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pprAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pprAst),
 				pprAst.getWarnings(),
 				log);
 	}
 	
-	protected CompiledPage expand(
+	protected EngCompiledPage expand(
 			ExpansionCallback callback,
 			PageId pageId,
 			WtPreproWikitextPage ppAst,
 			WtEntityMap entityMap,
 			boolean forInclusion,
-			Map<String, WtNode> arguments,
+			Map<String, WtValue> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
 			throws CompilerException
@@ -542,8 +550,8 @@ public class Compiler
 			throw new CompilerException(title, "Compilation failed!", e, log);
 		}
 		
-		return new CompiledPage(
-				new Page(pprAst.getContent()),
+		return nf().compiledPage(
+				nf().page(pprAst),
 				pprAst.getWarnings(),
 				log);
 	}
@@ -556,12 +564,12 @@ public class Compiler
 	private ValidatedWikitext validate(
 			PageTitle title,
 			String wikitext,
-			WtContentNode parentLog,
+			LogContainer parentLog,
 			WtEntityMap entityMap)
 			throws CompilerException
 	{
 		ValidatorLog log = new ValidatorLog();
-		parentLog.getContent().add(log);
+		parentLog.add(log);
 		
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -571,12 +579,13 @@ public class Compiler
 			WikitextEncodingValidator validator = new WikitextEncodingValidator();
 			
 			if (entityMap == null)
-				entityMap = new WtEntityMap();
+				entityMap = new WtEntityMapImpl();
 			
 			ValidatedWikitext validatedWikitext = validator.validate(
-					wikitext,
+					parserConfig,
+					entityMap,
 					title.getDenormalizedFullTitle(),
-					entityMap);
+					wikitext);
 			
 			return validatedWikitext;
 		}
@@ -586,7 +595,7 @@ public class Compiler
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
+			log.add(new UnhandledException(e, w.toString()));
 			
 			throw new CompilerException(title, "Validation failed!", e);
 		}
@@ -604,11 +613,11 @@ public class Compiler
 			PageTitle title,
 			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
-			WtContentNode parentLog)
+			LogContainer parentLog)
 			throws CompilerException
 	{
 		PreprocessorLog log = new PreprocessorLog();
-		parentLog.getContent().add(log);
+		parentLog.add(log);
 		
 		log.setForInclusion(forInclusion);
 		
@@ -629,7 +638,7 @@ public class Compiler
 		}
 		catch (xtc.parser.ParseException e)
 		{
-			log.getContent().add(new ParseException(e.getMessage()));
+			log.add(new ParseException(e.getMessage()));
 			
 			throw new CompilerException(title, "Preprocessing failed!", e);
 		}
@@ -639,7 +648,7 @@ public class Compiler
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
+			log.add(new UnhandledException(e, w.toString()));
 			
 			throw new CompilerException(title, "Preprocessing failed!", e);
 		}
@@ -658,9 +667,9 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			WtPreproWikitextPage ppAst,
-			LinkedHashMap<String, WtNode> arguments,
+			LinkedHashMap<String, WtValue> arguments,
 			boolean forInclusion,
-			WtContentNode parentLog)
+			LogContainer parentLog)
 			throws CompilerException
 	{
 		return expand(
@@ -681,18 +690,18 @@ public class Compiler
 			ExpansionCallback callback,
 			PageTitle title,
 			WtPreproWikitextPage ppAst,
-			Map<String, WtNode> arguments,
+			Map<String, WtValue> arguments,
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
-			WtContentNode parentLog)
+			LogContainer parentLog)
 			throws CompilerException
 	{
 		PpResolverLog log = new PpResolverLog();
-		parentLog.getContent().add(log);
+		parentLog.add(log);
 		
 		if (arguments == null)
-			arguments = new HashMap<String, WtNode>();
+			arguments = new HashMap<String, WtValue>();
 		
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -744,7 +753,7 @@ public class Compiler
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
+			log.add(new UnhandledException(e, w.toString()));
 			
 			throw new CompilerException(title, "Resolution failed!", e);
 		}
@@ -761,11 +770,11 @@ public class Compiler
 	private WtParsedWikitextPage parse(
 			PageTitle title,
 			WtPreproWikitextPage ppAst,
-			WtContentNode parentLog)
+			LogContainer parentLog)
 			throws CompilerException
 	{
 		ParserLog log = new ParserLog();
-		parentLog.getContent().add(log);
+		parentLog.add(log);
 		
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -790,7 +799,7 @@ public class Compiler
 		}
 		catch (xtc.parser.ParseException e)
 		{
-			log.getContent().add(new ParseException(e.getMessage()));
+			log.add(new ParseException(e.getMessage()));
 			
 			throw new CompilerException(title, "Parsing failed!", e);
 		}
@@ -800,7 +809,7 @@ public class Compiler
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
+			log.add(new UnhandledException(e, w.toString()));
 			
 			throw new CompilerException(title, "Parsing failed!", e);
 		}
@@ -818,7 +827,7 @@ public class Compiler
 			throws CompilerException
 	{
 		PostprocessorLog log = new PostprocessorLog();
-		parentLog.getContent().add(log);
+		parentLog.add(log);
 		
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -837,7 +846,7 @@ public class Compiler
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.getContent().add(new UnhandledException(e, w.toString()));
+			log.add(new UnhandledException(e, w.toString()));
 			
 			throw new CompilerException(title, "Postprocessing failed!", e);
 		}

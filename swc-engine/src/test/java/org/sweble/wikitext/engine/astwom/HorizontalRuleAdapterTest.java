@@ -16,17 +16,11 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womHr;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womPage;
-import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.womText;
+import static org.junit.Assert.*;
+import static org.sweble.wikitext.engine.wom.tools.AstWomBuilder.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.adapters.PageAdapter;
-import org.sweble.wikitext.engine.wom.WomHorizontalRule;
-import org.sweble.wikitext.engine.wom.WomPage;
 import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;

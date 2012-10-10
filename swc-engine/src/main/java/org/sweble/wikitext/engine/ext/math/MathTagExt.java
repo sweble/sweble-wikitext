@@ -22,9 +22,11 @@ import java.util.Map;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
+import org.sweble.wikitext.parser.nodes.WtValue;
 
 public class MathTagExt
 		extends
@@ -34,15 +36,15 @@ public class MathTagExt
 	
 	// =========================================================================
 	
-	protected MathTagExt()
+	protected MathTagExt(WikiConfig wikiConfig)
 	{
 		super("Extension - Math");
-		addTagExtension(new MathTagExtImpl());
+		addTagExtension(new MathTagExtImpl(wikiConfig));
 	}
 	
-	public static MathTagExt group()
+	public static MathTagExt group(WikiConfig wikiConfig)
 	{
-		return new MathTagExt();
+		return new MathTagExt(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -57,17 +59,17 @@ public class MathTagExt
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public MathTagExtImpl()
+		public MathTagExtImpl(WikiConfig wikiConfig)
 		{
-			super("math");
+			super(wikiConfig, "math");
 		}
 		
 		@Override
 		public WtNode invoke(
 				ExpansionFrame frame,
 				WtTagExtension tagExt,
-				Map<String, WtNodeList> attrs,
-				String body)
+				Map<String, WtValue> attrs,
+				WtTagExtensionBody body)
 		{
 			return null;
 		}

@@ -16,9 +16,7 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.womTestFixtureGather;
-import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.womTestFixtureGet;
-import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.womTestFixtureInitialize;
+import static org.sweble.wikitext.engine.astwom.AstWomTestFixture.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -30,8 +28,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.sweble.wikitext.engine.Page;
-import org.sweble.wikitext.engine.wom.WomPage;
+import org.sweble.wikitext.engine.nodes.Page;
 
 @Ignore
 @RunWith(value = NamedParametrized.class)

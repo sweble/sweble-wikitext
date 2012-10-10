@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> [Block elements]*
  */
 public interface WomBlockquote
-        extends
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomBlockElement,
+			WomUniversalAttributes
 {
 	/**
 	 * Get source of the quotation.

@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomBreak
-        extends
-            WomInlineElement,
-            WomCoreAttributes
+		extends
+			WomInlineElement,
+			WomCoreAttributes
 {
 	/**
 	 * Get the sides on which floating elements are not allowed.

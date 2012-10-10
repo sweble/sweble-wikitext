@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomAttr
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Get the name of the attribute. Attribute names are case-insensitive.

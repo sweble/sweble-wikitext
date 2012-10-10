@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomMagicWord
-        extends
-            WomProcessingInstruction
+		extends
+			WomProcessingInstruction
 {
 	/**
 	 * Get the name of the magic word.

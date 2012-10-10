@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.ext.core;
 
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 
 public class CorePfnVariablesStatistics
 		extends
@@ -27,14 +28,14 @@ public class CorePfnVariablesStatistics
 	
 	// =========================================================================
 	
-	protected CorePfnVariablesStatistics()
+	protected CorePfnVariablesStatistics(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Statistics");
 	}
 	
-	public static CorePfnVariablesStatistics group()
+	public static CorePfnVariablesStatistics group(WikiConfig wikiConfig)
 	{
-		return new CorePfnVariablesStatistics();
+		return new CorePfnVariablesStatistics(wikiConfig);
 	}
 	
 	// =========================================================================

@@ -24,7 +24,7 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> ([Inline elements] \ {extlink, intlink, image, url})*
  */
 public interface WomTitle
-        extends
-            WomNode
+		extends
+			WomNode
 {
 }

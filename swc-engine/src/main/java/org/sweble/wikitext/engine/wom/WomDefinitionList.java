@@ -44,9 +44,9 @@ import java.util.Collection;
  * <b>Child elements:</b> ([Preprocessor elements]|dd|dt)*
  */
 public interface WomDefinitionList
-        extends
-            WomBlockElement,
-            WomUniversalAttributes
+		extends
+			WomBlockElement,
+			WomUniversalAttributes
 {
 	// ==[ Term-oriented interface ]============================================
 	
@@ -102,7 +102,9 @@ public interface WomDefinitionList
 	 *             Thrown if the given term <code>term</code> is not a term of
 	 *             this list.
 	 */
-	public void replaceTerm(WomDefinitionListTerm search, WomDefinitionListTerm replace) throws IllegalArgumentException;
+	public void replaceTerm(
+			WomDefinitionListTerm search,
+			WomDefinitionListTerm replace) throws IllegalArgumentException;
 	
 	/**
 	 * Remove a term and all its definitions from the list.
@@ -161,7 +163,9 @@ public interface WomDefinitionList
 	 *             Thrown if the given term <code>term</code> is not a term of
 	 *             this list.
 	 */
-	public void insertItem(WomDefinitionListTerm before, WomDefinitionListTerm term) throws IllegalArgumentException;
+	public void insertItem(
+			WomDefinitionListTerm before,
+			WomDefinitionListTerm term) throws IllegalArgumentException;
 	
 	// ==[ Item-oriented interface ]===========================================
 	
@@ -205,7 +209,9 @@ public interface WomDefinitionList
 	 * @throws IndexOutOfBoundsException
 	 *             If the given index is out of range.
 	 */
-	public WomDefinitionListItem replaceItem(int index, WomDefinitionListItem item) throws IndexOutOfBoundsException;
+	public WomDefinitionListItem replaceItem(
+			int index,
+			WomDefinitionListItem item) throws IndexOutOfBoundsException;
 	
 	/**
 	 * Remove a term or definition from the list.

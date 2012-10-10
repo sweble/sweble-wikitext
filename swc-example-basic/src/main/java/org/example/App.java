@@ -20,7 +20,7 @@ package org.example;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-import org.sweble.wikitext.engine.CompiledPage;
+import org.sweble.wikitext.engine.EngCompiledPage;
 import org.sweble.wikitext.engine.Compiler;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
@@ -84,7 +84,7 @@ public class App
 		String wikitext = FileUtils.readFileToString(file);
 		
 		// Compile the retrieved page
-		CompiledPage cp = compiler.postprocess(pageId, wikitext, null);
+		EngCompiledPage cp = compiler.postprocess(pageId, wikitext, null);
 		
 		// Render the compiled page as HTML
 		/*

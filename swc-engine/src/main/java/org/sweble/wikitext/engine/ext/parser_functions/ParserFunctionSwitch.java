@@ -20,9 +20,10 @@ package org.sweble.wikitext.engine.ext.parser_functions;
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -33,9 +34,9 @@ public class ParserFunctionSwitch
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionSwitch()
+	public ParserFunctionSwitch(WikiConfig wikiConfig)
 	{
-		super("switch");
+		super(wikiConfig, "switch");
 	}
 	
 	@Override
@@ -45,12 +46,12 @@ public class ParserFunctionSwitch
 			List<? extends WtNode> args)
 	{
 		if (args.size() < 1)
-			return new WtNodeList();
+			return nf().list();
 		
 		return new Evaluator(frame, args).evaluate();
 	}
 	
-	private static final class Evaluator
+	private final class Evaluator
 	{
 		private ExpansionFrame frame;
 		
@@ -93,7 +94,7 @@ public class ParserFunctionSwitch
 				// Process each argument of the switch (after the test string)
 				
 				after = null;
-				before = new WtNodeList();
+				before = nf().list();
 				if (args.get(i).isNodeType(WtNode.NT_NODE_LIST))
 				{
 					splitNodeListAtEquals(i);
@@ -214,8 +215,8 @@ public class ParserFunctionSwitch
 			int j = text.indexOf('=');
 			if (j != -1)
 			{
-				before.add(new WtText(text.substring(0, j)));
-				after = new WtNodeList(new WtText(text.substring(j + 1)));
+				before.add(nf().text(text.substring(0, j)));
+				after = nf().list(nf().text(text.substring(j + 1)));
 			}
 			else
 			{

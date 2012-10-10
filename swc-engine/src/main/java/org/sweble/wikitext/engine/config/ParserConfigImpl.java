@@ -34,9 +34,10 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import org.sweble.wikitext.parser.LinkTargetType;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.ParserConfig;
-import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
+import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
@@ -167,6 +168,14 @@ public class ParserConfigImpl
 		return gatherRtData;
 	}
 	
+	// ==[ AST creation ]=======================================================
+	
+	@Override
+	public EngineNodeFactory getNodeFactory()
+	{
+		return wikiConfig.getNodeFactory();
+	}
+	
 	// ==[ Link classification and parsing ]====================================
 	
 	public void addUrlProtocol(String protocol)
@@ -223,7 +232,7 @@ public class ParserConfigImpl
 	}
 	
 	@Override
-	public LinkTargetType classifyTarget(String target)
+	public LinkType classifyTarget(String target)
 	{
 		LinkTargetParser ltp = new LinkTargetParser();
 		try
@@ -232,7 +241,7 @@ public class ParserConfigImpl
 		}
 		catch (LinkTargetException e)
 		{
-			return LinkTargetType.INVALID;
+			return LinkType.INVALID;
 		}
 		
 		String nsStr = ltp.getNamespace();
@@ -240,10 +249,10 @@ public class ParserConfigImpl
 		{
 			NamespaceImpl ns = this.wikiConfig.getNamespace(nsStr);
 			if (ns != null && ns.isFileNs() && !ltp.isInitialColon())
-				return LinkTargetType.IMAGE;
+				return LinkType.IMAGE;
 		}
 		
-		return LinkTargetType.PAGE;
+		return LinkType.PAGE;
 	}
 	
 	@Override

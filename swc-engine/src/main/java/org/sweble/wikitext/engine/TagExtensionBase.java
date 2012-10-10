@@ -26,9 +26,12 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.sweble.wikitext.engine.TagExtensionBase.TagExtensionAdapter;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
+import org.sweble.wikitext.parser.nodes.WtValue;
 
 @XmlTransient
 @XmlJavaTypeAdapter(value = TagExtensionAdapter.class)
@@ -39,17 +42,29 @@ public abstract class TagExtensionBase
 {
 	private static final long serialVersionUID = 1L;
 	
+	private final WikiConfig wikiConfig;
+	
 	private final String id;
 	
 	// =========================================================================
 	
-	public TagExtensionBase(String id)
+	public TagExtensionBase(WikiConfig wikiConfig, String id)
 	{
-		super();
+		this.wikiConfig = wikiConfig;
 		this.id = id;
 	}
 	
 	// =========================================================================
+	
+	protected EngineNodeFactory nf()
+	{
+		return wikiConfig.getNodeFactory();
+	}
+	
+	public WikiConfig getWikiConfig()
+	{
+		return wikiConfig;
+	}
 	
 	public String getId()
 	{
@@ -59,8 +74,8 @@ public abstract class TagExtensionBase
 	public abstract WtNode invoke(
 			ExpansionFrame preprocessorFrame,
 			WtTagExtension wtTagExtension,
-			Map<String, WtNodeList> attributes,
-			String body);
+			Map<String, WtValue> attributes,
+			WtTagExtensionBody wtTagExtensionBody);
 	
 	// =========================================================================
 	

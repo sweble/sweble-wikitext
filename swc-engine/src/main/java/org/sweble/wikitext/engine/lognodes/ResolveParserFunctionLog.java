@@ -1,8 +1,8 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ResolveTagExtensionLog
+public class ResolveParserFunctionLog
 		extends
 			LogContainer
 {
@@ -10,13 +10,13 @@ public class ResolveTagExtensionLog
 	
 	// =========================================================================
 	
-	public ResolveTagExtensionLog()
+	public ResolveParserFunctionLog()
 	{
 	}
 	
-	public ResolveTagExtensionLog(String target, boolean success)
+	public ResolveParserFunctionLog(String name, boolean success)
 	{
-		setTarget(target);
+		setName(name);
 		setSuccess(success);
 	}
 	
@@ -37,31 +37,17 @@ public class ResolveTagExtensionLog
 		return old;
 	}
 	
-	private String target;
+	private String name;
 	
-	public final String getTarget()
+	public final String getName()
 	{
-		return this.target;
+		return this.name;
 	}
 	
-	public final String setTarget(String target)
+	public final String setName(String name)
 	{
-		String old = this.target;
-		this.target = target;
-		return old;
-	}
-	
-	private String canonical;
-	
-	public final String getCanonical()
-	{
-		return this.canonical;
-	}
-	
-	public final String setCanonical(String canonical)
-	{
-		String old = this.canonical;
-		this.canonical = canonical;
+		String old = this.name;
+		this.name = name;
 		return old;
 	}
 	
@@ -82,7 +68,7 @@ public class ResolveTagExtensionLog
 	@Override
 	public final int getPropertyCount()
 	{
-		return 4;
+		return 3;
 	}
 	
 	@Override
@@ -93,7 +79,7 @@ public class ResolveTagExtensionLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 4;
+				return 3;
 			}
 			
 			@Override
@@ -104,10 +90,8 @@ public class ResolveTagExtensionLog
 					case 0:
 						return "success";
 					case 1:
-						return "target";
+						return "name";
 					case 2:
-						return "canonical";
-					case 3:
 						return "timeNeeded";
 						
 					default:
@@ -121,13 +105,11 @@ public class ResolveTagExtensionLog
 				switch (index)
 				{
 					case 0:
-						return ResolveTagExtensionLog.this.getSuccess();
+						return ResolveParserFunctionLog.this.getSuccess();
 					case 1:
-						return ResolveTagExtensionLog.this.getTarget();
+						return ResolveParserFunctionLog.this.getName();
 					case 2:
-						return ResolveTagExtensionLog.this.getCanonical();
-					case 3:
-						return ResolveTagExtensionLog.this.getTimeNeeded();
+						return ResolveParserFunctionLog.this.getTimeNeeded();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -140,13 +122,11 @@ public class ResolveTagExtensionLog
 				switch (index)
 				{
 					case 0:
-						return ResolveTagExtensionLog.this.setSuccess((Boolean) value);
+						return ResolveParserFunctionLog.this.setSuccess((Boolean) value);
 					case 1:
-						return ResolveTagExtensionLog.this.setTarget((String) value);
+						return ResolveParserFunctionLog.this.setName((String) value);
 					case 2:
-						return ResolveTagExtensionLog.this.setCanonical((String) value);
-					case 3:
-						return ResolveTagExtensionLog.this.setTimeNeeded((Long) value);
+						return ResolveParserFunctionLog.this.setTimeNeeded((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

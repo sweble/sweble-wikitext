@@ -27,8 +27,8 @@ import java.util.Collection;
  * <b>Child elements:</b> attr* elembody?
  */
 public interface WomElement
-        extends
-            WomInlineElement
+		extends
+			WomInlineElement
 {
 	/**
 	 * Get the name of the element.

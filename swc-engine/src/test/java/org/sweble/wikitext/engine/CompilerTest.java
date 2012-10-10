@@ -21,10 +21,10 @@ import java.io.IOException;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-
-import de.fau.cs.osr.ptk.common.AstPrinter;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 
 public class CompilerTest
 		extends
@@ -48,7 +48,7 @@ public class CompilerTest
 	public void regresion()
 			throws LinkTargetException, IOException, CompilerException
 	{
-		CompiledPage cp = postprocess("Boston Red Sox", false);
+		EngCompiledPage cp = postprocess("Boston Red Sox", false);
 		Assert.assertEquals(
 				"Page([\n" +
 						"  WtParagraph([\n" +
@@ -70,6 +70,6 @@ public class CompilerTest
 						"    WtText(\" as one\")\n" +
 						"  ])\n" +
 						"])\n",
-				AstPrinter.print(cp.getPage()));
+				WtPrinter.print(cp.getPage()));
 	}
 }

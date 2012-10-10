@@ -22,9 +22,9 @@ import java.util.GregorianCalendar;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 
 public class CorePfnVariablesDateAndTime
 		extends
@@ -34,17 +34,17 @@ public class CorePfnVariablesDateAndTime
 	
 	// =========================================================================
 	
-	protected CorePfnVariablesDateAndTime()
+	protected CorePfnVariablesDateAndTime(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Date and Time");
-		addParserFunction(new CurrentYearPfn());
-		addParserFunction(new CurrentMonthPfn());
-		addParserFunction(new CurrentDayPfn());
+		addParserFunction(new CurrentYearPfn(wikiConfig));
+		addParserFunction(new CurrentMonthPfn(wikiConfig));
+		addParserFunction(new CurrentDayPfn(wikiConfig));
 	}
 	
-	public static CorePfnVariablesDateAndTime group()
+	public static CorePfnVariablesDateAndTime group(WikiConfig wikiConfig)
 	{
-		return new CorePfnVariablesDateAndTime();
+		return new CorePfnVariablesDateAndTime(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -59,16 +59,16 @@ public class CorePfnVariablesDateAndTime
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public CurrentYearPfn()
+		public CurrentYearPfn(WikiConfig wikiConfig)
 		{
-			super("currentyear");
+			super(wikiConfig, "currentyear");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
-			return new WtText(String.valueOf(cal.get(GregorianCalendar.YEAR)));
+			return nf().text(String.valueOf(cal.get(GregorianCalendar.YEAR)));
 		}
 	}
 	
@@ -84,16 +84,16 @@ public class CorePfnVariablesDateAndTime
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public CurrentMonthPfn()
+		public CurrentMonthPfn(WikiConfig wikiConfig)
 		{
-			super("currentmonth");
+			super(wikiConfig, "currentmonth");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
-			return new WtText(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
+			return nf().text(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
 		}
 	}
 	
@@ -117,16 +117,16 @@ public class CorePfnVariablesDateAndTime
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public CurrentDayPfn()
+		public CurrentDayPfn(WikiConfig wikiConfig)
 		{
-			super("currentday");
+			super(wikiConfig, "currentday");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
 			Calendar cal = GregorianCalendar.getInstance();
-			return new WtText(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
+			return nf().text(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
 		}
 	}
 	

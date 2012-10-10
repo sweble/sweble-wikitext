@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.engine.log.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.CompilerLog;
 
 public final class CompilerException
 		extends

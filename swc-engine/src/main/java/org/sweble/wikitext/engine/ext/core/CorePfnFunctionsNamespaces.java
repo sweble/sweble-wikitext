@@ -22,9 +22,9 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -36,15 +36,15 @@ public class CorePfnFunctionsNamespaces
 	
 	// =========================================================================
 	
-	protected CorePfnFunctionsNamespaces()
+	protected CorePfnFunctionsNamespaces(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Namespaces");
-		addParserFunction(new NsPfn());
+		addParserFunction(new NsPfn(wikiConfig));
 	}
 	
-	public static CorePfnFunctionsNamespaces group()
+	public static CorePfnFunctionsNamespaces group(WikiConfig wikiConfig)
 	{
-		return new CorePfnFunctionsNamespaces();
+		return new CorePfnFunctionsNamespaces(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -61,9 +61,9 @@ public class CorePfnFunctionsNamespaces
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public NsPfn()
+		public NsPfn(WikiConfig wikiConfig)
 		{
-			super("ns");
+			super(wikiConfig, "ns");
 		}
 		
 		@Override
@@ -107,7 +107,7 @@ public class CorePfnFunctionsNamespaces
 			if (namespace != null)
 				result = namespace.getName();
 			
-			return new WtText(result);
+			return nf().text(result);
 		}
 	}
 }

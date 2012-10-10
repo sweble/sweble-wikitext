@@ -1,56 +1,45 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class PreprocessorLog
+public class ParseException
 		extends
-			LogContainer
+			LogLeafNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public PreprocessorLog()
+	public ParseException()
 	{
-		super();
-		
+	}
+	
+	public ParseException(String message)
+	{
+		setMessage(message);
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private boolean forInclusion;
+	private String message;
 	
-	public final boolean getForInclusion()
+	public final String getMessage()
 	{
-		return this.forInclusion;
+		return this.message;
 	}
 	
-	public final boolean setForInclusion(boolean forInclusion)
+	public final String setMessage(String message)
 	{
-		boolean old = this.forInclusion;
-		this.forInclusion = forInclusion;
-		return old;
-	}
-	
-	private Long timeNeeded;
-	
-	public final Long getTimeNeeded()
-	{
-		return this.timeNeeded;
-	}
-	
-	public final Long setTimeNeeded(Long timeNeeded)
-	{
-		Long old = this.timeNeeded;
-		this.timeNeeded = timeNeeded;
+		String old = this.message;
+		this.message = message;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 2;
+		return 1;
 	}
 	
 	@Override
@@ -61,7 +50,7 @@ public class PreprocessorLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 2;
+				return 1;
 			}
 			
 			@Override
@@ -70,9 +59,7 @@ public class PreprocessorLog
 				switch (index)
 				{
 					case 0:
-						return "forInclusion";
-					case 1:
-						return "timeNeeded";
+						return "message";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -85,9 +72,7 @@ public class PreprocessorLog
 				switch (index)
 				{
 					case 0:
-						return PreprocessorLog.this.getForInclusion();
-					case 1:
-						return PreprocessorLog.this.getTimeNeeded();
+						return ParseException.this.getMessage();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -100,9 +85,7 @@ public class PreprocessorLog
 				switch (index)
 				{
 					case 0:
-						return PreprocessorLog.this.setForInclusion((Boolean) value);
-					case 1:
-						return PreprocessorLog.this.setTimeNeeded((Long) value);
+						return ParseException.this.setMessage((String) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

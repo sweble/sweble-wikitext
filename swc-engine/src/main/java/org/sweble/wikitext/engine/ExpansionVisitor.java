@@ -17,9 +17,6 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astList;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -32,29 +29,36 @@ import java.util.regex.Pattern;
 
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.log.ParseException;
-import org.sweble.wikitext.engine.log.ResolveMagicWordLog;
-import org.sweble.wikitext.engine.log.ResolveParameterLog;
-import org.sweble.wikitext.engine.log.ResolveParserFunctionLog;
-import org.sweble.wikitext.engine.log.ResolveRedirectLog;
-import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
-import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
-import org.sweble.wikitext.engine.log.UnhandledException;
+import org.sweble.wikitext.engine.lognodes.LogContainer;
+import org.sweble.wikitext.engine.lognodes.ParseException;
+import org.sweble.wikitext.engine.lognodes.ResolveMagicWordLog;
+import org.sweble.wikitext.engine.lognodes.ResolveParameterLog;
+import org.sweble.wikitext.engine.lognodes.ResolveParserFunctionLog;
+import org.sweble.wikitext.engine.lognodes.ResolveRedirectLog;
+import org.sweble.wikitext.engine.lognodes.ResolveTagExtensionLog;
+import org.sweble.wikitext.engine.lognodes.ResolveTransclusionLog;
+import org.sweble.wikitext.engine.lognodes.UnhandledException;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngNode;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.parser.AstNodeTypes;
-import org.sweble.wikitext.parser.WarningSeverity;
+import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
+import org.sweble.wikitext.parser.nodes.WtName;
 import org.sweble.wikitext.parser.nodes.WtNewline;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtPageSwitch;
 import org.sweble.wikitext.parser.nodes.WtRedirect;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtContentNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
+import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -65,7 +69,7 @@ import de.fau.cs.osr.utils.Tuple2;
 
 public final class ExpansionVisitor
 		extends
-			PtkAstVisitor
+			NodeTypeEngVisitor
 {
 	private static final Pattern STARTS_WITH_BLOCK_ELEMENT =
 			Pattern.compile("^(\\{\\||:|;|#|\\*)");
@@ -76,7 +80,7 @@ public final class ExpansionVisitor
 	
 	private final ExpansionFrame expFrame;
 	
-	private final WtContentNode frameLog;
+	private final LogContainer frameLog;
 	
 	private final ExpansionDebugHooks hooks;
 	
@@ -84,13 +88,15 @@ public final class ExpansionVisitor
 	
 	private final boolean catchAll;
 	
+	private final EngineNodeFactory nf;
+	
 	private boolean hadNewlineGlobal;
 	
 	// =========================================================================
 	
 	public ExpansionVisitor(
 			ExpansionFrame expFrame,
-			WtContentNode frameLog,
+			LogContainer frameLog,
 			ExpansionDebugHooks hooks,
 			boolean timingEnabled,
 			boolean catchAll)
@@ -100,6 +106,7 @@ public final class ExpansionVisitor
 		this.hooks = hooks;
 		this.timingEnabled = timingEnabled;
 		this.catchAll = catchAll;
+		this.nf = expFrame.getWikiConfig().getNodeFactory();
 	}
 	
 	// =========================================================================
@@ -125,19 +132,19 @@ public final class ExpansionVisitor
 		{
 		// -- These set the hadNewline flag --
 		
-			case WtNode.NT_TEXT:
+			case EngNode.NT_TEXT:
 				return visitText((WtText) n);
-			case AstNodeTypes.NT_NEWLINE:
+			case EngNode.NT_NEWLINE:
 				return visitNewline((WtNewline) n);
 				
 				// -- We must NOT reset hadNewline for these elements! --
 				
-			case AstNodeTypes.NT_ERROR:
+			case EngNode.NT_SOFT_ERROR:
 				return visitError(n);
 				
-			case AstNodeTypes.NT_IGNORED:
-			case AstNodeTypes.NT_XML_COMMENT:
-			case WtNode.NT_NODE_LIST:
+			case EngNode.NT_IGNORED:
+			case EngNode.NT_XML_COMMENT:
+			case EngNode.NT_NODE_LIST:
 				return visitUnspecific(n);
 				
 				// -- We MUST reset hadNewline for these elements! --
@@ -146,15 +153,15 @@ public final class ExpansionVisitor
 				hadNewlineGlobal = false;
 				switch (type)
 				{
-					case AstNodeTypes.NT_REDIRECT:
+					case EngNode.NT_REDIRECT:
 						return visit((WtRedirect) n);
-					case AstNodeTypes.NT_TEMPLATE_PARAMETER:
+					case EngNode.NT_TEMPLATE_PARAMETER:
 						return visit((WtTemplateParameter) n);
-					case AstNodeTypes.NT_TEMPLATE:
+					case EngNode.NT_TEMPLATE:
 						return visit((WtTemplate) n);
-					case AstNodeTypes.NT_TAG_EXTENSION:
+					case EngNode.NT_TAG_EXTENSION:
 						return visit((WtTagExtension) n);
-					case AstNodeTypes.NT_PAGE_SWITCH:
+					case EngNode.NT_PAGE_SWITCH:
 						return visit((WtPageSwitch) n);
 					default:
 						return visitUnspecific(n);
@@ -171,13 +178,13 @@ public final class ExpansionVisitor
 	// ==
 	// =========================================================================
 	
-	private WtNode visitNewline(WtNewline n)
+	private WtNewline visitNewline(WtNewline n)
 	{
 		hadNewlineGlobal = true;
 		return n;
 	}
 	
-	private WtNode visitText(WtText n)
+	private WtText visitText(WtText n)
 	{
 		String text = n.getContent();
 		if (!text.isEmpty())
@@ -216,7 +223,7 @@ public final class ExpansionVisitor
 		if (expFrame.isNoRedirect())
 			return n;
 		
-		String target = n.getTarget();
+		String target = n.getTarget().getContent();
 		
 		WtNode result = resolveRedirectWrapper(n, target);
 		if (result == null)
@@ -244,7 +251,7 @@ public final class ExpansionVisitor
 		if (frameLog != null)
 		{
 			log = new ResolveRedirectLog(target, false);
-			frameLog.getContent().add(log);
+			frameLog.add(log);
 		}
 		
 		StopWatch stopWatch = null;
@@ -302,7 +309,7 @@ public final class ExpansionVisitor
 		catch (LinkTargetException e)
 		{
 			if (log != null)
-				log.getContent().add(new ParseException(e.getMessage()));
+				log.add(new ParseException(e.getMessage()));
 			
 			fileInvalidPageNameWarning(n, target);
 			
@@ -325,7 +332,7 @@ public final class ExpansionVisitor
 			 * - The arguments that were passed to the page we are redirecting
 			 *   from will also be passed to the replacement page.
 			 */
-			CompiledPage compiledPage = getCompiler().preprocessAndExpand(
+			EngCompiledPage compiledPage = getCompiler().preprocessAndExpand(
 					expFrame.getCallback(),
 					page.getId(),
 					page.getText(),
@@ -373,7 +380,7 @@ public final class ExpansionVisitor
 		boolean hadNewline = this.hadNewlineGlobal;
 		
 		// First: Fully expand name.
-		WtNodeList name = (WtNodeList) dispatch(n.getName());
+		WtName name = (WtName) dispatch(n.getName());
 		//n.setName(name);
 		
 		Tuple2<String, WtNodeList> conv = StringConverterPartial.convert(name);
@@ -410,7 +417,7 @@ public final class ExpansionVisitor
 				StringConversionException e = new StringConversionException(tail);
 				
 				if (frameLog != null)
-					frameLog.getContent().add(new ParseException(e.getMessage()));
+					frameLog.add(new ParseException(e.getMessage()));
 				
 				fileInvalidTemplateNameWarning(n, e);
 			}
@@ -526,7 +533,7 @@ public final class ExpansionVisitor
 			{
 				ArrayList<WtNode> argValues = new ArrayList<WtNode>(args.size() + 1);
 				
-				WtNode arg0 = astList(new WtText(arg0Prefix), tail);
+				WtNode arg0 = nf.list(nf.text(arg0Prefix), tail);
 				
 				arg0 = EngineTextUtils.trim((WtNode) dispatch(arg0));
 				argValues.add(arg0);
@@ -535,12 +542,15 @@ public final class ExpansionVisitor
 				{
 					WtTemplateArgument tmplArg = args.get(j);
 					
-					WtNode arg = tmplArg.getHasName() ?
-							astList(tmplArg.getName(), astText("="), tmplArg.getValue()) :
-							tmplArg.getValue();
+					WtNodeList arg = nf.list();
+					if (tmplArg.hasName())
+					{
+						arg.addAll(tmplArg.getName());
+						arg.add(nf.text("="));
+					}
+					arg.addAll(tmplArg.getValue());
 					
-					arg = EngineTextUtils.trim((WtNode) dispatch(arg));
-					argValues.add(arg);
+					argValues.add(EngineTextUtils.trim((WtNode) dispatch(arg)));
 				}
 				
 				return argValues;
@@ -551,9 +561,8 @@ public final class ExpansionVisitor
 						new ArrayList<WtTemplateArgument>(args.size() + 1);
 				
 				argsWithArg0.add(
-						new WtTemplateArgument(
-								new WtNodeList(new WtText(arg0Prefix), tail),
-								false));
+						nf.tmplArg(nf.value(
+								nf.list(nf.text(arg0Prefix), tail))));
 				
 				for (WtTemplateArgument arg : args)
 					argsWithArg0.add(arg);
@@ -564,14 +573,21 @@ public final class ExpansionVisitor
 			{
 				ArrayList<WtNode> argValues = new ArrayList<WtNode>(args.size() + 1);
 				
-				argValues.add(new WtNodeList(new WtText(arg0Prefix), tail));
+				argValues.add(nf.list(nf.text(arg0Prefix), tail));
 				
 				for (int j = 0; j < args.size(); ++j)
 				{
 					WtTemplateArgument arg = args.get(j);
-					argValues.add(arg.getHasName() ?
-							astList(arg.getName(), astText("="), arg.getValue()) :
-							arg.getValue());
+					
+					WtNodeList value = nf.list();
+					if (arg.hasName())
+					{
+						value.addAll(arg.getName());
+						value.add(nf.text("="));
+					}
+					value.addAll(arg.getValue());
+					
+					argValues.add(value);
 				}
 				
 				return argValues;
@@ -629,7 +645,7 @@ public final class ExpansionVisitor
 		if (frameLog != null)
 		{
 			log = new ResolveParserFunctionLog(pfn.getId(), false);
-			frameLog.getContent().add(log);
+			frameLog.add(log);
 		}
 		
 		StopWatch stopWatch = null;
@@ -697,7 +713,7 @@ public final class ExpansionVisitor
 		if (frameLog != null)
 		{
 			log = new ResolveTransclusionLog(title, false);
-			frameLog.getContent().add(log);
+			frameLog.add(log);
 		}
 		
 		StopWatch stopWatch = null;
@@ -758,7 +774,7 @@ public final class ExpansionVisitor
 		catch (LinkTargetException e)
 		{
 			if (log != null)
-				log.getContent().add(new ParseException(e.getMessage()));
+				log.add(new ParseException(e.getMessage()));
 			
 			fileInvalidPageNameWarning(n, target);
 			
@@ -773,9 +789,9 @@ public final class ExpansionVisitor
 		if (page != null)
 		{
 			// EXPANDS ARGUMENTS!
-			Map<String, WtNode> tmplArgs = prepareTransclusionArguments(args, log);
+			Map<String, WtValue> tmplArgs = prepareTransclusionArguments(args, log);
 			
-			CompiledPage compiledPage = getCompiler().preprocessAndExpand(
+			EngCompiledPage compiledPage = getCompiler().preprocessAndExpand(
 					expFrame.getCallback(),
 					page.getId(),
 					page.getText(),
@@ -829,26 +845,26 @@ public final class ExpansionVisitor
 	 * If an argument has a name which can be resolved to a string, the argument
 	 * will additionally be put into the mapping with the resolved name as key.
 	 */
-	private Map<String, WtNode> prepareTransclusionArguments(
+	private Map<String, WtValue> prepareTransclusionArguments(
 			List<WtTemplateArgument> args,
 			ResolveTransclusionLog log)
 	{
-		HashMap<String, WtNode> transclArgs = new HashMap<String, WtNode>();
+		HashMap<String, WtValue> transclArgs = new HashMap<String, WtValue>();
 		
 		int index = 1;
 		for (WtTemplateArgument arg : args)
 		{
 			// EXPAND VALUE!
-			WtNodeList value = (WtNodeList) dispatch(arg.getValue());
+			WtValue value = (WtValue) dispatch(arg.getValue());
 			
 			boolean named = false;
-			if (arg.getHasName())
+			if (arg.hasName())
 			{
 				// ONLY TRIM NAMED VALUES!
-				value = (WtNodeList) EngineTextUtils.trim(value);
+				value = (WtValue) EngineTextUtils.trim(value);
 				
 				// EXPAND NAME!
-				WtNodeList name = (WtNodeList) dispatch(arg.getName());
+				WtName name = (WtName) dispatch(arg.getName());
 				
 				try
 				{
@@ -863,7 +879,7 @@ public final class ExpansionVisitor
 				catch (StringConversionException e)
 				{
 					if (log != null)
-						log.getContent().add(new ParseException(e.getMessage()));
+						log.add(new ParseException(e.getMessage()));
 					
 					fileInvalidArgumentNameWarning(arg, e);
 				}
@@ -873,7 +889,7 @@ public final class ExpansionVisitor
 			{
 				String id = String.valueOf(index);
 				
-				WtNode prev = transclArgs.put(id, value);
+				WtValue prev = transclArgs.put(id, value);
 				// Automatic indices never overwrite!
 				if (prev != null)
 					transclArgs.put(id, prev);
@@ -908,7 +924,7 @@ public final class ExpansionVisitor
 			return n;
 		
 		// Fully expand name!
-		WtNodeList name = (WtNodeList) dispatch(n.getName());
+		WtName name = (WtName) dispatch(n.getName());
 		
 		String nameStr = null;
 		try
@@ -918,7 +934,7 @@ public final class ExpansionVisitor
 		catch (StringConversionException e)
 		{
 			if (frameLog != null)
-				frameLog.getContent().add(new ParseException(e.getMessage()));
+				frameLog.add(new ParseException(e.getMessage()));
 			
 			fileInvalidParameterNameWarning(n, e);
 		}
@@ -944,7 +960,7 @@ public final class ExpansionVisitor
 	private WtNode resolveParameterWrapper(
 			WtTemplateParameter n,
 			String name,
-			WtTemplateArgument defaultValue) throws ExpansionException
+			WtValue wtValue) throws ExpansionException
 	{
 		if (hooks != null)
 		{
@@ -957,7 +973,7 @@ public final class ExpansionVisitor
 		if (frameLog != null)
 		{
 			log = new ResolveParameterLog(name, false);
-			frameLog.getContent().add(log);
+			frameLog.add(log);
 		}
 		
 		StopWatch stopWatch = null;
@@ -970,7 +986,7 @@ public final class ExpansionVisitor
 		WtNode result = null;
 		try
 		{
-			result = resolveParameter(n, name, defaultValue, log);
+			result = resolveParameter(n, name, wtValue, log);
 		}
 		catch (Exception e)
 		{
@@ -998,33 +1014,23 @@ public final class ExpansionVisitor
 	 * this frame. If no matching argument can be found, the default value is
 	 * used, if present. Otherwise, null is returned.
 	 */
-	private WtNode resolveParameter(
+	private WtValue resolveParameter(
 			WtTemplateParameter n,
 			String name,
-			WtTemplateArgument defaultValue,
+			WtValue wtValue,
 			ResolveParameterLog log)
 	{
-		WtNode value = getFrameArgument(name);
+		WtValue value = getFrameArgument(name);
 		
-		if (value == null && defaultValue != null)
+		if (value == null && wtValue != null)
 		{
 			// Only the first value after the pipe is the default 
 			// value. The rest is ignored.
 			
-			value = defaultValue.getValue();
-			if (defaultValue.getHasName())
-			{
-				// The default value cannot be separated into name and 
-				// value
-				
-				value = astList(
-						defaultValue.getName(),
-						astText("="),
-						defaultValue.getValue());
-			}
+			value = wtValue;
 			
 			// EXPAND DEFAULT VALUE!
-			value = (WtNode) dispatch(value);
+			value = (WtValue) dispatch(value);
 		}
 		
 		if (value != null)
@@ -1058,12 +1064,12 @@ public final class ExpansionVisitor
 	private WtNode resolveTagExtensionWrapper(
 			WtTagExtension n,
 			String name,
-			WtNodeList attrs,
-			String body) throws ExpansionException
+			WtXmlAttributes attrs,
+			WtTagExtensionBody wtTagExtensionBody) throws ExpansionException
 	{
 		if (hooks != null)
 		{
-			WtNode cont = hooks.beforeResolveTagExtension(this, n, name, attrs, body);
+			WtNode cont = hooks.beforeResolveTagExtension(this, n, name, attrs, wtTagExtensionBody);
 			if (cont != ExpansionDebugHooks.PROCEED)
 				return cont;
 		}
@@ -1072,7 +1078,7 @@ public final class ExpansionVisitor
 		if (frameLog != null)
 		{
 			log = new ResolveTagExtensionLog(name, false);
-			frameLog.getContent().add(log);
+			frameLog.add(log);
 		}
 		
 		StopWatch stopWatch = null;
@@ -1085,7 +1091,7 @@ public final class ExpansionVisitor
 		WtNode result = null;
 		try
 		{
-			result = resolveTagExtension(n, name, attrs, body, log);
+			result = resolveTagExtension(n, name, attrs, wtTagExtensionBody, log);
 		}
 		catch (Exception e)
 		{
@@ -1104,15 +1110,15 @@ public final class ExpansionVisitor
 		}
 		
 		return (hooks != null) ?
-				hooks.afterResolveTagExtension(this, n, name, attrs, body, result, log) :
+				hooks.afterResolveTagExtension(this, n, name, attrs, wtTagExtensionBody, result, log) :
 				result;
 	}
 	
 	private WtNode resolveTagExtension(
 			WtTagExtension n,
 			String name,
-			WtNodeList attrs,
-			String body,
+			WtXmlAttributes attrs,
+			WtTagExtensionBody wtTagExtensionBody,
 			ResolveTagExtensionLog log)
 	{
 		TagExtensionBase te = getWikiConfig().getTagExtension(name);
@@ -1127,9 +1133,9 @@ public final class ExpansionVisitor
 			//throw new InternalError("Cannot find tag extension: " + name);
 			return null;
 		
-		HashMap<String, WtNodeList> attrMap = prepareTagExtensionAttributes(attrs);
+		HashMap<String, WtValue> attrMap = prepareTagExtensionAttributes(attrs);
 		
-		WtNode result = te.invoke(expFrame, n, attrMap, body);
+		WtNode result = te.invoke(expFrame, n, attrMap, wtTagExtensionBody);
 		
 		log.setSuccess(true);
 		
@@ -1140,14 +1146,14 @@ public final class ExpansionVisitor
 	 * Converts the list of attributes into a map, ignoring any non-attribute
 	 * nodes.
 	 */
-	private HashMap<String, WtNodeList> prepareTagExtensionAttributes(
-			WtNodeList attrs)
+	private HashMap<String, WtValue> prepareTagExtensionAttributes(
+			WtXmlAttributes attrs)
 	{
-		HashMap<String, WtNodeList> attrMap = new HashMap<String, WtNodeList>();
+		HashMap<String, WtValue> attrMap = new HashMap<String, WtValue>();
 		
 		for (WtNode attr : attrs)
 		{
-			if (attr.isNodeType(AstNodeTypes.NT_XML_ATTRIBUTE))
+			if (attr.isNodeType(WtNode.NT_XML_ATTRIBUTE))
 			{
 				WtXmlAttribute a = (WtXmlAttribute) attr;
 				attrMap.put(a.getName(), a.getValue());
@@ -1190,7 +1196,7 @@ public final class ExpansionVisitor
 		if (frameLog != null)
 		{
 			log = new ResolveMagicWordLog(name, false);
-			frameLog.getContent().add(log);
+			frameLog.add(log);
 		}
 		
 		StopWatch stopWatch = null;
@@ -1273,7 +1279,7 @@ public final class ExpansionVisitor
 		return expFrame.getCompiler();
 	}
 	
-	private WtNode getFrameArgument(String name)
+	private WtValue getFrameArgument(String name)
 	{
 		return expFrame.getArguments().get(name);
 	}
@@ -1283,11 +1289,11 @@ public final class ExpansionVisitor
 		return expFrame.getCallback().retrieveWikitext(expFrame, title);
 	}
 	
-	private void logUnhandledException(WtContentNode log, Exception e)
+	private void logUnhandledException(LogContainer log, Exception e)
 	{
 		StringWriter w = new StringWriter();
 		e.printStackTrace(new PrintWriter(w));
-		log.getContent().add(new UnhandledException(e, w.toString()));
+		log.add(new UnhandledException(e, w.toString()));
 	}
 	
 	private void fileInvalidPageNameWarning(WtNode n, String target)
@@ -1338,16 +1344,16 @@ public final class ExpansionVisitor
 				title));
 	}
 	
-	private WtNode mergeLogsAndWarnings(
-			WtContentNode log,
-			CompiledPage compiledPage)
+	private WtContentNode mergeLogsAndWarnings(
+			LogContainer log,
+			EngCompiledPage compiledPage)
 	{
 		if (log != null)
-			log.getContent().add(compiledPage.getLog());
+			log.add(compiledPage.getLog());
 		
 		expFrame.addWarnings(compiledPage.getWarnings());
 		
-		return compiledPage.getPage().getContent();
+		return compiledPage.getPage();
 	}
 	
 	private WtNode treatBlockElements(WtTemplate tmpl, WtNode result)
@@ -1384,7 +1390,7 @@ public final class ExpansionVisitor
 			
 			Matcher m = STARTS_WITH_BLOCK_ELEMENT.matcher(split._1);
 			if (m.find())
-				result = astList(astText("\n" + split._1), split._2);
+				result = nf.list(nf.text("\n" + split._1), split._2);
 		}
 		
 		return result;

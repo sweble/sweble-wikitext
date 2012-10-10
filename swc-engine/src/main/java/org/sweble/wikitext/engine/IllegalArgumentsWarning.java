@@ -17,31 +17,30 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class IllegalArgumentsWarning
-        extends
-            OffendingNodeWarning
+		extends
+			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
 	public IllegalArgumentsWarning(
-	        WarningSeverity severity,
-	        String origin,
-	        String message,
-	        WtNode template)
+			WarningSeverity severity,
+			String origin,
+			String message,
+			WtNode template)
 	{
 		super(template, severity, origin, message);
 	}
 	
 	public IllegalArgumentsWarning(
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        String message,
-	        WtNode template)
+			WarningSeverity severity,
+			Class<?> origin,
+			String message,
+			WtNode template)
 	{
 		super(template, severity, origin, message);
 	}

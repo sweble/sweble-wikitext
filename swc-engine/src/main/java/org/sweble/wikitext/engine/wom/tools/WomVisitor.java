@@ -26,8 +26,8 @@ import org.sweble.wikitext.engine.wom.WomNode;
 import de.fau.cs.osr.utils.visitor.VisitorBase;
 
 public class WomVisitor
-        extends
-            VisitorBase<WomNode>
+		extends
+			VisitorBase<WomNode>
 {
 	@Override
 	protected Object dispatch(WomNode node)

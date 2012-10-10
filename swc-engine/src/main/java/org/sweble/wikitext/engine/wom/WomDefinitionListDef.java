@@ -24,7 +24,7 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> [Block elements]*
  */
 public interface WomDefinitionListDef
-        extends
-            WomDefinitionListItem
+		extends
+			WomDefinitionListItem
 {
 }

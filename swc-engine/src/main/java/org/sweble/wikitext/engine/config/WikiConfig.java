@@ -21,17 +21,22 @@ import java.util.Collection;
 
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.ParserConfig;
 
 public interface WikiConfig
 {
 	// ==[ Parser Configuration ]===============================================
 	
-	ParserConfig getParserConfig();
+	public ParserConfig getParserConfig();
 	
 	// ==[ Compiler Configuration ]=============================================
 	
-	CompilerConfig getCompilerConfig();
+	public CompilerConfig getCompilerConfig();
+	
+	// ==[ AST creation ]=======================================================
+	
+	public EngineNodeFactory getNodeFactory();
 	
 	// ==[ Namespaces ]=========================================================
 	

@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, [Inline elements]*
  */
 public interface WomVar
-        extends
-            WomInlineElement,
-            WomUniversalAttributes
+		extends
+			WomInlineElement,
+			WomUniversalAttributes
 {
 }

@@ -1,45 +1,56 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ParseException
+public class CompilerLog
 		extends
-			LogLeafNode
+			LogContainer
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public ParseException()
+	public CompilerLog()
 	{
-	}
-	
-	public ParseException(String message)
-	{
-		setMessage(message);
+		super();
+		
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String message;
+	private String title;
 	
-	public final String getMessage()
+	public final String getTitle()
 	{
-		return this.message;
+		return this.title;
 	}
 	
-	public final String setMessage(String message)
+	public final String setTitle(String title)
 	{
-		String old = this.message;
-		this.message = message;
+		String old = this.title;
+		this.title = title;
+		return old;
+	}
+	
+	private Long revision;
+	
+	public final Long getRevision()
+	{
+		return this.revision;
+	}
+	
+	public final Long setRevision(Long revision)
+	{
+		Long old = this.revision;
+		this.revision = revision;
 		return old;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1;
+		return 2;
 	}
 	
 	@Override
@@ -50,7 +61,7 @@ public class ParseException
 			@Override
 			protected int getPropertyCount()
 			{
-				return 1;
+				return 2;
 			}
 			
 			@Override
@@ -59,7 +70,9 @@ public class ParseException
 				switch (index)
 				{
 					case 0:
-						return "message";
+						return "title";
+					case 1:
+						return "revision";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -72,7 +85,9 @@ public class ParseException
 				switch (index)
 				{
 					case 0:
-						return ParseException.this.getMessage();
+						return CompilerLog.this.getTitle();
+					case 1:
+						return CompilerLog.this.getRevision();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -85,7 +100,9 @@ public class ParseException
 				switch (index)
 				{
 					case 0:
-						return ParseException.this.setMessage((String) value);
+						return CompilerLog.this.setTitle((String) value);
+					case 1:
+						return CompilerLog.this.setRevision((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

@@ -26,8 +26,8 @@ import java.util.Collection;
  * <b>Child elements:</b> attr* tagextbody?
  */
 public interface WomTagExtension
-        extends
-            WomProcessingInstruction
+		extends
+			WomProcessingInstruction
 {
 	/**
 	 * Get the name of the tag extension.

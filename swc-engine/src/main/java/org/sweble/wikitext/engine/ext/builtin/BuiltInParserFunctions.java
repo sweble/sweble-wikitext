@@ -23,10 +23,11 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.AstBuilder;
 
 public class BuiltInParserFunctions
 		extends
@@ -36,15 +37,15 @@ public class BuiltInParserFunctions
 	
 	// =========================================================================
 	
-	protected BuiltInParserFunctions()
+	protected BuiltInParserFunctions(WikiConfig wikiConfig)
 	{
 		super("Built-in Parser Functions");
-		addParserFunction(new ParserFunctionSafeSubst());
+		addParserFunction(new ParserFunctionSafeSubst(wikiConfig));
 	}
 	
-	public static BuiltInParserFunctions group()
+	public static BuiltInParserFunctions group(WikiConfig wikiConfig)
 	{
-		return new BuiltInParserFunctions();
+		return new BuiltInParserFunctions(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -59,9 +60,9 @@ public class BuiltInParserFunctions
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public ParserFunctionSafeSubst()
+		public ParserFunctionSafeSubst(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");
+			super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, "safesubst");
 		}
 		
 		@Override
@@ -75,15 +76,13 @@ public class BuiltInParserFunctions
 			
 			// Assuming we are  NOT doing a pre save transformation
 			
-			WtNode name = ((WtTemplateArgument) args.get(0)).getValue();
+			WtNodeList name = nf().list(((WtTemplateArgument) args.get(0)).getValue());
 			
-			@SuppressWarnings({ "unchecked", "rawtypes" })
-			List<WtTemplateArgument> tmplArgs = (List) args.subList(1, args.size());
+			WtNodeList tmplArgs = nf().list(args.subList(1, args.size()));
 			
-			WtTemplate tmpl = AstBuilder.astTemplate()
-					.withName(name)
-					.withArguments(tmplArgs)
-					.build();
+			WtTemplate tmpl = nf().tmpl(
+					nf().name(name),
+					nf().tmplArgs(tmplArgs));
 			
 			tmpl.setRtd(template.getRtd());
 			

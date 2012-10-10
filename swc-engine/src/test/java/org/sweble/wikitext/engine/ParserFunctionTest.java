@@ -23,10 +23,10 @@ import junit.framework.Assert;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-
-import de.fau.cs.osr.ptk.common.AstPrinter;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 
 public class ParserFunctionTest
 		extends
@@ -192,11 +192,11 @@ public class ParserFunctionTest
 	@SuppressWarnings("unused")
 	private void doTestAst(String expected, String page) throws LinkTargetException, IOException, CompilerException
 	{
-		final CompiledPage preprocessed = preprocess(page, false);
+		final EngCompiledPage preprocessed = preprocess(page, false);
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
 				expected,
-				AstPrinter.print(preprocessed.getPage().getContent()));
+				WtPrinter.print(preprocessed.getPage()));
 	}
 	
 	private void doTest(String namespace, String expected, String page) throws LinkTargetException, IOException, CompilerException

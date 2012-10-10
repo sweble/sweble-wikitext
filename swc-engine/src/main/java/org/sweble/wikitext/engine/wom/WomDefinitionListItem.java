@@ -20,8 +20,8 @@ package org.sweble.wikitext.engine.wom;
  * Interface to the items &lt;dt> and &lt;dd> of a definition list.
  */
 public interface WomDefinitionListItem
-        extends
-            WomNode,
-            WomUniversalAttributes
+		extends
+			WomNode,
+			WomUniversalAttributes
 {
 }

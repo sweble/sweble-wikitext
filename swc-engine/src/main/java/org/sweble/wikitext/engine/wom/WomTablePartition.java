@@ -33,8 +33,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> ([Preprocessor elements]|tr)*
  */
 public interface WomTablePartition
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Get the number of columns.

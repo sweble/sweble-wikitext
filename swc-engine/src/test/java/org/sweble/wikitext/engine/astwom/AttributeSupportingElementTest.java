@@ -17,18 +17,12 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astE;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astXmlAttrib;
+import static org.junit.Assert.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
 import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
-import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
@@ -200,7 +194,10 @@ public class AttributeSupportingElementTest
 			}
 			
 			@Override
-			public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+			public void customAction(
+					WomNode parent,
+					NativeOrXmlAttributeAdapter oldAttr,
+					NativeOrXmlAttributeAdapter newAttr)
 			{
 			}
 		}

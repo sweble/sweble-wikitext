@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> [Block elements]*
  */
 public interface WomTableCellBase
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Get the zero-based index of the row in which this cell is located.

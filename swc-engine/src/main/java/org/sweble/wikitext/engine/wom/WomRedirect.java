@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> -
  */
 public interface WomRedirect
-        extends
-        	WomProcessingInstruction,
-            WomLink
+		extends
+			WomProcessingInstruction,
+			WomLink
 {
 	/**
 	 * Return the target page of the redirection.

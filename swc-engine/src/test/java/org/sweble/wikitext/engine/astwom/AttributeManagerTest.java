@@ -17,13 +17,10 @@
 
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.engine.astwom.adapters.NativeOrXmlAttributeAdapter;
-import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomNodeType;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 
@@ -110,7 +107,10 @@ public class AttributeManagerTest
 		}
 		
 		@Override
-		public void customAction(WomNode parent, NativeOrXmlAttributeAdapter oldAttr, NativeOrXmlAttributeAdapter newAttr)
+		public void customAction(
+				WomNode parent,
+				NativeOrXmlAttributeAdapter oldAttr,
+				NativeOrXmlAttributeAdapter newAttr)
 		{
 		}
 	}

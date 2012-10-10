@@ -321,12 +321,12 @@ public class TextAdapter
 				
 				break;
 			}
-			case AstNodeTypes.NT_NEWLINE:
+			case WtNode.NT_NEWLINE:
 			{
 				// A newline is always only one character ... we cannot split that
 				throw new AssertionError();
 			}
-			case AstNodeTypes.NT_XML_CHAR_REF:
+			case WtNode.NT_XML_CHAR_REF:
 			{
 				// A entity reference can only represent one UTF-16 character or
 				// two surrogates, never more.
@@ -338,7 +338,7 @@ public class TextAdapter
 				// already!
 				throw new AssertionError();
 			}
-			case AstNodeTypes.NT_XML_ENTITY_REF:
+			case WtNode.NT_XML_ENTITY_REF:
 			{
 				// HTML entities are all one code point, BMP Unicode characters.
 				// So there's nothing to split here.
@@ -486,19 +486,19 @@ public class TextAdapter
 			{
 				return splitPart(p, (WtText) n, at, firstNewPart, lastNewPart);
 			}
-			case AstNodeTypes.NT_NEWLINE:
+			case WtNode.NT_NEWLINE:
 			{
 				// A newline is always only one character ... we cannot split that
 				throw new AssertionError();
 			}
-			case AstNodeTypes.NT_XML_CHAR_REF:
+			case WtNode.NT_XML_CHAR_REF:
 			{
 				// Splitting a code point consiting of two code units creates a 
 				// corrupted unicode string. But that case should have been 
 				// caught already!
 				throw new AssertionError();
 			}
-			case AstNodeTypes.NT_XML_ENTITY_REF:
+			case WtNode.NT_XML_ENTITY_REF:
 			{
 				// HTML entities are all one code point, BMP Unicode characters.
 				// So there's nothing to split here.
@@ -689,9 +689,9 @@ public class TextAdapter
 				switch (n.getNodeType())
 				{
 					case WtNode.NT_TEXT:
-					case AstNodeTypes.NT_NEWLINE:
-					case AstNodeTypes.NT_XML_CHAR_REF:
-					case AstNodeTypes.NT_XML_ENTITY_REF:
+					case WtNode.NT_NEWLINE:
+					case WtNode.NT_XML_CHAR_REF:
+					case WtNode.NT_XML_ENTITY_REF:
 						throw new AssertionError();
 						
 					default:
@@ -888,7 +888,7 @@ public class TextAdapter
 	{
 		switch (n.getNodeType())
 		{
-			case AstNodeTypes.NT_NEWLINE:
+			case WtNode.NT_NEWLINE:
 				append("\n", n);
 				break;
 			default:

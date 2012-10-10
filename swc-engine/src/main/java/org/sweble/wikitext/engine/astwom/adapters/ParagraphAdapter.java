@@ -174,7 +174,7 @@ public class ParagraphAdapter
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
-				case AstNodeTypes.NT_NEWLINE:
+				case WtNode.NT_NEWLINE:
 					++topGap;
 					break;
 				default:
@@ -196,7 +196,7 @@ public class ParagraphAdapter
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
-				case AstNodeTypes.NT_NEWLINE:
+				case WtNode.NT_NEWLINE:
 					++bottomGap;
 					break;
 				default:
@@ -235,7 +235,7 @@ public class ParagraphAdapter
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
-				case AstNodeTypes.NT_NEWLINE:
+				case WtNode.NT_NEWLINE:
 					++j;
 					if (j >= lines)
 						break outer;
@@ -268,7 +268,7 @@ public class ParagraphAdapter
 						if (StringUtils.isWhitespace(((WtText) n).getContent()))
 							i.remove();
 						break outer;
-					case AstNodeTypes.NT_NEWLINE:
+					case WtNode.NT_NEWLINE:
 						i.remove();
 						break;
 					default:
@@ -297,7 +297,7 @@ public class ParagraphAdapter
 					if (StringUtils.isWhitespace(((WtText) n).getContent()))
 						break;
 					break outer;
-				case AstNodeTypes.NT_NEWLINE:
+				case WtNode.NT_NEWLINE:
 					++j;
 					if (j >= lines)
 						break outer;
@@ -330,7 +330,7 @@ public class ParagraphAdapter
 						if (StringUtils.isWhitespace(((WtText) n).getContent()))
 							i.remove();
 						break outer;
-					case AstNodeTypes.NT_NEWLINE:
+					case WtNode.NT_NEWLINE:
 						i.remove();
 						break;
 					default:

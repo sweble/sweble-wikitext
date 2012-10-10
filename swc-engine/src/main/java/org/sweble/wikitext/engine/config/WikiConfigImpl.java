@@ -44,6 +44,7 @@ import javax.xml.bind.annotation.XmlType;
 
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactoryImpl;
 
 import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 
@@ -73,6 +74,8 @@ public class WikiConfigImpl
 	
 	@XmlElement()
 	private final CompilerConfigImpl compilerConfig;
+	
+	private EngineNodeFactoryImpl nodeFactory;
 	
 	// -- General Information --
 	
@@ -132,6 +135,7 @@ public class WikiConfigImpl
 	{
 		this.parserConfig = new ParserConfigImpl(this);
 		this.compilerConfig = new CompilerConfigImpl();
+		this.nodeFactory = new EngineNodeFactoryImpl(this);
 	}
 	
 	// ==[ Parser Configuration ]===============================================
@@ -147,6 +151,13 @@ public class WikiConfigImpl
 	public CompilerConfigImpl getCompilerConfig()
 	{
 		return compilerConfig;
+	}
+	
+	// ==[ AST creation ]=======================================================
+	
+	public EngineNodeFactoryImpl getNodeFactory()
+	{
+		return nodeFactory;
 	}
 	
 	// ==[ Namespaces ]=========================================================

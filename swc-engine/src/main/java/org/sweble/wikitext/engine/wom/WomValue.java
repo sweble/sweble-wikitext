@@ -24,7 +24,7 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, [Preprocessor elements]*
  */
 public interface WomValue
-        extends
-            WomNode
+		extends
+			WomNode
 {
 }

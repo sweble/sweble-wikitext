@@ -1,8 +1,8 @@
-package org.sweble.wikitext.engine.log;
+package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ResolveMagicWordLog
+public class ResolveTagExtensionLog
 		extends
 			LogContainer
 {
@@ -10,13 +10,13 @@ public class ResolveMagicWordLog
 	
 	// =========================================================================
 	
-	public ResolveMagicWordLog()
+	public ResolveTagExtensionLog()
 	{
 	}
 	
-	public ResolveMagicWordLog(String name, boolean success)
+	public ResolveTagExtensionLog(String target, boolean success)
 	{
-		setName(name);
+		setTarget(target);
 		setSuccess(success);
 	}
 	
@@ -37,17 +37,31 @@ public class ResolveMagicWordLog
 		return old;
 	}
 	
-	private String name;
+	private String target;
 	
-	public final String getName()
+	public final String getTarget()
 	{
-		return this.name;
+		return this.target;
 	}
 	
-	public final String setName(String name)
+	public final String setTarget(String target)
 	{
-		String old = this.name;
-		this.name = name;
+		String old = this.target;
+		this.target = target;
+		return old;
+	}
+	
+	private String canonical;
+	
+	public final String getCanonical()
+	{
+		return this.canonical;
+	}
+	
+	public final String setCanonical(String canonical)
+	{
+		String old = this.canonical;
+		this.canonical = canonical;
 		return old;
 	}
 	
@@ -68,7 +82,7 @@ public class ResolveMagicWordLog
 	@Override
 	public final int getPropertyCount()
 	{
-		return 3;
+		return 4;
 	}
 	
 	@Override
@@ -79,7 +93,7 @@ public class ResolveMagicWordLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 3;
+				return 4;
 			}
 			
 			@Override
@@ -90,8 +104,10 @@ public class ResolveMagicWordLog
 					case 0:
 						return "success";
 					case 1:
-						return "name";
+						return "target";
 					case 2:
+						return "canonical";
+					case 3:
 						return "timeNeeded";
 						
 					default:
@@ -105,11 +121,13 @@ public class ResolveMagicWordLog
 				switch (index)
 				{
 					case 0:
-						return ResolveMagicWordLog.this.getSuccess();
+						return ResolveTagExtensionLog.this.getSuccess();
 					case 1:
-						return ResolveMagicWordLog.this.getName();
+						return ResolveTagExtensionLog.this.getTarget();
 					case 2:
-						return ResolveMagicWordLog.this.getTimeNeeded();
+						return ResolveTagExtensionLog.this.getCanonical();
+					case 3:
+						return ResolveTagExtensionLog.this.getTimeNeeded();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -122,11 +140,13 @@ public class ResolveMagicWordLog
 				switch (index)
 				{
 					case 0:
-						return ResolveMagicWordLog.this.setSuccess((Boolean) value);
+						return ResolveTagExtensionLog.this.setSuccess((Boolean) value);
 					case 1:
-						return ResolveMagicWordLog.this.setName((String) value);
+						return ResolveTagExtensionLog.this.setTarget((String) value);
 					case 2:
-						return ResolveMagicWordLog.this.setTimeNeeded((Long) value);
+						return ResolveTagExtensionLog.this.setCanonical((String) value);
+					case 3:
+						return ResolveTagExtensionLog.this.setTimeNeeded((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

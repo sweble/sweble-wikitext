@@ -21,9 +21,9 @@ package org.sweble.wikitext.engine.wom;
  * universal attributes.
  */
 public interface WomUniversalAttributes
-        extends
-            WomCoreAttributes,
-            WomI18nAttributes,
-            WomEventAttributes
+		extends
+			WomCoreAttributes,
+			WomI18nAttributes,
+			WomEventAttributes
 {
 }

@@ -17,16 +17,15 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 
 public abstract class ParserFunctionsExtPfn
 		extends
@@ -36,14 +35,17 @@ public abstract class ParserFunctionsExtPfn
 	
 	// =========================================================================
 	
-	public ParserFunctionsExtPfn(String name)
+	public ParserFunctionsExtPfn(WikiConfig wikiConfig, String name)
 	{
-		super(name);
+		super(wikiConfig, name);
 	}
 	
-	public ParserFunctionsExtPfn(PfnArgumentMode argMode, String name)
+	public ParserFunctionsExtPfn(
+			WikiConfig wikiConfig,
+			PfnArgumentMode argMode,
+			String name)
 	{
-		super(argMode, name);
+		super(wikiConfig, argMode, name);
 	}
 	
 	// =========================================================================
@@ -70,9 +72,9 @@ public abstract class ParserFunctionsExtPfn
 	{
 		private static final long serialVersionUID = 1L;
 		
-		protected CtrlStmt(String name)
+		protected CtrlStmt(WikiConfig wikiConfig, String name)
 		{
-			super(PfnArgumentMode.UNEXPANDED_VALUES, name);
+			super(wikiConfig, PfnArgumentMode.UNEXPANDED_VALUES, name);
 		}
 		
 		@Override
@@ -91,7 +93,7 @@ public abstract class ParserFunctionsExtPfn
 			}
 			else
 			{
-				return astText("");
+				return nf().text("");
 			}
 		}
 		
@@ -115,19 +117,23 @@ public abstract class ParserFunctionsExtPfn
 		
 		private final int thenArgIndex;
 		
-		protected IfThenElseStmt(String name, int thenArgIndex)
+		protected IfThenElseStmt(
+				WikiConfig wikiConfig,
+				String name,
+				int thenArgIndex)
 		{
-			super(name);
+			super(wikiConfig, name);
 			this.hasDefault = false;
 			this.thenArgIndex = thenArgIndex;
 		}
 		
 		protected IfThenElseStmt(
+				WikiConfig wikiConfig,
 				String name,
 				int thenArgIndex,
 				boolean hasDefault)
 		{
-			super(name);
+			super(wikiConfig, name);
 			this.hasDefault = hasDefault;
 			this.thenArgIndex = thenArgIndex;
 		}
@@ -139,7 +145,7 @@ public abstract class ParserFunctionsExtPfn
 				List<? extends WtNode> args)
 		{
 			if (args.size() <= (hasDefault ? thenArgIndex - 1 : thenArgIndex))
-				return astText("");
+				return nf().text("");
 			
 			boolean cond = evaluateCondition(pfn, frame, args);
 			

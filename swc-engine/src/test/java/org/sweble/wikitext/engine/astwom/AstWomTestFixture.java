@@ -21,20 +21,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-import org.sweble.wikitext.engine.CompiledPage;
 import org.sweble.wikitext.engine.Compiler;
 import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.FullPage;
-import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.nodes.CompiledPage;
+import org.sweble.wikitext.engine.nodes.Page;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
-import org.sweble.wikitext.engine.wom.WomNode;
-import org.sweble.wikitext.engine.wom.WomPage;
-import org.sweble.wikitext.engine.wom.tools.WomPrinter;
-import org.sweble.wikitext.parser.utils.WtPrinter;
 import org.sweble.wikitext.parser.utils.RtDataPrinter;
+import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import de.fau.cs.osr.ptk.common.test.FileCompare;
 import de.fau.cs.osr.ptk.common.test.FileContent;

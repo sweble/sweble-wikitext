@@ -50,7 +50,7 @@ public interface WomAttribute
 	 *             Thrown if <code>null</code> was specified as name.
 	 */
 	public String setName(String name)
-		throws IllegalArgumentException,
+			throws IllegalArgumentException,
 			NullPointerException;
 	
 	/**

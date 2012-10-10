@@ -17,18 +17,16 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.ApplyToText;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -40,19 +38,19 @@ public class CorePfnFunctionsFormatting
 	
 	// =========================================================================
 	
-	protected CorePfnFunctionsFormatting()
+	protected CorePfnFunctionsFormatting(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - Formatting");
-		addParserFunction(new LcPfn());
-		addParserFunction(new LcFirstPfn());
-		addParserFunction(new UcPfn());
-		addParserFunction(new UcFirstPfn());
-		addParserFunction(new PadLeftPfn());
+		addParserFunction(new LcPfn(wikiConfig));
+		addParserFunction(new LcFirstPfn(wikiConfig));
+		addParserFunction(new UcPfn(wikiConfig));
+		addParserFunction(new UcFirstPfn(wikiConfig));
+		addParserFunction(new PadLeftPfn(wikiConfig));
 	}
 	
-	public static CorePfnFunctionsFormatting group()
+	public static CorePfnFunctionsFormatting group(WikiConfig wikiConfig)
 	{
-		return new CorePfnFunctionsFormatting();
+		return new CorePfnFunctionsFormatting(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -78,9 +76,9 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public LcPfn()
+		public LcPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lc");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lc");
 		}
 		
 		@Override
@@ -90,7 +88,7 @@ public class CorePfnFunctionsFormatting
 				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
-				return new WtNodeList();
+				return nf().list();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -117,9 +115,9 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public LcFirstPfn()
+		public LcFirstPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lcfirst");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "lcfirst");
 		}
 		
 		@Override
@@ -129,7 +127,7 @@ public class CorePfnFunctionsFormatting
 				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
-				return new WtNodeList();
+				return nf().list();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -158,9 +156,9 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public UcPfn()
+		public UcPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "uc");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "uc");
 		}
 		
 		@Override
@@ -170,7 +168,7 @@ public class CorePfnFunctionsFormatting
 				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
-				return new WtNodeList();
+				return nf().list();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -197,9 +195,9 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public UcFirstPfn()
+		public UcFirstPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "ucfirst");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "ucfirst");
 		}
 		
 		@Override
@@ -209,7 +207,7 @@ public class CorePfnFunctionsFormatting
 				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
-				return new WtNodeList();
+				return nf().list();
 			
 			new ApplyToText(new ApplyToText.Functor()
 			{
@@ -240,9 +238,9 @@ public class CorePfnFunctionsFormatting
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public PadLeftPfn()
+		public PadLeftPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "padleft");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "padleft");
 		}
 		
 		@Override
@@ -252,7 +250,7 @@ public class CorePfnFunctionsFormatting
 				List<? extends WtNode> args)
 		{
 			if (args.size() < 1)
-				return new WtNodeList();
+				return nf().list();
 			
 			WtNode arg0 = frame.expand(args.get(0));
 			
@@ -301,7 +299,7 @@ public class CorePfnFunctionsFormatting
 			String padding = StringUtils.repeat(padStr, repeat);
 			padding = padding.substring(0, padLen);
 			
-			return astText(padding + text);
+			return nf().text(padding + text);
 		}
 	}
 	

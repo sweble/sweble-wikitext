@@ -18,7 +18,6 @@ package org.sweble.wikitext.engine.astwom;
 
 import java.util.LinkedList;
 
-import org.sweble.wikitext.engine.Page;
 import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.CommentAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.HorizontalRuleAdapter;
@@ -27,6 +26,7 @@ import org.sweble.wikitext.engine.astwom.adapters.ParagraphAdapter;
 import org.sweble.wikitext.engine.astwom.adapters.TextAdapter;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.Page;
 import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.parser.LinkTargetType;
 import org.sweble.wikitext.parser.nodes.WtBold;

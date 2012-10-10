@@ -24,9 +24,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, [Inline elements]*
  */
 public interface WomTableCaption
-        extends
-            WomNode,
-            WomUniversalAttributes
+		extends
+			WomNode,
+			WomUniversalAttributes
 {
 	/**
 	 * Get the alignment of the caption.

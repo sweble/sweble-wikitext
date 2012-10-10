@@ -29,9 +29,9 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> Mixed, [Inline elements]*
  */
 public interface WomHeading
-        extends
-            WomNode,
-            WomUniversalAttributes
+		extends
+			WomNode,
+			WomUniversalAttributes
 {
 	/**
 	 * Get the alignment of the content inside the tag.

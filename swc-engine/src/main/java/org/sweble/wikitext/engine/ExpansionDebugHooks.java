@@ -19,21 +19,22 @@ package org.sweble.wikitext.engine;
 
 import java.util.List;
 
-import org.sweble.wikitext.engine.log.ResolveMagicWordLog;
-import org.sweble.wikitext.engine.log.ResolveParameterLog;
-import org.sweble.wikitext.engine.log.ResolveParserFunctionLog;
-import org.sweble.wikitext.engine.log.ResolveRedirectLog;
-import org.sweble.wikitext.engine.log.ResolveTagExtensionLog;
-import org.sweble.wikitext.engine.log.ResolveTransclusionLog;
+import org.sweble.wikitext.engine.lognodes.ResolveMagicWordLog;
+import org.sweble.wikitext.engine.lognodes.ResolveParameterLog;
+import org.sweble.wikitext.engine.lognodes.ResolveParserFunctionLog;
+import org.sweble.wikitext.engine.lognodes.ResolveRedirectLog;
+import org.sweble.wikitext.engine.lognodes.ResolveTagExtensionLog;
+import org.sweble.wikitext.engine.lognodes.ResolveTransclusionLog;
+import org.sweble.wikitext.parser.nodes.WtLeafNode;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtPageSwitch;
 import org.sweble.wikitext.parser.nodes.WtRedirect;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtLeafNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
 
 public abstract class ExpansionDebugHooks
 {
@@ -125,7 +126,7 @@ public abstract class ExpansionDebugHooks
 			WtTagExtension n,
 			String name,
 			WtNodeList attrs,
-			String body)
+			WtTagExtensionBody wtTagExtensionBody)
 	{
 		return PROCEED;
 	}
@@ -135,7 +136,7 @@ public abstract class ExpansionDebugHooks
 			WtTagExtension n,
 			String name,
 			WtNodeList attributes,
-			String body,
+			WtTagExtensionBody wtTagExtensionBody,
 			WtNode result,
 			ResolveTagExtensionLog log)
 	{

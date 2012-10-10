@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.ext.parser_functions;
 
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 
 public class ParserFunctionsPfnExt
 		extends
@@ -27,22 +28,22 @@ public class ParserFunctionsPfnExt
 	
 	// =========================================================================
 	
-	protected ParserFunctionsPfnExt()
+	protected ParserFunctionsPfnExt(WikiConfig wikiConfig)
 	{
 		super("Extension - Parser Functions");
-		addParserFunction(new ParserFunctionExpr());
-		addParserFunction(new ParserFunctionIf());
-		addParserFunction(new ParserFunctionIfeq());
-		addParserFunction(new ParserFunctionIfError());
-		addParserFunction(new ParserFunctionIfExist());
-		addParserFunction(new ParserFunctionIfExpr());
-		addParserFunction(new ParserFunctionSwitch());
-		addParserFunction(new ParserFunctionTime());
-		addParserFunction(new ParserFunctionTitleparts());
+		addParserFunction(new ParserFunctionExpr(wikiConfig));
+		addParserFunction(new ParserFunctionIf(wikiConfig));
+		addParserFunction(new ParserFunctionIfeq(wikiConfig));
+		addParserFunction(new ParserFunctionIfError(wikiConfig));
+		addParserFunction(new ParserFunctionIfExist(wikiConfig));
+		addParserFunction(new ParserFunctionIfExpr(wikiConfig));
+		addParserFunction(new ParserFunctionSwitch(wikiConfig));
+		addParserFunction(new ParserFunctionTime(wikiConfig));
+		addParserFunction(new ParserFunctionTitleparts(wikiConfig));
 	}
 	
-	public static ParserFunctionsPfnExt group()
+	public static ParserFunctionsPfnExt group(WikiConfig wikiConfig)
 	{
-		return new ParserFunctionsPfnExt();
+		return new ParserFunctionsPfnExt(wikiConfig);
 	}
 }

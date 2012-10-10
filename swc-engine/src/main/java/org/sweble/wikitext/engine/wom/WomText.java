@@ -48,12 +48,12 @@ public interface WomText
 	
 	@Override
 	public void deleteText(int from, int length)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IndexOutOfBoundsException;
 	
 	@Override
 	public void insertText(int at, String text)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IndexOutOfBoundsException;
 	
 	@Override
@@ -61,6 +61,6 @@ public interface WomText
 	
 	@Override
 	public String replaceText(int from, int length, String text)
-		throws UnsupportedOperationException,
+			throws UnsupportedOperationException,
 			IndexOutOfBoundsException;
 }

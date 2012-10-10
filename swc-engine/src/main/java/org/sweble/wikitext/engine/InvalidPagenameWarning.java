@@ -17,12 +17,11 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.parser.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 public class InvalidPagenameWarning
-        extends
-            OffendingNodeWarning
+		extends
+			OffendingNodeWarning
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -31,20 +30,20 @@ public class InvalidPagenameWarning
 	// =========================================================================
 	
 	public InvalidPagenameWarning(
-	        WarningSeverity severity,
-	        String origin,
-	        WtNode titleNode,
-	        String titleString)
+			WarningSeverity severity,
+			String origin,
+			WtNode titleNode,
+			String titleString)
 	{
 		super(titleNode, severity, origin, makeMessage(titleString));
 		this.titleString = titleString;
 	}
 	
 	public InvalidPagenameWarning(
-	        WarningSeverity severity,
-	        Class<?> origin,
-	        WtNode titleNode,
-	        String titleString)
+			WarningSeverity severity,
+			Class<?> origin,
+			WtNode titleNode,
+			String titleString)
 	{
 		super(titleNode, severity, origin, makeMessage(titleString));
 		this.titleString = titleString;
@@ -53,7 +52,7 @@ public class InvalidPagenameWarning
 	private static String makeMessage(String titleString)
 	{
 		return "The given text `" + titleString + "' " +
-		        "does not constitute a valid page name";
+				"does not constitute a valid page name";
 	}
 	
 	public String getTitleString()

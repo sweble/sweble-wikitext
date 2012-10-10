@@ -32,8 +32,8 @@ import java.util.Collection;
  * <b>Child elements:</b> name arg*
  */
 public interface WomTransclusion
-        extends
-            WomProcessingInstruction
+		extends
+			WomProcessingInstruction
 {
 	/**
 	 * Get the name of the (template) page to transclude.

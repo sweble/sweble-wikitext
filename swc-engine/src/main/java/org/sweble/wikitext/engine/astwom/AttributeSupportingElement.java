@@ -581,7 +581,7 @@ public abstract class AttributeSupportingElement
 		while (i.hasNext())
 		{
 			WtNode n = i.next();
-			if (n.getNodeType() != AstNodeTypes.NT_XML_ATTRIBUTE)
+			if (n.getNodeType() != WtNode.NT_XML_ATTRIBUTE)
 				continue;
 			
 			WtXmlAttribute astAttr = (WtXmlAttribute) n;
@@ -668,7 +668,7 @@ public abstract class AttributeSupportingElement
 				case WtNode.NT_TEXT:
 					b.append(((WtText) n).getContent());
 					break;
-				case AstNodeTypes.NT_XML_CHAR_REF:
+				case WtNode.NT_XML_CHAR_REF:
 				{
 					int cp = ((WtXmlCharRef) n).getCodePoint();
 					if (!XmlGrammar.isChar(cp))
@@ -678,7 +678,7 @@ public abstract class AttributeSupportingElement
 						b.append(Character.toChars(cp));
 					break;
 				}
-				case AstNodeTypes.NT_XML_ENTITY_REF:
+				case WtNode.NT_XML_ENTITY_REF:
 				{
 					String resolved = ((WtXmlEntityRef) n).getResolved();
 					if (resolved == null)
@@ -705,7 +705,7 @@ public abstract class AttributeSupportingElement
 				case WtNode.NT_TEXT:
 					normalizeWhitespace(b, ((WtText) n).getContent());
 					break;
-				case AstNodeTypes.NT_XML_CHAR_REF:
+				case WtNode.NT_XML_CHAR_REF:
 				{
 					int cp = ((WtXmlCharRef) n).getCodePoint();
 					if (!XmlGrammar.isChar(cp))
@@ -715,7 +715,7 @@ public abstract class AttributeSupportingElement
 						b.append(Character.toChars(cp));
 					break;
 				}
-				case AstNodeTypes.NT_XML_ENTITY_REF:
+				case WtNode.NT_XML_ENTITY_REF:
 				{
 					String resolved = ((WtXmlEntityRef) n).getResolved();
 					if (resolved == null)

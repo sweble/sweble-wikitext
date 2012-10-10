@@ -17,8 +17,6 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
@@ -28,9 +26,8 @@ import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -43,21 +40,21 @@ public class CorePfnVariablesPageNames
 	
 	// =========================================================================
 	
-	protected CorePfnVariablesPageNames()
+	protected CorePfnVariablesPageNames(WikiConfig wikiConfig)
 	{
 		super("Core - Variables - Page names");
-		addParserFunction(new FullPagenamePfn());
-		addParserFunction(new FullPagenameePfn());
-		addParserFunction(new PagenamePfn());
-		addParserFunction(new PagenameePfn());
-		addParserFunction(new BasePagenamePfn());
-		addParserFunction(new SubjectPagenamePfn());
-		addParserFunction(new TalkPagenamePfn());
+		addParserFunction(new FullPagenamePfn(wikiConfig));
+		addParserFunction(new FullPagenameePfn(wikiConfig));
+		addParserFunction(new PagenamePfn(wikiConfig));
+		addParserFunction(new PagenameePfn(wikiConfig));
+		addParserFunction(new BasePagenamePfn(wikiConfig));
+		addParserFunction(new SubjectPagenamePfn(wikiConfig));
+		addParserFunction(new TalkPagenamePfn(wikiConfig));
 	}
 	
-	public static CorePfnVariablesPageNames group()
+	public static CorePfnVariablesPageNames group(WikiConfig wikiConfig)
 	{
-		return new CorePfnVariablesPageNames();
+		return new CorePfnVariablesPageNames(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -72,15 +69,15 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public FullPagenamePfn()
+		public FullPagenamePfn(WikiConfig wikiConfig)
 		{
-			super("fullpagename");
+			super(wikiConfig, "fullpagename");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			return new WtText(frame.getRootFrame().getTitle().getDenormalizedFullTitle());
+			return nf().text(frame.getRootFrame().getTitle().getDenormalizedFullTitle());
 		}
 	}
 	
@@ -96,15 +93,15 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public FullPagenameePfn()
+		public FullPagenameePfn(WikiConfig wikiConfig)
 		{
-			super("fullpagenamee");
+			super(wikiConfig, "fullpagenamee");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			return astText(UrlEncoding.WIKI.encode(frame.getRootFrame().getTitle().getNormalizedFullTitle()));
+			return nf().text(UrlEncoding.WIKI.encode(frame.getRootFrame().getTitle().getNormalizedFullTitle()));
 		}
 	}
 	
@@ -120,15 +117,15 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public PagenamePfn()
+		public PagenamePfn(WikiConfig wikiConfig)
 		{
-			super("pagename");
+			super(wikiConfig, "pagename");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			return new WtText(frame.getRootFrame().getTitle().getDenormalizedTitle());
+			return nf().text(frame.getRootFrame().getTitle().getDenormalizedTitle());
 		}
 	}
 	
@@ -144,10 +141,10 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public PagenameePfn()
+		public PagenameePfn(WikiConfig wikiConfig)
 		{
 			// FIXME: DIESEN FIX FUER ALLE!
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "pagenamee");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "pagenamee");
 		}
 		
 		@Override
@@ -177,7 +174,7 @@ public class CorePfnVariablesPageNames
 			}
 			
 			String link = title.getTitle();
-			return new WtText(UrlEncoding.WIKI.encode(link));
+			return nf().text(UrlEncoding.WIKI.encode(link));
 		}
 	}
 	
@@ -193,15 +190,15 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public BasePagenamePfn()
+		public BasePagenamePfn(WikiConfig wikiConfig)
 		{
-			super("basepagename");
+			super(wikiConfig, "basepagename");
 		}
 		
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			return new WtText(frame.getRootFrame().getTitle().getBaseTitle().getDenormalizedFullTitle());
+			return nf().text(frame.getRootFrame().getTitle().getBaseTitle().getDenormalizedFullTitle());
 		}
 	}
 	
@@ -225,9 +222,9 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public SubjectPagenamePfn()
+		public SubjectPagenamePfn(WikiConfig wikiConfig)
 		{
-			super("subjectpagename");
+			super(wikiConfig, "subjectpagename");
 		}
 		
 		@Override
@@ -236,7 +233,7 @@ public class CorePfnVariablesPageNames
 			return invokeStatic(frame);
 		}
 		
-		protected static WtNode invokeStatic(ExpansionFrame frame)
+		protected WtNode invokeStatic(ExpansionFrame frame)
 		{
 			WikiConfig config = frame.getWikiConfig();
 			
@@ -247,7 +244,7 @@ public class CorePfnVariablesPageNames
 			if (subjectNs != ns)
 				title = title.newWithNamespace(subjectNs);
 			
-			return new WtText(title.getDenormalizedFullTitle());
+			return nf().text(title.getDenormalizedFullTitle());
 		}
 	}
 	
@@ -269,9 +266,9 @@ public class CorePfnVariablesPageNames
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public TalkPagenamePfn()
+		public TalkPagenamePfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "talkpagename");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "talkpagename");
 		}
 		
 		/*
@@ -287,7 +284,7 @@ public class CorePfnVariablesPageNames
 			if (talkNs != ns)
 				title = title.newWithNamespace(talkNs);
 			
-			return new WtText(title.getDenormalizedFullTitle());
+			return nf().text(title.getDenormalizedFullTitle());
 		}
 		*/
 		
@@ -318,7 +315,7 @@ public class CorePfnVariablesPageNames
 			}
 			
 			//String link = title.getTitle();
-			//return new WtText(UrlEncoding.WIKI.encode(link));
+			//return nf().text(UrlEncoding.WIKI.encode(link));
 			
 			WikiConfig config = frame.getWikiConfig();
 			
@@ -327,7 +324,7 @@ public class CorePfnVariablesPageNames
 			if (talkNs != ns)
 				title = title.newWithNamespace(talkNs);
 			
-			return new WtText(title.getDenormalizedFullTitle());
+			return nf().text(title.getDenormalizedFullTitle());
 		}
 	}
 	

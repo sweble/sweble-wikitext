@@ -22,8 +22,9 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 
 public abstract class CorePfnFunction
 		extends
@@ -33,14 +34,17 @@ public abstract class CorePfnFunction
 	
 	// =========================================================================
 	
-	public CorePfnFunction(PfnArgumentMode argMode, String name)
+	public CorePfnFunction(
+			WikiConfig wikiConfig,
+			PfnArgumentMode argMode,
+			String name)
 	{
-		super(argMode, name);
+		super(wikiConfig, argMode, name);
 	}
 	
-	public CorePfnFunction(String name)
+	public CorePfnFunction(WikiConfig wikiConfig, String name)
 	{
-		super(name);
+		super(wikiConfig, name);
 	}
 	
 	// =========================================================================

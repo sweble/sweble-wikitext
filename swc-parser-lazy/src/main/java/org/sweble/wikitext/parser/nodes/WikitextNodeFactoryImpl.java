@@ -42,6 +42,13 @@ public class WikitextNodeFactoryImpl
 	
 	// =========================================================================
 	
+	protected ParserConfig getParserConfig()
+	{
+		return parserConfig;
+	}
+	
+	// =========================================================================
+	
 	@Override
 	public WtLinkOptionLinkTarget loLinkTarget(ImageLinkTarget type)
 	{

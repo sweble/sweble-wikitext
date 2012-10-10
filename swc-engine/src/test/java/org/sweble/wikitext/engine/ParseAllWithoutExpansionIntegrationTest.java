@@ -17,22 +17,20 @@
 
 package org.sweble.wikitext.engine;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
-import org.sweble.wikitext.parser.AstNodeTypes;
 import org.sweble.wikitext.parser.WtEntityMap;
-import org.sweble.wikitext.parser.nodes.WtParagraph;
-import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
-import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
+import org.sweble.wikitext.parser.nodes.WtTemplateParameter;
+import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.utils.WtPrinter;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
@@ -68,7 +66,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 		
 		PageTitle title = PageTitle.make(config, "-");
 		PageId pageId = new PageId(title, -1);
-		CompiledPage page = compiler.postprocess(pageId, wikitext, null);
+		EngCompiledPage page = compiler.postprocess(pageId, wikitext, null);
 		
 		new ParameterToDefaultValueResolver(pageId).go(page);
 		
@@ -161,7 +159,7 @@ public class ParseAllWithoutExpansionIntegrationTest
 			return n;
 		}
 		
-		public WtNode visit(CompiledPage n)
+		public WtNode visit(EngCompiledPage n)
 		{
 			this.warnings = n.getWarnings();
 			this.entityMap = n.getEntityMap();
@@ -171,31 +169,35 @@ public class ParseAllWithoutExpansionIntegrationTest
 		
 		public WtNode visit(WtTemplateParameter n) throws CompilerException
 		{
-			WtTemplateArgument defValArg = n.getDefaultValue();
+			WtValue defValArg = n.getDefaultValue();
 			if (defValArg == null)
 				return n;
 			
-			WtNodeList defVal = defValArg.getValue();
+			WtValue defVal = defValArg;
 			
 			// Shortcut for all those empty default values
 			if (defVal.isEmpty())
 				return defValArg;
 			
-			WtPreproWikitextPage pprAst = new WtPreproWikitextPage(
-					defVal, warnings, entityMap);
+			// TODO: Fix!
+			WtPreproWikitextPage pprAst = config.getNodeFactory().preproPage(defVal);//, warnings, entityMap);
 			
-			CompiledPage parsed = compiler.postprocessPpOrExpAst(pageId, pprAst);
+			EngCompiledPage parsed = compiler.postprocessPpOrExpAst(pageId, pprAst);
 			
+			return parsed.getPage();
+			
+			/*
 			WtNodeList content = parsed.getPage().getContent();
 			
 			// The parser of course thinks that the given wikitext is a 
 			// individual page and will wrap even single line text into a 
 			// paragraph node. We try to catch at least simple cases to improve
 			// the resulting AST
-			if (content.size() == 1 && content.get(0).getNodeType() == AstNodeTypes.NT_PARAGRAPH)
+			if (content.size() == 1 && content.get(0).getNodeType() == WtNode.NT_PARAGRAPH)
 				content = ((WtParagraph) content.get(0)).getContent();
 			
 			return content;
+			*/
 		}
 	}
 	

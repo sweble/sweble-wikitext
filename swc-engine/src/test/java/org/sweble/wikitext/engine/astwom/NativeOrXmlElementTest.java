@@ -16,7 +16,6 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-
 public class NativeOrXmlElementTest
 {
 }

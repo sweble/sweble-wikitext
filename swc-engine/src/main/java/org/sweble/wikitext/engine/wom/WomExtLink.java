@@ -26,9 +26,9 @@ import java.net.URL;
  * <b>Child elements:</b> title?
  */
 public interface WomExtLink
-        extends
-            WomInlineElement,
-            WomLink
+		extends
+			WomInlineElement,
+			WomLink
 {
 	/**
 	 * Get the title of the external link.

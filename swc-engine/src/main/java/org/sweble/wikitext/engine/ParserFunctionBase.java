@@ -26,6 +26,8 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.sweble.wikitext.engine.ParserFunctionBase.ParserFunctionAdapter;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 @XmlTransient
@@ -37,6 +39,8 @@ public abstract class ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
+	private final WikiConfig wikiConfig;
+	
 	private final String id;
 	
 	private final PfnArgumentMode argMode;
@@ -45,29 +49,44 @@ public abstract class ParserFunctionBase
 	
 	// =========================================================================
 	
-	public ParserFunctionBase(String id)
+	public ParserFunctionBase(WikiConfig wikiConfig, String id)
 	{
-		this(PfnArgumentMode.UNEXPANDED_VALUES, false, id);
-		
-	}
-	
-	public ParserFunctionBase(PfnArgumentMode argMode, String id)
-	{
-		this(argMode, false, id);
+		this(wikiConfig, PfnArgumentMode.UNEXPANDED_VALUES, false, id);
 		
 	}
 	
 	public ParserFunctionBase(
+			WikiConfig wikiConfig,
+			PfnArgumentMode argMode,
+			String id)
+	{
+		this(wikiConfig, argMode, false, id);
+		
+	}
+	
+	public ParserFunctionBase(
+			WikiConfig wikiConfig,
 			PfnArgumentMode argMode,
 			boolean pageSwitch,
 			String id)
 	{
+		this.wikiConfig = wikiConfig;
 		this.argMode = argMode;
 		this.pageSwitch = pageSwitch;
 		this.id = id;
 	}
 	
 	// =========================================================================
+	
+	protected EngineNodeFactory nf()
+	{
+		return wikiConfig.getNodeFactory();
+	}
+	
+	public WikiConfig getWikiConfig()
+	{
+		return wikiConfig;
+	}
 	
 	public String getId()
 	{

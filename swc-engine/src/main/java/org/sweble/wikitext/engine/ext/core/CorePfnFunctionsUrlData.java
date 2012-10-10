@@ -17,9 +17,6 @@
 
 package org.sweble.wikitext.engine.ext.core;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astProtected;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,11 +32,11 @@ import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.UrlType;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
-import org.sweble.wikitext.parser.WarningSeverity;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
@@ -52,17 +49,17 @@ public class CorePfnFunctionsUrlData
 	
 	// =========================================================================
 	
-	protected CorePfnFunctionsUrlData()
+	protected CorePfnFunctionsUrlData(WikiConfig wikiConfig)
 	{
 		super("Core - Parser Functions - URL data");
-		addParserFunction(new FullurlPfn());
-		addParserFunction(new FilepathPfn());
-		addParserFunction(new UrlencodePfn());
+		addParserFunction(new FullurlPfn(wikiConfig));
+		addParserFunction(new FilepathPfn(wikiConfig));
+		addParserFunction(new UrlencodePfn(wikiConfig));
 	}
 	
-	public static CorePfnFunctionsUrlData group()
+	public static CorePfnFunctionsUrlData group(WikiConfig wikiConfig)
 	{
-		return new CorePfnFunctionsUrlData();
+		return new CorePfnFunctionsUrlData(wikiConfig);
 	}
 	
 	// =========================================================================
@@ -86,9 +83,9 @@ public class CorePfnFunctionsUrlData
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public FullurlPfn()
+		public FullurlPfn(WikiConfig wikiConfig)
 		{
-			super(PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "fullurl");
+			super(wikiConfig, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, "fullurl");
 		}
 		
 		@Override
@@ -211,7 +208,7 @@ public class CorePfnFunctionsUrlData
 					UrlType.FULL,
 					titleUrl);
 			
-			return new WtText(url.toExternalForm());
+			return nf().text(url.toExternalForm());
 		}
 	}
 	
@@ -237,9 +234,9 @@ public class CorePfnFunctionsUrlData
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public FilepathPfn()
+		public FilepathPfn(WikiConfig wikiConfig)
 		{
-			super("filepath");
+			super(wikiConfig, "filepath");
 		}
 		
 		@Override
@@ -314,9 +311,9 @@ public class CorePfnFunctionsUrlData
 			}
 			
 			if (url == null)
-				return astText("");
+				return nf().text("");
 			
-			return nowiki ? astProtected(url) : astText(url);
+			return nowiki ? nf().nowiki(url) : nf().text(url);
 		}
 	}
 	
@@ -334,9 +331,9 @@ public class CorePfnFunctionsUrlData
 	{
 		private static final long serialVersionUID = 1L;
 		
-		public UrlencodePfn()
+		public UrlencodePfn(WikiConfig wikiConfig)
 		{
-			super("urlencode");
+			super(wikiConfig, "urlencode");
 		}
 		
 		@Override
@@ -375,7 +372,7 @@ public class CorePfnFunctionsUrlData
 				}
 			}
 			
-			return astText(encoder.encode(text));
+			return nf().text(encoder.encode(text));
 		}
 	}
 	

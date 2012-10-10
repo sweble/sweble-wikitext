@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> WtText
  */
 public interface WomTagExtBody
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Return the text inside the tagextbody element.

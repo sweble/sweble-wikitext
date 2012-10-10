@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> name? value
  */
 public interface WomArg
-        extends
-            WomNode
+		extends
+			WomNode
 {
 	/**
 	 * Get the name of the argument.

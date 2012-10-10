@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> name default?
  */
 public interface WomParam
-        extends
-            WomProcessingInstruction
+		extends
+			WomProcessingInstruction
 {
 	/**
 	 * Get the name of the parameter.

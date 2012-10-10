@@ -16,15 +16,12 @@
  */
 package org.sweble.wikitext.engine.astwom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.sweble.wikitext.engine.astwom.adapters.BoldAdapter;
-import org.sweble.wikitext.engine.wom.WomNode;
 import org.sweble.wikitext.engine.wom.tools.AstWomBuilder;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;

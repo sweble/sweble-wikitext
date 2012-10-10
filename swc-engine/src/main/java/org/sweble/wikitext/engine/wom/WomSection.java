@@ -24,8 +24,8 @@ package org.sweble.wikitext.engine.wom;
  * <b>Child elements:</b> heading body
  */
 public interface WomSection
-        extends
-            WomBlockElement
+		extends
+			WomBlockElement
 {
 	/**
 	 * Get the level of the section. Ranges from 1 (most important) to 6 (least

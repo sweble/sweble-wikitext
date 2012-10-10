@@ -17,19 +17,17 @@
 
 package org.sweble.wikitext.engine.ext.parser_functions;
 
-import static org.sweble.wikitext.parser.utils.AstBuilder.astProtectedText;
-import static org.sweble.wikitext.parser.utils.AstBuilder.astText;
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
-import org.sweble.wikitext.engine.SoftErrorNode;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.engine.utils.EngineTextUtils;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.StringConverter;
 
@@ -41,9 +39,9 @@ public class ParserFunctionTime
 {
 	private static final long serialVersionUID = 1L;
 	
-	public ParserFunctionTime()
+	public ParserFunctionTime(WikiConfig wikiConfig)
 	{
-		super("time");
+		super(wikiConfig, "time");
 	}
 	
 	@Override
@@ -129,7 +127,7 @@ public class ParserFunctionTime
 			}
 		}
 		
-		return astText(sb.toString());
+		return nf().text(sb.toString());
 	}
 	
 	private String _(String string, Object... args)
@@ -157,15 +155,15 @@ public class ParserFunctionTime
 		return format;
 	}
 	
-	private SoftErrorNode error(String msg)
+	private EngSoftErrorNode error(String msg)
 	{
-		return new SoftErrorNode(astProtectedText(StringUtils.escHtml(msg)));
+		return nf().softError(nf().nowiki(StringUtils.escHtml(msg)));
 	}
 	
-	private SoftErrorNode notYetImplemented(String msg)
+	private EngSoftErrorNode notYetImplemented(String msg)
 	{
-		SoftErrorNode error = new SoftErrorNode(astProtectedText(StringUtils.escHtml(msg)));
-		error.addCssClass("not-yet-implemented");
-		return error;
+		return nf().addCssClass(
+				nf().softError(nf().nowiki(StringUtils.escHtml(msg))),
+				"not-yet-implemented");
 	}
 }

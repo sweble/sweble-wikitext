@@ -22,8 +22,9 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTemplate;
 
 public abstract class CorePfnVariable
 		extends
@@ -33,16 +34,19 @@ public abstract class CorePfnVariable
 	
 	// =========================================================================
 	
-	public CorePfnVariable(String name)
+	public CorePfnVariable(WikiConfig wikiConfig, String name)
 	{
 		// Most variables don't take arguments so don't waste time with funny 
 		// conversions.
-		super(PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
+		super(wikiConfig, PfnArgumentMode.TEMPLATE_ARGUMENTS, name);
 	}
 	
-	public CorePfnVariable(PfnArgumentMode argMode, String name)
+	public CorePfnVariable(
+			WikiConfig wikiConfig,
+			PfnArgumentMode argMode,
+			String name)
 	{
-		super(argMode, name);
+		super(wikiConfig, argMode, name);
 	}
 	
 	// =========================================================================
