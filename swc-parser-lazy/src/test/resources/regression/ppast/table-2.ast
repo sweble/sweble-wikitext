@@ -1,0 +1,36 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtXmlElement(
+		{P} name = "table"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "tr"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "td"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[]
+					)
+				]
+			),
+			[1] = WtXmlEndTag(
+				{P} name = "td"
+			),
+			[2] = WtSemiPre[
+				[0] = WtSemiPreLine[
+					[0] = WtBold[
+						[0] = WtXmlEndTag(
+							{P} name = "td"
+						)
+					],
+					[1] = WtXmlEndTag(
+						{P} name = "tr"
+					)
+				]
+			]
+		]
+	)
+)

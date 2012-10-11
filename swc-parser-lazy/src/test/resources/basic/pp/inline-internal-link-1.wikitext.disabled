@@ -1,0 +1,30 @@
+[[Link!
+
+[[File:Image.png|Title]
+
+[[File:Image.png|1000000000000000000xpx]]
+
+[[File:Image.png|frame
+	|10x20px
+	|alt=Alternativer Text
+	|15xpx
+	|link=http://example.com
+	|x15px<!-- Comment -->
+	|top
+	|alt=Alternativer alternativer Text
+	|Title]]
+
+[[File:Image.png]]
+[[File:Image.png|invisible|visible]]
+[[File:Image.png|link=Some Page Title|Title]]
+[[File:Image.png|link=http://example.com|Title]]
+
+[[Hallo|arg0]]
+[[Hallo|arg0|http://blub.com]]
+[[Hallo|arg0|[http://blub.com]]]
+[[Hallo|arg0|[http://bl|ub.com]]]
+
+[[Hallo]]
+text a[[Hallo]] text
+text [[Hallo]]z text
+text a[[Hallo]]z text

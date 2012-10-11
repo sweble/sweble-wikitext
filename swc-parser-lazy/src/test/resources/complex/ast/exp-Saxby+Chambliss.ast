@@ -2250,7 +2250,16 @@ WtParsedWikitextPage(
 								[1] = WtXmlAttribute(
 									{P} name = "title"
 									{P} rtd = RTD[ " title=\"" <o> "\"" ]
-									value = WtValue[ [0] = "This claim needs references to reliable sources\uE0008\uE001 from December 2008" ]
+									value = WtValue[
+										[0] = "This claim needs references to reliable sources",
+										[1] = WtTagExtension(
+											{P} name = "nowiki"
+											{P} rtd = RTD[ "<nowiki" <o> "/>" <o> "" ]
+											xmlAttributes = WtXmlAttributes[],
+											body = -
+										),
+										[2] = " from December 2008"
+									]
 								),
 								[2] = WtXmlAttribute(
 									{P} name = "style"
@@ -2371,7 +2380,16 @@ WtParsedWikitextPage(
 									[0] = WtXmlAttribute(
 										{P} name = "class"
 										{P} rtd = RTD[ " class=\"" <o> "\"" ]
-										value = WtValue[ [0] = "rellink\uE00010\uE001relarticle mainarticle" ]
+										value = WtValue[
+											[0] = "rellink",
+											[1] = WtTagExtension(
+												{P} name = "nowiki"
+												{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+												xmlAttributes = WtXmlAttributes[],
+												body = WtTagExtensionBody(" ")
+											),
+											[2] = "relarticle mainarticle"
+										]
 									)
 								],
 								body = WtBody[
@@ -2559,7 +2577,16 @@ WtParsedWikitextPage(
 									[0] = WtXmlAttribute(
 										{P} name = "class"
 										{P} rtd = RTD[ " class=\"" <o> "\"" ]
-										value = WtValue[ [0] = "rellink\uE00015\uE001relarticle mainarticle" ]
+										value = WtValue[
+											[0] = "rellink",
+											[1] = WtTagExtension(
+												{P} name = "nowiki"
+												{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+												xmlAttributes = WtXmlAttributes[],
+												body = WtTagExtensionBody(" ")
+											),
+											[2] = "relarticle mainarticle"
+										]
 									)
 								],
 								body = WtBody[
@@ -3244,7 +3271,16 @@ WtParsedWikitextPage(
 					[0] = WtXmlAttribute(
 						{P} name = "class"
 						{P} rtd = RTD[ " class=\"" <o> "\"" ]
-						value = WtValue[ [0] = "rellink\uE00041\uE001boilerplate seealso" ]
+						value = WtValue[
+							[0] = "rellink",
+							[1] = WtTagExtension(
+								{P} name = "nowiki"
+								{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtTagExtensionBody(" ")
+							),
+							[2] = "boilerplate seealso"
+						]
 					)
 				],
 				body = WtBody[
@@ -4524,7 +4560,16 @@ WtParsedWikitextPage(
 									[0] = WtXmlAttribute(
 										{P} name = "style"
 										{P} rtd = RTD[ " style=\"" <o> "\"" ]
-										value = WtValue[ [0] = "background-color: \uE00045\uE001; width: 5px;" ]
+										value = WtValue[
+											[0] = "background-color: ",
+											[1] = WtTagExtension(
+												{P} name = "nowiki"
+												{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+												xmlAttributes = WtXmlAttributes[],
+												body = WtTagExtensionBody("#FF3333")
+											),
+											[2] = "; width: 5px;"
+										]
 									)
 								],
 								body = WtBody[ [0] = WtNewline("\n") ]
@@ -4649,7 +4694,16 @@ WtParsedWikitextPage(
 									[0] = WtXmlAttribute(
 										{P} name = "style"
 										{P} rtd = RTD[ " style=\"" <o> "\"" ]
-										value = WtValue[ [0] = "background-color: \uE00046\uE001; width: 5px;" ]
+										value = WtValue[
+											[0] = "background-color: ",
+											[1] = WtTagExtension(
+												{P} name = "nowiki"
+												{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+												xmlAttributes = WtXmlAttributes[],
+												body = WtTagExtensionBody("#3333FF")
+											),
+											[2] = "; width: 5px;"
+										]
 									)
 								],
 								body = WtBody[ [0] = WtNewline("\n") ]

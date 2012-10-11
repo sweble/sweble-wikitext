@@ -1,0 +1,13 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtTable(
+		xmlAttributes = WtXmlAttributes[
+			[0] = WtXmlAttribute(
+				{P} name = "x"
+				value = WtValue[ [0] = "&x" ]
+			)
+		],
+		body = WtBody[]
+	)
+)

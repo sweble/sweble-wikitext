@@ -37,6 +37,6 @@ public final class TypedWtAstPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		new WtPrinter(out).go((WtNode) ast);
+		new WtAstPrinter(out).go((WtNode) ast);
 	}
 }

@@ -100,4 +100,9 @@ public final class FullParser
 		
 		return userProcessed;
 	}
+	
+	public ParserConfig getParserConfig()
+	{
+		return parserConfig;
+	}
 }

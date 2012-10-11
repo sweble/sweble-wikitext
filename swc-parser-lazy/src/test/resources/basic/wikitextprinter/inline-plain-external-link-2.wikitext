@@ -1,6 +1,0 @@
-----
-http://example.com
-
-----
-before mail:mustermann@musterfirma.com after
-

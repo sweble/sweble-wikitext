@@ -1,4 +1,0 @@
-<pre>
-	Block
-</pre>
-

@@ -17,7 +17,7 @@
 
 module org.sweble.wikitext.parser.parser.Whitespace;
 
-import org.sweble.wikitext.parser.parser.ParserEntity;
+import org.sweble.wikitext.parser.utils.ParserEntity;
 
 modify org.sweble.wikitext.parser.utils.Whitespace;
 

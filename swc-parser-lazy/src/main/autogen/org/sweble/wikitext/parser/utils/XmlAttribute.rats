@@ -29,6 +29,7 @@
 
 module org.sweble.wikitext.parser.utils.XmlAttribute(WS);
 
+import org.sweble.wikitext.parser.utils.ParserEntity;
 import org.sweble.wikitext.parser.utils.XmlName;
 import org.sweble.wikitext.parser.utils.XmlReference;
 import WS;
@@ -154,10 +155,11 @@ private inline WtNode ValueSqChoice =
       yyValue = nf.text(string);
     }
   / &'&' XmlReference
+  / &'\uE000' WtParserEntity
 ;
 
 private transient String ValueSqString =
-  ( !XmlAttrValueStopper ![<'&] _ )+
+  ( !XmlAttrValueStopper ![<'&\uE000] _ )+
 ;
 
 
@@ -178,10 +180,11 @@ private inline WtNode ValueDqChoice =
       yyValue = nf.text(string);
     }
   / &'&' XmlReference
+  / &'\uE000' WtParserEntity
 ;
 
 private transient String ValueDqString =
-  ( !XmlAttrValueStopper ![<"&] _ )+
+  ( !XmlAttrValueStopper ![<"&\uE000] _ )+
 ;
 
 
@@ -202,6 +205,7 @@ private inline WtNode ValueNqChoice =
       yyValue = nf.text(string);
     }
   / &'&' XmlReference
+  / &'\uE000' WtParserEntity
 ;
 
 private transient String ValueNqString =

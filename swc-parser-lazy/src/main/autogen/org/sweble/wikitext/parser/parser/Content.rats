@@ -46,7 +46,7 @@ import org.sweble.wikitext.parser.utils.XmlReference;
 import org.sweble.wikitext.parser.parser.ExternalLink;
 import org.sweble.wikitext.parser.parser.InternalLink;
 import org.sweble.wikitext.parser.parser.PageSwitch;
-import org.sweble.wikitext.parser.parser.ParserEntity;
+import org.sweble.wikitext.parser.utils.ParserEntity;
 import org.sweble.wikitext.parser.parser.Signature;
 import org.sweble.wikitext.parser.parser.Ticks;
 import org.sweble.wikitext.parser.parser.Url;

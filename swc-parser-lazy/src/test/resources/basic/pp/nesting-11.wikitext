@@ -1,0 +1,7 @@
+
+{| border="1"
+ |1<pre>T|a
+|b</pre>
+ |2<span>X</span>Y
+ |3
+ |}

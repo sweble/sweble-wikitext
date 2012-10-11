@@ -1,0 +1,597 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtTemplate(
+		{P} precededByNewline = false
+		name = WtName[ [0] = "WikiProjectBannerShell" ],
+		args = WtTemplateArguments[
+			[0] = WtTemplateArgument(
+				name = WtName[ [0] = "1" ],
+				value = WtValue[
+					[0] = WtTemplate(
+						{P} precededByNewline = true
+						name = WtName[ [0] = "WikiProject Sussex" ],
+						args = WtTemplateArguments[
+							[0] = WtTemplateArgument(
+								name = WtName[ [0] = "class" ],
+								value = WtValue[ [0] = "start" ]
+							),
+							[1] = WtTemplateArgument(
+								name = WtName[ [0] = "importance" ],
+								value = WtValue[ [0] = "Mid" ]
+							),
+							[2] = WtTemplateArgument(
+								name = WtName[ [0] = "unref" ],
+								value = WtValue[]
+							)
+						]
+					),
+					[1] = WtTemplate(
+						{P} precededByNewline = true
+						name = WtName[ [0] = "WikiProject Architecture" ],
+						args = WtTemplateArguments[
+							[0] = WtTemplateArgument(
+								name = WtName[ [0] = "class" ],
+								value = WtValue[ [0] = "start" ]
+							),
+							[1] = WtTemplateArgument(
+								name = WtName[ [0] = "importance" ],
+								value = WtValue[ [0] = "mid" ]
+							)
+						]
+					),
+					[2] = WtTemplate(
+						{P} precededByNewline = true
+						name = WtName[ [0] = "WPMILHIST" ],
+						args = WtTemplateArguments[
+							[0] = WtTemplateArgument(
+								name = WtName[ [0] = "class" ],
+								value = WtValue[
+									[0] = "start",
+									[1] = WtXmlComment(
+										{P} content = " B-Class checklist "
+										{P} prefix = ""
+										{P} suffix = "\n"
+									),
+									[2] = WtXmlComment(
+										{P} content = " 1. It is suitably referenced, and all \nmajor points are appropriately cited. "
+										{P} prefix = ""
+										{P} suffix = ""
+									)
+								]
+							),
+							[1] = WtTemplateArgument(
+								name = WtName[ [0] = "B-Class-1" ],
+								value = WtValue[
+									[0] = "no",
+									[1] = WtXmlComment(
+										{P} content = " 2. It reasonably covers the topic, and \ndoes not contain major omissions or inaccuracies. "
+										{P} prefix = ""
+										{P} suffix = "\n"
+									)
+								]
+							),
+							[2] = WtTemplateArgument(
+								name = WtName[ [0] = "B-Class-2" ],
+								value = WtValue[
+									[0] = WtXmlComment(
+										{P} content = " 3. It has a defined structure, including \na lead section and one or more sections of content. "
+										{P} prefix = ""
+										{P} suffix = "\n"
+									)
+								]
+							),
+							[3] = WtTemplateArgument(
+								name = WtName[ [0] = "B-Class-3" ],
+								value = WtValue[
+									[0] = WtXmlComment(
+										{P} content = " 4. It is free from major grammatical errors. "
+										{P} prefix = ""
+										{P} suffix = "\n"
+									)
+								]
+							),
+							[4] = WtTemplateArgument(
+								name = WtName[ [0] = "B-Class-4" ],
+								value = WtValue[
+									[0] = WtXmlComment(
+										{P} content = " 5. It contains appropriate supporting materials, \nsuch as an infobox, images, or diagrams. "
+										{P} prefix = ""
+										{P} suffix = "\n"
+									)
+								]
+							),
+							[5] = WtTemplateArgument(
+								name = WtName[ [0] = "B-Class-5" ],
+								value = WtValue[
+									[0] = "no infobox, no plan or map",
+									[1] = WtXmlComment(
+										{P} content = " Task force tags "
+										{P} prefix = ""
+										{P} suffix = "\n"
+									)
+								]
+							),
+							[6] = WtTemplateArgument(
+								name = WtName[ [0] = "British-task-force" ],
+								value = WtValue[ [0] = "yes" ]
+							),
+							[7] = WtTemplateArgument(
+								name = WtName[ [0] = "Fortifications-task-force" ],
+								value = WtValue[ [0] = "yes" ]
+							),
+							[8] = WtTemplateArgument(
+								name = WtName[ [0] = "Medieval-task-force" ],
+								value = WtValue[ [0] = "yes" ]
+							),
+							[9] = WtTemplateArgument(
+								name = WtName[ [0] = "Technology-task-force" ],
+								value = WtValue[ [0] = "yes" ]
+							),
+							[10] = WtTemplateArgument(
+								name = WtName[ [0] = "Early-Modern-task-force" ],
+								value = WtValue[ [0] = "yes" ]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[1] = WtHorizontalRule(),
+	[2] = "Okay, what's the problem? Zvesoulis put a",
+	[3] = WtTagExtension(
+		{P} name = "nowiki"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtTagExtensionBody("{{cleanup}}")
+	),
+	[4] = "tag on the article, but I've read the thing through several times and don't see a problem warranting the tag. Moreover, this is the very first entry in the talk page which strikes me as meaning we have a ways to go before we start throwing tags around. I removed the tag and made a couple of other edits. If anyone has any thoughts on what needs to be",
+	[5] = WtItalics[ [0] = "cleaned up" ],
+	[6] = "please say something here and/or let me know. Thanks.",
+	[7] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		target = WtPageName("User:Duckecho"),
+		title = WtLinkTitle[ [0] = "Duckecho" ]
+	),
+	[8] = "(",
+	[9] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		target = WtPageName("User talk:Duckecho"),
+		title = WtLinkTitle[ [0] = "Talk)" ]
+	),
+	[10] = "7 July 2005 19:52 (UTC)The history section states that the castle was first built in 1068 and that it was built during Edward the Confessor's reign.  Which is correct?",
+	[11] = WtSection(
+		{P} level = 2
+		heading = WtHeading[ [0] = "Ghosts" ],
+		body = WtBody[
+			[0] = "What about the 4 ghosts living in the castle? there should be some reference",
+			[1] = WtXmlElement(
+				{P} name = "span"
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "style"
+						value = WtValue[ [0] = "font-size: smaller;" ]
+					),
+					[1] = WtXmlAttribute(
+						{P} name = "class"
+						value = WtValue[ [0] = "autosigned" ]
+					)
+				],
+				body = WtBody[
+					[0] = "\u2014Preceding",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Wikipedia:Signatures"),
+						title = WtLinkTitle[ [0] = "unsigned" ]
+					),
+					[2] = "comment added by",
+					[3] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Special:Contributions/88.17.252.156"),
+						title = WtLinkTitle[ [0] = "88.17.252.156" ]
+					),
+					[4] = "(",
+					[5] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("User talk:88.17.252.156"),
+						title = WtLinkTitle[ [0] = "talk" ]
+					),
+					[6] = ") 00:33, 8 March 2010 (UTC)"
+				]
+			),
+			[2] = WtXmlComment(
+				{P} content = " Template:UnsignedIP "
+				{P} prefix = ""
+				{P} suffix = ""
+			),
+			[3] = WtXmlComment(
+				{P} content = "Autosigned by SineBot"
+				{P} prefix = ""
+				{P} suffix = ""
+			)
+		]
+	),
+	[12] = WtSection(
+		{P} level = 2
+		heading = WtHeading[ [0] = "Automated peer review" ],
+		body = WtBody[
+			[0] = WtTemplate(
+				{P} precededByNewline = true
+				name = WtName[
+					[0] = "#ifeq:",
+					[1] = WtTemplateParameter(
+						{P} precededByNewline = false
+						name = WtName[ [0] = "name" ],
+						defaultValue = -,
+						garbage = WtTemplateArguments[]
+					)
+				],
+				args = WtTemplateArguments[
+					[0] = WtTemplateArgument(
+						name = -,
+						value = WtValue[ [0] = "Arundel Castle" ]
+					),
+					[1] = WtTemplateArgument(
+						name = -,
+						value = WtValue[ [0] = "[[User:MortimerCat|MortimerCat]] ([[User talk:MortimerCat|talk]]) 00:02, 14 April 2008 (UTC)" ]
+					)
+				]
+			),
+			[1] = "The following suggestions were generated by a semi-automatic",
+			[2] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				target = WtPageName("User:AndyZ/peerreviewer"),
+				title = WtLinkTitle[ [0] = "javascript program" ]
+			),
+			[3] = ", and might not be applicable for the article in question.",
+			[4] = WtUnorderedList[
+				[0] = WtListItem[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						name = WtName[ [0] = "Done" ],
+						args = WtTemplateArguments[]
+					),
+					[1] = "Per",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Wikipedia:Only make links that are relevant to the context"),
+						title = WtLinkTitle[ [0] = "Wikipedia:Context" ]
+					),
+					[3] = "and",
+					[4] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Wikipedia:Manual of Style (dates and numbers)"),
+						title = WtLinkTitle[ [0] = "Wikipedia:Manual of Style (dates)" ]
+					),
+					[5] = ", months and days of the week generally should not be linked. Years, decades, and centuries can be linked if they provide",
+					[6] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("WP:CONTEXT"),
+						title = WtLinkTitle[ [0] = "context" ]
+					),
+					[7] = "for the article.",
+					[8] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								target = WtPageName("User:AndyZ/G#contxt"),
+								title = WtLinkTitle[ [0] = "[?" ]
+							),
+							[1] = "]"
+						]
+					)
+				],
+				[1] = WtListItem[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						name = WtName[ [0] = "Not done" ],
+						args = WtTemplateArguments[]
+					),
+					[1] = "Per",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Wikipedia:What is a featured article?"),
+						title = -
+					),
+					[3] = ",",
+					[4] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("WP:IMAGE"),
+						title = WtLinkTitle[ [0] = "Images" ]
+					),
+					[5] = "should have concise captions.",
+					[6] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								target = WtPageName("User:AndyZ/G#caption"),
+								title = WtLinkTitle[ [0] = "[?" ]
+							),
+							[1] = "]"
+						]
+					)
+				],
+				[2] = WtListItem[
+					[0] = WtBold[ [0] = "NA" ],
+					[1] = "You may wish to consider adding an appropriate",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("WP:INFOBOX"),
+						title = WtLinkTitle[ [0] = "infobox" ]
+					),
+					[3] = "for this article, if one exists relating to the topic of the article.",
+					[4] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								target = WtPageName("User:AndyZ/G#infobox"),
+								title = WtLinkTitle[ [0] = "[?" ]
+							),
+							[1] = "]"
+						]
+					),
+					[5] = "(Note that there might not be an applicable infobox; remember that these suggestions are not generated manually)"
+				],
+				[3] = WtListItem[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						name = WtName[ [0] = "Done" ],
+						args = WtTemplateArguments[]
+					),
+					[1] = "As per",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Wikipedia:Manual of Style (dates and numbers)"),
+						title = WtLinkTitle[ [0] = "Wikipedia:Manual of Style (dates)" ]
+					),
+					[3] = ", dates shouldn't use",
+					[4] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[ [0] = "th" ]
+					),
+					[5] = "; for example, instead of (if such appeared in the article) using",
+					[6] = WtItalics[
+						[0] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							target = WtPageName("January 30"),
+							title = WtLinkTitle[
+								[0] = "January 30",
+								[1] = WtXmlElement(
+									{P} name = "sup"
+									xmlAttributes = WtXmlAttributes[],
+									body = WtBody[ [0] = "th" ]
+								)
+							]
+						),
+						[1] = "was a great day"
+					],
+					[7] = ", use",
+					[8] = WtItalics[
+						[0] = WtInternalLink(
+							{P} postfix = ""
+							{P} prefix = ""
+							target = WtPageName("January 30"),
+							title = -
+						),
+						[1] = "was a great day"
+					],
+					[9] = ".",
+					[10] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								target = WtPageName("User:AndyZ/G#dateth"),
+								title = WtLinkTitle[ [0] = "[?" ]
+							),
+							[1] = "]"
+						]
+					)
+				],
+				[4] = WtListItem[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						name = WtName[ [0] = "Done" ],
+						args = WtTemplateArguments[]
+					),
+					[1] = "Per",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("Wikipedia:Manual of Style (headings)"),
+						title = -
+					),
+					[3] = ", headings generally do not start with articles ('the', 'a(n)'). For example, if there was a section called",
+					[4] = WtItalics[
+						[0] = WtTagExtension(
+							{P} name = "nowiki"
+							xmlAttributes = WtXmlAttributes[],
+							body = WtTagExtensionBody("==The Biography==")
+						)
+					],
+					[5] = ", it should be changed to",
+					[6] = WtItalics[
+						[0] = WtTagExtension(
+							{P} name = "nowiki"
+							xmlAttributes = WtXmlAttributes[],
+							body = WtTagExtensionBody("==Biography==")
+						)
+					],
+					[7] = ".",
+					[8] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								target = WtPageName("User:AndyZ/G#headingthe"),
+								title = WtLinkTitle[ [0] = "[?" ]
+							),
+							[1] = "]"
+						]
+					)
+				],
+				[5] = WtListItem[
+					[0] = WtTemplate(
+						{P} precededByNewline = false
+						name = WtName[ [0] = "Not done" ],
+						args = WtTemplateArguments[]
+					),
+					[1] = "Watch for",
+					[2] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("User:Tony1/How_to_satisfy_Criterion_2a#Redundancy"),
+						title = WtLinkTitle[ [0] = "redundancies" ]
+					),
+					[3] = "that make the article too wordy instead of being crisp and concise. (You may wish to try Tony1's",
+					[4] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("User:Tony1/How to satisfy Criterion 1a: redundancy exercises"),
+						title = WtLinkTitle[ [0] = "redundancy exercises" ]
+					),
+					[5] = ".)",
+					[6] = WtUnorderedList[
+						[0] = WtListItem[
+							[0] = "Vague terms of size often are unnecessary and redundant -  \u201Csome\u201D, \u201Ca variety/number/majority of\u201D, \u201Cseveral\u201D, \u201Ca few\u201D, \u201Cmany\u201D, \u201Cany\u201D, and \u201Call\u201D. For example, \u201C",
+							[1] = WtXmlElement(
+								{P} name = "font"
+								xmlAttributes = WtXmlAttributes[
+									[0] = WtXmlAttribute(
+										{P} name = "color"
+										value = WtValue[ [0] = "red" ]
+									)
+								],
+								body = WtBody[
+									[0] = WtXmlElement(
+										{P} name = "s"
+										xmlAttributes = WtXmlAttributes[],
+										body = WtBody[ [0] = "All" ]
+									)
+								]
+							),
+							[2] = "pigs are pink, so we thought of",
+							[3] = WtXmlElement(
+								{P} name = "font"
+								xmlAttributes = WtXmlAttributes[
+									[0] = WtXmlAttribute(
+										{P} name = "color"
+										value = WtValue[ [0] = "red" ]
+									)
+								],
+								body = WtBody[
+									[0] = WtXmlElement(
+										{P} name = "s"
+										xmlAttributes = WtXmlAttributes[],
+										body = WtBody[ [0] = "a number of" ]
+									)
+								]
+							),
+							[4] = "ways to turn them green.\u201D"
+						],
+						[1] = WtListItem[
+							[0] = "\u201CIn",
+							[1] = WtXmlElement(
+								{P} name = "font"
+								xmlAttributes = WtXmlAttributes[
+									[0] = WtXmlAttribute(
+										{P} name = "color"
+										value = WtValue[ [0] = "red" ]
+									)
+								],
+								body = WtBody[
+									[0] = WtXmlElement(
+										{P} name = "s"
+										xmlAttributes = WtXmlAttributes[],
+										body = WtBody[ [0] = "the year [of]" ]
+									)
+								]
+							),
+							[2] = "1138\u201D"
+						]
+					]
+				],
+				[6] = WtListItem[
+					[0] = "Please ensure that the article has gone through a thorough copyediting so that it exemplifies some of",
+					[1] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("WP:WIAFA"),
+						title = WtLinkTitle[ [0] = "Wikipedia's best work" ]
+					),
+					[2] = ". See also",
+					[3] = WtInternalLink(
+						{P} postfix = ""
+						{P} prefix = ""
+						target = WtPageName("User:Tony1/How to satisfy Criterion 1a"),
+						title = -
+					),
+					[4] = ".",
+					[5] = WtXmlElement(
+						{P} name = "sup"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtInternalLink(
+								{P} postfix = ""
+								{P} prefix = ""
+								target = WtPageName("User:AndyZ/G#copyedit"),
+								title = WtLinkTitle[ [0] = "[?" ]
+							),
+							[1] = "]"
+						]
+					)
+				]
+			],
+			[5] = "You may wish to browse through",
+			[6] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				target = WtPageName("User:AndyZ/Suggestions"),
+				title = -
+			),
+			[7] = "for further ideas. Thanks,",
+			[8] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				target = WtPageName("User:MortimerCat"),
+				title = WtLinkTitle[ [0] = "MortimerCat" ]
+			),
+			[9] = "(",
+			[10] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				target = WtPageName("User talk:MortimerCat"),
+				title = WtLinkTitle[ [0] = "talk" ]
+			),
+			[11] = ") 00:02, 14 April 2008 (UTC)"
+		]
+	)
+)

@@ -25,7 +25,7 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
-import org.sweble.wikitext.parser.utils.WtPrinter;
+import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -342,7 +342,7 @@ public final class ElementScopeStack
 				s.append("\n");
 			}
 			s.append("Content:\n");
-			String c = WtPrinter.print(content);
+			String c = WtAstPrinter.print(content);
 			c = StringUtils.indent(c.trim(), "  | ");
 			s.append(c);
 			s.append("\n");

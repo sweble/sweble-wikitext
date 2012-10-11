@@ -71,7 +71,7 @@ public class RtDataPrinter
 	
 	protected void printText(WtText text)
 	{
-		p.print(text.getContent());
+		p.verbatim(text.getContent());
 	}
 	
 	protected void printNodeList(WtNodeList node)
@@ -101,7 +101,7 @@ public class RtDataPrinter
 		}
 		else
 		{
-			p.print(contentNode.getContent());
+			p.verbatim(contentNode.getContent());
 		}
 	}
 	
@@ -133,7 +133,7 @@ public class RtDataPrinter
 			}
 			else
 			{
-				p.print(String.valueOf(o));
+				p.verbatim(String.valueOf(o));
 			}
 		}
 	}

@@ -15022,7 +15022,16 @@ WtParsedWikitextPage(
 					[0] = WtXmlAttribute(
 						{P} name = "class"
 						{P} rtd = RTD[ " class=\"" <o> "\"" ]
-						value = WtValue[ [0] = "rellink\uE000128\uE001relarticle mainarticle" ]
+						value = WtValue[
+							[0] = "rellink",
+							[1] = WtTagExtension(
+								{P} name = "nowiki"
+								{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtTagExtensionBody(" ")
+							),
+							[2] = "relarticle mainarticle"
+						]
 					)
 				],
 				body = WtBody[

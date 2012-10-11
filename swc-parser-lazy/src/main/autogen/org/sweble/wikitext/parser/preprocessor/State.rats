@@ -68,6 +68,11 @@ body
   {
     return getState().hasAtLeastTemplateBraces(count);
   }
+
+  public WtNode getEntity(int id)
+  {
+    throw new InternalError("Entities should never occur in pre-processing!");
+  }
 }
 
 option stateful(WikitextPreprocessorState);
