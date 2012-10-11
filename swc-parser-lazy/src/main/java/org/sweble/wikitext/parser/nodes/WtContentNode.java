@@ -220,17 +220,7 @@ public interface WtContentNode
 			
 			for (Iterator<WtNode> i = this.iterator(); i.hasNext();)
 			{
-				WtNode node = i.next();
-				if (node == null)
-				{
-					// TODO: Remove this case!
-					out.append("null");
-				}
-				else
-				{
-					node.toString(out);
-				}
-				
+				i.next().toString(out);
 				if (i.hasNext())
 					out.append(", ");
 			}
