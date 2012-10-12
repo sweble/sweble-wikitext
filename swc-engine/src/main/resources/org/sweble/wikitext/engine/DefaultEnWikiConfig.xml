@@ -905,7 +905,7 @@
     </pfnGroups>
     <tagExtGroups>
         <tagExtGroup name="Built-in Tag Extensions">
-            <tagExt class="org.sweble.wikitext.engine.ext.builtin.BuiltInTagExtensions$TagExtensionNoWiki"/>
+            <tagExt class="org.sweble.wikitext.engine.ext.builtin.BuiltInTagExtensions$TagExtensionNowiki"/>
             <tagExt class="org.sweble.wikitext.engine.ext.builtin.BuiltInTagExtensions$TagExtensionPre"/>
         </tagExtGroup>
         <tagExtGroup name="Extension - Math">

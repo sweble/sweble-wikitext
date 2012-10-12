@@ -34,6 +34,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.ValidationEvent;
+import javax.xml.bind.ValidationEventHandler;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -661,6 +663,16 @@ public class WikiConfigImpl
 		
 		Marshaller m = context.createMarshaller();
 		
+		m.setEventHandler(new ValidationEventHandler()
+		{
+			@Override
+			public boolean handleEvent(ValidationEvent event)
+			{
+				System.err.println(event);
+				return true;
+			}
+		});
+		
 		try
 		{
 			m.setProperty(
@@ -680,23 +692,46 @@ public class WikiConfigImpl
 	
 	public static WikiConfigImpl load(File file) throws JAXBException
 	{
-		return (WikiConfigImpl) createUnmarshaller().unmarshal(file);
+		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(file));
 	}
 	
 	public static WikiConfigImpl load(Reader reader) throws JAXBException
 	{
-		return (WikiConfigImpl) createUnmarshaller().unmarshal(reader);
+		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(reader));
 	}
 	
 	public static WikiConfigImpl load(InputStream in) throws JAXBException
 	{
-		return (WikiConfigImpl) createUnmarshaller().unmarshal(in);
+		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(in));
+	}
+	
+	private static WikiConfigImpl finishImport(WikiConfigImpl config)
+	{
+		for (ParserFunctionBase pf : config.getParserFunctions())
+			pf.setWikiConfig(config);
+		
+		for (TagExtensionBase te : config.getTagExtensions())
+			te.setWikiConfig(config);
+		
+		return config;
 	}
 	
 	private static Unmarshaller createUnmarshaller() throws JAXBException
 	{
 		JAXBContext context = JAXBContext.newInstance(WikiConfigImpl.class);
+		
 		Unmarshaller m = context.createUnmarshaller();
+		
+		m.setEventHandler(new ValidationEventHandler()
+		{
+			@Override
+			public boolean handleEvent(ValidationEvent event)
+			{
+				// We don't want to recover!
+				return false;
+			}
+		});
+		
 		return m;
 	}
 	

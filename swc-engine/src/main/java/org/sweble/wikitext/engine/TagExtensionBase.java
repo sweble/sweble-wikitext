@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -42,9 +43,12 @@ public abstract class TagExtensionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final WikiConfig wikiConfig;
-	
 	private final String id;
+	
+	/**
+	 * Can't be final since it cannot be set during un-marshaling.
+	 */
+	private WikiConfig wikiConfig;
 	
 	// =========================================================================
 	
@@ -59,6 +63,14 @@ public abstract class TagExtensionBase
 	protected EngineNodeFactory nf()
 	{
 		return wikiConfig.getNodeFactory();
+	}
+	
+	/**
+	 * For internal use only!
+	 */
+	public void setWikiConfig(WikiConfig wikiConfig)
+	{
+		this.wikiConfig = wikiConfig;
 	}
 	
 	public WikiConfig getWikiConfig()
@@ -137,6 +149,10 @@ public abstract class TagExtensionBase
 			extends
 				XmlAdapter<TagExtensionRef, TagExtensionBase>
 	{
+		public TagExtensionAdapter()
+		{
+		}
+		
 		@Override
 		public TagExtensionRef marshal(TagExtensionBase v) throws Exception
 		{
@@ -146,7 +162,10 @@ public abstract class TagExtensionBase
 		@Override
 		public TagExtensionBase unmarshal(TagExtensionRef v) throws Exception
 		{
-			return (TagExtensionBase) Class.forName(v.className).newInstance();
+			Class<?> clazz = Class.forName(v.className);
+			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
+			// We don't have a wiki config object yet :(
+			return (TagExtensionBase) ctor.newInstance((WikiConfig) null);
 		}
 	}
 }

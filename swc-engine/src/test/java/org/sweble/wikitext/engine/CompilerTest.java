@@ -24,7 +24,7 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.WtPrinter;
+import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 public class CompilerTest
 		extends
@@ -70,6 +70,6 @@ public class CompilerTest
 						"    WtText(\" as one\")\n" +
 						"  ])\n" +
 						"])\n",
-				WtPrinter.print(cp.getPage()));
+				WtAstPrinter.print(cp.getPage()));
 	}
 }

@@ -26,7 +26,7 @@ import org.junit.Test;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.CompilerTestBase;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.WtPrinter;
+import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 public class ParserFunctionTest
 		extends
@@ -196,7 +196,7 @@ public class ParserFunctionTest
 		Assert.assertNotNull(preprocessed);
 		Assert.assertEquals(
 				expected,
-				WtPrinter.print(preprocessed.getPage()));
+				WtAstPrinter.print(preprocessed.getPage()));
 	}
 	
 	private void doTest(String namespace, String expected, String page) throws LinkTargetException, IOException, CompilerException

@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import java.io.Serializable;
+import java.lang.reflect.Constructor;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -39,13 +40,16 @@ public abstract class ParserFunctionBase
 {
 	private static final long serialVersionUID = 1L;
 	
-	private final WikiConfig wikiConfig;
-	
 	private final String id;
 	
 	private final PfnArgumentMode argMode;
 	
 	private final boolean pageSwitch;
+	
+	/**
+	 * Can't be final since it cannot be set during un-marshaling.
+	 */
+	private WikiConfig wikiConfig;
 	
 	// =========================================================================
 	
@@ -81,6 +85,14 @@ public abstract class ParserFunctionBase
 	protected EngineNodeFactory nf()
 	{
 		return wikiConfig.getNodeFactory();
+	}
+	
+	/**
+	 * For internal use only!
+	 */
+	public void setWikiConfig(WikiConfig wikiConfig)
+	{
+		this.wikiConfig = wikiConfig;
 	}
 	
 	public WikiConfig getWikiConfig()
@@ -171,6 +183,10 @@ public abstract class ParserFunctionBase
 			extends
 				XmlAdapter<ParserFunctionRef, ParserFunctionBase>
 	{
+		public ParserFunctionAdapter()
+		{
+		}
+		
 		@Override
 		public ParserFunctionRef marshal(ParserFunctionBase v) throws Exception
 		{
@@ -180,7 +196,10 @@ public abstract class ParserFunctionBase
 		@Override
 		public ParserFunctionBase unmarshal(ParserFunctionRef v) throws Exception
 		{
-			return (ParserFunctionBase) Class.forName(v.className).newInstance();
+			Class<?> clazz = Class.forName(v.className);
+			Constructor<?> ctor = clazz.getDeclaredConstructor(WikiConfig.class);
+			// We don't have a wiki config object yet :(
+			return (ParserFunctionBase) ctor.newInstance((WikiConfig) null);
 		}
 	}
 }
