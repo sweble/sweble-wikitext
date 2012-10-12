@@ -98,7 +98,6 @@
               <sources>
                 <source>src/main/autogen</source>
                 <source>src/main/generated</source>
-                <source>src/main/nodes</source>
               </sources>
             </configuration>
           </execution>
@@ -123,25 +122,6 @@
           <strict>true</strict>
         </configuration>
       </plugin>
-
-      <!-- Compile schema files -->
-      <!--
-      <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <configuration>
-          <schemaDirectory>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom</schemaDirectory>
-          <schemaIncludes>
-            <include>xwml-1.0.xsd</include>
-          </schemaIncludes>
-          <generatePackage>org.sweble.wikitext.engine.wom</generatePackage>
-          <generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
-          <catalog>${basedir}/src/main/autogen/org/sweble/wikitext/engine/wom/catalog.xml</catalog>
-          <strict>false</strict>
-          <forceRegenerate>true</forceRegenerate>
-        </configuration>
-      </plugin>
-      -->
 
       <!-- Check and format license headers -->
       <plugin>
