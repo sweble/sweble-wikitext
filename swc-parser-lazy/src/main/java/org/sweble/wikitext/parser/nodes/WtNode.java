@@ -133,8 +133,6 @@ public interface WtNode
 	
 	public static final int NT_ITALICS /* ...................... */= NT_PARSER_BITS + 22;
 	
-	public static final int NT_RAW_LIST_ITEM /* ................ */= NT_PARSER_BITS + 23;
-	
 	public static final int NT_DEFINITION_LIST_DEF /* .......... */= NT_PARSER_BITS + 24;
 	
 	public static final int NT_DEFINITION_LIST /* .............. */= NT_PARSER_BITS + 25;
