@@ -194,6 +194,11 @@ public class WtImageLink
 	
 	private WtLinkOptionAltText alt;
 	
+	public final boolean hasAlt()
+	{
+		return getAlt() != WtLinkOptionAltText.NO_ALT;
+	}
+	
 	public final WtLinkOptionAltText getAlt()
 	{
 		return this.alt;
