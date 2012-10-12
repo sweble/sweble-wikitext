@@ -1,0 +1,2 @@
+<!-- The engine supports this test fully -->
+lowercase

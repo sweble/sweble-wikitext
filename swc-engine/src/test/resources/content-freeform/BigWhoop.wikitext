@@ -1,9 +1,0 @@
-
-Comment upcoming:
-<!-- BigWhoop -->
-
-Transclusion upcoming:
-{{TranscludeMe}}
-
-Private use character upcoming:
-""

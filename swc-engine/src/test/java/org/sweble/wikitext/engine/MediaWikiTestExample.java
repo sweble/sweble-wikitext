@@ -15,56 +15,68 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.engine.ext.parser_functions;
+package org.sweble.wikitext.engine;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
+import org.sweble.wikitext.engine.utils.MediaWikiTestGenerator;
+import org.sweble.wikitext.engine.utils.MediaWikiTestGenerator.TestDesc;
 
 import de.fau.cs.osr.utils.NamedParametrized;
 
 @RunWith(value = NamedParametrized.class)
-public class ParserFunctionIntegrationTest
+public class MediaWikiTestExample
 		extends
 			EngineIntegrationTestBase
 {
-	private static final String FILTER_RX = ".*?\\.wikitext";
+	private static final String FILTER_RX = ".*?\\.mwtest";
 	
-	private static final String INPUT_SUB_DIR = "ext/pfn/wikitext";
-	
-	private static final String EXPECTED_AST_SUB_DIR = "ext/pfn/expanded";
+	private static final String INPUT_SUB_DIR = "mediawiki";
 	
 	// =========================================================================
 	
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return EngineIntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		List<File> testCollectionFiles =
+				getResources().gather(INPUT_SUB_DIR, FILTER_RX, true);
+		
+		return MediaWikiTestGenerator.enumerateInputs(testCollectionFiles);
 	}
 	
 	// =========================================================================
 	
-	private final File inputFile;
+	@SuppressWarnings("unused")
+	private final String name;
+	
+	@SuppressWarnings("unused")
+	private final TestDesc test;
+	
+	@SuppressWarnings("unused")
+	private final Map<String, String> articles;
 	
 	// =========================================================================
 	
-	public ParserFunctionIntegrationTest(String title, File inputFile)
+	public MediaWikiTestExample(
+			String name,
+			TestDesc test,
+			Map<String, String> articles)
 	{
-		this.inputFile = inputFile;
+		this.name = name;
+		this.test = test;
+		this.articles = articles;
 	}
-	
-	// =========================================================================
 	
 	@Test
+	@Ignore
 	public void testAstAfterPostprocessingMatchesReference() throws Exception
 	{
-		expandPrintAndCompare(
-				inputFile,
-				INPUT_SUB_DIR,
-				EXPECTED_AST_SUB_DIR);
 	}
 }

@@ -1274,7 +1274,7 @@ public final class ExpansionVisitor
 		return expFrame.getWikiConfig();
 	}
 	
-	private Compiler getCompiler()
+	private WtEngine getCompiler()
 	{
 		return expFrame.getCompiler();
 	}

@@ -1,0 +1,9 @@
+<!-- The engine DOES NOT YET support this test fully -->
+
+{{#iferror: {{#expr: 1 + 2 }} | error | correct }}
+{{#iferror: {{#expr: 1 + X }} | error | correct }}
+{{#iferror: {{#expr: 1 + 2 }} | error }}
+{{#iferror: {{#expr: 1 + X }} | error }}
+{{#iferror: {{#expr: 1 + 2 }} }}
+{{#iferror: {{#expr: 1 + X }} }} <!-- NOT SUPPORTED YET -->
+{{#iferror: <strong class="error">a</strong> | error | correct }} <!-- NOT SUPPORTED YET -->

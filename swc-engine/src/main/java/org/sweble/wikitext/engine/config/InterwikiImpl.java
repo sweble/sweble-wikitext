@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.UrlService;
+import org.sweble.wikitext.engine.utils.UrlService;
 
 @XmlType(
 		name = "interwiki",

@@ -22,6 +22,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
+import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+import org.sweble.wikitext.engine.utils.EngineTextUtils;
 
 public class EngineTextUtilsTest
 {

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.engine.ext.parser_functions;
+package org.sweble.wikitext.engine;
 
 import java.io.File;
 import java.util.List;
@@ -28,15 +28,15 @@ import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
 import de.fau.cs.osr.utils.NamedParametrized;
 
 @RunWith(value = NamedParametrized.class)
-public class ParserFunctionIntegrationTest
+public class EngineIntegrationTest
 		extends
 			EngineIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "ext/pfn/wikitext";
+	private static final String INPUT_SUB_DIR = "engine/exp/wikitext";
 	
-	private static final String EXPECTED_AST_SUB_DIR = "ext/pfn/expanded";
+	private static final String EXPECTED_AST_SUB_DIR = "engine/exp/expanded";
 	
 	// =========================================================================
 	
@@ -52,7 +52,7 @@ public class ParserFunctionIntegrationTest
 	
 	// =========================================================================
 	
-	public ParserFunctionIntegrationTest(String title, File inputFile)
+	public EngineIntegrationTest(String title, File inputFile)
 	{
 		this.inputFile = inputFile;
 	}

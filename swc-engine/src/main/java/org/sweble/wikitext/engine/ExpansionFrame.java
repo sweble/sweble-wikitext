@@ -24,6 +24,7 @@ import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.lognodes.LogContainer;
+import org.sweble.wikitext.engine.utils.UrlService;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtValue;
@@ -32,7 +33,7 @@ import de.fau.cs.osr.ptk.common.Warning;
 
 public class ExpansionFrame
 {
-	private final Compiler compiler;
+	private final WtEngine compiler;
 	
 	private final ExpansionFrame rootFrame;
 	
@@ -63,7 +64,7 @@ public class ExpansionFrame
 	// =========================================================================
 	
 	public ExpansionFrame(
-			Compiler compiler,
+			WtEngine compiler,
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
@@ -95,7 +96,7 @@ public class ExpansionFrame
 	}
 	
 	public ExpansionFrame(
-			Compiler compiler,
+			WtEngine compiler,
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
@@ -132,7 +133,7 @@ public class ExpansionFrame
 	
 	// =========================================================================
 	
-	public Compiler getCompiler()
+	public WtEngine getCompiler()
 	{
 		return compiler;
 	}
