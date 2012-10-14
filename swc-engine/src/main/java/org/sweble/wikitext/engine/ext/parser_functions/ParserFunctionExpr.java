@@ -25,7 +25,6 @@ import org.sweble.wikitext.engine.ext.parser_functions.ExprParser.ExprError;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class ParserFunctionExpr
 		extends
@@ -52,7 +51,7 @@ public class ParserFunctionExpr
 		String expr = null;
 		try
 		{
-			expr = StringConverter.convert(arg0).trim();
+			expr = tu().astToText(arg0).trim();
 		}
 		catch (StringConversionException e)
 		{

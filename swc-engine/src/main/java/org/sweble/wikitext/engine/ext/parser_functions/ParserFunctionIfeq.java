@@ -24,7 +24,6 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class ParserFunctionIfeq
 		extends
@@ -59,8 +58,8 @@ public class ParserFunctionIfeq
 		String b = null;
 		try
 		{
-			a = StringConverter.convert(arg0).trim();
-			b = StringConverter.convert(arg1).trim();
+			a = tu().astToText(arg0).trim();
+			b = tu().astToText(arg1).trim();
 		}
 		catch (StringConversionException e1)
 		{

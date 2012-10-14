@@ -25,11 +25,9 @@ import java.util.Locale;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
-import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -142,12 +140,12 @@ public class ParserFunctionTime
 	{
 		WtNode arg = preprocessorFrame.expand(args.get(index));
 		
-		EngineTextUtils.trim(arg);
+		tu().trim(arg);
 		
 		String format = null;
 		try
 		{
-			format = StringConverter.convert(arg).trim();
+			format = tu().astToText(arg).trim();
 		}
 		catch (StringConversionException e1)
 		{

@@ -147,6 +147,12 @@ public class SimpleParserConfig
 		return nodeFactory;
 	}
 	
+	@Override
+	public AstTextUtils createAstTextUtils()
+	{
+		return new AstTextUtilsImpl(this);
+	}
+	
 	// ==[ Link classification and parsing ]====================================
 	
 	@Override

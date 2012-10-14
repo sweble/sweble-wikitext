@@ -21,6 +21,7 @@ import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
+import org.sweble.wikitext.parser.utils.AstTextUtils;
 
 import de.fau.cs.osr.utils.XmlEntityResolver;
 
@@ -38,9 +39,11 @@ public interface ParserConfig
 	
 	boolean isGatherRtData();
 	
-	// ==[ AST creation ]=======================================================
+	// ==[ Factories ]=======================================================
 	
 	WikitextNodeFactory getNodeFactory();
+	
+	AstTextUtils createAstTextUtils();
 	
 	// ==[ Link classification and parsing ]====================================
 	

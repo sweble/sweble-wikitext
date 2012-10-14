@@ -28,7 +28,6 @@ import org.sweble.wikitext.engine.utils.ApplyToText;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class CorePfnFunctionsFormatting
 		extends
@@ -262,10 +261,10 @@ public class CorePfnFunctionsFormatting
 			String padStr = "0";
 			try
 			{
-				text = StringConverter.convert(arg0).trim();
+				text = tu().astToText(arg0).trim();
 				
 				WtNode arg1 = frame.expand(args.get(1));
-				String lenStr = StringConverter.convert(arg1).trim();
+				String lenStr = tu().astToText(arg1).trim();
 				len = Integer.parseInt(lenStr);
 				if (len <= 0)
 					return arg0;
@@ -275,7 +274,7 @@ public class CorePfnFunctionsFormatting
 					WtNode arg2 = frame.expand(args.get(2));
 					try
 					{
-						padStr = StringConverter.convert(arg2).trim();
+						padStr = tu().astToText(arg2).trim();
 					}
 					catch (StringConversionException e)
 					{

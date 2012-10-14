@@ -31,7 +31,6 @@ import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtTemplateArgument;
 import org.sweble.wikitext.parser.utils.RtDataPrinter;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 import de.fau.cs.osr.utils.XmlGrammar;
 
@@ -103,7 +102,7 @@ public class CorePfnFunctionsMiscellaneous
 			try
 			{
 				WtNode expNameNode = frame.expand(nameNode.getValue());
-				nameStr = StringConverter.convert(expNameNode).trim();
+				nameStr = tu().astToText(expNameNode).trim();
 			}
 			catch (StringConversionException e)
 			{
@@ -130,8 +129,8 @@ public class CorePfnFunctionsMiscellaneous
 				String argValue;
 				try
 				{
-					argName = StringConverter.convert(argNameNode);
-					argValue = StringConverter.convert(argValueNode);
+					argName = tu().astToText(argNameNode);
+					argValue = tu().astToText(argValueNode);
 				}
 				catch (StringConversionException e)
 				{

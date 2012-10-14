@@ -26,7 +26,6 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class ParserFunctionIfExist
 		extends
@@ -59,7 +58,7 @@ public class ParserFunctionIfExist
 		String testStr = null;
 		try
 		{
-			testStr = StringConverter.convert(test).trim();
+			testStr = tu().astToText(test).trim();
 			
 			PageTitle pageTitle = PageTitle.make(frame.getWikiConfig(), testStr);
 			

@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.sweble.wikitext.engine.ParserFunctionBase.ParserFunctionAdapter;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
 import org.sweble.wikitext.parser.nodes.WtNode;
 
 @XmlTransient
@@ -50,6 +51,10 @@ public abstract class ParserFunctionBase
 	 * Can't be final since it cannot be set during un-marshaling.
 	 */
 	private WikiConfig wikiConfig;
+	
+	private EngineAstTextUtils tu;
+	
+	private EngineNodeFactory nf;
 	
 	// =========================================================================
 	
@@ -84,7 +89,12 @@ public abstract class ParserFunctionBase
 	
 	protected EngineNodeFactory nf()
 	{
-		return wikiConfig.getNodeFactory();
+		return nf;
+	}
+	
+	protected EngineAstTextUtils tu()
+	{
+		return tu;
 	}
 	
 	/**
@@ -93,6 +103,8 @@ public abstract class ParserFunctionBase
 	public void setWikiConfig(WikiConfig wikiConfig)
 	{
 		this.wikiConfig = wikiConfig;
+		this.nf = wikiConfig.getNodeFactory();
+		this.tu = wikiConfig.createAstTextUtils();
 	}
 	
 	public WikiConfig getWikiConfig()

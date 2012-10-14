@@ -47,6 +47,8 @@ import javax.xml.bind.annotation.XmlType;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactoryImpl;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtilsImpl;
 
 import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 
@@ -160,6 +162,12 @@ public class WikiConfigImpl
 	public EngineNodeFactoryImpl getNodeFactory()
 	{
 		return nodeFactory;
+	}
+	
+	@Override
+	public EngineAstTextUtils createAstTextUtils()
+	{
+		return new EngineAstTextUtilsImpl(parserConfig);
 	}
 	
 	// ==[ Namespaces ]=========================================================

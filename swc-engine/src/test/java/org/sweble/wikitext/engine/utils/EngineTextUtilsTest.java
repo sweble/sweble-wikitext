@@ -22,8 +22,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
-import org.sweble.wikitext.engine.utils.EngineTextUtils;
 
 public class EngineTextUtilsTest
 {
@@ -31,12 +29,14 @@ public class EngineTextUtilsTest
 	
 	EngineNodeFactory nf = config.getNodeFactory();
 	
+	EngineAstTextUtils tu = config.createAstTextUtils();
+	
 	@Test
 	public void testTrimLeftLeavesUntrimmableTextUnaltered() throws Exception
 	{
 		assertEquals(
 				nf.text("Hello World"),
-				EngineTextUtils.trimLeft(nf.text("Hello World")));
+				tu.trimLeft(nf.text("Hello World")));
 	}
 	
 	@Test
@@ -44,7 +44,7 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.text("Hello World"),
-				EngineTextUtils.trimLeft(nf.text("  Hello World")));
+				tu.trimLeft(nf.text("  Hello World")));
 	}
 	
 	@Test
@@ -52,7 +52,7 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.list(nf.text("Hello World")),
-				EngineTextUtils.trimLeft(nf.list(nf.text("  "), nf.text("  Hello World"))));
+				tu.trimLeft(nf.list(nf.text("  "), nf.text("  Hello World"))));
 	}
 	
 	@Test
@@ -60,7 +60,7 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.list(nf.comment("Comment"), nf.ignored(""), nf.text("Hello World")),
-				EngineTextUtils.trimLeft(nf.list(nf.text("  "), nf.comment("Comment"), nf.ignored(""), nf.text("  Hello World"))));
+				tu.trimLeft(nf.list(nf.text("  "), nf.comment("Comment"), nf.ignored(""), nf.text("  Hello World"))));
 	}
 	
 	// -------
@@ -70,7 +70,7 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.text("Hello World"),
-				EngineTextUtils.trimRight(nf.text("Hello World")));
+				tu.trimRight(nf.text("Hello World")));
 	}
 	
 	@Test
@@ -78,7 +78,7 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.text("Hello World"),
-				EngineTextUtils.trimRight(nf.text("Hello World  ")));
+				tu.trimRight(nf.text("Hello World  ")));
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.list(nf.text("Hello World")),
-				EngineTextUtils.trimRight(nf.list(nf.text("Hello World  "), nf.text("  "))));
+				tu.trimRight(nf.list(nf.text("Hello World  "), nf.text("  "))));
 	}
 	
 	@Test
@@ -94,6 +94,6 @@ public class EngineTextUtilsTest
 	{
 		assertEquals(
 				nf.list(nf.text("Hello World"), nf.comment("Comment"), nf.ignored("")),
-				EngineTextUtils.trimRight(nf.list(nf.text("Hello World  "), nf.comment("Comment"), nf.ignored(""), nf.text("  "))));
+				tu.trimRight(nf.list(nf.text("Hello World  "), nf.comment("Comment"), nf.ignored(""), nf.text("  "))));
 	}
 }

@@ -26,7 +26,6 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class CorePfnFunctionsNamespaces
 		extends
@@ -80,7 +79,7 @@ public class CorePfnFunctionsNamespaces
 			String arg;
 			try
 			{
-				arg = StringConverter.convert(arg0).trim();
+				arg = tu().astToText(arg0).trim();
 			}
 			catch (StringConversionException e1)
 			{

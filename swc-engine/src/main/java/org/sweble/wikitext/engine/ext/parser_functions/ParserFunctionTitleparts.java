@@ -28,7 +28,6 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class ParserFunctionTitleparts
 		extends
@@ -60,11 +59,11 @@ public class ParserFunctionTitleparts
 		Integer firstPart = null;
 		try
 		{
-			String titleStr = StringConverter.convert(arg0).trim();
+			String titleStr = tu().astToText(arg0).trim();
 			pageTitle = PageTitle.make(frame.getWikiConfig(), titleStr);
 			
 			WtNode arg1 = frame.expand(args.get(1));
-			String countStr = StringConverter.convert(arg1).trim();
+			String countStr = tu().astToText(arg1).trim();
 			try
 			{
 				partCount = Integer.parseInt(countStr);
@@ -74,7 +73,7 @@ public class ParserFunctionTitleparts
 			}
 			
 			WtNode arg2 = frame.expand(args.get(2));
-			String firstStr = StringConverter.convert(arg2).trim();
+			String firstStr = tu().astToText(arg2).trim();
 			try
 			{
 				firstPart = Integer.parseInt(firstStr);

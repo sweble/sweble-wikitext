@@ -30,7 +30,6 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class CorePfnVariablesPageNames
 		extends
@@ -159,7 +158,7 @@ public class CorePfnVariablesPageNames
 			{
 				try
 				{
-					String titleStr = StringConverter.convert(argsValues.get(0)).trim();
+					String titleStr = tu().astToText(argsValues.get(0)).trim();
 					
 					title = PageTitle.make(frame.getWikiConfig(), titleStr);
 				}
@@ -300,7 +299,7 @@ public class CorePfnVariablesPageNames
 			{
 				try
 				{
-					String titleStr = StringConverter.convert(argsValues.get(0)).trim();
+					String titleStr = tu().astToText(argsValues.get(0)).trim();
 					
 					title = PageTitle.make(frame.getWikiConfig(), titleStr);
 				}

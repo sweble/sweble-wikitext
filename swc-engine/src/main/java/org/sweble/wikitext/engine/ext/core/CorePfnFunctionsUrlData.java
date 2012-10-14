@@ -39,7 +39,6 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class CorePfnFunctionsUrlData
 		extends
@@ -119,7 +118,7 @@ public class CorePfnFunctionsUrlData
 			String titleStr;
 			try
 			{
-				titleStr = StringConverter.convert(titleNode);
+				titleStr = tu().astToText(titleNode);
 			}
 			catch (StringConversionException e1)
 			{
@@ -171,7 +170,7 @@ public class CorePfnFunctionsUrlData
 				
 				try
 				{
-					queryStr = StringConverter.convert(queryNode);
+					queryStr = tu().astToText(queryNode);
 				}
 				catch (StringConversionException e)
 				{
@@ -251,7 +250,7 @@ public class CorePfnFunctionsUrlData
 			PageTitle title;
 			try
 			{
-				String titleStr = StringConverter.convert(args.get(0)).trim();
+				String titleStr = tu().astToText(args.get(0)).trim();
 				
 				title = PageTitle.make(frame.getWikiConfig(), titleStr);
 				
@@ -272,11 +271,11 @@ public class CorePfnFunctionsUrlData
 			{
 				try
 				{
-					String opt1 = StringConverter.convert(args.get(1)).trim();
+					String opt1 = tu().astToText(args.get(1)).trim();
 					
 					String opt2 = null;
 					if (args.size() > 2)
-						opt2 = StringConverter.convert(args.get(2)).trim();
+						opt2 = tu().astToText(args.get(2)).trim();
 					
 					String sizeStr = opt1;
 					if ("nowiki".equals(opt1))
@@ -348,7 +347,7 @@ public class CorePfnFunctionsUrlData
 			String text;
 			try
 			{
-				text = StringConverter.convert(args.get(0)).trim();
+				text = tu().astToText(args.get(0)).trim();
 			}
 			catch (StringConversionException e1)
 			{
@@ -360,7 +359,7 @@ public class CorePfnFunctionsUrlData
 			{
 				try
 				{
-					String encoderName = StringConverter.convert(args.get(1)).trim();
+					String encoderName = tu().astToText(args.get(1)).trim();
 					
 					encoder = UrlEncoding.valueOf(encoderName.toUpperCase());
 				}

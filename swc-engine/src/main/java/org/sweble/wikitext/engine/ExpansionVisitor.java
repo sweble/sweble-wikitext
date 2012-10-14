@@ -41,7 +41,7 @@ import org.sweble.wikitext.engine.lognodes.UnhandledException;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.nodes.EngNode;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
-import org.sweble.wikitext.engine.utils.EngineTextUtils;
+import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtName;
@@ -60,12 +60,11 @@ import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
+import org.sweble.wikitext.parser.utils.AstTextUtils;
+import org.sweble.wikitext.parser.utils.AstTextUtils.PartialConversion;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
-import org.sweble.wikitext.parser.utils.StringConverterPartial;
 
 import de.fau.cs.osr.utils.StopWatch;
-import de.fau.cs.osr.utils.Tuple2;
 
 public final class ExpansionVisitor
 		extends
@@ -90,6 +89,8 @@ public final class ExpansionVisitor
 	
 	private final EngineNodeFactory nf;
 	
+	private final EngineAstTextUtils tu;
+	
 	private boolean hadNewlineGlobal;
 	
 	// =========================================================================
@@ -107,6 +108,7 @@ public final class ExpansionVisitor
 		this.timingEnabled = timingEnabled;
 		this.catchAll = catchAll;
 		this.nf = expFrame.getWikiConfig().getNodeFactory();
+		this.tu = expFrame.getWikiConfig().createAstTextUtils();
 	}
 	
 	// =========================================================================
@@ -383,10 +385,7 @@ public final class ExpansionVisitor
 		WtName name = (WtName) dispatch(n.getName());
 		//n.setName(name);
 		
-		Tuple2<String, WtNodeList> conv = StringConverterPartial.convert(name);
-		String title = conv._1;
-		WtNodeList tail = conv._2;
-		
+		PartialConversion nameConv = tu.astToTextPartial(name);
 		// DO NOT expand parameters (yet)
 		ArrayList<WtTemplateArgument> args =
 				new ArrayList<WtTemplateArgument>(n.getArgs().size() + 1);
@@ -395,26 +394,26 @@ public final class ExpansionVisitor
 			args.add((WtTemplateArgument) arg);
 		
 		// First see if it is a parser function
-		WtNode result = resolveTemplateAsPfn(n, title, tail, args, hadNewline);
+		WtNode result = resolveTemplateAsPfn(n, nameConv.getText(), nameConv.getTail(), args, hadNewline);
 		
 		if (result == null)
 		{
 			// A template or magic word cannot be resolved if the name is not 
 			// fully convertable to a string
-			if (tail == null)
+			if (nameConv.getTail() == null)
 			{
 				// If not see if it is a magic word
 				// Magic Word calls cannot have arguments!
 				if (args.isEmpty())
-					result = resolveTemplateAsMagicWord(n, title, hadNewline);
+					result = resolveTemplateAsMagicWord(n, nameConv.getText(), hadNewline);
 				
 				// If not try to transclude
 				if (result == null)
-					result = resolveTemplateAsTransclusion(n, title, args, hadNewline);
+					result = resolveTemplateAsTransclusion(n, nameConv.getText(), args, hadNewline);
 			}
 			else
 			{
-				StringConversionException e = new StringConversionException(tail);
+				StringConversionException e = new StringConversionException(nameConv.getTail());
 				
 				if (frameLog != null)
 					frameLog.add(new ParseException(e.getMessage()));
@@ -535,7 +534,7 @@ public final class ExpansionVisitor
 				
 				WtNode arg0 = nf.list(nf.text(arg0Prefix), tail);
 				
-				arg0 = EngineTextUtils.trim((WtNode) dispatch(arg0));
+				arg0 = tu.trim((WtNode) dispatch(arg0));
 				argValues.add(arg0);
 				
 				for (int j = 0; j < args.size(); ++j)
@@ -550,7 +549,7 @@ public final class ExpansionVisitor
 					}
 					arg.addAll(tmplArg.getValue());
 					
-					argValues.add(EngineTextUtils.trim((WtNode) dispatch(arg)));
+					argValues.add(tu.trim((WtNode) dispatch(arg)));
 				}
 				
 				return argValues;
@@ -861,14 +860,14 @@ public final class ExpansionVisitor
 			if (arg.hasName())
 			{
 				// ONLY TRIM NAMED VALUES!
-				value = (WtValue) EngineTextUtils.trim(value);
+				value = (WtValue) tu.trim(value);
 				
 				// EXPAND NAME!
 				WtName name = (WtName) dispatch(arg.getName());
 				
 				try
 				{
-					String nameStr = StringConverter.convert(name).trim();
+					String nameStr = tu.astToText(name).trim();
 					
 					if (!nameStr.isEmpty())
 					{
@@ -929,7 +928,7 @@ public final class ExpansionVisitor
 		String nameStr = null;
 		try
 		{
-			nameStr = StringConverter.convert(name);
+			nameStr = tu.astToText(name);
 		}
 		catch (StringConversionException e)
 		{
@@ -1385,12 +1384,13 @@ public final class ExpansionVisitor
 	{
 		if (result != null && !hadNewline)
 		{
-			Tuple2<String, WtNodeList> split =
-					StringConverterPartial.convert(result, null, StringConverter.FAIL_ON_PROTECTED_TEXT);
+			PartialConversion split = tu.astToTextPartial(
+					result,
+					AstTextUtils.FAIL_ON_UNRESOLVED_ENTITY_REF);
 			
-			Matcher m = STARTS_WITH_BLOCK_ELEMENT.matcher(split._1);
+			Matcher m = STARTS_WITH_BLOCK_ELEMENT.matcher(split.getText());
 			if (m.find())
-				result = nf.list(nf.text("\n" + split._1), split._2);
+				result = nf.list(nf.text("\n" + split.getText()), split.getTail());
 		}
 		
 		return result;

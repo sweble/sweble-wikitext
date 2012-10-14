@@ -41,6 +41,7 @@ import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
 import org.sweble.wikitext.parser.postprocessor.ScopeType;
+import org.sweble.wikitext.parser.utils.AstTextUtils;
 
 import de.fau.cs.osr.utils.XmlGrammar;
 
@@ -98,7 +99,7 @@ public class ParserConfigImpl
 	
 	protected ParserConfigImpl()
 	{
-		this.wikiConfig = null;
+		this(null);
 	}
 	
 	public ParserConfigImpl(WikiConfigImpl wikiConfig)
@@ -174,6 +175,12 @@ public class ParserConfigImpl
 	public EngineNodeFactory getNodeFactory()
 	{
 		return wikiConfig.getNodeFactory();
+	}
+	
+	@Override
+	public AstTextUtils createAstTextUtils()
+	{
+		return wikiConfig.createAstTextUtils();
 	}
 	
 	// ==[ Link classification and parsing ]====================================

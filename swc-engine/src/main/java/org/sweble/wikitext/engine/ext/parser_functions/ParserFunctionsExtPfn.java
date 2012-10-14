@@ -23,7 +23,6 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.utils.EngineTextUtils;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 
@@ -89,7 +88,7 @@ public abstract class ParserFunctionsExtPfn
 			
 			if (result != null)
 			{
-				return EngineTextUtils.trim(frame.expand(result));
+				return tu().trim(frame.expand(result));
 			}
 			else
 			{

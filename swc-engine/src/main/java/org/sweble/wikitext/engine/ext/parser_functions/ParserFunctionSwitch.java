@@ -26,7 +26,6 @@ import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.StringConversionException;
-import org.sweble.wikitext.parser.utils.StringConverter;
 
 public class ParserFunctionSwitch
 		extends
@@ -77,7 +76,7 @@ public class ParserFunctionSwitch
 			Double icmp = null;
 			try
 			{
-				cmp = StringConverter.convert(arg0).trim();
+				cmp = tu().astToText(arg0).trim();
 				
 				icmp = strToDbl(cmp);
 			}
@@ -150,7 +149,7 @@ public class ParserFunctionSwitch
 			String cmp2;
 			try
 			{
-				cmp2 = StringConverter.convert(before).trim();
+				cmp2 = tu().astToText(before).trim();
 			}
 			catch (StringConversionException e)
 			{
