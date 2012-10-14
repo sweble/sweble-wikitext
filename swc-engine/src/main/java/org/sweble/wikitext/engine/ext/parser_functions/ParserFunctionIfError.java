@@ -53,14 +53,14 @@ public class ParserFunctionIfError
 	{
 		WtNode arg0 = frame.expand(args.get(0));
 		
-		boolean eval = searchErrorNode(arg0);
+		boolean hasError = searchErrorNode(arg0);
 		
 		// If NO error occurred the test statement becomes the default result
-		setDefault(eval ? nf().list() : arg0);
+		setDefault(hasError ? nf().list() : arg0);
 		//		if (!eval)
 		//			setDefault(arg0);
 		
-		return eval;
+		return hasError;
 	}
 	
 	private static boolean searchErrorNode(WtNode arg0)

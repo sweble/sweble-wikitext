@@ -55,6 +55,7 @@ public class ParserFunctionIntegrationTest
 	public ParserFunctionIntegrationTest(String title, File inputFile)
 	{
 		this.inputFile = inputFile;
+		getEngine().setCatchAll(false);
 	}
 	
 	// =========================================================================

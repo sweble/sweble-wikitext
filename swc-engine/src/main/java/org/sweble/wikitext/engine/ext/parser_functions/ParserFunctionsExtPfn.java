@@ -151,7 +151,8 @@ public abstract class ParserFunctionsExtPfn
 			WtNode result = defaultValue;
 			if (cond)
 			{
-				result = args.get(thenArgIndex);
+				if (args.size() > thenArgIndex)
+					result = args.get(thenArgIndex);
 			}
 			else
 			{

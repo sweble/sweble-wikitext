@@ -17,7 +17,6 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.TypedPrettyPrinter;
 
 import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.test.FileCompare;
@@ -50,6 +49,11 @@ public abstract class EngineIntegrationTestBase
 		return config;
 	}
 	
+	public WtEngine getEngine()
+	{
+		return engine;
+	}
+	
 	@Override
 	public ParserInterface<WtNode> instantiateParser()
 	{
@@ -80,13 +84,15 @@ public abstract class EngineIntegrationTestBase
 				forInclusion,
 				callback);
 		
-		String actual = printToString(ast.getPage(), new TypedPrettyPrinter());
+		TypedEnginePrettyPrinter pp = new TypedEnginePrettyPrinter();
+		
+		String actual = printToString(ast.getPage(), pp);
 		
 		File expectedFile = TestResourcesFixture.rebase(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
-				new TypedPrettyPrinter().getPrintoutType(),
+				pp.getPrintoutType(),
 				true /* don't throw if file doesn't exist */);
 		
 		FileCompare cmp = new FileCompare(getResources());

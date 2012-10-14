@@ -21,6 +21,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -51,6 +53,7 @@ import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
+import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.utils.StopWatch;
 
 public class WtEngine
@@ -708,6 +711,10 @@ public class WtEngine
 		
 		try
 		{
+			// Copy in case ppAst stores an immutable (empty) warning list.
+			List<Warning> warnings =
+					new LinkedList<Warning>(ppAst.getWarnings());
+			
 			ExpansionFrame frame;
 			if (rootFrame != null)
 			{
@@ -722,7 +729,7 @@ public class WtEngine
 						noRedirect,
 						rootFrame,
 						parentFrame,
-						ppAst.getWarnings(),
+						warnings,
 						log,
 						timingEnabled,
 						catchAll);
@@ -736,7 +743,7 @@ public class WtEngine
 						title,
 						ppAst.getEntityMap(),
 						noRedirect,
-						ppAst.getWarnings(),
+						warnings,
 						log,
 						timingEnabled,
 						catchAll);
@@ -744,6 +751,9 @@ public class WtEngine
 			
 			WtPreproWikitextPage expanded =
 					(WtPreproWikitextPage) frame.expand(ppAst);
+			
+			if (!warnings.isEmpty())
+				ppAst.setWarnings(warnings);
 			
 			return expanded;
 		}

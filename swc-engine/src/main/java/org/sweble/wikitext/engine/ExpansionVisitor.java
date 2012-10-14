@@ -400,7 +400,7 @@ public final class ExpansionVisitor
 		{
 			// A template or magic word cannot be resolved if the name is not 
 			// fully convertable to a string
-			if (nameConv.getTail() == null)
+			if (nameConv.getTail().isEmpty())
 			{
 				// If not see if it is a magic word
 				// Magic Word calls cannot have arguments!

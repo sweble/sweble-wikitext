@@ -79,7 +79,7 @@ public abstract class ParserFunctionBase
 			boolean pageSwitch,
 			String id)
 	{
-		this.wikiConfig = wikiConfig;
+		setWikiConfig(wikiConfig);
 		this.argMode = argMode;
 		this.pageSwitch = pageSwitch;
 		this.id = id;
@@ -102,9 +102,12 @@ public abstract class ParserFunctionBase
 	 */
 	public void setWikiConfig(WikiConfig wikiConfig)
 	{
-		this.wikiConfig = wikiConfig;
-		this.nf = wikiConfig.getNodeFactory();
-		this.tu = wikiConfig.createAstTextUtils();
+		if (wikiConfig != null)
+		{
+			this.wikiConfig = wikiConfig;
+			this.nf = wikiConfig.getNodeFactory();
+			this.tu = wikiConfig.createAstTextUtils();
+		}
 	}
 	
 	public WikiConfig getWikiConfig()
