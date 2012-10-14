@@ -149,7 +149,7 @@ public class AstTextUtilsImpl
 		
 		public void dispatch(WtNode node, int nodeType) throws StringConversionException
 		{
-			switch (node.getNodeType())
+			switch (nodeType)
 			{
 				case WtNode.NT_NODE_LIST:
 					visit((WtNodeList) node);
