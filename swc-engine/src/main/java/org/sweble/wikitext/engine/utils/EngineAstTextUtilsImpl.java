@@ -35,118 +35,116 @@ public class EngineAstTextUtilsImpl
 	@Override
 	public WtNode trimLeft(WtNode n)
 	{
-		switch (n.getNodeType())
+		if (n.isList())
 		{
-			case WtNode.NT_NODE_LIST:
+			WtNodeList l = (WtNodeList) n;
+			ListIterator<WtNode> i = l.listIterator();
+			outer: while (i.hasNext())
 			{
-				WtNodeList l = (WtNodeList) n;
-				ListIterator<WtNode> i = l.listIterator();
-				outer: while (i.hasNext())
+				WtNode item = i.next();
+				switch (item.getNodeType())
 				{
-					WtNode item = i.next();
-					switch (item.getNodeType())
-					{
-						case WtNode.NT_TEXT:
-							WtText t = (WtText) item;
-							String text = t.getContent();
-							if (text.isEmpty())
-							{
-								i.remove();
-								continue;
-							}
-							
-							String trimmed = StringUtils.trimLeft(text);
-							if (trimmed.equals(text))
-								break outer;
-							
-							if (trimmed.isEmpty())
-							{
-								i.remove();
-								continue;
-							}
-							else
-							{
-								t.setContent(trimmed);
-								break outer;
-							}
-							
-						case WtNode.NT_IGNORED:
-						case WtNode.NT_XML_COMMENT:
+					case WtNode.NT_TEXT:
+						WtText t = (WtText) item;
+						String text = t.getContent();
+						if (text.isEmpty())
+						{
+							i.remove();
 							continue;
-							
-						default:
+						}
+						
+						String trimmed = StringUtils.trimLeft(text);
+						if (trimmed.equals(text))
 							break outer;
-					}
+						
+						if (trimmed.isEmpty())
+						{
+							i.remove();
+							continue;
+						}
+						else
+						{
+							t.setContent(trimmed);
+							break outer;
+						}
+						
+					case WtNode.NT_IGNORED:
+					case WtNode.NT_XML_COMMENT:
+						continue;
+						
+					default:
+						break outer;
 				}
-				return n;
 			}
-			case WtNode.NT_TEXT:
-			{
-				WtText t = (WtText) n;
-				t.setContent(StringUtils.trimLeft(t.getContent()));
-				return n;
-			}
-			default:
-				return n;
+			return n;
+		}
+		else if (n.getNodeType() == WtNode.NT_TEXT)
+		{
+			WtText t = (WtText) n;
+			t.setContent(StringUtils.trimLeft(t.getContent()));
+			return n;
+		}
+		else
+		{
+			return n;
 		}
 	}
 	
 	@Override
 	public WtNode trimRight(WtNode n)
 	{
-		switch (n.getNodeType())
+		if (n.isList())
 		{
-			case WtNode.NT_NODE_LIST:
+			WtNodeList l = (WtNodeList) n;
+			ListIterator<WtNode> i = l.listIterator(l.size());
+			outer: while (i.hasPrevious())
 			{
-				WtNodeList l = (WtNodeList) n;
-				ListIterator<WtNode> i = l.listIterator(l.size());
-				outer: while (i.hasPrevious())
+				WtNode item = i.previous();
+				switch (item.getNodeType())
 				{
-					WtNode item = i.previous();
-					switch (item.getNodeType())
-					{
-						case WtNode.NT_TEXT:
-							WtText t = (WtText) item;
-							String text = t.getContent();
-							if (text.isEmpty())
-							{
-								i.remove();
-								continue;
-							}
-							
-							String trimmed = StringUtils.trimRight(text);
-							if (trimmed.equals(text))
-								break outer;
-							
-							if (trimmed.isEmpty())
-							{
-								i.remove();
-								continue;
-							}
-							else
-							{
-								t.setContent(trimmed);
-								break outer;
-							}
-							
-						case WtNode.NT_IGNORED:
-						case WtNode.NT_XML_COMMENT:
+					case WtNode.NT_TEXT:
+						WtText t = (WtText) item;
+						String text = t.getContent();
+						if (text.isEmpty())
+						{
+							i.remove();
 							continue;
-							
-						default:
+						}
+						
+						String trimmed = StringUtils.trimRight(text);
+						if (trimmed.equals(text))
 							break outer;
-					}
+						
+						if (trimmed.isEmpty())
+						{
+							i.remove();
+							continue;
+						}
+						else
+						{
+							t.setContent(trimmed);
+							break outer;
+						}
+						
+					case WtNode.NT_IGNORED:
+					case WtNode.NT_XML_COMMENT:
+						continue;
+						
+					default:
+						break outer;
 				}
-				return n;
 			}
-			case WtNode.NT_TEXT:
-			{
-				WtText t = (WtText) n;
-				t.setContent(StringUtils.trimRight(t.getContent()));
-				return n;
-			}
-			default:
-				return n;
+			return n;
+		}
+		else if (n.getNodeType() == WtNode.NT_TEXT)
+		{
+			WtText t = (WtText) n;
+			t.setContent(StringUtils.trimRight(t.getContent()));
+			return n;
+		}
+		else
+		{
+			return n;
 		}
 	}
 	
