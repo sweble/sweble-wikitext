@@ -36,7 +36,7 @@ public class WtAstPrinter
 {
 	public void visit(AstNode<WtNode> n)
 	{
-		if (printAbsent((WtNode) n))
+		if (printAbsent((AstNode<?>) n))
 			return;
 		super.visit(n);
 	}
@@ -44,7 +44,7 @@ public class WtAstPrinter
 	@Override
 	public void visit(AstLeafNode<WtNode> n)
 	{
-		if (printAbsent((WtNode) n))
+		if (printAbsent((AstNode<?>) n))
 			return;
 		super.visit(n);
 	}
@@ -52,7 +52,7 @@ public class WtAstPrinter
 	@Override
 	public void visit(AstNodeList<WtNode> n)
 	{
-		if (printAbsent((WtNode) n))
+		if (printAbsent((AstNode<?>) n))
 			return;
 		super.visit(n);
 	}
@@ -60,7 +60,7 @@ public class WtAstPrinter
 	@Override
 	public void visit(AstStringNode<WtNode> n)
 	{
-		if (printAbsent((WtNode) n))
+		if (printAbsent((AstNode<?>) n))
 			return;
 		super.visit(n);
 	}
@@ -68,14 +68,14 @@ public class WtAstPrinter
 	@Override
 	public void visit(AstText<WtNode> n)
 	{
-		if (printAbsent((WtNode) n))
+		if (printAbsent((AstNode<?>) n))
 			return;
 		super.visit(n);
 	}
 	
 	// =========================================================================
 	
-	private boolean printAbsent(WtNode n)
+	private boolean printAbsent(AstNode<?> n)
 	{
 		if (!(n instanceof WtEmptyImmutableNode))
 			return false;
