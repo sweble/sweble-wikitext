@@ -42,6 +42,7 @@ import org.sweble.wikitext.parser.parser.LinkBuilder;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
+import de.fau.cs.osr.ptk.common.ast.AstNodeList;
 
 public class WikitextNodeFactoryImpl
 		implements
@@ -428,6 +429,14 @@ public class WikitextNodeFactoryImpl
 	public WtNodeList list(Object... content)
 	{
 		return new WtNodeListImpl(content);
+	}
+	
+	@Override
+	public WtNodeList unwrap(AstNodeList<WtNode> n)
+	{
+		WtNodeList list = list();
+		list.exchange(n);
+		return list;
 	}
 	
 	@Override
