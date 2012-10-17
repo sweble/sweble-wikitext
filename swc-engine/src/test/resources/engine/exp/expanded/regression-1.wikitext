@@ -1,0 +1,1 @@
+<includeonly>August</includeonly><noinclude>WtTagExtensionBodyImpl("\n\n{{Documentation}}\n<!-- Add categories and interwikis to the /doc subpage, not here! -->\n")</noinclude>

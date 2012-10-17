@@ -1,0 +1,5 @@
+<includeonly>{{#if:{{{1|}}}|{{#switch:{{MONTHNUMBER|{{{1}}}}}|1=January|2=February|3=March|4=April|5=May|6=June|7=July|8=August|9=September|10=October|11=November|12=December|Incorrect required parameter 1=''month''!}}|Missing required parameter 1=''month''!}}</includeonly><noinclude>
+
+{{Documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>
