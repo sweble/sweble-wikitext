@@ -27,6 +27,7 @@ import org.sweble.wikitext.engine.lognodes.LogContainer;
 import org.sweble.wikitext.engine.utils.UrlService;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtValue;
 
 import de.fau.cs.osr.ptk.common.Warning;
@@ -41,7 +42,7 @@ public class ExpansionFrame
 	
 	private final PageTitle title;
 	
-	private final Map<String, WtValue> arguments;
+	private final Map<String, WtNodeList> arguments;
 	
 	private final boolean forInclusion;
 	
@@ -79,7 +80,7 @@ public class ExpansionFrame
 		this.callback = callback;
 		this.title = title;
 		this.entityMap = entityMap;
-		this.arguments = new HashMap<String, WtValue>();
+		this.arguments = new HashMap<String, WtNodeList>();
 		this.forInclusion = false;
 		this.noRedirect = noRedirect;
 		this.warnings = warnings;
@@ -101,7 +102,7 @@ public class ExpansionFrame
 			ExpansionDebugHooks hooks,
 			PageTitle title,
 			WtEntityMap entityMap,
-			Map<String, WtValue> arguments,
+			Map<String, WtNodeList> arguments,
 			boolean forInclusion,
 			boolean noRedirect,
 			ExpansionFrame rootFrame,
@@ -153,7 +154,7 @@ public class ExpansionFrame
 		return title;
 	}
 	
-	public Map<String, WtValue> getArguments()
+	public Map<String, WtNodeList> getArguments()
 	{
 		return arguments;
 	}

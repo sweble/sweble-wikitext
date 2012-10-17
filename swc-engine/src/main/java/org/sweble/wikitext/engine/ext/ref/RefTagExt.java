@@ -24,9 +24,9 @@ import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
-import org.sweble.wikitext.parser.nodes.WtValue;
 
 public class RefTagExt
 		extends
@@ -68,7 +68,7 @@ public class RefTagExt
 		public WtNode invoke(
 				ExpansionFrame frame,
 				WtTagExtension tagExt,
-				Map<String, WtValue> attrs,
+				Map<String, WtNodeList> attrs,
 				WtTagExtensionBody body)
 		{
 			return null;

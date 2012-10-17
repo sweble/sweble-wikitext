@@ -72,14 +72,17 @@ public class ParserFunctionTitleparts
 			{
 			}
 			
-			WtNode arg2 = frame.expand(args.get(2));
-			String firstStr = tu().astToText(arg2).trim();
-			try
+			if (args.size() > 2)
 			{
-				firstPart = Integer.parseInt(firstStr);
-			}
-			catch (NumberFormatException e)
-			{
+				WtNode arg2 = frame.expand(args.get(2));
+				String firstStr = tu().astToText(arg2).trim();
+				try
+				{
+					firstPart = Integer.parseInt(firstStr);
+				}
+				catch (NumberFormatException e)
+				{
+				}
 			}
 		}
 		catch (StringConversionException ee)

@@ -385,6 +385,12 @@ public final class ExpansionVisitor
 		WtName name = (WtName) dispatch(n.getName());
 		//n.setName(name);
 		
+		for (WtNode x : name)
+		{
+			if (x instanceof WtValue)
+				throw new InternalError();
+		}
+		
 		PartialConversion nameConv = tu.astToTextPartial(name);
 		// DO NOT expand parameters (yet)
 		ArrayList<WtTemplateArgument> args =
@@ -426,6 +432,15 @@ public final class ExpansionVisitor
 			result = markError(n);
 		else if (result != n)
 			this.hadNewlineGlobal = endedWithNewline(result);
+		
+		if (result != null)
+		{
+			for (WtNode x : result)
+			{
+				if (x instanceof WtValue)
+					throw new InternalError();
+			}
+		}
 		
 		return result;
 	}
@@ -483,6 +498,12 @@ public final class ExpansionVisitor
 				arg0Prefix,
 				tail,
 				args);
+		
+		for (WtNode x : argsValues)
+		{
+			if (x instanceof WtValue)
+				throw new InternalError();
+		}
 		
 		return invokePfn(n, pfn, argsValues, hadNewline);
 	}
@@ -788,7 +809,7 @@ public final class ExpansionVisitor
 		if (page != null)
 		{
 			// EXPANDS ARGUMENTS!
-			Map<String, WtValue> tmplArgs = prepareTransclusionArguments(args, log);
+			Map<String, WtNodeList> tmplArgs = prepareTransclusionArguments(args, log);
 			
 			EngCompiledPage compiledPage = getCompiler().preprocessAndExpand(
 					expFrame.getCallback(),
@@ -844,11 +865,11 @@ public final class ExpansionVisitor
 	 * If an argument has a name which can be resolved to a string, the argument
 	 * will additionally be put into the mapping with the resolved name as key.
 	 */
-	private Map<String, WtValue> prepareTransclusionArguments(
+	private Map<String, WtNodeList> prepareTransclusionArguments(
 			List<WtTemplateArgument> args,
 			ResolveTransclusionLog log)
 	{
-		HashMap<String, WtValue> transclArgs = new HashMap<String, WtValue>();
+		HashMap<String, WtNodeList> transclArgs = new HashMap<String, WtNodeList>();
 		
 		int index = 1;
 		for (WtTemplateArgument arg : args)
@@ -871,7 +892,7 @@ public final class ExpansionVisitor
 					
 					if (!nameStr.isEmpty())
 					{
-						transclArgs.put(nameStr, value);
+						transclArgs.put(nameStr, nf.unwrap(value));
 						named = true;
 					}
 				}
@@ -888,7 +909,7 @@ public final class ExpansionVisitor
 			{
 				String id = String.valueOf(index);
 				
-				WtValue prev = transclArgs.put(id, value);
+				WtNodeList prev = transclArgs.put(id, nf.unwrap(value));
 				// Automatic indices never overwrite!
 				if (prev != null)
 					transclArgs.put(id, prev);
@@ -945,6 +966,15 @@ public final class ExpansionVisitor
 		if (value == null)
 			value = markError(n);
 		
+		if (value != null)
+		{
+			for (WtNode x : value)
+			{
+				if (x instanceof WtValue)
+					throw new InternalError();
+			}
+		}
+		
 		return value;
 	}
 	
@@ -959,7 +989,7 @@ public final class ExpansionVisitor
 	private WtNode resolveParameterWrapper(
 			WtTemplateParameter n,
 			String name,
-			WtValue wtValue) throws ExpansionException
+			WtValue defaultValue) throws ExpansionException
 	{
 		if (hooks != null)
 		{
@@ -985,7 +1015,7 @@ public final class ExpansionVisitor
 		WtNode result = null;
 		try
 		{
-			result = resolveParameter(n, name, wtValue, log);
+			result = resolveParameter(n, name, defaultValue, log);
 		}
 		catch (Exception e)
 		{
@@ -1013,23 +1043,21 @@ public final class ExpansionVisitor
 	 * this frame. If no matching argument can be found, the default value is
 	 * used, if present. Otherwise, null is returned.
 	 */
-	private WtValue resolveParameter(
+	private WtNodeList resolveParameter(
 			WtTemplateParameter n,
 			String name,
-			WtValue wtValue,
+			WtValue defaultValue,
 			ResolveParameterLog log)
 	{
-		WtValue value = getFrameArgument(name);
+		WtNodeList value = getFrameArgument(name);
 		
-		if (value == null && wtValue != null)
+		if (value == null && defaultValue != null)
 		{
 			// Only the first value after the pipe is the default 
 			// value. The rest is ignored.
 			
-			value = wtValue;
-			
 			// EXPAND DEFAULT VALUE!
-			value = (WtValue) dispatch(value);
+			value = nf.unwrap((WtValue) dispatch(defaultValue));
 		}
 		
 		if (value != null)
@@ -1132,7 +1160,7 @@ public final class ExpansionVisitor
 			//throw new InternalError("Cannot find tag extension: " + name);
 			return null;
 		
-		HashMap<String, WtValue> attrMap = prepareTagExtensionAttributes(attrs);
+		HashMap<String, WtNodeList> attrMap = prepareTagExtensionAttributes(attrs);
 		
 		WtNode result = te.invoke(expFrame, n, attrMap, wtTagExtensionBody);
 		
@@ -1145,17 +1173,17 @@ public final class ExpansionVisitor
 	 * Converts the list of attributes into a map, ignoring any non-attribute
 	 * nodes.
 	 */
-	private HashMap<String, WtValue> prepareTagExtensionAttributes(
+	private HashMap<String, WtNodeList> prepareTagExtensionAttributes(
 			WtXmlAttributes attrs)
 	{
-		HashMap<String, WtValue> attrMap = new HashMap<String, WtValue>();
+		HashMap<String, WtNodeList> attrMap = new HashMap<String, WtNodeList>();
 		
 		for (WtNode attr : attrs)
 		{
 			if (attr.isNodeType(WtNode.NT_XML_ATTRIBUTE))
 			{
 				WtXmlAttribute a = (WtXmlAttribute) attr;
-				attrMap.put(a.getName(), a.getValue());
+				attrMap.put(a.getName(), nf.unwrap(a.getValue()));
 			}
 		}
 		
@@ -1278,7 +1306,7 @@ public final class ExpansionVisitor
 		return expFrame.getCompiler();
 	}
 	
-	private WtValue getFrameArgument(String name)
+	private WtNodeList getFrameArgument(String name)
 	{
 		return expFrame.getArguments().get(name);
 	}
