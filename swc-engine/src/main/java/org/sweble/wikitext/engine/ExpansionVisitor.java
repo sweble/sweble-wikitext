@@ -43,7 +43,6 @@ import org.sweble.wikitext.engine.nodes.EngNode;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtName;
 import org.sweble.wikitext.parser.nodes.WtNewline;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -1341,7 +1340,7 @@ public final class ExpansionVisitor
 				title));
 	}
 	
-	private WtContentNode mergeLogsAndWarnings(
+	private WtNodeList mergeLogsAndWarnings(
 			LogContainer log,
 			EngCompiledPage compiledPage)
 	{
@@ -1350,7 +1349,7 @@ public final class ExpansionVisitor
 		
 		expFrame.addWarnings(compiledPage.getWarnings());
 		
-		return compiledPage.getPage();
+		return nf.unwrap(compiledPage.getPage());
 	}
 	
 	private WtNode treatBlockElements(WtTemplate tmpl, WtNode result)
