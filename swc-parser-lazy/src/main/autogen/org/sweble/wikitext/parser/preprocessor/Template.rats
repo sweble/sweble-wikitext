@@ -159,7 +159,7 @@ private transient WtNode TemplateTailPart =
           arg0Value.addAll(arg0.getName());
           arg0Value.add(nf.text("="));
         }
-        arg0Value.add(arg0.getValue());
+        arg0Value.addAll(arg0.getValue());
         defaultValue = nf.value(arg0Value);
         if (args.size() > 1)
           garbage = nf.tmplArgs(nf.list(args.subList(1, args.size())));
