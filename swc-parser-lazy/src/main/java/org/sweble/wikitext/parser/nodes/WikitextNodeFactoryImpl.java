@@ -42,6 +42,7 @@ import org.sweble.wikitext.parser.parser.LinkBuilder;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodeList;
 
 public class WikitextNodeFactoryImpl
@@ -429,6 +430,13 @@ public class WikitextNodeFactoryImpl
 	public WtNodeList list(Object... content)
 	{
 		return new WtNodeListImpl(content);
+	}
+	
+	public WtNodeList toList(AstNode<WtNode> n)
+	{
+		WtNodeList list = list();
+		list.addAll(n);
+		return list;
 	}
 	
 	@Override

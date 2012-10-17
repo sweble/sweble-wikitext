@@ -892,7 +892,7 @@ public final class ExpansionVisitor
 					
 					if (!nameStr.isEmpty())
 					{
-						transclArgs.put(nameStr, nf.unwrap(value));
+						transclArgs.put(nameStr, nf.toList(value));
 						named = true;
 					}
 				}
@@ -909,7 +909,7 @@ public final class ExpansionVisitor
 			{
 				String id = String.valueOf(index);
 				
-				WtNodeList prev = transclArgs.put(id, nf.unwrap(value));
+				WtNodeList prev = transclArgs.put(id, nf.toList(value));
 				// Automatic indices never overwrite!
 				if (prev != null)
 					transclArgs.put(id, prev);
@@ -1057,7 +1057,7 @@ public final class ExpansionVisitor
 			// value. The rest is ignored.
 			
 			// EXPAND DEFAULT VALUE!
-			value = nf.unwrap((WtValue) dispatch(defaultValue));
+			value = nf.toList((WtValue) dispatch(defaultValue));
 		}
 		
 		if (value != null)
@@ -1183,7 +1183,7 @@ public final class ExpansionVisitor
 			if (attr.isNodeType(WtNode.NT_XML_ATTRIBUTE))
 			{
 				WtXmlAttribute a = (WtXmlAttribute) attr;
-				attrMap.put(a.getName(), nf.unwrap(a.getValue()));
+				attrMap.put(a.getName(), nf.toList(a.getValue()));
 			}
 		}
 		

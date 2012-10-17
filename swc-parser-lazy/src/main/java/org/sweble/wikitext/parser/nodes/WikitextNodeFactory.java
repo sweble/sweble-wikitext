@@ -29,6 +29,7 @@ import org.sweble.wikitext.parser.nodes.WtOnlyInclude.XmlElementType;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 
 import xtc.util.Pair;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodeList;
 
 public interface WikitextNodeFactory
@@ -159,6 +160,8 @@ public interface WikitextNodeFactory
 	WtNodeList list(Object... content);
 	
 	WtNodeList emptyList();
+	
+	WtNodeList toList(AstNode<WtNode> n);
 	
 	WtNodeList unwrap(AstNodeList<WtNode> n);
 	

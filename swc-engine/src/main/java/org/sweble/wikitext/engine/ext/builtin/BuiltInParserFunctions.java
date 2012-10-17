@@ -76,7 +76,7 @@ public class BuiltInParserFunctions
 			
 			// Assuming we are  NOT doing a pre save transformation
 			
-			WtNodeList name = nf().unwrap(((WtTemplateArgument) args.get(0)).getValue());
+			WtNodeList name = nf().toList(((WtTemplateArgument) args.get(0)).getValue());
 			
 			WtNodeList tmplArgs = nf().list(args.subList(1, args.size()));
 			
