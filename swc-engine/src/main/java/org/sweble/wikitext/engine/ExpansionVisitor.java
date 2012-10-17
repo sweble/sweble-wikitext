@@ -385,12 +385,6 @@ public final class ExpansionVisitor
 		WtName name = (WtName) dispatch(n.getName());
 		//n.setName(name);
 		
-		for (WtNode x : name)
-		{
-			if (x instanceof WtValue)
-				throw new InternalError();
-		}
-		
 		PartialConversion nameConv = tu.astToTextPartial(name);
 		// DO NOT expand parameters (yet)
 		ArrayList<WtTemplateArgument> args =
@@ -432,15 +426,6 @@ public final class ExpansionVisitor
 			result = markError(n);
 		else if (result != n)
 			this.hadNewlineGlobal = endedWithNewline(result);
-		
-		if (result != null)
-		{
-			for (WtNode x : result)
-			{
-				if (x instanceof WtValue)
-					throw new InternalError();
-			}
-		}
 		
 		return result;
 	}
@@ -498,12 +483,6 @@ public final class ExpansionVisitor
 				arg0Prefix,
 				tail,
 				args);
-		
-		for (WtNode x : argsValues)
-		{
-			if (x instanceof WtValue)
-				throw new InternalError();
-		}
 		
 		return invokePfn(n, pfn, argsValues, hadNewline);
 	}
@@ -965,15 +944,6 @@ public final class ExpansionVisitor
 		
 		if (value == null)
 			value = markError(n);
-		
-		if (value != null)
-		{
-			for (WtNode x : value)
-			{
-				if (x instanceof WtValue)
-					throw new InternalError();
-			}
-		}
 		
 		return value;
 	}
