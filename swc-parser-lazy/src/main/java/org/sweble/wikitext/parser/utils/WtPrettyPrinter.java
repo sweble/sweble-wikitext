@@ -97,10 +97,6 @@ public class WtPrettyPrinter
 		extends
 			AstVisitor<WtNode>
 {
-	private final LinkedList<WtNode> scope = new LinkedList<WtNode>();
-	
-	private int insideList;
-	
 	// --[ WtInnerNode1 ]-------------------------------------------------------
 	
 	public void visit(WtLinkOptionLinkTarget n)
@@ -743,6 +739,10 @@ public class WtPrettyPrinter
 	// =========================================================================
 	
 	protected final PrinterBase p;
+	
+	private final LinkedList<WtNode> scope = new LinkedList<WtNode>();
+	
+	private int insideList;
 	
 	public WtPrettyPrinter(Writer writer)
 	{
