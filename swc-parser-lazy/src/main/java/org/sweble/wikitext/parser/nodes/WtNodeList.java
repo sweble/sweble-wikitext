@@ -59,7 +59,7 @@ public interface WtNodeList
 		{
 			return WtNodeList.class.getSimpleName();
 		}
-
+		
 		@Override
 		public boolean indicatesAbsence()
 		{
@@ -162,7 +162,7 @@ public interface WtNodeList
 		@Override
 		public WtRtData getRtd()
 		{
-			throw null;
+			return null;
 		}
 		
 		@Override
