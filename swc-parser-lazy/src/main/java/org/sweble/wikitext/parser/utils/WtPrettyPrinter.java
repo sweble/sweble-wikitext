@@ -765,13 +765,4 @@ public class WtPrettyPrinter
 		p.flush();
 		return result;
 	}
-	
-	// =========================================================================
-	
-	private boolean useRtd = false;
-	
-	public void setRespectRtData(boolean useRtd)
-	{
-		this.useRtd = useRtd;
-	}
 }
