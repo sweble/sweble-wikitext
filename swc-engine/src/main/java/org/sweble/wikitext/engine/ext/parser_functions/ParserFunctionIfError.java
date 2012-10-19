@@ -21,9 +21,10 @@ import java.util.List;
 
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
+import org.sweble.wikitext.engine.nodes.EngNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
+import org.sweble.wikitext.parser.nodes.WtText;
 
 public class ParserFunctionIfError
 		extends
@@ -65,9 +66,22 @@ public class ParserFunctionIfError
 	
 	private static boolean searchErrorNode(WtNode arg0)
 	{
-		if (arg0 instanceof EngSoftErrorNode)
+		if (arg0.getNodeType() == EngNode.NT_SOFT_ERROR)
 		{
 			return true;
+		}
+		else if (arg0.getNodeType() == EngNode.NT_TEXT)
+		{
+			String text = ((WtText) arg0).getContent();
+			int open = text.indexOf("<strong");
+			if (open != -1)
+			{
+				int close = text.indexOf('>', open);
+				int error = text.indexOf("class=\"error\"", open);
+				if (error < close)
+					return true;
+			}
+			return false;
 		}
 		else
 		{
