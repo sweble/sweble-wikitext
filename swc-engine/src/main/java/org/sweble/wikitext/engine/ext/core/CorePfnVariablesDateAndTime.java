@@ -67,7 +67,7 @@ public class CorePfnVariablesDateAndTime
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			Calendar cal = GregorianCalendar.getInstance();
+			Calendar cal = getWikiConfig().getRuntimeInfo().getDateAndTime();
 			return nf().text(String.valueOf(cal.get(GregorianCalendar.YEAR)));
 		}
 	}
@@ -92,7 +92,7 @@ public class CorePfnVariablesDateAndTime
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			Calendar cal = GregorianCalendar.getInstance();
+			Calendar cal = getWikiConfig().getRuntimeInfo().getDateAndTime();
 			return nf().text(String.format("%02d", cal.get(GregorianCalendar.MONTH) + 1));
 		}
 	}
@@ -125,7 +125,7 @@ public class CorePfnVariablesDateAndTime
 		@Override
 		protected final WtNode invoke(WtTemplate var, ExpansionFrame frame)
 		{
-			Calendar cal = GregorianCalendar.getInstance();
+			Calendar cal = getWikiConfig().getRuntimeInfo().getDateAndTime();
 			return nf().text(String.valueOf(cal.get(GregorianCalendar.DAY_OF_MONTH)));
 		}
 	}

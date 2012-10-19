@@ -89,8 +89,7 @@ public class ParserFunctionTime
 		
 		Locale locale = new Locale(languageTag);
 		
-		Calendar timestamp = new GregorianCalendar(locale);
-		timestamp.setLenient(true);
+		Calendar timestamp = getWikiConfig().getRuntimeInfo().getDateAndTime(locale);
 		
 		return format(format, timestamp, locale);
 	}

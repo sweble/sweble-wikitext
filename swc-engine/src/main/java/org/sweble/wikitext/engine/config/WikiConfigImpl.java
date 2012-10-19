@@ -28,6 +28,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -133,6 +134,10 @@ public class WikiConfigImpl
 	
 	private NamespaceImpl defaultNamespace;
 	
+	// -- Runtime information --
+	
+	private WikiRuntimeInfo runtimeInfo;
+	
 	// =========================================================================
 	
 	public WikiConfigImpl()
@@ -140,6 +145,7 @@ public class WikiConfigImpl
 		this.parserConfig = new ParserConfigImpl(this);
 		this.compilerConfig = new CompilerConfigImpl();
 		this.nodeFactory = new EngineNodeFactoryImpl(this);
+		this.runtimeInfo = new WikiRuntimeInfoImpl(this);
 	}
 	
 	// ==[ Parser Configuration ]===============================================
@@ -527,6 +533,26 @@ public class WikiConfigImpl
 	public String getInterwikiPrefix()
 	{
 		return iwPrefix;
+	}
+	
+	@Override
+	public TimeZone getTimezone()
+	{
+		// TODO: Make variable and save to / read from XML
+		return TimeZone.getDefault();
+	}
+	
+	// ==[ Runtime information ]================================================
+	
+	@Override
+	public WikiRuntimeInfo getRuntimeInfo()
+	{
+		return runtimeInfo;
+	}
+	
+	public void setRuntimeInfo(WikiRuntimeInfo runtimeInfo)
+	{
+		this.runtimeInfo = runtimeInfo;
 	}
 	
 	// =========================================================================

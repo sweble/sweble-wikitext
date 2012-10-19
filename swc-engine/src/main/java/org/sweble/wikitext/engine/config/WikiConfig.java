@@ -18,6 +18,7 @@
 package org.sweble.wikitext.engine.config;
 
 import java.util.Collection;
+import java.util.TimeZone;
 
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
@@ -115,4 +116,9 @@ public interface WikiConfig
 	 */
 	public Object getInterwikiPrefix();
 	
+	// ==[ Runtime information ]================================================
+	
+	public WikiRuntimeInfo getRuntimeInfo();
+	
+	public TimeZone getTimezone();
 }
