@@ -180,19 +180,37 @@ public class EngineAstTextUtilsImpl
 			extends
 				SimpleStringConverter
 	{
+		private boolean doNotConvertNowiki;
+		
 		public SimpleEngineStringConverter()
 		{
+			doNotConvertNowiki = false;
 		}
 		
 		public SimpleEngineStringConverter(int[] options)
 		{
-			super(options);
+			this();
+			for (int option : options)
+				setOption(option);
+		}
+		
+		protected void setOption(int option)
+		{
+			switch (option)
+			{
+				case DO_NOT_CONVERT_NOWIKI:
+					doNotConvertNowiki = true;
+					break;
+				default:
+					super.setOption(option);
+					break;
+			}
 		}
 		
 		@Override
 		public void dispatch(WtNode node, int nodeType) throws StringConversionException
 		{
-			if (nodeType == EngNode.NT_NOWIKI)
+			if (!doNotConvertNowiki && nodeType == EngNode.NT_NOWIKI)
 			{
 				visit((EngNowiki) node);
 			}
@@ -214,19 +232,37 @@ public class EngineAstTextUtilsImpl
 			extends
 				PartialStringConverter
 	{
+		private boolean doNotConvertNowiki;
+		
 		public PartialEngineStringConverter()
 		{
+			doNotConvertNowiki = false;
 		}
 		
 		public PartialEngineStringConverter(int[] options)
 		{
-			super(options);
+			this();
+			for (int option : options)
+				setOption(option);
+		}
+		
+		protected void setOption(int option)
+		{
+			switch (option)
+			{
+				case DO_NOT_CONVERT_NOWIKI:
+					doNotConvertNowiki = true;
+					break;
+				default:
+					super.setOption(option);
+					break;
+			}
 		}
 		
 		@Override
 		public void dispatch(WtNode node, int nodeType) throws StringConversionException
 		{
-			if (nodeType == EngNode.NT_NOWIKI)
+			if (!doNotConvertNowiki && nodeType == EngNode.NT_NOWIKI)
 			{
 				visit((EngNowiki) node);
 			}
