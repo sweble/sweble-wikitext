@@ -59,7 +59,6 @@ import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
-import org.sweble.wikitext.parser.utils.AstTextUtils;
 import org.sweble.wikitext.parser.utils.AstTextUtils.PartialConversion;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 
@@ -939,7 +938,7 @@ public final class ExpansionVisitor
 		
 		WtNode value = null;
 		if (nameStr != null)
-			value = resolveParameterWrapper(n, nameStr.trim(), n.getDefaultValue());
+			value = resolveParameterWrapper(n, nameStr.trim());
 		
 		if (value == null)
 			value = markError(n);
@@ -957,8 +956,7 @@ public final class ExpansionVisitor
 	 */
 	private WtNode resolveParameterWrapper(
 			WtTemplateParameter n,
-			String name,
-			WtValue defaultValue) throws ExpansionException
+			String name) throws ExpansionException
 	{
 		if (hooks != null)
 		{
@@ -984,7 +982,7 @@ public final class ExpansionVisitor
 		WtNode result = null;
 		try
 		{
-			result = resolveParameter(n, name, defaultValue, log);
+			result = resolveParameter(n, name, log);
 		}
 		catch (Exception e)
 		{
@@ -1015,18 +1013,17 @@ public final class ExpansionVisitor
 	private WtNodeList resolveParameter(
 			WtTemplateParameter n,
 			String name,
-			WtValue defaultValue,
 			ResolveParameterLog log)
 	{
 		WtNodeList value = getFrameArgument(name);
 		
-		if (value == null && defaultValue != null)
+		if (value == null && n.hasDefaultValue())
 		{
 			// Only the first value after the pipe is the default 
 			// value. The rest is ignored.
 			
 			// EXPAND DEFAULT VALUE!
-			value = nf.toList((WtValue) dispatch(defaultValue));
+			value = nf.toList((WtValue) dispatch(n.getDefaultValue()));
 		}
 		
 		if (value != null)
@@ -1383,7 +1380,8 @@ public final class ExpansionVisitor
 		{
 			PartialConversion split = tu.astToTextPartial(
 					result,
-					AstTextUtils.FAIL_ON_UNRESOLVED_ENTITY_REF);
+					EngineAstTextUtils.FAIL_ON_UNRESOLVED_ENTITY_REF,
+					EngineAstTextUtils.DO_NOT_CONVERT_NOWIKI);
 			
 			Matcher m = STARTS_WITH_BLOCK_ELEMENT.matcher(split.getText());
 			if (m.find())

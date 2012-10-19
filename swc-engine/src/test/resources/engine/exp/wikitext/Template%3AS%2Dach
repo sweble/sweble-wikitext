@@ -1,0 +1,12 @@
+<includeonly>|-
+! colspan="3" style="border-top: 5px solid #FFF179;" |{{#if:{{{1}}}||Awards and achievements titles}}{{#switch:{{{1}}}
+ |#default={{#if:{{{1}}}|Awards and achievements}}
+ |rec=Records
+ |aw=Awards
+ |ach=Achievements
+ |awards=Awards
+ |records=Records
+ |achievements=Achievements
+}}</includeonly><noinclude>
+{{documentation}}
+</noinclude>
