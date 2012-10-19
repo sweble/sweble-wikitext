@@ -22,6 +22,7 @@ import java.util.List;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.ext.parser_functions.ExprParser.ExprError;
+import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -55,7 +56,7 @@ public class ParserFunctionExpr
 		}
 		catch (StringConversionException e)
 		{
-			return nf().softError(pfn);
+			return EngineRtData.set(nf().softError(pfn));
 		}
 		
 		ExprParser p = new ExprParser();
@@ -65,7 +66,7 @@ public class ParserFunctionExpr
 		}
 		catch (ExprError e)
 		{
-			return nf().softError(e.getMessage());
+			return EngineRtData.set(nf().softError(e.getMessage()));
 		}
 	}
 }

@@ -25,6 +25,7 @@ import java.util.Locale;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
+import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTemplate;
 import org.sweble.wikitext.parser.utils.StringConversionException;
@@ -154,13 +155,15 @@ public class ParserFunctionTime
 	
 	private EngSoftErrorNode error(String msg)
 	{
-		return nf().softError(nf().nowiki(StringUtils.escHtml(msg)));
+		return EngineRtData.set(nf().softError(
+				EngineRtData.set(nf().nowiki(StringUtils.escHtml(msg)))));
 	}
 	
 	private EngSoftErrorNode notYetImplemented(String msg)
 	{
 		return nf().addCssClass(
-				nf().softError(nf().nowiki(StringUtils.escHtml(msg))),
+				EngineRtData.set(nf().softError(
+						EngineRtData.set(nf().nowiki(StringUtils.escHtml(msg))))),
 				"not-yet-implemented");
 	}
 }

@@ -23,6 +23,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.TagExtensionBase;
 import org.sweble.wikitext.engine.config.TagExtensionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
@@ -103,7 +104,7 @@ public class BuiltInTagExtensions
 				Map<String, WtNodeList> attrs,
 				WtTagExtensionBody body)
 		{
-			return nf().nowiki(body.getContent());
+			return EngineRtData.set(nf().nowiki(body.getContent()));
 		}
 	}
 }

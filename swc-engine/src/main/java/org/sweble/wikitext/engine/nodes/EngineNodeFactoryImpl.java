@@ -8,14 +8,10 @@ import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtTagExtension;
-import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
-import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 import de.fau.cs.osr.ptk.common.Warning;
-import de.fau.cs.osr.ptk.common.ast.RtData;
 
 public final class EngineNodeFactoryImpl
 		extends
@@ -33,18 +29,7 @@ public final class EngineNodeFactoryImpl
 	@Override
 	public EngNowiki nowiki(String text)
 	{
-		EngNowiki nw = new EngNowiki(text);
-		
-		if (text.isEmpty())
-		{
-			nw.setRtd("<nowiki />");
-		}
-		else
-		{
-			nw.setRtd("<nowiki>", text, "</nowiki>");
-		}
-		
-		return nw;
+		return new EngNowiki(text);
 	}
 	
 	@Override
@@ -56,17 +41,12 @@ public final class EngineNodeFactoryImpl
 	@Override
 	public EngSoftErrorNode softError(WtNode content)
 	{
-		EngSoftErrorNode se = new EngSoftErrorNode(
+		return new EngSoftErrorNode(
 				"strong",
 				attrs(list(attr(
 						"class",
 						value(list(text("error")))))),
 				body(list(content)));
-		
-		se.setRtd("<strong", RtData.SEP, ">", RtData.SEP, "</strong>");
-		genAttrRtd(se.getXmlAttributes());
-		
-		return se;
 	}
 	
 	@Override
@@ -102,32 +82,6 @@ public final class EngineNodeFactoryImpl
 		return new EngPage(content);
 	}
 	
-	@Override
-	public WtTagExtension tagExt(String name, WtXmlAttributes xmlAttributes)
-	{
-		WtTagExtension tagExt = super.tagExt(name, xmlAttributes);
-		tagExt.setRtd(
-				'<', tagExt.getName(), RtData.SEP,
-				" />", RtData.SEP);
-		genAttrRtd(xmlAttributes);
-		return tagExt;
-	}
-	
-	@Override
-	public WtTagExtension tagExt(
-			String name,
-			WtXmlAttributes xmlAttributes,
-			WtTagExtensionBody body)
-	{
-		WtTagExtension tagExt = super.tagExt(name, xmlAttributes, body);
-		tagExt.setRtd(
-				'<', tagExt.getName(), RtData.SEP,
-				'>', RtData.SEP,
-				"</", tagExt.getName(), '>');
-		genAttrRtd(xmlAttributes);
-		return tagExt;
-	}
-	
 	// =========================================================================
 	
 	@Override
@@ -151,25 +105,5 @@ public final class EngineNodeFactoryImpl
 		}
 		
 		return elem;
-	}
-	
-	// =========================================================================
-	
-	private void genAttrRtd(WtXmlAttributes attrs)
-	{
-		for (WtNode attr : attrs)
-		{
-			if (!attr.isNodeType(WtNode.NT_XML_ATTRIBUTE))
-				continue;
-			WtXmlAttribute a = (WtXmlAttribute) attr;
-			if (a.hasValue())
-			{
-				attr.setRtd(" ", a.getName(), "=\"", RtData.SEP, "\"");
-			}
-			else
-			{
-				attr.setRtd(" ", a.getName());
-			}
-		}
 	}
 }

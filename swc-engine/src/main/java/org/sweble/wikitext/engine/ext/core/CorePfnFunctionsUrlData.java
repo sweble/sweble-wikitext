@@ -32,6 +32,7 @@ import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.engine.utils.UrlEncoding;
 import org.sweble.wikitext.engine.utils.UrlType;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
@@ -312,7 +313,7 @@ public class CorePfnFunctionsUrlData
 			if (url == null)
 				return nf().text("");
 			
-			return nowiki ? nf().nowiki(url) : nf().text(url);
+			return nowiki ? EngineRtData.set(nf().nowiki(url)) : nf().text(url);
 		}
 	}
 	

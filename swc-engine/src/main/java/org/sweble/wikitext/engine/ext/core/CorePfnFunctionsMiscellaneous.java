@@ -24,6 +24,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngineRtData;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
@@ -147,10 +148,10 @@ public class CorePfnFunctionsMiscellaneous
 						nf().value(argValueList)));
 			}
 			
-			WtTagExtension tagExt = nf().tagExt(
+			WtTagExtension tagExt = EngineRtData.set(nf().tagExt(
 					nameStr,
 					nf().attrs(attrs),
-					nf().tagExtBody(bodyStr));
+					nf().tagExtBody(bodyStr)));
 			
 			return frame.expand(tagExt);
 		}
