@@ -103,9 +103,7 @@ public class BuiltInTagExtensions
 				Map<String, WtNodeList> attrs,
 				WtTagExtensionBody body)
 		{
-			return (tagExt.getBody() == null) ?
-					nf().nowiki("") :
-					nf().nowiki(body.getContent());
+			return nf().nowiki(body.getContent());
 		}
 	}
 }
