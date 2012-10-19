@@ -2,7 +2,6 @@ package org.sweble.wikitext.engine.utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -13,7 +12,7 @@ import org.sweble.wikitext.engine.FullPage;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngine;
-import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
@@ -23,6 +22,7 @@ import de.fau.cs.osr.ptk.common.test.FileCompare;
 import de.fau.cs.osr.ptk.common.test.FileContent;
 import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
 import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
+import de.fau.cs.osr.utils.StringUtils;
 
 public abstract class EngineIntegrationTestBase
 		extends
@@ -30,7 +30,7 @@ public abstract class EngineIntegrationTestBase
 {
 	private static final Logger logger = Logger.getLogger(EngineIntegrationTestBase.class);
 	
-	private final WikiConfig config;
+	private final WikiConfigImpl config;
 	
 	private final WtEngine engine;
 	
@@ -44,7 +44,7 @@ public abstract class EngineIntegrationTestBase
 	
 	// =========================================================================
 	
-	public WikiConfig getConfig()
+	public WikiConfigImpl getConfig()
 	{
 		return config;
 	}
@@ -138,7 +138,7 @@ public abstract class EngineIntegrationTestBase
 		{
 			String fileTitle = pageTitle.getNormalizedFullTitle();
 			File base = new File(getResources().getBaseDirectory(), searchDir);
-			File file = new File(base, encodeFileTitle(fileTitle));
+			File file = new File(base, StringUtils.safeFilename(fileTitle));
 			if (!file.exists())
 			{
 				logger.warn("Could not find page " + pageTitle + " at " + file);
@@ -151,36 +151,6 @@ public abstract class EngineIntegrationTestBase
 				String text = FileUtils.readFileToString(file, "UTF8");
 				return new FullPage(pageId, text);
 			}
-		}
-		
-		private String encodeFileTitle(String fileTitle) throws UnsupportedEncodingException
-		{
-			StringBuilder b = new StringBuilder();
-			for (int i = 0; i < fileTitle.length(); ++i)
-			{
-				char ch = fileTitle.charAt(i);
-				switch (ch)
-				{
-					case ' ':
-					case '_':
-						b.append(ch);
-						break;
-					
-					default:
-						if ((ch >= '0' && ch <= '9')
-								|| (ch >= 'A' && ch <= 'Z')
-								|| (ch >= 'a' && ch <= 'z')
-								|| (ch == ' ') || (ch == '_'))
-						{
-							b.append(ch);
-						}
-						else
-						{
-							b.append(String.format("%%%02X", (int) ch));
-						}
-				}
-			}
-			return b.toString();
 		}
 		
 		@Override
