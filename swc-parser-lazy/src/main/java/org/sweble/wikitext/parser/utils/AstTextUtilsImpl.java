@@ -114,7 +114,7 @@ public class AstTextUtilsImpl
 	
 	protected class SimpleStringConverter
 	{
-		protected final boolean failOnUnresolvedEntityRef;
+		protected boolean failOnUnresolvedEntityRef;
 		
 		protected StringBuilder b = new StringBuilder();
 		
@@ -125,21 +125,21 @@ public class AstTextUtilsImpl
 		
 		public SimpleStringConverter(int[] options)
 		{
-			boolean failOnUnresolvedEntityRef = false;
-			
+			this();
 			for (int option : options)
+				setOption(option);
+		}
+		
+		protected void setOption(int option)
+		{
+			switch (option)
 			{
-				switch (option)
-				{
-					case FAIL_ON_UNRESOLVED_ENTITY_REF:
-						failOnUnresolvedEntityRef = true;
-						break;
-					default:
-						throw new IllegalArgumentException("Unknown option");
-				}
+				case FAIL_ON_UNRESOLVED_ENTITY_REF:
+					failOnUnresolvedEntityRef = true;
+					break;
+				default:
+					throw new IllegalArgumentException("Unknown option");
 			}
-			
-			this.failOnUnresolvedEntityRef = failOnUnresolvedEntityRef;
 		}
 		
 		public String toString()
