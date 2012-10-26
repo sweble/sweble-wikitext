@@ -140,12 +140,7 @@
           <header>../etc/license-header.txt</header>
           <excludes>
             <exclude>src/main/autogen/org/sweble/wikitext/engine/wom/catalog/xml.xsd</exclude>
-            <exclude>src/test/resources/org/sweble/wikitext/engine/index</exclude>
-            <exclude>src/test/resources/**/*.wikitext</exclude>
-            <exclude>src/test/resources/**/*.rtwt</exclude>
-            <exclude>src/test/resources/**/*.wom</exclude>
-            <exclude>src/test/resources/**/*.ast</exclude>
-            <exclude>src/test/resources/**/NOTICE</exclude>
+            <exclude>src/test/resources/**</exclude>
             <exclude>src/site/site.xml</exclude>
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>

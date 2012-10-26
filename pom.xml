@@ -136,6 +136,7 @@
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>etc/license-header-apt-style.xml</exclude>
+            <exclude>bin/**</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>

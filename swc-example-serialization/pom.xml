@@ -118,15 +118,18 @@
         <version>1.9.0</version>
         <configuration>
           <header>../etc/license-header.txt</header>
+          <strictCheck>true</strictCheck>
+          <failIfMissing>true</failIfMissing>
+          <skip>false</skip>
           <excludes>
-            <exclude>src/test/resources/*.wikitext</exclude>
-            <exclude>src/test/resources/*.result</exclude>
+            <exclude>src/test/resources/**</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
             <exclude>README</exclude>
-            <exclude>pom-archetype.xml</exclude>
-            <exclude>generate-archetype</exclude>
+            <exclude>archetype-content.txt</exclude>
+            <exclude>eclipse-project-files/**</exclude>
+            <exclude>archetype-files/src/site/apt/index.apt.vm</exclude>
           </excludes>
         </configuration>
       </plugin>
