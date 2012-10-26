@@ -8,16 +8,12 @@ WtParsedWikitextPage(
 			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = "<" ]
 		),
-		[1] = WtNewline("\n"),
-		[2] = WtXmlStartTag(
+		[1] = "\n",
+		[2] = WtXmlElement(
 			{P} name = "blub"
-			{P} rtd = RTD[ "<blub" <o> ">" ]
-			xmlAttributes = WtXmlAttributes[]
-		),
-		[3] = "<",
-		[4] = WtXmlEndTag(
-			{P} name = "blub"
-			{P} rtd = RTD[ "</blub>" ]
+			{P} rtd = RTD[ "<blub" <o> ">" <o> "</blub>" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "<" ]
 		)
 	]
 )

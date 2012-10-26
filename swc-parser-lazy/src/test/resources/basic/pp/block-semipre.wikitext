@@ -1,5 +1,5 @@
  Line 1
- Line 2
+<!-- Comment --> Line 2
  Line 3
 
 	discontinued

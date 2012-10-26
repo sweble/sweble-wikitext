@@ -1,0 +1,22 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[ Warning: <no location>: <no content> : 12.2.5.4.7 - R23 (1) @ WtXmlEndTag. ]
+	[0] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " Hallo "
+		),
+		[1] = " zwischen den Welten",
+		[2] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = " du schn\u00F6de "
+		),
+		[3] = WtXmlElement(
+			{P} name = "li"
+			{P} rtd = RTD[ "<li" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = " Welt" ]
+		)
+	],
+	[1] = "\n"
+)

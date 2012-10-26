@@ -4,6 +4,7 @@ The cast of the television series ''[[MythBusters]]'' perform experiments to ver
 Special episodes listed here were aired separately to the normal season episodes and special episodes. Also included are "mini myths", videos available from the [[Discovery Channel]] website.
 
 ==Episode overview==
+<onlyinclude>
 
 {| class="wikitable" style="width:100%; margin:auto; background:#FFFFFF;"
  |-
@@ -21,6 +22,8 @@ Special episodes listed here were aired separately to the normal season episodes
 |LineColor       = DBE9F4
 }}
  |}
+
+</onlyinclude>
 
 ==Specials==
 

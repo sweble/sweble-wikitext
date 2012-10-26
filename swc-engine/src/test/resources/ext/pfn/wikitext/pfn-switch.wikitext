@@ -44,4 +44,4 @@
  | 1<nowiki>=</nowiki>2 = nowiki
  | 1&#61;2 = html
  | 1{{=}}2 = template
- | default }}
+ | default }} <!-- not yet supported: should really be "template"! -->

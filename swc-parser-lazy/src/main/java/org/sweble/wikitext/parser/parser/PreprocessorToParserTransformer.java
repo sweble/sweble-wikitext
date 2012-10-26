@@ -151,7 +151,10 @@ public class PreprocessorToParserTransformer
 		
 		public void visit(WtIgnored n)
 		{
-			// Always trimmed
+			if (!trim)
+			{
+				visit((WtNode) n);
+			}
 		}
 		
 		public void visit(WtXmlComment n)

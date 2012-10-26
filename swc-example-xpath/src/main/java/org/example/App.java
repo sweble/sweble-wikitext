@@ -20,11 +20,11 @@ package org.example;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-import org.sweble.wikitext.engine.EngCompiledPage;
-import org.sweble.wikitext.engine.Compiler;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
+import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 
 public class App
@@ -63,7 +63,7 @@ public class App
 		WikiConfig config = DefaultConfigEn.generate();
 		
 		// Instantiate a compiler for wiki pages
-		Compiler compiler = new Compiler(config);
+		WtEngine engine = new WtEngine(config);
 		
 		// Retrieve a page
 		PageTitle pageTitle = PageTitle.make(config, fileTitle);
@@ -73,7 +73,7 @@ public class App
 		String wikitext = FileUtils.readFileToString(file);
 		
 		// Compile the retrieved page
-		EngCompiledPage cp = compiler.postprocess(pageId, wikitext, null);
+		EngCompiledPage cp = engine.postprocess(pageId, wikitext, null);
 		
 		return XPath.query(cp, query);
 	}

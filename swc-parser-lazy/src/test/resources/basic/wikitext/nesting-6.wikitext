@@ -1,3 +1,8 @@
+The list is nested inside a link and must not be recognized by the parser.
+The post-processor, however, will extract the table (which contains the list)
+from the link title. After pretty-printing, the list will no longer be inside
+the link title and will now be recognized -> BEWARE!
+
 [[target|
 {|
  |

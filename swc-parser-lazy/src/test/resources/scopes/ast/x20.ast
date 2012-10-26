@@ -1,44 +1,30 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
-	[0] = WtXmlElement(
+	{P} warnings = C[ Warning: /scopes/wikitext/x20.wikitext:5:3: <no content> : 12.2.5.4.7 - R22 (1) @ WtXmlEndTag. ]
+	[0] = WtParagraph[],
+	[1] = WtXmlElement(
 		{P} name = "p"
 		{P} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
 		xmlAttributes = WtXmlAttributes[],
-		body = WtBody[
-			[0] = WtNewline("\n"),
-			[1] = "P1",
-			[2] = WtNewline("\n")
-		]
+		body = WtBody[ [0] = "\nP1\n" ]
 	),
-	[1] = WtNewline("\n"),
-	[2] = "P2",
-	[3] = WtNewline("\n"),
-	[4] = WtXmlEndTag(
+	[2] = "\nP2\n",
+	[3] = WtXmlElement(
 		{P} name = "p"
-		{P} rtd = RTD[ "</p>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[]
 	),
-	[5] = WtNewline("\n"),
-	[6] = "P3",
-	[7] = WtNewline("\n"),
-	[8] = WtXmlElement(
+	[4] = "\nP3\n",
+	[5] = WtXmlElement(
 		{P} name = "p"
 		{P} rtd = RTD[ "<p" <o> ">" <o> "" ]
 		xmlAttributes = WtXmlAttributes[],
-		body = WtBody[
-			[0] = WtNewline("\n"),
-			[1] = "P4",
-			[2] = WtNewline("\n")
-		]
+		body = WtBody[ [0] = "\nP4\n" ]
 	),
-	[9] = WtXmlElement(
+	[6] = WtXmlElement(
 		{P} name = "div"
 		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 		xmlAttributes = WtXmlAttributes[],
-		body = WtBody[
-			[0] = WtNewline("\n"),
-			[1] = "asdf",
-			[2] = WtNewline("\n")
-		]
+		body = WtBody[ [0] = "\nasdf\n" ]
 	)
 )

@@ -1,0 +1,41 @@
+LazyParsedPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    parse errors = 
+    [
+      Tree construction error: 12.2.5.4.7 - R22 (1); XmlElementClose @ /tree/wikitext/paragraph-table-test.wikitext:3:3
+    ]
+    {N} warnings = []
+
+  [
+    Paragraph([ ])
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<p", [1] = ">"
+        {N} empty = false
+        {N} name = "p"
+
+      [ ]
+      [ Text("\n  ") ]
+    )
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<table", [1] = ">"
+        {N} empty = false
+        {N} name = "table"
+
+      [ ]
+      [ ]
+    )
+    Text("\n")
+    XmlElement(
+      Properties:
+        {N} empty = false
+        {N} name = "p"
+        synthetic = true
+
+      [ ]
+      [ ]
+    )
+  ]
+)

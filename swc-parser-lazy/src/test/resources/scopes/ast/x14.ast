@@ -1,6 +1,15 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.9 R16 @ WtText.,
+		Warning: /scopes/wikitext/x14.wikitext:1:20: <no content> : 12.2.5.4.9 R16 @ WtXmlStartTag.,
+		Warning: /scopes/wikitext/x14.wikitext:1:24: <no content> : 12.2.5.4.9 R16 @ WtText.,
+		Warning: /scopes/wikitext/x14.wikitext:1:26: <no content> : 12.2.5.4.9 R16 @ WtXmlStartTag.,
+		Warning: /scopes/wikitext/x14.wikitext:1:28: <no content> : 12.2.5.4.9 R16 @ WtText.,
+		Warning: /scopes/wikitext/x14.wikitext:1:44: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.,
+		Warning: /scopes/wikitext/x14.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
 	[0] = WtParagraph[
 		[0] = "a ",
 		[1] = WtXmlElement(
@@ -11,8 +20,7 @@ WtParsedWikitextPage(
 		)
 	],
 	[1] = WtXmlElement(
-		{P} name = "table"
-		{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
+		{P} name = "i"
 		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
 			[0] = " c ",
@@ -33,10 +41,25 @@ WtParsedWikitextPage(
 		]
 	),
 	[2] = WtXmlElement(
-		{P} name = "i"
-		{P} rtd = RTD[ "" <o> "" <o> "</i>" ]
+		{P} name = "table"
+		{P} rtd = RTD[ "<table" <o> ">" <o> "" ]
 		xmlAttributes = WtXmlAttributes[],
-		body = WtBody[ [0] = " e " ]
+		body = WtBody[]
 	),
-	[3] = " f"
+	[3] = WtXmlElement(
+		{P} name = "i"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = " e " ]
+			)
+		]
+	),
+	[4] = WtXmlElement(
+		{P} name = "b"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = " f" ]
+	)
 )

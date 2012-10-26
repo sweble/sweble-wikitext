@@ -41,7 +41,7 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "#REDIRECT[[" <o> "]]" ]
 			target = WtPageName("link")
 		),
-		[1] = WtNewline("\n"),
+		[1] = "\n",
 		[2] = WtTemplate(
 			{P} precededByNewline = true
 			{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -73,6 +73,5 @@ WtParsedWikitextPage(
 			]
 		)
 	],
-	[1] = WtNewline("\n"),
-	[2] = WtNewline("\n")
+	[1] = "\n\n"
 )

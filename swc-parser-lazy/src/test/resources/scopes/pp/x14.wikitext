@@ -1,3 +1,3 @@
 a <i> b </i>
 
-<table> c <div> <b> d </b></div></table><i> e </i> f
+<i> c <div> <b> d </b></div></i><table></table><i><b> e </b></i><b> f</b>

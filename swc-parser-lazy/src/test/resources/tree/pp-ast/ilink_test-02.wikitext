@@ -1,0 +1,5 @@
+Es kommt ein Link: [[Hallo|Mit <b>fettem Titel</b>]]<b> der ordentlich leaked...</b> 
+
+Es kommt ein <i>kursiver Link: [[Hallo|aber der Titel ]]</i>[[Hallo| ist nur so halb-halb]] und vorbei ists.
+
+Es kommt ein <i>kursiver Link: [[Hallo|mit voll kursivem Titel]] auch hier noch.</i> Und vorbei ists.

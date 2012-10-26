@@ -53,6 +53,7 @@ import org.sweble.wikitext.parser.nodes.WtTable;
 import org.sweble.wikitext.parser.nodes.WtTableCaption;
 import org.sweble.wikitext.parser.nodes.WtTableCell;
 import org.sweble.wikitext.parser.nodes.WtTableHeader;
+import org.sweble.wikitext.parser.nodes.WtTableImplicitTableBody;
 import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
@@ -408,6 +409,12 @@ public class SafeLinkTitlePrinter
 	{
 		// TODO: Implement
 		throw new FmtNotYetImplementedError();
+	}
+	
+	@Override
+	public void visit(WtTableImplicitTableBody n)
+	{
+		iterate(n.getBody());
 	}
 	
 	public void visit(WtTagExtension n)

@@ -91,7 +91,7 @@ body
             result.add(n);
           break;
 
-        case WtNode.NT_XML_START_TAG:
+        case WtNode.NT_IM_START_TAG:
           if (count >= 2)
           {
             result.add(n);

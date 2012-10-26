@@ -12,38 +12,47 @@ WtParsedWikitextPage(
 		),
 		[1] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
-			[0] = WtText(
+			[0] = " ",
+			[1] = WtText(
 				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:2:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
-				{P} content = " __NOTOC_"
-			)
+				{P} content = "__"
+			),
+			[2] = "NOTOC_"
 		),
 		[2] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
-			[0] = WtText(
+			[0] = " ",
+			[1] = WtText(
 				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:3:3 - 10: "__NOTOC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
-				{P} content = " __NOTOC"
-			)
+				{P} content = "__"
+			),
+			[2] = "NOTOC"
 		),
 		[3] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
-			[0] = WtText(
+			[0] = " ",
+			[1] = WtText(
 				{A} warnings = C[ Warning (normal): /basic/wikitext/special-magicword.wikitext:4:3 - 12: "__MAGIC__" : This looks like a Page Switch, however the specified page switch name is unknown. ]
-				{P} content = " __MAGIC__"
+				{P} content = "__MAGIC__"
 			)
 		),
 		[4] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
-			[0] = WtText(
+			[0] = " ",
+			[1] = WtText(
 				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:5:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
-				{P} content = " __MAGIC_"
-			)
+				{P} content = "__"
+			),
+			[2] = "MAGIC_"
 		),
 		[5] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
-			[0] = WtText(
+			[0] = " ",
+			[1] = WtText(
 				{A} warnings = C[ Warning (none): /basic/wikitext/special-magicword.wikitext:6:3 - 10: "__MAGIC" : This looks like a Page Switch, however the name of the page switch is missing or not recognized as name. ]
-				{P} content = " __MAGIC"
-			)
+				{P} content = "__"
+			),
+			[2] = "MAGIC"
 		),
 		[6] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "" ]

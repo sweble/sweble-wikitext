@@ -65,6 +65,7 @@ import org.sweble.wikitext.parser.nodes.WtTable;
 import org.sweble.wikitext.parser.nodes.WtTableCaption;
 import org.sweble.wikitext.parser.nodes.WtTableCell;
 import org.sweble.wikitext.parser.nodes.WtTableHeader;
+import org.sweble.wikitext.parser.nodes.WtTableImplicitTableBody;
 import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
@@ -116,6 +117,11 @@ public class WtPrettyPrinter
 		p.print("#REDIRECT[[");
 		dispatch(n.getTarget());
 		p.print("]]");
+	}
+	
+	public void visit(WtTableImplicitTableBody n)
+	{
+		iterate(n.getBody());
 	}
 	
 	public void visit(WtXmlAttribute n)
@@ -257,13 +263,15 @@ public class WtPrettyPrinter
 	
 	public void visit(WtTableRow n)
 	{
-		p.clearEatNewlinesAndIndents();
-		p.capNewlines(1, 1);
-		p.print(" |-");
-		
-		dispatch(n.getXmlAttributes());
-		p.println();
-		
+		if (!n.isImplicit())
+		{
+			p.clearEatNewlinesAndIndents();
+			p.capNewlines(1, 1);
+			p.print(" |-");
+			
+			dispatch(n.getXmlAttributes());
+			p.println();
+		}
 		dispatch(n.getBody());
 	}
 	

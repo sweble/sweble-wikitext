@@ -1,0 +1,254 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/unclosed_formatting_elements-12.2.8.6.wikitext:4:6: <no content> : 12.2.5.4.7 - R30 (1) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/unclosed_formatting_elements-12.2.8.6.wikitext:4:10: <no content> : 12.2.5.4.7 - R30 (1) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/unclosed_formatting_elements-12.2.8.6.wikitext:4:14: <no content> : 12.2.5.4.7 - R30 (1) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/unclosed_formatting_elements-12.2.8.6.wikitext:4:18: <no content> : 12.2.5.4.7 - R30 (1) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/unclosed_formatting_elements-12.2.8.6.wikitext:4:22: <no content> : 12.2.5.4.7 - R30 (1) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/unclosed_formatting_elements-12.2.8.6.wikitext:4:26: <no content> : 12.2.5.4.7 - R30 (1) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[],
+	[1] = WtXmlElement(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "class"
+						{P} rtd = RTD[ " class=" <o> "" ]
+						value = WtValue[ [0] = "x" ]
+					)
+				],
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "b"
+						{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "class"
+								{P} rtd = RTD[ " class=" <o> "" ]
+								value = WtValue[ [0] = "x" ]
+							)
+						],
+						body = WtBody[
+							[0] = WtXmlElement(
+								{P} name = "b"
+								{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+								xmlAttributes = WtXmlAttributes[],
+								body = WtBody[
+									[0] = WtXmlElement(
+										{P} name = "b"
+										{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+										xmlAttributes = WtXmlAttributes[
+											[0] = WtXmlAttribute(
+												{P} name = "class"
+												{P} rtd = RTD[ " class=" <o> "" ]
+												value = WtValue[ [0] = "x" ]
+											)
+										],
+										body = WtBody[
+											[0] = WtXmlElement(
+												{P} name = "b"
+												{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+												xmlAttributes = WtXmlAttributes[
+													[0] = WtXmlAttribute(
+														{P} name = "class"
+														{P} rtd = RTD[ " class=" <o> "" ]
+														value = WtValue[ [0] = "x" ]
+													)
+												],
+												body = WtBody[
+													[0] = WtXmlElement(
+														{P} name = "b"
+														{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+														xmlAttributes = WtXmlAttributes[],
+														body = WtBody[ [0] = "X\n" ]
+													)
+												]
+											)
+										]
+									)
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[2] = WtXmlElement(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "class"
+						{P} rtd = RTD[ " class=" <o> "" ]
+						value = WtValue[ [0] = "x" ]
+					)
+				],
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "b"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtXmlElement(
+								{P} name = "b"
+								xmlAttributes = WtXmlAttributes[
+									[0] = WtXmlAttribute(
+										{P} name = "class"
+										{P} rtd = RTD[ " class=" <o> "" ]
+										value = WtValue[ [0] = "x" ]
+									)
+								],
+								body = WtBody[
+									[0] = WtXmlElement(
+										{P} name = "b"
+										xmlAttributes = WtXmlAttributes[
+											[0] = WtXmlAttribute(
+												{P} name = "class"
+												{P} rtd = RTD[ " class=" <o> "" ]
+												value = WtValue[ [0] = "x" ]
+											)
+										],
+										body = WtBody[
+											[0] = WtXmlElement(
+												{P} name = "b"
+												xmlAttributes = WtXmlAttributes[],
+												body = WtBody[ [0] = "X\n" ]
+											)
+										]
+									)
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[3] = WtXmlElement(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[
+					[0] = WtXmlAttribute(
+						{P} name = "class"
+						{P} rtd = RTD[ " class=" <o> "" ]
+						value = WtValue[ [0] = "x" ]
+					)
+				],
+				body = WtBody[
+					[0] = WtXmlElement(
+						{P} name = "b"
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[
+							[0] = WtXmlElement(
+								{P} name = "b"
+								xmlAttributes = WtXmlAttributes[
+									[0] = WtXmlAttribute(
+										{P} name = "class"
+										{P} rtd = RTD[ " class=" <o> "" ]
+										value = WtValue[ [0] = "x" ]
+									)
+								],
+								body = WtBody[
+									[0] = WtXmlElement(
+										{P} name = "b"
+										xmlAttributes = WtXmlAttributes[
+											[0] = WtXmlAttribute(
+												{P} name = "class"
+												{P} rtd = RTD[ " class=" <o> "" ]
+												value = WtValue[ [0] = "x" ]
+											)
+										],
+										body = WtBody[
+											[0] = WtXmlElement(
+												{P} name = "b"
+												xmlAttributes = WtXmlAttributes[],
+												body = WtBody[
+													[0] = WtXmlElement(
+														{P} name = "b"
+														{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+														xmlAttributes = WtXmlAttributes[],
+														body = WtBody[
+															[0] = WtXmlElement(
+																{P} name = "b"
+																{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+																xmlAttributes = WtXmlAttributes[
+																	[0] = WtXmlAttribute(
+																		{P} name = "class"
+																		{P} rtd = RTD[ " class=" <o> "" ]
+																		value = WtValue[ [0] = "x" ]
+																	)
+																],
+																body = WtBody[
+																	[0] = WtXmlElement(
+																		{P} name = "b"
+																		{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+																		xmlAttributes = WtXmlAttributes[],
+																		body = WtBody[ [0] = "X\n" ]
+																	)
+																]
+															)
+														]
+													)
+												]
+											)
+										]
+									)
+								]
+							)
+						]
+					)
+				]
+			)
+		]
+	),
+	[4] = WtXmlElement(
+		{P} name = "p"
+		{P} rtd = RTD[ "<p" <o> ">" <o> "" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[1] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[2] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[3] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[4] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[5] = WtXmlEndTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "</b>" ]
+			),
+			[6] = "X"
+		]
+	)
+)

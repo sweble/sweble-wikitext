@@ -4,34 +4,31 @@ WtParsedWikitextPage(
 	[0] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	),
-	[1] = WtNewline("\n"),
-	[2] = WtNewline("\n"),
-	[3] = WtHorizontalRule(
+	[1] = "\n\n",
+	[2] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	),
-	[4] = WtParagraph[ [0] = "text" ],
-	[5] = WtNewline("\n"),
-	[6] = WtHorizontalRule(
+	[3] = WtParagraph[ [0] = "text" ],
+	[4] = "\n",
+	[5] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	),
-	[7] = WtNewline("\n"),
-	[8] = WtParagraph[ [0] = "t" ],
-	[9] = WtNewline("\n"),
-	[10] = WtHorizontalRule(
+	[6] = "\n",
+	[7] = WtParagraph[ [0] = "t" ],
+	[8] = "\n",
+	[9] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	),
-	[11] = WtNewline("\n"),
-	[12] = WtNewline("\n"),
+	[10] = "\n\n",
+	[11] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[12] = "\n",
 	[13] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	),
-	[14] = WtNewline("\n"),
+	[14] = "\n\n",
 	[15] = WtHorizontalRule(
-		{P} rtd = RTD[ "----" ]
-	),
-	[16] = WtNewline("\n"),
-	[17] = WtNewline("\n"),
-	[18] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	)
 )

@@ -20,12 +20,18 @@ package org.example;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-import org.sweble.wikitext.engine.EngCompiledPage;
-import org.sweble.wikitext.engine.Compiler;
+import org.apache.commons.io.IOUtils;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
+import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.output.HtmlRenderer;
+import org.sweble.wikitext.engine.output.HtmlRendererCallback;
+import org.sweble.wikitext.engine.output.MediaInfo;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+
+import de.fau.cs.osr.utils.StringUtils;
 
 public class App
 {
@@ -74,7 +80,7 @@ public class App
 		final int wrapCol = 80;
 		
 		// Instantiate a compiler for wiki pages
-		Compiler compiler = new Compiler(config);
+		WtEngine engine = new WtEngine(config);
 		
 		// Retrieve a page
 		PageTitle pageTitle = PageTitle.make(config, fileTitle);
@@ -84,29 +90,46 @@ public class App
 		String wikitext = FileUtils.readFileToString(file);
 		
 		// Compile the retrieved page
-		EngCompiledPage cp = compiler.postprocess(pageId, wikitext, null);
-		
-		// Render the compiled page as HTML
-		/*
-		StringWriter w = new StringWriter();
-		*/
+		EngCompiledPage cp = engine.postprocess(pageId, wikitext, null);
 		
 		if (renderHtml)
 		{
-			/*
-			HtmlPrinter p = new HtmlPrinter(w, pageTitle.getDenormalizedFullTitle());
-			p.setCssResource("/org/sweble/wikitext/engine/utils/HtmlPrinter.css", "");
-			p.setStandaloneHtml(true, "");
-			p.go(cp.getPage());
-			return w.toString();
-			*/
-			// FIXME:
-			throw new UnsupportedOperationException("Rendering to HTML is currently not supported :(");
+			String ourHtml = HtmlRenderer.print(new MyRendererCallback(), config, pageTitle, cp.getPage());
+			
+			String template = IOUtils.toString(App.class.getResourceAsStream("/render-template.html"), "UTF8");
+			
+			String html = template;
+			html = html.replace("{$TITLE}", StringUtils.escHtml(pageTitle.getDenormalizedFullTitle()));
+			html = html.replace("{$CONTENT}", ourHtml);
+			
+			return html;
 		}
 		else
 		{
 			TextConverter p = new TextConverter(config, wrapCol);
-			return (String) p.dispatch(cp.getPage());
+			return (String) p.go(cp.getPage());
+		}
+	}
+	
+	private static final class MyRendererCallback
+			implements
+				HtmlRendererCallback
+	{
+		@Override
+		public boolean resourceExists(PageTitle target)
+		{
+			// TODO Auto-generated method stub
+			return false;
+		}
+		
+		@Override
+		public MediaInfo getMediaInfo(
+				String title,
+				int width,
+				int height) throws Exception
+		{
+			// TODO Auto-generated method stub
+			return null;
 		}
 	}
 }

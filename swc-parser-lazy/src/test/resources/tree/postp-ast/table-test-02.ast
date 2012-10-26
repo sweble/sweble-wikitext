@@ -1,0 +1,23 @@
+LazyParsedPage(
+  Properties:
+    {N} entityMap = EntityMap {}
+    parse errors = 
+    [
+      Tree construction error: 12.2.5.4.9 R16; ImTagClose @ null,
+      Tree construction error: 12.2.5.4.7 R10 (1); LazyParsedPage @ /tree/wikitext/table-test-02.wikitext:1:1
+    ]
+    {N} warnings = []
+
+  [
+    Paragraph([ ])
+    XmlElement(
+      Properties:
+        RTD = RtData: [0] = "<table", [1] = ">"
+        {N} empty = false
+        {N} name = "table"
+
+      [ ]
+      [ ]
+    )
+  ]
+)

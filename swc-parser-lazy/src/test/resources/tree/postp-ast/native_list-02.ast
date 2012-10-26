@@ -1,0 +1,70 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R23 (2) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R23 (2) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R23 (2) @ WtXmlEndTag.,
+		Warning: /tree/wikitext/native_list-02.wikitext:9:3: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[ [0] = "List 1" ],
+	[1] = "\n",
+	[2] = WtUnorderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "\n" ]
+			[0] = " normal",
+			[1] = WtXmlElement(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "bold" ]
+			)
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "*" <o> "" ]
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = " bold" ]
+			),
+			[1] = "normal"
+		)
+	],
+	[3] = "\n\n",
+	[4] = WtParagraph[ [0] = "List 2" ],
+	[5] = "\n",
+	[6] = WtOrderedList[
+		[0] = WtListItem(
+			{P} rtd = RTD[ "#" <o> "\n" ]
+			[0] = " normal",
+			[1] = WtXmlElement(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" <o> "" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "bold" ]
+			)
+		),
+		[1] = WtListItem(
+			{P} rtd = RTD[ "#" <o> "" ]
+			[0] = WtXmlElement(
+				{P} name = "b"
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = " bold" ]
+			)
+		)
+	],
+	[7] = WtXmlElement(
+		{P} name = "b"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = "\n" ]
+	),
+	[8] = WtParagraph[
+		[0] = WtXmlElement(
+			{A} synthetic = true
+			{P} name = "b"
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[ [0] = "bold\n" ]
+		),
+		[1] = "\nnormal"
+	],
+	[9] = "\n"
+)

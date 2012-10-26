@@ -82,6 +82,12 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
+	public WtTableImplicitTableBody itbody(WtBody body)
+	{
+		return new WtTableImplicitTableBody(body);
+	}
+	
+	@Override
 	public WtRedirect redirect(WtPageName target)
 	{
 		return new WtRedirect(target);

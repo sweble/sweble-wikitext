@@ -1,0 +1,76 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hallo",
+	[2] = "!",
+	[3] = WtNewline("\n"),
+	[4] = WtXmlStartTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "<b" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[5] = "Ich bin fett",
+	[6] = WtNewline("\n"),
+	[7] = WtXmlStartTag(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[8] = "Ich bin ein Item",
+	[9] = "!",
+	[10] = WtXmlEndTag(
+		{P} name = "li"
+		{P} rtd = RTD[ "</li>" ]
+	),
+	[11] = WtNewline("\n"),
+	[12] = WtXmlEndTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "</b>" ]
+	),
+	[13] = WtNewline("\n"),
+	[14] = "Ich sollte wieder d\u00FCnn sein...",
+	[15] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[16] = WtNewline("\n"),
+	[17] = WtNewline("\n"),
+	[18] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[19] = "Hallo",
+	[20] = "!",
+	[21] = WtNewline("\n"),
+	[22] = WtXmlStartTag(
+		{P} name = "li"
+		{P} rtd = RTD[ "<li" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[23] = WtXmlStartTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "<b" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[24] = "Ich bin fett",
+	[25] = WtXmlEndTag(
+		{P} name = "li"
+		{P} rtd = RTD[ "</li>" ]
+	),
+	[26] = WtNewline("\n"),
+	[27] = "Ich sollte noch fett sein",
+	[28] = WtNewline("\n"),
+	[29] = WtXmlEndTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "</b>" ]
+	),
+	[30] = WtNewline("\n"),
+	[31] = "Ich aber nicht mehr...",
+	[32] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[33] = WtNewline("\n")
+)

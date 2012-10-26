@@ -207,7 +207,7 @@ public class LinkBuilder
 		if (this.targetType == LinkType.IMAGE)
 		{
 			if (hAlign == null)
-				hAlign = ImageHorizAlign.NONE;
+				hAlign = ImageHorizAlign.UNSPECIFIED;
 			
 			if (vAlign == null)
 				vAlign = ImageVertAlign.MIDDLE;

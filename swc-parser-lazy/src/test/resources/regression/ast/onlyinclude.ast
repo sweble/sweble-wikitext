@@ -1,5 +1,12 @@
 WtParsedWikitextPage(
-	{P} entityMap = -
+	{P} entityMap = {
+		[0] = WtIgnored("<onlyinclude>"),
+		[1] = WtIgnored("</onlyinclude>")
+	}
 	{P} warnings = C[]
-	[0] = WtParagraph[ [0] = "don't touch me!" ]
+	[0] = WtParagraph[
+		[0] = WtIgnored("<onlyinclude>"),
+		[1] = "don't touch me!",
+		[2] = WtIgnored("</onlyinclude>")
+	]
 )

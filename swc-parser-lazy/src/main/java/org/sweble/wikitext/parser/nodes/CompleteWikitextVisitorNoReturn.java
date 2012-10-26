@@ -8,6 +8,8 @@ public interface CompleteWikitextVisitorNoReturn
 	
 	public void visit(WtRedirect n);
 	
+	public void visit(WtTableImplicitTableBody n);
+	
 	public void visit(WtXmlAttribute n);
 	
 	public void visit(WtXmlEmptyTag n);

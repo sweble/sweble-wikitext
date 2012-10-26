@@ -1,32 +1,16 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
 	{P} warnings = C[]
-	[0] = WtParagraph[
-		[0] = "italic",
-		[1] = WtNewline("\n"),
-		[2] = "bold",
-		[3] = WtNewline("\n"),
-		[4] = "bold+italic"
-	],
-	[1] = WtNewline("\n"),
-	[2] = WtNewline("\n"),
-	[3] = WtParagraph[
-		[0] = "'hmmm",
-		[1] = WtNewline("\n"),
-		[2] = "hmm'",
-		[3] = WtNewline("\n"),
-		[4] = "Mark's",
-		[5] = WtNewline("\n"),
-		[6] = "Mark's"
-	],
-	[4] = WtNewline("\n"),
-	[5] = WtNewline("\n"),
-	[6] = WtUnorderedList[
+	[0] = WtParagraph[ [0] = "italic\nbold\nbold+italic" ],
+	[1] = "\n\n",
+	[2] = WtParagraph[ [0] = "'hmmm\nhmm'\nMark's\nMark's" ],
+	[3] = "\n\n",
+	[4] = WtUnorderedList[
 		[0] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
 			[0] = " ",
 			[1] = WtItalics(
-				{P} rtd = RTD[ "''" <o> "" ]
+				{P} rtd = RTD[ "''" <o> "''" ]
 				[0] = "Item 1"
 			)
 		),
@@ -34,7 +18,7 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "\n" ]
 			[0] = " ",
 			[1] = WtBold(
-				{P} rtd = RTD[ "'''" <o> "" ]
+				{P} rtd = RTD[ "'''" <o> "'''" ]
 				[0] = "Item 2"
 			)
 		),
@@ -42,41 +26,34 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "" ]
 			[0] = " ",
 			[1] = WtItalics(
-				{P} rtd = RTD[ "''" <o> "" ]
+				{P} rtd = RTD[ "''" <o> "''" ]
 				[0] = WtBold(
-					{P} rtd = RTD[ "'''" <o> "" ]
+					{P} rtd = RTD[ "'''" <o> "'''" ]
 					[0] = "Item 3"
 				)
 			)
 		)
 	],
-	[7] = WtNewline("\n"),
-	[8] = WtNewline("\n"),
-	[9] = WtSemiPre[
-		[0] = WtSemiPreLine(
-			{P} rtd = RTD[ " " <o> "" ]
-			[0] = WtItalics(
-				{P} rtd = RTD[ "''" <o> "" ]
-				[0] = "Pre 1"
-			)
+	[5] = "\n\n",
+	[6] = WtSemiPre[
+		[0] = " ",
+		[1] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
+			[0] = "Pre 1"
 		),
-		[1] = WtSemiPreLine(
-			{P} rtd = RTD[ "\n " <o> "" ]
+		[2] = "\n ",
+		[3] = WtBold(
+			{P} rtd = RTD[ "'''" <o> "'''" ]
+			[0] = "Pre 2"
+		),
+		[4] = "\n ",
+		[5] = WtItalics(
+			{P} rtd = RTD[ "''" <o> "''" ]
 			[0] = WtBold(
-				{P} rtd = RTD[ "'''" <o> "" ]
-				[0] = "Pre 2"
-			)
-		),
-		[2] = WtSemiPreLine(
-			{P} rtd = RTD[ "\n " <o> "" ]
-			[0] = WtItalics(
-				{P} rtd = RTD[ "''" <o> "" ]
-				[0] = WtBold(
-					{P} rtd = RTD[ "'''" <o> "" ]
-					[0] = "Pre 3"
-				)
+				{P} rtd = RTD[ "'''" <o> "'''" ]
+				[0] = "Pre 3"
 			)
 		)
 	],
-	[10] = WtNewline("\n")
+	[7] = "\n"
 )

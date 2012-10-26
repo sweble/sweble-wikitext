@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
+	{P} warnings = C[ Warning: /regression/wikitext/xml_attribute-1.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (1) @ WtParsedWikitextPage. ]
 	[0] = WtTable(
 		{P} rtd = RTD[ "{|" <o> "" <o> "" ]
 		xmlAttributes = WtXmlAttributes[

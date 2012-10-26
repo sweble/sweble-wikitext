@@ -1,0 +1,35 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtImageLink(
+			{P} alt = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+				)
+			{P} border = false
+			{P} format = UNRESTRAINED
+			{P} hAlign = UNSPECIFIED
+			{P} height = -1
+			{P} link = ImageLinkTarget[ DEFAULT: --- ]
+			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+			{P} upright = false
+			{P} vAlign = MIDDLE
+			{P} width = 225
+			target = WtPageName("file:Saxby Chambliss.jpg"),
+			options = WtLinkOptions[
+				[0] = WtLinkOptionResize(
+					{P} height = -1
+					{P} rtd = RTD[ "|225px" ]
+					{P} width = 225
+				),
+				[1] = WtLinkOptionAltText(
+					{P} rtd = RTD[ "|alt=" <o> "" ]
+				)
+			],
+			title = WtLinkTitle(
+				{P} rtd = RTD[ "|" <o> "" ]
+				[0] = "Saxby Chambliss"
+			)
+		)
+	]
+)

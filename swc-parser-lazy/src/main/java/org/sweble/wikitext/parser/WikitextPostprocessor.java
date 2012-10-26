@@ -18,8 +18,8 @@
 package org.sweble.wikitext.parser;
 
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.postprocessor.ScopedElementBuilder;
 import org.sweble.wikitext.parser.postprocessor.TicksAnalyzer;
+import org.sweble.wikitext.parser.postprocessor.TreeBuilder;
 
 public class WikitextPostprocessor
 {
@@ -39,7 +39,7 @@ public class WikitextPostprocessor
 		WtNode result = ast;
 		
 		result = TicksAnalyzer.process(/*config, */result);
-		result = ScopedElementBuilder.process(config, result);
+		result = TreeBuilder.process(config, result);
 		
 		return result;
 	}

@@ -1,0 +1,10 @@
+List 1
+* normal<b>bold
+* bold</b>normal
+
+List 2
+# normal<b>bold
+# bold
+bold
+</b>
+normal

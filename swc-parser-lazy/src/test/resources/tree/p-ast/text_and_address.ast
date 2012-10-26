@@ -1,0 +1,28 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hallo Welt",
+	[2] = "!",
+	[3] = WtNewline("\n"),
+	[4] = WtXmlStartTag(
+		{P} name = "address"
+		{P} rtd = RTD[ "<address" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[5] = "Test",
+	[6] = WtXmlEndTag(
+		{P} name = "address"
+		{P} rtd = RTD[ "</address>" ]
+	),
+	[7] = WtNewline("\n"),
+	[8] = "Tsch\u00FCss",
+	[9] = "!",
+	[10] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[11] = WtNewline("\n")
+)

@@ -5,7 +5,10 @@ WtParsedWikitextPage(
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
 				{P} name = "x"
-				value = WtValue[ [0] = "&x" ]
+				value = WtValue[
+					[0] = "&",
+					[1] = "x"
+				]
 			)
 		],
 		body = WtBody[]

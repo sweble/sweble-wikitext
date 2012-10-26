@@ -43,7 +43,6 @@ import org.sweble.wikitext.engine.ext.math.MathTagExt;
 import org.sweble.wikitext.engine.ext.parser_functions.ParserFunctionsPfnExt;
 import org.sweble.wikitext.engine.ext.ref.RefTagExt;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
-import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
 /**
  * Programatically generate a default configuration for a English Wiki.
@@ -5122,8 +5121,6 @@ public class DefaultConfigEn
 		
 		// ==[ Parsing XML elements ]===============================================
 		
-		setXmlElementBehavior(pc);
-		
 		addXmlEntities(pc);
 	}
 	
@@ -5390,61 +5387,5 @@ public class DefaultConfigEn
 		pc.addXmlEntity("lsaquo", "\u2039");
 		pc.addXmlEntity("rsaquo", "\u203a");
 		pc.addXmlEntity("euro", "\u20ac");
-	}
-	
-	private static void setXmlElementBehavior(ParserConfigImpl pc)
-	{
-		pc.setXmlElementBehavior("table", ScopeType.XML_TABLE, false);
-		
-		pc.setXmlElementBehavior("caption", ScopeType.XML_TABLE_ITEM, false);
-		pc.setXmlElementBehavior("td", ScopeType.XML_TABLE_ITEM, false);
-		pc.setXmlElementBehavior("th", ScopeType.XML_TABLE_ITEM, false);
-		pc.setXmlElementBehavior("tr", ScopeType.XML_TABLE_ITEM, false);
-		
-		pc.setXmlElementBehavior("dd", ScopeType.XML_ITEM, false);
-		pc.setXmlElementBehavior("dl", ScopeType.XML_ITEM, false);
-		pc.setXmlElementBehavior("dt", ScopeType.XML_ITEM, false);
-		pc.setXmlElementBehavior("li", ScopeType.XML_ITEM, false);
-		
-		pc.setXmlElementBehavior("blockquote", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("center", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("del", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("dfn", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("div", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("h1", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("h2", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("h3", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("h4", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("h5", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("h6", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("hr", ScopeType.XML_BLOCK, true);
-		pc.setXmlElementBehavior("ins", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("ol", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("pre", ScopeType.XML_BLOCK, false);
-		pc.setXmlElementBehavior("ul", ScopeType.XML_BLOCK, false);
-		
-		pc.setXmlElementBehavior("abbr", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("b", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("big", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("br", ScopeType.XML_INLINE, true);
-		pc.setXmlElementBehavior("cite", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("code", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("em", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("font", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("i", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("kbd", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("s", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("samp", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("small", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("span", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("strike", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("strong", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("sub", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("sup", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("tt", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("u", ScopeType.XML_INLINE, false);
-		pc.setXmlElementBehavior("var", ScopeType.XML_INLINE, false);
-		
-		pc.setXmlElementBehavior("p", ScopeType.XML_PARAGRAPH, false);
 	}
 }

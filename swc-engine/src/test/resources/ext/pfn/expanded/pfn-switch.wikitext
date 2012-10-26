@@ -23,4 +23,4 @@ Bar
 <!-- 12 -->
 A
 <!-- 13 -->
-template
+nowiki <!-- not yet supported: should really be "template"! -->

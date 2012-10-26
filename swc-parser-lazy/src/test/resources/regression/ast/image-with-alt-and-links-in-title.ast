@@ -1,42 +1,41 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
 	{P} warnings = C[]
-	[0] = WtParagraph[
-		[0] = WtImageLink(
-			{P} alt = WtLinkOptionAltText(
-					{P} rtd = RTD[ "|alt=" <o> "" ]
-					[0] = "Y"
-				)
-			{P} border = false
-			{P} format = THUMBNAIL
-			{P} hAlign = NONE
-			{P} height = -1
-			{P} link = ImageLinkTarget[ DEFAULT: --- ]
-			{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
-			{P} upright = false
-			{P} vAlign = MIDDLE
-			{P} width = -1
-			target = WtPageName("File:X"),
-			options = WtLinkOptions[
-				[0] = WtLinkOptionKeyword(
-					{P} keyword = "thumb"
-					{P} rtd = RTD[ "|thumb" ]
-				),
-				[1] = WtLinkOptionAltText(
-					{P} rtd = RTD[ "|alt=" <o> "" ]
-					[0] = "Y"
-				)
-			],
-			title = WtLinkTitle(
-				{P} rtd = RTD[ "|" <o> "" ]
-				[0] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("Z"),
-					title = -
-				)
+	[0] = WtParagraph[],
+	[1] = WtImageLink(
+		{P} alt = WtLinkOptionAltText(
+				{P} rtd = RTD[ "|alt=" <o> "" ]
+				[0] = "Y"
+			)
+		{P} border = false
+		{P} format = THUMBNAIL
+		{P} hAlign = UNSPECIFIED
+		{P} height = -1
+		{P} link = ImageLinkTarget[ DEFAULT: --- ]
+		{P} rtd = RTD[ "[[" <o> "" <o> "" <o> "]]" ]
+		{P} upright = false
+		{P} vAlign = MIDDLE
+		{P} width = -1
+		target = WtPageName("File:X"),
+		options = WtLinkOptions[
+			[0] = WtLinkOptionKeyword(
+				{P} keyword = "thumb"
+				{P} rtd = RTD[ "|thumb" ]
+			),
+			[1] = WtLinkOptionAltText(
+				{P} rtd = RTD[ "|alt=" <o> "" ]
+				[0] = "Y"
+			)
+		],
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = WtInternalLink(
+				{P} postfix = ""
+				{P} prefix = ""
+				{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+				target = WtPageName("Z"),
+				title = -
 			)
 		)
-	]
+	)
 )

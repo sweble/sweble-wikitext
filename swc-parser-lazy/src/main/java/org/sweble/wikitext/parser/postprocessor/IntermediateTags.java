@@ -19,12 +19,12 @@ package org.sweble.wikitext.parser.postprocessor;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtImEndTag;
 import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtParagraph;
 
@@ -48,11 +48,25 @@ public enum IntermediateTags
 			WtItalics e = WikitextNodeFactoryImpl.i_(body);
 			if (config.isGatherRtData())
 			{
-				String r0 = (o == null || o.isSynthetic()) ? null : "''";
-				String r1 = (c == null || c.isSynthetic()) ? null : "''";
+				String r0 = /*(o == null || o.isSynthetic()) ? null : */"''";
+				String r1 = /*(c == null || c.isSynthetic()) ? null : */"''";
 				e.setRtd(r0, WtRtData.SEP, r1);
 			}
 			return e;
+		}
+		
+		public WtNode createOpen(boolean synthetic)
+		{
+			WtImStartTag tag = WikitextNodeFactoryImpl.imStartTag_(this, synthetic);
+			tag.setRtd("''");
+			return tag;
+		}
+		
+		public WtNode createClose(boolean synthetic)
+		{
+			WtImEndTag tag = WikitextNodeFactoryImpl.imEndTag_(this, synthetic);
+			tag.setRtd("''");
+			return tag;
 		}
 	},
 	
@@ -74,11 +88,25 @@ public enum IntermediateTags
 			WtBold e = WikitextNodeFactoryImpl.b_(body);
 			if (config.isGatherRtData())
 			{
-				String r0 = (o == null || o.isSynthetic()) ? null : "'''";
-				String r1 = (c == null || c.isSynthetic()) ? null : "'''";
+				String r0 = /*(o == null || o.isSynthetic()) ? null : */"'''";
+				String r1 = /*(c == null || c.isSynthetic()) ? null : */"'''";
 				e.setRtd(r0, WtRtData.SEP, r1);
 			}
 			return e;
+		}
+		
+		public WtNode createOpen(boolean synthetic)
+		{
+			WtImStartTag tag = WikitextNodeFactoryImpl.imStartTag_(this, synthetic);
+			tag.setRtd("'''");
+			return tag;
+		}
+		
+		public WtNode createClose(boolean synthetic)
+		{
+			WtImEndTag tag = WikitextNodeFactoryImpl.imEndTag_(this, synthetic);
+			tag.setRtd("'''");
+			return tag;
 		}
 	},
 	

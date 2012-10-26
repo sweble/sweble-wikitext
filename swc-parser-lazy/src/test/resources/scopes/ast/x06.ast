@@ -1,6 +1,6 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
+	{P} warnings = C[ Warning: /scopes/wikitext/x06.wikitext:1:17: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag. ]
 	[0] = WtParagraph[
 		[0] = "a ",
 		[1] = WtXmlElement(
@@ -19,7 +19,6 @@ WtParsedWikitextPage(
 		),
 		[2] = WtXmlElement(
 			{P} name = "b"
-			{P} rtd = RTD[ "" <o> "" <o> "</b>" ]
 			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = " d " ]
 		),

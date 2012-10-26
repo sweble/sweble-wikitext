@@ -26,10 +26,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.AstCompressor;
-import org.sweble.wikitext.parser.utils.FullParser;
+import org.sweble.wikitext.parser.utils.NonExpandingParser;
 import org.sweble.wikitext.parser.utils.TypedPrettyPrinter;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
-import org.sweble.wikitext.parser.utils.WtPrettyPrinterTest;
+import org.sweble.wikitext.parser.utils.WtPrettyPrintAstTest;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 import de.fau.cs.osr.ptk.common.ParserInterface;
@@ -65,14 +65,14 @@ public class RegressionTest
 	
 	private final ParserConfig config;
 	
-	private final FullParser fullParser;
+	private final NonExpandingParser fullParser;
 	
 	// =========================================================================
 	
 	public RegressionTest(String title, File inputFile)
 	{
 		this.inputFile = inputFile;
-		this.fullParser = new FullParser();
+		this.fullParser = new NonExpandingParser();
 		this.config = fullParser.getParserConfig();
 	}
 	
@@ -115,7 +115,7 @@ public class RegressionTest
 	@Test
 	public void testParsedPrettyPrintedWikitextMatchesOriginal() throws Exception
 	{
-		WtPrettyPrinterTest.test(
+		WtPrettyPrintAstTest.test(
 				config,
 				this,
 				inputFile,

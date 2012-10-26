@@ -1,0 +1,16 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtRedirect(
+				{P} rtd = RTD[ "#REDIRECT [[" <o> "]]" ]
+				target = WtPageName("Wohin auch immer")
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtRedirect(
+			{P} rtd = RTD[ "#REDIRECT [[" <o> "]]" ]
+			target = WtPageName("Wohin auch immer")
+		)
+	],
+	[1] = "\n"
+)

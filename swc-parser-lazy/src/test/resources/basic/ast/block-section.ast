@@ -8,10 +8,9 @@ WtParsedWikitextPage(
 			[0] = " Hallo 1 "
 		),
 		body = WtBody[
-			[0] = WtNewline("\n"),
+			[0] = "\n",
 			[1] = WtParagraph[ [0] = "Welt 1" ],
-			[2] = WtNewline("\n"),
-			[3] = WtNewline("\n")
+			[2] = "\n\n"
 		]
 	),
 	[1] = WtSection(
@@ -21,7 +20,7 @@ WtParsedWikitextPage(
 			[0] = " Hallo 2 "
 		),
 		body = WtBody[
-			[0] = WtNewline("\n"),
+			[0] = "\n",
 			[1] = WtUnorderedList[
 				[0] = WtListItem(
 					{P} rtd = RTD[ "*" <o> "\n" ]
@@ -32,7 +31,7 @@ WtParsedWikitextPage(
 					[0] = " b"
 				)
 			],
-			[2] = WtNewline("\n")
+			[2] = "\n"
 		]
 	),
 	[2] = WtSection(
@@ -42,20 +41,19 @@ WtParsedWikitextPage(
 			[0] = " Hallo 3 "
 		),
 		body = WtBody[
-			[0] = WtNewline("\n"),
+			[0] = "\n",
 			[1] = WtParagraph[ [0] = "Welt 3" ],
-			[2] = WtNewline("\n"),
-			[3] = WtNewline("\n"),
-			[4] = WtSection(
+			[2] = "\n\n",
+			[3] = WtSection(
 				{P} level = 2
 				heading = WtHeading(
 					{P} rtd = RTD[ "==" <o> "==" ]
 					[0] = " Hallo 4 "
 				),
 				body = WtBody[
-					[0] = WtNewline("\n"),
+					[0] = "\n",
 					[1] = WtParagraph[ [0] = "Welt 4" ],
-					[2] = WtNewline("\n"),
+					[2] = "\n",
 					[3] = WtSection(
 						{P} level = 3
 						heading = WtHeading(
@@ -63,9 +61,9 @@ WtParsedWikitextPage(
 							[0] = " Hallo 5 "
 						),
 						body = WtBody[
-							[0] = WtNewline("\n"),
+							[0] = "\n",
 							[1] = WtParagraph[ [0] = "Welt 5" ],
-							[2] = WtNewline("\n")
+							[2] = "\n"
 						]
 					),
 					[4] = WtSection(
@@ -75,27 +73,23 @@ WtParsedWikitextPage(
 							[0] = " Hallo 6 "
 						),
 						body = WtBody[
-							[0] = WtNewline("\n"),
-							[1] = WtParagraph[
-								[0] = "Welt 6",
-								[1] = WtNewline("\n")
-							],
-							[2] = WtNewline("\n"),
-							[3] = WtNewline("\n")
+							[0] = "\n",
+							[1] = WtParagraph[ [0] = "Welt 6\n" ],
+							[2] = "\n\n"
 						]
 					)
 				]
 			),
-			[5] = WtSection(
+			[4] = WtSection(
 				{P} level = 2
 				heading = WtHeading(
 					{P} rtd = RTD[ "==" <o> "==" ]
 					[0] = " Hallo 7 "
 				),
 				body = WtBody[
-					[0] = WtNewline("\n"),
+					[0] = "\n",
 					[1] = WtParagraph[ [0] = "Welt 7" ],
-					[2] = WtNewline("\n"),
+					[2] = "\n",
 					[3] = WtSection(
 						{P} level = 4
 						heading = WtHeading(
@@ -103,9 +97,9 @@ WtParsedWikitextPage(
 							[0] = " Hallo 8 "
 						),
 						body = WtBody[
-							[0] = WtNewline("\n"),
+							[0] = "\n",
 							[1] = WtParagraph[ [0] = "Welt 8" ],
-							[2] = WtNewline("\n")
+							[2] = "\n"
 						]
 					)
 				]
@@ -119,13 +113,9 @@ WtParsedWikitextPage(
 			[0] = " Hallo 9 "
 		),
 		body = WtBody[
-			[0] = WtNewline("\n"),
-			[1] = WtParagraph[
-				[0] = "Welt 9",
-				[1] = WtNewline("\n")
-			],
-			[2] = WtNewline("\n"),
-			[3] = WtNewline("\n")
+			[0] = "\n",
+			[1] = WtParagraph[ [0] = "Welt 9\n" ],
+			[2] = "\n\n"
 		]
 	),
 	[4] = WtSection(
@@ -135,7 +125,7 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "=" <o> "=" ]
 			[0] = " Hallo 10 ="
 		),
-		body = WtBody[ [0] = WtNewline("\n") ]
+		body = WtBody[ [0] = "\n" ]
 	),
 	[5] = WtSection(
 		{P} level = 1

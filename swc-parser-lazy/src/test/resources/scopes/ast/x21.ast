@@ -1,7 +1,10 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
-	[0] = WtNewline("\n"),
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R24 (2) @ WtXmlEndTag.,
+		Warning: /scopes/wikitext/x21.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
+	]
+	[0] = "\n",
 	[1] = WtDefinitionList[
 		[0] = WtDefinitionListDef[
 			[0] = WtDefinitionList[
@@ -34,28 +37,16 @@ WtParsedWikitextPage(
 	],
 	[2] = WtXmlElement(
 		{P} name = "i"
-		{P} rtd = RTD[ "" <o> "" <o> "" ]
 		xmlAttributes = WtXmlAttributes[],
 		body = WtBody[
-			[0] = WtNewline("\n"),
-			[1] = WtNewline("\n")
+			[0] = "\n\n",
+			[1] = WtDefinitionList[
+				[0] = WtDefinitionListDef(
+					{P} rtd = RTD[ ":" <o> "" ]
+					[0] = "B "
+				)
+			],
+			[2] = "\n"
 		]
-	),
-	[3] = WtDefinitionList[
-		[0] = WtDefinitionListDef(
-			{P} rtd = RTD[ ":" <o> "" ]
-			[0] = WtXmlElement(
-				{P} name = "i"
-				{P} rtd = RTD[ "" <o> "" <o> "" ]
-				xmlAttributes = WtXmlAttributes[],
-				body = WtBody[ [0] = "B " ]
-			)
-		)
-	],
-	[4] = WtXmlElement(
-		{P} name = "i"
-		{P} rtd = RTD[ "" <o> "" <o> "" ]
-		xmlAttributes = WtXmlAttributes[],
-		body = WtBody[ [0] = WtNewline("\n") ]
 	)
 )

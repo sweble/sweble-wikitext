@@ -73,8 +73,17 @@ public class WtImStartTag
 		return synthetic;
 	}
 	
+	/**
+	 * TODO: Remove me!
+	 */
 	public IntermediateTags getType()
 	{
 		return type;
+	}
+	
+	@Override
+	public int getNodeType()
+	{
+		return NT_IM_START_TAG;
 	}
 }

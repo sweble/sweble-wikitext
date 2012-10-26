@@ -4,9 +4,10 @@ WtParsedWikitextPage(
 	[0] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (informative): /basic/wikitext/inline-internal-link-4.wikitext:1:1 - 8: "[[Link1" : This looks like a Internal Link, however the finishing `]]' is missing. ]
-			{P} content = "[[Link1|Title1 "
+			{P} content = "[["
 		),
-		[1] = WtInternalLink(
+		[1] = "Link1|Title1 ",
+		[2] = WtInternalLink(
 			{P} postfix = ""
 			{P} prefix = ""
 			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -16,6 +17,6 @@ WtParsedWikitextPage(
 				[0] = "Title2"
 			)
 		),
-		[2] = " ]]"
+		[3] = " ]]"
 	]
 )

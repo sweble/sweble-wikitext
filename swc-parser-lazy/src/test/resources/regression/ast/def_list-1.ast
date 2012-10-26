@@ -21,5 +21,5 @@ WtParsedWikitextPage(
 			[0] = "z"
 		)
 	],
-	[2] = WtNewline("\n")
+	[2] = "\n"
 )

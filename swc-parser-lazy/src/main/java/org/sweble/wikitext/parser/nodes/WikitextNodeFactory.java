@@ -42,6 +42,8 @@ public interface WikitextNodeFactory
 	
 	WtRedirect redirect(WtPageName target);
 	
+	WtTableImplicitTableBody itbody(WtBody body);
+	
 	WtXmlAttribute attr(String name);
 	
 	WtXmlAttribute attr(String name, WtValue value);

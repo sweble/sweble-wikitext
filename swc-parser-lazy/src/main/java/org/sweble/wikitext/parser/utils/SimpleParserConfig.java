@@ -17,10 +17,6 @@
 
 package org.sweble.wikitext.parser.utils;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
@@ -28,7 +24,6 @@ import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
-import org.sweble.wikitext.parser.postprocessor.ScopeType;
 
 /**
  * This is a simple parser config that is ONLY suited for test purposes!
@@ -37,14 +32,6 @@ public class SimpleParserConfig
 		implements
 			ParserConfig
 {
-	private final static HashSet<String> allowed;
-	
-	private final static HashSet<String> emptyOnly;
-	
-	private final static HashMap<String, ScopeType> elementTypes;
-	
-	// =========================================================================
-	
 	private final boolean warningsEnabled;
 	
 	private final boolean gatherRtd;
@@ -52,48 +39,6 @@ public class SimpleParserConfig
 	private final boolean autoCorrect;
 	
 	private final WikitextNodeFactory nodeFactory;
-	
-	// =========================================================================
-	
-	static
-	{
-		allowed = new HashSet<String>();
-		allowed.addAll(Arrays.asList(
-				"abbr", "b", "big", "blockquote", "br", "caption",
-				"center", "cite", "code", "dd", "del", "dfn", "div", "dl",
-				"dt", "em", "font", "h1", "h2", "h3", "h4", "h5", "h6", "hr",
-				"i", "ins", "kbd", "li", "ol", "p", "pre", "s", "samp",
-				"small", "span", "strike", "strong", "sub", "sup", "table",
-				"td", "th", "tr", "tt", "u", "ul", "var"));
-		
-		emptyOnly = new HashSet<String>();
-		emptyOnly.addAll(Arrays.asList(
-				"area", "base", "basefont", "br", "col", "frame", "hr",
-				"img", "input", "isindex", "link", "meta", "param"));
-		
-		elementTypes = new HashMap<String, ScopeType>();
-		
-		elementTypes.put("p", ScopeType.XML_PARAGRAPH);
-		
-		for (String e : Arrays.asList("abbr", "b", "big", "br", "cite", "code",
-				"em", "font", "i", "s", "samp", "small", "span", "strike", "strong",
-				"sub", "sup", "tt", "u", "var"))
-			elementTypes.put(e, ScopeType.XML_INLINE);
-		
-		for (String e : Arrays.asList("blockquote", "center", "del", "dfn", "div",
-				"h1", "h2", "h3", "h4", "h5", "h6", "hr", "ins", "kbd", "ol", "pre",
-				"ul"))
-			elementTypes.put(e, ScopeType.XML_BLOCK);
-		
-		for (String e : Arrays.asList("dd", "dl", "dt", "li"))
-			elementTypes.put(e, ScopeType.XML_ITEM);
-		
-		for (String e : Arrays.asList("caption", "td", "tr", "th"))
-			elementTypes.put(e, ScopeType.XML_TABLE_ITEM);
-		
-		for (String e : Arrays.asList("table"))
-			elementTypes.put(e, ScopeType.XML_TABLE);
-	}
 	
 	// =========================================================================
 	
@@ -247,27 +192,6 @@ public class SimpleParserConfig
 	}
 	
 	// ==[ Parsing XML elements ]===============================================
-	
-	@Override
-	public boolean isXmlElementAllowed(String name)
-	{
-		return allowed.contains(name.toLowerCase());
-	}
-	
-	@Override
-	public boolean isXmlElementEmptyOnly(String name)
-	{
-		return emptyOnly.contains(name.toLowerCase());
-	}
-	
-	@Override
-	public ScopeType getXmlElementType(String name)
-	{
-		ScopeType type = elementTypes.get(name);
-		if (type == null)
-			return ScopeType.XML_BLOCK;
-		return type;
-	}
 	
 	@Override
 	public boolean isValidXmlEntityRef(String name)

@@ -1,3 +1,10 @@
+Beware:
+Concerns the "parse the pretty printed text again" test.
+The " b &lt;div> c " part will be pulled in front of the table.
+The "a " is in a paragraph, the table contents will appear on a NEW LINE
+after the paragraph. When pretty printing the " b" will be at the start of a line.
+It will be parsed as SEMI PRE!
+
 a 
 
-<table> b <div> c </div></table> d
+ b <div> c </div><table></table> d

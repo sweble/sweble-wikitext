@@ -1,6 +1,9 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.
+	]
 	[0] = WtParagraph[
 		[0] = WtInternalLink(
 			{P} postfix = ""
@@ -20,7 +23,6 @@ WtParsedWikitextPage(
 		),
 		[1] = WtXmlElement(
 			{P} name = "i"
-			{P} rtd = RTD[ "" <o> "" <o> "" ]
 			xmlAttributes = WtXmlAttributes[],
 			body = WtBody[ [0] = " c" ]
 		)

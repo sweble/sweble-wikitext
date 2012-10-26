@@ -63,6 +63,7 @@ import org.sweble.wikitext.parser.nodes.WtTable;
 import org.sweble.wikitext.parser.nodes.WtTableCaption;
 import org.sweble.wikitext.parser.nodes.WtTableCell;
 import org.sweble.wikitext.parser.nodes.WtTableHeader;
+import org.sweble.wikitext.parser.nodes.WtTableImplicitTableBody;
 import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
@@ -171,19 +172,9 @@ public final class HtmlRenderer
 		{
 			p.indentAtBol();
 			
-			if (n.getTarget().getProtocol() != null)
-			{
-				pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s:%s\">%!</a>",
-						n.getTarget().getProtocol(),
-						n.getTarget().getPath(),
-						n.getTitle());
-			}
-			else
-			{
-				pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">%!</a>",
-						n.getTarget().getPath(),
-						n.getTitle());
-			}
+			pt("<a rel=\"nofollow\" class=\"external text\" href=\"%s\">%!</a>",
+					makeUrl(n.getTarget()),
+					n.getTitle());
 		}
 		else
 		{
@@ -265,6 +256,8 @@ public final class HtmlRenderer
 		
 		boolean exists = (info != null && info.getImgUrl() != null);
 		
+		boolean isImage = !target.getTitle().endsWith(".ogg");
+		
 		if (exists && imgHeight > 0)
 		{
 			int altWidth = imgHeight * info.getImgWidth() / info.getImgHeight();
@@ -335,7 +328,7 @@ public final class HtmlRenderer
 				linkUrl = (WtUrl) n.getLink().getTarget();
 				break;
 			case DEFAULT:
-				if (exists)
+				if (exists && isImage)
 					aClasses += " image";
 				break;
 		}
@@ -368,7 +361,7 @@ public final class HtmlRenderer
 			}
 			else if (linkTarget != null)
 			{
-				aTitle = makeUrl(linkTarget);
+				aTitle = makeImageTitle(n, target);//makeUrl(linkTarget);
 			}
 			else if (linkUrl != null)
 			{
@@ -386,16 +379,17 @@ public final class HtmlRenderer
 		if (exists)
 		{
 			width = scaled ? info.getThumbWidth() : info.getImgWidth();
-			if (!exists)
-				width = 180;
 			
 			height = scaled ? info.getThumbHeight() : info.getImgHeight();
 		}
+		else
+			width = 180;
 		
 		// -- generate html --
 		
-		if (n.getFormat() == ImageViewFormat.THUMBNAIL ||
-				n.getHAlign() != ImageHorizAlign.NONE)
+		if (isImage &&
+				n.getFormat() == ImageViewFormat.THUMBNAIL ||
+				n.getHAlign() != ImageHorizAlign.UNSPECIFIED)
 		{
 			String align = "";
 			switch (n.getHAlign())
@@ -458,12 +452,19 @@ public final class HtmlRenderer
 		
 		if (exists)
 		{
-			pt("<img alt=\"%s\" src=\"%s\" width=\"%d\" height=\"%d\"%s />",
-					alt.trim(),
-					imgUrl,
-					width,
-					height,
-					imgClasses);
+			if (isImage)
+			{
+				pt("<img alt=\"%s\" src=\"%s\" width=\"%d\" height=\"%d\"%s />",
+						alt.trim(),
+						imgUrl,
+						width,
+						height,
+						imgClasses);
+			}
+			else
+			{
+				p.print(esc(makeImageTitle(n, target)));
+			}
 		}
 		else
 		{
@@ -867,6 +868,11 @@ public final class HtmlRenderer
 		}
 	}
 	
+	public void visit(WtTableImplicitTableBody n)
+	{
+		iterate(n.getBody());
+	}
+	
 	public void visit(WtTagExtension n)
 	{
 		// TODO: Should not get skipped!
@@ -941,11 +947,9 @@ public final class HtmlRenderer
 	public void visit(WtUrl n)
 	{
 		p.indentAtBol();
-		pf("<a href=\"%s:%s\">%s:%s</a>",
-				n.getProtocol(),
-				n.getPath(),
-				n.getProtocol(),
-				n.getPath());
+		
+		String url = makeUrl(n);
+		pf("<a href=\"%s\">%s</a>", url, url);
 	}
 	
 	@Override
@@ -1227,7 +1231,7 @@ public final class HtmlRenderer
 	
 	private String makeUrl(WtUrl linkUrl)
 	{
-		if (linkUrl.getProtocol() == null)
+		if (linkUrl.getProtocol() == "")
 			return linkUrl.getPath();
 		return linkUrl.getProtocol() + ":" + linkUrl.getPath();
 	}

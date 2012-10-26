@@ -1,1 +1,1 @@
-<i> a </i>[[target|<i> b </i> c ]] d
+<i> a [[target| b ]]</i>[[target| c ]] d

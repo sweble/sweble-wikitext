@@ -10,7 +10,7 @@ WtParsedWikitextPage(
 				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[
 					[0] = WtParagraph[ [0] = "x" ],
-					[1] = WtNewline("\n")
+					[1] = "\n"
 				]
 			)
 		]

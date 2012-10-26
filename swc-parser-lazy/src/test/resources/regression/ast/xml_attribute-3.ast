@@ -2,7 +2,7 @@ WtParsedWikitextPage(
 	{P} entityMap = -
 	{P} warnings = C[]
 	[0] = WtParagraph[ [0] = "Whitespace before Eol!" ],
-	[1] = WtNewline("\n"),
+	[1] = "\n",
 	[2] = WtTable(
 		{P} rtd = RTD[ "{|" <o> "     \n" <o> " |}" ]
 		xmlAttributes = WtXmlAttributes[
@@ -13,16 +13,21 @@ WtParsedWikitextPage(
 			)
 		],
 		body = WtBody[
-			[0] = WtTableRow(
-				{P} rtd = RTD[ " |-" <o> "    \n" <o> "" ]
-				xmlAttributes = WtXmlAttributes[
-					[0] = WtXmlAttribute(
-						{P} name = "x"
-						{P} rtd = RTD[ "  x=\"" <o> "\"" ]
-						value = WtValue[ [0] = "hallo" ]
+			[0] = WtTableImplicitTableBody(
+				body = WtBody[
+					[0] = WtTableRow(
+						{P} implicit = false
+						{P} rtd = RTD[ " |-" <o> "    \n" <o> "" ]
+						xmlAttributes = WtXmlAttributes[
+							[0] = WtXmlAttribute(
+								{P} name = "x"
+								{P} rtd = RTD[ "  x=\"" <o> "\"" ]
+								value = WtValue[ [0] = "hallo" ]
+							)
+						],
+						body = WtBody[]
 					)
-				],
-				body = WtBody[]
+				]
 			)
 		]
 	)

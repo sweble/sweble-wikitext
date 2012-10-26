@@ -28,7 +28,7 @@ import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.ri.JXPathContextReferenceImpl;
 import org.junit.Test;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.FullParser;
+import org.sweble.wikitext.parser.utils.NonExpandingParser;
 import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import xtc.parser.ParseException;
@@ -109,14 +109,14 @@ public class XPathTest
 	
 	// =========================================================================
 	
-	private final FullParser parser;
+	private final NonExpandingParser parser;
 	
 	public XPathTest()
 	{
 		JXPathContextReferenceImpl.addNodePointerFactory(
 				new AstNodePointerFactory());
 		
-		parser = new FullParser(WARNINGS_ENABLED, GATHER_RTD, AUTO_CORRECT);
+		parser = new NonExpandingParser(WARNINGS_ENABLED, GATHER_RTD, AUTO_CORRECT);
 	}
 	
 	// =========================================================================

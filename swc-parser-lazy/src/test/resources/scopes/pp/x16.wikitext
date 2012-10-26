@@ -1,3 +1,3 @@
 a <i> b </i>
 
-<div><i> c </i>[[target|<i> d </i> e ]] f </div>
+<div><i> c [[target| d ]]</i>[[target| e ]] f </div>

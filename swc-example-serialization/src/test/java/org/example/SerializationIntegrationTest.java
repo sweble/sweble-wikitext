@@ -1,5 +1,7 @@
 package org.example;
 
+import static org.junit.Assert.*;
+
 import java.io.File;
 import java.net.URL;
 import java.util.LinkedList;
@@ -8,6 +10,8 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
+import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import de.fau.cs.osr.utils.NamedParametrized;
 
@@ -69,6 +73,23 @@ public class SerializationIntegrationTest
 	@Test
 	public void testJavaSerialization() throws Exception
 	{
+		byte[] serialized = serializer.serializeTo(SerializationMethod.JAVA);
+		
+		WtNode deserializedAst = serializer.deserializeFrom(SerializationMethod.JAVA, serialized);
+		
+		String originalAstPrinted = WtAstPrinter.print(serializer.getAst());
+		
+		String deserializedAstPrinted = WtAstPrinter.print(deserializedAst);
+		
+		assertEquals(originalAstPrinted, deserializedAstPrinted);
+		
+		serializer.roundTrip(SerializationMethod.JAVA);
+	}
+	
+	/*
+	@Test
+	public void testJavaSerialization() throws Exception
+	{
 		// Must complete without throwing an exception
 		serializer.roundTrip(SerializationMethod.JAVA);
 	}
@@ -86,4 +107,5 @@ public class SerializationIntegrationTest
 		// Must complete without throwing an exception
 		serializer.roundTrip(SerializationMethod.JSON);
 	}
+	*/
 }

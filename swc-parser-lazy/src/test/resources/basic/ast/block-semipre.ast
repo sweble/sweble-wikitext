@@ -9,30 +9,17 @@ WtParsedWikitextPage(
 	}
 	{P} warnings = C[]
 	[0] = WtSemiPre[
-		[0] = WtSemiPreLine(
-			{P} rtd = RTD[ " " <o> "" ]
-			[0] = "Line 1"
+		[0] = " Line 1\n",
+		[1] = WtXmlComment(
+			{P} content = " Comment "
+			{P} prefix = ""
+			{P} rtd = RTD[ "<!-- Comment -->" ]
+			{P} suffix = ""
 		),
-		[1] = WtSemiPreLine(
-			{P} rtd = RTD[ "\n" + WtXmlComment(" Comment ") + " " <o> "" ]
-			[0] = "Line 2"
-		),
-		[2] = WtSemiPreLine(
-			{P} rtd = RTD[ "\n " <o> "" ]
-			[0] = "Line 3"
-		)
+		[2] = " Line 2\n Line 3"
 	],
-	[1] = WtNewline("\n"),
+	[1] = "\n",
 	[2] = WtParagraph[ [0] = "\tdiscontinued" ],
-	[3] = WtNewline("\n"),
-	[4] = WtSemiPre[
-		[0] = WtSemiPreLine(
-			{P} rtd = RTD[ " " <o> "" ]
-			[0] = "Line 5"
-		),
-		[1] = WtSemiPreLine(
-			{P} rtd = RTD[ "\n " <o> "" ]
-			[0] = "Line 6"
-		)
-	]
+	[3] = "\n",
+	[4] = WtSemiPre[ [0] = " Line 5\n Line 6" ]
 )

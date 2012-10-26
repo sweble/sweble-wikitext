@@ -1,6 +1,9 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
+	{P} warnings = C[
+		Warning: /basic/wikitext/nesting-3.wikitext:1:31: <no content> : 12.2.5.4.7 - R27 @ WtInternalLink.,
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag.
+	]
 	[0] = WtParagraph[
 		[0] = WtExternalLink(
 			{P} rtd = RTD[ "[" <o> " " <o> "]" ]
@@ -9,17 +12,15 @@ WtParsedWikitextPage(
 				{P} protocol = "http"
 				{P} rtd = RTD[ "http://example.com" ]
 			),
-			title = WtLinkTitle[
-				[0] = "title1a ",
-				[1] = WtInternalLink(
-					{P} postfix = ""
-					{P} prefix = ""
-					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
-					target = WtPageName("target"),
-					title = -
-				),
-				[2] = " title1b"
-			]
-		)
+			title = WtLinkTitle[ [0] = "title1a " ]
+		),
+		[1] = WtInternalLink(
+			{P} postfix = ""
+			{P} prefix = ""
+			{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+			target = WtPageName("target"),
+			title = -
+		),
+		[2] = " title1b"
 	]
 )

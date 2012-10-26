@@ -212,7 +212,7 @@ private transient WtNode IgnoredElements =
     }
     '>' body:TagBody
     {
-      yyValue = nf.ignored("<" + header.name + header.garbage + ">" + body.content + body.endTag);
+      yyValue = nf.ignored("<" + header.name + header.garbage + ">" + body.content.getContent() + body.endTag);
     }
   / header:IgnoredElementHeader "/>"
     {

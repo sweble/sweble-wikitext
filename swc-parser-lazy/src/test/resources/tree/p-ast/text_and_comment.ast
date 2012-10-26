@@ -1,0 +1,30 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtXmlComment(
+				{P} content = " This is a comment "
+				{P} prefix = ""
+				{P} rtd = RTD[ "<!-- This is a comment -->\n" ]
+				{P} suffix = "\n"
+			)
+	}
+	{P} warnings = C[]
+	[0] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[1] = "Hallo Welt",
+	[2] = "!",
+	[3] = WtNewline("\n"),
+	[4] = WtXmlComment(
+		{P} content = " This is a comment "
+		{P} prefix = ""
+		{P} rtd = RTD[ "<!-- This is a comment -->\n" ]
+		{P} suffix = "\n"
+	),
+	[5] = "Tsch\u00FCss",
+	[6] = "!",
+	[7] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[8] = WtNewline("\n")
+)

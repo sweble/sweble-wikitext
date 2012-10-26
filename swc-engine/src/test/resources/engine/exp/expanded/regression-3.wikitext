@@ -1,2 +1,4 @@
 <includeonly>|-
-! colspan="3" style="border-top: 5px solid #FFF179;" |Awards and achievements</includeonly><noinclude>WtTagExtensionBodyImpl("\n{{documentation}}\n")</noinclude>
+! colspan="3" style="border-top: 5px solid #FFF179;" |Awards and achievements</includeonly><noinclude>
+{{documentation}}
+</noinclude>

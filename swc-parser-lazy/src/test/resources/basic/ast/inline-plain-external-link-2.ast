@@ -11,13 +11,12 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "http://example.com" ]
 		)
 	],
-	[2] = WtNewline("\n"),
+	[2] = "\n",
 	[3] = WtHorizontalRule(
 		{P} rtd = RTD[ "----" ]
 	),
-	[4] = WtNewline("\n"),
-	[5] = WtNewline("\n"),
-	[6] = WtParagraph[
+	[4] = "\n\n",
+	[5] = WtParagraph[
 		[0] = "before ",
 		[1] = WtUrl(
 			{P} path = "mustermann@musterfirma.com"
@@ -26,5 +25,5 @@ WtParsedWikitextPage(
 		),
 		[2] = " after"
 	],
-	[7] = WtNewline("\n")
+	[6] = "\n"
 )

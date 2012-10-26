@@ -26,21 +26,26 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Collections;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
+import org.sweble.wikitext.parser.WtEntityMapImpl;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
+import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
+import org.sweble.wikitext.parser.utils.NonExpandingParser;
 
 import com.google.gson.Gson;
 
-import de.fau.cs.osr.ptk.common.AstComparer;
+import de.fau.cs.osr.ptk.common.DeepAstComparer;
+import de.fau.cs.osr.ptk.common.DeepAstComparer.ComparisonException;
+import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.json.JsonConverter;
 import de.fau.cs.osr.ptk.common.xml.XmlReader;
 import de.fau.cs.osr.ptk.common.xml.XmlWriter;
@@ -324,6 +329,28 @@ public class Serializer
 		FileUtils.writeByteArrayToFile(output, serialize(method));
 	}
 	
+	public byte[] serializeTo(SerializationMethod method) throws IOException, Exception
+	{
+		parse();
+		return serialize(method);
+	}
+	
+	public WtNode deserializeFrom(SerializationMethod method, File input) throws Exception
+	{
+		return deserialize(method, FileUtils.readFileToByteArray(input));
+	}
+	
+	public WtNode deserializeFrom(SerializationMethod method, byte[] buffer) throws Exception
+	{
+		return deserialize(method, buffer);
+	}
+	
+	public WtNode getAst() throws Exception
+	{
+		parse();
+		return original;
+	}
+	
 	// =========================================================================
 	
 	private WtNode parse(String title, String content) throws Exception
@@ -360,7 +387,7 @@ public class Serializer
 	
 	private WtNode doParse(String title, String content) throws Exception
 	{
-		FullParser parser = new FullParser(
+		NonExpandingParser parser = new NonExpandingParser(
 				parserWarningsEnabled,
 				parserRtdEnabled,
 				parserAutoCorrectEnabled);
@@ -622,12 +649,17 @@ public class Serializer
 	
 	// =========================================================================
 	
-	private void compare(WtNode deserialize)
+	private void compare(WtNode deserialize) throws ComparisonException
 	{
-		// FIXME: Comparing entity maps fails since ast nodes are not comparable
-		((WtParsedWikitextPage) original).setEntityMap(null);
-		((WtParsedWikitextPage) deserialize).setEntityMap(null);
-		if (!AstComparer.compare(original, deserialize, true, true))
-			throw new InternalError("Deserialized AST differs from original AST!");
+		// FIXME: Comparing entity maps and warnings which contain again nodes 
+		// fails since ast nodes are not comparable
+		WtParsedWikitextPage o = (WtParsedWikitextPage) original;
+		o.setEntityMap(new WtEntityMapImpl());
+		o.setWarnings(Collections.<Warning> emptyList());
+		
+		WtParsedWikitextPage d = (WtParsedWikitextPage) deserialize;
+		d.setEntityMap(new WtEntityMapImpl());
+		d.setWarnings(Collections.<Warning> emptyList());
+		DeepAstComparer.compare(original, deserialize, true, true);
 	}
 }

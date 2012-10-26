@@ -1,7 +1,10 @@
 WtParsedWikitextPage(
 	{P} entityMap = -
-	{P} warnings = C[]
-	[0] = WtNewline("\n"),
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R20 (2) @ WtHeading.,
+		Warning: /scopes/wikitext/x01.wikitext:2:14: <no content> : 12.2.5.4.7 - R20 (2) @ WtBody.
+	]
+	[0] = "\n",
 	[1] = WtSection(
 		{P} level = 2
 		heading = WtHeading(
@@ -17,23 +20,12 @@ WtParsedWikitextPage(
 		body = WtBody[
 			[0] = WtXmlElement(
 				{P} name = "i"
-				{P} rtd = RTD[ "" <o> "" <o> "" ]
 				xmlAttributes = WtXmlAttributes[],
-				body = WtBody[ [0] = WtNewline("\n") ]
-			),
-			[1] = WtParagraph[
-				[0] = WtXmlElement(
-					{P} name = "i"
-					{P} rtd = RTD[ "" <o> "" <o> "" ]
-					xmlAttributes = WtXmlAttributes[],
-					body = WtBody[ [0] = "C" ]
-				)
-			],
-			[2] = WtXmlElement(
-				{P} name = "i"
-				{P} rtd = RTD[ "" <o> "" <o> "" ]
-				xmlAttributes = WtXmlAttributes[],
-				body = WtBody[ [0] = WtNewline("\n") ]
+				body = WtBody[
+					[0] = "\n",
+					[1] = WtParagraph[ [0] = "C" ],
+					[2] = "\n"
+				]
 			)
 		]
 	)

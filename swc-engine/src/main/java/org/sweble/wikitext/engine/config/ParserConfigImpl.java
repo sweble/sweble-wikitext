@@ -40,10 +40,7 @@ import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.parser.LinkTargetParser;
-import org.sweble.wikitext.parser.postprocessor.ScopeType;
 import org.sweble.wikitext.parser.utils.AstTextUtils;
-
-import de.fau.cs.osr.utils.XmlGrammar;
 
 @XmlRootElement(
 		name = "ParserConfig",
@@ -56,7 +53,9 @@ import de.fau.cs.osr.utils.XmlGrammar;
 		"internalLinkPrefixPattern",
 		"internalLinkPostfixPattern",
 		"jaxbAllowedUrlProtocols",
+		/* TODO: Remove when we really don't need it any more
 		"jaxbXmlElementBehavior",
+		*/
 		"jaxbXmlEntities" })
 @XmlAccessorType(XmlAccessType.NONE)
 public class ParserConfigImpl
@@ -89,11 +88,11 @@ public class ParserConfigImpl
 	@XmlElement
 	private String internalLinkPostfixPattern;
 	
+	/* TODO: Remove when we really don't need it any more
 	private final Set<String> allowedXmlElements = new HashSet<String>();
 	
 	private final Set<String> emptyOnlyXmlElements = new HashSet<String>();
-	
-	private final Map<String, ScopeType> xmlElementTypes = new HashMap<String, ScopeType>();
+	*/
 	
 	// =========================================================================
 	
@@ -303,26 +302,7 @@ public class ParserConfigImpl
 	
 	// ==[ Parsing XML elements ]===============================================
 	
-	public void setXmlElementBehavior(
-			String name,
-			ScopeType scope,
-			boolean emptyOnly)
-	{
-		if (!XmlGrammar.xmlName().matcher(name).matches())
-			throw new IllegalArgumentException("Given name is not a valid XML element name: `" + name + "'.");
-		
-		name = name.toLowerCase();
-		
-		allowedXmlElements.add(name);
-		
-		xmlElementTypes.put(name, scope);
-		
-		if (emptyOnly)
-			emptyOnlyXmlElements.add(name);
-		else
-			emptyOnlyXmlElements.remove(name);
-	}
-	
+	/* TODO: We will probably need these again?
 	@Override
 	public boolean isXmlElementAllowed(String name)
 	{
@@ -334,12 +314,7 @@ public class ParserConfigImpl
 	{
 		return emptyOnlyXmlElements.contains(name.toLowerCase());
 	}
-	
-	@Override
-	public ScopeType getXmlElementType(String name)
-	{
-		return xmlElementTypes.get(name);
-	}
+	*/
 	
 	@Override
 	public boolean isValidXmlEntityRef(String name)
@@ -355,15 +330,18 @@ public class ParserConfigImpl
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((allowedUrlProtocols == null) ? 0 : allowedUrlProtocols.hashCode());
+		/* TODO: Remove when we really don't need it any more
 		result = prime * result + ((allowedXmlElements == null) ? 0 : allowedXmlElements.hashCode());
+		*/
 		result = prime * result + (autoCorrect ? 1231 : 1237);
+		/* TODO: Remove when we really don't need it any more
 		result = prime * result + ((emptyOnlyXmlElements == null) ? 0 : emptyOnlyXmlElements.hashCode());
+		*/
 		result = prime * result + (gatherRtData ? 1231 : 1237);
 		result = prime * result + ((internalLinkPostfixPattern == null) ? 0 : internalLinkPostfixPattern.hashCode());
 		result = prime * result + ((internalLinkPrefixPattern == null) ? 0 : internalLinkPrefixPattern.hashCode());
 		result = prime * result + ((minSeverity == null) ? 0 : minSeverity.hashCode());
 		result = prime * result + (warningsEnabled ? 1231 : 1237);
-		result = prime * result + ((xmlElementTypes == null) ? 0 : xmlElementTypes.hashCode());
 		result = prime * result + ((xmlEntities == null) ? 0 : xmlEntities.hashCode());
 		return result;
 	}
@@ -385,6 +363,7 @@ public class ParserConfigImpl
 		}
 		else if (!allowedUrlProtocols.equals(other.allowedUrlProtocols))
 			return false;
+		/* TODO: Remove when we really don't need it any more
 		if (allowedXmlElements == null)
 		{
 			if (other.allowedXmlElements != null)
@@ -392,8 +371,10 @@ public class ParserConfigImpl
 		}
 		else if (!allowedXmlElements.equals(other.allowedXmlElements))
 			return false;
+		*/
 		if (autoCorrect != other.autoCorrect)
 			return false;
+		/* TODO: Remove when we really don't need it any more
 		if (emptyOnlyXmlElements == null)
 		{
 			if (other.emptyOnlyXmlElements != null)
@@ -401,6 +382,7 @@ public class ParserConfigImpl
 		}
 		else if (!emptyOnlyXmlElements.equals(other.emptyOnlyXmlElements))
 			return false;
+		*/
 		if (gatherRtData != other.gatherRtData)
 			return false;
 		if (internalLinkPostfixPattern == null)
@@ -420,13 +402,6 @@ public class ParserConfigImpl
 		if (minSeverity != other.minSeverity)
 			return false;
 		if (warningsEnabled != other.warningsEnabled)
-			return false;
-		if (xmlElementTypes == null)
-		{
-			if (other.xmlElementTypes != null)
-				return false;
-		}
-		else if (!xmlElementTypes.equals(other.xmlElementTypes))
 			return false;
 		if (xmlEntities == null)
 		{
@@ -489,6 +464,7 @@ public class ParserConfigImpl
 	
 	// =========================================================================
 	
+	/* TODO: Remove when we really don't need it any more
 	@SuppressWarnings("unused")
 	private static final class XmlElementBehaviorEntry
 			implements
@@ -548,6 +524,7 @@ public class ParserConfigImpl
 		for (XmlElementBehaviorEntry e : xmlElementTypes)
 			setXmlElementBehavior(e.name, e.type, e.emptyOnly);
 	}
+	*/
 	
 	// =========================================================================
 	
@@ -572,7 +549,7 @@ public class ParserConfigImpl
 	@SuppressWarnings("unused")
 	private UrlProtocolEntry[] getJaxbAllowedUrlProtocols()
 	{
-		UrlProtocolEntry[] array = new UrlProtocolEntry[xmlElementTypes.size()];
+		UrlProtocolEntry[] array = new UrlProtocolEntry[allowedUrlProtocols.size()];
 		int i = 0;
 		for (String protocol : allowedUrlProtocols)
 			array[i++] = new UrlProtocolEntry(protocol);

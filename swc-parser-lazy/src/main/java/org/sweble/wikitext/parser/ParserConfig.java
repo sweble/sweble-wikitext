@@ -20,7 +20,6 @@ package org.sweble.wikitext.parser;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
-import org.sweble.wikitext.parser.postprocessor.ScopeType;
 import org.sweble.wikitext.parser.utils.AstTextUtils;
 
 import de.fau.cs.osr.utils.XmlEntityResolver;
@@ -70,12 +69,6 @@ public interface ParserConfig
 	boolean isValidExtensionTagName(String name);
 	
 	// ==[ Parsing XML elements ]===============================================
-	
-	boolean isXmlElementAllowed(String name);
-	
-	boolean isXmlElementEmptyOnly(String name);
-	
-	ScopeType getXmlElementType(String name);
 	
 	boolean isValidXmlEntityRef(String name);
 }

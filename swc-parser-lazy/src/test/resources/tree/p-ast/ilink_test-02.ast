@@ -1,0 +1,106 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[2] = "Es kommt ein Link",
+	[3] = ":",
+	[4] = " ",
+	[5] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Hallo"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "Mit ",
+			[1] = WtXmlStartTag(
+				{P} name = "b"
+				{P} rtd = RTD[ "<b" <o> ">" ]
+				xmlAttributes = WtXmlAttributes[]
+			),
+			[2] = "fettem Titel"
+		)
+	),
+	[6] = " der ordentlich leaked...",
+	[7] = WtXmlEndTag(
+		{P} name = "b"
+		{P} rtd = RTD[ "</b>" ]
+	),
+	[8] = " ",
+	[9] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[10] = WtNewline("\n"),
+	[11] = WtNewline("\n"),
+	[12] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[13] = "Es kommt ein ",
+	[14] = WtXmlStartTag(
+		{P} name = "i"
+		{P} rtd = RTD[ "<i" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[15] = "kursiver Link",
+	[16] = ":",
+	[17] = " ",
+	[18] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Hallo"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "aber der Titel ",
+			[1] = WtXmlEndTag(
+				{P} name = "i"
+				{P} rtd = RTD[ "</i>" ]
+			),
+			[2] = " ist nur so halb-halb"
+		)
+	),
+	[19] = " und vorbei ists.",
+	[20] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[21] = WtNewline("\n"),
+	[22] = WtNewline("\n"),
+	[23] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[24] = "Es kommt ein ",
+	[25] = WtXmlStartTag(
+		{P} name = "i"
+		{P} rtd = RTD[ "<i" <o> ">" ]
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[26] = "kursiver Link",
+	[27] = ":",
+	[28] = " ",
+	[29] = WtInternalLink(
+		{P} postfix = ""
+		{P} prefix = ""
+		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+		target = WtPageName("Hallo"),
+		title = WtLinkTitle(
+			{P} rtd = RTD[ "|" <o> "" ]
+			[0] = "mit voll kursivem Titel"
+		)
+	),
+	[30] = " auch hier noch.",
+	[31] = WtXmlEndTag(
+		{P} name = "i"
+		{P} rtd = RTD[ "</i>" ]
+	),
+	[32] = " Und vorbei ists.",
+	[33] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[34] = WtNewline("\n")
+)

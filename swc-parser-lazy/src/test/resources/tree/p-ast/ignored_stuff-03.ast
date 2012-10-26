@@ -1,0 +1,36 @@
+WtParsedWikitextPage(
+	{P} entityMap = {
+		[0] = WtIgnored("<onlyinclude>"),
+		[1] = WtIgnored("</onlyinclude>")
+	}
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[2] = "This will not get transcluded",
+	[3] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[4] = WtNewline("\n"),
+	[5] = WtNewline("\n"),
+	[6] = WtSemiPre[
+		[0] = WtSemiPreLine(
+			{P} rtd = RTD[ WtIgnored("<onlyinclude>") + " " <o> "" ]
+			[0] = "Only the stuff in here would get transcluded ",
+			[1] = WtIgnored("</onlyinclude>")
+		)
+	],
+	[7] = WtNewline("\n"),
+	[8] = WtNewline("\n"),
+	[9] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[10] = "Nor will this get transcluded",
+	[11] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[12] = WtNewline("\n")
+)

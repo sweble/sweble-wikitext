@@ -1,0 +1,82 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtNewline("\n"),
+	[1] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[2] = WtTicks(
+		{P} rtd = RTD[ "''" ]
+		{P} tickCount = 2
+	),
+	[3] = "Italics",
+	[4] = WtTicks(
+		{P} rtd = RTD[ "''" ]
+		{P} tickCount = 2
+	),
+	[5] = WtNewline("\n"),
+	[6] = WtTicks(
+		{P} rtd = RTD[ "'''" ]
+		{P} tickCount = 3
+	),
+	[7] = "Bold",
+	[8] = WtTicks(
+		{P} rtd = RTD[ "'''" ]
+		{P} tickCount = 3
+	),
+	[9] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[10] = WtNewline("\n"),
+	[11] = WtNewline("\n"),
+	[12] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[13] = "Jetzt wirds funky",
+	[14] = ":",
+	[15] = WtNewline("\n"),
+	[16] = WtTicks(
+		{P} rtd = RTD[ "'''" ]
+		{P} tickCount = 3
+	),
+	[17] = "What?",
+	[18] = WtTicks(
+		{P} rtd = RTD[ "''" ]
+		{P} tickCount = 2
+	),
+	[19] = WtNewline("\n"),
+	[20] = WtTicks(
+		{P} rtd = RTD[ "''" ]
+		{P} tickCount = 2
+	),
+	[21] = "What",
+	[22] = WtTicks(
+		{P} rtd = RTD[ "'''" ]
+		{P} tickCount = 3
+	),
+	[23] = "s up?",
+	[24] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[25] = WtNewline("\n"),
+	[26] = WtNewline("\n"),
+	[27] = WtImStartTag(
+		{P} name = "@p"
+		xmlAttributes = WtXmlAttributes[]
+	),
+	[28] = WtTicks(
+		{P} rtd = RTD[ "'''''" ]
+		{P} tickCount = 5
+	),
+	[29] = "Boah",
+	[30] = WtTicks(
+		{P} rtd = RTD[ "'''''" ]
+		{P} tickCount = 5
+	),
+	[31] = WtImEndTag(
+		{P} name = "@p"
+	),
+	[32] = WtNewline("\n")
+)

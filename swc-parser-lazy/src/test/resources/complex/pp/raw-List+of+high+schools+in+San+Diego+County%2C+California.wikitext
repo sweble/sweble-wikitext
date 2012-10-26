@@ -1,5 +1,7 @@
 This is a '''list of high schools in [[San Diego County, California]]'''. It includes public and private schools and is arranged by school district (public schools) or affiliation (private schools).  These schools offer grades 9 through 12.  Junior High schools are not listed here.
 
+<onlyinclude>
+
 ==Public schools==
 
 ===Borrego Springs Unified School District===
@@ -186,6 +188,8 @@ This is a '''list of high schools in [[San Diego County, California]]'''. It inc
 *Pacific Academy International, Encinitas
 *Pacific Ridge School, Carlsbad
 
+</onlyinclude>
+
 ==Closed schools==
 
 *Sun Valley Charter High School, Ramona. Closed as of February 3, 2008 due to lack of funding.<ref>[http://www.ramonasentinel.com/default.asp?sourceid=&smenu=1&twindow=&mad=&sdetail=5118&wpage=1&skeyword=&sidate=&ccat=&ccatm=&restate=&restatus=&reoption=&retype=&repmin=&repmax=&rebed=&rebath=&subname=&pform=&sc=1085&hn=ramonasentinel&he=.com Ramona California's Community Newspaper<!-- Bot generated title -->]</ref>)
@@ -201,7 +205,7 @@ This is a '''list of high schools in [[San Diego County, California]]'''. It inc
 
 == References ==
 
-<references />
+<references></references>
 
 ==External links==
 

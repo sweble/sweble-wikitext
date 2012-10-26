@@ -926,6 +926,7 @@
             <protocol name="https://"/>
             <protocol name="http://"/>
         </allowedUrlProtocols>
+        <!--  TODO: Remove when really not needed any more
         <xmlElementBehavior>
             <element name="abbr" type="XML_INLINE" emptyOnly="false"/>
             <element name="b" type="XML_INLINE" emptyOnly="false"/>
@@ -975,6 +976,7 @@
             <element name="ul" type="XML_BLOCK" emptyOnly="false"/>
             <element name="var" type="XML_INLINE" emptyOnly="false"/>
         </xmlElementBehavior>
+        -->
         <xmlEntities>
             <entity name="AElig" value="Æ"/>
             <entity name="Aacute" value="Á"/>

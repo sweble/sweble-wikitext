@@ -4,10 +4,11 @@ WtParsedWikitextPage(
 	[0] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (informative): /basic/wikitext/nesting-5.wikitext:1:1 - 9: "[[target" : This looks like a Internal Link, however the finishing `]]' is missing. ]
-			{P} content = "[[target|"
-		)
+			{P} content = "[["
+		),
+		[1] = "target|"
 	],
-	[1] = WtNewline("\n"),
+	[1] = "\n",
 	[2] = WtUnorderedList[
 		[0] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
@@ -18,7 +19,7 @@ WtParsedWikitextPage(
 			[0] = " item 2"
 		)
 	],
-	[3] = WtNewline("\n"),
+	[3] = "\n",
 	[4] = WtParagraph[
 		[0] = WtInternalLink(
 			{P} postfix = ""
@@ -27,8 +28,7 @@ WtParsedWikitextPage(
 			target = WtPageName("target"),
 			title = -
 		),
-		[1] = WtNewline("\n"),
-		[2] = "]]"
+		[1] = "\n]]"
 	],
-	[5] = WtNewline("\n")
+	[5] = "\n"
 )

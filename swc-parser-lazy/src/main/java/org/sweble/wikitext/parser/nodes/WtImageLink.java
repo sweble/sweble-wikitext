@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.Serializable;
+
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
@@ -404,6 +406,14 @@ public class WtImageLink
 			{
 				return "";
 			}
+		},
+		UNSPECIFIED
+		{
+			@Override
+			public String asKeyword()
+			{
+				return null;
+			}
 		};
 		
 		public abstract String asKeyword();
@@ -634,7 +644,11 @@ public class WtImageLink
 	// =========================================================================
 	
 	public static final class ImageLinkTarget
+			implements
+				Serializable
 	{
+		private static final long serialVersionUID = 7512726979071706711L;
+		
 		private final LinkTargetType targetType;
 		
 		private final WtLinkTarget target;
@@ -665,6 +679,38 @@ public class WtImageLink
 		public String toString()
 		{
 			return "ImageLinkTarget[ " + targetType + ": " + target + " ]";
+		}
+		
+		@Override
+		public int hashCode()
+		{
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((target == null) ? 0 : target.hashCode());
+			result = prime * result + ((targetType == null) ? 0 : targetType.hashCode());
+			return result;
+		}
+		
+		@Override
+		public boolean equals(Object obj)
+		{
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			ImageLinkTarget other = (ImageLinkTarget) obj;
+			if (target == null)
+			{
+				if (other.target != null)
+					return false;
+			}
+			else if (!target.equals(other.target))
+				return false;
+			if (targetType != other.targetType)
+				return false;
+			return true;
 		}
 	}
 }

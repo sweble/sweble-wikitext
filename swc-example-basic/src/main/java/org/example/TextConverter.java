@@ -20,13 +20,13 @@ package org.example;
 import java.util.LinkedList;
 import java.util.regex.Pattern;
 
-import org.sweble.wikitext.engine.EngPage;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
+import org.sweble.wikitext.engine.nodes.EngPage;
 import org.sweble.wikitext.parser.nodes.WtBold;
 import org.sweble.wikitext.parser.nodes.WtExternalLink;
 import org.sweble.wikitext.parser.nodes.WtHorizontalRule;
+import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
@@ -169,7 +169,7 @@ public class TextConverter
 	
 	public void visit(EngPage p)
 	{
-		iterate(p.getContent());
+		iterate(p);
 	}
 	
 	public void visit(WtText text)
@@ -234,7 +234,7 @@ public class TextConverter
 	{
 		try
 		{
-			PageTitle page = PageTitle.make(config, link.getTarget());
+			PageTitle page = PageTitle.make(config, link.getTarget().getContent());
 			if (page.getNamespace().equals(config.getNamespace("Category")))
 				return;
 		}
@@ -243,10 +243,9 @@ public class TextConverter
 		}
 		
 		write(link.getPrefix());
-		if (link.getTitle().getContent() == null
-				|| link.getTitle().getContent().isEmpty())
+		if (!link.hasTitle())
 		{
-			write(link.getTarget());
+			write(link.getTarget().getContent());
 		}
 		else
 		{
