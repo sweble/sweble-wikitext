@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.sweble</groupId>
     <artifactId>sweble</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>2.0.0-alpha-1-SNAPSHOT</version>
     <relativePath>../sweble/pom.xml</relativePath>
   </parent>
 
@@ -15,7 +15,7 @@
 
   <groupId>org.sweble.wikitext</groupId>
   <artifactId>sweble-wikitext</artifactId>
-  <version>1.1.1-SNAPSHOT</version>
+  <version>2.0.0-alpha-1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
@@ -51,7 +51,6 @@
     <!-- Plugin dependency versions -->
     <version.plugin.jflex>1.4.3</version.plugin.jflex>
     <version.plugin.rats>1.3.0.1</version.plugin.rats>
-    <version.plugin.parser-toolkit>1.0.0.1</version.plugin.parser-toolkit>
     <version.plugin.jaxb>0.8.0</version.plugin.jaxb>
 
   </properties>
@@ -88,7 +87,7 @@
         <groupId>de.fau.cs.osr.utils</groupId>
         <artifactId>utils</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>0.3.1-SNAPSHOT</version>
+        <version>2.0.0-alpha-1-SNAPSHOT</version>
       </dependency>
 
       <!-- Parser Toolkit - Common -->
@@ -96,7 +95,7 @@
         <groupId>de.fau.cs.osr.ptk</groupId>
         <artifactId>ptk-common</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>1.1.1-SNAPSHOT</version>
+        <version>2.0.0-alpha-1-SNAPSHOT</version>
       </dependency>
 
       <!-- Sweble Wikitext Components - Sweble Wikitext Parser -->
@@ -104,7 +103,7 @@
         <groupId>org.sweble.wikitext</groupId>
         <artifactId>swc-parser-lazy</artifactId>
         <!-- Version is given directly so the release plugin can see it -->
-        <version>1.1.1-SNAPSHOT</version>
+        <version>2.0.0-alpha-1-SNAPSHOT</version>
       </dependency>
 
     </dependencies>
@@ -204,38 +203,6 @@
           <executions>
             <execution>
               <id>rats-generate</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Maven NodeGen Plugin -->
-        <plugin>
-          <groupId>de.fau.cs.osr.ptk</groupId>
-          <artifactId>ptk-nodegen-maven-plugin</artifactId>
-          <version>${version.plugin.parser-toolkit}</version>
-          <executions>
-            <execution>
-              <id>nodegen-generate</id>
-              <phase>generate-sources</phase>
-              <goals>
-                <goal>generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
-        <!-- Maven PrinterGen Plugin -->
-        <plugin>
-          <groupId>de.fau.cs.osr.ptk</groupId>
-          <artifactId>ptk-printergen-maven-plugin</artifactId>
-          <version>${version.plugin.parser-toolkit}</version>
-          <executions>
-            <execution>
-              <id>printergen-generate</id>
               <phase>generate-sources</phase>
               <goals>
                 <goal>generate</goal>
