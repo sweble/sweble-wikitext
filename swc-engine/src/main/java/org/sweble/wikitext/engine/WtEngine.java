@@ -19,6 +19,7 @@ package org.sweble.wikitext.engine;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -50,7 +51,6 @@ import org.sweble.wikitext.parser.encval.ValidatedWikitext;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
-import org.sweble.wikitext.parser.nodes.WtValue;
 import org.sweble.wikitext.parser.parser.PreprocessorToParserTransformer;
 import org.sweble.wikitext.parser.preprocessor.PreprocessedWikitext;
 
@@ -804,7 +804,11 @@ public class WtEngine
 							preprocessedWikitext,
 							title.getTitle());
 			
-			parsedAst.getWarnings().addAll(ppAst.getWarnings());
+			// if there were no warnings we would try to add to the EMPTY_LIST
+			if (parsedAst.getWarnings() == Collections.EMPTY_LIST) {
+				parsedAst.setWarnings(ppAst.getWarnings());
+			} else 
+				parsedAst.getWarnings().addAll(ppAst.getWarnings());
 			
 			return parsedAst;
 		}
