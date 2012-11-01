@@ -750,6 +750,9 @@ public final class TreeBuilderInTable
 								return true;
 						}
 						return false;
+					case WtNode.NT_TEXT:
+						// Whitespace only text can be part of the table.
+						continue;
 					case WtNode.NT_TABLE_CAPTION:
 						continue;
 					default:
