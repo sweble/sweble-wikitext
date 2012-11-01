@@ -805,10 +805,14 @@ public class WtEngine
 							title.getTitle());
 			
 			// if there were no warnings we would try to add to the EMPTY_LIST
-			if (parsedAst.getWarnings() == Collections.EMPTY_LIST) {
+			if (parsedAst.getWarnings() == Collections.EMPTY_LIST)
+			{
 				parsedAst.setWarnings(ppAst.getWarnings());
-			} else 
+			}
+			else
+			{
 				parsedAst.getWarnings().addAll(ppAst.getWarnings());
+			}
 			
 			return parsedAst;
 		}
