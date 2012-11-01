@@ -121,8 +121,7 @@ public final class TreeBuilderInTable
 	
 	public void visit(WtNode n)
 	{
-		// anythingElseR16(n);
-		throw new InternalError();
+		anythingElseR16(n);
 	}
 	
 	public void visit(WtText n)
@@ -161,9 +160,13 @@ public final class TreeBuilderInTable
 	}
 	
 	/*
-	 * public void visit(WtTableImplicitTableBody n) { startTagR07(n);
-	 * iterate(n.getBody()); dispatch(getFactory().synEndTag(TBODY)); }
-	 */
+	public void visit(WtTableImplicitTableBody n)
+	{
+		startTagR07(n);
+		iterate(n.getBody());
+		dispatch(getFactory().synEndTag(TBODY));
+	}
+	*/
 	
 	public void visit(WtTableCaption n)
 	{
