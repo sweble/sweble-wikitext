@@ -66,7 +66,7 @@ public interface WtLinkTarget
 		{
 			return WtLinkTarget.class.getSimpleName();
 		}
-
+		
 		@Override
 		public boolean indicatesAbsence()
 		{

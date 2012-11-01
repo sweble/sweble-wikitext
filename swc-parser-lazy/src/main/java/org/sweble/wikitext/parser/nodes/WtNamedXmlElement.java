@@ -34,7 +34,6 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-
 public interface WtNamedXmlElement
 		extends
 			WtNode

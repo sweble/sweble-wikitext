@@ -178,10 +178,10 @@ public interface WtNode
 	public static final int NT_LINK_OPTIONS /* ................. */= NT_PARSER_BITS + 46;
 	
 	public static final int NT_XML_ATTRIBUTES /* ............... */= NT_PARSER_BITS + 47;
-
+	
 	public static final int NT_IM_START_TAG /* ................. */= NT_PARSER_BITS + 48;
 	
 	public static final int NT_IM_END_TAG /* ................... */= NT_PARSER_BITS + 49;
-
+	
 	public static final int NT_TABLE_IMPLICIT_TBODY /* ......... */= NT_PARSER_BITS + 50;
 }
