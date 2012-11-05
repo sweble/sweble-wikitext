@@ -33,6 +33,7 @@ import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import xtc.parser.ParseException;
 import de.fau.cs.osr.ptk.common.jxpath.AstNodePointerFactory;
+import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
 import de.fau.cs.osr.utils.StringUtils;
 
 public class XPathTest
@@ -64,12 +65,12 @@ public class XPathTest
 		
 		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox Country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
-		String actual = b.toString().replace("\r\n", "\n");
+		String actual = TestResourcesFixture.lineEndToUnix(b.toString());
 		
 		String expected = null;
 		try
 		{
-			expected = load(PATH + "/ast/" + title + ".ast");
+			expected = TestResourcesFixture.lineEndToUnix(load(PATH + "/ast/" + title + ".ast"));
 		}
 		catch (IOException e)
 		{
@@ -93,12 +94,12 @@ public class XPathTest
 		
 		doQuery(context, b, "//WtTemplate[contains(name//WtText[@content],\"Infobox country\")]//WtTemplateArgument[contains(name//WtText[@content],\"capital\")]/value");
 		
-		String actual = b.toString().replace("\r\n", "\n");
+		String actual = TestResourcesFixture.lineEndToUnix(b.toString());
 		
 		String expected = null;
 		try
 		{
-			expected = load(PATH + "/ast/" + title + ".ast");
+			expected = TestResourcesFixture.lineEndToUnix(load(PATH + "/ast/" + title + ".ast"));
 		}
 		catch (IOException e)
 		{
