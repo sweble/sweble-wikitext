@@ -41,10 +41,10 @@ public class SerializationIntegrationTest
 		LinkedList<Object[]> inputs = new LinkedList<Object[]>();
 		
 		String[] articles = {
-				"exp-Saxby+Chambliss.wikitext",
+				"exp-Saxby Chambliss.wikitext",
 				"raw-Germany.wikitext",
-				"raw-Wallace+Neff.wikitext",
-				"raw-Zygmunt+Kubiak.wikitext" };
+				"raw-Wallace Neff.wikitext",
+				"raw-Zygmunt Kubiak.wikitext" };
 		
 		for (String article : articles)
 		{
