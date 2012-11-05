@@ -97,9 +97,9 @@ public class EncodingValidatorTest
 		StringBuilder ref = new StringBuilder();
 		ref.append("Ein einfacher Test-String\n");
 		ref.append("mit ein paar \uE0000\uE001 und \r\n");
-		ref.append("natürlich ein paar \uE0001\uE001.\n");
+		ref.append("nat\u00FCrlich ein paar \uE0001\uE001.\n");
 		ref.append("Aber auch \uE0002\uE001 und \uE0003\uE001 \r");
-		ref.append("dürfen nicht fehlen. Zu guter \n");
+		ref.append("d\u00FCrfen nicht fehlen. Zu guter \n");
 		ref.append("Letzt noch ein Wohlklang \uE0004\uE001.");
 		
 		assertEquals(ref.toString(), validatedWikitext);
