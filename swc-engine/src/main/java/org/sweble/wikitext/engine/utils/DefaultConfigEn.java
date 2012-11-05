@@ -1258,7 +1258,7 @@ public class DefaultConfigEn
 				false));
 		
 		c.addInterwiki(new InterwikiImpl(
-				"eĉei",
+				"e\u0109ei",
 				"http://www.ikso.net/cgi-bin/wiki.pl?$1",
 				false,
 				false));
@@ -4258,7 +4258,7 @@ public class DefaultConfigEn
 				false));
 		
 		c.addInterwiki(new InterwikiImpl(
-				"Ĉej",
+				"\u0108ej",
 				"http://esperanto.blahus.cz/cxej/vikio/index.php/$1",
 				false,
 				false));

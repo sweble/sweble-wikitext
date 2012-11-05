@@ -68,9 +68,9 @@ public class WikiConfigTest
 		xconf.save(wxconf);
 		
 		// First check if saved results looks identical (easier to debug)
-		assertEquals(wgconf.toString(), wxconf.toString());
+		assertEquals(wxconf.toString(), wgconf.toString());
 		
 		// Now check if the configurations are really identical
-		assertEquals(gconf, xconf);
+		assertEquals(xconf, gconf);
 	}
 }
