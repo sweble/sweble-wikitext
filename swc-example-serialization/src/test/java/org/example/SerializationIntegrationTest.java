@@ -16,7 +16,7 @@
  */
 package org.example;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.net.URL;
@@ -30,6 +30,7 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import de.fau.cs.osr.utils.NamedParametrized;
+import de.fau.cs.osr.utils.StringUtils;
 
 @RunWith(value = NamedParametrized.class)
 public class SerializationIntegrationTest
@@ -50,8 +51,8 @@ public class SerializationIntegrationTest
 			URL url = SerializationIntegrationTest.class.getResource(
 					"/" + article);
 			
-			Serializer serializer =
-					new Serializer(new File(url.getFile()));
+			String path = StringUtils.decodeUsingDefaultCharset(url.getFile());
+			Serializer serializer = new Serializer(new File(path));
 			
 			// Parsing options
 			serializer.setParserAutoCorrectEnabled(false);

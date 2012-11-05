@@ -43,6 +43,8 @@ import org.sweble.wikitext.dumpreader.export_0_6.RevisionType;
 import org.sweble.wikitext.dumpreader.export_0_6.SiteInfoType;
 import org.sweble.wikitext.dumpreader.export_0_6.TextType;
 
+import de.fau.cs.osr.utils.StringUtils;
+
 public class TestDumpReader_0_6
 {
 	private Logger logger;
@@ -57,8 +59,8 @@ public class TestDumpReader_0_6
 	public void testExport() throws Throwable
 	{
 		URL resource = getClass().getResource("/input-0.6.xml");
-		
-		final File file = new File(resource.getFile());
+		String path = StringUtils.decodeUsingDefaultCharset(resource.getFile());
+		final File file = new File(path);
 		
 		DumpReader dr = new DumpReader(file, logger)
 		{

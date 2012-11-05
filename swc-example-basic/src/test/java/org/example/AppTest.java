@@ -24,8 +24,9 @@ import java.net.URL;
 import junit.framework.Assert;
 
 import org.apache.commons.io.IOUtils;
-import org.junit.Ignore;
 import org.junit.Test;
+
+import de.fau.cs.osr.utils.StringUtils;
 
 public class AppTest
 {
@@ -36,7 +37,8 @@ public class AppTest
 		
 		URL url = AppTest.class.getResource("/" + title + ".wikitext");
 		
-		String actual = App.run(new File(url.getFile()), title, true);
+		String path = StringUtils.decodeUsingDefaultCharset(url.getFile());
+		String actual = App.run(new File(path), title, true);
 		
 		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".html");
 		String expected = IOUtils.toString(expectedIs);

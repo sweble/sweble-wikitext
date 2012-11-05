@@ -68,7 +68,8 @@ public class MassExpansionTest
 	public static List<NamedParametrizedSuite> enumerateSuites() throws Exception
 	{
 		URL dirUrl = MassExpansionTest.class.getResource("/" + TESTS_DIR + "/index");
-		File dir = new File(dirUrl.getFile()).getParentFile();
+		String path = StringUtils.decodeUsingDefaultCharset(dirUrl.getFile());
+		File dir = new File(path).getParentFile();
 		
 		String[] testSetDirs = dir.list(new FilenameFilter()
 		{

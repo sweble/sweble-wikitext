@@ -26,6 +26,8 @@ import junit.framework.Assert;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
+import de.fau.cs.osr.utils.StringUtils;
+
 public class AppTest
 {
 	@Test
@@ -34,12 +36,13 @@ public class AppTest
 		String title = "Simple_Page";
 		
 		URL url = AppTest.class.getResource("/" + title + ".wikitext");
+		String path = StringUtils.decodeUsingDefaultCharset(url.getFile());
 		
 		StringBuilder b = new StringBuilder();
 		
-		b.append(App.run(new File(url.getFile()), title, "//WtInternalLink"));
+		b.append(App.run(new File(path), title, "//WtInternalLink"));
 		
-		b.append(App.run(new File(url.getFile()), title, "//WtTableCell"));
+		b.append(App.run(new File(path), title, "//WtTableCell"));
 		
 		InputStream expectedIs = AppTest.class.getResourceAsStream("/" + title + ".result");
 		String expected = IOUtils.toString(expectedIs);
