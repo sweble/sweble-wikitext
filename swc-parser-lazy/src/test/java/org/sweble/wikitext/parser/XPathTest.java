@@ -70,7 +70,7 @@ public class XPathTest
 		String expected = null;
 		try
 		{
-			expected = TestResourcesFixture.lineEndToUnix(load(PATH + "/ast/" + title + ".ast"));
+			expected = load(PATH + "/ast/" + title + ".ast");
 		}
 		catch (IOException e)
 		{
@@ -99,7 +99,7 @@ public class XPathTest
 		String expected = null;
 		try
 		{
-			expected = TestResourcesFixture.lineEndToUnix(load(PATH + "/ast/" + title + ".ast"));
+			expected = load(PATH + "/ast/" + title + ".ast");
 		}
 		catch (IOException e)
 		{
@@ -136,7 +136,8 @@ public class XPathTest
 		InputStream in = getClass().getResourceAsStream(path);
 		if (in == null)
 			return null;
-		return IOUtils.toString(in, "UTF-8");
+		return TestResourcesFixture.lineEndToUnix(
+				IOUtils.toString(in, "UTF-8"));
 	}
 	
 	private void doQuery(
