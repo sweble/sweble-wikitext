@@ -129,7 +129,8 @@ public class BasicIntegrationTest
 		}
 		catch (IllegalArgumentException e)
 		{
-			String expected = FileUtils.readFileToString(inputFile);
+			String expected = TestResourcesFixture.lineEndToUnix(
+					FileUtils.readFileToString(inputFile));
 			
 			Assert.assertEquals(expected, actual);
 		}
