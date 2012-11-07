@@ -75,7 +75,7 @@ public class WtAstPrinter
 	
 	// =========================================================================
 	
-	private boolean printAbsent(AstNode<?> n)
+	private boolean printAbsent(@SuppressWarnings("rawtypes") AstNode n)
 	{
 		if (!(n instanceof WtEmptyImmutableNode))
 			return false;
