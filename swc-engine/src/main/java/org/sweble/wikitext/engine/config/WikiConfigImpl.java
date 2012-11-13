@@ -747,6 +747,8 @@ public class WikiConfigImpl
 		for (TagExtensionBase te : config.getTagExtensions())
 			te.setWikiConfig(config);
 		
+		config.nodeFactory = new EngineNodeFactoryImpl(config);
+		
 		return config;
 	}
 	
