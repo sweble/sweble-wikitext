@@ -1,0 +1,94 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[ Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag. ]
+	[0] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "span"
+			{P} rtd = RTD[ "<span" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[
+				[0] = WtXmlAttribute(
+					{P} name = "dir"
+					{P} rtd = RTD[ " dir=" <o> "" ]
+					value = WtValue[ [0] = "ltr" ]
+				)
+			],
+			body = WtBody[
+				[0] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName(":en:"),
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = WtXmlElement(
+							{P} name = "span"
+							{P} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
+							xmlAttributes = WtXmlAttributes[
+								[0] = WtXmlAttribute(
+									{P} name = "title"
+									{P} rtd = RTD[ " title=\"" <o> "\"" ]
+									value = WtValue[ [0] = "\u0625\u0646\u062C\u0644\u064A\u0632\u0649 (en:)" ]
+								)
+							],
+							body = WtBody[ [0] = "English" ]
+						)
+					)
+				),
+				[1] = " ",
+				[2] = WtBold(
+					{P} rtd = RTD[ "'''" <o> "'''" ]
+					[0] = "\u00B7"
+				),
+				[3] = " ",
+				[4] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName(":de:"),
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = WtXmlElement(
+							{P} name = "span"
+							{P} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
+							xmlAttributes = WtXmlAttributes[
+								[0] = WtXmlAttribute(
+									{P} name = "title"
+									{P} rtd = RTD[ " title=\"" <o> "\"" ]
+									value = WtValue[ [0] = "\u0627\u0644\u0645\u0627\u0646\u0649 (de:)" ]
+								)
+							],
+							body = WtBody[ [0] = "Deutsch" ]
+						)
+					)
+				),
+				[5] = " ",
+				[6] = WtBold(
+					{P} rtd = RTD[ "'''" <o> "'''" ]
+					[0] = "\u00B7"
+				),
+				[7] = " ",
+				[8] = WtInternalLink(
+					{P} postfix = ""
+					{P} prefix = ""
+					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
+					target = WtPageName(":fr:"),
+					title = WtLinkTitle(
+						{P} rtd = RTD[ "|" <o> "" ]
+						[0] = WtXmlElement(
+							{P} name = "span"
+							{P} rtd = RTD[ "<span" <o> ">" <o> "</span>" ]
+							xmlAttributes = WtXmlAttributes[
+								[0] = WtXmlAttribute(
+									{P} name = "title"
+									{P} rtd = RTD[ " title=\"" <o> "\"" ]
+									value = WtValue[ [0] = "\u0641\u0631\u0646\u0633\u0627\u0648\u0649 (fr:)" ]
+								)
+							],
+							body = WtBody[ [0] = "Fran\u00E7ais" ]
+						)
+					)
+				)
+			]
+		)
+	]
+)
