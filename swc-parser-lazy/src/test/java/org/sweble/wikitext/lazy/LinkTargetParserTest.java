@@ -116,4 +116,10 @@ public class LinkTargetParserTest
 	{
 		Assert.assertEquals("", LinkTargetParser.trim(""));
 	}
+	
+	@Test
+	public void testTrimUnderscoreWithOnlyUnderscores() throws Exception
+	{
+		Assert.assertEquals("", LinkTargetParser.trimUnderscore("_"));
+	}
 }
