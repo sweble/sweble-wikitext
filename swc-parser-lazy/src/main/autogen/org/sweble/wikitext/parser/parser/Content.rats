@@ -51,6 +51,7 @@ import org.sweble.wikitext.parser.parser.Signature;
 import org.sweble.wikitext.parser.parser.Ticks;
 import org.sweble.wikitext.parser.parser.Url;
 import org.sweble.wikitext.parser.parser.HorizontalRule;
+import org.sweble.wikitext.parser.parser.LangConvTag;
 import org.sweble.wikitext.parser.parser.List;
 import org.sweble.wikitext.parser.parser.SemiPre;
 import org.sweble.wikitext.parser.parser.Section;
@@ -431,6 +432,7 @@ private inline WtNode InlineContentAtom =
   / &"__"     PageSwitch
   / &"<"      XmlElement
   / &"&"      XmlReference
+  / &"-{"     LanguageConversionTag
   / &"\uE000" WtParserEntity
 ;
 
@@ -485,6 +487,7 @@ private inline String TextStopperPrefix =
   / "__"            // page switch
   / "<"             // xml tag and comment
   / "&"             // xml entity
+  / "-{"            // language conversion rule
   / "\uE000"        // parser entity
 ;
 

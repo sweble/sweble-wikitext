@@ -1,0 +1,187 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * LanguageConversionTag
+ * ---------------------
+ *
+ *   Grammar:
+ *     - "-{" TEXT "}-"
+ *     - "-{" FLAGS "|" ( A "=>" )? VARIANT ":" B ( ";" ... )* "|" TEXT }-
+ *
+ */
+
+module org.sweble.wikitext.parser.parser.LangConvTag;
+
+import org.sweble.wikitext.parser.parser.Content;
+import org.sweble.wikitext.parser.parser.State;
+
+import org.sweble.wikitext.parser.utils.ParserCharSequence;
+import org.sweble.wikitext.parser.utils.Warnings;
+
+
+
+
+/*
+// -- Header / Body / Footer ---------------------------------------------------
+
+body
+{
+  Result parseLctFlags(int start, int base)
+  {
+    Pattern p = yyState.getLctFlagsPattern();
+    if (p == null)
+      return new SemanticValue("", base);
+
+    Matcher m = p.matcher(new ParserCharSequence(base));
+
+    if (!m.lookingAt())
+    {
+      return new SemanticValue("", base);
+    }
+    else
+    {
+      return new SemanticValue(m.group(), base + m.end());
+    }
+  }
+}
+*/
+
+
+
+
+// -- LanguageConversionTag ----------------------------------------------------
+
+WtNode LanguageConversionTag =
+    "-{" yyValue:LanguageConversionTagChoice
+  / "-{"
+    {
+      yyValue = nf.text("-{");
+    }
+;
+
+private inline WtNode LanguageConversionTagChoice =
+    LctConvertToSpecifiedVariant
+  / LctDisplayCurrentVariantName
+  / LctRuleBasedConvert
+;
+
+/* If flags are given AND contain a variant the stuff after the '|' is treated 
+ * as text to be converted into the given variant. The flag 'R' is set in any case.
+ */
+private transient WtNode LctConvertToSpecifiedVariant =
+  flags:LctFlags void:'|' &{ containsVariant(flags) } text:LctTextStar "}-"
+  {
+    yyValue = ...;
+  }
+;
+
+/* If flags are given AND flag 'N' is set the rest is ignored.
+ */
+private transient WtNode LctDisplayCurrentVariantName =
+  flags:LctFlags void:'|' &{ hasFlag(flags, 'N') } garbage:LctTextStar "}-"
+  {
+    yyValue = ...;
+  }
+;
+
+/* The flags do not specify a language variant and neither the 'N' 
+ * nor the 'R' flag is set. In this case the part after the '|' is a set of rules.
+ */
+private transient WtNode LctRuleBasedConvert =
+  flags:( LctFlags void:'|' )? rules:LctRules "}-"
+  {
+    yyValue = ...;
+  }
+;
+
+/* A list of flags, separated by ';'.
+ * Flags have to be further processed. Some flags turn off other flags,
+ * some flags add additional flags and some flags enable the identification
+ * of variant names (which would be ignored otherwise).
+ */
+private WtLctFlags LctFlags =
+  head:LctFlag tail:( void:';' LctFlag )*
+  {
+    yyValue = nf.lctFlags(head, tail);
+  }
+;
+
+/* A flag usually is a single letter or symbol.
+ * Some language variants have words which map to one of those symbols.
+ * Finally a flag can also be the name of a language variant.
+ *
+ * Default flags: A, T, R, D, -, H, N
+ * Implicit flags: S, +, E
+ * Examples for additional flags from LanguageSr.php: ријеч => W, писмо => S
+ * Examples for language variant names: zh-hans, zh-hk
+ */
+private transient String LctFlag =
+  ( !"}-" !'|' !';' _ )*
+;
+
+private transient String LctRulePart =
+  ( !"}-" !';' !"=>" !':' _ )*
+;
+
+private transient String LctRuleGarbage =
+  ( !"}-" !';' _ )*
+;
+
+private transient WtLctRule LctRule =
+    a:LctRulePart "=>" v:LctRulePart ":" b:LctRulePart
+    {
+      yyValue = new WtLctRule(a, v, b);
+    }
+  / v:LctRulePart ":" b:LctRulePart
+    {
+      yyValue= new WtLctRule(v, b);
+    }
+  / garbage:LctRuleGarbage
+    {
+      yyValue = new WtLctRuleGarbage(garbage);
+    }
+;
+
+private transient WtNodeList LctRules =
+  head:LctRule tail:( void:';' LctRule )*
+  {
+    yyValue = new WtNodeList(head, tail);
+  }
+;
+
+private inline stateful WtNodeList LctTextStar =
+  /*
+  {
+    enter(ParserScopes.LIST_ITEM);
+  }
+  */
+  InlineContentStar
+;
+
+/*
+private noinline transient String LctFlags =
+  ^{
+      Result yyResult = parseLctFlags(yyStart, yyBase);
+   }
+;
+*/
+
+
+
+
+// -- End of file --------------------------------------------------------------
