@@ -159,6 +159,38 @@
               <forceRegenerate>true</forceRegenerate>
             </configuration>
           </execution>
+          <execution>
+            <id>compile-mw-schema-0.7</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.7.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_7</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compile-mw-schema-0.8</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <schemaDirectory>${basedir}/src/main/schema</schemaDirectory>
+              <schemaIncludes>
+                <include>export-0.8.xsd</include>
+              </schemaIncludes>
+              <generatePackage>org.sweble.wikitext.dumpreader.export_0_8</generatePackage>
+              <catalog>${basedir}/src/main/schema/catalog.xml</catalog>
+              <strict>true</strict>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 

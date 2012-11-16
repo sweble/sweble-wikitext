@@ -65,6 +65,52 @@ public enum ExportSchemaVersion
 		{
 			return org.sweble.wikitext.dumpreader.export_0_6.MediaWikiType.class;
 		}
+	},
+	
+	// =========================================================================
+	
+	V0_7
+	{
+		@Override
+		public String getSchema()
+		{
+			return "/export-0.7.xsd";
+		}
+		
+		@Override
+		public String getContextPath()
+		{
+			return "org.sweble.wikitext.dumpreader.export_0_7";
+		}
+		
+		@Override
+		public Class<?> getMediaWikiType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_7.MediaWikiType.class;
+		}
+	},
+	
+	// =========================================================================
+	
+	V0_8
+	{
+		@Override
+		public String getSchema()
+		{
+			return "/export-0.8.xsd";
+		}
+		
+		@Override
+		public String getContextPath()
+		{
+			return "org.sweble.wikitext.dumpreader.export_0_8";
+		}
+		
+		@Override
+		public Class<?> getMediaWikiType()
+		{
+			return org.sweble.wikitext.dumpreader.export_0_8.MediaWikiType.class;
+		}
 	};
 	
 	// =========================================================================
