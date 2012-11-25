@@ -19,13 +19,13 @@ package org.sweble.wikitext.articlecruncher.pnodes;
 
 import java.util.concurrent.Callable;
 
-import org.sweble.wikitext.articlecruncher.CompletedJob;
+import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Processor;
 
 final class LpnWorker
 		implements
-			Callable<CompletedJob>
+			Callable<ProcessedJob>
 {
 	private final LpnJobProcessorFactory jobProcessorFactory;
 	
@@ -42,7 +42,7 @@ final class LpnWorker
 	// =========================================================================
 	
 	@Override
-	public CompletedJob call() throws Exception
+	public ProcessedJob call() throws Exception
 	{
 		// Wait for LpnDistributor to retrieve the future handle!
 		synchronized (job)

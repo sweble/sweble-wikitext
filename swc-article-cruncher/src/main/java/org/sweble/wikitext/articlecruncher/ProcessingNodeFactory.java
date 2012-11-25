@@ -28,6 +28,6 @@ public interface ProcessingNodeFactory
 	WorkerBase create(
 			AbortHandler abortHandler,
 			BlockingQueue<JobWithHistory> inTray,
-			BlockingQueue<JobWithHistory> completedJobs);
+			BlockingQueue<JobWithHistory> processedJobs);
 	
 }

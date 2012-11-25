@@ -41,7 +41,7 @@ public abstract class ConsoleWriterBase
 	
 	public abstract void updateInTray(int size);
 	
-	public abstract void updateCompletedJobs(int size);
+	public abstract void updateProcessedJobs(int size);
 	
 	public abstract void finish();
 	

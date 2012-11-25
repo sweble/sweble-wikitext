@@ -33,7 +33,7 @@ public class LocalProcessingNode
 {
 	private final BlockingQueue<JobWithHistory> inTray;
 	
-	private final BlockingQueue<JobWithHistory> completedJobs;
+	private final BlockingQueue<JobWithHistory> processedJobs;
 	
 	private final int numWorkers;
 	
@@ -52,14 +52,14 @@ public class LocalProcessingNode
 	public LocalProcessingNode(
 			AbortHandler abortHandler,
 			BlockingQueue<JobWithHistory> inTray,
-			BlockingQueue<JobWithHistory> completedJobs,
+			BlockingQueue<JobWithHistory> processedJobs,
 			LpnJobProcessorFactory jobProcessorFactory,
 			int numWorkers)
 	{
 		super(LocalProcessingNode.class.getSimpleName(), abortHandler);
 		
 		this.inTray = inTray;
-		this.completedJobs = completedJobs;
+		this.processedJobs = processedJobs;
 		this.jobProcessorFactory = jobProcessorFactory;
 		this.numWorkers = numWorkers;
 	}
@@ -102,7 +102,7 @@ public class LocalProcessingNode
 					abortHandler,
 					distributor.getEcs(),
 					distributor.getRunningJobs(),
-					completedJobs,
+					processedJobs,
 					backPressure);
 			
 			gatherer.start(executor, synchronizer);

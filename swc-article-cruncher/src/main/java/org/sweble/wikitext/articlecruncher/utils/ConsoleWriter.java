@@ -31,7 +31,7 @@ public class ConsoleWriter
 	
 	private final int inTrayCapacity;
 	
-	private final int completedJobsCapacity;
+	private final int processedJobsCapacity;
 	
 	private final int outTrayCapacity;
 	
@@ -43,7 +43,7 @@ public class ConsoleWriter
 	
 	private int inTrayFill;
 	
-	private int completedJobsFill;
+	private int processedJobsFill;
 	
 	private long parsedCount;
 	
@@ -56,12 +56,12 @@ public class ConsoleWriter
 	public ConsoleWriter(
 			AbortHandler abortHandler,
 			int inTrayCapacity,
-			int completedJobsCapacity,
+			int processedJobsCapacity,
 			int outTrayCapacity)
 	{
 		super(ConsoleWriter.class.getSimpleName(), abortHandler);
 		this.inTrayCapacity = inTrayCapacity;
-		this.completedJobsCapacity = completedJobsCapacity;
+		this.processedJobsCapacity = processedJobsCapacity;
 		this.outTrayCapacity = outTrayCapacity;
 	}
 	
@@ -128,11 +128,11 @@ public class ConsoleWriter
 		}
 	}
 	
-	public void updateCompletedJobs(int size)
+	public void updateProcessedJobs(int size)
 	{
 		synchronized (progressLock)
 		{
-			this.completedJobsFill = size;
+			this.processedJobsFill = size;
 			update();
 		}
 	}
@@ -185,8 +185,8 @@ public class ConsoleWriter
 					"I:%2d/%d - C:%2d/%d - O:%2d/%d",
 					inTrayFill,
 					inTrayCapacity,
-					completedJobsFill,
-					completedJobsCapacity,
+					processedJobsFill,
+					processedJobsCapacity,
 					outTrayFill,
 					outTrayCapacity));
 		}

@@ -23,7 +23,7 @@ public class JobWithHistory
 	
 	private final JobWithHistory history;
 	
-	private final CompletedJob lastAttempt;
+	private final ProcessedJob lastAttempt;
 	
 	// =========================================================================
 	
@@ -43,10 +43,10 @@ public class JobWithHistory
 	 * @param history
 	 *            The last history object to build the history chain.
 	 * @param lastAttempt
-	 *            The completed job (this can be a failed or successful
+	 *            The processed job (this can be a failed or successful
 	 *            attempt).
 	 */
-	public JobWithHistory(JobWithHistory history, CompletedJob lastAttempt)
+	public JobWithHistory(JobWithHistory history, ProcessedJob lastAttempt)
 	{
 		this.job = lastAttempt.getJob();
 		this.history = history;
@@ -65,7 +65,7 @@ public class JobWithHistory
 		return history;
 	}
 	
-	public CompletedJob getLastAttempt()
+	public ProcessedJob getLastAttempt()
 	{
 		return lastAttempt;
 	}

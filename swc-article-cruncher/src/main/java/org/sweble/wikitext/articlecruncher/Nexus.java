@@ -69,9 +69,9 @@ public class Nexus
 	
 	private BlockingQueue<JobWithHistory> inTray;
 	
-	private BlockingQueue<JobWithHistory> completedJobs;
+	private BlockingQueue<JobWithHistory> processedJobs;
 	
-	private BlockingQueue<CompletedJob> outTray;
+	private BlockingQueue<ProcessedJob> outTray;
 	
 	private JobTraceSet jobTraces = new JobTraceSet();
 	
@@ -109,15 +109,15 @@ public class Nexus
 	
 	public void setUp(
 			int inTrayCapacity,
-			int completedJobsCapacity,
+			int processedJobsCapacity,
 			int outTrayCapacity) throws Throwable
 	{
-		setUp(inTrayCapacity, completedJobsCapacity, outTrayCapacity, true);
+		setUp(inTrayCapacity, processedJobsCapacity, outTrayCapacity, true);
 	}
 	
 	public void setUp(
 			int inTrayCapacity,
-			int completedJobsCapacity,
+			int processedJobsCapacity,
 			int outTrayCapacity,
 			boolean withConsoleWriter) throws Throwable
 	{
@@ -132,9 +132,9 @@ public class Nexus
 				
 				inTray = new LinkedBlockingDeque<JobWithHistory>(inTrayCapacity);
 				
-				completedJobs = new LinkedBlockingDeque<JobWithHistory>(completedJobsCapacity);
+				processedJobs = new LinkedBlockingDeque<JobWithHistory>(processedJobsCapacity);
 				
-				outTray = new LinkedBlockingDeque<CompletedJob>(outTrayCapacity);
+				outTray = new LinkedBlockingDeque<ProcessedJob>(outTrayCapacity);
 				
 				executor = new MyExecutorService(ExecutorType.CACHED_THREAD_POOL, logger);
 				
@@ -152,7 +152,7 @@ public class Nexus
 					consoleWriter = new ConsoleWriter(
 							abortHandler,
 							inTrayCapacity,
-							completedJobsCapacity,
+							processedJobsCapacity,
 							outTrayCapacity);
 				}
 				else
@@ -160,7 +160,7 @@ public class Nexus
 					consoleWriter = new ConsoleWriterDummy(abortHandler);
 				}
 				
-				gatherer = new Gatherer(abortHandler, inTray, completedJobs, outTray);
+				gatherer = new Gatherer(abortHandler, inTray, processedJobs, outTray);
 				
 				state = NexusState.INITIALIZED;
 			}
@@ -269,7 +269,7 @@ public class Nexus
 					WorkerBase pn = factory.create(
 							abortHandler,
 							inTray,
-							completedJobs);
+							processedJobs);
 					
 					processingNodes.add(pn);
 					
@@ -321,7 +321,7 @@ public class Nexus
 		return inTray;
 	}
 	
-	public BlockingQueue<CompletedJob> getOutTray()
+	public BlockingQueue<ProcessedJob> getOutTray()
 	{
 		return outTray;
 	}
@@ -349,7 +349,6 @@ public class Nexus
 					WorkerSynchronizer sync = get().synchronizer;
 					if (!sync.isSynchronized() && !sync.isAborted())
 					{
-						// Don't overwrite original cause
 						get().setEmergencyCause(t);
 						
 						logger.info(t == null ?
@@ -369,6 +368,7 @@ public class Nexus
 	
 	private void setEmergencyCause(Throwable t)
 	{
+		// Don't overwrite original cause
 		if (emergencyCause == null)
 			emergencyCause = t;
 	}

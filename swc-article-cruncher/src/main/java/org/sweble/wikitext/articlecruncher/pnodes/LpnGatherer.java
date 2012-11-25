@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.articlecruncher.pnodes;
 
-import static org.sweble.wikitext.articlecruncher.JobCompletionState.*;
+import static org.sweble.wikitext.articlecruncher.JobProcessingState.*;
 
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.Semaphore;
 
-import org.sweble.wikitext.articlecruncher.CompletedJob;
+import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.Result;
@@ -37,11 +37,11 @@ public class LpnGatherer
 		extends
 			WorkerBase
 {
-	private final CompletionService<CompletedJob> execCompServ;
+	private final CompletionService<ProcessedJob> execCompServ;
 	
-	private final BlockingQueue<JobWithHistory> completedJobs;
+	private final BlockingQueue<JobWithHistory> processedJobs;
 	
-	private final Map<Future<CompletedJob>, JobWithHistory> runningJobs;
+	private final Map<Future<ProcessedJob>, JobWithHistory> runningJobs;
 	
 	private final Semaphore backPressure;
 	
@@ -55,16 +55,16 @@ public class LpnGatherer
 	
 	public LpnGatherer(
 			AbortHandler abortHandler,
-			CompletionService<CompletedJob> execCompServ,
-			Map<Future<CompletedJob>, JobWithHistory> runningJobs,
-			BlockingQueue<JobWithHistory> completedJobs,
+			CompletionService<ProcessedJob> execCompServ,
+			Map<Future<ProcessedJob>, JobWithHistory> runningJobs,
+			BlockingQueue<JobWithHistory> processedJobs,
 			Semaphore backPressure)
 	{
 		super(LpnGatherer.class.getSimpleName(), abortHandler);
 		
 		this.execCompServ = execCompServ;
 		this.runningJobs = runningJobs;
-		this.completedJobs = completedJobs;
+		this.processedJobs = processedJobs;
 		this.backPressure = backPressure;
 	}
 	
@@ -75,7 +75,7 @@ public class LpnGatherer
 	{
 		while (true)
 		{
-			Future<CompletedJob> f = execCompServ.take();
+			Future<ProcessedJob> f = execCompServ.take();
 			++count;
 			
 			JobWithHistory job = runningJobs.remove(f);
@@ -85,7 +85,7 @@ public class LpnGatherer
 				//throw new InternalError("There must be a job for every future ...");
 			}
 			
-			CompletedJob lastAttempt;
+			ProcessedJob lastAttempt;
 			try
 			{
 				lastAttempt = f.get();
@@ -107,7 +107,7 @@ public class LpnGatherer
 				
 				if (job != null)
 				{
-					lastAttempt = new CompletedJob(
+					lastAttempt = new ProcessedJob(
 							FAILED,
 							job.getJob(),
 							new Result(
@@ -124,8 +124,8 @@ public class LpnGatherer
 			
 			if (job != null)
 			{
-				completedJobs.put(new JobWithHistory(job, lastAttempt));
-				Nexus.getConsoleWriter().updateInTray(completedJobs.size());
+				processedJobs.put(new JobWithHistory(job, lastAttempt));
+				Nexus.getConsoleWriter().updateInTray(processedJobs.size());
 			}
 			else
 			{

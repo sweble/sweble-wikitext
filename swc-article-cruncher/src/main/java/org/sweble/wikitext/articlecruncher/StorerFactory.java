@@ -27,5 +27,5 @@ public interface StorerFactory
 	WorkerBase create(
 			AbortHandler abortHandler,
 			JobTraceSet jobTraces,
-			BlockingQueue<CompletedJob> outTray);
+			BlockingQueue<ProcessedJob> outTray);
 }

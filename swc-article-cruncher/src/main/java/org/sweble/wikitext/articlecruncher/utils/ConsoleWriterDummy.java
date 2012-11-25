@@ -51,7 +51,7 @@ public class ConsoleWriterDummy
 	{
 	}
 	
-	public void updateCompletedJobs(int size)
+	public void updateProcessedJobs(int size)
 	{
 	}
 	

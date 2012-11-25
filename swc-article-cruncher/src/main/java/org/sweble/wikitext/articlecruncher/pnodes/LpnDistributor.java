@@ -29,7 +29,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.sweble.wikitext.articlecruncher.CompletedJob;
+import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
@@ -42,12 +42,12 @@ public class LpnDistributor
 		extends
 			WorkerBase
 {
-	private final Map<Future<CompletedJob>, JobWithHistory> runningJobs =
-			new HashMap<Future<CompletedJob>, JobWithHistory>();
+	private final Map<Future<ProcessedJob>, JobWithHistory> runningJobs =
+			new HashMap<Future<ProcessedJob>, JobWithHistory>();
 	
 	private final BlockingQueue<JobWithHistory> inTray;
 	
-	private final CompletionService<CompletedJob> execComplServ;
+	private final CompletionService<ProcessedJob> execComplServ;
 	
 	private final Semaphore backPressure;
 	
@@ -76,7 +76,7 @@ public class LpnDistributor
 		
 		info(getClass().getSimpleName() + " starts with a pool of " + numWorkers + " workers");
 		
-		execComplServ = new MyExecutorCompletionService<CompletedJob>(
+		execComplServ = new MyExecutorCompletionService<ProcessedJob>(
 				getLogger(),
 				corePoolSize,
 				maximumPoolSize,
@@ -93,7 +93,7 @@ public class LpnDistributor
 	{
 		while (true)
 		{
-			// Prevent a accumulation of finished jobs in the gatherer.
+			// Prevent a accumulation of processed jobs in the gatherer.
 			backPressure.acquire();
 			
 			final JobWithHistory job = inTray.take();
@@ -105,10 +105,10 @@ public class LpnDistributor
 			// Make sure we retrieve the future handle before the worker kicks off
 			synchronized (job)
 			{
-				Callable<CompletedJob> worker =
+				Callable<ProcessedJob> worker =
 						new LpnWorker(jobProcessorFactory, job);
 				
-				Future<CompletedJob> f = execComplServ.submit(worker);
+				Future<ProcessedJob> f = execComplServ.submit(worker);
 				
 				runningJobs.put(f, job);
 			}
@@ -123,12 +123,12 @@ public class LpnDistributor
 	
 	// =========================================================================
 	
-	public Map<Future<CompletedJob>, JobWithHistory> getRunningJobs()
+	public Map<Future<ProcessedJob>, JobWithHistory> getRunningJobs()
 	{
 		return runningJobs;
 	}
 	
-	public CompletionService<CompletedJob> getEcs()
+	public CompletionService<ProcessedJob> getEcs()
 	{
 		return execComplServ;
 	}

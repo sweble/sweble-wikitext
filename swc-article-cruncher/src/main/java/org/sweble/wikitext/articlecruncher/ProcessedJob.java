@@ -17,9 +17,9 @@
 
 package org.sweble.wikitext.articlecruncher;
 
-public final class CompletedJob
+public final class ProcessedJob
 {
-	private final JobCompletionState state;
+	private final JobProcessingState state;
 	
 	private final Job job;
 	
@@ -27,23 +27,23 @@ public final class CompletedJob
 	
 	// =========================================================================
 	
-	public CompletedJob(JobCompletionState state, Job job, Result result)
+	public ProcessedJob(JobProcessingState state, Job job, Result result)
 	{
 		this.state = state;
 		this.job = job;
 		this.result = result;
 	}
 	
-	public CompletedJob(Job job, Result result)
+	public ProcessedJob(Job job, Result result)
 	{
-		this.state = JobCompletionState.HAS_RESULT;
+		this.state = JobProcessingState.HAS_RESULT;
 		this.job = job;
 		this.result = result;
 	}
 	
 	// =========================================================================
 	
-	public JobCompletionState getState()
+	public JobProcessingState getState()
 	{
 		return state;
 	}

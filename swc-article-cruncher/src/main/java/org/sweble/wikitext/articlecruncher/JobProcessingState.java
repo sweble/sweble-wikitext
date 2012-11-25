@@ -17,11 +17,11 @@
 
 package org.sweble.wikitext.articlecruncher;
 
-public enum JobCompletionState
+public enum JobProcessingState
 {
-	/** The job completed with a result. */
+	/** Processing ended with a result. */
 	HAS_RESULT,
 	
-	/** The job completed without a result. */
+	/** Processing failed. */
 	FAILED,
 }
