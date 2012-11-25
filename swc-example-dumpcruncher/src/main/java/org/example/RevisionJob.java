@@ -8,7 +8,6 @@ import java.util.TimeZone;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.sweble.wikitext.articlecruncher.Job;
-import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.dumpreader.export_0_6.CommentType;
 import org.sweble.wikitext.dumpreader.export_0_6.ContributorType;
 import org.sweble.wikitext.dumpreader.export_0_6.PageType;
@@ -19,8 +18,6 @@ public class RevisionJob
 		extends
 			Job
 {
-	private final JobTrace trace = new JobTrace();
-	
 	// -- page info --
 	
 	private final BigInteger pageId;
@@ -128,16 +125,7 @@ public class RevisionJob
 	}
 	
 	// =========================================================================
-	
-	@Override
-	public JobTrace getTrace()
-	{
-		return trace;
-	}
-	
-	// =========================================================================
-	
-	// -- page --
+	// page
 	
 	public BigInteger getPageId()
 	{
@@ -159,7 +147,8 @@ public class RevisionJob
 		return pageRedirect;
 	}
 	
-	// -- revision --
+	// =========================================================================
+	// revision
 	
 	public BigInteger getId()
 	{
@@ -176,7 +165,8 @@ public class RevisionJob
 		return timestamp;
 	}
 	
-	// -- text --
+	// =========================================================================
+	// text
 	
 	public String getTextText()
 	{

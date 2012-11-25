@@ -4,10 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
 
+import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
-import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 import org.sweble.wikitext.dumpreader.DumpReader;
@@ -18,7 +17,7 @@ public class DumpReaderJobGenerator
 		extends
 			WorkerBase
 {
-	private final BlockingQueue<JobWithHistory> inTray;
+	private final BlockingQueue<Job> inTray;
 	
 	private final JobTraceSet jobTraces;
 	
@@ -29,7 +28,7 @@ public class DumpReaderJobGenerator
 	public DumpReaderJobGenerator(
 			File dumpFile,
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
+			BlockingQueue<Job> inTray,
 			JobTraceSet jobTraces) throws Exception
 	{
 		super(DumpReaderJobGenerator.class.getSimpleName(), abortHandler);
@@ -75,24 +74,10 @@ public class DumpReaderJobGenerator
 	protected void work() throws Throwable
 	{
 		dumpReader.unmarshal();
-		
-		Nexus.getConsoleWriter().writeProgress(
-				getParsedCount(),
-				getDecompressedBytesRead(),
-				getCompressedBytesRead(),
-				getFileSize());
-		
-		Nexus.getConsoleWriter().finish();
 	}
 	
 	protected void processPage(Object mediaWiki, Object page_) throws Exception
 	{
-		Nexus.getConsoleWriter().writeProgress(
-				getParsedCount(),
-				getDecompressedBytesRead(),
-				getCompressedBytesRead(),
-				getFileSize());
-		
 		PageType page = (PageType) page_;
 		
 		for (Object o : page.getRevisionOrUploadOrLogitem())
@@ -106,8 +91,7 @@ public class DumpReaderJobGenerator
 				
 				jobTraces.add(trace);
 				
-				inTray.put(new JobWithHistory(job));
-				Nexus.getConsoleWriter().updateInTray(inTray.size());
+				inTray.put(job);
 			}
 		}
 	}

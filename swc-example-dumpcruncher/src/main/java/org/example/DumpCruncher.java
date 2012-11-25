@@ -8,31 +8,36 @@ import java.util.concurrent.BlockingQueue;
 import joptsimple.OptionException;
 
 import org.apache.log4j.Logger;
-import org.sweble.wikitext.articlecruncher.CompletedJob;
+import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobGeneratorFactory;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.ProcessingNodeFactory;
+import org.sweble.wikitext.articlecruncher.Processor;
 import org.sweble.wikitext.articlecruncher.StorerFactory;
+import org.sweble.wikitext.articlecruncher.pnodes.LocalProcessingNode;
+import org.sweble.wikitext.articlecruncher.pnodes.LpnJobProcessorFactory;
+import org.sweble.wikitext.articlecruncher.storers.DummyStorer;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 
 import de.fau.cs.osr.utils.WrappedException;
 import de.fau.cs.osr.utils.getopt.Options;
 
-public class DumpToDb
+public class DumpCruncher
 {
-	private static final Logger logger = Logger.getLogger(DumpToDb.class);
+	private static final Logger logger = Logger.getLogger(DumpCruncher.class);
 	
 	private final Options options = new Options();
+	
+	private Nexus nexus;
 	
 	// =========================================================================
 	
 	public static void main(String[] args) throws Throwable
 	{
-		new DumpToDb().run(args);
+		new DumpCruncher().run(args);
 	}
 	
 	// =========================================================================
@@ -49,7 +54,7 @@ public class DumpToDb
 		}
 		finally
 		{
-			Set<JobTrace> jobTraces = Nexus.get().getJobTraces();
+			Set<JobTrace> jobTraces = nexus.getJobTraces();
 			for (JobTrace trace : jobTraces)
 				logger.warn("Unfinished job: " + trace.toString());
 			
@@ -60,13 +65,13 @@ public class DumpToDb
 	
 	public void setUp() throws Throwable
 	{
-		Nexus nexus = Nexus.get();
+		nexus = new Nexus();
 		
 		final File dumpFile = new File(options.value("dump"));
 		
 		nexus.setUp(
 				options.value("Nexus.InTrayCapacity", int.class),
-				options.value("Nexus.CompletedJobsCapacity", int.class),
+				options.value("Nexus.ProcessedJobsCapacity", int.class),
 				options.value("Nexus.OutTrayCapacity", int.class));
 		
 		nexus.addJobGenerator(new JobGeneratorFactory()
@@ -74,7 +79,7 @@ public class DumpToDb
 			@Override
 			public WorkerBase create(
 					AbortHandler abortHandler,
-					BlockingQueue<JobWithHistory> inTray,
+					BlockingQueue<Job> inTray,
 					JobTraceSet jobTraces)
 			{
 				try
@@ -102,67 +107,62 @@ public class DumpToDb
 				return new Processor()
 				{
 					@Override
-					public CompletedJob process(JobWithHistory jobWithHistory)
+					public CompletedJob process(Job job)
 					{
-						Job job = jobWithHistory.getJob();
-						Result result = new Result(job, (Object) null);
-						return new CompletedJob(job, result);
+						return null;
 					}
 				};
 			}
 		};
 		 */
 		
+		final LpnJobProcessorFactory lpnJPFactory = new LpnJobProcessorFactory()
+		{
+			@Override
+			public Processor createProcessor()
+			{
+				return new RevisionProcessor();
+			}
+		};
+		
 		nexus.addProcessingNode(new ProcessingNodeFactory()
 		{
 			@Override
 			public WorkerBase create(
 					AbortHandler abortHandler,
-					BlockingQueue<JobWithHistory> inTray,
-					BlockingQueue<JobWithHistory> completedJobs)
+					BlockingQueue<Job> inTray,
+					BlockingQueue<Job> completedJobs)
 			{
-				/* If you have more or fewer CPUs you can alter the number of 
-				 * workers.
-				 */
-				final int numWorkers = 4;
-				return new RevisionProcessor(
-						abortHandler,
-						inTray,
-						completedJobs,
-						numWorkers);
+				final int numWorkers = options.value("Nexus.NumProcessorWorkers", int.class);
 				
-				/* This code would use the dummy processor (lpnJPFactory) 
-				 * instead.
-				 * 
-				final int numWorkers = 1;
 				return new LocalProcessingNode(
 						abortHandler,
 						inTray,
 						completedJobs,
 						lpnJPFactory,
 						numWorkers);
-				 */
 			}
 		});
 		
+		/* If it makes sense, one could also use multiple storers
+		 * to distribute the load. 
+		 * 
+		 * Example: If you want to write the results to a database, multiple 
+		 * storeres can make sense since a single connection might be dominated 
+		 * by communication overhead between this application and the database 
+		 * server.
+		 */
 		nexus.addStorer(new StorerFactory()
 		{
 			@Override
 			public WorkerBase create(
 					AbortHandler abortHandler,
 					JobTraceSet jobTraces,
-					BlockingQueue<CompletedJob> outTray)
+					BlockingQueue<Job> outTray)
 			{
 				try
 				{
-					return new RevisionProcessor(
-							abortHandler,
-							jobTraces,
-							outTray,
-							options.propertySubset("ConnectionProperties"),
-							options.value("store-workers", int.class));
-					
-					//return new DummyStorer(abortHandler, jobTraces, outTray);
+					return new DummyStorer(abortHandler, jobTraces, outTray);
 				}
 				catch (Exception e)
 				{
@@ -180,11 +180,7 @@ public class DumpToDb
 				.withDescription("Print help message.")
 				.create();
 		
-		/*
-		options.createOption("quiet")
-				.withDescription("Suppress progress messages.")
-				.create();
-		*/
+		// ---
 		
 		options.createOption('d', "dump")
 				.withDescription("The dump file to read.")
@@ -202,7 +198,7 @@ public class DumpToDb
 				.withRequiredArg()
 				.create();
 		
-		options.createPropertyOnlyOption("Nexus.CompletedJobsCapacity")
+		options.createPropertyOnlyOption("Nexus.ProcessedJobsCapacity")
 				.withDescription("The number of elements the `in tray' queue can hold.")
 				.withDefault("8")
 				.withArgName("N")
@@ -214,10 +210,10 @@ public class DumpToDb
 				.withArgName("N")
 				.create();
 		
-		options.createOption("store-workers")
-				.withDescription("The number of store workers.")
-				.withPropertyKey("Nexus.NumStorerWorkers")
-				.withDefault("16")
+		options.createOption("processor-workers")
+				.withDescription("The number of processor workers.")
+				.withPropertyKey("Nexus.NumProcessorWorkers")
+				.withDefault("4")
 				.withArgName("N")
 				.create();
 		
@@ -229,41 +225,6 @@ public class DumpToDb
 				.create();
 		
 		// ---
-		
-		options.createFixedValueOption("ConnectionProperties.MaxActive", "100");
-		
-		options.createFixedValueOption("ConnectionProperties.MaxWait", "10000");
-		
-		options.createFixedValueOption("ConnectionProperties.TestOnBorrow", "true");
-		
-		options.createOption("username")
-				.withDescription("Database username.")
-				.withPropertyKey("ConnectionProperties.Username")
-				.withArgName("USERNAME")
-				.withRequiredArg()
-				.create();
-		
-		options.createOption("password")
-				.withDescription("Database password.")
-				.withPropertyKey("ConnectionProperties.Password")
-				.withArgName("PASSWORD")
-				.withRequiredArg()
-				.create();
-		
-		options.createOption("url")
-				.withDescription("Database url (eg: jdbc:postgresql://localhost:5432/<DB>).")
-				.withPropertyKey("ConnectionProperties.Url")
-				.withArgName("URL")
-				.withRequiredArg()
-				.create();
-		
-		options.createOption("driver-class-name")
-				.withDescription("The JDBC driver class.")
-				.withPropertyKey("ConnectionProperties.DriverClassName")
-				.withDefault("org.postgresql.Driver")
-				.withArgName("CLASS")
-				.withRequiredArg()
-				.create();
 		
 		try
 		{
@@ -279,16 +240,12 @@ public class DumpToDb
 				options.load(new File(options.value("P")));
 			
 			options.expected("dump");
-			options.expected("username");
-			options.expected("password");
-			options.expected("url");
 			
-			//options.optional("quiet");
 			options.optional("P");
 			options.optional("Nexus.InTrayCapacity");
-			options.optional("Nexus.CompletedJobsCapacity");
+			options.optional("Nexus.ProcessedJobsCapacity");
 			options.optional("Nexus.OutTrayCapacity");
-			options.optional("store-workers");
+			options.optional("Nexus.NumProcessorWorkers");
 			
 			options.checkForInvalidOptions();
 			
