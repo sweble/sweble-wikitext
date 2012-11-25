@@ -19,10 +19,9 @@ package org.sweble.wikitext.articlecruncher.storers;
 
 import java.util.concurrent.BlockingQueue;
 
-import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
-import org.sweble.wikitext.articlecruncher.Nexus;
+import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 
@@ -57,7 +56,6 @@ public class DummyStorer
 		while (true)
 		{
 			ProcessedJob job = outTray.take();
-			Nexus.getConsoleWriter().updateOutTray(outTray.size());
 			++count;
 			
 			// Do nothing

@@ -27,7 +27,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
-import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorCompletionService;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
@@ -90,7 +89,6 @@ public class LpnDistributor
 			backPressure.acquire();
 			
 			final JobWithHistory job = inTray.take();
-			Nexus.getConsoleWriter().updateInTray(inTray.size());
 			++count;
 			
 			job.getJob().getTrace().signOff(getClass(), null);

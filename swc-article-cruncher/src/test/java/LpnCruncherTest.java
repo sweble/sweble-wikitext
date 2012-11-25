@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobGeneratorFactory;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
+import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.ProcessingNodeFactory;
@@ -28,7 +28,7 @@ public class LpnCruncherTest
 {
 	private Nexus nexus;
 	
-	private static final long NUM_JOBS_TO_GENERATE = (long) Math.pow(2, 22);
+	private static final long NUM_JOBS_TO_GENERATE = (long) Math.pow(2, 21);
 	
 	private static final int NUM_WORKERS = 256;
 	
@@ -38,12 +38,10 @@ public class LpnCruncherTest
 	
 	private AtomicLong stored = new AtomicLong(0);
 	
-	//private long failAfter = -1;
-	
 	@Before
 	public void before() throws Throwable
 	{
-		nexus = Nexus.get();
+		nexus = new Nexus();
 		
 		nexus.setUp(
 				16, /* in tray capacity */
@@ -61,30 +59,6 @@ public class LpnCruncherTest
 		nexus.addStorer(storerFactory);
 	}
 	
-	/*
-	@Test
-	public void testWithFailing() throws Throwable
-	{
-		failAfter = (numJobsToGenerate * 3) / 4;
-		
-		try
-		{
-			nexus.start();
-		}
-		catch (RuntimeException e)
-		{
-			assertEquals("Die!", e.getMessage());
-		}
-		
-		Set<JobTrace> jobTraces = Nexus.get().getJobTraces();
-		System.out.println("numJobsToGenerate: " + numJobsToGenerate);
-		System.out.println("generated: " + generated.get());
-		System.out.println("processed: " + processed.get());
-		System.out.println("stored: " + stored.get());
-		System.out.println("job traces left: " + jobTraces.size());
-	}
-	*/
-	
 	@Test
 	public void testWithoutFailing() throws Throwable
 	{
@@ -96,7 +70,7 @@ public class LpnCruncherTest
 		
 		assertEquals(NUM_JOBS_TO_GENERATE, stored.get());
 		
-		Set<JobTrace> jobTraces = Nexus.get().getJobTraces();
+		Set<JobTrace> jobTraces = nexus.getJobTraces();
 		assertTrue(jobTraces.isEmpty());
 	}
 	

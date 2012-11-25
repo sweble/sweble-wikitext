@@ -44,6 +44,7 @@ public class Nexus
 	
 	// =========================================================================
 	
+	/*
 	private static Nexus nexus;
 	
 	public static Nexus get()
@@ -57,6 +58,7 @@ public class Nexus
 	{
 		return get().consoleWriter;
 	}
+	*/
 	
 	// =========================================================================
 	
@@ -101,7 +103,7 @@ public class Nexus
 	
 	// =========================================================================
 	
-	private Nexus()
+	public Nexus()
 	{
 	}
 	
@@ -326,30 +328,30 @@ public class Nexus
 		return outTray;
 	}
 	
-	public static void shutdown()
+	public/*static*/void shutdown()
 	{
 		internalShutdown(null);
 	}
 	
-	public static void emergencyShutdown(Throwable t)
+	public/*static*/void emergencyShutdown(Throwable t)
 	{
 		internalShutdown(t);
 	}
 	
 	// =========================================================================
 	
-	private static void internalShutdown(Throwable t)
+	private/*static*/void internalShutdown(Throwable t)
 	{
-		synchronized (get().synchronizer.getMonitor())
+		synchronized (/*get().*/synchronizer.getMonitor())
 		{
-			switch (get().state)
+			switch (/*get().*/state)
 			{
 				case RUNNING:
 				{
-					WorkerSynchronizer sync = get().synchronizer;
+					WorkerSynchronizer sync = /*get().*/synchronizer;
 					if (!sync.isSynchronized() && !sync.isAborted())
 					{
-						get().setEmergencyCause(t);
+						/*get().*/setEmergencyCause(t);
 						
 						logger.info(t == null ?
 								"Nexus performing orderly shutdown" :

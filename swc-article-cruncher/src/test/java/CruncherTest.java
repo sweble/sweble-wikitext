@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobGeneratorFactory;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
+import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.ProcessingNodeFactory;
@@ -25,7 +25,7 @@ public class CruncherTest
 {
 	private Nexus nexus;
 	
-	private static final long NUM_JOBS_TO_GENERATE = (long) Math.pow(2, 22);
+	private static final long NUM_JOBS_TO_GENERATE = (long) Math.pow(2, 21);
 	
 	private AtomicLong generated = new AtomicLong(0);
 	
@@ -38,7 +38,7 @@ public class CruncherTest
 	@Before
 	public void before() throws Throwable
 	{
-		nexus = Nexus.get();
+		nexus = new Nexus();
 		
 		nexus.setUp(
 				16, /* in tray capacity */
@@ -56,30 +56,6 @@ public class CruncherTest
 		nexus.addStorer(storerFactory);
 	}
 	
-	/*
-	@Test
-	public void testWithFailing() throws Throwable
-	{
-		failAfter = (numJobsToGenerate * 3) / 4;
-		
-		try
-		{
-			nexus.start();
-		}
-		catch (RuntimeException e)
-		{
-			assertEquals("Die!", e.getMessage());
-		}
-		
-		Set<JobTrace> jobTraces = Nexus.get().getJobTraces();
-		System.out.println("numJobsToGenerate: " + numJobsToGenerate);
-		System.out.println("generated: " + generated.get());
-		System.out.println("processed: " + processed.get());
-		System.out.println("stored: " + stored.get());
-		System.out.println("job traces left: " + jobTraces.size());
-	}
-	*/
-	
 	@Test
 	public void testWithoutFailing() throws Throwable
 	{
@@ -91,8 +67,36 @@ public class CruncherTest
 		
 		assertEquals(NUM_JOBS_TO_GENERATE, stored.get());
 		
-		Set<JobTrace> jobTraces = Nexus.get().getJobTraces();
+		Set<JobTrace> jobTraces = nexus.getJobTraces();
 		assertTrue(jobTraces.isEmpty());
+	}
+	
+	@Test
+	public void testWithFailing() throws Throwable
+	{
+		failAfter = (NUM_JOBS_TO_GENERATE * 3) / 4;
+		
+		try
+		{
+			nexus.start();
+		}
+		catch (RuntimeException e)
+		{
+			assertEquals("Die!", e.getMessage());
+		}
+		
+		Set<JobTrace> jobTraces = nexus.getJobTraces();
+		
+		assertEquals(generated.get(), processed.get() + jobTraces.size());
+		assertEquals(generated.get(), stored.get() + jobTraces.size());
+		
+		/*
+		System.out.println("numJobsToGenerate: " + NUM_JOBS_TO_GENERATE);
+		System.out.println("generated: " + generated.get());
+		System.out.println("processed: " + processed.get());
+		System.out.println("stored: " + stored.get());
+		System.out.println("job traces left: " + jobTraces.size());
+		*/
 	}
 	
 	// =========================================================================

@@ -57,7 +57,6 @@ public class Gatherer
 		while (true)
 		{
 			JobWithHistory processed = processedJobs.take();
-			Nexus.getConsoleWriter().updateProcessedJobs(processedJobs.size());
 			++count;
 			
 			processed.getJob().getTrace().signOff(getClass(), null);
@@ -68,12 +67,10 @@ public class Gatherer
 			if (tryAgain)
 			{
 				inTray.put(processed);
-				Nexus.getConsoleWriter().updateInTray(inTray.size());
 			}
 			else
 			{
 				outTray.put(processed.getLastAttempt());
-				Nexus.getConsoleWriter().updateOutTray(outTray.size());
 			}
 		}
 	}
