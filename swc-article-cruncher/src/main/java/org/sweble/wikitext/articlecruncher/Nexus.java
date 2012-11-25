@@ -25,9 +25,6 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
-import org.sweble.wikitext.articlecruncher.utils.ConsoleWriter;
-import org.sweble.wikitext.articlecruncher.utils.ConsoleWriterBase;
-import org.sweble.wikitext.articlecruncher.utils.ConsoleWriterDummy;
 import org.sweble.wikitext.articlecruncher.utils.ExecutorType;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorService;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
@@ -41,24 +38,6 @@ public class Nexus
 		RUNNING,
 		SHUTDOWN
 	}
-	
-	// =========================================================================
-	
-	/*
-	private static Nexus nexus;
-	
-	public static Nexus get()
-	{
-		if (nexus == null)
-			nexus = new Nexus();
-		return nexus;
-	}
-	
-	public static ConsoleWriterBase getConsoleWriter()
-	{
-		return get().consoleWriter;
-	}
-	*/
 	
 	// =========================================================================
 	
@@ -81,13 +60,7 @@ public class Nexus
 	
 	private Throwable emergencyCause;
 	
-	//private WorkerBase parser;
-	
 	private WorkerBase gatherer;
-	
-	//private WorkerBase storer;
-	
-	private ConsoleWriterBase consoleWriter;
 	
 	private NexusState state;
 	
@@ -114,15 +87,6 @@ public class Nexus
 			int processedJobsCapacity,
 			int outTrayCapacity) throws Throwable
 	{
-		setUp(inTrayCapacity, processedJobsCapacity, outTrayCapacity, true);
-	}
-	
-	public void setUp(
-			int inTrayCapacity,
-			int processedJobsCapacity,
-			int outTrayCapacity,
-			boolean withConsoleWriter) throws Throwable
-	{
 		synchronized (synchronizer.getMonitor())
 		{
 			if (state != null)
@@ -148,19 +112,6 @@ public class Nexus
 						emergencyShutdown(t);
 					}
 				};
-				
-				if (withConsoleWriter)
-				{
-					consoleWriter = new ConsoleWriter(
-							abortHandler,
-							inTrayCapacity,
-							processedJobsCapacity,
-							outTrayCapacity);
-				}
-				else
-				{
-					consoleWriter = new ConsoleWriterDummy(abortHandler);
-				}
 				
 				gatherer = new Gatherer(abortHandler, inTray, processedJobs, outTray);
 				
@@ -190,7 +141,6 @@ public class Nexus
 				{
 					logger.info("Nexus starting workers");
 					
-					consoleWriter.start(executor);
 					gatherer.start(executor);
 					
 					logger.info("Nexus waiting for end of input stream");
@@ -397,9 +347,6 @@ public class Nexus
 			
 			for (WorkerBase s : storers)
 				s.stop();
-			
-			if (consoleWriter != null)
-				consoleWriter.stop();
 			
 			if (executor != null)
 			{
