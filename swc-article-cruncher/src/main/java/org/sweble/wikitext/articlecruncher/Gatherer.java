@@ -26,19 +26,19 @@ public class Gatherer
 		extends
 			WorkerBase
 {
-	private final BlockingQueue<JobWithHistory> inTray;
+	private final BlockingQueue<Job> inTray;
 	
-	private final BlockingQueue<JobWithHistory> processedJobs;
+	private final BlockingQueue<Job> processedJobs;
 	
-	private final BlockingQueue<ProcessedJob> outTray;
+	private final BlockingQueue<Job> outTray;
 	
 	// =========================================================================
 	
 	public Gatherer(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
-			BlockingQueue<JobWithHistory> processedJobs,
-			BlockingQueue<ProcessedJob> outTray)
+			BlockingQueue<Job> inTray,
+			BlockingQueue<Job> processedJobs,
+			BlockingQueue<Job> outTray)
 	{
 		super(Gatherer.class.getSimpleName(), abortHandler);
 		
@@ -56,10 +56,10 @@ public class Gatherer
 	{
 		while (true)
 		{
-			JobWithHistory processed = processedJobs.take();
+			Job processed = processedJobs.take();
 			++count;
 			
-			processed.getJob().getTrace().signOff(getClass(), null);
+			processed.signOff(getClass(), null);
 			
 			// TODO: Decide what to do with it.
 			boolean tryAgain = false;
@@ -70,7 +70,7 @@ public class Gatherer
 			}
 			else
 			{
-				outTray.put(processed.getLastAttempt());
+				outTray.put(processed);
 			}
 		}
 	}

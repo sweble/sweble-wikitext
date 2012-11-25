@@ -48,11 +48,11 @@ public class Nexus
 	
 	// =========================================================================
 	
-	private BlockingQueue<JobWithHistory> inTray;
+	private BlockingQueue<Job> inTray;
 	
-	private BlockingQueue<JobWithHistory> processedJobs;
+	private BlockingQueue<Job> processedJobs;
 	
-	private BlockingQueue<ProcessedJob> outTray;
+	private BlockingQueue<Job> outTray;
 	
 	private JobTraceSet jobTraces = new JobTraceSet();
 	
@@ -96,11 +96,11 @@ public class Nexus
 			{
 				logger.info("Nexus starting");
 				
-				inTray = new LinkedBlockingDeque<JobWithHistory>(inTrayCapacity);
+				inTray = new LinkedBlockingDeque<Job>(inTrayCapacity);
 				
-				processedJobs = new LinkedBlockingDeque<JobWithHistory>(processedJobsCapacity);
+				processedJobs = new LinkedBlockingDeque<Job>(processedJobsCapacity);
 				
-				outTray = new LinkedBlockingDeque<ProcessedJob>(outTrayCapacity);
+				outTray = new LinkedBlockingDeque<Job>(outTrayCapacity);
 				
 				executor = new MyExecutorService(ExecutorType.CACHED_THREAD_POOL, logger);
 				
@@ -268,12 +268,12 @@ public class Nexus
 		return jobTraces.getTraces();
 	}
 	
-	public BlockingQueue<JobWithHistory> getInTray()
+	public BlockingQueue<Job> getInTray()
 	{
 		return inTray;
 	}
 	
-	public BlockingQueue<ProcessedJob> getOutTray()
+	public BlockingQueue<Job> getOutTray()
 	{
 		return outTray;
 	}

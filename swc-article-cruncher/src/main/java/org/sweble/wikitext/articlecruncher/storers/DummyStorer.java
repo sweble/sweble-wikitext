@@ -19,9 +19,9 @@ package org.sweble.wikitext.articlecruncher.storers;
 
 import java.util.concurrent.BlockingQueue;
 
+import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
-import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 
@@ -31,14 +31,14 @@ public class DummyStorer
 {
 	private final JobTraceSet jobTraces;
 	
-	private final BlockingQueue<ProcessedJob> outTray;
+	private final BlockingQueue<Job> outTray;
 	
 	// =========================================================================
 	
 	public DummyStorer(
 			AbortHandler abortHandler,
 			JobTraceSet jobTraces,
-			BlockingQueue<ProcessedJob> outTray)
+			BlockingQueue<Job> outTray)
 	{
 		super(DummyStorer.class.getSimpleName(), abortHandler);
 		
@@ -55,12 +55,12 @@ public class DummyStorer
 	{
 		while (true)
 		{
-			ProcessedJob job = outTray.take();
+			Job job = outTray.take();
 			++count;
 			
 			// Do nothing
 			
-			JobTrace trace = job.getJob().getTrace();
+			JobTrace trace = job.getTrace();
 			trace.signOff(getClass(), null);
 			
 			if (!jobTraces.remove(trace))

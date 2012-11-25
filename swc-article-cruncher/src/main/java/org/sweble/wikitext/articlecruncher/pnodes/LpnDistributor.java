@@ -26,7 +26,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
+import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorCompletionService;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
@@ -37,9 +37,9 @@ public class LpnDistributor
 		extends
 			WorkerBase
 {
-	private final BlockingQueue<JobWithHistory> inTray;
+	private final BlockingQueue<Job> inTray;
 	
-	private final CompletionService<JobWithHistory> execComplServ;
+	private final CompletionService<Job> execComplServ;
 	
 	private final Semaphore backPressure;
 	
@@ -51,7 +51,7 @@ public class LpnDistributor
 	
 	public LpnDistributor(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
+			BlockingQueue<Job> inTray,
 			ThreadGroup fatherThreadGroup,
 			int numWorkers,
 			LpnJobProcessorFactory jobProcessorFactory,
@@ -68,7 +68,7 @@ public class LpnDistributor
 		
 		info(getClass().getSimpleName() + " starts with a pool of " + numWorkers + " workers");
 		
-		execComplServ = new MyExecutorCompletionService<JobWithHistory>(
+		execComplServ = new MyExecutorCompletionService<Job>(
 				getLogger(),
 				corePoolSize,
 				maximumPoolSize,
@@ -88,13 +88,12 @@ public class LpnDistributor
 			// Prevent a accumulation of processed jobs in the gatherer.
 			backPressure.acquire();
 			
-			final JobWithHistory job = inTray.take();
+			final Job job = inTray.take();
 			++count;
 			
-			job.getJob().getTrace().signOff(getClass(), null);
+			job.signOff(getClass(), null);
 			
-			Callable<JobWithHistory> worker =
-					new LpnWorker(jobProcessorFactory, job);
+			Callable<Job> worker = new LpnWorker(jobProcessorFactory, job);
 			
 			execComplServ.submit(worker);
 		}
@@ -108,7 +107,7 @@ public class LpnDistributor
 	
 	// =========================================================================
 	
-	public CompletionService<JobWithHistory> getEcs()
+	public CompletionService<Job> getEcs()
 	{
 		return execComplServ;
 	}

@@ -26,6 +26,6 @@ public interface JobGeneratorFactory
 {
 	WorkerBase create(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
+			BlockingQueue<Job> inTray,
 			JobTraceSet jobTraces);
 }

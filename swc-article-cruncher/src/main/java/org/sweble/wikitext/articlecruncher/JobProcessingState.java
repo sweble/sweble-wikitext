@@ -24,4 +24,7 @@ public enum JobProcessingState
 	
 	/** Processing failed. */
 	FAILED,
+	
+	/** Not yet processed. */
+	UNPROCESSED,
 }

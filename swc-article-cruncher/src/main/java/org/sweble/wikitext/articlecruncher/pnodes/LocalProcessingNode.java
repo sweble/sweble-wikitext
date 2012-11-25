@@ -20,7 +20,7 @@ package org.sweble.wikitext.articlecruncher.pnodes;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Semaphore;
 
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
+import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.ProcessingNode;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.ExecutorType;
@@ -31,9 +31,9 @@ public class LocalProcessingNode
 		extends
 			ProcessingNode
 {
-	private final BlockingQueue<JobWithHistory> inTray;
+	private final BlockingQueue<Job> inTray;
 	
-	private final BlockingQueue<JobWithHistory> processedJobs;
+	private final BlockingQueue<Job> processedJobs;
 	
 	private final int numWorkers;
 	
@@ -51,8 +51,8 @@ public class LocalProcessingNode
 	
 	public LocalProcessingNode(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
-			BlockingQueue<JobWithHistory> processedJobs,
+			BlockingQueue<Job> inTray,
+			BlockingQueue<Job> processedJobs,
 			LpnJobProcessorFactory jobProcessorFactory,
 			int numWorkers)
 	{

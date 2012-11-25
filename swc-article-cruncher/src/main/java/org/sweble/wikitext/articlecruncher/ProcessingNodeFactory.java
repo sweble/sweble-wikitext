@@ -27,7 +27,7 @@ public interface ProcessingNodeFactory
 	
 	WorkerBase create(
 			AbortHandler abortHandler,
-			BlockingQueue<JobWithHistory> inTray,
-			BlockingQueue<JobWithHistory> processedJobs);
+			BlockingQueue<Job> inTray,
+			BlockingQueue<Job> processedJobs);
 	
 }
