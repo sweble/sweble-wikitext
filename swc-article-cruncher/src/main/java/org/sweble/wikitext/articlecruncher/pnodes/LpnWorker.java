@@ -19,38 +19,50 @@ package org.sweble.wikitext.articlecruncher.pnodes;
 
 import java.util.concurrent.Callable;
 
-import org.sweble.wikitext.articlecruncher.ProcessedJob;
+import org.apache.log4j.Logger;
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
+import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.Processor;
 
 final class LpnWorker
 		implements
-			Callable<ProcessedJob>
+			Callable<JobWithHistory>
 {
+	private static final Logger logger = Logger.getLogger(LpnWorker.class.getSimpleName());
+	
 	private final LpnJobProcessorFactory jobProcessorFactory;
 	
-	private final JobWithHistory job;
+	private final JobWithHistory jobHistory;
 	
 	// =========================================================================
 	
-	LpnWorker(LpnJobProcessorFactory jobProcessorFactory, JobWithHistory job)
+	LpnWorker(LpnJobProcessorFactory jobProcessorFactory, JobWithHistory jobHistory)
 	{
 		this.jobProcessorFactory = jobProcessorFactory;
-		this.job = job;
+		this.jobHistory = jobHistory;
 	}
 	
 	// =========================================================================
 	
 	@Override
-	public ProcessedJob call() throws Exception
+	public JobWithHistory call() throws Exception
 	{
-		// Wait for LpnDistributor to retrieve the future handle!
-		synchronized (job)
+		ProcessedJob lastAttempt;
+		try
 		{
-			job.getJob().getTrace().signOff(getClass(), null);
+			jobHistory.getJob().getTrace().signOff(getClass(), null);
 			
 			Processor processor = jobProcessorFactory.createProcessor();
-			return processor.process(job);
+			
+			lastAttempt = processor.process(jobHistory);
 		}
+		catch (Throwable t)
+		{
+			logger.warn("Processing failed with exception", t);
+			
+			lastAttempt = new ProcessedJob(jobHistory.getJob(), t);
+		}
+		
+		return new JobWithHistory(jobHistory, lastAttempt);
 	}
 }

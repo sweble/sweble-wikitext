@@ -27,11 +27,20 @@ public final class ProcessedJob
 	
 	// =========================================================================
 	
+	/*
 	public ProcessedJob(JobProcessingState state, Job job, Result result)
 	{
 		this.state = state;
 		this.job = job;
 		this.result = result;
+	}
+	*/
+	
+	public ProcessedJob(Job job, Throwable t)
+	{
+		this.state = JobProcessingState.FAILED;
+		this.job = job;
+		this.result = new Result(job, t);
 	}
 	
 	public ProcessedJob(Job job, Result result)

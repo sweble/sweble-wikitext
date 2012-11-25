@@ -17,19 +17,15 @@
 
 package org.sweble.wikitext.articlecruncher.pnodes;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
-import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
@@ -42,12 +38,9 @@ public class LpnDistributor
 		extends
 			WorkerBase
 {
-	private final Map<Future<ProcessedJob>, JobWithHistory> runningJobs =
-			new HashMap<Future<ProcessedJob>, JobWithHistory>();
-	
 	private final BlockingQueue<JobWithHistory> inTray;
 	
-	private final CompletionService<ProcessedJob> execComplServ;
+	private final CompletionService<JobWithHistory> execComplServ;
 	
 	private final Semaphore backPressure;
 	
@@ -76,7 +69,7 @@ public class LpnDistributor
 		
 		info(getClass().getSimpleName() + " starts with a pool of " + numWorkers + " workers");
 		
-		execComplServ = new MyExecutorCompletionService<ProcessedJob>(
+		execComplServ = new MyExecutorCompletionService<JobWithHistory>(
 				getLogger(),
 				corePoolSize,
 				maximumPoolSize,
@@ -102,16 +95,10 @@ public class LpnDistributor
 			
 			job.getJob().getTrace().signOff(getClass(), null);
 			
-			// Make sure we retrieve the future handle before the worker kicks off
-			synchronized (job)
-			{
-				Callable<ProcessedJob> worker =
-						new LpnWorker(jobProcessorFactory, job);
-				
-				Future<ProcessedJob> f = execComplServ.submit(worker);
-				
-				runningJobs.put(f, job);
-			}
+			Callable<JobWithHistory> worker =
+					new LpnWorker(jobProcessorFactory, job);
+			
+			execComplServ.submit(worker);
 		}
 	}
 	
@@ -123,12 +110,7 @@ public class LpnDistributor
 	
 	// =========================================================================
 	
-	public Map<Future<ProcessedJob>, JobWithHistory> getRunningJobs()
-	{
-		return runningJobs;
-	}
-	
-	public CompletionService<ProcessedJob> getEcs()
+	public CompletionService<JobWithHistory> getEcs()
 	{
 		return execComplServ;
 	}

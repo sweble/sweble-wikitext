@@ -101,7 +101,6 @@ public class LocalProcessingNode
 			gatherer = new LpnGatherer(
 					abortHandler,
 					distributor.getEcs(),
-					distributor.getRunningJobs(),
 					processedJobs,
 					backPressure);
 			

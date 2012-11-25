@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-import static org.sweble.wikitext.articlecruncher.JobProcessingState.*;
 
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -9,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobGeneratorFactory;
+import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.ProcessingNodeFactory;
@@ -169,10 +168,7 @@ public class CruncherTest
 							
 							Result result = new Result(job, (Object) null);
 							
-							ProcessedJob processed = new ProcessedJob(
-									FAILED,
-									job,
-									result);
+							ProcessedJob processed = new ProcessedJob(job, result);
 							
 							processedJobs.put(new JobWithHistory(jobWithHistory, processed));
 						}

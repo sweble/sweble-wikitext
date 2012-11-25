@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-import static org.sweble.wikitext.articlecruncher.JobProcessingState.*;
 
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -9,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.JobGeneratorFactory;
+import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.JobTrace;
 import org.sweble.wikitext.articlecruncher.JobTraceSet;
-import org.sweble.wikitext.articlecruncher.JobWithHistory;
 import org.sweble.wikitext.articlecruncher.Nexus;
 import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.ProcessingNodeFactory;
@@ -120,6 +119,8 @@ public class LpnCruncherTest
 						@Override
 						protected void work() throws InterruptedException
 						{
+							int percent = 0;
+							
 							for (long i = 0; i < NUM_JOBS_TO_GENERATE; ++i)
 							{
 								// generate jobs out of thin air.
@@ -132,7 +133,16 @@ public class LpnCruncherTest
 								jobTraces.add(trace);
 								
 								inTray.put(new JobWithHistory(job));
+								
+								int newPercent = (int) ((i * 100) / (NUM_JOBS_TO_GENERATE - 1));
+								if (percent != newPercent)
+								{
+									System.err.print('.');
+									percent = newPercent;
+								}
 							}
+							
+							System.err.println(" done.");
 						}
 					};
 				}
@@ -161,44 +171,6 @@ public class LpnCruncherTest
 						createLpnFactory(),
 						NUM_WORKERS);
 			}
-			/*
-			@Override
-			public WorkerBase create(
-					final AbortHandler abortHandler,
-					final BlockingQueue<JobWithHistory> inTray,
-					final BlockingQueue<JobWithHistory> processedJobs)
-			{
-				return new WorkerBase("ProcessingNode", abortHandler)
-				{
-					@Override
-					protected void work() throws InterruptedException
-					{
-						while (true)
-						{
-							JobWithHistory jobWithHistory = inTray.take();
-							Job job = jobWithHistory.getJob();
-							
-							job.getTrace().signOff(getClass(), null);
-							
-							// do process.
-							if (failAfter >= 0 && generated.get() > failAfter)
-								throw new RuntimeException("Die!");
-							
-							processed.incrementAndGet();
-							
-							Result result = new Result(job, (Object) null);
-							
-							ProcessedJob processed = new ProcessedJob(
-									FAILED,
-									job,
-									result);
-							
-							processedJobs.put(new JobWithHistory(jobWithHistory, processed));
-						}
-					}
-				};
-			}
-			*/
 		};
 	}
 	
@@ -218,12 +190,10 @@ public class LpnCruncherTest
 						
 						job.getTrace().signOff(getClass(), null);
 						
+						processed.incrementAndGet();
 						Result result = new Result(job, (Object) null);
 						
-						ProcessedJob processed = new ProcessedJob(
-								FAILED,
-								job,
-								result);
+						ProcessedJob processed = new ProcessedJob(job, result);
 						
 						return processed;
 					}

@@ -17,19 +17,13 @@
 
 package org.sweble.wikitext.articlecruncher.pnodes;
 
-import static org.sweble.wikitext.articlecruncher.JobProcessingState.*;
-
-import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.Semaphore;
 
-import org.sweble.wikitext.articlecruncher.ProcessedJob;
 import org.sweble.wikitext.articlecruncher.JobWithHistory;
-import org.sweble.wikitext.articlecruncher.Nexus;
-import org.sweble.wikitext.articlecruncher.Result;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 
@@ -37,11 +31,9 @@ public class LpnGatherer
 		extends
 			WorkerBase
 {
-	private final CompletionService<ProcessedJob> execCompServ;
+	private final CompletionService<JobWithHistory> execCompServ;
 	
 	private final BlockingQueue<JobWithHistory> processedJobs;
-	
-	private final Map<Future<ProcessedJob>, JobWithHistory> runningJobs;
 	
 	private final Semaphore backPressure;
 	
@@ -55,15 +47,13 @@ public class LpnGatherer
 	
 	public LpnGatherer(
 			AbortHandler abortHandler,
-			CompletionService<ProcessedJob> execCompServ,
-			Map<Future<ProcessedJob>, JobWithHistory> runningJobs,
+			CompletionService<JobWithHistory> execCompServ,
 			BlockingQueue<JobWithHistory> processedJobs,
 			Semaphore backPressure)
 	{
 		super(LpnGatherer.class.getSimpleName(), abortHandler);
 		
 		this.execCompServ = execCompServ;
-		this.runningJobs = runningJobs;
 		this.processedJobs = processedJobs;
 		this.backPressure = backPressure;
 	}
@@ -75,22 +65,14 @@ public class LpnGatherer
 	{
 		while (true)
 		{
-			Future<ProcessedJob> f = execCompServ.take();
+			Future<JobWithHistory> f = execCompServ.take();
 			++count;
 			
-			JobWithHistory job = runningJobs.remove(f);
-			if (job == null)
-			{
-				getLogger().fatal("There must be a job for every future ... " + f);
-				//throw new InternalError("There must be a job for every future ...");
-			}
-			
-			ProcessedJob lastAttempt;
 			try
 			{
-				lastAttempt = f.get();
+				JobWithHistory processedJob = f.get();
 				
-				switch (lastAttempt.getState())
+				switch (processedJob.getLastAttempt().getState())
 				{
 					case FAILED:
 						++failureCount;
@@ -100,39 +82,16 @@ public class LpnGatherer
 						++successCount;
 						break;
 				}
+				
+				processedJobs.put(processedJob);
+				backPressure.release();
 			}
 			catch (ExecutionException e)
 			{
-				warn("Processing failed with exception", e.getCause());
+				fatal(LpnWorker.class.getSimpleName() + " failed with unhandled expection", e.getCause());
 				
-				if (job != null)
-				{
-					lastAttempt = new ProcessedJob(
-							FAILED,
-							job.getJob(),
-							new Result(
-									job.getJob(),
-									e));
-				}
-				else
-				{
-					lastAttempt = null;
-				}
-				
-				++failureCount;
+				abort(e.getCause());
 			}
-			
-			if (job != null)
-			{
-				processedJobs.put(new JobWithHistory(job, lastAttempt));
-				Nexus.getConsoleWriter().updateInTray(processedJobs.size());
-			}
-			else
-			{
-				getLogger().fatal("Lost job... " + lastAttempt);
-			}
-			
-			backPressure.release();
 		}
 	}
 	
