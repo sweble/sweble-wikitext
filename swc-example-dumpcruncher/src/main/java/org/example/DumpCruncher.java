@@ -21,6 +21,8 @@ import org.sweble.wikitext.articlecruncher.pnodes.LpnJobProcessorFactory;
 import org.sweble.wikitext.articlecruncher.storers.DummyStorer;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.utils.DefaultConfigEn;
 
 import de.fau.cs.osr.utils.WrappedException;
 import de.fau.cs.osr.utils.getopt.Options;
@@ -32,6 +34,10 @@ public class DumpCruncher
 	private final Options options = new Options();
 	
 	private Nexus nexus;
+	
+	private Gui gui;
+	
+	private WikiConfig wikiConfig;
 	
 	// =========================================================================
 	
@@ -47,7 +53,7 @@ public class DumpCruncher
 		if (!options(args))
 			return;
 		
-		logger.info("Starting dump reader");
+		logger.info("Starting dump cruncher");
 		try
 		{
 			setUp();
@@ -59,12 +65,14 @@ public class DumpCruncher
 				logger.warn("Unfinished job: " + trace.toString());
 			
 			logger.info("Number of unfinished jobs: " + jobTraces.size());
-			logger.info("Dump reader exiting");
+			logger.info("Dump cruncher exiting");
 		}
 	}
 	
 	public void setUp() throws Throwable
 	{
+		gui = new Gui(this);
+		
 		nexus = new Nexus();
 		
 		final File dumpFile = new File(options.value("dump"));
@@ -84,7 +92,12 @@ public class DumpCruncher
 			{
 				try
 				{
-					return new DumpReaderJobGenerator(dumpFile, abortHandler, inTray, jobTraces);
+					return new DumpReaderJobGenerator(
+							DumpCruncher.this,
+							dumpFile,
+							abortHandler,
+							inTray,
+							jobTraces);
 				}
 				catch (Exception e)
 				{
@@ -116,12 +129,14 @@ public class DumpCruncher
 		};
 		 */
 		
+		wikiConfig = DefaultConfigEn.generate();
+		
 		final LpnJobProcessorFactory lpnJPFactory = new LpnJobProcessorFactory()
 		{
 			@Override
 			public Processor createProcessor()
 			{
-				return new RevisionProcessor();
+				return new RevisionProcessor(DumpCruncher.this);
 			}
 		};
 		
@@ -133,7 +148,7 @@ public class DumpCruncher
 					BlockingQueue<Job> inTray,
 					BlockingQueue<Job> completedJobs)
 			{
-				final int numWorkers = options.value("Nexus.NumProcessorWorkers", int.class);
+				final int numWorkers = options.value("Nexus.NumProcessingWorkers", int.class);
 				
 				return new LocalProcessingNode(
 						abortHandler,
@@ -172,7 +187,33 @@ public class DumpCruncher
 		});
 		
 		nexus.start();
+		
+		gui.close();
 	}
+	
+	// =========================================================================
+	
+	public Options getOptions()
+	{
+		return options;
+	}
+	
+	public Nexus getNexus()
+	{
+		return nexus;
+	}
+	
+	public Gui getGui()
+	{
+		return gui;
+	}
+	
+	public WikiConfig getWikiConfig()
+	{
+		return wikiConfig;
+	}
+	
+	// =========================================================================
 	
 	private boolean options(String[] args) throws IOException
 	{
@@ -184,7 +225,7 @@ public class DumpCruncher
 		
 		options.createOption('d', "dump")
 				.withDescription("The dump file to read.")
-				.withPropertyKey("DumpToDb.File")
+				.withPropertyKey("DumpCruncher.File")
 				.withArgName("FILE")
 				.withRequiredArg()
 				.create();
@@ -210,9 +251,9 @@ public class DumpCruncher
 				.withArgName("N")
 				.create();
 		
-		options.createOption("processor-workers")
-				.withDescription("The number of processor workers.")
-				.withPropertyKey("Nexus.NumProcessorWorkers")
+		options.createOption("processing-workers")
+				.withDescription("The number of processing workers.")
+				.withPropertyKey("Nexus.NumProcessingWorkers")
 				.withDefault("4")
 				.withArgName("N")
 				.create();
@@ -245,7 +286,7 @@ public class DumpCruncher
 			options.optional("Nexus.InTrayCapacity");
 			options.optional("Nexus.ProcessedJobsCapacity");
 			options.optional("Nexus.OutTrayCapacity");
-			options.optional("Nexus.NumProcessorWorkers");
+			options.optional("Nexus.NumProcessingWorkers");
 			
 			options.checkForInvalidOptions();
 			

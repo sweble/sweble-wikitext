@@ -21,11 +21,14 @@ public class DumpReaderJobGenerator
 	
 	private final JobTraceSet jobTraces;
 	
+	private final DumpCruncher dumpCruncher;
+	
 	private final DumpReader dumpReader;
 	
 	// =========================================================================
 	
 	public DumpReaderJobGenerator(
+			DumpCruncher dumpCruncher,
 			File dumpFile,
 			AbortHandler abortHandler,
 			BlockingQueue<Job> inTray,
@@ -33,6 +36,7 @@ public class DumpReaderJobGenerator
 	{
 		super(DumpReaderJobGenerator.class.getSimpleName(), abortHandler);
 		
+		this.dumpCruncher = dumpCruncher;
 		this.inTray = inTray;
 		this.jobTraces = jobTraces;
 		
@@ -92,6 +96,11 @@ public class DumpReaderJobGenerator
 				jobTraces.add(trace);
 				
 				inTray.put(job);
+				
+				Gui gui = dumpCruncher.getGui();
+				gui.setPageCount((int) getParsedCount());
+				gui.setBytesRead(getCompressedBytesRead());
+				gui.redrawLater();
 			}
 		}
 	}
