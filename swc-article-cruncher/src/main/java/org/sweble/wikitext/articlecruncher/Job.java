@@ -112,7 +112,7 @@ public abstract class Job
 	 * 
 	 * Such a job can be re-submitted.
 	 */
-	public synchronized void processed(Exception exception)
+	public synchronized void failed(Exception exception)
 	{
 		history = new JobHistory(history, exception);
 	}

@@ -39,7 +39,7 @@ public class LpnDistributor
 {
 	private final BlockingQueue<Job> inTray;
 	
-	private final CompletionService<Job> execComplServ;
+	private final MyExecutorCompletionService<Job> execComplServ;
 	
 	private final Semaphore backPressure;
 	
@@ -102,6 +102,9 @@ public class LpnDistributor
 	@Override
 	protected void after()
 	{
+		if (execComplServ != null)
+			execComplServ.shutdownAndAwaitTermination();
+		
 		info(getClass().getSimpleName() + " counts " + count + " items");
 	}
 	

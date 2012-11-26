@@ -26,6 +26,6 @@ public interface Processor
 	 *            The job to process.
 	 * @return The result of the processed job.
 	 */
-	public Object process(Job job);
+	public Object process(Job job) throws Exception;
 	
 }

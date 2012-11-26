@@ -54,11 +54,11 @@ final class LpnWorker
 			
 			job.processed(processor.process(job));
 		}
-		catch (Throwable t)
+		catch (Exception t)
 		{
 			logger.warn("Processing failed with exception", t);
 			
-			job.processed(t);
+			job.failed(t);
 		}
 		
 		return job;
