@@ -80,6 +80,7 @@
             <exclude>src/main/schema/export-*.xsd</exclude>
             <exclude>src/main/schema/catalog/xml.xsd</exclude>
             <exclude>src/main/resources/**</exclude>
+            <exclude>src/test/resources/**</exclude>
           </excludes>
         </configuration>
       </plugin>
