@@ -15,7 +15,6 @@
 /src/main/resources/archetype-resources/src/main
 /src/main/resources/archetype-resources/src/main/java
 /src/main/resources/archetype-resources/src/main/java/App.java
-/src/main/resources/archetype-resources/src/main/java/FullParser.java
 /src/main/resources/archetype-resources/src/main/java/SerializationMethod.java
 /src/main/resources/archetype-resources/src/main/java/Serializer.java
 /src/main/resources/archetype-resources/src/main/java/StripAstVisitor.java
@@ -23,10 +22,10 @@
 /src/main/resources/archetype-resources/src/test/java
 /src/main/resources/archetype-resources/src/test/java/SerializationIntegrationTest.java
 /src/main/resources/archetype-resources/src/test/resources
-/src/main/resources/archetype-resources/src/test/resources/exp-Saxby+Chambliss.wikitext
+/src/main/resources/archetype-resources/src/test/resources/exp-Saxby Chambliss.wikitext
 /src/main/resources/archetype-resources/src/test/resources/raw-Germany.wikitext
-/src/main/resources/archetype-resources/src/test/resources/raw-Wallace+Neff.wikitext
-/src/main/resources/archetype-resources/src/test/resources/raw-Zygmunt+Kubiak.wikitext
+/src/main/resources/archetype-resources/src/test/resources/raw-Wallace Neff.wikitext
+/src/main/resources/archetype-resources/src/test/resources/raw-Zygmunt Kubiak.wikitext
 /src/site
 /src/site/apt
 /src/site/apt/index.apt.vm
