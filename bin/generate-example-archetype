@@ -1,107 +1,126 @@
-#!/bin/bash
+#!/bin/bash -eu
+#
+# Copyright 2011 The Open Source Research Group,
+#                University of Erlangen-Nürnberg
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-set -o errexit
+echo
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> generate-example-archetype"
+
+. "$( dirname "$0" )/utils.sh"
 
 PRJ="$1"
 if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
-  echo "Usage: $0 PROJECT"
-  exit -1
+  error_exit "Usage: $0 PROJECT"
 fi
 
-MVN=`which mvn`
+import_maven_3
 
-$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
-	MVN=`which mvn3` || exit -1
+# Important for platform independant sort!
+export LC_COLLATE=POSIX
 
-pushd $PRJ &>/dev/null
-
-WDIR=$(pwd)
 echo
-echo "Working in: ${WDIR}"
+pushd "$PRJ" &>/dev/null
 
-LOG="${WDIR}/generate-example-archetype.log"
-ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
-ARCHETYPE_DST_DIR="${WDIR}/target/generated-sources/archetype"
-ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
+  log_info_sep
+  log_info "Generating Example Archetype"
+  log_info_sep
 
-# Build example project and generate archetype
-#echo "Cleaning ..."
-#echo "Cleaning ..." &>> "${LOG}"
-#$MVN clean &>> "${LOG}"
-rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
+  WDIR=$(pwd)
+  log_info "Working in: ${WDIR}"
 
-#echo "Verifying ..."
-#echo "Verifying ..." &>> "${LOG}"
-#$MVN verify &>> "${LOG}"
-#$MVN clean &>/dev/null
+  LOG="${WDIR}/generate-example-archetype.log"
+  log_info "Logging to: ${LOG}"
 
-echo "Gathering information on sweble-wikitext parent pom..."
-echo "Gathering information on sweble-wikitext parent pom..." &>> "${LOG}"
-pushd ../ &>/dev/null
-SWEBLE_WIKITEXT_VERSION=$($MVN help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-SWEBLE_WIKITEXT_GROUP_ID=$($MVN help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
-SWEBLE_WIKITEXT_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
-popd &>/dev/null
-if [[ $SWEBLE_WIKITEXT_GROUP_ID != "org.sweble.wikitext" ]] || [[ $SWEBLE_WIKITEXT_ARTIFACT_ID != "sweble-wikitext" ]]; then
-  echo "Expected org.sweble.wikitext:sweble-wikitext project in parent directory!"
-  exit 1
-fi
-echo "sweble-wikitext version: ${SWEBLE_WIKITEXT_VERSION}" >> "${LOG}"
+  # Redirect all output to logfile
+  exec > >(tee "$LOG")
+  exec 2>&1
 
-echo "Gathering information on example project ..."
-echo "Gathering information on example project ..." &>> "${LOG}"
-PRJ_VERSION=$($MVN help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-PRJ_GROUP_ID=$($MVN help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
-PRJ_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
-echo "Project groupId: ${PRJ_GROUP_ID}" >> "${LOG}"
-echo "Project artifactId: ${PRJ_ARTIFACT_ID}" >> "${LOG}"
-echo "Project version: ${PRJ_VERSION}" >> "${LOG}"
+  ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
+  ARCHETYPE_DST_DIR="${WDIR}/target/generated-sources/archetype"
+  ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
 
-echo "Gathering sources ..."
-echo "Gathering sources ..." &>> "${LOG}"
-mkdir -p "$ARCHETYPE_SRC_DIR"
-cp -a LICENSE NOTICE README pom.xml src/ "$ARCHETYPE_SRC_DIR"
+  # Build example project and generate archetype
+  rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
 
-echo "Generating archetype ..."
-echo "Generating archetype ..." &>> "${LOG}"
-pushd "$ARCHETYPE_SRC_DIR" &>/dev/null
+  log_info
+  log_info "Gathering information on sweble-wikitext parent pom..."
+  pushd ../ &>/dev/null
+    SWEBLE_WIKITEXT_VERSION=$( mvn_get_pom_version )
+    SWEBLE_WIKITEXT_GROUP_ID=$( mvn_get_pom_group_id )
+    SWEBLE_WIKITEXT_ARTIFACT_ID=$( mvn_get_pom_artifact_id )
+  popd &>/dev/null
+  if [[ $SWEBLE_WIKITEXT_GROUP_ID != "org.sweble.wikitext" ]] || [[ $SWEBLE_WIKITEXT_ARTIFACT_ID != "sweble-wikitext" ]]; then
+    error_exit "Expected org.sweble.wikitext:sweble-wikitext project in parent directory!"
+  fi
+  log_info "  Parent project version: ${SWEBLE_WIKITEXT_VERSION}"
 
-  echo
-  echo "ARCHETYPE: ${ARCHETYPE_DST_DIR}"
-  echo
+  log_info
+  log_info "Gathering information on example project ..."
+  PRJ_VERSION=$( mvn_get_pom_version )
+  PRJ_GROUP_ID=$( mvn_get_pom_group_id )
+  PRJ_ARTIFACT_ID=$( mvn_get_pom_artifact_id )
+  log_info "  Project groupId: ${PRJ_GROUP_ID}"
+  log_info "  Project artifactId: ${PRJ_ARTIFACT_ID}"
+  log_info "  Project version: ${PRJ_VERSION}"
 
-  $MVN archetype:create-from-project &>> "${LOG}"
-  mv  target/generated-sources/archetype "$ARCHETYPE_DST_DIR"
+  log_info
+  log_info "Gathering sources ..."
+  mkdir -p "$ARCHETYPE_SRC_DIR"
+  cp -a LICENSE NOTICE README pom.xml src/ "$ARCHETYPE_SRC_DIR"
 
-popd &>/dev/null
+  log_info
+  log_info_sep
+  log_info "Generating archetype"
+  log_info_sep
+  log_info "Archetype location: ${ARCHETYPE_DST_DIR}"
+  
+  pushd "$ARCHETYPE_SRC_DIR" &>/dev/null
 
-# Use our own, beautifully formatted pom.xml file
-cp -a archetype-files/* ${ARCHETYPE_DST_DIR}/
+    do_mvn archetype:create-from-project
+    mv  target/generated-sources/archetype "$ARCHETYPE_DST_DIR"
 
-# Fix archetype's pom.xml
-cat archetype-files/pom.xml \
-  | sed -e "s/\${ARCHETYPE_VERSION}/${PRJ_VERSION}/" \
-  | sed -e "s/\${SWEBLE_WIKITEXT_VERSION}/${SWEBLE_WIKITEXT_VERSION}/" \
-  > ${ARCHETYPE_DST_DIR}/pom.xml
+  popd &>/dev/null
 
-# Don't know what we would need that for:
-rm -rf ${ARCHETYPE_DST_DIR}/{src/test/,target/}
+  # Use our own, beautifully formatted pom.xml file
+  cp -a archetype-files/* ${ARCHETYPE_DST_DIR}/
 
-# Check contents
-EXPECTED_FILES=$(cat archetype-content.txt)
-ACTUAL_FILES=$(find ${ARCHETYPE_DST_DIR} | sort)
-ACTUAL_FILES=${ACTUAL_FILES//$ARCHETYPE_DST_DIR/}
+  # Fix archetype's pom.xml
+  cat archetype-files/pom.xml \
+    | sed -e "s/\${ARCHETYPE_VERSION}/${PRJ_VERSION}/" \
+    | sed -e "s/\${SWEBLE_WIKITEXT_VERSION}/${SWEBLE_WIKITEXT_VERSION}/" \
+    > ${ARCHETYPE_DST_DIR}/pom.xml
 
-if [ ! "${ACTUAL_FILES}" = "${EXPECTED_FILES}" ]; then
-	echo "Unexpected files in ${ARCHETYPE_DST_DIR}!"
-	AF=`mktemp`
-	echo "${ACTUAL_FILES}" > "${AF}"
-	diff archetype-content.txt "${AF}" || true
-	rm "${AF}"
-	exit 1
-fi
+  # Don't know what we would need that for:
+  rm -rf ${ARCHETYPE_DST_DIR}/{src/test/,target/}
 
-REQPROP=$(cat <<EOF
+  # Check contents
+  EXPECTED_FILES=$(cat archetype-content.txt)
+  ACTUAL_FILES=$(find ${ARCHETYPE_DST_DIR} | sort)
+  ACTUAL_FILES=${ACTUAL_FILES//$ARCHETYPE_DST_DIR/}
+
+  if [ ! "${ACTUAL_FILES}" = "${EXPECTED_FILES}" ]; then
+    AF=`mktemp`
+    echo "${ACTUAL_FILES}" > "${AF}"
+    diff archetype-content.txt "${AF}" || true
+    rm "${AF}"
+    echo
+    error_exit "Unexpected files in ${ARCHETYPE_DST_DIR}!"
+  fi
+
+  REQPROP=$(cat <<EOF
   <requiredProperties>
     <requiredProperty key="groupId">
       <defaultValue>${PRJ_GROUP_ID}</defaultValue>
@@ -114,83 +133,82 @@ REQPROP=$(cat <<EOF
 EOF
 )
 
-METADATA="${ARCHETYPE_DST_DIR}/src/main/resources/META-INF/maven/archetype-metadata.xml"
-cat "${METADATA}" | grep -v '</archetype-descriptor>' > "${METADATA}.tmp"
-echo "${REQPROP}" >> "${METADATA}.tmp"
-mv "${METADATA}.tmp" "${METADATA}"
+  METADATA="${ARCHETYPE_DST_DIR}/src/main/resources/META-INF/maven/archetype-metadata.xml"
+  cat "${METADATA}" | grep -v '</archetype-descriptor>' > "${METADATA}.tmp"
+  echo "${REQPROP}" >> "${METADATA}.tmp"
+  mv "${METADATA}.tmp" "${METADATA}"
 
-# Install archetype/Update local catalog
-pushd ${ARCHETYPE_DST_DIR} &> /dev/null
+  # Install archetype/Update local catalog
+  pushd ${ARCHETYPE_DST_DIR} &>/dev/null
 
-  echo "Installing archetype ..."
-  echo "Installing archetype ..." &>> "${LOG}"
+    log_info_sep
+    log_info "Installing archetype ..."
+    log_info_sep
 
-  AT_VERSION=$($MVN help:evaluate -Dexpression=project.version | grep -e '^[0-9]\+\.[0-9]\+\.[0-9]\+\(-[A-Za-z0-9_]\+\)\?$')
-  AT_GROUP_ID=$($MVN help:evaluate -Dexpression=project.groupId | grep -e '^[a-zA-Z_]\+\(\.[a-zA-Z_]\+\)*$' | head -n1)
-  AT_ARTIFACT_ID=$($MVN help:evaluate -Dexpression=project.artifactId | grep -e '^[a-zA-Z_-]\+$' | head -n1)
+    AT_VERSION=$( mvn_get_pom_version )
+    AT_GROUP_ID=$( mvn_get_pom_group_id )
+    AT_ARTIFACT_ID=$( mvn_get_pom_artifact_id )
 
-  echo "Archetype groupId: ${AT_GROUP_ID}" >> "${LOG}"
-  echo "Archetype artifactId: ${AT_ARTIFACT_ID}" >> "${LOG}"
-  echo "Archetype version: ${AT_VERSION}" >> "${LOG}"
+    log_info "Archetype groupId: ${AT_GROUP_ID}"
+    log_info "Archetype artifactId: ${AT_ARTIFACT_ID}"
+    log_info "Archetype version: ${AT_VERSION}"
+    log_info
+    log_info "Jar location: ${ARCHETYPE_DST_DIR}/target/${AT_ARTIFACT_ID}-${AT_VERSION}.jar"
 
-  $MVN install &>> "${LOG}"
+    do_mvn install
 
-  echo
-  echo "JAR: ${ARCHETYPE_DST_DIR}/target/${AT_ARTIFACT_ID}-${AT_VERSION}.jar"
-  echo
+    log_info_sep
+    log_info "Generating site"
+    log_info_sep
+    log_info "Site location: ${ARCHETYPE_DST_DIR}/target/staging"
 
-  echo "Generating site ..."
-  echo "Generating site ..." &>> "${LOG}"
+    do_mvn site site:stage
 
-  $MVN site site:stage &>> "${LOG}"
+  popd &>/dev/null
 
-  echo
-  echo "Staged SITE: ${ARCHETYPE_DST_DIR}/target/staging"
-  echo
+  log_info_sep
+  log_info "Generating project from archetype"
+  log_info_sep
 
-popd &> /dev/null
+  PROJECT=project
+  rm -rf ${ARCHETYPE_TEST_DIR}
+  mkdir ${ARCHETYPE_TEST_DIR}
+  pushd ${ARCHETYPE_TEST_DIR} &>/dev/null
+  do_mvn archetype:generate \
+    -B \
+    -DarchetypeCatalog=local \
+    -DarchetypeGroupId=${AT_GROUP_ID} \
+    -DarchetypeArtifactId=${AT_ARTIFACT_ID} \
+    -DarchetypeVersion=${AT_VERSION} \
+    -DgroupId=org.example \
+    -DartifactId=${PROJECT} \
+    -Dversion=1.0
+  popd &>/dev/null
 
-echo "Generating project from archetype ..."
-echo "Generating project from archetype ..." &>> "${LOG}"
-PROJECT=project
-rm -rf ${ARCHETYPE_TEST_DIR}
-mkdir ${ARCHETYPE_TEST_DIR}
-pushd ${ARCHETYPE_TEST_DIR} &> /dev/null
-$MVN archetype:generate \
-	-B \
-	-DarchetypeCatalog=local \
-	-DarchetypeGroupId=${AT_GROUP_ID} \
-	-DarchetypeArtifactId=${AT_ARTIFACT_ID} \
-	-DarchetypeVersion=${AT_VERSION} \
-	-DgroupId=org.example \
-	-DartifactId=${PROJECT} \
-	-Dversion=1.0 &>> "${LOG}"
-popd &> /dev/null
+  log_info_sep
+  log_info "Verifying generated project"
+  log_info_sep
 
-# Try to build generated project
-echo "Verifying generated project ..."
-echo "Verifying generated project ..." &>> "${LOG}"
-pushd ${ARCHETYPE_TEST_DIR}/${PROJECT} &> /dev/null
-$MVN verify &>> "${LOG}"
-popd &> /dev/null
+  pushd ${ARCHETYPE_TEST_DIR}/${PROJECT} &>/dev/null
+  do_mvn verify
+  popd &>/dev/null
 
-# Deploy
-if [[ ! -z ${DEPLOY_EXAMPLE_ARCHETYPES-} ]]; then
+  # Deploy
+  if [[ ! -z ${DEPLOY_EXAMPLE_ARCHETYPES-} ]]; then
 
-  pushd ${ARCHETYPE_DST_DIR} &> /dev/null
+    pushd ${ARCHETYPE_DST_DIR} &>/dev/null
 
-    echo "Deploying archetype ..."
-    echo "Deploying archetype ..." &>> "${LOG}"
+      log_info_sep
+      log_info "Deploying archetype"
+      log_info_sep
 
-    $MVN deploy $DEPLOY_EXAMPLE_ARCHETYPES &>> "${LOG}"
+      do_mvn deploy $DEPLOY_EXAMPLE_ARCHETYPES
 
-  popd &> /dev/null
+    popd &>/dev/null
 
-fi
-
-# SUCCESS!
-echo "Done"
-echo "Done" &>> "${LOG}"
-echo
+  fi
 
 popd &>/dev/null
+
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< generate-example-archetype"
+echo

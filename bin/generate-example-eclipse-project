@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 #
 # Copyright 2011 The Open Source Research Group,
 #                University of Erlangen-Nürnberg
@@ -16,7 +16,11 @@
 # limitations under the License.
 #
 
-set -o errexit
+echo
+echo "
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> generate-example-eclipse-project"
+
+. "$( dirname "$0" )/utils.sh"
 
 PRJ="$1"
 if [[ -z "${PRJ}" ]] || [[ ! -d "${PRJ}" ]]; then
@@ -24,89 +28,79 @@ if [[ -z "${PRJ}" ]] || [[ ! -d "${PRJ}" ]]; then
 	exit -1
 fi
 
-MVN=`which mvn`
+import_maven_3
 
-$MVN -v 2>&1 | grep "Apache Maven 3" >/dev/null || \
-	MVN=`which mvn3` || exit -1
+pushd "$PRJ" &>/dev/null
 
-pushd "${PRJ}" &>/dev/null
+  log_info_sep
+  log_info "Generating Example Eclipse Project"
+  log_info_sep
 
-WDIR=$(pwd)
-TITLE=$(basename "${WDIR}")
-LOG="${WDIR}/generate-example-eclipse-project.log"
-JARPRJ="${WDIR}/target/generated-sources/${TITLE}-jar"
-ZIP="${WDIR}/target/${TITLE}-jar.zip"
+  WDIR=$(pwd)
+  log_info "Working in: ${WDIR}"
 
-# Build example project and generate archetype
-#echo "Cleaning ..."
-#echo "Cleaning ..." &>> "${LOG}"
-#$MVN clean &>> "${LOG}"
-rm -rf "$LOG" "$JARPRJ" "$ZIP"
+  LOG="${WDIR}/generate-example-archetype.log"
+  log_info "Logging to: ${LOG}"
 
-echo
-echo "Verifying ..."
-echo "Verifying ..." &>> "${LOG}"
-$MVN verify &>> "${LOG}"
-#$MVN clean &>/dev/null
+  # Redirect all output to logfile
+  exec > >(tee "$LOG")
+  exec 2>&1
 
-CLASSPATH=""
-function get_dependency() {
+  TITLE=$( basename "${WDIR}" )
+  JARPRJ="${WDIR}/target/generated-sources/${TITLE}-jar"
+  ZIP="${WDIR}/target/${TITLE}-jar.zip"
 
-	GROUPID="$1"
-	ARTIFACTID="$2"
+  rm -rf "$LOG" "$JARPRJ" "$ZIP"
 
-	pushd "${WDIR}" &>/dev/null
+  log_info_sep
+  log_info "Verifying"
+  log_info_sep
 
-	echo "Identifying version of '${GROUPID}:${ARTIFACTID}'"
-	VERSION=$( \
-		$MVN dependency:list | \
-		grep -e "\[INFO\][ ]*${GROUPID}:${ARTIFACTID}" | \
-		sed -e "s/.*${GROUPID}:${ARTIFACTID}:jar:\([^:]\+\):.*/\1/" )
+  do_mvn verify
 
-	JAR="${ARTIFACTID}-${VERSION}-jar-with-dependencies.jar"
-	echo "Downloading '$JAR'"
-	$MVN org.apache.maven.plugins:maven-dependency-plugin:2.4:get \
-		-DgroupId=${GROUPID} \
-		-DartifactId=${ARTIFACTID} \
-		-Dversion=${VERSION} \
-		-Dpackaging=jar \
-		-Dclassifier=jar-with-dependencies \
-		-Ddest="../${JARPRJ}/lib/${JAR}" &>> "${LOG}"
+  log_info_sep
+  log_info "Assembling project files"
+  log_info_sep
+  log_info "Zipped project: ${ZIP}"
+  echo
 
-	CLASSPATH="$CLASSPATH	<classpathentry kind=\"lib\" path=\"lib/$JAR\"/>"$'\n'
+  mkdir -p "${JARPRJ}"
 
-	popd &>/dev/null
+  mkdir -p "${JARPRJ}/lib"
+  mvn_copy_dependencies "${JARPRJ}/lib"
 
-}
+  pushd "${JARPRJ}" &>/dev/null
 
-mkdir -p "${JARPRJ}"
-pushd "${JARPRJ}" &>/dev/null
+    cp ${WDIR}/eclipse-project-files/project .project
 
-mkdir -p lib
-get_dependency "org.sweble.wikitext" "swc-engine"
+    cat ${WDIR}/eclipse-project-files/classpath | sed -e '/<!-- LIBS -->/q' > .classpath
 
-cp ${WDIR}/eclipse-project-files/project .project
+    for lib in lib/*.jar; do
+      echo "  <classpathentry kind=\"lib\" path=\"${lib}\"/>" >> .classpath
+    done
 
-cat ${WDIR}/eclipse-project-files/classpath | sed -e '/<!-- LIBS -->/q' > .classpath
-echo -n "$CLASSPATH" >> .classpath
-cat ${WDIR}/eclipse-project-files/classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
+    cat ${WDIR}/eclipse-project-files/classpath | sed -e '1,/<!-- LIBS -->/d' >> .classpath
 
-dest="src"
-for i in {main,test}; do
-	for j in {java,resources}; do
-		src="${WDIR}/src/$i/$j"
-		if [[ -d $src ]]; then
-			echo "copying: $src -> $dest"
-			rsync -a $src/ $dest/
-		fi
-	done
-	dest="test"
-done
+    dest="src"
+    for i in {main,test}; do
+      for j in {java,resources}; do
+        src="${WDIR}/src/$i/$j"
+        if [[ -d $src ]]; then
+          echo "copying: $src -> $dest"
+          rsync -a $src/ $dest/
+        fi
+      done
+      dest="test"
+    done
+
+  popd &>/dev/null
+
+  pushd "$( dirname "${JARPRJ}" )" &>/dev/null
+    zip -r "${ZIP}" "$( basename "${JARPRJ}" )"
+  popd &>/dev/null
 
 popd &>/dev/null
 
-# Zip it
-zip -r "${ZIP}" "${JARPRJ}" &>> "${LOG}"
 echo
-echo "PROJECT: ${ZIP}"
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< generate-example-eclipse-project"
 echo
