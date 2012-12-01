@@ -1,0 +1,32 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /regression/wikitext/issue-35-2.wikitext:5:3: <no content> : 12.2.5.4.7 - R30 (3) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "tt"
+			{P} rtd = RTD[ "<tt" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[]
+		)
+	],
+	[1] = WtXmlElement(
+		{P} name = "tt"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = "\n\n",
+			[1] = WtParagraph[ [0] = "\"Take some more /wiki/Tea ,\" the March Hare said to Alice, very earnestly." ],
+			[2] = "\n\n"
+		]
+	),
+	[2] = WtParagraph[
+		[0] = WtXmlElement(
+			{A} synthetic = true
+			{P} name = "tt"
+			xmlAttributes = WtXmlAttributes[],
+			body = WtBody[]
+		)
+	]
+)

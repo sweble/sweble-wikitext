@@ -1,0 +1,50 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[
+		Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag.,
+		Warning: /regression/wikitext/issue-35-1.wikitext:1:79: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag.
+	]
+	[0] = WtParagraph[
+		[0] = WtXmlElement(
+			{P} name = "source"
+			{P} rtd = RTD[ "<source" <o> ">" <o> "" ]
+			xmlAttributes = WtXmlAttributes[
+				[0] = WtXmlAttribute(
+					{P} name = "lang"
+					{P} rtd = RTD[ " lang=\"" <o> "\"" ]
+					value = WtValue[ [0] = "xml" ]
+				)
+			],
+			body = WtBody[ [0] = " " ]
+		)
+	],
+	[1] = WtXmlElement(
+		{P} name = "div"
+		{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[
+			[0] = " ",
+			[1] = WtXmlElement(
+				{P} name = "div"
+				{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
+				xmlAttributes = WtXmlAttributes[],
+				body = WtBody[ [0] = "Joe Doe" ]
+			),
+			[2] = " ",
+			[3] = WtUrl(
+				{P} path = "//example.com/"
+				{P} protocol = "http"
+				{P} rtd = RTD[ "http://example.com/" ]
+			),
+			[4] = WtText(
+				{A} warnings = C[ Warning (none): /regression/wikitext/issue-35-1.wikitext:1:66 - 67: "[" : This looks like a External Link, however the actual URL is missing. ]
+				{P} content = " [^] "
+			)
+		]
+	),
+	[2] = " ",
+	[3] = WtXmlEndTag(
+		{P} name = "source"
+		{P} rtd = RTD[ "</source>" ]
+	)
+)
