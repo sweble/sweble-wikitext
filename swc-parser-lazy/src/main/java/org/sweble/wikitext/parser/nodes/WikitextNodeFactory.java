@@ -18,6 +18,7 @@
 package org.sweble.wikitext.parser.nodes;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
@@ -93,6 +94,10 @@ public interface WikitextNodeFactory
 	
 	WtXmlElement elem(String name, WtXmlAttributes xmlAttributes, WtBody body);
 	
+	WtLctVarConv lctVarConv(WtLctFlags flags, WtBody body);
+	
+	WtLctRuleConv lctRuleConv(WtLctFlags flags, WtLctRules rules);
+	
 	// -- Inner Node 3 ---------------------------------------------------------
 	
 	WtImageLink img(WtPageName target);
@@ -148,6 +153,12 @@ public interface WikitextNodeFactory
 	WtImEndTag imEndTag(IntermediateTags type, boolean synthetic);
 	
 	WtXmlEntityRef entityRef(String name, String resolved);
+	
+	WtLctFlags lctFlags(List<String> flags);
+	
+	WtLctRule lctRule(String search, String variant, String replace);
+	
+	WtLctRule lctRule(String variant, String replace);
 	
 	// -- Node List ------------------------------------------------------------
 	
@@ -243,6 +254,8 @@ public interface WikitextNodeFactory
 	
 	WtXmlAttributes emptyAttrs();
 	
+	WtLctRules lctRules(WtNodeList rules);
+	
 	// -- String Node ----------------------------------------------------------
 	
 	WtIgnored ignored(String content);
@@ -262,6 +275,8 @@ public interface WikitextNodeFactory
 	WtXmlComment comment(String content);
 	
 	WtXmlComment comment(String prefix, String content, String suffix);
+	
+	WtLctGarbage lctGarbage(String garbage);
 	
 	// -- Text -----------------------------------------------------------------
 	

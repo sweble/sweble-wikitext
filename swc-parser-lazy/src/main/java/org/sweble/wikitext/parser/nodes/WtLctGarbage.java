@@ -15,20 +15,34 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.parser.parser;
+package org.sweble.wikitext.parser.nodes;
 
-public enum ParserAtoms
+import de.fau.cs.osr.ptk.common.ast.Uninitialized;
+
+public class WtLctGarbage
+		extends
+			WtStringNodeImpl
 {
-	INTERNAL_LINK,
-	EXTERNAL_LINK,
-	PLAIN_EXTERNAL_LINK,
-	HORIZONTAL_RULE,
-	LIST,
-	//MAGIC_WORD,
-	SEMI_PRE,
-	//SIGNATURE,
-	//XML_REFERENCE,
-	SECTIONS,
-	TABLE,
-	LCT,
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	/**
+	 * Only for use by de-serialization code.
+	 */
+	protected WtLctGarbage()
+	{
+		super(Uninitialized.X);
+	}
+	
+	protected WtLctGarbage(String content)
+	{
+		super(content);
+	}
+	
+	@Override
+	public int getNodeType()
+	{
+		return NT_LCT_GARBAGE;
+	}
 }

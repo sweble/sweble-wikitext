@@ -17,7 +17,11 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
@@ -27,6 +31,7 @@ import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
+import org.sweble.wikitext.parser.nodes.WtLctRules.WtLctRulesImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
@@ -235,6 +240,18 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
+	public WtLctVarConv lctVarConv(WtLctFlags flags, WtBody body)
+	{
+		return new WtLctVarConv(flags, body);
+	}
+	
+	@Override
+	public WtLctRuleConv lctRuleConv(WtLctFlags flags, WtLctRules rules)
+	{
+		return new WtLctRuleConv(flags, rules);
+	}
+	
+	@Override
 	public WtImageLink img(WtPageName target)
 	{
 		return img(target, emptyLinkOpts(), null);
@@ -406,6 +423,46 @@ public class WikitextNodeFactoryImpl
 	public WtXmlEntityRef entityRef(String name, String resolved)
 	{
 		return new WtXmlEntityRef(name, resolved);
+	}
+	
+	@Override
+	public WtLctFlags lctFlags(List<String> flags)
+	{
+		Set<String> lctFlags = new HashSet<String>();
+		Set<String> lctVariants = new HashSet<String>();
+		List<String> lctGarbage = new ArrayList<String>();
+		for (String flag : flags)
+		{
+			// TODO: Implement properly!
+			if (flag.length() == 1 /* this.parserConfig.isLctFlag(flag) */)
+			{
+				lctFlags.add(flag);
+			}
+			else
+			/*if (this.parserConfig.isLctVariant(flag))*/
+			{
+				lctVariants.add(flag);
+			}
+			/*
+			else
+			{
+				lctGarbage.add(flag);
+			}
+			*/
+		}
+		return new WtLctFlags(lctFlags, lctVariants, lctGarbage);
+	}
+	
+	@Override
+	public WtLctRule lctRule(String search, String variant, String replace)
+	{
+		return new WtLctRule(search, variant, replace);
+	}
+	
+	@Override
+	public WtLctRule lctRule(String variant, String replace)
+	{
+		return new WtLctRule(variant, replace);
 	}
 	
 	@Override
@@ -674,6 +731,12 @@ public class WikitextNodeFactoryImpl
 	}
 	
 	@Override
+	public WtLctRules lctRules(WtNodeList rules)
+	{
+		return new WtLctRulesImpl(rules);
+	}
+	
+	@Override
 	public WtIgnored ignored(String content)
 	{
 		return new WtIgnored(content);
@@ -725,6 +788,12 @@ public class WikitextNodeFactoryImpl
 	public WtXmlComment comment(String prefix, String content, String suffix)
 	{
 		return new WtXmlComment(content, prefix, suffix);
+	}
+	
+	@Override
+	public WtLctGarbage lctGarbage(String garbage)
+	{
+		return new WtLctGarbage(garbage);
 	}
 	
 	@Override

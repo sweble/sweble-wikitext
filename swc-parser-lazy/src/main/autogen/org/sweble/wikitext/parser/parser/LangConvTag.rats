@@ -21,7 +21,7 @@
  *
  *   Grammar:
  *     - "-{" TEXT "}-"
- *     - "-{" FLAGS "|" ( A "=>" )? VARIANT ":" B ( ";" ... )* "|" TEXT }-
+ *     - "-{" FLAGS "|" ( A "=>" )? VARIANT ":" B ( ";" ( A "=>" )? VARIANT ":" B )* "|" TEXT }-
  *
  */
 
@@ -29,6 +29,7 @@ module org.sweble.wikitext.parser.parser.LangConvTag;
 
 import org.sweble.wikitext.parser.parser.Content;
 import org.sweble.wikitext.parser.parser.State;
+import org.sweble.wikitext.parser.parser.Whitespace;
 
 import org.sweble.wikitext.parser.utils.ParserCharSequence;
 import org.sweble.wikitext.parser.utils.Warnings;
@@ -36,37 +37,27 @@ import org.sweble.wikitext.parser.utils.Warnings;
 
 
 
-/*
 // -- Header / Body / Footer ---------------------------------------------------
 
 body
 {
-  Result parseLctFlags(int start, int base)
+  private boolean hasFlag(WtLctFlags flags, char c)
   {
-    Pattern p = yyState.getLctFlagsPattern();
-    if (p == null)
-      return new SemanticValue("", base);
-
-    Matcher m = p.matcher(new ParserCharSequence(base));
-
-    if (!m.lookingAt())
-    {
-      return new SemanticValue("", base);
-    }
-    else
-    {
-      return new SemanticValue(m.group(), base + m.end());
-    }
+    return flags.getFlags().contains("" + c);
+  }
+  
+  private boolean containsVariant(WtLctFlags flags)
+  {
+    return !flags.getVariants().isEmpty();
   }
 }
-*/
 
 
 
 
 // -- LanguageConversionTag ----------------------------------------------------
 
-WtNode LanguageConversionTag =
+transient WtNode LanguageConversionTag =
     "-{" yyValue:LanguageConversionTagChoice
   / "-{"
     {
@@ -74,9 +65,13 @@ WtNode LanguageConversionTag =
     }
 ;
 
-private inline WtNode LanguageConversionTagChoice =
+inline void InlineContentStopperLangConvTag =
+  &{ inScope(ParserScopes.LCT_PART) } "}-"
+;
+
+private transient WtNode LanguageConversionTagChoice =
     LctConvertToSpecifiedVariant
-  / LctDisplayCurrentVariantName
+  / LctProtect
   / LctRuleBasedConvert
 ;
 
@@ -84,19 +79,27 @@ private inline WtNode LanguageConversionTagChoice =
  * as text to be converted into the given variant. The flag 'R' is set in any case.
  */
 private transient WtNode LctConvertToSpecifiedVariant =
-  flags:LctFlags void:'|' &{ containsVariant(flags) } text:LctTextStar "}-"
+  flags:LctFlags void:'|' &{ containsVariant(flags) || hasFlag(flags, 'N') } text:LctTextStar "}-"
   {
-    yyValue = ...;
+    yyValue = nf.lctVarConv(flags, nf.body(text));
+    setRtd(yyValue, "-{", SEP, '|', SEP, "}-");
   }
 ;
 
-/* If flags are given AND flag 'N' is set the rest is ignored.
+/* No flags, no rules -> just protect the content in braces from language 
+ * conversion.
  */
-private transient WtNode LctDisplayCurrentVariantName =
-  flags:LctFlags void:'|' &{ hasFlag(flags, 'N') } garbage:LctTextStar "}-"
+private transient WtNode LctProtect =
+  &LctIsProtect text:LctTextStar "}-"
   {
-    yyValue = ...;
+    WtLctFlags flags = nf.lctFlags(Collections.<String>emptyList());
+    yyValue = nf.lctVarConv(flags, nf.body(text));
+    setRtd(yyValue, "-{", SEP, SEP, "}-");
   }
+;
+
+private transient void LctIsProtect =
+  ( !"}-" !';' !"=>" !':' !'|' !SafeGuard _ )* "}-"
 ;
 
 /* The flags do not specify a language variant and neither the 'N' 
@@ -105,7 +108,17 @@ private transient WtNode LctDisplayCurrentVariantName =
 private transient WtNode LctRuleBasedConvert =
   flags:( LctFlags void:'|' )? rules:LctRules "}-"
   {
-    yyValue = ...;
+    if (flags == null)
+    {
+      flags = nf.lctFlags(Collections.<String>emptyList());
+      yyValue = nf.lctRuleConv(flags, nf.lctRules(rules));
+      setRtd(yyValue, "-{", SEP, SEP, "}-");
+    }
+    else
+    {
+      yyValue = nf.lctRuleConv(flags, nf.lctRules(rules));
+      setRtd(yyValue, "-{", SEP, '|', SEP, "}-");
+    }
   }
 ;
 
@@ -114,10 +127,12 @@ private transient WtNode LctRuleBasedConvert =
  * some flags add additional flags and some flags enable the identification
  * of variant names (which would be ignored otherwise).
  */
-private WtLctFlags LctFlags =
+private transient WtLctFlags LctFlags =
   head:LctFlag tail:( void:';' LctFlag )*
   {
-    yyValue = nf.lctFlags(head, tail);
+    List<String> flags = new Pair<String>(head, tail).list();
+    yyValue = nf.lctFlags(flags);
+    setRtd(yyValue, org.apache.commons.lang.StringUtils.join(flags, ';'));
   }
 ;
 
@@ -131,55 +146,67 @@ private WtLctFlags LctFlags =
  * Examples for language variant names: zh-hans, zh-hk
  */
 private transient String LctFlag =
-  ( !"}-" !'|' !';' _ )*
+  ( !"}-" !'|' !';' !SafeGuard _ )*
 ;
 
 private transient String LctRulePart =
-  ( !"}-" !';' !"=>" !':' _ )*
+  ( !"}-" !';' !"=>" !':' !SafeGuard _ )*
 ;
 
 private transient String LctRuleGarbage =
-  ( !"}-" !';' _ )*
+  ( !"}-" !';' !SafeGuard _ )*
 ;
 
-private transient WtLctRule LctRule =
+private transient WtNode LctRule =
     a:LctRulePart "=>" v:LctRulePart ":" b:LctRulePart
     {
-      yyValue = new WtLctRule(a, v, b);
+      yyValue = nf.lctRule(a, v, b);
+      setRtd(yyValue, a, "=>", v, ":", b);
     }
   / v:LctRulePart ":" b:LctRulePart
     {
-      yyValue= new WtLctRule(v, b);
+      yyValue= nf.lctRule(v, b);
+      setRtd(yyValue, v, ":", b);
     }
   / garbage:LctRuleGarbage
     {
-      yyValue = new WtLctRuleGarbage(garbage);
+      yyValue = nf.lctGarbage(garbage);
+      setRtd(yyValue, garbage);
     }
 ;
 
 private transient WtNodeList LctRules =
   head:LctRule tail:( void:';' LctRule )*
   {
-    yyValue = new WtNodeList(head, tail);
+    Pair<WtNode> t = tail;
+    while (!t.isEmpty())
+    {
+      WtRtData rtd = t.head().getRtd();
+      if (rtd != null)
+        rtd.prepend(";");
+      t = t.tail();
+    }
+
+    yyValue = nf.list(head, tail);
   }
 ;
 
-private inline stateful WtNodeList LctTextStar =
-  /*
+private transient stateful WtNodeList LctTextStar =
   {
-    enter(ParserScopes.LIST_ITEM);
+    enter(ParserScopes.LCT_PART);
   }
-  */
   InlineContentStar
 ;
 
-/*
-private noinline transient String LctFlags =
-  ^{
-      Result yyResult = parseLctFlags(yyStart, yyBase);
-   }
+private transient void SafeGuard =
+  slEol
+  ( pExtSpaceStar "{|"
+  / pTpStar       "---"
+  / pTpStar       [*#:;]
+  / pTpStar       [ ]
+  / pTpStar       [=]
+  )
 ;
-*/
 
 
 

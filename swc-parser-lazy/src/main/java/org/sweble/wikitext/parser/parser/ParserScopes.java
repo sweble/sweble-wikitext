@@ -322,6 +322,27 @@ public enum ParserScopes
 		{
 			return true;
 		}
+	},
+	
+	LCT_PART
+	{
+		@Override
+		public boolean accepts(ParserAtoms atom)
+		{
+			return true;
+		}
+		
+		@Override
+		public boolean isNoEolScope()
+		{
+			return false;
+		}
+		
+		@Override
+		public boolean isSticky()
+		{
+			return false;
+		}
 	};
 	
 	public abstract boolean accepts(ParserAtoms atom);

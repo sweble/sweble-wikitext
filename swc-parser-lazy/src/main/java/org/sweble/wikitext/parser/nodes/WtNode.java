@@ -184,4 +184,16 @@ public interface WtNode
 	public static final int NT_IM_END_TAG /* ................... */= NT_PARSER_BITS + 49;
 	
 	public static final int NT_TABLE_IMPLICIT_TBODY /* ......... */= NT_PARSER_BITS + 50;
+	
+	public static final int NT_LCT_FLAGS /* .................... */= NT_PARSER_BITS + 51;
+	
+	public static final int NT_LCT_RULE /* ..................... */= NT_PARSER_BITS + 52;
+	
+	public static final int NT_LCT_GARBAGE /* .................. */= NT_PARSER_BITS + 53;
+	
+	public static final int NT_LCT_VAR_CONV /* ................. */= NT_PARSER_BITS + 54;
+	
+	public static final int NT_LCT_RULES /* .................... */= NT_PARSER_BITS + 55;
+	
+	public static final int NT_LCT_RULE_CONV /* ................ */= NT_PARSER_BITS + 56;
 }

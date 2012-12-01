@@ -443,6 +443,7 @@ private inline void InlineContentStopper =
   / InlineContentStopperHeading
   / InlineContentStopperTableHeader
   / InlineContentStopperTableCell
+  / InlineContentStopperLangConvTag
 ;
 
 /* Plain text is basically everything that is not a ContentAtom (semantically,
@@ -477,6 +478,7 @@ private inline String TextStopperPrefix =
   / "!"             // table header inline element end
   / "]"             // external and internal link title end
   / ":"             // Definition list definition (in the pair TERM:DEF)
+  / "}-"            // language converion rule end
 
   // -- content atom prefix --
 
