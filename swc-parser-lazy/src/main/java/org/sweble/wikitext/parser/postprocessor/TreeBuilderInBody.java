@@ -175,8 +175,10 @@ public final class TreeBuilderInBody
 			startTagR19(n);
 			break;
 			*/
+			/*
 			case A:
-				throw new InternalError("This must not happen!");
+			throw new InternalError("This must not happen!");
+			*/
 			case B:
 			case BIG:
 			case CODE:
@@ -285,7 +287,13 @@ public final class TreeBuilderInBody
 			case H6:
 				endTagR25(n);
 				break;
+			/*
 			case A:
+			*/
+			case INT_LINK:
+			case EXT_LINK:
+			case URL:
+				
 			case B:
 			case BIG:
 			case CODE:
@@ -539,7 +547,7 @@ public final class TreeBuilderInBody
 		if (n.hasTitle())
 			dispatch(n.getTitle());
 		
-		dispatch(getFactory().synEndTag(A));
+		dispatch(getFactory().synEndTag(INT_LINK));//A));
 	}
 	
 	public void visit(WtExternalLink n)
@@ -549,13 +557,13 @@ public final class TreeBuilderInBody
 		if (n.hasTitle())
 			dispatch(n.getTitle());
 		
-		dispatch(getFactory().synEndTag(A));
+		dispatch(getFactory().synEndTag(EXT_LINK));//A));
 	}
 	
 	public void visit(WtUrl n)
 	{
 		startTagR27(n);
-		dispatch(getFactory().synEndTag(A));
+		dispatch(getFactory().synEndTag(URL));//A));
 	}
 	
 	public void visit(WtImageLink n)
@@ -951,12 +959,26 @@ public final class TreeBuilderInBody
 	 */
 	private void startTagR27(WtNode n)
 	{
-		WtNode active = tb.getActiveFormattingElement(A);
+		// Only one of those can actually happen -> short circuit logic
+		if (forceCloseLink(n, INT_LINK) ||
+				forceCloseLink(n, EXT_LINK) ||
+				forceCloseLink(n, URL))
+			/* do nothing */;
+		
+		tb.reconstructActiveFormattingElements();
+		
+		WtNode a = tb.insertAnHtmlElement(n);
+		tb.pushActiveFormattingElements(a);
+	}
+	
+	private boolean forceCloseLink(WtNode n, ElementType type)
+	{
+		WtNode active = tb.getActiveFormattingElement(type);
 		if (active != null)
 		{
 			tb.error(n, "12.2.5.4.7 - R27");
 			
-			dispatch(getFactory().synEndTag(A));
+			dispatch(getFactory().synEndTag(type));
 			
 			// Remove if not already done 
 			// (can happen if not in table scope)
@@ -964,12 +986,13 @@ public final class TreeBuilderInBody
 				tb.removeFromStack(active);
 			if (tb.isInListOfActiveFormattingElements(active))
 				tb.removeFromActiveFormattingElements(active);
+			
+			return true;
 		}
-		
-		tb.reconstructActiveFormattingElements();
-		
-		WtNode a = tb.insertAnHtmlElement(n);
-		tb.pushActiveFormattingElements(a);
+		else
+		{
+			return false;
+		}
 	}
 	
 	/**

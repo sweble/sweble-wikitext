@@ -234,44 +234,56 @@ public class ElementFactory
 				newNode = nf.p(nf.list());
 				break;
 			
+			/*
 			case A:
-				switch (node.getNodeType())
+			switch (node.getNodeType())
+			{
+				case NT_INTERNAL_LINK:
 				{
-					case NT_INTERNAL_LINK:
-					{
-						WtInternalLink n = (WtInternalLink) node;
-						newNode = nf.intLink(n.getPrefix(), n.getTarget(),
-								n.getPostfix());
-						if (n.hasTitle())
-						{
-							WtLinkTitle title = nf.linkTitle(nf.list());
-							title.setRtd(n.getTitle().getRtd());
-							((WtInternalLink) newNode).setTitle(title);
-						}
-						break;
-					}
-					case NT_EXTERNAL_LINK:
-					{
-						WtExternalLink n = (WtExternalLink) node;
-						newNode = nf.extLink(n.getTarget());
-						if (n.hasTitle())
-						{
-							WtLinkTitle title = nf.linkTitle(nf.list());
-							title.setRtd(n.getTitle().getRtd());
-							((WtExternalLink) newNode).setTitle(title);
-						}
-						break;
-					}
-					case NT_URL:
-					{
-						WtUrl n = (WtUrl) node;
-						newNode = nf.url(n.getProtocol(), n.getPath());
-						break;
-					}
-					default:
-						throw new InternalError();
+				*/
+			case INT_LINK:
+			{
+				WtInternalLink n = (WtInternalLink) node;
+				newNode = nf.intLink(n.getPrefix(), n.getTarget(),
+						n.getPostfix());
+				if (n.hasTitle())
+				{
+					WtLinkTitle title = nf.linkTitle(nf.list());
+					title.setRtd(n.getTitle().getRtd());
+					((WtInternalLink) newNode).setTitle(title);
 				}
 				break;
+			}
+			/*
+			case NT_EXTERNAL_LINK:
+			*/
+			case EXT_LINK:
+			{
+				WtExternalLink n = (WtExternalLink) node;
+				newNode = nf.extLink(n.getTarget());
+				if (n.hasTitle())
+				{
+					WtLinkTitle title = nf.linkTitle(nf.list());
+					title.setRtd(n.getTitle().getRtd());
+					((WtExternalLink) newNode).setTitle(title);
+				}
+				break;
+			}
+			/*
+			case NT_URL:
+			*/
+			case URL:
+			{
+				WtUrl n = (WtUrl) node;
+				newNode = nf.url(n.getProtocol(), n.getPath());
+				break;
+			}
+			/*
+			default:
+				throw new InternalError();
+			}
+			break;
+			*/
 			
 			case B:
 				newNode = nf.b(nf.list());

@@ -38,9 +38,16 @@ public enum ElementType
 	FRAMED_IMG,
 	UNKNOWN,
 	
+	// A replacements
+	INT_LINK,
+	EXT_LINK,
+	URL,
+	
 	// == HTML Version 4.01 ====================================================
 	
+	/*
 	A,
+	*/
 	ABBR, // Normal Tag
 	ACRONYM, // Normal Tag
 	ADDRESS,
@@ -238,7 +245,13 @@ public enum ElementType
 	{
 		switch (this)
 		{
-			case A:
+		/*
+		case A:
+		*/
+			case INT_LINK:
+			case EXT_LINK:
+			case URL:
+				
 			case B:
 			case BIG:
 			case CODE:
@@ -263,7 +276,13 @@ public enum ElementType
 	
 	static
 	{
+		/* Bug 35: We must not recognize <a> tags!
 		xmlElementTypeMap.put("a", A);
+		*/
+		xmlElementTypeMap.put("#int-link", INT_LINK);
+		xmlElementTypeMap.put("#ext-link", EXT_LINK);
+		xmlElementTypeMap.put("#url", URL);
+		
 		xmlElementTypeMap.put("abbr", ABBR);
 		xmlElementTypeMap.put("acronym", ACRONYM);
 		xmlElementTypeMap.put("address", ADDRESS);
@@ -395,9 +414,14 @@ public enum ElementType
 						FRAMED_IMG;
 				
 			case NT_INTERNAL_LINK:
+				return INT_LINK;
 			case NT_EXTERNAL_LINK:
+				return EXT_LINK;
 			case NT_URL:
+				return URL;
+				/*
 				return A;
+				*/
 				
 			case NT_XML_START_TAG:
 			case NT_IM_START_TAG:

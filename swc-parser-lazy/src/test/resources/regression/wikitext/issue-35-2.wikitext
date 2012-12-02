@@ -1,5 +1,1 @@
-<tt>
-
-"Take some more /wiki/Tea ," the March Hare said to Alice, very earnestly.
-
-</tt>
+1<tt>2<a>3</a>4</tt>5
