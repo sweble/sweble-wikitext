@@ -8,18 +8,16 @@ WtParsedWikitextPage(
 	),
 	[2] = "div> c \" part will be pulled in front of the table.\nThe \"a \" is in a paragraph, the table contents will appear on a NEW LINE\nafter the paragraph. When pretty printing the \" b\" will be at the start of a line.\nIt will be parsed as SEMI PRE!",
 	[3] = "a",
-	[4] = WtSemiPre[
-		[0] = "b",
-		[1] = WtXmlElement(
-			{P} name = "div"
-			xmlAttributes = WtXmlAttributes[],
-			body = WtBody[ [0] = "c" ]
-		),
-		[2] = WtXmlElement(
-			{P} name = "table"
-			xmlAttributes = WtXmlAttributes[],
-			body = WtBody[]
-		),
-		[3] = "d"
-	]
+	[4] = "b",
+	[5] = WtXmlElement(
+		{P} name = "div"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[ [0] = "c" ]
+	),
+	[6] = WtXmlElement(
+		{P} name = "table"
+		xmlAttributes = WtXmlAttributes[],
+		body = WtBody[]
+	),
+	[7] = "d"
 )

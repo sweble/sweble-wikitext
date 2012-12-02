@@ -66,6 +66,16 @@ noinline memoized WtNode SemiPreMemoized =
 
 // -- SemiPre ------------------------------------------------------------------
 
+/* A SemiPre section cannot begin with a line consisting only of whitespace.
+ * All following lines may contain only whitespace.
+ *
+ * A line containing BlockElemStart or BlockElemEnd will not be recognized as
+ * SemiPre line. Furthermore, if a line is located within a block element it
+ * should not be recognized as SemiPre line. We cannot guarantee this behavior 
+ * here.
+ * FIXME: We will have to unwrap SemiPre lines later if we should discover that
+ * they appear inside a block element.
+ */
 noinline transient WtNode SemiPreTransient =
   &{ accept(ParserAtoms.SEMI_PRE) } first:FirstSemiPreLine tail:( SemiPreLine )*
   {
@@ -74,7 +84,7 @@ noinline transient WtNode SemiPreTransient =
 ;
 
 private inline WtSemiPreLine FirstSemiPreLine =
-  !EmptyLine rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
+  rt1:pTpStar ' ' !EmptyLine !HasBlockElem content:SemiPreContentStar
   {
     yyValue = setRtd(
       nf.semiPreLine(content),
@@ -83,7 +93,7 @@ private inline WtSemiPreLine FirstSemiPreLine =
 ;
 
 private inline WtSemiPreLine SemiPreLine =
-  rt0:pEol rt1:pTpStar ' ' !OpenOrCloseMatch content:SemiPreContentStar
+  rt0:pEol rt1:pTpStar ' ' !HasBlockElem content:SemiPreContentStar
   {
     yyValue = setRtd(
       nf.semiPreLine(content),
@@ -95,15 +105,51 @@ private inline void EmptyLine =
   pExtSpaceStar slEol
 ;
 
-// TODO: This is insufficient to capture MediaWiki's behavior!
-//       Unfortunatly I don't yet fully understand MediaWiki's behavior :(
-private inline void OpenOrCloseMatch =
-  pExtSpaceStar '<' '/'?
-    ( "div" / "hr" / "center" / "pre" / "p" / "blockquote"
-    / "h1" / "h2" / "h3" / "h4" / "h5" / "h6"
-    / "table" / "tr" / "td" / "th"
-    / "ul" / "ol" / "li"
-    )
+private inline void HasBlockElem =
+  ( !BlockElemStart !BlockElemEnd !slEol _ )* ( BlockElemStart / BlockElemEnd )
+;
+
+private inline void BlockElemStart =
+    "<table"
+  / "<blockquote"
+  / "<h1"
+  / "<h2"
+  / "<h3"
+  / "<h4"
+  / "<h5"
+  / "<h6"
+  / "<pre"
+  / "<tr"
+  / "<p"
+  / "<ul"
+  / "<ol"
+  / "<dl"
+  / "<li"
+  / "</tr"
+  / "</td"
+  / "</th"
+;
+
+private inline void BlockElemEnd =
+    "</table"
+  / "</blockquote"
+  / "</h1"
+  / "</h2"
+  / "</h3"
+  / "</h4"
+  / "</h5"
+  / "</h6"
+  / "<td"
+  / "<th"
+  / "<" '/'? "div"
+  / "<hr"
+  / "</pre"
+  / "</p"
+  / "</li"
+  / "</ul"
+  / "</ol"
+  / "</dl"
+  / "<" '/'? "center"
 ;
 
 private inline stateful WtNodeList SemiPreContentStar =

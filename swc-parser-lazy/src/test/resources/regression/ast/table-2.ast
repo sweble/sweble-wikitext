@@ -3,8 +3,6 @@ WtParsedWikitextPage(
 	{P} warnings = C[
 		Warning: /regression/wikitext/table-2.wikitext:2:7: <no content> : 12.2.5.4.15 R01 (2) @ WtXmlEndTag.,
 		Warning: /regression/wikitext/table-2.wikitext:3:7: <no content> : 12.2.5.4.15 R01 (2) @ WtXmlEndTag.,
-		Warning: <no location>: <no content> : 12.2.5.4.9 R16 @ WtXmlEndTag.,
-		Warning: <no location>: <no content> : 12.2.5.4.7 - R52 (2) @ WtXmlEndTag.,
 		Warning: /regression/wikitext/table-2.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (1) @ WtParsedWikitextPage.,
 		Warning: /regression/wikitext/table-2.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
 	]
@@ -26,13 +24,10 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "<td" <o> ">" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
-									[0] = "\n",
-									[1] = WtSemiPre[
-										[0] = " ",
-										[1] = WtBold(
-											{P} rtd = RTD[ "'''" <o> "" ]
-										)
-									]
+									[0] = "\n ",
+									[1] = WtBold(
+										{P} rtd = RTD[ "'''" <o> "" ]
+									)
 								]
 							),
 							[1] = WtXmlElement(
