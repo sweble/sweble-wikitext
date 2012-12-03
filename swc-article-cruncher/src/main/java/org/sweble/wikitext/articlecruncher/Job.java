@@ -136,7 +136,7 @@ public abstract class Job
 	 */
 	public synchronized Object getResult()
 	{
-		return (getState() == JobProcessingState.FAILED) ? history.getResult() : null;
+		return (getState() == JobProcessingState.HAS_RESULT) ? history.getResult() : null;
 	}
 	
 	/**
