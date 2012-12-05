@@ -40,6 +40,10 @@ import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtLctFlags;
+import org.sweble.wikitext.parser.nodes.WtLctRule;
+import org.sweble.wikitext.parser.nodes.WtLctRuleConv;
+import org.sweble.wikitext.parser.nodes.WtLctRuleGarbage;
+import org.sweble.wikitext.parser.nodes.WtLctRules;
 import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionGarbage;
@@ -159,6 +163,18 @@ public class WtPrettyPrinter
 	public void visit(WtImStartTag n)
 	{
 		// Should not appear in post-processed wikitext
+	}
+	
+	public void visit(WtLctRule n)
+	{
+		if (!n.isDirectConvert())
+		{
+			p.print(n.getSearch());
+			p.print("=>");
+		}
+		p.print(n.getVariant());
+		p.print(":");
+		dispatch(n.getReplace());
 	}
 	
 	// --[ WtInnerNode2 ]-------------------------------------------------------
@@ -341,6 +357,18 @@ public class WtPrettyPrinter
 			p.print('|');
 		}
 		dispatch(n.getText());
+		p.print("}-");
+	}
+	
+	public void visit(WtLctRuleConv n)
+	{
+		p.print("-{");
+		if (n.hasFlags())
+		{
+			dispatch(n.getFlags());
+			p.print('|');
+		}
+		dispatch(n.getRules());
 		p.print("}-");
 	}
 	
@@ -714,6 +742,20 @@ public class WtPrettyPrinter
 		iterate(n);
 	}
 	
+	public void visit(WtLctRules n)
+	{
+		int i = 0;
+		for (WtNode rule : n)
+		{
+			if (rule instanceof WtLctRuleGarbage)
+				// Don't print garbage!
+				continue;
+			if (i++ > 0)
+				p.print(";");
+			dispatch(rule);
+		}
+	}
+	
 	// --[ WtStringNode ]-------------------------------------------------------
 	
 	public void visit(WtIgnored n)
@@ -753,6 +795,11 @@ public class WtPrettyPrinter
 	public void visit(WtTagExtensionBody n)
 	{
 		p.verbatim(n.getContent());
+	}
+	
+	public void visit(WtLctRuleGarbage n)
+	{
+		// Don't print garbage!
 	}
 	
 	public void visit(WtText n)

@@ -183,7 +183,7 @@ body
 
   private boolean isVariant(String name)
   {
-    return name.trim().equalsIgnoreCase("zh-hans");
+    return this.getState().getConfig().isLctVariant(name);
   }
 }
 
@@ -215,7 +215,7 @@ private transient WtNode LanguageConversionTagChoice =
  * as text to be converted into the given variant. The flag 'R' is set in any case.
  */
 private transient WtLctVarConv LctConvertToSpecifiedVariant =
-  flags:LctFlags void:'|' &{ containsVariant(flags) || hasFlag(flags, 'N') } text:LctProtectedContentStar "}-"
+  flags:LctFlags void:'|' &{ containsVariant(flags) || hasFlag(flags, 'N')  || hasFlag(flags, 'R') } text:LctProtectedContentStar "}-"
   {
     yyValue = nf.lctVarConv(flags, cleanProtectedContent(text));
     setRtd(yyValue, "-{", SEP, '|', SEP, "}-");
@@ -228,8 +228,10 @@ private transient WtLctVarConv LctConvertToSpecifiedVariant =
 private transient WtLctRuleConv LctRuleBasedConvert =
   flags:( LctFlags void:'|' )? rules:LctRulePlus "}-"
   {
-    yyValue = nf.lctRuleConv((flags == null) ? nf.noLctFlags() : flags, nf.lctRules(rules));
-    setRtd(yyValue, "-{", SEP, SEP, "}-");
+    if (flags == null)
+      flags = nf.noLctFlags();
+    yyValue = nf.lctRuleConv(flags, nf.lctRules(rules));
+    setRtd(yyValue, "-{", SEP, (yyValue.hasFlags() ? "|" : null), SEP, "}-");
   }
 ;
 
@@ -268,7 +270,7 @@ private String LctNewline =
 ;
 
 private transient WtNodeList LctRulePlus =
-  head:LctRule tail:( void:';' LctRule )*
+  head:LctRule tail:( void:';' LctRuleOrGarbage )*
   {
     Pair<WtNode> t = tail;
     while (!t.isEmpty())
@@ -283,7 +285,12 @@ private transient WtNodeList LctRulePlus =
   }
 ;
 
-private transient WtNode LctRule =
+private transient WtNode LctRuleOrGarbage =
+    LctRule
+  / LctRuleGarbageStar
+;
+
+private transient WtLctRule LctRule =
     a:LctConvPatternPlus "=>" v:LctVariantColon ":" b:LctRuleTextStar
     {
       yyValue = nf.lctRule(a, v, b);
@@ -318,14 +325,24 @@ private transient stateful WtLctRuleText LctRuleTextStar =
   }
 ;
 
+private transient WtLctRuleGarbage LctRuleGarbageStar =
+  LctRuleTextStar
+  {
+    String content = difference(yyStart, yyResult);
+    yyValue = setRtd(nf.lctGarbage(content), content);
+  }
+;
+
 /* No flags, no rules -> just protect the content in braces from language 
  * conversion.
  */
 private transient WtLctVarConv LctProtect =
-  /*&LctIsProtect*/ text:LctProtectedContentStar "}-"
+  flags:( LctFlags void:'|' )? text:LctProtectedContentStar "}-"
   {
-    yyValue = nf.lctVarConv(nf.noLctFlags(), cleanProtectedContent(text));
-    setRtd(yyValue, "-{", SEP, SEP, "}-");
+    if (flags == null)
+      flags = nf.noLctFlags();
+    yyValue = nf.lctVarConv(flags, cleanProtectedContent(text));
+    setRtd(yyValue, "-{", SEP, (yyValue.hasFlags() ? "|" : null), SEP, "}-");
   }
 ;
 

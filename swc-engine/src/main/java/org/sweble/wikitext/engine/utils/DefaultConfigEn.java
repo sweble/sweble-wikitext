@@ -5103,7 +5103,7 @@ public class DefaultConfigEn
 	{
 		ParserConfigImpl pc = c.getParserConfig();
 		
-		// ==[ Parser features ]====================================================
+		// ==[ Parser features ]================================================
 		
 		pc.setAutoCorrect(false);
 		pc.setGatherRtData(true);
@@ -5119,9 +5119,13 @@ public class DefaultConfigEn
 		pc.setInternalLinkPrefixPattern(null);
 		pc.setInternalLinkPostfixPattern("[a-z]+");
 		
-		// ==[ Parsing XML elements ]===============================================
+		// ==[ Parsing XML elements ]===========================================
 		
 		addXmlEntities(pc);
+		
+		// ==[ Language Conversion Tags ]=======================================
+		
+		addLctMappings(pc);
 	}
 	
 	private static void addXmlEntities(ParserConfigImpl pc)
@@ -5387,5 +5391,26 @@ public class DefaultConfigEn
 		pc.addXmlEntity("lsaquo", "\u2039");
 		pc.addXmlEntity("rsaquo", "\u203a");
 		pc.addXmlEntity("euro", "\u20ac");
+	}
+	
+	private static void addLctMappings(ParserConfigImpl pc)
+	{
+		// TOOD: This does not really make sense! It's for a Chinese wiki!
+		
+		pc.addLctFlagMapping("A", "A");
+		pc.addLctFlagMapping("T", "T");
+		pc.addLctFlagMapping("R", "R");
+		pc.addLctFlagMapping("D", "D");
+		pc.addLctFlagMapping("-", "-");
+		pc.addLctFlagMapping("H", "H");
+		pc.addLctFlagMapping("N", "N");
+		
+		pc.addLctVariantMapping("zh", "zh");
+		pc.addLctVariantMapping("zh-hans", "zh-hans");
+		pc.addLctVariantMapping("zh-hant", "zh-hant");
+		pc.addLctVariantMapping("zh-cn", "zh-cn");
+		pc.addLctVariantMapping("zh-tw", "zh-tw");
+		pc.addLctVariantMapping("zh-hk", "zh-hk");
+		pc.addLctVariantMapping("zh-sg", "zh-sg");
 	}
 }

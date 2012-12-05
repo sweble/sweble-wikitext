@@ -19,6 +19,9 @@ package org.sweble.wikitext.parser.utils;
 
 import java.util.Collections;
 import java.util.Map;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
@@ -243,10 +246,40 @@ public class SimpleParserConfig
 			return null;
 		}
 	}
-	
+
 	@Override
 	public Map<String, String> getXmlEntities()
 	{
 		return Collections.emptyMap();
+	}
+
+	// ==[ Language Conversion Tags ]===========================================
+	
+	private static final Set<String> knownFlags = new HashSet<String>(Arrays.asList(
+			"A", "T", "R", "D", "-", "H", "N"));
+	
+	public boolean isLctFlag(String flag)
+	{
+		flag = normalizeLctFlag(flag);
+		return knownFlags.contains(flag);
+	}
+	
+	public String normalizeLctFlag(String flag)
+	{
+		return flag.trim().toUpperCase();
+	}
+	
+	private static final Set<String> knownVariants = new HashSet<String>(Arrays.asList(
+			"zh", "zh-hans", "zh-hant", "zh-cn", "zh-tw", "zh-hk", "zh-sg"));
+	
+	public boolean isLctVariant(String variant)
+	{
+		variant = normalizeLctVariant(variant);
+		return knownVariants.contains(variant);
+	}
+	
+	public String normalizeLctVariant(String variant)
+	{
+		return variant.trim().toLowerCase();
 	}
 }

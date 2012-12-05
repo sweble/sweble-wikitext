@@ -280,6 +280,8 @@ public interface WikitextNodeFactory
 	
 	WtXmlComment comment(String prefix, String content, String suffix);
 	
+	WtLctRuleGarbage lctGarbage(String content);
+	
 	// -- Text -----------------------------------------------------------------
 	
 	WtText text(String content);

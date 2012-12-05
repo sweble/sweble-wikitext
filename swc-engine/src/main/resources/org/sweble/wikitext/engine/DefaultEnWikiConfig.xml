@@ -1231,6 +1231,24 @@
             <entity name="zwj" value="‍"/>
             <entity name="zwnj" value="‌"/>
         </xmlEntities>
+        <lctFlagMappings>
+            <lctFlag name="-" normalized="-"/>
+            <lctFlag name="A" normalized="A"/>
+            <lctFlag name="D" normalized="D"/>
+            <lctFlag name="H" normalized="H"/>
+            <lctFlag name="N" normalized="N"/>
+            <lctFlag name="R" normalized="R"/>
+            <lctFlag name="T" normalized="T"/>
+        </lctFlagMappings>
+        <lctVariantMappings>
+            <lctVariant name="zh" normalized="zh"/>
+            <lctVariant name="zh-cn" normalized="zh-cn"/>
+            <lctVariant name="zh-hans" normalized="zh-hans"/>
+            <lctVariant name="zh-hant" normalized="zh-hant"/>
+            <lctVariant name="zh-hk" normalized="zh-hk"/>
+            <lctVariant name="zh-sg" normalized="zh-sg"/>
+            <lctVariant name="zh-tw" normalized="zh-tw"/>
+        </lctVariantMappings>
     </parserConfig>
     <compilerConfig>
         <trimTransparentBeforeParsing>true</trimTransparentBeforeParsing>

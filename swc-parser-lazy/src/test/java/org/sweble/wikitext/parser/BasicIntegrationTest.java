@@ -62,7 +62,7 @@ public class BasicIntegrationTest
 	@Parameters
 	public static List<Object[]> enumerateInputs() throws Exception
 	{
-		return IntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, true);
+		return IntegrationTestBase.gather(INPUT_SUB_DIR, FILTER_RX, false);
 	}
 	
 	// =========================================================================

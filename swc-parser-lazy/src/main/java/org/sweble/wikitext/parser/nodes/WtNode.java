@@ -196,4 +196,6 @@ public interface WtNode
 	public static final int NT_LCT_RULES /* .................... */= NT_PARSER_BITS + 55;
 	
 	public static final int NT_LCT_RULE_CONV /* ................ */= NT_PARSER_BITS + 56;
+	
+	public static final int NT_LCT_RULE_GARBAGE /* ............. */= NT_PARSER_BITS + 57;
 }

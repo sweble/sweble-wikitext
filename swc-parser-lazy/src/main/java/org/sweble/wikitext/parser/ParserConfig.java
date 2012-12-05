@@ -75,4 +75,14 @@ public interface ParserConfig
 	boolean isValidXmlEntityRef(String name);
 	
 	Map<String, String> getXmlEntities();
+
+	// ==[ Language Conversion Tags ]===========================================
+	
+	boolean isLctFlag(String flag);
+	
+	String normalizeLctFlag(String flag);
+	
+	boolean isLctVariant(String variant);
+	
+	String normalizeLctVariant(String variant);
 }

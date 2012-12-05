@@ -432,22 +432,18 @@ public class WikitextNodeFactoryImpl
 		List<String> lctGarbage = new ArrayList<String>();
 		for (String flag : flags)
 		{
-			// TODO: Implement properly!
-			if (flag.length() == 1 /* this.parserConfig.isLctFlag(flag) */)
+			if (this.parserConfig.isLctFlag(flag))
 			{
-				lctFlags.add(flag);
+				lctFlags.add(this.parserConfig.normalizeLctFlag(flag));
 			}
-			else
-			/*if (this.parserConfig.isLctVariant(flag))*/
+			else if (this.parserConfig.isLctVariant(flag))
 			{
-				lctVariants.add(flag);
+				lctVariants.add(this.parserConfig.normalizeLctVariant(flag));
 			}
-			/*
 			else
 			{
 				lctGarbage.add(flag);
 			}
-			*/
 		}
 		return new WtLctFlags.WtLctFlagsImpl(lctFlags, lctVariants, lctGarbage);
 	}
@@ -802,6 +798,12 @@ public class WikitextNodeFactoryImpl
 	public WtXmlComment comment(String prefix, String content, String suffix)
 	{
 		return new WtXmlComment(content, prefix, suffix);
+	}
+	
+	@Override
+	public WtLctRuleGarbage lctGarbage(String content)
+	{
+		return new WtLctRuleGarbage(content);
 	}
 	
 	@Override
