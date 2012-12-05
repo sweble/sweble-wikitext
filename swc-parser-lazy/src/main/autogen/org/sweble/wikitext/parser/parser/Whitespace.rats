@@ -60,7 +60,7 @@ void Eol :=
   <DUMMY> &{ acceptEol() } slEol
 ;
 
-WtNewline pEolNode =
+transient WtNewline pEolNode =
   eol:pEol
   {
     yyValue = nf.newline(eol);
