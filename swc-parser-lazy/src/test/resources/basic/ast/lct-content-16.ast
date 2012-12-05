@@ -1,0 +1,19 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtLctVarConv(
+			{P} rtd = RTD[ "-{" <o> "" <o> "}-" ]
+			flags = -,
+			body = WtBody[
+				[0] = WtUrl(
+					{P} path = "//example.com"
+					{P} protocol = "http"
+					{P} rtd = RTD[ "http://example.com" ]
+				),
+				[1] = " "
+			]
+		)
+	],
+	[1] = "\n"
+)

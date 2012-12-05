@@ -2812,8 +2812,10 @@ WtParsedWikitextPage(
 								target = WtPageName("Max Cleland"),
 								title = -
 							),
-							[14] = ".  Chambliss's political career would have likely ended if he hadn't run for the Senate; the state legislature had shifted his home in Moultrie (along with most of the southern portion of his district) to the nearby ",
-							[15] = WtInternalLink(
+							[14] = ".  Chambliss's political career would have likely ended if he hadn't run for the Senate",
+							[15] = ";",
+							[16] = " the state legislature had shifted his home in Moultrie (along with most of the southern portion of his district) to the nearby ",
+							[17] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -2823,127 +2825,129 @@ WtParsedWikitextPage(
 									[0] = "1st district"
 								)
 							),
-							[16] = ", represented by fellow Republican ",
-							[17] = WtInternalLink(
+							[18] = ", represented by fellow Republican ",
+							[19] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("Jack Kingston"),
 								title = -
 							),
-							[18] = ".",
-							[19] = WtImEndTag(
+							[20] = ".",
+							[21] = WtImEndTag(
 								{P} name = "@p"
 							),
-							[20] = WtNewline("\n"),
-							[21] = WtNewline("\n"),
-							[22] = WtImStartTag(
+							[22] = WtNewline("\n"),
+							[23] = WtNewline("\n"),
+							[24] = WtImStartTag(
 								{P} name = "@p"
 								xmlAttributes = WtXmlAttributes[]
 							),
-							[23] = "Chambliss focused on the issue of ",
-							[24] = WtInternalLink(
+							[25] = "Chambliss focused on the issue of ",
+							[26] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("national defense"),
 								title = -
 							),
-							[25] = " and ",
-							[26] = WtInternalLink(
+							[27] = " and ",
+							[28] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("homeland security"),
 								title = -
 							),
-							[27] = " during his campaign, and released an ad that included ",
-							[28] = WtInternalLink(
+							[29] = " during his campaign, and released an ad that included ",
+							[30] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("Osama bin Laden"),
 								title = -
 							),
-							[29] = " and ",
-							[30] = WtInternalLink(
+							[31] = " and ",
+							[32] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("Saddam Hussein"),
 								title = -
 							),
-							[31] = ", highlighting Cleland's record on the issues of war and terrorism.",
-							[32] = WtTagExtension(
+							[33] = ", highlighting Cleland's record on the issues of war and terrorism.",
+							[34] = WtTagExtension(
 								{P} name = "ref"
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[],
 								body = WtTagExtensionBody("[http://www.youtube.com/watch?v=tKFYpd0q9nE Chambliss Ad (Cleland)], ''You Tube'', August 02, 2006")
 							),
-							[33] = WtImEndTag(
+							[35] = WtImEndTag(
 								{P} name = "@p"
 							),
-							[34] = WtNewline("\n"),
-							[35] = WtNewline("\n"),
-							[36] = WtImStartTag(
+							[36] = WtNewline("\n"),
+							[37] = WtNewline("\n"),
+							[38] = WtImStartTag(
 								{P} name = "@p"
 								xmlAttributes = WtXmlAttributes[]
 							),
-							[37] = "Chambliss received criticism from Democrats and Republicans for this ad, pointing out that he, who hadn't served in the Vietnam War due to receiving military deferments, had attacked a Vietnam War veteran who lost three limbs during his service for not being tough enough on issues of war and homeland security. Republican Senator ",
-							[38] = WtInternalLink(
+							[39] = "Chambliss received criticism from Democrats and Republicans for this ad, pointing out that he, who hadn't served in the Vietnam War due to receiving military deferments, had attacked a Vietnam War veteran who lost three limbs during his service for not being tough enough on issues of war and homeland security. Republican Senator ",
+							[40] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("John McCain"),
 								title = -
 							),
-							[39] = " of ",
-							[40] = WtInternalLink(
+							[41] = " of ",
+							[42] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("Arizona"),
 								title = -
 							),
-							[41] = " said of one ad, \"",
-							[42] = WtText(
+							[43] = " said of one ad, \"",
+							[44] = WtText(
 								{A} warnings = C[ Warning (none): /tree/wikitext/ignore_throws_exception.wikitext:147:380 - 381: "[" : This looks like a External Link, however the actual URL is missing. ]
 								{P} content = "["
 							),
-							[43] = "I",
-							[44] = "]",
-							[45] = "t's worse than disgraceful, it's reprehensible;\" Senator ",
-							[46] = WtInternalLink(
+							[45] = "I",
+							[46] = "]",
+							[47] = "t's worse than disgraceful, it's reprehensible",
+							[48] = ";",
+							[49] = "\" Senator ",
+							[50] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("Chuck Hagel"),
 								title = -
 							),
-							[47] = " of ",
-							[48] = WtInternalLink(
+							[51] = " of ",
+							[52] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("Nebraska"),
 								title = -
 							),
-							[49] = " said the ads were \"beyond offensive to me.\"",
-							[50] = WtTagExtension(
+							[53] = " said the ads were \"beyond offensive to me.\"",
+							[54] = WtTagExtension(
 								{P} name = "ref"
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[],
 								body = WtTagExtensionBody("[http://mediamatters.org/items/200407300007 ''Carlson attempted to downplay Republican attacks on Cleland'' \u2014 Media Matters, July 30, 2004]")
 							),
-							[51] = " On the other hand, Chambliss supporters say the ad did not question Cleland's patriotism, but rather his judgment.",
-							[52] = WtTagExtension(
+							[55] = " On the other hand, Chambliss supporters say the ad did not question Cleland's patriotism, but rather his judgment.",
+							[56] = WtTagExtension(
 								{P} name = "ref"
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[],
 								body = WtTagExtensionBody("{{citenews|first=Michael|last=Crowley|authorlink=|author=|coauthors=|title=Former Sen. Max Cleland: How the disabled war veteran became the Democrats' mascot|url=http://slate.msn.com/id/2098171|date=April 2, 2004|accessdate=2009-01-23}}")
 							),
-							[53] = WtNewline("\n"),
-							[54] = WtTagExtension(
+							[57] = WtNewline("\n"),
+							[58] = WtTagExtension(
 								{P} name = "ref"
 								{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 								xmlAttributes = WtXmlAttributes[
@@ -2955,21 +2959,21 @@ WtParsedWikitextPage(
 								],
 								body = WtTagExtensionBody("{{citenews|first=Ann|last=Coulter|authorlink=Ann Coulter|author=|coauthors=|title=Teaching Democrats New Tricks|url=http://anncoulter.com/cgi-local/article.cgi?article=291|date=December 31, 2008|accessdate=2009-01-23}}")
 							),
-							[55] = WtImEndTag(
+							[59] = WtImEndTag(
 								{P} name = "@p"
 							),
-							[56] = WtNewline("\n"),
-							[57] = WtNewline("\n"),
-							[58] = WtImStartTag(
+							[60] = WtNewline("\n"),
+							[61] = WtNewline("\n"),
+							[62] = WtImStartTag(
 								{P} name = "@p"
 								xmlAttributes = WtXmlAttributes[]
 							),
-							[59] = "Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.",
-							[60] = WtImEndTag(
+							[63] = "Chambliss won the election, receiving 53 percent of the votes to Cleland's 46 percent.",
+							[64] = WtImEndTag(
 								{P} name = "@p"
 							),
-							[61] = WtNewline("\n"),
-							[62] = WtNewline("\n")
+							[65] = WtNewline("\n"),
+							[66] = WtNewline("\n")
 						]
 					),
 					[3] = WtSection(

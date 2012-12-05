@@ -36,6 +36,7 @@ public enum ElementType
 	SEMIPRE,
 	INLINE_IMG,
 	FRAMED_IMG,
+	LCT_VAR_CONV,
 	UNKNOWN,
 	
 	// A replacements
@@ -245,13 +246,11 @@ public enum ElementType
 	{
 		switch (this)
 		{
-		/*
-		case A:
-		*/
 			case INT_LINK:
 			case EXT_LINK:
 			case URL:
-				
+			case LCT_VAR_CONV:
+				// case A:
 			case B:
 			case BIG:
 			case CODE:
@@ -355,6 +354,7 @@ public enum ElementType
 		xmlElementTypeMap.put("#inline-img", INLINE_IMG);
 		xmlElementTypeMap.put("#framed-img", FRAMED_IMG);
 		xmlElementTypeMap.put("#semipre", SEMIPRE);
+		xmlElementTypeMap.put("#lct-var-conv", LCT_VAR_CONV);
 	}
 	
 	// =========================================================================
@@ -430,6 +430,9 @@ public enum ElementType
 			case NT_XML_EMPTY_TAG:
 			case NT_XML_ELEMENT:
 				return getType((WtNamedXmlElement) n);
+				
+			case NT_LCT_VAR_CONV:
+				return LCT_VAR_CONV;
 		}
 		
 		throw new InternalError();

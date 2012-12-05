@@ -28,6 +28,7 @@ import org.sweble.wikitext.parser.nodes.WtExternalLink;
 import org.sweble.wikitext.parser.nodes.WtHeading;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
+import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -374,6 +375,11 @@ public class ElementFactory
 				newNode = nf.img(n.getTarget(), n.getOptions(), title);
 				break;
 			}
+			
+			case LCT_VAR_CONV:
+				newNode = nf.lctVarConv(((WtLctVarConv) node).getFlags(),
+						nf.body(nf.list()));
+				break;
 			
 			default:
 				throw new InternalError(

@@ -156,9 +156,11 @@ public interface WikitextNodeFactory
 	
 	WtLctFlags lctFlags(List<String> flags);
 	
-	WtLctRule lctRule(String search, String variant, String replace);
+	WtLctFlags noLctFlags();
 	
-	WtLctRule lctRule(String variant, String replace);
+	WtLctRule lctRule(String search, String variant, WtLctRuleText replace);
+	
+	WtLctRule lctRule(String variant, WtLctRuleText replace);
 	
 	// -- Node List ------------------------------------------------------------
 	
@@ -256,6 +258,8 @@ public interface WikitextNodeFactory
 	
 	WtLctRules lctRules(WtNodeList rules);
 	
+	WtLctRuleText lctRuleText(WtNodeList content);
+	
 	// -- String Node ----------------------------------------------------------
 	
 	WtIgnored ignored(String content);
@@ -275,8 +279,6 @@ public interface WikitextNodeFactory
 	WtXmlComment comment(String content);
 	
 	WtXmlComment comment(String prefix, String content, String suffix);
-	
-	WtLctGarbage lctGarbage(String garbage);
 	
 	// -- Text -----------------------------------------------------------------
 	

@@ -17,171 +17,268 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class WtLctFlags
+public interface WtLctFlags
 		extends
-			WtLeafNode
+			WtNode
 {
-	private static final long serialVersionUID = 1L;
+	public static final WtLctNoFlags NO_FLAGS = new WtLctNoFlags();
 	
 	// =========================================================================
 	
-	/**
-	 * Only for use by de-serialization code.
-	 */
-	protected WtLctFlags()
-	{
-	}
+	public Set<String> getFlags();
 	
-	public WtLctFlags(
-			Set<String> flags,
-			Set<String> variants,
-			List<String> garbage)
-	{
-		setFlags(flags);
-		setVariants(variants);
-		setGarbage(garbage);
-	}
+	public Set<String> setFlags(Set<String> flags);
 	
-	@Override
-	public int getNodeType()
-	{
-		return NT_LCT_FLAGS;
-	}
+	public Set<String> getVariants();
+	
+	public Set<String> setVariants(Set<String> variants);
+	
+	public List<String> getGarbage();
+	
+	public List<String> setGarbage(List<String> garbage);
 	
 	// =========================================================================
-	// Properties
 	
-	private Set<String> flags;
-	
-	public final Set<String> getFlags()
+	public class WtLctNoFlags
+			extends
+				WtEmptyImmutableNode
+			implements
+				WtLctFlags
 	{
-		return this.flags;
-	}
-	
-	public final Set<String> setFlags(Set<String> flags)
-	{
-		Set<String> old = this.flags;
-		this.flags = flags;
-		return old;
-	}
-	
-	private Set<String> variants;
-	
-	public final Set<String> getVariants()
-	{
-		return this.variants;
-	}
-	
-	public final Set<String> setVariants(Set<String> variants)
-	{
-		Set<String> old = this.variants;
-		this.variants = variants;
-		return old;
-	}
-	
-	private List<String> garbage;
-	
-	public final List<String> getGarbage()
-	{
-		return this.garbage;
-	}
-	
-	public final List<String> setGarbage(List<String> garbage)
-	{
-		List<String> old = this.garbage;
-		this.garbage = garbage;
-		return old;
-	}
-	
-	@Override
-	public final int getPropertyCount()
-	{
-		return 3 + getSuperPropertyCount();
-	}
-	
-	private final int getSuperPropertyCount()
-	{
-		return super.getPropertyCount();
-	}
-	
-	@Override
-	public final AstNodePropertyIterator propertyIterator()
-	{
-		return new WtLeafNodePropertyIterator()
+		private static final long serialVersionUID = 2465445739660029292L;
+		
+		@Override
+		public int getNodeType()
 		{
-			@Override
-			protected int getPropertyCount()
+			return NT_LCT_FLAGS;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLctFlags.class.getSimpleName();
+		}
+		
+		@Override
+		public boolean indicatesAbsence()
+		{
+			return true;
+		}
+		
+		@Override
+		public Set<String> getFlags()
+		{
+			return Collections.emptySet();
+		}
+		
+		@Override
+		public Set<String> setFlags(Set<String> flags)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public Set<String> getVariants()
+		{
+			return Collections.emptySet();
+		}
+		
+		@Override
+		public Set<String> setVariants(Set<String> variants)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		@Override
+		public List<String> getGarbage()
+		{
+			return Collections.emptyList();
+		}
+		
+		@Override
+		public List<String> setGarbage(List<String> garbage)
+		{
+			throw new UnsupportedOperationException(genMsg());
+		}
+	}
+	
+	// =========================================================================
+	
+	public class WtLctFlagsImpl
+			extends
+				WtLeafNode
+			implements
+				WtLctFlags
+	{
+		private static final long serialVersionUID = 1L;
+		
+		// =====================================================================
+		
+		/**
+		 * Only for use by de-serialization code.
+		 */
+		protected WtLctFlagsImpl()
+		{
+		}
+		
+		public WtLctFlagsImpl(
+				Set<String> flags,
+				Set<String> variants,
+				List<String> garbage)
+		{
+			setFlags(flags);
+			setVariants(variants);
+			setGarbage(garbage);
+		}
+		
+		@Override
+		public int getNodeType()
+		{
+			return NT_LCT_FLAGS;
+		}
+		
+		@Override
+		public String getNodeName()
+		{
+			return WtLctFlags.class.getSimpleName();
+		}
+		
+		// =====================================================================
+		// Properties
+		
+		private Set<String> flags;
+		
+		public final Set<String> getFlags()
+		{
+			return this.flags;
+		}
+		
+		public final Set<String> setFlags(Set<String> flags)
+		{
+			Set<String> old = this.flags;
+			this.flags = flags;
+			return old;
+		}
+		
+		private Set<String> variants;
+		
+		public final Set<String> getVariants()
+		{
+			return this.variants;
+		}
+		
+		public final Set<String> setVariants(Set<String> variants)
+		{
+			Set<String> old = this.variants;
+			this.variants = variants;
+			return old;
+		}
+		
+		private List<String> garbage;
+		
+		public final List<String> getGarbage()
+		{
+			return this.garbage;
+		}
+		
+		public final List<String> setGarbage(List<String> garbage)
+		{
+			List<String> old = this.garbage;
+			this.garbage = garbage;
+			return old;
+		}
+		
+		@Override
+		public final int getPropertyCount()
+		{
+			return 3 + getSuperPropertyCount();
+		}
+		
+		private final int getSuperPropertyCount()
+		{
+			return super.getPropertyCount();
+		}
+		
+		@Override
+		public final AstNodePropertyIterator propertyIterator()
+		{
+			return new WtLeafNodePropertyIterator()
 			{
-				return WtLctFlags.this.getPropertyCount();
-			}
-			
-			@Override
-			protected String getName(int index)
-			{
-				switch (index - getSuperPropertyCount())
+				@Override
+				protected int getPropertyCount()
 				{
-					case 0:
-						return "flags";
-					case 1:
-						return "variants";
-					case 2:
-						return "garbage";
+					return WtLctFlagsImpl.this.getPropertyCount();
+				}
+				
+				@Override
+				protected String getName(int index)
+				{
+					switch (index - getSuperPropertyCount())
+					{
+						case 0:
+							return "flags";
+						case 1:
+							return "variants";
+						case 2:
+							return "garbage";
+							
+						default:
+							return super.getName(index);
+					}
+				}
+				
+				@Override
+				protected Object getValue(int index)
+				{
+					switch (index - getSuperPropertyCount())
+					{
+						case 0:
+							return WtLctFlagsImpl.this.getFlags();
+						case 1:
+							return WtLctFlagsImpl.this.getVariants();
+						case 2:
+							return WtLctFlagsImpl.this.getGarbage();
+							
+						default:
+							return super.getValue(index);
+					}
+				}
+				
+				@Override
+				protected Object setValue(int index, Object value)
+				{
+					switch (index - getSuperPropertyCount())
+					{
+						case 0:
+						{
+							@SuppressWarnings("unchecked")
+							Set<String> flags = (Set<String>) value;
+							return WtLctFlagsImpl.this.setFlags(flags);
+						}
+						case 1:
+						{
+							@SuppressWarnings("unchecked")
+							Set<String> variants = (Set<String>) value;
+							return WtLctFlagsImpl.this.setVariants(variants);
+						}
+						case 2:
+						{
+							@SuppressWarnings("unchecked")
+							List<String> garbage = (List<String>) value;
+							return WtLctFlagsImpl.this.setGarbage(garbage);
+						}
 						
-					default:
-						return super.getName(index);
-				}
-			}
-			
-			@Override
-			protected Object getValue(int index)
-			{
-				switch (index - getSuperPropertyCount())
-				{
-					case 0:
-						return WtLctFlags.this.getFlags();
-					case 1:
-						return WtLctFlags.this.getVariants();
-					case 2:
-						return WtLctFlags.this.getGarbage();
-						
-					default:
-						return super.getValue(index);
-				}
-			}
-			
-			@Override
-			protected Object setValue(int index, Object value)
-			{
-				switch (index - getSuperPropertyCount())
-				{
-					case 0:
-					{
-						@SuppressWarnings("unchecked")
-						Set<String> flags = (Set<String>) value;
-						return WtLctFlags.this.setFlags(flags);
+						default:
+							return super.setValue(index, value);
 					}
-					case 1:
-					{
-						@SuppressWarnings("unchecked")
-						Set<String> variants = (Set<String>) value;
-						return WtLctFlags.this.setVariants(variants);
-					}
-					case 2:
-					{
-						@SuppressWarnings("unchecked")
-						List<String> garbage = (List<String>) value;
-						return WtLctFlags.this.setGarbage(garbage);
-					}
-					
-					default:
-						return super.setValue(index, value);
 				}
-			}
-		};
+			};
+		}
 	}
 }

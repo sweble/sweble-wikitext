@@ -1,0 +1,17 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtParagraph[
+		[0] = WtLctVarConv(
+			{P} rtd = RTD[ "-{" <o> "" <o> "}-" ]
+			flags = -,
+			body = WtBody[
+				[0] = WtSignature(
+					{P} rtd = RTD[ "~~~~" ]
+					{P} tildeCount = 4
+				)
+			]
+		)
+	],
+	[1] = "\n"
+)

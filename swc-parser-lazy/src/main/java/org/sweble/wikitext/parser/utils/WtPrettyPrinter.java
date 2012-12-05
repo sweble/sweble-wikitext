@@ -19,8 +19,10 @@ package org.sweble.wikitext.parser.utils;
 
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtBold;
@@ -37,6 +39,8 @@ import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
+import org.sweble.wikitext.parser.nodes.WtLctFlags;
+import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionGarbage;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionKeyword;
@@ -328,6 +332,18 @@ public class WtPrettyPrinter
 		}
 	}
 	
+	public void visit(WtLctVarConv n)
+	{
+		p.print("-{");
+		if (n.hasFlags())
+		{
+			dispatch(n.getFlags());
+			p.print('|');
+		}
+		dispatch(n.getText());
+		p.print("}-");
+	}
+	
 	// --[ WtInnerNode3 ]-------------------------------------------------------
 	
 	public void visit(WtImageLink n)
@@ -443,6 +459,19 @@ public class WtPrettyPrinter
 		p.print('&');
 		p.print(n.getName());
 		p.print(';');
+	}
+	
+	public void visit(WtLctFlags n)
+	{
+		List<String> flags = new ArrayList<String>();
+		flags.addAll(n.getFlags());
+		flags.addAll(n.getVariants());
+		for (int i = 0; i < flags.size(); ++i)
+		{
+			if (i > 0)
+				p.print(';');
+			p.print(flags.get(i));
+		}
 	}
 	
 	// --[ WtNodeList ]---------------------------------------------------------

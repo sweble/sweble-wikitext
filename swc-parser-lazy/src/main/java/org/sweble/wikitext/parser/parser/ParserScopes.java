@@ -139,9 +139,7 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-			//case SIGNATURE:
 				case INTERNAL_LINK:
-					//case XML_REFERENCE:
 					return true;
 				default:
 					return false;
@@ -156,12 +154,9 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-					//case SIGNATURE:
-					//case XML_REFERENCE:
 					return true;
 				default:
 					return false;
@@ -176,12 +171,9 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-					//case SIGNATURE:
-					//case XML_REFERENCE:
 					return true;
 				default:
 					return false;
@@ -196,12 +188,9 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-					//case SIGNATURE:
-					//case XML_REFERENCE:
 					return true;
 				default:
 					return false;
@@ -267,12 +256,9 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-					//case SIGNATURE:
-					//case XML_REFERENCE:
 					return true;
 				default:
 					return false;
@@ -299,12 +285,9 @@ public enum ParserScopes
 		{
 			switch (atom)
 			{
-			//case MAGIC_WORD:
 				case EXTERNAL_LINK:
 				case INTERNAL_LINK:
 				case PLAIN_EXTERNAL_LINK:
-					//case SIGNATURE:
-					//case XML_REFERENCE:
 					return true;
 				default:
 					return false;
@@ -324,7 +307,28 @@ public enum ParserScopes
 		}
 	},
 	
-	LCT_PART
+	LCT_PROTECTED_CONTENT
+	{
+		@Override
+		public boolean accepts(ParserAtoms atom)
+		{
+			return true;
+		}
+		
+		@Override
+		public boolean isNoEolScope()
+		{
+			return false;
+		}
+		
+		@Override
+		public boolean isSticky()
+		{
+			return false;
+		}
+	},
+	
+	LCT_RULE_TEXT
 	{
 		@Override
 		public boolean accepts(ParserAtoms atom)

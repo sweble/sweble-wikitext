@@ -1,0 +1,22 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[]
+	[0] = WtSection(
+		{P} level = 2
+		heading = WtHeading(
+			{P} rtd = RTD[ "==" <o> "==" ]
+			[0] = "Section"
+		),
+		body = WtBody[
+			[0] = "\n",
+			[1] = WtParagraph[
+				[0] = WtLctVarConv(
+					{P} rtd = RTD[ "-{" <o> "" <o> "}-" ]
+					flags = -,
+					body = WtBody[ [0] = "\nbody\n" ]
+				)
+			],
+			[2] = "\n"
+		]
+	)
+)

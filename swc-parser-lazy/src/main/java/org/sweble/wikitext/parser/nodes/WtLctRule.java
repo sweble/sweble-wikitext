@@ -18,10 +18,11 @@
 package org.sweble.wikitext.parser.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
+import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
 public class WtLctRule
 		extends
-			WtLeafNode
+			WtInnerNode1
 {
 	private static final long serialVersionUID = 1L;
 	
@@ -32,22 +33,23 @@ public class WtLctRule
 	 */
 	protected WtLctRule()
 	{
+		super(Uninitialized.X);
 	}
 	
-	protected WtLctRule(String search, String variant, String replace)
+	protected WtLctRule(String search, String variant, WtLctRuleText replace)
 	{
+		super(replace);
 		if (search == null || search.isEmpty())
 			throw new IllegalArgumentException();
 		setSearch(search);
 		setVariant(variant);
-		setReplace(replace);
 	}
 	
-	protected WtLctRule(String variant, String replace)
+	protected WtLctRule(String variant, WtLctRuleText replace)
 	{
+		super(replace);
 		setSearch("");
 		setVariant(variant);
-		setReplace(replace);
 	}
 	
 	@Override
@@ -95,24 +97,10 @@ public class WtLctRule
 		return old;
 	}
 	
-	private String replace;
-	
-	public final String getReplace()
-	{
-		return this.replace;
-	}
-	
-	public final String setReplace(String replace)
-	{
-		String old = this.replace;
-		this.replace = replace;
-		return old;
-	}
-	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 4 + getSuperPropertyCount();
+		return 3 + getSuperPropertyCount();
 	}
 	
 	private final int getSuperPropertyCount()
@@ -123,7 +111,7 @@ public class WtLctRule
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new WtLeafNodePropertyIterator()
+		return new WtInnerNode1PropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
@@ -142,8 +130,6 @@ public class WtLctRule
 						return "search";
 					case 2:
 						return "variant";
-					case 3:
-						return "replace";
 						
 					default:
 						return super.getName(index);
@@ -161,8 +147,6 @@ public class WtLctRule
 						return WtLctRule.this.getSearch();
 					case 2:
 						return WtLctRule.this.getVariant();
-					case 3:
-						return WtLctRule.this.getReplace();
 						
 					default:
 						return super.getValue(index);
@@ -182,13 +166,31 @@ public class WtLctRule
 						return WtLctRule.this.setSearch((String) value);
 					case 2:
 						return WtLctRule.this.setVariant((String) value);
-					case 3:
-						return WtLctRule.this.setReplace((String) value);
 						
 					default:
 						return super.setValue(index, value);
 				}
 			}
 		};
+	}
+	
+	// =========================================================================
+	// Children
+	
+	public final void setReplace(WtLctRuleText replace)
+	{
+		set(0, replace);
+	}
+	
+	public final WtLctRuleText getReplace()
+	{
+		return (WtLctRuleText) get(0);
+	}
+	
+	private static final String[] CHILD_NAMES = new String[] { "replace" };
+	
+	public final String[] getChildNames()
+	{
+		return CHILD_NAMES;
 	}
 }

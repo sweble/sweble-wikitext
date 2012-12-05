@@ -1,0 +1,20 @@
+WtParsedWikitextPage(
+	{P} entityMap = -
+	{P} warnings = C[ Warning: <no location>: <no content> : 12.2.5.4.7 - R22 (2) @ WtXmlEndTag. ]
+	[0] = WtParagraph[
+		[0] = WtLctVarConv(
+			{P} rtd = RTD[ "-{" <o> "" <o> "}-" ]
+			flags = -,
+			body = WtBody[ [0] = "\n" ]
+		)
+	],
+	[1] = WtHorizontalRule(
+		{P} rtd = RTD[ "----" ]
+	),
+	[2] = WtLctVarConv(
+		{P} rtd = RTD[ "-{" <o> "" <o> "}-" ]
+		flags = -,
+		body = WtBody[ [0] = "\n" ]
+	),
+	[3] = "\n"
+)

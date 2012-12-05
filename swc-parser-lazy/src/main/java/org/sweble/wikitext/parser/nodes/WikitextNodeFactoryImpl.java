@@ -31,7 +31,6 @@ import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
-import org.sweble.wikitext.parser.nodes.WtLctRules.WtLctRulesImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
@@ -450,17 +449,26 @@ public class WikitextNodeFactoryImpl
 			}
 			*/
 		}
-		return new WtLctFlags(lctFlags, lctVariants, lctGarbage);
+		return new WtLctFlags.WtLctFlagsImpl(lctFlags, lctVariants, lctGarbage);
 	}
 	
 	@Override
-	public WtLctRule lctRule(String search, String variant, String replace)
+	public WtLctFlags noLctFlags()
+	{
+		return WtLctFlags.NO_FLAGS;
+	}
+	
+	@Override
+	public WtLctRule lctRule(
+			String search,
+			String variant,
+			WtLctRuleText replace)
 	{
 		return new WtLctRule(search, variant, replace);
 	}
 	
 	@Override
-	public WtLctRule lctRule(String variant, String replace)
+	public WtLctRule lctRule(String variant, WtLctRuleText replace)
 	{
 		return new WtLctRule(variant, replace);
 	}
@@ -733,7 +741,13 @@ public class WikitextNodeFactoryImpl
 	@Override
 	public WtLctRules lctRules(WtNodeList rules)
 	{
-		return new WtLctRulesImpl(rules);
+		return new WtLctRules(rules);
+	}
+	
+	@Override
+	public WtLctRuleText lctRuleText(WtNodeList content)
+	{
+		return new WtLctRuleText(content);
 	}
 	
 	@Override
@@ -788,12 +802,6 @@ public class WikitextNodeFactoryImpl
 	public WtXmlComment comment(String prefix, String content, String suffix)
 	{
 		return new WtXmlComment(content, prefix, suffix);
-	}
-	
-	@Override
-	public WtLctGarbage lctGarbage(String garbage)
-	{
-		return new WtLctGarbage(garbage);
 	}
 	
 	@Override

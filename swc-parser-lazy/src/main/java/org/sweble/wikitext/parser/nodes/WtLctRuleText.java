@@ -17,25 +17,21 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.Uninitialized;
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
 
-public class WtLctGarbage
+public class WtLctRuleText
 		extends
-			WtStringNodeImpl
+			WtContentNodeImpl
 {
 	private static final long serialVersionUID = 1L;
 	
-	// =========================================================================
+	// =====================================================================
 	
-	/**
-	 * Only for use by de-serialization code.
-	 */
-	protected WtLctGarbage()
+	protected WtLctRuleText()
 	{
-		super(Uninitialized.X);
 	}
 	
-	protected WtLctGarbage(String content)
+	protected WtLctRuleText(WtNodeList content)
 	{
 		super(content);
 	}
@@ -43,6 +39,12 @@ public class WtLctGarbage
 	@Override
 	public int getNodeType()
 	{
-		return NT_LCT_GARBAGE;
+		return NT_LCT_RULE_TEXT;
+	}
+	
+	@Override
+	public String getNodeName()
+	{
+		return WtLctRuleText.class.getSimpleName();
 	}
 }

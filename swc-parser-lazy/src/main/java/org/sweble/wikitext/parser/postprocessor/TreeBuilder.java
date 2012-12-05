@@ -37,6 +37,7 @@ import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
+import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtNamedXmlElement;
@@ -395,6 +396,9 @@ public class TreeBuilder
 					
 				case NT_TABLE_CELL:
 					return ((WtTableCell) node).getBody();
+					
+				case NT_LCT_VAR_CONV:
+					return ((WtLctVarConv) node).getText();
 					
 				default:
 					throw new InternalError();
@@ -1134,6 +1138,29 @@ public class TreeBuilder
 	void insertMarkerInActiveFormattingElements()
 	{
 		this.activeFormattingElements.add(MARKER);
+		
+		// LctVarConv tags must be effective over marker boundaries in order
+		// to "leak" into tables
+		
+		LinkedList<WtNode> list = activeFormattingElements;
+		ListIterator<WtNode> iter = list.listIterator(list.size());
+		
+		// Skip the just inserted marker
+		iter.previous();
+		
+		while (iter.hasPrevious())
+		{
+			WtNode e = iter.previous();
+			// We only look back to the last marker
+			if (e == MARKER)
+				break;
+			if (getNodeType(e) == LCT_VAR_CONV)
+			{
+				// Copy the LctVarConv tag after the marker
+				this.activeFormattingElements.add(e);
+				break;
+			}
+		}
 	}
 	
 	void clearActiveFormattingElementsToLastMarker()

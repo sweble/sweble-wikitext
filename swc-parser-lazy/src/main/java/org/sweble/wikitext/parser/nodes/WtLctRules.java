@@ -17,66 +17,34 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-public interface WtLctRules
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtContentNodeImpl;
+
+public class WtLctRules
 		extends
-			WtContentNode
+			WtContentNodeImpl
 {
-	public static final WtLctRules EMPTY = new WtEmptyLctRules();
+	private static final long serialVersionUID = 1L;
 	
-	// =========================================================================
+	// =====================================================================
 	
-	public static final class WtEmptyLctRules
-			extends
-				WtEmptyContentNode
-			implements
-				WtLctRules
+	protected WtLctRules()
 	{
-		private static final long serialVersionUID = -1064749733891892633L;
-		
-		@Override
-		public int getNodeType()
-		{
-			return NT_LCT_RULES;
-		}
-		
-		@Override
-		public String getNodeName()
-		{
-			return WtLctRules.class.getSimpleName();
-		}
 	}
 	
-	// =========================================================================
-	
-	public class WtLctRulesImpl
-			extends
-				WtContentNodeImpl
-			implements
-				WtLctRules
+	protected WtLctRules(WtNodeList content)
 	{
-		private static final long serialVersionUID = 1L;
-		
-		// =====================================================================
-		
-		protected WtLctRulesImpl()
-		{
-		}
-		
-		protected WtLctRulesImpl(WtNodeList content)
-		{
-			super(content);
-		}
-		
-		@Override
-		public int getNodeType()
-		{
-			return NT_LCT_RULES;
-		}
-		
-		@Override
-		public String getNodeName()
-		{
-			return WtLctRules.class.getSimpleName();
-		}
+		super(content);
+	}
+	
+	@Override
+	public int getNodeType()
+	{
+		return NT_LCT_RULES;
+	}
+	
+	@Override
+	public String getNodeName()
+	{
+		return WtLctRules.class.getSimpleName();
 	}
 }

@@ -203,7 +203,7 @@ private inline WtNode Block =
   !BlockStopper ( LineStartProd / Paragraph )
 ;
 
-private inline void BlockStopper =
+inline void BlockStopper =
     BlockStopperNextSection
   / BlockStopperNextTableElement
 ;
@@ -214,6 +214,14 @@ private noinline transient WtNode LineStartProd =
   / &( pTpStar       [*#:;] ) List
   / &( pTpStar       [ ]    ) SemiPre
   / &( pTpStar       [=]    ) Sections
+;
+
+noinline transient void LooksLikeALineStartProd =
+    pExtSpaceStar "{|"
+  / pTpStar       "---"
+  / pTpStar       [*#:;]
+  / pTpStar       [ ]
+  / pTpStar       [=]
 ;
 
 
@@ -473,12 +481,16 @@ private inline String TextStopperPrefix =
                     // table element start
                     // table cell/header inline element end
   / "="             // heading end
+  //"=>"            // LCT (already caught by "heading end"
   / "|"             // internal link parameter end
                     // table cell inline element end
+                    // LCT
   / "!"             // table header inline element end
   / "]"             // external and internal link title end
   / ":"             // Definition list definition (in the pair TERM:DEF)
-  / "}-"            // language converion rule end
+                    // LCT
+  / ";"             // LCT
+  / "}-"            // LCT end
 
   // -- content atom prefix --
 
@@ -489,7 +501,7 @@ private inline String TextStopperPrefix =
   / "__"            // page switch
   / "<"             // xml tag and comment
   / "&"             // xml entity
-  / "-{"            // language conversion rule
+  / "-{"            // LCT start
   / "\uE000"        // parser entity
 ;
 

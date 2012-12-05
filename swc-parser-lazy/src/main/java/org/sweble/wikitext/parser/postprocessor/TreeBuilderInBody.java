@@ -37,6 +37,7 @@ import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
+import org.sweble.wikitext.parser.nodes.WtLctVarConv;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtNewline;
@@ -735,6 +736,13 @@ public final class TreeBuilderInBody
 			tb.error(body, "12.2.5.4.7 - R20 (2)");
 		
 		tb.popFromStackUntilIncluding(SECTION_BODY);
+	}
+	
+	public void visit(WtLctVarConv n)
+	{
+		startTagR28(n);
+		iterate(n.getText());
+		endTagR30(getFactory().synEndTag(n));
 	}
 	
 	// =====================================================================

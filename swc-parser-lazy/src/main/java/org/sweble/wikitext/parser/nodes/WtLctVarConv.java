@@ -49,6 +49,11 @@ public class WtLctVarConv
 	// =========================================================================
 	// Children
 	
+	public boolean hasFlags()
+	{
+		return getFlags() != WtLctFlags.NO_FLAGS;
+	}
+	
 	public final void setFlags(WtLctFlags flags)
 	{
 		set(0, flags);
