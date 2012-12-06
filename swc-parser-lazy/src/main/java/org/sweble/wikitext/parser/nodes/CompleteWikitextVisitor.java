@@ -17,153 +17,153 @@
 
 package org.sweble.wikitext.parser.nodes;
 
-public interface CompleteWikitextVisitor
+public interface CompleteWikitextVisitor<T>
 {
 	// WtInnerNode1
 	
-	public Object visit(WtLinkOptionLinkTarget n);
+	public T visit(WtLinkOptionLinkTarget n);
 	
-	public Object visit(WtRedirect n);
+	public T visit(WtRedirect n);
 	
-	public Object visit(WtTableImplicitTableBody n);
+	public T visit(WtTableImplicitTableBody n);
 	
-	public Object visit(WtXmlAttribute n);
+	public T visit(WtXmlAttribute n);
 	
-	public Object visit(WtXmlEmptyTag n);
+	public T visit(WtXmlEmptyTag n);
 	
-	public Object visit(WtXmlStartTag n);
+	public T visit(WtXmlStartTag n);
 	
-	public Object visit(WtImStartTag n);
+	public T visit(WtImStartTag n);
 	
 	// WtInnerNode2
 	
-	public Object visit(WtExternalLink n);
+	public T visit(WtExternalLink n);
 	
-	public Object visit(WtInternalLink n);
+	public T visit(WtInternalLink n);
 	
-	public Object visit(WtSection n);
+	public T visit(WtSection n);
 	
-	public Object visit(WtTable n);
+	public T visit(WtTable n);
 	
-	public Object visit(WtTableCaption n);
+	public T visit(WtTableCaption n);
 	
-	public Object visit(WtTableCell n);
+	public T visit(WtTableCell n);
 	
-	public Object visit(WtTableHeader n);
+	public T visit(WtTableHeader n);
 	
-	public Object visit(WtTableRow n);
+	public T visit(WtTableRow n);
 	
-	public Object visit(WtTagExtension n);
+	public T visit(WtTagExtension n);
 	
-	public Object visit(WtTemplate n);
+	public T visit(WtTemplate n);
 	
-	public Object visit(WtTemplateArgument n);
+	public T visit(WtTemplateArgument n);
 	
-	public Object visit(WtXmlElement n);
+	public T visit(WtXmlElement n);
 	
 	// WtInnerNode3
 	
-	public Object visit(WtImageLink n);
+	public T visit(WtImageLink n);
 	
-	public Object visit(WtTemplateParameter n);
+	public T visit(WtTemplateParameter n);
 	
 	// WtLeafNode
 	
-	public Object visit(WtHorizontalRule n);
+	public T visit(WtHorizontalRule n);
 	
-	public Object visit(WtIllegalCodePoint n);
+	public T visit(WtIllegalCodePoint n);
 	
-	public Object visit(WtLinkOptionKeyword n);
+	public T visit(WtLinkOptionKeyword n);
 	
-	public Object visit(WtLinkOptionResize n);
+	public T visit(WtLinkOptionResize n);
 	
-	public Object visit(WtPageSwitch n);
+	public T visit(WtPageSwitch n);
 	
-	public Object visit(WtSignature n);
+	public T visit(WtSignature n);
 	
-	public Object visit(WtTicks n);
+	public T visit(WtTicks n);
 	
-	public Object visit(WtUrl n);
+	public T visit(WtUrl n);
 	
-	public Object visit(WtXmlCharRef n);
+	public T visit(WtXmlCharRef n);
 	
-	public Object visit(WtXmlEndTag n);
+	public T visit(WtXmlEndTag n);
 	
-	public Object visit(WtImEndTag n);
+	public T visit(WtImEndTag n);
 	
-	public Object visit(WtXmlEntityRef n);
+	public T visit(WtXmlEntityRef n);
 	
 	// WtNodeList
 	
-	public Object visit(WtNodeList n);
+	public T visit(WtNodeList n);
 	
 	// WtContentNode
 	
-	public Object visit(WtBody n);
+	public T visit(WtBody n);
 	
-	public Object visit(WtBold n);
+	public T visit(WtBold n);
 	
-	public Object visit(WtDefinitionList n);
+	public T visit(WtDefinitionList n);
 	
-	public Object visit(WtDefinitionListDef n);
+	public T visit(WtDefinitionListDef n);
 	
-	public Object visit(WtDefinitionListTerm n);
+	public T visit(WtDefinitionListTerm n);
 	
-	public Object visit(WtHeading n);
+	public T visit(WtHeading n);
 	
-	public Object visit(WtItalics n);
+	public T visit(WtItalics n);
 	
-	public Object visit(WtLinkOptionAltText n);
+	public T visit(WtLinkOptionAltText n);
 	
-	public Object visit(WtLinkOptions n);
+	public T visit(WtLinkOptions n);
 	
-	public Object visit(WtLinkTitle n);
+	public T visit(WtLinkTitle n);
 	
-	public Object visit(WtListItem n);
+	public T visit(WtListItem n);
 	
-	public Object visit(WtName n);
+	public T visit(WtName n);
 	
-	public Object visit(WtOnlyInclude n);
+	public T visit(WtOnlyInclude n);
 	
-	public Object visit(WtOrderedList n);
+	public T visit(WtOrderedList n);
 	
-	public Object visit(WtParsedWikitextPage n);
+	public T visit(WtParsedWikitextPage n);
 	
-	public Object visit(WtPreproWikitextPage n);
+	public T visit(WtPreproWikitextPage n);
 	
-	public Object visit(WtParagraph n);
+	public T visit(WtParagraph n);
 	
-	public Object visit(WtSemiPre n);
+	public T visit(WtSemiPre n);
 	
-	public Object visit(WtSemiPreLine n);
+	public T visit(WtSemiPreLine n);
 	
-	public Object visit(WtTemplateArguments n);
+	public T visit(WtTemplateArguments n);
 	
-	public Object visit(WtUnorderedList n);
+	public T visit(WtUnorderedList n);
 	
-	public Object visit(WtValue n);
+	public T visit(WtValue n);
 	
-	public Object visit(WtWhitespace n);
+	public T visit(WtWhitespace n);
 	
-	public Object visit(WtXmlAttributes n);
+	public T visit(WtXmlAttributes n);
 	
 	// WtText
 	
-	public Object visit(WtText n);
+	public T visit(WtText n);
 	
 	// WtStringNode
 	
-	public Object visit(WtIgnored n);
+	public T visit(WtIgnored n);
 	
-	public Object visit(WtLinkOptionGarbage n);
+	public T visit(WtLinkOptionGarbage n);
 	
-	public Object visit(WtNewline n);
+	public T visit(WtNewline n);
 	
-	public Object visit(WtPageName n);
+	public T visit(WtPageName n);
 	
-	public Object visit(WtTagExtensionBody n);
+	public T visit(WtTagExtensionBody n);
 	
-	public Object visit(WtXmlAttributeGarbage n);
+	public T visit(WtXmlAttributeGarbage n);
 	
-	public Object visit(WtXmlComment n);
+	public T visit(WtXmlComment n);
 }

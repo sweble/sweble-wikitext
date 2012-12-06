@@ -37,6 +37,7 @@
     <module>swc-example-dumpcruncher</module>
     <module>swc-example-serialization</module>
     <module>swc-example-xpath</module>
+    <module>swc-wom</module>
   </modules>
 
   <!-- ==[ Properties ]===================================================== -->
