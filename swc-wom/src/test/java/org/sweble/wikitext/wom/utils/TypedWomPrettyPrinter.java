@@ -5,6 +5,7 @@ import java.io.Writer;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wom.WomNode;
 
 import de.fau.cs.osr.ptk.common.PrinterInterface;
@@ -14,6 +15,13 @@ public class TypedWomPrettyPrinter
 		implements
 			PrinterInterface
 {
+	private final WikiConfig config;
+	
+	public TypedWomPrettyPrinter(WikiConfig config)
+	{
+		this.config = config;
+	}
+	
 	@Override
 	public String getPrintoutType()
 	{
@@ -25,7 +33,7 @@ public class TypedWomPrettyPrinter
 	{
 		try
 		{
-			WomPrettyPrinter.print(out, (WomNode) wom);
+			WomPrettyPrinter.print(config, out, (WomNode) wom);
 		}
 		catch (ParserConfigurationException e)
 		{

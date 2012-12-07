@@ -2,6 +2,9 @@ package org.sweble.wikitext.wom.utils;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -9,24 +12,23 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.wom.utils.StringSetMatcher.Match;
 import org.sweble.wom.WomAttribute;
 import org.sweble.wom.WomNode;
-import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 public class WomPrettyPrinter
 {
-	private static final String SWC_WOM_PREFIX = "wom";
-	
 	private static final String SWC_WOM_URI = "http://sweble.org/schema/wom";
 	
 	// =========================================================================
 	
-	public static void print(Writer out, WomNode wom) throws ParserConfigurationException, IOException
+	public static void print(WikiConfig config, Writer out, WomNode wom) throws ParserConfigurationException, IOException
 	{
-		Document doc = new WomPrettyPrinter().womToDom(wom);
+		Document doc = new WomPrettyPrinter(config).womToDom(wom);
 		
 		OutputFormat format = new OutputFormat(doc);
 		format.setLineWidth(80);
@@ -41,79 +43,126 @@ public class WomPrettyPrinter
 	
 	private final Document doc;
 	
-	public WomPrettyPrinter() throws ParserConfigurationException
+	private final Map<String, String> reverseEntityMap;
+	
+	private final StringSetMatcher reverseEntityMatcher;
+	
+	public WomPrettyPrinter(WikiConfig config) throws ParserConfigurationException
 	{
 		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 		this.doc = docBuilder.newDocument();
+		
+		Map<String, String> entities = config.getParserConfig().getXmlEntities();
+		reverseEntityMatcher = new StringSetMatcher(entities.values());
+		reverseEntityMap = new HashMap<String, String>();
+		for (Entry<String, String> e : entities.entrySet())
+			reverseEntityMap.put(e.getValue(), e.getKey());
 	}
 	
 	public Document womToDom(WomNode wom)
 	{
-		doc.appendChild(visit(wom));
+		visit(doc, wom);
 		return doc;
 	}
 	
-	private Node visit(WomNode n)
+	private void visit(Node parent, WomNode n)
 	{
 		switch (n.getNodeType())
 		{
 			case COMMENT:
-				return transformComment(n);
+				transformComment(parent, n);
+				break;
 			case DOCUMENT:
-				return transformDocument(n);
+				transformDocument(parent, n);
+				break;
 			case ELEMENT:
-				return transformElement(n);
+				transformElement(parent, n);
+				break;
 			case TEXT:
-				return transformText(n);
+				transformText(parent, n);
+				break;
 			case ATTRIBUTE:
 				// These are handled directly.
+				// FALL THROUGH!
 			default:
 				throw new InternalError();
 		}
 	}
 	
-	private Node transformDocument(WomNode n)
+	private void transformDocument(Node parent, WomNode n)
 	{
 		Element elem = doc.createElement(n.getNodeName());
 		elem.setAttribute("xmlns", SWC_WOM_URI);
 		//elem.setAttribute("xmlns:" + SWC_WOM_PREFIX, SWC_WOM_URI);
-		return transformElement(n, elem);
+		transformElement(n, elem);
+		parent.appendChild(elem);
 	}
 	
-	private Node transformElement(WomNode n)
+	private void transformElement(Node parent, WomNode n)
 	{
 		Element elem = doc.createElement(n.getNodeName());
-		return transformElement(n, elem);
+		transformElement(n, elem);
+		parent.appendChild(elem);
 	}
 	
-	private Node transformElement(WomNode n, Element elem)
+	private void transformElement(WomNode n, Element elem)
 	{
+		if (n.isPreserveSpace())
+			elem.setAttribute("xml:space", "preserve");
 		for (WomAttribute a : n.getAttributes())
-			elem.setAttributeNode(transformAttribute(a));
+			transformAttribute(elem, a);
 		for (WomNode c : n)
-			elem.appendChild(visit(c));
-		return elem;
+			visit(elem, c);
 	}
 	
-	private Attr transformAttribute(WomAttribute n)
+	private void transformAttribute(Element parent, WomAttribute n)
 	{
-		Attr attr = doc.createAttribute(n.getName());
-		attr.setValue(n.getValue());
-		return attr;
+		parent.setAttribute(n.getName(), n.getValue());
 	}
 	
-	private Node transformText(WomNode n)
+	private void transformText(Node parent, WomNode n)
 	{
+		/*
 		Element elem = doc.createElement("text");
+		//elem.setAttribute("xml:space", "preserve");
 		elem.setTextContent(n.getText());
 		return elem;
+		*/
+		
+		String text = n.getText();
+		
+		int len = text.length();
+		int from = 0;
+		int to = 0;
+		while (from < len)
+		{
+			Match m = reverseEntityMatcher.find(text, from);
+			to = (m == null) ? len : m.getPos();
+			if (to > from)
+			{
+				String part = text.substring(from, to);
+				parent.appendChild(doc.createTextNode(part));
+			}
+			if (m != null)
+			{
+				String name = reverseEntityMap.get(m.getMatch());
+				parent.appendChild(doc.createEntityReference(name));
+				to += m.getMatch().length();
+			}
+			from = to;
+		}
 	}
 	
-	private Node transformComment(WomNode n)
+	private void transformComment(Node parent, WomNode n)
 	{
+		/*
 		Element elem = doc.createElement("comment");
+		//elem.setAttribute("xml:space", "preserve");
 		elem.setTextContent(n.getValue());
 		return elem;
+		*/
+		
+		parent.appendChild(doc.createComment(n.getValue()));
 	}
 }

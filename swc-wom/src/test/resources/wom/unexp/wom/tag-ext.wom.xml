@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Tag-ext" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <tagext name="pre">
+      <attr name="attr" value="value"/>
+      <attr name="width" value="5"/>
+      <tagextbody>I'm a tag extension</tagextbody>
+    </tagext>
+  </body>
+</page>

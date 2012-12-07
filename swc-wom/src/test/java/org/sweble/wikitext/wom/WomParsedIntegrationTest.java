@@ -28,15 +28,15 @@ import org.sweble.wikitext.wom.utils.WomIntegrationTestBase;
 import de.fau.cs.osr.utils.NamedParametrized;
 
 @RunWith(value = NamedParametrized.class)
-public class WomIntegrationTest
+public class WomParsedIntegrationTest
 		extends
 			WomIntegrationTestBase
 {
 	private static final String FILTER_RX = ".*?\\.wikitext";
 	
-	private static final String INPUT_SUB_DIR = "wom/basic/wikitext";
+	private static final String INPUT_SUB_DIR = "wom/unexp/wikitext";
 	
-	private static final String EXPECTED_WOM_SUB_DIR = "wom/basic/wom";
+	private static final String EXPECTED_WOM_SUB_DIR = "wom/unexp/wom";
 	
 	// =========================================================================
 	
@@ -52,7 +52,7 @@ public class WomIntegrationTest
 	
 	// =========================================================================
 	
-	public WomIntegrationTest(String title, File inputFile)
+	public WomParsedIntegrationTest(String title, File inputFile)
 	{
 		this.inputFile = inputFile;
 	}
@@ -60,11 +60,12 @@ public class WomIntegrationTest
 	// =========================================================================
 	
 	@Test
-	public void testAstAfterPostprocessingMatchesReference() throws Exception
+	public void testAstAfterParsingWithoutExpansionMatchesReference() throws Exception
 	{
-		expandPrintAndCompare(
+		parsePrintAndCompare(
 				inputFile,
 				INPUT_SUB_DIR,
-				EXPECTED_WOM_SUB_DIR);
+				EXPECTED_WOM_SUB_DIR,
+				null);
 	}
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="Text" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
-    <text>some text</text>
+    <p bottomgap="0" topgap="0">some text</p>
   </body>
 </page>

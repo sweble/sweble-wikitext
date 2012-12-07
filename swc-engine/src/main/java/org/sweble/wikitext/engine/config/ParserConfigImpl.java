@@ -53,9 +53,6 @@ import org.sweble.wikitext.parser.utils.AstTextUtils;
 		"internalLinkPrefixPattern",
 		"internalLinkPostfixPattern",
 		"jaxbAllowedUrlProtocols",
-		/* TODO: Remove when we really don't need it any more
-		"jaxbXmlElementBehavior",
-		*/
 		"jaxbXmlEntities" })
 @XmlAccessorType(XmlAccessType.NONE)
 public class ParserConfigImpl
@@ -114,6 +111,12 @@ public class ParserConfigImpl
 		if (old != null)
 			throw new IllegalArgumentException("XML entity `" + name + "' already registered.");
 		xmlEntities.put(name, resolvesTo);
+	}
+
+	@Override
+	public Map<String, String> getXmlEntities()
+	{
+		return xmlEntities;
 	}
 	
 	@Override

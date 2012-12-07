@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Semipre" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <semipre xml:space="preserve"> First <i>line</i>
+ Second <b>line</b></semipre>
+  </body>
+</page>

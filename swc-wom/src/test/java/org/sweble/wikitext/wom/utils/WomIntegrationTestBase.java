@@ -21,6 +21,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
 import org.sweble.wikitext.engine.AstToWomVisitor;
 import org.sweble.wikitext.engine.CompilerException;
 import org.sweble.wikitext.engine.ExpansionCallback;
@@ -36,7 +37,6 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wom.WomNode;
 
-import de.fau.cs.osr.ptk.common.AstPrinter;
 import de.fau.cs.osr.ptk.common.ParserInterface;
 import de.fau.cs.osr.ptk.common.test.FileCompare;
 import de.fau.cs.osr.ptk.common.test.FileContent;
@@ -83,12 +83,74 @@ public abstract class WomIntegrationTestBase
 	
 	// =========================================================================
 	
+	public void parsePrintAndCompare(
+			File inputFile,
+			String inputSubDir,
+			String expectedSubDir,
+			ExpansionCallback callback) throws IOException, LinkTargetException, CompilerException
+	{
+		FileContent inputFileContent = new FileContent(inputFile);
+		
+		String fileTitle = inputFile.getName();
+		int i = fileTitle.lastIndexOf('.');
+		if (i != -1)
+			fileTitle = fileTitle.substring(0, i);
+		
+		PageTitle title = PageTitle.make(config, fileTitle);
+		PageId pageId = new PageId(title, -1);
+		EngCompiledPage ast = engine.parse(
+				pageId,
+				inputFileContent.getContent(),
+				callback);
+		
+		//System.out.println(AstPrinter.print((WtNode) ast.getPage()));
+		
+		AstToWomVisitor astToWomVisitor = new AstToWomVisitor(
+				config,
+				title,
+				"Mr. Tester",
+				DateTime.parse("2012-12-07T12:15:30.000+01:00"));
+		
+		WomNode wom = (WomNode) astToWomVisitor.go(ast.getPage());
+		
+		TypedWomPrettyPrinter pp = new TypedWomPrettyPrinter(config);
+		
+		String actual = printToString(wom, pp);
+		
+		File expectedFile = TestResourcesFixture.rebase(
+				inputFile,
+				inputSubDir,
+				expectedSubDir,
+				pp.getPrintoutType(),
+				true /* don't throw if file doesn't exist */);
+		
+		FileCompare cmp = new FileCompare(getResources());
+		cmp.compareWithExpectedOrGenerateExpectedFromActual(expectedFile, actual);
+	}
+	
+	// =========================================================================
+	
+	public void parsePrintAndCompare(
+			File inputFile,
+			String inputSubDir,
+			String expectedSubDir) throws IOException, LinkTargetException, CompilerException
+	{
+		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
+		
+		parsePrintAndCompare(
+				inputFile,
+				inputSubDir,
+				expectedSubDir,
+				callback);
+	}
+	
+	// =========================================================================
+	
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir,
-			ExpansionCallback callback,
-			boolean forInclusion) throws IOException, LinkTargetException, CompilerException
+			ExpansionCallback callback) throws IOException, LinkTargetException, CompilerException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
 		
@@ -104,11 +166,17 @@ public abstract class WomIntegrationTestBase
 				inputFileContent.getContent(),
 				callback);
 		
-		System.out.println(AstPrinter.print((WtNode) ast.getPage()));
+		//System.out.println(AstPrinter.print((WtNode) ast.getPage()));
 		
-		WomNode wom = (WomNode) new AstToWomVisitor(title).go(ast.getPage());
+		AstToWomVisitor astToWomVisitor = new AstToWomVisitor(
+				config,
+				title,
+				"Mr. Tester",
+				DateTime.parse("2012-12-07T12:15:30.000+01:00"));
 		
-		TypedWomPrettyPrinter pp = new TypedWomPrettyPrinter();
+		WomNode wom = (WomNode) astToWomVisitor.go(ast.getPage());
+		
+		TypedWomPrettyPrinter pp = new TypedWomPrettyPrinter(config);
 		
 		String actual = printToString(wom, pp);
 		
@@ -132,14 +200,11 @@ public abstract class WomIntegrationTestBase
 	{
 		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
 		
-		boolean forInclusion = false;
-		
 		expandPrintAndCompare(
 				inputFile,
 				inputSubDir,
 				expectedSubDir,
-				callback,
-				forInclusion);
+				callback);
 	}
 	
 	// =========================================================================

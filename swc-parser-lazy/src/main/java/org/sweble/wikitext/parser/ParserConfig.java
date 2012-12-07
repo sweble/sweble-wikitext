@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser;
 
+import java.util.Map;
+
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.parser.LinkBuilder.LinkType;
@@ -71,4 +73,6 @@ public interface ParserConfig
 	// ==[ Parsing XML elements ]===============================================
 	
 	boolean isValidXmlEntityRef(String name);
+	
+	Map<String, String> getXmlEntities();
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Native-italics-bold" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <p bottomgap="0" topgap="0">
+      <i>italics</i>
+    </p>
+    <p bottomgap="0" topgap="0">
+      <b>bold</b>
+    </p>
+    <p bottomgap="0" topgap="0">
+      <i>
+        <b>both</b>
+      </i>
+    </p>
+  </body>
+</page>

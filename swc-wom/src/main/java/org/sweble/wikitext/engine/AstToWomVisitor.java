@@ -1,5 +1,12 @@
 package org.sweble.wikitext.engine;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Map;
+
+import org.joda.time.DateTime;
+import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitor;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
@@ -7,6 +14,7 @@ import org.sweble.wikitext.engine.nodes.EngPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtBold;
+import org.sweble.wikitext.parser.nodes.WtContentNode;
 import org.sweble.wikitext.parser.nodes.WtDefinitionList;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListDef;
 import org.sweble.wikitext.parser.nodes.WtDefinitionListTerm;
@@ -72,13 +80,67 @@ import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
+import org.sweble.wikitext.parser.utils.StringConversionException;
+import org.sweble.wikitext.parser.utils.WtRtDataPrettyPrinter;
+import org.sweble.wom.WomAttribute;
+import org.sweble.wom.WomInlineElement;
+import org.sweble.wom.WomName;
 import org.sweble.wom.WomNode;
+import org.sweble.wom.WomPage;
+import org.sweble.wom.WomParagraph;
+import org.sweble.wom.WomSignatureFormat;
+import org.sweble.wom.WomTagExtBody;
+import org.sweble.wom.WomText;
+import org.sweble.wom.impl.types.AbbrImpl;
+import org.sweble.wom.impl.types.AttributeImpl;
+import org.sweble.wom.impl.types.BigImpl;
+import org.sweble.wom.impl.types.BlockquoteImpl;
+import org.sweble.wom.impl.types.BodyImpl;
+import org.sweble.wom.impl.types.BoldImpl;
+import org.sweble.wom.impl.types.BreakImpl;
+import org.sweble.wom.impl.types.CenterImpl;
+import org.sweble.wom.impl.types.CiteImpl;
+import org.sweble.wom.impl.types.CodeImpl;
 import org.sweble.wom.impl.types.CommentImpl;
+import org.sweble.wom.impl.types.DelImpl;
+import org.sweble.wom.impl.types.DfnImpl;
+import org.sweble.wom.impl.types.DivImpl;
+import org.sweble.wom.impl.types.ElementBodyImpl;
+import org.sweble.wom.impl.types.ElementImpl;
+import org.sweble.wom.impl.types.EmphasizeImpl;
+import org.sweble.wom.impl.types.FontImpl;
+import org.sweble.wom.impl.types.HorizontalRuleImpl;
+import org.sweble.wom.impl.types.InsImpl;
+import org.sweble.wom.impl.types.ItalicsImpl;
+import org.sweble.wom.impl.types.KbdImpl;
+import org.sweble.wom.impl.types.NameImpl;
+import org.sweble.wom.impl.types.NowikiImpl;
 import org.sweble.wom.impl.types.PageImpl;
+import org.sweble.wom.impl.types.ParagraphImpl;
+import org.sweble.wom.impl.types.PreImpl;
+import org.sweble.wom.impl.types.RedirectImpl;
+import org.sweble.wom.impl.types.SampImpl;
+import org.sweble.wom.impl.types.SemiPreImpl;
+import org.sweble.wom.impl.types.SignatureImpl;
+import org.sweble.wom.impl.types.SmallImpl;
+import org.sweble.wom.impl.types.SpanImpl;
+import org.sweble.wom.impl.types.StrikeImpl;
+import org.sweble.wom.impl.types.StrongImpl;
+import org.sweble.wom.impl.types.SubImpl;
+import org.sweble.wom.impl.types.SupImpl;
+import org.sweble.wom.impl.types.TagExtBodyImpl;
+import org.sweble.wom.impl.types.TagExtensionImpl;
+import org.sweble.wom.impl.types.TeletypeImpl;
 import org.sweble.wom.impl.types.TextImpl;
+import org.sweble.wom.impl.types.TransclusionImpl;
+import org.sweble.wom.impl.types.UnderlineImpl;
 import org.sweble.wom.impl.types.ValueImpl;
+import org.sweble.wom.impl.types.VarImpl;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
+import de.fau.cs.osr.utils.StringUtils;
+import de.fau.cs.osr.utils.WrappedException;
+import de.fau.cs.osr.utils.XmlGrammar;
 
 public class AstToWomVisitor
 		extends
@@ -86,61 +148,347 @@ public class AstToWomVisitor
 		implements
 			CompleteEngineVisitor<WomNode>
 {
+	private final WikiConfig config;
+	
 	private final PageTitle pageTitle;
 	
+	private final LinkedList<WomNode> stack = new LinkedList<WomNode>();
+	
+	private final String author;
+	
+	private final DateTime timestamp;
+	
+	private final Map<String, XhtmlElement> xhtmlElems;
+	
 	// =========================================================================
 	
-	public AstToWomVisitor(PageTitle pageTitle)
+	public AstToWomVisitor(
+			WikiConfig config,
+			PageTitle pageTitle,
+			String author,
+			DateTime timestamp)
 	{
+		this.config = config;
+		
 		this.pageTitle = pageTitle;
+		
+		this.author = author;
+		
+		this.timestamp = timestamp;
+		
+		this.xhtmlElems = new HashMap<String, XhtmlElement>();
+		for (XhtmlElement e : XhtmlElement.values())
+			xhtmlElems.put(e.name().toLowerCase(), e);
 	}
 	
-	// =========================================================================
+	// == [ Encoding Validator ] ===============================================
 	
 	@Override
-	public WomNode visit(WtLinkOptionLinkTarget n)
+	public WomNode visit(WtIllegalCodePoint n)
+	{
+		// The & will be escaped and therefore the whole thing will be rendered 
+		// as plain text, indicating that something unrepresentable was 
+		// processed here.
+		return appendText("&#" + n.getCodePoint() + ";");
+	}
+	
+	// == [ Tag extension ] ====================================================
+	
+	@Override
+	public WomNode visit(WtTagExtension n)
+	{
+		TagExtensionImpl e = new TagExtensionImpl(n.getName());
+		
+		for (WtNode attr : n.getXmlAttributes())
+		{
+			WomAttribute womAttr = (WomAttribute) dispatch(attr);
+			if (womAttr != null)
+				e.setTagAttribute(womAttr.getName(), womAttr.getValue());
+		}
+		
+		if (n.hasBody())
+			e.setBody((WomTagExtBody) dispatch(n.getBody()));
+		
+		return e;
+	}
+	
+	@Override
+	public WomNode visit(WtTagExtensionBody n)
+	{
+		return new TagExtBodyImpl(n.getContent());
+	}
+	
+	// == [ Template ] =========================================================
+	
+	@Override
+	public WomNode visit(WtTemplate n)
+	{
+		TransclusionImpl t = new TransclusionImpl();
+		stack.push(t);
+		t.setName((WomName) dispatch(n.getName()));
+		dispatch(n.getArgs());
+		stack.pop();
+		return t;
+	}
+	
+	@Override
+	public WomNode visit(WtTemplateArgument n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtRedirect n)
+	public WomNode visit(WtTemplateParameter n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtTableImplicitTableBody n)
+	public WomNode visit(WtTemplateArguments n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
+	// == [ XML stuff ] ========================================================
+	
 	@Override
-	public WomNode visit(WtXmlAttribute n)
+	public WomNode visit(WtXmlCharRef n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		int codePoint = n.getCodePoint();
+		if (!XmlGrammar.isChar(codePoint))
+		{
+			// The & will be escaped and therefore the whole thing will be 
+			// rendered as plain text, indicating that something unrepresentable 
+			// was processed here.
+			return appendText("&#" + codePoint + ";");
+		}
+		else
+		{
+			return appendText(new String(Character.toChars(codePoint)));
+		}
+	}
+	
+	@Override
+	public WomNode visit(WtXmlEntityRef n)
+	{
+		if (n.getResolved() == null)
+		{
+			// The & will be escaped and therefore the whole thing will be 
+			// rendered as plain text, indicating that something unrepresentable 
+			// was processed here.
+			return appendText("&" + n.getName() + ";");
+		}
+		else
+		{
+			return appendText(n.getResolved());
+		}
 	}
 	
 	@Override
 	public WomNode visit(WtXmlEmptyTag n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return convertToText(n);
 	}
 	
 	@Override
 	public WomNode visit(WtXmlStartTag n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return convertToText(n);
 	}
 	
 	@Override
 	public WomNode visit(WtImStartTag n)
+	{
+		// Drop that ****
+		return null;
+	}
+	
+	@Override
+	public WomNode visit(WtXmlEndTag n)
+	{
+		return convertToText(n);
+	}
+	
+	@Override
+	public WomNode visit(WtImEndTag n)
+	{
+		// Drop that ****
+		return null;
+	}
+	
+	@Override
+	public WomNode visit(WtXmlAttributes n)
+	{
+		WomNode parent = stack.peek();
+		for (WtNode a : n)
+		{
+			WomAttribute womAttr = (WomAttribute) dispatch(a);
+			if (womAttr != null)
+				parent.setAttributeNode(womAttr);
+		}
+		return null;
+	}
+	
+	@Override
+	public WomNode visit(WtXmlAttribute n)
+	{
+		return new AttributeImpl(n.getName(), stringify(n.getValue()));
+	}
+	
+	@Override
+	public WomNode visit(WtXmlAttributeGarbage n)
+	{
+		// Ignore garbage
+		return null;
+	}
+	
+	@Override
+	public WomNode visit(WtXmlElement n)
+	{
+		String eName = n.getName().toLowerCase();
+		XhtmlElement eType = xhtmlElems.get(eName);
+		if (eType != null)
+		{
+			switch (eType)
+			{
+			// -- Easy stuff --
+			
+				case ABBR:
+					return completeXmlElement(n, new AbbrImpl());
+				case B:
+					return completeXmlElement(n, new BoldImpl());
+				case BIG:
+					return completeXmlElement(n, new BigImpl());
+				case BLOCKQUOTE:
+					return completeXmlElement(n, new BlockquoteImpl());
+				case BR:
+					return completeXmlElement(n, new BreakImpl());
+				case CENTER:
+					return completeXmlElement(n, new CenterImpl());
+				case CITE:
+					return completeXmlElement(n, new CiteImpl());
+				case CODE:
+					return completeXmlElement(n, new CodeImpl());
+				case DEL:
+					return completeXmlElement(n, new DelImpl());
+				case DFN:
+					return completeXmlElement(n, new DfnImpl());
+				case DIV:
+					return completeXmlElement(n, new DivImpl());
+				case EM:
+					return completeXmlElement(n, new EmphasizeImpl());
+				case FONT:
+					return completeXmlElement(n, new FontImpl());
+				case HR:
+					return completeXmlElement(n, new HorizontalRuleImpl());
+				case I:
+					return completeXmlElement(n, new ItalicsImpl());
+				case INS:
+					return completeXmlElement(n, new InsImpl());
+				case KBD:
+					return completeXmlElement(n, new KbdImpl());
+				case P:
+					return completeXmlElement(n, new ParagraphImpl());
+				case S:
+					return completeXmlElement(n, new StrikeImpl());
+				case SAMP:
+					return completeXmlElement(n, new SampImpl());
+				case SMALL:
+					return completeXmlElement(n, new SmallImpl());
+				case SPAN:
+					return completeXmlElement(n, new SpanImpl());
+				case STRIKE:
+					return completeXmlElement(n, new StrikeImpl());
+				case STRONG:
+					return completeXmlElement(n, new StrongImpl());
+				case SUB:
+					return completeXmlElement(n, new SubImpl());
+				case SUP:
+					return completeXmlElement(n, new SupImpl());
+				case TT:
+					return completeXmlElement(n, new TeletypeImpl());
+				case U:
+					return completeXmlElement(n, new UnderlineImpl());
+				case VAR:
+					return completeXmlElement(n, new VarImpl());
+					
+					// -- Complex stuff --
+					
+				case PRE:
+					return handlePreElement(n);
+					
+				case CAPTION:
+				case DD:
+				case DL:
+				case DT:
+				case LI:
+				case OL:
+				case TABLE:
+				case TBODY:
+				case TD:
+				case TH:
+				case TR:
+				case UL:
+					
+					// -- Just wrong stuff --
+					
+				default:
+					return nyi();
+			}
+		}
+		else
+		{
+			ElementImpl e = new ElementImpl(eName);
+			
+			for (WtNode attr : n.getXmlAttributes())
+			{
+				WomAttribute womAttr = (WomAttribute) dispatch(attr);
+				if (womAttr != null)
+					e.setElemAttribute(womAttr.getName(), womAttr.getValue());
+			}
+			
+			if (n.hasBody())
+			{
+				stack.push(e);
+				e.setBody(new ElementBodyImpl());
+				processChildren(n.getBody(), e.getBody());
+				stack.pop();
+			}
+			
+			return e;
+		}
+	}
+	
+	private WomNode completeXmlElement(WtXmlElement n, WomNode e)
+	{
+		stack.push(e);
+		dispatch(n.getXmlAttributes());
+		if (n.hasBody())
+			onlyProcessChildren(n.getBody(), e);
+		stack.pop();
+		return e;
+	}
+	
+	private WomNode handlePreElement(WtXmlElement n)
+	{
+		return new PreImpl(stringify(n.getBody()));
+	}
+	
+	// == [ Links ] ============================================================
+	
+	@Override
+	public WomNode visit(WtRedirect n)
+	{
+		WomPage page = (WomPage) stack.getLast();
+		page.setRedirect(new RedirectImpl(n.getTarget().getContent()));
+		return null;
+	}
+	
+	@Override
+	public WomNode visit(WtUrl n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
@@ -161,76 +509,6 @@ public class AstToWomVisitor
 	}
 	
 	@Override
-	public WomNode visit(WtSection n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTable n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTableCaption n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTableCell n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTableHeader n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTableRow n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTagExtension n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTemplate n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTemplateArgument n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtXmlElement n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
 	public WomNode visit(WtImageLink n)
 	{
 		// TODO Auto-generated method stub
@@ -238,21 +516,28 @@ public class AstToWomVisitor
 	}
 	
 	@Override
-	public WomNode visit(WtTemplateParameter n)
+	public WomNode visit(WtPageName n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtHorizontalRule n)
+	public WomNode visit(WtLinkTitle n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtIllegalCodePoint n)
+	public WomNode visit(WtLinkOptions n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	@Override
+	public WomNode visit(WtLinkOptionLinkTarget n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
@@ -273,77 +558,53 @@ public class AstToWomVisitor
 	}
 	
 	@Override
-	public WomNode visit(WtPageSwitch n)
+	public WomNode visit(WtLinkOptionAltText n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtSignature n)
+	public WomNode visit(WtLinkOptionGarbage n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	// == [ Section ] ==========================================================
+	
+	@Override
+	public WomNode visit(WtSection n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtTicks n)
+	public WomNode visit(WtHeading n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	// == [ Lists ] ============================================================
+	
+	@Override
+	public WomNode visit(WtOrderedList n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtUrl n)
+	public WomNode visit(WtUnorderedList n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
 	@Override
-	public WomNode visit(WtXmlCharRef n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtXmlEndTag n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtImEndTag n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtXmlEntityRef n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtNodeList n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtBody n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtBold n)
+	public WomNode visit(WtListItem n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
@@ -370,192 +631,223 @@ public class AstToWomVisitor
 		return nyi();
 	}
 	
+	// == [ Table ] ============================================================
+	
 	@Override
-	public WomNode visit(WtHeading n)
+	public WomNode visit(WtTable n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
+	}
+	
+	@Override
+	public WomNode visit(WtTableCaption n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	@Override
+	public WomNode visit(WtTableImplicitTableBody n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	@Override
+	public WomNode visit(WtTableRow n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	@Override
+	public WomNode visit(WtTableCell n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	@Override
+	public WomNode visit(WtTableHeader n)
+	{
+		// TODO Auto-generated method stub
+		return nyi();
+	}
+	
+	// == [ Simple HTML equivalents ] ==========================================
+	
+	@Override
+	public WomNode visit(WtHorizontalRule n)
+	{
+		return processChildren(n, new HorizontalRuleImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtItalics n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new ItalicsImpl());
 	}
 	
 	@Override
-	public WomNode visit(WtLinkOptionAltText n)
+	public WomNode visit(WtBold n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new BoldImpl());
 	}
 	
-	@Override
-	public WomNode visit(WtLinkOptions n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
+	// == [ Signature ] ========================================================
 	
 	@Override
-	public WomNode visit(WtLinkTitle n)
+	public WomNode visit(WtSignature n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		WomSignatureFormat format;
+		switch (n.getTildeCount())
+		{
+			case 3:
+				format = WomSignatureFormat.USER;
+				break;
+			case 4:
+				format = WomSignatureFormat.USER_TIMESTAMP;
+				break;
+			case 5:
+				format = WomSignatureFormat.TIMESTAMP;
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid AST signature node");
+		}
+		return new SignatureImpl(format, author, timestamp);
 	}
 	
-	@Override
-	public WomNode visit(WtListItem n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtName n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtOnlyInclude n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtOrderedList n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtParsedWikitextPage n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtPreproWikitextPage n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
+	// == [ Paragraph ] ========================================================
 	
 	@Override
 	public WomNode visit(WtParagraph n)
 	{
-		ValueImpl p = new ValueImpl();
-		for (WtNode c : n)
-			p.appendChild((WomNode) dispatch(c));
-		return p; 
-		/*
-		// TODO Auto-generated method stub
-		return nyi();
-		*/
+		ParagraphImpl p = new ParagraphImpl();
+		p.setTopGap(countNewlines(n.listIterator(), false));
+		p.setBottomGap(countNewlines(n.listIterator(n.size()), true));
+		processChildren(n, p);
+		if (!p.hasChildNodes())
+			return null;
+		return p;
 	}
+	
+	private int countNewlines(ListIterator<?> i, boolean reverse)
+	{
+		int count = 0;
+		outer: while (reverse ? i.hasPrevious() : i.hasNext())
+		{
+			WtNode n = (WtNode) (reverse ? i.previous() : i.next());
+			switch (n.getNodeType())
+			{
+				case WtNode.NT_NEWLINE:
+					++count;
+					break;
+				case WtNode.NT_TEXT:
+				{
+					String text = ((WtText) n).getContent();
+					int len = text.length();
+					for (int j = 0; j < len; ++j)
+					{
+						int ch = text.charAt(reverse ? len - 1 - j : j);
+						if (ch == '\n' || ch == '\r')
+						{
+							if (j + 1 < len)
+							{
+								int ch2 = text.charAt(reverse ? len - 1 - j : j);
+								if (ch2 == '\n' || ch2 == '\r')
+									++j;
+							}
+							++count;
+						}
+						else if (!Character.isWhitespace(ch))
+						{
+							break outer;
+						}
+					}
+					break;
+				}
+				default:
+					break outer;
+			}
+		}
+		return count;
+	}
+	
+	// == [ Semi Pre ] =========================================================
 	
 	@Override
 	public WomNode visit(WtSemiPre n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new SemiPreImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtSemiPreLine n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return convertContainerNode(n);
+	}
+	
+	// == [ Containers ] =======================================================
+	
+	@Override
+	public WomNode visit(WtNodeList n)
+	{
+		return convertContainerNode(n);
 	}
 	
 	@Override
-	public WomNode visit(WtTemplateArguments n)
+	public WomNode visit(WtBody n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new BodyImpl());
 	}
 	
 	@Override
-	public WomNode visit(WtUnorderedList n)
+	public WomNode visit(WtName n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new NameImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtValue n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new ValueImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtWhitespace n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return convertContainerNode(n);
 	}
 	
 	@Override
-	public WomNode visit(WtXmlAttributes n)
+	public WomNode visit(WtOnlyInclude n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return convertContainerNode(n);
 	}
+	
+	private WomNode convertContainerNode(WtNode n)
+	{
+		WomNode parent = stack.peek();
+		onlyProcessChildren(n, parent);
+		return null;
+	}
+	
+	// == [ Text ] =============================================================
 	
 	@Override
 	public WomNode visit(WtText n)
 	{
-		return new TextImpl(n.getContent());
-	}
-	
-	@Override
-	public WomNode visit(WtIgnored n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtLinkOptionGarbage n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return appendText(n.getContent());
 	}
 	
 	@Override
 	public WomNode visit(WtNewline n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return appendText(n.getContent());
 	}
 	
-	@Override
-	public WomNode visit(WtPageName n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtTagExtensionBody n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
-	
-	@Override
-	public WomNode visit(WtXmlAttributeGarbage n)
-	{
-		// TODO Auto-generated method stub
-		return nyi();
-	}
+	// == [ Comment ] ==========================================================
 	
 	@Override
 	public WomNode visit(WtXmlComment n)
@@ -563,39 +855,143 @@ public class AstToWomVisitor
 		return new CommentImpl(n.getContent());
 	}
 	
+	// == [ Nowiki ] ===========================================================
+	
 	@Override
-	public WomNode visit(EngCompiledPage n)
+	public WomNode visit(EngNowiki n)
+	{
+		return new NowikiImpl(n.getContent());
+	}
+	
+	// == [ Error Node ] =======================================================
+	
+	@Override
+	public WomNode visit(EngSoftErrorNode n)
+	{
+		// TODO: Other options?
+		return visit((WtXmlElement) n);
+	}
+	
+	// == [ Page Switch ] ======================================================
+	
+	@Override
+	public WomNode visit(WtPageSwitch n)
 	{
 		// TODO Auto-generated method stub
 		return nyi();
 	}
 	
+	// == [ Page roots ] =======================================================
+	
 	@Override
-	public WomNode visit(EngNowiki n)
+	public WomNode visit(EngCompiledPage n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return (WomNode) dispatch(n.getPage());
 	}
 	
 	@Override
 	public WomNode visit(EngPage n)
 	{
+		return createRootNode(n);
+	}
+	
+	@Override
+	public WomNode visit(WtParsedWikitextPage n)
+	{
+		return createRootNode(n);
+	}
+	
+	@Override
+	public WomNode visit(WtPreproWikitextPage n)
+	{
+		return createRootNode(n);
+	}
+	
+	private WomNode createRootNode(WtContentNode body)
+	{
 		PageImpl page = new PageImpl(
 				pageTitle.getNamespaceAlias(),
 				null,
 				pageTitle.getDenormalizedFullTitle());
-		
-		for (WtNode c : n)
-			page.getBody().appendChild((WomNode) dispatch(c));
-		
+		stack.push(page);
+		processChildren(body, page.getBody());
+		stack.pop();
 		return page;
 	}
 	
+	// == [ Misc ] =============================================================
+	
 	@Override
-	public WomNode visit(EngSoftErrorNode n)
+	public WomNode visit(WtTicks n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return appendText(StringUtils.strrep('\'', n.getTickCount()));
+	}
+	
+	@Override
+	public WomNode visit(WtIgnored n)
+	{
+		// Ignore ignored stuff...
+		return null;
+	}
+	
+	// =========================================================================
+	
+	private WomNode processChildren(WtNode astNode, WomNode womNode)
+	{
+		stack.push(womNode);
+		onlyProcessChildren(astNode, womNode);
+		stack.pop();
+		return womNode;
+	}
+	
+	private WomNode onlyProcessChildren(WtNode astNode, WomNode womNode)
+	{
+		for (WtNode c : astNode)
+		{
+			WomNode result = (WomNode) dispatch(c);
+			if (result != null)
+				womNode.appendChild(result);
+		}
+		return womNode;
+	}
+	
+	private WomNode convertToText(WtNode n)
+	{
+		return appendText(WtRtDataPrettyPrinter.print(n));
+	}
+	
+	private WomNode appendText(String text)
+	{
+		WomNode parent = stack.peek();
+		if (parent instanceof WomParagraph || parent instanceof WomInlineElement || !text.trim().isEmpty())
+		{
+			WomNode last = parent.getLastChild();
+			if (last instanceof WomText)
+			{
+				last.appendText(text);
+				return null;
+			}
+			else
+			{
+				return new TextImpl(text);
+			}
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	private String stringify(WtContentNode value)
+	{
+		try
+		{
+			return config.createAstTextUtils().astToText(value);
+		}
+		catch (StringConversionException e)
+		{
+			throw new WrappedException(e);
+		}
 	}
 	
 	private WomNode nyi()

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="Comment" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
-    <comment> comment </comment>
+    <p bottomgap="0" topgap="0">
+      <!-- comment -->
+    </p>
   </body>
 </page>

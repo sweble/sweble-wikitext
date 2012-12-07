@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Hr" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <p bottomgap="0" topgap="0">a</p>
+    <hr/>
+    <p bottomgap="0" topgap="0">b</p>
+    <p bottomgap="1" topgap="0">x </p>
+    <hr/> y </body>
+</page>

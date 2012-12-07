@@ -17,6 +17,9 @@
 
 package org.sweble.wikitext.parser.utils;
 
+import java.util.Collections;
+import java.util.Map;
+
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
@@ -239,5 +242,11 @@ public class SimpleParserConfig
 		{
 			return null;
 		}
+	}
+	
+	@Override
+	public Map<String, String> getXmlEntities()
+	{
+		return Collections.emptyMap();
 	}
 }
