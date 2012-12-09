@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Tmpl-param" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <param>
+      <name>param</name>
+    </param>
+    <param>
+      <name>param</name>
+      <default>default value</default>
+    </param>
+    <param>
+      <name>param</name>
+      <default>default values</default>
+    </param>
+  </body>
+</page>

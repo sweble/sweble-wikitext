@@ -1,0 +1,7 @@
+{{tmpl}}
+
+{{tmpl|arg0}}
+
+{{tmpl|arg0=value}}
+
+{{{{name providing template}}|{{foo|baz}}={{bar|foobar}}}}

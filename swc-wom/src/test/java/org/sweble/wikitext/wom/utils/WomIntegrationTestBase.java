@@ -18,9 +18,9 @@ package org.sweble.wikitext.wom.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.sweble.wikitext.engine.AstToWomVisitor;
 import org.sweble.wikitext.engine.CompilerException;
@@ -29,7 +29,11 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.FullPage;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
+import org.sweble.wikitext.engine.ParserFunctionBase;
+import org.sweble.wikitext.engine.PfnArgumentMode;
 import org.sweble.wikitext.engine.WtEngine;
+import org.sweble.wikitext.engine.config.I18nAliasImpl;
+import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEn;
@@ -42,14 +46,11 @@ import de.fau.cs.osr.ptk.common.test.FileCompare;
 import de.fau.cs.osr.ptk.common.test.FileContent;
 import de.fau.cs.osr.ptk.common.test.IntegrationTestBase;
 import de.fau.cs.osr.ptk.common.test.TestResourcesFixture;
-import de.fau.cs.osr.utils.StringUtils;
 
 public abstract class WomIntegrationTestBase
 		extends
 			IntegrationTestBase<WtNode>
 {
-	private static final Logger logger = Logger.getLogger(WomIntegrationTestBase.class);
-	
 	private final WikiConfigImpl config;
 	
 	private final WtEngine engine;
@@ -61,6 +62,25 @@ public abstract class WomIntegrationTestBase
 		this.config = DefaultConfigEn.generate();
 		this.config.getCompilerConfig().setTrimTransparentBeforeParsing(false);
 		this.engine = new WtEngine(config);
+		
+		// TODO: Improve default config!
+		this.config.addI18nAlias(new I18nAliasImpl("notoc", true, Arrays.asList("NOTOC")));
+		ParserFunctionGroup pfnGroup = new ParserFunctionGroup("myGroup");
+		pfnGroup.addParserFunction(new ParserFunctionBase(config, PfnArgumentMode.EXPANDED_AND_TRIMMED_VALUES, true, "notoc")
+		{
+			private static final long serialVersionUID = 1L;
+			
+			@Override
+			public WtNode invoke(
+					WtNode template,
+					ExpansionFrame preprocessorFrame,
+					List<? extends WtNode> argsValues)
+			{
+				// TODO Auto-generated method stub
+				return null;
+			}
+		});
+		this.config.addParserFunctionGroup(pfnGroup);
 	}
 	
 	// =========================================================================
@@ -135,7 +155,7 @@ public abstract class WomIntegrationTestBase
 			String inputSubDir,
 			String expectedSubDir) throws IOException, LinkTargetException, CompilerException
 	{
-		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
+		ExpansionCallback callback = new TestExpansionCallback();
 		
 		parsePrintAndCompare(
 				inputFile,
@@ -198,7 +218,7 @@ public abstract class WomIntegrationTestBase
 			String inputSubDir,
 			String expectedSubDir) throws IOException, LinkTargetException, CompilerException
 	{
-		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
+		ExpansionCallback callback = new TestExpansionCallback();
 		
 		expandPrintAndCompare(
 				inputFile,
@@ -213,33 +233,12 @@ public abstract class WomIntegrationTestBase
 			implements
 				ExpansionCallback
 	{
-		private final String searchDir;
-		
-		public TestExpansionCallback(String searchDir)
-		{
-			this.searchDir = searchDir;
-		}
-		
 		@Override
 		public FullPage retrieveWikitext(
 				ExpansionFrame expansionFrame,
 				PageTitle pageTitle) throws Exception
 		{
-			String fileTitle = pageTitle.getNormalizedFullTitle();
-			File base = new File(getResources().getBaseDirectory(), searchDir);
-			File file = new File(base, StringUtils.safeFilename(fileTitle));
-			if (!file.exists())
-			{
-				logger.warn("Could not find page " + pageTitle + " at " + file);
-				return null;
-			}
-			else
-			{
-				logger.trace("Retrieving wikitext: " + file);
-				PageId pageId = new PageId(pageTitle, -1);
-				String text = FileUtils.readFileToString(file, "UTF8");
-				return new FullPage(pageId, text);
-			}
+			return null;
 		}
 		
 		@Override

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Template" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <transclusion>
+      <name>tmpl</name>
+    </transclusion>
+    <transclusion>
+      <name>tmpl</name>
+      <arg>
+        <value>arg0</value>
+      </arg>
+    </transclusion>
+    <transclusion>
+      <name>tmpl</name>
+      <arg>
+        <name>arg0</name>
+        <value>value</value>
+      </arg>
+    </transclusion>
+    <transclusion>
+      <name>
+        <transclusion>
+          <name>name providing template</name>
+        </transclusion>
+      </name>
+      <arg>
+        <name>
+          <transclusion>
+            <name>foo</name>
+            <arg>
+              <value>baz</value>
+            </arg>
+          </transclusion>
+        </name>
+        <value>
+          <transclusion>
+            <name>bar</name>
+            <arg>
+              <value>foobar</value>
+            </arg>
+          </transclusion>
+        </value>
+      </arg>
+    </transclusion>
+  </body>
+</page>

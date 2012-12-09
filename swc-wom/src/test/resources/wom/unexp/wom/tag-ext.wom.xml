@@ -4,7 +4,7 @@
     <tagext name="pre">
       <attr name="attr" value="value"/>
       <attr name="width" value="5"/>
-      <tagextbody>I'm a tag extension</tagextbody>
+      <tagextbody xml:space="preserve">I'm a tag extension</tagextbody>
     </tagext>
   </body>
 </page>

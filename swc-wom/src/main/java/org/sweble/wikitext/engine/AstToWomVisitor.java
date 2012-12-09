@@ -82,7 +82,10 @@ import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.WtRtDataPrettyPrinter;
+import org.sweble.wom.WomArg;
 import org.sweble.wom.WomAttribute;
+import org.sweble.wom.WomBody;
+import org.sweble.wom.WomHeading;
 import org.sweble.wom.WomInlineElement;
 import org.sweble.wom.WomName;
 import org.sweble.wom.WomNode;
@@ -91,7 +94,10 @@ import org.sweble.wom.WomParagraph;
 import org.sweble.wom.WomSignatureFormat;
 import org.sweble.wom.WomTagExtBody;
 import org.sweble.wom.WomText;
+import org.sweble.wom.WomTransclusion;
+import org.sweble.wom.WomValue;
 import org.sweble.wom.impl.types.AbbrImpl;
+import org.sweble.wom.impl.types.ArgImpl;
 import org.sweble.wom.impl.types.AttributeImpl;
 import org.sweble.wom.impl.types.BigImpl;
 import org.sweble.wom.impl.types.BlockquoteImpl;
@@ -102,6 +108,7 @@ import org.sweble.wom.impl.types.CenterImpl;
 import org.sweble.wom.impl.types.CiteImpl;
 import org.sweble.wom.impl.types.CodeImpl;
 import org.sweble.wom.impl.types.CommentImpl;
+import org.sweble.wom.impl.types.DefaultImpl;
 import org.sweble.wom.impl.types.DelImpl;
 import org.sweble.wom.impl.types.DfnImpl;
 import org.sweble.wom.impl.types.DivImpl;
@@ -109,17 +116,23 @@ import org.sweble.wom.impl.types.ElementBodyImpl;
 import org.sweble.wom.impl.types.ElementImpl;
 import org.sweble.wom.impl.types.EmphasizeImpl;
 import org.sweble.wom.impl.types.FontImpl;
+import org.sweble.wom.impl.types.HeadingImpl;
 import org.sweble.wom.impl.types.HorizontalRuleImpl;
 import org.sweble.wom.impl.types.InsImpl;
 import org.sweble.wom.impl.types.ItalicsImpl;
 import org.sweble.wom.impl.types.KbdImpl;
+import org.sweble.wom.impl.types.ListItemImpl;
 import org.sweble.wom.impl.types.NameImpl;
 import org.sweble.wom.impl.types.NowikiImpl;
+import org.sweble.wom.impl.types.OrderedListImpl;
 import org.sweble.wom.impl.types.PageImpl;
+import org.sweble.wom.impl.types.PageSwitchImpl;
 import org.sweble.wom.impl.types.ParagraphImpl;
+import org.sweble.wom.impl.types.ParamImpl;
 import org.sweble.wom.impl.types.PreImpl;
 import org.sweble.wom.impl.types.RedirectImpl;
 import org.sweble.wom.impl.types.SampImpl;
+import org.sweble.wom.impl.types.SectionImpl;
 import org.sweble.wom.impl.types.SemiPreImpl;
 import org.sweble.wom.impl.types.SignatureImpl;
 import org.sweble.wom.impl.types.SmallImpl;
@@ -134,6 +147,7 @@ import org.sweble.wom.impl.types.TeletypeImpl;
 import org.sweble.wom.impl.types.TextImpl;
 import org.sweble.wom.impl.types.TransclusionImpl;
 import org.sweble.wom.impl.types.UnderlineImpl;
+import org.sweble.wom.impl.types.UnorderedListImpl;
 import org.sweble.wom.impl.types.ValueImpl;
 import org.sweble.wom.impl.types.VarImpl;
 
@@ -234,22 +248,28 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtTemplateArgument n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		WomValue value = (WomValue) dispatch(n.getValue());
+		return n.hasName() ?
+				new ArgImpl((WomName) dispatch(n.getName()), value) :
+				new ArgImpl(value);
 	}
 	
 	@Override
 	public WomNode visit(WtTemplateParameter n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		WomName name = (WomName) dispatch(n.getName());
+		return n.hasDefaultValue() ?
+				new ParamImpl(name, processChildren(n.getDefaultValue(), new DefaultImpl())) :
+				new ParamImpl(name);
 	}
 	
 	@Override
 	public WomNode visit(WtTemplateArguments n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		WomTransclusion parent = (WomTransclusion) stack.peek();
+		for (WtNode arg : n)
+			parent.addArgument((WomArg) dispatch(arg));
+		return null;
 	}
 	
 	// == [ XML stuff ] ========================================================
@@ -576,15 +596,18 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtSection n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		SectionImpl s = new SectionImpl(n.getLevel());
+		stack.push(s);
+		s.setHeading((WomHeading) dispatch(n.getHeading()));
+		s.setBody((WomBody) dispatch(n.getBody()));
+		stack.pop();
+		return s;
 	}
 	
 	@Override
 	public WomNode visit(WtHeading n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new HeadingImpl());
 	}
 	
 	// == [ Lists ] ============================================================
@@ -592,22 +615,19 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtOrderedList n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new OrderedListImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtUnorderedList n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new UnorderedListImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtListItem n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new ListItemImpl());
 	}
 	
 	@Override
@@ -877,8 +897,7 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtPageSwitch n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return new PageSwitchImpl(n.getName());
 	}
 	
 	// == [ Page roots ] =======================================================
@@ -936,7 +955,7 @@ public class AstToWomVisitor
 	
 	// =========================================================================
 	
-	private WomNode processChildren(WtNode astNode, WomNode womNode)
+	private <T extends WomNode> T processChildren(WtNode astNode, T womNode)
 	{
 		stack.push(womNode);
 		onlyProcessChildren(astNode, womNode);
@@ -997,5 +1016,6 @@ public class AstToWomVisitor
 	private WomNode nyi()
 	{
 		throw new UnsupportedOperationException("not yet implemented");
+		//return null;
 	}
 }
