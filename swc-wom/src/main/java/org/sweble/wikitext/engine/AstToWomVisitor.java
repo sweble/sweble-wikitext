@@ -1,5 +1,7 @@
 package org.sweble.wikitext.engine;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -80,6 +82,7 @@ import org.sweble.wikitext.parser.nodes.WtXmlEmptyTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wikitext.parser.utils.StringConversionException;
 import org.sweble.wikitext.parser.utils.WtRtDataPrettyPrinter;
 import org.sweble.wom.WomArg;
@@ -118,10 +121,12 @@ import org.sweble.wom.impl.types.DivImpl;
 import org.sweble.wom.impl.types.ElementBodyImpl;
 import org.sweble.wom.impl.types.ElementImpl;
 import org.sweble.wom.impl.types.EmphasizeImpl;
+import org.sweble.wom.impl.types.ExtLinkImpl;
 import org.sweble.wom.impl.types.FontImpl;
 import org.sweble.wom.impl.types.HeadingImpl;
 import org.sweble.wom.impl.types.HorizontalRuleImpl;
 import org.sweble.wom.impl.types.InsImpl;
+import org.sweble.wom.impl.types.IntLinkImpl;
 import org.sweble.wom.impl.types.ItalicsImpl;
 import org.sweble.wom.impl.types.KbdImpl;
 import org.sweble.wom.impl.types.ListItemImpl;
@@ -148,9 +153,11 @@ import org.sweble.wom.impl.types.TagExtBodyImpl;
 import org.sweble.wom.impl.types.TagExtensionImpl;
 import org.sweble.wom.impl.types.TeletypeImpl;
 import org.sweble.wom.impl.types.TextImpl;
+import org.sweble.wom.impl.types.TitleImpl;
 import org.sweble.wom.impl.types.TransclusionImpl;
 import org.sweble.wom.impl.types.UnderlineImpl;
 import org.sweble.wom.impl.types.UnorderedListImpl;
+import org.sweble.wom.impl.types.UrlImpl;
 import org.sweble.wom.impl.types.ValueImpl;
 import org.sweble.wom.impl.types.VarImpl;
 
@@ -457,7 +464,7 @@ public class AstToWomVisitor
 					
 				case PRE:
 					return new PreImpl(stringify(n.getBody()));
-
+					
 					// -- Tables --
 					
 				case CAPTION:
@@ -519,22 +526,63 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtUrl n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		try
+		{
+			return new UrlImpl(new URL(n.getProtocol() + ":" + n.getPath()));
+		}
+		catch (MalformedURLException e)
+		{
+			throw new WrappedException(e);
+		}
 	}
 	
 	@Override
 	public WomNode visit(WtExternalLink n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		URL url;
+		try
+		{
+			WtUrl target = n.getTarget();
+			url = new URL(target.getProtocol() + ":" + target.getPath());
+		}
+		catch (MalformedURLException e)
+		{
+			throw new WrappedException(e);
+		}
+		
+		ExtLinkImpl extLink = new ExtLinkImpl(url);
+		if (n.hasTitle())
+		{
+			stack.push(extLink);
+			extLink.setTitle(new TitleImpl());
+			processChildren(n.getTitle(), extLink.getTitle());
+			stack.pop();
+		}
+		return extLink;
 	}
 	
 	@Override
 	public WomNode visit(WtInternalLink n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		PageTitle target;
+		try
+		{
+			target = PageTitle.make(config, n.getTarget().getContent());
+		}
+		catch (LinkTargetException e)
+		{
+			throw new WrappedException(e);
+		}
+		
+		IntLinkImpl intLink = new IntLinkImpl(target.getNormalizedFullTitle());
+		if (n.hasTitle())
+		{
+			stack.push(intLink);
+			intLink.setTitle(new TitleImpl());
+			processChildren(n.getTitle(), intLink.getTitle());
+			stack.pop();
+		}
+		return intLink;
 	}
 	
 	@Override
