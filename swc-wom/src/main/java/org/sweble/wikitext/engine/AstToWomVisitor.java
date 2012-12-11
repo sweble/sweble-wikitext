@@ -109,6 +109,9 @@ import org.sweble.wom.impl.types.CiteImpl;
 import org.sweble.wom.impl.types.CodeImpl;
 import org.sweble.wom.impl.types.CommentImpl;
 import org.sweble.wom.impl.types.DefaultImpl;
+import org.sweble.wom.impl.types.DefinitionListDefImpl;
+import org.sweble.wom.impl.types.DefinitionListImpl;
+import org.sweble.wom.impl.types.DefinitionListTermImpl;
 import org.sweble.wom.impl.types.DelImpl;
 import org.sweble.wom.impl.types.DfnImpl;
 import org.sweble.wom.impl.types.DivImpl;
@@ -435,23 +438,34 @@ public class AstToWomVisitor
 				case VAR:
 					return completeXmlElement(n, new VarImpl());
 					
-					// -- Complex stuff --
+					// -- Lists --
+					
+				case DD:
+					return completeXmlElement(n, new DefinitionListDefImpl());
+				case DL:
+					return completeXmlElement(n, new DefinitionListImpl());
+				case DT:
+					return completeXmlElement(n, new DefinitionListTermImpl());
+				case LI:
+					return completeXmlElement(n, new ListItemImpl());
+				case OL:
+					return completeXmlElement(n, new OrderedListImpl());
+				case UL:
+					return completeXmlElement(n, new UnorderedListImpl());
+					
+					// -- Misc --
 					
 				case PRE:
-					return handlePreElement(n);
+					return new PreImpl(stringify(n.getBody()));
+
+					// -- Tables --
 					
 				case CAPTION:
-				case DD:
-				case DL:
-				case DT:
-				case LI:
-				case OL:
 				case TABLE:
 				case TBODY:
 				case TD:
 				case TH:
 				case TR:
-				case UL:
 					
 					// -- Just wrong stuff --
 					
@@ -490,11 +504,6 @@ public class AstToWomVisitor
 			onlyProcessChildren(n.getBody(), e);
 		stack.pop();
 		return e;
-	}
-	
-	private WomNode handlePreElement(WtXmlElement n)
-	{
-		return new PreImpl(stringify(n.getBody()));
 	}
 	
 	// == [ Links ] ============================================================
@@ -633,22 +642,19 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtDefinitionList n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new DefinitionListImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtDefinitionListDef n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new DefinitionListDefImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtDefinitionListTerm n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new DefinitionListTermImpl());
 	}
 	
 	// == [ Table ] ============================================================
