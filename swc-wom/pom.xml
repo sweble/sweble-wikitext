@@ -101,6 +101,7 @@
             <exclude>src/site/site.xml</exclude>
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
+            <exclude>src/test/resources/**</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>dependencies</exclude>
             <exclude>LICENSE</exclude>

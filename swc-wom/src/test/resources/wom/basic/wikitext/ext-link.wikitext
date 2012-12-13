@@ -1,3 +1,5 @@
 [http://example.com Title]
 
 [http://example.com]
+
+[//example.com]

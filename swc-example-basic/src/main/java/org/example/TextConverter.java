@@ -218,8 +218,11 @@ public class TextConverter
 	
 	public void visit(WtUrl wtUrl)
 	{
-		write(wtUrl.getProtocol());
-		write(':');
+		if (!wtUrl.getProtocol().isEmpty())
+		{
+			write(wtUrl.getProtocol());
+			write(':');
+		}
 		write(wtUrl.getPath());
 	}
 	

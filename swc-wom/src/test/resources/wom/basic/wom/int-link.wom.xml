@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Int-link" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <p bottomgap="0" topgap="0">
+      <intlink target="Page_title">
+        <title>Link title</title>
+      </intlink>
+    </p>
+    <p bottomgap="0" topgap="0">
+      <intlink target="Page_title"/>
+    </p>
+  </body>
+</page>

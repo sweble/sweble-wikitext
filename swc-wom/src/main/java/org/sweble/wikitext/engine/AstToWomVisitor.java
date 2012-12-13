@@ -1,7 +1,23 @@
+/**
+ * Copyright 2011 The Open Source Research Group,
+ *                University of Erlangen-Nürnberg
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.sweble.wikitext.engine;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -28,6 +44,10 @@ import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint;
 import org.sweble.wikitext.parser.nodes.WtImEndTag;
 import org.sweble.wikitext.parser.nodes.WtImStartTag;
 import org.sweble.wikitext.parser.nodes.WtImageLink;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
+import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
 import org.sweble.wikitext.parser.nodes.WtInternalLink;
 import org.sweble.wikitext.parser.nodes.WtItalics;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText;
@@ -89,6 +109,9 @@ import org.sweble.wom.WomArg;
 import org.sweble.wom.WomAttribute;
 import org.sweble.wom.WomBody;
 import org.sweble.wom.WomHeading;
+import org.sweble.wom.WomImageFormat;
+import org.sweble.wom.WomImageHAlign;
+import org.sweble.wom.WomImageVAlign;
 import org.sweble.wom.WomInlineElement;
 import org.sweble.wom.WomName;
 import org.sweble.wom.WomNode;
@@ -97,6 +120,7 @@ import org.sweble.wom.WomParagraph;
 import org.sweble.wom.WomSignatureFormat;
 import org.sweble.wom.WomTagExtBody;
 import org.sweble.wom.WomText;
+import org.sweble.wom.WomTitle;
 import org.sweble.wom.WomTransclusion;
 import org.sweble.wom.WomValue;
 import org.sweble.wom.impl.types.AbbrImpl;
@@ -125,6 +149,8 @@ import org.sweble.wom.impl.types.ExtLinkImpl;
 import org.sweble.wom.impl.types.FontImpl;
 import org.sweble.wom.impl.types.HeadingImpl;
 import org.sweble.wom.impl.types.HorizontalRuleImpl;
+import org.sweble.wom.impl.types.ImageCaptionImpl;
+import org.sweble.wom.impl.types.ImageImpl;
 import org.sweble.wom.impl.types.InsImpl;
 import org.sweble.wom.impl.types.IntLinkImpl;
 import org.sweble.wom.impl.types.ItalicsImpl;
@@ -149,6 +175,12 @@ import org.sweble.wom.impl.types.StrikeImpl;
 import org.sweble.wom.impl.types.StrongImpl;
 import org.sweble.wom.impl.types.SubImpl;
 import org.sweble.wom.impl.types.SupImpl;
+import org.sweble.wom.impl.types.TableBodyImpl;
+import org.sweble.wom.impl.types.TableCaptionImpl;
+import org.sweble.wom.impl.types.TableCellImpl;
+import org.sweble.wom.impl.types.TableHeaderImpl;
+import org.sweble.wom.impl.types.TableImpl;
+import org.sweble.wom.impl.types.TableRowImpl;
 import org.sweble.wom.impl.types.TagExtBodyImpl;
 import org.sweble.wom.impl.types.TagExtensionImpl;
 import org.sweble.wom.impl.types.TeletypeImpl;
@@ -320,13 +352,13 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtXmlEmptyTag n)
 	{
-		return convertToText(n);
+		return convertToTextNode(n);
 	}
 	
 	@Override
 	public WomNode visit(WtXmlStartTag n)
 	{
-		return convertToText(n);
+		return convertToTextNode(n);
 	}
 	
 	@Override
@@ -339,7 +371,7 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtXmlEndTag n)
 	{
-		return convertToText(n);
+		return convertToTextNode(n);
 	}
 	
 	@Override
@@ -467,12 +499,18 @@ public class AstToWomVisitor
 					
 					// -- Tables --
 					
-				case CAPTION:
 				case TABLE:
+					return tableFromElement(n);
+				case CAPTION:
+					return tableCaptionFromElement(n);
 				case TBODY:
-				case TD:
-				case TH:
+					return tableBodyFromElement(n);
 				case TR:
+					return completeXmlElement(n, new TableRowImpl());
+				case TD:
+					return completeXmlElement(n, new TableCellImpl());
+				case TH:
+					return completeXmlElement(n, new TableHeaderImpl());
 					
 					// -- Just wrong stuff --
 					
@@ -503,7 +541,7 @@ public class AstToWomVisitor
 		}
 	}
 	
-	private WomNode completeXmlElement(WtXmlElement n, WomNode e)
+	private <T extends WomNode> T completeXmlElement(WtXmlElement n, T e)
 	{
 		stack.push(e);
 		dispatch(n.getXmlAttributes());
@@ -511,6 +549,31 @@ public class AstToWomVisitor
 			onlyProcessChildren(n.getBody(), e);
 		stack.pop();
 		return e;
+	}
+	
+	private WomNode tableFromElement(WtXmlElement n)
+	{
+		TableImpl table = new TableImpl();
+		stack.push(table);
+		dispatch(n.getXmlAttributes());
+		if (n.hasBody())
+			iterate(n.getBody());
+		stack.pop();
+		return table;
+	}
+	
+	private WomNode tableCaptionFromElement(WtXmlElement n)
+	{
+		TableCaptionImpl caption = completeXmlElement(n, new TableCaptionImpl());
+		((TableImpl) stack.peek()).setCaption(caption);
+		return caption;
+	}
+	
+	private WomNode tableBodyFromElement(WtXmlElement n)
+	{
+		TableBodyImpl body = completeXmlElement(n, new TableBodyImpl());
+		((TableImpl) stack.peek()).setBody(body);
+		return body;
 	}
 	
 	// == [ Links ] ============================================================
@@ -526,36 +589,19 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtUrl n)
 	{
-		try
-		{
-			return new UrlImpl(new URL(n.getProtocol() + ":" + n.getPath()));
-		}
-		catch (MalformedURLException e)
-		{
-			throw new WrappedException(e);
-		}
+		return new UrlImpl(urlNodeToUrl(n));
 	}
 	
 	@Override
 	public WomNode visit(WtExternalLink n)
 	{
-		URL url;
-		try
-		{
-			WtUrl target = n.getTarget();
-			url = new URL(target.getProtocol() + ":" + target.getPath());
-		}
-		catch (MalformedURLException e)
-		{
-			throw new WrappedException(e);
-		}
+		URI url = urlNodeToUrl(n.getTarget());
 		
 		ExtLinkImpl extLink = new ExtLinkImpl(url);
 		if (n.hasTitle())
 		{
 			stack.push(extLink);
-			extLink.setTitle(new TitleImpl());
-			processChildren(n.getTitle(), extLink.getTitle());
+			extLink.setLinkTitle((WomTitle) dispatch(n.getTitle()));
 			stack.pop();
 		}
 		return extLink;
@@ -574,12 +620,15 @@ public class AstToWomVisitor
 			throw new WrappedException(e);
 		}
 		
-		IntLinkImpl intLink = new IntLinkImpl(target.getNormalizedFullTitle());
+		String t = target.getNormalizedFullTitle();
+		if (target.getFragment() != null)
+			t += "#" + target.getFragment();
+		
+		IntLinkImpl intLink = new IntLinkImpl(t);
 		if (n.hasTitle())
 		{
 			stack.push(intLink);
-			intLink.setTitle(new TitleImpl());
-			processChildren(n.getTitle(), intLink.getTitle());
+			intLink.setLinkTitle((WomTitle) dispatch(n.getTitle()));
 			stack.pop();
 		}
 		return intLink;
@@ -588,64 +637,165 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtImageLink n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		ImageImpl img = new ImageImpl(n.getTarget().getContent());
+		img.setFormat(mapImgFormat(n.getFormat()));
+		img.setBorder(n.getBorder());
+		img.setHAlign(mapImgHAlign(n.getHAlign()));
+		img.setVAlign(mapImgVAlign(n.getVAlign()));
+		if (n.getWidth() >= 0)
+			img.setWidth(n.getWidth());
+		if (n.getHeight() >= 0)
+			img.setHeight(n.getHeight());
+		img.setUpright(n.getUpright());
+		setImgLink(img, n.getLink());
+		if (n.hasAlt())
+		{
+			img.setAlt(convertContentToText(n.getAlt()));
+		}
+		if (n.hasTitle())
+		{
+			stack.push(img);
+			img.setCaption(processChildren(n.getTitle(), new ImageCaptionImpl()));
+			stack.pop();
+		}
+		return img;
+	}
+	
+	private void setImgLink(ImageImpl img, ImageLinkTarget link)
+	{
+		switch (link.getTargetType())
+		{
+			case DEFAULT:
+				// Nothing to do
+				break;
+			case NO_LINK:
+				img.setIntLink("");
+				break;
+			case PAGE:
+				img.setIntLink(((WtPageName) link.getTarget()).getContent());
+				break;
+			case URL:
+				img.setExtLink(urlNodeToUrl((WtUrl) link.getTarget()));
+				break;
+			default:
+				throw new InternalError();
+		}
+	}
+	
+	private WomImageVAlign mapImgVAlign(ImageVertAlign vAlign)
+	{
+		switch (vAlign)
+		{
+			case BASELINE:
+				return WomImageVAlign.BASELINE;
+			case BOTTOM:
+				return WomImageVAlign.BOTTOM;
+			case MIDDLE:
+				return WomImageVAlign.MIDDLE;
+			case SUB:
+				return WomImageVAlign.SUB;
+			case SUPER:
+				return WomImageVAlign.SUPER;
+			case TEXT_BOTTOM:
+				return WomImageVAlign.TEXT_BOTTOM;
+			case TEXT_TOP:
+				return WomImageVAlign.TEXT_TOP;
+			case TOP:
+				return WomImageVAlign.TOP;
+			default:
+				throw new InternalError();
+		}
+	}
+	
+	private WomImageHAlign mapImgHAlign(ImageHorizAlign hAlign)
+	{
+		switch (hAlign)
+		{
+			case CENTER:
+				return WomImageHAlign.CENTER;
+			case LEFT:
+				return WomImageHAlign.LEFT;
+			case NONE:
+				return WomImageHAlign.NONE;
+			case RIGHT:
+				return WomImageHAlign.RIGHT;
+			case UNSPECIFIED:
+				return WomImageHAlign.DEFAULT;
+			default:
+				throw new InternalError();
+		}
+	}
+	
+	private WomImageFormat mapImgFormat(ImageViewFormat format)
+	{
+		switch (format)
+		{
+			case FRAME:
+				return WomImageFormat.FRAME;
+			case FRAMELESS:
+				return WomImageFormat.FRAMELESS;
+			case THUMBNAIL:
+				return WomImageFormat.THUMBNAIL;
+			case UNRESTRAINED:
+				return WomImageFormat.UNRESTRAINED;
+			default:
+				throw new InternalError();
+		}
 	}
 	
 	@Override
 	public WomNode visit(WtPageName n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtPageName
+		throw new InternalError();
 	}
 	
 	@Override
 	public WomNode visit(WtLinkTitle n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n, new TitleImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtLinkOptions n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtLinkOptions
+		throw new InternalError();
 	}
 	
 	@Override
 	public WomNode visit(WtLinkOptionLinkTarget n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtLinkOptionLinkTarget
+		throw new InternalError();
 	}
 	
 	@Override
 	public WomNode visit(WtLinkOptionKeyword n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtLinkOptionKeyword
+		throw new InternalError();
 	}
 	
 	@Override
 	public WomNode visit(WtLinkOptionResize n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtLinkOptionResize
+		throw new InternalError();
 	}
 	
 	@Override
 	public WomNode visit(WtLinkOptionAltText n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtLinkOptionAltText
+		throw new InternalError();
 	}
 	
 	@Override
 	public WomNode visit(WtLinkOptionGarbage n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		// Thou shalt not dispatch to WtLinkOptionGarbage
+		throw new InternalError();
 	}
 	
 	// == [ Section ] ==========================================================
@@ -710,43 +860,45 @@ public class AstToWomVisitor
 	@Override
 	public WomNode visit(WtTable n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		TableImpl table = new TableImpl();
+		stack.push(table);
+		iterate(n.getBody());
+		stack.pop();
+		return table;
 	}
 	
 	@Override
 	public WomNode visit(WtTableCaption n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		TableCaptionImpl caption = processChildren(n.getBody(), new TableCaptionImpl());
+		((TableImpl) stack.peek()).setCaption(caption);
+		return caption;
 	}
 	
 	@Override
 	public WomNode visit(WtTableImplicitTableBody n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		TableBodyImpl body = processChildren(n.getBody(), new TableBodyImpl());
+		((TableImpl) stack.peek()).setBody(body);
+		return body;
 	}
 	
 	@Override
 	public WomNode visit(WtTableRow n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n.getBody(), new TableRowImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtTableCell n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n.getBody(), new TableCellImpl());
 	}
 	
 	@Override
 	public WomNode visit(WtTableHeader n)
 	{
-		// TODO Auto-generated method stub
-		return nyi();
+		return processChildren(n.getBody(), new TableHeaderImpl());
 	}
 	
 	// == [ Simple HTML equivalents ] ==========================================
@@ -982,10 +1134,18 @@ public class AstToWomVisitor
 	
 	private WomNode createRootNode(WtContentNode body)
 	{
+		String title = pageTitle.getDenormalizedTitle();
+		String path = null;
+		int i = title.lastIndexOf('/');
+		if (i != -1)
+		{
+			path = title.substring(0, i);
+			title = title.substring(i + 1);
+		}
 		PageImpl page = new PageImpl(
 				pageTitle.getNamespaceAlias(),
-				null,
-				pageTitle.getDenormalizedFullTitle());
+				path,
+				title);
 		stack.push(page);
 		processChildren(body, page.getBody());
 		stack.pop();
@@ -1028,9 +1188,21 @@ public class AstToWomVisitor
 		return womNode;
 	}
 	
-	private WomNode convertToText(WtNode n)
+	private WomNode convertToTextNode(WtNode n)
 	{
-		return appendText(WtRtDataPrettyPrinter.print(n));
+		return appendText(convertToText(n));
+	}
+	
+	private String convertToText(WtNode n)
+	{
+		return WtRtDataPrettyPrinter.print(n);
+	}
+	
+	private String convertContentToText(WtContentNode n)
+	{
+		WtNodeList list = config.getNodeFactory().list();
+		n.exchange(list);
+		return convertToText(list);
 	}
 	
 	private WomNode appendText(String text)
@@ -1062,6 +1234,21 @@ public class AstToWomVisitor
 			return config.createAstTextUtils().astToText(value);
 		}
 		catch (StringConversionException e)
+		{
+			throw new WrappedException(e);
+		}
+	}
+	
+	private URI urlNodeToUrl(WtUrl urlNode)
+	{
+		try
+		{
+			if (urlNode.getProtocol().isEmpty())
+				return new URI(urlNode.getPath());
+			
+			return new URI(urlNode.getProtocol() + ":" + urlNode.getPath());
+		}
+		catch (URISyntaxException e)
 		{
 			throw new WrappedException(e);
 		}

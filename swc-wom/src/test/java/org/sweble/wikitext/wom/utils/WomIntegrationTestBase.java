@@ -179,6 +179,11 @@ public abstract class WomIntegrationTestBase
 		if (i != -1)
 			fileTitle = fileTitle.substring(0, i);
 		
+		if (fileTitle.startsWith("raw-"))
+			fileTitle = fileTitle.substring("raw-".length());
+		if (fileTitle.startsWith("exp-"))
+			fileTitle = fileTitle.substring("exp-".length());
+		
 		PageTitle title = PageTitle.make(config, fileTitle);
 		PageId pageId = new PageId(title, -1);
 		EngCompiledPage ast = engine.postprocess(

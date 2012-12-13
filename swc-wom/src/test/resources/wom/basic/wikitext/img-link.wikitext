@@ -1,0 +1,21 @@
+[[Image:Test]]
+
+[[Image:Test|alt=Alt Text]]
+
+[[Image:Test|alt=Alt Text|Title]]
+
+[[Image:Test|link=|Title]]
+
+[[Image:Test|link=http://example.com|Title]]
+
+[[Image:Test|link=Some Page|Title]]
+
+[[Image:Test|alt=Alt Text|upright|border|Title]]
+
+[[Image:Test|alt=Alt Text|frame|bottom|right|upright|border|Title]]
+
+[[Image:Test|alt=Alt Text|128px|Title]]
+
+[[Image:Test|alt=Alt Text|x512px|Title]]
+
+[[Image:Test|alt=Alt Text|128x512px|Title]]

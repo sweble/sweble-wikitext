@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page title="Heading" version="1.0" xmlns="http://sweble.org/schema/wom">
+  <body>
+    <section level="2">
+      <heading> Heading </heading>
+      <body>
+        <p bottomgap="0" topgap="0">Body</p>
+      </body>
+    </section>
+  </body>
+</page>
