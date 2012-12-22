@@ -295,7 +295,7 @@ public class MassExpansionTest
 		for (String filename : testCaseFiles)
 		{
 			File file = new File(testCasesDir, filename);
-			String content = FileUtils.readFileToString(file);
+			String content = FileUtils.readFileToString(file, "UTF-8");
 			
 			testCases.add(new Object[] {
 					filename,

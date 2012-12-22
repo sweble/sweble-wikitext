@@ -84,7 +84,7 @@ public class MediaWikiTestGenerator
 			List<TestDesc> tests,
 			Map<String, String> articles) throws IOException
 	{
-		String src = FileUtils.readFileToString(inputFile);
+		String src = FileUtils.readFileToString(inputFile, "UTF-8");
 		
 		Pattern p = Pattern.compile(
 				"(?m)^[ \t]*!![ \t]*(\\w+):?[ \t]*(?:\r\n?|\n)");
