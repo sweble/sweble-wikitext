@@ -111,7 +111,7 @@ import de.fau.cs.osr.utils.FmtNotYetImplementedError;
 import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.visitor.VisitingException;
 
-public final class HtmlRenderer
+public class HtmlRenderer
 		extends
 			HtmlRendererBase
 		implements
@@ -403,9 +403,11 @@ public final class HtmlRenderer
 		
 		// -- generate html --
 		
-		if (isImage &&
+		boolean hasThumbFrame = isImage &&
 				n.getFormat() == ImageViewFormat.THUMBNAIL ||
-				n.getHAlign() != ImageHorizAlign.UNSPECIFIED)
+				n.getHAlign() != ImageHorizAlign.UNSPECIFIED;
+		
+		if (hasThumbFrame)
 		{
 			String align = "";
 			switch (n.getHAlign())
@@ -514,8 +516,7 @@ public final class HtmlRenderer
 			}
 		}
 		
-		if (n.getFormat() == ImageViewFormat.THUMBNAIL ||
-				n.getHAlign() != ImageHorizAlign.NONE)
+		if (hasThumbFrame)
 		{
 			p.decIndent();
 			p.indentln("</div>");
@@ -1198,7 +1199,7 @@ public final class HtmlRenderer
 		return makeTitleFromNodes(n.getAlt());
 	}
 	
-	private String makeImageCaption(WtImageLink n)
+	protected String makeImageCaption(WtImageLink n)
 	{
 		return makeTitleFromNodes(n.getTitle());
 	}
@@ -1218,7 +1219,7 @@ public final class HtmlRenderer
 		return target.getDenormalizedFullTitle();
 	}
 	
-	private String makeImageTitle(WtImageLink n, PageTitle target)
+	protected String makeImageTitle(WtImageLink n, PageTitle target)
 	{
 		return target.getDenormalizedFullTitle();
 	}
@@ -1236,7 +1237,7 @@ public final class HtmlRenderer
 		return targetStr;
 	}
 	
-	private static String makeUrl(PageTitle target)
+	protected static String makeUrl(PageTitle target)
 	{
 		String page = UrlEncoding.WIKI.encode(target.getNormalizedFullTitle());
 		String f = target.getFragment();
@@ -1245,7 +1246,7 @@ public final class HtmlRenderer
 		return page + "#" + UrlEncoding.WIKI.encode(f);
 	}
 	
-	private String makeUrl(WtUrl linkUrl)
+	protected String makeUrl(WtUrl linkUrl)
 	{
 		if (linkUrl.getProtocol() == "")
 			return linkUrl.getPath();
@@ -1458,23 +1459,23 @@ public final class HtmlRenderer
 	
 	// =========================================================================
 	
-	private static final String LOCAL_URL = "/mediawiki/index.php/";
+	protected static final String LOCAL_URL = "/mediawiki/index.php/";
 	
-	private static final Logger logger = Logger.getLogger(HtmlRenderer.class);
+	protected static final Logger logger = Logger.getLogger(HtmlRenderer.class);
 	
-	private static final Set<String> blockElements = new HashSet<String>();
+	protected static final Set<String> blockElements = new HashSet<String>();
 	
-	private final WikiConfig wikiConfig;
+	protected final WikiConfig wikiConfig;
 	
-	private final PageTitle pageTitle;
+	protected final PageTitle pageTitle;
 	
-	private final EngineNodeFactory nf;
+	protected final EngineNodeFactory nf;
 	
-	private final EngineAstTextUtils tu;
+	protected final EngineAstTextUtils tu;
 	
-	private final HtmlRendererCallback callback;
+	protected final HtmlRendererCallback callback;
 	
-	private int inPre = 0;
+	protected int inPre = 0;
 	
 	static
 	{
