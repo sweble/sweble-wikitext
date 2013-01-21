@@ -58,6 +58,8 @@ import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.utils.StopWatch;
 
 public class WtEngine
+		implements
+			IWtEngine
 {
 	private static final Logger logger = Logger.getLogger(WtEngine.class);
 	
