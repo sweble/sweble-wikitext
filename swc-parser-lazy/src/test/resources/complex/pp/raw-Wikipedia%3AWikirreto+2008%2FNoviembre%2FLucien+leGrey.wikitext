@@ -1,0 +1,5766 @@
+<!-- LAS DOS SIGUIENTES LÍNEAS SON IMPRESCINDIBLES -->
+
+<noinclude><small>{{Wikipedia:Wikirreto 2008/Avisos}}</small></noinclude>
+
+==Tabla==
+
+{| class="sortable wikitable"
+ ! Nº 
+ ! Nombre de artículo
+ ! Tipo de trabajo
+ ! Kb finales
+ ! Puntuación
+ |-
+ | 1
+ | [[Buergeria buergeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 2
+ | [[Buergeria japonica]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 3
+ | [[Buergeria oxycephalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 4
+ | [[Buergeria robusta]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 5
+ | [[Buergeriinae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 6
+ | [[Chirixalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 7
+ | [[Chirixalus ananjevae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 8
+ | [[Chirixalus cherrapunjiae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 9
+ | [[Chirixalus doriae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 10
+ | [[Chirixalus dudhwaensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 11
+ | [[Chirixalus hansenae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 12
+ | [[Chirixalus laevis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 13
+ | [[Chirixalus nongkhorensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 14
+ | [[Chirixalus palpebralis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 15
+ | [[Chirixalus punctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 16
+ | [[Chirixalus shyamrupus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 17
+ | [[Chirixalus simus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 18
+ | [[Chirixalus vittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 19
+ | [[Chiromantis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 20
+ | [[Chiromantis kelleri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 21
+ | [[Chiromantis petersii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 22
+ | [[Chiromantis rufescens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 23
+ | [[Chiromantis xerampelina]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 24
+ | [[Kurixalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 25
+ | [[Kurixalus eiffingeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 26
+ | [[Kurixalus idiootocus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 27
+ | [[Nyctixalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 28
+ | [[Nyctixalus margaritifer]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 29
+ | [[Nyctixalus moloch]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 30
+ | [[Nyctixalus pictus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 31
+ | [[Nyctixalus spinosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 32
+ | [[Philautus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 33
+ | [[Philautus abditus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 34
+ | [[Philautus abundus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 35
+ | [[Philautus acutirostris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 36
+ | [[Philautus acutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 37
+ | [[Philautus adspersus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 38
+ | [[Philautus albopunctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 39
+ | [[Philautus alto]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 40
+ | [[Philautus amoenus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 41
+ | [[Philautus andersoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 42
+ | [[Philautus annandalii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 43
+ | [[Philautus asankai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 44
+ | [[Philautus aurantium]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 45
+ | [[Philautus auratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 46
+ | [[Philautus aurifasciatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 47
+ | [[Philautus banaensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 48
+ | [[Philautus beddomii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 49
+ | [[Philautus bombayensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 50
+ | [[Philautus bunitus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 51
+ | [[Philautus caeruleus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 52
+ | [[Philautus cardamonus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 53
+ | [[Philautus carinensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 54
+ | [[Philautus cavirostris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 55
+ | [[Philautus chalazodes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 56
+ | [[Philautus charius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 57
+ | [[Philautus cinerascens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 58
+ | [[Philautus cornutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 59
+ | [[Philautus cuspis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 60
+ | [[Philautus decoris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 61
+ | [[Philautus dimbullae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 62
+ | [[Philautus disgregus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 63
+ | [[Philautus dubius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 64
+ | [[Philautus erythrophthalmus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 65
+ | [[Philautus eximius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 66
+ | [[Philautus extirpo]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 67
+ | [[Philautus femoralis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 68
+ | [[Philautus fergusonianus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 69
+ | [[Philautus flaviventris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 70
+ | [[Philautus folicola]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 71
+ | [[Philautus frankenbergi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 72
+ | [[Philautus fulvus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 73
+ | [[Philautus garo]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 74
+ | [[Philautus glandulosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 75
+ | [[Philautus gracilipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 76
+ | [[Philautus griet]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 77
+ | [[Philautus gryllus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 78
+ | [[Philautus gunungensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 79
+ | [[Philautus hallidayi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 80
+ | [[Philautus halyi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 81
+ | [[Philautus hoffmanni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 82
+ | [[Philautus hoipolloi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 83
+ | [[Philautus hosii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 84
+ | [[Philautus hypomelas]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 85
+ | [[Philautus ingeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 86
+ | [[Philautus jacobsoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 87
+ | [[Philautus jerdonii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 88
+ | [[Philautus jinxiuensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 89
+ | [[Philautus kempiae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 90
+ | [[Philautus kerangae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 91
+ | [[Philautus leitensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 92
+ | [[Philautus leucorhinus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 93
+ | [[Philautus limbus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 94
+ | [[Philautus longchuanensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 95
+ | [[Philautus longicrus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 96
+ | [[Philautus lunatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 97
+ | [[Philautus luteolus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 98
+ | [[Philautus macropus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 99
+ | [[Philautus malcolmsmithi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 100
+ | [[Philautus maosonensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 101
+ | [[Philautus medogensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 102
+ | [[Philautus menglaensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 103
+ | [[Philautus microdiscus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 104
+ | [[Philautus microtympanum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 105
+ | [[Philautus mittermeieri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 106
+ | [[Philautus mjobergi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 107
+ | [[Philautus mooreorum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 108
+ | [[Philautus namdaphaensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 109
+ | [[Philautus nanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 110
+ | [[Philautus nasutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 111
+ | [[Philautus nemus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 112
+ | [[Philautus ocellatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 113
+ | [[Philautus ocularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 114
+ | [[Philautus odontotarsus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 115
+ | [[Philautus oxyrhynchus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 116
+ | [[Philautus pallidipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 117
+ | [[Philautus papillosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 118
+ | [[Philautus parvulus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 119
+ | [[Philautus petersi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 120
+ | [[Philautus petilus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 121
+ | [[Philautus pleurotaenia]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 122
+ | [[Philautus poecilius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 123
+ | [[Philautus poppiae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 124
+ | [[Philautus popularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 125
+ | [[Philautus procax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 126
+ | [[Philautus refugii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 127
+ | [[Philautus regius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 128
+ | [[Philautus reticulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 129
+ | [[Philautus rhododiscus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 130
+ | [[Philautus rugatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 131
+ | [[Philautus rus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 132
+ | [[Philautus sanctisilvaticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 133
+ | [[Philautus sarasinorum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 134
+ | [[Philautus saueri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 135
+ | [[Philautus schmackeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 136
+ | [[Philautus schmarda]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 137
+ | [[Philautus semiruber]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 138
+ | [[Philautus shillongensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 139
+ | [[Philautus signatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 140
+ | [[Philautus silus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 141
+ | [[Philautus silvaticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 142
+ | [[Philautus simba]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 143
+ | [[Philautus similipalensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 144
+ | [[Philautus similis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 145
+ | [[Philautus sordidus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 146
+ | [[Philautus steineri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 147
+ | [[Philautus stellatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 148
+ | [[Philautus stictomerus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 149
+ | [[Philautus stuarti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 150
+ | [[Philautus supercornutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 151
+ | [[Philautus surdus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 152
+ | [[Philautus surrufus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 153
+ | [[Philautus tectus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 154
+ | [[Philautus temporalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 155
+ | [[Philautus terebrans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 156
+ | [[Philautus tinniens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 157
+ | [[Philautus travancoricus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 158
+ | [[Philautus tuberohumerus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 159
+ | [[Philautus tytthus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 160
+ | [[Philautus umbra]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 161
+ | [[Philautus variabilis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 162
+ | [[Philautus vermiculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 163
+ | [[Philautus viridis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 164
+ | [[Philautus vittiger]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 165
+ | [[Philautus worcesteri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 166
+ | [[Philautus wynaadensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 167
+ | [[Philautus zal]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 168
+ | [[Philautus zimmeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 169
+ | [[Philautus zorro]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 170
+ | [[Polypedates]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 171
+ | [[Polypedates chenfui]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 172
+ | [[Polypedates colletti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 173
+ | [[Polypedates cruciger]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 174
+ | [[Polypedates dorsoviridis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 175
+ | [[Polypedates dugritei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 176
+ | [[Polypedates eques]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 177
+ | [[Polypedates fastigo]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 178
+ | [[Polypedates gongshanensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 179
+ | [[Polypedates hecticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 180
+ | [[Polypedates hungfuensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 181
+ | [[Polypedates insularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 182
+ | [[Polypedates leucomystax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 183
+ | [[Polypedates longinasus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 184
+ | [[Polypedates macrotis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 185
+ | [[Polypedates maculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 186
+ | [[Polypedates megacephalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 187
+ | [[Polypedates mutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 188
+ | [[Polypedates naso]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 189
+ | [[Polypedates nigropunctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 190
+ | [[Polypedates omeimontis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 191
+ | [[Polypedates otilophus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 192
+ | [[Polypedates pseudocruciger]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 193
+ | [[Polypedates puerensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 194
+ | [[Polypedates taeniatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 195
+ | [[Polypedates yaoshanensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 196
+ | [[Polypedates zed]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 197
+ | [[Polypedates zhaojuensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 198
+ | [[Rhacophorinae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 199
+ | [[Rhacophorus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 200
+ | [[Rhacophorus achantharrhena]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 201
+ | [[Rhacophorus angulirostris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 202
+ | [[Rhacophorus annamensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 203
+ | [[Rhacophorus appendiculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 204
+ | [[Rhacophorus arboreus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 205
+ | [[Rhacophorus arvalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 206
+ | [[Rhacophorus aurantiventris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 207
+ | [[Rhacophorus baliogaster]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 208
+ | [[Rhacophorus baluensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 209
+ | [[Rhacophorus barisani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 210
+ | [[Rhacophorus bifasciatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 211
+ | [[Rhacophorus bimaculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 212
+ | [[Rhacophorus bipunctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 213
+ | [[Rhacophorus bisacculus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 214
+ | [[Rhacophorus calcadensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 215
+ | [[Rhacophorus calcaneus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 216
+ | [[Rhacophorus catamitus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 217
+ | [[Rhacophorus cyanopunctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 218
+ | [[Rhacophorus dennysi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 219
+ | [[Rhacophorus depressus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 220
+ | [[Rhacophorus duboisi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 221
+ | [[Rhacophorus dulitensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 222
+ | [[Rhacophorus edentulus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 223
+ | [[Rhacophorus everetti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 224
+ | [[Rhacophorus exechopygus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 225
+ | [[Rhacophorus fasciatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 226
+ | [[Rhacophorus gauni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 227
+ | [[Rhacophorus georgii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 228
+ | [[Rhacophorus hainanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 229
+ | [[Rhacophorus harrissoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 230
+ | [[Rhacophorus hoanglienensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 231
+ | [[Rhacophorus htunwini]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 232
+ | [[Rhacophorus kajau]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 233
+ | [[Rhacophorus lateralis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 234
+ | [[Rhacophorus malabaricus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 235
+ | [[Rhacophorus margaritifer]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 236
+ | [[Rhacophorus maximus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 237
+ | [[Rhacophorus modestus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 238
+ | [[Rhacophorus moltrechti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 239
+ | [[Rhacophorus monticola]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 240
+ | [[Rhacophorus nigropalmatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 241
+ | [[Rhacophorus notater]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 242
+ | [[Rhacophorus orlovi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 243
+ | [[Rhacophorus owstoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 244
+ | [[Rhacophorus pardalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 245
+ | [[Rhacophorus poecilonotus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 246
+ | [[Rhacophorus prasinatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 247
+ | [[Rhacophorus prominanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 248
+ | [[Rhacophorus pseudomalabaricus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 249
+ | [[Rhacophorus reinwardtii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 250
+ | [[Rhacophorus rhodopus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 251
+ | [[Rhacophorus rhyssocephalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 252
+ | [[Rhacophorus robinsonii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 253
+ | [[Rhacophorus rufipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 254
+ | [[Rhacophorus schlegelii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 255
+ | [[Rhacophorus taipeianus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 256
+ | [[Rhacophorus taronensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 257
+ | [[Rhacophorus translineatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 258
+ | [[Rhacophorus tuberculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 259
+ | [[Rhacophorus turpes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 260
+ | [[Rhacophorus variabilis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 261
+ | [[Rhacophorus verrucopus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 262
+ | [[Rhacophorus verrucosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 263
+ | [[Rhacophorus viridis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 264
+ | [[Theloderma]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 265
+ | [[Theloderma bicolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 266
+ | [[Theloderma corticale]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 267
+ | [[Theloderma gordoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 268
+ | [[Theloderma horridum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 269
+ | [[Theloderma kwangsiense]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 270
+ | [[Theloderma leporosum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 271
+ | [[Theloderma phrynoderma]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 272
+ | [[Theloderma stellatum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 273
+ | [[Arthroleptis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 274
+ | [[Arthroleptis adelphus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 275
+ | [[Arthroleptis adolfifriederici]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 276
+ | [[Arthroleptis affinis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 277
+ | [[Arthroleptis bivittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 278
+ | [[Arthroleptis brevipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 279
+ | [[Arthroleptis carquejai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 280
+ | [[Arthroleptis crusculum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 281
+ | [[Arthroleptis discodactyla]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 282
+ | [[Arthroleptis francei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 283
+ | [[Arthroleptis hematogaster]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 284
+ | [[Arthroleptis lameerei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 285
+ | [[Arthroleptis loveridgei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 286
+ | [[Arthroleptis milletihorsini]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 287
+ | [[Arthroleptis mossoensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 288
+ | [[Arthroleptis nikeae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 289
+ | [[Arthroleptis nimbaensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 290
+ | [[Arthroleptis phrynoides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 291
+ | [[Arthroleptis poecilonotus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 292
+ | [[Arthroleptis pyrrhoscelis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 293
+ | [[Arthroleptis reichei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 294
+ | [[Arthroleptis schubotzi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 295
+ | [[Arthroleptis spinalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 296
+ | [[Arthroleptis stenodactylus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 297
+ | [[Arthroleptis sylvatica]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 298
+ | [[Arthroleptis taeniatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 299
+ | [[Arthroleptis tanneri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 300
+ | [[Arthroleptis troglodytes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 301
+ | [[Arthroleptis tuberosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 302
+ | [[Arthroleptis variabilis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 303
+ | [[Arthroleptis vercammeni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 304
+ | [[Arthroleptis wahlbergii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 305
+ | [[Arthroleptis xenochirus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 306
+ | [[Arthroleptis xenodactyla]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 307
+ | [[Arthroleptis xenodactyloides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 308
+ | [[Arthroleptis zimmeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 309
+ | [[Astylosternus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 310
+ | [[Astylosternus batesi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 311
+ | [[Astylosternus diadematus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 312
+ | [[Astylosternus fallax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 313
+ | [[Astylosternus laurenti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 314
+ | [[Astylosternus montanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 315
+ | [[Astylosternus nganhanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 316
+ | [[Astylosternus occidentalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 317
+ | [[Astylosternus perreti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 318
+ | [[Astylosternus ranoides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 319
+ | [[Astylosternus rheophilus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 320
+ | [[Astylosternus schioetzi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 321
+ | [[Cardioglossa]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 322
+ | [[Cardioglossa alsco]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 323
+ | [[Cardioglossa aureoli]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 324
+ | [[Cardioglossa cyaneospila]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 325
+ | [[Cardioglossa dorsalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 326
+ | [[Cardioglossa elegans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 327
+ | [[Cardioglossa escalerae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 328
+ | [[Cardioglossa gracilis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 329
+ | [[Cardioglossa gratiosa]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 330
+ | [[Cardioglossa leucomystax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 331
+ | [[Cardioglossa melanogaster]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 332
+ | [[Cardioglossa nigromaculata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 333
+ | [[Cardioglossa oreas]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 334
+ | [[Cardioglossa pulchra]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 335
+ | [[Cardioglossa schioetzi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 336
+ | [[Cardioglossa trifasciata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 337
+ | [[Cardioglossa venusta]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 338
+ | [[Leptodactylodon]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 339
+ | [[Leptodactylodon albiventris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 340
+ | [[Leptodactylodon axillaris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 341
+ | [[Leptodactylodon bicolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 342
+ | [[Leptodactylodon blanci]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 343
+ | [[Leptodactylodon boulengeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 344
+ | [[Leptodactylodon bueanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 345
+ | [[Leptodactylodon erythrogaster]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 346
+ | [[Leptodactylodon mertensi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 347
+ | [[Leptodactylodon ornatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 348
+ | [[Leptodactylodon ovatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 349
+ | [[Leptodactylodon perreti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 350
+ | [[Leptodactylodon polyacanthus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 351
+ | [[Leptodactylodon stevarti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 352
+ | [[Leptodactylodon ventrimarmoratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 353
+ | [[Leptodactylodon wildi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 354
+ | [[Nyctibates corrugatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 355
+ | [[Scotobleps gabonicus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 356
+ | [[Leptopelis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 357
+ | [[Leptopelis anchietae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 358
+ | [[Leptopelis argenteus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 359
+ | [[Leptopelis aubryi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 360
+ | [[Leptopelis barbouri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 361
+ | [[Leptopelis bequaerti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 362
+ | [[Leptopelis bocagii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 363
+ | [[Leptopelis boulengeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 364
+ | [[Leptopelis brevipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 365
+ | [[Leptopelis brevirostris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 366
+ | [[Leptopelis broadleyi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 367
+ | [[Leptopelis bufonides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 368
+ | [[Leptopelis calcaratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 369
+ | [[Leptopelis christyi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 370
+ | [[Leptopelis concolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 371
+ | [[Leptopelis crystallinoron]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 372
+ | [[Leptopelis cynnamomeus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 373
+ | [[Leptopelis fenestratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 374
+ | [[Leptopelis fiziensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 375
+ | [[Leptopelis flavomaculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 376
+ | [[Leptopelis gramineus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 377
+ | [[Leptopelis hyloides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 378
+ | [[Leptopelis jordani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 379
+ | [[Leptopelis karissimbensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 380
+ | [[Leptopelis kivuensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 381
+ | [[Leptopelis lebeaui]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 382
+ | [[Leptopelis macrotis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 383
+ | [[Leptopelis marginatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 384
+ | [[Leptopelis millsoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 385
+ | [[Leptopelis modestus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 386
+ | [[Leptopelis mossambicus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 387
+ | [[Leptopelis natalensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 388
+ | [[Leptopelis nordequatorialis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 389
+ | [[Leptopelis notatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 390
+ | [[Leptopelis ocellatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 391
+ | [[Leptopelis omissus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 392
+ | [[Leptopelis oryi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 393
+ | [[Leptopelis palmatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 394
+ | [[Leptopelis parbocagii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 395
+ | [[Leptopelis parkeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 396
+ | [[Leptopelis parvus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 397
+ | [[Leptopelis ragazzii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 398
+ | [[Leptopelis rufus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 399
+ | [[Leptopelis susanae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 400
+ | [[Leptopelis uluguruensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 401
+ | [[Leptopelis vannutellii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 402
+ | [[Leptopelis vermiculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 403
+ | [[Leptopelis viridis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 404
+ | [[Leptopelis xenodactylus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 405
+ | [[Leptopelis yaldeni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 406
+ | [[Leptopelis zebra]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 407
+ | [[Leptopelis occidentalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 408
+ | [[Hyperolius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 409
+ | [[Hyperolius acuticephalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 410
+ | [[Hyperolius acuticeps]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 411
+ | [[Hyperolius acutirostris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 412
+ | [[Hyperolius ademetzi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 413
+ | [[Hyperolius adspersus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 414
+ | [[Hyperolius albofrenatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 415
+ | [[Hyperolius argus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 416
+ | [[Hyperolius atrigularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 417
+ | [[Hyperolius balfouri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 418
+ | [[Hyperolius baumanni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 419
+ | [[Hyperolius benguellensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 420
+ | [[Hyperolius bicolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 421
+ | [[Hyperolius bobirensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 422
+ | [[Hyperolius bolifambae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 423
+ | [[Hyperolius bopeleti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 424
+ | [[Hyperolius brachiofasciatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 425
+ | [[Hyperolius camerunensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 426
+ | [[Hyperolius castaneus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 427
+ | [[Hyperolius chlorosteus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 428
+ | [[Hyperolius chrysogaster]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 429
+ | [[Hyperolius cinereus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 430
+ | [[Hyperolius cinnamomeoventris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 431
+ | [[Hyperolius concolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 432
+ | [[Hyperolius cystocandicans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 433
+ | [[Hyperolius diaphanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 434
+ | [[Hyperolius dintelmanni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 435
+ | [[Hyperolius discodactylus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 436
+ | [[Hyperolius endjami]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 437
+ | [[Hyperolius fasciatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 438
+ | [[Hyperolius ferreirai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 439
+ | [[Hyperolius ferrugineus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 440
+ | [[Hyperolius frontalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 441
+ | [[Hyperolius fuscigula]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 442
+ | [[Hyperolius fusciventris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 443
+ | [[Hyperolius ghesquieri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 444
+ | [[Hyperolius glandicolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 445
+ | [[Hyperolius gularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 446
+ | [[Hyperolius guttulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 447
+ | [[Hyperolius horstockii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 448
+ | [[Hyperolius houyi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 449
+ | [[Hyperolius hutsebauti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 450
+ | [[Hyperolius igbettensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 451
+ | [[Hyperolius inornatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 452
+ | [[Hyperolius kachalolae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 453
+ | [[Hyperolius kibarae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 454
+ | [[Hyperolius kihangensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 455
+ | [[Hyperolius kivuensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 456
+ | [[Hyperolius kuligae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 457
+ | [[Hyperolius lamottei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 458
+ | [[Hyperolius langi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 459
+ | [[Hyperolius lateralis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 460
+ | [[Hyperolius laticeps]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 461
+ | [[Hyperolius laurenti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 462
+ | [[Hyperolius leleupi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 463
+ | [[Hyperolius leucotaenius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 464
+ | [[Hyperolius lucani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 465
+ | [[Hyperolius maestus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 466
+ | [[Hyperolius major]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 467
+ | [[Hyperolius marginatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 468
+ | [[Hyperolius mariae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 469
+ | [[Hyperolius marmoratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 470
+ | [[Hyperolius minutissimus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 471
+ | [[Hyperolius mitchelli]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 472
+ | [[Hyperolius molleri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 473
+ | [[Hyperolius montanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 474
+ | [[Hyperolius mosaicus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 475
+ | [[Hyperolius nasutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 476
+ | [[Hyperolius nienokouensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 477
+ | [[Hyperolius nimbae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 478
+ | [[Hyperolius nitidulus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 479
+ | [[Hyperolius obscurus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 480
+ | [[Hyperolius occidentalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 481
+ | [[Hyperolius ocellatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 482
+ | [[Hyperolius orkarkarri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 483
+ | [[Hyperolius parallelus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 484
+ | [[Hyperolius pardalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 485
+ | [[Hyperolius parkeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 486
+ | [[Hyperolius phantasticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 487
+ | [[Hyperolius pickersgilli]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 488
+ | [[Hyperolius picturatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 489
+ | [[Hyperolius pictus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 490
+ | [[Hyperolius platyceps]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 491
+ | [[Hyperolius polli]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 492
+ | [[Hyperolius polystictus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 493
+ | [[Hyperolius protchei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 494
+ | [[Hyperolius pseudargus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 495
+ | [[Hyperolius puncticulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 496
+ | [[Hyperolius punctulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 497
+ | [[Hyperolius pusillus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 498
+ | [[Hyperolius pustulifer]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 499
+ | [[Hyperolius pyrrhodictyon]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 500
+ | [[Hyperolius quadratomaculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 501
+ | [[Hyperolius quinquevittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 502
+ | [[Hyperolius raveni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 503
+ | [[Hyperolius reesi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 504
+ | [[Hyperolius rhizophilus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 505
+ | [[Hyperolius rhodesianus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 506
+ | [[Hyperolius riggenbachi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 507
+ | [[Hyperolius robustus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 508
+ | [[Hyperolius rubrovermiculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 509
+ | [[Hyperolius sankuruensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 510
+ | [[Hyperolius schoutedeni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 511
+ | [[Hyperolius seabrai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 512
+ | [[Hyperolius semidiscus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 513
+ | [[Hyperolius sheldricki]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 514
+ | [[Hyperolius soror]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 515
+ | [[Hyperolius spinigularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 516
+ | [[Hyperolius steindachneri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 517
+ | [[Hyperolius stenodactylus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 518
+ | [[Hyperolius swynnertoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 519
+ | [[Hyperolius sylvaticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 520
+ | [[Hyperolius tannerorum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 521
+ | [[Hyperolius thomensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 522
+ | [[Hyperolius thoracotuberculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 523
+ | [[Hyperolius tornieri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 524
+ | [[Hyperolius torrentis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 525
+ | [[Hyperolius tuberculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 526
+ | [[Hyperolius tuberilinguis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 527
+ | [[Hyperolius vilhenai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 528
+ | [[Hyperolius viridiflavus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 529
+ | [[Hyperolius viridigulosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 530
+ | [[Hyperolius viridis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 531
+ | [[Hyperolius wermuthi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 532
+ | [[Hyperolius xenorhinus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 533
+ | [[Hyperolius zonatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 534
+ | [[Hyperolius bocagei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 535
+ | [[Afrixalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 536
+ | [[Afrixalus aureus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 537
+ | [[Afrixalus brachycnemis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 538
+ | [[Afrixalus clarkeorum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 539
+ | [[Afrixalus crotalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 540
+ | [[Afrixalus dorsalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 541
+ | [[Afrixalus equatorialis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 542
+ | [[Afrixalus fornasini]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 543
+ | [[Afrixalus fulvovittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 544
+ | [[Afrixalus knysnae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 545
+ | [[Afrixalus lacteus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 546
+ | [[Afrixalus laevis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 547
+ | [[Afrixalus leucostictus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 548
+ | [[Afrixalus lindholmi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 549
+ | [[Afrixalus morerei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 550
+ | [[Afrixalus nigeriensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 551
+ | [[Afrixalus orophilus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 552
+ | [[Afrixalus osorioi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 553
+ | [[Afrixalus paradorsalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 554
+ | [[Afrixalus quadrivittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 555
+ | [[Afrixalus schneideri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 556
+ | [[Afrixalus septentrionalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 557
+ | [[Afrixalus spinifrons]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 558
+ | [[Afrixalus stuhlmanni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 559
+ | [[Afrixalus sylvaticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 560
+ | [[Afrixalus uluguruensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 561
+ | [[Afrixalus upembae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 562
+ | [[Afrixalus vibekensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 563
+ | [[Afrixalus weidholzi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 564
+ | [[Afrixalus wittei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 565
+ | [[Heterixalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 566
+ | [[Heterixalus alboguttatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 567
+ | [[Heterixalus andrakata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 568
+ | [[Heterixalus betsileo]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 569
+ | [[Heterixalus boettgeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 570
+ | [[Heterixalus carbonei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 571
+ | [[Heterixalus luteostriatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 572
+ | [[Heterixalus madagascariensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 573
+ | [[Heterixalus punctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 574
+ | [[Heterixalus rutenbergi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 575
+ | [[Heterixalus tricolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 576
+ | [[Heterixalus variabilis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 577
+ | [[Kassina]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 578
+ | [[Kassina arboricola]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 579
+ | [[Kassina cassinoides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 580
+ | [[Kassina cochranae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 581
+ | [[Kassina fusca]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 582
+ | [[Kassina jozani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 583
+ | [[Kassina kuvangensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 584
+ | [[Kassina lamottei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 585
+ | [[Kassina maculata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 586
+ | [[Kassina maculifer]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 587
+ | [[Kassina maculosa]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 588
+ | [[Kassina mertensi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 589
+ | [[Kassina schioetzi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 590
+ | [[Kassina somalica]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 591
+ | [[Acanthixalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 592
+ | [[Acanthixalus sonjae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 593
+ | [[Acanthixalus spinosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 594
+ | [[Alexteroon]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 595
+ | [[Alexteroon hypsiphonus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 596
+ | [[Alexteroon jynx]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 597
+ | [[Alexteroon obstetricans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 598
+ | [[Callixalus pictus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 599
+ | [[Arlequinus krebsi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 600
+ | [[Chlorolius koehleri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 601
+ | [[Chrysobatrachus cupreonitens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 602
+ | [[Cryptothylax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 603
+ | [[Cryptothylax greshoffii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 604
+ | [[Paracassina]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 605
+ | [[Paracassina kounhiensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 606
+ | [[Paracassina obscura]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 607
+ | [[Cryptothylax minutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 608
+ | [[Phlyctimantis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 609
+ | [[Phlyctimantis boulengeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 610
+ | [[Phlyctimantis keithae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 611
+ | [[Phlyctimantis leonardi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 612
+ | [[Tachycnemis seychellensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 613
+ | [[Semnodactylus wealii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 614
+ | [[Phlyctimantis verrucosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 615
+ | [[Atelopus andinus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 616
+ | [[Atelopus angelito]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 617
+ | [[Atelopus arsyecue]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 618
+ | [[Atelopus arthuri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 619
+ | [[Atelopus balios]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 620
+ | [[Atelopus bomolochos]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 621
+ | [[Atelopus boulengeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 622
+ | [[Atelopus carauta]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 623
+ | [[Atelopus carrikeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 624
+ | [[Atelopus certus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 625
+ | [[Atelopus chiriquiensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 626
+ | [[Atelopus chocoensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 627
+ | [[Atelopus chrysocorallus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 628
+ | [[Atelopus coynei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 629
+ | [[Atelopus cruciger]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 630
+ | [[Atelopus dimorphus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 631
+ | [[Atelopus elegans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 632
+ | [[Atelopus erythropus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 633
+ | [[Atelopus eusebianus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 634
+ | [[Atelopus exiguus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 635
+ | [[Atelopus famelicus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 636
+ | [[Atelopus farci]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 637
+ | [[Atelopus flavescens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 638
+ | [[Atelopus franciscus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 639
+ | [[Atelopus galactogaster]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 640
+ | [[Atelopus glyphus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 641
+ | [[Atelopus guanujo]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 642
+ | [[Atelopus guitarraensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 643
+ | [[Atelopus halihelos]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 644
+ | [[Atelopus laetissimus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 645
+ | [[Atelopus limosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 646
+ | [[Atelopus longibrachius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 647
+ | [[Atelopus longirostris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 648
+ | [[Atelopus lozanoi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 649
+ | [[Atelopus lynchi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 650
+ | [[Atelopus mandingues]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 651
+ | [[Atelopus mindoensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 652
+ | [[Atelopus minutulus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 653
+ | [[Atelopus monohernandezii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 654
+ | [[Atelopus mucubajiensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 655
+ | [[Atelopus muisca]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 656
+ | [[Atelopus nahumae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 657
+ | [[Atelopus nanay]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 658
+ | [[Atelopus nepiozomus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 659
+ | [[Atelopus nicefori]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 660
+ | [[Atelopus oxyrhynchus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 661
+ | [[Atelopus pachydermus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 662
+ | [[Atelopus palmatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 663
+ | [[Atelopus pedimarmoratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 664
+ | [[Atelopus peruensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 665
+ | [[Atelopus petersi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 666
+ | [[Atelopus petriruizi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 667
+ | [[Atelopus pictiventris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 668
+ | [[Atelopus pinangoi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 669
+ | [[Atelopus planispina]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 670
+ | [[Atelopus pulcher]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 671
+ | [[Atelopus quimbaya]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 672
+ | [[Atelopus reticulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 673
+ | [[Atelopus sanjosei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 674
+ | [[Atelopus seminiferus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 675
+ | [[Atelopus senex]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 676
+ | [[Atelopus sernai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 677
+ | [[Atelopus simulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 678
+ | [[Atelopus siranus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 679
+ | [[Atelopus sonsonensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 680
+ | [[Atelopus sorianoi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 681
+ | [[Atelopus spumarius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 682
+ | [[Atelopus spurrelli]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 683
+ | [[Atelopus subornatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 684
+ | [[Atelopus tamaensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 685
+ | [[Atelopus tricolor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 686
+ | [[Atelopus varius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 687
+ | [[Atelopus vogli]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 688
+ | [[Atelopus walkeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 689
+ | [[Atelopus zeteki]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 690
+ | [[Ansonia albomaculata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 691
+ | [[Ansonia anotis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 692
+ | [[Ansonia endauensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 693
+ | [[Ansonia fuliginea]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 694
+ | [[Ansonia glandulosa]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 695
+ | [[Ansonia guibei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 696
+ | [[Ansonia hanitschi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 697
+ | [[Ansonia inthanon]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 698
+ | [[Ansonia kraensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 699
+ | [[Ansonia latidisca]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 700
+ | [[Ansonia leptopus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 701
+ | [[Ansonia longidigita]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 702
+ | [[Ansonia malayana]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 703
+ | [[Ansonia mcgregori]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 704
+ | [[Ansonia minuta]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 705
+ | [[Ansonia muelleri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 706
+ | [[Ansonia penangensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 707
+ | [[Ansonia platysoma]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 708
+ | [[Ansonia rubigina]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 709
+ | [[Ansonia siamensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 710
+ | [[Ansonia spinulifer]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 711
+ | [[Ansonia tiomanica]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 712
+ | [[Ansonia torrentis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 713
+ | [[Amietophrynus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 714
+ | [[Amietophrynus asmarae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 715
+ | [[Amietophrynus blanfordii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 716
+ | [[Amietophrynus brauni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 717
+ | [[Amietophrynus buchneri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 718
+ | [[Amietophrynus camerunensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 719
+ | [[Amietophrynus chudeaui]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 720
+ | [[Amietophrynus cristiglans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 721
+ | [[Amietophrynus danielae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 722
+ | [[Amietophrynus djohongensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 723
+ | [[Amietophrynus fuliginatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 724
+ | [[Amietophrynus funereus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 725
+ | [[Amietophrynus garmani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 726
+ | [[Amietophrynus gracilipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 727
+ | [[Amietophrynus gutturalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 728
+ | [[Amietophrynus kassasii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 729
+ | [[Amietophrynus kerinyagae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 730
+ | [[Amietophrynus kisoloensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 731
+ | [[Amietophrynus langanoensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 732
+ | [[Amietophrynus latifrons]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 733
+ | [[Amietophrynus lemairii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 734
+ | [[Amietophrynus maculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 735
+ | [[Amietophrynus pantherinus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 736
+ | [[Amietophrynus pardalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 737
+ | [[Amietophrynus perreti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 738
+ | [[Amietophrynus poweri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 739
+ | [[Amietophrynus rangeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 740
+ | [[Amietophrynus reesi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 741
+ | [[Amietophrynus regularis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 742
+ | [[Amietophrynus steindachneri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 743
+ | [[Amietophrynus superciliaris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 744
+ | [[Amietophrynus taiensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 745
+ | [[Amietophrynus togoensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 746
+ | [[Amietophrynus tuberosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 747
+ | [[Amietophrynus turkanae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 748
+ | [[Amietophrynus urunguensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 749
+ | [[Amietophrynus villiersi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 750
+ | [[Amietophrynus vittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 751
+ | [[Amietophrynus xeros]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 752
+ | [[Gastrotheca abdita]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 753
+ | [[Gastrotheca albolineata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 754
+ | [[Gastrotheca andaquiensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 755
+ | [[Gastrotheca angustifrons]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 756
+ | [[Gastrotheca antomia]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 757
+ | [[Gastrotheca argenteovirens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 758
+ | [[Gastrotheca atympana]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 759
+ | [[Gastrotheca aureomaculata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 760
+ | [[Gastrotheca bufona]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 761
+ | [[Gastrotheca christiani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 762
+ | [[Gastrotheca chrysosticta]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 763
+ | [[Gastrotheca cornuta]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 764
+ | [[Gastrotheca dendronastes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 765
+ | [[Gastrotheca dunni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 766
+ | [[Gastrotheca espeletia]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 767
+ | [[Gastrotheca excubitor]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 768
+ | [[Gastrotheca fissipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 769
+ | [[Gastrotheca galeata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 770
+ | [[Gastrotheca gracilis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 771
+ | [[Gastrotheca griswoldi]] "
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 772
+ | [[Gastrotheca guentheri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 773
+ | [[Gastrotheca helenae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 774
+ | [[Gastrotheca lateonota]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 775
+ | [[Gastrotheca lauzuricae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 776
+ | [[Gastrotheca litonedis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 777
+ | [[Gastrotheca longipes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 778
+ | [[Gastrotheca marsupiata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 779
+ | [[Gastrotheca microdiscus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 780
+ | [[Gastrotheca monticola]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 781
+ | [[Gastrotheca nicefori]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 782
+ | [[Gastrotheca ochoai]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 783
+ | [[Gastrotheca orophylax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 784
+ | [[Gastrotheca ossilaginis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 785
+ | [[Gastrotheca ovifera]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 786
+ | [[Gastrotheca pacchamama]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 787
+ | [[Gastrotheca peruana]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 788
+ | [[Gastrotheca phalarosa]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 789
+ | [[Gastrotheca piperata]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 790
+ | [[Gastrotheca plumbea]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 791
+ | [[Gastrotheca pseustes]] "
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 792
+ | [[Gastrotheca psychrophila]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 793
+ | [[Gastrotheca rebeccae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 794
+ | [[Gastrotheca riobambae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 795
+ | [[Gastrotheca ruizi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 796
+ | [[Gastrotheca splendens]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 797
+ | [[Gastrotheca stictopleura]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 798
+ | [[Gastrotheca testudinea]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 799
+ | [[Gastrotheca trachyceps]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 800
+ | [[Gastrotheca walkeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 801
+ | [[Gastrotheca weinlandii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 802
+ | [[Gastrotheca williamsoni]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 803
+ | [[Gastrotheca zeugocystis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 804
+ | [[Mantidactylus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 805
+ | [[Mantidactylus aerumnalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 806
+ | [[Mantidactylus aglavei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 807
+ | [[Mantidactylus albofrenatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 808
+ | [[Mantidactylus albolineatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 809
+ | [[Mantidactylus alutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 810
+ | [[Mantidactylus ambohimitombi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 811
+ | [[Mantidactylus ambohitra]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 812
+ | [[Mantidactylus ambreensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 813
+ | [[Mantidactylus argenteus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 814
+ | [[Mantidactylus asper]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 815
+ | [[Mantidactylus bertini]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 816
+ | [[Mantidactylus betsileanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 817
+ | [[Mantidactylus bicalcaratus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 818
+ | [[Mantidactylus biporus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 819
+ | [[Mantidactylus blanci]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 820
+ | [[Mantidactylus blommersae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 821
+ | [[Mantidactylus boulengeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 822
+ | [[Mantidactylus brevipalmatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 823
+ | [[Mantidactylus brunae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 824
+ | [[Mantidactylus charlotteae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 825
+ | [[Mantidactylus cornutus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 826
+ | [[Mantidactylus corvus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 827
+ | [[Mantidactylus curtus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 828
+ | [[Mantidactylus decaryi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 829
+ | [[Mantidactylus depressiceps]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 830
+ | [[Mantidactylus domerguei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 831
+ | [[Mantidactylus eiselti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 832
+ | [[Mantidactylus elegans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 833
+ | [[Mantidactylus enki]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 834
+ | [[Mantidactylus femoralis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 835
+ | [[Mantidactylus fimbriatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 836
+ | [[Mantidactylus flavobrunneus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 837
+ | [[Mantidactylus grandidieri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 838
+ | [[Mantidactylus grandisonae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 839
+ | [[Mantidactylus granulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 840
+ | [[Mantidactylus guibei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 841
+ | [[Mantidactylus guttulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 842
+ | [[Mantidactylus horridus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 843
+ | [[Mantidactylus kathrinae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 844
+ | [[Mantidactylus kely]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 845
+ | [[Mantidactylus klemmeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 846
+ | [[Mantidactylus leucocephalus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 847
+ | [[Mantidactylus leucomaculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 848
+ | [[Mantidactylus liber]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 849
+ | [[Mantidactylus lugubris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 850
+ | [[Mantidactylus luteus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 851
+ | [[Mantidactylus madecassus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 852
+ | [[Mantidactylus madinika]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 853
+ | [[Mantidactylus majori]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 854
+ | [[Mantidactylus malagasius]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 855
+ | [[Mantidactylus massorum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 856
+ | [[Mantidactylus melanopleura]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 857
+ | [[Mantidactylus microtis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 858
+ | [[Mantidactylus microtympanum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 859
+ | [[Mantidactylus mocquardi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 860
+ | [[Mantidactylus moseri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 861
+ | [[Mantidactylus opiparis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 862
+ | [[Mantidactylus pauliani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 863
+ | [[Mantidactylus peraccae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 864
+ | [[Mantidactylus phantasticus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 865
+ | [[Mantidactylus plicifer]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 866
+ | [[Mantidactylus pseudoasper]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 867
+ | [[Mantidactylus pulcher]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 868
+ | [[Mantidactylus punctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 869
+ | [[Mantidactylus redimitus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 870
+ | [[Mantidactylus rivicola]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 871
+ | [[Mantidactylus salegy]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 872
+ | [[Mantidactylus sarotra]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 873
+ | [[Mantidactylus schilfi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 874
+ | [[Mantidactylus sculpturatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 875
+ | [[Mantidactylus silvanus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 876
+ | [[Mantidactylus spiniferus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 877
+ | [[Mantidactylus striatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 878
+ | [[Mantidactylus tandroka]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 879
+ | [[Mantidactylus thelenae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 880
+ | [[Mantidactylus timidus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 881
+ | [[Mantidactylus tornieri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 882
+ | [[Mantidactylus tricinctus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 883
+ | [[Mantidactylus tschenki]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 884
+ | [[Mantidactylus ulcerosus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 885
+ | [[Mantidactylus ventrimaculatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 886
+ | [[Mantidactylus webbi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 887
+ | [[Mantidactylus wittei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 888
+ | [[Mantidactylus zavona]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 889
+ | [[Mantidactylus zipperi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 890
+ | [[Mantidactylus zolitschka]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 891
+ | [[Boophis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 892
+ | [[Boophis albilabris]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 893
+ | [[Boophis albipunctatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 894
+ | [[Boophis andohahela]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 895
+ | [[Boophis andreonei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 896
+ | [[Boophis anjanaharibeensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 897
+ | [[Boophis ankaratra]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 898
+ | [[Boophis blommersae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 899
+ | [[Boophis boehmei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 900
+ | [[Boophis bottae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 901
+ | [[Boophis brachychir]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 902
+ | [[Boophis burgeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 903
+ | [[Boophis doulioti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 904
+ | [[Boophis elenae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 905
+ | [[Boophis englaenderi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 906
+ | [[Boophis erythrodactylus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 907
+ | [[Boophis feonnyala]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 908
+ | [[Boophis goudotii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 909
+ | [[Boophis guibei]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 910
+ | [[Boophis haematopus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 911
+ | [[Boophis hillenii]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 912
+ | [[Boophis idae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 913
+ | [[Boophis jaegeri]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 914
+ | [[Boophis laurenti]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 915
+ | [[Boophis liami]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 916
+ | [[Boophis lichenoides]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 917
+ | [[Boophis luteus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 918
+ | [[Boophis madagascariensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 919
+ | [[Boophis majori]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 920
+ | [[Boophis mandraka]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 921
+ | [[Boophis marojezensis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 922
+ | [[Boophis microtympanum]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 923
+ | [[Boophis miniatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 924
+ | [[Boophis occidentalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 925
+ | [[Boophis opisthodon]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 926
+ | [[Boophis pauliani]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 927
+ | [[Boophis periegetes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 928
+ | [[Boophis picturatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 929
+ | [[Boophis pyrrhus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 930
+ | [[Boophis rappiodes]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 931
+ | [[Boophis reticulatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 932
+ | [[Boophis rhodoscelis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 933
+ | [[Boophis rufioculis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 934
+ | [[Boophis sambirano]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 935
+ | [[Boophis schuboeae]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 936
+ | [[Boophis septentrionalis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 937
+ | [[Boophis sibilans]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 938
+ | [[Boophis solomaso]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 939
+ | [[Boophis tasymena]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 940
+ | [[Boophis tephraeomystax]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 941
+ | [[Boophis viridis]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 942
+ | [[Boophis vittatus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 943
+ | [[Boophis williamsi]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 944
+ | [[Boophis xerophilus]]
+ | Ca 
+ | <2 Kb
+ | 0,5
+ |-
+ | 945
+ | [[Rhacophoridae]]
+ | Ca
+ | 1.728 bytes
+ | 0,5
+ |-
+ | 946
+ | [[Vigilante]]
+ | Cp (desamb)
+ | 908 bytes
+ | 0,5
+ |-
+ | 947
+ | [[Sooglossidae]]
+ | C
+ | 3.161 bytes
+ | 1
+ |}
+
+==Resumen==
+
+{| class="sortable wikitable"
+ ! Icono
+ ! Tipo
+ ! # de Art.
+ ! Puntuación
+ |-
+ | [[Imagen:N write green black.svg|30px]]
+ | '''Wikificados'''
+ | 00
+ | 00 puntos
+ |-
+ | [[Imagen:N write.svg|30px]]
+ | '''Wikificados especiales'''
+ | 00
+ | 00 puntos
+ |-
+ | [[Imagen:Quill and ink.svg|30px]]
+ | '''Creados'''
+ | 01
+ | 01 puntos
+ |-
+ | [[Imagen:Pencil.svg|30px]]
+ | '''C. Pequeños'''
+ | 01
+ | 0,5 puntos
+ |-
+ | [[Imagen:Redhat-office.png|30px]]
+ | '''C. Automáticos'''
+ | 945
+ | 472,5 puntos
+ |-
+ | [[Imagen:Artículo_bueno.svg|30px]]
+ | '''AB's'''
+ | 00 
+ | 00 puntos
+ |-
+ | [[Imagen:Cscr-featured.svg|30px]]
+ | '''AD's'''
+ | 00
+ | 00 puntos
+ |-
+ | [[Imagen:Crystal Clear app List manager.png|30px]]
+ | '''Revisión SAB'''
+ | 00
+ | 00 puntos
+ |-
+ | <big>'''Total'''</big>
+ | <big>>>>>>>>>>>>>>>>></big>
+ | 947
+ | <big>'''474 puntos'''</big>
+ |}
+
+<noinclude>
+
+==Tabla rápida==
+
+*Entre 2 y 5 kb: '''1 punto'''.
+*Entre 5 y 7 kb: '''2 puntos'''.
+*Entre 7 y 13 kb: '''3 puntos'''.
+*Entre 13 y 19 kb: '''4 puntos'''.
+*Entre 19 y 31 kb: '''5 puntos'''.
+*Más de 31 kb: '''6 puntos'''.
+
+<noinclude>
+
+[[Categoría:Wikipedia:Wikirreto 2008/Noviembre|Lucien leGrey]] 
+
+</noinclude>

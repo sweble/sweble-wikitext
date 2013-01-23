@@ -275,8 +275,8 @@ noinline transient WtNode ParagraphTransient =
 ;
 
 private inline void ParagraphStopper =
-    LineStartProd
-  / BlockStopper
+    BlockStopper
+  / LineStartProd
 ;
 
 /* PreParaWs = S* EOL ( S* EOL )*
