@@ -39,7 +39,7 @@ public interface WtStringNode
 		}
 		
 		@Override
-		public String setContent(String content)
+		public void setContent(String content)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}

@@ -56,11 +56,9 @@ public class WtLinkOptionResize
 		return this.width;
 	}
 	
-	public final int setWidth(int width)
+	public final void setWidth(int width)
 	{
-		int old = this.width;
 		this.width = width;
-		return old;
 	}
 	
 	private int height;
@@ -70,11 +68,9 @@ public class WtLinkOptionResize
 		return this.height;
 	}
 	
-	public final int setHeight(int height)
+	public final void setHeight(int height)
 	{
-		int old = this.height;
 		this.height = height;
-		return old;
 	}
 	
 	@Override
@@ -135,10 +131,18 @@ public class WtLinkOptionResize
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtLinkOptionResize.this.setWidth((Integer) value);
+					{
+						int old = WtLinkOptionResize.this.getWidth();
+						WtLinkOptionResize.this.setWidth((Integer) value);
+						return old;
+					}
 					case 1:
-						return WtLinkOptionResize.this.setHeight((Integer) value);
-						
+					{
+						int old = WtLinkOptionResize.this.getHeight();
+						WtLinkOptionResize.this.setHeight((Integer) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

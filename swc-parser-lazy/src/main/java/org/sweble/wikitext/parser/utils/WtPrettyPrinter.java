@@ -312,7 +312,7 @@ public class WtPrettyPrinter
 	
 	public void visit(WtTemplate n)
 	{
-		if (n.getPrecededByNewline())
+		if (n.isPrecededByNewline())
 		{
 			p.clearEatNewlinesAndIndents();
 			p.println();

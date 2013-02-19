@@ -55,13 +55,11 @@ public class WtLinkOptionKeyword
 		return this.keyword;
 	}
 	
-	public final String setKeyword(String keyword)
+	public final void setKeyword(String keyword)
 	{
 		if (keyword == null)
 			throw new NullPointerException();
-		String old = this.keyword;
 		this.keyword = keyword;
-		return old;
 	}
 	
 	@Override
@@ -118,8 +116,12 @@ public class WtLinkOptionKeyword
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtLinkOptionKeyword.this.setKeyword((String) value);
-						
+					{
+						String old = WtLinkOptionKeyword.this.getKeyword();
+						WtLinkOptionKeyword.this.setKeyword((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

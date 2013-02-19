@@ -48,7 +48,7 @@ public interface WtLinkOptions
 	
 	// =========================================================================
 	
-	public class WtLinkOptionsImpl
+	public static final class WtLinkOptionsImpl
 			extends
 				WtContentNodeImpl
 			implements

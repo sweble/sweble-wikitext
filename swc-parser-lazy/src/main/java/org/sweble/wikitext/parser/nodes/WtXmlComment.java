@@ -68,13 +68,11 @@ public class WtXmlComment
 		return this.prefix;
 	}
 	
-	public final String setPrefix(String prefix)
+	public final void setPrefix(String prefix)
 	{
 		if (prefix == null)
 			throw new NullPointerException();
-		String old = this.prefix;
 		this.prefix = prefix;
-		return old;
 	}
 	
 	private String suffix;
@@ -84,13 +82,11 @@ public class WtXmlComment
 		return this.suffix;
 	}
 	
-	public final String setSuffix(String suffix)
+	public final void setSuffix(String suffix)
 	{
 		if (suffix == null)
 			throw new NullPointerException();
-		String old = this.suffix;
 		this.suffix = suffix;
-		return old;
 	}
 	
 	@Override
@@ -151,10 +147,18 @@ public class WtXmlComment
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlComment.this.setPrefix((String) value);
+					{
+						String old = WtXmlComment.this.getPrefix();
+						WtXmlComment.this.setPrefix((String) value);
+						return old;
+					}
 					case 1:
-						return WtXmlComment.this.setSuffix((String) value);
-						
+					{
+						String old = WtXmlComment.this.getSuffix();
+						WtXmlComment.this.setSuffix((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

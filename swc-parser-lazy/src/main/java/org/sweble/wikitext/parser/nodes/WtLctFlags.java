@@ -27,25 +27,25 @@ public interface WtLctFlags
 		extends
 			WtNode
 {
-	public static final WtLctNoFlags NO_FLAGS = new WtLctNoFlags();
+	public static final WtNoLctFlags NO_FLAGS = new WtNoLctFlags();
 	
 	// =========================================================================
 	
 	public Set<String> getFlags();
 	
-	public Set<String> setFlags(Set<String> flags);
+	public void setFlags(Set<String> flags);
 	
 	public Set<String> getVariants();
 	
-	public Set<String> setVariants(Set<String> variants);
+	public void setVariants(Set<String> variants);
 	
 	public List<String> getGarbage();
 	
-	public List<String> setGarbage(List<String> garbage);
+	public void setGarbage(List<String> garbage);
 	
 	// =========================================================================
 	
-	public class WtLctNoFlags
+	public static final class WtNoLctFlags
 			extends
 				WtEmptyImmutableNode
 			implements
@@ -78,7 +78,7 @@ public interface WtLctFlags
 		}
 		
 		@Override
-		public Set<String> setFlags(Set<String> flags)
+		public void setFlags(Set<String> flags)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
@@ -90,7 +90,7 @@ public interface WtLctFlags
 		}
 		
 		@Override
-		public Set<String> setVariants(Set<String> variants)
+		public void setVariants(Set<String> variants)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
@@ -102,7 +102,7 @@ public interface WtLctFlags
 		}
 		
 		@Override
-		public List<String> setGarbage(List<String> garbage)
+		public void setGarbage(List<String> garbage)
 		{
 			throw new UnsupportedOperationException(genMsg());
 		}
@@ -110,7 +110,7 @@ public interface WtLctFlags
 	
 	// =========================================================================
 	
-	public class WtLctFlagsImpl
+	public static final class WtLctFlagsImpl
 			extends
 				WtLeafNode
 			implements
@@ -159,11 +159,9 @@ public interface WtLctFlags
 			return this.flags;
 		}
 		
-		public final Set<String> setFlags(Set<String> flags)
+		public final void setFlags(Set<String> flags)
 		{
-			Set<String> old = this.flags;
 			this.flags = flags;
-			return old;
 		}
 		
 		private Set<String> variants;
@@ -173,11 +171,9 @@ public interface WtLctFlags
 			return this.variants;
 		}
 		
-		public final Set<String> setVariants(Set<String> variants)
+		public final void setVariants(Set<String> variants)
 		{
-			Set<String> old = this.variants;
 			this.variants = variants;
-			return old;
 		}
 		
 		private List<String> garbage;
@@ -187,11 +183,9 @@ public interface WtLctFlags
 			return this.garbage;
 		}
 		
-		public final List<String> setGarbage(List<String> garbage)
+		public final void setGarbage(List<String> garbage)
 		{
-			List<String> old = this.garbage;
 			this.garbage = garbage;
-			return old;
 		}
 		
 		@Override
@@ -259,19 +253,25 @@ public interface WtLctFlags
 						{
 							@SuppressWarnings("unchecked")
 							Set<String> flags = (Set<String>) value;
-							return WtLctFlagsImpl.this.setFlags(flags);
+							Set<String> old = WtLctFlagsImpl.this.getFlags();
+							WtLctFlagsImpl.this.setFlags(flags);
+							return old;
 						}
 						case 1:
 						{
 							@SuppressWarnings("unchecked")
 							Set<String> variants = (Set<String>) value;
-							return WtLctFlagsImpl.this.setVariants(variants);
+							Set<String> old = WtLctFlagsImpl.this.getVariants();
+							WtLctFlagsImpl.this.setVariants(variants);
+							return old;
 						}
 						case 2:
 						{
 							@SuppressWarnings("unchecked")
 							List<String> garbage = (List<String>) value;
-							return WtLctFlagsImpl.this.setGarbage(garbage);
+							List<String> old = WtLctFlagsImpl.this.getGarbage();
+							WtLctFlagsImpl.this.setGarbage(garbage);
+							return old;
 						}
 						
 						default:

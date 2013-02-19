@@ -61,13 +61,11 @@ public class WtLinkOptionLinkTarget
 		return this.targetType;
 	}
 	
-	public final LinkTargetType setTargetType(LinkTargetType targetType)
+	public final void setTargetType(LinkTargetType targetType)
 	{
 		if (targetType == null)
 			throw new NullPointerException();
-		LinkTargetType old = this.targetType;
 		this.targetType = targetType;
-		return old;
 	}
 	
 	@Override
@@ -124,8 +122,12 @@ public class WtLinkOptionLinkTarget
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtLinkOptionLinkTarget.this.setTargetType((LinkTargetType) value);
-						
+					{
+						LinkTargetType old = WtLinkOptionLinkTarget.this.getTargetType();
+						WtLinkOptionLinkTarget.this.setTargetType((LinkTargetType) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

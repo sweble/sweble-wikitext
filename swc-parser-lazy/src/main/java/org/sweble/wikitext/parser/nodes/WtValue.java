@@ -48,7 +48,7 @@ public interface WtValue
 	
 	// =========================================================================
 	
-	public class WtValueImpl
+	public static final class WtValueImpl
 			extends
 				WtContentNodeImpl
 			implements

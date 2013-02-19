@@ -64,7 +64,7 @@ public class WtExternalLink
 		return (WtUrl) get(0);
 	}
 	
-	public boolean hasTitle()
+	public final boolean hasTitle()
 	{
 		return getTitle() != WtLinkTitle.NO_TITLE;
 	}

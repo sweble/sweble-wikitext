@@ -64,13 +64,11 @@ public class WtUrl
 		return this.protocol;
 	}
 	
-	public final String setProtocol(String protocol)
+	public final void setProtocol(String protocol)
 	{
 		if (protocol == null)
 			throw new NullPointerException();
-		String old = this.protocol;
 		this.protocol = protocol;
-		return old;
 	}
 	
 	private String path;
@@ -80,13 +78,11 @@ public class WtUrl
 		return this.path;
 	}
 	
-	public final String setPath(String path)
+	public final void setPath(String path)
 	{
 		if (path == null)
 			throw new NullPointerException();
-		String old = this.path;
 		this.path = path;
-		return old;
 	}
 	
 	@Override
@@ -147,10 +143,18 @@ public class WtUrl
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtUrl.this.setProtocol((String) value);
+					{
+						String old = WtUrl.this.getProtocol();
+						WtUrl.this.setProtocol((String) value);
+						return old;
+					}
 					case 1:
-						return WtUrl.this.setPath((String) value);
-						
+					{
+						String old = WtUrl.this.getPath();
+						WtUrl.this.setPath((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

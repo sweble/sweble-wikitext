@@ -75,12 +75,10 @@ public class WtLctRule
 		return this.search;
 	}
 	
-	public final String setSearch(String search)
+	public final void setSearch(String search)
 	{
 		this.directConvert = search.isEmpty();
-		String old = this.search;
 		this.search = search;
-		return old;
 	}
 	
 	private String variant;
@@ -90,11 +88,9 @@ public class WtLctRule
 		return this.variant;
 	}
 	
-	public final String setVariant(String variant)
+	public final void setVariant(String variant)
 	{
-		String old = this.variant;
 		this.variant = variant;
-		return old;
 	}
 	
 	@Override
@@ -163,10 +159,18 @@ public class WtLctRule
 								"You cannot set variable `directConvert' directly! " +
 										"Use setSearch() instead.");
 					case 1:
-						return WtLctRule.this.setSearch((String) value);
+					{
+						String old = WtLctRule.this.getSearch();
+						WtLctRule.this.setSearch((String) value);
+						return old;
+					}
 					case 2:
-						return WtLctRule.this.setVariant((String) value);
-						
+					{
+						String old = WtLctRule.this.getVariant();
+						WtLctRule.this.setVariant((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

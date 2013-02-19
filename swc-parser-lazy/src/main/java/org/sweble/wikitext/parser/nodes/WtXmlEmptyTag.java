@@ -69,13 +69,11 @@ public class WtXmlEmptyTag
 		return this.name;
 	}
 	
-	public final String setName(String name)
+	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
-		String old = this.name;
 		this.name = name;
-		return old;
 	}
 	
 	@Override
@@ -132,8 +130,12 @@ public class WtXmlEmptyTag
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlEmptyTag.this.setName((String) value);
-						
+					{
+						String old = WtXmlEmptyTag.this.getName();
+						WtXmlEmptyTag.this.setName((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

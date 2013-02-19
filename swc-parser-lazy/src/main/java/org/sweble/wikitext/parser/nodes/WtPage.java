@@ -82,13 +82,11 @@ public abstract class WtPage
 		return this.warnings;
 	}
 	
-	public final List<Warning> setWarnings(List<Warning> warnings)
+	public final void setWarnings(List<Warning> warnings)
 	{
 		if (warnings == null)
 			throw new NullPointerException();
-		List<Warning> old = this.warnings;
 		this.warnings = warnings;
-		return old;
 	}
 	
 	private WtEntityMap entityMap;
@@ -103,13 +101,11 @@ public abstract class WtPage
 		return this.entityMap;
 	}
 	
-	public final WtEntityMap setEntityMap(WtEntityMap entityMap)
+	public final void setEntityMap(WtEntityMap entityMap)
 	{
 		if (entityMap == null)
 			throw new NullPointerException();
-		WtEntityMap old = this.entityMap;
 		this.entityMap = entityMap;
-		return old;
 	}
 	
 	@Override
@@ -173,11 +169,17 @@ public abstract class WtPage
 					{
 						@SuppressWarnings("unchecked")
 						List<Warning> list = (List<Warning>) value;
-						return WtPage.this.setWarnings(list);
+						List<Warning> old = WtPage.this.getWarnings();
+						WtPage.this.setWarnings(list);
+						return old;
 					}
 					case 1:
-						return WtPage.this.setEntityMap((WtEntityMap) value);
-						
+					{
+						WtEntityMap old = WtPage.this.getEntityMap();
+						WtPage.this.setEntityMap((WtEntityMap) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

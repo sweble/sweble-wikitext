@@ -62,13 +62,11 @@ public class WtInternalLink
 		return this.prefix;
 	}
 	
-	public final String setPrefix(String prefix)
+	public final void setPrefix(String prefix)
 	{
 		if (prefix == null)
 			throw new NullPointerException();
-		String old = this.prefix;
 		this.prefix = prefix;
-		return old;
 	}
 	
 	private String postfix;
@@ -78,13 +76,11 @@ public class WtInternalLink
 		return this.postfix;
 	}
 	
-	public final String setPostfix(String postfix)
+	public final void setPostfix(String postfix)
 	{
 		if (postfix == null)
 			throw new NullPointerException();
-		String old = this.postfix;
 		this.postfix = postfix;
-		return old;
 	}
 	
 	@Override
@@ -145,10 +141,18 @@ public class WtInternalLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtInternalLink.this.setPrefix((String) value);
+					{
+						String old = WtInternalLink.this.getPrefix();
+						WtInternalLink.this.setPrefix((String) value);
+						return old;
+					}
 					case 1:
-						return WtInternalLink.this.setPostfix((String) value);
-						
+					{
+						String old = WtInternalLink.this.getPostfix();
+						WtInternalLink.this.setPostfix((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

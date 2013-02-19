@@ -51,7 +51,7 @@ public interface WtTagExtensionBody
 	
 	// =========================================================================
 	
-	public class WtTagExtensionBodyImpl
+	public static final class WtTagExtensionBodyImpl
 			extends
 				WtStringNodeImpl
 			implements

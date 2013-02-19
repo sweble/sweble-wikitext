@@ -60,13 +60,11 @@ public class WtXmlEntityRef
 		return this.name;
 	}
 	
-	public final String setName(String name)
+	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
-		String old = this.name;
 		this.name = name;
-		return old;
 	}
 	
 	private String resolved;
@@ -76,11 +74,9 @@ public class WtXmlEntityRef
 		return this.resolved;
 	}
 	
-	public final String setResolved(String resolved)
+	public final void setResolved(String resolved)
 	{
-		String old = this.resolved;
 		this.resolved = resolved;
-		return old;
 	}
 	
 	@Override
@@ -141,10 +137,18 @@ public class WtXmlEntityRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlEntityRef.this.setName((String) value);
+					{
+						String old = WtXmlEntityRef.this.getName();
+						WtXmlEntityRef.this.setName((String) value);
+						return old;
+					}
 					case 1:
-						return WtXmlEntityRef.this.setResolved((String) value);
-						
+					{
+						String old = WtXmlEntityRef.this.getResolved();
+						WtXmlEntityRef.this.setResolved((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

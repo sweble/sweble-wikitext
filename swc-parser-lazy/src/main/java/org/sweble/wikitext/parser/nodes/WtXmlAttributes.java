@@ -48,7 +48,7 @@ public interface WtXmlAttributes
 	
 	// =========================================================================
 	
-	public class WtXmlAttributesImpl
+	public static final class WtXmlAttributesImpl
 			extends
 				WtContentNodeImpl
 			implements

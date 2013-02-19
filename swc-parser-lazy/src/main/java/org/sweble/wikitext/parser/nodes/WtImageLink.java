@@ -81,11 +81,9 @@ public class WtImageLink
 		return this.width;
 	}
 	
-	public final int setWidth(int width)
+	public final void setWidth(int width)
 	{
-		int old = this.width;
 		this.width = width;
-		return old;
 	}
 	
 	private int height;
@@ -95,11 +93,9 @@ public class WtImageLink
 		return this.height;
 	}
 	
-	public final int setHeight(int height)
+	public final void setHeight(int height)
 	{
-		int old = this.height;
 		this.height = height;
-		return old;
 	}
 	
 	private boolean upright;
@@ -109,11 +105,9 @@ public class WtImageLink
 		return this.upright;
 	}
 	
-	public final boolean setUpright(boolean upright)
+	public final void setUpright(boolean upright)
 	{
-		boolean old = this.upright;
 		this.upright = upright;
-		return old;
 	}
 	
 	private ImageHorizAlign hAlign;
@@ -123,13 +117,11 @@ public class WtImageLink
 		return this.hAlign;
 	}
 	
-	public final ImageHorizAlign setHAlign(ImageHorizAlign hAlign)
+	public final void setHAlign(ImageHorizAlign hAlign)
 	{
 		if (hAlign == null)
 			throw new NullPointerException();
-		ImageHorizAlign old = this.hAlign;
 		this.hAlign = hAlign;
-		return old;
 	}
 	
 	private ImageVertAlign vAlign;
@@ -139,13 +131,11 @@ public class WtImageLink
 		return this.vAlign;
 	}
 	
-	public final ImageVertAlign setVAlign(ImageVertAlign vAlign)
+	public final void setVAlign(ImageVertAlign vAlign)
 	{
 		if (vAlign == null)
 			throw new NullPointerException();
-		ImageVertAlign old = this.vAlign;
 		this.vAlign = vAlign;
-		return old;
 	}
 	
 	private ImageViewFormat format;
@@ -155,13 +145,11 @@ public class WtImageLink
 		return this.format;
 	}
 	
-	public final ImageViewFormat setFormat(ImageViewFormat format)
+	public final void setFormat(ImageViewFormat format)
 	{
 		if (format == null)
 			throw new NullPointerException();
-		ImageViewFormat old = this.format;
 		this.format = format;
-		return old;
 	}
 	
 	private boolean border;
@@ -171,11 +159,9 @@ public class WtImageLink
 		return this.border;
 	}
 	
-	public final boolean setBorder(boolean border)
+	public final void setBorder(boolean border)
 	{
-		boolean old = this.border;
 		this.border = border;
-		return old;
 	}
 	
 	private ImageLinkTarget link;
@@ -185,13 +171,11 @@ public class WtImageLink
 		return this.link;
 	}
 	
-	public final ImageLinkTarget setLink(ImageLinkTarget link)
+	public final void setLink(ImageLinkTarget link)
 	{
 		if (link == null)
 			throw new NullPointerException();
-		ImageLinkTarget old = this.link;
 		this.link = link;
-		return old;
 	}
 	
 	private WtLinkOptionAltText alt;
@@ -206,13 +190,11 @@ public class WtImageLink
 		return this.alt;
 	}
 	
-	public final WtLinkOptionAltText setAlt(WtLinkOptionAltText alt)
+	public final void setAlt(WtLinkOptionAltText alt)
 	{
 		if (alt == null)
 			throw new NullPointerException();
-		WtLinkOptionAltText old = this.alt;
 		this.alt = alt;
-		return old;
 	}
 	
 	@Override
@@ -301,24 +283,60 @@ public class WtImageLink
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtImageLink.this.setWidth((Integer) value);
+					{
+						int old = WtImageLink.this.getWidth();
+						WtImageLink.this.setWidth((Integer) value);
+						return old;
+					}
 					case 1:
-						return WtImageLink.this.setHeight((Integer) value);
+					{
+						int old = WtImageLink.this.getHeight();
+						WtImageLink.this.setHeight((Integer) value);
+						return old;
+					}
 					case 2:
-						return WtImageLink.this.setUpright((Boolean) value);
+					{
+						boolean old = WtImageLink.this.getUpright();
+						WtImageLink.this.setUpright((Boolean) value);
+						return old;
+					}
 					case 3:
-						return WtImageLink.this.setHAlign((ImageHorizAlign) value);
+					{
+						ImageHorizAlign old = WtImageLink.this.getHAlign();
+						WtImageLink.this.setHAlign((ImageHorizAlign) value);
+						return old;
+					}
 					case 4:
-						return WtImageLink.this.setVAlign((ImageVertAlign) value);
+					{
+						ImageVertAlign old = WtImageLink.this.getVAlign();
+						WtImageLink.this.setVAlign((ImageVertAlign) value);
+						return old;
+					}
 					case 5:
-						return WtImageLink.this.setFormat((ImageViewFormat) value);
+					{
+						ImageViewFormat old = WtImageLink.this.getFormat();
+						WtImageLink.this.setFormat((ImageViewFormat) value);
+						return old;
+					}
 					case 6:
-						return WtImageLink.this.setBorder((Boolean) value);
+					{
+						boolean old = WtImageLink.this.getBorder();
+						WtImageLink.this.setBorder((Boolean) value);
+						return old;
+					}
 					case 7:
-						return WtImageLink.this.setLink((ImageLinkTarget) value);
+					{
+						ImageLinkTarget old = WtImageLink.this.getLink();
+						WtImageLink.this.setLink((ImageLinkTarget) value);
+						return old;
+					}
 					case 8:
-						return WtImageLink.this.setAlt((WtLinkOptionAltText) value);
-						
+					{
+						WtLinkOptionAltText old = WtImageLink.this.getAlt();
+						WtImageLink.this.setAlt((WtLinkOptionAltText) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

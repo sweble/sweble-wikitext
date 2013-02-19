@@ -48,7 +48,7 @@ public interface WtLinkTitle
 	
 	// =========================================================================
 	
-	public class WtLinkTitleImpl
+	public static final class WtLinkTitleImpl
 			extends
 				WtContentNodeImpl
 			implements

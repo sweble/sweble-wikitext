@@ -73,7 +73,7 @@ public interface WtBody
 	
 	// =========================================================================
 	
-	public class WtBodyImpl
+	public static final class WtBodyImpl
 			extends
 				WtContentNodeImpl
 			implements

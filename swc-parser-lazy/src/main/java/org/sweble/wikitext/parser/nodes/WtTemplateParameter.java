@@ -72,11 +72,9 @@ public class WtTemplateParameter
 		return this.precededByNewline;
 	}
 	
-	public final boolean setPrecededByNewline(boolean precededByNewline)
+	public final void setPrecededByNewline(boolean precededByNewline)
 	{
-		boolean old = this.precededByNewline;
 		this.precededByNewline = precededByNewline;
-		return old;
 	}
 	
 	@Override
@@ -133,8 +131,12 @@ public class WtTemplateParameter
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTemplateParameter.this.setPrecededByNewline((Boolean) value);
-						
+					{
+						boolean old = WtTemplateParameter.this.getPrecededByNewline();
+						WtTemplateParameter.this.setPrecededByNewline((Boolean) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

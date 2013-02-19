@@ -65,11 +65,9 @@ public class WtTicks
 		return this.tickCount;
 	}
 	
-	public final int setTickCount(int tickCount)
+	public final void setTickCount(int tickCount)
 	{
-		int old = this.tickCount;
 		this.tickCount = tickCount;
-		return old;
 	}
 	
 	@Override
@@ -126,8 +124,12 @@ public class WtTicks
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTicks.this.setTickCount((Integer) value);
-						
+					{
+						int old = WtTicks.this.getTickCount();
+						WtTicks.this.setTickCount((Integer) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

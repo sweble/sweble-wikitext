@@ -57,11 +57,9 @@ public class WtTableRow
 		return this.implicit;
 	}
 	
-	public final boolean setImplicit(boolean implicit)
+	public final void setImplicit(boolean implicit)
 	{
-		boolean old = this.implicit;
 		this.implicit = implicit;
-		return old;
 	}
 	
 	@Override
@@ -118,8 +116,12 @@ public class WtTableRow
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTableRow.this.setImplicit((Boolean) value);
-						
+					{
+						boolean old = WtTableRow.this.isImplicit();
+						WtTableRow.this.setImplicit((Boolean) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

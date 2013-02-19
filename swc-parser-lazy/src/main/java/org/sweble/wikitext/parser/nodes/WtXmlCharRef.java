@@ -55,11 +55,9 @@ public class WtXmlCharRef
 		return this.codePoint;
 	}
 	
-	public final int setCodePoint(int codePoint)
+	public final void setCodePoint(int codePoint)
 	{
-		int old = this.codePoint;
 		this.codePoint = codePoint;
-		return old;
 	}
 	
 	@Override
@@ -116,8 +114,12 @@ public class WtXmlCharRef
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlCharRef.this.setCodePoint((Integer) value);
-						
+					{
+						int old = WtXmlCharRef.this.getCodePoint();
+						WtXmlCharRef.this.setCodePoint((Integer) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

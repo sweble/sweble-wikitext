@@ -60,11 +60,9 @@ public class WtOnlyInclude
 		return this.elementType;
 	}
 	
-	public final XmlElementType setElementType(XmlElementType elementType)
+	public final void setElementType(XmlElementType elementType)
 	{
-		XmlElementType old = this.elementType;
 		this.elementType = elementType;
-		return old;
 	}
 	
 	@Override
@@ -121,8 +119,12 @@ public class WtOnlyInclude
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtOnlyInclude.this.setElementType((XmlElementType) value);
-						
+					{
+						XmlElementType old = WtOnlyInclude.this.getElementType();
+						WtOnlyInclude.this.setElementType((XmlElementType) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

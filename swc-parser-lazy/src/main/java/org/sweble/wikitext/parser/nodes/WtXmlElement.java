@@ -71,11 +71,9 @@ public class WtXmlElement
 		return this.name;
 	}
 	
-	public final String setName(String name)
+	public final void setName(String name)
 	{
-		String old = this.name;
 		this.name = name;
-		return old;
 	}
 	
 	@Override
@@ -132,8 +130,12 @@ public class WtXmlElement
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlElement.this.setName((String) value);
-						
+					{
+						String old = WtXmlElement.this.getName();
+						WtXmlElement.this.setName((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

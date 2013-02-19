@@ -64,11 +64,9 @@ public class WtXmlAttribute
 		return this.name;
 	}
 	
-	public final String setName(String name)
+	public final void setName(String name)
 	{
-		String old = this.name;
 		this.name = name;
-		return old;
 	}
 	
 	@Override
@@ -125,8 +123,12 @@ public class WtXmlAttribute
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtXmlAttribute.this.setName((String) value);
-						
+					{
+						String old = WtXmlAttribute.this.getName();
+						WtXmlAttribute.this.setName((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

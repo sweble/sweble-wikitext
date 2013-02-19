@@ -54,16 +54,22 @@ public class WtTemplate
 	
 	private boolean precededByNewline;
 	
+	/**
+	 * @deprecated
+	 */
 	public final boolean getPrecededByNewline()
 	{
 		return this.precededByNewline;
 	}
 	
-	public final boolean setPrecededByNewline(boolean precededByNewline)
+	public final boolean isPrecededByNewline()
 	{
-		boolean old = this.precededByNewline;
+		return this.precededByNewline;
+	}
+	
+	public final void setPrecededByNewline(boolean precededByNewline)
+	{
 		this.precededByNewline = precededByNewline;
-		return old;
 	}
 	
 	@Override
@@ -107,7 +113,7 @@ public class WtTemplate
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTemplate.this.getPrecededByNewline();
+						return WtTemplate.this.isPrecededByNewline();
 						
 					default:
 						return super.getValue(index);
@@ -120,8 +126,12 @@ public class WtTemplate
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTemplate.this.setPrecededByNewline((Boolean) value);
-						
+					{
+						boolean old = WtTemplate.this.isPrecededByNewline();
+						WtTemplate.this.setPrecededByNewline((Boolean) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

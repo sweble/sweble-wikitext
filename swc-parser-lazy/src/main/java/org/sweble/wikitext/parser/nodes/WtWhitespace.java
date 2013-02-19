@@ -68,11 +68,9 @@ public class WtWhitespace
 		return this.hasNewline;
 	}
 	
-	public final boolean setHasNewline(boolean hasNewline)
+	public final void setHasNewline(boolean hasNewline)
 	{
-		boolean old = this.hasNewline;
 		this.hasNewline = hasNewline;
-		return old;
 	}
 	
 	@Override
@@ -129,8 +127,12 @@ public class WtWhitespace
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtWhitespace.this.setHasNewline((Boolean) value);
-						
+					{
+						boolean old = WtWhitespace.this.getHasNewline();
+						WtWhitespace.this.setHasNewline((Boolean) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

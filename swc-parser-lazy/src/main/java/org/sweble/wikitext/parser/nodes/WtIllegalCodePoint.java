@@ -56,13 +56,11 @@ public class WtIllegalCodePoint
 		return this.codePoint;
 	}
 	
-	public final String setCodePoint(String codePoint)
+	public final void setCodePoint(String codePoint)
 	{
 		if (codePoint == null)
 			throw new NullPointerException();
-		String old = this.codePoint;
 		this.codePoint = codePoint;
-		return old;
 	}
 	
 	private IllegalCodePointType type;
@@ -72,13 +70,11 @@ public class WtIllegalCodePoint
 		return this.type;
 	}
 	
-	public final IllegalCodePointType setType(IllegalCodePointType type)
+	public final void setType(IllegalCodePointType type)
 	{
 		if (type == null)
 			throw new NullPointerException();
-		IllegalCodePointType old = this.type;
 		this.type = type;
-		return old;
 	}
 	
 	@Override
@@ -139,10 +135,18 @@ public class WtIllegalCodePoint
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtIllegalCodePoint.this.setCodePoint((String) value);
+					{
+						String old = WtIllegalCodePoint.this.getCodePoint();
+						WtIllegalCodePoint.this.setCodePoint((String) value);
+						return old;
+					}
 					case 1:
-						return WtIllegalCodePoint.this.setType((IllegalCodePointType) value);
-						
+					{
+						IllegalCodePointType old = WtIllegalCodePoint.this.getType();
+						WtIllegalCodePoint.this.setType((IllegalCodePointType) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

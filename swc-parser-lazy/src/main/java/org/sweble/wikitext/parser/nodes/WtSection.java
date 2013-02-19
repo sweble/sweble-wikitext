@@ -67,11 +67,9 @@ public class WtSection
 		return this.level;
 	}
 	
-	public final int setLevel(int level)
+	public final void setLevel(int level)
 	{
-		int old = this.level;
 		this.level = level;
-		return old;
 	}
 	
 	@Override
@@ -128,8 +126,12 @@ public class WtSection
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtSection.this.setLevel((Integer) value);
-						
+					{
+						int old = WtSection.this.getLevel();
+						WtSection.this.setLevel((Integer) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

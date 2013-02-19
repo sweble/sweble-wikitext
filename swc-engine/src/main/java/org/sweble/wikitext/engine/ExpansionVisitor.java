@@ -1352,7 +1352,7 @@ public final class ExpansionVisitor
 	private WtNode treatBlockElements(WtTemplate tmpl, WtNode result)
 	{
 		if (result != null)
-			return treatBlockElements(tmpl, result, tmpl.getPrecededByNewline());
+			return treatBlockElements(tmpl, result, tmpl.isPrecededByNewline());
 		return null;
 	}
 	

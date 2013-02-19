@@ -55,11 +55,9 @@ public class WtSignature
 		return this.tildeCount;
 	}
 	
-	public final int setTildeCount(int tildeCount)
+	public final void setTildeCount(int tildeCount)
 	{
-		int old = this.tildeCount;
 		this.tildeCount = tildeCount;
-		return old;
 	}
 	
 	@Override
@@ -116,8 +114,12 @@ public class WtSignature
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtSignature.this.setTildeCount((Integer) value);
-						
+					{
+						int old = WtSignature.this.getTildeCount();
+						WtSignature.this.setTildeCount((Integer) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}

@@ -71,13 +71,11 @@ public class WtTagExtension
 		return this.name;
 	}
 	
-	public final String setName(String name)
+	public final void setName(String name)
 	{
 		if (name == null)
 			throw new NullPointerException();
-		String old = this.name;
 		this.name = name;
-		return old;
 	}
 	
 	@Override
@@ -134,8 +132,12 @@ public class WtTagExtension
 				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return WtTagExtension.this.setName((String) value);
-						
+					{
+						String old = WtTagExtension.this.getName();
+						WtTagExtension.this.setName((String) value);
+						return old;
+					}
+					
 					default:
 						return super.setValue(index, value);
 				}
