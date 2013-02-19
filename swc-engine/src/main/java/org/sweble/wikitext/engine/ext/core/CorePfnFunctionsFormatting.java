@@ -274,11 +274,19 @@ public class CorePfnFunctionsFormatting
 					WtNode arg2 = frame.expand(args.get(2));
 					try
 					{
-						padStr = tu().astToText(arg2).trim();
+						padStr = tu().astToText(arg2);//.trim();
+						/* Trimming the pad string can lead to division by zero 
+						 * divisions. Of course an empty pad string doesn't make 
+						 * sense. But I'm not sure, if the pad string should
+						 * be trimmed in the first place. After all, padding with
+						 * spaces makes perfect sense... */
 					}
 					catch (StringConversionException e)
 					{
 					}
+					
+					if (padStr.isEmpty())
+						return arg0;
 				}
 			}
 			catch (StringConversionException e)
