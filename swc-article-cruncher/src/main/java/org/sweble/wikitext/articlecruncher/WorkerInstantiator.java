@@ -15,13 +15,11 @@
  * limitations under the License.
  */
 
-package org.sweble.wikitext.articlecruncher.pnodes;
+package org.sweble.wikitext.articlecruncher;
 
-import org.sweble.wikitext.articlecruncher.Processor;
+import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 
-public interface LpnJobProcessorFactory
+public interface WorkerInstantiator
 {
-	public Processor createProcessor();
-	
-	public String getProcessorNameTemplate();
+	WorkerBase instantiate();
 }

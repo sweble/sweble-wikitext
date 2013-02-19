@@ -51,11 +51,18 @@ public class LpnGatherer
 			BlockingQueue<Job> processedJobs,
 			Semaphore backPressure)
 	{
-		super(LpnGatherer.class.getSimpleName(), abortHandler);
+		super(getClassName(), abortHandler);
+		
+		Thread.currentThread().setName(getClassName());
 		
 		this.execCompServ = execCompServ;
 		this.processedJobs = processedJobs;
 		this.backPressure = backPressure;
+	}
+	
+	private static String getClassName()
+	{
+		return LpnGatherer.class.getSimpleName();
 	}
 	
 	// =========================================================================

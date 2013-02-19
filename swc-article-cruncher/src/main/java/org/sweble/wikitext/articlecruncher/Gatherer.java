@@ -40,11 +40,18 @@ public class Gatherer
 			BlockingQueue<Job> processedJobs,
 			BlockingQueue<Job> outTray)
 	{
-		super(Gatherer.class.getSimpleName(), abortHandler);
+		super(getClassName(), abortHandler);
+		
+		Thread.currentThread().setName(getClassName());
 		
 		this.inTray = inTray;
 		this.processedJobs = processedJobs;
 		this.outTray = outTray;
+	}
+	
+	private static String getClassName()
+	{
+		return Gatherer.class.getSimpleName();
 	}
 	
 	// =========================================================================

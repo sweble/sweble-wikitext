@@ -145,6 +145,11 @@ public class MyExecutorCompletionService<V>
 		executor.shutdownAndAwaitTermination();
 	}
 	
+	public void setThreadNameTemplate(String threadNameTemplate)
+	{
+		executor.setThreadNameTemplate(threadNameTemplate);
+	}
+	
 	// =========================================================================
 	
 	public Future<V> submit(Callable<V> task)

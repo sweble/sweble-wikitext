@@ -28,7 +28,7 @@ public class DaemonThreadFactory
 	
 	private final ThreadGroup group;
 	
-	private final String namePrefix;
+	private String threadNameTemplate;
 	
 	// =========================================================================
 	
@@ -44,7 +44,14 @@ public class DaemonThreadFactory
 		
 		this.group = group;
 		
-		this.namePrefix = String.format("%s-thread-%%02d", poolName);
+		this.threadNameTemplate = String.format("%s-%%02d", poolName);
+	}
+	
+	// =========================================================================
+	
+	public void setThreadNameTemplate(String threadNameTemplate)
+	{
+		this.threadNameTemplate = threadNameTemplate;
 	}
 	
 	// =========================================================================
@@ -52,7 +59,7 @@ public class DaemonThreadFactory
 	@Override
 	public Thread newThread(Runnable runnable)
 	{
-		String name = String.format(namePrefix, threadNumber.getAndIncrement());
+		String name = String.format(threadNameTemplate, threadNumber.getAndIncrement());
 		
 		Thread thread = new Thread(group, runnable, name);
 		

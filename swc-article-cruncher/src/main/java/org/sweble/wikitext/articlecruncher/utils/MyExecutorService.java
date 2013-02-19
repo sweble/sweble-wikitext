@@ -145,6 +145,11 @@ public class MyExecutorService
 		return threadFactory.getThreadGroup();
 	}
 	
+	public void setThreadNameTemplate(String threadNameTemplate)
+	{
+		this.threadFactory.setThreadNameTemplate(threadNameTemplate);
+	}
+	
 	// =========================================================================
 	
 	/*

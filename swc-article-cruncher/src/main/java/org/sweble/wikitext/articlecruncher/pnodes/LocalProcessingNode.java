@@ -18,13 +18,18 @@
 package org.sweble.wikitext.articlecruncher.pnodes;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CompletionService;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
 
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.ProcessingNode;
+import org.sweble.wikitext.articlecruncher.WorkerInstantiator;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.ExecutorType;
 import org.sweble.wikitext.articlecruncher.utils.MyExecutorService;
+import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
+import org.sweble.wikitext.articlecruncher.utils.WorkerLauncher;
 import org.sweble.wikitext.articlecruncher.utils.WorkerSynchronizer;
 
 public class LocalProcessingNode
@@ -43,9 +48,9 @@ public class LocalProcessingNode
 	
 	private Semaphore backPressure;
 	
-	private LpnDistributor distributor;
+	private WorkerLauncher distributor;
 	
-	private LpnGatherer gatherer;
+	private WorkerLauncher gatherer;
 	
 	// =========================================================================
 	
@@ -56,12 +61,19 @@ public class LocalProcessingNode
 			LpnJobProcessorFactory jobProcessorFactory,
 			int numWorkers)
 	{
-		super(LocalProcessingNode.class.getSimpleName(), abortHandler);
+		super(getClassName(), abortHandler);
+		
+		Thread.currentThread().setName(getClassName());
 		
 		this.inTray = inTray;
 		this.processedJobs = processedJobs;
 		this.jobProcessorFactory = jobProcessorFactory;
 		this.numWorkers = numWorkers;
+	}
+	
+	private static String getClassName()
+	{
+		return LocalProcessingNode.class.getSimpleName();
 	}
 	
 	// =========================================================================
@@ -75,7 +87,7 @@ public class LocalProcessingNode
 					ExecutorType.CACHED_THREAD_POOL,
 					getLogger());
 			
-			AbortHandler abortHandler = new AbortHandler()
+			final AbortHandler abortHandler = new AbortHandler()
 			{
 				@Override
 				public void notify(Throwable t)
@@ -88,21 +100,42 @@ public class LocalProcessingNode
 			
 			backPressure = new Semaphore(numWorkers);
 			
-			distributor = new LpnDistributor(
-					abortHandler,
-					inTray,
-					executor.getThreadGroup(),
-					numWorkers,
-					jobProcessorFactory,
-					backPressure);
+			final BlockingQueue<CompletionService<Job>> ecsQueue =
+					new LinkedBlockingQueue<CompletionService<Job>>();
+			
+			distributor = new WorkerLauncher(new WorkerInstantiator()
+			{
+				@Override
+				public WorkerBase instantiate()
+				{
+					LpnDistributor d = new LpnDistributor(
+							abortHandler,
+							inTray,
+							executor.getThreadGroup(),
+							numWorkers,
+							jobProcessorFactory,
+							backPressure);
+					ecsQueue.add(d.getEcs());
+					return d;
+				}
+			}, abortHandler);
 			
 			distributor.start(executor, synchronizer);
 			
-			gatherer = new LpnGatherer(
-					abortHandler,
-					distributor.getEcs(),
-					processedJobs,
-					backPressure);
+			final CompletionService<Job> ecs = ecsQueue.take();
+			
+			gatherer = new WorkerLauncher(new WorkerInstantiator()
+			{
+				@Override
+				public WorkerBase instantiate()
+				{
+					return new LpnGatherer(
+							abortHandler,
+							ecs,
+							processedJobs,
+							backPressure);
+				}
+			}, abortHandler);
 			
 			gatherer.start(executor, synchronizer);
 			

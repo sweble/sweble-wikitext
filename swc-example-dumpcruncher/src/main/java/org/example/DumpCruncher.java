@@ -138,6 +138,12 @@ public class DumpCruncher
 			{
 				return new RevisionProcessor(DumpCruncher.this);
 			}
+			
+			@Override
+			public String getProcessorNameTemplate()
+			{
+				return "Processor-%02d";
+			}
 		};
 		
 		nexus.addProcessingNode(new ProcessingNodeFactory()

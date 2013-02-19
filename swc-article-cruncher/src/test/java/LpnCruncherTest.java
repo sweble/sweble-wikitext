@@ -126,6 +126,12 @@ public class LpnCruncherTest
 					}
 				};
 			}
+			
+			@Override
+			public String getProcessorNameTemplate()
+			{
+				return "Processor-%02d";
+			}
 		};
 	}
 }

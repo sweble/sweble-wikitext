@@ -57,7 +57,9 @@ public class LpnDistributor
 			LpnJobProcessorFactory jobProcessorFactory,
 			Semaphore backPressure)
 	{
-		super(LpnDistributor.class.getSimpleName(), abortHandler);
+		super(getClassName(), abortHandler);
+		
+		Thread.currentThread().setName(getClassName());
 		
 		this.inTray = inTray;
 		this.backPressure = backPressure;
@@ -76,6 +78,13 @@ public class LpnDistributor
 				TimeUnit.SECONDS,
 				new SynchronousQueue<Runnable>(),
 				new RejectedExecutionHandlerImpl());
+		
+		execComplServ.setThreadNameTemplate(jobProcessorFactory.getProcessorNameTemplate());
+	}
+	
+	protected static String getClassName()
+	{
+		return LpnDistributor.class.getSimpleName();
 	}
 	
 	// =========================================================================
