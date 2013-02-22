@@ -11,53 +11,71 @@
     <p bottomgap="0" topgap="0">
       <image alt="Alt Text" format="unrestrained" halign="default"
         source="Image:Test" valign="middle">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <p bottomgap="0" topgap="0">
       <image format="unrestrained" halign="default" intlink=""
         source="Image:Test" valign="middle">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <p bottomgap="0" topgap="0">
       <image extlink="http://example.com" format="unrestrained"
         halign="default" source="Image:Test" valign="middle">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <p bottomgap="0" topgap="0">
       <image format="unrestrained" halign="default" intlink="Some Page"
         source="Image:Test" valign="middle">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <p bottomgap="0" topgap="0">
       <image alt="Alt Text" border="border" format="unrestrained"
         halign="default" source="Image:Test" upright="upright" valign="middle">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <image alt="Alt Text" border="border" format="frame" halign="right"
       source="Image:Test" upright="upright" valign="bottom">
-      <imgcaption>Title</imgcaption>
+      <imgcaption>
+        <text xml:space="preserve">Title</text>
+      </imgcaption>
     </image>
     <p bottomgap="0" topgap="0">
       <image alt="Alt Text" format="unrestrained" halign="default"
         source="Image:Test" valign="middle" width="128">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <p bottomgap="0" topgap="0">
       <image alt="Alt Text" format="unrestrained" halign="default"
         height="512" source="Image:Test" valign="middle">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
     <p bottomgap="0" topgap="0">
       <image alt="Alt Text" format="unrestrained" halign="default"
         height="512" source="Image:Test" valign="middle" width="128">
-        <imgcaption>Title</imgcaption>
+        <imgcaption>
+          <text xml:space="preserve">Title</text>
+        </imgcaption>
       </image>
     </p>
   </body>

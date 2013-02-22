@@ -182,7 +182,7 @@ public class WtTemplateParameter
 		return (WtTemplateArguments) get(2);
 	}
 	
-	private static final String[] CHILD_NAMES = new String[] { "name", "defaultValue", "garbage" };
+	private static final String[] CHILD_NAMES = new String[] { "name", "default", "garbage" };
 	
 	public final String[] getChildNames()
 	{

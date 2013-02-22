@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="Xml-entity-ref" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
-    <p bottomgap="0" topgap="0">&amp;&nbsp;</p>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">&amp;
+ </text>
+    </p>
   </body>
 </page>

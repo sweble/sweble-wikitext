@@ -2,7 +2,9 @@
 <page title="Bold-element" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <p bottomgap="0" topgap="0">
-      <b attr="value">Fetter Text</b>
+      <b attr="value">
+        <text xml:space="preserve">Fetter Text</text>
+      </b>
     </p>
   </body>
 </page>

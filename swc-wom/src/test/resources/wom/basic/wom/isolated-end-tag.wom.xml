@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="Isolated-end-tag" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
-    <p bottomgap="0" topgap="0">&lt;/div&gt;</p>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">&lt;/div></text>
+    </p>
   </body>
 </page>

@@ -14,9 +14,9 @@ WtParsedWikitextPage(
 			),
 		[1] = WtTemplateParameter(
 				{P} precededByNewline = true
-				{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+				{P} rtd = RTD[ "{{{" <o> "|" <o> "" <o> "}}}" ]
 				name = WtName[ [0] = "Some Template Parameter" ],
-				defaultValue = WtValue[ [0] = "Some Template Parameter Default Value" ],
+				default = WtValue[ [0] = "Some Template Parameter Default Value" ],
 				garbage = WtTemplateArguments[]
 			)
 	}
@@ -40,9 +40,9 @@ WtParsedWikitextPage(
 	[2] = WtNewline("\n"),
 	[3] = WtTemplateParameter(
 		{P} precededByNewline = true
-		{P} rtd = RTD[ "{{{" <o> "" <o> "" <o> "}}}" ]
+		{P} rtd = RTD[ "{{{" <o> "|" <o> "" <o> "}}}" ]
 		name = WtName[ [0] = "Some Template Parameter" ],
-		defaultValue = WtValue[ [0] = "Some Template Parameter Default Value" ],
+		default = WtValue[ [0] = "Some Template Parameter Default Value" ],
 		garbage = WtTemplateArguments[]
 	),
 	[4] = WtImEndTag(

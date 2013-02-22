@@ -2,41 +2,63 @@
 <page title="Template" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <transclusion>
-      <name>tmpl</name>
+      <name>
+        <text xml:space="preserve">tmpl</text>
+      </name>
     </transclusion>
     <transclusion>
-      <name>tmpl</name>
+      <name>
+        <text xml:space="preserve">tmpl</text>
+      </name>
       <arg>
-        <value>arg0</value>
+        <value>
+          <text xml:space="preserve">arg0</text>
+        </value>
       </arg>
     </transclusion>
     <transclusion>
-      <name>tmpl</name>
+      <name>
+        <text xml:space="preserve">tmpl</text>
+      </name>
       <arg>
-        <name>arg0</name>
-        <value>value</value>
+        <name>
+          <text xml:space="preserve">arg0</text>
+        </name>
+        <value>
+          <text xml:space="preserve">value</text>
+        </value>
       </arg>
     </transclusion>
     <transclusion>
       <name>
         <transclusion>
-          <name>name providing template</name>
+          <name>
+            <text xml:space="preserve">name providing template</text>
+          </name>
         </transclusion>
       </name>
       <arg>
         <name>
           <transclusion>
-            <name>foo</name>
+            <name>
+              <text xml:space="preserve">foo</text>
+            </name>
             <arg>
-              <value>baz</value>
+              <value>
+                <text xml:space="preserve">baz</text>
+              </value>
             </arg>
           </transclusion>
         </name>
         <value>
           <transclusion>
-            <name>bar</name>
+            <name>
+              <text xml:space="preserve">bar</text>
+            </name>
             <arg>
-              <value>foobar</value>
+              <value>
+                <text xml:space="preserve">foobar</text>
+              </value>
             </arg>
           </transclusion>
         </value>

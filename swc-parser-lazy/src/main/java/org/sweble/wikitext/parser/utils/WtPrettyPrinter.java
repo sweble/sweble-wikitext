@@ -51,6 +51,7 @@ import org.sweble.wikitext.parser.nodes.WtLinkOptionKeyword;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionResize;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions;
+import org.sweble.wikitext.parser.nodes.WtLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtListItem;
 import org.sweble.wikitext.parser.nodes.WtName;
@@ -778,6 +779,10 @@ public class WtPrettyPrinter
 		p.print(n.getContent());
 	}
 	
+	public void visit(WtLinkTarget.WtNoLink n)
+	{
+	}
+	
 	public void visit(WtXmlAttributeGarbage n)
 	{
 		// Don't print garbage!
@@ -826,13 +831,31 @@ public class WtPrettyPrinter
 	
 	private final LinkedList<WtNode> scope = new LinkedList<WtNode>();
 	
+	private boolean newlineAtEof = false;
+	
 	private int insideList;
+	
+	// =========================================================================
 	
 	public WtPrettyPrinter(Writer writer)
 	{
 		this.p = new PrinterBase(writer);
 		this.p.setMemoize(false);
 	}
+	
+	// =========================================================================
+	
+	public void setNewlineAtEof(boolean newlineAtEof)
+	{
+		this.newlineAtEof = newlineAtEof;
+	}
+	
+	public boolean isNewlineAtEof()
+	{
+		return newlineAtEof;
+	}
+	
+	// =========================================================================
 	
 	@Override
 	protected boolean before(WtNode node)
@@ -845,7 +868,8 @@ public class WtPrettyPrinter
 	protected Object after(WtNode node, Object result)
 	{
 		p.ignoreNewlines();
-		p.println();
+		if (newlineAtEof)
+			p.println();
 		p.flush();
 		return result;
 	}

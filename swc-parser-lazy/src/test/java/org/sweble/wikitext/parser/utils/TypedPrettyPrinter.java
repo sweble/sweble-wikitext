@@ -37,6 +37,8 @@ public final class TypedPrettyPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		WtPrettyPrinter.print(out, (WtNode) ast);
+		WtPrettyPrinter pp = new WtPrettyPrinter(out);
+		pp.setNewlineAtEof(true);
+		pp.go((WtNode) ast);
 	}
 }

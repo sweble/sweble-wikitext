@@ -3,7 +3,9 @@
   <body>
     <p bottomgap="0" topgap="0">
       <intlink target="Page_title">
-        <title>Link title</title>
+        <title>
+          <text xml:space="preserve">Link title</text>
+        </title>
       </intlink>
     </p>
     <p bottomgap="0" topgap="0">

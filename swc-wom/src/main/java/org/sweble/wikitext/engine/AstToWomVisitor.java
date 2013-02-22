@@ -1200,9 +1200,7 @@ public class AstToWomVisitor
 	
 	private String convertContentToText(WtContentNode n)
 	{
-		WtNodeList list = config.getNodeFactory().list();
-		n.exchange(list);
-		return convertToText(list);
+		return convertToText(config.getNodeFactory().toList(n));
 	}
 	
 	private WomNode appendText(String text)

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="Paragraphs" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
-    <p bottomgap="0" topgap="0">First Paragraph</p>
-    <p bottomgap="0" topgap="0">Second Paragraph</p>
-    <p bottomgap="0" topgap="0">Third Paragraph</p>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">First Paragraph</text>
+    </p>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">Second Paragraph</text>
+    </p>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">Third Paragraph</text>
+    </p>
   </body>
 </page>

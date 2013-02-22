@@ -3,7 +3,9 @@
   <body>
     <p bottomgap="0" topgap="0">
       <extlink target="http://example.com">
-        <title>Title</title>
+        <title>
+          <text xml:space="preserve">Title</text>
+        </title>
       </extlink>
     </p>
     <p bottomgap="0" topgap="0">

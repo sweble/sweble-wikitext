@@ -29,7 +29,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.wom.utils.StringSetMatcher.Match;
 import org.sweble.wom.WomAttribute;
 import org.sweble.wom.WomNode;
 import org.w3c.dom.Document;
@@ -139,15 +138,33 @@ public class WomPrettyPrinter
 	
 	private void transformText(Node parent, WomNode n)
 	{
-		/*
-		Element elem = doc.createElement("text");
-		//elem.setAttribute("xml:space", "preserve");
-		elem.setTextContent(n.getText());
-		return elem;
-		*/
-		
 		String text = n.getText();
 		
+		if (true)
+		{
+			Element elem = doc.createElement(n.getNodeName());
+			elem.setAttribute("xml:space", "preserve");
+			if (true)
+			{
+				appendEntitifiedText(elem, text);
+			}
+			else
+			{
+				elem.setTextContent(text);
+			}
+			parent.appendChild(elem);
+		}
+		else
+		{
+			appendEntitifiedText(parent, text);
+		}
+	}
+	
+	private void appendEntitifiedText(Node parent, String text)
+	{
+		parent.appendChild(doc.createTextNode(text));
+		
+		/*
 		int len = text.length();
 		int from = 0;
 		int to = 0;
@@ -168,6 +185,7 @@ public class WomPrettyPrinter
 			}
 			from = to;
 		}
+		*/
 	}
 	
 	private void transformComment(Node parent, WomNode n)

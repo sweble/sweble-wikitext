@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="Hr" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
-    <p bottomgap="0" topgap="0">a</p>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">a</text>
+    </p>
     <hr/>
-    <p bottomgap="0" topgap="0">b</p>
-    <p bottomgap="1" topgap="0">x </p>
-    <hr/> y </body>
+    <p bottomgap="0" topgap="0">
+      <text xml:space="preserve">b</text>
+    </p>
+    <p bottomgap="1" topgap="0">
+      <text xml:space="preserve">x
+</text>
+    </p>
+    <hr/>
+    <text xml:space="preserve">
+y
+</text>
+  </body>
 </page>

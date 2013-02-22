@@ -149,6 +149,7 @@ private transient WtNode TemplateTailPart =
       WtValue defaultValue = nf.noValue();
       WtTemplateArguments garbage = nf.emptyTmplArgs();
 
+      Object rtd2 = null;
       WtTemplateArguments args = content.args;
       if (args.size() > 0)
       {
@@ -161,13 +162,14 @@ private transient WtNode TemplateTailPart =
         }
         arg0Value.addAll(arg0.getValue());
         defaultValue = nf.value(arg0Value);
+        rtd2 = "|";
         if (args.size() > 1)
           garbage = nf.tmplArgs(nf.list(args.subList(1, args.size())));
       }
 
       yyValue = setRtd(
         nf.tmplParam(content.name, defaultValue, garbage),
-        "{{{", SEP, SEP, SEP, "}}}");
+        "{{{", SEP, rtd2, SEP, SEP, "}}}");
 
       getState().eatTemplateBraces(3);
     }

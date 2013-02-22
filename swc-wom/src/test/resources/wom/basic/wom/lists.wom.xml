@@ -2,24 +2,94 @@
 <page title="Lists" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <ul>
-      <li> Item 1</li>
-      <li> Item 2</li>
+      <li>
+        <text xml:space="preserve"> Item 1</text>
+      </li>
+      <li>
+        <text xml:space="preserve"> Item 2</text>
+      </li>
     </ul>
     <ol>
-      <li> Item 1</li>
-      <li> Item 2</li>
+      <li>
+        <text xml:space="preserve"> Item 1</text>
+      </li>
+      <li>
+        <text xml:space="preserve"> Item 2</text>
+      </li>
     </ol>
-    <ul> 0 <li>Item 1</li> 2 <li>Item 3</li> 4 </ul>
-    <ol> 0 <li>Item 1</li> 2 <li>Item 3</li> 4 </ol>
+    <ul>
+      <text xml:space="preserve">
+0
+</text>
+      <li>
+        <text xml:space="preserve">Item 1</text>
+      </li>
+      <text xml:space="preserve">
+2
+</text>
+      <li>
+        <text xml:space="preserve">Item 3</text>
+      </li>
+      <text xml:space="preserve">
+4
+</text>
+    </ul>
+    <ol>
+      <text xml:space="preserve">
+0
+</text>
+      <li>
+        <text xml:space="preserve">Item 1</text>
+      </li>
+      <text xml:space="preserve">
+2
+</text>
+      <li>
+        <text xml:space="preserve">Item 3</text>
+      </li>
+      <text xml:space="preserve">
+4
+</text>
+    </ol>
     <dl>
-      <dd>Def 0</dd>
-      <dt>Term 1</dt>
-      <dd>Def 1</dd>
-      <dd>Def 2</dd>
-      <dt>Term 2</dt>
-      <dd>Def 3</dd>
+      <dd>
+        <text xml:space="preserve">Def 0</text>
+      </dd>
+      <dt>
+        <text xml:space="preserve">Term 1</text>
+      </dt>
+      <dd>
+        <text xml:space="preserve">Def 1</text>
+      </dd>
+      <dd>
+        <text xml:space="preserve">Def 2</text>
+      </dd>
+      <dt>
+        <text xml:space="preserve">Term 2</text>
+      </dt>
+      <dd>
+        <text xml:space="preserve">Def 3</text>
+      </dd>
     </dl>
-    <dl> 0 <dd>Def 0</dd> 1 <dt>Tern 1</dt> 2 <dd>Def 1</dd>
+    <dl>
+      <text xml:space="preserve">
+0
+</text>
+      <dd>
+        <text xml:space="preserve">Def 0</text>
+      </dd>
+      <text xml:space="preserve">
+1
+</text>
+      <dt>
+        <text xml:space="preserve">Tern 1</text>
+      </dt>
+      <text xml:space="preserve">
+2
+</text>
+      <dd>
+        <text xml:space="preserve">Def 1</text>
+      </dd>
     </dl>
   </body>
 </page>

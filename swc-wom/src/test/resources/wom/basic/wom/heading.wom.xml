@@ -2,9 +2,13 @@
 <page title="Heading" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <section level="2">
-      <heading> Heading </heading>
+      <heading>
+        <text xml:space="preserve"> Heading </text>
+      </heading>
       <body>
-        <p bottomgap="0" topgap="0">Body</p>
+        <p bottomgap="0" topgap="0">
+          <text xml:space="preserve">Body</text>
+        </p>
       </body>
     </section>
   </body>

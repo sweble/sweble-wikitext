@@ -37,6 +37,8 @@ public final class TypedEnginePrettyPrinter
 	@Override
 	public void print(Object ast, Writer out) throws IOException
 	{
-		EnginePrettyPrinter.print(out, (WtNode) ast);
+		EnginePrettyPrinter pp = new EnginePrettyPrinter(out);
+		pp.setNewlineAtEof(true);
+		pp.go((WtNode) ast);
 	}
 }

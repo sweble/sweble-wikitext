@@ -2,14 +2,20 @@
 <page title="Native-italics-bold" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <p bottomgap="0" topgap="0">
-      <i>italics</i>
+      <i>
+        <text xml:space="preserve">italics</text>
+      </i>
     </p>
     <p bottomgap="0" topgap="0">
-      <b>bold</b>
+      <b>
+        <text xml:space="preserve">bold</text>
+      </b>
     </p>
     <p bottomgap="0" topgap="0">
       <i>
-        <b>both</b>
+        <b>
+          <text xml:space="preserve">both</text>
+        </b>
       </i>
     </p>
   </body>

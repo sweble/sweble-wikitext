@@ -2,7 +2,9 @@
 <page title="Nowiki" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <p bottomgap="0" topgap="0">
-      <nowiki xml:space="preserve">Nowiki</nowiki>
+      <nowiki>
+        <text xml:space="preserve">Nowiki</text>
+      </nowiki>
     </p>
   </body>
 </page>

@@ -2,7 +2,9 @@
 <page title="Pre" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <p bottomgap="0" topgap="0">
-      <pre xml:space="preserve">I'm a tag extension</pre>
+      <pre>
+        <text xml:space="preserve">I'm a tag extension</text>
+      </pre>
     </p>
   </body>
 </page>
