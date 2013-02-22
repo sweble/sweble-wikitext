@@ -33,6 +33,12 @@
         <artifactId>jaxb-impl</artifactId>
     </dependency>
 
+    <!-- Apache Xerces -->
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+    </dependency>
+
     <!-- Project Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -53,12 +59,7 @@
       <artifactId>sweble-wom</artifactId>
       <version>2.0.0-alpha-2-SNAPSHOT</version>
     </dependency>
-    
-<dependency>
-    <groupId>xerces</groupId>
-    <artifactId>xerces</artifactId>
-    <version>2.4.0</version>
-</dependency>
+
     <!--
       Testing
     -->
