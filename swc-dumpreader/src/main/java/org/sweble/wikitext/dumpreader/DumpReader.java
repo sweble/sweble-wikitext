@@ -38,8 +38,7 @@ import javax.xml.validation.SchemaFactory;
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
 import org.apache.log4j.Logger;
-
-import com.sun.org.apache.xerces.internal.util.XMLCatalogResolver;
+import org.apache.xerces.util.XMLCatalogResolver;
 
 import de.fau.cs.osr.utils.WrappedException;
 

@@ -2,7 +2,7 @@
 <page title="Isolated-end-tag" version="1.0" xmlns="http://sweble.org/schema/wom">
   <body>
     <p bottomgap="0" topgap="0">
-      <text xml:space="preserve">&lt;/div></text>
+      <text xml:space="preserve">&lt;/div&gt;</text>
     </p>
   </body>
 </page>

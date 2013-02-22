@@ -62,6 +62,16 @@
       <version>1.0</version>
     </dependency>
 
+    <!-- Apache Xerces -->
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>xml-resolver</groupId>
+      <artifactId>xml-resolver</artifactId>
+    </dependency>
+
     <!-- Utils -->
     <dependency>
       <groupId>de.fau.cs.osr.utils</groupId>
@@ -237,7 +247,11 @@
             <headerDefinition>../etc/license-header-apt-style.xml</headerDefinition>
           </headerDefinitions>
           <excludes>
-            <exclude>*</exclude>
+            <exclude>**/*.log</exclude>
+            <exclude>NOTICE</exclude>
+            <exclude>LICENSE</exclude>
+            <exclude>.gitignore</exclude>
+            <exclude>src/test/resources/log4j.properties</exclude>
             <exclude>src/site/site.xml</exclude>
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>

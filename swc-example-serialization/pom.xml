@@ -122,6 +122,7 @@
           <failIfMissing>true</failIfMissing>
           <skip>false</skip>
           <excludes>
+            <exclude>src/main/resources/log4j.properties</exclude>
             <exclude>src/test/resources/**</exclude>
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>

@@ -145,6 +145,7 @@
             <exclude>src/site/changes.xml</exclude>
             <exclude>src/site/resources/css/site.css</exclude>
             <exclude>**/.gitignore</exclude>
+            <exclude>**/*.log</exclude>
             <exclude>dependencies</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
