@@ -5,7 +5,7 @@
 
   <groupId>org.example</groupId>
   <artifactId>swc-example-xpath</artifactId>
-  <version>2.0.0-alpha-2-SNAPSHOT</version>
+  <version>2.0.0-alpha-3-SNAPSHOT</version>
 
   <name>SWC - XPath Example</name>
   <url>http://osr.informatik.uni-erlangen.de</url>
@@ -33,7 +33,7 @@
     <dependency>
       <groupId>org.sweble.wikitext</groupId>
       <artifactId>swc-engine</artifactId>
-      <version>2.0.0-alpha-2-SNAPSHOT</version>
+      <version>2.0.0-alpha-3-SNAPSHOT</version>
     </dependency>
 
     <!-- JUnit -->
