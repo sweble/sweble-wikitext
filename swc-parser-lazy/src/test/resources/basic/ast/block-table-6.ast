@@ -37,12 +37,8 @@ WtParsedWikitextPage(
 								]
 							)
 						]
-					)
-				]
-			),
-			[1] = WtTableImplicitTableBody(
-				body = WtBody[
-					[0] = WtTableRow(
+					),
+					[1] = WtTableRow(
 						{P} implicit = false
 						{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 						xmlAttributes = WtXmlAttributes[],

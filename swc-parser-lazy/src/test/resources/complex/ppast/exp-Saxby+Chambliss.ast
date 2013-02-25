@@ -48,12 +48,8 @@ WtParsedWikitextPage(
 								]
 							)
 						]
-					)
-				]
-			),
-			[1] = WtTableImplicitTableBody(
-				body = WtBody[
-					[0] = WtTableRow(
+					),
+					[1] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -103,7 +99,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[1] = WtTableRow(
+					[2] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -157,7 +153,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[2] = WtTableRow(
+					[3] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -185,7 +181,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[3] = WtTableRow(
+					[4] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -244,7 +240,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[4] = WtTableRow(
+					[5] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -272,17 +268,17 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[5] = WtTableRow(
-						{P} implicit = false
-						xmlAttributes = WtXmlAttributes[],
-						body = WtBody[]
-					),
 					[6] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[]
 					),
 					[7] = WtTableRow(
+						{P} implicit = false
+						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[]
+					),
+					[8] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -362,7 +358,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[8] = WtTableRow(
+					[9] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -409,7 +405,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[9] = WtTableRow(
+					[10] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -437,7 +433,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[10] = WtTableRow(
+					[11] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -475,7 +471,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[11] = WtTableRow(
+					[12] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -518,7 +514,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[12] = WtTableRow(
+					[13] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -565,7 +561,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[13] = WtTableRow(
+					[14] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -593,7 +589,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[14] = WtTableRow(
+					[15] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -620,11 +616,6 @@ WtParsedWikitextPage(
 								]
 							)
 						]
-					),
-					[15] = WtTableRow(
-						{P} implicit = false
-						xmlAttributes = WtXmlAttributes[],
-						body = WtBody[]
 					),
 					[16] = WtTableRow(
 						{P} implicit = false
@@ -684,6 +675,11 @@ WtParsedWikitextPage(
 					[27] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
+						body = WtBody[]
+					),
+					[28] = WtTableRow(
+						{P} implicit = false
+						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
 							[0] = WtTableCell(
 								xmlAttributes = WtXmlAttributes[
@@ -702,7 +698,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[28] = WtTableRow(
+					[29] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -776,7 +772,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[29] = WtTableRow(
+					[30] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -804,7 +800,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[30] = WtTableRow(
+					[31] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -818,7 +814,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[31] = WtTableRow(
+					[32] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -844,7 +840,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[32] = WtTableRow(
+					[33] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -886,7 +882,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[33] = WtTableRow(
+					[34] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -900,7 +896,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[34] = WtTableRow(
+					[35] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -921,7 +917,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[35] = WtTableRow(
+					[36] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[
@@ -943,7 +939,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[36] = WtTableRow(
+					[37] = WtTableRow(
 						{P} implicit = false
 						xmlAttributes = WtXmlAttributes[],
 						body = WtBody[]
@@ -2194,12 +2190,8 @@ WtParsedWikitextPage(
 										body = WtBody[]
 									)
 								]
-							)
-						]
-					),
-					[2] = WtTableImplicitTableBody(
-						body = WtBody[
-							[0] = WtTableRow(
+							),
+							[1] = WtTableRow(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
@@ -2290,7 +2282,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[1] = WtTableRow(
+							[2] = WtTableRow(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
@@ -2381,7 +2373,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[2] = WtTableRow(
+							[3] = WtTableRow(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
@@ -2472,7 +2464,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[3] = WtTableRow(
+							[4] = WtTableRow(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[
@@ -2675,12 +2667,8 @@ WtParsedWikitextPage(
 										body = WtBody[]
 									)
 								]
-							)
-						]
-					),
-					[2] = WtTableImplicitTableBody(
-						body = WtBody[
-							[0] = WtTableRow(
+							),
+							[1] = WtTableRow(
 								{P} implicit = false
 								xmlAttributes = WtXmlAttributes[],
 								body = WtBody[

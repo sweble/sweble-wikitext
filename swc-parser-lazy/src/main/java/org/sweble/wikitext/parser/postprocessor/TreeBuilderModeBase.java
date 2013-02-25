@@ -76,7 +76,7 @@ public class TreeBuilderModeBase
 		{
 			if (endTag.getNodeType() == WtNode.NT_IM_END_TAG)
 			{
-				addRtDataOfEndTag(finish, (WtIntermediate) endTag);
+				addRtDataOfImEndTag(finish, (WtIntermediate) endTag);
 				return;
 			}
 			else if (endTag.getBooleanAttribute("synthetic"))
@@ -105,7 +105,7 @@ public class TreeBuilderModeBase
 		}
 	}
 	
-	protected static void addRtDataOfEndTag(WtNode finish, WtIntermediate endTag)
+	protected static void addRtDataOfImEndTag(WtNode finish, WtIntermediate endTag)
 	{
 		if (endTag.getRtd() == null)
 			return;

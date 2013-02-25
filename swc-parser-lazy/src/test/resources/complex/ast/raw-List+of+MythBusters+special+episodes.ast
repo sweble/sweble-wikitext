@@ -516,12 +516,8 @@ WtParsedWikitextPage(
 												]
 											)
 										]
-									)
-								]
-							),
-							[1] = WtTableImplicitTableBody(
-								body = WtBody[
-									[0] = WtTableRow(
+									),
+									[1] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -566,7 +562,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[1] = WtTableRow(
+									[2] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -629,7 +625,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[2] = WtTableRow(
+									[3] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -695,7 +691,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[3] = WtTableRow(
+									[4] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -833,12 +829,8 @@ WtParsedWikitextPage(
 												]
 											)
 										]
-									)
-								]
-							),
-							[1] = WtTableImplicitTableBody(
-								body = WtBody[
-									[0] = WtTableRow(
+									),
+									[1] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1017,12 +1009,8 @@ WtParsedWikitextPage(
 												]
 											)
 										]
-									)
-								]
-							),
-							[1] = WtTableImplicitTableBody(
-								body = WtBody[
-									[0] = WtTableRow(
+									),
+									[1] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1130,12 +1118,8 @@ WtParsedWikitextPage(
 												]
 											)
 										]
-									)
-								]
-							),
-							[1] = WtTableImplicitTableBody(
-								body = WtBody[
-									[0] = WtTableRow(
+									),
+									[1] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1172,7 +1156,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[1] = WtTableRow(
+									[2] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1238,7 +1222,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[2] = WtTableRow(
+									[3] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1285,7 +1269,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[3] = WtTableRow(
+									[4] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1418,12 +1402,8 @@ WtParsedWikitextPage(
 												]
 											)
 										]
-									)
-								]
-							),
-							[1] = WtTableImplicitTableBody(
-								body = WtBody[
-									[0] = WtTableRow(
+									),
+									[1] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1476,7 +1456,7 @@ WtParsedWikitextPage(
 											)
 										]
 									),
-									[1] = WtTableRow(
+									[2] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1616,12 +1596,8 @@ WtParsedWikitextPage(
 												]
 											)
 										]
-									)
-								]
-							),
-							[1] = WtTableImplicitTableBody(
-								body = WtBody[
-									[0] = WtTableRow(
+									),
+									[1] = WtTableRow(
 										{P} implicit = false
 										{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 										xmlAttributes = WtXmlAttributes[],
@@ -1782,12 +1758,8 @@ WtParsedWikitextPage(
 										]
 									)
 								]
-							)
-						]
-					),
-					[1] = WtTableImplicitTableBody(
-						body = WtBody[
-							[0] = WtTableRow(
+							),
+							[1] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -1844,7 +1816,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[1] = WtTableRow(
+							[2] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -1901,7 +1873,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[2] = WtTableRow(
+							[3] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -1958,7 +1930,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[3] = WtTableRow(
+							[4] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -1993,7 +1965,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[4] = WtTableRow(
+							[5] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2039,7 +2011,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[5] = WtTableRow(
+							[6] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2096,7 +2068,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[6] = WtTableRow(
+							[7] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2153,7 +2125,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[7] = WtTableRow(
+							[8] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2209,7 +2181,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[8] = WtTableRow(
+							[9] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2265,7 +2237,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[9] = WtTableRow(
+							[10] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> " \n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2322,7 +2294,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[10] = WtTableRow(
+							[11] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2382,7 +2354,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[11] = WtTableRow(
+							[12] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],
@@ -2428,7 +2400,7 @@ WtParsedWikitextPage(
 									)
 								]
 							),
-							[12] = WtTableRow(
+							[13] = WtTableRow(
 								{P} implicit = false
 								{P} rtd = RTD[ "|-" <o> "\n" <o> "" ]
 								xmlAttributes = WtXmlAttributes[],

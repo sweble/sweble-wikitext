@@ -28,6 +28,7 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtTagExtension;
 import org.sweble.wikitext.parser.nodes.WtTagExtensionBody;
+import org.sweble.wikitext.parser.nodes.WtXmlElement;
 
 public class BuiltInTagExtensions
 		extends
@@ -73,10 +74,12 @@ public class BuiltInTagExtensions
 				Map<String, WtNodeList> attrs,
 				WtTagExtensionBody body)
 		{
-			return nf().elem(
+			WtXmlElement pre = nf().elem(
 					"pre",
 					tagExt.getXmlAttributes(),
 					nf().body(nf().list(nf().text(body.getContent()))));
+			pre.setRtd(tagExt.getRtd());
+			return pre;
 		}
 	}
 	

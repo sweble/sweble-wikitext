@@ -298,7 +298,9 @@ public final class TreeBuilderInTable
 		// We don't have a fragment case
 		// -> No scope checking
 		
-		tb.popFromStackUntilIncluding(TABLE);
+		addRtDataOfEndTag(
+				tb.popFromStackUntilIncluding(TABLE),
+				n);
 		
 		tb.resetInsertionMode();
 	}
@@ -426,7 +428,9 @@ public final class TreeBuilderInTable
 					if (!isNodeOneOf(tb.getCurrentNode(), CAPTION))
 						tb.error(n, "12.2.5.4.11 R01 (2)");
 					
-					tb.popFromStackUntilIncluding(CAPTION);
+					addRtDataOfEndTag(
+							tb.popFromStackUntilIncluding(CAPTION),
+							n);
 					tb.clearActiveFormattingElementsToLastMarker();
 					tb.switchInsertionMode(InsertionMode.IN_TABLE);
 					break;
@@ -846,12 +850,16 @@ public final class TreeBuilderInTable
 			switch (nodeType)
 			{
 				case TR:
+				{
 					// We don't have a fragment case!
 					tb.clearStackBackToTableRowContext();
-					if (getNodeType(tb.popFromStack()) != TR)
+					WtNode row = tb.popFromStack();
+					if (getNodeType(row) != TR)
 						throw new InternalError();
+					addRtDataOfEndTag(row, n);
 					tb.switchInsertionMode(InsertionMode.IN_TABLE_BODY);
 					break;
+				}
 				case TABLE:
 					rule03(n);
 					break;
@@ -905,6 +913,12 @@ public final class TreeBuilderInTable
 		}
 		
 		public void visit(WtTableCaption n)
+		{
+			// rule03 re-dispatches
+			rule03(n);
+		}
+		
+		public void visit(WtTableRow n)
 		{
 			// rule03 re-dispatches
 			rule03(n);
@@ -994,7 +1008,9 @@ public final class TreeBuilderInTable
 						tb.generateImpliedEndTags();
 						if (getNodeType(tb.getCurrentNode()) != nodeType)
 							tb.error(n, "12.2.5.4.15 R01 (2)");
-						tb.popFromStackUntilIncluding(nodeType);
+						addRtDataOfEndTag(
+								tb.popFromStackUntilIncluding(nodeType),
+								n);
 						tb.clearActiveFormattingElementsToLastMarker();
 						tb.switchInsertionMode(InsertionMode.IN_ROW);
 					}

@@ -152,7 +152,7 @@ WtParsedWikitextPage(
 	[2] = WtParagraph[],
 	[3] = WtXmlElement(
 		{P} name = "table"
-		{P} rtd = RTD[ "<table" <o> ">" <o> "" ]
+		{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 		xmlAttributes = WtXmlAttributes[
 			[0] = WtXmlAttribute(
 				{P} name = "class"

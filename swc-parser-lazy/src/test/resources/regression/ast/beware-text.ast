@@ -30,7 +30,7 @@ WtParsedWikitextPage(
 			),
 			[4] = WtXmlElement(
 				{P} name = "table"
-				{P} rtd = RTD[ "<table" <o> ">" <o> "" ]
+				{P} rtd = RTD[ "<table" <o> ">" <o> "</table>" ]
 				xmlAttributes = WtXmlAttributes[],
 				body = WtBody[]
 			),
