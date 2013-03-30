@@ -102,7 +102,11 @@ public final class TreeBuilderInBody
 				// Synthetic paragraph closing tags can be ignored if they
 				// don't have a proper opening tag
 				if (tb.isElementTypeInButtonScope(P))
-					endTagR22(getFactory().synEndTag(n));
+				{
+					WtNode pEndTag = getFactory().synEndTag(n);
+					pEndTag.setBooleanAttribute("parser-recognized", true);
+					endTagR22(pEndTag);
+				}
 				break;
 			default:
 				throw new InternalError("Should not happen!");
@@ -886,9 +890,78 @@ public final class TreeBuilderInBody
 			if (getNodeType(tb.getCurrentNode()) != P)
 				tb.error(n, "12.2.5.4.7 - R22 (2)");
 			
-			addRtDataOfEndTag(
-					tb.popFromStackUntilIncluding(P),
-					n);
+			WtNode p = tb.popFromStackUntilIncluding(P);
+			addRtDataOfEndTag(p, n);
+			
+			if (!n.getBooleanAttribute("parser-recognized"))
+			{
+				/* Hannes: When a paragraph is implicitly closed in front of
+				 * another block element we have to manually fix newlines. If
+				 * the parser guessed the end tag of a paragraph correctly, this
+				 * is already done by the paser. If not, all newlines are
+				 * located in front of the next block element and the implicit
+				 * closing tag will come after those newlines. We'll have to
+				 * move all but two newlines after the implicit closing node.
+				 */
+				
+				/* Newlines are converted to text nodes and text nodes are
+				 * merged. Therefore, if there is a newline at the end of the
+				 * paragraph, the last child of the paragraph must be a text node
+				 * which will contain the newlines.
+				 */
+				
+				int last = p.size() - 1;
+				if (last > 0)
+				{
+					WtNode t = p.get(last);
+					if (t.getNodeType() == WtNode.NT_TEXT)
+					{
+						WtText tn = (WtText) t;
+						String text = tn.getContent();
+						
+						// extract all but the first two newlines
+						int count = 0;
+						int lastNewline = -1;
+						outer: for (int j = text.length() - 1; j >= 0; --j)
+						{
+							char ch = text.charAt(j);
+							switch (ch)
+							{
+								case ' ':
+								case '\t':
+									continue;
+								case '\n':
+									++count;
+									if (count <= 2)
+										lastNewline = j;
+									break;
+								default:
+									break outer;
+							}
+						}
+						
+						// if we found newlines...
+						if (count > 0)
+						{
+							// remove at most 2 from paragraph
+							String outerNewlines;
+							if (lastNewline > 0)
+							{
+								tn.setContent(text.substring(0, lastNewline));
+								outerNewlines = text.substring(lastNewline);
+							}
+							else
+							{
+								p.remove(last);
+								outerNewlines = text;
+							}
+							
+							// and insert them after paragraph
+							tokenR01andR02(getFactory().text(outerNewlines));
+						}
+					}
+				}
+			}
 		}
 	}
 	

@@ -6809,10 +6809,10 @@ WtParsedWikitextPage(
 						[0] = WtBold(
 							{P} rtd = RTD[ "'''" <o> "'''" ]
 							[0] = "Wiki markup"
-						),
-						[1] = "\n"
+						)
 					],
-					[6] = WtXmlElement(
+					[6] = "\n",
+					[7] = WtXmlElement(
 						{P} name = "p"
 						{P} rtd = RTD[ "<p" <o> ">" <o> "</p>" ]
 						xmlAttributes = WtXmlAttributes[
@@ -7201,16 +7201,16 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = WtBold(
 							{P} rtd = RTD[ "'''" <o> "'''" ]
 							[0] = "As it appears in a browser"
 						),
 						[1] = ":"
 					],
-					[9] = "\n",
-					[10] = WtTable(
+					[10] = "\n",
+					[11] = WtTable(
 						{P} rtd = RTD[ "{|" <o> "\n" <o> "|}" ]
 						xmlAttributes = WtXmlAttributes[
 							[0] = WtXmlAttribute(
@@ -7500,7 +7500,7 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[11] = "\n\n"
+					[12] = "\n\n"
 				]
 			),
 			[12] = WtSection(
@@ -9618,10 +9618,10 @@ WtParsedWikitextPage(
 				[0] = WtBold(
 					{P} rtd = RTD[ "'''" <o> "'''" ]
 					[0] = "Wiki markup"
-				),
-				[1] = "\n"
+				)
 			],
-			[15] = WtXmlElement(
+			[15] = "\n",
+			[16] = WtXmlElement(
 				{P} name = "div"
 				{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -9640,15 +9640,16 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[16] = "\n\n",
-			[17] = WtParagraph[
+			[17] = "\n\n",
+			[18] = WtParagraph[
 				[0] = WtBold(
 					{P} rtd = RTD[ "'''" <o> "'''" ]
 					[0] = "As it appears in a browser"
 				),
-				[1] = ":\n"
+				[1] = ":"
 			],
-			[18] = WtXmlElement(
+			[19] = "\n",
+			[20] = WtXmlElement(
 				{P} name = "div"
 				{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -9951,8 +9952,8 @@ WtParsedWikitextPage(
 					[3] = WtParagraph[]
 				]
 			),
-			[19] = "\n\n",
-			[20] = WtParagraph[
+			[21] = "\n\n",
+			[22] = WtParagraph[
 				[0] = "Notice that the table retains the gray background of the wikitable class, and the headers are still bold and centered.  But now the text formatting has been overridden by the local ",
 				[1] = WtItalics(
 					{P} rtd = RTD[ "''" <o> "''" ]
@@ -9960,8 +9961,8 @@ WtParsedWikitextPage(
 				),
 				[2] = " statement; all of the text in the table has been made italic and 120% normal size, and the wikitable border has been replaced by the red dashed border."
 			],
-			[21] = "\n\n",
-			[22] = WtParagraph[
+			[23] = "\n\n",
+			[24] = WtParagraph[
 				[0] = "Of course this works only for browsers supporting inline CSS, if it's important use XHTML markup like ",
 				[1] = WtXmlElement(
 					{P} name = "code"
@@ -9997,8 +9998,8 @@ WtParsedWikitextPage(
 				),
 				[4] = " instead of \"font-style:italic\"."
 			],
-			[23] = "\n\n",
-			[24] = WtSection(
+			[25] = "\n\n",
+			[26] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -10162,10 +10163,10 @@ WtParsedWikitextPage(
 				[0] = WtBold(
 					{P} rtd = RTD[ "'''" <o> "'''" ]
 					[0] = "Wiki markup"
-				),
-				[1] = "\n"
+				)
 			],
-			[10] = WtXmlElement(
+			[10] = "\n",
+			[11] = WtXmlElement(
 				{P} name = "div"
 				{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -10184,15 +10185,16 @@ WtParsedWikitextPage(
 					)
 				]
 			),
-			[11] = "\n\n",
-			[12] = WtParagraph[
+			[12] = "\n\n",
+			[13] = WtParagraph[
 				[0] = WtBold(
 					{P} rtd = RTD[ "'''" <o> "'''" ]
 					[0] = "As it appears in a browser"
 				),
-				[1] = ":\n"
+				[1] = ":"
 			],
-			[13] = WtXmlElement(
+			[14] = "\n",
+			[15] = WtXmlElement(
 				{P} name = "div"
 				{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 				xmlAttributes = WtXmlAttributes[
@@ -10450,8 +10452,8 @@ WtParsedWikitextPage(
 					[3] = WtParagraph[]
 				]
 			),
-			[14] = "\n\n",
-			[15] = WtSection(
+			[16] = "\n\n",
+			[17] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -10474,10 +10476,10 @@ WtParsedWikitextPage(
 						[0] = WtBold(
 							{P} rtd = RTD[ "'''" <o> "'''" ]
 							[0] = "Wiki markup"
-						),
-						[1] = "\n"
+						)
 					],
-					[4] = WtXmlElement(
+					[4] = "\n",
+					[5] = WtXmlElement(
 						{P} name = "div"
 						{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 						xmlAttributes = WtXmlAttributes[
@@ -10496,16 +10498,17 @@ WtParsedWikitextPage(
 							)
 						]
 					),
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "\n",
 						[1] = WtBold(
 							{P} rtd = RTD[ "'''" <o> "'''" ]
 							[0] = "As it appears in a browser"
 						),
-						[2] = ":\n"
+						[2] = ":"
 					],
-					[7] = WtXmlElement(
+					[8] = "\n",
+					[9] = WtXmlElement(
 						{P} name = "div"
 						{P} rtd = RTD[ "<div" <o> ">" <o> "</div>" ]
 						xmlAttributes = WtXmlAttributes[
@@ -10763,8 +10766,8 @@ WtParsedWikitextPage(
 							[3] = WtParagraph[]
 						]
 					),
-					[8] = "\n\n",
-					[9] = WtParagraph[
+					[10] = "\n\n",
+					[11] = WtParagraph[
 						[0] = "If you want the table to default to collapsed state, use the code ",
 						[1] = WtXmlElement(
 							{P} name = "code"
@@ -10780,7 +10783,7 @@ WtParsedWikitextPage(
 							body = WtBody[ [0] = "{| class=\"wikitable sortable collapsible\"" ]
 						)
 					],
-					[10] = "\n\n"
+					[12] = "\n\n"
 				]
 			)
 		]

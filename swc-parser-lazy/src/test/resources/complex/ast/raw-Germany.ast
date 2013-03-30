@@ -5844,10 +5844,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Germania" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -5891,16 +5891,16 @@ WtParsedWikitextPage(
 							[4] = "1"
 						)
 					),
-					[3] = "\nThe ",
-					[4] = WtInternalLink(
+					[4] = "\nThe ",
+					[5] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("ethnogenesis"),
 						title = -
 					),
-					[5] = " of the ",
-					[6] = WtInternalLink(
+					[6] = " of the ",
+					[7] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -5910,46 +5910,46 @@ WtParsedWikitextPage(
 							[0] = "Germanic tribes"
 						)
 					),
-					[7] = " is assumed to have occurred during the ",
-					[8] = WtInternalLink(
+					[8] = " is assumed to have occurred during the ",
+					[9] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Nordic Bronze Age"),
 						title = -
 					),
-					[9] = ", or at the latest during the ",
-					[10] = WtInternalLink(
+					[10] = ", or at the latest during the ",
+					[11] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Pre-Roman Iron Age"),
 						title = -
 					),
-					[11] = ". From southern Scandinavia and northern Germany, the tribes began expanding south, east and west in the 1st century",
-					[12] = WtXmlEntityRef(
+					[12] = ". From southern Scandinavia and northern Germany, the tribes began expanding south, east and west in the 1st century",
+					[13] = WtXmlEntityRef(
 						{P} name = "nbsp"
 						{P} resolved = "\u00A0"
 						{P} rtd = RTD[ "&nbsp;" ]
 					),
-					[13] = "BC, coming into contact with the ",
-					[14] = WtInternalLink(
+					[14] = "BC, coming into contact with the ",
+					[15] = WtInternalLink(
 						{P} postfix = "ic"
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]ic" ]
 						target = WtPageName("Celt"),
 						title = -
 					),
-					[15] = " tribes of ",
-					[16] = WtInternalLink(
+					[16] = " tribes of ",
+					[17] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Gaul"),
 						title = -
 					),
-					[17] = " as well as ",
-					[18] = WtInternalLink(
+					[18] = " as well as ",
+					[19] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -5959,8 +5959,8 @@ WtParsedWikitextPage(
 							[0] = "Iranian"
 						)
 					),
-					[19] = ", ",
-					[20] = WtInternalLink(
+					[20] = ", ",
+					[21] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -5970,8 +5970,8 @@ WtParsedWikitextPage(
 							[0] = "Baltic"
 						)
 					),
-					[21] = ", and ",
-					[22] = WtInternalLink(
+					[22] = ", and ",
+					[23] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -5981,24 +5981,24 @@ WtParsedWikitextPage(
 							[0] = "Slavic"
 						)
 					),
-					[23] = " tribes in ",
-					[24] = WtInternalLink(
+					[24] = " tribes in ",
+					[25] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Eastern Europe"),
 						title = -
 					),
-					[25] = ". Little is known about early Germanic history, except through their recorded interactions with the ",
-					[26] = WtInternalLink(
+					[26] = ". Little is known about early Germanic history, except through their recorded interactions with the ",
+					[27] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Roman Empire"),
 						title = -
 					),
-					[27] = ", etymological research and archaeological finds.",
-					[28] = WtTagExtension(
+					[28] = ", etymological research and archaeological finds.",
+					[29] = WtTagExtension(
 						{P} name = "ref"
 						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 						xmlAttributes = WtXmlAttributes[
@@ -6010,8 +6010,8 @@ WtParsedWikitextPage(
 						],
 						body = WtTagExtensionBody("{{cite book | first = Jill N. | last = Claster | title = Medieval Experience: 300\u20131400 | publisher = [[New York University Press]] | year = 1982 | page = 35 | isbn=0-8147-1381-5 }}")
 					),
-					[29] = "\n\n",
-					[30] = WtParagraph[
+					[30] = "\n\n",
+					[31] = WtParagraph[
 						[0] = "Under ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -6220,7 +6220,7 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{cite book | series= The Cambridge Ancient History | title = The crisis of empire, A.D. 193\u2013337 | volume = 12 | page = 442 | isbn=0-521-30199-8 | first = Alan K. | last = Bowman | first2 = Peter | last2 = Garnsey | first3 = Averil | last3 = Cameron | publisher = Cambridge University Press | year = 2005}}")
 						)
 					],
-					[31] = "\n\n"
+					[32] = "\n\n"
 				]
 			),
 			[5] = WtSection(
@@ -6393,10 +6393,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Ostsiedlung" ]
 								)
 							]
-						),
-						[3] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -6448,8 +6448,8 @@ WtParsedWikitextPage(
 							[6] = "1000"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "On 25 December 800, ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -6522,9 +6522,9 @@ WtParsedWikitextPage(
 						),
 						[16] = " (Holy Roman Empire of the German Nation) starting in 1448, to adjust the title to its then reduced territory."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[],
-					[7] = WtImageLink(
+					[6] = "\n\n",
+					[7] = WtParagraph[],
+					[8] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -6571,8 +6571,8 @@ WtParsedWikitextPage(
 							[3] = "."
 						)
 					),
-					[8] = "\n\n",
-					[9] = WtParagraph[
+					[9] = "\n\n",
+					[10] = WtParagraph[
 						[0] = "Under the reign of the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -6762,8 +6762,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{ cite book | url=http://www.vlib.us/medieval/lectures/black_death.html | title = The Great Famine (1315\u20131317) and the Black Death (1346\u20131351) | first = Lynn Harry | last = Nelson | publisher = [[University of Kansas]] }}")
 						)
 					],
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "The edict of the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -6804,8 +6804,8 @@ WtParsedWikitextPage(
 						),
 						[8] = "."
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = "The monk ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -6941,7 +6941,7 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{cite book | last = Fulbrook | first = Mary | title = A Concise History of Germany | publisher = Cambridge University Press | year = 1991 | page = 97 | isbn = 0-521-54071-2 }}")
 						)
 					],
-					[14] = "\n\n"
+					[15] = "\n\n"
 				]
 			),
 			[7] = WtSection(
@@ -6964,10 +6964,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "German Confederation" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -6997,8 +6997,8 @@ WtParsedWikitextPage(
 							[1] = " in 1848"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Following the fall of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -7124,8 +7124,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("Martin, Norman. [http://www.fotw.net/flags/de1848.html German Confederation 1815\u20131866 (Germany)]. Flags of the World. 5 October 2000. Retrieved 7 December 2006.")
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "In the light of a ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -7247,7 +7247,7 @@ WtParsedWikitextPage(
 						),
 						[26] = ", formerly the leading German state, from the affairs of the remaining German states."
 					],
-					[7] = "\n\n"
+					[8] = "\n\n"
 				]
 			),
 			[8] = WtSection(
@@ -7275,10 +7275,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "World War I" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -7324,8 +7324,8 @@ WtParsedWikitextPage(
 							[4] = " is at the centre in a white uniform."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "The state known as ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -7419,9 +7419,9 @@ WtParsedWikitextPage(
 						),
 						[18] = " outside Europe."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[],
-					[7] = WtImageLink(
+					[6] = "\n\n",
+					[7] = WtParagraph[],
+					[8] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -7456,8 +7456,8 @@ WtParsedWikitextPage(
 							[2] = " in blue"
 						)
 					),
-					[8] = "\n\n",
-					[9] = WtParagraph[
+					[9] = "\n\n",
+					[10] = WtParagraph[
 						[0] = "In the ",
 						[1] = WtTemplate(
 							{P} precededByNewline = false
@@ -7565,8 +7565,8 @@ WtParsedWikitextPage(
 						),
 						[20] = ", Germany became increasingly isolated."
 					],
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "Germany's imperialism reached outside its own country, and it joined many other powers in Europe in claiming its share of Africa. The ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -7639,8 +7639,8 @@ WtParsedWikitextPage(
 						),
 						[16] = "."
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = "The ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -7768,7 +7768,7 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{cite book | first = Stephen J. | last = Lee | title = Europe, 1890\u20131945 | publisher = Routledge | year = 2003 | page = 131 | isbn = 0-415-25455-8 | location = London}}")
 						)
 					],
-					[14] = "\n\n"
+					[15] = "\n\n"
 				]
 			),
 			[9] = WtSection(
@@ -7791,10 +7791,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Weimar Republic" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -7839,8 +7839,8 @@ WtParsedWikitextPage(
 							[3] = " era was dominated by political unrest."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "At the beginning of the German Revolution, Germany was declared a ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -7897,8 +7897,8 @@ WtParsedWikitextPage(
 						),
 						[12] = " on 11 August 1919."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Suffering from the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -8016,8 +8016,8 @@ WtParsedWikitextPage(
 						),
 						[20] = ", and were also targeted."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "Discontentment with the new Weimar government helped fuel the growth of the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -8066,7 +8066,7 @@ WtParsedWikitextPage(
 						),
 						[10] = ", honouring Hitler's request."
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			),
 			[10] = WtSection(
@@ -8089,10 +8089,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Nazi Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -8139,8 +8139,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "On 27 February 1933 the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -8255,8 +8255,8 @@ WtParsedWikitextPage(
 						),
 						[24] = "."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Leading to ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -8392,9 +8392,9 @@ WtParsedWikitextPage(
 						),
 						[28] = " failed."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[],
-					[9] = WtImageLink(
+					[8] = "\n\n",
+					[9] = WtParagraph[],
+					[10] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -8437,16 +8437,16 @@ WtParsedWikitextPage(
 							[4] = " 1945"
 						)
 					),
-					[10] = "On 22 June 1941, Germany broke the ",
-					[11] = WtInternalLink(
+					[11] = "On 22 June 1941, Germany broke the ",
+					[12] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Molotov\u2013Ribbentrop pact"),
 						title = -
 					),
-					[12] = " and ",
-					[13] = WtInternalLink(
+					[13] = " and ",
+					[14] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8456,8 +8456,8 @@ WtParsedWikitextPage(
 							[0] = "invaded the Soviet Union"
 						)
 					),
-					[14] = ". The same year, ",
-					[15] = WtInternalLink(
+					[15] = ". The same year, ",
+					[16] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8467,8 +8467,8 @@ WtParsedWikitextPage(
 							[0] = "Japan"
 						)
 					),
-					[16] = " ",
-					[17] = WtInternalLink(
+					[17] = " ",
+					[18] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8478,16 +8478,16 @@ WtParsedWikitextPage(
 							[0] = "attacked"
 						)
 					),
-					[18] = " the American base at Pearl Harbor, and Germany declared war on the United States as a consequence of its alliance with Japan. Although the German army advanced into the Soviet Union quite rapidly, the ",
-					[19] = WtInternalLink(
+					[19] = " the American base at Pearl Harbor, and Germany declared war on the United States as a consequence of its alliance with Japan. Although the German army advanced into the Soviet Union quite rapidly, the ",
+					[20] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Battle of Stalingrad"),
 						title = -
 					),
-					[20] = " marked a major turning point in the war. Subsequently, the German army started to retreat on the ",
-					[21] = WtInternalLink(
+					[21] = " marked a major turning point in the war. Subsequently, the German army started to retreat on the ",
+					[22] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8497,8 +8497,8 @@ WtParsedWikitextPage(
 							[0] = "Eastern front"
 						)
 					),
-					[22] = ". In September 1943, Germany's ally Italy surrendered, and German forces were forced to defend an additional front in Italy. ",
-					[23] = WtInternalLink(
+					[23] = ". In September 1943, Germany's ally Italy surrendered, and German forces were forced to defend an additional front in Italy. ",
+					[24] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8508,8 +8508,8 @@ WtParsedWikitextPage(
 							[0] = "D-Day"
 						)
 					),
-					[24] = " marked another major turning point in the war, opening up a ",
-					[25] = WtInternalLink(
+					[25] = " marked another major turning point in the war, opening up a ",
+					[26] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8519,16 +8519,16 @@ WtParsedWikitextPage(
 							[0] = "Western front"
 						)
 					),
-					[26] = "; the Allied forces landed on the beaches of ",
-					[27] = WtInternalLink(
+					[27] = "; the Allied forces landed on the beaches of ",
+					[28] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Normandy"),
 						title = -
 					),
-					[28] = " and made advances towards German territory. Germany's defeat soon followed. On 8 May 1945, ",
-					[29] = WtInternalLink(
+					[29] = " and made advances towards German territory. Germany's defeat soon followed. On 8 May 1945, ",
+					[30] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -8538,31 +8538,31 @@ WtParsedWikitextPage(
 							[0] = "the German armed forces surrendered"
 						)
 					),
-					[30] = " after the ",
-					[31] = WtInternalLink(
+					[31] = " after the ",
+					[32] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("Red Army"),
 						title = -
 					),
-					[32] = " occupied Berlin. Approximately seven million German soldiers and civilians \u2013 including ",
-					[33] = WtInternalLink(
+					[33] = " occupied Berlin. Approximately seven million German soldiers and civilians \u2013 including ",
+					[34] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("ethnic Germans"),
 						title = -
 					),
-					[34] = " from Eastern Europe \u2013 died during World War II.",
-					[35] = WtTagExtension(
+					[35] = " from Eastern Europe \u2013 died during World War II.",
+					[36] = WtTagExtension(
 						{P} name = "ref"
 						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 						xmlAttributes = WtXmlAttributes[],
 						body = WtTagExtensionBody("Steinberg, Heinz G\u00FCnter. ''Die Bev\u00F6lkerungsentwicklung in Deutschland im Zweiten Weltkrieg: mit einem \u00DCberblick \u00FCber die Entwicklung von 1945 bis 1990.'' Bonn 1991.")
 					),
-					[36] = "\n\n",
-					[37] = WtParagraph[
+					[37] = "\n\n",
+					[38] = WtParagraph[
 						[0] = "In what later became known as ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -8682,7 +8682,7 @@ WtParsedWikitextPage(
 							args = WtTemplateArguments[]
 						)
 					],
-					[38] = "\n\n"
+					[39] = "\n\n"
 				]
 			),
 			[11] = WtSection(
@@ -8705,10 +8705,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "History of Germany (1945\u20131990)" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -8769,8 +8769,8 @@ WtParsedWikitextPage(
 							[8] = " was formed by the Soviet Zone, while West Germany was formed by the American, British, and French zones in 1949 and the Saar in 1957."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "The war resulted in the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -8852,8 +8852,8 @@ WtParsedWikitextPage(
 						),
 						[14] = " into four military occupation zones."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "The western sectors, controlled by France, the United Kingdom, and the United States, were merged on 23 May 1949, to form the ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -8935,8 +8935,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{cite book | last = Wise | first = Michael Z. | title = Capital dilemma: Germany's search for a new architecture of democracy| year = 1998| publisher = Princeton Architectural Press | isbn =978-1-56898-134-5 | page = 23 | chapter = Bonn, Capital of Self-Effacement}}")
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "West Germany, established as a federal parliamentary republic with a \"",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -9007,9 +9007,9 @@ WtParsedWikitextPage(
 						),
 						[12] = ", having been occupied by France since 1947."
 					],
-					[9] = "\n\n",
-					[10] = WtParagraph[],
-					[11] = WtImageLink(
+					[10] = "\n\n",
+					[11] = WtParagraph[],
+					[12] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -9052,8 +9052,8 @@ WtParsedWikitextPage(
 							[4] = " shortly after its opening in 1989"
 						)
 					),
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = "East Germany was an ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -9165,8 +9165,8 @@ WtParsedWikitextPage(
 						),
 						[24] = "."
 					],
-					[14] = "\n\n",
-					[15] = WtParagraph[
+					[15] = "\n\n",
+					[16] = WtParagraph[
 						[0] = "Tensions between East and West Germany were somewhat reduced in the early 1970s by Chancellor ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -9200,8 +9200,8 @@ WtParsedWikitextPage(
 						),
 						[6] = " acceptance of Germany's territorial losses in World War II."
 					],
-					[16] = "\n\n",
-					[17] = WtParagraph[
+					[17] = "\n\n",
+					[18] = WtParagraph[
 						[0] = "In summer 1989, Hungary decided (2 May) to dismantle the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -9295,7 +9295,7 @@ WtParsedWikitextPage(
 						),
 						[18] = " or \"neue L\u00E4nder\")."
 					],
-					[18] = "\n\n"
+					[19] = "\n\n"
 				]
 			),
 			[12] = WtSection(
@@ -9318,10 +9318,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "History of Germany since 1990" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -9364,8 +9364,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Based on the Bonn-Berlin Act, adopted by the parliament on 10 March 1994, Berlin once again became the capital of the reunified Germany, while Bonn obtained the unique status of a ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -9386,8 +9386,8 @@ WtParsedWikitextPage(
 						),
 						[5] = " The relocation of the government was completed in 1999."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Since reunification, Germany has taken a more active role in the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -9460,8 +9460,8 @@ WtParsedWikitextPage(
 						),
 						[14] = " These deployments were controversial, since after the war, Germany was bound by domestic law only to deploy troops for defence roles. Deployments to foreign territories were understood not to be covered by the defence provision; however, the parliamentary vote on the issue effectively legalised the participation in a peacekeeping context."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "In 2005, ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -9527,7 +9527,7 @@ WtParsedWikitextPage(
 						),
 						[12] = "."
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			)
 		]
@@ -9552,10 +9552,10 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "Geography of Germany" ]
 						)
 					]
-				),
-				[1] = "\n"
+				)
 			],
-			[2] = WtImageLink(
+			[2] = "\n",
+			[3] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -9586,8 +9586,8 @@ WtParsedWikitextPage(
 					[0] = "Topographic map"
 				)
 			),
-			[3] = "\n\n",
-			[4] = WtParagraph[
+			[4] = "\n\n",
+			[5] = WtParagraph[
 				[0] = "Germany is located in the Central Europe, the territory covers ",
 				[1] = WtTemplate(
 					{P} precededByNewline = false
@@ -9741,8 +9741,8 @@ WtParsedWikitextPage(
 				),
 				[16] = "."
 			],
-			[5] = "\n\n",
-			[6] = WtParagraph[
+			[6] = "\n\n",
+			[7] = WtParagraph[
 				[0] = "Elevation ranges from the mountains of the ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -9887,8 +9887,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("{{Cite web| url = https://www.cia.gov/library/publications/the-world-factbook/geos/gm.html| title = CIA Factbook | accessdate = 23 October 2010| author=CIA | authorlink = Central Intelligence Agency}}")
 				)
 			],
-			[7] = "\n\n",
-			[8] = WtParagraph[
+			[8] = "\n\n",
+			[9] = WtParagraph[
 				[0] = "Germany shares borders with more European countries than any other country on the continent. Its neighbours are Denmark in the north, Poland and the Czech Republic in the east, Austria and Switzerland in the south, France and ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -9899,8 +9899,8 @@ WtParsedWikitextPage(
 				),
 				[2] = " in the south-west and Belgium and the Netherlands in the north-west."
 			],
-			[9] = "\n\n",
-			[10] = WtParagraph[
+			[10] = "\n\n",
+			[11] = WtParagraph[
 				[0] = "The most significant natural resources are iron ore, coal, ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -9943,8 +9943,8 @@ WtParsedWikitextPage(
 				),
 				[10] = " and water."
 			],
-			[11] = "\n\n",
-			[12] = WtSection(
+			[12] = "\n\n",
+			[13] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -11135,7 +11135,7 @@ WtParsedWikitextPage(
 					[8] = "\n\n"
 				]
 			),
-			[13] = WtSection(
+			[14] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -11309,7 +11309,7 @@ WtParsedWikitextPage(
 					[8] = "\n\n"
 				]
 			),
-			[14] = WtSection(
+			[15] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -11567,7 +11567,7 @@ WtParsedWikitextPage(
 					[10] = "\n\n"
 				]
 			),
-			[15] = WtSection(
+			[16] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -11734,10 +11734,10 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "Politics of Germany" ]
 						)
 					]
-				),
-				[1] = "\n"
+				)
 			],
-			[2] = WtImageLink(
+			[2] = "\n",
+			[3] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -11776,8 +11776,8 @@ WtParsedWikitextPage(
 					[2] = ". "
 				)
 			),
-			[3] = "\n\n",
-			[4] = WtParagraph[
+			[4] = "\n\n",
+			[5] = WtParagraph[
 				[0] = "Germany is a ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -11837,8 +11837,8 @@ WtParsedWikitextPage(
 				),
 				[12] = " (constitution), the authors expressed the intention that it would be replaced by a proper constitution once Germany was reunited as one state."
 			],
-			[5] = "\n\n",
-			[6] = WtParagraph[
+			[6] = "\n\n",
+			[7] = WtParagraph[
 				[0] = "Amendments to the ",
 				[1] = WtItalics(
 					{P} rtd = RTD[ "''" <o> "''" ]
@@ -11872,8 +11872,8 @@ WtParsedWikitextPage(
 				),
 				[8] = " in 1990, with only minor amendments."
 			],
-			[7] = "\n\n",
-			[8] = WtSection(
+			[8] = "\n\n",
+			[9] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -12280,7 +12280,7 @@ WtParsedWikitextPage(
 					[16] = "\n\n"
 				]
 			),
-			[9] = WtSection(
+			[10] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -12305,10 +12305,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Law enforcement in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -12353,8 +12353,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "The ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -12429,8 +12429,8 @@ WtParsedWikitextPage(
 						),
 						[16] = " (Basic Law). It acts independently of the other state bodies, but cannot act on its own behalf."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Germany's supreme court system, called ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -12544,9 +12544,9 @@ WtParsedWikitextPage(
 						),
 						[24] = " in Leipzig."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[],
-					[9] = WtImageLink(
+					[8] = "\n\n",
+					[9] = WtParagraph[],
+					[10] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -12596,8 +12596,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = WtInternalLink(
 							{P} postfix = ""
 							{P} prefix = ""
@@ -12692,10 +12692,10 @@ WtParsedWikitextPage(
 						),
 						[21] = " if prosecution by a court of the country where the crime was committed, or by an international court, is not possible."
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[ [0] = "Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself." ],
-					[14] = "\n\n",
-					[15] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[ [0] = "Legislative power is divided between the federation and the state level. The Basic Law presumes that all legislative power remains at the state level unless otherwise designated by the Basic Law itself." ],
+					[15] = "\n\n",
+					[16] = WtParagraph[
 						[0] = "Any federal law overrides state law if the legislative power lies at the federal level. A famous example is the purported Hessian provision for the death penalty, which goes against the ban on capital punishment under the Basic Law, rendering the Hessian provision invalid. The ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -12741,8 +12741,8 @@ WtParsedWikitextPage(
 						),
 						[10] = ". They are competent whether the action is based on federal or state law."
 					],
-					[16] = "\n\n",
-					[17] = WtParagraph[
+					[17] = "\n\n",
+					[18] = WtParagraph[
 						[0] = "Many of the fundamental matters of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -12763,10 +12763,10 @@ WtParsedWikitextPage(
 						),
 						[6] = " are the highest level of administrative jurisdiction concerning the state administrations, unless the question of law concerns federal law or state law identical to federal law. In such cases, final appeal to the Federal Administrative Court is possible."
 					],
-					[18] = "\n\n"
+					[19] = "\n\n"
 				]
 			),
-			[10] = WtSection(
+			[11] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -12786,10 +12786,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Foreign relations of Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -12836,8 +12836,8 @@ WtParsedWikitextPage(
 							[6] = "."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Germany maintains a network of 229 diplomatic missions abroad and holds relations with more than 190 countries.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -12847,8 +12847,8 @@ WtParsedWikitextPage(
 						),
 						[2] = " As member it is the largest contributor to the budget of the European Union (providing 20%) and third largest contributor to the United Nations (providing 8%). Germany is a member of the NATO defence alliance, the Organisation of Economic Co-operation and Development (OECD), the G8, the G20, the World Bank and the International Monetary Fund (IMF)."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Germany has played a leading role in the European Union since its inception and has maintained a ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -12913,9 +12913,9 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("Glaab, Manuela.&nbsp;[http://web.archive.org/web/20071121072523/http://en.internationalepolitik.de/archiv/2003/spring2003/german-foreign-policy.html German Foreign Policy: Book Review] Internationale Politik. Spring 2003. Retrieved 3 January 2007.")
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[],
-					[9] = WtImageLink(
+					[8] = "\n\n",
+					[9] = WtParagraph[],
+					[10] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -12953,8 +12953,8 @@ WtParsedWikitextPage(
 							[2] = " in 1957, which became the European Union in 1993. It maintains close relations with its neighbours to coordinate EU politics."
 						)
 					),
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "During the Cold War, Germany's partition by the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -13008,9 +13008,9 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.dw-world.de/dw/article/0,2144,1741310,00.html Germany's New Face Abroad] [[Deutsche Welle]]. 14 October 2005. Retrieved 3 December 2006.")
 						)
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[],
-					[14] = WtImageLink(
+					[13] = "\n\n",
+					[14] = WtParagraph[],
+					[15] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -13045,8 +13045,8 @@ WtParsedWikitextPage(
 							[2] = " member in 1955. (Defence ministers in 2000)"
 						)
 					),
-					[15] = "\n\n",
-					[16] = WtParagraph[
+					[16] = "\n\n",
+					[17] = WtParagraph[
 						[0] = "The governments of Germany and the United States are close political allies.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -13129,8 +13129,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://benefits.military.com/misc/installations/Base_Content.jsp?id=1675 Kaiserslautern, Germany Overview] U.S. Military. Retrieved 3 December 2006.")
 						)
 					],
-					[17] = "\n\n",
-					[18] = WtParagraph[
+					[18] = "\n\n",
+					[19] = WtParagraph[
 						[0] = "The development policy of the Federal Republic of Germany is an independent area of German foreign policy. It is formulated by the Federal Ministry for Economic Cooperation and Development (BMZ) and carried out by the implementing organisations. The German government sees development policy as a joint responsibility of the international community.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -13147,10 +13147,10 @@ WtParsedWikitextPage(
 						),
 						[4] = " Germany spent 0.37 per cent of its gross domestic product (GDP) on development, which is below the government's target of increasing aid to 0.51 per cent of GDP by 2010. The international target of 0.7% of GNP would have not been reached either."
 					],
-					[19] = "\n\n"
+					[20] = "\n\n"
 				]
 			),
-			[11] = WtSection(
+			[12] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -13170,10 +13170,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Bundeswehr" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -13224,8 +13224,8 @@ WtParsedWikitextPage(
 							[6] = "."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Germany's military, the ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -13371,9 +13371,9 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{de icon}} [http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html Grundgesetz f\u00FCr die Bundesrepublik Deutschland: Article 115a]{{dead link|date=September 2010}} Bundestag.de. Retrieved 19 November 2009. {{Wayback|url=http://www.bundestag.de/parlament/funktion/gesetze/grundgesetz/gg_10a.html|date =20080614163824|bot=DASHBot}}{{dead link|date=September 2010}}")
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[],
-					[7] = WtImageLink(
+					[6] = "\n\n",
+					[7] = WtParagraph[],
+					[8] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -13415,8 +13415,8 @@ WtParsedWikitextPage(
 							[2] = " flight demonstration"
 						)
 					),
-					[8] = "\n\n",
-					[9] = WtParagraph[
+					[9] = "\n\n",
+					[10] = WtParagraph[
 						[0] = "The Bundeswehr employs 200,500 professional soldiers, 55,000 18\u201325",
 						[1] = WtXmlEntityRef(
 							{P} name = "nbsp"
@@ -13425,10 +13425,10 @@ WtParsedWikitextPage(
 						),
 						[2] = "year-old conscripts who serve for at least six months under current rules, and 2,500 active reservists at any given time. Roughly 300,000 reservists are available to the Armed Forces and participate in defence exercises as well as deployments abroad."
 					],
-					[10] = "\n\n",
-					[11] = WtParagraph[ [0] = "Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far." ],
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[ [0] = "Since 2001 women can serve in all functions of service without restriction, but they are not subject to conscription. There are presently around 14,500 women on active duty and a number of female reservists who take part in all duties including peacekeeping missions and other operations. Two female medical officers have been promoted to a General rank so far." ],
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = WtTemplate(
 							{P} precededByNewline = true
 							{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -13518,7 +13518,7 @@ WtParsedWikitextPage(
 							args = WtTemplateArguments[]
 						)
 					],
-					[14] = "\n\n"
+					[15] = "\n\n"
 				]
 			)
 		]
@@ -13543,10 +13543,10 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "Economy of Germany" ]
 						)
 					]
-				),
-				[1] = "\n"
+				)
 			],
-			[2] = WtImageLink(
+			[2] = "\n",
+			[3] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -13575,8 +13575,8 @@ WtParsedWikitextPage(
 					)
 				)
 			),
-			[3] = "\n\n",
-			[4] = WtParagraph[
+			[4] = "\n\n",
+			[5] = WtParagraph[
 				[0] = "Germany has a ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -13672,9 +13672,9 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("\"German Economy Experiences Record Growth in 2010\" [http://www.germany.info/Vertretung/usa/en/__pr/P__Wash/2011/01/12__GDP__2010__PR.html German Embassy Press Release 12 Jan. 2011]")
 				)
 			],
-			[5] = "\n\n",
-			[6] = WtParagraph[],
-			[7] = WtImageLink(
+			[6] = "\n\n",
+			[7] = WtParagraph[],
+			[8] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -13724,8 +13724,8 @@ WtParsedWikitextPage(
 					[4] = ". "
 				)
 			),
-			[8] = "\n\n",
-			[9] = WtParagraph[
+			[9] = "\n\n",
+			[10] = WtParagraph[
 				[0] = "Since the age of ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -13767,8 +13767,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("[Germany Trade Statistics 2009], [[suite101.com]], 1 April 2010. Retrieved 25 August 2010.")
 				)
 			],
-			[10] = "\n\n",
-			[11] = WtParagraph[
+			[11] = "\n\n",
+			[12] = WtParagraph[
 				[0] = "Most of the country's export products are in engineering, especially in machinery, automobiles, chemical goods and metals.",
 				[1] = WtTagExtension(
 					{P} name = "ref"
@@ -13790,8 +13790,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("[http://web.archive.org/web/20061210163253/http://www.german-renewable-energy.com/Renewables/Navigation/Englisch/wind-power.html Wind Power] Federal Ministry of Economics and Technology (Germany) Retrieved 30 November 2006.")
 				)
 			],
-			[12] = "\n\n",
-			[13] = WtParagraph[
+			[13] = "\n\n",
+			[14] = WtParagraph[
 				[0] = "Germany is an advocate of closer European economic and political integration. Its commercial policies are increasingly determined by agreements among European Union (EU) members and EU ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -13810,8 +13810,8 @@ WtParsedWikitextPage(
 				),
 				[4] = " in Frankfurt."
 			],
-			[14] = "\n\n",
-			[15] = WtParagraph[
+			[15] = "\n\n",
+			[16] = WtParagraph[
 				[0] = "Two decades after ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -13858,8 +13858,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("{{Cite news| url=http://www.nytimes.com/2009/06/19/world/europe/19germany.html | work=The New York Times | title=In East Germany, a Decline as Stark as a Wall | first=Nicholas | last=Kulish | date=19 June 2009 | accessdate=31 March 2010}}")
 				)
 			],
-			[16] = "\n\n",
-			[17] = WtParagraph[
+			[17] = "\n\n",
+			[18] = WtParagraph[
 				[0] = "The nominal GDP of Germany contracted in the second and third quarters of 2008, putting the country in a technical recession following a global and ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -13898,8 +13898,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("{{Cite news| url= http://www.france24.com/en/20090106-germany-agrees-new-50-billion-euro-stimulus-plan| title= Germany agrees on 50-billion-euro stimulus plan|publisher=France 24| date=6 January 2009}}")
 				)
 			],
-			[18] = "\n\n",
-			[19] = WtSection(
+			[19] = "\n\n",
+			[20] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -15062,7 +15062,7 @@ WtParsedWikitextPage(
 					[15] = "\n\n"
 				]
 			),
-			[20] = WtSection(
+			[21] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -15087,10 +15087,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Rail transport in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -15121,8 +15121,8 @@ WtParsedWikitextPage(
 							[2] = " train"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "With its central position in Europe, Germany is an important transportation hub. This is reflected in its dense and modern transportation networks. The extensive motorway (",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15145,8 +15145,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{Cite web|authorlink=www.adac.de/verkehrs-experten|title=Autobahn-Temporegelung|publisher=[[ADAC]]|date=October 2007|url=http://www.adac.de/images/SP_Tempolimit_V%201%2E0_tcm8-199598.pdf|format=PDF|language=German|accessdate=15 November 2008}} {{Dead link|date=June 2010| bot=DASHBot}}")
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Germany has established a polycentric network of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15199,8 +15199,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{de icon}} [http://web.archive.org/web/20070809140315/http://www.db.de/site/bahn/de/unternehmen/investor__relations/finanzberichte/geschaeftsbericht/geschaeftsbericht__2006.html Gesch\u00E4ftsbericht 2006 der Deutschen Bahn AG], [[Deutsche Bahn]]. Retrieved 19 November 2009.")
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "The largest German airports are the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15301,10 +15301,10 @@ WtParsedWikitextPage(
 						),
 						[20] = "."
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			),
-			[21] = WtSection(
+			[22] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -15324,10 +15324,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Energy in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -15369,8 +15369,8 @@ WtParsedWikitextPage(
 							[4] = " capacity in the world is installed in Germany."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Germany is the world's fifth largest consumer of energy, and two-thirds of its primary energy was imported in 2002. In the same year, Germany was Europe's largest consumer of electricity, totalling 512.9 terawatt-hours. Government policy promotes energy conservation and the development of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15422,8 +15422,8 @@ WtParsedWikitextPage(
 						),
 						[10] = " has been improving since the beginning of the 1970s. The government has set the goal of meeting half the country's energy demands from renewable sources by 2050."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "In 2000, the government and the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15452,10 +15452,10 @@ WtParsedWikitextPage(
 						),
 						[6] = " Renewable energy still plays a more modest role in energy consumption. In 2006, energy consumption was met by the following sources: oil (36%); coal, including lignite (24%); natural gas (23%); nuclear (13%); hydro-electric and wind power (1%); and other (4%). However, the share of renewable energy in electricity supply has been rapidly increasing, reaching 14% in 2007. The German government has set a new target to increase this share to 27% by 2020."
 					],
-					[7] = "\n\n"
+					[8] = "\n\n"
 				]
 			),
-			[22] = WtSection(
+			[23] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -15475,10 +15475,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "German inventors and discoverers" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -15534,8 +15534,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Germany has been the home of many famous inventors and ",
 						[1] = WtInternalLink(
 							{P} postfix = "s"
@@ -15669,8 +15669,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.centennialofflight.gov/essay/Lighter_than_air/zeppelin/LTA8.htm The Zeppelin] U.S. Centennial of Flight Commission. Retrieved 2 January 2007.")
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = WtInternalLink(
 							{P} postfix = ""
 							{P} prefix = ""
@@ -15748,8 +15748,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.itu.int/aboutitu/HistoricalFigures.html Historical figures in telecommunications.] International Telecommunication Union. 14 January 2004. Retrieved 2 January 2007.")
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "With regard to triadic patents Germany is in third place after the USA and Japan. With more than 26,500 registrations for patents submitted to the European Patent Office, Germany is the leading European nation. ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15785,10 +15785,10 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.tatsachen-ueber-deutschland.de/en/education-and-research/main-content-07/industry-strongly-engaged-in-research.html Industry strongly engaged in research] Facts about Germany. Retrieved 2010-29-08.")
 						)
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			),
-			[23] = WtSection(
+			[24] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -15808,10 +15808,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Science and technology in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -15844,16 +15844,16 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\nGermany's achievements in sciences have been significant and ",
-					[4] = WtInternalLink(
+					[4] = "\nGermany's achievements in sciences have been significant and ",
+					[5] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 						target = WtPageName("research and development"),
 						title = -
 					),
-					[5] = " efforts form an integral part of the ",
-					[6] = WtInternalLink(
+					[6] = " efforts form an integral part of the ",
+					[7] = WtInternalLink(
 						{P} postfix = ""
 						{P} prefix = ""
 						{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -15863,15 +15863,15 @@ WtParsedWikitextPage(
 							[0] = "country's economy"
 						)
 					),
-					[7] = ". Germany has been the home of some of the most prominent researchers in various scientific fields.",
-					[8] = WtTagExtension(
+					[8] = ". Germany has been the home of some of the most prominent researchers in various scientific fields.",
+					[9] = WtTagExtension(
 						{P} name = "ref"
 						{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 						xmlAttributes = WtXmlAttributes[],
 						body = WtTagExtensionBody("[http://www.campus-germany.de/english/2.60.260.html Back to the Future: Germany \u2013 A Country of Research] German Academic Exchange Service (23 February 2005). Retrieved 8 December 2006.")
 					),
-					[9] = "\n\n",
-					[10] = WtParagraph[
+					[10] = "\n\n",
+					[11] = WtParagraph[
 						[0] = "The ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -15956,8 +15956,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("National Science Nobel Prize shares 1901\u20132009 [http://www.idsia.ch/~juergen/sci.html by citizenship at the time of the award] and [http://www.idsia.ch/~juergen/scinat.html by country of birth]. From [[J\u00FCrgen Schmidhuber|J. Schmidhuber]] (2010), [http://www.idsia.ch/~juergen/nobelshare.html Evolution of National Nobel Prize Shares in the 20th Century] at [http://arxiv.org/abs/1009.2634 arXiv:1009.2634v1]")
 						)
 					],
-					[11] = "\n\n",
-					[12] = WtParagraph[
+					[12] = "\n\n",
+					[13] = WtParagraph[
 						[0] = "The work of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -16123,8 +16123,8 @@ WtParsedWikitextPage(
 						),
 						[42] = "."
 					],
-					[13] = "\n\n",
-					[14] = WtParagraph[
+					[14] = "\n\n",
+					[15] = WtParagraph[
 						[0] = "Important research institutions in Germany are the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -16174,7 +16174,7 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://web.archive.org/web/20080621091621/http://www.dfg.de/en/research_funding/scientific_prizes/gw_leibniz_prize.html Gottfried Wilhelm Leibniz Prize], DFG. Retrieved 12 March 2007.")
 						)
 					],
-					[15] = "\n\n"
+					[16] = "\n\n"
 				]
 			)
 		]
@@ -16361,10 +16361,10 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("The forecast of 65 million assumes a net migration of +100,000 per year; the forecast of 70 million assumes a net migration of +200,000 per year.<br/>{{cite press release | publisher=[[Federal Statistical Office of Germany|Destatis]] | date = 2009-11-18| language = German|title=Pressemitteilung Nr.435 vom 18.11.2009:Im Jahr 2060 wird jeder Siebente 80 Jahre oder \u00E4lter sein| trans_title = Press Release No. 435 of 18 November 2009: By 2006, every seventh person will be eighty or older| url=http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/pm/2009/11/PD09__435__12411,templateId=renderPrint.psml | accessdate = 2011-02-12| quote = Heute leben in Deutschland etwa 82 Millionen Menschen, 2060 werden es voraussichtlich nur noch 65 bis 70 Millionen sein. (Today there are 82 million people living in Germany; in 2006 it is forecast to be only 65 to 70 million.)}}<br/>\nMore details on the methodology, detailed tables broken down by age and sex, etc. are provided at \n{{cite web| url = http://www.destatis.de/jetspeed/portal/cms/Sites/destatis/Internet/DE/Presse/abisz/Bevoelkerungsvorausberechnung,templateId=renderPrint.psml| title = Bev\u00F6lkerungsentwicklung in Deutschland bis 2060| trans_title = Population development in Germany till 2060| date = 2009-11-18| publisher = [[Statistisches Bundesamt]] | language = German| accessdate = 2011-02-15}}")
-				),
-				[4] = "\n"
+				)
 			],
-			[11] = WtImageLink(
+			[11] = "\n",
+			[12] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -16399,10 +16399,10 @@ WtParsedWikitextPage(
 					[2] = " in 2005"
 				)
 			),
-			[12] = "\n\n",
-			[13] = WtParagraph[ [0] = "Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class." ],
-			[14] = "\n\n",
-			[15] = WtParagraph[
+			[13] = "\n\n",
+			[14] = WtParagraph[ [0] = "Over 99% of those of age 15 and above are estimated to be able to read and write. A growing number of inhabitants are functionally illiterate. Illiteracy rates of youngsters vary by ethnic group and parents socio-economic class." ],
+			[15] = "\n\n",
+			[16] = WtParagraph[
 				[0] = WtInternalLink(
 					{P} postfix = ""
 					{P} prefix = ""
@@ -16428,8 +16428,8 @@ WtParsedWikitextPage(
 				),
 				[5] = " that nearly 30% of Germans aged 5 years and younger have at least one parent who was born abroad."
 			],
-			[16] = "\n\n",
-			[17] = WtSection(
+			[17] = "\n\n",
+			[18] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -16641,7 +16641,7 @@ WtParsedWikitextPage(
 					[9] = "\n\n"
 				]
 			),
-			[18] = WtSection(
+			[19] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -18473,7 +18473,7 @@ WtParsedWikitextPage(
 					[6] = "\n\n"
 				]
 			),
-			[19] = WtSection(
+			[20] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -18493,10 +18493,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Languages of Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -18523,8 +18523,8 @@ WtParsedWikitextPage(
 							[0] = "Knowledge of German in European countries"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "German is the official and predominant spoken language in Germany.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -18627,8 +18627,8 @@ WtParsedWikitextPage(
 						),
 						[20] = ", and Russian."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Standard German is a ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -18842,8 +18842,8 @@ WtParsedWikitextPage(
 						),
 						[38] = "."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "Around the world, German has approximately 100",
 						[1] = WtXmlEntityRef(
 							{P} name = "nbsp"
@@ -18900,10 +18900,10 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Survey)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_en.pdf| format=PDF |accessdate=3 February 2007}}<br />{{Cite web|title=Special Eurobarometer 243: Europeans and their Languages (Executive Summary)|publisher=[[Europa (web portal)]] |author=[[European Commission]]|year=2006|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_243_sum_en.pdf|format=PDF|doi=|accessdate=3 February 2007}}")
 						)
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			),
-			[20] = WtSection(
+			[21] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -18923,10 +18923,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Religion in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -18977,8 +18977,8 @@ WtParsedWikitextPage(
 							[6] = "."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "According to organisational reporting based on projections in 2008 about 34.1% Germans have ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -18998,8 +18998,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{Cite web|url=http://www.adherents.com/adhloc/Wh_112.html |title=By Location |publisher=Adherents.com |date= |accessdate=26 September 2010}}")
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Christianity is the largest religion in Germany, with around 49.4",
 						[1] = WtXmlEntityRef(
 							{P} name = "nbsp"
@@ -19295,8 +19295,8 @@ WtParsedWikitextPage(
 							]
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "Protestantism is concentrated in the north and east and ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -19354,8 +19354,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{de icon}} [http://www.remid.de/remid_info_zahlen.htm Religionen in Deutschland: Mitgliederzahlen] Religionswissenschaftlicher Medien- und Informationsdienst; 31 October 2009. Retrieved 19 November 2009.")
 						)
 					],
-					[9] = "\n\n",
-					[10] = WtParagraph[
+					[10] = "\n\n",
+					[11] = WtParagraph[
 						[0] = "Of the roughly 4",
 						[1] = WtXmlEntityRef(
 							{P} name = "nbsp"
@@ -19549,8 +19549,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{de icon}} [[Die Zeit]] 12/07, page 13")
 						)
 					],
-					[11] = "\n\n",
-					[12] = WtParagraph[
+					[12] = "\n\n",
+					[13] = WtParagraph[
 						[0] = "According to the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -19573,10 +19573,10 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{Cite web|url=http://ec.europa.eu/public_opinion/archives/ebs/ebs_225_report_en.pdf|title=Eurobarometer on Social Values, Science and technology 2005 (page 11)|accessdate=5 May 2007|format=PDF}}")
 						)
 					],
-					[13] = "\n\n"
+					[14] = "\n\n"
 				]
 			),
-			[21] = WtSection(
+			[22] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -19596,10 +19596,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Education in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -19629,8 +19629,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Responsibility for educational oversight in Germany lies primarily with the ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -19719,9 +19719,9 @@ WtParsedWikitextPage(
 						),
 						[16] = " prepares pupils for vocational education."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[],
-					[7] = WtImageLink(
+					[6] = "\n\n",
+					[7] = WtParagraph[],
+					[8] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -19756,8 +19756,8 @@ WtParsedWikitextPage(
 							[2] = " was established in 1386."
 						)
 					),
-					[8] = "\n\n",
-					[9] = WtParagraph[
+					[9] = "\n\n",
+					[10] = WtParagraph[
 						[0] = "Since the 1960s, a reform movement attempted to unify secondary education in a ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -19788,8 +19788,8 @@ WtParsedWikitextPage(
 						),
 						[8] = " having low standards of achievement, inner-city Hauptschulen were increasingly considered dysfunctional by some people; outside the main metropolitan areas, the population is shrinking, so that according to some people it becomes increasingly impractical to maintain a three- or four-tier school system."
 					],
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "A special system of apprenticeship called ",
 						[1] = WtItalics(
 							{P} rtd = RTD[ "''" <o> "''" ]
@@ -19817,8 +19817,8 @@ WtParsedWikitextPage(
 							body = -
 						)
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = "To enter a ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -19900,10 +19900,10 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.daad.de/deutschland/studium/studienplanung/00493.en.html#headline_0_1 Tuition Fees in Germany] German Academic Exchange Service. Retrieved 30 November 2006.")
 						)
 					],
-					[14] = "\n\n"
+					[15] = "\n\n"
 				]
 			),
-			[22] = WtSection(
+			[23] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -19923,10 +19923,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Health in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -19956,8 +19956,8 @@ WtParsedWikitextPage(
 							)
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Germany has the world's oldest ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -20016,8 +20016,8 @@ WtParsedWikitextPage(
 						),
 						[12] = " In 2005, Germany spent 10.7% of GDP on health care, or US$3,628 per capita."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "Germany ranked 20th in the world in ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -20058,8 +20058,8 @@ WtParsedWikitextPage(
 						),
 						[8] = "), and it was tied for eighth place in the number of practicing physicians, at per 1,000 people (3.3)."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "In 2002 the top diagnosis for male patients released from the hospital was ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -20129,7 +20129,7 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{Cite news|title=Germany launches obesity campaign|url=http://news.bbc.co.uk/2/hi/health/6639227.stm|publisher=BBC|date=9 May 2007|accessdate =25 June 2010}}")
 						)
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			)
 		]
@@ -20154,10 +20154,10 @@ WtParsedWikitextPage(
 							value = WtValue[ [0] = "Culture of Germany" ]
 						)
 					]
-				),
-				[1] = "\n"
+				)
 			],
-			[2] = WtImageLink(
+			[2] = "\n",
+			[3] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -20195,8 +20195,8 @@ WtParsedWikitextPage(
 					[1] = " (1770\u20131827), composer"
 				)
 			),
-			[3] = "\n\n",
-			[4] = WtParagraph[
+			[4] = "\n\n",
+			[5] = WtParagraph[
 				[0] = "German culture began long before the rise of Germany as a ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -20266,8 +20266,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("Wasser, Jeremy. [http://www.spiegel.de/international/0,1518,410135,00.html Sp\u00E4tzle Westerns] Spiegel Online International. 6 April 2006. Retrieved 6 December 2006.")
 				)
 			],
-			[5] = "\n\n",
-			[6] = WtParagraph[
+			[6] = "\n\n",
+			[7] = WtParagraph[
 				[0] = "In Germany, the federated states are in charge of the cultural institutions. There are 240 subsidised theatres, hundreds of symphonic orchestras, thousands of museums and over 25,000 libraries spread over the 16 states. These cultural opportunities are enjoyed by many millions: there are over 91",
 				[1] = WtXmlEntityRef(
 					{P} name = "nbsp"
@@ -20294,9 +20294,9 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("[http://www.study-in-germany.de/english/4.303.659.html Unbelievable Multitude] www.study-in-germany.de Retrieved 17 October 2008.")
 				)
 			],
-			[7] = "\n\n",
-			[8] = WtParagraph[],
-			[9] = WtImageLink(
+			[8] = "\n\n",
+			[9] = WtParagraph[],
+			[10] = WtImageLink(
 				{P} alt = -
 				{P} border = false
 				{P} format = THUMBNAIL
@@ -20319,8 +20319,8 @@ WtParsedWikitextPage(
 					[0] = "Berlin is a centre of arts, nightlife, music, architecture and festivals"
 				)
 			),
-			[10] = "\n\n",
-			[11] = WtParagraph[
+			[11] = "\n\n",
+			[12] = WtParagraph[
 				[0] = "The UNESCO inscribed 33 properties in ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -20340,8 +20340,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("[http://www.worldheritagesite.org/countries/germany.html World Heritage Sites in Germany] www.worldheritagesite.org Retrieved 3 October 2010.")
 				)
 			],
-			[12] = "\n\n",
-			[13] = WtParagraph[
+			[13] = "\n\n",
+			[14] = WtParagraph[
 				[0] = "Numerous German painters have enjoyed international prestige through their work in diverse artistic styles. ",
 				[1] = WtInternalLink(
 					{P} postfix = ""
@@ -20515,8 +20515,8 @@ WtParsedWikitextPage(
 					body = WtTagExtensionBody("2006 A Dictionary of Architecture and Landscape Architecture (Paperback) , Second (in English) , Oxford University Press, 880. ISBN 0-19-860678-8")
 				)
 			],
-			[14] = "\n\n",
-			[15] = WtSection(
+			[15] = "\n\n",
+			[16] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -21029,7 +21029,7 @@ WtParsedWikitextPage(
 					[6] = "\n\n"
 				]
 			),
-			[16] = WtSection(
+			[17] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -21049,10 +21049,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "German philosophy" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -21086,8 +21086,8 @@ WtParsedWikitextPage(
 							[1] = " (1724\u20131804)"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Germany's influence on philosophy is historically significant and many notable German philosophers have helped shape ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -21098,8 +21098,8 @@ WtParsedWikitextPage(
 						),
 						[2] = " since the Middle Ages. The rise of the modern natural sciences and the related decline of religion raised a series of questions, which recur throughout German philosophy, concerning the relationships between knowledge and faith, reason and emotion, and scientific, ethical, and artistic ways of seeing the world."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = WtInternalLink(
 							{P} postfix = ""
 							{P} prefix = ""
@@ -21269,8 +21269,8 @@ WtParsedWikitextPage(
 						),
 						[41] = " have been particularly influential."
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[
+					[8] = "\n\n",
+					[9] = WtParagraph[
 						[0] = "In the 21st century Germany has been an important country for the development of contemporary analytic philosophy in continental Europe, along with France, Austria, Switzerland and the Scandinavian countries.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -21279,10 +21279,10 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("Searle, John. (1987). ''The Blackwell Companion to Philosophy'', \"Introduction\". Wiley-Blackwell.")
 						)
 					],
-					[9] = "\n\n"
+					[10] = "\n\n"
 				]
 			),
-			[17] = WtSection(
+			[18] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -21302,10 +21302,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Cinema of Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -21350,8 +21350,8 @@ WtParsedWikitextPage(
 							[3] = " in 1930, Germany's first major film with sound"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "German cinema dates back to the very early years of the medium with the work of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -21408,8 +21408,8 @@ WtParsedWikitextPage(
 						),
 						[12] = " (1927) is referred to as the birth of modern Science Fiction movies."
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "In 1930 Austrian-American ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -21484,9 +21484,9 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.filmbug.com/db/343340 Leni Riefenstahl], Filmbug Movie Stars. Retrieved 13 April 2007.")
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[],
-					[9] = WtImageLink(
+					[8] = "\n\n",
+					[9] = WtParagraph[],
+					[10] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -21521,8 +21521,8 @@ WtParsedWikitextPage(
 							[2] = " in February 2007"
 						)
 					),
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "During the 1970s and 80s, ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -21622,8 +21622,8 @@ WtParsedWikitextPage(
 						),
 						[20] = " (2008) have enjoyed international success."
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = "The ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -21720,8 +21720,8 @@ WtParsedWikitextPage(
 						),
 						[20] = "."
 					],
-					[14] = "\n\n",
-					[15] = WtParagraph[
+					[15] = "\n\n",
+					[16] = WtParagraph[
 						[0] = "The ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -21763,10 +21763,10 @@ WtParsedWikitextPage(
 						),
 						[10] = " in Potsdam are the oldest large-scale film studios in the world and a centre for international film production."
 					],
-					[16] = "\n\n"
+					[17] = "\n\n"
 				]
 			),
-			[18] = WtSection(
+			[19] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -22423,7 +22423,7 @@ WtParsedWikitextPage(
 					[6] = "\n\n"
 				]
 			),
-			[19] = WtSection(
+			[20] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -22574,7 +22574,7 @@ WtParsedWikitextPage(
 					[11] = "\n\n"
 				]
 			),
-			[20] = WtSection(
+			[21] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -22594,10 +22594,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "Sport in Germany" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -22644,8 +22644,8 @@ WtParsedWikitextPage(
 							[3] = " championships."
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "Sport forms an integral part of German life. Twenty-seven million Germans are members of a sports club and an additional twelve million pursue such an activity individually.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -22862,9 +22862,9 @@ WtParsedWikitextPage(
 							body = -
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[],
-					[7] = WtImageLink(
+					[6] = "\n\n",
+					[7] = WtParagraph[],
+					[8] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -22915,8 +22915,8 @@ WtParsedWikitextPage(
 							[6] = "."
 						)
 					),
-					[8] = "\n\n",
-					[9] = WtParagraph[
+					[9] = "\n\n",
+					[10] = WtParagraph[
 						[0] = "Germany is one of the leading motor sports countries in the world. Race-winning cars, teams and drivers have come from Germany. The most successful ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -23004,8 +23004,8 @@ WtParsedWikitextPage(
 						),
 						[20] = " is a popular series in Germany."
 					],
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "Historically, German sportsmen have been some of the most successful contenders in the Olympic Games, ranking third in an ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -23111,10 +23111,10 @@ WtParsedWikitextPage(
 						),
 						[24] = "."
 					],
-					[12] = "\n\n"
+					[13] = "\n\n"
 				]
 			),
-			[21] = WtSection(
+			[22] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
@@ -23134,10 +23134,10 @@ WtParsedWikitextPage(
 									value = WtValue[ [0] = "German cuisine" ]
 								)
 							]
-						),
-						[1] = "\n"
+						)
 					],
-					[2] = WtImageLink(
+					[2] = "\n",
+					[3] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -23171,8 +23171,8 @@ WtParsedWikitextPage(
 							[2] = " (Black Forest cake)"
 						)
 					),
-					[3] = "\n\n",
-					[4] = WtParagraph[
+					[4] = "\n\n",
+					[5] = WtParagraph[
 						[0] = "German cuisine varies from region to region. The southern regions of ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -23215,8 +23215,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("{{Cite web | url = http://www.organic-europe.net/country_reports/germany/default.asp | title = Organic Agriculture in Germany | publisher=organic-Europe | accessdate = 26 November 2007}}")
 						)
 					],
-					[5] = "\n\n",
-					[6] = WtParagraph[
+					[6] = "\n\n",
+					[7] = WtParagraph[
 						[0] = "A popular German saying has the meaning: \"Breakfast like an emperor, lunch like a king, and dine like a beggar.\" Breakfast is usually a selection of breads and rolls with jam and honey or cold meats and cheese, sometimes accompanied by a boiled egg. Cereals or muesli with milk or ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -23240,9 +23240,9 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://www.germany-tourism.de/ENG/culture_and_events/culinary_germany_brot.htm 300 Types of Bread], www.germany-tourism.de. Retrieved 2007, 26 November.")
 						)
 					],
-					[7] = "\n\n",
-					[8] = WtParagraph[],
-					[9] = WtImageLink(
+					[8] = "\n\n",
+					[9] = WtParagraph[],
+					[10] = WtImageLink(
 						{P} alt = -
 						{P} border = false
 						{P} format = THUMBNAIL
@@ -23277,8 +23277,8 @@ WtParsedWikitextPage(
 							[2] = " served at private festivities"
 						)
 					),
-					[10] = "\n\n",
-					[11] = WtParagraph[
+					[11] = "\n\n",
+					[12] = WtParagraph[
 						[0] = "As a country with many immigrants, Germany has adopted many international dishes into its cuisine and daily eating habits. ",
 						[1] = WtInternalLink(
 							{P} postfix = ""
@@ -23417,8 +23417,8 @@ WtParsedWikitextPage(
 							body = WtTagExtensionBody("[http://in.reuters.com/article/lifestyleMolt/idINL1447732320071114 German cuisine beats Italy, Spain in gourmet stars], Reuters India. Retrieved 2007, 26 November.")
 						)
 					],
-					[12] = "\n\n",
-					[13] = WtParagraph[
+					[13] = "\n\n",
+					[14] = WtParagraph[
 						[0] = "Although wine is becoming more popular in many parts of Germany, the national alcoholic drink is beer. German beer consumption per person is declining but\u2014at 116 litres annually\u2014it is still among the highest in the world.",
 						[1] = WtTagExtension(
 							{P} name = "ref"
@@ -23522,10 +23522,10 @@ WtParsedWikitextPage(
 						),
 						[22] = " (its mixture with fruit juice) are very popular in Germany."
 					],
-					[14] = "\n\n"
+					[15] = "\n\n"
 				]
 			),
-			[22] = WtSection(
+			[23] = WtSection(
 				{P} level = 3
 				heading = WtHeading(
 					{P} rtd = RTD[ "===" <o> "===" ]
