@@ -2410,7 +2410,7 @@ WtParsedWikitextPage(
 					[1] = WtNewline("\n"),
 					[2] = WtUnorderedList[
 						[0] = WtListItem(
-							{P} rtd = RTD[ "*" <o> "\n" ]
+							{P} rtd = RTD[ "*" <o> "" ]
 							[0] = WtTicks(
 								{P} rtd = RTD[ "'''" ]
 								{P} tickCount = 3
@@ -2430,7 +2430,8 @@ WtParsedWikitextPage(
 								{P} tickCount = 3
 							),
 							[3] = " (Ranking Member)",
-							[4] = WtUnorderedList[
+							[4] = WtUnorderedList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtListItem(
 									{P} rtd = RTD[ "**" <o> "\n" ]
 									[0] = "As Ranking Member of the full committee, Sen. Chambliss may serve as an ",
@@ -2445,10 +2446,10 @@ WtParsedWikitextPage(
 									),
 									[4] = " member of all subcommittees."
 								)
-							]
+							)
 						),
 						[1] = WtListItem(
-							{P} rtd = RTD[ "*" <o> "\n" ]
+							{P} rtd = RTD[ "*" <o> "" ]
 							[0] = WtTicks(
 								{P} rtd = RTD[ "'''" ]
 								{P} tickCount = 3
@@ -2467,7 +2468,8 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "'''" ]
 								{P} tickCount = 3
 							),
-							[3] = WtUnorderedList[
+							[3] = WtUnorderedList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtListItem(
 									{P} rtd = RTD[ "**" <o> "\n" ]
 									[0] = WtInternalLink(
@@ -2507,7 +2509,7 @@ WtParsedWikitextPage(
 										)
 									)
 								)
-							]
+							)
 						),
 						[2] = WtListItem(
 							{P} rtd = RTD[ "*" <o> "\n" ]

@@ -119,7 +119,7 @@ body
     return n;
   }
 
-  private void pushNewList(Vector<ListNode> listStack, char ch, boolean createItem)
+  private ListNode pushNewList(Vector<ListNode> listStack, char ch, boolean createItem)
   {
     ListNode node = null;
     switch (ch)
@@ -146,9 +146,11 @@ body
       // TODO: Issue warning!
       pushNewListItem(listStack, ch, null);
     }
+    
+    return node;
   }
 
-  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, TempListItem p)
+  private WtRtData processListItem(Vector<ListNode> listStack, WtNodeList items, TempListItem p, WtRtData lastItemRtd)
   {
     int j;
     for (j = 0; j < p.prefix.length() && j < listStack.size(); ++j)
@@ -165,6 +167,18 @@ body
     int last = p.prefix.length() - 1;
 
     // open new list levels
+    if (p.rt0 != null) {
+      if (j < p.prefix.length()) {
+        ListNode node = pushNewList(listStack, p.prefix.charAt(j), j < last);
+        node.node.setRtd(p.rt0, SEP);
+        ++j;
+      }
+      else
+      {
+        if (lastItemRtd != null)
+          lastItemRtd.setField(1, p.rt0);    	
+      }
+    }
     for (; j < p.prefix.length(); ++j)
       pushNewList(listStack, p.prefix.charAt(j), j < last);
 
@@ -189,16 +203,16 @@ body
 
     WtNodeList items = nf.list();
 
-    WtRtData lastItem = processListItem(listStack, items, first);
+    WtRtData lastItemRtd = processListItem(listStack, items, first, null);
 
     for (Pair<TempListItem> i = tail; !i.isEmpty(); i = i.tail())
     {
       TempListItem item = i.head();
 
-      if (lastItem != null)
-        lastItem.setField(1, item.rt0);
+      /*if (lastItem != null)
+        lastItem.setField(1, item.rt0);*/
 
-      lastItem = processListItem(listStack, items, item);
+      lastItemRtd = processListItem(listStack, items, item, lastItemRtd);
     }
 
     return items;

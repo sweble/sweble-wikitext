@@ -3,11 +3,12 @@ WtParsedWikitextPage(
 	{P} warnings = C[]
 	[0] = WtDefinitionList[
 		[0] = WtDefinitionListTerm(
-			{P} rtd = RTD[ ";" <o> "\n" ]
+			{P} rtd = RTD[ ";" <o> "" ]
 			[0] = "Other"
 		)
 	],
-	[1] = WtUnorderedList[
+	[1] = WtUnorderedList(
+		{P} rtd = RTD[ "\n" <o> "" ]
 		[0] = WtListItem(
 			{P} rtd = RTD[ "*" <o> "\n" ]
 			[0] = "x"
@@ -20,6 +21,6 @@ WtParsedWikitextPage(
 			{P} rtd = RTD[ "*" <o> "" ]
 			[0] = "z"
 		)
-	],
+	),
 	[2] = "\n"
 )

@@ -896,7 +896,7 @@ WtParsedWikitextPage(
 					)
 				),
 				[5] = WtListItem(
-					{P} rtd = RTD[ "*" <o> "\n" ]
+					{P} rtd = RTD[ "*" <o> "" ]
 					[0] = WtTemplate(
 						{P} precededByNewline = false
 						{P} rtd = RTD[ "{{" <o> "" <o> "}}" ]
@@ -926,7 +926,8 @@ WtParsedWikitextPage(
 						)
 					),
 					[5] = ".)",
-					[6] = WtUnorderedList[
+					[6] = WtUnorderedList(
+						{P} rtd = RTD[ "\n" <o> "" ]
 						[0] = WtListItem(
 							{P} rtd = RTD[ "**" <o> "\n" ]
 							[0] = "Vague terms of size often are unnecessary and redundant -  \u201Csome\u201D, \u201Ca variety/number/majority of\u201D, \u201Cseveral\u201D, \u201Ca few\u201D, \u201Cmany\u201D, \u201Cany\u201D, and \u201Call\u201D. For example, \u201C",
@@ -1000,7 +1001,7 @@ WtParsedWikitextPage(
 							),
 							[2] = " 1138\u201D"
 						)
-					]
+					)
 				),
 				[6] = WtListItem(
 					{P} rtd = RTD[ "*" <o> "" ]

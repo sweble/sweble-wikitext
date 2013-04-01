@@ -8078,14 +8078,15 @@ WtParsedWikitextPage(
 					[2] = "\n\n",
 					[3] = WtDefinitionList[
 						[0] = WtDefinitionListDef(
-							{P} rtd = RTD[ ":" <o> "\n" ]
+							{P} rtd = RTD[ ":" <o> "" ]
 							[0] = " Wikicode (",
 							[1] = WtItalics(
 								{P} rtd = RTD[ "''" <o> "''" ]
 								[0] = "showing table forces line-break"
 							),
 							[2] = "):",
-							[3] = WtDefinitionList[
+							[3] = WtDefinitionList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtDefinitionListDef(
 									{P} rtd = RTD[ "::" <o> "\n" ]
 									[0] = " ",
@@ -8096,12 +8097,13 @@ WtParsedWikitextPage(
 										body = WtTagExtensionBody("* This is a test table here <table style=\"border: 1px solid black\"><tr><td>HELLO WORLD</table> followed by this text afterward.")
 									)
 								)
-							]
+							)
 						),
 						[1] = WtDefinitionListDef(
-							{P} rtd = RTD[ ":" <o> "\n" ]
+							{P} rtd = RTD[ ":" <o> "" ]
 							[0] = "Result:",
-							[1] = WtDefinitionList[
+							[1] = WtDefinitionList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtDefinitionListDef[
 									[0] = WtUnorderedList[
 										[0] = WtListItem(
@@ -8141,17 +8143,18 @@ WtParsedWikitextPage(
 										)
 									]
 								]
-							]
+							)
 						),
 						[2] = WtDefinitionListDef(
-							{P} rtd = RTD[ ":" <o> "\n" ]
+							{P} rtd = RTD[ ":" <o> "" ]
 							[0] = " Wikicode (",
 							[1] = WtItalics(
 								{P} rtd = RTD[ "''" <o> "''" ]
 								[0] = "table-within-table"
 							),
 							[2] = "):",
-							[3] = WtDefinitionList[
+							[3] = WtDefinitionList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtDefinitionListDef(
 									{P} rtd = RTD[ "::" <o> "\n" ]
 									[0] = " ",
@@ -8162,12 +8165,13 @@ WtParsedWikitextPage(
 										body = WtTagExtensionBody("* <table style=\"background-color: #fafeff\"><tr><td>This is a test table here<td><table height=11px><tr><td style=\"border: 1px solid black; font-size:60%\">HELLO WORLD</table></td><td>followed by this text afterward.</table>  This line is more text after the outer table.")
 									)
 								)
-							]
+							)
 						),
 						[3] = WtDefinitionListDef(
-							{P} rtd = RTD[ ":" <o> "\n" ]
+							{P} rtd = RTD[ ":" <o> "" ]
 							[0] = "Result:",
-							[1] = WtDefinitionList[
+							[1] = WtDefinitionList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtDefinitionListDef[
 									[0] = WtUnorderedList[
 										[0] = WtListItem(
@@ -8256,7 +8260,7 @@ WtParsedWikitextPage(
 										)
 									]
 								]
-							]
+							)
 						)
 					],
 					[4] = "\n",
@@ -15219,9 +15223,10 @@ WtParsedWikitextPage(
 							)
 						),
 						[11] = WtListItem(
-							{P} rtd = RTD[ "*" <o> "\n" ]
+							{P} rtd = RTD[ "*" <o> "" ]
 							[0] = " Examples:",
-							[1] = WtUnorderedList[
+							[1] = WtUnorderedList(
+								{P} rtd = RTD[ "\n" <o> "" ]
 								[0] = WtListItem(
 									{P} rtd = RTD[ "**" <o> "\n" ]
 									[0] = " ",
@@ -15278,7 +15283,7 @@ WtParsedWikitextPage(
 										)
 									)
 								)
-							]
+							)
 						),
 						[12] = WtListItem(
 							{P} rtd = RTD[ "*" <o> "\n" ]
