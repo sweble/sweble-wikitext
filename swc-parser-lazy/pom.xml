@@ -18,7 +18,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Lazy Wikitext Parser</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     A lazy parser for MediaWiki's Wikitext.

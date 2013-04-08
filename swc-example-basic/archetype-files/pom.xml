@@ -19,7 +19,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - Basic Example Archetype</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-example-basic-archetype</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-basic-archetype</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     An archetype that creates a simple application which is able to parse a page

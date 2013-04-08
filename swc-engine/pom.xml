@@ -18,7 +18,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Engine</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-engine</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-engine</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     A minimal engine using the Sweble Lazy Wikitext Parser to
