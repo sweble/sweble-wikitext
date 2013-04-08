@@ -18,7 +18,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Dump Reader</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-dumpreader</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-dumpreader</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     A small library for reading in Wikipedia dumps.
