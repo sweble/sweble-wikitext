@@ -19,7 +19,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - Serialization Example Archetype</name>
-  <url>http://osr.informatik.uni-erlangen.de</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-serialization-archetype</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     An example project that contains a simple application that is able to parse
