@@ -4,7 +4,7 @@
 
   <bannerLeft>
     <name>Sweble</name>
-    <src>http://sweble.org/img/maven-site-banner-left-swc-example-xpath-archetype.png</src>
+    <src>http://sweble.org/img/maven-site-banner-left-swc-xpath-example-archetype.png</src>
     <href>http://sweble.org</href>
   </bannerLeft>
   <bannerRight>
