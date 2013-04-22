@@ -43,7 +43,7 @@ WDIR=$(pwd)
 TITLE=$(basename "${WDIR}")
 LOG="${WDIR}/generate-example-eclipse-project.log"
 JARPRJ="${WDIR}/target/generated-sources/${TITLE}-jar"
-ZIP="${WDIR}/target/${TITLE}-jar.zip"
+ZIP="${WDIR}/target/${TITLE}-eclipse-project.zip"
 
 echo
 echo "Working in: ${WDIR}"
