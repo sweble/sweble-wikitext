@@ -45,7 +45,7 @@ import org.sweble.wikitext.engine.ext.ref.RefTagExt;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
 
 /**
- * Programatically generate a default configuration for a English Wiki.
+ * Programatically generate a default configuration for an English Wiki.
  */
 public class DefaultConfigEn
 {
