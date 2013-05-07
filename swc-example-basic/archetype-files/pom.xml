@@ -8,7 +8,7 @@
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
     <version>${SWEBLE_WIKITEXT_VERSION}</version>
-    <relativePath>../../../../pom.xml</relativePath>
+    <!--<relativePath>../../../../pom.xml</relativePath>-->
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Basic Example Archetype -->
@@ -19,7 +19,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - Basic Example Archetype</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-example-basic-archetype</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-basic-archetype</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     An archetype that creates a simple application which is able to parse a page

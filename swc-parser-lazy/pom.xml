@@ -18,7 +18,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - Sweble Wikitext Parser</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-parser-lazy</url>
   <inceptionYear>2010</inceptionYear>
   <description>
     A parser for MediaWiki's Wikitext.
@@ -191,62 +191,6 @@
 
             <plugin>
               <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-jxr-plugin</artifactId>
-              <reportSets>
-                <reportSet>
-                  <id>src-xref</id>
-                  <reports>
-                    <report>jxr</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-pmd-plugin</artifactId>
-              <version>2.7.1</version>
-              <configuration>
-                <targetJdk>${version.java}</targetJdk>
-              </configuration>
-            </plugin>
-
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>cobertura-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>taglist-maven-plugin</artifactId>
-              <configuration>
-                <encoding>UTF-8</encoding>
-                <sourceFileLocale>en</sourceFileLocale>
-                <emptyComments>true</emptyComments>
-                <tagListOptions>
-                  <tagClasses>
-                    <tagClass>
-                      <displayName>Code Work</displayName>
-                      <tags>
-                        <tag>
-                          <matchString>fixme</matchString>
-                          <matchType>ignoreCase</matchType>
-                        </tag>
-                        <tag>
-                          <matchString>todo</matchString>
-                          <matchType>ignoreCase</matchType>
-                        </tag>
-                        <tag>
-                          <matchString>@todo</matchString>
-                          <matchType>ignoreCase</matchType>
-                        </tag>
-                      </tags>
-                    </tagClass>
-                  </tagClasses>
-                </tagListOptions>
-              </configuration>
             </plugin>
 
             <plugin>

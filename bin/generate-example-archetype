@@ -21,7 +21,7 @@ echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> generate-example-arc
 
 . "$( dirname "$0" )/utils.sh"
 
-PRJ="$1"
+PRJ="${1:-}"
 if [[ -z "$PRJ" ]] || [[ ! -d "$PRJ" ]]; then
   error_exit "Usage: $0 PROJECT"
 fi

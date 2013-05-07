@@ -19,11 +19,11 @@
   <packaging>pom</packaging>
 
   <name>Sweble Wikitext Components</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext</url>
   <inceptionYear>2009</inceptionYear>
   <description>
     The Sweble Wikitext Components module provides a parser for MediaWiki's
-    Wikitext and an Engine trying emulating the behavior of a MediaWiki.
+    wikitext and an engine trying to emulate the behavior of a MediaWiki.
   </description>
 
   <!-- ==[ Submodules ]===================================================== -->
@@ -155,7 +155,7 @@
             <exclude>**/.gitignore</exclude>
             <exclude>LICENSE</exclude>
             <exclude>NOTICE</exclude>
-            <exclude>*-example-*-jar/**</exclude>
+            <exclude>*-archetype/**</exclude>
           </excludes>
         </configuration>
       </plugin>

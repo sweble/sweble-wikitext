@@ -5,7 +5,7 @@
   <bannerLeft>
     <name>Sweble</name>
     <src>http://sweble.org/img/maven-site-banner-left-sweble-wikitext.png</src>
-    <href>http://sweble.org/</href>
+    <href>http://sweble.org</href>
   </bannerLeft>
   <bannerRight>
     <src>http://sweble.org/img/maven-site-banner-right.png</src>
@@ -34,13 +34,15 @@
     <breadcrumbs>
       <item name="Sweble" href="http://sweble.org" />
       <item name="Documentation" href="http://sweble.org/doc" img="" />
-      <item name="Tooling" href="http://sweble.org/doc/site/tooling" img="" />
-      <item name="Sweble" href="http://sweble.org/doc/site/tooling/sweble" img="" />
-      <item name="Wikitext Components" href="http://sweble.org/doc/site/tooling/sweble/sweble-wikitext" img="" />
+      <item name="Tooling" href="http://sweble.org/sites/swc-devel/latest/tooling" img="" />
+      <item name="Sweble" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble" img="" />
+      <item name="Wikitext Components" href="http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext" img="" />
     </breadcrumbs>
 
     <menu ref="parent"/>
+    <menu ref="modules"/>
 
+    <!--
     <menu name="Modules">
       <item name="SWC - Sweble Wikitext Parser" href="swc-parser-lazy/index.html" />
       <item name="SWC - Engine" href="swc-engine/index.html" />
@@ -53,15 +55,15 @@
       <item name="SWC - Serialization Example" href="swc-example-serialization-archetype/index.html" />
       <item name="SWC - XPath Example" href="swc-example-xpath-archetype/index.html" />
     </menu>
+    -->
     
     <menu ref="reports"/>
 
     <menu name="Sweble">
       <item name="Blog" href="http://sweble.org" />
-      <item name="Wiki" href="http://sweble.org/wiki" />
       <item name="Documentation" href="http://sweble.org/doc" />
-      <item name="Mailing Lists" href="http://sweble.org/mailing-lists/" />
-      <item name="Repositories" href="http://sweble.org/git-repositories/" />
+      <item name="Mailing Lists" href="http://sweble.org/mailing-lists" />
+      <item name="Repositories" href="http://sweble.org/repos" />
       <item name="Bugtracker" href="http://sweble.org/bugtracker" />
     </menu>
 

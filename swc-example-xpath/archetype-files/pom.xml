@@ -8,7 +8,7 @@
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
     <version>${SWEBLE_WIKITEXT_VERSION}</version>
-    <relativePath>../../../../pom.xml</relativePath>
+    <!--<relativePath>../../../../pom.xml</relativePath>-->
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - XPath Example Archetype -->
@@ -19,7 +19,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - XPath Example Archetype</name>
-  <url>http://osr.informatik.uni-erlangen.de</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-xpath-archetype</url>
   <inceptionYear>2011</inceptionYear>
   <description>
     An archetype that creates a simple application which is able to parse

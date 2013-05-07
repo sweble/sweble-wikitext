@@ -6,6 +6,7 @@
   <groupId>org.example</groupId>
   <artifactId>swc-example-serialization</artifactId>
   <version>2.0.0-alpha-3-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <name>SWC - Serialization Example</name>
   <url>http://osr.informatik.uni-erlangen.de</url>
@@ -18,6 +19,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.java>1.6</version.java>
+    <mvnCmdLine>mvn</mvnCmdLine>
   </properties>
 
   <dependencies>
@@ -219,7 +221,7 @@
             <executions>
               <execution>
                 <id>exec-generate-example-archetype</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
@@ -228,11 +230,14 @@
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables>
+                    <MVN>${mvnCmdLine}</MVN>
+                  </environmentVariables>
                 </configuration>
               </execution>
               <execution>
                 <id>exec-generate-example-eclipse-project</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
@@ -241,6 +246,9 @@
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables>
+                    <MVN>${mvnCmdLine}</MVN>
+                  </environmentVariables>
                 </configuration>
               </execution>
             </executions>
