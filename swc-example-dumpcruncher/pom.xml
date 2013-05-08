@@ -10,6 +10,7 @@
   <packaging>jar</packaging>
 
   <name>SWC - Dump Cruncher Example</name>
+  <url>http://osr.informatik.uni-erlangen.de</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     An example project that goes through a WikiMedia Dump and processes each 
@@ -19,6 +20,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.java>1.6</version.java>
+    <mvnCmdLine>mvn</mvnCmdLine>
   </properties>
 
   <dependencies>
@@ -226,7 +228,7 @@
             <executions>
               <execution>
                 <id>exec-generate-example-archetype</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
@@ -235,11 +237,14 @@
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables>
+                    <MVN>${mvnCmdLine}</MVN>
+                  </environmentVariables>
                 </configuration>
               </execution>
               <execution>
                 <id>exec-generate-example-eclipse-project</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
@@ -248,6 +253,9 @@
                   <arguments>
                     <argument>.</argument>
                   </arguments>
+                  <environmentVariables>
+                    <MVN>${mvnCmdLine}</MVN>
+                  </environmentVariables>
                 </configuration>
               </execution>
             </executions>

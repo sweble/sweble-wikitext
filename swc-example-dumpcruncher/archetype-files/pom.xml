@@ -8,7 +8,6 @@
     <groupId>org.sweble.wikitext</groupId>
     <artifactId>sweble-wikitext</artifactId>
     <version>${SWEBLE_WIKITEXT_VERSION}</version>
-    <relativePath>../../../../pom.xml</relativePath>
   </parent>
 
   <!-- This POM: Sweble Wikitext Components - Dump Cruncher Example Archetype -->
@@ -19,7 +18,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>SWC - Dump Cruncher Example Archetype</name>
-  <url>http://sweble.org/doc/site/tooling/sweble/sweble-wikitext/swc-example-dumpcruncher-archetype</url>
+  <url>http://sweble.org/sites/swc-devel/latest/tooling/sweble/sweble-wikitext/swc-example-dumpcruncher-archetype</url>
   <inceptionYear>2012</inceptionYear>
   <description>
     An archetype that creates an example project that goes through a WikiMedia 
