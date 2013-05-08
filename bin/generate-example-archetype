@@ -48,13 +48,6 @@ pushd "$PRJ" &>/dev/null
   exec > >(tee "$LOG")
   exec 2>&1
 
-  ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
-  ARCHETYPE_DST_DIR="${WDIR}/target/generated-sources/archetype"
-  ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
-
-  # Build example project and generate archetype
-  rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
-
   log_info
   log_info "Gathering information on sweble-wikitext parent pom..."
   pushd ../ &>/dev/null
@@ -75,6 +68,13 @@ pushd "$PRJ" &>/dev/null
   log_info "  Project groupId: ${PRJ_GROUP_ID}"
   log_info "  Project artifactId: ${PRJ_ARTIFACT_ID}"
   log_info "  Project version: ${PRJ_VERSION}"
+
+  ARCHETYPE_SRC_DIR="${WDIR}/target/generated-sources/archetype-project"
+  ARCHETYPE_DST_DIR="${WDIR}/../${PRJ_ARTIFACT_ID}-archetype"
+  ARCHETYPE_TEST_DIR="${WDIR}/target/test-archetype"
+
+  # Build example project and generate archetype
+  rm -rf "$LOG" "$ARCHETYPE_SRC_DIR" "$ARCHETYPE_DST_DIR" "$ARCHETYPE_TEST_DIR"
 
   log_info
   log_info "Gathering sources ..."
