@@ -651,15 +651,17 @@ public class Serializer
 	
 	private void compare(WtNode deserialize) throws ComparisonException
 	{
+		/*
 		// FIXME: Comparing entity maps and warnings which contain again nodes 
 		// fails since ast nodes are not comparable
 		WtParsedWikitextPage o = (WtParsedWikitextPage) original;
 		o.setEntityMap(new WtEntityMapImpl());
 		o.setWarnings(Collections.<Warning> emptyList());
-		
+
 		WtParsedWikitextPage d = (WtParsedWikitextPage) deserialize;
 		d.setEntityMap(new WtEntityMapImpl());
 		d.setWarnings(Collections.<Warning> emptyList());
-		DeepAstComparer.compare(original, deserialize, true, true);
+		*/
+		DeepAstComparer.compareAndThrow(original, deserialize, true, true);
 	}
 }

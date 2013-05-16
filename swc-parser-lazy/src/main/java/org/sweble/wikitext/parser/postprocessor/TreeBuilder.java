@@ -60,8 +60,8 @@ import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderIn
 import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderInTableBody;
 import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderInTableText;
 
-import de.fau.cs.osr.ptk.common.AstComparer;
 import de.fau.cs.osr.ptk.common.AstVisitor;
+import de.fau.cs.osr.ptk.common.DeepAstComparer;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.utils.visitor.VisitorInterface;
 import de.fau.cs.osr.utils.visitor.VisitorLogic;
@@ -537,7 +537,7 @@ public class TreeBuilder
 			if (v0 == v1)
 				return true;
 			
-			if (!AstComparer.compare(v0, v1, false, false))
+			if (!DeepAstComparer.compare(v0, v1, false, false))
 				return false;
 		}
 		

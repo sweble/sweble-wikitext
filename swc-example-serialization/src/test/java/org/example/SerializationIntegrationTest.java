@@ -16,18 +16,15 @@
  */
 package org.example;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.File;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
-import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.WtAstPrinter;
 
 import de.fau.cs.osr.utils.NamedParametrized;
 import de.fau.cs.osr.utils.StringUtils;
@@ -87,6 +84,7 @@ public class SerializationIntegrationTest
 	
 	// =========================================================================
 	
+	/*
 	@Test
 	public void testJavaSerialization() throws Exception
 	{
@@ -102,8 +100,8 @@ public class SerializationIntegrationTest
 		
 		serializer.roundTrip(SerializationMethod.JAVA);
 	}
+	*/
 	
-	/*
 	@Test
 	public void testJavaSerialization() throws Exception
 	{
@@ -112,6 +110,7 @@ public class SerializationIntegrationTest
 	}
 	
 	@Test
+	@Ignore
 	public void testXmlSerialization() throws Exception
 	{
 		// Must complete without throwing an exception
@@ -119,10 +118,10 @@ public class SerializationIntegrationTest
 	}
 	
 	@Test
+	@Ignore
 	public void testJsonSerialization() throws Exception
 	{
 		// Must complete without throwing an exception
 		serializer.roundTrip(SerializationMethod.JSON);
 	}
-	*/
 }
