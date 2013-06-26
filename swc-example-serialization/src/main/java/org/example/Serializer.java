@@ -26,29 +26,28 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
-import java.util.Collections;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.sweble.wikitext.parser.WtEntityMapImpl;
+import org.sweble.wikitext.engine.config.WikiConfigImpl;
+import org.sweble.wikitext.engine.serialization.EngineAstNodeConverter;
+import org.sweble.wikitext.parser.comparer.WtComparer;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtParsedWikitextPage;
 import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
 
 import com.google.gson.Gson;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import de.fau.cs.osr.ptk.common.DeepAstComparer;
-import de.fau.cs.osr.ptk.common.DeepAstComparer.ComparisonException;
-import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.json.JsonConverter;
-import de.fau.cs.osr.ptk.common.xml.XmlReader;
-import de.fau.cs.osr.ptk.common.xml.XmlWriter;
+import de.fau.cs.osr.ptk.common.xml.AstNodeConverter;
+import de.fau.cs.osr.utils.ComparisonException;
 import de.fau.cs.osr.utils.NameAbbrevService;
 import de.fau.cs.osr.utils.StopWatch;
 
@@ -451,13 +450,8 @@ public class Serializer
 			}
 			case XML:
 			{
-				OutputStreamWriter osw = new OutputStreamWriter(objBaos, "UTF-8");
-				XmlWriter<WtNode> xmlWriter = new XmlWriter<WtNode>(
-						WtNode.class,
-						WtNodeList.class,
-						WtText.class);
-				xmlWriter.serialize(original, osw, abbrevService);
-				osw.close();
+				getXmlSerializer().toXML(original, objBaos);
+				objBaos.close();
 				break;
 			}
 			case JSON:
@@ -479,6 +473,20 @@ public class Serializer
 		}
 		
 		return objBaos.toByteArray();
+	}
+	
+	private XStream getXmlSerializer()
+	{
+		AstNodeConverter<WtNode> converter =
+				AstNodeConverter.forNodeType(WtNode.class);
+		
+		EngineAstNodeConverter.setup(new WikiConfigImpl(), converter);
+		
+		XStream xstream = new XStream(new DomDriver());
+		xstream.registerConverter(converter);
+		xstream.setMode(XStream.NO_REFERENCES);
+		
+		return xstream;
 	}
 	
 	// =========================================================================
@@ -533,13 +541,8 @@ public class Serializer
 			}
 			case XML:
 			{
-				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-				XmlReader<WtNode> xmlReader = new XmlReader<WtNode>(
-						WtNode.class,
-						WtNodeList.class,
-						WtText.class);
-				result = xmlReader.deserialize(isr, abbrevService);
-				isr.close();
+				result = (WtNode) getXmlSerializer().fromXML(is, original);
+				is.close();
 				break;
 			}
 			case JSON:
@@ -651,17 +654,6 @@ public class Serializer
 	
 	private void compare(WtNode deserialize) throws ComparisonException
 	{
-		/*
-		// FIXME: Comparing entity maps and warnings which contain again nodes 
-		// fails since ast nodes are not comparable
-		WtParsedWikitextPage o = (WtParsedWikitextPage) original;
-		o.setEntityMap(new WtEntityMapImpl());
-		o.setWarnings(Collections.<Warning> emptyList());
-
-		WtParsedWikitextPage d = (WtParsedWikitextPage) deserialize;
-		d.setEntityMap(new WtEntityMapImpl());
-		d.setWarnings(Collections.<Warning> emptyList());
-		*/
-		DeepAstComparer.compareAndThrow(original, deserialize, true, true);
+		WtComparer.compareAndThrow(original, deserialize, true, true);
 	}
 }
