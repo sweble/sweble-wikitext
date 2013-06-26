@@ -138,6 +138,11 @@ public class WtLinkOptionLinkTarget
 	// =========================================================================
 	// Children
 	
+	public final boolean hasTarget()
+	{
+		return getTarget() != WtLinkTarget.NO_LINK;
+	}
+	
 	public final void setTarget(WtLinkTarget target)
 	{
 		set(0, target);
