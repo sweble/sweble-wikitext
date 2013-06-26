@@ -23,6 +23,7 @@ import java.util.Collection;
 import org.sweble.wikitext.parser.WtRtData;
 
 import xtc.util.Pair;
+import de.fau.cs.osr.ptk.common.ast.AstNodeImpl;
 import de.fau.cs.osr.ptk.common.ast.AstNodeList;
 import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
 
@@ -65,6 +66,16 @@ public interface WtNodeList
 		public boolean indicatesAbsence()
 		{
 			return false;
+		}
+		
+		@Override
+		public boolean equals(Object other)
+		{
+			if (this == other)
+				return true;
+			if (other instanceof WtNodeListImpl)
+				return AstNodeImpl.equalsNoTypeCheck(this, (WtNodeListImpl) other);
+			return super.equals(other);
 		}
 		
 		protected Object readResolve() throws ObjectStreamException
@@ -174,6 +185,18 @@ public interface WtNodeList
 		@Override
 		public void clearRtd()
 		{
+		}
+		
+		// =====================================================================
+		
+		@Override
+		public boolean equals(Object other)
+		{
+			if (this == other)
+				return true;
+			if (other instanceof WtEmptyNodeList)
+				return AstNodeImpl.equalsNoTypeCheck(this, (WtEmptyNodeList) other);
+			return super.equals(other);
 		}
 	}
 }
