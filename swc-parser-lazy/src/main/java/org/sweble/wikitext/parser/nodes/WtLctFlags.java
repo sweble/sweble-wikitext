@@ -17,6 +17,7 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.ObjectStreamException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -105,6 +106,13 @@ public interface WtLctFlags
 		public void setGarbage(List<String> garbage)
 		{
 			throw new UnsupportedOperationException(genMsg());
+		}
+		
+		// =====================================================================
+		
+		protected Object readResolve() throws ObjectStreamException
+		{
+			return WtLctFlags.NO_FLAGS;
 		}
 	}
 	

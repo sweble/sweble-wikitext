@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.ObjectStreamException;
+
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
 public interface WtTagExtensionBody
@@ -46,6 +48,11 @@ public interface WtTagExtensionBody
 		public String getNodeName()
 		{
 			return WtTagExtensionBody.class.getSimpleName();
+		}
+		
+		protected Object readResolve() throws ObjectStreamException
+		{
+			return WtTagExtensionBody.NO_BODY;
 		}
 	}
 	

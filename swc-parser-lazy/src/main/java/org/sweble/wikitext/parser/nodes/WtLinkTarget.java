@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.ObjectStreamException;
+
 public interface WtLinkTarget
 		extends
 			WtNode
@@ -71,6 +73,11 @@ public interface WtLinkTarget
 		public boolean indicatesAbsence()
 		{
 			return true;
+		}
+		
+		protected Object readResolve() throws ObjectStreamException
+		{
+			return WtLinkTarget.NO_LINK;
 		}
 	}
 }

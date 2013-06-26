@@ -17,6 +17,7 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.ObjectStreamException;
 import java.util.Collection;
 
 import org.sweble.wikitext.parser.WtRtData;
@@ -64,6 +65,11 @@ public interface WtNodeList
 		public boolean indicatesAbsence()
 		{
 			return false;
+		}
+		
+		protected Object readResolve() throws ObjectStreamException
+		{
+			return WtNodeList.EMPTY;
 		}
 	}
 	

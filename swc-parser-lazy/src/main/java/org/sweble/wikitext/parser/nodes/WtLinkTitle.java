@@ -17,6 +17,8 @@
 
 package org.sweble.wikitext.parser.nodes;
 
+import java.io.ObjectStreamException;
+
 public interface WtLinkTitle
 		extends
 			WtContentNode
@@ -43,6 +45,11 @@ public interface WtLinkTitle
 		public String getNodeName()
 		{
 			return WtLinkTitle.class.getSimpleName();
+		}
+		
+		protected Object readResolve() throws ObjectStreamException
+		{
+			return WtLinkTitle.NO_TITLE;
 		}
 	}
 	
