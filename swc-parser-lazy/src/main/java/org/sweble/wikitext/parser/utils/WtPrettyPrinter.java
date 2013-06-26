@@ -391,10 +391,10 @@ public class WtPrettyPrinter
 	{
 		p.print("{{{");
 		dispatch(n.getName());
-		if (n.hasDefaultValue())
+		if (n.hasDefault())
 		{
 			p.print('|');
-			dispatch(n.getDefaultValue());
+			dispatch(n.getDefault());
 		}
 		p.print("}}}");
 	}

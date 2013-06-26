@@ -1017,13 +1017,13 @@ public final class ExpansionVisitor
 	{
 		WtNodeList value = getFrameArgument(name);
 		
-		if (value == null && n.hasDefaultValue())
+		if (value == null && n.hasDefault())
 		{
 			// Only the first value after the pipe is the default 
 			// value. The rest is ignored.
 			
 			// EXPAND DEFAULT VALUE!
-			value = nf.toList((WtValue) dispatch(n.getDefaultValue()));
+			value = nf.toList((WtValue) dispatch(n.getDefault()));
 		}
 		
 		if (value != null)

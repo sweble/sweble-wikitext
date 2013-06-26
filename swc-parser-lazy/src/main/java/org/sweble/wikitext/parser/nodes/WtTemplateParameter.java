@@ -157,17 +157,17 @@ public class WtTemplateParameter
 		return (WtName) get(0);
 	}
 	
-	public final boolean hasDefaultValue()
+	public final boolean hasDefault()
 	{
-		return getDefaultValue() != WtValue.NO_VALUE;
+		return getDefault() != WtValue.NO_VALUE;
 	}
 	
-	public final void setDefaultValue(WtValue defaultValue)
+	public final void setDefault(WtValue _default)
 	{
-		set(1, defaultValue);
+		set(1, _default);
 	}
 	
-	public final WtValue getDefaultValue()
+	public final WtValue getDefault()
 	{
 		return (WtValue) get(1);
 	}

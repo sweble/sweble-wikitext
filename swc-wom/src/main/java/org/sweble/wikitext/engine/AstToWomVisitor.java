@@ -300,8 +300,8 @@ public class AstToWomVisitor
 	public WomNode visit(WtTemplateParameter n)
 	{
 		WomName name = (WomName) dispatch(n.getName());
-		return n.hasDefaultValue() ?
-				new ParamImpl(name, processChildren(n.getDefaultValue(), new DefaultImpl())) :
+		return n.hasDefault() ?
+				new ParamImpl(name, processChildren(n.getDefault(), new DefaultImpl())) :
 				new ParamImpl(name);
 	}
 	
