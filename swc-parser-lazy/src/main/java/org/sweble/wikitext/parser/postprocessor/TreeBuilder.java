@@ -28,6 +28,7 @@ import java.util.ListIterator;
 import java.util.Map;
 
 import org.sweble.wikitext.parser.ParserConfig;
+import org.sweble.wikitext.parser.comparer.WtComparer;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtContentNode.WtAbsentContentNode;
@@ -61,7 +62,6 @@ import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderIn
 import org.sweble.wikitext.parser.postprocessor.TreeBuilderInTable.TreeBuilderInTableText;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
-import de.fau.cs.osr.ptk.common.DeepAstComparer;
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.utils.visitor.VisitorInterface;
 import de.fau.cs.osr.utils.visitor.VisitorLogic;
@@ -537,7 +537,7 @@ public class TreeBuilder
 			if (v0 == v1)
 				return true;
 			
-			if (!DeepAstComparer.compare(v0, v1, false, false))
+			if (!WtComparer.compareNoThrow(v0, v1, false, false))
 				return false;
 		}
 		
