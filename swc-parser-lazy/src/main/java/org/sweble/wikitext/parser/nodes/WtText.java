@@ -48,19 +48,19 @@ public class WtText
 	// =========================================================================
 	
 	@Override
-	public WtRtData setRtd(WtRtData rtd)
+	public void setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public WtRtData setRtd(Object... glue)
+	public void setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public WtRtData setRtd(String... glue)
+	public void setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException();
 	}

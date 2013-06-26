@@ -59,27 +59,23 @@ public abstract class WtInnerNode2
 	// =========================================================================
 	
 	@Override
-	public WtRtData setRtd(WtRtData rtd)
+	public void setRtd(WtRtData rtd)
 	{
 		if (rtd != null && rtd.size() != this.size() + 1)
 			throw new IllegalArgumentException();
-		WtRtData old = this.rtd;
 		this.rtd = rtd;
-		return old;
 	}
 	
 	@Override
-	public WtRtData setRtd(Object... glue)
+	public void setRtd(Object... glue)
 	{
 		rtd = new WtRtData(this, glue);
-		return rtd;
 	}
 	
 	@Override
-	public WtRtData setRtd(String... glue)
+	public void setRtd(String... glue)
 	{
 		rtd = new WtRtData(this, glue);
-		return rtd;
 	}
 	
 	@Override
@@ -150,8 +146,12 @@ public abstract class WtInnerNode2
 			switch (index)
 			{
 				case 0:
-					return WtInnerNode2.this.setRtd((WtRtData) value);
-					
+				{
+					WtRtData old = WtInnerNode2.this.getRtd();
+					WtInnerNode2.this.setRtd((WtRtData) value);
+					return old;
+				}
+				
 				default:
 					throw new IndexOutOfBoundsException();
 			}

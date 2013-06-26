@@ -46,19 +46,19 @@ public abstract class WtEmptyImmutableNode
 	// =========================================================================
 	
 	@Override
-	public WtRtData setRtd(WtRtData rtd)
+	public void setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
 	
 	@Override
-	public WtRtData setRtd(Object... glue)
+	public void setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}
 	
 	@Override
-	public WtRtData setRtd(String... glue)
+	public void setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException(genMsg());
 	}

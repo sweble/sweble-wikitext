@@ -111,27 +111,23 @@ public interface WtContentNode
 		// =====================================================================
 		
 		@Override
-		public WtRtData setRtd(WtRtData rtd)
+		public void setRtd(WtRtData rtd)
 		{
 			if (rtd != null && rtd.size() != 2)
 				throw new IllegalArgumentException();
-			WtRtData old = this.rtd;
 			this.rtd = rtd;
-			return old;
 		}
 		
 		@Override
-		public WtRtData setRtd(Object... glue)
+		public void setRtd(Object... glue)
 		{
 			rtd = new WtRtData(2, glue);
-			return rtd;
 		}
 		
 		@Override
-		public WtRtData setRtd(String... glue)
+		public void setRtd(String... glue)
 		{
 			rtd = new WtRtData(2, glue);
-			return rtd;
 		}
 		
 		@Override
@@ -202,8 +198,12 @@ public interface WtContentNode
 				switch (index)
 				{
 					case 0:
-						return WtContentNodeImpl.this.setRtd((WtRtData) value);
-						
+					{
+						WtRtData old = WtContentNodeImpl.this.getRtd();
+						WtContentNodeImpl.this.setRtd((WtRtData) value);
+						return old;
+					}
+					
 					default:
 						throw new IndexOutOfBoundsException();
 				}

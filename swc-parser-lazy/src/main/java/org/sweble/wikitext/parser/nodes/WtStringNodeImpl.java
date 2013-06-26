@@ -48,27 +48,23 @@ public abstract class WtStringNodeImpl
 	// =========================================================================
 	
 	@Override
-	public WtRtData setRtd(WtRtData rtd)
+	public void setRtd(WtRtData rtd)
 	{
 		if (rtd != null && rtd.size() != this.size() + 1)
 			throw new IllegalArgumentException();
-		WtRtData old = this.rtd;
 		this.rtd = rtd;
-		return old;
 	}
 	
 	@Override
-	public WtRtData setRtd(Object... glue)
+	public void setRtd(Object... glue)
 	{
 		rtd = new WtRtData(this, glue);
-		return rtd;
 	}
 	
 	@Override
-	public WtRtData setRtd(String... glue)
+	public void setRtd(String... glue)
 	{
 		rtd = new WtRtData(this, glue);
-		return rtd;
 	}
 	
 	@Override
@@ -144,8 +140,12 @@ public abstract class WtStringNodeImpl
 			switch (index - getSuperPropertyCount())
 			{
 				case 0:
-					return WtStringNodeImpl.this.setRtd((WtRtData) value);
-					
+				{
+					WtRtData old = WtStringNodeImpl.this.getRtd();
+					WtStringNodeImpl.this.setRtd((WtRtData) value);
+					return old;
+				}
+				
 				default:
 					return super.setValue(index, value);
 			}

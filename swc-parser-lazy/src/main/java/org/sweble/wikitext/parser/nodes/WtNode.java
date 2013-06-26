@@ -25,11 +25,11 @@ public interface WtNode
 		extends
 			AstNode<WtNode>
 {
-	public WtRtData setRtd(WtRtData rtd);
+	public void setRtd(WtRtData rtd);
 	
-	public WtRtData setRtd(Object... glue);
+	public void setRtd(Object... glue);
 	
-	public WtRtData setRtd(String... glue);
+	public void setRtd(String... glue);
 	
 	public WtRtData getRtd();
 	

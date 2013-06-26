@@ -26,6 +26,7 @@ public class WtParserEntity
 		extends
 			AstParserEntity<WtNode>
 		implements
+			WtNode, /* keep this here since WtIntermediate is only a "signal" interface. */
 			WtIntermediate
 {
 	private static final long serialVersionUID = 7333107598118095040L;
@@ -56,19 +57,19 @@ public class WtParserEntity
 	// =========================================================================
 	
 	@Override
-	public WtRtData setRtd(WtRtData rtd)
+	public void setRtd(WtRtData rtd)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public WtRtData setRtd(Object... glue)
+	public void setRtd(Object... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
 	
 	@Override
-	public WtRtData setRtd(String... glue)
+	public void setRtd(String... glue)
 	{
 		throw new UnsupportedOperationException();
 	}
