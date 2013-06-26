@@ -21,6 +21,7 @@ import java.io.ObjectStreamException;
 import java.util.Collection;
 
 import org.sweble.wikitext.parser.WtRtData;
+import org.sweble.wikitext.parser.nodes.WtContentNode.WtEmptyContentNode;
 
 import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNodeImpl;
@@ -38,17 +39,11 @@ public interface WtNodeList
 	
 	public class WtEmptyNodeList
 			extends
-				WtEmptyImmutableNode
+				WtEmptyContentNode
 			implements
 				WtNodeList
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
-		
-		@Override
-		public void exchange(AstNodeList<WtNode> other)
-		{
-			throw new UnsupportedOperationException(genMsg());
-		}
 		
 		@Override
 		public int getNodeType()
@@ -60,12 +55,6 @@ public interface WtNodeList
 		public String getNodeName()
 		{
 			return WtNodeList.class.getSimpleName();
-		}
-		
-		@Override
-		public boolean indicatesAbsence()
-		{
-			return false;
 		}
 		
 		@Override
