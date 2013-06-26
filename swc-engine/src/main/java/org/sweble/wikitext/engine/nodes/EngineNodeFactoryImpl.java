@@ -17,11 +17,13 @@
 package org.sweble.wikitext.engine.nodes;
 
 import java.util.List;
+import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.lognodes.CompilerLog;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
+import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
@@ -38,6 +40,19 @@ public final class EngineNodeFactoryImpl
 	public EngineNodeFactoryImpl(WikiConfig wikiConfig)
 	{
 		super(wikiConfig.getParserConfig());
+		
+		{
+			Map<Class<?>, WtNode> prototypes = super.getPrototypes();
+			prototypes.put(EngCompiledPage.class, new EngCompiledPage());
+			prototypes.put(EngNowiki.class, new EngNowiki());
+			prototypes.put(EngPage.class, new EngPage());
+			prototypes.put(EngSoftErrorNode.class, new EngSoftErrorNode());
+		}
+		
+		{
+			Map<NamedMemberId, Object> defaultValueImmutables = super.getDefaultValueImmutables();
+			defaultValueImmutables.put(new NamedMemberId(EngSoftErrorNode.class, "body"), WtBody.EMPTY);
+		}
 	}
 	
 	// =========================================================================

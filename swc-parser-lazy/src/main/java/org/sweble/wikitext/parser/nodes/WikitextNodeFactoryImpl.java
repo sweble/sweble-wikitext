@@ -19,28 +19,45 @@ package org.sweble.wikitext.parser.nodes;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
+import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.nodes.WtBody.WtBodyImpl;
+import org.sweble.wikitext.parser.nodes.WtBody.WtEmptyBody;
+import org.sweble.wikitext.parser.nodes.WtBody.WtNoBody;
 import org.sweble.wikitext.parser.nodes.WtIllegalCodePoint.IllegalCodePointType;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageHorizAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageLinkTarget;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageVertAlign;
 import org.sweble.wikitext.parser.nodes.WtImageLink.ImageViewFormat;
+import org.sweble.wikitext.parser.nodes.WtLctFlags.WtLctFlagsImpl;
+import org.sweble.wikitext.parser.nodes.WtLctFlags.WtNoLctFlags;
 import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtLinkOptionAltTextImpl;
+import org.sweble.wikitext.parser.nodes.WtLinkOptionAltText.WtNoLinkOptionAltText;
+import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtEmptyLinkOptions;
 import org.sweble.wikitext.parser.nodes.WtLinkOptions.WtLinkOptionsImpl;
 import org.sweble.wikitext.parser.nodes.WtLinkTarget.LinkTargetType;
+import org.sweble.wikitext.parser.nodes.WtLinkTarget.WtNoLink;
 import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtLinkTitleImpl;
+import org.sweble.wikitext.parser.nodes.WtLinkTitle.WtNoLinkTitle;
 import org.sweble.wikitext.parser.nodes.WtName.WtNameImpl;
+import org.sweble.wikitext.parser.nodes.WtName.WtNoName;
+import org.sweble.wikitext.parser.nodes.WtNodeList.WtEmptyNodeList;
 import org.sweble.wikitext.parser.nodes.WtNodeList.WtNodeListImpl;
 import org.sweble.wikitext.parser.nodes.WtOnlyInclude.XmlElementType;
+import org.sweble.wikitext.parser.nodes.WtTagExtensionBody.WtNoTagExtensionBody;
 import org.sweble.wikitext.parser.nodes.WtTagExtensionBody.WtTagExtensionBodyImpl;
+import org.sweble.wikitext.parser.nodes.WtTemplateArguments.WtEmptyTemplateArguments;
 import org.sweble.wikitext.parser.nodes.WtTemplateArguments.WtTemplateArgumentsImpl;
+import org.sweble.wikitext.parser.nodes.WtValue.WtNoValue;
 import org.sweble.wikitext.parser.nodes.WtValue.WtValueImpl;
+import org.sweble.wikitext.parser.nodes.WtXmlAttributes.WtEmptyXmlAttributes;
 import org.sweble.wikitext.parser.nodes.WtXmlAttributes.WtXmlAttributesImpl;
 import org.sweble.wikitext.parser.parser.LinkBuilder;
 import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
@@ -48,19 +65,161 @@ import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodeList;
+import de.fau.cs.osr.ptk.common.serialization.NodeFactory;
+import de.fau.cs.osr.ptk.common.serialization.SimpleNodeFactory;
 
 public class WikitextNodeFactoryImpl
+		extends
+			SimpleNodeFactory<WtNode>
 		implements
 			WikitextNodeFactory
 {
+	private final Map<Class<?>, WtNode> prototypes =
+			new HashMap<Class<?>, WtNode>();
+	
+	private final Map<Class<?>, WtNode> immutables =
+			new HashMap<Class<?>, WtNode>();
+	
+	private final Map<NodeFactory.NamedMemberId, Object> defaultValueImmutables =
+			new HashMap<NodeFactory.NamedMemberId, Object>();
+	
 	private ParserConfig parserConfig;
 	
 	// =========================================================================
 	
 	public WikitextNodeFactoryImpl(ParserConfig parserConfig)
 	{
-		super();
 		this.parserConfig = parserConfig;
+		
+		this.prototypes.put(WtLctRule.class, new WtLctRule());
+		this.prototypes.put(WtLinkOptionLinkTarget.class, new WtLinkOptionLinkTarget());
+		this.prototypes.put(WtRedirect.class, new WtRedirect());
+		this.prototypes.put(WtTableImplicitTableBody.class, new WtTableImplicitTableBody());
+		this.prototypes.put(WtXmlAttribute.class, new WtXmlAttribute());
+		this.prototypes.put(WtXmlEmptyTag.class, new WtXmlEmptyTag());
+		this.prototypes.put(WtXmlStartTag.class, new WtXmlStartTag());
+		
+		this.prototypes.put(WtExternalLink.class, new WtExternalLink());
+		this.prototypes.put(WtInternalLink.class, new WtInternalLink());
+		this.prototypes.put(WtLctRuleConv.class, new WtLctRuleConv());
+		this.prototypes.put(WtLctVarConv.class, new WtLctVarConv());
+		this.prototypes.put(WtSection.class, new WtSection());
+		this.prototypes.put(WtTable.class, new WtTable());
+		this.prototypes.put(WtTableCaption.class, new WtTableCaption());
+		this.prototypes.put(WtTableCell.class, new WtTableCell());
+		this.prototypes.put(WtTableHeader.class, new WtTableHeader());
+		this.prototypes.put(WtTableRow.class, new WtTableRow());
+		this.prototypes.put(WtTagExtension.class, new WtTagExtension());
+		this.prototypes.put(WtTemplate.class, new WtTemplate());
+		this.prototypes.put(WtTemplateArgument.class, new WtTemplateArgument());
+		this.prototypes.put(WtXmlElement.class, new WtXmlElement());
+		
+		this.prototypes.put(WtImageLink.class, new WtImageLink());
+		this.prototypes.put(WtTemplateParameter.class, new WtTemplateParameter());
+		
+		this.prototypes.put(WtHorizontalRule.class, new WtHorizontalRule());
+		this.prototypes.put(WtIllegalCodePoint.class, new WtIllegalCodePoint());
+		this.prototypes.put(WtLctFlags.class, new WtLctFlagsImpl());
+		this.prototypes.put(WtLctFlagsImpl.class, new WtLctFlagsImpl());
+		this.prototypes.put(WtLinkOptionKeyword.class, new WtLinkOptionKeyword());
+		this.prototypes.put(WtLinkOptionResize.class, new WtLinkOptionResize());
+		this.prototypes.put(WtPageSwitch.class, new WtPageSwitch());
+		this.prototypes.put(WtSignature.class, new WtSignature());
+		this.prototypes.put(WtTicks.class, new WtTicks());
+		this.prototypes.put(WtUrl.class, new WtUrl());
+		this.prototypes.put(WtXmlCharRef.class, new WtXmlCharRef());
+		this.prototypes.put(WtXmlEndTag.class, new WtXmlEndTag());
+		this.prototypes.put(WtXmlEntityRef.class, new WtXmlEntityRef());
+		
+		this.prototypes.put(WtParserEntity.class, new WtParserEntity());
+		
+		this.prototypes.put(WtNodeList.class, new WtNodeListImpl());
+		this.prototypes.put(WtNodeListImpl.class, new WtNodeListImpl());
+		this.prototypes.put(WtBody.class, new WtBodyImpl());
+		this.prototypes.put(WtBodyImpl.class, new WtBodyImpl());
+		this.prototypes.put(WtBold.class, new WtBold());
+		this.prototypes.put(WtDefinitionList.class, new WtDefinitionList());
+		this.prototypes.put(WtDefinitionListDef.class, new WtDefinitionListDef());
+		this.prototypes.put(WtDefinitionListTerm.class, new WtDefinitionListTerm());
+		this.prototypes.put(WtHeading.class, new WtHeading());
+		this.prototypes.put(WtItalics.class, new WtItalics());
+		this.prototypes.put(WtLctRules.class, new WtLctRuleText());
+		this.prototypes.put(WtLinkOptionAltText.class, new WtLinkOptionAltTextImpl());
+		this.prototypes.put(WtLinkOptionAltTextImpl.class, new WtLinkOptionAltTextImpl());
+		this.prototypes.put(WtLinkOptions.class, new WtLinkOptionsImpl());
+		this.prototypes.put(WtLinkOptionsImpl.class, new WtLinkOptionsImpl());
+		this.prototypes.put(WtLinkTitle.class, new WtLinkTitleImpl());
+		this.prototypes.put(WtLinkTitleImpl.class, new WtLinkTitleImpl());
+		this.prototypes.put(WtListItem.class, new WtListItem());
+		this.prototypes.put(WtName.class, new WtNameImpl());
+		this.prototypes.put(WtNameImpl.class, new WtNameImpl());
+		this.prototypes.put(WtOnlyInclude.class, new WtOnlyInclude());
+		this.prototypes.put(WtOrderedList.class, new WtOrderedList());
+		this.prototypes.put(WtParsedWikitextPage.class, new WtParsedWikitextPage());
+		this.prototypes.put(WtPreproWikitextPage.class, new WtPreproWikitextPage());
+		this.prototypes.put(WtParagraph.class, new WtParagraph());
+		this.prototypes.put(WtSemiPre.class, new WtSemiPre());
+		this.prototypes.put(WtSemiPreLine.class, new WtSemiPreLine());
+		this.prototypes.put(WtTemplateArguments.class, new WtTemplateArgumentsImpl());
+		this.prototypes.put(WtTemplateArgumentsImpl.class, new WtTemplateArgumentsImpl());
+		this.prototypes.put(WtUnorderedList.class, new WtUnorderedList());
+		this.prototypes.put(WtValue.class, new WtValueImpl());
+		this.prototypes.put(WtValueImpl.class, new WtValueImpl());
+		this.prototypes.put(WtWhitespace.class, new WtWhitespace());
+		this.prototypes.put(WtXmlAttributes.class, new WtXmlAttributesImpl());
+		this.prototypes.put(WtXmlAttributesImpl.class, new WtXmlAttributesImpl());
+		
+		this.prototypes.put(WtIgnored.class, new WtIgnored());
+		this.prototypes.put(WtLctRuleGarbage.class, new WtLctRuleGarbage());
+		this.prototypes.put(WtLinkOptionGarbage.class, new WtLinkOptionGarbage());
+		this.prototypes.put(WtNewline.class, new WtNewline());
+		this.prototypes.put(WtPageName.class, new WtPageName());
+		this.prototypes.put(WtTagExtensionBody.class, new WtTagExtensionBodyImpl());
+		this.prototypes.put(WtTagExtensionBodyImpl.class, new WtTagExtensionBodyImpl());
+		this.prototypes.put(WtXmlAttributeGarbage.class, new WtXmlAttributeGarbage());
+		this.prototypes.put(WtXmlComment.class, new WtXmlComment());
+		
+		this.prototypes.put(WtText.class, new WtText());
+		
+		this.immutables.put(WtNoTagExtensionBody.class, WtTagExtensionBody.NO_BODY);
+		this.immutables.put(WtNoBody.class, WtBody.NO_BODY);
+		this.immutables.put(WtNoLinkOptionAltText.class, WtLinkOptionAltText.NO_ALT);
+		this.immutables.put(WtNoLinkTitle.class, WtLinkTitle.NO_TITLE);
+		this.immutables.put(WtNoName.class, WtName.NO_NAME);
+		this.immutables.put(WtNoValue.class, WtValue.NO_VALUE);
+		
+		this.immutables.put(WtEmptyBody.class, WtBody.EMPTY);
+		this.immutables.put(WtEmptyLinkOptions.class, WtLinkOptions.EMPTY);
+		this.immutables.put(WtEmptyNodeList.class, WtNodeList.EMPTY);
+		this.immutables.put(WtEmptyTemplateArguments.class, WtTemplateArguments.EMPTY);
+		this.immutables.put(WtEmptyXmlAttributes.class, WtXmlAttributes.EMPTY);
+		
+		this.immutables.put(WtNoLctFlags.class, WtLctFlags.NO_FLAGS);
+		this.immutables.put(WtNoLink.class, WtLinkTarget.NO_LINK);
+		
+		// Default values for nodes that can have "NO_*" children
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtLctRuleConv.class, "flags"), WtLctFlags.NO_FLAGS);
+		this.defaultValueImmutables.put(new NamedMemberId(WtLctVarConv.class, "flags"), WtLctFlags.NO_FLAGS);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtLinkOptionLinkTarget.class, "target"), WtLinkTarget.NO_LINK);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtTable.class, "body"), WtBody.NO_BODY);
+		this.defaultValueImmutables.put(new NamedMemberId(WtSection.class, "body"), WtBody.NO_BODY);
+		this.defaultValueImmutables.put(new NamedMemberId(WtXmlElement.class, "body"), WtBody.NO_BODY);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtImageLink.class, "alt"), WtLinkOptionAltText.NO_ALT);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtImageLink.class, "title"), WtLinkTitle.NO_TITLE);
+		this.defaultValueImmutables.put(new NamedMemberId(WtInternalLink.class, "title"), WtLinkTitle.NO_TITLE);
+		this.defaultValueImmutables.put(new NamedMemberId(WtExternalLink.class, "title"), WtLinkTitle.NO_TITLE);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtTemplateArgument.class, "name"), WtName.NO_NAME);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtTemplateParameter.class, "default"), WtValue.NO_VALUE);
+		this.defaultValueImmutables.put(new NamedMemberId(WtXmlAttribute.class, "value"), WtValue.NO_VALUE);
+		
+		this.defaultValueImmutables.put(new NamedMemberId(WtTagExtension.class, "body"), WtTagExtensionBody.NO_BODY);
 	}
 	
 	// =========================================================================
@@ -68,6 +227,66 @@ public class WikitextNodeFactoryImpl
 	protected ParserConfig getParserConfig()
 	{
 		return parserConfig;
+	}
+	
+	protected Map<Class<?>, WtNode> getPrototypes()
+	{
+		return prototypes;
+	}
+	
+	protected Map<Class<?>, WtNode> getImmutables()
+	{
+		return immutables;
+	}
+	
+	protected Map<NodeFactory.NamedMemberId, Object> getDefaultValueImmutables()
+	{
+		return defaultValueImmutables;
+	}
+	
+	// =========================================================================
+	
+	@Override
+	public WtNode instantiateNode(Class<?> clazz)
+	{
+		WtNode p = prototypes.get(clazz);
+		try
+		{
+			if (p != null)
+				return (WtNode) p.clone();
+		}
+		catch (CloneNotSupportedException e)
+		{
+			e.printStackTrace();
+		}
+		p = immutables.get(clazz);
+		if (p != null)
+			return p;
+		return super.instantiateNode(clazz);
+	}
+	
+	@Override
+	public WtNode instantiateDefaultChild(
+			NodeFactory.NamedMemberId id, Class<?> type)
+	{
+		WtNode p = (WtNode) defaultValueImmutables.get(id);
+		if (p != null)
+			return p;
+		return super.instantiateDefaultChild(id, type);
+	}
+	
+	@Override
+	public Object instantiateDefaultProperty(
+			NodeFactory.NamedMemberId id, Class<?> type)
+	{
+		if (type == WtRtData.class)
+			return null;
+		if (type == String.class)
+			return "";
+		Object p = defaultValueImmutables.get(id);
+		if (p != null)
+			return p;
+		return super.instantiateDefaultProperty(id, type);
 	}
 	
 	// =========================================================================

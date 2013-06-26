@@ -32,8 +32,11 @@ import org.sweble.wikitext.parser.postprocessor.IntermediateTags;
 import xtc.util.Pair;
 import de.fau.cs.osr.ptk.common.ast.AstNode;
 import de.fau.cs.osr.ptk.common.ast.AstNodeList;
+import de.fau.cs.osr.ptk.common.serialization.NodeFactory;
 
 public interface WikitextNodeFactory
+		extends
+			NodeFactory<WtNode>
 {
 	// -- Inner Node 1 ---------------------------------------------------------
 	
