@@ -104,11 +104,31 @@ import org.sweble.wikitext.parser.nodes.WtXmlEndTag;
 import org.sweble.wikitext.parser.nodes.WtXmlEntityRef;
 import org.sweble.wikitext.parser.nodes.WtXmlStartTag;
 
+import de.fau.cs.osr.ptk.common.serialization.AstConverterBase;
 import de.fau.cs.osr.ptk.common.serialization.AstNodeConverterBase;
 import de.fau.cs.osr.ptk.common.serialization.SimpleTypeNameMapper;
 
 public class EngineAstNodeConverter
 {
+	private static final ReadOnlyTypeNameMapper tnm = new ReadOnlyTypeNameMapper();
+	
+	// =========================================================================
+	
+	/**
+	 * The returned type name mapper is read-only!
+	 */
+	public static SimpleTypeNameMapper getTypeNameMapper()
+	{
+		return tnm;
+	}
+	
+	// =========================================================================
+	
+	public static void setup(AstConverterBase converter)
+	{
+		setupTypeNameMapper(converter);
+	}
+	
 	public static void setup(
 			WikiConfig config,
 			AstNodeConverterBase<WtNode> converter)
@@ -134,9 +154,6 @@ public class EngineAstNodeConverter
 	public static void setupOutputMinification(
 			AstNodeConverterBase<WtNode> converter)
 	{
-		SimpleTypeNameMapper typeNameMapper = new SimpleTypeNameMapper();
-		converter.setTypeNameMapper(typeNameMapper);
-		
 		converter.suppressNode(WtNoTagExtensionBody.class);
 		converter.suppressTypeInfo(WtTagExtensionBodyImpl.class);
 		
@@ -177,89 +194,110 @@ public class EngineAstNodeConverter
 		converter.setSuppressEmptyStringProperties(true);
 	}
 	
-	private static void setupTypeNameMapper(
-			AstNodeConverterBase<WtNode> converter)
+	private static void setupTypeNameMapper(AstConverterBase converter)
 	{
-		SimpleTypeNameMapper tnm = new SimpleTypeNameMapper();
 		converter.setTypeNameMapper(tnm);
+	}
+	
+	// =========================================================================
+	
+	private static final class ReadOnlyTypeNameMapper
+			extends
+				SimpleTypeNameMapper
+	{
+		@Override
+		public void add(Class<?> type, String name)
+		{
+			throw new UnsupportedOperationException("This is a read-only type name mapper!");
+		}
 		
-		tnm.add(WtLctRule.class, "lct-rule");
-		tnm.add(WtLinkOptionLinkTarget.class, "lo-target");
-		tnm.add(WtRedirect.class, "redirect");
-		tnm.add(WtTableImplicitTableBody.class, "tbody-implicit");
-		tnm.add(WtXmlAttribute.class, "attr");
-		tnm.add(WtXmlEmptyTag.class, "emptytag");
-		tnm.add(WtXmlStartTag.class, "starttag");
+		protected void privateAdd(Class<?> type, String name)
+		{
+			super.add(type, name);
+		}
+	}
+	
+	// =========================================================================
+	
+	static
+	{
+		tnm.privateAdd(WtLctRule.class, "lct-rule");
+		tnm.privateAdd(WtLinkOptionLinkTarget.class, "lo-target");
+		tnm.privateAdd(WtRedirect.class, "redirect");
+		tnm.privateAdd(WtTableImplicitTableBody.class, "tbody-implicit");
+		tnm.privateAdd(WtXmlAttribute.class, "attr");
+		tnm.privateAdd(WtXmlEmptyTag.class, "emptytag");
+		tnm.privateAdd(WtXmlStartTag.class, "starttag");
 		
-		tnm.add(WtExternalLink.class, "extlink");
-		tnm.add(WtInternalLink.class, "intlink");
-		tnm.add(WtLctRuleConv.class, "lct-ruleconv");
-		tnm.add(WtLctVarConv.class, "lct-varconv");
-		tnm.add(WtSection.class, "section");
-		tnm.add(WtTable.class, "table");
-		tnm.add(WtTableCaption.class, "caption");
-		tnm.add(WtTableCell.class, "td");
-		tnm.add(WtTableHeader.class, "th");
-		tnm.add(WtTableRow.class, "tr");
-		tnm.add(WtTagExtension.class, "tagext");
-		tnm.add(WtTemplate.class, "template");
-		tnm.add(WtTemplateArgument.class, "arg");
-		tnm.add(WtXmlElement.class, "elem");
+		tnm.privateAdd(WtExternalLink.class, "extlink");
+		tnm.privateAdd(WtInternalLink.class, "intlink");
+		tnm.privateAdd(WtLctRuleConv.class, "lct-ruleconv");
+		tnm.privateAdd(WtLctVarConv.class, "lct-varconv");
+		tnm.privateAdd(WtSection.class, "section");
+		tnm.privateAdd(WtTable.class, "table");
+		tnm.privateAdd(WtTableCaption.class, "caption");
+		tnm.privateAdd(WtTableCell.class, "td");
+		tnm.privateAdd(WtTableHeader.class, "th");
+		tnm.privateAdd(WtTableRow.class, "tr");
+		tnm.privateAdd(WtTagExtension.class, "tagext");
+		tnm.privateAdd(WtTemplate.class, "template");
+		tnm.privateAdd(WtTemplateArgument.class, "arg");
+		tnm.privateAdd(WtXmlElement.class, "elem");
 		
-		tnm.add(WtImageLink.class, "image");
-		tnm.add(WtTemplateParameter.class, "param");
+		tnm.privateAdd(WtImageLink.class, "image");
+		tnm.privateAdd(WtTemplateParameter.class, "param");
 		
-		tnm.add(WtHorizontalRule.class, "hr");
-		tnm.add(WtIllegalCodePoint.class, "icp");
-		tnm.add(WtLctFlagsImpl.class, "lct-flags");
-		tnm.add(WtLinkOptionKeyword.class, "lo-keyword");
-		tnm.add(WtLinkOptionResize.class, "lo-resize");
-		tnm.add(WtPageSwitch.class, "pageswitch");
-		tnm.add(WtSignature.class, "signature");
-		tnm.add(WtTicks.class, "ticks");
-		tnm.add(WtUrl.class, "url");
-		tnm.add(WtXmlCharRef.class, "cref");
-		tnm.add(WtXmlEndTag.class, "endtag");
-		tnm.add(WtXmlEntityRef.class, "eref");
+		tnm.privateAdd(WtHorizontalRule.class, "hr");
+		tnm.privateAdd(WtIllegalCodePoint.class, "icp");
+		tnm.privateAdd(WtLctFlagsImpl.class, "lct-flags");
+		tnm.privateAdd(WtLinkOptionKeyword.class, "lo-keyword");
+		tnm.privateAdd(WtLinkOptionResize.class, "lo-resize");
+		tnm.privateAdd(WtPageSwitch.class, "pageswitch");
+		tnm.privateAdd(WtSignature.class, "signature");
+		tnm.privateAdd(WtTicks.class, "ticks");
+		tnm.privateAdd(WtUrl.class, "url");
+		tnm.privateAdd(WtXmlCharRef.class, "cref");
+		tnm.privateAdd(WtXmlEndTag.class, "endtag");
+		tnm.privateAdd(WtXmlEntityRef.class, "eref");
 		
-		tnm.add(WtParserEntity.class, "entity");
+		tnm.privateAdd(WtParserEntity.class, "entity");
 		
-		tnm.add(WtNodeListImpl.class, "list");
-		tnm.add(WtBodyImpl.class, "body");
-		tnm.add(WtBold.class, "b");
-		tnm.add(WtDefinitionList.class, "dl");
-		tnm.add(WtDefinitionListDef.class, "dd");
-		tnm.add(WtDefinitionListTerm.class, "dt");
-		tnm.add(WtHeading.class, "heading");
-		tnm.add(WtItalics.class, "i");
-		tnm.add(WtLctRules.class, "lct-rules");
-		tnm.add(WtLinkOptionAltTextImpl.class, "lo-alt");
-		tnm.add(WtLinkOptionsImpl.class, "los");
-		tnm.add(WtLinkTitleImpl.class, "title");
-		tnm.add(WtListItem.class, "li");
-		tnm.add(WtNameImpl.class, "name");
-		tnm.add(WtOnlyInclude.class, "onlyinclude");
-		tnm.add(WtOrderedList.class, "ol");
-		tnm.add(WtParsedWikitextPage.class, "parsed");
-		tnm.add(WtPreproWikitextPage.class, "prepro");
-		tnm.add(WtParagraph.class, "p");
-		tnm.add(WtSemiPre.class, "spre");
-		tnm.add(WtSemiPreLine.class, "spre-line");
-		tnm.add(WtTemplateArgumentsImpl.class, "args");
-		tnm.add(WtUnorderedList.class, "ul");
-		tnm.add(WtValueImpl.class, "value");
-		tnm.add(WtWhitespace.class, "ws");
-		tnm.add(WtXmlAttributesImpl.class, "attrs");
+		tnm.privateAdd(WtNodeListImpl.class, "list");
+		tnm.privateAdd(WtBodyImpl.class, "body");
+		tnm.privateAdd(WtBold.class, "b");
+		tnm.privateAdd(WtDefinitionList.class, "dl");
+		tnm.privateAdd(WtDefinitionListDef.class, "dd");
+		tnm.privateAdd(WtDefinitionListTerm.class, "dt");
+		tnm.privateAdd(WtHeading.class, "heading");
+		tnm.privateAdd(WtItalics.class, "i");
+		tnm.privateAdd(WtLctRules.class, "lct-rules");
+		tnm.privateAdd(WtLinkOptionAltTextImpl.class, "lo-alt");
+		tnm.privateAdd(WtLinkOptionsImpl.class, "los");
+		tnm.privateAdd(WtLinkTitleImpl.class, "title");
+		tnm.privateAdd(WtListItem.class, "li");
+		tnm.privateAdd(WtNameImpl.class, "name");
+		tnm.privateAdd(WtOnlyInclude.class, "onlyinclude");
+		tnm.privateAdd(WtOrderedList.class, "ol");
+		tnm.privateAdd(WtParsedWikitextPage.class, "parsed");
+		tnm.privateAdd(WtPreproWikitextPage.class, "prepro");
+		tnm.privateAdd(WtParagraph.class, "p");
+		tnm.privateAdd(WtSemiPre.class, "spre");
+		tnm.privateAdd(WtSemiPreLine.class, "spre-line");
+		tnm.privateAdd(WtTemplateArgumentsImpl.class, "args");
+		tnm.privateAdd(WtUnorderedList.class, "ul");
+		tnm.privateAdd(WtValueImpl.class, "value");
+		tnm.privateAdd(WtWhitespace.class, "ws");
+		tnm.privateAdd(WtXmlAttributesImpl.class, "attrs");
 		
-		tnm.add(WtIgnored.class, "ignored");
-		tnm.add(WtLctRuleGarbage.class, "lct-rule-garbage");
-		tnm.add(WtLinkOptionGarbage.class, "lo-garbage");
-		tnm.add(WtNewline.class, "nl");
-		tnm.add(WtPageName.class, "pagename");
-		tnm.add(WtTagExtensionBodyImpl.class, "tagext-body");
-		tnm.add(WtXmlAttributeGarbage.class, "attr-garbage");
-		tnm.add(WtXmlComment.class, "comment");
+		tnm.privateAdd(WtIgnored.class, "ignored");
+		tnm.privateAdd(WtLctRuleGarbage.class, "lct-rule-garbage");
+		tnm.privateAdd(WtLinkOptionGarbage.class, "lo-garbage");
+		tnm.privateAdd(WtNewline.class, "nl");
+		tnm.privateAdd(WtPageName.class, "pagename");
+		tnm.privateAdd(WtTagExtensionBodyImpl.class, "tagext-body");
+		tnm.privateAdd(WtXmlAttributeGarbage.class, "attr-garbage");
+		tnm.privateAdd(WtXmlComment.class, "comment");
 		
-		tnm.add(WtText.class, "text");
+		tnm.privateAdd(WtText.class, "text");
 	}
 }
