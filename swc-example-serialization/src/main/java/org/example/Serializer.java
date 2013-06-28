@@ -26,29 +26,33 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Collections;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.serialization.EngineAstNodeConverter;
+import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.comparer.WtComparer;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import de.fau.cs.osr.ptk.common.json.JsonConverter;
-import de.fau.cs.osr.ptk.common.xml.AstNodeConverter;
-import de.fau.cs.osr.utils.ComparisonException;
-import de.fau.cs.osr.utils.NameAbbrevService;
+import de.fau.cs.osr.ptk.common.ast.AstNode;
+import de.fau.cs.osr.ptk.common.ast.RtData;
+import de.fau.cs.osr.ptk.common.json.AstNodeJsonTypeAdapter;
+import de.fau.cs.osr.ptk.common.json.AstRtDataJsonTypeAdapter;
+import de.fau.cs.osr.ptk.common.serialization.NodeFactory;
+import de.fau.cs.osr.ptk.common.xml.AstNodeXmlConverter;
 import de.fau.cs.osr.utils.StopWatch;
 
 public class Serializer
@@ -56,15 +60,6 @@ public class Serializer
 	private static final StopWatch watch = new StopWatch();
 	
 	// =========================================================================
-	
-	private static final NameAbbrevService abbrevService = new NameAbbrevService(
-			"de.fau.cs.osr.ptk.common.ast",
-			"org.sweble.wikitext.parser",
-			"org.sweble.wikitext.parser.nodes",
-			"org.sweble.wikitext.parser.nodes.parser",
-			"org.sweble.wikitext.parser.nodes.preprocessor",
-			"org.sweble.wikitext.parser.nodes.utils",
-			"org.sweble.wikitext.engine");
 	
 	private boolean quiet = false;
 	
@@ -102,13 +97,16 @@ public class Serializer
 	
 	private int wikitextLength;
 	
-	private File source;
+	private InputStream source;
+	
+	private String sourceName;
 	
 	// =========================================================================
 	
-	public Serializer(File source) throws Exception
+	public Serializer(InputStream source, String sourceName) throws Exception
 	{
 		this.source = source;
+		this.sourceName = sourceName;
 	}
 	
 	// =========================================================================
@@ -260,14 +258,14 @@ public class Serializer
 		if (original != null)
 			return;
 		
-		String title = source.getName();
+		String title = sourceName;
 		if (!quiet)
 		{
 			System.out.println();
 			System.out.println("Parsing: " + title);
 		}
 		
-		String content = FileUtils.readFileToString(source);
+		String content = IOUtils.toString(source, "UTF-8");
 		
 		WtNode original = parse(title, content);
 		
@@ -301,7 +299,7 @@ public class Serializer
 		}
 		
 		byte[] serialized = serialize(method);
-		compare(deserialize(method, serialized));
+		compare(method, deserialize(method, serialized));
 		
 		if (timeSerialization)
 		{
@@ -348,6 +346,19 @@ public class Serializer
 	{
 		parse();
 		return original;
+	}
+	
+	public WtNode getFixedOriginalAst(final SerializationMethod method) throws Exception, CloneNotSupportedException
+	{
+		WtNode originalAst = getAst();
+		if (method == SerializationMethod.JSON)
+		{
+			// As long as GSON does not handle Object collections and polymorphism 
+			// correctly, the "warnings" attribute cannot be serialized
+			originalAst = (WtNode) originalAst.clone();
+			originalAst.setProperty("warnings", Collections.EMPTY_LIST);
+		}
+		return originalAst;
 	}
 	
 	// =========================================================================
@@ -444,27 +455,20 @@ public class Serializer
 			case JAVA:
 			{
 				ObjectOutputStream oos = new ObjectOutputStream(objBaos);
-				oos.writeObject(original);
+				oos.writeObject(getAst());
 				oos.close();
 				break;
 			}
 			case XML:
 			{
-				getXmlSerializer().toXML(original, objBaos);
+				getXmlSerializer().toXML(getAst(), objBaos);
 				objBaos.close();
 				break;
 			}
 			case JSON:
 			{
 				OutputStreamWriter osw = new OutputStreamWriter(objBaos, "UTF-8");
-				Gson converter = JsonConverter.createGsonConverter(
-						true,
-						abbrevService,
-						!ppStripLocations,
-						WtNode.class,
-						WtNodeList.class,
-						WtText.class);
-				converter.toJson(original, osw);
+				getJsonSerializer().toJson(getAst(), osw);
 				osw.close();
 				break;
 			}
@@ -477,8 +481,8 @@ public class Serializer
 	
 	private XStream getXmlSerializer()
 	{
-		AstNodeConverter<WtNode> converter =
-				AstNodeConverter.forNodeType(WtNode.class);
+		AstNodeXmlConverter<WtNode> converter =
+				AstNodeXmlConverter.forNodeType(WtNode.class);
 		
 		EngineAstNodeConverter.setup(new WikiConfigImpl(), converter);
 		
@@ -487,6 +491,55 @@ public class Serializer
 		xstream.setMode(XStream.NO_REFERENCES);
 		
 		return xstream;
+	}
+	
+	private Gson getJsonSerializer()
+	{
+		final AstNodeJsonTypeAdapter<WtNode> nodeConverter =
+				AstNodeJsonTypeAdapter.forNodeType(WtNode.class);
+		EngineAstNodeConverter.setup(new WikiConfigImpl(), nodeConverter);
+		
+		// As long as GSON does not handle Object collections and polymorphism 
+		// correctly, the "warnings" attribute cannot be serialized
+		nodeConverter.suppressProperty("warnings");
+		nodeConverter.setNodeFactory(new NodeFactory<WtNode>()
+		{
+			NodeFactory<WtNode> nf = nodeConverter.getNodeFactory();
+			
+			@Override
+			public WtNode instantiateNode(Class<?> clazz)
+			{
+				return nf.instantiateNode(clazz);
+			}
+			
+			@Override
+			public WtNode instantiateDefaultChild(
+					NamedMemberId id,
+					Class<?> childType)
+			{
+				return nf.instantiateDefaultChild(id, childType);
+			}
+			
+			@Override
+			public Object instantiateDefaultProperty(
+					NamedMemberId id,
+					Class<?> type)
+			{
+				if (id.memberName == "warnings")
+					return Collections.EMPTY_LIST;
+				return nf.instantiateDefaultProperty(id, type);
+			}
+		});
+		
+		AstRtDataJsonTypeAdapter<WtRtData> rtdConverter = new AstRtDataJsonTypeAdapter<WtRtData>(WtRtData.class);
+		EngineAstNodeConverter.setup(rtdConverter);
+		
+		GsonBuilder builder = new GsonBuilder();
+		builder.registerTypeHierarchyAdapter(RtData.class, rtdConverter);
+		builder.registerTypeHierarchyAdapter(AstNode.class, nodeConverter);
+		builder.serializeNulls();
+		builder.setPrettyPrinting();
+		return builder.create();
 	}
 	
 	// =========================================================================
@@ -541,21 +594,14 @@ public class Serializer
 			}
 			case XML:
 			{
-				result = (WtNode) getXmlSerializer().fromXML(is, original);
+				result = (WtNode) getXmlSerializer().fromXML(is, WtNode.class);
 				is.close();
 				break;
 			}
 			case JSON:
 			{
 				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-				Gson converter = JsonConverter.createGsonConverter(
-						true,
-						abbrevService,
-						!ppStripLocations,
-						WtNode.class,
-						WtNodeList.class,
-						WtText.class);
-				result = converter.fromJson(isr, WtNode.class);
+				result = (WtNode) getJsonSerializer().fromJson(isr, WtNode.class);
 				isr.close();
 				break;
 			}
@@ -652,8 +698,8 @@ public class Serializer
 	
 	// =========================================================================
 	
-	private void compare(WtNode deserialize) throws ComparisonException
+	private void compare(SerializationMethod method, WtNode deserialize) throws CloneNotSupportedException, Exception
 	{
-		WtComparer.compareAndThrow(original, deserialize, true, true);
+		WtComparer.compareAndThrow(getFixedOriginalAst(method), deserialize, true, true);
 	}
 }

@@ -17,6 +17,7 @@
 package org.example;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
 
 import joptsimple.OptionException;
@@ -158,7 +159,9 @@ public class App
 			SerializationMethod method,
 			String fileTitle) throws Exception
 	{
-		Serializer serializer = new Serializer(source);
+		Serializer serializer = new Serializer(
+				new FileInputStream(source),
+				source.getName());
 		
 		// Parsing
 		serializer.setParserAutoCorrectEnabled(opt.has("auto-correct"));
