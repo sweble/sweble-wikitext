@@ -450,7 +450,8 @@ public class Serializer
 			}
 			case XML:
 			{
-				getXmlSerializer().toXML(original, objBaos);
+				OutputStreamWriter osw = new OutputStreamWriter(objBaos, "UTF-8");
+				getXmlSerializer().toXML(original, osw);
 				objBaos.close();
 				break;
 			}
