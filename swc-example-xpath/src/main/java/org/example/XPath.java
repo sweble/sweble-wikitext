@@ -38,7 +38,7 @@ public class XPath
 	static
 	{
 		JXPathContextReferenceImpl.addNodePointerFactory(
-		        new AstNodePointerFactory());
+				new AstNodePointerFactory());
 	}
 	
 	static String query(EngCompiledPage cp, String query)

@@ -17,10 +17,10 @@
 
 package org.sweble.wikitext.parser.utils;
 
-import java.util.Collections;
-import java.util.Map;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.sweble.wikitext.parser.ParserConfig;
@@ -246,13 +246,13 @@ public class SimpleParserConfig
 			return null;
 		}
 	}
-
+	
 	@Override
 	public Map<String, String> getXmlEntities()
 	{
 		return Collections.emptyMap();
 	}
-
+	
 	// ==[ Language Conversion Tags ]===========================================
 	
 	private static final Set<String> knownFlags = new HashSet<String>(Arrays.asList(

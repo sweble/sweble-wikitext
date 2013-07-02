@@ -23,7 +23,6 @@ import java.math.BigDecimal;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.sweble.wikitext.engine.ext.parser_functions.ExprParser;
 
 public class ExprTest
 {

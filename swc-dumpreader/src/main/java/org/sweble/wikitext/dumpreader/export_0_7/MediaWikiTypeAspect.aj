@@ -20,8 +20,6 @@ package org.sweble.wikitext.dumpreader.export_0_7;
 import java.util.ArrayList;
 
 import org.sweble.wikitext.dumpreader.PageListener;
-import org.sweble.wikitext.dumpreader.export_0_7.MediaWikiType;
-import org.sweble.wikitext.dumpreader.export_0_7.PageType;
 
 public aspect MediaWikiTypeAspect
 {

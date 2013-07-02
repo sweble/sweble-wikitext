@@ -59,9 +59,13 @@ import de.fau.cs.osr.utils.StringUtils;
  * better understand the visitor pattern as implemented by the Visitor class,
  * please take a look at the following resources:
  * <ul>
- * <li><a href="http://en.wikipedia.org/wiki/Visitor_pattern">http://en.wikipedia.org/wiki/Visitor_pattern</a> (classic pattern)</li>
- * <li><a href="http://www.javaworld.com/javaworld/javatips/jw-javatip98.html">http://www.javaworld.com/javaworld/javatips/jw-javatip98.html</a>
- * (the version we use here)</li>
+ * <li><a
+ * href="http://en.wikipedia.org/wiki/Visitor_pattern">http://en.wikipedia
+ * .org/wiki/Visitor_pattern</a> (classic pattern)</li>
+ * <li><a
+ * href="http://www.javaworld.com/javaworld/javatips/jw-javatip98.html">http
+ * ://www.javaworld.com/javaworld/javatips/jw-javatip98.html</a> (the version we
+ * use here)</li>
  * </ul>
  * 
  * The methods needed to descend into an AST and visit the children of a given

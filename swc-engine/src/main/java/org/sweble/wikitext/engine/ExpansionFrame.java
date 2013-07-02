@@ -28,7 +28,6 @@ import org.sweble.wikitext.engine.utils.UrlService;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
-import org.sweble.wikitext.parser.nodes.WtValue;
 
 import de.fau.cs.osr.ptk.common.Warning;
 

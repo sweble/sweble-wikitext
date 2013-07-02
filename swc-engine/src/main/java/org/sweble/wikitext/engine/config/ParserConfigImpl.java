@@ -112,7 +112,7 @@ public class ParserConfigImpl
 			throw new IllegalArgumentException("XML entity `" + name + "' already registered.");
 		xmlEntities.put(name, resolvesTo);
 	}
-
+	
 	@Override
 	public Map<String, String> getXmlEntities()
 	{

@@ -105,7 +105,9 @@ public class TreeBuilderModeBase
 		}
 	}
 	
-	protected static void addRtDataOfImEndTag(WtNode finish, WtIntermediate endTag)
+	protected static void addRtDataOfImEndTag(
+			WtNode finish,
+			WtIntermediate endTag)
 	{
 		if (endTag.getRtd() == null)
 			return;

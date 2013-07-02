@@ -51,9 +51,9 @@ import org.sweble.wikitext.engine.utils.NoTransparentRtDataPrinter;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 
 import de.fau.cs.osr.utils.NamedParametrizedSuites;
-import de.fau.cs.osr.utils.StringUtils;
 import de.fau.cs.osr.utils.NamedParametrizedSuites.NamedParametrizedSuite;
 import de.fau.cs.osr.utils.NamedParametrizedSuites.Suites;
+import de.fau.cs.osr.utils.StringUtils;
 
 @RunWith(value = NamedParametrizedSuites.class)
 public class MassExpansionTest
