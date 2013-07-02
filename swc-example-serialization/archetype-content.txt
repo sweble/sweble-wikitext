@@ -20,6 +20,7 @@
 /src/main/resources/archetype-resources/src/main/java/StripAstVisitor.java
 /src/main/resources/archetype-resources/src/test
 /src/main/resources/archetype-resources/src/test/java
+/src/main/resources/archetype-resources/src/test/java/ProfileSerialization.java
 /src/main/resources/archetype-resources/src/test/java/SerializationIntegrationTest.java
 /src/main/resources/archetype-resources/src/test/resources
 /src/main/resources/archetype-resources/src/test/resources/exp-Saxby Chambliss.wikitext
