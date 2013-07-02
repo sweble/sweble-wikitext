@@ -595,8 +595,9 @@ public class Serializer
 			}
 			case XML:
 			{
-				result = (WtNode) getXmlSerializer().fromXML(is, WtNode.class);
-				is.close();
+				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+				result = (WtNode) getXmlSerializer().fromXML(isr, WtNode.class);
+				isr.close();
 				break;
 			}
 			case JSON:
