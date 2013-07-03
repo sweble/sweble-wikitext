@@ -35,6 +35,10 @@ public interface WtName
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
 		
+		private WtNoName()
+		{
+		}
+		
 		@Override
 		public int getNodeType()
 		{

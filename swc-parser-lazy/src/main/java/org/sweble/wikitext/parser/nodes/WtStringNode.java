@@ -24,13 +24,17 @@ public interface WtStringNode
 			WtNode,
 			AstStringNode<WtNode>
 {
-	public abstract class WtNullStringNode
+	public abstract class WtNoStringNode
 			extends
 				WtEmptyImmutableNode
 			implements
 				WtStringNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
+		
+		protected WtNoStringNode()
+		{
+		}
 		
 		@Override
 		public String getContent()

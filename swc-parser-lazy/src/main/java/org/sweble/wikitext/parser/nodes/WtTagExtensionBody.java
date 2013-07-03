@@ -32,11 +32,15 @@ public interface WtTagExtensionBody
 	
 	public static final class WtNoTagExtensionBody
 			extends
-				WtNullStringNode
+				WtNoStringNode
 			implements
 				WtTagExtensionBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		private WtNoTagExtensionBody()
+		{
+		}
 		
 		@Override
 		public int getNodeType()

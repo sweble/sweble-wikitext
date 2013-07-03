@@ -45,6 +45,10 @@ public interface WtNodeList
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
 		
+		private WtEmptyNodeList()
+		{
+		}
+		
 		@Override
 		public int getNodeType()
 		{

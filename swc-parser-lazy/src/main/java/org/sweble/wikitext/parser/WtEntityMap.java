@@ -32,10 +32,16 @@ public interface WtEntityMap
 {
 	public static final WtEntityMap EMPTY_ENTITY_MAP = new WtEmptyEntityMap();
 	
+	// =========================================================================
+	
 	public static final class WtEmptyEntityMap
 			implements
 				WtEntityMap
 	{
+		private WtEmptyEntityMap()
+		{
+		}
+		
 		@Override
 		public int registerEntity(WtNode entity)
 		{

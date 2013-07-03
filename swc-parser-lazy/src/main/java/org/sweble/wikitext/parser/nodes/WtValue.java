@@ -35,6 +35,10 @@ public interface WtValue
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
 		
+		private WtNoValue()
+		{
+		}
+		
 		@Override
 		public int getNodeType()
 		{

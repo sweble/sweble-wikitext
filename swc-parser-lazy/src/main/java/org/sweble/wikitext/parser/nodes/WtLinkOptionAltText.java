@@ -35,6 +35,10 @@ public interface WtLinkOptionAltText
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
 		
+		private WtNoLinkOptionAltText()
+		{
+		}
+		
 		@Override
 		public int getNodeType()
 		{

@@ -36,17 +36,17 @@ public abstract class WtInnerNode3
 	
 	// =========================================================================
 	
-	public WtInnerNode3(Uninitialized u)
+	protected WtInnerNode3(Uninitialized u)
 	{
 		super(u);
 	}
 	
-	public WtInnerNode3(WtNode n0, WtNode n1, WtNode n2)
+	protected WtInnerNode3(WtNode n0, WtNode n1, WtNode n2)
 	{
 		super(n0, n1, n2);
 	}
 	
-	public WtInnerNode3(
+	protected WtInnerNode3(
 			Location arg0,
 			WtNode n0,
 			WtNode n1,
@@ -55,7 +55,7 @@ public abstract class WtInnerNode3
 		super(arg0, n0, n1, n2);
 	}
 	
-	public WtInnerNode3(Location arg0)
+	protected WtInnerNode3(Location arg0)
 	{
 		super(arg0);
 	}

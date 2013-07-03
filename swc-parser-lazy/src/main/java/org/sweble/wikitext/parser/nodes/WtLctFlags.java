@@ -54,6 +54,10 @@ public interface WtLctFlags
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
 		
+		private WtNoLctFlags()
+		{
+		}
+		
 		@Override
 		public int getNodeType()
 		{
@@ -135,7 +139,7 @@ public interface WtLctFlags
 		{
 		}
 		
-		public WtLctFlagsImpl(
+		protected WtLctFlagsImpl(
 				Set<String> flags,
 				Set<String> variants,
 				List<String> garbage)

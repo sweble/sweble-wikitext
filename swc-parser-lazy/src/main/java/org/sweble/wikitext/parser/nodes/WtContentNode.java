@@ -37,6 +37,10 @@ public interface WtContentNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
 		
+		protected WtAbsentContentNode()
+		{
+		}
+		
 		@Override
 		public abstract int getNodeType();
 		
@@ -65,6 +69,10 @@ public interface WtContentNode
 				WtContentNode
 	{
 		private static final long serialVersionUID = 2465445739660029292L;
+		
+		protected WtEmptyContentNode()
+		{
+		}
 		
 		@Override
 		public abstract int getNodeType();

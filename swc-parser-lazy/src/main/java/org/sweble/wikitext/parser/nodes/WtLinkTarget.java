@@ -51,6 +51,10 @@ public interface WtLinkTarget
 	{
 		private static final long serialVersionUID = 4433767404703646519L;
 		
+		private WtNoLink()
+		{
+		}
+		
 		@Override
 		public LinkTargetType getTargetType()
 		{

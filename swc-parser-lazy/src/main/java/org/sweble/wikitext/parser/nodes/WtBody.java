@@ -39,6 +39,10 @@ public interface WtBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
 		
+		private WtNoBody()
+		{
+		}
+		
 		@Override
 		public int getNodeType()
 		{
@@ -66,6 +70,10 @@ public interface WtBody
 				WtBody
 	{
 		private static final long serialVersionUID = -1064749733891892633L;
+		
+		private WtEmptyBody()
+		{
+		}
 		
 		@Override
 		public int getNodeType()
