@@ -204,15 +204,22 @@ public class ParserConfigImpl
 	
 	public void setInternalLinkPrefixPattern(String pat)
 	{
-		try
+		if (pat == null)
 		{
-			Pattern.compile("(" + pat + ")$");
+			this.internalLinkPrefixPattern = null;
 		}
-		catch (PatternSyntaxException e)
+		else
 		{
-			throw new IllegalArgumentException("Not a valid internal link prefix pattern: `" + pat + "'.", e);
+			try
+			{
+				Pattern.compile("(" + pat + ")$");
+			}
+			catch (PatternSyntaxException e)
+			{
+				throw new IllegalArgumentException("Not a valid internal link prefix pattern: `" + pat + "'.", e);
+			}
+			this.internalLinkPrefixPattern = pat;
 		}
-		this.internalLinkPrefixPattern = pat;
 	}
 	
 	@Override
@@ -223,15 +230,22 @@ public class ParserConfigImpl
 	
 	public void setInternalLinkPostfixPattern(String pat)
 	{
-		try
+		if (pat == null)
 		{
-			Pattern.compile(pat);
+			this.internalLinkPostfixPattern = null;
 		}
-		catch (PatternSyntaxException e)
+		else
 		{
-			throw new IllegalArgumentException("Not a valid internal link postfix pattern: `" + pat + "'.", e);
+			try
+			{
+				Pattern.compile(pat);
+			}
+			catch (PatternSyntaxException e)
+			{
+				throw new IllegalArgumentException("Not a valid internal link postfix pattern: `" + pat + "'.", e);
+			}
+			this.internalLinkPostfixPattern = pat;
 		}
-		this.internalLinkPostfixPattern = pat;
 	}
 	
 	@Override
