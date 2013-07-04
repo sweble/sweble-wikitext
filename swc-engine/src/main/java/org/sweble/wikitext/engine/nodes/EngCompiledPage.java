@@ -18,7 +18,7 @@ package org.sweble.wikitext.engine.nodes;
 
 import java.util.List;
 
-import org.sweble.wikitext.engine.lognodes.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtInnerNode1;
 
@@ -47,7 +47,7 @@ public class EngCompiledPage
 	protected EngCompiledPage(
 			EngPage page,
 			List<Warning> warnings,
-			CompilerLog log)
+			EngineLog log)
 	{
 		super(page);
 		setWarnings(warnings);
@@ -58,7 +58,7 @@ public class EngCompiledPage
 			EngPage page,
 			List<Warning> warnings,
 			WtEntityMap entityMap,
-			CompilerLog log)
+			EngineLog log)
 	{
 		super(page);
 		setWarnings(warnings);
@@ -75,16 +75,16 @@ public class EngCompiledPage
 	// =========================================================================
 	// Properties
 	
-	private CompilerLog log;
+	private EngineLog log;
 	
-	public final CompilerLog getLog()
+	public final EngineLog getLog()
 	{
 		return this.log;
 	}
 	
-	public final CompilerLog setLog(CompilerLog log)
+	public final EngineLog setLog(EngineLog log)
 	{
-		CompilerLog old = this.log;
+		EngineLog old = this.log;
 		this.log = log;
 		return old;
 	}
@@ -174,7 +174,7 @@ public class EngCompiledPage
 				switch (index)
 				{
 					case 0:
-						return EngCompiledPage.this.setLog((CompilerLog) value);
+						return EngCompiledPage.this.setLog((EngineLog) value);
 					case 1:
 					{
 						@SuppressWarnings("unchecked")

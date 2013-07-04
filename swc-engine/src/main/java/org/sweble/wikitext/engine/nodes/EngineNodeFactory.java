@@ -18,7 +18,7 @@ package org.sweble.wikitext.engine.nodes;
 
 import java.util.List;
 
-import org.sweble.wikitext.engine.lognodes.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -42,13 +42,13 @@ public interface EngineNodeFactory
 	EngCompiledPage compiledPage(
 			EngPage page,
 			List<Warning> warnings,
-			CompilerLog log);
+			EngineLog log);
 	
 	EngCompiledPage compiledPage(
 			EngPage page,
 			List<Warning> warnings,
 			WtEntityMap entityMap,
-			CompilerLog log);
+			EngineLog log);
 	
 	EngPage page(WtNodeList content);
 	

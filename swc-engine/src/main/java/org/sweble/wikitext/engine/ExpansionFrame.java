@@ -33,7 +33,7 @@ import de.fau.cs.osr.ptk.common.Warning;
 
 public class ExpansionFrame
 {
-	private final WtEngine compiler;
+	private final WtEngine engine;
 	
 	private final ExpansionFrame rootFrame;
 	
@@ -64,7 +64,7 @@ public class ExpansionFrame
 	// =========================================================================
 	
 	public ExpansionFrame(
-			WtEngine compiler,
+			WtEngine engine,
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
@@ -75,7 +75,7 @@ public class ExpansionFrame
 			boolean timingEnabled,
 			boolean catchAll)
 	{
-		this.compiler = compiler;
+		this.engine = engine;
 		this.callback = callback;
 		this.title = title;
 		this.entityMap = entityMap;
@@ -96,7 +96,7 @@ public class ExpansionFrame
 	}
 	
 	public ExpansionFrame(
-			WtEngine compiler,
+			WtEngine engine,
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
@@ -111,7 +111,7 @@ public class ExpansionFrame
 			boolean timingEnabled,
 			boolean catchAll)
 	{
-		this.compiler = compiler;
+		this.engine = engine;
 		this.callback = callback;
 		this.title = title;
 		this.entityMap = entityMap;
@@ -133,9 +133,9 @@ public class ExpansionFrame
 	
 	// =========================================================================
 	
-	public WtEngine getCompiler()
+	public WtEngine getEngine()
 	{
-		return compiler;
+		return engine;
 	}
 	
 	public ExpansionFrame getRootFrame()
@@ -170,7 +170,7 @@ public class ExpansionFrame
 	
 	public WikiConfig getWikiConfig()
 	{
-		return compiler.getWikiConfig();
+		return engine.getWikiConfig();
 	}
 	
 	public void fileWarning(Warning warning)

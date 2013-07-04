@@ -19,7 +19,7 @@ package org.example;
 
 import org.sweble.wikitext.articlecruncher.Job;
 import org.sweble.wikitext.articlecruncher.Processor;
-import org.sweble.wikitext.engine.CompilerException;
+import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngine;
@@ -39,7 +39,7 @@ public class RevisionProcessor
 	}
 	
 	@Override
-	public Object process(Job job) throws LinkTargetException, CompilerException
+	public Object process(Job job) throws LinkTargetException, EngineException
 	{
 		Gui gui = dumpCruncher.getGui();
 		gui.processingStarted();

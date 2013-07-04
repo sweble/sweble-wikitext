@@ -32,9 +32,9 @@ public interface WikiConfig
 	
 	public ParserConfig getParserConfig();
 	
-	// ==[ Compiler Configuration ]=============================================
+	// ==[ Engine Configuration ]===============================================
 	
-	public CompilerConfig getCompilerConfig();
+	public EngineConfig getEngineConfig();
 	
 	// ==[ AST creation ]=======================================================
 	

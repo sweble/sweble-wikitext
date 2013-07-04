@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.lognodes.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtBody;
@@ -92,7 +92,7 @@ public final class EngineNodeFactoryImpl
 	public EngCompiledPage compiledPage(
 			EngPage page,
 			List<Warning> warnings,
-			CompilerLog log)
+			EngineLog log)
 	{
 		return new EngCompiledPage(page, warnings, log);
 	}
@@ -102,7 +102,7 @@ public final class EngineNodeFactoryImpl
 			EngPage page,
 			List<Warning> warnings,
 			WtEntityMap entityMap,
-			CompilerLog log)
+			EngineLog log)
 	{
 		return new EngCompiledPage(page, warnings, entityMap, log);
 	}

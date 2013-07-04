@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine.config;
 
-public interface CompilerConfig
+public interface EngineConfig
 {
 	
 	public abstract boolean isTrimTransparentBeforeParsing();

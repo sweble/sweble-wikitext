@@ -21,7 +21,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.sweble.wikitext.engine.CompilerException;
+import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.FullPage;
@@ -83,7 +83,7 @@ public abstract class EngineIntegrationTestBase
 			String inputSubDir,
 			String expectedSubDir,
 			ExpansionCallback callback,
-			boolean forInclusion) throws IOException, LinkTargetException, CompilerException
+			boolean forInclusion) throws IOException, LinkTargetException, EngineException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
 		
@@ -120,7 +120,7 @@ public abstract class EngineIntegrationTestBase
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
-			String expectedSubDir) throws IOException, LinkTargetException, CompilerException
+			String expectedSubDir) throws IOException, LinkTargetException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback(inputSubDir);
 		

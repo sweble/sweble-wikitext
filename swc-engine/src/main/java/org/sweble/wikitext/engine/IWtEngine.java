@@ -60,7 +60,7 @@ public interface IWtEngine
 			String wikitext,
 			boolean forInclusion,
 			ExpansionCallback callback)
-			throws CompilerException;
+			throws EngineException;
 	
 	/**
 	 * Takes wikitext and expands the wikitext. The following steps are
@@ -76,7 +76,7 @@ public interface IWtEngine
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-			throws CompilerException;
+			throws EngineException;
 	
 	/**
 	 * Takes wikitext and expands the wikitext. The following steps are
@@ -93,7 +93,7 @@ public interface IWtEngine
 			String wikitext,
 			boolean forInclusion,
 			ExpansionCallback callback)
-			throws CompilerException;
+			throws EngineException;
 	
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
@@ -111,7 +111,7 @@ public interface IWtEngine
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-			throws CompilerException;
+			throws EngineException;
 	
 	/**
 	 * Takes wikitext and parses the wikitext for viewing. The following steps
@@ -130,7 +130,7 @@ public interface IWtEngine
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-			throws CompilerException;
+			throws EngineException;
 	
 	/**
 	 * Takes an AST after preprocessing or after expansion and performs the
@@ -144,6 +144,6 @@ public interface IWtEngine
 	public EngCompiledPage postprocessPpOrExpAst(
 			PageId pageId,
 			WtPreproWikitextPage pprAst)
-			throws CompilerException;
+			throws EngineException;
 	
 }

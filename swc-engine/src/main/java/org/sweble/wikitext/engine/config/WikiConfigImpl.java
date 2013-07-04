@@ -67,7 +67,7 @@ import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 		"jaxbPfnGroups",
 		"jaxbTagExtGroups",
 		"parserConfig",
-		"compilerConfig" })
+		"engineConfig" })
 @XmlAccessorType(XmlAccessType.NONE)
 public class WikiConfigImpl
 		implements
@@ -78,7 +78,7 @@ public class WikiConfigImpl
 	private final ParserConfigImpl parserConfig;
 	
 	@XmlElement()
-	private final CompilerConfigImpl compilerConfig;
+	private final EngineConfigImpl engineConfig;
 	
 	private EngineNodeFactoryImpl nodeFactory;
 	
@@ -143,7 +143,7 @@ public class WikiConfigImpl
 	public WikiConfigImpl()
 	{
 		this.parserConfig = new ParserConfigImpl(this);
-		this.compilerConfig = new CompilerConfigImpl();
+		this.engineConfig = new EngineConfigImpl();
 		this.nodeFactory = new EngineNodeFactoryImpl(this);
 		this.runtimeInfo = new WikiRuntimeInfoImpl(this);
 	}
@@ -156,11 +156,11 @@ public class WikiConfigImpl
 		return parserConfig;
 	}
 	
-	// ==[ Compiler Configuration ]=============================================
+	// ==[ Engine Configuration ]===============================================
 	
-	public CompilerConfigImpl getCompilerConfig()
+	public EngineConfigImpl getEngineConfig()
 	{
-		return compilerConfig;
+		return engineConfig;
 	}
 	
 	// ==[ AST creation ]=======================================================
@@ -563,7 +563,7 @@ public class WikiConfigImpl
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((aliases == null) ? 0 : aliases.hashCode());
-		result = prime * result + ((compilerConfig == null) ? 0 : compilerConfig.hashCode());
+		result = prime * result + ((engineConfig == null) ? 0 : engineConfig.hashCode());
 		result = prime * result + ((contentLang == null) ? 0 : contentLang.hashCode());
 		result = prime * result + ((defaultNamespace == null) ? 0 : defaultNamespace.hashCode());
 		result = prime * result + ((iwPrefix == null) ? 0 : iwPrefix.hashCode());
@@ -594,12 +594,12 @@ public class WikiConfigImpl
 		}
 		else if (!aliases.equals(other.aliases))
 			return false;
-		if (compilerConfig == null)
+		if (engineConfig == null)
 		{
-			if (other.compilerConfig != null)
+			if (other.engineConfig != null)
 				return false;
 		}
-		else if (!compilerConfig.equals(other.compilerConfig))
+		else if (!engineConfig.equals(other.engineConfig))
 			return false;
 		if (contentLang == null)
 		{

@@ -20,7 +20,7 @@ package org.sweble.wikitext.engine.utils;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.sweble.wikitext.engine.config.CompilerConfigImpl;
+import org.sweble.wikitext.engine.config.EngineConfigImpl;
 import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.InterwikiImpl;
 import org.sweble.wikitext.engine.config.NamespaceImpl;
@@ -53,7 +53,7 @@ public class DefaultConfigEn
 	{
 		WikiConfigImpl c = new WikiConfigImpl();
 		configureParser(c);
-		configureCompiler(c);
+		configureEngine(c);
 		configureWiki(c);
 		return c;
 	}
@@ -5092,9 +5092,9 @@ public class DefaultConfigEn
 		*/
 	}
 	
-	private static void configureCompiler(WikiConfigImpl c)
+	private static void configureEngine(WikiConfigImpl c)
 	{
-		CompilerConfigImpl cc = c.getCompilerConfig();
+		EngineConfigImpl cc = c.getEngineConfig();
 		
 		cc.setTrimTransparentBeforeParsing(true);
 	}

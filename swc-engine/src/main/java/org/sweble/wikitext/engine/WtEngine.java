@@ -27,9 +27,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.sweble.wikitext.engine.config.CompilerConfig;
+import org.sweble.wikitext.engine.config.EngineConfig;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.lognodes.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.engine.lognodes.LogContainer;
 import org.sweble.wikitext.engine.lognodes.ParseException;
 import org.sweble.wikitext.engine.lognodes.ParserLog;
@@ -69,7 +69,7 @@ public class WtEngine
 	
 	private ParserConfig parserConfig;
 	
-	private CompilerConfig compilerConfig;
+	private EngineConfig engineConfig;
 	
 	private ExpansionDebugHooks hooks;
 	
@@ -86,7 +86,7 @@ public class WtEngine
 		super();
 		this.wikiConfig = wikiConfig;
 		this.parserConfig = wikiConfig.getParserConfig();
-		this.compilerConfig = wikiConfig.getCompilerConfig();
+		this.engineConfig = wikiConfig.getEngineConfig();
 	}
 	
 	// =========================================================================
@@ -158,14 +158,14 @@ public class WtEngine
 			String wikitext,
 			boolean forInclusion,
 			ExpansionCallback callback)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -182,14 +182,14 @@ public class WtEngine
 			if (callback != null)
 				pprAst = expand(callback, title, ppAst, null, false, log);
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -212,7 +212,7 @@ public class WtEngine
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-			throws CompilerException
+			throws EngineException
 	{
 		return expand(pageId, wikitext, false, callback);
 	}
@@ -232,14 +232,14 @@ public class WtEngine
 			String wikitext,
 			boolean forInclusion,
 			ExpansionCallback callback)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null || callback == null)
 			throw new NullPointerException();
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -257,14 +257,14 @@ public class WtEngine
 			
 			pAst = pprAst;
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -290,14 +290,14 @@ public class WtEngine
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -316,14 +316,14 @@ public class WtEngine
 			
 			pAst = parse(title, pprAst, log);
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -349,14 +349,14 @@ public class WtEngine
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -377,14 +377,14 @@ public class WtEngine
 			
 			pAst = postprocess(title, pAst, log);
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -405,14 +405,14 @@ public class WtEngine
 	public EngCompiledPage postprocessPpOrExpAst(
 			PageId pageId,
 			WtPreproWikitextPage pprAst)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -423,14 +423,14 @@ public class WtEngine
 			
 			pAst = postprocess(title, pAst, log);
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -461,7 +461,7 @@ public class WtEngine
 			Map<String, WtNodeList> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -471,7 +471,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -494,14 +494,14 @@ public class WtEngine
 					parentFrame,
 					log);
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -519,7 +519,7 @@ public class WtEngine
 			Map<String, WtNodeList> arguments,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame)
-			throws CompilerException
+			throws EngineException
 	{
 		if (pageId == null)
 			throw new NullPointerException();
@@ -529,7 +529,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		CompilerLog log = new CompilerLog();
+		EngineLog log = new EngineLog();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -546,14 +546,14 @@ public class WtEngine
 					parentFrame,
 					log);
 		}
-		catch (CompilerException e)
+		catch (EngineException e)
 		{
 			e.attachLog(log);
 			throw e;
 		}
 		catch (Throwable e)
 		{
-			throw new CompilerException(title, "Compilation failed!", e, log);
+			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
 		return nf().compiledPage(
@@ -572,7 +572,7 @@ public class WtEngine
 			String wikitext,
 			LogContainer parentLog,
 			WtEntityMap entityMap)
-			throws CompilerException
+			throws EngineException
 	{
 		ValidatorLog log = new ValidatorLog();
 		parentLog.add(log);
@@ -603,7 +603,7 @@ public class WtEngine
 			e.printStackTrace(new PrintWriter(w));
 			log.add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException(title, "Validation failed!", e);
+			throw new EngineException(title, "Validation failed!", e);
 		}
 		finally
 		{
@@ -620,7 +620,7 @@ public class WtEngine
 			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
 			LogContainer parentLog)
-			throws CompilerException
+			throws EngineException
 	{
 		PreprocessorLog log = new PreprocessorLog();
 		parentLog.add(log);
@@ -646,7 +646,7 @@ public class WtEngine
 		{
 			log.add(new ParseException(e.getMessage()));
 			
-			throw new CompilerException(title, "Preprocessing failed!", e);
+			throw new EngineException(title, "Preprocessing failed!", e);
 		}
 		catch (Exception e)
 		{
@@ -656,7 +656,7 @@ public class WtEngine
 			e.printStackTrace(new PrintWriter(w));
 			log.add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException(title, "Preprocessing failed!", e);
+			throw new EngineException(title, "Preprocessing failed!", e);
 		}
 		finally
 		{
@@ -676,7 +676,7 @@ public class WtEngine
 			LinkedHashMap<String, WtNodeList> arguments,
 			boolean forInclusion,
 			LogContainer parentLog)
-			throws CompilerException
+			throws EngineException
 	{
 		return expand(
 				callback,
@@ -701,7 +701,7 @@ public class WtEngine
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
 			LogContainer parentLog)
-			throws CompilerException
+			throws EngineException
 	{
 		PpResolverLog log = new PpResolverLog();
 		parentLog.add(log);
@@ -768,7 +768,7 @@ public class WtEngine
 			e.printStackTrace(new PrintWriter(w));
 			log.add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException(title, "Resolution failed!", e);
+			throw new EngineException(title, "Resolution failed!", e);
 		}
 		finally
 		{
@@ -784,7 +784,7 @@ public class WtEngine
 			PageTitle title,
 			WtPreproWikitextPage ppAst,
 			LogContainer parentLog)
-			throws CompilerException
+			throws EngineException
 	{
 		ParserLog log = new ParserLog();
 		parentLog.add(log);
@@ -797,7 +797,7 @@ public class WtEngine
 			PreprocessedWikitext preprocessedWikitext =
 					PreprocessorToParserTransformer.transform(
 							ppAst,
-							compilerConfig.isTrimTransparentBeforeParsing());
+							engineConfig.isTrimTransparentBeforeParsing());
 			
 			WikitextParser parser = new WikitextParser(parserConfig);
 			
@@ -822,7 +822,7 @@ public class WtEngine
 		{
 			log.add(new ParseException(e.getMessage()));
 			
-			throw new CompilerException(title, "Parsing failed!", e);
+			throw new EngineException(title, "Parsing failed!", e);
 		}
 		catch (Exception e)
 		{
@@ -832,7 +832,7 @@ public class WtEngine
 			e.printStackTrace(new PrintWriter(w));
 			log.add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException(title, "Parsing failed!", e);
+			throw new EngineException(title, "Parsing failed!", e);
 		}
 		finally
 		{
@@ -844,8 +844,8 @@ public class WtEngine
 	private WtParsedWikitextPage postprocess(
 			PageTitle title,
 			WtParsedWikitextPage pAst,
-			CompilerLog parentLog)
-			throws CompilerException
+			EngineLog parentLog)
+			throws EngineException
 	{
 		PostprocessorLog log = new PostprocessorLog();
 		parentLog.add(log);
@@ -869,7 +869,7 @@ public class WtEngine
 			e.printStackTrace(new PrintWriter(w));
 			log.add(new UnhandledException(e, w.toString()));
 			
-			throw new CompilerException(title, "Postprocessing failed!", e);
+			throw new EngineException(title, "Postprocessing failed!", e);
 		}
 		finally
 		{

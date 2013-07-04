@@ -1250,7 +1250,7 @@
             <lctVariant name="zh-tw" normalized="zh-tw"/>
         </lctVariantMappings>
     </parserConfig>
-    <compilerConfig>
+    <engineConfig>
         <trimTransparentBeforeParsing>true</trimTransparentBeforeParsing>
-    </compilerConfig>
+    </engineConfig>
 </swc-engine:WikiConfig>

@@ -18,7 +18,7 @@ package org.sweble.wikitext.engine.lognodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class CompilerLog
+public class EngineLog
 		extends
 			LogContainer
 {
@@ -26,7 +26,7 @@ public class CompilerLog
 	
 	// =========================================================================
 	
-	public CompilerLog()
+	public EngineLog()
 	{
 		super();
 		
@@ -101,9 +101,9 @@ public class CompilerLog
 				switch (index)
 				{
 					case 0:
-						return CompilerLog.this.getTitle();
+						return EngineLog.this.getTitle();
 					case 1:
-						return CompilerLog.this.getRevision();
+						return EngineLog.this.getRevision();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -116,9 +116,9 @@ public class CompilerLog
 				switch (index)
 				{
 					case 0:
-						return CompilerLog.this.setTitle((String) value);
+						return EngineLog.this.setTitle((String) value);
 					case 1:
-						return CompilerLog.this.setRevision((Long) value);
+						return EngineLog.this.setRevision((Long) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

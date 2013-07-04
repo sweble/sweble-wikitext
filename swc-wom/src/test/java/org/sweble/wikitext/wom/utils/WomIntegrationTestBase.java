@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 import org.sweble.wikitext.engine.AstToWomVisitor;
-import org.sweble.wikitext.engine.CompilerException;
+import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.FullPage;
@@ -60,7 +60,7 @@ public abstract class WomIntegrationTestBase
 	public WomIntegrationTestBase()
 	{
 		this.config = DefaultConfigEn.generate();
-		this.config.getCompilerConfig().setTrimTransparentBeforeParsing(false);
+		this.config.getEngineConfig().setTrimTransparentBeforeParsing(false);
 		this.engine = new WtEngine(config);
 		
 		// TODO: Improve default config!
@@ -107,7 +107,7 @@ public abstract class WomIntegrationTestBase
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir,
-			ExpansionCallback callback) throws IOException, LinkTargetException, CompilerException
+			ExpansionCallback callback) throws IOException, LinkTargetException, EngineException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
 		
@@ -153,7 +153,7 @@ public abstract class WomIntegrationTestBase
 	public void parsePrintAndCompare(
 			File inputFile,
 			String inputSubDir,
-			String expectedSubDir) throws IOException, LinkTargetException, CompilerException
+			String expectedSubDir) throws IOException, LinkTargetException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback();
 		
@@ -170,7 +170,7 @@ public abstract class WomIntegrationTestBase
 			File inputFile,
 			String inputSubDir,
 			String expectedSubDir,
-			ExpansionCallback callback) throws IOException, LinkTargetException, CompilerException
+			ExpansionCallback callback) throws IOException, LinkTargetException, EngineException
 	{
 		FileContent inputFileContent = new FileContent(inputFile);
 		
@@ -221,7 +221,7 @@ public abstract class WomIntegrationTestBase
 	public void expandPrintAndCompare(
 			File inputFile,
 			String inputSubDir,
-			String expectedSubDir) throws IOException, LinkTargetException, CompilerException
+			String expectedSubDir) throws IOException, LinkTargetException, EngineException
 	{
 		ExpansionCallback callback = new TestExpansionCallback();
 		

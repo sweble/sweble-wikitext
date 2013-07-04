@@ -17,9 +17,9 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.engine.lognodes.CompilerLog;
+import org.sweble.wikitext.engine.lognodes.EngineLog;
 
-public final class CompilerException
+public final class EngineException
 		extends
 			Exception
 {
@@ -27,11 +27,11 @@ public final class CompilerException
 	
 	private final PageTitle pageTitle;
 	
-	private CompilerLog log;
+	private EngineLog log;
 	
 	// =========================================================================
 	
-	public CompilerException(
+	public EngineException(
 			PageTitle pageTitle,
 			String message,
 			Throwable cause)
@@ -39,11 +39,11 @@ public final class CompilerException
 		this(pageTitle, message, cause, null);
 	}
 	
-	public CompilerException(
+	public EngineException(
 			PageTitle pageTitle,
 			String message,
 			Throwable cause,
-			CompilerLog log)
+			EngineLog log)
 	{
 		super(makeMessage(pageTitle, message), unwrap(cause));
 		this.pageTitle = pageTitle;
@@ -66,7 +66,7 @@ public final class CompilerException
 	
 	// =========================================================================
 	
-	public void attachLog(CompilerLog log)
+	public void attachLog(EngineLog log)
 	{
 		if (this.log != null)
 			throw new IllegalStateException("Log already attached!");
@@ -79,7 +79,7 @@ public final class CompilerException
 		return pageTitle;
 	}
 	
-	public CompilerLog getLog()
+	public EngineLog getLog()
 	{
 		return log;
 	}

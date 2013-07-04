@@ -24,14 +24,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(
-		name = "CompilerConfig",
+		name = "EngineConfig",
 		namespace = "org.sweble.wikitext.engine")
 @XmlType(propOrder = {
 		"trimTransparentBeforeParsing" })
 @XmlAccessorType(XmlAccessType.NONE)
-public class CompilerConfigImpl
+public class EngineConfigImpl
 		implements
-			CompilerConfig
+			EngineConfig
 {
 	@XmlElement()
 	private boolean trimTransparentBeforeParsing;
@@ -70,7 +70,7 @@ public class CompilerConfigImpl
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CompilerConfigImpl other = (CompilerConfigImpl) obj;
+		EngineConfigImpl other = (EngineConfigImpl) obj;
 		if (trimTransparentBeforeParsing != other.trimTransparentBeforeParsing)
 			return false;
 		return true;

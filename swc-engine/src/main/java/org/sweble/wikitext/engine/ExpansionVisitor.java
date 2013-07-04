@@ -332,7 +332,7 @@ public final class ExpansionVisitor
 			 * - The arguments that were passed to the page we are redirecting
 			 *   from will also be passed to the replacement page.
 			 */
-			EngCompiledPage compiledPage = getCompiler().preprocessAndExpand(
+			EngCompiledPage compiledPage = getEngine().preprocessAndExpand(
 					expFrame.getCallback(),
 					page.getId(),
 					page.getText(),
@@ -788,7 +788,7 @@ public final class ExpansionVisitor
 			// EXPANDS ARGUMENTS!
 			Map<String, WtNodeList> tmplArgs = prepareTransclusionArguments(args, log);
 			
-			EngCompiledPage compiledPage = getCompiler().preprocessAndExpand(
+			EngCompiledPage compiledPage = getEngine().preprocessAndExpand(
 					expFrame.getCallback(),
 					page.getId(),
 					page.getText(),
@@ -1267,9 +1267,9 @@ public final class ExpansionVisitor
 		return expFrame.getWikiConfig();
 	}
 	
-	private WtEngine getCompiler()
+	private WtEngine getEngine()
 	{
-		return expFrame.getCompiler();
+		return expFrame.getEngine();
 	}
 	
 	private WtNodeList getFrameArgument(String name)
