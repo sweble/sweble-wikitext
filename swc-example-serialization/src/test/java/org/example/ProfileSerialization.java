@@ -20,8 +20,6 @@ import java.io.IOException;
 
 public class ProfileSerialization
 {
-	private static final SerializationMethod SERIALIZATION_METHOD = SerializationMethod.XML;
-	
 	private static final String ARTICLE = "raw-Germany.wikitext";
 	
 	public static void main(String[] args) throws IOException, Exception
@@ -45,40 +43,17 @@ public class ProfileSerialization
 		serializer.setQuiet(false);
 		
 		// =====================================================================
-		/*
-		System.out.println("go");
-		
-		if (!PROFILE_DESERIALIZATION)
-		{
-			for (int i = 0; i < COUNT; ++i)
-			{
-				serializer.serializeTo(SERIALIZATION_METHOD);
-				System.out.print('.');
-			}
-		}
-		
-		if (PROFILE_DESERIALIZATION)
-		{
-			byte[] serialized = serializer.serializeTo(SERIALIZATION_METHOD);
-			for (int i = 0; i < COUNT; ++i)
-			{
-				serializer.deserializeFrom(SERIALIZATION_METHOD, serialized);
-				System.out.print('.');
-			}
-		}
-		*/
-		// =====================================================================
 		
 		serializer.setTimeParsing(true);
-		serializer.setTimeSerialization(true);
-		serializer.setTimeDeserialization(true);
-		serializer.setTimeCompression(true);
+		serializer.setTimeSerialization(false);
+		serializer.setTimeDeserialization(false);
+		serializer.setTimeCompression(false);
 		
 		//serializer.setMeasurementIterations(measurementIterations);
 		//serializer.setWarumpIterations(warumpIterations);
 		
 		serializer.roundTrip(SerializationMethod.JAVA);
-		serializer.roundTrip(SerializationMethod.JSON);
-		serializer.roundTrip(SerializationMethod.XML);
+		//serializer.roundTrip(SerializationMethod.JSON);
+		//serializer.roundTrip(SerializationMethod.XML);
 	}
 }

@@ -470,6 +470,7 @@ public class Serializer
 				break;
 			}
 			default:
+				objBaos.close();
 				throw new UnsupportedOperationException();
 		}
 		

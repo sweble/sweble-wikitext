@@ -23,7 +23,7 @@ import de.fau.cs.osr.ptk.common.ast.AstLocation;
 
 public final class StripAstVisitor
 		extends
-			AstVisitor
+			AstVisitor<WtNode>
 {
 	private boolean stripAllAttributes;
 	
