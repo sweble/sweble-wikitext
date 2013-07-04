@@ -7,10 +7,12 @@ WtParsedWikitextPage(
 		Warning: /regression/wikitext/beware-text.wikitext:1:1: <no content> : 12.2.5.4.7 R10 (2) @ WtParsedWikitextPage.
 	]
 	[0] = WtParagraph[
-		[0] = WtText(
+		[0] = "The text intentionally contains an unescaped ",
+		[1] = WtText(
 			{A} warnings = C[ Warning (informative): /regression/wikitext/beware-text.wikitext:1:46 - 47: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-			{P} content = "The text intentionally contains an unescaped &ltdiv> tag!"
-		)
+			{P} content = "&"
+		),
+		[2] = "ltdiv> tag!"
 	],
 	[1] = "\n\n",
 	[2] = WtParagraph[ [0] = "Beware:\nConcerns the \"parse the pretty printed text again\" test.\nThe \" b " ],

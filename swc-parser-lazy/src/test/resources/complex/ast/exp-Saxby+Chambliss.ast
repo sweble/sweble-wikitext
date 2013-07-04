@@ -2637,41 +2637,43 @@ WtParsedWikitextPage(
 									target = WtPageName("Arizona"),
 									title = -
 								),
-								[4] = WtText(
+								[4] = " said of one ad, \"",
+								[5] = WtText(
 									{A} warnings = C[ Warning (none): /complex/wikitext/exp-Saxby+Chambliss.wikitext:786:380 - 381: "[" : This looks like a External Link, however the actual URL is missing. ]
-									{P} content = " said of one ad, \"[I]t's worse than disgraceful, it's reprehensible;\" Senator "
+									{P} content = "["
 								),
-								[5] = WtInternalLink(
+								[6] = "I]t's worse than disgraceful, it's reprehensible;\" Senator ",
+								[7] = WtInternalLink(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 									target = WtPageName("Chuck Hagel"),
 									title = -
 								),
-								[6] = " of ",
-								[7] = WtInternalLink(
+								[8] = " of ",
+								[9] = WtInternalLink(
 									{P} postfix = ""
 									{P} prefix = ""
 									{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 									target = WtPageName("Nebraska"),
 									title = -
 								),
-								[8] = " said the ads were \"beyond offensive to me.\"",
-								[9] = WtTagExtension(
+								[10] = " said the ads were \"beyond offensive to me.\"",
+								[11] = WtTagExtension(
 									{P} name = "ref"
 									{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 									xmlAttributes = WtXmlAttributes[],
 									body = WtTagExtensionBody("[http://mediamatters.org/items/200407300007 ''Carlson attempted to downplay Republican attacks on Cleland'' \u2014 Media Matters, July 30, 2004]")
 								),
-								[10] = " On the other hand, Chambliss supporters say the ad did not question Cleland's patriotism, but rather his judgment.",
-								[11] = WtTagExtension(
+								[12] = " On the other hand, Chambliss supporters say the ad did not question Cleland's patriotism, but rather his judgment.",
+								[13] = WtTagExtension(
 									{P} name = "ref"
 									{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 									xmlAttributes = WtXmlAttributes[],
 									body = WtTagExtensionBody("{{citenews|first=Michael|last=Crowley|authorlink=|author=|coauthors=|title=Former Sen. Max Cleland: How the disabled war veteran became the Democrats' mascot|url=http://slate.msn.com/id/2098171|date=April 2, 2004|accessdate=2009-01-23}}")
 								),
-								[12] = "\n",
-								[13] = WtTagExtension(
+								[14] = "\n",
+								[15] = WtTagExtension(
 									{P} name = "ref"
 									{P} rtd = RTD[ "<ref" <o> ">" <o> "</ref>" ]
 									xmlAttributes = WtXmlAttributes[

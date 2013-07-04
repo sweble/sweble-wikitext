@@ -5,9 +5,8 @@ WtParsedWikitextPage(
 		{P} name = "@p"
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[1] = "Hallo Welt",
-	[2] = "!",
-	[3] = WtImEndTag(
+	[1] = "Hallo Welt!",
+	[2] = WtImEndTag(
 		{P} name = "@p"
 	)
 )

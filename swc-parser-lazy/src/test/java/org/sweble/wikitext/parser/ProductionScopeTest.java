@@ -24,7 +24,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
 import org.sweble.wikitext.parser.utils.TypedPrettyPrinter;
 import org.sweble.wikitext.parser.utils.TypedWtAstPrinter;
@@ -87,7 +86,7 @@ public class ProductionScopeTest
 	public void testAstAfterPostprocessingMatchesReferenceAst() throws Exception
 	{
 		@SuppressWarnings("unchecked")
-		AstVisitor<WtNode>[] visitors = new AstVisitor[] { new AstCompressor() };
+		AstVisitor<WtNode>[] visitors = new AstVisitor[] {};
 		
 		parsePrintAndCompare(
 				inputFile,
@@ -101,7 +100,7 @@ public class ProductionScopeTest
 	public void testPrettyPrintedWikitextMatchesReference() throws Exception
 	{
 		@SuppressWarnings("unchecked")
-		AstVisitor<WtNode>[] visitors = new AstVisitor[] { new AstCompressor() };
+		AstVisitor<WtNode>[] visitors = new AstVisitor[] {};
 		
 		parsePrintAndCompare(
 				inputFile,

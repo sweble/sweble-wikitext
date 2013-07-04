@@ -5,35 +5,33 @@ WtParsedWikitextPage(
 		{P} name = "@p"
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[1] = "Hallo Welt",
-	[2] = "!",
-	[3] = WtNewline("\n"),
-	[4] = WtXmlStartTag(
+	[1] = "Hallo Welt!",
+	[2] = WtNewline("\n"),
+	[3] = WtXmlStartTag(
 		{P} name = "dd"
 		{P} rtd = RTD[ "<dd" <o> ">" ]
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[5] = "Some item",
-	[6] = WtXmlEndTag(
+	[4] = "Some item",
+	[5] = WtXmlEndTag(
 		{P} name = "dd"
 		{P} rtd = RTD[ "</dd>" ]
 	),
-	[7] = WtNewline("\n"),
-	[8] = WtXmlStartTag(
+	[6] = WtNewline("\n"),
+	[7] = WtXmlStartTag(
 		{P} name = "dt"
 		{P} rtd = RTD[ "<dt" <o> ">" ]
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[9] = "Some item",
-	[10] = WtXmlEndTag(
+	[8] = "Some item",
+	[9] = WtXmlEndTag(
 		{P} name = "dt"
 		{P} rtd = RTD[ "</dt>" ]
 	),
-	[11] = WtNewline("\n"),
-	[12] = "Tsch\u00FCss",
-	[13] = "!",
-	[14] = WtImEndTag(
+	[10] = WtNewline("\n"),
+	[11] = "Tsch\u00FCss!",
+	[12] = WtImEndTag(
 		{P} name = "@p"
 	),
-	[15] = WtNewline("\n")
+	[13] = WtNewline("\n")
 )

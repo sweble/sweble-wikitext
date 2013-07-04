@@ -2670,8 +2670,7 @@ WtParsedWikitextPage(
 															[0] = WtImageLink(
 																{P} alt = WtLinkOptionAltText(
 																		{P} rtd = RTD[ "|alt=" <o> "" ]
-																		[0] = "\n",
-																		[1] = "    "
+																		[0] = "\n    "
 																	)
 																{P} border = false
 																{P} format = UNRESTRAINED
@@ -2696,8 +2695,7 @@ WtParsedWikitextPage(
 																	),
 																	[2] = WtLinkOptionAltText(
 																		{P} rtd = RTD[ "|alt=" <o> "" ]
-																		[0] = "\n",
-																		[1] = "    "
+																		[0] = "\n    "
 																	)
 																],
 																title = -
@@ -5083,8 +5081,7 @@ WtParsedWikitextPage(
 											[0] = WtImageLink(
 												{P} alt = WtLinkOptionAltText(
 														{P} rtd = RTD[ "|alt=" <o> "" ]
-														[0] = "\n",
-														[1] = "    "
+														[0] = "\n    "
 													)
 												{P} border = false
 												{P} format = UNRESTRAINED
@@ -5109,8 +5106,7 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionAltText(
 														{P} rtd = RTD[ "|alt=" <o> "" ]
-														[0] = "\n",
-														[1] = "    "
+														[0] = "\n    "
 													)
 												],
 												title = -
@@ -5249,8 +5245,7 @@ WtParsedWikitextPage(
 											[0] = WtImageLink(
 												{P} alt = WtLinkOptionAltText(
 														{P} rtd = RTD[ "|alt=" <o> "" ]
-														[0] = "\n",
-														[1] = "    "
+														[0] = "\n    "
 													)
 												{P} border = false
 												{P} format = UNRESTRAINED
@@ -5275,8 +5270,7 @@ WtParsedWikitextPage(
 													),
 													[2] = WtLinkOptionAltText(
 														{P} rtd = RTD[ "|alt=" <o> "" ]
-														[0] = "\n",
-														[1] = "    "
+														[0] = "\n    "
 													)
 												],
 												title = -

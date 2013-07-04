@@ -24,22 +24,25 @@ WtParsedWikitextPage(
 	[4] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (none): /regression/wikitext/links-entities.wikitext:5:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
-			{P} content = "[[Hallo %00 Hallo]]"
-		)
+			{P} content = "[["
+		),
+		[1] = "Hallo %00 Hallo]]"
 	],
 	[5] = "\n\n",
 	[6] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (none): /regression/wikitext/links-entities.wikitext:7:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
-			{P} content = "[[Hallo %7F Hallo]]"
-		)
+			{P} content = "[["
+		),
+		[1] = "Hallo %7F Hallo]]"
 	],
 	[7] = "\n\n",
 	[8] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (none): /regression/wikitext/links-entities.wikitext:9:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
-			{P} content = "[[Hallo %80 Hallo]]"
-		)
+			{P} content = "[["
+		),
+		[1] = "Hallo %80 Hallo]]"
 	],
 	[9] = "\n\n",
 	[10] = WtParagraph[
@@ -75,27 +78,29 @@ WtParsedWikitextPage(
 	[16] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (none): /regression/wikitext/links-entities.wikitext:17:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
-			{P} content = "[[Hallo "
+			{P} content = "[["
 		),
-		[1] = WtXmlEntityRef(
+		[1] = "Hallo ",
+		[2] = WtXmlEntityRef(
 			{P} name = "amplifier"
 			{P} resolved = null
 			{P} rtd = RTD[ "&amplifier;" ]
 		),
-		[2] = " Hallo]]"
+		[3] = " Hallo]]"
 	],
 	[17] = "\n\n",
 	[18] = WtParagraph[
 		[0] = WtText(
 			{A} warnings = C[ Warning (none): /regression/wikitext/links-entities.wikitext:19:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
-			{P} content = "[[Hallo "
+			{P} content = "[["
 		),
-		[1] = WtXmlEntityRef(
+		[1] = "Hallo ",
+		[2] = WtXmlEntityRef(
 			{P} name = "amp"
 			{P} resolved = "&"
 			{P} rtd = RTD[ "&amp;" ]
 		),
-		[2] = "amp; Hallo]]"
+		[3] = "amp; Hallo]]"
 	],
 	[19] = "\n\n",
 	[20] = WtParagraph[
@@ -120,12 +125,15 @@ WtParsedWikitextPage(
 	[23] = "\n\n",
 	[24] = WtParagraph[
 		[0] = WtText(
-			{A} warnings = C[
-				Warning (none): /regression/wikitext/links-entities.wikitext:25:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing.,
-				Warning (informative): /regression/wikitext/links-entities.wikitext:25:9 - 10: "&" : This looks like a XML Reference, however the entity name or character code is missing.
-			]
-			{P} content = "[[Hallo &%42mp; Hallo]]"
-		)
+			{A} warnings = C[ Warning (none): /regression/wikitext/links-entities.wikitext:25:1 - 3: "[[" : This looks like a Internal Link, however a target link is missing. ]
+			{P} content = "[["
+		),
+		[1] = "Hallo ",
+		[2] = WtText(
+			{A} warnings = C[ Warning (informative): /regression/wikitext/links-entities.wikitext:25:9 - 10: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
+			{P} content = "&"
+		),
+		[3] = "%42mp; Hallo]]"
 	],
 	[25] = "\n\n",
 	[26] = WtParagraph[

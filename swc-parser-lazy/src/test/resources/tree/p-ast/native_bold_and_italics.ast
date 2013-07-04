@@ -34,49 +34,48 @@ WtParsedWikitextPage(
 		{P} name = "@p"
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[13] = "Jetzt wirds funky",
-	[14] = ":",
-	[15] = WtNewline("\n"),
-	[16] = WtTicks(
+	[13] = "Jetzt wirds funky:",
+	[14] = WtNewline("\n"),
+	[15] = WtTicks(
 		{P} rtd = RTD[ "'''" ]
 		{P} tickCount = 3
 	),
-	[17] = "What?",
-	[18] = WtTicks(
+	[16] = "What?",
+	[17] = WtTicks(
 		{P} rtd = RTD[ "''" ]
 		{P} tickCount = 2
 	),
-	[19] = WtNewline("\n"),
-	[20] = WtTicks(
+	[18] = WtNewline("\n"),
+	[19] = WtTicks(
 		{P} rtd = RTD[ "''" ]
 		{P} tickCount = 2
 	),
-	[21] = "What",
-	[22] = WtTicks(
+	[20] = "What",
+	[21] = WtTicks(
 		{P} rtd = RTD[ "'''" ]
 		{P} tickCount = 3
 	),
-	[23] = "s up?",
-	[24] = WtImEndTag(
+	[22] = "s up?",
+	[23] = WtImEndTag(
 		{P} name = "@p"
 	),
+	[24] = WtNewline("\n"),
 	[25] = WtNewline("\n"),
-	[26] = WtNewline("\n"),
-	[27] = WtImStartTag(
+	[26] = WtImStartTag(
 		{P} name = "@p"
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[28] = WtTicks(
+	[27] = WtTicks(
 		{P} rtd = RTD[ "'''''" ]
 		{P} tickCount = 5
 	),
-	[29] = "Boah",
-	[30] = WtTicks(
+	[28] = "Boah",
+	[29] = WtTicks(
 		{P} rtd = RTD[ "'''''" ]
 		{P} tickCount = 5
 	),
-	[31] = WtImEndTag(
+	[30] = WtImEndTag(
 		{P} name = "@p"
 	),
-	[32] = WtNewline("\n")
+	[31] = WtNewline("\n")
 )

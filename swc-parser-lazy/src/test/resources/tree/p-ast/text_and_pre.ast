@@ -12,20 +12,18 @@ WtParsedWikitextPage(
 		{P} name = "@p"
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[1] = "Hallo Welt",
-	[2] = "!",
-	[3] = WtNewline("\n"),
-	[4] = WtTagExtension(
+	[1] = "Hallo Welt!",
+	[2] = WtNewline("\n"),
+	[3] = WtTagExtension(
 		{P} name = "pre"
 		{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 		xmlAttributes = WtXmlAttributes[],
 		body = WtTagExtensionBody("\n\tSome special pre text\n")
 	),
-	[5] = WtNewline("\n"),
-	[6] = "Tsch\u00FCss",
-	[7] = "!",
-	[8] = WtImEndTag(
+	[4] = WtNewline("\n"),
+	[5] = "Tsch\u00FCss!",
+	[6] = WtImEndTag(
 		{P} name = "@p"
 	),
-	[9] = WtNewline("\n")
+	[7] = WtNewline("\n")
 )

@@ -9904,21 +9904,13 @@ WtParsedWikitextPage(
 					[1] = "Using",
 					[2] = WtTemplate(
 						{P} precededByNewline = false
-						name = WtName[
-							[0] = "[[",
-							[1] = "Template:visualizer|visualizer",
-							[2] = "]]"
-						],
+						name = WtName[ [0] = "[[Template:visualizer|visualizer]]" ],
 						args = WtTemplateArguments[]
 					),
 					[3] = "or another template that uses",
 					[4] = WtTemplate(
 						{P} precededByNewline = false
-						name = WtName[
-							[0] = "[[",
-							[1] = "Template:metavisualizer|metavisualizer",
-							[2] = "]]"
-						],
+						name = WtName[ [0] = "[[Template:metavisualizer|metavisualizer]]" ],
 						args = WtTemplateArguments[]
 					),
 					[5] = "."
@@ -10147,11 +10139,7 @@ WtParsedWikitextPage(
 							[0] = "Cleanup template",
 							[1] = WtTemplate(
 								{P} precededByNewline = false
-								name = WtName[
-									[0] = "[[",
-									[1] = "Template:Listtable|Listtable",
-									[2] = "]]"
-								],
+								name = WtName[ [0] = "[[Template:Listtable|Listtable]]" ],
 								args = WtTemplateArguments[]
 							),
 							[2] = "and its category",

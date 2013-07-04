@@ -273,15 +273,17 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "''" <o> "''" ]
 								[0] = "one week before"
 							),
-							[6] = WtText(
+							[6] = " the Grammar-Scotch game was played (with Wills as referee). \"What I can be confident of is that it would have looked nothing like either aussie rules or gaelic of the modern age but rather more like a version of rugby a la Tom Brown's Schooldays....\" Agreed. \"",
+							[7] = WtText(
 								{A} warnings = C[ Warning (none): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:15:1220 - 1221: "[" : This looks like a External Link, however the actual URL is missing. ]
-								{P} content = " the Grammar-Scotch game was played (with Wills as referee). \"What I can be confident of is that it would have looked nothing like either aussie rules or gaelic of the modern age but rather more like a version of rugby a la Tom Brown's Schooldays....\" Agreed. \"[W]ithout doubt, that is the source of the Aussie Rules that was played in 1850s and 1860s...\" It is "
+								{P} content = "["
 							),
-							[7] = WtItalics(
+							[8] = "W]ithout doubt, that is the source of the Aussie Rules that was played in 1850s and 1860s...\" It is ",
+							[9] = WtItalics(
 								{P} rtd = RTD[ "''" <o> "''" ]
 								[0] = "one"
 							),
-							[8] = " of the sources, yes. For example rugby and Aussie rules in the 1850s both had 20 players per team."
+							[10] = " of the sources, yes. For example rugby and Aussie rules in the 1850s both had 20 players per team."
 						)
 					]
 				]
@@ -292,25 +294,27 @@ WtParsedWikitextPage(
 					[0] = WtDefinitionList[
 						[0] = WtDefinitionListDef(
 							{P} rtd = RTD[ "::" <o> "" ]
-							[0] = WtText(
+							[0] = "\"",
+							[1] = WtText(
 								{A} warnings = C[ Warning (none): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:17:4 - 5: "[" : This looks like a External Link, however the actual URL is missing. ]
-								{P} content = "\"[T]he precursors of Soccer allowed that to happen to a far greater degree. Read the Cambridge Rules and Sheffield Rules. These are basically the rules of Aussie rules as they were codified in 1859!\" Sheffield, yes. IMO, the key is not \"kicking v running\"; it is the lack of an offside rule, which is what sets the Sheffield rules, Aussie rules and Gaelic apart. That is a very Irish thing "
+								{P} content = "["
 							),
-							[1] = WtXmlEntityRef(
+							[2] = "T]he precursors of Soccer allowed that to happen to a far greater degree. Read the Cambridge Rules and Sheffield Rules. These are basically the rules of Aussie rules as they were codified in 1859!\" Sheffield, yes. IMO, the key is not \"kicking v running\"; it is the lack of an offside rule, which is what sets the Sheffield rules, Aussie rules and Gaelic apart. That is a very Irish thing ",
+							[3] = WtXmlEntityRef(
 								{P} name = "mdash"
 								{P} resolved = "\u2014"
 								{P} rtd = RTD[ "&mdash;" ]
 							),
-							[2] = " it was in ",
-							[3] = WtInternalLink(
+							[4] = " it was in ",
+							[5] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 								target = WtPageName("hurling"),
 								title = -
 							),
-							[4] = " before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ",
-							[5] = WtImageLink(
+							[6] = " before any of these codes of football exited. Cambridge had an offside rule. And not quite enough time elapsed between the Sheffield rules (1857) and Wills' experiments of 1858, for the former to have influenced the latter. So I suspect that it was either a case of parallel evolution or they were both influenced by a common \"ancestor\". ",
+							[7] = WtImageLink(
 								{P} alt = -
 								{P} border = false
 								{P} format = UNRESTRAINED
@@ -331,8 +335,8 @@ WtParsedWikitextPage(
 								],
 								title = -
 							),
-							[6] = "  ",
-							[7] = WtInternalLink(
+							[8] = "  ",
+							[9] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -342,8 +346,8 @@ WtParsedWikitextPage(
 									[0] = "Grant65"
 								)
 							),
-							[8] = " | ",
-							[9] = WtInternalLink(
+							[10] = " | ",
+							[11] = WtInternalLink(
 								{P} postfix = ""
 								{P} prefix = ""
 								{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -353,7 +357,7 @@ WtParsedWikitextPage(
 									[0] = "Talk"
 								)
 							),
-							[10] = " 16:27, 20 December 2005 (UTC)"
+							[12] = " 16:27, 20 December 2005 (UTC)"
 						)
 					]
 				]
@@ -762,49 +766,57 @@ WtParsedWikitextPage(
 					{P} rtd = RTD[ "''" <o> "''" ]
 					[0] = "A Game of Our Own"
 				),
-				[2] = WtText(
+				[2] = " (1990; there is a 2003 edition, which I haven't seen yet), and Rob Hess ",
+				[3] = WtText(
 					{A} warnings = C[ Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:69:132 - 133: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-					{P} content = " (1990; there is a 2003 edition, which I haven't seen yet), and Rob Hess & Bob Stewart's "
+					{P} content = "&"
 				),
-				[3] = WtItalics(
+				[4] = " Bob Stewart's ",
+				[5] = WtItalics(
 					{P} rtd = RTD[ "''" <o> "''" ]
 					[0] = "More Than A Game"
 				),
-				[4] = " (1998). The latter book provides a few more details: they say that \"a rugby ball\" was used in the experimental game on July 31, 1858; that people of various backgrounds were involved, and; that rules were supposed to have been formulated afterwards, although these have not survived. "
+				[6] = " (1998). The latter book provides a few more details: they say that \"a rugby ball\" was used in the experimental game on July 31, 1858; that people of various backgrounds were involved, and; that rules were supposed to have been formulated afterwards, although these have not survived. "
 			],
 			[8] = "\n\n",
 			[9] = WtParagraph[
-				[0] = WtText(
+				[0] = "Hess ",
+				[1] = WtText(
 					{A} warnings = C[ Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:71:6 - 7: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-					{P} content = "Hess & Stewart barely mention the Melbourne Grammar v. Scotch College match on August 7. Blainey is a prolific promoter of that game (cynics might say because of his own background), but he doesn't discuss the rules either. (However, it is known that Wills did umpire that game.) "
-				)
+					{P} content = "&"
+				),
+				[2] = " Stewart barely mention the Melbourne Grammar v. Scotch College match on August 7. Blainey is a prolific promoter of that game (cynics might say because of his own background), but he doesn't discuss the rules either. (However, it is known that Wills did umpire that game.) "
 			],
 			[10] = "\n\n",
 			[11] = WtParagraph[
-				[0] = WtText(
+				[0] = "Re. the other drafters of the 1859 rules, Hess ",
+				[1] = WtText(
 					{A} warnings = C[ Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:73:48 - 49: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-					{P} content = "Re. the other drafters of the 1859 rules, Hess & Stewart say that, like Wills, Hammersley and Thompson were ex-Cambridge University, and Smith was Irish and had attended Trinity College in Dublin. (There are some similarities between the Cambridge rules and Aussie rules, see "
+					{P} content = "&"
 				),
-				[1] = WtInternalLink(
+				[2] = " Stewart say that, like Wills, Hammersley and Thompson were ex-Cambridge University, and Smith was Irish and had attended Trinity College in Dublin. (There are some similarities between the Cambridge rules and Aussie rules, see ",
+				[3] = WtInternalLink(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 					target = WtPageName("Football#The Establishment of Modern Codes of Football"),
 					title = -
 				),
-				[2] = WtText(
+				[4] = ".) Hess ",
+				[5] = WtText(
 					{A} warnings = C[ Warning (informative): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:73:343 - 344: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-					{P} content = ".) Hess & Stewart say Harrison was not involved. They also cite a letter to a Melbourne newspaper in 1864, suggesting that the English "
+					{P} content = "&"
 				),
-				[3] = WtInternalLink(
+				[6] = " Stewart say Harrison was not involved. They also cite a letter to a Melbourne newspaper in 1864, suggesting that the English ",
+				[7] = WtInternalLink(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 					target = WtPageName("Football Association"),
 					title = -
 				),
-				[4] = " rules of 1863 had been by influenced by the Melbourne FC rules! ",
-				[5] = WtInternalLink(
+				[8] = " rules of 1863 had been by influenced by the Melbourne FC rules! ",
+				[9] = WtInternalLink(
 					{P} postfix = ""
 					{P} prefix = ""
 					{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
@@ -814,7 +826,7 @@ WtParsedWikitextPage(
 						[0] = "Grant65"
 					)
 				),
-				[6] = " 10:28, 14 Mar 2004 (UTC)"
+				[10] = " 10:28, 14 Mar 2004 (UTC)"
 			],
 			[12] = "\n\n",
 			[13] = WtParagraph[
@@ -3086,10 +3098,12 @@ WtParsedWikitextPage(
 			[79] = WtParagraph[
 				[0] = WtBold(
 					{P} rtd = RTD[ "'''" <o> "'''" ]
-					[0] = WtText(
+					[0] = "Oh, by the way, official attendance at the WAFL grand final was 22,570.",
+					[1] = WtText(
 						{A} warnings = C[ Warning (none): /complex/wikitext/raw-Talk%3AAustralian+rules+football%2FArchive+1.wikitext:314:75 - 76: "[" : This looks like a External Link, however the actual URL is missing. ]
-						{P} content = "Oh, by the way, official attendance at the WAFL grand final was 22,570.[6] ;-) Grant65 | Talk 14:28, 22 November 2005 (UTC) "
-					)
+						{P} content = "["
+					),
+					[2] = "6] ;-) Grant65 | Talk 14:28, 22 November 2005 (UTC) "
 				),
 				[1] = "\nPerhaps you can explain the relevance of this point.  I don't get it."
 			],

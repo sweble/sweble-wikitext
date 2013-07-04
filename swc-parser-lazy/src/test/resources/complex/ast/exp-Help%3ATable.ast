@@ -6270,10 +6270,12 @@ WtParsedWikitextPage(
 							[5] = WtParagraph[ [0] = "Note the floating-table to the right." ],
 							[6] = "\n\n",
 							[7] = WtParagraph[
-								[0] = WtText(
+								[0] = "This paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 ",
+								[1] = WtText(
 									{A} warnings = C[ Warning (informative): /complex/wikitext/exp-Help%3ATable.wikitext:518:54 - 55: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-									{P} content = "This paragraph is after the table.  The text in column 2\nwill span both rows due to format specifier \"rowspan=2\" so there\nis no coding for \"Col 2\" in the 2nd row, just: Col 1 & Col 3.\n"
-								)
+									{P} content = "&"
+								),
+								[2] = " Col 3.\n"
 							]
 						]
 					),
@@ -6289,11 +6291,13 @@ WtParsedWikitextPage(
 				body = WtBody[
 					[0] = "\n",
 					[1] = WtParagraph[
-						[0] = WtText(
+						[0] = "A table can be used to wrap an image, so that the table can float towards the center of the page (such as using: style=\"float: right;\"). However, the table margins, border and font-size must be precisely set to match a typical image display. The Image-spec parameter \"thumb|\" (although auto-thumbnailing to user-preference width) forces a wide left-margin that squeezes the nearby text, so the parameter \"center|\" can be added to suppress the left-margin padding. However, \"center\" sometimes shoves the caption to a 2nd line (under a centered box \"",
+						[1] = WtText(
 							{A} warnings = C[ Warning (none): /complex/wikitext/exp-Help%3ATable.wikitext:522:549 - 550: "[" : This looks like a External Link, however the actual URL is missing. ]
-							{P} content = "A table can be used to wrap an image, so that the table can float towards the center of the page (such as using: style=\"float: right;\"). However, the table margins, border and font-size must be precisely set to match a typical image display. The Image-spec parameter \"thumb|\" (although auto-thumbnailing to user-preference width) forces a wide left-margin that squeezes the nearby text, so the parameter \"center|\" can be added to suppress the left-margin padding. However, \"center\" sometimes shoves the caption to a 2nd line (under a centered box \"[]\"), so \"thumb|\" could be omitted and just hard-code the image size, adding a gray (#BBB) border. Using precise parameters to match other images, a floating-image table can be coded as follows:\n"
+							{P} content = "["
 						),
-						[1] = WtTagExtension(
+						[2] = "]\"), so \"thumb|\" could be omitted and just hard-code the image size, adding a gray (#BBB) border. Using precise parameters to match other images, a floating-image table can be coded as follows:\n",
+						[3] = WtTagExtension(
 							{P} name = "pre"
 							{P} rtd = RTD[ "<pre" <o> ">" <o> "</pre>" ]
 							xmlAttributes = WtXmlAttributes[
@@ -11185,51 +11189,55 @@ WtParsedWikitextPage(
 				),
 				[1] = WtListItem(
 					{P} rtd = RTD[ "#" <o> "" ]
-					[0] = WtText(
+					[0] = "HTML ",
+					[1] = WtText(
 						{A} warnings = C[ Warning (informative): /complex/wikitext/exp-Help%3ATable.wikitext:992:7 - 8: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-						{P} content = "HTML & wiki-"
+						{P} content = "&"
 					),
-					[1] = WtTagExtension(
+					[2] = " wiki-",
+					[3] = WtTagExtension(
 						{P} name = "nowiki"
 						{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 						xmlAttributes = WtXmlAttributes[],
 						body = WtTagExtensionBody("<td>")
 					),
-					[2] = " syntax (",
-					[3] = WtBold(
+					[4] = " syntax (",
+					[5] = WtBold(
 						{P} rtd = RTD[ "'''" <o> "'''" ]
 						[0] = "Do not use"
 					),
-					[4] = ")"
+					[6] = ")"
 				)
 			],
 			[4] = "\n\n",
 			[5] = WtParagraph[
-				[0] = WtText(
+				[0] = "All three are supported by MediaWiki and create (currently) valid HTML output, but the pipe syntax is the simplest. Also, HTML ",
+				[1] = WtText(
 					{A} warnings = C[ Warning (informative): /complex/wikitext/exp-Help%3ATable.wikitext:994:128 - 129: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-					{P} content = "All three are supported by MediaWiki and create (currently) valid HTML output, but the pipe syntax is the simplest. Also, HTML & wiki-"
+					{P} content = "&"
 				),
-				[1] = WtTagExtension(
-					{P} name = "nowiki"
-					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
-					xmlAttributes = WtXmlAttributes[],
-					body = WtTagExtensionBody("<td>")
-				),
-				[2] = " syntax (i.e., unclosed ",
+				[2] = " wiki-",
 				[3] = WtTagExtension(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("<td>")
 				),
-				[4] = " and ",
+				[4] = " syntax (i.e., unclosed ",
 				[5] = WtTagExtension(
+					{P} name = "nowiki"
+					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
+					xmlAttributes = WtXmlAttributes[],
+					body = WtTagExtensionBody("<td>")
+				),
+				[6] = " and ",
+				[7] = WtTagExtension(
 					{P} name = "nowiki"
 					{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 					xmlAttributes = WtXmlAttributes[],
 					body = WtTagExtensionBody("<tr>")
 				),
-				[6] = " tags) will not necessarily remain browser-supported in the future, especially on handheld internet-accessible devices."
+				[8] = " tags) will not necessarily remain browser-supported in the future, especially on handheld internet-accessible devices."
 			],
 			[6] = "\n\n",
 			[7] = WtParagraph[
@@ -13176,10 +13184,12 @@ WtParsedWikitextPage(
 												],
 												title = WtLinkTitle(
 													{P} rtd = RTD[ "|" <o> "" ]
-													[0] = WtText(
+													[0] = "Shade, shutters; vertical ",
+													[1] = WtText(
 														{A} warnings = C[ Warning (informative): /complex/wikitext/exp-Help%3ATable.wikitext:1162:76 - 77: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-														{P} content = "Shade, shutters; vertical & horizontal blinds."
-													)
+														{P} content = "&"
+													),
+													[2] = " horizontal blinds."
 												)
 											),
 											[2] = "\n"
@@ -14656,26 +14666,28 @@ WtParsedWikitextPage(
 							{P} resolved = "&"
 							{P} rtd = RTD[ "&amp;" ]
 						),
-						[4] = WtText(
+						[4] = "nbsp;",
+						[5] = WtText(
 							{A} warnings = C[ Warning (none): /complex/wikitext/exp-Help%3ATable.wikitext:1265:133 - 134: "[" : This looks like a External Link, however the actual URL is missing. ]
-							{P} content = "nbsp;["
+							{P} content = "["
 						),
-						[5] = WtXmlElement(
+						[6] = WtXmlElement(
 							{P} name = "font"
 							{P} rtd = RTD[ "<font" <o> "/>" <o> "" ]
 							xmlAttributes = WtXmlAttributes[],
 							body = WtBody[
 								[0] = WtText(
 									{A} warnings = C[ Warning (none): /complex/wikitext/exp-Help%3ATable.wikitext:1265:141 - 142: "[" : This looks like a External Link, however the actual URL is missing. ]
-									{P} content = "[Image:]]\").  However, auto-centering simply requires use of center-tags to be placed around an image-link for centering in a cell "
+									{P} content = "["
 								),
-								[1] = WtTagExtension(
+								[1] = "Image:]]\").  However, auto-centering simply requires use of center-tags to be placed around an image-link for centering in a cell ",
+								[2] = WtTagExtension(
 									{P} name = "nowiki"
 									{P} rtd = RTD[ "<nowiki" <o> ">" <o> "</nowiki>" ]
 									xmlAttributes = WtXmlAttributes[],
 									body = WtTagExtensionBody("(\"<center>[[File:..]]</center>\")")
 								),
-								[2] = "."
+								[3] = "."
 							]
 						)
 					],
@@ -15053,10 +15065,12 @@ WtParsedWikitextPage(
 								{P} rtd = RTD[ "http://excel2wiki.net/wikipedia.php" ]
 							),
 							title = WtLinkTitle[
-								[0] = WtText(
+								[0] = "Copy ",
+								[1] = WtText(
 									{A} warnings = C[ Warning (informative): /complex/wikitext/exp-Help%3ATable.wikitext:1295:139 - 140: "&" : This looks like a XML Reference, however the entity name or character code is missing. ]
-									{P} content = "Copy & Paste Excel-to-Wiki"
-								)
+									{P} content = "&"
+								),
+								[2] = " Paste Excel-to-Wiki"
 							]
 						),
 						[2] = " converter or you can save your spreadsheets as ",

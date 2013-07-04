@@ -38,7 +38,6 @@ import org.sweble.wikitext.engine.serialization.EngineAstNodeConverter;
 import org.sweble.wikitext.parser.WtRtData;
 import org.sweble.wikitext.parser.comparer.WtComparer;
 import org.sweble.wikitext.parser.nodes.WtNode;
-import org.sweble.wikitext.parser.utils.AstCompressor;
 import org.sweble.wikitext.parser.utils.NodeStats;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
 
@@ -407,9 +406,6 @@ public class Serializer
 					ppStripAllAttributes,
 					ppStripRtdAttributes,
 					ppStripLocations));
-		
-		if (ppSimplifyAst)
-			parser.addVisitor(new AstCompressor());
 		
 		return parser.parseArticle(content, title);
 	}

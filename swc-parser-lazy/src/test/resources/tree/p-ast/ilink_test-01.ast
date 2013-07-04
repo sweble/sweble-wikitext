@@ -5,18 +5,16 @@ WtParsedWikitextPage(
 		{P} name = "@p"
 		xmlAttributes = WtXmlAttributes[]
 	),
-	[1] = "Es kommt ein Link",
-	[2] = ":",
-	[3] = " ",
-	[4] = WtInternalLink(
+	[1] = "Es kommt ein Link: ",
+	[2] = WtInternalLink(
 		{P} postfix = ""
 		{P} prefix = ""
 		{P} rtd = RTD[ "[[" <o> "" <o> "]]" ]
 		target = WtPageName("Hallo"),
 		title = -
 	),
-	[5] = " und er ist wieder weg ...",
-	[6] = WtImEndTag(
+	[3] = " und er ist wieder weg ...",
+	[4] = WtImEndTag(
 		{P} name = "@p"
 	)
 )

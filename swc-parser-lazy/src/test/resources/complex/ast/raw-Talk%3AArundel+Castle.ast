@@ -991,10 +991,12 @@ WtParsedWikitextPage(
 										{P} rtd = RTD[ "<s" <o> ">" <o> "</s>" ]
 										xmlAttributes = WtXmlAttributes[],
 										body = WtBody[
-											[0] = WtText(
+											[0] = "the year ",
+											[1] = WtText(
 												{A} warnings = C[ Warning (none): /complex/wikitext/raw-Talk%3AArundel+Castle.wikitext:21:37 - 38: "[" : This looks like a External Link, however the actual URL is missing. ]
-												{P} content = "the year [of]"
-											)
+												{P} content = "["
+											),
+											[2] = "of]"
 										]
 									)
 								]
