@@ -54,7 +54,7 @@ public abstract class EngineIntegrationTestBase
 	
 	public EngineIntegrationTestBase()
 	{
-		this.config = DefaultConfigEn.generate();
+		this.config = DefaultConfigEnWp.generate();
 		this.engine = new WtEngine(config);
 	}
 	

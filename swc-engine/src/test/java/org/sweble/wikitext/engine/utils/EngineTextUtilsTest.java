@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 
 public class EngineTextUtilsTest
 {
-	WikiConfig config = DefaultConfigEn.generate();
+	WikiConfig config = DefaultConfigEnWp.generate();
 	
 	EngineNodeFactory nf = config.getNodeFactory();
 	

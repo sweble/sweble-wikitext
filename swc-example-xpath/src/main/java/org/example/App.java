@@ -25,7 +25,7 @@ import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 public class App
 {
@@ -60,7 +60,7 @@ public class App
 	static String run(File file, String fileTitle, String query) throws Exception
 	{
 		// Set-up a simple wiki configuration
-		WikiConfig config = DefaultConfigEn.generate();
+		WikiConfig config = DefaultConfigEnWp.generate();
 		
 		// Instantiate a compiler for wiki pages
 		WtEngine engine = new WtEngine(config);

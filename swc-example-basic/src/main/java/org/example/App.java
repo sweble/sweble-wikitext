@@ -29,7 +29,7 @@ import org.sweble.wikitext.engine.nodes.EngCompiledPage;
 import org.sweble.wikitext.engine.output.HtmlRenderer;
 import org.sweble.wikitext.engine.output.HtmlRendererCallback;
 import org.sweble.wikitext.engine.output.MediaInfo;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 import de.fau.cs.osr.utils.StringUtils;
 
@@ -75,7 +75,7 @@ public class App
 	static String run(File file, String fileTitle, boolean renderHtml) throws Exception
 	{
 		// Set-up a simple wiki configuration
-		WikiConfig config = DefaultConfigEn.generate();
+		WikiConfig config = DefaultConfigEnWp.generate();
 		
 		final int wrapCol = 80;
 		

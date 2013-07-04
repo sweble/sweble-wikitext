@@ -926,57 +926,6 @@
             <protocol name="https://"/>
             <protocol name="http://"/>
         </allowedUrlProtocols>
-        <!--  TODO: Remove when really not needed any more
-        <xmlElementBehavior>
-            <element name="abbr" type="XML_INLINE" emptyOnly="false"/>
-            <element name="b" type="XML_INLINE" emptyOnly="false"/>
-            <element name="big" type="XML_INLINE" emptyOnly="false"/>
-            <element name="blockquote" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="br" type="XML_INLINE" emptyOnly="true"/>
-            <element name="caption" type="XML_TABLE_ITEM" emptyOnly="false"/>
-            <element name="center" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="cite" type="XML_INLINE" emptyOnly="false"/>
-            <element name="code" type="XML_INLINE" emptyOnly="false"/>
-            <element name="dd" type="XML_ITEM" emptyOnly="false"/>
-            <element name="del" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="dfn" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="div" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="dl" type="XML_ITEM" emptyOnly="false"/>
-            <element name="dt" type="XML_ITEM" emptyOnly="false"/>
-            <element name="em" type="XML_INLINE" emptyOnly="false"/>
-            <element name="font" type="XML_INLINE" emptyOnly="false"/>
-            <element name="h1" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="h2" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="h3" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="h4" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="h5" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="h6" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="hr" type="XML_BLOCK" emptyOnly="true"/>
-            <element name="i" type="XML_INLINE" emptyOnly="false"/>
-            <element name="ins" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="kbd" type="XML_INLINE" emptyOnly="false"/>
-            <element name="li" type="XML_ITEM" emptyOnly="false"/>
-            <element name="ol" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="p" type="XML_PARAGRAPH" emptyOnly="false"/>
-            <element name="pre" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="s" type="XML_INLINE" emptyOnly="false"/>
-            <element name="samp" type="XML_INLINE" emptyOnly="false"/>
-            <element name="small" type="XML_INLINE" emptyOnly="false"/>
-            <element name="span" type="XML_INLINE" emptyOnly="false"/>
-            <element name="strike" type="XML_INLINE" emptyOnly="false"/>
-            <element name="strong" type="XML_INLINE" emptyOnly="false"/>
-            <element name="sub" type="XML_INLINE" emptyOnly="false"/>
-            <element name="sup" type="XML_INLINE" emptyOnly="false"/>
-            <element name="table" type="XML_TABLE" emptyOnly="false"/>
-            <element name="td" type="XML_TABLE_ITEM" emptyOnly="false"/>
-            <element name="th" type="XML_TABLE_ITEM" emptyOnly="false"/>
-            <element name="tr" type="XML_TABLE_ITEM" emptyOnly="false"/>
-            <element name="tt" type="XML_INLINE" emptyOnly="false"/>
-            <element name="u" type="XML_INLINE" emptyOnly="false"/>
-            <element name="ul" type="XML_BLOCK" emptyOnly="false"/>
-            <element name="var" type="XML_INLINE" emptyOnly="false"/>
-        </xmlElementBehavior>
-        -->
         <xmlEntities>
             <entity name="AElig" value="Æ"/>
             <entity name="Aacute" value="Á"/>
@@ -1231,24 +1180,8 @@
             <entity name="zwj" value="‍"/>
             <entity name="zwnj" value="‌"/>
         </xmlEntities>
-        <lctFlagMappings>
-            <lctFlag name="-" normalized="-"/>
-            <lctFlag name="A" normalized="A"/>
-            <lctFlag name="D" normalized="D"/>
-            <lctFlag name="H" normalized="H"/>
-            <lctFlag name="N" normalized="N"/>
-            <lctFlag name="R" normalized="R"/>
-            <lctFlag name="T" normalized="T"/>
-        </lctFlagMappings>
-        <lctVariantMappings>
-            <lctVariant name="zh" normalized="zh"/>
-            <lctVariant name="zh-cn" normalized="zh-cn"/>
-            <lctVariant name="zh-hans" normalized="zh-hans"/>
-            <lctVariant name="zh-hant" normalized="zh-hant"/>
-            <lctVariant name="zh-hk" normalized="zh-hk"/>
-            <lctVariant name="zh-sg" normalized="zh-sg"/>
-            <lctVariant name="zh-tw" normalized="zh-tw"/>
-        </lctVariantMappings>
+        <lctFlagMappings/>
+        <lctVariantMappings/>
     </parserConfig>
     <engineConfig>
         <trimTransparentBeforeParsing>true</trimTransparentBeforeParsing>

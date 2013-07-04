@@ -23,7 +23,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 
 import org.junit.Test;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 public class WikiConfigTest
 {
@@ -31,13 +31,13 @@ public class WikiConfigTest
 	public void testSave() throws Exception
 	{
 		// We just want to know if the process works without failing fatally
-		DefaultConfigEn.generate().save(new StringWriter());
+		DefaultConfigEnWp.generate().save(new StringWriter());
 	}
 	
 	@Test
 	public void testLoadConfig() throws Exception
 	{
-		WikiConfigImpl gconf = DefaultConfigEn.generate();
+		WikiConfigImpl gconf = DefaultConfigEnWp.generate();
 		
 		StringWriter writer = new StringWriter();
 		gconf.save(writer);
@@ -59,11 +59,12 @@ public class WikiConfigTest
 	@Test
 	public void testXmlAndGeneratedConfigAreEqual() throws Exception
 	{
-		WikiConfigImpl gconf = DefaultConfigEn.generate();
+		WikiConfigImpl gconf = DefaultConfigEnWp.generate();
 		StringWriter wgconf = new StringWriter();
 		gconf.save(wgconf);
 		
-		WikiConfigImpl xconf = WikiConfigImpl.load(getClass().getResourceAsStream("/org/sweble/wikitext/engine/DefaultEnWikiConfig.xml"));
+		WikiConfigImpl xconf = WikiConfigImpl.load(getClass().getResourceAsStream(
+				"/org/sweble/wikitext/engine/utils/DefaultConfigEnWp.xml"));
 		StringWriter wxconf = new StringWriter();
 		xconf.save(wxconf);
 		

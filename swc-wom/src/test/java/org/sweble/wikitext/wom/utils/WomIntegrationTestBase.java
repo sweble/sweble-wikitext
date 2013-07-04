@@ -36,7 +36,7 @@ import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngCompiledPage;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.sweble.wom.WomNode;
@@ -59,7 +59,7 @@ public abstract class WomIntegrationTestBase
 	
 	public WomIntegrationTestBase()
 	{
-		this.config = DefaultConfigEn.generate();
+		this.config = DefaultConfigEnWp.generate();
 		this.config.getEngineConfig().setTrimTransparentBeforeParsing(false);
 		this.engine = new WtEngine(config);
 		

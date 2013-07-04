@@ -39,7 +39,7 @@ import org.sweble.wikitext.articlecruncher.storers.DummyStorer;
 import org.sweble.wikitext.articlecruncher.utils.AbortHandler;
 import org.sweble.wikitext.articlecruncher.utils.WorkerBase;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.utils.DefaultConfigEn;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 import de.fau.cs.osr.utils.WrappedException;
 import de.fau.cs.osr.utils.getopt.Options;
@@ -146,7 +146,7 @@ public class DumpCruncher
 		};
 		 */
 		
-		wikiConfig = DefaultConfigEn.generate();
+		wikiConfig = DefaultConfigEnWp.generate();
 		
 		final LpnJobProcessorFactory lpnJPFactory = new LpnJobProcessorFactory()
 		{
