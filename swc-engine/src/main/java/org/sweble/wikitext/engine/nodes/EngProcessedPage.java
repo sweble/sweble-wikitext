@@ -18,17 +18,16 @@ package org.sweble.wikitext.engine.nodes;
 
 import java.util.List;
 
-import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.parser.WtEntityMap;
-import org.sweble.wikitext.parser.nodes.WtInnerNode1;
+import org.sweble.wikitext.parser.nodes.WtInnerNode2;
 
 import de.fau.cs.osr.ptk.common.Warning;
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 import de.fau.cs.osr.ptk.common.ast.Uninitialized;
 
-public class EngCompiledPage
+public class EngProcessedPage
 		extends
-			WtInnerNode1
+			WtInnerNode2
 		implements
 			EngNode
 {
@@ -39,52 +38,50 @@ public class EngCompiledPage
 	/**
 	 * Only for use by de-serialization code.
 	 */
-	protected EngCompiledPage()
+	protected EngProcessedPage()
 	{
 		super(Uninitialized.X);
 	}
 	
-	protected EngCompiledPage(
+	protected EngProcessedPage(
 			EngPage page,
-			List<Warning> warnings,
-			EngineLog log)
+			EngLogProcessingPass log,
+			List<Warning> warnings)
 	{
-		super(page);
+		super(page, log);
 		setWarnings(warnings);
-		setLog(log);
 	}
 	
-	protected EngCompiledPage(
+	protected EngProcessedPage(
 			EngPage page,
+			EngLogProcessingPass log,
 			List<Warning> warnings,
-			WtEntityMap entityMap,
-			EngineLog log)
+			WtEntityMap entityMap)
 	{
-		super(page);
+		super(page, log);
 		setWarnings(warnings);
 		setEntityMap(entityMap);
-		setLog(log);
 	}
 	
 	@Override
 	public int getNodeType()
 	{
-		return NT_COMPILED_PAGE;
+		return NT_PROCESSED_PAGE;
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private EngineLog log;
+	private EngLogProcessingPass log;
 	
-	public final EngineLog getLog()
+	public final EngLogProcessingPass getLog()
 	{
 		return this.log;
 	}
 	
-	public final EngineLog setLog(EngineLog log)
+	public final EngLogProcessingPass setLog(EngLogProcessingPass log)
 	{
-		EngineLog old = this.log;
+		EngLogProcessingPass old = this.log;
 		this.log = log;
 		return old;
 	}
@@ -157,11 +154,11 @@ public class EngCompiledPage
 				switch (index)
 				{
 					case 0:
-						return EngCompiledPage.this.getLog();
+						return EngProcessedPage.this.getLog();
 					case 1:
-						return EngCompiledPage.this.getWarnings();
+						return EngProcessedPage.this.getWarnings();
 					case 2:
-						return EngCompiledPage.this.getEntityMap();
+						return EngProcessedPage.this.getEntityMap();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -174,15 +171,15 @@ public class EngCompiledPage
 				switch (index)
 				{
 					case 0:
-						return EngCompiledPage.this.setLog((EngineLog) value);
+						return EngProcessedPage.this.setLog((EngLogProcessingPass) value);
 					case 1:
 					{
 						@SuppressWarnings("unchecked")
 						List<Warning> warnings = (List<Warning>) value;
-						return EngCompiledPage.this.setWarnings(warnings);
+						return EngProcessedPage.this.setWarnings(warnings);
 					}
 					case 2:
-						return EngCompiledPage.this.setEntityMap((WtEntityMap) value);
+						return EngProcessedPage.this.setEntityMap((WtEntityMap) value);
 						
 					default:
 						throw new IndexOutOfBoundsException();

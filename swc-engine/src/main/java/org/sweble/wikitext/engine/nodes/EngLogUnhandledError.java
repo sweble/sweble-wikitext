@@ -14,48 +14,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ParseException
+public class EngLogUnhandledError
 		extends
-			LogLeafNode
+			EngLogLeafNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public ParseException()
+	protected EngLogUnhandledError()
 	{
 	}
 	
-	public ParseException(String message)
+	protected EngLogUnhandledError(Throwable exception, String dump)
 	{
-		setMessage(message);
+		setException(exception);
+		setDump(dump);
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String message;
+	private Throwable exception;
 	
-	public final String getMessage()
+	public final Throwable getException()
 	{
-		return this.message;
+		return this.exception;
 	}
 	
-	public final String setMessage(String message)
+	public final void setException(Throwable exception)
 	{
-		String old = this.message;
-		this.message = message;
-		return old;
+		this.exception = exception;
+	}
+	
+	private String dump;
+	
+	public final String getDump()
+	{
+		return this.dump;
+	}
+	
+	public final void setDump(String dump)
+	{
+		this.dump = dump;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1;
+		return 2;
 	}
 	
 	@Override
@@ -66,7 +77,7 @@ public class ParseException
 			@Override
 			protected int getPropertyCount()
 			{
-				return 1;
+				return 2;
 			}
 			
 			@Override
@@ -75,7 +86,9 @@ public class ParseException
 				switch (index)
 				{
 					case 0:
-						return "message";
+						return "exception";
+					case 1:
+						return "dump";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -88,7 +101,9 @@ public class ParseException
 				switch (index)
 				{
 					case 0:
-						return ParseException.this.getMessage();
+						return EngLogUnhandledError.this.getException();
+					case 1:
+						return EngLogUnhandledError.this.getDump();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -101,8 +116,18 @@ public class ParseException
 				switch (index)
 				{
 					case 0:
-						return ParseException.this.setMessage((String) value);
-						
+					{
+						Throwable old = EngLogUnhandledError.this.getException();
+						EngLogUnhandledError.this.setException((Throwable) value);
+						return old;
+					}
+					case 1:
+					{
+						String old = EngLogUnhandledError.this.getDump();
+						EngLogUnhandledError.this.setDump((String) value);
+						return old;
+					}
+					
 					default:
 						throw new IndexOutOfBoundsException();
 				}

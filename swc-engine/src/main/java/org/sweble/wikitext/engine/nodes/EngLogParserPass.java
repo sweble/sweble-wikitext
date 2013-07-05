@@ -14,15 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
 
-import de.fau.cs.osr.ptk.common.ast.AstNodeListImpl;
+package org.sweble.wikitext.engine.nodes;
 
-public abstract class LogContainer
+public class EngLogParserPass
 		extends
-			AstNodeListImpl<LogNode>
-		implements
-			LogNode
+			EngLogPass
 {
-	private static final long serialVersionUID = -1365120120054529928L;
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	protected EngLogParserPass()
+	{
+	}
 }

@@ -19,12 +19,12 @@ package org.sweble.wikitext.engine;
 
 import java.util.List;
 
-import org.sweble.wikitext.engine.lognodes.ResolveMagicWordLog;
-import org.sweble.wikitext.engine.lognodes.ResolveParameterLog;
-import org.sweble.wikitext.engine.lognodes.ResolveParserFunctionLog;
-import org.sweble.wikitext.engine.lognodes.ResolveRedirectLog;
-import org.sweble.wikitext.engine.lognodes.ResolveTagExtensionLog;
-import org.sweble.wikitext.engine.lognodes.ResolveTransclusionLog;
+import org.sweble.wikitext.engine.nodes.EngLogMagicWordResolution;
+import org.sweble.wikitext.engine.nodes.EngLogParameterResolution;
+import org.sweble.wikitext.engine.nodes.EngLogParserFunctionResolution;
+import org.sweble.wikitext.engine.nodes.EngLogRedirectResolution;
+import org.sweble.wikitext.engine.nodes.EngLogTagExtensionResolution;
+import org.sweble.wikitext.engine.nodes.EngLogTransclusionResolution;
 import org.sweble.wikitext.parser.nodes.WtLeafNode;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtNodeList;
@@ -58,7 +58,7 @@ public abstract class ExpansionDebugHooks
 			WtRedirect n,
 			String target,
 			WtNode result,
-			ResolveRedirectLog log)
+			EngLogRedirectResolution log)
 	{
 		return result;
 	}
@@ -78,7 +78,7 @@ public abstract class ExpansionDebugHooks
 			ParserFunctionBase pfn,
 			List<? extends WtNode> argsValues,
 			WtNode result,
-			ResolveParserFunctionLog log)
+			EngLogParserFunctionResolution log)
 	{
 		return result;
 	}
@@ -98,7 +98,7 @@ public abstract class ExpansionDebugHooks
 			String target,
 			List<WtTemplateArgument> args,
 			WtNode result,
-			ResolveTransclusionLog log)
+			EngLogTransclusionResolution log)
 	{
 		return result;
 	}
@@ -116,7 +116,7 @@ public abstract class ExpansionDebugHooks
 			WtTemplateParameter n,
 			String name,
 			WtNode result,
-			ResolveParameterLog log)
+			EngLogParameterResolution log)
 	{
 		return result;
 	}
@@ -138,7 +138,7 @@ public abstract class ExpansionDebugHooks
 			WtNodeList attributes,
 			WtTagExtensionBody wtTagExtensionBody,
 			WtNode result,
-			ResolveTagExtensionLog log)
+			EngLogTagExtensionResolution log)
 	{
 		return result;
 	}
@@ -156,7 +156,7 @@ public abstract class ExpansionDebugHooks
 			WtPageSwitch n,
 			String word,
 			WtNode result,
-			ResolveMagicWordLog log)
+			EngLogMagicWordResolution log)
 	{
 		return result;
 	}

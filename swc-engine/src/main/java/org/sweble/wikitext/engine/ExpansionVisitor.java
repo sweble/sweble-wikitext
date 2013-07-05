@@ -29,17 +29,15 @@ import java.util.regex.Pattern;
 
 import org.sweble.wikitext.engine.config.Namespace;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.lognodes.LogContainer;
-import org.sweble.wikitext.engine.lognodes.ParseException;
-import org.sweble.wikitext.engine.lognodes.ResolveMagicWordLog;
-import org.sweble.wikitext.engine.lognodes.ResolveParameterLog;
-import org.sweble.wikitext.engine.lognodes.ResolveParserFunctionLog;
-import org.sweble.wikitext.engine.lognodes.ResolveRedirectLog;
-import org.sweble.wikitext.engine.lognodes.ResolveTagExtensionLog;
-import org.sweble.wikitext.engine.lognodes.ResolveTransclusionLog;
-import org.sweble.wikitext.engine.lognodes.UnhandledException;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngLogContainer;
+import org.sweble.wikitext.engine.nodes.EngLogMagicWordResolution;
+import org.sweble.wikitext.engine.nodes.EngLogParameterResolution;
+import org.sweble.wikitext.engine.nodes.EngLogParserFunctionResolution;
+import org.sweble.wikitext.engine.nodes.EngLogRedirectResolution;
+import org.sweble.wikitext.engine.nodes.EngLogTagExtensionResolution;
+import org.sweble.wikitext.engine.nodes.EngLogTransclusionResolution;
 import org.sweble.wikitext.engine.nodes.EngNode;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.engine.utils.EngineAstTextUtils;
 import org.sweble.wikitext.parser.WikitextWarning.WarningSeverity;
@@ -77,7 +75,7 @@ public final class ExpansionVisitor
 	
 	private final ExpansionFrame expFrame;
 	
-	private final LogContainer frameLog;
+	private final EngLogContainer frameLog;
 	
 	private final ExpansionDebugHooks hooks;
 	
@@ -95,7 +93,7 @@ public final class ExpansionVisitor
 	
 	public ExpansionVisitor(
 			ExpansionFrame expFrame,
-			LogContainer frameLog,
+			EngLogContainer frameLog,
 			ExpansionDebugHooks hooks,
 			boolean timingEnabled,
 			boolean catchAll)
@@ -247,10 +245,10 @@ public final class ExpansionVisitor
 				return cont;
 		}
 		
-		ResolveRedirectLog log = null;
+		EngLogRedirectResolution log = null;
 		if (frameLog != null)
 		{
-			log = new ResolveRedirectLog(target, false);
+			log = nf.logRedirectResolution(target, false);
 			frameLog.add(log);
 		}
 		
@@ -299,7 +297,7 @@ public final class ExpansionVisitor
 	private WtNode expandRedirectionTargetPage(
 			WtRedirect n,
 			String target,
-			ResolveRedirectLog log) throws Exception
+			EngLogRedirectResolution log) throws Exception
 	{
 		PageTitle title;
 		try
@@ -309,7 +307,7 @@ public final class ExpansionVisitor
 		catch (LinkTargetException e)
 		{
 			if (log != null)
-				log.add(new ParseException(e.getMessage()));
+				log.add(nf.logParserError(e.getMessage()));
 			
 			fileInvalidPageNameWarning(n, target);
 			
@@ -332,7 +330,7 @@ public final class ExpansionVisitor
 			 * - The arguments that were passed to the page we are redirecting
 			 *   from will also be passed to the replacement page.
 			 */
-			EngCompiledPage compiledPage = getEngine().preprocessAndExpand(
+			EngProcessedPage processedPage = getEngine().preprocessAndExpand(
 					expFrame.getCallback(),
 					page.getId(),
 					page.getText(),
@@ -344,7 +342,7 @@ public final class ExpansionVisitor
 			
 			log.setSuccess(true);
 			
-			return mergeLogsAndWarnings(log, compiledPage);
+			return mergeLogsAndWarnings(log, processedPage);
 		}
 		else
 		{
@@ -414,7 +412,7 @@ public final class ExpansionVisitor
 				StringConversionException e = new StringConversionException(nameConv.getTail());
 				
 				if (frameLog != null)
-					frameLog.add(new ParseException(e.getMessage()));
+					frameLog.add(nf.logParserError(e.getMessage()));
 				
 				fileInvalidTemplateNameWarning(n, e);
 			}
@@ -638,10 +636,10 @@ public final class ExpansionVisitor
 				return cont;
 		}
 		
-		ResolveParserFunctionLog log = null;
+		EngLogParserFunctionResolution log = null;
 		if (frameLog != null)
 		{
-			log = new ResolveParserFunctionLog(pfn.getId(), false);
+			log = nf.logParserFunctionResolution(pfn.getId(), false);
 			frameLog.add(log);
 		}
 		
@@ -706,10 +704,10 @@ public final class ExpansionVisitor
 				return cont;
 		}
 		
-		ResolveTransclusionLog log = null;
+		EngLogTransclusionResolution log = null;
 		if (frameLog != null)
 		{
-			log = new ResolveTransclusionLog(title, false);
+			log = nf.logTransclusionResolution(title, false);
 			frameLog.add(log);
 		}
 		
@@ -759,7 +757,7 @@ public final class ExpansionVisitor
 			WtTemplate n,
 			String target,
 			List<WtTemplateArgument> args,
-			ResolveTransclusionLog log) throws Exception
+			EngLogTransclusionResolution log) throws Exception
 	{
 		Namespace tmplNs = getWikiConfig().getTemplateNamespace();
 		
@@ -771,7 +769,7 @@ public final class ExpansionVisitor
 		catch (LinkTargetException e)
 		{
 			if (log != null)
-				log.add(new ParseException(e.getMessage()));
+				log.add(nf.logParserError(e.getMessage()));
 			
 			fileInvalidPageNameWarning(n, target);
 			
@@ -788,7 +786,7 @@ public final class ExpansionVisitor
 			// EXPANDS ARGUMENTS!
 			Map<String, WtNodeList> tmplArgs = prepareTransclusionArguments(args, log);
 			
-			EngCompiledPage compiledPage = getEngine().preprocessAndExpand(
+			EngProcessedPage processedPage = getEngine().preprocessAndExpand(
 					expFrame.getCallback(),
 					page.getId(),
 					page.getText(),
@@ -800,7 +798,7 @@ public final class ExpansionVisitor
 			
 			log.setSuccess(true);
 			
-			WtNode tResult = mergeLogsAndWarnings(log, compiledPage);
+			WtNode tResult = mergeLogsAndWarnings(log, processedPage);
 			
 			return treatBlockElements(n, tResult);
 		}
@@ -844,7 +842,7 @@ public final class ExpansionVisitor
 	 */
 	private Map<String, WtNodeList> prepareTransclusionArguments(
 			List<WtTemplateArgument> args,
-			ResolveTransclusionLog log)
+			EngLogTransclusionResolution log)
 	{
 		HashMap<String, WtNodeList> transclArgs = new HashMap<String, WtNodeList>();
 		
@@ -876,7 +874,7 @@ public final class ExpansionVisitor
 				catch (StringConversionException e)
 				{
 					if (log != null)
-						log.add(new ParseException(e.getMessage()));
+						log.add(nf.logParserError(e.getMessage()));
 					
 					fileInvalidArgumentNameWarning(arg, e);
 				}
@@ -931,7 +929,7 @@ public final class ExpansionVisitor
 		catch (StringConversionException e)
 		{
 			if (frameLog != null)
-				frameLog.add(new ParseException(e.getMessage()));
+				frameLog.add(nf.logParserError(e.getMessage()));
 			
 			fileInvalidParameterNameWarning(n, e);
 		}
@@ -965,10 +963,10 @@ public final class ExpansionVisitor
 				return cont;
 		}
 		
-		ResolveParameterLog log = null;
+		EngLogParameterResolution log = null;
 		if (frameLog != null)
 		{
-			log = new ResolveParameterLog(name, false);
+			log = nf.logParameterResolution(name, false);
 			frameLog.add(log);
 		}
 		
@@ -1013,7 +1011,7 @@ public final class ExpansionVisitor
 	private WtNodeList resolveParameter(
 			WtTemplateParameter n,
 			String name,
-			ResolveParameterLog log)
+			EngLogParameterResolution log)
 	{
 		WtNodeList value = getFrameArgument(name);
 		
@@ -1067,10 +1065,10 @@ public final class ExpansionVisitor
 				return cont;
 		}
 		
-		ResolveTagExtensionLog log = null;
+		EngLogTagExtensionResolution log = null;
 		if (frameLog != null)
 		{
-			log = new ResolveTagExtensionLog(name, false);
+			log = nf.logTagExtensionResolution(name, false);
 			frameLog.add(log);
 		}
 		
@@ -1112,7 +1110,7 @@ public final class ExpansionVisitor
 			String name,
 			WtXmlAttributes attrs,
 			WtTagExtensionBody wtTagExtensionBody,
-			ResolveTagExtensionLog log)
+			EngLogTagExtensionResolution log)
 	{
 		TagExtensionBase te = getWikiConfig().getTagExtension(name);
 		if (te == null)
@@ -1185,10 +1183,10 @@ public final class ExpansionVisitor
 				return cont;
 		}
 		
-		ResolveMagicWordLog log = null;
+		EngLogMagicWordResolution log = null;
 		if (frameLog != null)
 		{
-			log = new ResolveMagicWordLog(name, false);
+			log = nf.logMagicWordResolution(name, false);
 			frameLog.add(log);
 		}
 		
@@ -1228,7 +1226,7 @@ public final class ExpansionVisitor
 	private WtNode resolvePageSwitch(
 			WtPageSwitch n,
 			String name,
-			ResolveMagicWordLog log)
+			EngLogMagicWordResolution log)
 	{
 		ParserFunctionBase mw =
 				getWikiConfig().getPageSwitch("__" + name + "__");
@@ -1282,11 +1280,11 @@ public final class ExpansionVisitor
 		return expFrame.getCallback().retrieveWikitext(expFrame, title);
 	}
 	
-	private void logUnhandledException(LogContainer log, Exception e)
+	private void logUnhandledException(EngLogContainer log, Exception e)
 	{
 		StringWriter w = new StringWriter();
 		e.printStackTrace(new PrintWriter(w));
-		log.add(new UnhandledException(e, w.toString()));
+		log.add(nf.logUnhandledError(e, w.toString()));
 	}
 	
 	private void fileInvalidPageNameWarning(WtNode n, String target)
@@ -1338,15 +1336,15 @@ public final class ExpansionVisitor
 	}
 	
 	private WtNodeList mergeLogsAndWarnings(
-			LogContainer log,
-			EngCompiledPage compiledPage)
+			EngLogContainer log,
+			EngProcessedPage processedPage)
 	{
 		if (log != null)
-			log.add(compiledPage.getLog());
+			log.add(processedPage.getLog());
 		
-		expFrame.addWarnings(compiledPage.getWarnings());
+		expFrame.addWarnings(processedPage.getWarnings());
 		
-		return nf.unwrap(compiledPage.getPage());
+		return nf.unwrap(processedPage.getPage());
 	}
 	
 	private WtNode treatBlockElements(WtTemplate tmpl, WtNode result)

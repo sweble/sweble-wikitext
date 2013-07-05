@@ -29,16 +29,14 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.sweble.wikitext.engine.config.EngineConfig;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.lognodes.EngineLog;
-import org.sweble.wikitext.engine.lognodes.LogContainer;
-import org.sweble.wikitext.engine.lognodes.ParseException;
-import org.sweble.wikitext.engine.lognodes.ParserLog;
-import org.sweble.wikitext.engine.lognodes.PostprocessorLog;
-import org.sweble.wikitext.engine.lognodes.PpResolverLog;
-import org.sweble.wikitext.engine.lognodes.PreprocessorLog;
-import org.sweble.wikitext.engine.lognodes.UnhandledException;
-import org.sweble.wikitext.engine.lognodes.ValidatorLog;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngLogContainer;
+import org.sweble.wikitext.engine.nodes.EngLogExpansionPass;
+import org.sweble.wikitext.engine.nodes.EngLogParserPass;
+import org.sweble.wikitext.engine.nodes.EngLogPostprocessorPass;
+import org.sweble.wikitext.engine.nodes.EngLogPreprocessorPass;
+import org.sweble.wikitext.engine.nodes.EngLogProcessingPass;
+import org.sweble.wikitext.engine.nodes.EngLogValidatorPass;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WikitextEncodingValidator;
@@ -153,7 +151,7 @@ public class WtEngine
 	 * <li>Optional: Expansion</li>
 	 * </ul>
 	 */
-	public EngCompiledPage preprocess(
+	public EngProcessedPage preprocess(
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
@@ -165,7 +163,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -192,10 +190,10 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pprAst),
-				pprAst.getWarnings(),
-				log);
+				log,
+				pprAst.getWarnings());
 	}
 	
 	/**
@@ -208,7 +206,7 @@ public class WtEngine
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	public EngCompiledPage expand(
+	public EngProcessedPage expand(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -227,7 +225,7 @@ public class WtEngine
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	public EngCompiledPage expand(
+	public EngProcessedPage expand(
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
@@ -239,7 +237,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -267,11 +265,11 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pAst),
+				log,
 				pAst.getWarnings(),
-				pAst.getEntityMap(),
-				log);
+				pAst.getEntityMap());
 	}
 	
 	/**
@@ -286,7 +284,7 @@ public class WtEngine
 	 * <li>Entity substitution</li>
 	 * </ul>
 	 */
-	public EngCompiledPage parse(
+	public EngProcessedPage parse(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -297,7 +295,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -326,10 +324,10 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pAst),
-				pAst.getWarnings(),
-				log);
+				log,
+				pAst.getWarnings());
 	}
 	
 	/**
@@ -345,7 +343,7 @@ public class WtEngine
 	 * <li>Postprocessing</li>
 	 * </ul>
 	 */
-	public EngCompiledPage postprocess(
+	public EngProcessedPage postprocess(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -356,7 +354,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -387,10 +385,10 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pAst),
-				pAst.getWarnings(),
-				log);
+				log,
+				pAst.getWarnings());
 	}
 	
 	/**
@@ -402,7 +400,7 @@ public class WtEngine
 	 * <li>Postprocessing</li>
 	 * </ul>
 	 */
-	public EngCompiledPage postprocessPpOrExpAst(
+	public EngProcessedPage postprocessPpOrExpAst(
 			PageId pageId,
 			WtPreproWikitextPage pprAst)
 			throws EngineException
@@ -412,7 +410,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -433,10 +431,10 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pAst),
-				pAst.getWarnings(),
-				log);
+				log,
+				pAst.getWarnings());
 	}
 	
 	// =========================================================================
@@ -452,7 +450,7 @@ public class WtEngine
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	protected EngCompiledPage preprocessAndExpand(
+	protected EngProcessedPage preprocessAndExpand(
 			ExpansionCallback callback,
 			PageId pageId,
 			String wikitext,
@@ -471,7 +469,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -504,13 +502,13 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pprAst),
-				pprAst.getWarnings(),
-				log);
+				log,
+				pprAst.getWarnings());
 	}
 	
-	protected EngCompiledPage expand(
+	protected EngProcessedPage expand(
 			ExpansionCallback callback,
 			PageId pageId,
 			WtPreproWikitextPage ppAst,
@@ -529,7 +527,7 @@ public class WtEngine
 		
 		PageTitle title = pageId.getTitle();
 		
-		EngineLog log = new EngineLog();
+		EngLogProcessingPass log = nf().logProcessingPass();
 		log.setTitle(title.getDenormalizedFullTitle());
 		log.setRevision(pageId.getRevision());
 		
@@ -556,10 +554,10 @@ public class WtEngine
 			throw new EngineException(title, "Compilation failed!", e, log);
 		}
 		
-		return nf().compiledPage(
+		return nf().processedPage(
 				nf().page(pprAst),
-				pprAst.getWarnings(),
-				log);
+				log,
+				pprAst.getWarnings());
 	}
 	
 	// =========================================================================
@@ -570,11 +568,11 @@ public class WtEngine
 	private ValidatedWikitext validate(
 			PageTitle title,
 			String wikitext,
-			LogContainer parentLog,
+			EngLogContainer parentLog,
 			WtEntityMap entityMap)
 			throws EngineException
 	{
-		ValidatorLog log = new ValidatorLog();
+		EngLogValidatorPass log = nf().logValidatorPass();
 		parentLog.add(log);
 		
 		StopWatch stopWatch = new StopWatch();
@@ -601,7 +599,7 @@ public class WtEngine
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.add(new UnhandledException(e, w.toString()));
+			log.add(nf().logUnhandledError(e, w.toString()));
 			
 			throw new EngineException(title, "Validation failed!", e);
 		}
@@ -619,10 +617,10 @@ public class WtEngine
 			PageTitle title,
 			ValidatedWikitext validatedWikitext,
 			boolean forInclusion,
-			LogContainer parentLog)
+			EngLogContainer parentLog)
 			throws EngineException
 	{
-		PreprocessorLog log = new PreprocessorLog();
+		EngLogPreprocessorPass log = nf().logPreprocessorPass();
 		parentLog.add(log);
 		
 		log.setForInclusion(forInclusion);
@@ -644,7 +642,7 @@ public class WtEngine
 		}
 		catch (xtc.parser.ParseException e)
 		{
-			log.add(new ParseException(e.getMessage()));
+			log.add(nf().logParserError(e.getMessage()));
 			
 			throw new EngineException(title, "Preprocessing failed!", e);
 		}
@@ -654,7 +652,7 @@ public class WtEngine
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.add(new UnhandledException(e, w.toString()));
+			log.add(nf().logUnhandledError(e, w.toString()));
 			
 			throw new EngineException(title, "Preprocessing failed!", e);
 		}
@@ -675,7 +673,7 @@ public class WtEngine
 			WtPreproWikitextPage ppAst,
 			LinkedHashMap<String, WtNodeList> arguments,
 			boolean forInclusion,
-			LogContainer parentLog)
+			EngLogContainer parentLog)
 			throws EngineException
 	{
 		return expand(
@@ -700,10 +698,10 @@ public class WtEngine
 			boolean forInclusion,
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
-			LogContainer parentLog)
+			EngLogContainer parentLog)
 			throws EngineException
 	{
-		PpResolverLog log = new PpResolverLog();
+		EngLogExpansionPass log = nf().logExpansionPass();
 		parentLog.add(log);
 		
 		if (arguments == null)
@@ -766,7 +764,7 @@ public class WtEngine
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.add(new UnhandledException(e, w.toString()));
+			log.add(nf().logUnhandledError(e, w.toString()));
 			
 			throw new EngineException(title, "Resolution failed!", e);
 		}
@@ -783,10 +781,10 @@ public class WtEngine
 	private WtParsedWikitextPage parse(
 			PageTitle title,
 			WtPreproWikitextPage ppAst,
-			LogContainer parentLog)
+			EngLogContainer parentLog)
 			throws EngineException
 	{
-		ParserLog log = new ParserLog();
+		EngLogParserPass log = nf().logParserPass();
 		parentLog.add(log);
 		
 		StopWatch stopWatch = new StopWatch();
@@ -820,7 +818,7 @@ public class WtEngine
 		}
 		catch (xtc.parser.ParseException e)
 		{
-			log.add(new ParseException(e.getMessage()));
+			log.add(nf().logParserError(e.getMessage()));
 			
 			throw new EngineException(title, "Parsing failed!", e);
 		}
@@ -830,7 +828,7 @@ public class WtEngine
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.add(new UnhandledException(e, w.toString()));
+			log.add(nf().logUnhandledError(e, w.toString()));
 			
 			throw new EngineException(title, "Parsing failed!", e);
 		}
@@ -844,10 +842,10 @@ public class WtEngine
 	private WtParsedWikitextPage postprocess(
 			PageTitle title,
 			WtParsedWikitextPage pAst,
-			EngineLog parentLog)
+			EngLogProcessingPass parentLog)
 			throws EngineException
 	{
-		PostprocessorLog log = new PostprocessorLog();
+		EngLogPostprocessorPass log = nf().logPostprocessorPass();
 		parentLog.add(log);
 		
 		StopWatch stopWatch = new StopWatch();
@@ -867,7 +865,7 @@ public class WtEngine
 			
 			StringWriter w = new StringWriter();
 			e.printStackTrace(new PrintWriter(w));
-			log.add(new UnhandledException(e, w.toString()));
+			log.add(nf().logUnhandledError(e, w.toString()));
 			
 			throw new EngineException(title, "Postprocessing failed!", e);
 		}

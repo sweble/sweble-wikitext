@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 
 public class FullPreprocessedPage
 {
@@ -25,14 +25,14 @@ public class FullPreprocessedPage
 	
 	private final boolean forInclusion;
 	
-	private final EngCompiledPage page;
+	private final EngProcessedPage page;
 	
 	// =========================================================================
 	
 	public FullPreprocessedPage(
 			PageId pageId,
 			boolean forInclusion,
-			EngCompiledPage page)
+			EngProcessedPage page)
 	{
 		super();
 		this.id = pageId;
@@ -52,7 +52,7 @@ public class FullPreprocessedPage
 		return forInclusion;
 	}
 	
-	public EngCompiledPage getPage()
+	public EngProcessedPage getPage()
 	{
 		return page;
 	}

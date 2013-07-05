@@ -52,7 +52,7 @@ public final class EngineRtData
 		return n;
 	}
 	
-	public static EngCompiledPage set(EngCompiledPage n)
+	public static EngProcessedPage set(EngProcessedPage n)
 	{
 		return n;
 	}

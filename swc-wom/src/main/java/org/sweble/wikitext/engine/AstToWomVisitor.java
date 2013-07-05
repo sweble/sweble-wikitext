@@ -26,7 +26,7 @@ import java.util.Map;
 import org.joda.time.DateTime;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitor;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.engine.nodes.EngPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
@@ -1109,7 +1109,7 @@ public class AstToWomVisitor
 	// == [ Page roots ] =======================================================
 	
 	@Override
-	public WomNode visit(EngCompiledPage n)
+	public WomNode visit(EngProcessedPage n)
 	{
 		return (WomNode) dispatch(n.getPage());
 	}

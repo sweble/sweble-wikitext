@@ -17,7 +17,7 @@
 
 package org.sweble.wikitext.engine;
 
-import org.sweble.wikitext.engine.lognodes.EngineLog;
+import org.sweble.wikitext.engine.nodes.EngLogProcessingPass;
 
 public final class EngineException
 		extends
@@ -27,7 +27,7 @@ public final class EngineException
 	
 	private final PageTitle pageTitle;
 	
-	private EngineLog log;
+	private EngLogProcessingPass log;
 	
 	// =========================================================================
 	
@@ -43,7 +43,7 @@ public final class EngineException
 			PageTitle pageTitle,
 			String message,
 			Throwable cause,
-			EngineLog log)
+			EngLogProcessingPass log)
 	{
 		super(makeMessage(pageTitle, message), unwrap(cause));
 		this.pageTitle = pageTitle;
@@ -66,7 +66,7 @@ public final class EngineException
 	
 	// =========================================================================
 	
-	public void attachLog(EngineLog log)
+	public void attachLog(EngLogProcessingPass log)
 	{
 		if (this.log != null)
 			throw new IllegalStateException("Log already attached!");
@@ -79,7 +79,7 @@ public final class EngineException
 		return pageTitle;
 	}
 	
-	public EngineLog getLog()
+	public EngLogProcessingPass getLog()
 	{
 		return log;
 	}

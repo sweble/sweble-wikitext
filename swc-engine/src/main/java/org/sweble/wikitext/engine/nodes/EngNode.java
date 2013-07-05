@@ -32,7 +32,7 @@ public interface EngNode
 	
 	public static final int NT_PAGE /* ................. */= NT_ENGINE_BITS + 1;
 	
-	public static final int NT_COMPILED_PAGE /* ........ */= NT_ENGINE_BITS + 2;
+	public static final int NT_PROCESSED_PAGE /* ....... */= NT_ENGINE_BITS + 2;
 	
 	public static final int NT_NOWIKI /* ............... */= NT_ENGINE_BITS + 3;
 	

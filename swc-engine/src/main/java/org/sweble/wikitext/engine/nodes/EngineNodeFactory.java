@@ -18,7 +18,6 @@ package org.sweble.wikitext.engine.nodes;
 
 import java.util.List;
 
-import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -31,6 +30,8 @@ public interface EngineNodeFactory
 		extends
 			WikitextNodeFactory
 {
+	// --[ Wikitext specific ]--------------------------------------------------
+	
 	EngNowiki nowiki(String text);
 	
 	EngSoftErrorNode softError(String message);
@@ -39,18 +40,60 @@ public interface EngineNodeFactory
 	
 	EngSoftErrorNode softError(WtNodeList content, Exception e);
 	
-	EngCompiledPage compiledPage(
+	EngProcessedPage processedPage(
 			EngPage page,
-			List<Warning> warnings,
-			EngineLog log);
+			EngLogProcessingPass log,
+			List<Warning> warnings);
 	
-	EngCompiledPage compiledPage(
+	EngProcessedPage processedPage(
 			EngPage page,
+			EngLogProcessingPass log,
 			List<Warning> warnings,
-			WtEntityMap entityMap,
-			EngineLog log);
+			WtEntityMap entityMap);
 	
 	EngPage page(WtNodeList content);
+	
+	// --[ Log nodes ]----------------------------------------------------------
+	
+	EngLogExpansionPass logExpansionPass();
+	
+	EngLogParserPass logParserPass();
+	
+	EngLogPostprocessorPass logPostprocessorPass();
+	
+	EngLogPreprocessorPass logPreprocessorPass();
+	
+	EngLogProcessingPass logProcessingPass();
+	
+	EngLogValidatorPass logValidatorPass();
+	
+	EngLogMagicWordResolution logMagicWordResolution(
+			String name,
+			boolean success);
+	
+	EngLogParameterResolution logParameterResolution(
+			String name,
+			boolean success);
+	
+	EngLogParserFunctionResolution logParserFunctionResolution(
+			String name,
+			boolean success);
+	
+	EngLogRedirectResolution logRedirectResolution(
+			String target,
+			boolean success);
+	
+	EngLogTagExtensionResolution logTagExtensionResolution(
+			String target,
+			boolean success);
+	
+	EngLogTransclusionResolution logTransclusionResolution(
+			String target,
+			boolean success);
+	
+	EngLogParserError logParserError(String message);
+	
+	EngLogUnhandledError logUnhandledError(Throwable exception, String dump);
 	
 	// --[ Modification ]-------------------------------------------------------
 	

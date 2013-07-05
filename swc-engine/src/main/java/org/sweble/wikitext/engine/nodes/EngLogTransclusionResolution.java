@@ -16,17 +16,20 @@
  */
 package org.sweble.wikitext.engine.nodes;
 
-import org.sweble.wikitext.parser.nodes.CompleteWikitextVisitorNoReturn;
-
-public interface CompleteEngineVisitorNoReturn
+public class EngLogTransclusionResolution
 		extends
-			CompleteWikitextVisitorNoReturn
+			EngLogTargetResolution
 {
-	public void visit(EngProcessedPage n);
+	private static final long serialVersionUID = 1L;
 	
-	public void visit(EngNowiki n);
+	// =========================================================================
 	
-	public void visit(EngPage n);
+	protected EngLogTransclusionResolution()
+	{
+	}
 	
-	public void visit(EngSoftErrorNode n);
+	protected EngLogTransclusionResolution(String target, boolean success)
+	{
+		super(target, success);
+	}
 }

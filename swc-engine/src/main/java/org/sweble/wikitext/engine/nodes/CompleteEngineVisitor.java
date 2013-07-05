@@ -22,7 +22,7 @@ public interface CompleteEngineVisitor<T>
 		extends
 			CompleteWikitextVisitor<T>
 {
-	public T visit(EngCompiledPage n);
+	public T visit(EngProcessedPage n);
 	
 	public T visit(EngNowiki n);
 	

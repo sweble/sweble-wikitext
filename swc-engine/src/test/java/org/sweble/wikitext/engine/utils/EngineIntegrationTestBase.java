@@ -29,7 +29,7 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 
@@ -94,7 +94,7 @@ public abstract class EngineIntegrationTestBase
 		
 		PageTitle title = PageTitle.make(config, fileTitle);
 		PageId pageId = new PageId(title, -1);
-		EngCompiledPage ast = engine.expand(
+		EngProcessedPage ast = engine.expand(
 				pageId,
 				inputFileContent.getContent(),
 				forInclusion,

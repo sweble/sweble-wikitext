@@ -16,17 +16,15 @@
  */
 package org.sweble.wikitext.engine.nodes;
 
-import org.sweble.wikitext.parser.nodes.CompleteWikitextVisitorNoReturn;
-
-public interface CompleteEngineVisitorNoReturn
+public class EngLogValidatorPass
 		extends
-			CompleteWikitextVisitorNoReturn
+			EngLogPass
 {
-	public void visit(EngProcessedPage n);
+	private static final long serialVersionUID = 1L;
 	
-	public void visit(EngNowiki n);
+	// =========================================================================
 	
-	public void visit(EngPage n);
-	
-	public void visit(EngSoftErrorNode n);
+	protected EngLogValidatorPass()
+	{
+	}
 }

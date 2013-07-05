@@ -14,15 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.AstLeafNodeImpl;
-
-public class LogLeafNode
+public class EngLogPostprocessorPass
 		extends
-			AstLeafNodeImpl<LogNode>
-		implements
-			LogNode
+			EngLogPass
 {
-	private static final long serialVersionUID = -1024830219477280567L;
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	protected EngLogPostprocessorPass()
+	{
+	}
 }

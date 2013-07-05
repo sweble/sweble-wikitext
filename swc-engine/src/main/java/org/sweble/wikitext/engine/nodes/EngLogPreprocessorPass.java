@@ -14,92 +14,99 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ValidatorLog
+public class EngLogPreprocessorPass
 		extends
-			LogContainer
+			EngLogPass
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public ValidatorLog()
+	protected EngLogPreprocessorPass()
 	{
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private Long timeNeeded;
+	private boolean forInclusion;
 	
-	public final Long getTimeNeeded()
+	public final boolean getForInclusion()
 	{
-		return this.timeNeeded;
+		return this.forInclusion;
 	}
 	
-	public final Long setTimeNeeded(Long timeNeeded)
+	public final void setForInclusion(boolean forInclusion)
 	{
-		Long old = this.timeNeeded;
-		this.timeNeeded = timeNeeded;
-		return old;
+		this.forInclusion = forInclusion;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1;
+		return 1 + getSuperPropertyCount();
+	}
+	
+	private final int getSuperPropertyCount()
+	{
+		return super.getPropertyCount();
 	}
 	
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
+		return new EngLogContainerPropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return 1;
+				return EngLogPreprocessorPass.this.getPropertyCount();
 			}
 			
 			@Override
 			protected String getName(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "timeNeeded";
+						return "forInclusion";
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getName(index);
 				}
 			}
 			
 			@Override
 			protected Object getValue(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return ValidatorLog.this.getTimeNeeded();
+						return EngLogPreprocessorPass.this.getForInclusion();
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getValue(index);
 				}
 			}
 			
 			@Override
 			protected Object setValue(int index, Object value)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return ValidatorLog.this.setTimeNeeded((Long) value);
-						
+					{
+						boolean old = EngLogPreprocessorPass.this.getForInclusion();
+						EngLogPreprocessorPass.this.setForInclusion((Boolean) value);
+						return old;
+					}
+					
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.setValue(index, value);
 				}
 			}
 		};

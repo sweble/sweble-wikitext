@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.lognodes.LogContainer;
+import org.sweble.wikitext.engine.nodes.EngLogContainer;
 import org.sweble.wikitext.engine.utils.UrlService;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -45,7 +45,7 @@ public class ExpansionFrame
 	
 	private final boolean forInclusion;
 	
-	private final LogContainer frameLog;
+	private final EngLogContainer frameLog;
 	
 	private final ExpansionCallback callback;
 	
@@ -71,7 +71,7 @@ public class ExpansionFrame
 			WtEntityMap entityMap,
 			boolean noRedirect,
 			List<Warning> warnings,
-			LogContainer frameLog,
+			EngLogContainer frameLog,
 			boolean timingEnabled,
 			boolean catchAll)
 	{
@@ -107,7 +107,7 @@ public class ExpansionFrame
 			ExpansionFrame rootFrame,
 			ExpansionFrame parentFrame,
 			List<Warning> warnings,
-			LogContainer frameLog,
+			EngLogContainer frameLog,
 			boolean timingEnabled,
 			boolean catchAll)
 	{
@@ -163,7 +163,7 @@ public class ExpansionFrame
 		return forInclusion;
 	}
 	
-	public LogContainer getFrameLog()
+	public EngLogContainer getFrameLog()
 	{
 		return frameLog;
 	}

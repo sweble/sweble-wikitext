@@ -24,7 +24,7 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 
 public class RevisionProcessor
@@ -60,7 +60,7 @@ public class RevisionProcessor
 		String wikitext = revJob.getTextText();
 		
 		// Compile the retrieved page
-		EngCompiledPage cp = engine.postprocess(pageId, wikitext, null);
+		EngProcessedPage cp = engine.postprocess(pageId, wikitext, null);
 		
 		gui.processingFinished();
 		gui.redrawLater();

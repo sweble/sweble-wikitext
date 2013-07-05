@@ -27,7 +27,7 @@ import org.apache.log4j.Logger;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.CompleteEngineVisitorNoReturn;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngNowiki;
 import org.sweble.wikitext.engine.nodes.EngPage;
 import org.sweble.wikitext.engine.nodes.EngSoftErrorNode;
@@ -118,7 +118,7 @@ public class HtmlRenderer
 			CompleteEngineVisitorNoReturn
 {
 	@Override
-	public void visit(EngCompiledPage n)
+	public void visit(EngProcessedPage n)
 	{
 		dispatch(n.getPage());
 	}

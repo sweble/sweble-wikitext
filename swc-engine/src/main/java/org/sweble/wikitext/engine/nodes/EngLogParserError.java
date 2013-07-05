@@ -14,77 +14,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ResolveMagicWordLog
+public class EngLogParserError
 		extends
-			LogContainer
+			EngLogLeafNode
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public ResolveMagicWordLog()
+	protected EngLogParserError()
 	{
 	}
 	
-	public ResolveMagicWordLog(String name, boolean success)
+	protected EngLogParserError(String message)
 	{
-		setName(name);
-		setSuccess(success);
+		setMessage(message);
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private boolean success;
+	private String message;
 	
-	public final boolean getSuccess()
+	public final String getMessage()
 	{
-		return this.success;
+		return this.message;
 	}
 	
-	public final boolean setSuccess(boolean success)
+	public final void setMessage(String message)
 	{
-		boolean old = this.success;
-		this.success = success;
-		return old;
-	}
-	
-	private String name;
-	
-	public final String getName()
-	{
-		return this.name;
-	}
-	
-	public final String setName(String name)
-	{
-		String old = this.name;
-		this.name = name;
-		return old;
-	}
-	
-	private Long timeNeeded;
-	
-	public final Long getTimeNeeded()
-	{
-		return this.timeNeeded;
-	}
-	
-	public final Long setTimeNeeded(Long timeNeeded)
-	{
-		Long old = this.timeNeeded;
-		this.timeNeeded = timeNeeded;
-		return old;
+		this.message = message;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 3;
+		return 1;
 	}
 	
 	@Override
@@ -95,7 +64,7 @@ public class ResolveMagicWordLog
 			@Override
 			protected int getPropertyCount()
 			{
-				return 3;
+				return 1;
 			}
 			
 			@Override
@@ -104,11 +73,7 @@ public class ResolveMagicWordLog
 				switch (index)
 				{
 					case 0:
-						return "success";
-					case 1:
-						return "name";
-					case 2:
-						return "timeNeeded";
+						return "message";
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -121,11 +86,7 @@ public class ResolveMagicWordLog
 				switch (index)
 				{
 					case 0:
-						return ResolveMagicWordLog.this.getSuccess();
-					case 1:
-						return ResolveMagicWordLog.this.getName();
-					case 2:
-						return ResolveMagicWordLog.this.getTimeNeeded();
+						return EngLogParserError.this.getMessage();
 						
 					default:
 						throw new IndexOutOfBoundsException();
@@ -138,12 +99,12 @@ public class ResolveMagicWordLog
 				switch (index)
 				{
 					case 0:
-						return ResolveMagicWordLog.this.setSuccess((Boolean) value);
-					case 1:
-						return ResolveMagicWordLog.this.setName((String) value);
-					case 2:
-						return ResolveMagicWordLog.this.setTimeNeeded((Long) value);
-						
+					{
+						String old = EngLogParserError.this.getMessage();
+						EngLogParserError.this.setMessage((String) value);
+						return old;
+					}
+					
 					default:
 						throw new IndexOutOfBoundsException();
 				}

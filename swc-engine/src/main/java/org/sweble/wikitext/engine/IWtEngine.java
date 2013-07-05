@@ -18,7 +18,7 @@
 package org.sweble.wikitext.engine;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.nodes.EngineNodeFactory;
 import org.sweble.wikitext.parser.nodes.WtPreproWikitextPage;
 
@@ -55,7 +55,7 @@ public interface IWtEngine
 	 * <li>Optional: Expansion</li>
 	 * </ul>
 	 */
-	public EngCompiledPage preprocess(
+	public EngProcessedPage preprocess(
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
@@ -72,7 +72,7 @@ public interface IWtEngine
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	public EngCompiledPage expand(
+	public EngProcessedPage expand(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -88,7 +88,7 @@ public interface IWtEngine
 	 * <li>Expansion</li>
 	 * </ul>
 	 */
-	public EngCompiledPage expand(
+	public EngProcessedPage expand(
 			PageId pageId,
 			String wikitext,
 			boolean forInclusion,
@@ -107,7 +107,7 @@ public interface IWtEngine
 	 * <li>Entity substitution</li>
 	 * </ul>
 	 */
-	public EngCompiledPage parse(
+	public EngProcessedPage parse(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -126,7 +126,7 @@ public interface IWtEngine
 	 * <li>Postprocessing</li>
 	 * </ul>
 	 */
-	public EngCompiledPage postprocess(
+	public EngProcessedPage postprocess(
 			PageId pageId,
 			String wikitext,
 			ExpansionCallback callback)
@@ -141,7 +141,7 @@ public interface IWtEngine
 	 * <li>Postprocessing</li>
 	 * </ul>
 	 */
-	public EngCompiledPage postprocessPpOrExpAst(
+	public EngProcessedPage postprocessPpOrExpAst(
 			PageId pageId,
 			WtPreproWikitextPage pprAst)
 			throws EngineException;

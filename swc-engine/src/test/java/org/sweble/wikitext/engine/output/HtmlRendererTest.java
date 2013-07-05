@@ -27,7 +27,7 @@ import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.utils.NonExpandingParser;
@@ -88,7 +88,7 @@ public class HtmlRendererTest
 		String wikitext = inputFileContent.getContent();
 		ExpansionCallback expCallback = null;
 		
-		EngCompiledPage ast = getEngine().postprocess(pageId, wikitext, expCallback);
+		EngProcessedPage ast = getEngine().postprocess(pageId, wikitext, expCallback);
 		
 		TestCallback rendererCallback = new TestCallback();
 		

@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.lognodes.EngineLog;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtBody;
@@ -43,7 +42,7 @@ public final class EngineNodeFactoryImpl
 		
 		{
 			Map<Class<?>, WtNode> prototypes = super.getPrototypes();
-			prototypes.put(EngCompiledPage.class, new EngCompiledPage());
+			prototypes.put(EngProcessedPage.class, new EngProcessedPage());
 			prototypes.put(EngNowiki.class, new EngNowiki());
 			prototypes.put(EngPage.class, new EngPage());
 			prototypes.put(EngSoftErrorNode.class, new EngSoftErrorNode());
@@ -55,7 +54,7 @@ public final class EngineNodeFactoryImpl
 		}
 	}
 	
-	// =========================================================================
+	// --[ Wikitext specific ]--------------------------------------------------
 	
 	@Override
 	public EngNowiki nowiki(String text)
@@ -89,22 +88,22 @@ public final class EngineNodeFactoryImpl
 	}
 	
 	@Override
-	public EngCompiledPage compiledPage(
+	public EngProcessedPage processedPage(
 			EngPage page,
-			List<Warning> warnings,
-			EngineLog log)
+			EngLogProcessingPass log,
+			List<Warning> warnings)
 	{
-		return new EngCompiledPage(page, warnings, log);
+		return new EngProcessedPage(page, log, warnings);
 	}
 	
 	@Override
-	public EngCompiledPage compiledPage(
+	public EngProcessedPage processedPage(
 			EngPage page,
+			EngLogProcessingPass log,
 			List<Warning> warnings,
-			WtEntityMap entityMap,
-			EngineLog log)
+			WtEntityMap entityMap)
 	{
-		return new EngCompiledPage(page, warnings, entityMap, log);
+		return new EngProcessedPage(page, log, warnings, entityMap);
 	}
 	
 	@Override
@@ -113,7 +112,107 @@ public final class EngineNodeFactoryImpl
 		return new EngPage(content);
 	}
 	
-	// =========================================================================
+	// --[ Log nodes ]----------------------------------------------------------
+	
+	@Override
+	public EngLogExpansionPass logExpansionPass()
+	{
+		return new EngLogExpansionPass();
+	}
+	
+	@Override
+	public EngLogParserPass logParserPass()
+	{
+		return new EngLogParserPass();
+	}
+	
+	@Override
+	public EngLogPostprocessorPass logPostprocessorPass()
+	{
+		return new EngLogPostprocessorPass();
+	}
+	
+	@Override
+	public EngLogPreprocessorPass logPreprocessorPass()
+	{
+		return new EngLogPreprocessorPass();
+	}
+	
+	@Override
+	public EngLogProcessingPass logProcessingPass()
+	{
+		return new EngLogProcessingPass();
+	}
+	
+	@Override
+	public EngLogValidatorPass logValidatorPass()
+	{
+		return new EngLogValidatorPass();
+	}
+	
+	@Override
+	public EngLogMagicWordResolution logMagicWordResolution(
+			String name,
+			boolean success)
+	{
+		return new EngLogMagicWordResolution(name, success);
+	}
+	
+	@Override
+	public EngLogParameterResolution logParameterResolution(
+			String name,
+			boolean success)
+	{
+		return new EngLogParameterResolution(name, success);
+	}
+	
+	@Override
+	public EngLogParserFunctionResolution logParserFunctionResolution(
+			String name,
+			boolean success)
+	{
+		return new EngLogParserFunctionResolution(name, success);
+	}
+	
+	@Override
+	public EngLogRedirectResolution logRedirectResolution(
+			String target,
+			boolean success)
+	{
+		return new EngLogRedirectResolution(target, success);
+	}
+	
+	@Override
+	public EngLogTagExtensionResolution logTagExtensionResolution(
+			String target,
+			boolean success)
+	{
+		return new EngLogTagExtensionResolution(target, success);
+	}
+	
+	@Override
+	public EngLogTransclusionResolution logTransclusionResolution(
+			String target,
+			boolean success)
+	{
+		return new EngLogTransclusionResolution(target, success);
+	}
+	
+	@Override
+	public EngLogParserError logParserError(String message)
+	{
+		return new EngLogParserError(message);
+	}
+	
+	@Override
+	public EngLogUnhandledError logUnhandledError(
+			Throwable exception,
+			String dump)
+	{
+		return new EngLogUnhandledError(exception, dump);
+	}
+	
+	// --[ Modification ]-------------------------------------------------------
 	
 	@Override
 	public <T extends WtXmlElement> T addCssClass(T elem, String cssClass)

@@ -14,114 +14,105 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class EngineLog
+public abstract class EngLogNameResolution
 		extends
-			LogContainer
+			EngLogResolution
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public EngineLog()
+	protected EngLogNameResolution()
 	{
-		super();
-		
+	}
+	
+	protected EngLogNameResolution(String name, boolean success)
+	{
+		super(success);
+		setName(name);
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private String title;
+	private String name;
 	
-	public final String getTitle()
+	public final String getName()
 	{
-		return this.title;
+		return this.name;
 	}
 	
-	public final String setTitle(String title)
+	public final void setName(String name)
 	{
-		String old = this.title;
-		this.title = title;
-		return old;
-	}
-	
-	private Long revision;
-	
-	public final Long getRevision()
-	{
-		return this.revision;
-	}
-	
-	public final Long setRevision(Long revision)
-	{
-		Long old = this.revision;
-		this.revision = revision;
-		return old;
+		this.name = name;
 	}
 	
 	@Override
-	public final int getPropertyCount()
+	public int getPropertyCount()
 	{
-		return 2;
+		return 1 + getSuperPropertyCount();
+	}
+	
+	private final int getSuperPropertyCount()
+	{
+		return super.getPropertyCount();
 	}
 	
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
+		return new EngLogResolutionPropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return 2;
+				return EngLogNameResolution.this.getPropertyCount();
 			}
 			
 			@Override
 			protected String getName(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "title";
-					case 1:
-						return "revision";
+						return "name";
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getName(index);
 				}
 			}
 			
 			@Override
 			protected Object getValue(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return EngineLog.this.getTitle();
-					case 1:
-						return EngineLog.this.getRevision();
+						return EngLogNameResolution.this.getName();
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getValue(index);
 				}
 			}
 			
 			@Override
 			protected Object setValue(int index, Object value)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return EngineLog.this.setTitle((String) value);
-					case 1:
-						return EngineLog.this.setRevision((Long) value);
-						
+					{
+						String old = EngLogNameResolution.this.getName();
+						EngLogNameResolution.this.setName((String) value);
+						return old;
+					}
+					
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.setValue(index, value);
 				}
 			}
 		};

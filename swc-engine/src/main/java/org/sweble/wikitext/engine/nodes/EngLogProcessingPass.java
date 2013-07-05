@@ -14,92 +14,121 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class PostprocessorLog
+public class EngLogProcessingPass
 		extends
-			LogContainer
+			EngLogPass
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public PostprocessorLog()
+	protected EngLogProcessingPass()
 	{
 	}
 	
 	// =========================================================================
 	// Properties
 	
-	private Long timeNeeded;
+	private String title;
 	
-	public final Long getTimeNeeded()
+	public final String getTitle()
 	{
-		return this.timeNeeded;
+		return this.title;
 	}
 	
-	public final Long setTimeNeeded(Long timeNeeded)
+	public final void setTitle(String title)
 	{
-		Long old = this.timeNeeded;
-		this.timeNeeded = timeNeeded;
-		return old;
+		this.title = title;
+	}
+	
+	private Long revision;
+	
+	public final Long getRevision()
+	{
+		return this.revision;
+	}
+	
+	public final void setRevision(Long revision)
+	{
+		this.revision = revision;
 	}
 	
 	@Override
 	public final int getPropertyCount()
 	{
-		return 1;
+		return 2 + getSuperPropertyCount();
+	}
+	
+	private final int getSuperPropertyCount()
+	{
+		return super.getPropertyCount();
 	}
 	
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
+		return new EngLogContainerPropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return 1;
+				return EngLogProcessingPass.this.getPropertyCount();
 			}
 			
 			@Override
 			protected String getName(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "timeNeeded";
+						return "title";
+					case 1:
+						return "revision";
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getName(index);
 				}
 			}
 			
 			@Override
 			protected Object getValue(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return PostprocessorLog.this.getTimeNeeded();
+						return EngLogProcessingPass.this.getTitle();
+					case 1:
+						return EngLogProcessingPass.this.getRevision();
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getValue(index);
 				}
 			}
 			
 			@Override
 			protected Object setValue(int index, Object value)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return PostprocessorLog.this.setTimeNeeded((Long) value);
-						
+					{
+						Object old = EngLogProcessingPass.this.getTitle();
+						EngLogProcessingPass.this.setTitle((String) value);
+						return old;
+					}
+					case 1:
+					{
+						Object old = EngLogProcessingPass.this.getRevision();
+						EngLogProcessingPass.this.setRevision((Long) value);
+						return old;
+					}
+					
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.setValue(index, value);
 				}
 			}
 		};

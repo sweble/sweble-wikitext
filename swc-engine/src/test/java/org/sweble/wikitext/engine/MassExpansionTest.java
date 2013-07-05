@@ -45,7 +45,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.config.WikiRuntimeInfo;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.EngineIntegrationTestBase;
 import org.sweble.wikitext.engine.utils.NoTransparentRtDataPrinter;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
@@ -371,7 +371,7 @@ public class MassExpansionTest
 		
 		PageTitle title = desc.getTitle();
 		PageId pageId = new PageId(title, -1);
-		EngCompiledPage ast = getEngine().expand(
+		EngProcessedPage ast = getEngine().expand(
 				pageId,
 				desc.getStmt(),
 				forInclusion,

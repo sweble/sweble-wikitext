@@ -35,7 +35,7 @@ import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
@@ -118,7 +118,7 @@ public abstract class WomIntegrationTestBase
 		
 		PageTitle title = PageTitle.make(config, fileTitle);
 		PageId pageId = new PageId(title, -1);
-		EngCompiledPage ast = engine.parse(
+		EngProcessedPage ast = engine.parse(
 				pageId,
 				inputFileContent.getContent(),
 				callback);
@@ -186,7 +186,7 @@ public abstract class WomIntegrationTestBase
 		
 		PageTitle title = PageTitle.make(config, fileTitle);
 		PageId pageId = new PageId(title, -1);
-		EngCompiledPage ast = engine.postprocess(
+		EngProcessedPage ast = engine.postprocess(
 				pageId,
 				inputFileContent.getContent(),
 				callback);

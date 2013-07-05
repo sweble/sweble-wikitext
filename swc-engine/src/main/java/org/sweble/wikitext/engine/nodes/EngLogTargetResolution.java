@@ -14,44 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
 import de.fau.cs.osr.ptk.common.ast.AstNodePropertyIterator;
 
-public class ResolveRedirectLog
+public abstract class EngLogTargetResolution
 		extends
-			LogContainer
+			EngLogResolution
 {
 	private static final long serialVersionUID = 1L;
 	
 	// =========================================================================
 	
-	public ResolveRedirectLog()
+	public EngLogTargetResolution()
 	{
 	}
 	
-	public ResolveRedirectLog(String target, boolean success)
+	public EngLogTargetResolution(String target, boolean success)
 	{
+		super(success);
 		setTarget(target);
-		setSuccess(success);
 	}
 	
 	// =========================================================================
 	// Properties
-	
-	private boolean success;
-	
-	public final boolean getSuccess()
-	{
-		return this.success;
-	}
-	
-	public final boolean setSuccess(boolean success)
-	{
-		boolean old = this.success;
-		this.success = success;
-		return old;
-	}
 	
 	private String target;
 	
@@ -60,11 +46,9 @@ public class ResolveRedirectLog
 		return this.target;
 	}
 	
-	public final String setTarget(String target)
+	public final void setTarget(String target)
 	{
-		String old = this.target;
 		this.target = target;
-		return old;
 	}
 	
 	private String canonical;
@@ -74,98 +58,83 @@ public class ResolveRedirectLog
 		return this.canonical;
 	}
 	
-	public final String setCanonical(String canonical)
+	public final void setCanonical(String canonical)
 	{
-		String old = this.canonical;
 		this.canonical = canonical;
-		return old;
-	}
-	
-	private Long timeNeeded;
-	
-	public final Long getTimeNeeded()
-	{
-		return this.timeNeeded;
-	}
-	
-	public final Long setTimeNeeded(Long timeNeeded)
-	{
-		Long old = this.timeNeeded;
-		this.timeNeeded = timeNeeded;
-		return old;
 	}
 	
 	@Override
-	public final int getPropertyCount()
+	public int getPropertyCount()
 	{
-		return 4;
+		return 2 + getSuperPropertyCount();
+	}
+	
+	private final int getSuperPropertyCount()
+	{
+		return super.getPropertyCount();
 	}
 	
 	@Override
 	public final AstNodePropertyIterator propertyIterator()
 	{
-		return new AstNodePropertyIterator()
+		return new EngLogResolutionPropertyIterator()
 		{
 			@Override
 			protected int getPropertyCount()
 			{
-				return 4;
+				return EngLogTargetResolution.this.getPropertyCount();
 			}
 			
 			@Override
 			protected String getName(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return "success";
-					case 1:
 						return "target";
-					case 2:
+					case 1:
 						return "canonical";
-					case 3:
-						return "timeNeeded";
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getName(index);
 				}
 			}
 			
 			@Override
 			protected Object getValue(int index)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return ResolveRedirectLog.this.getSuccess();
+						return EngLogTargetResolution.this.getTarget();
 					case 1:
-						return ResolveRedirectLog.this.getTarget();
-					case 2:
-						return ResolveRedirectLog.this.getCanonical();
-					case 3:
-						return ResolveRedirectLog.this.getTimeNeeded();
+						return EngLogTargetResolution.this.getCanonical();
 						
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.getValue(index);
 				}
 			}
 			
 			@Override
 			protected Object setValue(int index, Object value)
 			{
-				switch (index)
+				switch (index - getSuperPropertyCount())
 				{
 					case 0:
-						return ResolveRedirectLog.this.setSuccess((Boolean) value);
+					{
+						String old = EngLogTargetResolution.this.getTarget();
+						EngLogTargetResolution.this.setTarget((String) value);
+						return old;
+					}
 					case 1:
-						return ResolveRedirectLog.this.setTarget((String) value);
-					case 2:
-						return ResolveRedirectLog.this.setCanonical((String) value);
-					case 3:
-						return ResolveRedirectLog.this.setTimeNeeded((Long) value);
-						
+					{
+						String old = EngLogTargetResolution.this.getCanonical();
+						EngLogTargetResolution.this.setCanonical((String) value);
+						return old;
+					}
+					
 					default:
-						throw new IndexOutOfBoundsException();
+						return super.setValue(index, value);
 				}
 			}
 		};

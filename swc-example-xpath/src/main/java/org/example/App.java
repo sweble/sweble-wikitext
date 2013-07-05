@@ -24,7 +24,7 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.WtEngine;
 import org.sweble.wikitext.engine.config.WikiConfig;
-import org.sweble.wikitext.engine.nodes.EngCompiledPage;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 
 public class App
@@ -73,7 +73,7 @@ public class App
 		String wikitext = FileUtils.readFileToString(file);
 		
 		// Compile the retrieved page
-		EngCompiledPage cp = engine.postprocess(pageId, wikitext, null);
+		EngProcessedPage cp = engine.postprocess(pageId, wikitext, null);
 		
 		return XPath.query(cp, query);
 	}

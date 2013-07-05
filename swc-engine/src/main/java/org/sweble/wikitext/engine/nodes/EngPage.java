@@ -33,13 +33,9 @@ public class EngPage
 	{
 	}
 	
-	/**
-	 * Swaps content from received WtNodeList object into this object and
-	 * therefore EMPTIES the received list!
-	 */
 	protected EngPage(WtNodeList content)
 	{
-		exchange(content);
+		addAll(content);
 	}
 	
 	@Override

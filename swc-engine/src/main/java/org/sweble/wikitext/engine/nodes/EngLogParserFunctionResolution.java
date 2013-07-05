@@ -14,12 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.sweble.wikitext.engine.lognodes;
+package org.sweble.wikitext.engine.nodes;
 
-import de.fau.cs.osr.ptk.common.ast.AstNode;
-
-public interface LogNode
+public class EngLogParserFunctionResolution
 		extends
-			AstNode<LogNode>
+			EngLogNameResolution
 {
+	private static final long serialVersionUID = 1L;
+	
+	// =========================================================================
+	
+	protected EngLogParserFunctionResolution()
+	{
+	}
+	
+	protected EngLogParserFunctionResolution(String name, boolean success)
+	{
+		super(name, success);
+	}
 }
