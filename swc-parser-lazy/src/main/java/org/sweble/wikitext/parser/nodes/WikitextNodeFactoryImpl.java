@@ -83,12 +83,15 @@ public class WikitextNodeFactoryImpl
 	private final Map<NodeFactory.NamedMemberId, Object> defaultValueImmutables =
 			new HashMap<NodeFactory.NamedMemberId, Object>();
 	
-	private ParserConfig parserConfig;
+	private final ParserConfig parserConfig;
 	
 	// =========================================================================
 	
 	public WikitextNodeFactoryImpl(ParserConfig parserConfig)
 	{
+		if (parserConfig == null)
+			throw new NullPointerException();
+		
 		this.parserConfig = parserConfig;
 		
 		this.prototypes.put(WtLctRule.class, new WtLctRule());

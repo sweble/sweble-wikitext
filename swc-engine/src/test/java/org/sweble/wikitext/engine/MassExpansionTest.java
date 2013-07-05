@@ -112,110 +112,117 @@ public class MassExpansionTest
 			File zipFile) throws IOException
 	{
 		ZipFile zf = new ZipFile(zipFile);
-		Enumeration<? extends ZipEntry> entries = zf.entries();
-		
-		String suiteName;
+		try
 		{
-			String zfname = zipFile.getName();
-			if (!zfname.toLowerCase().endsWith(".zip"))
-				throw new InternalError();
-			suiteName = zfname.substring(0, zfname.length() - 4);
+			Enumeration<? extends ZipEntry> entries = zf.entries();
+			
+			String suiteName;
+			{
+				String zfname = zipFile.getName();
+				if (!zfname.toLowerCase().endsWith(".zip"))
+					throw new InternalError();
+				suiteName = zfname.substring(0, zfname.length() - 4);
+			}
+			
+			String testPrefix = suiteName + "/tests/";
+			String resourcesPrefix = suiteName + "/resources/";
+			
+			Map<FileUrlKey, String> fileUrls =
+					new HashMap<FileUrlKey, String>();
+			
+			Map<String, ArticleDesc> articles =
+					new HashMap<String, ArticleDesc>();
+			
+			List<Object[]> testCases = new ArrayList<Object[]>();
+			
+			while (entries.hasMoreElements())
+			{
+				ZipEntry ze = (ZipEntry) entries.nextElement();
+				
+				// Skip directories
+				if (ze.getName().endsWith("/"))
+					continue;
+				
+				long longSize = ze.getSize();
+				if (longSize > Integer.MAX_VALUE)
+					throw new IllegalArgumentException("Archives contains files too big to process!");
+				
+				InputStream is = zf.getInputStream(ze);
+				byte[] content = IOUtils.toByteArray(is);
+				is.close();
+				
+				String filename = ze.getName();
+				if (filename.startsWith(resourcesPrefix + "fileUrl-") && filename.endsWith(".txt"))
+				{
+					filename = filename.substring(resourcesPrefix.length());
+					Matcher m = fileUrlRx.matcher(filename);
+					if (!m.matches())
+						throw new IllegalArgumentException("Wrong 'fileUrl' pattern: " + ze.getName());
+					
+					String encName = m.group(1);
+					int width = Integer.parseInt(m.group(2));
+					int height = Integer.parseInt(m.group(3));
+					
+					FileUrlKey key = new FileUrlKey(encName, width, height);
+					fileUrls.put(key, new String(content, "UTF8"));
+				}
+				else if (filename.startsWith(resourcesPrefix + "retrieveWikitext-") && filename.endsWith(".wikitext"))
+				{
+					filename = filename.substring(resourcesPrefix.length());
+					Matcher m = articleRx.matcher(filename);
+					if (!m.matches())
+						throw new IllegalArgumentException("Wrong 'retrieveWikitext' pattern: " + ze.getName());
+					
+					String encName = m.group(1);
+					long revision = Long.parseLong(m.group(2));
+					
+					ArticleDesc article = new ArticleDesc(
+							revision,
+							new String(content, "UTF8"));
+					
+					articles.put(encName, article);
+				}
+				else if (filename.startsWith(testPrefix) && filename.endsWith(".txt"))
+				{
+					filename = filename.substring(testPrefix.length());
+					Matcher m = testRx.matcher(filename);
+					if (!m.matches())
+						throw new IllegalArgumentException("Invalid test case filename: " + ze.getName());
+					
+					String title = m.group(1);
+					String test = new String(content, "UTF8");
+					
+					testCases.add(new Object[] {
+							title,
+							fileUrls,
+							articles,
+							test });
+				}
+				else
+				{
+					System.err.println("Ignored file in " + zipFile + ": " + ze.getName());
+					continue;
+				}
+			}
+			
+			Collections.sort(testCases, new Comparator<Object[]>()
+			{
+				@Override
+				public int compare(Object[] o1, Object[] o2)
+				{
+					return ((String) o1[0]).compareTo((String) o2[0]);
+				}
+			});
+			
+			return new NamedParametrizedSuite(
+					zipFile.getName(),
+					MassExpansionTest.class.getSimpleName(),
+					testCases);
 		}
-		
-		String testPrefix = suiteName + "/tests/";
-		String resourcesPrefix = suiteName + "/resources/";
-		
-		Map<FileUrlKey, String> fileUrls =
-				new HashMap<FileUrlKey, String>();
-		
-		Map<String, ArticleDesc> articles =
-				new HashMap<String, ArticleDesc>();
-		
-		List<Object[]> testCases = new ArrayList<Object[]>();
-		
-		while (entries.hasMoreElements())
+		finally
 		{
-			ZipEntry ze = (ZipEntry) entries.nextElement();
-			
-			// Skip directories
-			if (ze.getName().endsWith("/"))
-				continue;
-			
-			long longSize = ze.getSize();
-			if (longSize > Integer.MAX_VALUE)
-				throw new IllegalArgumentException("Archives contains files too big to process!");
-			
-			InputStream is = zf.getInputStream(ze);
-			byte[] content = IOUtils.toByteArray(is);
-			is.close();
-			
-			String filename = ze.getName();
-			if (filename.startsWith(resourcesPrefix + "fileUrl-") && filename.endsWith(".txt"))
-			{
-				filename = filename.substring(resourcesPrefix.length());
-				Matcher m = fileUrlRx.matcher(filename);
-				if (!m.matches())
-					throw new IllegalArgumentException("Wrong 'fileUrl' pattern: " + ze.getName());
-				
-				String encName = m.group(1);
-				int width = Integer.parseInt(m.group(2));
-				int height = Integer.parseInt(m.group(3));
-				
-				FileUrlKey key = new FileUrlKey(encName, width, height);
-				fileUrls.put(key, new String(content, "UTF8"));
-			}
-			else if (filename.startsWith(resourcesPrefix + "retrieveWikitext-") && filename.endsWith(".wikitext"))
-			{
-				filename = filename.substring(resourcesPrefix.length());
-				Matcher m = articleRx.matcher(filename);
-				if (!m.matches())
-					throw new IllegalArgumentException("Wrong 'retrieveWikitext' pattern: " + ze.getName());
-				
-				String encName = m.group(1);
-				long revision = Long.parseLong(m.group(2));
-				
-				ArticleDesc article = new ArticleDesc(
-						revision,
-						new String(content, "UTF8"));
-				
-				articles.put(encName, article);
-			}
-			else if (filename.startsWith(testPrefix) && filename.endsWith(".txt"))
-			{
-				filename = filename.substring(testPrefix.length());
-				Matcher m = testRx.matcher(filename);
-				if (!m.matches())
-					throw new IllegalArgumentException("Invalid test case filename: " + ze.getName());
-				
-				String title = m.group(1);
-				String test = new String(content, "UTF8");
-				
-				testCases.add(new Object[] {
-						title,
-						fileUrls,
-						articles,
-						test });
-			}
-			else
-			{
-				System.err.println("Ignored file in " + zipFile + ": " + ze.getName());
-				continue;
-			}
+			zf.close();
 		}
-		
-		Collections.sort(testCases, new Comparator<Object[]>()
-		{
-			@Override
-			public int compare(Object[] o1, Object[] o2)
-			{
-				return ((String) o1[0]).compareTo((String) o2[0]);
-			}
-		});
-		
-		return new NamedParametrizedSuite(
-				zipFile.getName(),
-				MassExpansionTest.class.getSimpleName(),
-				testCases);
 	}
 	
 	private static NamedParametrizedSuite enumerateSuiteTestCases(File dir) throws IOException

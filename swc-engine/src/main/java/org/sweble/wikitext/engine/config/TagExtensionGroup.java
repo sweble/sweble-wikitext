@@ -135,7 +135,6 @@ public class TagExtensionGroup
 	// =========================================================================
 	
 	@XmlElement(name = "tagExt")
-	@SuppressWarnings("unused")
 	private ArrayList<TagExtensionBase> getJaxbTagExtensions()
 	{
 		ArrayList<TagExtensionBase> sorted = new ArrayList<TagExtensionBase>(tagExtensions);

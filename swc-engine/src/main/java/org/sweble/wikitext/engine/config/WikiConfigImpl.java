@@ -44,6 +44,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.util.JAXBSource;
+import javax.xml.transform.Source;
 
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.TagExtensionBase;
@@ -116,10 +118,6 @@ public class WikiConfigImpl
 	
 	private transient final Map<String, TagExtensionBase> tagExtensions = new HashMap<String, TagExtensionBase>();
 	
-	/*
-	private final Map<I18nAliasImpl, TagExtensionBase> aliasToTagExtMap = new HashMap<I18nAliasImpl, TagExtensionBase>();
-	*/
-	
 	// -- Interwikis --
 	
 	private final Map<String, InterwikiImpl> prefixToInterwikiMap = new HashMap<String, InterwikiImpl>();
@@ -143,9 +141,9 @@ public class WikiConfigImpl
 	public WikiConfigImpl()
 	{
 		this.parserConfig = new ParserConfigImpl(this);
-		this.engineConfig = new EngineConfigImpl();
-		this.nodeFactory = new EngineNodeFactoryImpl(this);
+		this.nodeFactory = new EngineNodeFactoryImpl(this.parserConfig);
 		this.runtimeInfo = new WikiRuntimeInfoImpl(this);
+		this.engineConfig = new EngineConfigImpl();
 	}
 	
 	// ==[ Parser Configuration ]===============================================
@@ -691,6 +689,11 @@ public class WikiConfigImpl
 		createMarshaller().marshal(this, out);
 	}
 	
+	public JAXBSource getAsJAXBSource() throws JAXBException
+	{
+		return new JAXBSource(createMarshaller(), this);
+	}
+	
 	private Marshaller createMarshaller() throws JAXBException
 	{
 		JAXBContext context = JAXBContext.newInstance(WikiConfigImpl.class);
@@ -739,6 +742,11 @@ public class WikiConfigImpl
 		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(in));
 	}
 	
+	public static WikiConfigImpl load(Source in) throws JAXBException
+	{
+		return finishImport((WikiConfigImpl) createUnmarshaller().unmarshal(in));
+	}
+	
 	private static WikiConfigImpl finishImport(WikiConfigImpl config)
 	{
 		for (ParserFunctionBase pf : config.getParserFunctions())
@@ -747,7 +755,9 @@ public class WikiConfigImpl
 		for (TagExtensionBase te : config.getTagExtensions())
 			te.setWikiConfig(config);
 		
-		config.nodeFactory = new EngineNodeFactoryImpl(config);
+		config.parserConfig.setWikiConfig(config);
+		
+		config.nodeFactory = new EngineNodeFactoryImpl(config.parserConfig);
 		
 		return config;
 	}
@@ -802,7 +812,6 @@ public class WikiConfigImpl
 	
 	// =========================================================================
 	
-	@SuppressWarnings("unused")
 	@XmlElement(name = "i18nAlias")
 	@XmlElementWrapper(name = "i18nAliases")
 	private I18nAliasImpl[] getJaxbAliases()
@@ -822,7 +831,6 @@ public class WikiConfigImpl
 	
 	// =========================================================================
 	
-	@SuppressWarnings("unused")
 	@XmlElement(name = "pfnGroup")
 	@XmlElementWrapper(name = "pfnGroups")
 	private ParserFunctionGroup[] getJaxbPfnGroups()
@@ -842,7 +850,6 @@ public class WikiConfigImpl
 	
 	// =========================================================================
 	
-	@SuppressWarnings("unused")
 	@XmlElement(name = "tagExtGroup")
 	@XmlElementWrapper(name = "tagExtGroups")
 	private TagExtensionGroup[] getJaxbTagExtGroups()
@@ -862,7 +869,6 @@ public class WikiConfigImpl
 	
 	// =========================================================================
 	
-	@SuppressWarnings("unused")
 	@XmlElement(name = "interwiki")
 	@XmlElementWrapper(name = "interwikis")
 	private InterwikiImpl[] getJaxbInterwikis()
@@ -907,7 +913,6 @@ public class WikiConfigImpl
 		}
 	}
 	
-	@SuppressWarnings("unused")
 	@XmlElement(name = "namespaces")
 	private Namespaces getJaxbNamespaces()
 	{

@@ -24,13 +24,16 @@ public class WikiRuntimeInfoImpl
 		implements
 			WikiRuntimeInfo
 {
-	@SuppressWarnings("unused")
 	private final WikiConfigImpl wikiConfigImpl;
+	
+	// =========================================================================
 	
 	public WikiRuntimeInfoImpl(WikiConfigImpl wikiConfigImpl)
 	{
 		this.wikiConfigImpl = wikiConfigImpl;
 	}
+	
+	// =========================================================================
 	
 	@Override
 	public Calendar getDateAndTime()

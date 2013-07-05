@@ -19,7 +19,7 @@ package org.sweble.wikitext.engine.nodes;
 import java.util.List;
 import java.util.Map;
 
-import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.parser.ParserConfig;
 import org.sweble.wikitext.parser.WtEntityMap;
 import org.sweble.wikitext.parser.nodes.WikitextNodeFactoryImpl;
 import org.sweble.wikitext.parser.nodes.WtBody;
@@ -36,9 +36,9 @@ public final class EngineNodeFactoryImpl
 		implements
 			EngineNodeFactory
 {
-	public EngineNodeFactoryImpl(WikiConfig wikiConfig)
+	public EngineNodeFactoryImpl(ParserConfig parserConfig)
 	{
-		super(wikiConfig.getParserConfig());
+		super(parserConfig);
 		
 		{
 			Map<Class<?>, WtNode> prototypes = super.getPrototypes();

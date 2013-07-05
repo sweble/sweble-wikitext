@@ -63,7 +63,7 @@ public class ParserConfigImpl
 {
 	private static final Pattern URL_PROTOCOL_SYNTAX = Pattern.compile("^\\w+(:|://)$");
 	
-	private final WikiConfigImpl wikiConfig;
+	private transient WikiConfigImpl wikiConfig;
 	
 	private final Map<String, String> xmlEntities = new HashMap<String, String>();
 	
@@ -93,10 +93,24 @@ public class ParserConfigImpl
 	
 	// =========================================================================
 	
+	/**
+	 * This must only be used for de-serialization. Afterwards the wikiConfig
+	 * field has to be set explicitly!
+	 */
 	protected ParserConfigImpl()
 	{
 		this(null);
 	}
+	
+	/**
+	 * Fix ParserConfigImpl after de-serialization.
+	 */
+	protected void setWikiConfig(WikiConfigImpl wikiConfig)
+	{
+		this.wikiConfig = wikiConfig;
+	}
+	
+	// =========================================================================
 	
 	public ParserConfigImpl(WikiConfigImpl wikiConfig)
 	{
@@ -406,7 +420,6 @@ public class ParserConfigImpl
 	
 	@XmlElement(name = "entity")
 	@XmlElementWrapper(name = "xmlEntities")
-	@SuppressWarnings("unused")
 	private XmlEntityMapEntry[] getJaxbXmlEntities()
 	{
 		XmlEntityMapEntry[] array = new XmlEntityMapEntry[xmlEntities.size()];
@@ -444,7 +457,6 @@ public class ParserConfigImpl
 	
 	@XmlElement(name = "protocol")
 	@XmlElementWrapper(name = "allowedUrlProtocols")
-	@SuppressWarnings("unused")
 	private UrlProtocolEntry[] getJaxbAllowedUrlProtocols()
 	{
 		UrlProtocolEntry[] array = new UrlProtocolEntry[allowedUrlProtocols.size()];
@@ -492,7 +504,6 @@ public class ParserConfigImpl
 	
 	@XmlElement(name = "lctFlag")
 	@XmlElementWrapper(name = "lctFlagMappings")
-	@SuppressWarnings("unused")
 	private LctFlagMapEntry[] getJaxbLctFlagMappings()
 	{
 		LctFlagMapEntry[] array = new LctFlagMapEntry[lctFlagMap.size()];
@@ -541,7 +552,6 @@ public class ParserConfigImpl
 	
 	@XmlElement(name = "lctVariant")
 	@XmlElementWrapper(name = "lctVariantMappings")
-	@SuppressWarnings("unused")
 	private LctVariantMapEntry[] getJaxbLctVariantMappings()
 	{
 		LctVariantMapEntry[] array = new LctVariantMapEntry[lctVariantMap.size()];

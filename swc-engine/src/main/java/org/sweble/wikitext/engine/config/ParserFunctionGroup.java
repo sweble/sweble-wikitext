@@ -134,7 +134,6 @@ public class ParserFunctionGroup
 	
 	// =========================================================================
 	
-	@SuppressWarnings("unused")
 	@XmlElement(name = "pfn")
 	private ArrayList<ParserFunctionBase> getPfns()
 	{

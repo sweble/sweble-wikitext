@@ -249,6 +249,8 @@ public class HtmlRenderer
 				if (imgWidth <= 0)
 					imgWidth = 180;
 				break;
+			default:
+				break;
 		}
 		
 		if (n.getUpright())
@@ -311,6 +313,8 @@ public class HtmlRenderer
 		{
 			case THUMBNAIL:
 				imgClasses += " thumbimage";
+				break;
+			default:
 				break;
 		}
 		
