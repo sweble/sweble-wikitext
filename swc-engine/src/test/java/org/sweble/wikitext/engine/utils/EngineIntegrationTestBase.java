@@ -27,7 +27,7 @@ import org.sweble.wikitext.engine.ExpansionFrame;
 import org.sweble.wikitext.engine.FullPage;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.WtEngine;
+import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.parser.nodes.WtNode;
@@ -48,14 +48,14 @@ public abstract class EngineIntegrationTestBase
 	
 	private final WikiConfigImpl config;
 	
-	private final WtEngine engine;
+	private final WtEngineImpl engine;
 	
 	// =========================================================================
 	
 	public EngineIntegrationTestBase()
 	{
 		this.config = DefaultConfigEnWp.generate();
-		this.engine = new WtEngine(config);
+		this.engine = new WtEngineImpl(config);
 	}
 	
 	// =========================================================================
@@ -65,7 +65,7 @@ public abstract class EngineIntegrationTestBase
 		return config;
 	}
 	
-	public WtEngine getEngine()
+	public WtEngineImpl getEngine()
 	{
 		return engine;
 	}

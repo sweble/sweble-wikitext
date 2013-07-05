@@ -22,7 +22,7 @@ import org.sweble.wikitext.articlecruncher.Processor;
 import org.sweble.wikitext.engine.EngineException;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.WtEngine;
+import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
@@ -50,7 +50,7 @@ public class RevisionProcessor
 		WikiConfig config = dumpCruncher.getWikiConfig();
 		
 		// Instantiate a compiler for wiki pages
-		WtEngine engine = new WtEngine(config);
+		WtEngineImpl engine = new WtEngineImpl(config);
 		
 		// Retrieve a page
 		PageTitle pageTitle = PageTitle.make(config, revJob.getPageTitle());

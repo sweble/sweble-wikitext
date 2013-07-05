@@ -23,7 +23,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
-import org.sweble.wikitext.engine.WtEngine;
+import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.output.HtmlRenderer;
@@ -80,7 +80,7 @@ public class App
 		final int wrapCol = 80;
 		
 		// Instantiate a compiler for wiki pages
-		WtEngine engine = new WtEngine(config);
+		WtEngineImpl engine = new WtEngineImpl(config);
 		
 		// Retrieve a page
 		PageTitle pageTitle = PageTitle.make(config, fileTitle);

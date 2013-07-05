@@ -31,7 +31,7 @@ import org.sweble.wikitext.engine.PageId;
 import org.sweble.wikitext.engine.PageTitle;
 import org.sweble.wikitext.engine.ParserFunctionBase;
 import org.sweble.wikitext.engine.PfnArgumentMode;
-import org.sweble.wikitext.engine.WtEngine;
+import org.sweble.wikitext.engine.WtEngineImpl;
 import org.sweble.wikitext.engine.config.I18nAliasImpl;
 import org.sweble.wikitext.engine.config.ParserFunctionGroup;
 import org.sweble.wikitext.engine.config.WikiConfigImpl;
@@ -53,7 +53,7 @@ public abstract class WomIntegrationTestBase
 {
 	private final WikiConfigImpl config;
 	
-	private final WtEngine engine;
+	private final WtEngineImpl engine;
 	
 	// =========================================================================
 	
@@ -61,7 +61,7 @@ public abstract class WomIntegrationTestBase
 	{
 		this.config = DefaultConfigEnWp.generate();
 		this.config.getEngineConfig().setTrimTransparentBeforeParsing(false);
-		this.engine = new WtEngine(config);
+		this.engine = new WtEngineImpl(config);
 		
 		// TODO: Improve default config!
 		this.config.addI18nAlias(new I18nAliasImpl("notoc", true, Arrays.asList("NOTOC")));
@@ -90,7 +90,7 @@ public abstract class WomIntegrationTestBase
 		return config;
 	}
 	
-	public WtEngine getEngine()
+	public WtEngineImpl getEngine()
 	{
 		return engine;
 	}

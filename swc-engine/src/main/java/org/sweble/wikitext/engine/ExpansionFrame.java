@@ -33,7 +33,7 @@ import de.fau.cs.osr.ptk.common.Warning;
 
 public class ExpansionFrame
 {
-	private final WtEngine engine;
+	private final WtEngineImpl engine;
 	
 	private final ExpansionFrame rootFrame;
 	
@@ -64,7 +64,7 @@ public class ExpansionFrame
 	// =========================================================================
 	
 	public ExpansionFrame(
-			WtEngine engine,
+			WtEngineImpl engine,
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
@@ -96,7 +96,7 @@ public class ExpansionFrame
 	}
 	
 	public ExpansionFrame(
-			WtEngine engine,
+			WtEngineImpl engine,
 			ExpansionCallback callback,
 			ExpansionDebugHooks hooks,
 			PageTitle title,
@@ -133,7 +133,7 @@ public class ExpansionFrame
 	
 	// =========================================================================
 	
-	public WtEngine getEngine()
+	public WtEngineImpl getEngine()
 	{
 		return engine;
 	}
